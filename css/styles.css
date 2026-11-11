@@ -387,13 +387,18 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .is-past { opacity: .62; }
 @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
 
-/* typewriter caret */
-.is-typing .typed::after {
-  content: ""; display: inline-block; width: .5em; height: 1em; margin-left: .1em;
-  vertical-align: -.12em; background: currentColor; opacity: .6;
+/* Typewriter: the untyped rest of the line is in place but transparent,
+   so the box keeps its final size. The caret is a left border on the rest:
+   an inline border never adds a line-break point, and the negative margin
+   cancels its width, so the text never shifts. */
+.typed__rest {
+  color: transparent;
+  border-left: .12em solid currentColor;
+  border-left-color: rgba(127, 140, 160, .9);
+  margin-left: -.12em;
   animation: caret .8s steps(1) infinite;
 }
-@keyframes caret { 50% { opacity: 0; } }
+@keyframes caret { 50% { border-left-color: transparent; } }
 
 .fact {
   align-self: stretch; font-size: .925em; line-height: 1.45;
