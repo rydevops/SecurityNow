@@ -4,6 +4,8 @@ A Progressive Web App that turns episodes of **Security Now!** with Steve Gibson
 
 ## Features
 
+- **Portrait and landscape layouts**, chosen by device orientation (separate cover and storyboard art for each)
+- Animated glow on the **SECURITY NOW** title. The cover is labeled as an unofficial fan recreation.
 - **Cover → Episodes → Reader** flow, with hash routes (`#/`, `#/episodes`, `#/episode/1`)
 - **Storyboard reader**: Leo (left) and Steve (right) talk in speech bubbles. The current speaker is highlighted, and the other host is shown in grayscale.
 - **Key fact** cards, a **chapter drawer**, a progress bar, and a **quiz** at the end of each episode
@@ -19,6 +21,11 @@ A Progressive Web App that turns episodes of **Security Now!** with Steve Gibson
 
 **When you deploy a change, bump `version` in `version.json`.**
 
+## Episodes so far
+
+- **#001** As the Worm Turns (Aug 19, 2005)
+- **#1000** One Thousand! (Nov 12, 2024)
+
 ## Adding an episode
 
 1. Create `episodes/sn-XXX.json` (use `episodes/sn-001.json` as the template). It contains `chapters`, each with `beats`:
@@ -29,6 +36,8 @@ A Progressive Web App that turns episodes of **Security Now!** with Steve Gibson
 3. Bump `version.json`.
 
 Source transcripts: `https://www.grc.com/sn/sn-XXX.txt` (three-digit numbers up to 999, then `sn-1000.txt` and up).
+
+See `CLAUDE.md` for the full set of project rules (branching, PRs, caching, how episodes are adapted).
 
 ## GitHub Pages
 

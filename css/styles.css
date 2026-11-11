@@ -93,12 +93,58 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   padding: calc(16px + var(--safe-t)) 16px calc(24px + var(--safe-b));
   gap: 1.25rem;
 }
-.cover__art {
-  width: min(100%, 560px, calc(100dvh - 190px));
-  aspect-ratio: 1; object-fit: cover; border-radius: 18px;
+/* Cover art: square on upright screens, 16:9 in landscape. The glow and
+   shine layers sit exactly on top of the art. */
+.cover__frame {
+  --cover-ratio: 1;
+  position: relative;
+  width: min(100%, 560px, calc(100dvh - 250px));
+  aspect-ratio: var(--cover-ratio);
+  border-radius: 18px; overflow: hidden;
   box-shadow: 0 30px 80px rgba(0, 0, 0, .6), 0 0 0 1px var(--line);
   animation: rise .8s ease both;
+  isolation: isolate;
 }
+.cover__frame picture, .cover__art { display: block; width: 100%; height: 100%; }
+.cover__art { object-fit: cover; }
+
+/* Glow: a white mask of just the title letters, pulsing with layered blue drop-shadows */
+.cover__glow { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; }
+.cover__glow img {
+  width: 100%; height: 100%; display: block;
+  animation: title-glow 3.2s ease-in-out infinite;
+  will-change: filter, opacity;
+}
+@keyframes title-glow {
+  0%, 100% { opacity: .55; filter: drop-shadow(0 0 2px rgba(124, 196, 255, .7)) drop-shadow(0 0 8px rgba(77, 163, 255, .45)); }
+  50%      { opacity: 1;   filter: drop-shadow(0 0 4px rgba(170, 220, 255, .95)) drop-shadow(0 0 16px rgba(77, 163, 255, .9)) drop-shadow(0 0 34px rgba(47, 127, 224, .7)); }
+}
+/* Shine: a light sweep clipped to the letters with the same mask */
+.cover__shine {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+  background: linear-gradient(100deg, transparent 42%, rgba(200, 230, 255, .95) 50%, transparent 58%) 0 0 / 300% 100% no-repeat;
+  -webkit-mask: url("../assets/title-glow-portrait.png") center / 100% 100% no-repeat;
+          mask: url("../assets/title-glow-portrait.png") center / 100% 100% no-repeat;
+  animation: title-shine 5.5s ease-in-out infinite;
+}
+@keyframes title-shine {
+  0%, 35%  { background-position: 120% 0; }
+  75%, 100% { background-position: -20% 0; }
+}
+@media (orientation: landscape) {
+  .cover__frame { --cover-ratio: 1672 / 941; width: min(100%, 1100px, calc((100dvh - 250px) * 1.777)); }
+  .cover__shine {
+    -webkit-mask-image: url("../assets/title-glow-landscape.png");
+            mask-image: url("../assets/title-glow-landscape.png");
+  }
+}
+.cover__badge {
+  margin: 0; padding: .35rem .9rem; border-radius: 999px;
+  font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--glow); border: 1px solid rgba(255, 179, 71, .45); background: rgba(255, 179, 71, .08);
+  animation: rise .8s ease both;
+}
+.cover__disclaimer { margin: 0; max-width: 34rem; text-align: center; color: var(--muted); opacity: .75; font-size: .75rem; line-height: 1.5; animation: rise .8s .4s ease both; }
 .cover__actions { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; animation: rise .8s .15s ease both; }
 .cover__tag { margin: 0; text-align: center; color: var(--muted); font-size: .85rem; letter-spacing: .2em; text-transform: uppercase; animation: rise .8s .3s ease both; }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
@@ -157,45 +203,98 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   flex: 1; min-height: 0; display: flex; justify-content: center;
   padding-bottom: var(--safe-b);
 }
-/* The storyboard art is 1086 × 1448 (3:4) and is pinned to the bottom of
-   the stage at full width. On screens taller than 3:4 the stage grows
-   upward, and a gradient that matches the art's dark sides and white
-   centre column fills the extra space. Overlays use cqw (stage width)
-   units measured from the art, so they stay aligned at any size. */
+/* The storyboard art is pinned to the bottom of the stage at full width.
+   If the screen is taller than the art, the stage grows upward and a
+   gradient matching the art's dark sides and white centre column fills
+   the extra space. Overlays use cqw (percent of stage width) units
+   measured from the art, so they stay aligned at any size.
+
+   Two layouts, chosen by orientation:
+     portrait  -> storyboard.jpg            1086 × 1448 (3:4)
+     landscape -> storyboard-landscape.jpg  1672 × 941  (16:9)
+   Every measurement lives in the variables below. */
 .stage {
+  --art: url("../assets/storyboard.jpg");
+  --aspect: 0.75;           /* art width / height */
+  --img-h: 133.34cqw;       /* art height on stage */
+  --col-l: 12.9%;           /* white column, left edge */
+  --col-r: 87.05%;          /* white column, right edge */
+  --leo-w: 29%;   --leo-h: 34cqw;
+  --steve-w: 30%; --steve-h: 32.5cqw;
+  --name-b: 4.5cqw;
+  --panel-l: 14.2%; --panel-r: 14.2%; --panel-t: 2.5cqw; --panel-b: 34cqw;
+  --ctrl-l: 30%; --ctrl-r: 30%; --ctrl-b: 5.5cqw;
+  --bubble-max: 88%;
+  --k: 1;                   /* scale for cqw-based type */
+
   position: relative;
-  width: min(100vw, calc((100dvh - var(--topbar) - var(--safe-t) - var(--safe-b) - 3px) * 0.75));
+  width: min(100vw, calc((100dvh - var(--topbar) - var(--safe-t) - var(--safe-b) - 3px) * var(--aspect)));
   height: 100%;
   min-height: calc(min(100vw, 600px) * 1.3334);
   background:
-    url("../assets/storyboard.jpg") center bottom / 100% auto no-repeat,
-    linear-gradient(90deg, #00172e 0 12.9%, #f1f4fb 12.9% 87.05%, #00172e 87.05%);
+    var(--art) center bottom / 100% auto no-repeat,
+    linear-gradient(90deg, #00172e 0 var(--col-l), #f1f4fb var(--col-l) var(--col-r), #00172e var(--col-r));
   container-type: inline-size;
   overflow: hidden;
   user-select: none;
+}
+@media (orientation: landscape) {
+  .stage {
+    --art: url("../assets/storyboard-landscape.jpg");
+    --aspect: 1.7768;
+    --img-h: 56.28cqw;
+    --col-l: 7.9%;
+    --col-r: 92.05%;
+    --leo-w: 17%;   --leo-h: 18.5cqw;
+    --steve-w: 17.5%; --steve-h: 19cqw;
+    --name-b: 2.2cqw;
+    --panel-l: 18.5%; --panel-r: 18.5%; --panel-t: 1.2cqw; --panel-b: 8.6cqw;
+    --ctrl-l: 37%; --ctrl-r: 37%; --ctrl-b: 1.6cqw;
+    --bubble-max: 76%;
+    --k: .5;
+    min-height: 0;
+  }
+}
+/* Short landscape screens (phones on their side): slimmer top bar */
+@media (orientation: landscape) and (max-height: 500px) {
+  :root { --topbar: 44px; }
+  .topbar__title { font-size: .95rem; }
 }
 
 /* Soften the top edge of the art where it meets the extended background */
 .stage::before, .stage::after {
   content: ""; position: absolute; pointer-events: none;
-  bottom: calc(133.34cqw - 18cqw); height: 18cqw; width: 12.9%;
+  bottom: calc(var(--img-h) - 18cqw * var(--k)); height: calc(18cqw * var(--k));
   background: linear-gradient(180deg, #00172e 15%, rgba(0, 23, 46, 0));
 }
-.stage::before { left: 0; }
-.stage::after  { right: 0; width: 12.95%; }
+.stage::before { left: 0;  width: var(--col-l); }
+.stage::after  { right: 0; width: calc(100% - var(--col-r)); }
 
 /* --- hosts (portraits are baked into the art; we spotlight them) --- */
 .host { position: absolute; bottom: 0; transition: backdrop-filter .35s ease, -webkit-backdrop-filter .35s ease, background .35s ease; }
-.host--leo   { left: 0;  width: 29%; height: 34cqw; }
-.host--steve { right: 0; width: 30%; height: 32.5cqw; }
-/* grayscale only: the white column stays white, so no visible box */
+.host--leo   { left: 0;  width: var(--leo-w);   height: var(--leo-h); }
+.host--steve { right: 0; width: var(--steve-w); height: var(--steve-h); }
+/* Grayscale the host who isn't speaking. The edges that face the white
+   column fade out, so the filtered area doesn't show as a box. */
 .host.is-dim {
   -webkit-backdrop-filter: grayscale(1);
   backdrop-filter: grayscale(1);
 }
+.host--leo {
+  -webkit-mask: linear-gradient(to left, transparent, #000 22%), linear-gradient(to bottom, transparent, #000 18%);
+  -webkit-mask-composite: source-in;
+  mask: linear-gradient(to left, transparent, #000 22%), linear-gradient(to bottom, transparent, #000 18%);
+  mask-composite: intersect;
+}
+.host--steve {
+  -webkit-mask: linear-gradient(to right, transparent, #000 22%), linear-gradient(to bottom, transparent, #000 18%);
+  -webkit-mask-composite: source-in;
+  mask: linear-gradient(to right, transparent, #000 22%), linear-gradient(to bottom, transparent, #000 18%);
+  mask-composite: intersect;
+}
 .host__name {
-  position: absolute; bottom: 4.5cqw; left: 50%; transform: translateX(-50%);
-  font-size: clamp(10px, 2.2cqw, 15px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  position: absolute; bottom: var(--name-b); left: 50%; transform: translateX(-50%);
+  font-size: clamp(10px, calc(2.2cqw * var(--k)), 15px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
   padding: .25em .7em; border-radius: 999px; white-space: nowrap;
   background: rgba(5, 15, 34, .78); border: 1px solid var(--line); color: var(--muted);
   transition: color .3s ease, border-color .3s ease, box-shadow .3s ease;
@@ -213,20 +312,20 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 
 /* --- dialogue panel (sits in the white column of the storyboard) --- */
 .panel {
-  position: absolute; left: 14.2%; right: 14.2%; top: 2.5cqw; bottom: 34cqw;
+  position: absolute; left: var(--panel-l); right: var(--panel-r); top: var(--panel-t); bottom: var(--panel-b);
   display: flex; flex-direction: column;
   color: var(--ink);
 }
 .panel__chapter {
   flex: none; text-align: center;
-  font-size: clamp(10px, 2cqw, 14px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  font-size: clamp(10px, calc(2cqw * var(--k)), 14px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
   color: #2f6fc0; padding: .4em 0 .7em;
   border-bottom: 1px solid rgba(13, 42, 85, .12);
 }
 .thread {
   flex: 1; overflow-y: auto; overscroll-behavior: contain;
-  display: flex; flex-direction: column; gap: 2.2cqw;
-  padding: 2.5cqw .3cqw 3cqw;
+  display: flex; flex-direction: column; gap: calc(2.2cqw * var(--k));
+  padding: calc(2.5cqw * var(--k)) .3cqw calc(3cqw * var(--k));
   scroll-behavior: smooth;
   mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 10px), transparent);
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 10px), transparent);
@@ -235,8 +334,8 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .thread > :first-child { margin-top: auto; } /* new lines grow upward from the bottom */
 
 .bubble {
-  position: relative; max-width: 88%;
-  font-size: clamp(13px, 2.65cqw, 19px); line-height: 1.45;
+  position: relative; max-width: var(--bubble-max);
+  font-size: clamp(13px, calc(2.65cqw * var(--k)), 19px); line-height: 1.45;
   padding: .7em .95em; border-radius: 1.1em;
   box-shadow: 0 2px 8px rgba(13, 42, 85, .12);
   transition: opacity .3s ease;
@@ -249,7 +348,7 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
 
 .fact {
-  align-self: stretch; font-size: clamp(12.5px, 2.45cqw, 17.5px); line-height: 1.45;
+  align-self: stretch; font-size: clamp(12.5px, calc(2.45cqw * var(--k)), 17.5px); line-height: 1.45;
   padding: .85em 1em; border-radius: .9em;
   background: linear-gradient(180deg, #0a1b38, #0d2a55); color: #e8f0ff;
   border-left: 4px solid var(--glow);
@@ -263,14 +362,14 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 
 .divider {
   align-self: center; text-align: center;
-  font-size: clamp(11px, 2.1cqw, 15px); color: #4a5d7e; padding: .4em 0;
+  font-size: clamp(11px, calc(2.1cqw * var(--k)), 15px); color: #4a5d7e; padding: .4em 0;
   animation: pop .35s ease both;
 }
 .divider b { display: block; font-size: 1.25em; color: var(--ink); margin-top: .15em; }
 
 /* --- quiz & finale cards --- */
 .card {
-  align-self: stretch; font-size: clamp(13px, 2.55cqw, 18px); line-height: 1.4;
+  align-self: stretch; font-size: clamp(13px, calc(2.55cqw * var(--k)), 18px); line-height: 1.4;
   padding: 1em; border-radius: 1em; background: #fff; color: var(--ink);
   border: 1px solid rgba(13, 42, 85, .12); box-shadow: 0 6px 18px rgba(13, 42, 85, .12);
   animation: pop .35s ease both;
@@ -296,11 +395,11 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 
 /* --- controls (bottom-centre, between the two portraits) --- */
 .controls {
-  position: absolute; left: 30%; right: 30%; bottom: 5.5cqw;
-  display: flex; align-items: center; justify-content: space-between; gap: 2cqw;
+  position: absolute; left: var(--ctrl-l); right: var(--ctrl-r); bottom: var(--ctrl-b);
+  display: flex; align-items: center; justify-content: space-between; gap: calc(2cqw * var(--k));
 }
 .ctrl {
-  width: clamp(40px, 9cqw, 60px); aspect-ratio: 1; border-radius: 50%;
+  width: clamp(38px, calc(9cqw * var(--k)), 60px); aspect-ratio: 1; border-radius: 50%;
   display: grid; place-items: center; border: 0;
   background: #fff; color: var(--steve);
   box-shadow: 0 4px 14px rgba(13, 42, 85, .25), inset 0 0 0 1px rgba(13, 42, 85, .1);
@@ -312,7 +411,7 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .ctrl--next { background: linear-gradient(180deg, #5bb0ff, #2f7fe0); color: #fff; box-shadow: 0 6px 18px rgba(47, 127, 224, .5); }
 .ctrl--next.is-hint { animation: nudge 1.6s ease-in-out infinite; }
 @keyframes nudge { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(3px); } 90% { transform: translateX(-1px); } }
-.ctrl__count { font-size: clamp(11px, 2.2cqw, 15px); font-weight: 700; color: #4a5d7e; font-variant-numeric: tabular-nums; }
+.ctrl__count { font-size: clamp(11px, calc(2.2cqw * var(--k)), 15px); font-weight: 700; color: #4a5d7e; font-variant-numeric: tabular-nums; }
 
 /* =========================================================
    CHAPTER DRAWER
