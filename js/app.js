@@ -117,7 +117,7 @@
   const screens = { cover: $('#screen-cover'), index: $('#screen-index'), reader: $('#screen-reader') };
   function show(name) {
     for (const [k, s] of Object.entries(screens)) s.hidden = k !== name;
-    stopTyping(true);
+    stopTyping();
     closeDrawer();
     closeSettings();
     window.scrollTo(0, 0);
@@ -274,7 +274,7 @@
   // jump: show the step at once (chapter jump, opening, going back)
   // type: the reader moved forward, so type the newest line if enabled
   function renderStep({ jump = false, type = false } = {}) {
-    stopTyping(false);
+    stopTyping();
     const step = steps[idx];
     const thread = $('#rd-thread');
     thread.innerHTML = '';
@@ -340,34 +340,44 @@
       : `${HOST_NAMES[beat.s] || beat.s}: ${beat.t}`;
   }
 
-  /* ---------- typewriter ---------- */
+  /* ---------- typewriter ----------
+     The whole line goes into the box at once: a visible "shown" part and
+     an invisible "rest". Both stay in the layout, so the box is already its
+     final size when typing starts and the words never move. Only the colour
+     of each character changes as it's typed. */
+  function typeInto(box, target, full, onDone) {
+    const { every, chars } = SPEEDS[settings.speed];
+    const shown = el('span', 'typed__shown');
+    const rest = el('span', 'typed__rest', full);
+    rest.setAttribute('aria-hidden', 'true');
+    target.textContent = '';
+    target.append(shown, rest);
+    box.classList.add('is-typing');
+    let i = 0;
+    const done = () => {
+      clearInterval(timer);
+      target.textContent = full;           // back to plain text
+      box.classList.remove('is-typing');
+    };
+    const timer = setInterval(() => {
+      i = Math.min(full.length, i + chars);
+      shown.textContent = full.slice(0, i);
+      rest.textContent = full.slice(i);
+      if (i >= full.length) { done(); onDone?.(); }
+    }, every);
+    return { finish: done };
+  }
+
   let typer = null;
   function startTyping(node) {
     const target = node.querySelector('.typed');
     if (!target) return;
-    const full = target.textContent;
-    const { every, chars } = SPEEDS[settings.speed];
-    const thread = $('#rd-thread');
-    let i = 0;
-    target.textContent = '';
-    node.classList.add('is-typing');
-    typer = {
-      node, target, full,
-      timer: setInterval(() => {
-        const atBottom = thread.scrollHeight - thread.scrollTop - thread.clientHeight < 48;
-        i = Math.min(full.length, i + chars);
-        target.textContent = full.slice(0, i);
-        if (atBottom) thread.scrollTop = thread.scrollHeight;
-        if (i >= full.length) stopTyping(false);
-      }, every),
-    };
+    typer = typeInto(node, target, target.textContent, () => { typer = null; });
   }
-  // finish = true shows the rest of the line at once
-  function stopTyping(finish = true) {
+  // Stop typing and show the rest of the line at once
+  function stopTyping() {
     if (!typer) return;
-    clearInterval(typer.timer);
-    if (finish) typer.target.textContent = typer.full;
-    typer.node.classList.remove('is-typing');
+    typer.finish();
     typer = null;
   }
 
@@ -473,10 +483,10 @@
   /* ---------- navigation ---------- */
   // While a line is being typed, "next" finishes it first; the next press moves on
   function next() {
-    if (typer) { stopTyping(true); return; }
+    if (typer) { stopTyping(); return; }
     if (idx < steps.length - 1) { idx++; renderStep({ type: true }); }
   }
-  function prev() { if (idx > 0) { idx--; renderStep({ jump: true }); } else stopTyping(true); }
+  function prev() { if (idx > 0) { idx--; renderStep({ jump: true }); } else stopTyping(); }
   $('#rd-next').addEventListener('click', (e) => { e.stopPropagation(); next(); });
   $('#rd-prev').addEventListener('click', (e) => { e.stopPropagation(); prev(); });
 
@@ -582,7 +592,7 @@
   /* =========================================================
      SETTINGS PANEL
      ========================================================= */
-  let previewTimer = null;
+  let preview = null;
   function syncSettingsUI() {
     document.querySelectorAll('#set-size button').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.v === settings.size)));
     document.querySelectorAll('#set-speed button').forEach((b) => {
@@ -593,20 +603,12 @@
   }
   // Show the current speed in the preview bubble
   function runPreview() {
-    clearInterval(previewTimer);
+    preview?.finish();
+    preview = null;
     const t = $('#set-preview');
     const full = t.dataset.full || (t.dataset.full = t.textContent);
-    const bubble = t.closest('.bubble');
-    if (!settings.typing) { t.textContent = full; bubble.classList.remove('is-typing'); return; }
-    const { every, chars } = SPEEDS[settings.speed];
-    let i = 0;
-    t.textContent = '';
-    bubble.classList.add('is-typing');
-    previewTimer = setInterval(() => {
-      i = Math.min(full.length, i + chars);
-      t.textContent = full.slice(0, i);
-      if (i >= full.length) { clearInterval(previewTimer); bubble.classList.remove('is-typing'); }
-    }, every);
+    if (!settings.typing) { t.textContent = full; return; }
+    preview = typeInto(t.closest('.bubble'), t, full, () => { preview = null; });
   }
   function saveSettings() {
     store.set('settings', settings);
@@ -626,13 +628,13 @@
   });
   $('#set-typing').addEventListener('change', (e) => {
     settings.typing = e.target.checked;
-    if (!settings.typing) stopTyping(true);
+    if (!settings.typing) stopTyping();
     saveSettings(); runPreview();
   });
   let settingsFocus = null;
   function openSettings() {
     settingsFocus = document.activeElement;
-    stopTyping(true);
+    stopTyping();
     syncSettingsUI();
     $('#settings').hidden = false;
     $('#set-size button[aria-pressed="true"]')?.focus();
@@ -640,7 +642,8 @@
   }
   function closeSettings() {
     if ($('#settings').hidden) return;
-    clearInterval(previewTimer);
+    preview?.finish();
+    preview = null;
     $('#settings').hidden = true;
     settingsFocus?.focus?.();
   }
