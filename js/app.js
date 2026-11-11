@@ -25,6 +25,23 @@
     set(k, v) { try { localStorage.setItem('sn:' + k, JSON.stringify(v)); } catch { /* ignore */ } },
   };
 
+  /* ---------- reader settings (text size, typewriter) ---------- */
+  const SPEEDS = {               // every = ms per tick, chars = characters per tick
+    slow:   { every: 45, chars: 1 },
+    normal: { every: 35, chars: 3 },
+    fast:   { every: 25, chars: 6 },
+  };
+  const SIZES = [0.85, 1, 1.15, 1.3, 1.5];
+  const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const settings = Object.assign(
+    { size: 1, typing: !prefersReducedMotion, speed: 'normal' },
+    store.get('settings', {})
+  );
+  if (!SIZES.includes(settings.size)) settings.size = 1;
+  if (!SPEEDS[settings.speed]) settings.speed = 'normal';
+  const applySettings = () => document.documentElement.style.setProperty('--ts', String(settings.size));
+  applySettings();
+
   /* ---------- network: never use the HTTP cache ---------- */
   const getJSON = async (path) => {
     const sep = path.includes('?') ? '&' : '?';
@@ -100,7 +117,9 @@
   const screens = { cover: $('#screen-cover'), index: $('#screen-index'), reader: $('#screen-reader') };
   function show(name) {
     for (const [k, s] of Object.entries(screens)) s.hidden = k !== name;
+    stopTyping(true);
     closeDrawer();
+    closeSettings();
     window.scrollTo(0, 0);
   }
 
@@ -245,14 +264,17 @@
     document.title = `#${pad(ep.number)} ${ep.title} · Security Now!`;
     buildDrawer();
     show('reader');
-    renderStep(true);
+    renderStep({ jump: true });
   }
 
   function chapterTitle(ci) {
     return ci >= ep.chapters.length ? 'Test Yourself' : `Chapter ${ci + 1} · ${ep.chapters[ci].title}`;
   }
 
-  function renderStep(jump = false) {
+  // jump: show the step at once (chapter jump, opening, going back)
+  // type: the reader moved forward, so type the newest line if enabled
+  function renderStep({ jump = false, type = false } = {}) {
+    stopTyping(false);
     const step = steps[idx];
     const thread = $('#rd-thread');
     thread.innerHTML = '';
@@ -273,8 +295,10 @@
         const node = beatNode(ch.beats[b]);
         if (b < step.bi) { node.classList.add('is-past'); node.style.animation = 'none'; }
         thread.appendChild(node);
+        if (b === step.bi && type && settings.typing) startTyping(node);
       }
       setSpeaker(step.beat.s || null);
+      announce(step.beat);
     }
 
     requestAnimationFrame(() => {
@@ -301,12 +325,50 @@
       const label = el('div', 'fact__label');
       label.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>';
       label.appendChild(document.createTextNode('Key fact'));
-      f.append(label, el('div', 'fact__title', beat.title), el('p', '', beat.t));
+      f.append(label, el('div', 'fact__title', beat.title), el('p', 'typed', beat.t));
       return f;
     }
     const b = el('div', `bubble bubble--${beat.s}`);
-    b.append(el('span', 'bubble__who', HOST_NAMES[beat.s] || beat.s), document.createTextNode(beat.t));
+    b.append(el('span', 'bubble__who', HOST_NAMES[beat.s] || beat.s), el('span', 'typed', beat.t));
     return b;
+  }
+
+  // Screen readers get each new line in full at once, not character by character
+  function announce(beat) {
+    $('#rd-live').textContent = beat.type === 'fact'
+      ? `Key fact. ${beat.title}. ${beat.t}`
+      : `${HOST_NAMES[beat.s] || beat.s}: ${beat.t}`;
+  }
+
+  /* ---------- typewriter ---------- */
+  let typer = null;
+  function startTyping(node) {
+    const target = node.querySelector('.typed');
+    if (!target) return;
+    const full = target.textContent;
+    const { every, chars } = SPEEDS[settings.speed];
+    const thread = $('#rd-thread');
+    let i = 0;
+    target.textContent = '';
+    node.classList.add('is-typing');
+    typer = {
+      node, target, full,
+      timer: setInterval(() => {
+        const atBottom = thread.scrollHeight - thread.scrollTop - thread.clientHeight < 48;
+        i = Math.min(full.length, i + chars);
+        target.textContent = full.slice(0, i);
+        if (atBottom) thread.scrollTop = thread.scrollHeight;
+        if (i >= full.length) stopTyping(false);
+      }, every),
+    };
+  }
+  // finish = true shows the rest of the line at once
+  function stopTyping(finish = true) {
+    if (!typer) return;
+    clearInterval(typer.timer);
+    if (finish) typer.target.textContent = typer.full;
+    typer.node.classList.remove('is-typing');
+    typer = null;
   }
 
   function setSpeaker(who) {
@@ -392,7 +454,7 @@
     const again = el('button', 'btn btn--ghost', 'Replay');
     again.onclick = () => {
       quiz.answers = []; store.set('quiz:' + ep.number, []);
-      idx = 0; renderStep(true);
+      idx = 0; renderStep({ jump: true });
     };
     row.append(all, again);
     c.appendChild(row);
@@ -409,22 +471,49 @@
   }
 
   /* ---------- navigation ---------- */
-  function next() { if (idx < steps.length - 1) { idx++; renderStep(); } }
-  function prev() { if (idx > 0) { idx--; renderStep(); } }
+  // While a line is being typed, "next" finishes it first; the next press moves on
+  function next() {
+    if (typer) { stopTyping(true); return; }
+    if (idx < steps.length - 1) { idx++; renderStep({ type: true }); }
+  }
+  function prev() { if (idx > 0) { idx--; renderStep({ jump: true }); } else stopTyping(true); }
   $('#rd-next').addEventListener('click', (e) => { e.stopPropagation(); next(); });
   $('#rd-prev').addEventListener('click', (e) => { e.stopPropagation(); prev(); });
 
-  // Tap anywhere on the story (except on buttons/cards) to advance
-  $('#stage').addEventListener('click', (e) => {
+  // Tapping the left end of the stage goes back; the right end (or anywhere
+  // in between) goes forward, just like the arrow buttons.
+  const stage = $('#stage');
+  function edgeZone(x) {
+    const r = stage.getBoundingClientRect();
+    const w = Math.max(64, r.width * 0.18);
+    if (x - r.left < w) return 'prev';
+    if (r.right - x < w) return 'next';
+    return null;
+  }
+  function flashEdge(zone) {
+    const n = $(`.edge--${zone}`);
+    n.classList.remove('is-flash');
+    void n.offsetWidth; // restart the animation
+    n.classList.add('is-flash');
+  }
+  stage.addEventListener('click', (e) => {
     if (e.target.closest('button, a, .card')) return;
     if (window.getSelection()?.toString()) return;
-    next();
+    const zone = edgeZone(e.clientX);
+    if (zone) flashEdge(zone);
+    zone === 'prev' ? prev() : next();
   });
+  // Mouse users see which end they're over
+  stage.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    stage.dataset.hover = e.target.closest('button, a, .card') ? '' : (edgeZone(e.clientX) || '');
+  });
+  stage.addEventListener('pointerleave', () => { stage.dataset.hover = ''; });
 
   // Swipe left/right
   let sx = 0, sy = 0, st = 0;
-  $('#stage').addEventListener('pointerdown', (e) => { sx = e.clientX; sy = e.clientY; st = Date.now(); });
-  $('#stage').addEventListener('pointerup', (e) => {
+  stage.addEventListener('pointerdown', (e) => { sx = e.clientX; sy = e.clientY; st = Date.now(); });
+  stage.addEventListener('pointerup', (e) => {
     const dx = e.clientX - sx, dy = e.clientY - sy;
     if (Date.now() - st < 600 && Math.abs(dx) > 60 && Math.abs(dy) < 50) {
       e.preventDefault();
@@ -433,10 +522,11 @@
     }
   });
   let suppressClick = false;
-  $('#stage').addEventListener('click', (e) => { if (suppressClick) { suppressClick = false; e.stopImmediatePropagation(); } }, true);
+  stage.addEventListener('click', (e) => { if (suppressClick) { suppressClick = false; e.stopImmediatePropagation(); } }, true);
 
   document.addEventListener('keydown', (e) => {
     if (!$('#drawer').hidden) { if (e.key === 'Escape') closeDrawer(); return; }
+    if (!$('#settings').hidden) { if (e.key === 'Escape') closeSettings(); return; }
     if (screens.reader.hidden || e.target.matches('input, textarea')) return;
     if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && !e.target.closest('button'))) { e.preventDefault(); next(); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
@@ -462,7 +552,7 @@
       b.onclick = () => {
         idx = steps.findIndex((s) => s.ci === ci);
         closeDrawer();
-        renderStep(true);
+        renderStep({ jump: true });
       };
       li.appendChild(b);
       list.appendChild(li);
@@ -488,6 +578,74 @@
   }
   $('#rd-chapters-btn').addEventListener('click', openDrawer);
   $('#drawer').addEventListener('click', (e) => { if (e.target.closest('[data-close]')) closeDrawer(); });
+
+  /* =========================================================
+     SETTINGS PANEL
+     ========================================================= */
+  let previewTimer = null;
+  function syncSettingsUI() {
+    document.querySelectorAll('#set-size button').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.v === settings.size)));
+    document.querySelectorAll('#set-speed button').forEach((b) => {
+      b.setAttribute('aria-pressed', String(b.dataset.v === settings.speed));
+      b.disabled = !settings.typing;
+    });
+    $('#set-typing').checked = settings.typing;
+  }
+  // Show the current speed in the preview bubble
+  function runPreview() {
+    clearInterval(previewTimer);
+    const t = $('#set-preview');
+    const full = t.dataset.full || (t.dataset.full = t.textContent);
+    const bubble = t.closest('.bubble');
+    if (!settings.typing) { t.textContent = full; bubble.classList.remove('is-typing'); return; }
+    const { every, chars } = SPEEDS[settings.speed];
+    let i = 0;
+    t.textContent = '';
+    bubble.classList.add('is-typing');
+    previewTimer = setInterval(() => {
+      i = Math.min(full.length, i + chars);
+      t.textContent = full.slice(0, i);
+      if (i >= full.length) { clearInterval(previewTimer); bubble.classList.remove('is-typing'); }
+    }, every);
+  }
+  function saveSettings() {
+    store.set('settings', settings);
+    applySettings();
+    syncSettingsUI();
+    // Text reflows when the size changes; keep the newest line in view
+    const thread = $('#rd-thread');
+    if (thread && !screens.reader.hidden) requestAnimationFrame(() => { thread.scrollTop = thread.scrollHeight; });
+  }
+  $('#set-size').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    settings.size = +b.dataset.v; saveSettings();
+  });
+  $('#set-speed').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b || b.disabled) return;
+    settings.speed = b.dataset.v; saveSettings(); runPreview();
+  });
+  $('#set-typing').addEventListener('change', (e) => {
+    settings.typing = e.target.checked;
+    if (!settings.typing) stopTyping(true);
+    saveSettings(); runPreview();
+  });
+  let settingsFocus = null;
+  function openSettings() {
+    settingsFocus = document.activeElement;
+    stopTyping(true);
+    syncSettingsUI();
+    $('#settings').hidden = false;
+    $('#set-size button[aria-pressed="true"]')?.focus();
+    runPreview();
+  }
+  function closeSettings() {
+    if ($('#settings').hidden) return;
+    clearInterval(previewTimer);
+    $('#settings').hidden = true;
+    settingsFocus?.focus?.();
+  }
+  $('#rd-settings-btn').addEventListener('click', openSettings);
+  $('#settings').addEventListener('click', (e) => { if (e.target.closest('[data-close]')) closeSettings(); });
 
   /* =========================================================
      BOOT
