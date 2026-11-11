@@ -45,6 +45,10 @@
         { "type": "fact", "title": "Reverse-engineering a patch", "t": "When a fix ships, attackers can compare the patched files with the old ones to see exactly what changed. That shows them where the hole is. Each patch is also a hint for unpatched machines." },
         { "s": "leo", "t": "Is that the fastest turnaround ever?" },
         { "s": "steve", "t": "Yes. It's usually more like six weeks. The LSASS vulnerability came out in late April 2004, and the Sasser worm that used it took about six weeks to appear." },
+        { "type": "fact", "title": "What is LSASS?", "t": "LSASS (Local Security Authority Subsystem Service, lsass.exe) is the core Windows process that checks passwords when you log in, enforces security policy and issues the access tokens that decide what each program may do. A flaw in LSASS hands an attacker the highest level of control over the machine." },
+        { "type": "fact", "title": "The LSASS flaw (MS04-011)", "t": "On April 13, 2004, Microsoft patched a buffer overflow in LSASS (security bulletin MS04-011). Specially crafted network requests to the Windows file-sharing ports could overflow it and run the attacker's code, with no login needed. Windows 2000 and Windows XP were affected." },
+        { "type": "fact", "title": "The Sasser worm", "t": "Sasser appeared on April 30, 2004, about 17 days after the patch. (On the show, Steve remembered it as about six weeks.) It scanned random Internet addresses on TCP port 445, used the LSASS flaw to get in, then copied itself to each new victim and kept scanning. No user action was needed." },
+        { "type": "fact", "title": "Sasser's impact", "t": "Sasser often crashed LSASS, so infected PCs showed a shutdown countdown and rebooted over and over. It hit hundreds of thousands of machines, disrupting airline check-ins, newsrooms, hospitals and rail systems. Its author, an 18-year-old German student, was arrested in May 2004." },
         { "s": "leo", "t": "Why so fast? Are the attackers getting smarter, or was this one easy?" },
         { "s": "steve", "t": "I think it's desperation. There hadn't been a usable new hole in 14 or 15 months, and they were still relying on the old LSASS flaw." },
         { "s": "steve", "t": "Their bot and worm tools are mature now. As soon as they had a new way to take control of Windows remotely, they added that code to their existing tools and released it." },
@@ -124,13 +128,19 @@
       "q": "How long after Microsoft's patch did the first Zotob-family worms appear?",
       "options": ["About six weeks", "About three days", "The same afternoon", "Two months"],
       "answer": 1,
-      "explain": "Attackers reverse-engineered the patch and released worms within three days. Sasser had taken about six weeks."
+      "explain": "Attackers reverse-engineered the patch and released worms within three days. Earlier worms took much longer; Sasser came about 17 days after its patch."
     },
     {
       "q": "What is the key difference between a worm and a virus?",
       "options": ["Worms only affect Macs", "A worm spreads by itself; a virus needs the user to act", "Viruses are always harmless", "There is no difference"],
       "answer": 1,
       "explain": "A worm exploits a network service and spreads on its own. A virus traditionally needs a user action, such as opening an attachment."
+    },
+    {
+      "q": "What does LSASS, the Windows service attacked by the Sasser worm, do?",
+      "options": ["Plays system sounds", "Checks logins and enforces Windows security policy", "Manages printer queues", "Updates the desktop wallpaper"],
+      "answer": 1,
+      "explain": "LSASS (lsass.exe) handles logins, security policy and access tokens. The flaw patched in MS04-011 let Sasser take over the machine through port 445 with no user action."
     },
     {
       "q": "Which Windows version was the worm's main target?",
