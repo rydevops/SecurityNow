@@ -6,6 +6,13 @@
       "subtitle": "The first Internet worms of 2005",
       "date": "2005-08-19",
       "file": "sn-001.json"
+    },
+    {
+      "number": 1000,
+      "title": "One Thousand!",
+      "subtitle": "Twenty years, four digits, and a full week of news",
+      "date": "2024-11-12",
+      "file": "sn-1000.json"
     }
   ]
 }

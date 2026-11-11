@@ -62,7 +62,21 @@
     <!-- ============ COVER ============ -->
     <section id="screen-cover" class="screen" aria-label="Cover">
       <div class="cover">
-        <img class="cover__art" src="assets/cover.jpg" alt="Security Now! cover: a hooded hacker breaks into a corporate building while Steve Gibson and Leo Laporte look on">
+        <p class="cover__badge">Unofficial fan recreation</p>
+        <!-- The art is chosen by orientation: landscape (16:9) on desktops and
+             rotated phones/tablets, portrait (1:1) on upright phones/tablets. -->
+        <div class="cover__frame">
+          <picture>
+            <source media="(orientation: landscape)" srcset="assets/cover-landscape.jpg">
+            <img class="cover__art" src="assets/cover.jpg" alt="Security Now! cover: a hooded hacker breaks into a corporate building while Steve Gibson and Leo Laporte look on">
+          </picture>
+          <!-- Animated glow around the "SECURITY NOW" title. The masks contain only the title lettering, so the glow follows the letters. -->
+          <picture class="cover__glow" aria-hidden="true">
+            <source media="(orientation: landscape)" srcset="assets/title-glow-landscape.png">
+            <img src="assets/title-glow-portrait.png" alt="">
+          </picture>
+          <div class="cover__shine" aria-hidden="true"></div>
+        </div>
         <div class="cover__actions">
           <button class="btn btn--primary" id="cover-start">Start reading</button>
           <button class="btn btn--ghost" id="cover-episodes">
@@ -71,6 +85,7 @@
           </button>
         </div>
         <p class="cover__tag">An interactive book of the podcast</p>
+        <p class="cover__disclaimer">An unofficial fan recreation. Not affiliated with or endorsed by Steve Gibson, Leo Laporte, GRC or TWiT.</p>
       </div>
     </section>
 
