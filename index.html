@@ -119,6 +119,9 @@
           <span id="rd-num" class="epnum"></span>
           <span id="rd-title"></span>
         </div>
+        <button class="iconbtn" id="rd-settings-btn" aria-label="Reading settings" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+        </button>
         <button class="iconbtn" id="rd-chapters-btn" aria-label="Chapters" aria-haspopup="dialog">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
         </button>
@@ -128,12 +131,20 @@
 
       <div class="stagewrap">
         <div class="stage" id="stage">
+          <!-- Backdrop: Leo's and Steve's pieces of the storyboard pinned to the screen edges -->
+          <div class="scene" aria-hidden="true">
+            <div class="scene__side scene__side--l"></div>
+            <div class="scene__side scene__side--r"></div>
+          </div>
+          <div class="edge edge--prev" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span></div>
+          <div class="edge edge--next" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span></div>
           <div class="host host--leo" data-host="leo"><span class="host__name">Leo</span></div>
           <div class="host host--steve" data-host="steve"><span class="host__name">Steve</span></div>
 
           <div class="panel">
             <div class="panel__chapter" id="rd-chapter"></div>
-            <div class="thread" id="rd-thread" aria-live="polite"></div>
+            <div class="thread" id="rd-thread"></div>
+            <div class="sr-only" id="rd-live" aria-live="polite"></div>
           </div>
 
           <div class="controls">
@@ -163,6 +174,51 @@
         <ol class="chapters" id="drawer-list"></ol>
         <div class="drawer__links">
           <a id="drawer-transcript" target="_blank" rel="noopener">Read the full transcript ↗</a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ============ SETTINGS ============ -->
+    <div class="drawer" id="settings" hidden>
+      <div class="drawer__scrim" data-close></div>
+      <aside class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <header class="drawer__head">
+          <h2 id="settings-title">Reading settings</h2>
+          <button class="iconbtn" data-close aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </header>
+
+        <section class="setting">
+          <div class="setting__label" id="lbl-size">Text size</div>
+          <div class="seg seg--size" role="group" aria-labelledby="lbl-size" id="set-size">
+            <button data-v="0.85" aria-label="Small">A</button>
+            <button data-v="1" aria-label="Medium">A</button>
+            <button data-v="1.15" aria-label="Large">A</button>
+            <button data-v="1.3" aria-label="Extra large">A</button>
+            <button data-v="1.5" aria-label="Largest">A</button>
+          </div>
+        </section>
+
+        <section class="setting">
+          <label class="setting__label" for="set-typing">
+            Typewriter effect
+            <span class="switch"><input type="checkbox" id="set-typing" role="switch"><span></span></span>
+          </label>
+          <p class="setting__hint">New lines appear a few characters at a time. Tap once to finish a line, and again to continue.</p>
+        </section>
+
+        <section class="setting">
+          <div class="setting__label" id="lbl-speed">Typing speed</div>
+          <div class="seg" role="group" aria-labelledby="lbl-speed" id="set-speed">
+            <button data-v="slow">Slow</button>
+            <button data-v="normal">Normal</button>
+            <button data-v="fast">Fast</button>
+          </div>
+        </section>
+
+        <div class="preview" aria-hidden="true">
+          <div class="bubble bubble--steve"><span class="bubble__who">Steve Gibson</span><span class="typed" id="set-preview">Patch early, patch often, and never expose your NAS to the Internet.</span></div>
         </div>
       </aside>
     </div>

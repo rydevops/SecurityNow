@@ -200,59 +200,60 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .progress__bar { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--glow)); transition: width .35s ease; }
 
 .stagewrap {
-  flex: 1; min-height: 0; display: flex; justify-content: center;
-  padding-bottom: var(--safe-b);
+  flex: 1; min-height: 0; position: relative;
+  margin-bottom: var(--safe-b);
 }
-/* The storyboard art is pinned to the bottom of the stage at full width.
-   If the screen is taller than the art, the stage grows upward and a
-   gradient matching the art's dark sides and white centre column fills
-   the extra space. Overlays use cqw (percent of stage width) units
-   measured from the art, so they stay aligned at any size.
+/* ---------------------------------------------------------------
+   STAGE
+   The storyboard is split into three parts so the hosts always sit
+   at the edges of the screen, whatever its shape:
+     • left piece  (Leo + the dark side strip), pinned bottom-left
+     • right piece (Steve + the dark side strip), pinned bottom-right
+     • the white centre column, a flat colour that stretches to fit
+   --u is the size of one source-art pixel on screen. It is the larger
+   scale that still fits the art's height and width. All measurements
+   below are in source-art pixels and are multiplied by --u.
 
-   Two layouts, chosen by orientation:
-     portrait  -> storyboard.jpg            1086 × 1448 (3:4)
-     landscape -> storyboard-landscape.jpg  1672 × 941  (16:9)
-   Every measurement lives in the variables below. */
+   Two sets of art, chosen by orientation:
+     portrait  -> storyboard.jpg            1086 × 1448
+     landscape -> storyboard-landscape.jpg  1672 × 941
+   --------------------------------------------------------------- */
 .stage {
-  --art: url("../assets/storyboard.jpg");
-  --aspect: 0.75;           /* art width / height */
-  --img-h: 133.34cqw;       /* art height on stage */
-  --col-l: 12.9%;           /* white column, left edge */
-  --col-r: 87.05%;          /* white column, right edge */
-  --leo-w: 29%;   --leo-h: 34cqw;
-  --steve-w: 30%; --steve-h: 32.5cqw;
-  --name-b: 4.5cqw;
-  --panel-l: 14.2%; --panel-r: 14.2%; --panel-t: 2.5cqw; --panel-b: 34cqw;
-  --ctrl-l: 30%; --ctrl-r: 30%; --ctrl-b: 5.5cqw;
+  --art-w: 1086; --art-h: 1448;
+  --art-l: url("../assets/stage-portrait-left.jpg");
+  --art-r: url("../assets/stage-portrait-right.jpg");
+  --side-l: 340; --side-r: 341;      /* widths of the left/right pieces */
+  --col-l: 140;  --col-r: 141;       /* dark strip widths (left/right)  */
+  --leo-w: 315;   --leo-h: 369;      /* Leo's spotlight box             */
+  --steve-w: 326; --steve-h: 353;    /* Steve's spotlight box           */
+  --name-b: 49;                      /* name tag offset from bottom     */
+  --panel-l: 154; --panel-r: 154; --panel-t: 27; --panel-b: 369;
+  --ctrl-w: 434;  --ctrl-b: 60;
   --bubble-max: 88%;
-  --k: 1;                   /* scale for cqw-based type */
+  --u: min(calc(100cqh / var(--art-h)), calc(100cqw / var(--art-w)));
+  --fu: calc(var(--u) * 10.86);      /* type unit                       */
 
-  position: relative;
-  width: min(100vw, calc((100dvh - var(--topbar) - var(--safe-t) - var(--safe-b) - 3px) * var(--aspect)));
-  height: 100%;
-  min-height: calc(min(100vw, 600px) * 1.3334);
-  background:
-    var(--art) center bottom / 100% auto no-repeat,
-    linear-gradient(90deg, #00172e 0 var(--col-l), #f1f4fb var(--col-l) var(--col-r), #00172e var(--col-r));
-  container-type: inline-size;
+  position: absolute; inset: 0;
+  container-type: size;
   overflow: hidden;
   user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
 }
 @media (orientation: landscape) {
   .stage {
-    --art: url("../assets/storyboard-landscape.jpg");
-    --aspect: 1.7768;
-    --img-h: 56.28cqw;
-    --col-l: 7.9%;
-    --col-r: 92.05%;
-    --leo-w: 17%;   --leo-h: 18.5cqw;
-    --steve-w: 17.5%; --steve-h: 19cqw;
-    --name-b: 2.2cqw;
-    --panel-l: 18.5%; --panel-r: 18.5%; --panel-t: 1.2cqw; --panel-b: 8.6cqw;
-    --ctrl-l: 37%; --ctrl-r: 37%; --ctrl-b: 1.6cqw;
+    --art-w: 1672; --art-h: 941;
+    --art-l: url("../assets/stage-landscape-left.jpg");
+    --art-r: url("../assets/stage-landscape-right.jpg");
+    --side-l: 300; --side-r: 300;
+    --col-l: 132;  --col-r: 133;
+    --leo-w: 284;   --leo-h: 309;
+    --steve-w: 293; --steve-h: 318;
+    --name-b: 37;
+    --panel-l: 309; --panel-r: 309; --panel-t: 20; --panel-b: 144;
+    --ctrl-w: 434;  --ctrl-b: 27;
     --bubble-max: 76%;
-    --k: .5;
-    min-height: 0;
+    --fu: calc(var(--u) * 8.36);
   }
 }
 /* Short landscape screens (phones on their side): slimmer top bar */
@@ -261,19 +262,33 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   .topbar__title { font-size: .95rem; }
 }
 
-/* Soften the top edge of the art where it meets the extended background */
-.stage::before, .stage::after {
-  content: ""; position: absolute; pointer-events: none;
-  bottom: calc(var(--img-h) - 18cqw * var(--k)); height: calc(18cqw * var(--k));
-  background: linear-gradient(180deg, #00172e 15%, rgba(0, 23, 46, 0));
+.scene {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg,
+    #00172e calc(var(--col-l) * var(--u)),
+    #f1f5fc calc(var(--col-l) * var(--u)),
+    #f1f5fc calc(100% - var(--col-r) * var(--u)),
+    #00172e calc(100% - var(--col-r) * var(--u)));
 }
-.stage::before { left: 0;  width: var(--col-l); }
-.stage::after  { right: 0; width: calc(100% - var(--col-r)); }
+.scene__side { position: absolute; bottom: 0; height: calc(var(--art-h) * var(--u)); }
+/* Each piece fades into the plain strip above it, for screens taller than the art */
+.scene__side--l {
+  left: 0; width: calc(var(--side-l) * var(--u));
+  background:
+    linear-gradient(#00172e 15%, rgba(0, 23, 46, 0)) 0 0 / calc(var(--col-l) * var(--u)) calc(160 * var(--u)) no-repeat,
+    var(--art-l) 0 0 / 100% 100% no-repeat;
+}
+.scene__side--r {
+  right: 0; width: calc(var(--side-r) * var(--u));
+  background:
+    linear-gradient(#00172e 15%, rgba(0, 23, 46, 0)) 100% 0 / calc(var(--col-r) * var(--u)) calc(160 * var(--u)) no-repeat,
+    var(--art-r) 0 0 / 100% 100% no-repeat;
+}
 
 /* --- hosts (portraits are baked into the art; we spotlight them) --- */
-.host { position: absolute; bottom: 0; transition: backdrop-filter .35s ease, -webkit-backdrop-filter .35s ease, background .35s ease; }
-.host--leo   { left: 0;  width: var(--leo-w);   height: var(--leo-h); }
-.host--steve { right: 0; width: var(--steve-w); height: var(--steve-h); }
+.host { position: absolute; bottom: 0; transition: backdrop-filter .35s ease, -webkit-backdrop-filter .35s ease; }
+.host--leo   { left: 0;  width: calc(var(--leo-w) * var(--u));   height: calc(var(--leo-h) * var(--u)); }
+.host--steve { right: 0; width: calc(var(--steve-w) * var(--u)); height: calc(var(--steve-h) * var(--u)); }
 /* Grayscale the host who isn't speaking. The edges that face the white
    column fade out, so the filtered area doesn't show as a box. */
 .host.is-dim {
@@ -293,8 +308,8 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   mask-composite: intersect;
 }
 .host__name {
-  position: absolute; bottom: var(--name-b); left: 50%; transform: translateX(-50%);
-  font-size: clamp(10px, calc(2.2cqw * var(--k)), 15px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  position: absolute; bottom: calc(var(--name-b) * var(--u)); left: 50%; transform: translateX(-50%);
+  font-size: clamp(10px, calc(2.2 * var(--fu)), 15px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
   padding: .25em .7em; border-radius: 999px; white-space: nowrap;
   background: rgba(5, 15, 34, .78); border: 1px solid var(--line); color: var(--muted);
   transition: color .3s ease, border-color .3s ease, box-shadow .3s ease;
@@ -310,23 +325,48 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 }
 @keyframes pulse { 50% { opacity: .3; transform: scale(.7); } }
 
+/* --- tap zones: the left and right ends of the stage go back and forward --- */
+.edge {
+  position: absolute; top: 0; bottom: 0; width: max(64px, 18%);
+  display: grid; align-items: center; pointer-events: none;
+  opacity: 0; transition: opacity .25s ease;
+}
+.edge--prev { left: 0;  justify-items: start; background: linear-gradient(90deg, rgba(77, 163, 255, .16), transparent); }
+.edge--next { right: 0; justify-items: end;   background: linear-gradient(270deg, rgba(77, 163, 255, .16), transparent); }
+.edge span {
+  margin: 0 10px; width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; color: #fff;
+  background: rgba(13, 42, 85, .75); box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+}
+.stage[data-hover="prev"] .edge--prev,
+.stage[data-hover="next"] .edge--next { opacity: 1; }
+.edge.is-flash { animation: edge-flash .45s ease; }
+@keyframes edge-flash { 0% { opacity: 1; } 100% { opacity: 0; } }
+@media (hover: hover) and (pointer: fine) {
+  .stage[data-hover="prev"], .stage[data-hover="next"] { cursor: pointer; }
+}
+
 /* --- dialogue panel (sits in the white column of the storyboard) --- */
 .panel {
-  position: absolute; left: var(--panel-l); right: var(--panel-r); top: var(--panel-t); bottom: var(--panel-b);
+  position: absolute;
+  left: calc(var(--panel-l) * var(--u)); right: calc(var(--panel-r) * var(--u));
+  top: calc(var(--panel-t) * var(--u)); bottom: calc(var(--panel-b) * var(--u));
   display: flex; flex-direction: column;
   color: var(--ink);
 }
 .panel__chapter {
   flex: none; text-align: center;
-  font-size: clamp(10px, calc(2cqw * var(--k)), 14px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  font-size: clamp(10px, calc(2 * var(--fu)), 14px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
   color: #2f6fc0; padding: .4em 0 .7em;
   border-bottom: 1px solid rgba(13, 42, 85, .12);
 }
+/* Reading text size: the base size scales with the stage, and the reader's
+   Text size setting (--ts) multiplies it. Children size themselves in em. */
 .thread {
   flex: 1; overflow-y: auto; overscroll-behavior: contain;
-  display: flex; flex-direction: column; gap: calc(2.2cqw * var(--k));
-  padding: calc(2.5cqw * var(--k)) .3cqw calc(3cqw * var(--k));
-  scroll-behavior: smooth;
+  display: flex; flex-direction: column; gap: calc(2.2 * var(--fu));
+  padding: calc(2.5 * var(--fu)) 2px calc(3 * var(--fu));
+  font-size: calc(clamp(13px, calc(2.65 * var(--fu)), 19px) * var(--ts, 1));
   mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 10px), transparent);
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 10px), transparent);
   scrollbar-width: thin;
@@ -335,7 +375,7 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 
 .bubble {
   position: relative; max-width: var(--bubble-max);
-  font-size: clamp(13px, calc(2.65cqw * var(--k)), 19px); line-height: 1.45;
+  font-size: 1em; line-height: 1.45;
   padding: .7em .95em; border-radius: 1.1em;
   box-shadow: 0 2px 8px rgba(13, 42, 85, .12);
   transition: opacity .3s ease;
@@ -347,8 +387,16 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .is-past { opacity: .62; }
 @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
 
+/* typewriter caret */
+.is-typing .typed::after {
+  content: ""; display: inline-block; width: .5em; height: 1em; margin-left: .1em;
+  vertical-align: -.12em; background: currentColor; opacity: .6;
+  animation: caret .8s steps(1) infinite;
+}
+@keyframes caret { 50% { opacity: 0; } }
+
 .fact {
-  align-self: stretch; font-size: clamp(12.5px, calc(2.45cqw * var(--k)), 17.5px); line-height: 1.45;
+  align-self: stretch; font-size: .925em; line-height: 1.45;
   padding: .85em 1em; border-radius: .9em;
   background: linear-gradient(180deg, #0a1b38, #0d2a55); color: #e8f0ff;
   border-left: 4px solid var(--glow);
@@ -362,14 +410,14 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 
 .divider {
   align-self: center; text-align: center;
-  font-size: clamp(11px, calc(2.1cqw * var(--k)), 15px); color: #4a5d7e; padding: .4em 0;
+  font-size: .8em; color: #4a5d7e; padding: .4em 0;
   animation: pop .35s ease both;
 }
 .divider b { display: block; font-size: 1.25em; color: var(--ink); margin-top: .15em; }
 
 /* --- quiz & finale cards --- */
 .card {
-  align-self: stretch; font-size: clamp(13px, calc(2.55cqw * var(--k)), 18px); line-height: 1.4;
+  align-self: stretch; font-size: .96em; line-height: 1.4;
   padding: 1em; border-radius: 1em; background: #fff; color: var(--ink);
   border: 1px solid rgba(13, 42, 85, .12); box-shadow: 0 6px 18px rgba(13, 42, 85, .12);
   animation: pop .35s ease both;
@@ -395,11 +443,13 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 
 /* --- controls (bottom-centre, between the two portraits) --- */
 .controls {
-  position: absolute; left: var(--ctrl-l); right: var(--ctrl-r); bottom: var(--ctrl-b);
-  display: flex; align-items: center; justify-content: space-between; gap: calc(2cqw * var(--k));
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: calc(var(--ctrl-w) * var(--u)); min-width: 150px;
+  bottom: calc(var(--ctrl-b) * var(--u));
+  display: flex; align-items: center; justify-content: space-between; gap: calc(2 * var(--fu));
 }
 .ctrl {
-  width: clamp(38px, calc(9cqw * var(--k)), 60px); aspect-ratio: 1; border-radius: 50%;
+  width: clamp(38px, calc(9 * var(--fu)), 60px); aspect-ratio: 1; border-radius: 50%;
   display: grid; place-items: center; border: 0;
   background: #fff; color: var(--steve);
   box-shadow: 0 4px 14px rgba(13, 42, 85, .25), inset 0 0 0 1px rgba(13, 42, 85, .1);
@@ -411,7 +461,49 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .ctrl--next { background: linear-gradient(180deg, #5bb0ff, #2f7fe0); color: #fff; box-shadow: 0 6px 18px rgba(47, 127, 224, .5); }
 .ctrl--next.is-hint { animation: nudge 1.6s ease-in-out infinite; }
 @keyframes nudge { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(3px); } 90% { transform: translateX(-1px); } }
-.ctrl__count { font-size: clamp(11px, calc(2.2cqw * var(--k)), 15px); font-weight: 700; color: #4a5d7e; font-variant-numeric: tabular-nums; }
+.ctrl__count { font-size: clamp(11px, calc(2.2 * var(--fu)), 15px); font-weight: 700; color: #4a5d7e; font-variant-numeric: tabular-nums; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+.setting { padding: 14px 0; border-top: 1px solid var(--line); }
+.setting:first-of-type { border-top: 0; }
+.setting__label { display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-weight: 700; font-size: .95rem; }
+.setting__hint { color: var(--muted); font-size: .8rem; margin: .3rem 0 0; }
+.seg { display: flex; gap: 4px; margin-top: 10px; padding: 4px; border-radius: 12px; background: rgba(0, 0, 0, .25); border: 1px solid var(--line); }
+.seg button {
+  flex: 1; min-height: 38px; border: 0; border-radius: 9px; background: transparent; color: var(--muted);
+  font-weight: 700; font-size: .85rem;
+}
+.seg button[aria-pressed="true"] { background: var(--navy); color: #fff; box-shadow: inset 0 0 0 1px var(--accent); }
+.seg button:disabled { opacity: .4; cursor: default; }
+.seg--size button:nth-child(1) { font-size: .75rem; }
+.seg--size button:nth-child(3) { font-size: .95rem; }
+.seg--size button:nth-child(4) { font-size: 1.05rem; }
+.seg--size button:nth-child(5) { font-size: 1.15rem; }
+.switch { position: relative; width: 48px; height: 28px; flex: none; }
+.switch input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; z-index: 1; }
+.switch span {
+  position: absolute; inset: 0; border-radius: 999px; background: rgba(255, 255, 255, .15);
+  transition: background .2s ease;
+}
+.switch span::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; transition: transform .2s ease;
+}
+.switch input:checked + span { background: var(--accent); }
+.switch input:checked + span::after { transform: translateX(20px); }
+.switch input:focus-visible + span { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.preview {
+  margin-top: 16px; padding: 14px; border-radius: 14px; background: var(--paper); color: var(--ink);
+  font-size: calc(16px * var(--ts, 1));
+}
+.preview .bubble { animation: none; max-width: 100%; }
 
 /* =========================================================
    CHAPTER DRAWER

@@ -30,13 +30,26 @@ Rules and conventions for working in this repository. Follow them on every task.
 - Layout is chosen by **orientation** (`@media (orientation: landscape)` and `<picture><source media=…>`). Desktops and rotated phones/tablets get landscape; upright phones/tablets get portrait.
   - Cover: `assets/cover.jpg` (1:1) / `assets/cover-landscape.jpg` (16:9)
   - Storyboard: `assets/storyboard.jpg` (1086×1448) / `assets/storyboard-landscape.jpg` (1672×941)
-- All stage measurements (white-column edges, portrait boxes, panel and controls) are CSS variables on `.stage`, defined once per orientation. If the art changes, re-measure it and update only those variables.
-- The storyboard is pinned to the bottom of the stage. A gradient matching the art fills any extra height.
+- **The hosts always sit at the edges of the screen.** The stage fills the viewport, and the storyboard is split into three parts:
+  - `assets/stage-{portrait,landscape}-left.jpg` (Leo + dark strip), pinned bottom-left
+  - `assets/stage-{portrait,landscape}-right.jpg` (Steve + dark strip), pinned bottom-right
+  - the white centre column, a flat colour that stretches to any width
+
+  If the storyboard art changes, regenerate these crops. Each crop's inner edge must fall entirely in the white column.
+- `--u` is one source-art pixel on screen (`min(100cqh/art-h, 100cqw/art-w)`). All stage measurements (strip widths, spotlight boxes, panel, controls) are source-pixel numbers in CSS variables on `.stage`, defined once per orientation and multiplied by `--u`. If the art changes, re-measure and update only those variables.
+- If the screen is taller than the art, a gradient matching the strips fills the space above the pieces.
 - The **"SECURITY NOW" title glows** with an animated effect on the cover. It uses `assets/title-glow-{portrait,landscape}.png`, masks of just the title letters taken from each cover. If a cover image changes, regenerate its mask with the same dimensions as the cover.
 - The non-speaking host is grayscaled, and the speaking host's name tag glows.
 - Before committing UI changes, check them with the pre-installed Playwright at phone portrait, phone landscape, tablet portrait and desktop sizes. Confirm there are no console errors.
 
-## 5. Adapting episodes
+## 5. Reader controls
+
+- **Navigation:** the arrow buttons, the keyboard (←/→, Space, PageUp/PageDown), swipes, and taps. A tap on the **left end** of the stage (max(64px, 18%) wide) goes back; a tap on the **right end**, or anywhere in between, goes forward. Taps on buttons, links and quiz cards are ignored. Mouse users see a highlight over each end.
+- **Settings (gear button):** text size (0.85×–1.5×, applied through the `--ts` CSS variable to everything in the thread), the typewriter effect (on/off), and typing speed (slow/normal/fast, `SPEEDS` in `app.js`). Settings are saved in `localStorage` under `sn:settings`.
+- **Typewriter:** only the newest line types, and only when moving forward. Going back, opening an episode or jumping to a chapter shows lines in full. A tap or "next" during typing finishes the line, and the next one advances. Screen readers get the full line at once through the `#rd-live` region. Typing defaults to off when `prefers-reduced-motion` is set.
+- Thread content sizes itself in `em`, so the text-size setting scales all of it. Don't hard-code font sizes inside `.thread`.
+
+## 6. Adapting episodes
 
 - Transcript URL: `https://www.grc.com/sn/sn-NNN.txt`, zero-padded to 3 digits for 1–999 (`sn-001.txt`) and plain from 1000 on (`sn-1000.txt`). The "SecurityNow" cloud environment allows `www.grc.com`.
 - **Only adapt the episodes that are asked for.**
@@ -49,10 +62,10 @@ Rules and conventions for working in this repository. Follow them on every task.
 - Register the episode in `episodes/index.json` (the index sorts by number and groups episodes in ranges of 100, so it scales into the thousands).
 - Validate the JSON (`python3 -m json.tool`), click through the episode in a browser, and bump `version.json`.
 
-## 6. Code conventions
+## 7. Code conventions
 
 - Vanilla JS (one IIFE in `js/app.js`), no frameworks, no external CDNs and no build tools.
 - Hash routes: `#/`, `#/episodes`, `#/episode/<n>`, so GitHub Pages needs no server config.
-- `localStorage` holds only reading progress and quiz answers. Every access is wrapped in try/catch, and the app must still work without it.
+- `localStorage` holds only reading progress, quiz answers and reader settings. Every access is wrapped in try/catch, and the app must still work without it.
 - Insert episode text with `textContent`, never `innerHTML`.
 - Respect `prefers-reduced-motion`.

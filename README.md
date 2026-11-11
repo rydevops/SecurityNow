@@ -10,7 +10,9 @@ A Progressive Web App that turns episodes of **Security Now!** with Steve Gibson
 - **Storyboard reader**: Leo (left) and Steve (right) talk in speech bubbles. The current speaker is highlighted, and the other host is shown in grayscale.
 - **Key fact** cards, a **chapter drawer**, a progress bar, and a **quiz** at the end of each episode
 - **Episode index** grouped in ranges of 100 (001–100 … 1001–1100 …), with search by number or title
-- Tap, swipe or use the arrow keys to move through an episode. Progress is saved in the browser.
+- Tap, swipe or use the arrow keys to move through an episode. Tapping the left end of the stage goes back; tapping the right end goes forward. Progress is saved in the browser.
+- The hosts stay at the edges of any screen, including ultrawide.
+- **Reading settings** (gear button): text size, a typewriter effect and its speed
 - Installable PWA (manifest + service worker)
 
 ## No caching / auto-update
