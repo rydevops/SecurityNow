@@ -1,0 +1,11 @@
+{
+  "episodes": [
+    {
+      "number": 1,
+      "title": "As the Worm Turns",
+      "subtitle": "The first Internet worms of 2005",
+      "date": "2005-08-19",
+      "file": "sn-001.json"
+    }
+  ]
+}
