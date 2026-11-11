@@ -1,0 +1,111 @@
+{
+  "number": 5,
+  "title": "Personal Password Policy, Part 2",
+  "subtitle": "Listeners weigh in",
+  "date": "2005-09-15",
+  "description": "Episode 4 brought so much listener feedback that Steve and Leo, together in person in Toronto, came back to passwords: length and randomness, reuse, usernames, password managers and keystroke loggers.",
+  "transcript": "https://www.grc.com/sn/sn-005.txt",
+  "audio": "http://media.GRC.com/sn/SN-005.mp3",
+  "chapters": [
+    {
+      "title": "Live from Toronto",
+      "beats": [
+        { "s": "leo", "t": "Episode 5, September 15, 2005, and we're in Toronto, face to face for the first time on this show." },
+        { "s": "steve", "t": "Much better than the VoIP setup we're still trying to sort out." },
+        { "s": "leo", "t": "Last week's password episode got so much response that we're doing a Part 2." },
+        { "s": "steve", "t": "One listener made a good point. If your domain-name rule is too obvious, someone who sees one of your passwords could work out the rule and then try it on your other sites." },
+        { "s": "leo", "t": "So weaving \"google\" together with your Social Security number, g5o5 and so on, is too easy to spot." },
+        { "s": "steve", "t": "Right. Make the result look nothing like the domain name." }
+      ]
+    },
+    {
+      "title": "Length and Randomness",
+      "beats": [
+        { "s": "steve", "t": "Another listener noticed I skipped brute force. That's trying every combination: a, b, c, then aa, ab and so on. It's why length matters." },
+        { "s": "steve", "t": "With lowercase, uppercase and digits, each character can be one of 62 symbols, so every extra character multiplies the possibilities by 62." },
+        { "s": "leo", "t": "62 for one character, 62 squared for two... by eight characters that's a huge number." },
+        { "type": "fact", "title": "The math of length", "t": "With 62 possible symbols, an 8-character password has 62⁸ ≈ 218 trillion possibilities, and 12 characters about 3 × 10²¹. Each added character multiplies an attacker's work by 62. Some sites ignore uppercase, which shrinks the choices." },
+        { "s": "leo", "t": "In the end, only something truly random is truly secure." },
+        { "s": "steve", "t": "That's the right way to think about it: randomness times length gives you strength." }
+      ]
+    },
+    {
+      "title": "Listener Tricks",
+      "beats": [
+        { "s": "steve", "t": "Many listeners build passwords from phrases: the first letters of a song lyric or a favorite saying, like \"Show me the money\" for the bank." },
+        { "s": "leo", "t": "That gets confusing with dozens of sites, though." },
+        { "s": "steve", "t": "Another trick is to type a word with your fingers shifted on the keyboard, say up and to the left. Letters on the top row turn into numbers, and the result looks like gibberish." },
+        { "s": "steve", "t": "Or vary the direction for each letter. It's another kind of personal rule that's very unlikely to be cracked." }
+      ]
+    },
+    {
+      "title": "Reuse, Usernames and Gmail",
+      "beats": [
+        { "s": "steve", "t": "Do you really need a different password everywhere? Never reuse your banking, investment or shopping passwords." },
+        { "s": "steve", "t": "For throwaway accounts on sites you'll never visit again, I think you can relax. The risk there is small." },
+        { "s": "leo", "t": "Vary your usernames too. If they're not your name, they're much harder to guess." },
+        { "s": "steve", "t": "More sites use your email address as the username now, so keep a few throwaway email accounts." },
+        { "s": "leo", "t": "Kevin Rose showed me a Gmail trick: add a plus sign and a tag, like laporte+nytimes@gmail.com. It still reaches my inbox, so every site can get its own address." },
+        { "s": "steve", "t": "That works for Gmail, but not for most email providers." },
+        { "type": "fact", "title": "Plus addressing", "t": "Gmail ignores anything after a + in the username, so you+shop@gmail.com goes to you@gmail.com. A tag for each site lets you filter mail and see who leaked or sold your address. Many other providers support it now too." }
+      ]
+    },
+    {
+      "title": "Password Managers and Keyloggers",
+      "beats": [
+        { "s": "steve", "t": "Lots of questions about the password managers built into browsers like Firefox. I'm wary of storing passwords inside the program that talks to the Internet." },
+        { "s": "steve", "t": "A malicious site could exploit a browser bug to pull out every saved password. I'd trust a separate program, like RoboForm, more." },
+        { "s": "leo", "t": "Many banking sites won't let the browser save your password anyway." },
+        { "s": "steve", "t": "And if malware is already on your PC, you're in trouble anyway. A keystroke logger sees everything you type." },
+        { "s": "steve", "t": "If I were writing one, I'd watch for 16 digits that pass the card-number check, then grab everything typed just before and after. That's probably the whole login and order." },
+        { "type": "fact", "title": "The card-number check", "t": "Steve called it \"Mod 9\" on the show, but card numbers actually use the Luhn check (mod 10). It catches every single mistyped digit and most swaps of neighboring digits, so only about 1 in 10 random 16-digit numbers passes." },
+        { "s": "leo", "t": "Doesn't explaining that help the bad guys?" },
+        { "s": "steve", "t": "I'd assume they already know." },
+        { "s": "leo", "t": "A plug for Mac OS X: Keychain is a separate, encrypted password store. It unlocks when you log in, fills in passwords for the browser, and can generate strong passwords for you." }
+      ]
+    },
+    {
+      "title": "Your Tools, Our Habits",
+      "beats": [
+        { "s": "steve", "t": "Listeners sent about 15 favorite password tools: freeware, open source, Palm and Pocket PC apps, even USB sticks. Links are in the show notes. They're listener picks, not our recommendations." },
+        { "s": "steve", "t": "I use two Palms. One is my eBook reader. The other holds my passwords and never connects to a computer, so nothing can get onto it." },
+        { "s": "leo", "t": "I keep a notebook of all my passwords on my computer. Without it I'd be lost." },
+        { "s": "steve", "t": "The goal of both episodes was to get you to stop and think. Logging in is part of everyone's future, so spend a few minutes now on a plan." },
+        { "s": "leo", "t": "Share these ideas with friends and family. We're also thinking about an MP3 CD of the episodes." },
+        { "s": "steve", "t": "And my list of future topics is up to about 25, so we won't run out anytime soon." }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does password length matter so much?",
+      "options": ["Long passwords are easier to remember", "Each extra character multiplies the work of a brute-force attack", "Websites require it", "It stops phishing"],
+      "answer": 1,
+      "explain": "With 62 possible symbols, every added character multiplies the number of guesses by 62."
+    },
+    {
+      "q": "What is the risk of an obvious personal algorithm?",
+      "options": ["It's too slow", "Someone who sees one password could work out the rule and use it on your other sites", "Sites will reject it", "It uses too many numbers"],
+      "answer": 1,
+      "explain": "Make your rule's output look unrelated to the domain name."
+    },
+    {
+      "q": "Why is Steve wary of browser-built-in password managers?",
+      "options": ["They're too expensive", "A browser bug could let a malicious site pull out the stored passwords", "They don't support Firefox", "They delete passwords"],
+      "answer": 1,
+      "explain": "Storing secrets inside the program that talks to the Internet gives attackers a target. A separate manager is safer."
+    },
+    {
+      "q": "What does the Gmail \"plus\" trick let you do?",
+      "options": ["Send bigger attachments", "Give each site a unique address that still reaches your inbox", "Encrypt email", "Block spam completely"],
+      "answer": 1,
+      "explain": "name+tag@gmail.com goes to name@gmail.com, so each site can get its own address."
+    },
+    {
+      "q": "Which check do credit card numbers actually use?",
+      "options": ["Mod 9", "The Luhn check (mod 10)", "SHA-256", "No check at all"],
+      "answer": 1,
+      "explain": "Steve said \"Mod 9\" on the show, but it's the Luhn mod-10 check, which catches single-digit errors and most neighboring swaps."
+    }
+  ]
+}

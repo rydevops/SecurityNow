@@ -1,0 +1,107 @@
+{
+  "number": 2,
+  "title": "HoneyMonkeys",
+  "subtitle": "Microsoft goes looking for trouble",
+  "date": "2005-08-25",
+  "description": "How Microsoft's Strider HoneyMonkey system finds malicious websites before they find you, what it uncovered in its first month, and what Microsoft is (and isn't) doing with what it learns.",
+  "transcript": "https://www.grc.com/sn/sn-002.txt",
+  "audio": "http://media.GRC.com/sn/SN-002.mp3",
+  "chapters": [
+    {
+      "title": "Meet the HoneyMonkey",
+      "beats": [
+        { "s": "leo", "t": "This is Security Now! Episode 2, August 25, 2005. We recorded this one over Google Talk, which came out yesterday. The ringtone alone is worth it." },
+        { "s": "steve", "t": "Today's topic comes from Microsoft Research: the Strider HoneyMonkey Exploit Detection System." },
+        { "s": "leo", "t": "Strider HoneyMonkey. Folks, try to guess what that is." },
+        { "s": "steve", "t": "Start with honeypots. A honeypot is a closely watched computer left out on the Internet on purpose, so attackers will hit it and researchers can see what's out there." },
+        { "s": "leo", "t": "Like Winnie the Pooh. Put out the honey and see who sticks their nose in." },
+        { "s": "steve", "t": "Right. That's how security firms catch new worms. Microsoft flipped it around: instead of waiting to be attacked, its machines go out and visit dangerous websites." },
+        { "type": "fact", "title": "Honeypot vs. HoneyMonkey", "t": "A honeypot waits to be attacked, which is good for catching worms that scan the network. A HoneyMonkey is a client honeypot: it browses to websites like a person would, to catch sites that attack visitors' browsers." },
+        { "s": "steve", "t": "\"Monkey see, monkey do.\" The HoneyMonkeys copy a person browsing with Internet Explorer, going to the kinds of sites that get people infected." },
+        { "s": "steve", "t": "\"Strider\" is the name of a family of Microsoft Research projects. There's also Strider Gatekeeper, which detects spyware, and Strider GhostBuster, which detects rootkits." }
+      ]
+    },
+    {
+      "title": "How It Works",
+      "beats": [
+        { "s": "steve", "t": "Each HoneyMonkey is a virtual PC, a whole Windows machine in a file. If it gets infected, you just throw it away and start fresh." },
+        { "s": "steve", "t": "The web has something like 10 billion pages, and most are harmless, so they start in the bad neighborhoods: block lists people post online, and links from spam and phishing emails." },
+        { "s": "steve", "t": "The monkey doesn't click anything. It loads the page, waits a few minutes, and then the other Strider tools check whether anything on the machine changed." },
+        { "s": "leo", "t": "So if the machine changed just from viewing a page, that page attacked it." },
+        { "type": "fact", "title": "Drive-by downloads", "t": "A drive-by download is when a web page exploits a browser bug to install software just because you visited. You don't have to click or agree to anything. That's exactly what HoneyMonkeys are built to detect." },
+        { "s": "steve", "t": "They test each suspect site in stages: unpatched XP, then XP SP1 with patches, then SP2 unpatched, then SP2 fully patched." },
+        { "s": "steve", "t": "If a page still infects a fully patched SP2 machine, it's using a zero-day, a hole Microsoft hasn't fixed yet." }
+      ]
+    },
+    {
+      "title": "What They Found",
+      "beats": [
+        { "s": "steve", "t": "In the first month, the HoneyMonkeys found 752 URLs that tried to infect Internet Explorer using known vulnerabilities." },
+        { "s": "steve", "t": "And they found one zero-day. Microsoft knew about the bug but had never disclosed it, and a website was already exploiting it." },
+        { "s": "steve", "t": "Within two weeks, 40 more sites were using the same unpublished exploit." },
+        { "s": "leo", "t": "So security through obscurity doesn't work. You don't have to tell anyone; the bad guys find out anyway." },
+        { "s": "steve", "t": "The exploit sites are also connected. Among the top 30, many have the same owners, with registrations in more than ten countries." },
+        { "s": "steve", "t": "One person owned the number 1, 3 and 10 sites, and 61 other exploit sites redirected visitors to him." },
+        { "s": "steve", "t": "Infecting people's machines has become a business: spyware, adware, and zombie PCs for sending spam." },
+        { "s": "leo", "t": "That's why it's gotten so much worse. It used to be kids showing off. Now there's money in it." },
+        { "type": "fact", "title": "Why the money matters", "t": "Once infected PCs could be turned into cash through ad fraud, spam relays and stolen data, malware went from a hobby to an organized business. Attackers started sharing exploits and sending victims to each other's sites." }
+      ]
+    },
+    {
+      "title": "Where the Danger Is",
+      "beats": [
+        { "s": "steve", "t": "Most of the exploiting URLs were adult sites. No surprise to anyone who's been online a while." },
+        { "s": "leo", "t": "Isn't that skewed by where they looked?" },
+        { "s": "steve", "t": "A little. The starting lists came from block lists people share. But they also found a shopping site and freeware download sites that attack visitors directly." },
+        { "s": "steve", "t": "And more than 20 malicious search sites. Just running a search there tries to infect you." },
+        { "s": "leo", "t": "So: stay out of the seedy parts of the web, stick with the big, well-known sites, and patch." },
+        { "s": "steve", "t": "Some articles said this proves patching works. Who ever doubted that? Put an unpatched XP machine on the Internet without a firewall and it's game over." }
+      ]
+    },
+    {
+      "title": "Keeping It to Themselves",
+      "beats": [
+        { "s": "steve", "t": "Google, Yahoo! and MSN all had these bad URLs in their search results. Microsoft removed them from MSN Search." },
+        { "s": "leo", "t": "And told Google and Yahoo!, I hope?" },
+        { "s": "steve", "t": "No. It also only tests Internet Explorer, not Firefox or Netscape." },
+        { "s": "steve", "t": "On the positive side, results go to Microsoft's Internet Safety Enforcement Team, which works with the FBI to go after these sites. And there's a good reason not to publish the list: they're watching those sites for new exploits." },
+        { "s": "steve", "t": "The catch is that the HoneyMonkeys come from a known block of IP addresses. Attackers will notice and block them, so Microsoft is talking about spreading them out around the world." },
+        { "s": "leo", "t": "I'm glad they're being proactive, but using it for a competitive edge bothers me. The security tradition is to share." },
+        { "s": "steve", "t": "Security is becoming a business for Microsoft, with anti-spyware and antivirus products coming. The good news is that they published how it works, so anyone can build their own HoneyMonkeys." },
+        { "s": "steve", "t": "Other platforms have holes too. Apple just shipped 44 security fixes in one update. If Microsoft keeps working this hard, Windows could someday be the safer one." }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How is a HoneyMonkey different from a traditional honeypot?",
+      "options": ["It's a physical robot", "It visits websites to get attacked, instead of waiting to be attacked", "It only scans email", "It blocks all traffic"],
+      "answer": 1,
+      "explain": "A honeypot waits for attacks. A HoneyMonkey goes looking for them by browsing suspicious sites like a person would."
+    },
+    {
+      "q": "How did a HoneyMonkey decide that a site had attacked it?",
+      "options": ["The site asked for a password", "It clicked a download button", "Its machine changed just from loading the page", "Antivirus software flagged a file"],
+      "answer": 2,
+      "explain": "It only loaded the page and waited. If anything on the machine changed, the page had exploited the browser (a drive-by download)."
+    },
+    {
+      "q": "How many exploit URLs did the HoneyMonkeys find in their first month?",
+      "options": ["12", "752", "10,000", "1 million"],
+      "answer": 1,
+      "explain": "They found 752 URLs that tried to infect Internet Explorer, including one using a vulnerability Microsoft hadn't disclosed."
+    },
+    {
+      "q": "Why did Steve and Leo have mixed feelings about the project?",
+      "options": ["It infected real users", "Microsoft only cleaned up its own search engine and only tested IE", "It cost too much", "It used Google Talk"],
+      "answer": 1,
+      "explain": "Microsoft removed the bad sites from MSN but didn't tell Google or Yahoo!, and it only tested Internet Explorer."
+    },
+    {
+      "q": "What did the zero-day discovery show?",
+      "options": ["Secret bugs stay secret", "Attackers can find and share bugs even when vendors don't disclose them", "Firefox was vulnerable", "Patches don't work"],
+      "answer": 1,
+      "explain": "One site exploited an undisclosed IE bug, and 40 more sites were using it within two weeks. Keeping it quiet didn't keep it secret."
+    }
+  ]
+}

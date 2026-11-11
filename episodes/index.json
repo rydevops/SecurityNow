@@ -8,6 +8,34 @@
       "file": "sn-001.json"
     },
     {
+      "number": 2,
+      "title": "HoneyMonkeys",
+      "subtitle": "Microsoft goes looking for trouble",
+      "date": "2005-08-25",
+      "file": "sn-002.json"
+    },
+    {
+      "number": 3,
+      "title": "NAT Router Firewalls",
+      "subtitle": "The best firewall you already own",
+      "date": "2005-09-01",
+      "file": "sn-003.json"
+    },
+    {
+      "number": 4,
+      "title": "Personal Password Policy",
+      "subtitle": "Stop and think before you type",
+      "date": "2005-09-08",
+      "file": "sn-004.json"
+    },
+    {
+      "number": 5,
+      "title": "Personal Password Policy, Part 2",
+      "subtitle": "Listeners weigh in",
+      "date": "2005-09-15",
+      "file": "sn-005.json"
+    },
+    {
       "number": 1000,
       "title": "One Thousand!",
       "subtitle": "Twenty years, four digits, and a full week of news",
