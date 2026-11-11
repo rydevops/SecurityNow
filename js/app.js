@@ -406,12 +406,37 @@
     if (i >= qs.length) thread.appendChild(finaleCard(qs));
   }
 
+  // Option order for a quiz question, fixed for every visit. The correct
+  // answer goes in a slot that moves with each question, so every quiz uses
+  // all positions. The wrong answers are shuffled around it, seeded from the
+  // question text. Returns original option indices, so answers saved in
+  // localStorage keep working.
+  function optionOrder(q, qi) {
+    const n = q.options.length;
+    let t = 0x811c9dc5;                                   // FNV-1a hash of the question
+    for (const ch of q.q) t = Math.imul(t ^ ch.codePointAt(0), 16777619) >>> 0;
+    const rand = () => {                                  // mulberry32
+      t = (t + 0x6D2B79F5) >>> 0;
+      let r = Math.imul(t ^ (t >>> 15), 1 | t);
+      r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
+      return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+    };
+    const others = [...Array(n).keys()].filter((k) => k !== q.answer);
+    for (let k = others.length - 1; k > 0; k--) {         // Fisher–Yates
+      const j = Math.floor(rand() * (k + 1));
+      [others[k], others[j]] = [others[j], others[k]];
+    }
+    others.splice((qi + ep.number) % n, 0, q.answer);
+    return others;
+  }
+
   function questionCard(q, i, total, picked) {
     const c = el('div', 'card');
     c.appendChild(el('div', 'card__kicker', `Question ${i + 1} of ${total}`));
     c.appendChild(el('h3', '', q.q));
     const opts = el('div', 'opts');
-    q.options.forEach((o, oi) => {
+    optionOrder(q, i).forEach((oi) => {
+      const o = q.options[oi];
       const b = el('button', 'opt', o);
       if (picked != null) {
         b.disabled = true;

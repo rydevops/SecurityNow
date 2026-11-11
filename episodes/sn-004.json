@@ -1,0 +1,113 @@
+{
+  "number": 4,
+  "title": "Personal Password Policy",
+  "subtitle": "Stop and think before you type",
+  "date": "2005-09-08",
+  "description": "Follow-ups on routers and firewalls, then why everyone needs a personal password policy, and a simple way to make strong, unique passwords you never have to memorize.",
+  "transcript": "https://www.grc.com/sn/sn-004.txt",
+  "audio": "http://media.GRC.com/sn/SN-004.mp3",
+  "chapters": [
+    {
+      "title": "Router Mailbag",
+      "beats": [
+        { "s": "leo", "t": "Episode 4, September 8, 2005. ShieldsUP! is up to almost 40 million users..." },
+        { "s": "steve", "t": "We passed 38 million the other day." },
+        { "s": "leo", "t": "We got a ton of mail about last week's router episode." },
+        { "s": "steve", "t": "Listener Jeff McDonald made a great point. Remember the corporate Zotob outbreak from Episode 1? If one machine on your network gets infected, a firewall on each machine keeps it from spreading to the others." },
+        { "s": "leo", "t": "Although malware on your machine can turn off your firewall. A firewall on my machine protects me from someone else's infected machine." },
+        { "s": "steve", "t": "Also, the free firewalls are disappearing. Computer Associates just bought Tiny, and Kerio is discontinuing its Server Firewall on September 30. The Kerio Personal Firewall is still available." },
+        { "s": "steve", "t": "ZoneAlarm still has a free version, but it's trying to do everything now. I prefer something small and focused." },
+        { "s": "steve", "t": "Someone also pointed out that the XP SP2 Windows Firewall does warn you when a program tries to open a listening port, like a trojan setting up a server." },
+        { "type": "fact", "title": "Listening ports", "t": "A program that \"listens\" on a port is waiting for incoming connections, like a server. A trojan that opens a listening port is inviting attackers in. The SP2 firewall asks before allowing it, but it doesn't watch outgoing connections." }
+      ]
+    },
+    {
+      "title": "SmoothWall and the Verdict",
+      "beats": [
+        { "s": "steve", "t": "Lots of people asked about SmoothWall, from smoothwall.org. It's a free Linux-based firewall that turns an old PC into a serious firewall." },
+        { "s": "steve", "t": "Give an old PC a network card for the Internet, one for your LAN and a third for a real DMZ. It has a web interface, so you don't need to know Linux." },
+        { "s": "leo", "t": "Patrick Norton is a big fan. You do need a spare computer for it." },
+        { "s": "steve", "t": "My recommendation: a NAT router for near-perfect protection from outside attacks, plus the free Kerio Personal Firewall 4.2. It's small, light and well behaved." },
+        { "s": "leo", "t": "I've seen too many problems with system-level software. My advice: a router plus the built-in Windows Firewall on XP SP2. That's a pretty good combination." },
+        { "s": "steve", "t": "I think that's true." }
+      ]
+    },
+    {
+      "title": "Write Your Passwords Down?",
+      "beats": [
+        { "s": "steve", "t": "Jesper Johansson, a senior Microsoft security program manager, told a conference that the usual corporate rule, \"never write down your password,\" is wrong." },
+        { "s": "leo", "t": "That seems like good advice, though. People stick passwords on their monitors." },
+        { "s": "steve", "t": "If people can't write passwords down, they choose ones they can remember, and those are weak. That's worse than writing them down." },
+        { "s": "steve", "t": "Bruce Schneier agrees. Write them on a small piece of paper and keep it in your wallet. People already know how to protect what's in their wallet." },
+        { "type": "fact", "title": "Bruce Schneier", "t": "A well-known cryptographer and security writer, and founder of Counterpane Internet Security. His advice: a strong password written down and kept in your wallet beats a weak one you can remember." }
+      ]
+    },
+    {
+      "title": "What Makes a Good Password",
+      "beats": [
+        { "s": "steve", "t": "Most people never decide on a password policy. A site says \"create a password,\" and they type the first thing that comes to mind. Take five minutes and work out a plan." },
+        { "s": "steve", "t": "The biggest threat is a dictionary attack. Huge word lists circulate online, tens of megabytes of every word you can think of." },
+        { "s": "leo", "t": "So real words, pets' names and people's names get cracked quickly." },
+        { "s": "steve", "t": "Forget it. Mix letters and numbers so the password isn't in any dictionary." },
+        { "type": "fact", "title": "Dictionary attack", "t": "Instead of trying every possible combination, an attacker tries likely ones: words, names and common substitutions. It's fast and works surprisingly often, because people choose memorable passwords." }
+      ]
+    },
+    {
+      "title": "Your Own Password Algorithm",
+      "beats": [
+        { "s": "steve", "t": "Password managers are nice, but they don't come with you to a friend's house, and if someone gets the master password, they get everything." },
+        { "s": "steve", "t": "My idea: invent your own secret rule for turning a site's domain name into a password." },
+        { "s": "steve", "t": "Take every other letter, capitalize in some pattern, swap letters, mix in a number that means something to you, and add a few fixed random characters." },
+        { "s": "leo", "t": "So for nytimes.com I could weave in my birth year and capitalize every third letter. That's not guessable." },
+        { "s": "steve", "t": "Every site gets a different strong password, and you never have to memorize one. You can work it out again anywhere." },
+        { "s": "steve", "t": "Just don't use any example from this show! And if two people happen to invent the same rule, it doesn't matter. Nobody knows who they are." },
+        { "type": "fact", "title": "Why it works", "t": "Each site gets a unique password, so one stolen password doesn't unlock your other accounts. Only the rule needs remembering. Episode 5 adds a warning: make the rule hard to spot from a single password." }
+      ]
+    },
+    {
+      "title": "Confessions and Lessons",
+      "beats": [
+        { "s": "leo", "t": "So how do you do your passwords, Steve?" },
+        { "s": "steve", "t": "Not as well as I should. I keep a Palm Pilot next to me with my notes. Away from it, I try my usual passwords one after another and hope the site is patient." },
+        { "s": "leo", "t": "Same here. I have high-, medium- and low-security passwords. I don't care much if someone guesses my New York Times password." },
+        { "s": "steve", "t": "That's a good point: not everything needs the same protection." },
+        { "s": "steve", "t": "I've had credit card fraud twice. Most recently, my bank let someone change my mailing address through a web form, and things started shipping to Colorado." },
+        { "s": "steve", "t": "The bank used my mother's maiden name to verify me, and I'd given that same answer as a password hint on another site. That's called repurposing: one site's secret becomes another site's key." },
+        { "s": "leo", "t": "And mothers' maiden names aren't hard to find anyway. Remember Paris Hilton? Her password reminder was her dog's name, which everyone knew." },
+        { "type": "fact", "title": "Security questions are weak", "t": "\"Secret\" answers like your mother's maiden name or a pet's name are often public or reused across sites. Treat them like passwords: give each site a different made-up answer." }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Microsoft's Jesper Johansson and Bruce Schneier say it's OK to write passwords down?",
+      "options": ["Paper can't be hacked", "Banning it pushes people to choose weak, memorable passwords", "Companies require it", "It's faster to type"],
+      "answer": 1,
+      "explain": "A strong password kept safely in your wallet is better than a weak one you can remember."
+    },
+    {
+      "q": "What is a dictionary attack?",
+      "options": ["Stealing a dictionary", "Guessing passwords from huge lists of real words and names", "Reading the user's email", "Trying only numbers"],
+      "answer": 1,
+      "explain": "Attackers try likely words first. That's why real words and names make terrible passwords."
+    },
+    {
+      "q": "What is Steve's \"personal algorithm\" idea?",
+      "options": ["Use the same password everywhere", "Turn each site's domain name into its password with your own secret rule", "Let the browser pick", "Use your birthday"],
+      "answer": 1,
+      "explain": "Every site gets a unique, strong password that you can work out again anywhere without memorizing it."
+    },
+    {
+      "q": "What went wrong in Steve's bank fraud story?",
+      "options": ["He used password123", "His mother's maiden name, used by the bank, was also a password hint on another site", "The bank's site was hacked", "He lost his wallet"],
+      "answer": 1,
+      "explain": "Repurposing: a secret reused on a less careful site became the key to a more important one."
+    },
+    {
+      "q": "What did Leo recommend for most people's firewall setup?",
+      "options": ["No firewall", "A NAT router plus the built-in Windows Firewall in XP SP2", "Three software firewalls", "Only antivirus"],
+      "answer": 1,
+      "explain": "The router blocks inbound attacks, and the SP2 firewall adds protection on each PC without the trouble some third-party firewalls cause."
+    }
+  ]
+}

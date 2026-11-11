@@ -26,6 +26,10 @@ A Progressive Web App that turns episodes of **Security Now!** with Steve Gibson
 ## Episodes so far
 
 - **#001** As the Worm Turns (Aug 19, 2005)
+- **#002** HoneyMonkeys (Aug 25, 2005)
+- **#003** NAT Router Firewalls (Sep 1, 2005)
+- **#004** Personal Password Policy (Sep 8, 2005)
+- **#005** Personal Password Policy, Part 2 (Sep 15, 2005)
 - **#1000** One Thousand! (Nov 12, 2024)
 
 ## Adding an episode

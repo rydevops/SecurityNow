@@ -58,7 +58,8 @@ Rules and conventions for working in this repository. Follow them on every task.
   - Make it read like Steve and Leo talking (`"s": "leo"` / `"s": "steve"`), in their own voices, as in Episode 1.
   - **Paraphrase.** Don't copy long passages from the transcript or from articles quoted on the show. Short phrases are fine.
   - Don't invent facts. Background added in "Key fact" cards must be accurate and general.
-- Structure: `episodes/sn-NNN.json` with `number`, `title`, `subtitle`, `date`, `description`, `transcript`, `audio`, and `chapters[]`. Each chapter has `beats[]`; a beat is either a dialogue line `{ "s", "t" }` or a fact card `{ "type": "fact", "title", "t" }`. End with a 4–6 question `quiz[]` (`q`, `options`, `answer` index, `explain`).
+  - If a host gets a fact wrong on the show, keep the line as they said it, and give the correct fact in a card that notes the difference (see Sasser's timing in Episode 1 and the card-number check in Episode 5).
+- Structure: `episodes/sn-NNN.json` with `number`, `title`, `subtitle`, `date`, `description`, `transcript`, `audio`, and `chapters[]`. Each chapter has `beats[]`; a beat is either a dialogue line `{ "s", "t" }` or a fact card `{ "type": "fact", "title", "t" }`. End with a 4–6 question `quiz[]` (`q`, `options`, `answer` index, `explain`). Write `options` in any order. The app places the correct answer in a different slot for each question (`optionOrder()` in `app.js`), so quizzes never fall into a pattern. Write wrong answers that are plausible.
 - Register the episode in `episodes/index.json` (the index sorts by number and groups episodes in ranges of 100, so it scales into the thousands).
 - Validate the JSON (`python3 -m json.tool`), click through the episode in a browser, and bump `version.json`.
 
