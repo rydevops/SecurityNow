@@ -1,0 +1,603 @@
+{
+  "number": 128,
+  "title": "Listener Feedback Q&A #33",
+  "subtitle": "WPA key length, chained routers, secure deletion and more",
+  "date": "2008-01-24",
+  "description": "A working exploit appears for the Windows TCP/IP flaw, and Apple patches a serious QuickTime hole. A listener recovers four-year-old photos from a drive he kept in a drawer. Questions cover how short a WPA passphrase can safely be, why two chained routers can't isolate WEP from WPA, eBay's single-token limit, spoofed spam senders, Mac encryption, deleting files securely, why Steve stays on Windows, TrueCrypt for portable drives, using three monitors, a developer shop's VMware solution, window-snapping tools and a preview of Windows SteadyState.",
+  "transcript": "https://www.grc.com/sn/sn-128.txt",
+  "audio": "http://media.GRC.com/sn/SN-128.mp3",
+  "chapters": [
+    {
+      "title": "No Heath Ledger, Just Security",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is the one show where we won't mention Heath Ledger, the stock market or the Fed's rate cut. We talk about security."
+        },
+        {
+          "s": "steve",
+          "t": "Your voice sounds back to full strength."
+        },
+        {
+          "s": "leo",
+          "t": "It cracks a little. I can hit high notes I haven't in years. Does your lab have any wood in it?"
+        },
+        {
+          "s": "steve",
+          "t": "Underneath the Formica, maybe. When my ex wandered off, I covered the fireplace with bookcases for shelf space. I just had to turn the AC off, on January 23rd, so you wouldn't hear it."
+        },
+        {
+          "s": "leo",
+          "t": "There are people listening who just had 37 inches of snow."
+        }
+      ]
+    },
+    {
+      "title": "An Exploit for the Windows Stack Flaw",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It was a rather quiet week, with one or two big things. The big one: there's now a remote code execution exploit for last week's horrible Windows TCP/IP flaw."
+        },
+        {
+          "s": "leo",
+          "t": "The one patched this Patch Tuesday."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely patched. But many machines aren't, whether because they fail Windows validation as pirated copies, or for who knows why. Microsoft apparently downplayed it, saying it would be really difficult to exploit. It took one week."
+        },
+        {
+          "s": "leo",
+          "t": "When zero-day exploits are the norm, that was difficult."
+        },
+        {
+          "s": "steve",
+          "t": "I expect a worm soon. Most 'Net-wide worms, like Code Red and Nimda, just tested how far they could go. MSBlast had a destructive payload aimed at Microsoft. With bots so popular, we might see a worm that builds zombie armies."
+        },
+        {
+          "s": "leo",
+          "t": "So it's a script exploiting it, not yet a worm?"
+        },
+        {
+          "s": "steve",
+          "t": "The whole industry will know the instant there's a worm. Everyone's routers will get pinged with this nonsense."
+        },
+        {
+          "s": "leo",
+          "t": "The last worm with this potential was Zotob, which hit CNN and many others. When these get publicity, people change their security policies, and the next one isn't as bad. Companies hit by Zotob, mostly through infected laptops brought inside the firewall, now run internal firewalls. It's closing the barn door after the horse is gone, but it keeps the next horse in."
+        }
+      ]
+    },
+    {
+      "title": "Apple Patches QuickTime",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When I turned on my little Mac for Skype today, I saw Apple has patched the serious QuickTime vulnerability we mentioned last week, in all versions before 7.4, on both OS X and Windows. Any QuickTime video, image or stream could take over a machine."
+        },
+        {
+          "s": "leo",
+          "t": "QuickTime updates itself on Windows too. My Windows machine offered a QuickTime patch and an iTunes update."
+        },
+        {
+          "s": "steve",
+          "t": "I get the little QuickTime \"Q\" in my tray all the time. I think they just want a chunk of my screen."
+        },
+        {
+          "s": "leo",
+          "t": "It's an ad. You can turn it off. I like programs that, when you exit them from the tray, ask whether they should ever start automatically again. QuickTime has that good behavior."
+        }
+      ]
+    },
+    {
+      "title": "Photos Back After Four Years in a Drawer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Aaron wrote, \"Just a SpinRite Story.\" In 2003, before he'd heard of SpinRite, his Dell's drive crashed, clicking, so he was \"sure\" it was total hardware failure. Dell sent a replacement, and he restored from a month-old backup, losing a month of precious family photos. Recovery software failed, and he couldn't afford recovery companies. So he put the drive in a box for four years."
+        },
+        {
+          "s": "leo",
+          "t": "Like Walt Disney with his head. Just in case."
+        },
+        {
+          "s": "steve",
+          "t": "In early 2007, three computers later, he discovered SpinRite through a newly discovered security podcast. It fixed his 2007 problem easily, and his mind went to the drive in the drawer. He connected it to an old computer, and after 26 hours of SpinRite, he got that month of pictures back."
+        },
+        {
+          "s": "steve",
+          "t": "His moral: regular backups are a good first line of defense, and SpinRite is a great second line."
+        },
+        {
+          "s": "leo",
+          "t": "And SpinRite had been around for 15 years when he had the problem. He'd just never heard of it."
+        },
+        {
+          "type": "fact",
+          "title": "A myth",
+          "t": "Walt Disney wasn't cryogenically frozen. He was cremated in 1966. The story is a long-running urban legend."
+        }
+      ]
+    },
+    {
+      "title": "How Short Can a WPA Passphrase Be?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eddie in Watsonville, California used a 63-character random password from GRC.com/passwords for WPA. Fine until his Sony PSP, which has no keyboard. After six failed attempts, he gave up on it. Then a WiFi Internet radio for Christmas. So he used just the first 24 characters. Two tries on the radio and three on the PSP, and they're online. How much security did he give up? Decades instead of millennia?"
+        },
+        {
+          "s": "steve",
+          "t": "And I still can't type my key into my iPod touch."
+        },
+        {
+          "s": "steve",
+          "t": "WPA concatenates your passphrase with your network's SSID and its length, and hashes it 4,096 times into a 256-bit key the devices actually use. Anyone in radio range can learn the SSID, so the only unknown is the passphrase."
+        },
+        {
+          "s": "steve",
+          "t": "So the attack on a \"preshared key\" is brute force. Try dictionary words, run each through the 4,096 hashes, and test whether the trial key decrypts captured traffic."
+        },
+        {
+          "s": "leo",
+          "t": "But someone has to sit on your curb within radio range."
+        },
+        {
+          "s": "steve",
+          "t": "No. It's a fully offline attack. Capture some traffic, take it home to your Cray, and pound on it, or use a distributed network of PCs."
+        },
+        {
+          "s": "leo",
+          "t": "They'd have to be pretty determined."
+        },
+        {
+          "s": "steve",
+          "t": "Targeted, wanting your network specifically, not wandering for open WiFi. A home user probably won't be. A corporation could be."
+        },
+        {
+          "s": "steve",
+          "t": "Sixty-three random printable characters, at about 7 bits each, is 441 bits hashed down to 256. Current wisdom is that 20 characters is right on the borderline of feasible offline brute force. So never use fewer than 20. Eddie's 24 is probably safe."
+        },
+        {
+          "s": "steve",
+          "t": "And don't leave the SSID at its default or blank. A future attack is precomputed hashes, called \"rainbow tables.\" The SSID was added to the hash precisely so attackers can't precompute hashes of dictionary words, or A, Ab, Ac and so on, once for everyone. A default SSID, like Netgear's, would allow that. The 4,096 hashings make each guess slow."
+        },
+        {
+          "s": "steve",
+          "t": "Our show notes link to a technical page on attacks on WPA preshared keys."
+        },
+        {
+          "s": "leo",
+          "t": "I use a memorable password, mixed case and punctuation, but only about 10 characters."
+        },
+        {
+          "s": "steve",
+          "t": "Let's hope no one desperately needs to get into your network."
+        },
+        {
+          "s": "leo",
+          "t": "At Macworld I met the host of Dan's Mathcast, who uses clips of Steve's math as lessons. He says you're always good."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "WPA2's passphrase hashing works the same way, and GPU cracking makes short passphrases even weaker. WPA3's new handshake resists this offline guessing."
+        }
+      ]
+    },
+    {
+      "title": "Why Not a Switch Between Routers?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Don Sherman in Clawson, Michigan, an engineering graduate student, runs WEP for his TiVos and WPA for everything else. Why three routers? Why not a switch to split the networks?"
+        },
+        {
+          "s": "steve",
+          "t": "Chain two wireless routers. If the inner one is the insecure WEP one, cracked in under a minute now, someone on it can make upstream connections through the outer router, since that's how the Internet works, and reach your secure devices."
+        },
+        {
+          "s": "steve",
+          "t": "Swap them, with WEP outside and WPA inside, and all your precious traffic passes through the insecure network to reach the Internet. With ARP spoofing, mature now on Ethernet and WiFi, an attacker convinces the secure router that his machine is the gateway, a man-in-the-middle reroute."
+        },
+        {
+          "s": "steve",
+          "t": "So two chained routers aren't safe in either order. Join them with a third."
+        },
+        {
+          "s": "leo",
+          "t": "So you need NAT, not a switch?"
+        },
+        {
+          "s": "steve",
+          "t": "Actually, the outer router just gives each inner router an IP. So if his ISP gives him two IP addresses, a switch absolutely works."
+        },
+        {
+          "s": "leo",
+          "t": "Two segments."
+        },
+        {
+          "s": "steve",
+          "t": "Three: the insecure LAN, the secure LAN, and a mini LAN with the switch and two routers. ARP never crosses a router, so nobody on the WEP side can spoof the secure router's outside interface."
+        }
+      ]
+    },
+    {
+      "title": "eBay's One-Token Limit",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeremy in St. Petersburg, Florida paid $72 for his VeriSign card, because $24 overnight shipping was the only option. It's slick, but eBay and VeriSign's PIP site allow only one token per account, unlike PayPal. VeriSign's Gary Krall confirmed neither plans to support more. Doesn't eBay own PayPal? So he disabled his football on eBay and PIP, keeping it only for PayPal."
+        },
+        {
+          "s": "leo",
+          "t": "That was my experience too."
+        },
+        {
+          "s": "steve",
+          "t": "VIP supports up to five credentials per account and checks your code against all of them. PayPal does it. eBay and VeriSign themselves don't."
+        },
+        {
+          "s": "leo",
+          "t": "I use the football on PayPal, where I use it most, and the card for SeatBelt."
+        },
+        {
+          "s": "steve",
+          "t": "And the football's only $5."
+        },
+        {
+          "s": "leo",
+          "t": "A security reason, or just implementation?"
+        },
+        {
+          "s": "steve",
+          "t": "I see no security flaw in multiple credentials. I think eBay just hasn't gotten around to it."
+        }
+      ]
+    },
+    {
+      "title": "Spam \"From\" IBM",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marcio in London got a replica-watch spam from kasey@ibm.com. A forged address, or a bot-infected IBM machine?"
+        },
+        {
+          "s": "steve",
+          "t": "I get a steady trickle of these. The From, To and Subject lines are content inside the envelope, completely separate from SMTP, the Simple Mail Transfer Protocol that moves mail between servers. Spammers trivially put anything there, often something credible. Leo and I have both been targets."
+        },
+        {
+          "s": "leo",
+          "t": "TWiT.tv and GRC. And radio callers get floods of bounced mail they never sent. Sometimes it's chosen at random from a mailing list."
+        },
+        {
+          "s": "steve",
+          "t": "I'm sure IBM's servers aren't infected. As we've discussed, email headers can be traced back to find the machine that really connected to your server. That isn't spoofable. Just don't trust the From address."
+        },
+        {
+          "s": "leo",
+          "t": "That's why there are moves toward sender authentication. If mail without an authenticated sender were rejected, pretty much all spam would go away. Bill Gates said spam would soon be a thing of the past, since Microsoft had a scheme. Nobody agreed on which to use."
+        },
+        {
+          "type": "fact",
+          "title": "Gates' prediction",
+          "t": "At Davos in 2004, Bill Gates predicted spam would be solved within two years. Sender checks like SPF, DKIM and DMARC later became standard, but spam persists."
+        }
+      ]
+    },
+    {
+      "title": "Encryption on the Mac",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Thomas Bonham can't use FileVault on OS X 10.5 Leopard because his drive is case-sensitive HFS+. He wants something like TrueCrypt for the Mac."
+        },
+        {
+          "s": "leo",
+          "t": "I'm surprised TrueCrypt hasn't been ported. PGP has a free noncommercial version. Most people use FileVault, which, like BitLocker, encrypts your whole home directory, so it's not as flexible as TrueCrypt. Bruce Schneier's blog hopes for a Mac TrueCrypt. And OS X is BSD UNIX, so there are command-line encryptors, but that takes cobbling."
+        },
+        {
+          "s": "leo",
+          "t": "I'm reading TrueCrypt's page: TrueCrypt 5, scheduled this month, will support OS X, plus a GUI for Linux. Fully cross-platform, so you could make an encrypted USB drive on Windows and read it on a Mac."
+        },
+        {
+          "type": "fact",
+          "title": "TrueCrypt 5",
+          "t": "TrueCrypt 5.0 shipped in February 2008 with Mac OS X support. Its developers abandoned the project in 2014, and VeraCrypt continues it."
+        }
+      ]
+    },
+    {
+      "title": "Deleting Files for Real",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew Reeves of Alpharetta, Georgia, a lawyer... no, a loyal listener, wants the secure deletion utility we mentioned. And can the transcripts become searchable?"
+        },
+        {
+          "s": "steve",
+          "t": "Search is on my shortlist. Meanwhile, Google's advanced search can restrict results to GRC's domain."
+        },
+        {
+          "s": "steve",
+          "t": "There are a gazillion file shredders, but most don't do it right. Windows NT was C2-qualified, a government security standard requiring careful reuse. NT, 2000, XP and Vista always zero memory pages before giving them to applications, and a background process zeros unallocated memory."
+        },
+        {
+          "s": "leo",
+          "t": "That's neat."
+        },
+        {
+          "s": "steve",
+          "t": "Disk space is zeroed upon allocation, not upon deletion. So a deleted file, even emptied from the trash, stays on the drive until its sectors are given to a program. Undelete utilities and offline tools can read it."
+        },
+        {
+          "s": "steve",
+          "t": "Trickier still: when you encrypt or compress a file, NT carefully keeps the unencrypted version until encryption succeeds, then unlinks it but leaves it on the drive. So unencrypted copies of encrypted files are still lurking. EFS works the same way."
+        },
+        {
+          "s": "steve",
+          "t": "Mark Russinovich solved this with SDelete, S for Secure, now on Microsoft's Sysinternals pages. Google \"SDelete Sysinternals.\" It's a small command-line utility that uses the defragmentation API to find a file's physical pieces and zaps them before freeing them. And an option, I think -z, scrubs all current free space, wiping any history you hoped was gone."
+        },
+        {
+          "s": "leo",
+          "t": "The Mac's file menu has secure delete, but I bet it doesn't clear slack space. To wipe a whole drive before giving it away, use the free, open-source Darik's Boot and Nuke, DBAN, from a bootable floppy or CD, since you don't want to do that from within Windows."
+        }
+      ]
+    },
+    {
+      "title": "Why Not Switch From Windows?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steven Barrett of Round Rock, Texas asks: honestly, why not just use something other than Windows? You know better than anyone what's wrong with it."
+        },
+        {
+          "s": "steve",
+          "t": "My real answer: this is where the problems are, so this is where I am."
+        },
+        {
+          "s": "leo",
+          "t": "You said if you retired, you might not. I use Windows for Adobe Audition, my audio editor. I haven't found anything as good on the Mac."
+        },
+        {
+          "s": "steve",
+          "t": "And virtually everything is on Windows. TrueCrypt has been for years and isn't yet on the Mac."
+        },
+        {
+          "s": "leo",
+          "t": "It goes both ways. Windows lacks Rsync, for instance. People get over-attached to their operating systems. You may love your OS, but it doesn't love you. It's a tool."
+        },
+        {
+          "s": "steve",
+          "t": "And I've bought a lot of Windows software, just as I'm locked into Kindle books."
+        },
+        {
+          "s": "leo",
+          "t": "That's an argument for open source. I use Windows, Mac and Linux, probably the Mac most. Use the tool for the job."
+        },
+        {
+          "s": "steve",
+          "t": "I use FreeBSD UNIX where UNIX serving is best. I tried running a Usenet news server on Windows, and it was really bad."
+        },
+        {
+          "s": "leo",
+          "t": "Our two dedicated web servers run Red Hat Enterprise Linux, which I manage myself. Once tuned, they handle tens of thousands of requests a day, rock solid."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt for a Portable Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michael Daniels of Dallas, a fan since Steve's Screen Savers guest spots, carries a 120-gig drive and realized anyone who found it could read his files. He found TrueCrypt. Is it good?"
+        },
+        {
+          "s": "leo",
+          "t": "I just got a Corsair USB key that came with TrueCrypt on it."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt is really nice. We did an entire episode on it, Episode 41, covering its functions, how its crypto works and the clever touches that make it our solution of choice."
+        },
+        {
+          "s": "leo",
+          "t": "It's perfect for external drives. Corsair now makes 16- and 32-gig keys, basically external hard drives. Use TrueCrypt for anything private on them."
+        },
+        {
+          "s": "steve",
+          "t": "And soon we'll do an episode on IronKey with its founder and chief architect."
+        }
+      ]
+    },
+    {
+      "title": "Three Monitors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Don Hebert of Burbank noticed in a photo that you use three monitors, like Bill Gates. How?"
+        },
+        {
+          "s": "steve",
+          "t": "It's the photo at GRC.com/steve or stevegibson, taken years ago by a Newsweek photographer. It's the same computer and monitors I'm using now. I hang onto machines a long time. My Windows 2000 box has three monitors."
+        },
+        {
+          "s": "steve",
+          "t": "Just plug in more video adapters. Windows lets you arrange the monitors logically into one large screen and drag windows between them."
+        },
+        {
+          "s": "leo",
+          "t": "On The Screen Savers we tracked which cards worked together."
+        },
+        {
+          "s": "steve",
+          "t": "Different-sized monitors leave weird rectangles you can't reach. You can stack them vertically or horizontally, or four in a square. I use UltraMon, with hotkeys: Ctrl-1 moves the current window left, Ctrl-2 moves it right, circularly."
+        },
+        {
+          "s": "steve",
+          "t": "When writing code, I keep the Windows API reference, too vast to memorize, on my left monitor, so it doesn't cover my editing window."
+        },
+        {
+          "s": "leo",
+          "t": "I have a 30-inch display on my Mac and a 24-inch Windows machine to its right, with Synergy sharing one mouse and keyboard across both. Like an extended desktop across two operating systems. I'm thinking of a second 30-inch, but they're so expensive."
+        },
+        {
+          "s": "steve",
+          "t": "Mine are years-old SGI monitors at 1600 by 1024, on 3D Labs cards. For my next machine, the quad-core I call Quadmire, running XP, my move to XP, I have beautiful 1600-by-1200 Dell monitors lined up. I think I own maybe 15 of them."
+        }
+      ]
+    },
+    {
+      "title": "A Developer Shop's VMware Solution",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Peter Brischetto in Sydney, Australia hoped we'd discuss enterprise security for hours. He was network administrator at a 40-person software firm. Every developer's laptop ran XP with IIS, Microsoft SQL and Visual Studio, and connected to client networks, hotels and home. Mid-project, developers refused Microsoft's updates, which broke their environments. I don't blame them."
+        },
+        {
+          "s": "leo",
+          "t": "Their solution: VMware on every laptop, with an image per client for development and testing. The native XP stayed fully patched without SQL or IIS. The VMs had limited network connections and regular snapshots to roll back. And new developers were running with the latest image in minutes."
+        },
+        {
+          "s": "leo",
+          "t": "Now he consults for small businesses, where requirements vary greatly, and would love to hear other admins' experiences."
+        },
+        {
+          "s": "steve",
+          "t": "A very clever solution, using the isolation VMs provide. Many listeners were captivated by enterprise security. Send stories, solutions and dilemmas to GRC.com/feedback, with \"corporate security\" or \"enterprise security\" in the subject."
+        },
+        {
+          "s": "leo",
+          "t": "We'll never focus only on enterprise, which would leave out much of our audience. What we cover is high-end computing, useful everywhere. I've always been end-user focused, and we do this for fun."
+        },
+        {
+          "s": "steve",
+          "t": "That's where I come from too."
+        }
+      ]
+    },
+    {
+      "title": "Sticky Windows and Taskbar Shuffle",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Javier Gordo of Katy, Texas lost the little app you mentioned that makes window edges stick to the screen and each other."
+        },
+        {
+          "s": "steve",
+          "t": "It's allSnap, at allsnap.org. It's on every one of my Windows machines. I almost want to bring it when I touch someone else's. I used to spend time lining up window edges so no background showed through. allSnap makes it a snap."
+        },
+        {
+          "s": "steve",
+          "t": "An allSnap addict also led me to Taskbar Shuffle. Things that start at boot sit on the left of my taskbar, like my email client. If I close it, as during the podcast, and restart it, it appears on the right. With Taskbar Shuffle, just drag buttons into any order. And hold Ctrl to rearrange tray icons too."
+        }
+      ]
+    },
+    {
+      "title": "A Preview: Windows SteadyState",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Leo in New Jersey, a 16-year-old and his house's resident IT guy, has a downstairs computer that's his torrent box and the Mom, Dad and houseguest computer."
+        },
+        {
+          "s": "leo",
+          "t": "Let Mom and Dad use the torrent box."
+        },
+        {
+          "s": "leo",
+          "t": "His admin account is his torrent area, with a limited account for his parents. Would Windows SteadyState work for his parents and houseguests? Could he keep his admin account? How would he install software or update antivirus for every account? Would he still need antivirus?"
+        },
+        {
+          "s": "steve",
+          "t": "We've never needed an inter-episode teaser, but Windows SteadyState is next week's topic. I've been going steady with it for about four weeks, and I'm very impressed. It would be perfect for Leo."
+        },
+        {
+          "s": "leo",
+          "t": "Thumbnail it for us."
+        },
+        {
+          "s": "steve",
+          "t": "It's a free Microsoft facility, matured from a rough earlier toolkit into one simple download. It's like System Restore but far more bulletproof, really locking down a system. It requires XP. Vista has a flavor of it built in, and it won't run on Windows 2000."
+        },
+        {
+          "s": "steve",
+          "t": "It's for machines exposed to hostile environments, like an elementary school lab or a public library's Internet research computers: constraining what users can do, and protecting the machine from them."
+        },
+        {
+          "s": "steve",
+          "t": "My focus was corporate: selectively preserving things like a user's My Documents directory, which isn't the default. I worked all that out, and we'll cover it next week."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Steve say a WPA passphrase should be at least 20 characters?",
+      "options": [
+        "Captured traffic can be attacked offline by brute force, and shorter passphrases are near the edge of feasible",
+        "The router requires it",
+        "Longer ones are faster",
+        "To match the SSID"
+      ],
+      "answer": 0,
+      "explain": "Eddie's 24 characters is probably safe."
+    },
+    {
+      "q": "Why shouldn't you leave your WiFi network's SSID at the default?",
+      "options": [
+        "Attackers could use precomputed \"rainbow tables\" for common SSIDs",
+        "It slows the network",
+        "It's illegal",
+        "It hides the network"
+      ],
+      "answer": 0,
+      "explain": "The SSID is mixed into the key's hash."
+    },
+    {
+      "q": "Why can't two chained routers safely separate a WEP network from a WPA network?",
+      "options": [
+        "Either order exposes the secure side to upstream connections or ARP spoofing",
+        "Routers can't be chained",
+        "WEP is faster",
+        "WPA blocks WEP"
+      ],
+      "answer": 0,
+      "explain": "Joining two routers with a third, or a switch with two IPs, works."
+    },
+    {
+      "q": "Why does spam often appear to come from big companies like IBM?",
+      "options": [
+        "The From address is just text inside the message and is trivially forged",
+        "Their servers are infected",
+        "IBM sends spam",
+        "SMTP verifies senders"
+      ],
+      "answer": 0,
+      "explain": "Headers can reveal the real source."
+    },
+    {
+      "q": "Why do many file \"shredders\" fail on Windows NT systems?",
+      "options": [
+        "Windows leaves earlier copies, such as the unencrypted version of an encrypted file, on the disk",
+        "They're too slow",
+        "Windows blocks them",
+        "They delete the wrong file"
+      ],
+      "answer": 0,
+      "explain": "Sysinternals' SDelete handles this correctly."
+    },
+    {
+      "q": "Why did Peter's company put developers' tools in VMware images?",
+      "options": [
+        "So each laptop's main Windows could stay fully patched while client environments stayed unchanged",
+        "To save disk space",
+        "To run Mac software",
+        "To speed up builds"
+      ],
+      "answer": 0,
+      "explain": "Snapshots also allowed easy rollback."
+    }
+  ]
+}
