@@ -1,0 +1,281 @@
+{
+  "number": 27,
+  "title": "How LANs Work, Part 1",
+  "subtitle": "Subnet masks, gateways and DHCP",
+  "date": "2006-02-16",
+  "description": "After two weeks on the Internet's wide-area side, Steve and Leo turn to local area networks: subnet masks, default gateways and DHCP, and how packets find their way around a LAN and out to the Internet.",
+  "transcript": "https://www.grc.com/sn/sn-027.txt",
+  "audio": "http://media.GRC.com/sn/SN-027.mp3",
+  "chapters": [
+    {
+      "title": "Patch Tuesday and Pop Culture",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 27. It's two days after Patch Tuesday, and my PC says I have updates."
+        },
+        {
+          "s": "steve",
+          "t": "Seven patches: two \"critical,\" five \"important.\" Remember, Microsoft's \"critical\" basically means \"worm-able.\" This batch included WMF follow-ups and a Media Player image flaw."
+        },
+        {
+          "s": "leo",
+          "t": "So set Automatic Updates to install important updates too."
+        },
+        {
+          "s": "steve",
+          "t": "Definitely. Microsoft rated the WMF flaw only \"important.\" You want everything."
+        },
+        {
+          "s": "leo",
+          "t": "I'm loving \"Fallen Dragon.\" And you saw Harrison Ford's \"Firewall\"?"
+        },
+        {
+          "s": "steve",
+          "t": "There's no actual firewall in it. The technology is hokey; he borrows his daughter's iPod to grab account numbers. But I was on the edge of my seat."
+        },
+        {
+          "s": "leo",
+          "t": "Willing suspension of disbelief. For real tech, listen to Security Now!"
+        }
+      ]
+    },
+    {
+      "title": "Follow-Ups",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some listeners thought I was knocking TCP. It's about overhead. A DNS lookup over UDP is two packets. Over TCP it's the handshake (3), the query and answer (2) and the close (2): seven."
+        },
+        {
+          "s": "steve",
+          "t": "UDP suits short or real-time messages. TCP suits long connections where you want the network to handle ordering and delivery for you."
+        },
+        {
+          "type": "fact",
+          "title": "Choosing UDP or TCP",
+          "t": "UDP: low overhead, no setup, the application handles loss. Good for DNS, VoIP, games and streaming. TCP: reliable, ordered delivery handled for you. Good for web pages, email and file transfers. Modern protocols like QUIC build reliability on top of UDP."
+        },
+        {
+          "s": "steve",
+          "t": "Some ShieldsUP! users suddenly see open ports. We traced it to peer-to-peer programs using Universal Plug and Play to open router ports themselves."
+        },
+        {
+          "s": "steve",
+          "t": "LimeWire and BearShare advertise that they configure UPnP routers automatically. The BitSpirit BitTorrent client lists \"UPnP port mapping.\""
+        },
+        {
+          "s": "leo",
+          "t": "We warned about this a year ago. Convenient for LimeWire means convenient for trojans."
+        },
+        {
+          "s": "steve",
+          "t": "First a feature we called a bad idea, then good programs using it. Bad programs are next."
+        },
+        {
+          "s": "steve",
+          "t": "Also, Mac OS X has its first worm. It spreads over iChat and replaces recently used applications with copies of itself."
+        },
+        {
+          "s": "leo",
+          "t": "But you'd have to unzip it, run an \"image\" that's actually a program, and type your admin password. It takes a lot of cooperation."
+        },
+        {
+          "type": "fact",
+          "title": "OSX/Leap.A",
+          "t": "The first Mac OS X worm, found in February 2006, posed as JPEG previews of a future OS X version and spread through iChat buddy lists. It needed the user to open it and authorize it, and it did little damage, but it ended the \"Macs get no malware\" myth."
+        },
+        {
+          "s": "steve",
+          "t": "The OpenVPN how-tos are all I'm working on. I have servers at Level 3 and at home, including a diskless FreeBSD box booting from CompactFlash, and a Windows 2000 server for working out the Windows details."
+        }
+      ]
+    },
+    {
+      "title": "Your Router Makes a LAN",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Networking used to belong to one guy at the office. Now everyone at home is learning about subnet masks and DHCP."
+        },
+        {
+          "s": "steve",
+          "t": "Before home routers, your PC plugged straight into your modem and was part of your provider's network. A NAT router creates a network of its own, so all that plumbing is now in your house."
+        },
+        {
+          "s": "steve",
+          "t": "Your machines connect through a hub or switch and can address packets directly to each other. The question is: is a destination on our LAN, or does it need to go to the router?"
+        },
+        {
+          "s": "steve",
+          "t": "That's what the subnet mask decides. A router at 192.168.0.1 might use the mask 255.255.255.0."
+        },
+        {
+          "s": "leo",
+          "t": "In binary, 255 is eight 1s and 0 is eight 0s. Where the mask is 1s, the bits have to match. Where it's 0s, they can vary."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Compare the destination with your own address in the positions where the mask is 1. If they match, it's local, so send it directly. If not, send it to the gateway."
+        },
+        {
+          "s": "steve",
+          "t": "A 10.x network uses 255.0.0.0, so anything starting with 10 is local."
+        },
+        {
+          "type": "fact",
+          "title": "Subnet mask math",
+          "t": "To check whether a destination is local, AND it with the mask and compare with your own address ANDed with the mask. 192.168.0.42 AND 255.255.255.0 = 192.168.0.0, the same as yours, so it's local. 4.79.142.200 gives 4.79.142.0, which doesn't match, so it goes to the gateway. The mask can also be written as /24."
+        },
+        {
+          "s": "steve",
+          "t": "All machines on a LAN share the same mask. That's their agreement about which addresses belong to the network."
+        }
+      ]
+    },
+    {
+      "title": "The Default Gateway",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Anything not on the LAN goes to the default gateway, usually your NAT router. The packet is addressed to the remote IP but handed to the router."
+        },
+        {
+          "s": "steve",
+          "t": "The router has the same mask, sees the address is outside the LAN, and sends it out its WAN port. Replies come back, NAT translates them to the internal address, and they're delivered on the LAN."
+        },
+        {
+          "s": "leo",
+          "t": "The mask also sets how many addresses you get."
+        },
+        {
+          "s": "steve",
+          "t": "With 255.255.255.0 there are 256 addresses. The last, .255, is the broadcast address that everyone on the LAN hears, and .0 is the network address. That leaves 1 through 254, and the router uses one of them."
+        },
+        {
+          "s": "steve",
+          "t": "A LAN with no Internet connection doesn't need a gateway at all. And many home routers limit you to around 100 addresses."
+        },
+        {
+          "s": "steve",
+          "t": "Classic network classes match the masks: Class A is 255.0.0.0, Class B is 255.255.0.0, Class C is 255.255.255.0."
+        },
+        {
+          "s": "leo",
+          "t": "I've used subnet masks for years. Now I finally know what they mean."
+        }
+      ]
+    },
+    {
+      "title": "DHCP",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Most computers are set to \"Obtain an IP address automatically.\" At startup they broadcast: \"I'm new in the neighborhood. Is there a DHCP server?\""
+        },
+        {
+          "s": "steve",
+          "t": "In a home network the router answers, and gives the machine an address, the subnet mask, its own address as the gateway, and the DNS servers to use."
+        },
+        {
+          "type": "fact",
+          "title": "DHCP in four steps",
+          "t": "DORA: the client broadcasts Discover, the server replies with an Offer, the client Requests it, and the server Acknowledges. The lease includes an IP address, subnet mask, default gateway, DNS servers and lease time."
+        },
+        {
+          "s": "steve",
+          "t": "Since it's a broadcast, a malicious machine on the LAN could answer instead and pose as the gateway."
+        },
+        {
+          "s": "leo",
+          "t": "You could turn off DHCP and assign static addresses."
+        },
+        {
+          "s": "steve",
+          "t": "Most routers let you. But as we'll see in two weeks, Ethernet has no real security at all, and there are easier attacks than spoofing DHCP. So DHCP is fine."
+        },
+        {
+          "s": "steve",
+          "t": "I use static addresses because I like knowing every machine's IP. My servers are 10.1.something, and my two TiVos are 10.0.0.200 and .201."
+        },
+        {
+          "s": "leo",
+          "t": "That's the propeller-head approach. A guest plugs in a laptop and it just doesn't work."
+        },
+        {
+          "s": "leo",
+          "t": "I bet you label every machine with its IP address."
+        },
+        {
+          "s": "steve",
+          "t": "I did, until the labels went out of date. The only thing worse than an unlabeled machine is a mislabeled one."
+        },
+        {
+          "s": "steve",
+          "t": "Your router is both. It's a DHCP client on its WAN side, getting an address from your ISP, and a DHCP server on its LAN side, handing addresses to your machines."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is Q&A. Then the episode after that: ARP and how insecure Ethernet really is."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does a subnet mask tell a computer?",
+      "options": [
+        "Which destination addresses are on the local network and which must go to the gateway",
+        "How fast the network is",
+        "The router's password",
+        "Which ports are open"
+      ],
+      "answer": 0,
+      "explain": "Where the mask bits are 1, the destination must match your own address to be local."
+    },
+    {
+      "q": "On a 255.255.255.0 network, why are only addresses 1–254 usable for machines?",
+      "options": [
+        ".0 is the network address and .255 is the broadcast address",
+        "The router reserves them for itself",
+        "They're used by DNS",
+        "The FCC forbids them"
+      ],
+      "answer": 0,
+      "explain": "Of 256 addresses, two are reserved; the gateway also takes one of the rest."
+    },
+    {
+      "q": "What does a computer do with a packet for an address outside its LAN?",
+      "options": [
+        "Sends it to the default gateway (usually the router)",
+        "Drops it",
+        "Broadcasts it to everyone",
+        "Asks DNS"
+      ],
+      "answer": 0,
+      "explain": "The gateway forwards it out to the wider network."
+    },
+    {
+      "q": "What does a DHCP server hand to a new machine?",
+      "options": [
+        "An IP address, subnet mask, gateway address and DNS servers",
+        "A password",
+        "A MAC address",
+        "A firewall rule"
+      ],
+      "answer": 0,
+      "explain": "It lets \"obtain an IP address automatically\" just work."
+    },
+    {
+      "q": "Why are some ShieldsUP! users suddenly seeing open ports?",
+      "options": [
+        "Peer-to-peer programs use UPnP to open router ports without asking",
+        "ShieldsUP! has a bug",
+        "ISPs opened them",
+        "Windows Update opened them"
+      ],
+      "answer": 0,
+      "explain": "Turn off UPnP unless you know you need it."
+    }
+  ]
+}

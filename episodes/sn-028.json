@@ -1,0 +1,305 @@
+{
+  "number": 28,
+  "title": "Listener Feedback Q&A #4",
+  "subtitle": "Most secure OS, ShieldsUP! surprises, file sharing, tunnels and more",
+  "date": "2006-02-23",
+  "description": "Steve gives a straighter answer on the most secure operating system, then answers questions about ShieldsUP! results through VPNs and Tor, JavaScript seeing your private IP address, safe file sharing at home, Hamachi's use of UDP, Google's \"Search Across Computers,\" what your ISP can see, and why packets get lost.",
+  "transcript": "https://www.grc.com/sn/sn-028.txt",
+  "audio": "http://media.GRC.com/sn/SN-028.mp3",
+  "chapters": [
+    {
+      "title": "Which OS Is Most Secure?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 28, recorded in Toronto after lunch. Steve had his traditional two ham sandwiches."
+        },
+        {
+          "s": "steve",
+          "t": "Many people felt I dodged last time's \"most secure OS\" question with \"Windows is getting better.\""
+        },
+        {
+          "s": "steve",
+          "t": "US-CERT reported 812 security flaws in Windows and Windows applications in 2005, versus 2,328 for UNIX and Linux and their packages. Linux has grown from two to six million lines of code in about three years, and change is the enemy of security."
+        },
+        {
+          "s": "leo",
+          "t": "That's apples and oranges. Linux counts include thousands of bundled programs, and many more people are looking at open-source code. Counting found flaws doesn't tell you how many remain."
+        },
+        {
+          "s": "steve",
+          "t": "Agreed. Security is a process, not a product. For an easy-to-use consumer platform, I'd say Mac OS, with its UNIX networking heritage, gives the average user more security than Windows."
+        },
+        {
+          "s": "leo",
+          "t": "Though it's not the most secure UNIX, and Apple hasn't always kept its older components patched."
+        },
+        {
+          "s": "steve",
+          "t": "And how you use your computer matters as much as which one you use. Open every attachment and you're in trouble anywhere."
+        },
+        {
+          "type": "fact",
+          "title": "Counting vulnerabilities misleads",
+          "t": "Totals depend on how much code is counted, how many people look, and whether bundled applications are included. Better measures: how fast fixes ship, how many flaws are actually exploited, and how much damage one flaw can do."
+        },
+        {
+          "s": "steve",
+          "t": "On DHCP versus static addresses, listeners pointed out that network printers and port-forwarding targets need fixed addresses. You can do both: routers typically hand out about 100 addresses, leaving plenty for static assignments."
+        },
+        {
+          "s": "leo",
+          "t": "Eventually printers and services should simply be discoverable, so nobody needs to know an IP address."
+        }
+      ]
+    },
+    {
+      "title": "Testing the Wrong Machine",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David's PC is fully stealthed in ShieldsUP!, but with HotSpotVPN connected, it shows SSH, DNS and HTTPS ports open. Is the VPN opening holes?"
+        },
+        {
+          "s": "steve",
+          "t": "Check the IP address at the top of the ShieldsUP! page. With the VPN up, we're probing HotSpotVPN's public address, not yours. Your PC has a private 10.x address behind their NAT, which nobody outside can reach."
+        },
+        {
+          "s": "leo",
+          "t": "Chad sees open and closed ports, but nothing stealthed, when using Tor."
+        },
+        {
+          "s": "steve",
+          "t": "Same thing. We're testing the last onion router in your chain, where your traffic exits."
+        },
+        {
+          "s": "leo",
+          "t": "So turn off VPNs and Tor when you run ShieldsUP!, or you aren't testing your own machine."
+        },
+        {
+          "type": "fact",
+          "title": "Know what you're scanning",
+          "t": "An online port scanner can only test the public address your traffic appears to come from. Behind a VPN, Tor or a carrier's NAT, that's someone else's equipment. Test with the tunnel off to see your own exposure."
+        },
+        {
+          "s": "leo",
+          "t": "Jan says AuditMyPC showed her private internal IP address using JavaScript. Should she worry?"
+        },
+        {
+          "s": "steve",
+          "t": "That's script running in your own browser reporting back, like the old trick of showing you your own hard drive's contents. A private 192.168 address is shared by millions of people and is useless to an attacker. It actually shows you're behind a router."
+        },
+        {
+          "s": "leo",
+          "t": "Still, I don't see why JavaScript should be able to find that out."
+        },
+        {
+          "s": "steve",
+          "t": "Client-side scripting is a double-edged sword: lots of functionality, at a security cost."
+        }
+      ]
+    },
+    {
+      "title": "Sharing Files at Home",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Maxwell asks whether Windows file sharing is safe between his wired PC and wireless laptop."
+        },
+        {
+          "s": "steve",
+          "t": "The old advice was never to turn on sharing. NAT routers changed that, as long as UPnP is off. His wireless is the risk, so use WPA with a long passphrase, and then share freely."
+        },
+        {
+          "s": "leo",
+          "t": "If you turn off the router's DHCP, do you lose NAT?"
+        },
+        {
+          "s": "steve",
+          "t": "No. You just assign addresses by hand. They're still private, and NAT still translates them."
+        },
+        {
+          "s": "leo",
+          "t": "Dean asks: Hamachi uses UDP, which is \"less reliable.\" Does it handle dropped packets? And what does OpenVPN use?"
+        },
+        {
+          "s": "steve",
+          "t": "OpenVPN can use either, but prefers UDP, like Hamachi. TCP running inside the tunnel still recovers its own lost packets. UDP is the right carrier for it."
+        },
+        {
+          "s": "leo",
+          "t": "Think of the Chunnel. You build the tunnel with UDP, and reliable TCP traffic can still run inside it."
+        }
+      ]
+    },
+    {
+      "title": "Encryption, ISPs and Tunnels",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Burt asks: after the uproar over Google Desktop's \"Search Across Computers,\" which stores an index of your files on Google's servers, would Windows file encryption protect him?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Windows file encryption only protects files on disk. Anything you can see while logged in, a program like Google Desktop can read too."
+        },
+        {
+          "s": "leo",
+          "t": "The EFF warns that a warrant could pull your files from Google's servers, and recommends turning the feature off."
+        },
+        {
+          "s": "steve",
+          "t": "I agree. Google has great ideas but sometimes goes a little too far."
+        },
+        {
+          "s": "leo",
+          "t": "For USB drives, a listener found FolderLock easy to bypass."
+        },
+        {
+          "s": "steve",
+          "t": "Look at TrueCrypt: free, open source, and it gets this right. We'll do a whole episode on it."
+        },
+        {
+          "s": "leo",
+          "t": "George asks: isn't encrypting my home Wi-Fi pointless once data reaches my ISP?"
+        },
+        {
+          "s": "steve",
+          "t": "We encrypt the riskiest hop. Beyond your router, ordinary email and web traffic are unencrypted, and ISPs keep mail on their servers. Your privacy depends on the people running those servers."
+        },
+        {
+          "s": "leo",
+          "t": "That's why I use PGP. I also reach my email provider over SSL, so my ISP can't read it, though the email provider still can."
+        },
+        {
+          "type": "fact",
+          "title": "End-to-end vs. hop-by-hop",
+          "t": "Wi-Fi encryption and SSL to your mail server protect one hop each. Only end-to-end encryption, like PGP or S/MIME, keeps a message unreadable to every server between sender and recipient."
+        },
+        {
+          "s": "leo",
+          "t": "Karen asks: on hotel Wi-Fi with a VPN to work, can other guests see her shared folders?"
+        },
+        {
+          "s": "steve",
+          "t": "No. The tunnel is up and encrypted before any of your data goes through it. But before you start the VPN, you're exposed, so keep a personal firewall on your laptop."
+        },
+        {
+          "s": "leo",
+          "t": "A TiVo owner moved to WPA. Can WEP-only devices still join?"
+        },
+        {
+          "s": "steve",
+          "t": "Run two access points, one WPA and one WEP or open, but plug both into a main router in a Y configuration. ARP doesn't cross routers, so the untrusted side can't attack the trusted one. More on that next week."
+        },
+        {
+          "s": "leo",
+          "t": "John points out that tunnels bypass corporate and ISP filtering. Some ISPs block BitTorrent."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Properly encrypted data looks like random noise, so it can't be filtered. We're describing the technology, not encouraging anyone to break their company's rules."
+        }
+      ]
+    },
+    {
+      "title": "DNS, Lost Packets and Sources",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Philip asks: what's a DNS server?"
+        },
+        {
+          "s": "steve",
+          "t": "It turns names like GRC.com into numeric IP addresses, like directory assistance for the Internet. DHCP tells your computer which DNS server to use."
+        },
+        {
+          "s": "leo",
+          "t": "Craig asks why packets get lost at all."
+        },
+        {
+          "s": "steve",
+          "t": "Routers have little buffering. If three inputs suddenly all want the same output, it can't carry three times the data, so it sends what it can and drops the rest. Resending usually works."
+        },
+        {
+          "type": "fact",
+          "title": "Congestion loss",
+          "t": "Most packet loss isn't broken hardware. It's brief overloads. When a router's queue fills, extra packets are dropped. TCP treats loss as a signal to slow down, which is how the Internet avoids congestion collapse."
+        },
+        {
+          "s": "leo",
+          "t": "Burt asks where we get our tech news."
+        },
+        {
+          "s": "steve",
+          "t": "I'm Mr. Google. I search for exactly what I need, then recognize trusted sites like SecurityFocus and Bugtraq in the results."
+        },
+        {
+          "s": "leo",
+          "t": "I use a news aggregator with about 60 feeds. SecurityFocus newsletters and the Bugtraq mailing list are great for security."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: LAN insecurity. How ARP joins IP to Ethernet, and why it's so frighteningly insecure."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did ShieldsUP! show open ports for a HotSpotVPN user?",
+      "options": [
+        "It was testing HotSpotVPN's public IP, not the user's PC",
+        "The VPN opened his firewall",
+        "ShieldsUP! was broken",
+        "His router was hacked"
+      ],
+      "answer": 0,
+      "explain": "Behind the VPN, his PC had a private address nobody outside could reach."
+    },
+    {
+      "q": "Is it a problem that a website's JavaScript can see your private 192.168.x.x address?",
+      "options": [
+        "Not really; millions share it, and it shows you're behind NAT",
+        "Yes, it lets attackers connect directly",
+        "It reveals your password",
+        "It's illegal"
+      ],
+      "answer": 0,
+      "explain": "Your public IP is always visible anyway; the private one gives an attacker nothing."
+    },
+    {
+      "q": "Does Windows file encryption stop a desktop search tool from indexing your files?",
+      "options": [
+        "No; while you're logged in, programs see the decrypted files",
+        "Yes, completely",
+        "Only on weekends",
+        "Only for PDFs"
+      ],
+      "answer": 0,
+      "explain": "Encryption protects files on disk, not from software running as you."
+    },
+    {
+      "q": "Why can a router drop packets even when nothing is broken?",
+      "options": [
+        "Brief bursts exceed what one output link can carry, so extra packets are discarded",
+        "Packets expire every second",
+        "Routers delete random packets",
+        "ISPs throttle everything"
+      ],
+      "answer": 0,
+      "explain": "Resending usually gets through once the burst passes."
+    },
+    {
+      "q": "What protects email from every server between you and the recipient?",
+      "options": [
+        "End-to-end encryption such as PGP",
+        "Wi-Fi WPA encryption",
+        "SSL to your own mail server",
+        "A strong password"
+      ],
+      "answer": 0,
+      "explain": "Hop-by-hop encryption protects only one link; PGP keeps the message sealed all the way."
+    }
+  ]
+}

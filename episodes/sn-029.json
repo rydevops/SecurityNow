@@ -1,0 +1,274 @@
+{
+  "number": 29,
+  "title": "Ethernet Insecurity",
+  "subtitle": "ARP, and why any machine on your LAN can intercept your traffic",
+  "date": "2006-03-02",
+  "description": "How Ethernet, the LAN technology nearly the whole world uses, works, and its complete lack of security. Any other machine on the same Ethernet, at a hotspot, in an office or in an entire wired hotel, can intercept and manipulate traffic.",
+  "transcript": "https://www.grc.com/sn/sn-029.txt",
+  "audio": "http://media.GRC.com/sn/SN-029.mp3",
+  "chapters": [
+    {
+      "title": "Why Not Use MAC Addresses Everywhere?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 29, from Steve's fortress of solitude under the Saddleback Mountains."
+        },
+        {
+          "s": "steve",
+          "t": "Surrounded by screens: bandwidth at Level 3, server load, even our round-trip time right now, about 30 milliseconds. Switching to LCDs cut my air-conditioning bill."
+        },
+        {
+          "s": "steve",
+          "t": "A listener asked: MAC addresses are 48 bits and globally unique. Why not route the Internet with them instead of 32-bit IP addresses?"
+        },
+        {
+          "s": "steve",
+          "t": "Because the Internet works only because IP addresses are hierarchical. A router knows that anything starting with 68 goes in a particular direction. A MAC address is just a manufacturer code plus a serial number. It says nothing about where the device is."
+        },
+        {
+          "s": "steve",
+          "t": "It's like delivering mail by Social Security number. Every router would need a list of every network card on Earth."
+        },
+        {
+          "type": "fact",
+          "title": "Flat vs. hierarchical addressing",
+          "t": "MAC addresses are \"flat\": unique, but they say nothing about location, which is fine on one LAN where every card hears every frame. IP addresses are hierarchical, so routers can forward based on prefixes with small tables."
+        }
+      ]
+    },
+    {
+      "title": "Ethernet's Clever Simplicity",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Bob Metcalfe designed Ethernet at Xerox PARC in the early '70s, when computers cost $100,000. His idea was to put them all on one shared coax cable, terminated at each end."
+        },
+        {
+          "s": "leo",
+          "t": "I once disconnected the wrong piece and took down the whole office."
+        },
+        {
+          "s": "steve",
+          "t": "IBM's Token Ring passed a \"talking stick\" around. Metcalfe's approach was simpler, and the simpler one won."
+        },
+        {
+          "s": "steve",
+          "t": "That's CSMA/CD: listen for silence, transmit, and if two cards collide, both back off for a random time and try again."
+        },
+        {
+          "s": "steve",
+          "t": "Its weakness is heavy traffic. More traffic means more collisions, which means more retries and still more collisions, and throughput falls off. Most networks aren't that busy."
+        },
+        {
+          "type": "fact",
+          "title": "Ethernet's birthday",
+          "t": "Metcalfe's Ethernet memo is dated May 22, 1973, at Xerox PARC. It ran at 2.94 Mbit/s over thick coax. Standardized 10 Mbit/s Ethernet followed in 1980. Today's versions run at 10, 100 and even 400 Gbit/s, with the same basic frame format."
+        }
+      ]
+    },
+    {
+      "title": "Hubs, Switches and Broadcasts",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We moved from coax (10Base2) to twisted pair (10BaseT): one pair to transmit and one to receive. The plug has eight pins, but only four are used."
+        },
+        {
+          "s": "steve",
+          "t": "A hub simply repeats everything it receives out of every port, so collisions still happen."
+        },
+        {
+          "s": "steve",
+          "t": "A switch is smarter. It learns which MAC addresses are on each port, up to thousands of them, and sends each frame only out the right port. That fixes congestion."
+        },
+        {
+          "s": "steve",
+          "t": "Every frame starts with the destination and source MAC addresses: six pairs of hex digits, like 00:02:05:… The first three pairs identify the manufacturer."
+        },
+        {
+          "s": "steve",
+          "t": "Cards respond to their own address and to the broadcast address, all ones (FF:FF:FF:FF:FF:FF). A switch has to send broadcasts out every port, just like a hub."
+        }
+      ]
+    },
+    {
+      "title": "ARP: Gluing IP to Ethernet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The big problem: Ethernet has no concept of authentication. It assumed everyone on the LAN was trusted."
+        },
+        {
+          "s": "steve",
+          "t": "Now we plug into hotel networks, hotspots and corporate networks full of strangers. Wi-Fi works the same way, so it inherits the problem."
+        },
+        {
+          "s": "steve",
+          "t": "IP packets cross a LAN wrapped in Ethernet frames addressed by MAC address. So every machine needs a table mapping IP addresses to MAC addresses: the ARP cache."
+        },
+        {
+          "s": "steve",
+          "t": "If the router doesn't know who has an IP address, it broadcasts an ARP request: \"Who has 192.168.0.5?\" The owner replies with its MAC address, and the router fills in its table."
+        },
+        {
+          "s": "steve",
+          "t": "Here's the catch: there's no way to verify an ARP reply. And machines accept replies even when they never asked."
+        },
+        {
+          "s": "leo",
+          "t": "So there's no attempt to validate the sender?"
+        },
+        {
+          "s": "steve",
+          "t": "There's no way to validate it. It was never even considered when this was designed."
+        },
+        {
+          "type": "fact",
+          "title": "ARP cache poisoning",
+          "t": "An attacker sends forged ARP replies: \"the gateway's IP is at MY MAC address\" to the victim, and \"the victim's IP is at MY MAC address\" to the gateway. Both update their caches, and from then on the attacker is in the middle of their traffic."
+        }
+      ]
+    },
+    {
+      "title": "One Packet Each Way",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Send a PC an ARP reply saying \"I'm the gateway,\" and all its Internet traffic now goes to you."
+        },
+        {
+          "s": "leo",
+          "t": "But then it never reaches the real gateway."
+        },
+        {
+          "s": "steve",
+          "t": "So you send a second forged reply to the gateway claiming to be the PC, and forward everything both ways. You've spliced yourself in as a man in the middle, with just one packet to each machine."
+        },
+        {
+          "s": "leo",
+          "t": "I'm guessing there are tools for this."
+        },
+        {
+          "s": "steve",
+          "t": "Cain & Abel, now at version 2.81, advertises \"ARP poison routing\" to sniff switched networks and attack encrypted protocols. It can even decrypt and record entire Windows Remote Desktop sessions, keystrokes included."
+        },
+        {
+          "s": "steve",
+          "t": "Ettercap is another free suite for man-in-the-middle attacks on LANs."
+        },
+        {
+          "s": "leo",
+          "t": "Security professionals use these tools too. Owning one doesn't make someone a bad guy."
+        },
+        {
+          "s": "steve",
+          "t": "But the lesson holds: whatever is possible will happen."
+        },
+        {
+          "s": "steve",
+          "t": "On a hotel hub you don't even need to attack. Put your network card in \"promiscuous mode,\" which means receive everything, and capture it all."
+        },
+        {
+          "s": "leo",
+          "t": "Remember the traveling security expert who collects hundreds of email logins a night in hotels."
+        }
+      ]
+    },
+    {
+      "title": "The Defense",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A properly built VPN defeats both passive sniffing and man-in-the-middle attacks, because the attacker can't impersonate the other end without being detected."
+        },
+        {
+          "s": "steve",
+          "t": "Protocols without strong authentication, like Remote Desktop, can be completely decrypted by a man in the middle."
+        },
+        {
+          "s": "steve",
+          "t": "Even with HTTPS, a man in the middle can't fake PayPal's certificate without your browser warning you. But users who click past that warning are in deep trouble."
+        },
+        {
+          "type": "fact",
+          "title": "Never click through certificate warnings",
+          "t": "Strong authentication is what stops a man in the middle. If a site you trust suddenly shows a certificate error on a hotel or café network, assume someone is intercepting, and don't continue."
+        },
+        {
+          "s": "leo",
+          "t": "Should we link to Cain & Abel and Ettercap?"
+        },
+        {
+          "s": "steve",
+          "t": "They're all over my page. Search for \"ARP poisoning\" and they come rolling out. My page at GRC.com/nat/arp.htm has diagrams showing exactly how it works."
+        },
+        {
+          "s": "leo",
+          "t": "Congratulations: Episode 25 passed 100,000 listeners in three weeks, and the earliest episodes are still downloaded thousands of times a week."
+        },
+        {
+          "s": "steve",
+          "t": "Some will ask how likely this attack really is. We just want people to understand the reality and decide for themselves. I won't plug my laptop into a hotel network without protection."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why can't the Internet route by MAC address?",
+      "options": [
+        "MAC addresses are flat and say nothing about location, so routers would need every address on Earth",
+        "They're too short",
+        "They change daily",
+        "They're encrypted"
+      ],
+      "answer": 0,
+      "explain": "Hierarchical IP prefixes let routers forward with small tables."
+    },
+    {
+      "q": "What does ARP do?",
+      "options": [
+        "Maps IP addresses to MAC addresses on a local network",
+        "Encrypts LAN traffic",
+        "Assigns IP addresses",
+        "Routes packets between ISPs"
+      ],
+      "answer": 0,
+      "explain": "\"Who has this IP?\" \"I do, at this MAC address\": that's ARP."
+    },
+    {
+      "q": "What makes ARP poisoning possible?",
+      "options": [
+        "Machines accept ARP replies without any way to verify them",
+        "Routers broadcast passwords",
+        "MAC addresses can't be changed",
+        "Switches encrypt traffic"
+      ],
+      "answer": 0,
+      "explain": "Two forged replies put the attacker between a PC and its gateway."
+    },
+    {
+      "q": "What does a network card in \"promiscuous mode\" do?",
+      "options": [
+        "Receives every frame on the wire, not just its own",
+        "Sends spam",
+        "Connects to any Wi-Fi",
+        "Encrypts everything"
+      ],
+      "answer": 0,
+      "explain": "Sniffers use it to capture all traffic they can hear."
+    },
+    {
+      "q": "What defeats both passive sniffing and ARP man-in-the-middle attacks?",
+      "options": [
+        "A properly authenticated VPN",
+        "Hiding your SSID",
+        "MAC filtering",
+        "Using a hub"
+      ],
+      "answer": 0,
+      "explain": "Strong authentication means an interceptor can't pose as the other end without being detected."
+    }
+  ]
+}
