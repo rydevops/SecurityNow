@@ -1144,7 +1144,9 @@
     {
       "number": 164,
       "title": "SockStress",
-      "date": "2008-10-02"
+      "subtitle": "Researchers disclose a new class of low-bandwidth TCP denial-of-service weaknesses",
+      "date": "2008-10-02",
+      "file": "sn-164.json"
     },
     {
       "number": 165,

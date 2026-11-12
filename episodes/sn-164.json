@@ -1,0 +1,314 @@
+{
+  "number": 164,
+  "title": "Sockstress",
+  "subtitle": "Researchers disclose a new class of low-bandwidth TCP denial-of-service weaknesses",
+  "date": "2008-10-02",
+  "description": "Steve drops the planned Q&A to cover a freshly disclosed problem: two Swedish researchers revealed, in an audio interview, a class of weaknesses in the way many operating systems and routers implement TCP, claiming low-bandwidth attacks that exhaust a server's resources. Steve explains the background (userland TCP stacks, the SYN flood and SYN cookies), what the researchers said, why he thinks the disclosure was handled badly compared with Dan Kaminsky's, and who is and isn't at risk. Plus a used Cisco VPN router that connected its buyer to a council's network, Phorm's opt-in trial, the RealDVD lawsuit, and a truncated podcast file.",
+  "transcript": "https://www.grc.com/sn/sn-164.txt",
+  "audio": "http://media.GRC.com/sn/SN-164.mp3",
+  "chapters": [
+    {
+      "title": "Why the Q&A Is Postponed",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're skipping the Q&A today because of something that surfaced just hours ago. Two security researchers claim to have found serious problems in every TCP stack they examined, letting them take sites down with a low-bandwidth denial of service. Search \"sockstress\" and you'll find pages about it."
+        },
+        {
+          "s": "steve",
+          "t": "What bothers me is how it came out: in an audio interview, where they kept talking long after they should have stopped. Unlike Dan Kaminsky, who kept DNS details under wraps for weeks while patches were prepared, these researchers revealed enough that anyone who understands TCP can work out the idea. They say they've been in vendor discussions that aren't going well, and plan to demo it in Helsinki in a couple of weeks."
+        },
+        {
+          "s": "leo",
+          "t": "So they went public rather than working quietly with the vendors the way Kaminsky did."
+        },
+        {
+          "s": "steve",
+          "t": "Right. That's why I want to explain the concepts today, because the confusion is already widespread and the cat is out of the bag."
+        },
+        {
+          "type": "fact",
+          "title": "Coordinated disclosure",
+          "t": "When a flaw affects many vendors, researchers often notify them privately and give time to ship fixes before publishing details. Kaminsky's 2008 DNS work followed that model; here the details reached the public first, which is why the vendor fixes lagged the discussion."
+        }
+      ]
+    },
+    {
+      "title": "A Used VPN Router Still Knows Its Old Network",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A BBC story: a security researcher bought a Cisco VPN router on eBay for next to nothing. When he plugged it in, it automatically connected to the internal network of Kirklees Council in West Yorkshire, which called the discovery concerning but said its data wasn't compromised."
+        },
+        {
+          "s": "steve",
+          "t": "It still held the previous owner's VPN settings and keys. The lesson is to return any such device to factory settings before selling or discarding it."
+        },
+        {
+          "s": "leo",
+          "t": "Same with SSH keys: if you hand over a machine that logs in without a password, it will happily keep doing so."
+        }
+      ]
+    },
+    {
+      "title": "Phorm Returns, With Opt-In",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Several listeners flagged that BT will run another Phorm trial, this time opt-in, on about 10,000 randomly chosen users, who will see an intercept page offering to join. That's the fix I said was needed. Phorm is now pitching it with anti-phishing protection."
+        },
+        {
+          "s": "steve",
+          "t": "Verizon, AT&T and Time Warner Cable told Congress that if they ever do this, it will be opt-in too. My lingering objection is that Phorm injects its own cookies on every site you visit, and opting out also works through cookies. BT reportedly estimated it would need around 300 more servers, which implies some slowdown for subscribers."
+        },
+        {
+          "s": "steve",
+          "t": "SSL connections stay unfiltered, so use secure connections when you can. For an ISP to filter those, it would have to make you trust its own certificate authority, and that is where I'd say no."
+        },
+        {
+          "s": "leo",
+          "t": "And Opera Mini does exactly that, since its proxy terminates the secure connection."
+        }
+      ]
+    },
+    {
+      "title": "RealDVD Meets Hollywood",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Hollywood has taken RealDVD to court. The software let you copy DVDs to a computer while keeping copy protection by decrypting and re-encrypting. Real sued first, asking a court to rule it legal as fair use; the studios countersued for copyright infringement and violating the DMCA."
+        },
+        {
+          "s": "leo",
+          "t": "There's a related case about a DVD jukebox, where a judge allowed copying to a hard drive because the original disc was still needed. We'll see how this one is tested."
+        }
+      ]
+    },
+    {
+      "title": "Updates and a Truncated Episode",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Firefox moved from 3.0.2 to 3.0.3 with several fixes, Mozilla had other updates, and Java for the Mac got a 136MB update fixing two serious flaws with remote-exploit aspects. If you use any of those, update."
+        },
+        {
+          "s": "leo",
+          "t": "And last week's Episode 163 was accidentally cut off during upload, so people got half the show. We fixed it within about twelve hours, but our caching servers (AOL uses Akamai) keep serving a bad copy if the filename is unchanged. The only fix is to re-post under a new name, which is why there's a 163A. Listen to 163A; I apologize for the wasted bandwidth."
+        }
+      ]
+    },
+    {
+      "title": "Sci-Fi and Author Michael McCollum",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A little sci-fi news. Fox's \"Fringe\" continues to be fun. Amanda Tapping has left Stargate for the Sci-Fi Channel's \"Sanctuary,\" premiering tomorrow, a show made largely against green screens where a sanctuary shelters monsters. I'm also enjoying the BBC's \"Primeval,\" and it's striking how far computer graphics have come for weekly TV."
+        },
+        {
+          "s": "steve",
+          "t": "Author Michael McCollum, whose Gibraltar series I've mentioned for years, reports that \"Gibraltar Stars\" is well under way, but also that unauthorized copies of his books have appeared online. His books are DRM-free and inexpensive, and he warns that trading them kills the incentive to write more. If you see them posted, politely ask for them to be taken down."
+        },
+        {
+          "s": "leo",
+          "t": "I put identifying information in my own purchased copies too; I'm halfway through Peter F. Hamilton's very long trilogy on my Kindle."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite Story: The Tech Who Forgot His Own Tool",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A letter titled \"SpinRite Saves a Tech from Himself.\" Matthew works for a college in southern BC and runs SpinRite first on any machine brought in, even telling clients to buy it. Then his own PC fell into an endless boot loop after a move. He spent four hours on the Recovery Console, repairs, reinstalls and hardware tests."
+        },
+        {
+          "s": "steve",
+          "t": "Ready to wipe and reinstall, he flipped through his CD case and found the SpinRite boot disc he'd forgotten. He ran it, walked away, and the machine booted straight in afterward."
+        },
+        {
+          "s": "leo",
+          "t": "The cobbler's kids go barefoot. We should do a show on boot loops someday."
+        }
+      ]
+    },
+    {
+      "title": "The Setup: A Scanner With Its Own TCP Stack",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the story. Two Swedish researchers from Outpost24, Robert Lee and Jack Louis, were asked to scan a very large network. To scan that much at once, they wrote their own TCP stack as an ordinary application, called a \"userland stack,\" rather than using the operating system's, because their probing traffic would otherwise overwhelm their own kernel."
+        },
+        {
+          "s": "steve",
+          "t": "That isn't hard. Nmap does something similar, and on Linux or any system that allows raw packets you can send a SYN and handle the replies yourself. Remember the TCP three-way handshake: SYN, SYN/ACK, ACK."
+        },
+        {
+          "s": "steve",
+          "t": "To keep huge numbers of probes in flight without tracking each one, they used what they call \"client-side SYN cookies\": encode enough in the packet that the reply itself proves it answers a probe they sent, so the scanner remembers nothing per connection."
+        }
+      ]
+    },
+    {
+      "title": "Background: SYN Floods and SYN Cookies",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Early denial-of-service attacks weren't bandwidth floods but resource-consumption attacks. A server receiving a SYN set aside memory for the half-open connection; keep sending SYNs, perhaps with spoofed source addresses, and the server's connection resources fill and it can't accept anyone else."
+        },
+        {
+          "s": "steve",
+          "t": "Dan Bernstein's answer, around 1999, was the SYN cookie. The server doesn't store anything when a SYN arrives. It encodes cryptographically, in its own sequence number, the details of the connection request. When a legitimate client's final ACK comes back, the server verifies it against that and only then commits resources. I came up with a similar idea independently for a ShieldsUP! client, which I called Genesis."
+        },
+        {
+          "s": "steve",
+          "t": "Linux supports SYN cookies. Windows turns something like them on adaptively when it sees a flood, because they have mild compatibility costs: some TCP options conveyed in the SYN can't be remembered."
+        },
+        {
+          "type": "fact",
+          "title": "SYN cookies",
+          "t": "A SYN cookie lets a server answer connection requests without allocating memory for them, by embedding a keyed hash of the connection details in the sequence number it returns. Only a client that completes the handshake presents the matching value, so spoofed floods consume nothing."
+        }
+      ]
+    },
+    {
+      "title": "What the Researchers Reported",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "While scanning, the researchers inadvertently started crashing machines, including routers. They looked into why, and they describe a family of weaknesses that they call Sockstress, after \"sockets.\" Their claims: it works against Windows, Linux, BSD and routers; sometimes only one service dies, sometimes the whole machine; in one case a machine wouldn't reboot afterward."
+        },
+        {
+          "s": "steve",
+          "t": "They also said it can take down the front-end appliances that protect or load-balance a farm of servers, which would bring down everything behind them. Per a blog post by Robert Lee, their demonstrated attack was rate-limited to about nine packets per second spread over sixteen source addresses, under one packet per second each, and a single broadband connection has more than enough upstream bandwidth to do harm."
+        },
+        {
+          "s": "steve",
+          "t": "As I listened I kept thinking: stop talking. As they mentioned crashing machines, timers and dropped packets, anyone who really understands TCP could infer what's going on. I haven't tested any of it, but I find them credible."
+        }
+      ]
+    },
+    {
+      "title": "Why Low Bandwidth Is the Point",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The key idea is that this isn't a flood. The old SYN-cookie defenses protect the front door, the handshake. But once a connection is really established, TCP must keep state: it has to remember data awaiting acknowledgment, retransmit lost packets on timers, and honor each side's advertised \"window\" of buffer space."
+        },
+        {
+          "s": "steve",
+          "t": "Those obligations are required by the protocol, and each consumes server resources such as memory and timers. The researchers' claim, as I understand it, is that an attacker who completes the handshake and then misbehaves in ways the protocol obliges the server to tolerate can make it burn resources at almost no cost to the attacker, who keeps no state of their own thanks to client-side cookies."
+        },
+        {
+          "s": "steve",
+          "t": "I'll illustrate with a long-known idea rather than their method. In tarpitting, a defender's decoy accepts a scanner's connection and then advertises a zero-size window, which tells the sender to stall and keep probing periodically. Scanners like Code Red and Nimda choked on those stuck connections. It shows how a valid connection can be held in an awkward state indefinitely. Which stacks are vulnerable to what, I can't say, and the researchers say different stacks fail in different ways."
+        },
+        {
+          "type": "fact",
+          "title": "Why this attack class is hard to filter",
+          "t": "Because the connections are fully valid and the traffic is low-volume, a server can't easily tell the abuse from many ordinary clients, and bandwidth-based DoS defenses don't see it. The vulnerabilities lie in core TCP behavior such as timers and window handling, so defense means hardening how the stack bounds its resource use."
+        }
+      ]
+    },
+    {
+      "title": "Who Is at Risk, and What the Fix Looks Like",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Does this only matter to people running websites?"
+        },
+        {
+          "s": "steve",
+          "t": "Mostly, yes. Unlike Kaminsky's DNS flaw, ordinary users with no exposed ports are not directly affected. If ShieldsUP! shows you stealth or no open ports, you're fine. But anything accepting Internet TCP connections is potentially exposed: web and FTP servers, commercial sites, and routers, which often leave the BGP port open and are easy to find with traceroute. A vulnerable Cisco or Juniper stack would be a serious problem for Internet connectivity."
+        },
+        {
+          "s": "steve",
+          "t": "A single attacker can be blacklisted by IP address, but that won't help against bot armies of thousands of machines, each tying up a little. And IPv6 changes nothing, since it still runs TCP with the same state and timers."
+        },
+        {
+          "s": "steve",
+          "t": "We can't change the TCP protocol, but vendors can harden their stacks, asking of each timer and resource, what happens if an attacker has a great many connections in this state? Linux code reportedly has a comment, in effect \"hope there aren't too many of these.\" The right code says it doesn't matter how many."
+        },
+        {
+          "s": "leo",
+          "t": "Randal Schwartz says OpenBSD's list reports its stack isn't affected."
+        },
+        {
+          "s": "steve",
+          "t": "That's encouraging, but the researchers haven't released their tool or full details, so we have to hope the OpenBSD folks are right. And don't confuse this with SYN cookies; Slashdot and even the interviewer got that wrong. It's about abuse of the protocol after the handshake."
+        },
+        {
+          "s": "leo",
+          "t": "We'll cover fixes as they arrive. The Q&A moves to next week."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Steve think the Sockstress disclosure was handled poorly?",
+      "options": [
+        "The researchers revealed enough in a public audio interview that skilled readers could infer the method before vendors had fixes",
+        "They sold the details to criminals",
+        "They released the full attack tool on the web",
+        "They refused to speak to any vendors at all"
+      ],
+      "answer": 0,
+      "explain": "Unlike Dan Kaminsky, who withheld details until patches were ready, these researchers described the idea publicly while vendor discussions were still going nowhere."
+    },
+    {
+      "q": "How does a SYN cookie defend a server against a SYN flood?",
+      "options": [
+        "The server encodes the request's details in its reply and allocates resources only when a valid final ACK returns",
+        "It blocks every SYN packet from unknown addresses",
+        "It encrypts the entire connection",
+        "It limits each client to one connection per day"
+      ],
+      "answer": 0,
+      "explain": "By embedding a keyed hash of the connection details in its sequence number, the server stays stateless until the handshake completes, so spoofed SYNs consume nothing."
+    },
+    {
+      "q": "What did the researchers' \"client-side SYN cookies\" accomplish?",
+      "options": [
+        "Their scanner could keep huge numbers of probes in flight without remembering any per-connection state",
+        "They let the client skip the TCP handshake entirely",
+        "They encrypted the scanner's traffic",
+        "They hid the scanner's IP address"
+      ],
+      "answer": 0,
+      "explain": "The reply to a probe carried enough encoded information to prove it matched, so the scanner needed no per-connection memory."
+    },
+    {
+      "q": "Why does this class of attack differ from a traditional bandwidth flood?",
+      "options": [
+        "It uses fully established, valid connections at very low rates to exhaust the server's resources, so volume-based defenses don't help",
+        "It needs thousands of megabits per second",
+        "It only works against home users",
+        "It relies on spoofed source addresses"
+      ],
+      "answer": 0,
+      "explain": "Reported at under one packet per second per source, it targets state and timers required by TCP itself after the handshake, so it looks like many ordinary clients."
+    },
+    {
+      "q": "Who is mainly exposed to this kind of attack, according to Steve?",
+      "options": [
+        "Machines that accept incoming Internet TCP connections, such as servers and routers; users with no open ports are safe",
+        "Every user of every browser",
+        "Only users of Windows XP",
+        "Only IPv4 users, since IPv6 is immune"
+      ],
+      "answer": 0,
+      "explain": "Because the attacks target listening services, ordinary users whose ports are closed or stealth are not directly affected, while servers and routers with open ports are."
+    },
+    {
+      "q": "What lesson did the eBay-bought Cisco VPN router teach?",
+      "options": [
+        "Reset any such device to factory settings, since it keeps the old owner's network credentials",
+        "Never buy used hardware online",
+        "VPN routers cannot be reset",
+        "Cisco routers always expose their keys"
+      ],
+      "answer": 0,
+      "explain": "The router still held the previous owner's configuration and keys, so it connected the buyer straight into a council's internal network."
+    }
+  ]
+}
