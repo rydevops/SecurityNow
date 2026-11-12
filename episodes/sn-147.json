@@ -394,7 +394,12 @@
         },
         {
           "s": "leo",
-          "t": "So this questionnaire is nearly a hundred times bigger."
+          "t": "So this is, what, a thousand times bigger."
+        },
+        {
+          "type": "fact",
+          "title": "The math",
+          "t": "12.5MB against 169K is about 75 times bigger. Still a lot for a questionnaire."
         },
         {
           "s": "steve",
