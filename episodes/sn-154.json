@@ -1,0 +1,832 @@
+{
+  "number": 154,
+  "title": "Listener Feedback Q&A #46",
+  "subtitle": "Cheap stolen bank data, NebuAd's script injection, and a letter from the future",
+  "date": "2008-07-24",
+  "description": "Firefox fixes for the Safari \"carpet bomb\" blended threat, a glut of stolen bank details driving prices down, research that breaks TrueCrypt's hidden-volume deniability, NebuAd injecting script into web pages, and Microsoft's tool for blocking XP Service Pack 3 open the show. Then questions: Penn State's dorm network, a mystery UDP port in netstat, exposing webcams on port 80, an antivirus false positive on Wizmo, whitelisting, unpatched ISP DNS servers, ZoneAlarm blocking GRC, good uses for third-party cookies, why the YubiKey isn't asymmetric, a simpler Phorm, Bell Canada's deep packet inspection, and a time traveler's thank-you note.",
+  "transcript": "https://www.grc.com/sn/sn-154.txt",
+  "audio": "http://media.GRC.com/sn/SN-154.mp3",
+  "chapters": [
+    {
+      "title": "Three Years Approaching",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 154, our sesquicentennial plus four. I just like saying that word."
+        },
+        {
+          "s": "steve",
+          "t": "We're zeroing in on it. Two episodes to go, approaching the end of our third year."
+        },
+        {
+          "s": "leo",
+          "t": "It's an even-numbered show, so it's questions, including the Sad and Disturbing Truth of the Week and the Creative Writing Award of the Week."
+        },
+        {
+          "s": "steve",
+          "t": "They're deserved, as listeners will hear. But first, three bits of security news."
+        }
+      ]
+    },
+    {
+      "title": "Firefox Updates and Browser Habits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, new Firefox updates for both versions 2 and 3. Every time I mention Firefox 2 there's another sub-version; last time it was .15, now .16."
+        },
+        {
+          "type": "fact",
+          "title": "The version number",
+          "t": "Steve means Firefox 2.0.0.16. Firefox 3 got 3.0.1 in the same round."
+        },
+        {
+          "s": "steve",
+          "t": "I'm impressed with GRC's visitors. More than half use Firefox over IE."
+        },
+        {
+          "s": "leo",
+          "t": "I think we're at 60 or 70 percent on TWiT."
+        },
+        {
+          "s": "steve",
+          "t": "Firefox 3 fixed some architectural bugs that I doubt will ever be fixed in 2. Still, I never push anyone into a new major version."
+        },
+        {
+          "s": "steve",
+          "t": "These updates fix the blended threat we covered a few weeks ago. Safari downloads to your desktop by default, and Windows searches for DLLs in a brain-dead order that includes the desktop. So Safari could drop a file there that another browser then loads and runs."
+        },
+        {
+          "s": "leo",
+          "t": "I saw a study from the Swiss Federal Institute of Technology, IBM and Google. Only 60 percent of people run fully patched browsers. That leaves 40 percent vulnerable."
+        },
+        {
+          "type": "fact",
+          "title": "The study",
+          "t": "The ETH Zurich, IBM and Google study, published in July 2008, found that only about 60% of web users ran the latest, most secure version of their browser."
+        },
+        {
+          "s": "leo",
+          "t": "I like IE7, though. I think it's pretty secure. Do you agree?"
+        },
+        {
+          "s": "steve",
+          "t": "I do. My annoyance is how long Microsoft took. It took years, and that gave Firefox a huge window. It's Microsoft's own fault Firefox has the market share it does."
+        },
+        {
+          "s": "steve",
+          "t": "IE7 has good built-in pop-up blocking and warns you when an ActiveX control tries to run, so many old problems are gone. But its bad reputation may haunt it for who knows how long."
+        },
+        {
+          "s": "leo",
+          "t": "And once people try Firefox's extensions, they don't go back. Things like NoScript, which you love, and Adblock."
+        }
+      ]
+    },
+    {
+      "title": "A Glut of Stolen Bank Data",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next, a report from a security monitoring organization on how cybercrime groups are changing. The price of compromised financial details has fallen sharply."
+        },
+        {
+          "s": "leo",
+          "t": "It's a fire sale."
+        },
+        {
+          "s": "steve",
+          "t": "Guess why: oversupply. Bad guys used to pay about $100 for bank account details including the PIN. Now it's $10 to $20."
+        },
+        {
+          "s": "steve",
+          "t": "Bank data has become a commodity, so the crooks are hunting for other kinds of information they can sell at higher margins."
+        }
+      ]
+    },
+    {
+      "title": "Breaking TrueCrypt's Deniability",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Also in the news, Bruce Schneier, founder of Counterpane, worked with a group of students, who he says did the heavy lifting. They showed that systems that encrypt only part of a drive, rather than the whole thing, don't deliver the plausible deniability TrueCrypt tries to offer."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt can hide a partition in the unused space of an encrypted one. The idea is you hand over the keys to the outer volume and deny that anything else exists."
+        },
+        {
+          "s": "steve",
+          "t": "But operating systems aren't designed to clean up their debris. Using the hidden volume leaves traces, like odd drive letters in the registry and history lists. A good forensic examiner could tell there was another partition that has now disappeared. Then I guess they twist your arm harder."
+        },
+        {
+          "type": "fact",
+          "title": "The research",
+          "t": "The 2008 paper by Alexei Czeskis, Tadayoshi Kohno, Bruce Schneier and others at the University of Washington showed that Windows, Microsoft Word and Google Desktop leaked evidence of TrueCrypt 5.1a hidden volumes, such as shortcut files and cached copies."
+        },
+        {
+          "s": "steve",
+          "t": "Whole-drive encryption doesn't have this problem, because everything is encrypted. But if you wanted deniability, it's now been shown that it's broken."
+        }
+      ]
+    },
+    {
+      "title": "NebuAd Injects Script",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Staying with ISP spying: we've covered Phorm for weeks, and in the first week we also mentioned NebuAd. People in the GRC newsgroups, and some listeners, have since found updated terms from their ISPs saying they'll use NebuAd."
+        },
+        {
+          "s": "steve",
+          "t": "NebuAd doesn't do the script-free cookie dance I described, where equipment at the ISP bounces your browser around to salt your visits with cookies. Instead it does what Phorm did in its 2006 and 2007 tests with BT: it inserts JavaScript into pages you download."
+        },
+        {
+          "s": "steve",
+          "t": "When it sees a page ending with the closing html tag, it spoofs a final packet into the stream that adds its own script reference. Your browser then fetches whatever script NebuAd chooses from its own server and runs it. That's how it plants cookies and tracks you."
+        },
+        {
+          "s": "steve",
+          "t": "It's a different method that achieves the same thing, with the same opt-out mumbo-jumbo. ISPs send fine print nobody reads and make people opt out rather than opt in."
+        },
+        {
+          "s": "leo",
+          "t": "They just won't give up."
+        },
+        {
+          "s": "steve",
+          "t": "It's a bad trend."
+        },
+        {
+          "type": "fact",
+          "title": "What happened to NebuAd",
+          "t": "Facing U.S. congressional hearings and lawsuits, ISPs dropped NebuAd's trials during 2008, and the company shut down in 2009."
+        }
+      ]
+    },
+    {
+      "title": "Blocking XP Service Pack 3",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Lastly, XP Service Pack 3 is no longer a separate notice in Windows Update. Many people have had no problems, but there are lots of reports of trouble after installing it. I had two problems, and my tech support guy Greg had one."
+        },
+        {
+          "s": "leo",
+          "t": "I have a machine that tries to install it, fails and rolls back. It's going to keep doing that."
+        },
+        {
+          "s": "steve",
+          "t": "That's why I'm bringing it up. Greg pointed out, and Google confirmed, that Microsoft offers a Service Pack Blocker Tool. It's a tiny 10K command-line program. I don't think I've ever seen Microsoft do anything in 10K."
+        },
+        {
+          "s": "steve",
+          "t": "It just puts a DWORD in the registry telling Windows Update not to install the service pack. Individuals and people who manage office updates can use it if, like me, they feel it's still not time for SP3."
+        },
+        {
+          "s": "leo",
+          "t": "Anyone who does that should know how to protect themselves without SP3's patches."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. So far later patches have worked without requiring SP3. There was some question about the latest DNS patch."
+        },
+        {
+          "s": "leo",
+          "t": "Did Microsoft put out a patch for the DNS flaw?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft beat everyone to it, in the last round of updates. And how DNS spoofing works is our propellerhead topic next week."
+        },
+        {
+          "s": "leo",
+          "t": "Dan Kaminsky hasn't revealed the details, but a Slashdot post says someone figured it out, and it's been published. So people will be using it now."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. It'll be interesting to see."
+        },
+        {
+          "type": "fact",
+          "title": "The leak",
+          "t": "Security researcher Halvar Flake publicly guessed the attack on July 21, 2008, and a Matasano Security blog post confirming it was briefly published by mistake. Exploit code appeared within days."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite Rescue",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A fun SpinRite story from Steve Balaam, who composes game music. He bought SpinRite about three years ago, made a CD and forgot about it."
+        },
+        {
+          "s": "steve",
+          "t": "His brand new, non-networked, non-backed-up machine started making strange noises. He tried to copy everything to a portable drive, but the drive froze, and then the machine couldn't get past the BIOS power-on self test. He was ready to write off six weeks of work."
+        },
+        {
+          "s": "steve",
+          "t": "He remembered SpinRite and booted it. It found the drive. Six hours and many alarming graphs later, it finished."
+        },
+        {
+          "s": "leo",
+          "t": "That's the DynaStat display."
+        },
+        {
+          "s": "steve",
+          "t": "He rebooted and everything was as it should be. He's added a second drive and will run SpinRite as maintenance. He calls it the best money he's spent in a long time."
+        }
+      ]
+    },
+    {
+      "title": "Penn State's Dorm Network",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "On to questions. John R. Baskwill, who works for Penn State Harrisburg, answers an earlier question from a Penn State student whose PC showed the same IP that ShieldsUP! reported, meaning no NAT."
+        },
+        {
+          "s": "leo",
+          "t": "John says you were right: Penn State owns a large address pool. Dorm students register their MAC address, which is locked to a specific switch port."
+        },
+        {
+          "s": "steve",
+          "t": "So an intelligent switch only accepts Ethernet traffic from that MAC address."
+        },
+        {
+          "s": "leo",
+          "t": "DHCP gives each MAC address its own public IP. And yes, all dorm ports are behind a firewall."
+        },
+        {
+          "s": "leo",
+          "t": "But you suggested students add a NAT router. They can't. Only one personal computer is allowed: no hubs, routers, print servers or other devices. There are bandwidth limits, an agreement to sign and a video to watch. Illegal activity can be traced by the unique IP. Go Nittany Lions."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe part of the reason is that students who know their IP is assigned to them will behave more responsibly. If the MPAA finds a Penn State IP downloading movies, it traces straight to one student."
+        },
+        {
+          "s": "steve",
+          "t": "It's pretty locked down, maybe overkill. A student can't take a laptop to a friend's room and both get online. It certainly creates accountability."
+        },
+        {
+          "s": "steve",
+          "t": "But as I'm sure John and many listeners know, you can set a router's MAC address to match your PC's. Every NAT router offers that, because some ISPs used to lock service to one machine's MAC to make you pay for more IPs."
+        },
+        {
+          "s": "steve",
+          "t": "From the network's view, a PC with a firewall is indistinguishable from a NAT router. A student could copy the PC's MAC into a router and the university would be none the wiser. Detecting it would take sophisticated equipment, and the student would be breaking the agreement."
+        },
+        {
+          "s": "steve",
+          "t": "Listening to this, I realize we've never talked about DHCP. It's far more powerful than most people know. We'll cover it soon."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love that. I wonder how many students put in a WiFi access point, spoof the MAC and serve the whole dorm."
+        },
+        {
+          "s": "steve",
+          "t": "I'm saying nothing negative about Penn State. But when it's that restrictive, you almost force students to break out of jail. They can't even have friends plug in to do homework together."
+        },
+        {
+          "s": "leo",
+          "t": "The more onerous you get, the more people find ways around it."
+        }
+      ]
+    },
+    {
+      "title": "A Mystery UDP Port",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Christos Kirst in Huntington Beach, California owns SpinRite and has talked four people into buying it. Running \"netstat -an\" on his Windows 2000 server, he sees \"UDP 0.0.0.0:65518\". Should he worry?"
+        },
+        {
+          "s": "steve",
+          "t": "Netstat dates from the early UNIX days, and \"-an\" is my favorite set of options. It shows every port with activity: listening, established, or recently closed in time-wait."
+        },
+        {
+          "s": "steve",
+          "t": "That line means some process is listening for incoming UDP on a very high port. Ports only go to 65,535, so this didn't just ask for any port. It chose one way up out of the way, maybe trying to be obscure. On a lean server, that's worth worrying about."
+        },
+        {
+          "s": "steve",
+          "t": "XP's netstat added a \"-b\" option that shows which process opened each port. Windows 2000 lacks it. The concern is a trojan, which traditionally opens a listening port and waits for someone to connect."
+        },
+        {
+          "s": "steve",
+          "t": "The 0.0.0.0 is a wildcard: it accepts traffic from anyone. On my XP machine I see lots of ports bound to 127.0.0.1, which means this machine only. Firefox, IE and others use those to talk among themselves, and they won't accept outside connections."
+        },
+        {
+          "s": "steve",
+          "t": "The good news: if the server is behind a NAT router or a properly configured firewall, which today opens only the ports you want, like 80 and 443, nothing outside can reach that port. Still, it's suspicious enough to track down."
+        },
+        {
+          "s": "steve",
+          "t": "Mark Russinovich at Sysinternals wrote a tool that maps ports to processes. There was no solid way to do that in Windows 2000, so it took lots of reverse engineering. That's how he built his reputation, and why Microsoft acquired him."
+        },
+        {
+          "s": "leo",
+          "t": "Is it TCPView? Yes. There's also a command-line socket viewer. And it's 94 kilobytes, in true Steve Gibson style."
+        },
+        {
+          "s": "steve",
+          "t": "It's much like what Microsoft added to XP and Vista. Windows 2000 needs a tool like TCPView."
+        },
+        {
+          "type": "fact",
+          "title": "TCPView today",
+          "t": "TCPView is still part of Microsoft's free Sysinternals suite. On modern Windows, \"netstat -ab\" (run as administrator) or \"netstat -ano\" with Task Manager's process IDs does the same job."
+        }
+      ]
+    },
+    {
+      "title": "Webcams on Port 80",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "T.O. Galloway in Prince Frederick, Maryland was listening to Episode 152 and thinking about the South African listener whose router exposed its admin page on port 80."
+        },
+        {
+          "s": "steve",
+          "t": "By the way, lots of people who checked port 80 with ShieldsUP! after that discovered their routers have the same problem."
+        },
+        {
+          "s": "leo",
+          "t": "T.O. has network security cameras that stream on port 80 so he can watch his home while traveling. Does opening port 80 expose his router's admin login? Could he use an oddball port like 41,587? He also recommends 4XEM cameras, which he thinks equal Axis. Those cameras are really web servers."
+        },
+        {
+          "s": "steve",
+          "t": "They are. To reach them he set up port forwarding, sending incoming port 80 either to the cameras or to a PC running the server software."
+        },
+        {
+          "s": "steve",
+          "t": "So his router's admin page is safe, because port 80 goes to the forwarded device, not the router. That's the workaround we suggested: forward port 80 to an unused address like 192.168.0.222 to stealth it."
+        },
+        {
+          "s": "steve",
+          "t": "The real risk is the camera software itself. You're exposing a web server to the Internet, and the universal rule is that hackers find vulnerabilities in exposed services."
+        },
+        {
+          "s": "leo",
+          "t": "True of any service. Look at the DNS problem in BIND we were just discussing."
+        },
+        {
+          "s": "steve",
+          "t": "Mainline servers like IIS, which had its problems, and Apache have had all the dust beaten out of them. It's trivial to write a web server. The worry is a random programmer told to get it working this afternoon because it ships tomorrow."
+        },
+        {
+          "s": "leo",
+          "t": "We're not saying that's the case. It's the risk."
+        },
+        {
+          "s": "steve",
+          "t": "Every line of code has to be written with security in mind, and that's not most people's orientation."
+        },
+        {
+          "s": "leo",
+          "t": "So what's the safest thing for him to do?"
+        },
+        {
+          "s": "steve",
+          "t": "If I had to run software I couldn't vouch for, I'd give it its own machine and isolate it, maybe behind its own router with that port mapped through. Then if someone exploited it, they'd find nothing else on the machine and no way into the rest of the network."
+        },
+        {
+          "s": "leo",
+          "t": "More and more of these little devices are on our networks."
+        },
+        {
+          "s": "steve",
+          "t": "Just wait until you plug in your dishwasher or refrigerator."
+        },
+        {
+          "s": "leo",
+          "t": "The refrigerator that calls to say you're out of milk. That's a server."
+        }
+      ]
+    },
+    {
+      "title": "Antivirus Flags Wizmo",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Henry Cocozzoli in Troy, Michigan wants to be sure he doesn't have a trojan. If you live in Troy, you should."
+        },
+        {
+          "s": "steve",
+          "t": "I was chuckling about that too."
+        },
+        {
+          "s": "leo",
+          "t": "Trend Micro OfficeScan 8.0 flagged Steve's free Wizmo utility as \"PAK_Generic.001.\" Not the first time we've heard this."
+        },
+        {
+          "s": "steve",
+          "t": "Nor the last. It's certainly a false positive. Nobody else has reported it. Antivirus is increasingly heuristic: it sees a byte sequence similar to something bad and calls it a virus."
+        },
+        {
+          "s": "steve",
+          "t": "There are now so many viruses, around a million, three quarters of them in the last year. And they're more polymorphic than ever, so antivirus companies widen their scanning windows, and false positives rise. It's happening to everyone's software."
+        },
+        {
+          "s": "steve",
+          "t": "When Trend Micro updates its signatures, it will go away."
+        },
+        {
+          "s": "leo",
+          "t": "Antivirus uses signatures, plain string matching, and heuristics, which look for virus-like strings or behavior."
+        },
+        {
+          "s": "steve",
+          "t": "My software has had true signature matches before. My code that shut down the RPC service worked like a virus did, for benign reasons. People report these, the vendors say oops, and they narrow the signature or make an exception."
+        },
+        {
+          "s": "steve",
+          "t": "It even says it in the name: \"PAK_Generic.\""
+        },
+        {
+          "s": "leo",
+          "t": "It's basically saying it looks a little virus-like."
+        }
+      ]
+    },
+    {
+      "title": "Antivirus Whitelisting",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Danny Richardson in Fremont, California saw a CNET article about the future of antivirus, with companies moving from a blacklist to a whitelist model. What do you think?"
+        },
+        {
+          "s": "steve",
+          "t": "It's the antivirus companies realizing things are out of control. Finding the badware isn't working, because there's too much and the authors have too many tricks."
+        },
+        {
+          "s": "steve",
+          "t": "So, especially in corporations, they'll whitelist the software allowed to run and assume anything not known to be good is bad. That's a problem for end users, given all the software out there."
+        },
+        {
+          "s": "leo",
+          "t": "It limits what you can do. But it might be the only way to keep up."
+        },
+        {
+          "s": "steve",
+          "t": "In a corporation with restrictive policies, it makes sense. Then you go to your IT guy, tail between your legs, asking why you can't run the Martha's Vineyard mapping application."
+        },
+        {
+          "s": "leo",
+          "t": "Never heard of it. Can't run it."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think it works for end users. They like having something sifting through their data. And a false positive now and then lets them know the scanner is awake."
+        }
+      ]
+    },
+    {
+      "title": "Unpatched ISP DNS Servers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill Barnes in Charlotte, North Carolina asks what to do if Dan Kaminsky's test at DoxPara.com says he's vulnerable. Several of his clients' ISPs aren't patched, and the test shows a different DNS server than the router or ISP gave him. He has no leverage and doesn't want to shame them publicly. His EarthLink DNS got patched a couple of days after he first checked."
+        },
+        {
+          "s": "leo",
+          "t": "When I asked people in our chatroom to try DoxPara.com about a week and a half ago, a surprisingly large number of ISPs weren't patched."
+        },
+        {
+          "s": "steve",
+          "t": "Dan has now added a \"don't panic\" message. His test was freaking people out. It says not to be concerned yet, because IT administrators were only recently told and need time to safely deploy a fix."
+        },
+        {
+          "s": "steve",
+          "t": "I'll tell listeners the same. Even at its worst this is a highly targeted attack. It won't poison DNS 'Net-wide. It confuses a server so that, while its cached data hasn't expired, it sends your browser to a bad server."
+        },
+        {
+          "s": "steve",
+          "t": "But it's easy to discover unpatched servers. As ISPs fix theirs, attention will focus on the holdouts, and you can expect more games played against them."
+        },
+        {
+          "s": "steve",
+          "t": "I run my own fully resolving DNS server, so I don't depend on an ISP's. If you're concerned, point your DNS at OpenDNS, which has always been well designed and as spoof-proof as possible."
+        }
+      ]
+    },
+    {
+      "title": "ZoneAlarm Blocks GRC",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Nick Cody in Ipswich, U.K. found that GRC.com stalled while loading something from GRCtech.com, in both IE7 and Firefox 3. With ZoneAlarm 7's cookie control at medium, which blocks third-party cookies and removes private header information, he can't reach GRC. Turning it off fixed it. Surely there are no third-party cookies at GRC?"
+        },
+        {
+          "s": "leo",
+          "t": "I have a feeling GRCtech.com counts as a third party."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. For two years, since I deployed my third-party cookie testing, GRCtech.com has deliberately offered browsers cookies from outside GRC.com. It's part of the system I'm about to release that tells people when their browsers accept third-party cookies."
+        },
+        {
+          "s": "steve",
+          "t": "Take a look at GRC.com/cookies/stats.htm. It has a 3D bar chart of the past week's GRC visitors, showing by browser who has third-party cookies disabled."
+        },
+        {
+          "s": "steve",
+          "t": "It shows the effect of Safari disabling third-party cookies by default, alone in the industry. Our Linux visitors using Gecko browsers are also very privacy conscious, and Opera users disable a lot of them."
+        },
+        {
+          "s": "leo",
+          "t": "I'm surprised 2 percent of Safari users turned third-party cookies on."
+        },
+        {
+          "s": "steve",
+          "t": "I think they don't understand the implications. As for ZoneAlarm, it seems onerous to block an entire site."
+        },
+        {
+          "s": "leo",
+          "t": "Just block the cookie."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Literally no one can reach GRC.com after upgrading to ZoneAlarm 7. ZoneAlarm 2.6 was the last I used and liked. It's become a kitchen-sink product. Apparently it also injects script into pages. Since it's your own software, that's very different from ISP gunk, but I'd like to know what it's putting in my pages."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't you allow third-party cookies just for that site?"
+        },
+        {
+          "s": "steve",
+          "t": "ZoneAlarm knows about this. I've seen them tell users to whitelist GRC and GRCtech. Apparently it doesn't work. I don't know what's going on."
+        }
+      ]
+    },
+    {
+      "title": "Good Uses for Third-Party Cookies",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Samir Talwar in London says there are reasons for third-party cookies. Don't enable them by default, but one at a time as needed. He enables RememberTheMilk.com, a to-do manager with an iGoogle widget and a Google Calendar plug-in, and Disqus, the commenting system that loads into many blogs."
+        },
+        {
+          "s": "leo",
+          "t": "That's the commenting system on my blog at Leoville.com. So you'd get a Disqus cookie visiting my blog."
+        },
+        {
+          "s": "leo",
+          "t": "He also asks: why don't browsers treat JavaScript loaded from external sites as third-party code, so its cookie access looks like it comes from that site?"
+        },
+        {
+          "s": "steve",
+          "t": "Great point. We're beyond Web 2.0, and there are starting to be valid uses for third-party cookies, like mashups that run another site's code in a frame, or Remember The Milk."
+        },
+        {
+          "s": "steve",
+          "t": "Wholesale disabling probably still works for most people. Most browsers let you whitelist cookies by site, so you can deny third-party cookies generally and allow the few you need. Normally you only exchange cookies with the site you're visiting. We'll get into all this in painful detail soon."
+        },
+        {
+          "s": "leo",
+          "t": "Apparently I use them."
+        }
+      ]
+    },
+    {
+      "title": "Why the YubiKey Isn't Asymmetric",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michael Tiller in Canton, Michigan likes the YubiKey idea but says its symmetric encryption makes it impractical. Anyone able to verify your identity could also fake your credentials. The killer device would be asymmetric: give out a public credential and prove with a private one that it's you. The YubiKey forum says that would need pricier hardware and much more data."
+        },
+        {
+          "s": "steve",
+          "t": "I completely agree. If you get your YubiKey's secret key from Yubico so you or someone else can authenticate it, you're responsible for it, and anyone who gets it can fake your credential."
+        },
+        {
+          "s": "steve",
+          "t": "Asymmetric encryption is an entirely different order of magnitude more work. There are SSL accelerator cards for servers just for SSL setup."
+        },
+        {
+          "s": "steve",
+          "t": "CPUs are fast now. I force SSL for anyone using ShieldsUP!, to get past ISP transparent proxies and see their real IP, and I use no hardware acceleration. But the YubiKey's tiny processor easily does AES, Rijndael, which was designed to be simple in hardware."
+        },
+        {
+          "s": "steve",
+          "t": "The beauty of the YubiKey is that it just pretends to be a keyboard. It keeps internal state and increments it. It could encrypt that state with a private key, but the output would be the length of the key's modulus, a much longer string to type."
+        },
+        {
+          "s": "steve",
+          "t": "It's not simple. You'd press the button and come back tomorrow for the result."
+        },
+        {
+          "s": "leo",
+          "t": "That's why PGP uses a symmetric key, isn't it?"
+        },
+        {
+          "s": "steve",
+          "t": "Any of these systems. They generate a big random symmetric key, encrypt only that with the asymmetric cipher, and the recipient decrypts it with the other half, then decrypts the bulk payload with the symmetric key. And now we're all confused."
+        },
+        {
+          "type": "fact",
+          "title": "What came later",
+          "t": "Later YubiKeys added public-key features, including smart-card (PIV) and OpenPGP support and the FIDO U2F and FIDO2 standards, which use per-site key pairs so a server never holds a secret that could impersonate you."
+        }
+      ]
+    },
+    {
+      "title": "A Simpler Phorm?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jez Goldstone in Manchester, U.K. doesn't want to give anyone ideas. Instead of Phorm's browser dance, the ISP could tell Phorm which subscriber has an IP at any moment. Phorm could link that IP to its unique ID and inject a cookie into requests, then read it from ads on sites like CNET. Only TOR, JAP or another anonymizer would stop it. It fails behind a shared NAT router, but so does a cookie when a household shares one login. Did he miss anything?"
+        },
+        {
+          "s": "steve",
+          "t": "It would work. What he missed is that it requires clear collusion between the third party and the ISP."
+        },
+        {
+          "s": "leo",
+          "t": "And every ISP insists it isn't revealing personal information."
+        },
+        {
+          "s": "steve",
+          "t": "People are up in arms even so. I've gone through Phorm's technology, and they go to extreme measures to anonymize data. They can argue they get no account information from the ISP and are independent of IP. If they tapped the ISP's database to see who's on each IP, oh boy."
+        },
+        {
+          "s": "leo",
+          "t": "So they've thought of it."
+        },
+        {
+          "s": "steve",
+          "t": "They'd love to, but they dare not. And they're in deep doo-doo even so."
+        }
+      ]
+    },
+    {
+      "title": "Sad and Disturbing Truth: Bell Canada",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Sad and Disturbing Truth of the Week, from Pat Kugel in London, Ontario. Bell Canada provides PPPoE carrier service for many smaller ISPs; its ISP arm is Sympatico."
+        },
+        {
+          "s": "leo",
+          "t": "A Quebec organization is suing Bell, and the CRTC, Canada's FCC, is auditing it, over Deep Packet Inspection servers. Pat says the intent is to scan all PPPoE packets to target advertising and block websites they don't agree with."
+        },
+        {
+          "s": "leo",
+          "t": "Under CRTC rules the packets are private, and as a carrier Bell may only look at the PPPoE wrapper for the destination. Comcast just got an FCC warning for something similar. Are we losing the Net Neutrality war for profits and ads, or is he paranoid?"
+        },
+        {
+          "type": "fact",
+          "title": "The disputes",
+          "t": "In 2008 Canadian ISPs, through their association, complained to the CRTC that Bell was throttling peer-to-peer traffic on the wholesale lines it sold them. The CRTC ruled for Bell that November, then set traffic-management rules for all ISPs in 2009."
+        },
+        {
+          "s": "steve",
+          "t": "That is the sad and disturbing truth. A common carrier has legal obligations. It can't spy on the data it carries and censor it by content."
+        },
+        {
+          "s": "leo",
+          "t": "Like listening to your phone calls and saying you can't call that person."
+        },
+        {
+          "s": "steve",
+          "t": "Because we don't like what you said. DPI was nicer when it meant dots per inch. As processing gets cheaper, it's become almost inexpensive for carriers to deeply examine traffic. This is the next level beyond Phorm and NebuAd: Bell Canada doing it itself."
+        },
+        {
+          "s": "leo",
+          "t": "It seems to happen a lot in Canada. Sandvine, which Comcast uses for DPI, is a Canadian company, I think from London, Ontario."
+        },
+        {
+          "type": "fact",
+          "title": "Sandvine's home",
+          "t": "Sandvine was based in Waterloo, Ontario, not London."
+        }
+      ]
+    },
+    {
+      "title": "Creative Writing Award: A Letter from 2013",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Creative Writing Award goes to \"Jake,\" writing from the future. Since 2003 he's spent 10 years building a time machine. In 2013 he found Security Now!, really Security Then!, and listens for nostalgia about when security was comprehensible."
+        },
+        {
+          "s": "leo",
+          "t": "When his computer died, he bought SpinRite 7 and recovered everything in hours. Version 7 makes great toast, he says. SpinRite let him finish his time machine, so he came back to 2008 to thank you. P.S. Visit in 2013 for his perpetual motion machine, but don't count on free energy."
+        },
+        {
+          "s": "steve",
+          "t": "I got a kick out of that. We do not have SpinRite 7 yet, folks. We're selling SpinRite 6."
+        },
+        {
+          "s": "leo",
+          "t": "Now you'll get emails asking where SpinRite 7 is."
+        },
+        {
+          "s": "steve",
+          "t": "Toast wasn't on my list of features. But I won't argue with Jake. He apparently knows more about SpinRite 7 than I do."
+        }
+      ]
+    },
+    {
+      "title": "Next Week: DNS Spoofing",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How can people send questions?"
+        },
+        {
+          "s": "steve",
+          "t": "GRC.com/feedback, with no extension needed thanks to you, Leo. 435 people wrote in the last two weeks, and I love finding 12 to share."
+        },
+        {
+          "s": "leo",
+          "t": "GRC.com also has Wizmo, ShieldsUP!, SpinRite, 16KB versions, transcripts and show notes. What's next week?"
+        },
+        {
+          "s": "steve",
+          "t": "For listeners with propeller-head beanies, one of our great techie episodes. No matter how much of a neophyte you consider yourself, you'll understand DNS at the level needed to spoof your own ISP's server, if it isn't patched by then."
+        },
+        {
+          "s": "leo",
+          "t": "Strap on your pseudorandom number generators and head into the future."
+        },
+        {
+          "s": "steve",
+          "t": "And make a few passwords while you're at it."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why had the price of stolen bank account details dropped from about $100 to $10–20?",
+      "options": [
+        "There was an oversupply of stolen data",
+        "Banks added PINs",
+        "Police shut down markets",
+        "Crooks lost interest in money"
+      ],
+      "answer": 0,
+      "explain": "The crooks were moving to more valuable kinds of data."
+    },
+    {
+      "q": "What undermined TrueCrypt's hidden-volume deniability?",
+      "options": [
+        "The operating system and applications left traces of the hidden volume",
+        "AES was cracked",
+        "TrueCrypt stored keys in plain text",
+        "Hidden volumes were twice as large"
+      ],
+      "answer": 0,
+      "explain": "Whole-drive encryption doesn't have this weakness."
+    },
+    {
+      "q": "How did NebuAd plant its tracking cookies?",
+      "options": [
+        "By injecting a script reference at the end of web pages the user downloaded",
+        "By redirecting the browser through several servers",
+        "By installing a toolbar",
+        "By changing the user's DNS settings"
+      ],
+      "answer": 0,
+      "explain": "Phorm used the redirect \"dance\" instead."
+    },
+    {
+      "q": "What does 0.0.0.0 mean in a listening port shown by netstat?",
+      "options": [
+        "The port accepts connections from any address",
+        "The port is closed",
+        "Only this machine can connect",
+        "The port is unused"
+      ],
+      "answer": 0,
+      "explain": "127.0.0.1 means only the local machine."
+    },
+    {
+      "q": "Why did ZoneAlarm 7 users fail to load GRC.com?",
+      "options": [
+        "Its cookie control blocked GRC's deliberate third-party cookie tests from GRCtech.com",
+        "GRC blocked ZoneAlarm",
+        "GRC's certificate expired",
+        "ZoneAlarm flagged ShieldsUP! as malware"
+      ],
+      "answer": 0,
+      "explain": "The cookies were part of Steve's upcoming third-party cookie test."
+    },
+    {
+      "q": "Why does the YubiKey use symmetric rather than asymmetric encryption?",
+      "options": [
+        "Asymmetric crypto is far more computationally demanding and produces much longer output",
+        "Symmetric keys can't be stolen",
+        "AES is newer",
+        "Asymmetric encryption is illegal to export"
+      ],
+      "answer": 0,
+      "explain": "It would also make the typed string much longer."
+    }
+  ]
+}
