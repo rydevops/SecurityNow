@@ -1,0 +1,431 @@
+{
+  "number": 98,
+  "title": "Internet Identity Metasystems",
+  "subtitle": "Microsoft's CardSpace and an identity layer for the Internet",
+  "date": "2007-06-28",
+  "description": "Recorded early while Steve keynotes a spyware conference at Harvard Law. A listener asks how to judge certificate authorities, prompting Steve's rant about costly Extended Validation certificates, plus a monitor-based password trick and a TiVo rescue. Then Steve explains Microsoft identity architect Kim Cameron's case for an Internet identity layer, and how Vista's CardSpace presents identity \"cards,\" draws on trusted identity providers, lets users approve what's disclosed, and works alongside OpenID.",
+  "transcript": "https://www.grc.com/sn/sn-098.txt",
+  "audio": "http://media.GRC.com/sn/SN-098.mp3",
+  "chapters": [
+    {
+      "title": "Recording Ahead of Harvard",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our security blanket, Steve Gibson. Some call you a wet blanket for taking the fun out of surfing. You're not actually here right now."
+        },
+        {
+          "s": "steve",
+          "t": "I've been asked to keynote the kickoff of a symposium on spyware at Harvard Law School and be on a panel. That's on our usual recording day, so we're recording early."
+        },
+        {
+          "s": "leo",
+          "t": "Harvard's Berkman Center does amazing Internet work."
+        },
+        {
+          "s": "steve",
+          "t": "The Internet turns out not to be a fad after all."
+        },
+        {
+          "s": "leo",
+          "t": "Today: Internet Identity Metasystems. Don't be scared."
+        },
+        {
+          "s": "steve",
+          "t": "It's a mouthful, but it's the next step in authentication: more robust identity."
+        }
+      ]
+    },
+    {
+      "title": "Who Can You Trust to Sign Certificates?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "From the mailbag, Matt Sharp in Aberystwyth, U.K."
+        },
+        {
+          "s": "leo",
+          "t": "I'll have to look that up. It's probably Welsh."
+        },
+        {
+          "s": "steve",
+          "t": "You could Google it and see the top of his head."
+        },
+        {
+          "s": "steve",
+          "t": "He notes we said to check for https, the padlock, and a trustworthy signing authority. But how does an average user know which authorities are trustworthy? IE7 shows its green bar on eBay and PayPal, so you know you're safe. What about sites signed by others?"
+        },
+        {
+          "s": "steve",
+          "t": "This brings home a peeve. That green bar costs any site $1,500 a year. VeriSign calls it 128-bit SSL with EV, for Extended Validation. It's just a certificate for which they rake you over the coals."
+        },
+        {
+          "s": "leo",
+          "t": "A hacker wouldn't have $1,500."
+        },
+        {
+          "s": "steve",
+          "t": "I'd buy it once, but it's a one-year certificate. Two years is a \"discount\" at $2,695. I have a 128-bit certificate, but it won't light up green unless I pay a lot of green. It's such a scam."
+        },
+        {
+          "s": "leo",
+          "t": "That explains why you don't see many green bars."
+        },
+        {
+          "s": "leo",
+          "t": "Aberystwyth is mid-Wales's main seaside resort, on Cardigan Bay, the town of 50 pubs. Only the Welsh can pronounce it."
+        },
+        {
+          "s": "steve",
+          "t": "To actually answer Matt: a signing authority's root certificate has to be installed in your browser. I recently scrolled through IE7's list of authorities under XP. It goes on forever."
+        },
+        {
+          "s": "steve",
+          "t": "The browser vendor controls which authorities its browser accepts: Microsoft, the Firefox team, Opera, Safari. You can't normally get a bogus root certificate into a browser without deliberately installing it, and I've never heard of malware doing it. One hopes it's never automated."
+        },
+        {
+          "s": "steve",
+          "t": "And Certificate Revocation Lists, CRLs, let bogus certificates be revoked once found. SSL has been engineered well. So it's not a big problem."
+        },
+        {
+          "s": "leo",
+          "t": "Only the biggest merchants will have green bars, which eliminates their usefulness. And someone at Yahoo! told me at a party they're adding a SiteKey system like Bank of America's, though not mandatory. I told him to listen to our podcast. I hate SiteKeys, and their security is questionable."
+        },
+        {
+          "s": "steve",
+          "t": "SiteKey plays right into today's topic."
+        },
+        {
+          "type": "fact",
+          "title": "The green bar",
+          "t": "Extended Validation certificates required extra checks on the organization. Studies found users rarely noticed the green bar, and Chrome and Firefox removed it in 2019. Today a padlock means an encrypted connection to the right domain, and free certificates are common."
+        }
+      ]
+    },
+    {
+      "title": "A Password From Your Monitor",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Richard Collette of Beaumont, California heard us on your Tech Guy radio podcast talk about passwords. His method is new to me."
+        },
+        {
+          "s": "leo",
+          "t": "You're on the radio show each week, and he heard it in the podcast."
+        },
+        {
+          "s": "steve",
+          "t": "He combines his monitor's model and serial number into a complex password. If he forgets it, he turns the monitor around. Any device within arm's reach works. For unique per-site passwords, he puts the domain name between the model and serial number. Just don't tell anyone which device it is."
+        },
+        {
+          "s": "leo",
+          "t": "Because they could look on the back."
+        },
+        {
+          "s": "steve",
+          "t": "Serial numbers are unique within a model, so it creates a complex, unguessable alphanumeric blob he can always recover. Kind of neat."
+        },
+        {
+          "type": "fact",
+          "title": "A caution",
+          "t": "Serial numbers are often sequential and printed in predictable formats, and anyone near your desk can read them. A password manager generating random passwords is a safer way to get unique, unguessable ones."
+        }
+      ]
+    },
+    {
+      "title": "\"My TiVo Puked\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And Harvey Russ writes: \"Okay, this was an emergency. My TiVo puked.\" His TiVo dying was more urgent than his PC dying. WeakKnees' tech support page said it looked like a disk failure. He resurrected both disks in his Series 2 TiVo with SpinRite 6. He's used SpinRite since version 1.0."
+        },
+        {
+          "s": "leo",
+          "t": "That's a Linux disk."
+        },
+        {
+          "s": "steve",
+          "t": "TiVos are byte-swapped. Intel systems are \"little Indian,\" with least significant bytes first. The PowerPC in the Series 1 TiVo, and I think the Series 2, is \"big Indian,\" most significant first. So the partition table's signature, 55AA, appears as AA55. SpinRite says the disk looks blank and asks whether to go anyway. Harvey said please, and SpinRite did the whole drive."
+        },
+        {
+          "type": "fact",
+          "title": "Endian",
+          "t": "The terms are \"little-endian\" and \"big-endian,\" borrowed from \"Gulliver's Travels,\" where two nations feuded over which end of an egg to crack."
+        }
+      ]
+    },
+    {
+      "title": "The Missing Identity Layer",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Explain this title."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has an Identity and Access Architect, Kim Cameron. His blog sets this up so well, and I could hear my own voice in it. He says the Internet was built without a way to know who or what you're connected to. So every service invented its own workaround, leaving a patchwork of identity one-offs."
+        },
+        {
+          "s": "leo",
+          "t": "Exactly what we've been talking about."
+        },
+        {
+          "s": "steve",
+          "t": "He says hundreds of millions of people have been trained to accept whatever any site throws at them: to type names, passwords and personal information into almost any form that appears. They have no consistent way to judge whether a site is authentic, or to know when they're disclosing private information to the wrong party, as in phishing."
+        },
+        {
+          "s": "steve",
+          "t": "As people manage things of greater real-world value online, a criminal fringe that understands this patchwork has professionalized and organized internationally. Phishing tricks people with sites they can't verify. Spyware harvests information in long-term \"pharming\" attacks. Other schemes steal hundreds of thousands of identities from corporate, government and school databases in one blow, then sell them."
+        },
+        {
+          "s": "steve",
+          "t": "He calls phishing and pharming one of the fastest-growing segments of the computer industry, with a compound annual growth rate, get this, of 1,000 percent. The Anti-Phishing Working Group's February 2005 report showed phishing sites growing 26 percent a month, about 1,600 percent a year."
+        },
+        {
+          "s": "leo",
+          "t": "It makes sense. It's growing outrageously."
+        },
+        {
+          "s": "steve",
+          "t": "He warns that unchecked, we're headed for a deep crisis, where the Internet loses credibility for economic transactions just when it should be gaining it."
+        },
+        {
+          "s": "leo",
+          "t": "The real cost is that email and the Internet become less useful."
+        },
+        {
+          "s": "steve",
+          "t": "I've heard of people who've stopped using the Internet because of this. He also says that without an identity layer, the flexible web services we want can't flourish. Knowing who is connected to what is a must."
+        }
+      ]
+    },
+    {
+      "title": "Learning From Passport",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is from Microsoft. I hope it's not another proprietary single sign-on. Didn't they say they'd support OpenID?"
+        },
+        {
+          "s": "steve",
+          "t": "That's where we're going. Many will remember Passport, hopefully defunct, and always dysfunctional. MSDN, which I pay $2,500 a year for, once required a Passport account. It irked me. It was dead on arrival."
+        },
+        {
+          "s": "leo",
+          "t": "Was it misguided?"
+        },
+        {
+          "s": "steve",
+          "t": "No, Microsoft was right. Thank goodness some things are bigger than Microsoft. Like SPF: Microsoft tried its own licensed version, but email is bigger than Microsoft, and it ended up adopting an interoperable protocol."
+        },
+        {
+          "s": "steve",
+          "t": "Today's catalyst is a Vista feature with the strange name CardSpace. During development it was called InfoCard, which I think was better. It's Microsoft's answer to what OpenID does."
+        },
+        {
+          "s": "steve",
+          "t": "OpenID gives you a single, open-source authentication system based on a URL you control, on your own page or one from an identity provider, on MySpace or..."
+        },
+        {
+          "s": "leo",
+          "t": "Facebook. Whatever it is this week."
+        },
+        {
+          "s": "steve",
+          "t": "The site sends your browser to your identity server, you authenticate, and it sends you back with a signed package. Very cool. But it doesn't give sites granular information about you that you control. And it's inelegant, bouncing your browser around the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft learned from Passport's mistake. Everyone said it failed because it was Microsoft's. People want choice. So Microsoft created a \"metasystem\" that explicitly allows other authentication frameworks underneath the user's experience."
+        },
+        {
+          "s": "steve",
+          "t": "I'd be less enthusiastic if it were Vista-only. But CardSpace is coming to IE7 on XP, and there's already support in the open-source community on Linux, in Safari, and coming for Firefox."
+        },
+        {
+          "s": "leo",
+          "t": "Since there's no IE on the Mac anymore."
+        }
+      ]
+    },
+    {
+      "title": "How CardSpace Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Say I'm an eBay seller using an eBay-aware client to manage my auctions. It contacts eBay, which, if it supports this, sends a list of requirements: which protocols it accepts, which trusted identity providers, like Thawte or VeriSign, and what information it wants. All transparent to the user."
+        },
+        {
+          "s": "steve",
+          "t": "The client hands that packet to CardSpace, a hardened, secure subsystem in Windows. It pops up a simple, elegant display that looks like a set of credit cards. Each card is an identity carrying some information. Cards can be issued by governments or banks, or created by users themselves."
+        },
+        {
+          "s": "steve",
+          "t": "CardSpace finds the cards that match what eBay wants, say, from Thawte, VeriSign or Equifax, with your email address as your identifier, and shows only those. You pick the card you use for eBay."
+        },
+        {
+          "s": "steve",
+          "t": "CardSpace then makes a secure connection to that card's provider and asks it for your email address. A key point: your personal information needn't even live on your computer. The provider holds it. The card holds only tokens naming what it can provide, like your email, mailing address or phone number. So there's nothing local to compromise."
+        },
+        {
+          "s": "steve",
+          "t": "And critically, before anything identifying you leaves the machine, you always see a screen showing exactly what will be disclosed. The system is designed for the user's benefit, not the other party's."
+        },
+        {
+          "s": "steve",
+          "t": "There's even a new RFC for securely embedding corporate logos in X.509 security certificates. So you'd see eBay's logo, wrapped in enough crypto that it can't be spoofed."
+        },
+        {
+          "s": "leo",
+          "t": "The logo helps a lot."
+        },
+        {
+          "s": "steve",
+          "t": "Like SiteKey's picture, it's something visual to expect. You confirm, and CardSpace hands the result to your client, which sends it to eBay, all wrapped in strong crypto."
+        }
+      ]
+    },
+    {
+      "title": "Working With OpenID",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "OpenID in its basic form merely authenticates you, though with a single point of authentication under your control. And Microsoft formally endorsed OpenID as an underlying protocol for the metasystem."
+        },
+        {
+          "s": "leo",
+          "t": "I'm really glad to hear that."
+        },
+        {
+          "s": "steve",
+          "t": "OpenID is already taking off, and CardSpace was just born. Without that, it might be stillborn like Passport."
+        },
+        {
+          "s": "steve",
+          "t": "Remember I prefer Google Checkout because it provides vendors the information I've authorized, so I don't fill out forms. CardSpace offers the same benefit. You can create your own cards."
+        },
+        {
+          "s": "leo",
+          "t": "That's the name: a space of cards."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's animated demo shows a really nice interface. And there's a full open-source Apache module that works with CardSpace. They've really learned their lesson. I think this has a very good chance of succeeding."
+        },
+        {
+          "s": "leo",
+          "t": "So it coexists with OpenID?"
+        },
+        {
+          "s": "steve",
+          "t": "It can use it. The site wanting credentials is the \"relying party,\" RP. The one providing them is the \"identity provider,\" IP. The user arbitrates between them, with crypto letting everyone authenticate each other."
+        },
+        {
+          "s": "steve",
+          "t": "It uses SAML, the Security Assertion Markup Language, an open, XML-based standard for exchanging such information securely. It's easier than typing a funky-looking URL, and it manages multiple identities. Since you can be your own identity provider, you can have separate identities for Slashdot, eBay or random blogs."
+        },
+        {
+          "s": "steve",
+          "t": "And eBay could be an identity provider too. Your eBay reputation, earned through feedback as a good buyer or seller, could be packaged securely and exported to other sites, so your identity isn't fragmented all over the Internet."
+        },
+        {
+          "s": "leo",
+          "t": "And it's built into Vista."
+        },
+        {
+          "s": "steve",
+          "t": "And it'll be in IE7 on XP, where I'm comfortable and in no hurry to leave."
+        },
+        {
+          "s": "leo",
+          "t": "As a Mac user, I'd be left out."
+        },
+        {
+          "s": "steve",
+          "t": "I've seen screenshots of the Safari plug-in, in beta and successfully processing credentials."
+        },
+        {
+          "s": "leo",
+          "t": "I hope it comes to the iPhone."
+        },
+        {
+          "s": "steve",
+          "t": "Next time, Episode 99, we'll answer the intriguing question: are you human?"
+        },
+        {
+          "type": "fact",
+          "title": "What happened",
+          "t": "CardSpace never caught on, and Microsoft discontinued it in 2011. SAML, however, became a backbone of corporate single sign-on, and OpenID Connect later won on the consumer web."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does an Extended Validation certificate add, according to Steve?",
+      "options": [
+        "Little beyond extra vetting and IE7's green bar, at a high yearly price",
+        "Stronger encryption",
+        "Free renewals",
+        "Malware protection"
+      ],
+      "answer": 0,
+      "explain": "Steve called it a scam."
+    },
+    {
+      "q": "How does your browser decide which certificate authorities to trust?",
+      "options": [
+        "The browser vendor installs a list of trusted root certificates",
+        "Each website decides",
+        "Your ISP chooses",
+        "It trusts everyone"
+      ],
+      "answer": 0,
+      "explain": "Bogus certificates can be revoked through revocation lists."
+    },
+    {
+      "q": "What problem did Kim Cameron describe?",
+      "options": [
+        "The Internet has no built-in identity layer, leaving a patchwork that phishers exploit",
+        "Too many browsers",
+        "Slow connections",
+        "Weak encryption"
+      ],
+      "answer": 0,
+      "explain": "He cited phishing growing about 1,000 percent a year."
+    },
+    {
+      "q": "What does CardSpace show you before sending anything?",
+      "options": [
+        "Exactly what information will be disclosed, for your approval",
+        "Nothing",
+        "Your password",
+        "An advertisement"
+      ],
+      "answer": 0,
+      "explain": "The system is designed for the user's benefit."
+    },
+    {
+      "q": "Where is personal information kept in CardSpace's design?",
+      "options": [
+        "With the identity provider, while cards on your PC hold only tokens",
+        "On your hard drive",
+        "In the browser cache",
+        "On Microsoft's servers only"
+      ],
+      "answer": 0,
+      "explain": "So there's little to steal locally."
+    },
+    {
+      "q": "Why did Steve think CardSpace could succeed where Passport failed?",
+      "options": [
+        "It's an open metasystem supporting others' systems, including OpenID",
+        "It's mandatory",
+        "It's free",
+        "It replaces passwords by law"
+      ],
+      "answer": 0,
+      "explain": "People rejected Passport because Microsoft controlled it."
+    }
+  ]
+}
