@@ -1,0 +1,413 @@
+{
+  "number": 182,
+  "title": "Listener Feedback #59",
+  "subtitle": "A Q&A on MSRT, YubiKey static mode, keyfiles, VPNs and two PayPal blunders",
+  "date": "2009-02-05",
+  "description": "Steve and Leo answer listener questions in a quiet security week: how to run the Malicious Software Removal Tool on demand and confirm it's current, why a YubiKey in static mode isn't really a second factor, easy ways to send the occasional encrypted email, a firmware change that lets a YubiKey unlock TrueCrypt before boot, KeePass keyfiles as a cheaper token, VPNs for open WiFi, and whether keyloggers beat preboot login. Plus a road sign hacked through its default password, and two PayPal security-key flaws that let an attacker reset an account with public information.",
+  "transcript": "https://www.grc.com/sn/sn-182.txt",
+  "audio": "http://media.GRC.com/sn/SN-182.mp3",
+  "chapters": [
+    {
+      "title": "A Quiet Week and a Hacked Road Sign",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's been a very quiet security week, with Patch Tuesday coming next week. The one story worth telling: a temporary electronic road sign near the University of Texas at Austin was hacked in the middle of the night to read \"Caution! Zombies Ahead!\""
+        },
+        {
+          "s": "steve",
+          "t": "The point for us is how. The sign's controller still had its default password. The vandals broke a lock to reach the computer inside, and the default password let them rewrite the text."
+        },
+        {
+          "s": "steve",
+          "t": "Then they changed the password away from the default, so the city couldn't fix the sign. It took hours and the manufacturer's help to reset it."
+        },
+        {
+          "type": "fact",
+          "title": "Default passwords",
+          "t": "Shipping gear with a known default password and never forcing a change is one of the most common real-world weaknesses. The same pattern has exposed routers, cameras, printers and industrial controllers. Always change defaults on anything with a network or console."
+        }
+      ]
+    },
+    {
+      "title": "Collecting the Classic DEC Machines",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An aside on what's had me using PayPal so much lately: I've been collecting old computers. The core-memory plane I held up started it, and it led me back to the PDP-8, and now to the PDP-11 and the VAX."
+        },
+        {
+          "s": "steve",
+          "t": "DEC deliberately designed the PDP-11 and VAX instruction sets to be pleasant to program in assembly language, which also made them efficient targets for compilers. I want to restore some to museum condition and actually write code for them."
+        },
+        {
+          "s": "steve",
+          "t": "Gordon Bell, DEC's architect, understood Moore's Law in his own terms: about every year and a half you needed two more bits of address space, because the thing computers keep outgrowing is memory."
+        },
+        {
+          "type": "fact",
+          "title": "\"640K\"",
+          "t": "Bill Gates is often quoted as saying no one would ever need more than 640K of memory. He has denied ever saying it, but the line endures because early machines were built around address limits that software quickly outgrew, exactly the pattern Gordon Bell described."
+        },
+        {
+          "s": "steve",
+          "t": "I bought several SpareTimeGizmos PDP-8 kits, a couple of banged-up PDP-11s to make one good machine, and I'm hoarding the software and documentation off the net before the links rot away."
+        },
+        {
+          "s": "leo",
+          "t": "We should set up a Steve Gibson Computer Museum. There's the Computer History Museum in San Jose, founded by Gordon Bell's wife Gwen, and the DigiBarn up in the Santa Cruz Mountains."
+        }
+      ]
+    },
+    {
+      "title": "Errata: Hysteresis and Core Memory",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A bit of errata. Leo, you were reading dictionary definitions on another show and skipped one close to my heart: hysteresis."
+        },
+        {
+          "s": "leo",
+          "t": "From the electronics dictionary: the lagging of induced magnetism behind the magnetizing force."
+        },
+        {
+          "s": "steve",
+          "t": "That's it. Push a ferrous material with a magnetic force past a threshold and it stays magnetized; back off and it takes a greater reverse force to undo it. You follow one path up and a different path back. That nonlinear magnetic response is exactly what made core memory work."
+        }
+      ]
+    },
+    {
+      "title": "Sci-Fi Roundup",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some sci-fi news. Joss Whedon, who gave us \"Firefly,\" has a new series, \"Dollhouse,\" premiering on Fox this Friday the 13th. It's about \"Actives\" or \"Dolls\" whose personalities are wiped and reimprinted for assignments; Eliza Dushku's character, Echo, starts becoming self-aware."
+        },
+        {
+          "s": "steve",
+          "t": "The new \"Star Trek\" lands May 8th, a young Kirk and Spock meeting at the Academy. \"Terminator Salvation\" follows May 22nd. And James Cameron's \"Avatar,\" 12 years in the making, was pushed to Christmas, partly so more theaters can install 3D screens."
+        },
+        {
+          "s": "leo",
+          "t": "I'm not crazy about the 3D thing, but we'll see."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite and TrueCrypt",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A quick SpinRite story from John Salter. While making a video on using a YubiKey with TrueCrypt whole-disk encryption, TrueCrypt hit a bad sector and stopped. He deferred the encryption, ran SpinRite, which found the bad sector and fixed it with DynaStat, then let TrueCrypt resume. It finished fine."
+        },
+        {
+          "s": "steve",
+          "t": "I'd done the same thing deliberately when I vetted TrueCrypt: I used my own tools to damage a sector, TrueCrypt refused to pass it, SpinRite repaired it, and then TrueCrypt sailed through."
+        }
+      ]
+    },
+    {
+      "title": "KatMouse: A Better Mouse Wheel",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One more thing I'm excited about. I went back to an old outliner called ECCO to lay out the CryptoLink protocol, and discovered ECCO has no idea what a mouse wheel is. After five days of frustration I found a tiny free Windows utility called KatMouse."
+        },
+        {
+          "s": "steve",
+          "t": "KatMouse mouse-wheel-enables everything that scrolls, and better still, it scrolls whatever window the pointer is hovering over, even if that window isn't focused or on top. No clicking to focus first. I'm addicted to it."
+        },
+        {
+          "type": "fact",
+          "title": "Scroll-the-hovered-window",
+          "t": "Scrolling the window under the pointer rather than the focused one later became standard behavior in macOS and in Windows 10. In 2009 it was a third-party add-on, which is why Steve was so taken with KatMouse."
+        }
+      ]
+    },
+    {
+      "title": "Running the Malicious Software Removal Tool",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First question, from Iain Alexander in Nottingham, by way of Paul Thurrott: in Windows 7 the Malicious Software Removal Tool isn't called MSRT or MRT. To launch it on demand, type kb890830 into the Start menu search box and hit Enter."
+        },
+        {
+          "s": "steve",
+          "t": "That's the Knowledge Base article number, windows-kb890830, not a program name, so you're searching for it rather than running it. The \"v2.5\" in the filename suggests Microsoft revises that entry, so don't count on the exact string forever."
+        },
+        {
+          "s": "leo",
+          "t": "Corby in Reno had MRT flag viruses in very old Eudora attachments that two other AV scanners, Symantec and eEye Blink, called clean. Was Microsoft wrong?"
+        },
+        {
+          "s": "steve",
+          "t": "It can go either way. As malware got trickier, scanners turned heuristic, looking for things that merely resemble a virus, so false positives happen, even to my own GRC freeware. Old threats also get dropped from some scanners to keep pattern files small, while Microsoft may keep them. Both false positives and false negatives are real."
+        }
+      ]
+    },
+    {
+      "title": "Making Sure You Have the Current MRT",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike Siwinski in Rochester points out that Start, Run, MRT finds the copy already in System32, which may be old. He launched the December 2008 copy that way; January's was waiting in Windows Update. Running last month's tool won't help with a current infection."
+        },
+        {
+          "s": "steve",
+          "t": "Good catch, and it led me somewhere fun. Search your C drive for \"MRT\" and you'll find MRT.log, under the Windows debug directory. It records every monthly silent run and everything each run found, going back years. I had no idea it was there."
+        },
+        {
+          "s": "steve",
+          "t": "On my system there was just one MRT.exe, in System32, and its title bar said January '09. Mike's machine, for some reason, still had only December's. So after you run it, read the title bar to confirm the month, and if it's behind, your updates aren't current for a reason worth finding."
+        },
+        {
+          "type": "fact",
+          "title": "One copy, 20MB",
+          "t": "MRT.exe is a single executable over 20MB that Windows Update replaces each month, which is why it takes a few seconds to load. Microsoft keeps one current copy rather than a stack of old ones, and appends results to MRT.log every run."
+        }
+      ]
+    },
+    {
+      "title": "Is a Static YubiKey Really a Second Factor?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Derek writes that calling a YubiKey in static-password mode \"something you have\" is wrong. A static password is something you were too lazy to memorize; a keylogger captures it just as well, and you could in principle type it yourself. The \"something you have\" property only holds in one-time-password mode."
+        },
+        {
+          "s": "steve",
+          "t": "He's right, pedantically. In static mode it's 64 characters of gibberish you'd never type correctly by hand, so it's something you very much want to have, but it's not a true second factor, because it's fixed and a keylogger can record it. The one-timeness is what makes OTP mode provably \"something you have.\""
+        },
+        {
+          "s": "leo",
+          "t": "Right. Writing a password on a sticky note doesn't make it two-factor either. Two different things you know is still one factor."
+        }
+      ]
+    },
+    {
+      "title": "Secure Email the Easy Way",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul in Portland wants to send the occasional encrypted email, a Social Security number say, without making the recipient do the whole key dance. He found Comodo's free SecureEmail, where only the sender configures certificates and an unprepared recipient gets a one-time certificate and decrypts via Comodo's web reader."
+        },
+        {
+          "s": "steve",
+          "t": "My eyes glazed at the feature list, and worse, the web-reader step means Comodo does the decryption, so you're trusting them with your plaintext. That breaks TNO, Trust No One."
+        },
+        {
+          "s": "steve",
+          "t": "For the occasional case I'd use AxCrypt, a tiny free open-source AES tool, with its no-install AxDecrypt companion. Encrypt the file, email it, share the passphrase out of band by phone, and your friend decrypts it. That's easy and keeps the trust with just the two of you."
+        },
+        {
+          "s": "leo",
+          "t": "I wish everyone just ran GnuPG. I use it for signatures because people impersonate me, so an unsigned mail from me isn't from me. I change my key yearly, upload the public key to the key servers, and use the most recent one."
+        }
+      ]
+    },
+    {
+      "title": "A YubiKey That Unlocks TrueCrypt Before Boot",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dick Victor in Milwaukee says Yubico is changing the firmware so a YubiKey can work in static mode for preboot password entry on a TrueCrypt system partition. Today the key isn't recognized before the OS loads."
+        },
+        {
+          "s": "steve",
+          "t": "I talked with Yubico about it. A USB device's configuration header has a bit saying whether it's a boot device; a modern BIOS ignores devices that don't set it. The engineer, Jakob, had deliberately left that bit clear, because originally the key only did one-time passwords and needed a network to be useful before boot."
+        },
+        {
+          "s": "steve",
+          "t": "Static mode got popular enough to be useful offline, so firmware v1.3.3 now sets that bit. The BIOS then sees the key as a keyboard, and you can use it as your TrueCrypt preboot password. Yubico will update existing keys for anyone who needs it, free; you send the key in and they update or replace it."
+        },
+        {
+          "s": "leo",
+          "t": "So you'd really want two keys: one static, for WPA or TrueCrypt preboot, and one in OTP mode for online logins."
+        }
+      ]
+    },
+    {
+      "title": "KeePass and Keyfiles as a Cheaper Token",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Poojan Wagh in Chicago offers a cheaper alternative. KeePass can use a keyfile in addition to a password, so he keeps a keyfile on a USB stick, or a tiny SDHC card in his wallet, and gets two-factor from a few-dollar stick. TrueCrypt supports default keyfiles on removable media too, though probably not for preboot."
+        },
+        {
+          "s": "steve",
+          "t": "We've only brushed on keyfiles. I'm a bit less enthusiastic because it feels like security through obscurity: the key material is a static file the system knows where to find. You'd still want a real passphrase too, so losing the stick doesn't hand someone your files."
+        },
+        {
+          "s": "steve",
+          "t": "And a keyfile doesn't buy you a huge key. Whatever its size, it gets hashed down to the key length, 128 or 256 bits, so there are diminishing returns past a short, truly random phrase. A 64-character YubiKey static password already carries the full 256 bits."
+        },
+        {
+          "s": "steve",
+          "t": "One genuine plus: the keyfile isn't typed, so no keylogger can capture it. Combined with a passphrase, that's better than a passphrase alone, but it's no good at boot, since nothing there knows to read it."
+        }
+      ]
+    },
+    {
+      "title": "VPNs for Open WiFi",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim in Westchester, PA sometimes has to work from an office whose only Internet is an open WiFi hotspot, no phone line for a modem. How does he protect himself without hassling the owner about running open WiFi?"
+        },
+        {
+          "s": "steve",
+          "t": "This is exactly why CryptoLink is in my future. If Jim had a machine at home, he could tunnel to it and surf back out through his home connection, trusting nothing in between. OpenVPN can do similar but is fiddly, and it fails if the local network uses the same IP range as home."
+        },
+        {
+          "s": "steve",
+          "t": "For now there's a commercial option we've both used, HotSpotVPN. HotSpotVPN 2 is OpenVPN-based SSL at $10.88 a month, bought a month at a time. HotSpotVPN 1 is PPTP, built into Windows so there's nothing to install, at $8.88 a month or a few dollars for one-, three- or seven-day passes."
+        },
+        {
+          "s": "steve",
+          "t": "Either one fails TNO, since your traffic exits unencrypted at their servers and aggregation points attract snooping, which is another reason I prefer routing through your own home connection. But for open WiFi it's a sensible, cheap fix."
+        },
+        {
+          "s": "leo",
+          "t": "People keep recommending Hotspot Shield, which is free, from AnchorFree. I'd rather pay someone, so they've got fast servers and stay in business."
+        }
+      ]
+    },
+    {
+      "title": "Keyloggers, Preboot Login and Ctrl-Alt-Del",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dixon in San Francisco asks whether a keylogger can see a YubiKey or password used to log in before the OS boots, and whether Vista and 7 dropping the Ctrl-Alt-Del login requirement weakened keylogger protection."
+        },
+        {
+          "s": "steve",
+          "t": "It's possible in theory. A boot virus could install in Track 0, run before TrueCrypt, hook the BIOS keyboard interrupt, and log your preboot password, even neutering any check TrueCrypt made. I could write that, so others could. Preboot authentication isn't magically immune."
+        },
+        {
+          "s": "steve",
+          "t": "Ctrl-Alt-Del at login was deliberately designed to defeat keyloggers: it's a secure attention sequence that switches to a protected desktop no ordinary program can fake. Microsoft went to real lengths to make it mean something. Whether they've preserved that strength after making it optional, I don't know."
+        },
+        {
+          "type": "fact",
+          "title": "Secure attention sequence",
+          "t": "Ctrl-Alt-Del at the Windows login screen is intercepted by the OS itself and cannot be captured by a user-mode program, so it assures you the real login prompt, not a lookalike, is collecting your password. Making it optional trades that assurance for convenience."
+        }
+      ]
+    },
+    {
+      "title": "MAC Filtering Is Not Encryption",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Alex B in Minnesota was stunned by a PC World article that told readers to turn on MAC address filtering \"and you won't need any additional security at all,\" no password required."
+        },
+        {
+          "s": "steve",
+          "t": "Alex is right to be upset. MAC addresses ride in the clear on the front of every packet, so they're trivially copied and spoofed; filtering won't stop a determined neighbor, and it does nothing to stop them sniffing your unencrypted traffic."
+        },
+        {
+          "s": "steve",
+          "t": "MAC filtering is only good for keeping honest neighbors from joining by accident. Use WPA, and if you want, use both: a gnarly WPA passphrase you type in for the kids once so they can't share it, plus MAC filtering if you like. But never instead of encryption."
+        },
+        {
+          "s": "leo",
+          "t": "Use WPA. It's all you need, it works, and it's simple. It's frustrating that magazines publish this, because then I have to correct it on the radio."
+        }
+      ]
+    },
+    {
+      "title": "Two PayPal Security-Key Blunders",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now the PayPal questions. Brian in Raleigh lost his PayPal security key football and called customer service. All they asked for was his name and the last four digits of his credit card, then they deactivated the key and let him reset his password."
+        },
+        {
+          "s": "steve",
+          "t": "The last four digits are on every restaurant receipt, and your name is public. Two pieces of public knowledge, and the entire security-key protection on your account is gone. That's nuts; they should ask for the full card number at least, or security questions."
+        },
+        {
+          "s": "leo",
+          "t": "Robert in San Francisco had two keys, home and office, and reported one lost. PayPal emailed that the key would no longer be required for login, and sure enough it then accepted his password alone, ignoring his still-active second key."
+        },
+        {
+          "s": "steve",
+          "t": "So losing one of several keys makes PayPal stop requiring any of them, even though the others still show as active, with no way to turn protection back on. There has never been a company that needed competition more than PayPal."
+        },
+        {
+          "type": "fact",
+          "title": "Where PayPal went next",
+          "t": "Account-recovery paths that accept only public information have repeatedly undermined otherwise strong second factors, at PayPal and elsewhere. Over the following years PayPal and the broader industry moved toward app-based and phone-based authentication and tighter recovery checks, but recovery remained a weak point long after this episode."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How was the Austin road sign reprogrammed to warn of \"zombies\"?",
+      "options": [
+        "Its controller still used the manufacturer's default password",
+        "A buffer overflow in the sign's web interface",
+        "Intercepted wireless commands from the city's control center",
+        "A worm that spread between networked signs"
+      ],
+      "answer": 0,
+      "explain": "The vandals broke a lock to reach the controller and logged in with the unchanged default password, then changed it so the city couldn't quickly fix the sign."
+    },
+    {
+      "q": "Why is a YubiKey in static-password mode not a true second factor?",
+      "options": [
+        "The password is fixed, so a keylogger can capture and replay it",
+        "It only works when a network authentication server is reachable",
+        "It can be used by only one computer at a time",
+        "It stores the password in plaintext on the PayPal servers"
+      ],
+      "answer": 0,
+      "explain": "A real \"something you have\" factor like OTP mode generates a new, unrepeatable password each time; a static password is just a long fixed secret that can be recorded."
+    },
+    {
+      "q": "Why did Steve object to Comodo's SecureEmail web-reader approach?",
+      "options": [
+        "The recipient's decryption happens on Comodo's servers, so you must trust Comodo with your plaintext",
+        "It only supports 128-bit keys",
+        "It requires both parties to buy a paid certificate",
+        "It sends the passphrase in the clear over email"
+      ],
+      "answer": 0,
+      "explain": "Letting a third party decrypt your message breaks TNO, Trust No One; Steve preferred AxCrypt, where only the two correspondents share the passphrase."
+    },
+    {
+      "q": "What firmware change let a YubiKey unlock TrueCrypt before the OS boots?",
+      "options": [
+        "Setting the USB \"boot device\" bit so the BIOS recognizes it as a keyboard",
+        "Switching it permanently into one-time-password mode",
+        "Adding a battery so it works without USB power",
+        "Encrypting the static password with the TrueCrypt key"
+      ],
+      "answer": 0,
+      "explain": "A modern BIOS ignores USB devices that don't set the boot-device bit; firmware v1.3.3 sets it, so the key appears as a keyboard and can type the preboot password."
+    },
+    {
+      "q": "Why does a large keyfile not give you a proportionally larger encryption key?",
+      "options": [
+        "Whatever its size, it's hashed down to the cipher's key length, 128 or 256 bits",
+        "Keyfiles are limited to 64 bytes by the FAT file system",
+        "The cipher only reads the first sector of the file",
+        "Removable media can't hold more than a few kilobytes"
+      ],
+      "answer": 0,
+      "explain": "Entropy beyond the key length is discarded in the hash, so a short truly random phrase reaches the same security, with diminishing returns past that."
+    },
+    {
+      "q": "Why is MAC address filtering no substitute for WPA encryption?",
+      "options": [
+        "MAC addresses travel unencrypted on every packet, so they're easily copied and spoofed",
+        "MAC filtering slows the network too much to be practical",
+        "It only works on wired connections",
+        "Routers can store only a handful of MAC addresses"
+      ],
+      "answer": 0,
+      "explain": "Filtering can keep honest neighbors from joining by accident, but a determined attacker spoofs an allowed MAC and can still sniff all unencrypted traffic; only encryption protects the data."
+    }
+  ]
+}
