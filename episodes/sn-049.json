@@ -1,0 +1,404 @@
+{
+  "number": 49,
+  "title": "The NETSTAT Command",
+  "subtitle": "See every connection and open port on your machine",
+  "date": "2006-07-20",
+  "description": "Netstat, built into Windows, Mac, Linux and UNIX, shows what your computer is connected to and which ports are listening. Steve walks through its columns, states and options (-a, -b, -n, -v), what it can't see, and Sysinternals' TCPView, just after Microsoft bought Sysinternals. Plus: WMF malware served through MySpace ads.",
+  "transcript": "https://www.grc.com/sn/sn-049.txt",
+  "audio": "http://media.GRC.com/sn/SN-049.mp3",
+  "chapters": [
+    {
+      "title": "Humidity and a Helpful ISP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 49. It's hot everywhere."
+        },
+        {
+          "s": "steve",
+          "t": "And humid down here, so perspiration can't evaporate and cool you. It takes energy to turn water into vapor."
+        },
+        {
+          "s": "leo",
+          "t": "A small cable operator in Texas asked if he could give Security Now! to his customers. Our license prohibits commercial use without permission, so he was right to ask, and I said absolutely. We're over 100,000 listeners an episode now."
+        }
+      ]
+    },
+    {
+      "title": "WMF Strikes Again",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "And there's a big Windows security story: the WMF flaw."
+        },
+        {
+          "s": "steve",
+          "t": "The first big news of 2006, old Windows code that let an ordinary image file run code. Malicious sites have quietly used it ever since."
+        },
+        {
+          "s": "steve",
+          "t": "Now ads on MySpace and several other sites, like Webshots, used it. Researchers believe more than a million machines were infected."
+        },
+        {
+          "s": "steve",
+          "t": "But who are they? Microsoft patched this out of cycle, and Ilfak came on the show with his own fix. To be infected now, you can't have updated all year."
+        },
+        {
+          "s": "leo",
+          "t": "The banner ads came from an ad provider, not MySpace itself. You didn't have to do anything. Just view the page in IE on an unpatched machine, and you got a Trojan."
+        },
+        {
+          "type": "fact",
+          "title": "Malvertising",
+          "t": "Malicious ads served through legitimate ad networks became known as \"malvertising.\" The July 2006 MySpace ad installed spyware through the WMF flaw. Malvertising has hit major news and entertainment sites since, which is one reason many people use ad blockers for security."
+        }
+      ]
+    },
+    {
+      "title": "Sysinternals Joins Microsoft",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today: Netstat, and TCPView, the graphical version Mark Russinovich wrote at Sysinternals. Which, in news that isn't wonderful for the industry, is now a division of Microsoft."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, no. They found the Sony rootkit."
+        },
+        {
+          "s": "steve",
+          "t": "With RootkitRevealer, yes. Mark and Bryce founded it in 1996 and built a tremendous source of free utilities, plus Winternals' commercial tools. Microsoft wanted it all."
+        },
+        {
+          "s": "leo",
+          "t": "I hope they made a ton of money."
+        },
+        {
+          "s": "steve",
+          "t": "The moment it was announced, nobody could reach the site. Everybody was grabbing everything before it went away. Mark says he's no longer in control of the site, and the EULAs immediately changed."
+        },
+        {
+          "s": "steve",
+          "t": "Mark kept improving his freeware. I think that era is over. Go to sysinternals.com soon and grab what looks good."
+        },
+        {
+          "s": "leo",
+          "t": "This is why I like open source. If it were GPL'd, others could keep developing it."
+        },
+        {
+          "type": "fact",
+          "title": "Sysinternals today",
+          "t": "Steve's fear didn't come true. Microsoft still offers the Sysinternals tools free, including TCPView, Process Explorer and Autoruns, and Russinovich kept updating them while becoming Azure's chief technology officer."
+        }
+      ]
+    },
+    {
+      "title": "Netstat Basics",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I've been on a MacBook lately, which Nerds On Site provided for their conference, testing new menus for GRC in Safari. So I checked Netstat on the Mac too."
+        },
+        {
+          "s": "steve",
+          "t": "Netstat, \"network status,\" started on UNIX and is in virtually every operating system. It shows what's happening in your TCP/IP stack in real time. Nothing else does this, and you don't need to install anything."
+        },
+        {
+          "s": "steve",
+          "t": "This is an episode to replay sitting at your computer."
+        },
+        {
+          "s": "steve",
+          "t": "On a Mac, open Terminal. Plain netstat shows lots of UNIX domain sockets you don't care about, so type \"netstat -f inet\" to see only Internet sockets. \"man netstat\" gives you the manual."
+        },
+        {
+          "s": "steve",
+          "t": "On Windows, open a command prompt."
+        },
+        {
+          "s": "leo",
+          "t": "In XP it's called Command Prompt, not MS-DOS Prompt."
+        },
+        {
+          "s": "steve",
+          "t": "Make the window tall. Click its upper-left icon, choose Properties, then Layout, and set the screen buffer to 1,000 lines so you can scroll back. \"cls\" clears the screen."
+        },
+        {
+          "s": "steve",
+          "t": "Now type \"netstat\" and don't freak out. We'll take it step by step."
+        },
+        {
+          "s": "leo",
+          "t": "I can see I'm connected to Irvine, which is you. Should I be concerned that I'm connected to France?"
+        },
+        {
+          "s": "steve",
+          "t": "If you didn't expect to be, find out why. Type \"netstat -b\" to show the program behind each line."
+        },
+        {
+          "s": "leo",
+          "t": "It's all Skype. I opened a port for it, and someone in Grenoble and others are using me. Am I a supernode?"
+        },
+        {
+          "s": "steve",
+          "t": "I couldn't ask for a better example. People will think we set this up."
+        },
+        {
+          "type": "fact",
+          "title": "Modern netstat",
+          "t": "On Windows Vista and later, \"netstat -b\" requires an administrator command prompt. Linux has largely replaced netstat with \"ss,\" and \"lsof -i\" shows network connections by program on macOS and Linux."
+        }
+      ]
+    },
+    {
+      "title": "Reading the Columns",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When the FBI connected me with a family in Irvine whose machine was sending traffic at us, the first thing I did was open a DOS box and type netstat. They had a whole bunch of connections to port 6667."
+        },
+        {
+          "s": "steve",
+          "t": "That's the default IRC port. If you see 6667 and aren't knowingly using IRC, you may have a bot connected to its IRC server, waiting for commands."
+        },
+        {
+          "s": "steve",
+          "t": "The first column, Proto, is TCP or UDP. TCP is always listed first."
+        },
+        {
+          "s": "steve",
+          "t": "The second, Local Address, is your end of the socket: an IP address, a colon, then the port. 127.0.0.1 is localhost. 0.0.0.0 is a wildcard meaning any IP."
+        },
+        {
+          "s": "steve",
+          "t": "The third, Foreign Address, is the remote IP and port you're connected to. That's where you saw France and Irvine."
+        },
+        {
+          "s": "steve",
+          "t": "The fourth is State. LISTENING is an open port waiting for connections. ESTABLISHED is a live connection. TIME_WAIT is a connection being torn down, held briefly so stray late packets can't confuse a new one. SYN_SENT and SYN_RECEIVED are connections being set up, which go by too fast to see except on busy servers."
+        },
+        {
+          "s": "steve",
+          "t": "Some options add a fifth column, PID, the process ID that Task Manager can show."
+        },
+        {
+          "s": "leo",
+          "t": "That's more useful to UNIX folks, who list and kill processes."
+        }
+      ]
+    },
+    {
+      "title": "Options That Matter",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Plain netstat shows only established and recently closed connections. Add -a, for \"all,\" to see listening ports too."
+        },
+        {
+          "s": "steve",
+          "t": "Don't freak out about listening ports. They're open on your machine, inside your firewall and NAT router, not necessarily exposed to the Internet."
+        },
+        {
+          "s": "leo",
+          "t": "I always see svchost.exe."
+        },
+        {
+          "s": "steve",
+          "t": "It's a generic host process holding a collection of Windows services, like DNS and NetBIOS."
+        },
+        {
+          "s": "leo",
+          "t": "And LSASS."
+        },
+        {
+          "s": "steve",
+          "t": "That's the licensing security service service."
+        },
+        {
+          "s": "leo",
+          "t": "Sasser named itself LSSASS, so that was a sign you had it."
+        },
+        {
+          "type": "fact",
+          "title": "Lookalike names",
+          "t": "LSASS is the Local Security Authority Subsystem Service, which handles logins and security policy, not licensing. Sasser.A actually copied itself as \"avserve.exe.\" But malware often uses names that look like real system files, like \"scvhost.exe\" for svchost.exe."
+        },
+        {
+          "s": "steve",
+          "t": "-n, for \"numeric,\" shows raw IPs and port numbers, like 53 instead of \"domain,\" instead of looking up names. I'm comfortable with port numbers."
+        },
+        {
+          "s": "leo",
+          "t": "But the reverse lookups of addresses are useful."
+        },
+        {
+          "s": "steve",
+          "t": "-b, new in XP, shows the program responsible for each line. Windows 2000 doesn't have it. \"netstat /?\" lists your version's options, even on Windows 98."
+        },
+        {
+          "s": "steve",
+          "t": "-v I can only guess stands for \"very much more than you ever wanted to know.\" With -b, it lists the whole chain of Windows modules behind each connection."
+        },
+        {
+          "s": "leo",
+          "t": "It's gone on for quite a while."
+        },
+        {
+          "s": "steve",
+          "t": "You can combine options, like \"netstat -abn.\" I think -ab will be most popular. Slash or dash both work."
+        },
+        {
+          "s": "steve",
+          "t": "Netstat is a snapshot. You can tell it to repeat at an interval."
+        },
+        {
+          "type": "fact",
+          "title": "Repeating netstat",
+          "t": "On Windows, add a number of seconds at the end, like \"netstat -an 5,\" to repeat until you press Ctrl+C. On Linux, \"-c\" repeats continuously. On macOS, \"-w\" takes an interval."
+        }
+      ]
+    },
+    {
+      "title": "Can You Trust What It Says?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "If netstat says it's Skype, is it?"
+        },
+        {
+          "s": "steve",
+          "t": "Not necessarily. My LeakTest, the first firewall leak tester, showed that early firewalls trusted programs by name. Malware could call itself iexplore.exe. Only ZoneAlarm checked a cryptographic fingerprint, and LeakTest forced every firewall to add that."
+        },
+        {
+          "s": "steve",
+          "t": "Fingerprinting stops a fake getting out through your firewall, but netstat still shows whatever name it uses. Close Skype and run netstat again, and see whether the Skype lines vanish."
+        },
+        {
+          "s": "leo",
+          "t": "Would a rootkit like Sony's show up?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't think Sony's rootkit opened ports. But software can bypass the stack and talk to the adapter directly. Packet sniffers install low-level drivers that netstat doesn't show."
+        },
+        {
+          "s": "steve",
+          "t": "You can never trust anything in the same machine that might be hosting something malicious. Netstat is useful in 99.999 percent of cases, but to really know, watch traffic from another machine, like a router or firewall. Then you lose the ability to see which program sent it."
+        },
+        {
+          "s": "leo",
+          "t": "That's why people scan from outside with Nmap."
+        },
+        {
+          "s": "steve",
+          "t": "Listening ports aren't necessarily exposed. Use ShieldsUP!'s custom port probe or its full scan of ports 1 through 1056 to check from outside. But a Trojan's backdoor could be listening behind your router, invisible to ShieldsUP!, and you'd still want it gone."
+        },
+        {
+          "s": "steve",
+          "t": "Kerio's firewall also has a Connections tab. Netstat is a superset, since it shows listening ports too."
+        }
+      ]
+    },
+    {
+      "title": "TCPView and Steve's Freeware",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "TCPView shows the same information graphically, refreshing about every five seconds, with green and red highlights as connections appear and disappear. TCPView Pro adds process names on Windows 95, 98 and 2000."
+        },
+        {
+          "s": "leo",
+          "t": "You've given away lots of utilities too."
+        },
+        {
+          "s": "steve",
+          "t": "LeakTest, when firewalls didn't check programs; OptOut, the first spyware remover, after I found Aureate's spyware."
+        },
+        {
+          "s": "leo",
+          "t": "DCOMbobulator, Shoot The Messenger, Unplug n' Pray."
+        },
+        {
+          "s": "steve",
+          "t": "We first met at TechTV over Trouble In Paradise, for Iomega's Click of Death."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite also shows how many error corrections your drive makes. Drives are now so dense that ECC happens constantly. If the rate rises over time, that's an early warning."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: a multi-part series on virtual machine technology, for true sandboxing."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does netstat show you?",
+      "options": [
+        "Your computer's current connections and listening ports",
+        "Your hard drive's health",
+        "Your router's settings",
+        "Websites' passwords"
+      ],
+      "answer": 0,
+      "explain": "It's built into Windows, Mac, Linux and UNIX, so you don't need to install anything."
+    },
+    {
+      "q": "Which netstat option adds listening ports to the display?",
+      "options": [
+        "-a",
+        "-n",
+        "-v",
+        "-b"
+      ],
+      "answer": 0,
+      "explain": "Plain netstat shows only established and recently closed connections."
+    },
+    {
+      "q": "What does \"netstat -b\" add on Windows XP?",
+      "options": [
+        "The program responsible for each connection or listening port",
+        "Bandwidth used",
+        "A beep",
+        "Blocked connections"
+      ],
+      "answer": 0,
+      "explain": "That's how Leo traced his connections to France back to Skype."
+    },
+    {
+      "q": "What might many connections to remote port 6667 suggest?",
+      "options": [
+        "An IRC bot waiting for commands, if you're not using IRC",
+        "Normal web browsing",
+        "A printer",
+        "Windows Update"
+      ],
+      "answer": 0,
+      "explain": "Port 6667 is IRC's default."
+    },
+    {
+      "q": "What does the TIME_WAIT state mean?",
+      "options": [
+        "A closing connection held briefly so late packets can't confuse a new one",
+        "The connection is waiting to start",
+        "A virus is waiting",
+        "The server is busy"
+      ],
+      "answer": 0,
+      "explain": "LISTENING and ESTABLISHED are the other common states."
+    },
+    {
+      "q": "Why can't netstat be fully trusted on an infected machine?",
+      "options": [
+        "Malware in the same machine can hide from it or bypass the network stack",
+        "Netstat is out of date",
+        "It only shows UDP",
+        "It requires the Internet"
+      ],
+      "answer": 0,
+      "explain": "For certainty, watch traffic from a separate machine."
+    }
+  ]
+}

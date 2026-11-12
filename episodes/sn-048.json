@@ -1,0 +1,406 @@
+{
+  "number": 48,
+  "title": "Listener Feedback Q&A #9",
+  "subtitle": "Banking, PayPal, firewalls and fake phishing replies",
+  "date": "2006-07-13",
+  "description": "Patch Tuesday habits and a podcast caching mishap, then listener questions on online banking and PayPal, firewall slowdowns, intrusion prevention, rootkits vs. firewalls, defending a web server from DDoS, huge hosts files, monitoring traffic, opening a game port safely, \"exposed\" private IPs, feeding phishers fake logins, ISP egress filtering, and IE's zones and frames.",
+  "transcript": "https://www.grc.com/sn/sn-048.txt",
+  "audio": "http://media.GRC.com/sn/SN-048.mp3",
+  "chapters": [
+    {
+      "title": "Patch Tuesday and a Partial Download",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Episode 48. This was July's second Tuesday, so Microsoft has its monthly security updates. Nothing super critical for end users, an Excel problem and some server issues, but don't let them pile up. They need a restart."
+        },
+        {
+          "s": "leo",
+          "t": "I set Automatic Updates to \"Automatic (recommended),\" but it downloaded the updates and is waiting for me to click the shield in the system tray. Check yours."
+        },
+        {
+          "s": "steve",
+          "t": "I use \"Download but don't install.\" I like to see the menu, and I tell Windows Update never to offer things I don't use."
+        },
+        {
+          "s": "leo",
+          "t": "You still install the critical updates?"
+        },
+        {
+          "s": "steve",
+          "t": "I do. But I go months without rebooting, with apps spread across three screens. I have to tidy up first. And once you install, it pesters you to death until you restart."
+        },
+        {
+          "s": "steve",
+          "t": "Many people couldn't download Episode 46. It cut off after a few minutes."
+        },
+        {
+          "s": "leo",
+          "t": "My fault. Akamai caches our files. People know our consistent filenames and start downloading on Thursdays. I copied the file straight into the public folder, so anyone who hit it mid-upload got a partial copy cached for everyone on their Akamai server."
+        },
+        {
+          "s": "leo",
+          "t": "I reseeded the file, and Akamai noticed the change. If iTunes already grabbed a partial, unsubscribe and resubscribe. I normally upload to a hidden folder, then copy it into place."
+        },
+        {
+          "s": "steve",
+          "t": "And the 16KB version is always available from GRC."
+        }
+      ]
+    },
+    {
+      "title": "Is Online Banking Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Fred in Arkansas is increasingly uncomfortable with online banking and PayPal debits from his checking account. He pastes his 10-character bank password from KeePass. Does that beat keyloggers?"
+        },
+        {
+          "s": "steve",
+          "t": "He's becoming more aware of security, which is good."
+        },
+        {
+          "s": "steve",
+          "t": "I use PayPal so merchants never see my card details. But PayPal pushed me hard, with credit card limits and an \"unverified address,\" to give it my bank account. Now it defaults to it."
+        },
+        {
+          "s": "steve",
+          "t": "So every time, I manually switch the payment to my credit card. If something I buy on eBay never arrives, I can dispute the charge. If PayPal pulled it from my bank, that money is gone."
+        },
+        {
+          "s": "leo",
+          "t": "It's mostly cost. Bank transfers have lower fees than credit cards. PayPal verifies your account by depositing two small amounts you have to report back."
+        },
+        {
+          "s": "leo",
+          "t": "TWiT takes donations only through PayPal, and I never see your financial information. Its dispute resolution works well. I refund people who forget they signed up for a yearly $20. But it doesn't have the force of law that credit card disputes do."
+        },
+        {
+          "s": "leo",
+          "t": "Google just launched a competitor, Google Checkout. It's cheaper for AdWords advertisers, and eBay, which owns PayPal, refuses to accept it."
+        },
+        {
+          "s": "steve",
+          "t": "There was also a credit card system called SET that offered this kind of third-party insulation but never got off the ground. I expect merchants will eventually just get money from a third party, never our details."
+        },
+        {
+          "type": "fact",
+          "title": "Payments since",
+          "t": "SET, backed by Visa and Mastercard from 1996, was abandoned as too complicated. Google Checkout was folded into Google Wallet in 2013, and eBay spun off PayPal in 2015. Today, \"tokenization\" in Apple Pay and Google Pay gives merchants a stand-in number, not your real card."
+        },
+        {
+          "s": "steve",
+          "t": "As for Fred: pasting probably bypasses a simple keylogger. But many tools read form fields or watch data leaving your computer. If your computer has bad stuff in it, you're not safe."
+        },
+        {
+          "s": "leo",
+          "t": "If you think you have a keylogger, you have bigger problems than copy and paste."
+        },
+        {
+          "s": "steve",
+          "t": "Years ago people said they didn't use their computer for anything important. It was clear that would change."
+        }
+      ]
+    },
+    {
+      "title": "Firewalls, Speed and Intrusion Prevention",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt in Laveen, Arizona tried Kerio's personal firewall. On his gigabit LAN, transfers to his Linux Samba server fell from 40 megabytes a second to 20 to 30 receiving and 10 sending."
+        },
+        {
+          "s": "steve",
+          "t": "Early personal firewalls visibly kept your CPU busy. Matt's case is extreme. 40 megabytes a second is 320 megabits, and the firewall is another layer inspecting every connection and packet. He might reduce its involvement in LAN traffic."
+        },
+        {
+          "s": "steve",
+          "t": "For Internet traffic, the overhead is effectively zero. TCP sends packets ahead of acknowledgments, so the Internet's own delays completely mask a firewall's tiny per-packet cost."
+        },
+        {
+          "s": "leo",
+          "t": "Brian in Toronto asks: Kerio has network and host intrusion prevention, \"NIPS\" and \"HIPS.\" What are they?"
+        },
+        {
+          "s": "steve",
+          "t": "Network intrusion prevention is about packets. Host intrusion prevention watches how programs behave, catching rootkit-style tricks like one program reaching into another, the way a debugger does. Windows has far too little isolation between processes."
+        },
+        {
+          "s": "leo",
+          "t": "And IDS?"
+        },
+        {
+          "s": "steve",
+          "t": "An intrusion detection system interprets traffic to spot bad things, like malformed URLs that used to take over Microsoft's IIS."
+        },
+        {
+          "s": "leo",
+          "t": "Doug asks: will a software firewall catch a rootkit's outbound traffic?"
+        },
+        {
+          "s": "steve",
+          "t": "Not reliably. Firewall makers and malware are in an arms race. Some malware turns off well-known firewalls. Once something's in your machine, all bets are off. Outbound monitoring is best for controlling well-behaved programs."
+        },
+        {
+          "type": "fact",
+          "title": "EDR",
+          "t": "Host intrusion prevention grew into \"endpoint detection and response\" (EDR): tools that record process behavior on every company PC and flag suspicious patterns. Windows' built-in Defender now includes similar behavior monitoring."
+        }
+      ]
+    },
+    {
+      "title": "DDoS and Big Hosts Files",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lydell in East Hartford asks: how do I protect my web server from a DDoS aimed at port 80?"
+        },
+        {
+          "s": "steve",
+          "t": "Unfortunately, there's virtually nothing he can do himself. He has to accept port 80 from the whole world, so botnets everywhere can flood it. Hosts that offer protection have really big pipes, and that's expensive."
+        },
+        {
+          "s": "leo",
+          "t": "A dedicated server usually gets a 10-megabit pipe."
+        },
+        {
+          "s": "steve",
+          "t": "That's 40 cable bots. 100 megabits is 400. By today's standards those are small botnets."
+        },
+        {
+          "s": "leo",
+          "t": "Daniel in Modesto asks: does a huge hosts file slow your computer down?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Windows searches it in milliseconds, compared with a second or more to ask your ISP's DNS server. And blocking all those ads speeds things up."
+        },
+        {
+          "s": "leo",
+          "t": "Even thousands of lines is still a small text file."
+        }
+      ]
+    },
+    {
+      "title": "Can Monitors Be Fooled?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David in Bossier City asks whether Sysinternals' TCPView and TDIMon can be fooled by the tricks bots use. TDIMon did show his Remote Desktop traffic over Hamachi."
+        },
+        {
+          "s": "steve",
+          "t": "They're terrific, and next week we'll talk about seeing what your computer is doing. But they're reliable only for software that plays by the rules. Malware inside your computer can hide from them."
+        },
+        {
+          "s": "steve",
+          "t": "To know for sure, monitor from a separate machine on your network perimeter, like a Linux or BSD box, that's not exposed to Windows malware."
+        },
+        {
+          "type": "fact",
+          "title": "Watching from outside",
+          "t": "Network security teams still do this. Sensors at the network edge, like Zeek or Suricata, watch traffic from outside the computers they protect, so malware on a PC can't tamper with them."
+        }
+      ]
+    },
+    {
+      "title": "A Game Server for One Friend",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Shawn, writing from \"somewhere on Planet Earth,\" forwarded port 8080 for a game server, and ShieldsUP! shows a big red flag. Can he do this safely?"
+        },
+        {
+          "s": "steve",
+          "t": "ShieldsUP! checks 8080 because it's common for web servers that don't run as root and can't open ports below 1024."
+        },
+        {
+          "s": "steve",
+          "t": "But Shawn only wants one friend to connect. Many newer routers let you allow port 8080 only from one remote IP. If his doesn't, a firewall on his server can silently drop everything on that port except his friend's IP."
+        },
+        {
+          "s": "steve",
+          "t": "Then ShieldsUP! should show 8080 as stealth for everyone else."
+        }
+      ]
+    },
+    {
+      "title": "\"We Can See Your Private IP\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Armand in Antwerp: a firewall test showed his private address, like 192.168.x.x. Can he be reached from the Internet?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Those sites scare people. A script running in his browser reads his local IP and displays it. It means nothing for security, except that scripting is on."
+        },
+        {
+          "s": "steve",
+          "t": "And addresses like 192.168, 10 and 172.16 through 172.31 are non-routable, reserved for private networks. Packets aimed at them on the Internet are just dropped."
+        },
+        {
+          "s": "leo",
+          "t": "Unlike ActionScript, which really is dangerous, JavaScript is sandboxed."
+        },
+        {
+          "type": "fact",
+          "title": "A slip of the tongue",
+          "t": "Leo said \"ActionScript,\" Flash's scripting language, but he meant IE's Active Scripting and ActiveX. As Episode 38 explained, those were the dangerous, unrestricted technologies."
+        }
+      ]
+    },
+    {
+      "title": "Feeding Phishers Fake Logins",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian in Ashland, Oregon replied to a PayPal phishing email with fake logins like \"I_AM_A_PHISHER,\" submitted quickly, hoping to trip PayPal's intrusion detection. He wants everyone to do it."
+        },
+        {
+          "s": "steve",
+          "t": "I understand the frustration. It's like people who sent complaints about every stray packet. But you want as little involvement with this junk as possible. Just delete it."
+        },
+        {
+          "s": "leo",
+          "t": "And by clicking the link he visited a site that might also host malware. Don't click links in email, period."
+        }
+      ]
+    },
+    {
+      "title": "Making ISPs Help",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric in Malibu asks: if ISPs log traffic, couldn't they tell customers their machines are attacking someone and help them remove the bots?"
+        },
+        {
+          "s": "steve",
+          "t": "ISPs know which source IPs are valid for packets leaving their network. A bot forging random source addresses produces packets that couldn't have come from there. Simply dropping them is \"egress filtering,\" and I've pushed for it on my Denial of Service pages."
+        },
+        {
+          "s": "steve",
+          "t": "But it means more work and equipment, and as far as I know, few ISPs bother."
+        },
+        {
+          "s": "leo",
+          "t": "That alone would eliminate spoofing."
+        },
+        {
+          "s": "steve",
+          "t": "For that ISP. Bots could then forge addresses near their own, within the ISP's range. It solves some of the problem, not all of it."
+        },
+        {
+          "s": "steve",
+          "t": "ISPs could also spot infected customers, since they know their real IPs and MAC addresses. I've heard of some doing it."
+        },
+        {
+          "s": "leo",
+          "t": "ISPs resisted blocking port 25 for spam, too, until they had to."
+        },
+        {
+          "s": "steve",
+          "t": "Cox blocks 135 and 137 through 139 and 445 for its own good. Bots cost it bandwidth."
+        },
+        {
+          "s": "leo",
+          "t": "John Bambenek at SANS's Internet Storm Center warns that Net Neutrality rules might stop ISPs blocking ports for security. I don't think so."
+        },
+        {
+          "s": "steve",
+          "t": "ISPs could just add a waiver to their service agreements."
+        },
+        {
+          "type": "fact",
+          "title": "ISPs and bots",
+          "t": "Many ISPs now do what Eric suggested. They detect infected customers and send notices, or put them in a \"walled garden\" until they clean up, following IETF guidance published in 2011 (RFC 6561)."
+        }
+      ]
+    },
+    {
+      "title": "IE's Zones and Frames",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jason in Maryland asks: with the Internet zone on High and Trusted Sites on Medium, does an ad or frame from another site on a trusted page get trusted too? What about a nasty script in webmail?"
+        },
+        {
+          "s": "steve",
+          "t": "IE does the right thing. It checks every request individually, so components from sites you haven't trusted stay restricted."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: how users can monitor what their computer is communicating. Then virtual machines."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Steve make PayPal charge his credit card instead of his bank account?",
+      "options": [
+        "He can dispute a credit card charge; money taken from the bank is gone",
+        "Credit cards are faster",
+        "Bank transfers aren't encrypted",
+        "PayPal requires it"
+      ],
+      "answer": 0,
+      "explain": "PayPal prefers bank transfers because the fees are lower."
+    },
+    {
+      "q": "Why is a firewall's overhead effectively zero on Internet connections?",
+      "options": [
+        "TCP sends ahead of acknowledgments, so Internet delays mask the tiny per-packet cost",
+        "Firewalls turn off online",
+        "Internet traffic isn't inspected",
+        "Firewalls compress data"
+      ],
+      "answer": 0,
+      "explain": "Only very fast LAN transfers, like Matt's, show a slowdown."
+    },
+    {
+      "q": "How can you let one friend reach a game server without exposing the port to everyone?",
+      "options": [
+        "Allow that port only from your friend's IP, on the router or the server's firewall",
+        "Use port 80 instead",
+        "Turn off ShieldsUP!",
+        "Open all ports"
+      ],
+      "answer": 0,
+      "explain": "Everyone else then sees the port as stealth."
+    },
+    {
+      "q": "Should you worry if a website displays your 192.168.x.x address?",
+      "options": [
+        "No; private addresses aren't routable on the Internet",
+        "Yes, you can be hacked through it",
+        "Only on Macs",
+        "Only if it ends in .1"
+      ],
+      "answer": 0,
+      "explain": "A script read it locally; routers drop packets aimed at private IPs."
+    },
+    {
+      "q": "What is ISP \"egress filtering\"?",
+      "options": [
+        "Dropping outgoing packets whose source address couldn't come from the ISP's network",
+        "Blocking all email",
+        "Encrypting customer traffic",
+        "Logging every website visit"
+      ],
+      "answer": 0,
+      "explain": "It stops customers' bots from forging random source IPs."
+    },
+    {
+      "q": "In IE, does an ad from an untrusted site get trusted because it appears on a trusted page?",
+      "options": [
+        "No; IE checks each request's own domain",
+        "Yes, the whole page is trusted",
+        "Only if it's an image",
+        "Only in Firefox"
+      ],
+      "answer": 0,
+      "explain": "Zones apply per component, not per page."
+    }
+  ]
+}
