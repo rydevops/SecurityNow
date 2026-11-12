@@ -436,6 +436,11 @@
           "t": "SteadyState can only restore an entire drive. But if you repartition, create another drive, and put the user's profile, desktop and documents there, you get an interesting free solution. The system is protected from anything they do and won't execute code from the other drive, yet it's still their own workstation. I'll explore it in a future podcast."
         },
         {
+          "type": "fact",
+          "title": "SteadyState's end",
+          "t": "Microsoft discontinued Windows SteadyState in 2010 and did not release it for Windows 7. Similar \"reset on reboot\" features later came from other vendors."
+        },
+        {
           "s": "leo",
           "t": "We're on the user's side, but sympathetic to the IT guy."
         },
@@ -446,11 +451,6 @@
         {
           "s": "leo",
           "t": "Next week is a Q&A. IT pros, send your thoughts and clever solutions to GRC.com/feedback. And I'll underscore \"maintenance\" in SpinRite's description today."
-        },
-        {
-          "type": "fact",
-          "title": "SteadyState's end",
-          "t": "Microsoft discontinued Windows SteadyState in 2010 and did not release it for Windows 7. Similar \"reset on reboot\" features later came from other vendors."
         }
       ]
     }
