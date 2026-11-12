@@ -1,0 +1,488 @@
+{
+  "number": 66,
+  "title": "Windows Vista Security",
+  "subtitle": "Why 64-bit Vista is the secure one",
+  "date": "2006-11-16",
+  "description": "Steve installs Vista RC2 and finds it slow and crashy, then walks through Vista's new security: Windows Defender built in, BitLocker whole-volume encryption, and, only on 64-bit systems, mandatory driver signing and Kernel Patch Protection. His bottom line: don't buy any more 32-bit systems.",
+  "transcript": "https://www.grc.com/sn/sn-066.txt",
+  "audio": "http://media.GRC.com/sn/SN-066.mp3",
+  "chapters": [
+    {
+      "title": "Steve Installs Vista",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last week we talked about security worldwide. I'm in Canada, where it's freezing."
+        },
+        {
+          "s": "steve",
+          "t": "I'll be joining you up there in December. Since we last talked, I've installed Vista: Release Candidate 2, build 5766 or so. It's probably final by the time people hear this."
+        },
+        {
+          "s": "leo",
+          "t": "The rumor is it was certified and went to master about a week ago."
+        },
+        {
+          "type": "fact",
+          "title": "Vista ships",
+          "t": "Vista was released to manufacturing on November 8, 2006, as build 6000. Businesses got it that month, and consumers on January 30, 2007."
+        },
+        {
+          "s": "steve",
+          "t": "I hope they changed it. All kinds of things crash. I ran Memtest86 for four days without a single error, and XP runs like a bat out of hell on this machine: a 3.06GHz hyperthreaded Pentium 4 with 2GB of RAM."
+        },
+        {
+          "s": "steve",
+          "t": "For Vista I bought an NVIDIA GeForce 7600 GS with 512MB. It needs a hard-drive power connector because the bus can't power it. But Leo, Vista is slow."
+        },
+        {
+          "s": "leo",
+          "t": "You don't like the Aero Glass interface?"
+        },
+        {
+          "s": "steve",
+          "t": "It's attractive, but not at this cost. Moving a window around pegs the processor at 100 percent. Stretching a window, it refreshes so slowly. I turned the glass off and made a second user with the UI bolted down. It's better, but still slow."
+        },
+        {
+          "s": "steve",
+          "t": "Vista's Experience Rating gives my hard drive a 4.9 and my processor a 4.2, out of 5 I think. My graphics get a 2. What do you want from me?"
+        },
+        {
+          "type": "fact",
+          "title": "The rating scale",
+          "t": "Vista's Windows Experience Index actually topped out at 5.9, with the lowest subscore setting the overall rating."
+        },
+        {
+          "s": "leo",
+          "t": "The final build is 6000, pretty close to yours. Pre-release code often still has debugging code in it."
+        },
+        {
+          "s": "steve",
+          "t": "RC2 was only about two weeks older than the release. IE has crashed, and every time I log out, the system drops to the BIOS and reboots."
+        },
+        {
+          "s": "steve",
+          "t": "I spent Sunday listening to the four Windows Weekly episodes with Paul Thurrott. Paul asked, \"Is Steve Gibson still using Windows 2000?\" Yes, and I'm moving to XP soon. It's mature enough now."
+        },
+        {
+          "s": "leo",
+          "t": "Our shows cover Vista from different angles. Listeners should hear both."
+        }
+      ]
+    },
+    {
+      "title": "Parallels and a Friendlier Blue Screen",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Staying with virtualization for a moment: I'm more and more impressed with Parallels running XP on my Mac. It seems to run at full speed. Mark Thompson thinks its performance beats VMware even on Windows hosts."
+        },
+        {
+          "s": "steve",
+          "t": "I think VMware's advantage is in its patents, like incremental snapshots and rollbacks. But Vista RC2 wouldn't install under Parallels. Even RC1 needed fixes from the Parallels team."
+        },
+        {
+          "s": "steve",
+          "t": "And Vista turned the blue screen into a dialog, which even says you've just had a blue screen."
+        },
+        {
+          "s": "leo",
+          "t": "Like when Apple took out the \"Error 11\" message. We don't have to fix the software, just take out the error."
+        }
+      ]
+    },
+    {
+      "title": "New Code, Old Bugs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's hard to judge security, though. Nobody's attacking Vista yet."
+        },
+        {
+          "s": "steve",
+          "t": "Today I want to cover the architectural things Microsoft did for security. We already discussed Vista's rewritten network stack. Symantec's early pokes found critical vulnerabilities that were fixed decades ago in early UNIX stacks."
+        },
+        {
+          "s": "steve",
+          "t": "That's not architectural. It's brand-new code that hasn't had the debris pounded out of it. That's why I'm five years late moving to XP, which inherited Windows 2000's maturity."
+        },
+        {
+          "s": "leo",
+          "t": "So for real security, use XP?"
+        },
+        {
+          "s": "steve",
+          "t": "We'll draw conclusions once I've laid the foundation. But the bottom line is: don't buy any more 32-bit systems."
+        },
+        {
+          "s": "steve",
+          "t": "That's freaky for me to say. To move security forward, Microsoft consciously chose to break things it has always allowed. It was the right decision, and I fully endorse it. But only the 64-bit platform gets those changes. The 32-bit platform sails on mostly unchanged."
+        },
+        {
+          "s": "leo",
+          "t": "We haven't recommended 64-bit Windows, XP or Vista, because it breaks so much, including drivers."
+        },
+        {
+          "s": "steve",
+          "t": "I like Vista's UI and Microsoft's policy decisions. What scares me is the recoded Internet-facing networking, and we don't even know about its peer-to-peer features yet."
+        }
+      ]
+    },
+    {
+      "title": "Windows Defender Built In",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, what's new. XP Service Pack 2 brought the Windows Security Center, monitoring your firewall, automatic updates and antivirus. Vista adds Windows Defender, Microsoft's malware scanner."
+        },
+        {
+          "s": "steve",
+          "t": "We don't run anti-spyware software, but I found in the log that Vista ran a Defender scan by itself in the wee hours. It's nice to have it built in, rather than a third-party add-on sinking tendrils into the kernel and slowing things down."
+        },
+        {
+          "s": "leo",
+          "t": "I've been pretty happy with it. Of course, we know how not to get malware in the first place."
+        },
+        {
+          "s": "steve",
+          "t": "But it updates continuously, so it will really help users who aren't proactive."
+        },
+        {
+          "s": "steve",
+          "t": "Personal firewalls existed long before SP2, yet we had Code Red, Nimda and Blaster, because people had them off or subverted. Once the firewall was built in and on by default, that problem went away."
+        },
+        {
+          "s": "steve",
+          "t": "With Defender in every copy of Vista, scanning in the background, I think we'll see a sea change in the spyware problem. Competitors aren't happy, but they had a good long run. Hats off to Microsoft."
+        }
+      ]
+    },
+    {
+      "title": "BitLocker",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next, BitLocker. I like the double meaning: it locks your bits, and it's a locker that stores them. It's built-in whole-volume encryption, like built-in TrueCrypt. Everything written is encrypted on the fly, and everything read is decrypted."
+        },
+        {
+          "s": "steve",
+          "t": "It works two ways. With a TPM, a Trusted Platform Module, which is controversial for privacy, the system authenticates you and decrypts the OS volume. BitLocker needs its own partition, since it runs before decryption starts."
+        },
+        {
+          "s": "steve",
+          "t": "Without a TPM, the key can be stored on a small USB drive, which you must have plugged in at boot. Your BIOS must read USB at boot, which most motherboards and laptops from the last few years can. The USB dongle becomes your key."
+        },
+        {
+          "s": "steve",
+          "t": "The two partitions make it harder to set up, but I imagine OEMs will ship laptops and desktops partitioned for it."
+        },
+        {
+          "s": "steve",
+          "t": "It stops someone from pulling the drive, putting it in another machine, and reading it with NTFS drivers underneath Windows' security. The whole system volume, apps and data, is wrapped. Again, hats off to Microsoft."
+        },
+        {
+          "s": "leo",
+          "t": "We'd probably still recommend TrueCrypt. But once it's built into the OS, more people will use it."
+        },
+        {
+          "s": "steve",
+          "t": "That's my point, and corporations will be far more able to run it on laptops. But it requires Vista, and I won't be there anytime soon."
+        },
+        {
+          "s": "leo",
+          "t": "I'll be running Vista the minute I can buy it. But now I'm wondering whether to buy 32 or 64."
+        },
+        {
+          "type": "fact",
+          "title": "BitLocker's editions",
+          "t": "In Vista, BitLocker came only in the Enterprise and Ultimate editions. Windows 10 and 11 Pro include it, and many Windows 11 PCs now turn on device encryption automatically."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft's Backward Compatibility",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Which brings us to the major new systems protecting the kernel. We've covered rootkits, Blue Pill's silent hypervisor shim, and Sony's DRM rootkit. And a few weeks ago, Symantec, McAfee and others learned their kernel tricks would no longer be permitted. Would Microsoft give them an authenticated way to modify the kernel? The good news is, no."
+        },
+        {
+          "s": "leo",
+          "t": "That's only in 64-bit, though, right?"
+        },
+        {
+          "s": "steve",
+          "t": "That's where I'm going. Microsoft has always gone to extreme lengths not to break old things. Mark Thompson complains that Apple is far more willing to say, sorry, we broke that, upgrade."
+        },
+        {
+          "s": "leo",
+          "t": "Which is why your 15-year-old copy of Might and Magic still works on XP."
+        },
+        {
+          "s": "steve",
+          "t": "It's why removing full raw sockets from XP, as I begged, took two service packs and several years. It was controversial, and a bunch of software did break."
+        }
+      ]
+    },
+    {
+      "title": "64-bit Change #1: Signed Drivers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two things appear only in 64-bit Vista. The first: all kernel drivers must be signed."
+        },
+        {
+          "s": "steve",
+          "t": "Signing is good. You'd like to know a driver in your kernel really came from NVIDIA, Microsoft or Symantec. Microsoft signs all of its own, and you can verify their certificates."
+        },
+        {
+          "s": "steve",
+          "t": "Driver signing became active in Windows 2000 but was never enforced. A group policy can make 32-bit Windows refuse unsigned drivers, but since Windows loads them without complaint by default, most manufacturers never bothered to sign."
+        },
+        {
+          "s": "leo",
+          "t": "Does it cost them money?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. I pay something like $700 a year for my Authenticode credentials to sign my apps. My older ones aren't signed. It annoys me, but I want that signature to mean something, and verifying I am who I am takes effort."
+        },
+        {
+          "s": "steve",
+          "t": "I told the MojoPac people it's dumb for high-volume downloadable software not to be signed. IE warns about an unknown publisher, and signing is the only way to prove who you are."
+        },
+        {
+          "s": "leo",
+          "t": "This has been around ten years. It's about time they enforced it."
+        },
+        {
+          "s": "steve",
+          "t": "XP 64-bit has been out about a year and a half, and because it enforces signed drivers, many publishers skipped 64-bit support. Vista 64 requires signed drivers with no exception and no way to turn it off."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's thinking: 32-bit applications run fine on 64-bit Windows, as 16-bit apps did on Windows 95, 98 and NT. But kernel code must be rewritten. No 32-bit driver can run in a 64-bit kernel. So Microsoft isn't breaking anyone's drivers. It's saying, sign the new ones."
+        },
+        {
+          "s": "leo",
+          "t": "To clarify: signing is required on 64-bit Vista, not 32-bit."
+        },
+        {
+          "s": "steve",
+          "t": "Correct."
+        },
+        {
+          "s": "leo",
+          "t": "It also means a lot of hardware won't work, because there'll be no driver."
+        },
+        {
+          "s": "steve",
+          "t": "Which wouldn't work anyway until it had 64-bit support."
+        },
+        {
+          "type": "fact",
+          "title": "Signing later",
+          "t": "Microsoft eventually went further. Since Windows 10 version 1607, new kernel drivers must be signed through Microsoft's own portal. Attackers still sometimes abuse old, legitimately signed vulnerable drivers."
+        }
+      ]
+    },
+    {
+      "title": "Why 64 Bits?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I thought, wait, 32 bits seems like plenty. But big server applications are finding 4GB of directly addressable RAM isn't a lot anymore."
+        },
+        {
+          "s": "leo",
+          "t": "That's the current limit for 32-bit platforms."
+        },
+        {
+          "s": "steve",
+          "t": "A 32-bit double word has about four billion combinations, so it can address four billion bytes. We could play games like the old 640K days."
+        },
+        {
+          "s": "leo",
+          "t": "Paging stuff in and out."
+        },
+        {
+          "s": "steve",
+          "t": "Expanded and extended memory. That's just not going to happen anymore."
+        }
+      ]
+    },
+    {
+      "title": "64-bit Change #2: Kernel Patch Protection",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So 64-bit gets us more than four gigs. What else?"
+        },
+        {
+          "s": "steve",
+          "t": "Kernel Patch Protection, or KPP. It's controversial because it's so important and powerful. The 64-bit kernel never allows itself to be patched."
+        },
+        {
+          "s": "steve",
+          "t": "Every personal firewall does this in 32 bits. It's the only way to hook the network layer to block incoming traffic. That access has always been unfettered in 16- and 32-bit Windows. Microsoft has flatly said it ends with 64 bits."
+        },
+        {
+          "s": "leo",
+          "t": "This is what Symantec and Adobe were complaining about?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. They proposed ways of proving their privileges cryptographically. But as we said a few weeks ago, don't let them. If you create exceptions, hackers will find a way around them."
+        },
+        {
+          "s": "leo",
+          "t": "And Microsoft's compromise is to enforce it only in 64-bit."
+        },
+        {
+          "s": "steve",
+          "t": "Because they can't in 32-bit. Instead, Microsoft created new APIs, including the Windows Filtering Platform, WFP, which gives applications legitimate access to raw network traffic. Personal firewalls must be redesigned around it, but it's a clean, non-patching way to work."
+        },
+        {
+          "s": "steve",
+          "t": "The vendors complain because they'd like to keep breaking the rules. That's rootkit technology. 64-bit Windows will be rootkit protected."
+        },
+        {
+          "s": "leo",
+          "t": "Be careful saying that."
+        },
+        {
+          "s": "steve",
+          "t": "I know. But you won't be able to modify the kernel. And because the policy is rigorous, with no exceptions, Microsoft can later add its forthcoming hypervisor and use the chip's hardware to lock the kernel's pages against writing."
+        },
+        {
+          "type": "fact",
+          "title": "KPP in practice",
+          "t": "Kernel Patch Protection was nicknamed PatchGuard, and researchers did find ways around it. Microsoft's hypervisor later arrived as Hyper-V in 2008. Windows 10 and 11 use it for Virtualization-Based Security, protecting the kernel as Steve predicted."
+        }
+      ]
+    },
+    {
+      "title": "Should You Wait for 64-bit Hardware?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "There aren't that many 64-bit processors. AMD has a few. I'm running the 64 FX in my Shuttle PC, and there's the Opteron and Sempron. Intel has the Xeons. These are workstation-grade, not in widespread use yet."
+        },
+        {
+          "type": "fact",
+          "title": "64-bit chips in 2006",
+          "t": "In fact, 64-bit x86 chips were already common. AMD's Athlon 64 launched in 2003, and Intel's Core 2 Duo, out since July 2006, also ran 64-bit code, though most PCs still ran 32-bit Windows."
+        },
+        {
+          "s": "steve",
+          "t": "If people try Vista on current hardware and it performs like RC2, they'll decide they need new hardware. I hope that creates a market for 64-bit systems, so driver support grows and prices come down."
+        },
+        {
+          "s": "leo",
+          "t": "I just spec'd a 64-bit Xeon Dell workstation, and it was four grand. I'm waiting for Vista, but you've convinced me to go with a Xeon or 64-bit AMD."
+        },
+        {
+          "s": "steve",
+          "t": "I'll have Vista running so we can poke at it. But on my main system, I'll be moving to XP."
+        },
+        {
+          "s": "leo",
+          "t": "Also, if peripheral makers don't write 64-bit Vista drivers, you can't use those devices. You may need new printers and scanners too."
+        },
+        {
+          "s": "steve",
+          "t": "The other direction: 32-bit Vista still gets the firewall, built-in malware scanning and BitLocker. But no kernel protection and no enforced driver signing. Too many people use unsigned drivers and mess with the kernel."
+        },
+        {
+          "s": "leo",
+          "t": "Think of 32-bit Vista as compatibility mode, and 64-bit as incompatible but secure mode."
+        },
+        {
+          "s": "steve",
+          "t": "You have to break some eggs to make the omelet."
+        },
+        {
+          "s": "leo",
+          "t": "Mac users benefit a bit here. I'm running a 32-bit OS on a 64-bit Xeon Mac, but Leopard will be fully 64-bit. We'll all go 64-bit someday. And Steve, you've convinced me not to get the XPS 700. I'll go with a Xeon."
+        },
+        {
+          "s": "steve",
+          "t": "It's worth being on the leading edge in that case. I have another fun SpinRite story, but I'll save it for next week."
+        },
+        {
+          "type": "fact",
+          "title": "The 64-bit future",
+          "t": "Leopard (2007) added 64-bit support for applications, with fully 64-bit kernels arriving in Snow Leopard. Windows 11 dropped 32-bit versions entirely."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which two protections did Vista enforce only on 64-bit systems?",
+      "options": [
+        "Mandatory driver signing and Kernel Patch Protection",
+        "BitLocker and Defender",
+        "The firewall and UAC",
+        "Aero and Security Center"
+      ],
+      "answer": 0,
+      "explain": "32-bit Vista still got Defender and BitLocker."
+    },
+    {
+      "q": "Why couldn't Microsoft enforce these on 32-bit Vista?",
+      "options": [
+        "Too many existing drivers and programs were unsigned or patched the kernel",
+        "32-bit chips lacked encryption",
+        "It was a licensing choice",
+        "Antivirus firms sued"
+      ],
+      "answer": 0,
+      "explain": "Kernel drivers must be rewritten for 64-bit anyway, so nothing breaks there."
+    },
+    {
+      "q": "How can BitLocker work without a TPM?",
+      "options": [
+        "The key is kept on a USB drive needed at boot",
+        "It can't",
+        "With a password typed in Windows",
+        "Through a network server"
+      ],
+      "answer": 0,
+      "explain": "The BIOS must be able to read USB at boot."
+    },
+    {
+      "q": "What did Microsoft offer firewall makers in place of kernel patching?",
+      "options": [
+        "The Windows Filtering Platform",
+        "Signed exceptions",
+        "Raw sockets",
+        "A hypervisor"
+      ],
+      "answer": 0,
+      "explain": "Steve argued any exception would be found by hackers."
+    },
+    {
+      "q": "What is the memory limit for 32-bit direct addressing?",
+      "options": [
+        "4GB",
+        "2GB",
+        "640K",
+        "16GB"
+      ],
+      "answer": 0,
+      "explain": "A 32-bit word has about four billion combinations."
+    },
+    {
+      "q": "What did Steve conclude for security-conscious buyers?",
+      "options": [
+        "Don't buy any more 32-bit systems",
+        "Stay on Windows 2000",
+        "Buy a Mac",
+        "Wait for Vista SP1"
+      ],
+      "answer": 0,
+      "explain": "He himself was moving from 2000 to XP."
+    }
+  ]
+}
