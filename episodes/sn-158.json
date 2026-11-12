@@ -1,0 +1,756 @@
+{
+  "number": 158,
+  "title": "Listener Feedback Q&A #48",
+  "subtitle": "ISPs confess to Congress, blended threats, and a bank that ignores half your password",
+  "date": "2008-08-21",
+  "description": "ISPs admit to Congress that they monitored customers, travelers to the Beijing Olympics are warned about their laptops, and a listener's RAID 5 rescue. Then questions, mostly about DNS: smarter double-checking, IP whitelisting a company wiki, keeping name servers only at registrars, weak Debian certificates combined with DNS spoofing, how routing works, iPhone radio risks, an ISP that hijacks DNS requests, a self-updating hosts file, rogue certificate authorities, Hotmail's insecure login, Wells Fargo truncating passwords, and an open source advocate who isn't a pirate.",
+  "transcript": "https://www.grc.com/sn/sn-158.txt",
+  "audio": "http://media.GRC.com/sn/SN-158.mp3",
+  "chapters": [
+    {
+      "title": "Coding Name Servers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's a Q&A week. I've been having a ball for weeks coding a set of pseudo DNS name servers for GRC's forthcoming, very high quality DNS spoofability test. There's nothing I like better than keeping my head down in code."
+        },
+        {
+          "s": "leo",
+          "t": "I'm learning Lua, a lightweight scripting language that's easy to embed, so lots of applications use it, like World of Warcraft and VoodooPad on the Mac. It's fun to write little programs with an interpreter."
+        },
+        {
+          "s": "leo",
+          "t": "One thing I'd have liked to do in life is be a coder. I probably wouldn't have been very good."
+        },
+        {
+          "s": "steve",
+          "t": "I disagree. You're very logical. You'd have been good. But we need you for this. I'll write the code."
+        }
+      ]
+    },
+    {
+      "title": "ISPs Confess to Congress",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Security news has been quiet after last week's grand mal Patch Tuesday, a long list of critical fixes. A couple of strays came along later, too."
+        },
+        {
+          "s": "steve",
+          "t": "The interesting item: Congress is starting to understand ISPs doing deep packet inspection and spying on customers. In answers to congressional questionnaires, which you'd better answer truthfully, nearly all of about 30 major ISPs admitted that at some point, maybe even now, they monitored customers' traffic without their knowledge or permission, or any mention in the license agreement."
+        },
+        {
+          "s": "leo",
+          "t": "Some admitted using NebuAd."
+        },
+        {
+          "s": "steve",
+          "t": "At least two said they tried NebuAd, aren't now, but are looking at it for the future, as an opt-in. I have no problem with that, as long as people have the choice."
+        },
+        {
+          "type": "fact",
+          "title": "What the ISPs said",
+          "t": "Responding to the House Energy and Commerce Committee in August 2008, several smaller ISPs, including Embarq, Charter, Knology and others, said they had tested NebuAd's behavioral targeting. Most large ISPs said they did not use it."
+        },
+        {
+          "s": "steve",
+          "t": "The Electronic Frontier Foundation is on top of this, educating Congress. And Representative Ed Markey, big on privacy, is talking about a law next year requiring opt-in. That would be spectacular."
+        },
+        {
+          "s": "leo",
+          "t": "Good for the industry too. Most people will opt in if you give them a reason. Just be upfront instead of sneaking around."
+        }
+      ]
+    },
+    {
+      "title": "Travelers' Laptops",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of that, strong advisories went out to people traveling abroad, not coincidentally around the Olympics in China. Take your electronics and data seriously. Countries without our constitutional privacy rights may search your hotel room, have customs officials dump your devices, and sometimes bar encrypted data entirely."
+        },
+        {
+          "s": "leo",
+          "t": "So if they can't read it, you can't bring it in."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly."
+        },
+        {
+          "s": "leo",
+          "t": "That's one way rather than demanding you decrypt it. Leave your laptop with us and you can come in."
+        }
+      ]
+    },
+    {
+      "title": "A RAID 5 Rescue",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Following up on last week, when I said to run SpinRite on each RAID drive separately rather than through the RAID controller."
+        },
+        {
+          "s": "leo",
+          "t": "I haven't had a chance yet."
+        },
+        {
+          "s": "steve",
+          "t": "Doug Sauer in Indianapolis has a four-year-old system with dual 2.2GHz Xeons and a three-drive RAID 5. Two weeks ago it reported a lost drive."
+        },
+        {
+          "s": "steve",
+          "t": "RAID 5 with three drives gives you the space of two, with parity so any one drive can die without data loss. That's more efficient than mirroring, where you get 50 percent."
+        },
+        {
+          "s": "steve",
+          "t": "He pulled the bad drive and ran a fresh copy of SpinRite on it. Presto, fully recovered. He also ran the other two drives separately, and SpinRite found and fixed errors on both. He's imaging to an external drive now."
+        },
+        {
+          "s": "steve",
+          "t": "He says for once he was one small step ahead of Leo, and the euphoria prompted him to write. He's forwarded all our DNS episodes to his team."
+        }
+      ]
+    },
+    {
+      "title": "Smarter Double-Checking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "First question. Paul Sargent in the U.K. heard you, in Episode 167, dismiss \"debouncing\" DNS because it doubles the packets. But a server only queries on a cache miss or when a TTL expires. On expiry it asks once, and only asks again if the answer changed. Records rarely change, so the extra traffic would only come from complete cache misses. Is that often enough to matter?"
+        },
+        {
+          "type": "fact",
+          "title": "The episode",
+          "t": "Paul means Episode 157, \"DNS - After the Patch.\""
+        },
+        {
+          "s": "steve",
+          "t": "I like his clever notion. DNS is a distributed database. Chunks of the name-to-IP mapping float around on servers that check in only periodically, so no central server bears the brunt. The tradeoff is slower updates, which is what \"propagation\" really means."
+        },
+        {
+          "s": "steve",
+          "t": "So when a cached record expires, a server could query once, and only get suspicious and check more if the answer differs. He's right about that."
+        },
+        {
+          "s": "steve",
+          "t": "But here's what it misses, which is why I liked the question. Kaminsky's brilliant gotcha was that you can force servers to make queries, instead of waiting for caches to expire."
+        },
+        {
+          "s": "steve",
+          "t": "Three months ago, Googling DNS spoofing gave you pages and pages. It's not new. But everyone believed you had to wait for a cached record to expire. A server tells you how much time a record has left, so caches downstream expire together. An attacker would wait for expiry, trigger the query and rush a spoofed reply in."
+        },
+        {
+          "s": "steve",
+          "t": "That gave you one shot per TTL interval, typically a day. Not a huge problem."
+        },
+        {
+          "s": "steve",
+          "t": "Dan realized you could ask for nonexistent machines in a domain, forcing constant upstream queries, and sneak replacement name server records into a reply. Paul's idea works without that, but doesn't solve the problem we just had."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't DNS be changed to prevent all those queries?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm sure corporate firewall vendors are madly adding code, with new brochure bullet points in a month about next-generation DNS spoof-proofing. One query goes out and 10,000 replies come in? That stands out like a sore thumb. Right now nothing notices."
+        }
+      ]
+    },
+    {
+      "title": "Whitelisting a Company Wiki",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener wants a private company wiki hosted at PBwiki, with no username or password, using PBwiki's IP whitelist. Business accounts run over SSL. Would whitelisting only the company's IPs keep everyone else out?"
+        },
+        {
+          "s": "steve",
+          "t": "Wiki access is a web page, and the web uses TCP. So even without SSL, you can't spoof an IP. If you send a SYN with the company's IP as its source, the reply goes to the company, not you."
+        },
+        {
+          "s": "steve",
+          "t": "The only vulnerability, and it's small, is a man in the middle, like someone at an ISP who can receive packets bound for the company. They'd pass the whitelist. But ISPs have access to all our traffic anyway. Level 3 can see mine, which is why I use SSH and a secure VPN between home and Level 3."
+        },
+        {
+          "s": "steve",
+          "t": "A username and password could be sniffed, except that SSL encrypts them. So if he worries about someone on his wire, a password or passphrase over SSL would stop them."
+        },
+        {
+          "s": "leo",
+          "t": "So IP whitelisting is safe."
+        },
+        {
+          "s": "steve",
+          "t": "It's a good solution, and I use it. Some TCP ports at Level 3 can't practically be blocked or run over SSL, so filters give my home IP range special access. It's not spoofable."
+        },
+        {
+          "s": "leo",
+          "t": "Belt and suspenders: add passwords too?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a tradeoff. He wants employees to just click a URL. I can't use that URL, because I'm not at his IP. If he decides to use a passphrase and SSL instead, he might drop the filter so employees can reach the wiki from home, which the IP filter blocks."
+        }
+      ]
+    },
+    {
+      "title": "Why Not Only Trust the Registrar?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Stroker in Florida asks why a domain's name server IPs can change anywhere but at the registrar. Make the registrar the only place, and secure the registrar-to-TLD link. And why can't certificate authorities use IPs only, with no DNS? Banks should allow access by IP, maybe with each customer assigned an IP."
+        },
+        {
+          "s": "steve",
+          "t": "Several misconceptions here, and others shared them. Many people thought that when you make an SSL connection, your browser also contacts VeriSign or GoDaddy to verify the certificate chain. It doesn't."
+        },
+        {
+          "s": "steve",
+          "t": "Your browser comes with the root certificate authorities built in. It gets the site's certificate and checks that it was signed by one of the authorities in your local store. There's no constant connection to a remote certificate authority."
+        },
+        {
+          "s": "steve",
+          "t": "As for the first part: the power of Kaminsky's attack is that a reply about a bogus machine, like xyz123.google.com, can carry replacement name server records. Stroker is essentially asking, why not disallow caching name server records?"
+        },
+        {
+          "s": "steve",
+          "t": "That would require far more queries up the hierarchy. We absolutely depend on caching. Name server records, address records and mail MX records all have TTLs. Disallowing it would stop this attack, but DNS is near the edge already, and the whole architecture would collapse."
+        },
+        {
+          "s": "leo",
+          "t": "You cured the disease but killed the patient."
+        }
+      ]
+    },
+    {
+      "title": "A Blended Threat: Weak Debian Keys",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Olle Lindgren in Sweden says you're right that Kaminsky's flaw didn't break SSL. But imagine a certificate issued from a vulnerable Debian system. Its private key would be easy to guess, and it could authenticate the server or sign content like software updates. Add DNS cache poisoning and it's nasty. At least three large OpenID providers and a major bank used weak Debian certificates."
+        },
+        {
+          "s": "steve",
+          "t": "Right, where Debian thought they were improving the code and badly broke it. We've never explicitly discussed blended threats, so this is a great opportunity."
+        },
+        {
+          "s": "steve",
+          "t": "Debian's broken random number code meant a certificate request generated there had very low entropy. A company like GoDaddy, VeriSign or Network Solutions would sign it, and the site would accept SSL connections."
+        },
+        {
+          "s": "steve",
+          "t": "SSL is a prophylactic against spoofing, because you can check that a certificate was really issued to PayPal.com or Google.com. But if a site's key was made on a Debian system, you can independently crack it and get its private key, which is what it must absolutely protect."
+        },
+        {
+          "s": "steve",
+          "t": "Then you can accept SSL connections as that site. The only problem is getting people to come to you. Thus DNS spoofing. Visitors get your IP, your server presents a valid certificate, and bingo, an SSL connection."
+        },
+        {
+          "s": "leo",
+          "t": "Unless you check the IP address. I do that all the time."
+        },
+        {
+          "s": "steve",
+          "t": "Nobody does that. A blended threat combines two problems that aren't huge individually into something far more than their sum. People would check the certificate chain, see it's valid, and type in their personal information. Oops."
+        }
+      ]
+    },
+    {
+      "title": "How Routing Works",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Trevor Harrison in Vancouver asks: how does an IP address find the right computer? How does everyone know where each network card is? And couldn't that be spoofed too?"
+        },
+        {
+          "s": "steve",
+          "t": "We covered this in our first year. That's routing. IP addresses are assigned in blocks. GRC's IP at Level 3 starts with 4.79.142, like most addresses in that region of Level 3."
+        },
+        {
+          "s": "steve",
+          "t": "Every router connects to several others and has a routing table. When a packet arrives, the table says which connection sends it toward its destination: maybe anything starting with 4 goes one way, 5 another."
+        },
+        {
+          "s": "steve",
+          "t": "The next router has its own table. As the packet gets closer, more and more leading bits of the address matter, 4, then 4.79, and so on, until the router just in front of the machine delivers it."
+        },
+        {
+          "s": "leo",
+          "t": "It's like a zip code."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, zip codes are hierarchical too. That's one of the brilliant things about the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "It's not the network card that would be spoofed, but the router. That's a whole class of attack: BGP spoofing. BGP is how routers exchange routing information. It uses TCP, which should be unspoofable, but early TCP stacks didn't randomize initial sequence numbers well. At first they just increased steadily."
+        },
+        {
+          "s": "steve",
+          "t": "Attackers could connect to a router, read its current sequence number, and guess the numbers in its conversation with another BGP router, much like the old DNS attack. Then they could splice into that connection and load false routes, sending packets where they wanted. Security has since improved."
+        },
+        {
+          "s": "leo",
+          "t": "Let's put routing and BGP on our list."
+        },
+        {
+          "s": "steve",
+          "t": "I think we did a \"How the Internet Works\" episode."
+        }
+      ]
+    },
+    {
+      "title": "How Secure Is an iPhone?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tim in Houston always listens to us first. How secure is his iPhone? He leaves Bluetooth off except when using it, but leaves WiFi on, and it often sees open networks. Can someone hack it in his pocket? What about 3G or EDGE?"
+        },
+        {
+          "s": "steve",
+          "t": "The answer is: radio is bad."
+        },
+        {
+          "s": "leo",
+          "t": "And this applies to any smartphone."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not singling out the iPhone. Radio is necessary. I use WiFi, wrapped in WPA with a passphrase from hell from GRC.com/passwords."
+        },
+        {
+          "s": "steve",
+          "t": "But we've discussed vulnerabilities like one in Intel's WiFi drivers. Down in the first packet processing, as data comes off the antenna, before encryption or authentication, there was an overflow. Broadcasting a malicious bit of radio noise could take over a machine."
+        },
+        {
+          "s": "steve",
+          "t": "It's so hard to write truly bug-free software. If a flaw like that were found in a phone, and I don't know of one, someone in a public place could broadcast a packet that takes over your phone."
+        },
+        {
+          "s": "leo",
+          "t": "You have to explicitly join a WiFi network on the iPhone. Does that protect you?"
+        },
+        {
+          "s": "steve",
+          "t": "No. With the Intel flaw, all you needed was your radio on. The driver processed packets before any network connection, before encryption, authentication or the TCP stack. So turn off WiFi. Besides, as I understand it, the iPhone has no power to spare."
+        },
+        {
+          "s": "leo",
+          "t": "I turn off \"Ask to join networks.\" Anything you're not using, turn off."
+        },
+        {
+          "s": "steve",
+          "t": "And Bluetooth, which he does, since it's had problems."
+        },
+        {
+          "s": "leo",
+          "t": "Bluetooth has problems even without an exploit, if you leave it discoverable. But mostly these require programming errors."
+        },
+        {
+          "s": "leo",
+          "t": "And there are always holes."
+        }
+      ]
+    },
+    {
+      "title": "An ISP Hijacks DNS Requests",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill Richardson in Fort Worth, Texas, not the former governor, set his Linksys router's DNS to OpenDNS long ago. But when he mistyped an address, he got a Charter Communications \"not found\" page."
+        },
+        {
+          "s": "leo",
+          "t": "His router and PC both showed OpenDNS. Yet DoxPara said his DNS server was vulnerable, using a single port, and ARIN's Whois, the American Registry for Internet Numbers, showed that server belongs to Charter. How is Charter intercepting his requests, and what can he do?"
+        },
+        {
+          "s": "steve",
+          "t": "Let's say he's configured to use OpenDNS. DNS is UDP, with no connection, and his ISP can do anything with his packets. They see queries aimed at OpenDNS on port 53, the universal DNS port."
+        },
+        {
+          "s": "steve",
+          "t": "Charter, perhaps to show its own advertising page, ignores the destination IP and rewrites the packets on the fly to go to its own DNS server. No matter how he configures DNS at home, Charter overrides it. When he fat-fingers a name, he gets the IP of Charter's interception page instead of \"not found.\""
+        },
+        {
+          "s": "leo",
+          "t": "Usually for advertising. VeriSign did it for a while."
+        },
+        {
+          "s": "steve",
+          "t": "And they didn't do it long, because it really made people angry."
+        },
+        {
+          "s": "leo",
+          "t": "Lots of ISPs do it. They call it a convenience, better than Internet Explorer's useless error page."
+        },
+        {
+          "s": "steve",
+          "t": "Two things. If many ISPs do it, the only way is rewriting your DNS traffic. And DoxPara showed all his queries come from one port. So Charter not only overrides his security-minded DNS choice, it sends him to a spoofable server. It forces all its customers onto a misconfigured server."
+        },
+        {
+          "s": "leo",
+          "t": "Is there any way to find out if your ISP is redirecting?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. My test will clearly show the IP, and its reverse lookup, of every server whose queries reach us. You'd instantly see Charter instead of OpenDNS."
+        },
+        {
+          "s": "leo",
+          "t": "Could a traceroute show it?"
+        },
+        {
+          "s": "steve",
+          "t": "A traceroute sends packets with a Time To Live of 1, then 2, and so on. Each router that decrements a packet's TTL to zero sends it back with its own IP, so you build a list of the routers along the path."
+        },
+        {
+          "s": "steve",
+          "t": "A redirected DNS packet would stop quickly at Charter's nearby server instead of crossing many hops to OpenDNS. That would be suspicious, if you knew to look. But most traceroutes use ICMP packets, which wouldn't be redirected. You'd need a traceroute that sends UDP to port 53. Doable, but sophisticated. Easier to come to GRC once my service is up."
+        },
+        {
+          "s": "leo",
+          "t": "There's the UNIX \"dig\" command for DNS diagnostics too."
+        },
+        {
+          "s": "steve",
+          "t": "This is why I'm building a permanent facility, like ShieldsUP!, with a better statistical system than anyone has. Things like this can reroute you to a spoofable server even after you deliberately configured a good one."
+        },
+        {
+          "s": "leo",
+          "t": "When I run the OARC test I get results from Comcast and OpenDNS."
+        },
+        {
+          "s": "steve",
+          "t": "Some newsgroup testers of my preliminary test see responses from as many as 15 name servers. The IPs shown are of servers that actually send queries onto the Internet. The servers you configure may forward requests to a pool of servers in round-robin fashion."
+        },
+        {
+          "s": "leo",
+          "t": "That's it. I go to Comcast in San Francisco and in Salt Lake City. But I also go to OpenDNS, so I'm confused."
+        },
+        {
+          "s": "steve",
+          "t": "We will resolve your confusion, my son. We'll spend an episode on it once the test is up."
+        }
+      ]
+    },
+    {
+      "title": "A Self-Updating Hosts File",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David in Heidelberg \"hosts\" an idea. Instead of bookmarking IP addresses, use the hosts file. If sites' IPs change, why not update it automatically? It could also block ads and throw malware off the track. Isn't this how DNS was born?"
+        },
+        {
+          "s": "steve",
+          "t": "It is. I can imagine software, aware of spoofing, that periodically reads your hosts file and verifies or updates its entries to keep them in sync with reality. A little custom DNS system driven by your hosts file. I think that's kind of cool."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't that what DNS and OpenDNS already do? OpenDNS can block porn sites if you want."
+        },
+        {
+          "s": "steve",
+          "t": "The benefit would be if you don't trust an external DNS source. It's absolutely possible now to write an unspoofable DNS resolver, for instance by seeing how many responses come back to a query."
+        },
+        {
+          "s": "steve",
+          "t": "For a small hosts file, there's no reason not to start at the root servers, which you reach by IP address. Walk down from the root to .com to the domain's servers, getting authoritative information at every step, with no caching. That's unspoofable, and it would keep the sites you care about current, with nobody able to tamper."
+        },
+        {
+          "s": "steve",
+          "t": "If I had more time, I'd write one. I'm a little busy."
+        }
+      ]
+    },
+    {
+      "title": "Rogue Certificate Authorities",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Derek O'Harrow in Reading, England notes that in Episode 155 you said SSL can't be faked. But you've also said there are many root certificate authorities. Couldn't Mr. Russian Hacker spoof a domain and get a PayPal.com certificate from a more dubious authority? Wouldn't the browser accept it? Thanks for never missing a week, earthquakes included."
+        },
+        {
+          "s": "steve",
+          "t": "I'll do a whole podcast on how the SSL protocol works, since we've only covered certificates. You don't need to spoof the certificate authority's domain, because your browser already holds a huge number of them."
+        },
+        {
+          "s": "steve",
+          "t": "That's been my anguish: we trust every one, and even one issuing a certificate maliciously or by mistake compromises our trust in the real owner. If such an authority gave Mr. Russian Hacker a www.paypal.com certificate, then with DNS spoofing he could accept secure connections as PayPal. The browser would connect happily, and with an extended validation certificate all the green lights would turn on."
+        },
+        {
+          "s": "leo",
+          "t": "So EV certificates don't fix this."
+        },
+        {
+          "s": "steve",
+          "t": "No. They're just hopefully harder to get."
+        },
+        {
+          "s": "leo",
+          "t": "You need to provide all sorts of information. He wouldn't."
+        },
+        {
+          "s": "steve",
+          "t": "Two weeks ago I needed my first wildcard certificate, for *.GRC.com, from GoDaddy. My DNS test's first approach pulled assets over SSL from many different GRC machines, to force DNS lookups, and I wanted to require SSL so people could avoid spoofing."
+        },
+        {
+          "s": "steve",
+          "t": "I had it in five minutes. Their whole validation was an automated email to my domain's Whois address, and I clicked the link."
+        },
+        {
+          "s": "steve",
+          "t": "In the last month or so we've heard of Whois entries being changed. So all Mr. Russian Hacker would need is his email address in the victim's domain record. Say he's PayPal.com, receive the automated email, and bang, he gets a certificate."
+        },
+        {
+          "s": "leo",
+          "t": "But that's a non-EV certificate. That's why we need EV."
+        },
+        {
+          "s": "steve",
+          "t": "We hope EV isn't a five-minute email loop. Otherwise it's back to the drawing board."
+        }
+      ]
+    },
+    {
+      "title": "Fake Login Pages and Hotmail",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew in Fresno, California asks two things. Couldn't a hacker spoof Gmail and VeriSign both, so a fake Gmail certificate checks out against a fake VeriSign? And couldn't he just fake webmail login pages to collect credentials? Gmail and Yahoo! Mail redirect plain http to SSL for login, but hotmail.com doesn't."
+        },
+        {
+          "s": "steve",
+          "t": "Again, there's no communication back to the certificate authority. In the last couple months Microsoft sent Windows a root certificate update. Roots arrive only with the browser or in signed, authenticated updates, and then certificates are checked locally with no contact with Microsoft, VeriSign, GoDaddy or anybody."
+        },
+        {
+          "s": "steve",
+          "t": "But his Hotmail discovery is important. With no secure login, Hotmail is a perfect DNS spoofing target. A fake page over plain HTTP needs no certificate and could happily collect usernames and passwords. It could even forward to the real Hotmail as a man in the middle. When you don't need SSL, DNS spoofing is a perfect entrée to a man-in-the-middle attack."
+        },
+        {
+          "s": "steve",
+          "t": "Gmail and Yahoo! do the right thing by redirecting to secure login. If Matthew is right, that's really bad on Hotmail's part."
+        },
+        {
+          "s": "steve",
+          "t": "If he had an unexpired cookie, it might treat him with less security. But without SSL, cookies can be sniffed too. Cookie snarfing is another problem."
+        },
+        {
+          "s": "leo",
+          "t": "I'm trying it. The login page was HTTP, and my mailbox is HTTP too."
+        },
+        {
+          "s": "steve",
+          "t": "Sounds bad, Leo. I hope nobody grabbed your login on the fly."
+        },
+        {
+          "s": "leo",
+          "t": "The page source is one big obscure JavaScript."
+        },
+        {
+          "s": "steve",
+          "t": "You'd need a tool that watches your network traffic."
+        },
+        {
+          "s": "leo",
+          "t": "No user will do that. They'll assume Microsoft must be secure."
+        },
+        {
+          "s": "leo",
+          "t": "Let me try again. I typed the wrong password, and it did go to an HTTPS page."
+        },
+        {
+          "s": "steve",
+          "t": "It sounds like they've got some mixed in there."
+        },
+        {
+          "type": "fact",
+          "title": "Hotmail's path to HTTPS",
+          "t": "Microsoft let Hotmail users opt into full-session HTTPS in late 2010 and later made it the default. Its successor, Outlook.com, uses HTTPS throughout."
+        }
+      ]
+    },
+    {
+      "title": "Wells Fargo Ignores Extra Characters",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Isaac Church in Loomis, California noticed that Wells Fargo accepts passwords that aren't quite right. As long as the first part is correct, extra characters are ignored. Doesn't that make guessing easier? Do other banks do this?"
+        },
+        {
+          "s": "steve",
+          "t": "Oh my goodness. It means they're not hashing, or only hashing the first N characters. They're probably storing the password and checking only the first N, whether he added characters later or changed the end."
+        },
+        {
+          "s": "steve",
+          "t": "First, you wonder who wrote this and what else on the site you can trust. And the real security question is how big N is. Eight? Nine? Seven? That quickly becomes too short."
+        },
+        {
+          "s": "steve",
+          "t": "I almost hesitated to make this public, but our listeners need to know, especially Wells Fargo customers. Experiment to find N, and definitely complain."
+        },
+        {
+          "type": "fact",
+          "title": "Why truncation is bad",
+          "t": "If a site silently checks only the first few characters, a long password is effectively a short one, and brute-force guessing gets far easier. Good systems hash the entire password with a slow, salted password-hashing function."
+        },
+        {
+          "s": "leo",
+          "t": "Bizarre."
+        },
+        {
+          "s": "steve",
+          "t": "We got most of it right, and we don't want customers complaining they can't log in, so close is good enough. Come on in and manage all your money."
+        }
+      ]
+    },
+    {
+      "title": "Not a Pirate",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Russell McOrmond in Ottawa says: last Q&A, someone said SpinRite was the only program they'd bought, and Leo said they must be a pirate. SpinRite is the only program he's bought in 15 years too, and he's not a pirate."
+        },
+        {
+          "s": "leo",
+          "t": "He's a user and commercial supporter of Free/Libre and Open Source Software. He's bought CDs and manuals, but the software is royalty-free and perfectly legal. He's policy coordinator for CLUE, Canada's Association for Open Source, at Linux.ca. The hardest message for politicians is that charging royalties is only one business model among many."
+        },
+        {
+          "s": "leo",
+          "t": "Russell, you're right on, and I apologize to open source advocates everywhere."
+        },
+        {
+          "s": "steve",
+          "t": "I thought that was neat."
+        },
+        {
+          "s": "leo",
+          "t": "There's no open source SpinRite. Steve, put it in your will that SpinRite goes open source when you pass on."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite is so stable, its major versions last so many years, and GRC runs so smoothly that after I'm in my grave Greg and Sue could easily continue it."
+        },
+        {
+          "s": "leo",
+          "t": "At some point SSDs will change drives so much that SpinRite won't make sense."
+        },
+        {
+          "s": "steve",
+          "t": "Drive technology is maturing so fast that it'll be tough for solid state to catch up, though ultimately it will. Manufacturers with huge investments in spinning platters sell you a terabyte for $125."
+        },
+        {
+          "s": "leo",
+          "t": "I bought two of the new 300GB VelociRaptors for our ultimate gaming machine. They're so tiny. And 500GB eSATA drives for $98."
+        },
+        {
+          "s": "steve",
+          "t": "And you're going to run SpinRite on each at Level 4 before you put them in."
+        },
+        {
+          "s": "leo",
+          "t": "And ship a copy of SpinRite with it."
+        }
+      ]
+    },
+    {
+      "title": "Next Week: Vista's Defenses",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next week, the other big Black Hat presentation: the supposed complete defeat of Vista's ASLR and DEP. How easy is it to bypass them?"
+        },
+        {
+          "s": "leo",
+          "t": "It's good to have someone who can read these presentations with a technical eye. The New York Times will just report what the guy says."
+        },
+        {
+          "s": "steve",
+          "t": "It's a 54-page report. I'll do my homework."
+        },
+        {
+          "s": "leo",
+          "t": "GRC.com has 16KB versions and transcripts by Elaine, who edits out my ums."
+        },
+        {
+          "s": "steve",
+          "t": "She insists on getting every listener's name spelled right. My tech support guy Greg says you should keep your accents going through the whole question."
+        },
+        {
+          "s": "leo",
+          "t": "I get as many requests to knock it off."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Kaminsky realize that made double-checking expired records insufficient?",
+      "options": [
+        "An attacker can force queries by asking for nonexistent machines, instead of waiting for a record to expire",
+        "Records never expire",
+        "The root servers can be hacked",
+        "DNS uses TCP"
+      ],
+      "answer": 0,
+      "explain": "The old attack allowed only one try per TTL interval."
+    },
+    {
+      "q": "Why can't an outsider spoof an IP address to get past a website's IP whitelist?",
+      "options": [
+        "Web traffic uses TCP, so the handshake reply goes to the real IP",
+        "SSL hides IP addresses",
+        "Whitelists check passwords too",
+        "Routers block all spoofing"
+      ],
+      "answer": 0,
+      "explain": "Only someone who can intercept the traffic, like an ISP, could."
+    },
+    {
+      "q": "Does your browser contact the certificate authority when it checks an SSL certificate?",
+      "options": [
+        "No, it checks the signature against root certificates already stored on your computer",
+        "Yes, every time",
+        "Only for EV certificates",
+        "Only on Windows"
+      ],
+      "answer": 0,
+      "explain": "Root certificates arrive with the browser or in signed updates."
+    },
+    {
+      "q": "How did Charter override a customer's choice of OpenDNS?",
+      "options": [
+        "It rewrote DNS packets bound for port 53 to go to its own server",
+        "It changed the customer's router settings",
+        "It blocked OpenDNS's website",
+        "It installed software on the PC"
+      ],
+      "answer": 0,
+      "explain": "Its own server also used a single, spoofable port."
+    },
+    {
+      "q": "How did GoDaddy verify Steve's wildcard certificate request?",
+      "options": [
+        "By an automated email to the domain's Whois address",
+        "By a phone call",
+        "By checking his passport",
+        "By visiting his office"
+      ],
+      "answer": 0,
+      "explain": "A changed Whois record could let an attacker do the same."
+    },
+    {
+      "q": "What did Wells Fargo's login reveal about its password handling?",
+      "options": [
+        "It checked only the first several characters, ignoring the rest",
+        "It required 20 characters",
+        "It used two-factor codes",
+        "It locked accounts after one error"
+      ],
+      "answer": 0,
+      "explain": "That suggests passwords weren't properly hashed."
+    }
+  ]
+}
