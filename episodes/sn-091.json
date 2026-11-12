@@ -1,0 +1,598 @@
+{
+  "number": 91,
+  "title": "Marc Maiffret",
+  "subtitle": "eEye's founder on Blink, disclosure and the shifting attack surface",
+  "date": "2007-05-10",
+  "description": "After a mailbag on SecurID PINs, borrowed dining-hall hands and a Geek Squad SpinRite sighting, Steve and Leo interview Marc Maiffret, who co-founded eEye Digital Security after an FBI raid at 17. He explains Retina and REM, how eEye's Blink blocks attacks before patches exist, the free consumer version, why non-Microsoft software is now the easiest way in, responsible disclosure, the risks of web-hosted software, and his views on Vista and Mac security.",
+  "transcript": "https://www.grc.com/sn/sn-091.txt",
+  "audio": "http://media.GRC.com/sn/SN-091.mp3",
+  "guests": {
+    "marc": "Marc Maiffret"
+  },
+  "chapters": [
+    {
+      "title": "An Interview Episode",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "One of our rare interview episodes."
+        },
+        {
+          "s": "steve",
+          "t": "We recorded it already, with Marc Maiffret, co-founder of eEye Digital Security. Their name comes up over and over. They find Windows problems, tell Microsoft, then wait months for patches. I asked Marc whether their users are protected during that window. They are, and it's even better: eEye's technology filters at many levels, including checking incoming protocol data for sanity. So it blocks even problems nobody knows about yet."
+        },
+        {
+          "s": "steve",
+          "t": "And there's a free one-year download for home users, with Blink very affordable after that."
+        }
+      ]
+    },
+    {
+      "title": "Mailbag: SecurID PINs and Borrowed Hands",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm expanding errata into \"Errata and Mailbag\" so I can share good notes. Many SecurID users said I forgot that you also enter a PIN or password before the six digits. That adds something you know to something you have, making it two-factor. Six digits alone would be single-factor."
+        },
+        {
+          "s": "steve",
+          "t": "Scott in Washington, who kept his last name private for good reason, wrote about hand geometry. Studies say it's enough for low-risk physical access, and he asked what other security led to my server room."
+        },
+        {
+          "s": "steve",
+          "t": "His college used hand geometry for dining-hall access. Students without weekend meal plans borrowed cards from friends with similar hands. Even if the friend had already eaten, they got a free meal."
+        },
+        {
+          "s": "leo",
+          "t": "You'd go around high-fiving people to find a matching hand."
+        },
+        {
+          "s": "steve",
+          "t": "And 12-year-old listener Justin Girard's two-year-old Dell XPS 600 died with a Blue Screen of Death, then its brother, the Black Screen of Death. The Geek Squad came, popped in a CD, and it booted SpinRite, which fixed it. He's now a believer."
+        },
+        {
+          "s": "leo",
+          "t": "New respect for the Geek Squad."
+        },
+        {
+          "s": "steve",
+          "t": "Not quite. My office says the Geek Squad has no SpinRite license."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe it was the tech's personal copy."
+        },
+        {
+          "s": "steve",
+          "t": "You can't use a personal copy that way. We have three licenses. The single-user license covers all the machines you own, and I won't complain if you fix a buddy's. The site license covers all machines at one company location if you own four copies, so you can buy one to try and three more later. And an enterprise license, ten copies through Sue at our sales address, covers multiple sites."
+        },
+        {
+          "s": "steve",
+          "t": "The Geek Squad has been in trouble before over unlicensed software. To anyone at the Geek Squad: upgrade to an enterprise license, and I'll happily have you popping SpinRite discs into customers' machines."
+        },
+        {
+          "s": "leo",
+          "t": "The Geek Squad is Best Buy's. Not to be confused with Nerds On Site, who are 100 percent legitimate."
+        }
+      ]
+    },
+    {
+      "title": "From FBI Raid to Security Firm",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marc, how did you get started?"
+        },
+        {
+          "s": "marc",
+          "t": "eEye started about eight or nine years ago, with my co-founder, Firas Bushnaq. At the time I was a typical 17-year-old, hacking and doing things I shouldn't. The wake-up call was being raided by the FBI at 17."
+        },
+        {
+          "s": "leo",
+          "t": "You were a black hat."
+        },
+        {
+          "s": "marc",
+          "t": "Yes. I realized I needed to grow up and do something with my life."
+        },
+        {
+          "s": "leo",
+          "t": "Kevin Poulsen and Kevin Mitnick were caught as minors and weren't scared enough to stop. You avoided jail."
+        },
+        {
+          "s": "marc",
+          "t": "I've never been arrested. I might have some parking tickets."
+        },
+        {
+          "s": "leo",
+          "t": "What were you doing?"
+        },
+        {
+          "s": "marc",
+          "t": "You name it. I was in Rhino9, one of the first hacking groups focused on Microsoft Windows exploits, like how people know The L0pht. And I was compromising systems at major companies and governments."
+        },
+        {
+          "s": "steve",
+          "t": "Did you have other plans at 17?"
+        },
+        {
+          "s": "marc",
+          "t": "No. Hacking was an escape from an interesting home life. I didn't realize how big some of what I did was. Before the raid I'd run away from home for about a year, living around the U.S. and hacking. After the raid, I decided high school wasn't for me and worked out with my mom that I'd start working."
+        },
+        {
+          "s": "marc",
+          "t": "I got a job at a web design and hosting company Firas had started, and showed him my exploit and penetration-testing tools. He came from structured software development at Berkeley Systems, maker of the After Dark screensavers."
+        },
+        {
+          "s": "leo",
+          "t": "Flying Toasters!"
+        },
+        {
+          "s": "marc",
+          "t": "Remember when people bought screensavers? We came up with our first and still most prominent product, Retina."
+        }
+      ]
+    },
+    {
+      "title": "Retina and REM",
+      "beats": [
+        {
+          "s": "marc",
+          "t": "Retina is vulnerability assessment. You target the computers on your network, and it shows every way someone could break in and how to fix it: thinking like a hacker. We have about 9,000 customers. The entire Department of Defense standardized on Retina, which is funny, considering I was raided as a kid."
+        },
+        {
+          "s": "leo",
+          "t": "How is it different from Nmap?"
+        },
+        {
+          "s": "marc",
+          "t": "Nmap maps your ports and services, the attack surface. Retina goes further and finds the vulnerabilities in those services. Yesterday was Patch Tuesday, with critical flaws in Microsoft Exchange and the DNS service. Instead of just saying Exchange is running, Retina says here are the five vulnerabilities and misconfigurations to fix."
+        },
+        {
+          "s": "marc",
+          "t": "REM is the enterprise version: dozens of Retina scanners worldwide reporting to a central server, with analytics so a bank or the Defense Department can view vulnerabilities in terms of its business processes."
+        },
+        {
+          "s": "steve",
+          "t": "You've gone totally corporate, Marc."
+        },
+        {
+          "s": "leo",
+          "t": "Better than tuna fish in jail."
+        }
+      ]
+    },
+    {
+      "title": "How Blink Protects Before the Patch",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When you report flaws to Microsoft under responsible disclosure, are your customers protected in the meantime?"
+        },
+        {
+          "s": "marc",
+          "t": "That led to Blink. Customers asked: if it takes us three months to patch, why don't you just protect us? Blink shields desktops and servers whether patches are installed or not."
+        },
+        {
+          "s": "marc",
+          "t": "Businesses need weeks to roll out patches, while exploits appear within hours, and rushed patches skip compatibility testing. Put Blink on an unpatched Windows 2000 machine, live on the Internet, and it won't be compromised."
+        },
+        {
+          "s": "leo",
+          "t": "Is it a firewall? A patch?"
+        },
+        {
+          "s": "marc",
+          "t": "Several layers. It has the standard application firewall deciding which programs may talk to the Internet. But my mom will say yes to everything or no to everything. You can turn that off and still be protected."
+        },
+        {
+          "s": "marc",
+          "t": "It analyzes network protocols, like RPC, looking generically for buffer overflows, integer overflows and malformed requests. It has plug-ins for applications like Internet Explorer and Outlook. It hooks kernel APIs, watching for bad behavior. And it has generic buffer overflow protection."
+        },
+        {
+          "s": "marc",
+          "t": "It's everything and the kitchen sink, but uses less memory than McAfee or Symantec. If Mom's Yahoo! games slow down, she starts disabling things. Security people forget usability."
+        },
+        {
+          "s": "leo",
+          "t": "Do you still need antivirus?"
+        },
+        {
+          "s": "marc",
+          "t": "No. Blink includes full antivirus and antispyware. Beyond signatures, it runs executables in a sandbox to watch their behavior. If one connects to an IRC server in Russia for botnet commands, we know it's malicious without a signature. Malware has its own zero-day problem: new samples every day that signatures miss for a week or more."
+        },
+        {
+          "s": "marc",
+          "t": "We still use signatures. The more generic you get, the more false positives you risk. In 2006, we needed after-the-fact signatures for Microsoft attacks maybe two or three times. And businesses need to know whether a generic RPC attack was a worm, a script kiddie or a targeted attacker. That's the needle in the haystack."
+        },
+        {
+          "s": "steve",
+          "t": "Protocol-level filtering means if something slips through, you can strengthen the filter against a whole class of latent problems."
+        },
+        {
+          "s": "marc",
+          "t": "Exactly. Before choosing an approach, we analyzed five or six thousand Windows-related vulnerabilities and found a few hundred common characteristics, including how protocols were manipulated. The Sasser worm was stopped by three separate layers of Blink."
+        }
+      ]
+    },
+    {
+      "title": "The Animated Cursor Flaw",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Did Blink need an update for the ANI cursor flaw?"
+        },
+        {
+          "s": "marc",
+          "t": "No, it was already protecting through a couple of layers. We analyze file formats much as we analyze protocols, and our generic buffer-overflow layer flags code running from strange places in the heap or stack."
+        },
+        {
+          "s": "leo",
+          "t": "That's different from DEP, which breaks so many things?"
+        },
+        {
+          "s": "marc",
+          "t": "DEP just checks whether code runs where it shouldn't. Java, for example, does things that look like that. We add a second step of intelligence: is this really bad, or just an application acting funny?"
+        },
+        {
+          "s": "marc",
+          "t": "We also released a free third-party patch for that one flaw, because reporters are flooded with companies claiming their product protects. The download page offered the one-off patch, or Blink, which protects against that and every other Microsoft flaw and zero-day."
+        },
+        {
+          "s": "leo",
+          "t": "If I were in the security software business, I wouldn't like you very much."
+        }
+      ]
+    },
+    {
+      "title": "Free Blink Personal",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So you have a free version?"
+        },
+        {
+          "s": "marc",
+          "t": "The marketing guys will shoot me. It's the exact same technology we sell to companies worldwide for a lot of money, with friendlier defaults and installation. It's free for a year for personal use. People whose Symantec and McAfee renewals are due are downloading it. We're simplifying the interface for consumers."
+        },
+        {
+          "s": "marc",
+          "t": "The catch: attacks and vulnerabilities found on your computer are sent anonymously to eEye. That helps us spot bugs, like a false-positive spike with Yahoo! Messenger, and decide which generic catches deserve specific network rules."
+        },
+        {
+          "s": "steve",
+          "t": "Does it update during that year?"
+        },
+        {
+          "s": "marc",
+          "t": "Yes. And it includes a slimmed-down Retina with over 3,000 vulnerability checks, telling you which patches are missing and what's misconfigured."
+        }
+      ]
+    },
+    {
+      "title": "It's More Than a Microsoft World",
+      "beats": [
+        {
+          "s": "marc",
+          "t": "The eye-opening statistic from that anonymous data: home users are getting better at Microsoft patches. But most vulnerabilities are now in non-Microsoft software: iTunes, Adobe, QuickTime, Flash."
+        },
+        {
+          "s": "marc",
+          "t": "Since 2006 I've preached that it's more than a Microsoft world. In companies, it's backup software like Veritas, or ActiveX flaws on laptops. Tools like Metasploit produce exploits for non-Microsoft flaws just as fast. But nobody has a Patch Tuesday for those. And consumers ask why install a 42-megabyte iTunes update when the music plays fine. Vendors don't separate features from security updates."
+        },
+        {
+          "s": "leo",
+          "t": "Any chance of Blink for Mac or Linux?"
+        },
+        {
+          "s": "marc",
+          "t": "We toy with the idea. It's a business decision."
+        },
+        {
+          "s": "steve",
+          "t": "So Windows is no longer the lowest-hanging fruit. Microsoft's Patch Tuesday and years of educating users worked. Now network-aware applications are the next round."
+        },
+        {
+          "s": "marc",
+          "t": "I date Microsoft's security effort to about 1999, when I found some of the first remotely exploitable Microsoft flaws. Since then, Microsoft and researchers both climbed. Graph almost any other software company, and it's a flat line. Companies spend on security only when insecurity costs them money. We saw one of the first non-Microsoft worms target Symantec's antivirus."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft got it, but look how long it took."
+        },
+        {
+          "s": "marc",
+          "t": "People are surprised to hear me praise Microsoft, but it truly has the best security practices of any software company."
+        }
+      ]
+    },
+    {
+      "title": "Vista and Office 2007 Aren't the End",
+      "beats": [
+        {
+          "s": "marc",
+          "t": "What worries me is complacency, with all the marketing around Vista and Office 2007. I end presentations by remotely exploiting Vista and Office 2007, both built under Microsoft's full security development life cycle: a malformed Office file runs code, then a local Vista kernel flaw escalates from an unprivileged user into the kernel. That shatters all their layers."
+        },
+        {
+          "s": "marc",
+          "t": "Businesses stay busy with one critical vulnerability every month or two. That's only about 12 a year. Across all of Microsoft's software, it will never get below 12 mistakes a year."
+        },
+        {
+          "s": "marc",
+          "t": "Vista's improvements, like address space randomization, focus mostly on Microsoft's own code. We recently found a Java flaw that compromises a fully patched Vista machine at the wrong website."
+        },
+        {
+          "s": "marc",
+          "t": "And the most eye-opening part: the vulnerable code in both our Vista and Office 2007 flaws exists only in those new versions. They weren't missed legacy bugs. It was new code."
+        }
+      ]
+    },
+    {
+      "title": "To Reveal or Not to Reveal",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "When should researchers reveal what they find?"
+        },
+        {
+          "s": "marc",
+          "t": "Terms like \"full disclosure\" and \"responsible disclosure\" should be killed off, since everyone means different things. At eEye, we research a flaw until we understand everything we can, because vendors don't always get it right or tell the truth. That may take a month. Then we report it to the vendor and give them the time it takes to fix it."
+        },
+        {
+          "s": "marc",
+          "t": "You should never reveal specific details publicly until a patch exists. But Microsoft sometimes takes close to a year, and I see no excuse for that. The longer it takes, the more likely the flaw is already known underground. The second ANI flaw, not ours, was found by a security company, took Microsoft months, and showed up in the wild as a zero-day."
+        },
+        {
+          "s": "marc",
+          "t": "Releasing a flaw without telling the vendor isn't illegal. And for independent researchers, working with a vendor is painful. The vendor wants to minimize everything, since it's a marketing problem. Some companies, like Oracle, are even worse."
+        },
+        {
+          "s": "steve",
+          "t": "And researchers get nothing but a thank-you at the bottom of an announcement."
+        },
+        {
+          "s": "marc",
+          "t": "Some recognition, maybe a job. So many independent researchers sell exploits instead, sometimes to legitimate buyers like iDefense or TippingPoint's program, sometimes to bad guys pairing a zero-day with the scam of the month."
+        },
+        {
+          "s": "marc",
+          "t": "Within about a week of the ANI zero-day going public, websites hosted it with malware that searched your system for credit card information. Attackers no longer hope you run an attachment. They exploit software flaws when you visit a web page or open a Word document."
+        }
+      ]
+    },
+    {
+      "title": "From Border Attacks to Client Attacks",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I spent years urging personal firewalls, then routers, because Windows shipped with exposed services. With SP2's firewall on and most homes behind routers, attacks now rely on users doing something that invites them in."
+        },
+        {
+          "s": "marc",
+          "t": "Exactly, from network worms like Sasser and Blaster to client applications. That's scarier. Companies still rely on perimeter security, the castle and moat, maybe with desktop antivirus."
+        },
+        {
+          "s": "marc",
+          "t": "The easiest attack: send a Word zero-day to a company's HR department. She opens it, Word disappears, and she's none the wiser. Now I'm inside. I use a remote attack like the DNS zero-day on the Active Directory server, and I own the company, within hours. We protect the walls, not the inside."
+        },
+        {
+          "s": "steve",
+          "t": "My crusades have gone from raw sockets in XP to browser scripting. With scripting on, your browser runs code from any site you visit. How is that ever going to be safe?"
+        },
+        {
+          "s": "marc",
+          "t": "It's headed for the worst. The browser is becoming the operating system. Active scripting, Flash, Microsoft's new Silverlight: each makes the browser richer and enlarges its attack surface. We've seen attacks through MySpace."
+        }
+      ]
+    },
+    {
+      "title": "The Risks of Web-Hosted Software",
+      "beats": [
+        {
+          "s": "marc",
+          "t": "Here's something people haven't thought about. As software moves onto the web, like Google's office applications, outside researchers can't legally test it, since that means attacking someone else's server. Some Microsoft security people like that about Windows Live."
+        },
+        {
+          "s": "marc",
+          "t": "But bad guys don't care about laws, so they'll still find flaws, while good researchers are crippled. And a flaw in desktop Outlook lets me target one user at a time. A flaw in a hosted Outlook lets me reach every user."
+        },
+        {
+          "s": "steve",
+          "t": "Does the DMCA hurt your work?"
+        },
+        {
+          "s": "marc",
+          "t": "The DMCA has a provision protecting reverse engineering for security research. You can disassemble Internet Explorer looking for flaws. But attacking a hosted web service can be illegal."
+        },
+        {
+          "s": "marc",
+          "t": "One benefit of hosted services: fix one cluster of servers, and everyone's protected, unlike pushing patches through Windows Update."
+        },
+        {
+          "s": "steve",
+          "t": "But Gmail centralizes everyone's data. Get into that server, and it's a spectacular disaster."
+        },
+        {
+          "s": "marc",
+          "t": "We haven't begun to see it. When TJX loses customer data, it's bad. When everyone's data sits with a third party, there are privacy issues. I joke that the NSA started Google to spy on everybody. And one guy in China attacking one server gets thousands of virtual victims."
+        },
+        {
+          "s": "steve",
+          "t": "Like IRC servers collecting zombies: browsers all connected to a central server. Send them all a vulnerable ActiveX control."
+        },
+        {
+          "type": "fact",
+          "title": "The research exemption",
+          "t": "The DMCA's original security-testing exemption was narrow. In 2015 and 2018 the U.S. Copyright Office granted broader exemptions for good-faith security research."
+        }
+      ]
+    },
+    {
+      "title": "Vista Versus the Mac",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "What about Windows versus Mac security?"
+        },
+        {
+          "s": "marc",
+          "t": "Some of Vista's features, like address space randomization and the annoying UAC stuff, are bad knockoffs of what UNIX has had forever. I use a Mac for music recording. But Windows is 90-something percent of the world, so it gets more vulnerabilities."
+        },
+        {
+          "s": "marc",
+          "t": "What's sad is that Apple's code isn't any more secure than anyone's. Researchers won't spend three weeks hunting Mac bugs when Windows bugs are worth more."
+        },
+        {
+          "s": "steve",
+          "t": "And eEye is big in enterprises, which run Windows."
+        },
+        {
+          "s": "marc",
+          "t": "Apple still treats security as a marketing problem, like Microsoft eight or nine years ago. Its updates and notifications are flawed. We've found QuickTime flaws, and it was that old Microsoft culture."
+        },
+        {
+          "s": "steve",
+          "t": "And TV ads show one guy getting sick while the other can't."
+        },
+        {
+          "s": "marc",
+          "t": "Like Oracle's \"unbreakable\" campaign, which made everyone go after Oracle. If Apple focused on security now, before its market share makes it a target, the perception could become reality. But most people at Apple are drinking their own Kool-Aid without fact-checking."
+        },
+        {
+          "s": "leo",
+          "t": "Is Blink coming for Vista?"
+        },
+        {
+          "s": "marc",
+          "t": "We're aiming for the end of the year."
+        },
+        {
+          "s": "steve",
+          "t": "No security-conscious user is on Vista yet anyway."
+        },
+        {
+          "s": "leo",
+          "t": "Is that true? Don't use Vista if you care about security?"
+        },
+        {
+          "s": "marc",
+          "t": "I wouldn't say don't use it. But there's not much compelling security reason to upgrade from XP. UAC is an annoyance with no real value. If a new computer comes with Vista, go for it. It's not less secure. But don't spend a hundred-whatever dollars on it for security. Or just get a Mac."
+        },
+        {
+          "s": "leo",
+          "t": "So the most secure setup is XP plus Blink."
+        },
+        {
+          "s": "marc",
+          "t": "XP and Blink."
+        },
+        {
+          "s": "steve",
+          "t": "What happens after the free year?"
+        },
+        {
+          "s": "marc",
+          "t": "You can buy it now if you'd rather not send anonymous data and want support: $24.95 for one computer, or $29 for three. The free version is for the U.S. and Canada only, for boring legal reasons."
+        },
+        {
+          "s": "steve",
+          "t": "Leo, I think we'll sell a lot of copies of Blink."
+        },
+        {
+          "type": "fact",
+          "title": "What happened to Blink",
+          "t": "Blink's personal version was later discontinued. BeyondTrust bought eEye in 2012, and Marc Maiffret became its chief technology officer."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Verdict",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Blink's architecture is so correct compared with always following behind with pattern updates. It protects people preemptively. And as an assembly language guy, I love that it's dramatically lighter than the monster security suites. I'm going to start recommending it."
+        },
+        {
+          "s": "leo",
+          "t": "It's at eEye.com under Products. Next week, a Q&A."
+        },
+        {
+          "s": "steve",
+          "t": "ShieldsUP! is at 49.816 million. At about 25,000 uses a day, we'll cross 50 million in about ten days."
+        },
+        {
+          "s": "leo",
+          "t": "A horn should go off. And Geek Squad, don't worry: SpinRite licenses are very affordable."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What set Marc Maiffret on the path to founding eEye?",
+      "options": [
+        "An FBI raid when he was 17",
+        "A Microsoft job offer",
+        "A college course",
+        "Winning a hacking contest"
+      ],
+      "answer": 0,
+      "explain": "He was in a Windows-focused hacking group called Rhino9."
+    },
+    {
+      "q": "How does Retina differ from a port scanner like Nmap?",
+      "options": [
+        "It identifies the actual vulnerabilities in the services it finds",
+        "It only lists ports",
+        "It encrypts traffic",
+        "It removes viruses"
+      ],
+      "answer": 0,
+      "explain": "The Defense Department standardized on it."
+    },
+    {
+      "q": "How did Blink protect users against the ANI flaw before Microsoft's patch?",
+      "options": [
+        "Its existing layers, including generic buffer-overflow detection, already blocked it",
+        "It deleted cursors",
+        "eEye shipped a signature months earlier",
+        "It disabled Internet Explorer"
+      ],
+      "answer": 0,
+      "explain": "eEye also offered a standalone third-party patch."
+    },
+    {
+      "q": "Where did Marc say most vulnerabilities on home PCs now are?",
+      "options": [
+        "In non-Microsoft software like iTunes, Adobe, QuickTime and Flash",
+        "In Windows itself",
+        "In routers",
+        "In email"
+      ],
+      "answer": 0,
+      "explain": "Few vendors have anything like Patch Tuesday."
+    },
+    {
+      "q": "Why did Marc worry about software moving onto the web?",
+      "options": [
+        "Good researchers can't legally test hosted servers, and one flaw exposes every user",
+        "Browsers are too slow",
+        "Web software can't be patched",
+        "Hosted software is always open source"
+      ],
+      "answer": 0,
+      "explain": "Attackers don't care about the law."
+    },
+    {
+      "q": "What was Marc's advice about Vista?",
+      "options": [
+        "Don't upgrade just for security, though a new PC with Vista is fine",
+        "Upgrade immediately",
+        "Never use it",
+        "Use it only with UAC off"
+      ],
+      "answer": 0,
+      "explain": "He found new-code flaws in Vista and Office 2007."
+    }
+  ]
+}
