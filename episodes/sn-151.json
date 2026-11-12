@@ -257,6 +257,11 @@
           "t": "They said they'd reengineered the processor around a RISC core with a fast emulation wrapper, still running the relatively horrible Intel instruction set. They'd profiled real code, and for the first time many of the most-used instructions executed in a single cycle."
         },
         {
+          "type": "fact",
+          "title": "More precisely",
+          "t": "The 486 already had an 8KB on-chip cache, and the Pentium's on-chip caches were small Level 1 caches, two 8KB halves. Its big change was two parallel pipelines. Translating x86 instructions into RISC-like micro-operations came with the Pentium Pro in 1995."
+        },
+        {
           "s": "steve",
           "t": "The 286, 386 and 486 were heavily microcoded, with a ROM on the chip essentially emulating the instruction set, a computer within a computer, because the instruction set was too complicated for hardware."
         },
@@ -271,11 +276,6 @@
         {
           "s": "steve",
           "t": "Keeping that instruction set compatible made it hard to speed up. They added parallel pipelines and speculative execution, where at a branch they'd effectively take it and not take it, splitting the execution stream to get ahead of the code. Bizarre lengths."
-        },
-        {
-          "type": "fact",
-          "title": "More precisely",
-          "t": "The 486 already had an 8KB on-chip cache, and the Pentium's on-chip caches were small Level 1 caches, two 8KB halves. Its big change was two parallel pipelines. Translating x86 instructions into RISC-like micro-operations came with the Pentium Pro in 1995."
         }
       ]
     },
