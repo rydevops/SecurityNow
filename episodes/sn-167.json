@@ -1,0 +1,449 @@
+{
+  "number": 167,
+  "title": "Listener Feedback Q&A #52",
+  "subtitle": "Debunking the WPA \"crack,\" payment services vs. Visa, and why banks ignore case",
+  "date": "2008-10-23",
+  "description": "The 52nd Q&A: why ElcomSoft's GPU attack doesn't break a strong WPA key, a recommended public VPN service, secure power-line networking, whether every web form is a risk, why hardening IIS isn't the same as hardening TCP, why you might want a payment service over Visa, Skype port forwarding and supernodes, blocking port 25, solid-state drives and wear leveling, why bank passwords are capped and case-insensitive, a Security Now! DVD-day milestone, and a preview of clickjacking.",
+  "transcript": "https://www.grc.com/sn/sn-167.txt",
+  "audio": "http://media.GRC.com/sn/SN-167.mp3",
+  "chapters": [
+    {
+      "title": "Books, Floppies and eSATA",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "For video viewers, Steve is surrounded by books."
+        },
+        {
+          "s": "steve",
+          "t": "Mostly programming books. I have an unopened copy of Windows 3.1 and an etched Cabernet bottle from Microsoft I'll never open."
+        },
+        {
+          "s": "leo",
+          "t": "I have Lotus Symphony for the Macintosh on 40 floppies. Now I've got a 32GB SD card and an 8GB micro SD smaller than my pinky nail."
+        },
+        {
+          "s": "steve",
+          "t": "A friend found a dock on ThinkGeek: you plant a hot-swappable SATA drive into it, with USB 2 and eSATA."
+        },
+        {
+          "s": "leo",
+          "t": "I have six of those and buy 750GB drives for under a hundred bucks by the dozen. We record all our video on them. Dane just handed me 16 kilobytes of framed core memory for a Data General Nova, a 19-inch board, probably hand wire-wrapped."
+        },
+        {
+          "s": "steve",
+          "t": "The Nova and SuperNova were beautiful machines."
+        }
+      ]
+    },
+    {
+      "title": "Updates and Ruby on Rails",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's been quiet. There's another Mac update, about 31MB, fixing third-party components and some remote code execution. And several listeners noted that Ruby on Rails has built-in CSRF defense, on by default since version 2.0."
+        },
+        {
+          "s": "leo",
+          "t": "Rails is used on a lot of Web 2.0 sites."
+        },
+        {
+          "s": "steve",
+          "t": "Forms automatically include a pseudorandom token that must be returned, which prevents the blind request forgery we discussed. It's even a reason to choose Rails."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves the Dance",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Calvin from Saint John, New Brunswick is the tech guy for a friend in Alberta. She moved her youth-dance music to an external drive to copy to a new MacBook, but it only clicked and never mounted."
+        },
+        {
+          "s": "steve",
+          "t": "He couriered it out, took the case apart, found a laptop SATA drive, and booted SpinRite. It showed the red warning that the drive was in imminent danger, which SpinRite reads from the drive's SMART data, though the USB interface hadn't passed that along."
+        },
+        {
+          "s": "steve",
+          "t": "At Level 2, after about 11 hours, it finished with about 25 green Rs for recovered sectors. He booted a Linux live CD, mounted the drive and copied the files to a USB stick. The dance was saved."
+        }
+      ]
+    },
+    {
+      "title": "A Self-DDoSed Advertiser",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "During Game 7 of the American League Championship Series, TBS had technical trouble and missed the first two innings, running reruns and an ad for a Windows-speedup product. It said go to our website now."
+        },
+        {
+          "s": "leo",
+          "t": "I went, and nothing. They DDoSed themselves and didn't come back for half an hour. All that revenue gone. I think they thought they'd bought the comedy show, not a major ball game."
+        },
+        {
+          "s": "steve",
+          "t": "And that had to be an expensive commercial."
+        }
+      ]
+    },
+    {
+      "title": "Debunking the WPA \"Crack\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Many listeners, and me, ask about ElcomSoft's report that WPA and WPA2 may no longer be secure."
+        },
+        {
+          "s": "steve",
+          "t": "It really inflamed things, picked up by Slashdot and SC Magazine. ElcomSoft uses the integer power of NVIDIA GPUs to accelerate brute-force attacks, claiming two cards can break WiFi encryption up to a hundred times faster."
+        },
+        {
+          "s": "steve",
+          "t": "I don't doubt that. But a good random password is already something like 10^38 times harder to crack. A hundred times faster against infinity is nothing. ElcomSoft itself only bills it as a way to check for weak passwords."
+        },
+        {
+          "s": "leo",
+          "t": "And instead of \"a hundred times faster,\" the writer said \"10,000 percent faster.\""
+        },
+        {
+          "s": "steve",
+          "t": "You'd get that only as a distributed attack across many machines. Even so, with a strong WPA key it doesn't help. If WPA couldn't withstand a hundredfold gain, it couldn't withstand a onefold gain."
+        },
+        {
+          "s": "leo",
+          "t": "So a 64-character random key leaves you with tens of billions of millennia either way."
+        },
+        {
+          "s": "steve",
+          "t": "The only known WPA weakness is brute force, and you only need a few captured packets. Use GRC.com/passwords for a strong key."
+        },
+        {
+          "type": "fact",
+          "title": "WPA's real weaknesses later",
+          "t": "WPA with TKIP was genuinely weakened by later attacks, and in 2017 the KRACK attack hit the WPA/WPA2 handshake itself. WPA3 arrived in 2018. A long random passphrase remains the best defense against brute force."
+        }
+      ]
+    },
+    {
+      "title": "A Public VPN Service",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike in Toronto wants a good VPN service after a poor experience with Strong VPN."
+        },
+        {
+          "s": "steve",
+          "t": "An easy one: HotSpotVPN, which you and I both used. About $8.88 a month. Strong servers, standard OpenVPN, preconfigured client."
+        },
+        {
+          "s": "leo",
+          "t": "You get some slowdown going through their server, and you have to trust them, since traffic concentrates there. But for email and web surfing it's fine, and you don't want to do anything sensitive on hotel or hotspot WiFi without it."
+        }
+      ]
+    },
+    {
+      "title": "Power-Line Networking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bruce Kincheloe in Denver asks whether power-line networking's encryption is enough to prevent eavesdropping."
+        },
+        {
+          "s": "steve",
+          "t": "Good news: it's very secure. These devices come from the same company, which understands that putting your network on shared apartment-building wiring means they'd better get encryption right. I looked at the technology, and they used all the right words. Yes, it's safe."
+        }
+      ]
+    },
+    {
+      "title": "Is Every Web Form a Risk?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lance Reichert in Greene, New York quotes his company's security quiz: \"Every time you log onto a web page you create a scenario hackers could potentially use to crack your employer's network.\" Is that FUD?"
+        },
+        {
+          "s": "steve",
+          "t": "A little over-concerned, but good for awareness. The number one attack is going to bad websites with vulnerable browsers. And even a reputable site like EE Times could have its server compromised and its pages seeded with malicious code. We see that all the time, so you can't fully trust even a credible site."
+        },
+        {
+          "s": "leo",
+          "t": "But that makes the web useless if you can't fill out forms."
+        },
+        {
+          "s": "steve",
+          "t": "I come more to your side, Leo: Firefox with NoScript, turning scripting on only for sites you use, is the best practical defense. We'll soon have the author of Sandboxie on; many in our newsgroups use it as a lightweight sandbox around the browser."
+        },
+        {
+          "s": "leo",
+          "t": "But on a corporate network, can't something bad spread through the network even from a VM? And you can't isolate a browser from the network."
+        },
+        {
+          "s": "steve",
+          "t": "All you can do is be as aware as you can. We don't want people to disconnect and sit under a tree. Some protection is better than none, like a lock and key on your front door."
+        }
+      ]
+    },
+    {
+      "title": "Hardening IIS vs. the TCP Stack",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt Ludlam in Weybridge asks: if Microsoft hardened IIS against TCP attacks, haven't they hardened the whole stack, so we're all safe?"
+        },
+        {
+          "s": "steve",
+          "t": "The TCP stack is a service the application uses. IIS says, accept connections on port 80, tell me when someone connects, give me their data, but handle the messy details. The socket interface abstracts all of that."
+        },
+        {
+          "s": "steve",
+          "t": "One abuse is a client that connects and stalls, claiming it has no buffer space, then does it over and over. An unaware application waits patiently until something collapses. A hardened application can decide that after 15 seconds of this, it's not okay, and hang up."
+        },
+        {
+          "s": "steve",
+          "t": "But that's per application. Port 80 on a server might be protected while an SMTP server on port 25 isn't, so the attack just switches ports. Hardening the stack itself would protect every application, but TCP deliberately allows idle connections to stay open indefinitely, which some applications need, so you must be careful not to break those assumptions."
+        }
+      ]
+    },
+    {
+      "title": "Why a Payment Service Over Visa?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sheldon Smith in Apple Valley, Minnesota asks why he needs PayPal, Amazon or Google payments when Visa already provides fraud protection."
+        },
+        {
+          "s": "steve",
+          "t": "It insulates your real card. And losing a card onto the 'Net is a hassle. It's happened to me three times. I'm using it less now that PayPal lets me generate a one-time card. When someone used my Visa in France, Visa caught the small test purchase followed by a big one and protected me."
+        },
+        {
+          "s": "leo",
+          "t": "Credit card companies do that because the law requires it. I don't think PayPal, Google or Amazon payments have the same requirement. PayPal defrauded me, and I had to escalate to the office of the president to get my money back."
+        },
+        {
+          "s": "steve",
+          "t": "American Express is even more pro-consumer; they just put the money back."
+        },
+        {
+          "s": "leo",
+          "t": "You're protected from the financial loss with a card, but not from the hassle of changing the number everywhere."
+        },
+        {
+          "s": "leo",
+          "t": "What I'd like is for the law to put the same requirements on these payment services."
+        },
+        {
+          "type": "fact",
+          "title": "Buyer protection today",
+          "t": "U.S. law (the Fair Credit Billing Act) limits credit card fraud liability and gives chargeback rights. Services like PayPal added their own buyer-protection programs over the years, though their terms differ from a card issuer's legal obligations."
+        }
+      ]
+    },
+    {
+      "title": "Skype, Port Forwarding and Supernodes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul Corr in Trenton set a fixed high port for Skype and forwarded it, then found ShieldsUP! failed on ping until he re-enabled \"block anonymous requests.\" What's best practice?"
+        },
+        {
+          "s": "steve",
+          "t": "Port forwarding on a high port shouldn't fail ShieldsUP!. He may have confused it with a DMZ, which sends all unsolicited traffic to one machine and will light ShieldsUP! up in red."
+        },
+        {
+          "s": "leo",
+          "t": "A DMZ is a big cannon for a little gnat."
+        },
+        {
+          "s": "steve",
+          "t": "Port forwarding only helps call quality when both ends are behind NAT-hostile routers. Skype came from the Gnutella people and does good NAT traversal, arranging a direct connection, if one router is predictable. Mine isn't, so I map a port."
+        },
+        {
+          "s": "steve",
+          "t": "With no forwarding, use Wireshark while talking to your friend and check whether your UDP packets go straight to his IP. If Skype can't connect directly, it relays through someone else's machine, a supernode, which hurts quality. Google Talk instead relays on its own servers."
+        },
+        {
+          "s": "steve",
+          "t": "You don't need a DMZ. Route a single port to Skype and tell Skype which port. Only one of you needs to. And with port forwarding rather than a DMZ, your machine won't carry other people's supernode traffic."
+        },
+        {
+          "s": "leo",
+          "t": "It does seem to make a difference."
+        }
+      ]
+    },
+    {
+      "title": "Blocking Port 25",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Greenland in Perth says his ISP, Telstra, blocks port 25 to fight spam and wants $10 a month for a static IP so he can run his own mail server."
+        },
+        {
+          "s": "steve",
+          "t": "It's not clear whether they block inbound or outbound port 25. Many ISPs block outbound port 25 so customers can only send through the ISP's own SMTP server, which stops zombie machines from mailing spam straight to other servers."
+        },
+        {
+          "s": "leo",
+          "t": "So it's to stop you, or malware on your machine, from sending spam."
+        },
+        {
+          "s": "steve",
+          "t": "David wants inbound port 25 for his own mail server on his own domain, using dynamic DNS to track his changing IP. Telstra blocks that unless you pay for a static IP."
+        },
+        {
+          "s": "steve",
+          "t": "We already see ports 135 through 139 and 445, the Windows file-sharing ports, blocked at ISPs. I expect that someday ISPs will simply drop incoming TCP SYN packets at their border, so customers can be clients of the Internet but not servers. Some ISPs already NAT all their customers with private IPs, which has the same effect."
+        },
+        {
+          "s": "leo",
+          "t": "Comcast resisted blocking port 25 for years, fearing support calls, but finally did it, and it cut the spam from their zombies."
+        }
+      ]
+    },
+    {
+      "title": "Solid-State Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ian Clark in Sydney asks whether a thumb drive and a solid-state hard drive are the same, and what their lifespan is."
+        },
+        {
+          "s": "steve",
+          "t": "Not all are created equal. I splurged on a 64GB SSD for my OQO and looked into why it costs so much. Cheap flash uses multilevel storage, MLC, which stores several bits per cell as analog voltage levels, so it's denser and cheaper but less reliable. Single-level storage, SLC, stores one bit per cell and is more robust and more expensive."
+        },
+        {
+          "s": "steve",
+          "t": "High-quality drives and thumb drives also do \"wear leveling,\" spreading writes so you don't burn out hot spots, which cheap giveaway thumb drives skip. You get what you pay for."
+        },
+        {
+          "s": "leo",
+          "t": "Apple offered a 128GB SSD in the new laptops for about $400, probably MLC. Ryan Shrout said Intel's drive is the best, at twice the price. I decided to buy a regular hard drive and wait for SSDs to come down."
+        },
+        {
+          "s": "steve",
+          "t": "That was smart."
+        }
+      ]
+    },
+    {
+      "title": "Why Banks Cap and Ignore Case",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Gary Warner, director of research at the University of Alabama's Computer Forensics program, explains the Wells Fargo saga: banks still run on mainframes, which have accepted user IDs and passwords since the '60s. Many bank web apps just front-end mainframe applications that can't have passwords longer than eight, sometimes seven, characters, and can't be case-sensitive. Some predate shift keys on computers."
+        },
+        {
+          "s": "steve",
+          "t": "A GUI web surface was glued onto old database technology on the back end."
+        },
+        {
+          "s": "leo",
+          "t": "My 1980s Bank of America online banking was white uppercase text on black, type 1 through 4. I bet it's the same mainframe behind the scenes. Why mess with it when it works?"
+        }
+      ]
+    },
+    {
+      "title": "Fun Observation: DVD Day",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Voeller in Ashland, Oregon says Security Now! has passed a milestone: the episodes no longer fit on a single DVD. He can archive 1 through 164 for mandatory distribution to security-deficient family and friends. By his math, the lower-quality versions should fill a DVD around January 2019, with Episode 692."
+        },
+        {
+          "s": "steve",
+          "t": "And at that pace we're not even filling your hard-drive shelf quickly."
+        },
+        {
+          "s": "leo",
+          "t": "No, the video I save is 10GB an hour, and still just three drives for three months."
+        }
+      ]
+    },
+    {
+      "title": "Next Week: Clickjacking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt Bender in Madison, Wisconsin has been following an exploit called clickjacking, possibly even scarier than the ones we've covered."
+        },
+        {
+          "s": "steve",
+          "t": "We've not covered it here. It's been on my radar and in the security news a lot lately. We'll cover it in depth next week."
+        },
+        {
+          "s": "leo",
+          "t": "I've been testing it. I'd love to know how it works and what we can do about it, besides NoScript."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why doesn't ElcomSoft's GPU tool break a strong WPA key?",
+      "options": [
+        "A hundredfold speedup is nothing against the astronomical size of a good random key",
+        "GPUs can't do crypto",
+        "WPA uses no key",
+        "It only works on WEP"
+      ],
+      "answer": 0,
+      "explain": "ElcomSoft itself only claims it checks for weak passwords."
+    },
+    {
+      "q": "Why isn't hardening IIS the same as hardening the whole TCP stack?",
+      "options": [
+        "The defense is per application, so another service like SMTP on port 25 stays vulnerable",
+        "IIS has its own stack",
+        "TCP can't be hardened",
+        "Only Windows is affected"
+      ],
+      "answer": 0,
+      "explain": "Hardening the stack itself would protect every application."
+    },
+    {
+      "q": "What's one reason to use a payment service instead of your Visa card directly?",
+      "options": [
+        "It avoids exposing your real card number, which is a hassle to change",
+        "It's required by law",
+        "It's always cheaper",
+        "It blocks all fraud"
+      ],
+      "answer": 0,
+      "explain": "Credit cards, unlike some services, have legal fraud protections."
+    },
+    {
+      "q": "When does forwarding a port actually improve a Skype call?",
+      "options": [
+        "When both ends are behind NAT-hostile routers that block a direct connection",
+        "Always",
+        "Only on dial-up",
+        "Never"
+      ],
+      "answer": 0,
+      "explain": "Otherwise Skype relays through someone else's machine, a supernode."
+    },
+    {
+      "q": "Why do many ISPs block outbound port 25?",
+      "options": [
+        "To stop infected machines from sending spam directly to other mail servers",
+        "To save bandwidth",
+        "To sell static IPs",
+        "To block web traffic"
+      ],
+      "answer": 0,
+      "explain": "Customers are expected to send through the ISP's own SMTP server."
+    },
+    {
+      "q": "Why are many bank passwords capped in length and case-insensitive?",
+      "options": [
+        "The web front end talks to old mainframes with those limits",
+        "Hashing requires it",
+        "The law requires it",
+        "Browsers can't send long passwords"
+      ],
+      "answer": 0,
+      "explain": "Some of those systems predate shift keys."
+    }
+  ]
+}
