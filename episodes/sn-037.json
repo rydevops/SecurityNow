@@ -1,0 +1,354 @@
+{
+  "number": 37,
+  "title": "Crypto Series Wrap-up",
+  "subtitle": "Primes, key recovery and certificates",
+  "date": "2006-04-27",
+  "description": "Steve and Leo finish their crypto series: how many primes there are, how hard factoring really is, how organizations recover lost private keys by splitting secrets among trustees, and what a security certificate actually is.",
+  "transcript": "https://www.grc.com/sn/sn-037.txt",
+  "audio": "http://media.GRC.com/sn/SN-037.mp3",
+  "chapters": [
+    {
+      "title": "Giggling at Langley",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 37, recorded over lunch in Toronto while we tape Call for Help. For once I'm sitting across from you."
+        },
+        {
+          "s": "steve",
+          "t": "A listener who works at the CIA wrote that people looked at him funny. He was giggling walking through security at headquarters, after the Diffie-Hellman episode clicked for him."
+        },
+        {
+          "s": "leo",
+          "t": "Speaking of Langley: the Kryptos sculpture there has four encrypted sections. Three were solved in 1999, and the fourth has resisted everyone for 16 years. Now sculptor Jim Sanborn says he made a mistake: an extra X, put in for aesthetic reasons. It changes a few words of the third section."
+        },
+        {
+          "type": "fact",
+          "title": "Kryptos",
+          "t": "Kryptos was installed at CIA headquarters in 1990, with encryption help from retired CIA cryptographer Ed Scheidt. In April 2006, Sanborn said he had left out an X in the second section, not the third as said on the show. Restoring it changed that section's ending. The fourth section has resisted public solution for decades."
+        },
+        {
+          "s": "steve",
+          "t": "Today we tie up the loose ends: stream ciphers, block ciphers, public key and hashes are covered. Now primes, key recovery and certificates."
+        }
+      ]
+    },
+    {
+      "title": "Why Not a Table of Primes?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Listeners asked: if primes are rare, why not precompute all of them and try each one?"
+        },
+        {
+          "s": "leo",
+          "t": "In a 10-by-10 grid of the first hundred numbers, only a couple of dozen are prime."
+        },
+        {
+          "s": "steve",
+          "t": "Primes feel rare, but magnitudes fool us. There are more primes of 512 bits or fewer than there are atoms in the known universe."
+        },
+        {
+          "s": "leo",
+          "t": "You can't print a book that big, and you couldn't search it if you did."
+        },
+        {
+          "type": "fact",
+          "title": "The prime number theorem",
+          "t": "The number of primes below N is roughly N divided by the natural log of N. Below 2^512 that's about 2^503, around 10^151 primes. The observable universe has an estimated 10^80 atoms."
+        },
+        {
+          "s": "steve",
+          "t": "A 1,024-bit RSA key is the product of two 512-bit primes. Multiply two binary numbers and their lengths add."
+        },
+        {
+          "s": "leo",
+          "t": "I use 4,096 bits, but let's stay with 1,024."
+        }
+      ]
+    },
+    {
+      "title": "How Hard Is Factoring?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Diffie-Hellman's one-way function is exponentiation. RSA's is multiplication. Reversing it is factoring: find the two primes. Know either one and you just divide."
+        },
+        {
+          "s": "steve",
+          "t": "The record I found: a 512-bit number, two 256-bit primes, took a team with 292 off-the-shelf PCs five months to factor."
+        },
+        {
+          "s": "steve",
+          "t": "Brute-forcing a symmetric key doubles in difficulty with each added bit. Factoring doesn't. Each bit makes it only about 1.035 times harder."
+        },
+        {
+          "s": "steve",
+          "t": "But compound that 512 more times, up to 1,024 bits, and you're at somewhere between 3 and 30 million years with current technology."
+        },
+        {
+          "s": "leo",
+          "t": "So if it's ever cracked, it won't be by brute force. It'll be a mathematical breakthrough."
+        },
+        {
+          "s": "steve",
+          "t": "Or someone finding the slip of paper you wrote your passphrase on."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't someone at the NSA have found a better way?"
+        },
+        {
+          "s": "steve",
+          "t": "That's why cryptographers always say \"believed to be secure,\" or \"as far as we know.\""
+        },
+        {
+          "s": "leo",
+          "t": "Still, this is mathematics people have worked on since Eratosthenes."
+        },
+        {
+          "type": "fact",
+          "title": "Factoring records since",
+          "t": "RSA-155, a 512-bit number, was factored in 1999 using about 300 computers. RSA-768 fell in 2009, and an 829-bit number in 2020. Improved algorithms and hardware mean 1,024-bit RSA is no longer considered safe. NIST has required at least 2,048 bits since 2013."
+        },
+        {
+          "type": "fact",
+          "title": "The quantum caveat",
+          "t": "A large enough quantum computer running Shor's algorithm could factor RSA keys and break Diffie-Hellman efficiently. None exists yet, but NIST published post-quantum standards in 2024, and browsers have begun adopting them."
+        }
+      ]
+    },
+    {
+      "title": "Recovering Lost Keys",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You keep your private key private. But what if you lose it? Your hard drive crashes, or your token goes missing."
+        },
+        {
+          "s": "leo",
+          "t": "I've made about eight keys over the years and lost all but the last couple. I can't even revoke the old ones."
+        },
+        {
+          "s": "leo",
+          "t": "Though a bad guy who gets my key still needs my passphrase."
+        },
+        {
+          "s": "steve",
+          "t": "True, but here the danger is losing it yourself. People can still send you messages you can't decrypt, and you can't sign anything."
+        },
+        {
+          "s": "steve",
+          "t": "A company that issues keys to every employee wants a safe store of them: key recovery. But like the two officers on a submarine who both have to turn their keys, you don't want one person able to unlock them all."
+        },
+        {
+          "s": "steve",
+          "t": "Idea one: encrypt the key database with a random 128-bit key and give two people 64 bits each. But now each person only needs to find 64 more bits, which can be brute-forced."
+        },
+        {
+          "s": "steve",
+          "t": "And if one is in Tahiti on vacation, you're stuck. So try two-of-three: split the key into three parts, and give each person two of them."
+        },
+        {
+          "s": "leo",
+          "t": "Now each piece is only about 43 bits, and 40-bit keys have already been cracked."
+        },
+        {
+          "s": "steve",
+          "t": "So we scrap the whole idea."
+        }
+      ]
+    },
+    {
+      "title": "Secret Sharing with Geometry",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's a toe-curling concept. Two points define a line. Draw a line on an x-y grid, and let the place it crosses the y-axis be the key."
+        },
+        {
+          "s": "steve",
+          "t": "Give each trustee one point on that line. One point alone tells you nothing, since infinitely many lines pass through it."
+        },
+        {
+          "s": "leo",
+          "t": "They can rotate around that point."
+        },
+        {
+          "s": "steve",
+          "t": "But any two trustees together define the line, and so the key. And you can hand out as many points as you like."
+        },
+        {
+          "s": "leo",
+          "t": "What if you want to require three people?"
+        },
+        {
+          "s": "steve",
+          "t": "Three points define a parabola. Two points leave a whole family of parabolas, but a third nails it down."
+        },
+        {
+          "s": "leo",
+          "t": "And four?"
+        },
+        {
+          "s": "steve",
+          "t": "It generalizes to curves of any order. It's simple polynomial math, and you can set any policy: how many trustees, and how many must come together."
+        },
+        {
+          "type": "fact",
+          "title": "Shamir's Secret Sharing",
+          "t": "Adi Shamir, the S in RSA, published this in 1979. To require k of n people, choose a random polynomial of degree k−1 whose value at zero is the secret, and give each person one point. Any k points reveal the secret, and fewer reveal nothing at all. Real systems do the math in a finite field rather than on a real-number grid."
+        }
+      ]
+    },
+    {
+      "title": "What a Certificate Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A listener says Thawte still offers free personal certificates, though for shorter periods."
+        },
+        {
+          "type": "fact",
+          "title": "Free email certificates",
+          "t": "Thawte stopped issuing its free personal email certificates in 2009. Free S/MIME certificates are still available from some providers, and Let's Encrypt has issued free HTTPS certificates since 2015."
+        },
+        {
+          "s": "steve",
+          "t": "S/MIME, Secure MIME, is built into email clients like Outlook Express. Add your certificate and those of your correspondents, and mail can be encrypted automatically. We'll do a whole episode on it."
+        },
+        {
+          "s": "steve",
+          "t": "The problem with public keys is that a key has no identity. It's just a blob of bits."
+        },
+        {
+          "s": "leo",
+          "t": "Joe could make a key that says he's Alice, and you'd have no way of knowing."
+        },
+        {
+          "s": "steve",
+          "t": "A certificate is simply the binding of identity information, like a name, company or address, to a public key. What it's worth depends on who stands behind it."
+        },
+        {
+          "s": "leo",
+          "t": "I can make my own certificate in OS X, but anyone could make one claiming to be me."
+        },
+        {
+          "s": "steve",
+          "t": "So someone has to vouch for it."
+        },
+        {
+          "s": "leo",
+          "t": "Like a notary public, who checks your ID before stamping your document."
+        },
+        {
+          "s": "steve",
+          "t": "You generate a key pair and fill in your identity, then sign a \"certificate request\" with your private key. That proves to the certificate authority that you own the private key matching the public key you're submitting."
+        },
+        {
+          "s": "steve",
+          "t": "The authority hashes your identity and public key together and signs that with its own private key. That signature is the notary's stamp."
+        },
+        {
+          "s": "steve",
+          "t": "To check it, you need the authority's public key. Browsers and operating systems ship with 30 or 40 of them, valid for decades. VeriSign, Thawte, even the U.S. Postal Service."
+        },
+        {
+          "type": "fact",
+          "title": "Certificate chains",
+          "t": "Today's systems trust over a hundred root certificate authorities. Roots usually sign intermediate certificates, which sign websites' certificates, and browsers check the whole chain. Website certificates are now limited to about a year, and that maximum is shrinking further."
+        },
+        {
+          "s": "leo",
+          "t": "It's mostly automated. Free certificates usually just verify your email address. Paid ones check more."
+        },
+        {
+          "s": "steve",
+          "t": "For GRC's server certificates, VeriSign checks Dun & Bradstreet, plus a fax, phone and email loop."
+        }
+      ]
+    },
+    {
+      "title": "Webs of Trust and Envelopes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "PGP has the \"web of trust\" instead. A new key starts untrusted, and as people who know you sign it, its trust grows. Hence key-signing parties."
+        },
+        {
+          "s": "steve",
+          "t": "It's a bit like Google ranking a page by the pages linking to it."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks to this series I get lots of encrypted mail. I'm sure the NSA is watching closely."
+        },
+        {
+          "s": "leo",
+          "t": "Right now using encryption is a red flag. If everyone uses it, it's just an envelope. If everyone else sent postcards, your envelope would look suspicious."
+        },
+        {
+          "s": "steve",
+          "t": "That wraps up the crypto fundamentals. In future episodes we'll cover how SSL, PGP and S/MIME work in detail."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why can't attackers just keep a table of all 512-bit primes?",
+      "options": [
+        "There are more of them than atoms in the known universe",
+        "Primes are secret",
+        "Nobody has found any",
+        "It's illegal"
+      ],
+      "answer": 0,
+      "explain": "The prime number theorem shows big primes are plentiful."
+    },
+    {
+      "q": "How does factoring difficulty grow as RSA keys get longer?",
+      "options": [
+        "About 1.035 times harder per added bit, which compounds hugely",
+        "It doubles with each bit",
+        "It doesn't change",
+        "It gets easier"
+      ],
+      "answer": 0,
+      "explain": "Unlike symmetric brute force, each bit adds less, but 512 more bits still means millions of years."
+    },
+    {
+      "q": "Why is splitting a 128-bit key into two 64-bit halves for two trustees a bad idea?",
+      "options": [
+        "Each trustee then needs only 64 more bits, which is brute-forceable",
+        "The halves can't be recombined",
+        "It needs three people",
+        "It's too slow"
+      ],
+      "answer": 0,
+      "explain": "Partial keys reduce the remaining secret to a dangerous size."
+    },
+    {
+      "q": "In Steve's geometry explanation of secret sharing, what do two trustees' points determine?",
+      "options": [
+        "A line whose y-axis crossing is the key",
+        "A circle",
+        "The slope only",
+        "Nothing useful"
+      ],
+      "answer": 0,
+      "explain": "One point allows infinite lines; two fix it. Three points fix a parabola."
+    },
+    {
+      "q": "What is a certificate, at its core?",
+      "options": [
+        "Identity information bound to a public key and signed by someone who vouches for it",
+        "A private key",
+        "An encrypted password",
+        "A paper document"
+      ],
+      "answer": 0,
+      "explain": "Its value depends on who signed it, like a notary's stamp."
+    }
+  ]
+}

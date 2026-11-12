@@ -1,0 +1,238 @@
+{
+  "number": 35,
+  "title": "Cryptographic Hashes",
+  "subtitle": "Fingerprints for data, and the birthday attack",
+  "date": "2006-04-13",
+  "description": "The last basic building block: cryptographic hashes. What they are, how digital signatures and download checksums use them, and how the \"birthday attack\" works against hashes that are too short.",
+  "transcript": "https://www.grc.com/sn/sn-035.txt",
+  "audio": "http://media.GRC.com/sn/SN-035.mp3",
+  "chapters": [
+    {
+      "title": "Encrypted Email Fan Mail",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 35. Since I published my public key, people keep sending me their first-ever encrypted email."
+        },
+        {
+          "s": "steve",
+          "t": "Some listeners were surprised I've never used PGP. I just don't have electronic conversations that need it; I sign paper at my lawyer's office."
+        },
+        {
+          "s": "leo",
+          "t": "I don't really need encryption either, but I sign every email. People spoof my name, so if a message from me isn't signed, it isn't from me."
+        },
+        {
+          "s": "steve",
+          "t": "Signing uses hashes, which is today's topic."
+        }
+      ]
+    },
+    {
+      "title": "What a Cryptographic Hash Is",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Hashes go by many names: message digest, fingerprint, cryptographic checksum, manipulation detection code."
+        },
+        {
+          "s": "steve",
+          "t": "Like Reader's Digest, a digest boils something long down to something short: the input, technically the \"pre-image,\" becomes a small token, typically 128 or 160 bits, now often 256 or 512."
+        },
+        {
+          "s": "steve",
+          "t": "Unlike the ciphers we've covered, a hash isn't meant to be reversed. Its irreversibility is the whole point."
+        },
+        {
+          "s": "steve",
+          "t": "Change a single bit anywhere in a 10K input, and about half of the output bits change."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't that what a CRC does?"
+        },
+        {
+          "s": "steve",
+          "t": "A CRC, a cyclic redundancy check, is a good example of what a cryptographic hash isn't. It's easy to craft an input that produces any CRC you want."
+        },
+        {
+          "s": "steve",
+          "t": "A cryptographic hash has three properties: it's easy to compute; it's infeasible to design an input that produces a chosen output; and it's infeasible to find two inputs with the same output, a \"collision.\""
+        },
+        {
+          "s": "steve",
+          "t": "Here's an ordinary hash: XOR the four bytes of an IP address into one byte to sort visitors into 256 groups. It spreads them evenly, but you can trivially pick IP addresses that land in any group. That's what a cryptographic hash prevents."
+        },
+        {
+          "type": "fact",
+          "title": "Hash requirements",
+          "t": "Preimage resistance: given a hash, you can't find an input that produces it. Second-preimage resistance: given an input, you can't find another with the same hash. Collision resistance: you can't find any two inputs that hash the same. CRCs and checksums have none of these."
+        }
+      ]
+    },
+    {
+      "title": "Signing a Message",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "To sign an email, PGP hashes it into a fingerprint. Just appending the fingerprint isn't enough, since a forger could change the message and recompute it."
+        },
+        {
+          "s": "steve",
+          "t": "So you encrypt the fingerprint with your private key and attach that. The message itself stays readable."
+        },
+        {
+          "s": "steve",
+          "t": "The recipient decrypts the fingerprint with your public key, hashes the message themselves, and compares. If even one bit differs, the hashes won't match."
+        },
+        {
+          "s": "leo",
+          "t": "In practice, my signed emails are plain text with a \"BEGIN PGP SIGNATURE\" block at the end. With GPG installed and my public key, software checks it automatically."
+        },
+        {
+          "s": "leo",
+          "t": "It's not as easy as it ought to be, though. Mom isn't doing it."
+        },
+        {
+          "s": "steve",
+          "t": "My complaint is all that extra crud in every one of your emails."
+        },
+        {
+          "s": "leo",
+          "t": "An S/MIME certificate signature attaches it invisibly, but I prefer text because it works everywhere."
+        },
+        {
+          "type": "fact",
+          "title": "Signatures sign hashes",
+          "t": "A digital signature is computed over the message's hash, not the whole message. That's fast, and it ties the signature to every bit of the content. If the hash function is weak, signatures built on it are weak too."
+        }
+      ]
+    },
+    {
+      "title": "Checksums on Downloads",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Download sites often post MD5 or SHA-1 hashes. Hash the file yourself with a free tool and compare. If they match, you have exactly the file they intended."
+        },
+        {
+          "s": "leo",
+          "t": "That's especially important when installing PGP or GPG itself. A trojan version would compromise everything afterward."
+        },
+        {
+          "type": "fact",
+          "title": "Checking a download",
+          "t": "Use \"certutil -hashfile file SHA256\" on Windows, or \"shasum -a 256 file\" on Mac and Linux, and compare with the published value. A hash only helps if you get it from a trusted source. A signed hash, or a hash on an HTTPS page, is better."
+        }
+      ]
+    },
+    {
+      "title": "The Birthday Attack",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "How many people must be in a room for better-than-even odds that someone shares your birthday? 253."
+        },
+        {
+          "s": "steve",
+          "t": "But how many for any two people to share a birthday? Only 23, because 23 people make 253 pairs."
+        },
+        {
+          "s": "steve",
+          "t": "The same applies to hashes. Suppose a hash were only 64 bits: about 18 billion billion possible values. The odds that a fair contract and an evil one happen to match are tiny."
+        },
+        {
+          "s": "steve",
+          "t": "But if I write both contracts, I can make thousands of invisible variations of each, extra spaces, double spaces after periods, and look for any match between the two groups."
+        },
+        {
+          "s": "steve",
+          "t": "For a 64-bit hash, it takes only about 2^32, around 4 billion, variations to probably find a match. I get you to sign the fair contract, then claim you signed the evil one with the same fingerprint."
+        },
+        {
+          "s": "leo",
+          "t": "Four billion sounds like a lot, but computers do that quickly."
+        },
+        {
+          "s": "steve",
+          "t": "That's why hashes are 128 bits and longer. Then the birthday attack needs about 2^64 tries, a number with 19 zeroes."
+        },
+        {
+          "type": "fact",
+          "title": "Birthday bound",
+          "t": "For an n-bit hash, finding any collision takes roughly 2^(n/2) attempts, not 2^n. That's why 256-bit hashes like SHA-256 are standard today: they give about 128 bits of collision resistance."
+        },
+        {
+          "type": "fact",
+          "title": "MD5 and SHA-1 today",
+          "t": "Weaknesses in MD5 let researchers find collisions far faster than brute force, in seconds by the late 2000s, and forge a CA certificate in 2008. Google produced the first SHA-1 collision (\"SHAttered\") in 2017. Use SHA-256 or SHA-3 instead."
+        },
+        {
+          "s": "steve",
+          "t": "That completes our toolkit: symmetric stream and block ciphers, asymmetric ciphers, cryptographic hashes and cryptographic random numbers. After next week's Q&A, we'll put the pieces together, including certificate signing."
+        },
+        {
+          "s": "steve",
+          "t": "I've been coding a brand-new GRC service, the first in years, to show on Call for Help next week."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What makes a hash \"cryptographic\" rather than an ordinary hash like a CRC?",
+      "options": [
+        "You can't feasibly craft an input for a chosen output, or find two inputs that collide",
+        "It's longer",
+        "It's encrypted",
+        "It's reversible"
+      ],
+      "answer": 0,
+      "explain": "CRCs are easy to manipulate deliberately; cryptographic hashes aren't."
+    },
+    {
+      "q": "How does a digital signature on an email work?",
+      "options": [
+        "The message's hash is encrypted with the sender's private key and checked with their public key",
+        "The whole email is encrypted with the recipient's key",
+        "A picture of a signature is attached",
+        "The email is compressed"
+      ],
+      "answer": 0,
+      "explain": "Any change to the message makes the recomputed hash fail to match."
+    },
+    {
+      "q": "Why compare a download's MD5 or SHA hash with the one the site publishes?",
+      "options": [
+        "To confirm the file is bit-for-bit what the publisher intended",
+        "To decrypt the file",
+        "To speed up the download",
+        "To scan it for viruses"
+      ],
+      "answer": 0,
+      "explain": "Matching fingerprints mean nothing was altered."
+    },
+    {
+      "q": "How many people does a room need for better-than-even odds that two share a birthday?",
+      "options": [
+        "23",
+        "253",
+        "183",
+        "365"
+      ],
+      "answer": 0,
+      "explain": "23 people form 253 pairs, which is why collisions come sooner than intuition says."
+    },
+    {
+      "q": "Roughly how much work does a birthday attack on a 64-bit hash take?",
+      "options": [
+        "About 2^32 tries",
+        "About 2^64 tries",
+        "About 64 tries",
+        "It's impossible"
+      ],
+      "answer": 0,
+      "explain": "Collisions take about the square root of the number of possible values, so hashes must be long."
+    }
+  ]
+}
