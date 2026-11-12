@@ -1,0 +1,408 @@
+{
+  "number": 61,
+  "title": "ISP Privacy and Security",
+  "subtitle": "Two more IE zero-days, then what your ISP can see",
+  "date": "2006-10-12",
+  "description": "Leo reports on running Vista in Parallels. Steve covers a \"hailstorm\" of Patch Tuesday fixes, an IE zero-day patched after HD Moore weaponized it, and a new DirectAnimation zero-day left unpatched, with ZERT's ZProtector as a stopgap. Then a listener favorite: what your ISP, or employer, can see, why email is stored in the clear, and how PGP, SSL and VPNs protect you.",
+  "transcript": "https://www.grc.com/sn/sn-061.txt",
+  "audio": "http://media.GRC.com/sn/SN-061.mp3",
+  "chapters": [
+    {
+      "title": "Vista Inside Parallels",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 61. I promised a report on Windows Vista in Parallels on the Mac."
+        },
+        {
+          "s": "leo",
+          "t": "I'm on a Mac Pro: dual Xeons, four processors, a Radeon X1900. The first Parallels beta wouldn't run Vista at all. Now it runs at completely normal speed with a gig of my 4GB dedicated to Windows."
+        },
+        {
+          "s": "leo",
+          "t": "A couple of weirdnesses: sometimes it says the virtualization bit isn't set, and putting the Mac to sleep and waking it fixes it."
+        },
+        {
+          "s": "steve",
+          "t": "Jerry Pournelle's latest column mentions your quad-core system."
+        },
+        {
+          "s": "leo",
+          "t": "At Call for Help, Sean Carruthers benchmarked Photoshop. The Windows version in Parallels was faster than the Mac version. Fastest would be Windows natively in Boot Camp, but I feel no urge to launch it."
+        },
+        {
+          "s": "leo",
+          "t": "I'm not sure I'm getting Aero Glass, though. I'm downloading the latest Parallels and may know by the end of the show."
+        },
+        {
+          "s": "steve",
+          "t": "You could slice off part of that big drive for a natively bootable Vista with Boot Camp."
+        },
+        {
+          "s": "leo",
+          "t": "I boot from a 10,000 RPM Western Digital Raptor with a 250GB second drive, so maybe I will. There's a report Vista may boot on Macs even without Boot Camp now."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft seems to be moving toward running Windows on Mac hardware."
+        },
+        {
+          "s": "leo",
+          "t": "It sells more copies. But for a beta OS, a VM is perfect. Why take a chance?"
+        }
+      ]
+    },
+    {
+      "title": "A Hailstorm of Patches",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Yesterday was Patch Tuesday."
+        },
+        {
+          "s": "steve",
+          "t": "One site called it a \"hailstorm\" of patches. They fixed another zero-day, different from the VML one."
+        },
+        {
+          "s": "steve",
+          "t": "It's in the setSlice method of IE's WebViewFolderIcon control. Known since mid-July, for months it only crashed your browser."
+        },
+        {
+          "s": "steve",
+          "t": "But a crash means code ran that shouldn't have. A few weeks ago, HD Moore, who creates the Metasploit Framework, added a working remote code execution exploit, and it's now been found in the wild installing rootkits."
+        },
+        {
+          "s": "leo",
+          "t": "First they crash things, then they figure out where to put their code."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly: a browser denial of service leveraged into remote code execution. So run Windows Update."
+        },
+        {
+          "s": "steve",
+          "t": "This episode's show notes are a link farm, the third icon in the episode's box on the Security Now! page."
+        },
+        {
+          "s": "leo",
+          "t": "Sorry for the Windows sounds. I'm booting Vista on the same machine we're talking on. One CPU is at 100 percent, but the others are idle, so Skype has headroom."
+        },
+        {
+          "s": "steve",
+          "t": "Only a test."
+        }
+      ]
+    },
+    {
+      "title": "A Zero-Day Still Unpatched",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So the VML flaw was fixed out of cycle, and Microsoft just fixed a second zero-day. But there's a third."
+        },
+        {
+          "s": "steve",
+          "t": "It's in the DirectAnimation ActiveX control that IE uses. It's been known since mid-September, it's being exploited in the wild, and yesterday's updates did not fix it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft says it will patch in a normal cycle, or out of cycle, \"depending on customer needs.\" Meanwhile, it's gathering momentum."
+        },
+        {
+          "s": "steve",
+          "t": "People notice that new exploits appear on or just after Patch Tuesday."
+        },
+        {
+          "s": "leo",
+          "t": "To take advantage of the month-long delay."
+        },
+        {
+          "s": "steve",
+          "t": "That's what the bad guys would do. Predictable patch days help IT people, but attackers release right after one to maximize their window."
+        },
+        {
+          "type": "fact",
+          "title": "Exploit Wednesday",
+          "t": "Security folks still joke about \"Exploit Wednesday.\" Attackers also study each Patch Tuesday's fixes to build exploits for unpatched machines, which is why prompt updating matters."
+        },
+        {
+          "s": "steve",
+          "t": "SANS suggests using an alternate browser, or disabling ActiveX scripting."
+        },
+        {
+          "s": "leo",
+          "t": "We've been saying that for a while."
+        },
+        {
+          "s": "steve",
+          "t": "I browse with no ActiveX and enable it only for sites I need."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft documents setting a \"kill bit\" for a specific ActiveX control, which stops IE, and Outlook's viewer, from using it. It means editing the registry."
+        }
+      ]
+    },
+    {
+      "title": "ZERT's ZProtector",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So once again the Zero-Day Emergency Response Team, ZERT, has a goodie that covers both the newly patched zero-day and this unpatched one."
+        },
+        {
+          "s": "steve",
+          "t": "Their \"ZProtector,\" with GUI and command-line versions, simply sets the kill bits, neutering the control in IE until Microsoft fixes it. Then you turn it back on, like their VML fix."
+        },
+        {
+          "s": "steve",
+          "t": "Google ZERT or use our notes. They provide full source, which I've looked over. These are good white-hat guys, and they'll be busy, now and in Vista times."
+        },
+        {
+          "s": "steve",
+          "t": "It's a new arms race: attackers time releases around Microsoft's schedule, racing to install malware and take machines over."
+        },
+        {
+          "s": "steve",
+          "t": "I don't want to be alarmist. It isn't yet a huge problem. But if you use IE with ActiveX enabled and visit the Internet's darker corners, protect yourself. That's three zero-days in almost as many weeks."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Microsoft fixed the WebViewFolderIcon flaw in its October 2006 updates and the DirectAnimation flaw in November's. Internet Explorer and ActiveX are now retired, and browsers update themselves automatically."
+        }
+      ]
+    },
+    {
+      "title": "What Can Your ISP See?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today's main topic is a listener question."
+        },
+        {
+          "s": "steve",
+          "t": "It's a mini Q&A, just one question, but a good one."
+        },
+        {
+          "s": "leo",
+          "t": "Someone called my radio show today asking whether instant messengers log chats. I said some do, but your ISP may be logging what you do online."
+        },
+        {
+          "s": "steve",
+          "t": "People ask on our feedback form all the time: my computer is secure, my Wi-Fi uses WPA, but what about my ISP? At work, the corporate IT department is your conduit to the Internet. What about the parts you don't control?"
+        },
+        {
+          "s": "steve",
+          "t": "There are two kinds of exposure. One is real-time traffic flowing through the ISP, which it might log, or be legally compelled to log."
+        },
+        {
+          "s": "steve",
+          "t": "The other is storage, mostly email. Your ISP usually runs the SMTP server where incoming mail waits for your POP or IMAP client, and where your outgoing mail is relayed."
+        }
+      ]
+    },
+    {
+      "title": "Email Rests in the Clear",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Email that isn't encrypted end to end is in the clear. Even if you connect to your ISP with SSL, SSL encrypts it in transit, then it's decrypted and stored in the clear at the ISP, across the Internet, and at the destination ISP."
+        },
+        {
+          "s": "leo",
+          "t": "That's with POP mail. With web mail like Gmail over SSL, your ISP never sees it."
+        },
+        {
+          "s": "steve",
+          "t": "Right. It's still stored unencrypted at Google, but your ISP can't see it passing through."
+        },
+        {
+          "s": "leo",
+          "t": "And services like Hushmail keep mail encrypted on the server. But you have to take extraordinary steps."
+        },
+        {
+          "s": "steve",
+          "t": "That's where I'm headed: PGP. To protect email from the moment it leaves your machine to the moment it arrives, you need a tool like PGP."
+        },
+        {
+          "s": "leo",
+          "t": "PGP Corporation owns PGP and makes a free version, but you have to jump through hoops. Use the open-source GNU Privacy Guard, GPG, from gnupg.org. It's fully PGP compatible and uses the same key servers."
+        },
+        {
+          "s": "leo",
+          "t": "I sign all my mail. When someone sends me their key, our mail is encrypted both ways. But most people don't, so most of my mail is unencrypted."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not a PGP user."
+        },
+        {
+          "s": "leo",
+          "t": "So I can't encrypt my mail to you, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "We're just gossiping back and forth."
+        },
+        {
+          "s": "steve",
+          "t": "With PGP, servers see only a blob of ASCII gibberish. No subpoena, no packet logging, nothing can decrypt it."
+        },
+        {
+          "type": "fact",
+          "title": "Email encryption today",
+          "t": "Most mail servers now encrypt connections to each other with TLS, so mail is protected in transit between providers, but it still sits readable on each provider's servers. End-to-end tools like PGP or S/MIME, or services like Proton Mail, are still needed to keep the provider from reading it."
+        }
+      ]
+    },
+    {
+      "title": "Traffic Flowing Through",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The second concern is traffic. Unless you use SSL, or a VPN tunnel through your ISP, anything you do is open to their monitoring."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not suggesting ISPs are monitoring. But there are stories of the FBI, CIA and NSA monitoring ISPs, and it seems to be growing."
+        },
+        {
+          "s": "leo",
+          "t": "Attorney General Alberto Gonzales has asked ISPs to keep up to two years of data on everybody, just in case."
+        },
+        {
+          "s": "steve",
+          "t": "ISPs resist. Who pays for storing two years of traffic, and how do you find a needle in that haystack? There's clearly an intent to diminish our privacy, and PGP, SSL and VPNs give you bulletproof protection."
+        },
+        {
+          "s": "leo",
+          "t": "Encrypted IM exists, and your bank's site is SSL. The rest is out in the clear."
+        },
+        {
+          "s": "steve",
+          "t": "A typical Google search isn't encrypted. Google knows what you search for and says it keeps stats anonymously. But your ISP knows exactly who you are. Without SSL, the URLs you visit and the data you enter can all be seen."
+        },
+        {
+          "type": "fact",
+          "title": "HTTPS everywhere",
+          "t": "Since the 2013 Snowden revelations, most of the web moved to HTTPS, and DNS can now be encrypted too. Your ISP mostly sees which sites you connect to, not what you do there. A VPN hides even that from your ISP, but shifts your trust to the VPN provider."
+        }
+      ]
+    },
+    {
+      "title": "Why Encrypt Everything?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You and I don't encrypt because you don't. If you used PGP, we would."
+        },
+        {
+          "s": "steve",
+          "t": "There's nothing we're talking about that needs it."
+        },
+        {
+          "s": "leo",
+          "t": "But if only a few of my messages were encrypted, someone might say, \"Let's look into this.\" If everybody encrypted everything, nothing would stand out."
+        },
+        {
+          "s": "leo",
+          "t": "People use me as a test to see if their keys work. Once we exchange keys, every message is encrypted automatically. It's painless."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe I'll have to take a look."
+        },
+        {
+          "s": "leo",
+          "t": "I understand \"why bother.\" But until everyone uses it routinely, any use of it looks suspicious. Honest, Alberto, nothing's going on here. These aren't the droids you're looking for."
+        }
+      ]
+    },
+    {
+      "title": "Coming Up: MojoPac",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next week, MojoPac. I've opened a dialogue with its makers. Their site is all features and benefits, but I need to know exactly how it works to know where its security and privacy boundaries are."
+        },
+        {
+          "s": "steve",
+          "t": "It appears to use Windows' user profiles to make a completely portable profile, apps and data, on a removable device. But they must be doing more for their claims to hold."
+        },
+        {
+          "s": "leo",
+          "t": "Final Parallels report: Vista RC2 runs at nearly full speed and is very usable. But I'm not getting Aero Glass. Vista can't assess my virtual hardware, and the registry hacks don't help. I'll use Boot Camp for that. Still, I recommend Parallels."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did HD Moore change the WebViewFolderIcon flaw?",
+      "options": [
+        "He added a working remote-code exploit to Metasploit, turning a browser crash into a takeover",
+        "He patched it",
+        "He reported it to Apple",
+        "He proved it harmless"
+      ],
+      "answer": 0,
+      "explain": "It was then found installing rootkits in the wild."
+    },
+    {
+      "q": "Why do new exploits often appear right after Patch Tuesday?",
+      "options": [
+        "Attackers get the longest window before Microsoft's next scheduled patches",
+        "Patches create the flaws",
+        "Microsoft releases exploits",
+        "Hackers work Wednesdays"
+      ],
+      "answer": 0,
+      "explain": "Predictable schedules help IT departments and attackers alike."
+    },
+    {
+      "q": "What did ZERT's ZProtector do about the DirectAnimation zero-day?",
+      "options": [
+        "Set ActiveX \"kill bits\" so IE couldn't use the vulnerable control",
+        "Deleted Internet Explorer",
+        "Patched Windows permanently",
+        "Installed antivirus"
+      ],
+      "answer": 0,
+      "explain": "It's a stopgap until Microsoft's patch."
+    },
+    {
+      "q": "If you send email to your ISP over SSL, is it protected on the ISP's server?",
+      "options": [
+        "No; SSL protects it in transit, but it's stored in the clear",
+        "Yes, permanently",
+        "Only on weekends",
+        "Only with POP"
+      ],
+      "answer": 0,
+      "explain": "End-to-end tools like PGP keep it encrypted everywhere."
+    },
+    {
+      "q": "Why does Leo want everyone to use PGP routinely?",
+      "options": [
+        "If everyone encrypts, encrypted mail no longer looks suspicious",
+        "It's faster",
+        "It blocks spam",
+        "It's required by law"
+      ],
+      "answer": 0,
+      "explain": "He uses GNU Privacy Guard from gnupg.org."
+    },
+    {
+      "q": "What can an ISP see when you browse without SSL or a VPN?",
+      "options": [
+        "The pages you visit and data you enter, tied to your identity",
+        "Nothing",
+        "Only your IP address",
+        "Only email"
+      ],
+      "answer": 0,
+      "explain": "Your ISP knows exactly who you are."
+    }
+  ]
+}

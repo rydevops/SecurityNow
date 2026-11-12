@@ -1,0 +1,498 @@
+{
+  "number": 62,
+  "title": "Internet Proxies",
+  "subtitle": "Caching, filtering and the privacy tradeoffs of proxies",
+  "date": "2006-10-19",
+  "description": "An unpatched DirectAnimation exploit and Vista's kernel lockout of security vendors, a deep dive into how hard drives use error correction, then the main topic: proxies. Steve explains ISPs' transparent caching proxies, how ShieldsUP! sees past them, cache-control headers, corporate proxies, IE's slow and risky proxy auto-discovery, and local filters like Proxomitron.",
+  "transcript": "https://www.grc.com/sn/sn-062.txt",
+  "audio": "http://media.GRC.com/sn/SN-062.mp3",
+  "chapters": [
+    {
+      "title": "Still Unpatched",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Once again we were ahead of the curve on Windows zero-days. Now there's a PowerPoint exploit too, though not in the wild. There were 23 patches last Tuesday, and the hackers get right to work."
+        },
+        {
+          "s": "steve",
+          "t": "And the DirectAnimation path control exploit we covered last week is still unpatched, with public exploit code. I asked Sunbelt Software whether their web spiders see it spreading like the VML flaw, but haven't heard back."
+        },
+        {
+          "s": "steve",
+          "t": "If you use IE with scripting on, it's worth running the free ZERT utility to turn off DirectAnimation until Microsoft patches, probably on November's Patch Tuesday. That's four more weeks of exposure, and attackers now release exploits right at patch time to maximize it."
+        }
+      ]
+    },
+    {
+      "title": "Vista Locks Out Security Vendors",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's Vista news too. Security companies are upset. Vista prevents modifying the kernel, and McAfee and Symantec need to install their hooks there."
+        },
+        {
+          "s": "steve",
+          "t": "On XP they used their own benign hacks. Vista's explicit protection locks them out, which raises antitrust questions."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft says, okay, we'll provide new APIs, in Service Pack 1. Vista is weeks from Release to Manufacturing."
+        },
+        {
+          "s": "leo",
+          "t": "October 25th, one week away."
+        },
+        {
+          "s": "steve",
+          "t": "So none of these third-party tools can arrive until SP1, typically 12 to 18 months out, and everyone will use Microsoft's Vista-compatible tools meanwhile."
+        },
+        {
+          "s": "leo",
+          "t": "But given Microsoft's antitrust history, it's unlikely to try that on purpose. It can argue it's protecting against hackers, not Symantec and McAfee."
+        },
+        {
+          "s": "steve",
+          "t": "And I'd rather they didn't open it. If there's an API, the bad guys can use it too."
+        },
+        {
+          "s": "leo",
+          "t": "A win-win for Microsoft: competitive advantage and a more secure system. And the protection only applies to 64-bit Vista, while the big money is in 32-bit."
+        },
+        {
+          "s": "steve",
+          "t": "I think 64-bit adoption will be slow, though Vista is so resource hungry that people will need new machines anyway."
+        },
+        {
+          "type": "fact",
+          "title": "PatchGuard",
+          "t": "Kernel Patch Protection, nicknamed PatchGuard, applies only to 64-bit Windows. Microsoft later published new interfaces for security vendors. Vista was released to manufacturing on November 8, 2006."
+        }
+      ]
+    },
+    {
+      "title": "Can SpinRite Find a Lost Outlook Folder?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Before proxies: Megan emailed me in a crisis. She lost an Outlook folder of business emails, maybe the whole .pst file, without deleting anything. Can a file vanish because of a drive error, and would SpinRite help?"
+        },
+        {
+          "s": "steve",
+          "t": "Probably, if it wasn't malware rewriting something, but a sector that's no longer readable. Our testimonials page is full of people who couldn't boot, or were stuck in a reboot loop, until SpinRite fixed a low-level disk problem."
+        },
+        {
+          "s": "leo",
+          "t": "So SpinRite doesn't understand file systems, but it can recover the sector a file or directory lives on."
+        },
+        {
+          "s": "steve",
+          "t": "Right. In the old days, SpinRite had to understand the file system to move data and relink it. Today drives relocate sectors themselves, beneath the file system."
+        },
+        {
+          "s": "leo",
+          "t": "Is that part of error correction?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Drives are so dense that they depend on ECC just to read good sectors."
+        },
+        {
+          "s": "leo",
+          "t": "We're nearly at the quantum level. I stopped buying big drives when you told me that. I buy 150GB Raptors."
+        },
+        {
+          "s": "steve",
+          "t": "I ask my supplier for the smallest drive he can still get. We could build the most reliable 100MB drive ever, but manufacturers want maximum capacity and we want cheap 500GB drives, so they make them reliable enough."
+        }
+      ]
+    },
+    {
+      "title": "How a Drive Fixes Itself",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When ECC corrects a sector, it builds an XOR mask that flips the wrong bits back, like the XOR we covered in encryption."
+        },
+        {
+          "s": "steve",
+          "t": "The span from the first bit needing repair to the last tells the drive how bad the sector is. Small corrections happen all the time. When the span passes a threshold, the drive copies the corrected data to a spare sector and swaps it in."
+        },
+        {
+          "s": "steve",
+          "t": "Since that's all beneath the file system, SpinRite doesn't care if it's Linux, TiVo, Mac or NTFS. Its magic is recovering data the drive alone can't."
+        },
+        {
+          "s": "leo",
+          "t": "I'll tell Megan to get SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "There's no demo, since there's never been a way to make one. But if it doesn't work for someone, they write our sales address, destroy their copy, and we refund them, no questions asked."
+        },
+        {
+          "s": "leo",
+          "t": "You're so ethical I can't stand it."
+        },
+        {
+          "s": "steve",
+          "t": "Last week a man wrote that he'd used a pirated copy a friend gave him to recover 120GB from a drive that suddenly quit. As a sysadmin he knew he should back up. He was so thankful he bought his own copy."
+        },
+        {
+          "s": "leo",
+          "t": "SpinRite has never had copy protection."
+        },
+        {
+          "s": "steve",
+          "t": "I'd rather trust customers. If a friend of yours is in trouble and your copy saves them, I won't mind. I'd just ask that they consider buying it if it works."
+        },
+        {
+          "s": "leo",
+          "t": "Our web host's drive failed over the weekend, with bad sectors forcing Linux to boot read-only. The techs just pulled it. We had good backups, but I'm moving to a new data center with RAID 5 on three 150GB Raptors."
+        },
+        {
+          "s": "steve",
+          "t": "That's exactly GRC's setup: RAID 5 on three drives, plus a hot spare the controller can rebuild onto."
+        },
+        {
+          "s": "leo",
+          "t": "You know more about hard drives than anyone, except maybe Al Shugart. He died, didn't he?"
+        },
+        {
+          "type": "fact",
+          "title": "Al Shugart",
+          "t": "Al Shugart, a disk drive pioneer who founded Shugart Associates and co-founded Seagate, was still alive when this was recorded. He died in December 2006."
+        }
+      ]
+    },
+    {
+      "title": "MojoPac Stumbles",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'd planned to cover MojoPac this week. But it has problems. It debuted at the fall DEMO conference, where Mark Thompson's company was one of 50 chosen to present, along with MojoPac and a company called U3."
+        },
+        {
+          "s": "steve",
+          "t": "Going from beta to 1.0, MojoPac added copy protection that locks it to a USB 2.0 drive's serial number, breaking what beta users had been doing. When people complained, MojoPac shut down its forums."
+        },
+        {
+          "s": "leo",
+          "t": "A case study in how to do things wrong."
+        },
+        {
+          "s": "steve",
+          "t": "The trial expired after 30 days or 99 boots, but people booted many times a day, and they couldn't buy it because the store wasn't online yet. Some of that was just fixed. I can't get anyone to respond, even through the Whois contact addresses."
+        },
+        {
+          "s": "steve",
+          "t": "It also doesn't fully virtualize the system, so software that locks itself to a computer sees a different PC when you move it. That defeats the purpose."
+        },
+        {
+          "s": "steve",
+          "t": "You can only move your MojoPac between drives about twice, and it's $29.95, going to $50. I expect free or open-source competitors soon, and I think I've found one. Next week: MojoPac, U3, and moka5 from Stanford."
+        },
+        {
+          "s": "steve",
+          "t": "It's a cool idea, enabled by affordable 4GB flash drives: carry your environment, apps and data, and plug into any Windows PC."
+        }
+      ]
+    },
+    {
+      "title": "What a Proxy Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now, proxies. You see the setting hidden in browsers, and apps asking about SOCKS proxies. What is a proxy?"
+        },
+        {
+          "s": "steve",
+          "t": "It can enhance your privacy and anonymity, and it can be a security problem."
+        },
+        {
+          "s": "steve",
+          "t": "A proxy acts on your behalf, like a voting proxy. Your browser connects to the proxy instead of the remote server. The proxy makes the request for you, receives the result, and passes it back to you."
+        },
+        {
+          "s": "steve",
+          "t": "Many ISPs do this transparently. My provider, Cox, intercepts connections without customers knowing. The reason is caching: ISPs pay for bandwidth, so a big caching proxy at their boundary serves repeat requests locally."
+        },
+        {
+          "s": "steve",
+          "t": "The first person to visit Amazon gets a unique page from Amazon, but its buttons and images are generic. If someone else at the same ISP visited recently, the proxy already has them."
+        },
+        {
+          "s": "leo",
+          "t": "That's my argument with our advertising agency. If a thousand Comcast customers download the same Security Now! episode, I bet it counts once."
+        },
+        {
+          "s": "steve",
+          "t": "It saves your bandwidth, the ISP's bandwidth, and it's faster for the customer."
+        }
+      ]
+    },
+    {
+      "title": "Seeing Past a Transparent Proxy",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Can I tell if I'm getting a cached copy?"
+        },
+        {
+          "s": "steve",
+          "t": "Not as a user. But I had to solve this for ShieldsUP!. When a Cox customer visits, my server sees the proxy's IP address. Without care, I'd scan the proxy instead of the visitor."
+        },
+        {
+          "s": "steve",
+          "t": "First, I switch you to SSL. A transparent proxy can't intercept SSL, because it can't give your browser a certificate matching my site."
+        },
+        {
+          "s": "steve",
+          "t": "Second, proxies often add headers: \"X-Forwarded-For,\" with the real user's IP, and \"Via,\" naming the proxy."
+        },
+        {
+          "s": "leo",
+          "t": "So our ad agency could at least see that a request came from a proxy."
+        },
+        {
+          "s": "steve",
+          "t": "But not how many people shared that copy."
+        }
+      ]
+    },
+    {
+      "title": "Telling Caches What to Do",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Proxies cache only if allowed. SSL avoids caching, and it's cheaper than it used to be. HTTP 1.0 opened a new connection for every image. HTTP 1.1 keeps connections open, by default two per server, and streams many requests through them, so SSL setup costs little. Machines are faster too."
+        },
+        {
+          "type": "fact",
+          "title": "Connections today",
+          "t": "Browsers now open about six connections per server for HTTP/1.1, and HTTP/2 and HTTP/3 send everything over a single connection. HTTPS is now nearly universal, so ISP caching proxies can't see or cache most content."
+        },
+        {
+          "s": "steve",
+          "t": "Servers can also send an expiration header, as a time or a duration. Say a page's button images are good for a day. Your browser uses its own cached copy until then, which speeds up later pages, and transparent proxies follow the same rules."
+        },
+        {
+          "s": "steve",
+          "t": "In IE, holding Control while refreshing ignores the cache and fetches fresh copies."
+        },
+        {
+          "s": "leo",
+          "t": "Shift on the Mac."
+        },
+        {
+          "s": "steve",
+          "t": "Volatile pages, like e-commerce, should be marked never to cache. I also mark mine as expiring in 1997, a commonly used date in the past, so they're pre-expired."
+        },
+        {
+          "s": "leo",
+          "t": "@Home pioneered caching proxies. I bet we miss many downloads from Cox, Comcast and Road Runner."
+        },
+        {
+          "s": "steve",
+          "t": "It's a real win for them."
+        }
+      ]
+    },
+    {
+      "title": "Corporate Proxies and Auto-Discovery",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Then there are explicit proxies, which you configure in your browser, often at work."
+        },
+        {
+          "s": "steve",
+          "t": "Here's a tip. I once helped Sue with her computer, and IE took ages to start. It was set to \"Automatically detect settings,\" the default."
+        },
+        {
+          "s": "steve",
+          "t": "Every launch, IE hunts for a DHCP or DNS server to tell it where to find its proxy settings. Unless you need a proxy, go to Tools, Internet Options, Connections, LAN Settings, and uncheck automatic detection. IE will start noticeably faster."
+        },
+        {
+          "s": "steve",
+          "t": "DHCP can provide much more than your IP address, mask and gateway, including a URL for a proxy configuration file."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft designed this for IE in an IETF draft around 1999. It was never ratified, and it expired."
+        },
+        {
+          "s": "steve",
+          "t": "If DHCP doesn't answer, IE falls back to DNS. It takes your machine's full name and searches for a \"wpad\" host, stripping one part at a time back to your company's domain."
+        },
+        {
+          "s": "steve",
+          "t": "But with two-part country domains like co.uk, it thinks \"co\" is your company, and asks the Internet for wpad.co.uk. Someone set up that machine, which can hand your browser bogus proxy settings and reroute all its traffic."
+        },
+        {
+          "s": "leo",
+          "t": "You'd think they'd know about top-level domains by now."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe newer versions fixed it. Either way, turn it off if you don't need it."
+        },
+        {
+          "type": "fact",
+          "title": "WPAD attacks",
+          "t": "The Web Proxy Auto-Discovery problem Steve describes kept resurfacing for years, including through new top-level domains that collided with internal names. Microsoft patched several WPAD flaws, and many security guides recommend disabling auto-detection unless your organization uses it."
+        },
+        {
+          "s": "steve",
+          "t": "A corporate proxy, often on port 8080, can cache, enforce blacklists of sites, and filter malicious scripts. Often port 80 is blocked at the firewall, so you must use it, and all your traffic passes through their filter."
+        },
+        {
+          "s": "leo",
+          "t": "So what should you do?"
+        },
+        {
+          "s": "steve",
+          "t": "You don't have much choice. Hamachi, GoToMyPC or a VPN can get you out, but that deliberately bypasses security policies meant to protect the company. I expect companies to block those too."
+        }
+      ]
+    },
+    {
+      "title": "Other Proxies",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There are also compression proxies, which phones and PDAs use to reformat big pages for small screens."
+        },
+        {
+          "s": "steve",
+          "t": "And Proxomitron, a proxy you run on your own machine. Your browser goes through it, so it can filter ads, spam and more."
+        },
+        {
+          "s": "leo",
+          "t": "We've recommended it for years. It's the worst-looking software I've ever seen, but it gets the job done."
+        },
+        {
+          "s": "leo",
+          "t": "What's the performance cost?"
+        },
+        {
+          "s": "steve",
+          "t": "A simple caching proxy is very low overhead, and a net win, since content comes from your ISP's own network. Proxomitron is powerful, with regular expressions and scripting, so it slows things more."
+        },
+        {
+          "s": "steve",
+          "t": "I've long wanted to write a GRC net filter, in assembly language, efficient and friendlier. It's on my list."
+        },
+        {
+          "s": "steve",
+          "t": "And Tor, The Onion Router, will get its own episode. It chains privacy-enhancing proxies using nested layers of encryption, like an onion, and our crypto series gives us the background."
+        },
+        {
+          "s": "steve",
+          "t": "One more risk: proxies have cached malicious pages. After the server was taken down, its content lived on in ISP caches, still infecting people."
+        },
+        {
+          "s": "leo",
+          "t": "You have to be careful what you cache."
+        },
+        {
+          "s": "steve",
+          "t": "Search engines cache pages too. But Google now warns about known malicious pages. I saw that warning a couple of days ago."
+        }
+      ]
+    },
+    {
+      "title": "Selling SpinRite to Peter Norton? No.",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "People want to hear more about how drives work."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite began with interleave optimization: a nondestructive, low-level reformat that nobody had heard of."
+        },
+        {
+          "s": "steve",
+          "t": "Peter Norton invited me to lunch in Santa Monica because his customers' surveys said they wanted SpinRite. Not selling it was the best decision of my life."
+        },
+        {
+          "s": "steve",
+          "t": "They ended up cloning it. I'll be polite, since it wasn't Peter's fault, but we found our code in their version, called Calibrate. Since they hadn't really written it, they couldn't support it, and their support people told customers to get SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Peter said that when he heard about a nondestructive low-level reformat, he kept waiting to see a mushroom cloud rise from Southern California."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why were security vendors upset about Vista's kernel protection?",
+      "options": [
+        "It blocked the kernel hooks their products used, and Microsoft's replacement APIs would come later",
+        "It deleted their software",
+        "It made Windows slower",
+        "It required Macs"
+      ],
+      "answer": 0,
+      "explain": "Microsoft argued an open API could help attackers too."
+    },
+    {
+      "q": "How does a modern hard drive decide to replace a sector?",
+      "options": [
+        "When its ECC corrections span too many bits, it copies the data to a spare sector",
+        "Every 1,000 reads",
+        "When the OS asks",
+        "Never"
+      ],
+      "answer": 0,
+      "explain": "SpinRite works beneath the file system with this process."
+    },
+    {
+      "q": "Why do ISPs run transparent caching proxies?",
+      "options": [
+        "To save bandwidth by serving repeated content from a local cache",
+        "To spy on customers",
+        "To block viruses",
+        "To slow traffic"
+      ],
+      "answer": 0,
+      "explain": "It's also faster for customers, but it undercounts downloads."
+    },
+    {
+      "q": "How does ShieldsUP! avoid testing the ISP's proxy instead of the visitor?",
+      "options": [
+        "It switches to SSL, which a transparent proxy can't intercept",
+        "It asks the user",
+        "It scans every IP",
+        "It ignores proxies"
+      ],
+      "answer": 0,
+      "explain": "Headers like X-Forwarded-For also reveal proxies."
+    },
+    {
+      "q": "Why does Steve suggest turning off IE's \"Automatically detect settings\"?",
+      "options": [
+        "It slows IE's startup and can be tricked into using a malicious proxy",
+        "It disables SSL",
+        "It blocks cookies",
+        "It turns off the firewall"
+      ],
+      "answer": 0,
+      "explain": "In co.uk domains, it could ask wpad.co.uk for settings."
+    },
+    {
+      "q": "What happened when proxies cached malicious pages?",
+      "options": [
+        "The malware kept spreading from caches after the original server was gone",
+        "Nothing",
+        "The proxies crashed",
+        "The pages were fixed"
+      ],
+      "answer": 0,
+      "explain": "Caching cuts both ways."
+    }
+  ]
+}
