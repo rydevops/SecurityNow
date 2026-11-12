@@ -1,0 +1,564 @@
+{
+  "number": 72,
+  "title": "Listener Feedback Q&A #14",
+  "subtitle": "TOR follow-ups, passwords after death, SPF and CVV codes",
+  "date": "2006-12-28",
+  "description": "A holiday Q&A: a SpinRite story that got a technician fired, onion routing on CBS's \"Numbers,\" leaving encrypted data and passwords to your family, laptop drive temperatures, SPF's trouble with relays and road warriors, whether TOR routers can trace you, crypto backdoors, port 113 and stealth, TOR on open Wi-Fi and DNS leaks, credit card security codes, and the odds of two people generating the same key.",
+  "transcript": "https://www.grc.com/sn/sn-072.txt",
+  "audio": "http://media.GRC.com/sn/SN-072.mp3",
+  "chapters": [
+    {
+      "title": "Soldiering On Over the Holidays",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Between Christmas and New Year's, much of TWiT has taken off. Steve says we must soldier on."
+        },
+        {
+          "s": "steve",
+          "t": "I've never had such positive feedback as for the last Q&A, so I'm nervous. People loved the mix and that we took our time, 97 minutes. This one has a lot of TOR questions, so less diversity."
+        },
+        {
+          "s": "steve",
+          "t": "Many said they couldn't believe I explained TOR with no diagrams. Just listening, they understood the onion. The question form is at the bottom of GRC.com/securitynow. You can even leave it anonymous."
+        }
+      ]
+    },
+    {
+      "title": "\"Your SpinRite Software Got Me Fired\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A listener says SpinRite works on external drives, too."
+        },
+        {
+          "s": "steve",
+          "t": "I have emails from people whose USB drives it fixed. Through USB or FireWire, SpinRite has less intimate access. It's faster and sees more when the drive is attached to the motherboard. But it does its best."
+        },
+        {
+          "s": "steve",
+          "t": "For the holidays, a wacky story titled \"Steve, your SpinRite software got me fired. True story.\" It's from SpinRite 2's days, about 15 years ago, in Rockville, Maryland, when drives were MFM and RLL."
+        },
+        {
+          "type": "fact",
+          "title": "MFM and RLL",
+          "t": "MFM stands for Modified Frequency Modulation, and RLL for Run Length Limited. Both were ways of encoding data on early PC hard drives."
+        },
+        {
+          "s": "steve",
+          "t": "David, a new service tech, was called to a seniors' community organization whose drive needed a low-level format. The lady begged him to save their data, for the old people's sake."
+        },
+        {
+          "s": "steve",
+          "t": "He brought his own copy of SpinRite 2 and explained to the senior tech with him: it reads each track before reformatting it, then writes the original data back instead of zeros, so they don't lose anything."
+        },
+        {
+          "s": "leo",
+          "t": "That was always the best thing about SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "The senior tech asked, \"Won't that take twice as long?\" Twenty minutes instead of 10, but it saves their data. \"No. This is a service contract. We already have their money. Just format their drive, and we can bill that 10 minutes at the next job. We're not a charity.\""
+        },
+        {
+          "s": "steve",
+          "t": "David felt he was in the Twilight Zone. He said \"No, I can't do that,\" and ran SpinRite. It took 22 minutes. The system came back up, and the lady said, \"God bless you, David.\""
+        },
+        {
+          "s": "steve",
+          "t": "In the parking lot they almost got into a fistfight, and took it to the company's president, who agreed with the senior tech and fired David on the spot. As he left, the other tech smiled smugly."
+        },
+        {
+          "s": "leo",
+          "t": "Oh my god. I bet that kind of shenanigans still goes on."
+        },
+        {
+          "s": "steve",
+          "t": "Before meeting you in Toronto, I told the story to the Nerds On Site guys. They said, \"Who is that guy? We'll hire him.\""
+        },
+        {
+          "s": "leo",
+          "t": "I don't want to recommend companies that put billable hours over customers. I bet that company is long out of business."
+        }
+      ]
+    },
+    {
+      "title": "Onion Routing on \"Numbers\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dennis from Atlanta, Georgia listened to our anonymity episodes. Then the next \"Numbers\" on CBS was about a vigilante using onion routing networks to stalk and kill pedophiles. More than a coincidence?"
+        },
+        {
+          "s": "steve",
+          "t": "So many people wrote this. One was thinking \"please mention onion routing,\" and they did, by name. They used the analogy of envelopes inside envelopes. He noted it only works if only the addressee can open each envelope. Wouldn't paper mail be nice that way? We have nothing to do with CBS's scheduling."
+        },
+        {
+          "s": "leo",
+          "t": "They wrote it months ago. But advanced tech is sneaking into mainstream programming. I like it."
+        }
+      ]
+    },
+    {
+      "title": "Your Encrypted Life After Death",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andy, in Spain, asks something morbid but important: I don't share passwords with anyone, even my wife. But if I die or become very ill, my family needs access, and someone must wind down my company. If everything's TrueCrypted with unguessable passwords, how do I unwind it for them?"
+        },
+        {
+          "s": "steve",
+          "t": "Isn't that a great question? We've spent 72 weeks on encryption, uncrackable passwords and not writing them down. If something happened, your life would be locked away from the good guys, too."
+        },
+        {
+          "s": "leo",
+          "t": "TrueCrypt can use a keyfile, plus a password. Give your attorney the password, maybe in your will, and keep the keyfile in a safety deposit box, to be opened on your death."
+        },
+        {
+          "s": "steve",
+          "t": "But you'll want to update this file often. TrueCrypt may be overkill and confusing for a family. A simple freeware utility can encrypt one text file with full-strength symmetric crypto."
+        },
+        {
+          "s": "steve",
+          "t": "Put in it all your usernames, IDs, and passwords for email, drives and online financial accounts. Re-encrypt it when you update it. Leave its password with your attorney or in a safety deposit box, with instructions: run this program, enter this password."
+        },
+        {
+          "s": "steve",
+          "t": "A 15-year-old isn't thinking about this. But anyone preparing a will should."
+        },
+        {
+          "type": "fact",
+          "title": "Planning ahead today",
+          "t": "Password managers now offer emergency access, letting a trusted contact request entry after a waiting period. Google's Inactive Account Manager and Apple's Legacy Contact do the same for those accounts."
+        }
+      ]
+    },
+    {
+      "title": "Is 50°C Too Hot for a Laptop Drive?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jared Burford in Western Australia says his laptop's 100GB 7200 RPM Hitachi gets so hot during SpinRite that it warns it can't continue due to overheating. In air conditioning, it stays around 50°C. Is that too high?"
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite 6 is the first version aware of SMART data, which includes the drive's temperature. Our SpinRite development newsgroup testers found laptops have a much bigger heat problem than desktops."
+        },
+        {
+          "s": "leo",
+          "t": "There's nowhere for the heat to go."
+        },
+        {
+          "s": "steve",
+          "t": "You can literally burn your lap. And seeking generates heat: accelerating and decelerating the head takes force. SpinRite uses the drive continuously, so if a drive gets too hot, SpinRite pauses until it cools. You can ignore it."
+        },
+        {
+          "s": "steve",
+          "t": "Many people upgrade to 7200 RPM drives in machines not designed to cool them. Over-temperature is the number one cause of premature drive failure, and nobody's been watching."
+        },
+        {
+          "s": "leo",
+          "t": "So is 50°C too hot?"
+        },
+        {
+          "s": "steve",
+          "t": "No. I think SpinRite's limit is around 75. Manufacturers' specs agree closely on maximum operating temperature, and SpinRite just tells you if you exceed it."
+        }
+      ]
+    },
+    {
+      "title": "SPF, Relays and Road Warriors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Damon in Oklahoma follows up on spam. Your SPF record lists your mail server. But ISPs block port 25. When your users travel, you can't list every ISP's server. Doesn't that make SPF almost useless? I don't follow, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "SPF, the Sender... I'm blanking on the acronym."
+        },
+        {
+          "s": "leo",
+          "t": "Framework. Sender something Framework."
+        },
+        {
+          "s": "steve",
+          "t": "Its meaning changed several times, which confused everybody. The idea: DNS can tell you a domain's IP, or with an MX query, its mail server. SPF adds a text record saying which IPs or machines may originate mail from that domain."
+        },
+        {
+          "s": "steve",
+          "t": "When my server sends mail to Google, Google knows my IP from the TCP connection, which can't be spoofed. It asks GRC.com's DNS for its SPF record, which I wrote, saying GRC mail comes only from this one IP. A non-GRC server pretending to be steve@grc.com fails."
+        },
+        {
+          "type": "fact",
+          "title": "The acronym",
+          "t": "SPF stands for Sender Policy Framework. Its original name was Sender Permitted From, which is part of why the acronym confused people."
+        },
+        {
+          "s": "steve",
+          "t": "Here's one problem. Greg, my tech support guy, couldn't email someone a few days ago. SPF only works for direct connections. Relays, especially open relays that forward anyone's mail, have been huge spam tools."
+        },
+        {
+          "s": "steve",
+          "t": "The recipient's server relayed Greg's mail to a third server, which checked SPF and found the relaying server wasn't authorized by GRC. It bounced. When security tightens, you get problems, like the driver-signing controversy."
+        },
+        {
+          "s": "leo",
+          "t": "Could you have sent it directly from GRC?"
+        },
+        {
+          "s": "steve",
+          "t": "No, the recipient was configured with that relay. Anyone using SPF, and there are hundreds of thousands of servers now, can't reach him. He'll eventually wonder why he's not hearing from people."
+        },
+        {
+          "s": "steve",
+          "t": "The second problem is Damon's. Greg travels and wants to send GRC mail. ISPs block outbound port 25, because zombies send spam with their own mail engines. You can only use the ISP's server. Mine is smtp.west.cox.net."
+        },
+        {
+          "s": "steve",
+          "t": "If Greg sends GRC mail through Cox's server, it's a relay, and recipients checking GRC's SPF reject it."
+        },
+        {
+          "s": "steve",
+          "t": "I could add Greg's ISP's server to GRC's SPF record. That opens a tiny hole: anyone on that ISP could spoof GRC mail. It's unlikely, but it's not what I did."
+        },
+        {
+          "s": "steve",
+          "t": "Instead, since I control our mail server, we opened another entrance on a random high port. Greg's Eudora sends there instead of port 25. His ISP doesn't block it, so his mail goes directly to our server. It's complex, but SPF is finally bringing authentication to email."
+        },
+        {
+          "type": "fact",
+          "title": "The standard fix",
+          "t": "Mail clients now normally submit mail on port 587 (or 465 with TLS) with a username and password, which ISPs don't block. That's essentially what Steve improvised."
+        }
+      ]
+    },
+    {
+      "title": "Can a TOR Router Trace You?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brad Beyenhof of San Diego asks: can't each TOR router note who sent it the onion, so you could backtrack the path?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Each router receives the onion from one other router, with the outer shells already removed by earlier routers. That information is gone."
+        },
+        {
+          "s": "steve",
+          "t": "And you can't track forward, because the remaining shell is encrypted with the next router's public key, which only its private key can decrypt. Each router gets only what it needs for its piece: symmetric keys for its links to its neighbors, and an opaque blob to forward."
+        },
+        {
+          "s": "leo",
+          "t": "Very elegant."
+        }
+      ]
+    },
+    {
+      "title": "Can Apple Unlock FileVault?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Carlos Restrepo in Houston, Texas asks: if I encrypt with something like FileVault, OS X's built-in encryption, could the government order Apple to decrypt my data? Can developers decrypt it from knowing the algorithm, or is my password necessary?"
+        },
+        {
+          "s": "steve",
+          "t": "Listen to our earlier crypto series. Properly implemented crypto, as I'm sure Apple's and TrueCrypt's are, has no backdoor. A program could secretly write your key somewhere, but that would be a breach of the program, not the crypto."
+        },
+        {
+          "s": "steve",
+          "t": "Good asymmetric or symmetric crypto with long enough keys is elegantly beautiful math. No expert will say it can't be broken, but security comes from many people scrutinizing it for years without finding a way. That's where mature crypto is today."
+        },
+        {
+          "s": "leo",
+          "t": "Knowing how it was done doesn't let you reverse it."
+        },
+        {
+          "s": "steve",
+          "t": "That's the elegance. It's fully published, with no obscurity, and bulletproof."
+        },
+        {
+          "s": "leo",
+          "t": "That's why I prefer open source. I trust Apple and Microsoft, but you can't check their code. Small projects may not be vetted, but TrueCrypt surely has been."
+        },
+        {
+          "type": "fact",
+          "title": "TrueCrypt's audit",
+          "t": "TrueCrypt's developers abruptly ended the project in 2014. A 2015 audit found no backdoor, and its successor, VeraCrypt, fixed the issues it found."
+        }
+      ]
+    },
+    {
+      "title": "Port 113 and \"True Stealth\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bert Keates of Sun City West, Arizona reconnected two old Windows 98SE machines behind his Netgear router. ShieldsUP! shows everything stealthed except port 113, which is closed. Should he worry about the Windows 98 machines? He wants printer and file sharing."
+        },
+        {
+          "s": "steve",
+          "t": "\"True stealth\" is my ShieldsUP! term for when nothing at all comes back. I send TCP to the nonexistent port 0, ICMP to 0 and 1, odd bit patterns. Only if nothing returns do I say \"You have true stealth.\""
+        },
+        {
+          "s": "steve",
+          "t": "Port 113 is IDENT, old technology. When you connected to some remote servers, they'd query port 113 for identification. Some old FTP and IRC servers still do."
+        },
+        {
+          "s": "steve",
+          "t": "If port 113 is stealthed, the server sends a SYN and waits, then doubles the wait and retries, maybe a minute, delaying your connection. So Netgear deliberately leaves 113 closed: it answers with a reset, \"I'm here, but this port is closed,\" and the server moves on."
+        },
+        {
+          "s": "steve",
+          "t": "And Bert is testing his router, not Windows 98. His LAN uses private 192.168 addresses. Behind the router, file and printer sharing is safe, since it's a very good hardware firewall."
+        },
+        {
+          "s": "leo",
+          "t": "If you never use IDENT, you can often stealth it in the router."
+        }
+      ]
+    },
+    {
+      "title": "TOR on Open Wi-Fi",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim in Victoria, BC asks: would TOR protect me on an open Wi-Fi network?"
+        },
+        {
+          "s": "steve",
+          "t": "Open Wi-Fi has two very different problems. One is someone monitoring your traffic. Any encrypted connection handles that."
+        },
+        {
+          "s": "steve",
+          "t": "The other is your machine itself. On open Wi-Fi it's on the LAN with everyone. Without a local firewall, it's like letting anyone plug a network cable into it. People who rely on a NAT router at home are exposed when they take laptops out. Run your software firewall."
+        },
+        {
+          "s": "leo",
+          "t": "And TOR does anonymity, not encryption."
+        },
+        {
+          "s": "leo",
+          "t": "Vaylor Trucks of Lawrenceville, Georgia asks: why not use TOR instead of a VPN at a hotspot, to encrypt the first hop?"
+        },
+        {
+          "s": "steve",
+          "t": "I need to confirm whether a TOR client encrypts the link to the first onion router. Many asked, and I'll have an answer next time."
+        },
+        {
+          "s": "leo",
+          "t": "That first leg through the Wi-Fi is what matters."
+        },
+        {
+          "s": "steve",
+          "t": "And it's clever. If you're not frantic about anonymity, you could use a single onion router, without multi-hop slowness, like a free, always-available VPN."
+        },
+        {
+          "s": "steve",
+          "t": "One caveat I didn't mention: TOR carries only TCP. DNS uses UDP. Someone watching you would see your DNS queries and know where you're going."
+        },
+        {
+          "s": "steve",
+          "t": "You want to proxy all your data until it leaves your computer."
+        },
+        {
+          "s": "leo",
+          "t": "TOR's docs say to install Proxify for this."
+        },
+        {
+          "s": "steve",
+          "t": "As far as I know, TOR's client uses a SOCKS proxy, which isn't encrypted by default. I'll find out."
+        },
+        {
+          "type": "fact",
+          "title": "The answer",
+          "t": "TOR does encrypt the first hop: the link to the first relay uses TLS, inside which the onion layers stay intact. TOR deliberately won't build one-hop circuits to the Internet. Its SOCKS interface only connects your browser to the local TOR program, and it can resolve DNS names through TOR. The privacy proxy TOR recommended then was Privoxy."
+        }
+      ]
+    },
+    {
+      "title": "What the CVV Code Is For",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe Campana of Ontario, California asks about the three- or four-digit security codes on MasterCard, Visa and American Express. Why are they there?"
+        },
+        {
+          "s": "steve",
+          "t": "I learned this writing GRC's e-commerce system from scratch in assembly, a year or two before SpinRite 6. I didn't trust off-the-shelf shopping carts, which had constant security problems. And I have a hundred things to download but only one to buy."
+        },
+        {
+          "s": "steve",
+          "t": "By law, cards carry a phone number for the issuer. The code is the CSC, Card Security Code, also called CVV or CVV2. It's never in the magnetic stripe and never embossed, so old carbon imprinters and card swipes never capture it."
+        },
+        {
+          "s": "leo",
+          "t": "So you need physical access to the card."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Sometimes it's printed in the signature area and wears off, but the issuer can tell you if you prove your identity. Better to keep the number away from the card, maybe in a secret corner of your wallet."
+        },
+        {
+          "s": "steve",
+          "t": "By agreement, it never appears on receipts and is never stored in a database. It's a separate token, like a PIN for your card."
+        },
+        {
+          "s": "leo",
+          "t": "But the whole card system is grossly insecure. You give that number out whenever you buy something. Until we get smartcards and biometrics, it'll stay that way."
+        },
+        {
+          "s": "steve",
+          "t": "Cards predate online commerce. And you hand your card to anonymous restaurant servers."
+        },
+        {
+          "s": "leo",
+          "t": "As a user you don't mind much, since you're protected if you watch your statements."
+        },
+        {
+          "type": "fact",
+          "title": "Storing the code",
+          "t": "The Payment Card Industry Data Security Standard (PCI DSS) forbids merchants from storing the security code after authorizing a transaction. Chip cards, tokenized mobile payments and one-time codes have since reduced card fraud."
+        }
+      ]
+    },
+    {
+      "title": "Can a TOR Exit Router Find You?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An appropriately anonymous listener in Southeast England asks: if the last router is corrupted, say by the NSA, can it extract my IP? It must know where to send replies. And can't someone read the clear text, or just own the server?"
+        },
+        {
+          "s": "steve",
+          "t": "The last router sees unencrypted traffic both ways. But replies go back through the circuit set up by the onion. It knows only how to encrypt and which onion router to send to. It has no idea where the traffic originated."
+        },
+        {
+          "s": "steve",
+          "t": "It can watch what you're doing. TOR is about anonymity, not privacy. It sees anonymous people's traffic."
+        },
+        {
+          "s": "leo",
+          "t": "If it's not encrypted, they can read it."
+        },
+        {
+          "s": "steve",
+          "t": "And a malicious exit could inject JavaScript into returned pages, which runs in your browser if scripting is on by default. But any web server could do that. Smart people don't run scripts by default."
+        },
+        {
+          "s": "leo",
+          "t": "TOR's wiki explains using Firefox's NoScript extension."
+        },
+        {
+          "s": "steve",
+          "t": "Unless you tell it, through scripting or a cookie, it can't know who you are. And there's a blizzard of traffic among the routers, more since we talked about it."
+        }
+      ]
+    },
+    {
+      "title": "Could Two People Generate the Same Key?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last, Fred Barlow of Atlanta asks: if someone generated exactly the same public and private keys I did, could each decrypt the other's messages?"
+        },
+        {
+          "s": "leo",
+          "t": "Yes, but it's never going to happen."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Asymmetric keys are very long: 1K, 2K, even 4K. There are 2 to the 1,024 possible 1K keys, an astronomically large number. Even if two people somehow chose the same key, they'd never know it."
+        },
+        {
+          "s": "steve",
+          "t": "I just tried raising 2 to the 1,024th on my HP-11C. It showed 9.99999 to the 99th, meaning it overflowed and blew the calculator's mind."
+        },
+        {
+          "s": "leo",
+          "t": "It's larger than the number of molecules in the universe. You're okay."
+        },
+        {
+          "type": "fact",
+          "title": "The real numbers",
+          "t": "Key sizes like these are in bits, not kilobytes: a 1,024-bit RSA key. 2 to the 1,024th is about 1.8 times 10 to the 308th. RSA keys are built from large primes, so there are fewer possible keys than that, but still unimaginably many."
+        },
+        {
+          "s": "steve",
+          "t": "And ShieldsUP! is approaching 47 million uses."
+        },
+        {
+          "s": "leo",
+          "t": "Happy New Year. We see you in 2007, our third year of securing you, your friends and family."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why was the young technician fired in the SpinRite 2 story?",
+      "options": [
+        "He used SpinRite to save a client's data instead of a faster destructive format",
+        "He damaged the drive",
+        "He billed too much",
+        "He was late"
+      ],
+      "answer": 0,
+      "explain": "The work took 22 minutes instead of 10."
+    },
+    {
+      "q": "How did Steve suggest leaving passwords for your family?",
+      "options": [
+        "Keep them in an encrypted file whose password your attorney or safety deposit box holds",
+        "Email them to your spouse",
+        "Write them on the PC",
+        "Use the same password everywhere"
+      ],
+      "answer": 0,
+      "explain": "A simple single-file encryption tool is easier for family than TrueCrypt."
+    },
+    {
+      "q": "Why did SPF bounce Greg's email?",
+      "options": [
+        "The recipient's mail passed through a relay that GRC's SPF record didn't authorize",
+        "Greg's password expired",
+        "GRC was blacklisted",
+        "Port 25 was open"
+      ],
+      "answer": 0,
+      "explain": "SPF only trusts direct connections."
+    },
+    {
+      "q": "How did Steve let Greg send GRC mail from the road?",
+      "options": [
+        "He opened another, high port on GRC's mail server",
+        "He disabled SPF",
+        "He added Greg's ISP to the SPF record",
+        "He used webmail"
+      ],
+      "answer": 0,
+      "explain": "ISPs block outbound port 25 but not other ports."
+    },
+    {
+      "q": "Why does a Netgear router leave port 113 closed rather than stealthed?",
+      "options": [
+        "Stealthing IDENT can delay connections to servers that query it",
+        "It's required by law",
+        "It's a bug",
+        "To allow printer sharing"
+      ],
+      "answer": 0,
+      "explain": "Closed ports answer immediately with a reset."
+    },
+    {
+      "q": "What privacy leak did Steve warn of when using TOR?",
+      "options": [
+        "DNS lookups, which use UDP, can reveal where you're going",
+        "Your MAC address",
+        "Your password",
+        "Router logs"
+      ],
+      "answer": 0,
+      "explain": "TOR carries only TCP traffic."
+    }
+  ]
+}

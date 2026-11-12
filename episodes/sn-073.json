@@ -1,0 +1,605 @@
+{
+  "number": 73,
+  "title": "Digital Rights Management (DRM)",
+  "subtitle": "From cassette copies to AACS",
+  "date": "2007-01-04",
+  "description": "To prepare for next week's interview with Peter Gutmann about Vista's content protection, Steve surveys the history of copyright and copy protection: DAT and SCMS, fair use, the DMCA, DVD's broken CSS, CPRM, DTCP and HDCP, and the elaborate AACS system protecting HD DVD and Blu-ray, which a hacker called muslix64 has already sidestepped. Plus SpinRite's DynaStat and SecurAble's progress.",
+  "transcript": "https://www.grc.com/sn/sn-073.txt",
+  "audio": "http://media.GRC.com/sn/SN-073.mp3",
+  "chapters": [
+    {
+      "title": "No More Problems in '07",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Welcome to 2007. There are no more security problems, so we can stop doing this show."
+        },
+        {
+          "s": "steve",
+          "t": "No more problems in '07. And everyone, we're kidding."
+        },
+        {
+          "s": "leo",
+          "t": "You have to be careful, or it ends up on Digg. When I said I was having trouble getting TWiT guests, my father-in-law heard I was canceling it. In fact, Time magazine named TWiT one of the top ten podcasts of the year, alongside mostly mainstream media like \"This American Life.\""
+        }
+      ]
+    },
+    {
+      "title": "Peter Gutmann's Paper",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today, a new form of digital rights management."
+        },
+        {
+          "s": "steve",
+          "t": "Over the holidays, a paper by Peter Gutmann, a well-known security researcher, drew a lot of attention. I've corresponded with him since 2002, when I asked permission to use parts of his open-source cryptographic library."
+        },
+        {
+          "s": "steve",
+          "t": "I read it on December 24, flying to Northern California for Christmas. By page two it had me in its grip. It's \"A Cost Analysis of Windows Vista Content Protection,\" about the costs of the DRM Microsoft put into Vista. Peter has a progressive, open-source, free-speech take."
+        },
+        {
+          "s": "steve",
+          "t": "We've touched on DRM and the Digital Millennium Copyright Act, DMCA, but never focused on it. Peter will join us next week. He's been in a firestorm. Many bloggers say he's wrong, and Bob Cringely, the old InfoWorld columnist, disagreed with some of it."
+        },
+        {
+          "s": "steve",
+          "t": "So I spent most of the week researching the AACS content protection system, to fact-check Peter and give our listeners the full picture. No audience is better prepared, since it's all about crypto."
+        },
+        {
+          "s": "leo",
+          "t": "DRM falls within our purview, absolutely."
+        }
+      ]
+    },
+    {
+      "title": "Copying Goes Digital",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "AACS stands for?"
+        },
+        {
+          "s": "steve",
+          "t": "Advanced Access Content System. It's been an acronym-soup week."
+        },
+        {
+          "s": "leo",
+          "t": "A replacement for DVD's CSS?"
+        },
+        {
+          "s": "steve",
+          "t": "More an evolution. Content protection has been evolving constantly since digital tape. The recording industry had a spasm when DAT, digital audio tape, was introduced in 1987. Consumers could make perfect copies."
+        },
+        {
+          "s": "steve",
+          "t": "Remember plugging two cassette recorders together in elementary school?"
+        },
+        {
+          "s": "leo",
+          "t": "It got hissier with each copy."
+        },
+        {
+          "s": "steve",
+          "t": "That was a copyright violation even then."
+        },
+        {
+          "s": "leo",
+          "t": "Wasn't there a Home Recording Act loophole?"
+        },
+        {
+          "s": "steve",
+          "t": "That came after DAT, in 1992, in response to it. The Audio Home Recording Act required digital audio recorders to include SCMS, the Serial Copy Management System. You could make one first-generation copy, but the copy couldn't be copied."
+        },
+        {
+          "s": "steve",
+          "t": "Earlier, around '72, the industry worried about consumer tape recorders. Congress didn't want to ban all copying, so there was a \"fair use\" exemption: personal and academic copies that don't cause economic harm."
+        }
+      ]
+    },
+    {
+      "title": "How Copyright Evolved",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The original copyright provision, in 1788, allowed 28 years of protection for books, maps and charts. After about a century it doubled to 56 years, and \"printing\" became \"copying,\" with phonographs and player-piano rolls."
+        },
+        {
+          "type": "fact",
+          "title": "Early copyright terms",
+          "t": "The Constitution (ratified 1788) authorized copyright. The first law, the Copyright Act of 1790, gave 14 years plus a 14-year renewal, for 28. The 1909 act doubled that to 56. Today it's generally the author's life plus 70 years."
+        },
+        {
+          "s": "steve",
+          "t": "The goal was the public interest. Unlimited copying would discourage creators, so they got exclusive rights for a time, and then works entered the public domain."
+        },
+        {
+          "s": "steve",
+          "t": "It's like patents: you publicly disclose your invention in return for 17 years of exclusivity, and others can build on it by paying royalties."
+        },
+        {
+          "type": "fact",
+          "title": "Patent terms",
+          "t": "U.S. patents lasted 17 years from issue until 1995. They now run 20 years from the filing date."
+        },
+        {
+          "s": "steve",
+          "t": "But with the content industry's growing lobbying strength, Congress keeps tightening down on individual users' rights."
+        },
+        {
+          "s": "steve",
+          "t": "The flip side: the world changed. Kids plugging tape recorders together became hard drives with gigabytes, the Internet, and fantastic communications. You could argue the content industry has a point about needing more protection."
+        },
+        {
+          "s": "steve",
+          "t": "That led to the World Intellectual Property Organization, WIPO, treaties, and to implement them, the DMCA. It criminalizes touching any content that's ever been encrypted, with much bigger fines. Fair use technically remains, but it's gone for encrypted content."
+        }
+      ]
+    },
+    {
+      "title": "Ripping CDs Versus DVDs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "CDs aren't encrypted. Nobody thinks twice about ripping one to an MP3 player for personal use, and fair use allows it. Handing out perfect copies isn't allowed, but nothing on CDs prevents it."
+        },
+        {
+          "s": "steve",
+          "t": "The DMCA criminalizes circumventing, even exploring how to circumvent, anti-copying technology. So DVDs, protected by the very broken CSS, the Content Scrambling System, can't legally be ripped at all."
+        },
+        {
+          "s": "steve",
+          "t": "To content producers, the PC is the worst thing that ever happened: little $500 piracy studios with DVD burners. Laws help them, but they know they must actually prevent copying."
+        },
+        {
+          "s": "steve",
+          "t": "I asked Mark Thompson of AnalogX whether file sharing has really hurt the industry. \"Without a question.\" A songwriter friend of his has watched his royalties drop year by year."
+        }
+      ]
+    },
+    {
+      "title": "CSS: 40 Bits, 25 Significant",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "CSS had problems. Export restrictions then classified cryptography as munitions, so nothing with keys longer than 40 bits could be exported. That limited DVD's crypto to 40 bits. Players also had little processing power."
+        },
+        {
+          "s": "steve",
+          "t": "Analyses showed only 25 of CSS's 40 bits were mathematically significant. It's reminiscent of 40-bit WEP in Wi-Fi."
+        },
+        {
+          "s": "steve",
+          "t": "CSS stopped casual copying, but it was cracked so badly that anyone determined can copy commercial DVDs. The MPAA, the Motion Picture Association, wasn't happy. But under the DMCA, the encryption still establishes its intent to protect."
+        },
+        {
+          "s": "steve",
+          "t": "And it blocks fair use. About a year ago a report said pressed CDs and DVDs oxidize and may last 10 or 15 years, not 100, while recordable CD-R and DVD-R discs last much longer. I buy movies because I love them and want to watch them in 30 years. I can't legally make personal backups."
+        },
+        {
+          "type": "fact",
+          "title": "Disc lifespans",
+          "t": "Most research has found the opposite: pressed discs generally outlast recordable ones, whose organic dyes degrade, though quality and storage conditions vary widely. Properly stored discs of either kind can last decades."
+        }
+      ]
+    },
+    {
+      "title": "CPPM, CPRM, DTCP and HDCP",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Quietly, protection kept evolving. An informal \"CSS2\" never really existed. CPPM, Content Protection for Pre-recorded Media, protects DVD-Audio discs, which carry stunning uncompressed multichannel sound a CD can't hold. They never really got off the ground."
+        },
+        {
+          "s": "steve",
+          "t": "CPRM, Content Protection for Recordable Media, got more press. Its spec included ordinary ATA hard drives. These systems protect sector by sector, so arbitrary blocks inside your drive could be locked and encrypted, impossible to back up. After a fury, the licensing body vowed never to license it for hard drives."
+        },
+        {
+          "s": "steve",
+          "t": "All this is available only under license, protected by patents and trade secrets. Only licensees get the algorithms and device keys. Patents sometimes reveal more."
+        },
+        {
+          "s": "steve",
+          "t": "DTCP, Digital Transmission Content Protection, protects FireWire, IEEE 1394, and USB. Its two copy-control bits give four states: copy freely, never copy, copy once, or copy no more."
+        },
+        {
+          "s": "steve",
+          "t": "Finally HDCP, High-bandwidth Digital Content Protection, Intel's intellectual property, protects the link to TVs and projectors. Content producers now protect the entire channel: disc, player, and the player's outputs to the screen."
+        },
+        {
+          "s": "steve",
+          "t": "Content can carry policies on whether it may play over component video, the analog RGB connection many home theaters use. Analog can't be digitally protected. Nobody knows if or when it will be done, but players can shut off component outputs, or deliberately degrade the resolution, at the owner's request."
+        },
+        {
+          "s": "leo",
+          "t": "They've always wanted to reach into your computer and change how it behaves. Or even retract stuff."
+        }
+      ]
+    },
+    {
+      "title": "AACS and the High-Definition Formats",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "That leads us to AACS. Oh boy, wait till you hear this."
+        },
+        {
+          "s": "steve",
+          "t": "AACS is the latest step in content providers gaining technological grip. The DMCA gave them legal grip, with serious teeth. The EFF and free-speech groups say it goes too far. Our technologies have always been strengthened by open academic examination, and the DMCA prevents that. It protects against even discussing content protection."
+        },
+        {
+          "s": "steve",
+          "t": "AACS is part of both next-generation, high-definition disc formats: HD DVD and Blu-ray."
+        },
+        {
+          "s": "leo",
+          "t": "They both use the same method?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, from one powerful licensing body. HD DVD lets studios retool DVD production lines. Blu-ray needs brand-new facilities, but holds more, around 50 or 56GB, where HD DVD holds 40."
+        },
+        {
+          "type": "fact",
+          "title": "Capacities",
+          "t": "Dual-layer Blu-ray discs held 50GB and dual-layer HD DVDs 30GB. HD DVD lost the format war in February 2008, when Toshiba dropped it."
+        },
+        {
+          "s": "steve",
+          "t": "Both use H.264, the AVC MPEG-4 codec, the generation beyond DVD's MPEG-2. It compresses better and handles up to 1920 by 1080, where MPEG-2 likes DVD's 720 by 480."
+        },
+        {
+          "s": "steve",
+          "t": "And Blu-ray adds one more layer: it can carry a replacement copy-protection scheme if AACS is ever badly broken."
+        },
+        {
+          "s": "leo",
+          "t": "That's what security experts told them: there's no uncrackable system, so have a backup."
+        },
+        {
+          "type": "fact",
+          "title": "BD+",
+          "t": "Blu-ray's extra layer is BD+, a small virtual machine on each disc that runs studio code to check and repair the player's protection."
+        },
+        {
+          "s": "steve",
+          "t": "It's my mantra: you can't make a system like this work perfectly. Security has to be perfect, and one weak link breaks it."
+        }
+      ]
+    },
+    {
+      "title": "muslix64 Sidesteps AACS",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of which, over the holidays someone named muslix64 announced an HD DVD backup tool, posted on the Doom9 forums with full source code. A YouTube video shows him playing protected HD DVD content he decrypted himself."
+        },
+        {
+          "s": "steve",
+          "t": "Using Windows and a player, maybe PowerDVD 6.5, he grabbed the decryption keys from the software while it ran, then decrypted the disc's files, which are in the standard UDF format. He wrote it in Java, and AACS's own spec samples are in Java. I'd guess he used them."
+        },
+        {
+          "s": "steve",
+          "t": "He didn't break AACS. He captured a deep intermediate result."
+        }
+      ]
+    },
+    {
+      "title": "The Machinery of AACS",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "AACS is light years beyond CSS. A licensing entity issues device keys to licensed players, and media keys plus a Media Key Block, MKB, to licensed disc replicators."
+        },
+        {
+          "s": "steve",
+          "t": "The MKB uses a recent technique called broadcast encryption, with Subset Difference Revocation, SDR. If you want to hurt yourself, Google it. It's an amazing tree of keys."
+        },
+        {
+          "s": "steve",
+          "t": "It controls encrypted content broadcast to huge numbers of receivers and revokes some of them, without having to send every revoked key, since most receivers stay valid."
+        },
+        {
+          "s": "leo",
+          "t": "If a key is revoked, the player stops working?"
+        },
+        {
+          "s": "steve",
+          "t": "More than that. The MKB is constructed so revoked receivers can't use it to derive the key at all. I've read it about three times and I'm beginning to get a handle on it."
+        },
+        {
+          "s": "leo",
+          "t": "I can't even follow the meta-discussion."
+        },
+        {
+          "s": "steve",
+          "t": "The industry is determined not to repeat its DVD mistake, and has gone overboard. Discs are licensed, content is licensed, and there are drive certificates and host certificates."
+        },
+        {
+          "s": "steve",
+          "t": "No more 40-bit nonsense. It's 128-bit AES, the Rijndael cipher, throughout, also used as building blocks for hashing and signing. And full public-key crypto, elliptic-curve Diffie-Hellman key exchange between devices."
+        },
+        {
+          "s": "steve",
+          "t": "It's so heavy that first-generation players take more than a full minute to register an inserted disc. Even the bus between the optical drive and the player's motherboard is encrypted, with a public-key exchange so nobody can sniff it."
+        },
+        {
+          "s": "leo",
+          "t": "They didn't want a repeat of DeCSS."
+        },
+        {
+          "s": "steve",
+          "t": "That's how we're paying for CSS's crack."
+        }
+      ]
+    },
+    {
+      "title": "Revocation: Your Player Goes Inert",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Players have non-volatile memory, and MKBs are serialized. If a player model were known to be cracked, content owners could revoke its keys, for that player or that whole family. It's up to the licensor how granular the keys are."
+        },
+        {
+          "s": "steve",
+          "t": "When you insert a disc, after verifying the MKB's signature, the player compares serial numbers. If the disc's is newer, the player updates its copy on the fly. That pushes revocation out."
+        },
+        {
+          "s": "steve",
+          "t": "So if you were unlucky enough to own the same player as one that was cracked, a newer disc could render it inert. It would refuse to play."
+        },
+        {
+          "s": "steve",
+          "t": "Even the licensing contracts are proprietary. They mention unspecified \"other measures\" against those whose keys become exposed."
+        },
+        {
+          "s": "leo",
+          "t": "Come knocking on your door."
+        },
+        {
+          "s": "steve",
+          "t": "In fairness, it's not clear this would ever be used on a mass-produced product."
+        },
+        {
+          "s": "leo",
+          "t": "I'd be pretty annoyed if my $500 or $1,000 player stopped working."
+        },
+        {
+          "s": "steve",
+          "t": "More than annoyed. There'd be class-action lawsuits."
+        },
+        {
+          "type": "fact",
+          "title": "Revocation in practice",
+          "t": "AACS did revoke compromised software players' keys in 2007, forcing PowerDVD and WinDVD updates. Hackers kept extracting new keys, and in 2007 one AACS processing key spread widely online as a hexadecimal number starting \"09 F9.\""
+        }
+      ]
+    },
+    {
+      "title": "HDCP: The Weak Last Mile",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And again the weakest link: HDCP, the last mile from your player to the HDMI screen you got for Christmas. HDMI devices carry revocable HDCP keys. The industry's euphemism for revocation is \"renewability.\""
+        },
+        {
+          "s": "steve",
+          "t": "HDCP turns out not to be very strong. Weaknesses have been published, but the DMCA puts a pall on getting specific, since you're a criminal if you do."
+        },
+        {
+          "s": "steve",
+          "t": "Pirates could crack HDCP, use an uncracked player, digitally capture the decompressed picture, recompress it and remaster it."
+        },
+        {
+          "type": "fact",
+          "title": "HDCP's master key",
+          "t": "In 2010, HDCP's master key was published online, letting anyone generate valid device keys. Intel confirmed it was genuine."
+        },
+        {
+          "s": "steve",
+          "t": "Who are they trying to stop? A friend from the Philippines visiting for the holidays said he walks past racks of Hollywood movies for a couple of dollars."
+        },
+        {
+          "s": "leo",
+          "t": "Those are the real pirates."
+        },
+        {
+          "s": "steve",
+          "t": "Peter says stopping this would require revoking the laws of physics, his poetic version of what I always say. Our devices must decrypt and present the content, or they'd be useless. Without perfect control right to our retinas, there are ways around it."
+        },
+        {
+          "s": "leo",
+          "t": "There's always a hole."
+        },
+        {
+          "s": "steve",
+          "t": "Second-generation players are considered quick because they take only about 15 seconds."
+        },
+        {
+          "s": "leo",
+          "t": "My Xbox 360's HD DVD drive doesn't seem slow, though early players got complaints."
+        },
+        {
+          "s": "steve",
+          "t": "Now we know what it's doing."
+        }
+      ]
+    },
+    {
+      "title": "Will Consumers Care?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I've never been a file-sharing guy. I have a vast DVD and CD collection and no pirated content. But I like converting things for MP3 players, or watching on my Palm. That's fair use. In fairness, some people do duplicate DVDs for friends."
+        },
+        {
+          "s": "leo",
+          "t": "It's the movie companies' right. The question is whether consumers will put up with it, or avoid HD players, or Vista, which we'll discuss next week."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think it will matter, sadly. We're seeing the end of an era, or as content producers would say, an error. DVDs won't go away. Movies will come out on both."
+        },
+        {
+          "s": "steve",
+          "t": "To see HD's difference, I bought \"Mission: Impossible III\" and the first \"Tomb Raider.\" What's not to like about Angelina Jolie in high definition?"
+        },
+        {
+          "s": "leo",
+          "t": "I watched \"King Kong\" and \"Seabiscuit.\" On a big plasma, it seems better than the theater."
+        },
+        {
+          "s": "steve",
+          "t": "Film has more detail, but up close the picture fills more of your retina. And what TiVo captures, shrunk to 480 by 320, is lower resolution than producers worry about."
+        },
+        {
+          "s": "steve",
+          "t": "Some players offer studios reduced resolution instead of disabling outputs. That will annoy people with component video bought specifically for HD."
+        },
+        {
+          "s": "leo",
+          "t": "So the people who care are a minority."
+        },
+        {
+          "s": "steve",
+          "t": "DVDs were cracked long ago by DeCSS, with push-button tools now."
+        },
+        {
+          "s": "leo",
+          "t": "They were never easy enough for most people. Most will say, okay, we'll take it."
+        },
+        {
+          "s": "steve",
+          "t": "And what would you do with 40GB of decrypted data? It's nicer on a disc in the album."
+        },
+        {
+          "s": "leo",
+          "t": "Operating systems are different. If they're encumbered with this cruft, people may viscerally dislike them without knowing why."
+        },
+        {
+          "s": "steve",
+          "t": "A perfect segue. Read Peter's paper before next week. Essentially, Vista is AACS brought to Windows, and Peter analyzes the user-side consequences. Baby, you wouldn't believe what they've done to Windows."
+        },
+        {
+          "s": "steve",
+          "t": "Read to the end. Some juicy bits that seemed removed were moved to numbered notes."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite's DynaStat",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "SpinRite was busy over the holidays. Dennis had one file that usually refused to be read. SpinRite found no errors and flew through, yet afterward the file worked."
+        },
+        {
+          "s": "steve",
+          "t": "Weeks later it acted up worse. This time SpinRite immediately saw trouble, got a perfect read a few seconds into DynaStat, and had the drive swap out the sector. \"SpinRite continues to be the best $89 I ever spent.\""
+        },
+        {
+          "s": "leo",
+          "t": "What is DynaStat?"
+        },
+        {
+          "s": "steve",
+          "t": "The sector was on the verge of failing. Drives always use ECC, error correction code, which lets them gauge the size of each error. Past a point, the drive retires the sector."
+        },
+        {
+          "s": "steve",
+          "t": "DynaStat, Dynamic Statistics, first appeared in SpinRite 3.1. SpinRite uses nonstandard drive commands to read unreadable sectors, which nothing else I know of does. It re-reads many times, builds statistics on what it gets, and reverse engineers the original data. Then the drive swaps in a spare, and SpinRite writes the corrected data there."
+        }
+      ]
+    },
+    {
+      "title": "SecurAble Is Nearly Done",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "SecurAble is finished. Our newsgroup has version 0.99 and is finding typos. I'll formally release it in two weeks, once its web page is up."
+        },
+        {
+          "s": "steve",
+          "t": "It turns out my HP TC1100's Pentium M supports hardware DEP. I never knew, because the BIOS turns it off, with no option to turn it on. My next utility, DEPuty, will enable things your BIOS disabled."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft recently got system manufacturers to agree to stop disabling hardware DEP by default. Many SecurAble users found theirs off, but had BIOS options they'd never noticed. The same goes for virtualization."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, Peter on AACS and Vista. The week after, SecurAble's formal release."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the 1992 Audio Home Recording Act require?",
+      "options": [
+        "SCMS, allowing one digital copy that couldn't be copied again",
+        "A ban on DAT",
+        "Encryption on CDs",
+        "Royalty-free copying"
+      ],
+      "answer": 0,
+      "explain": "It responded to DAT's 1987 arrival."
+    },
+    {
+      "q": "Why was DVD's CSS so weak?",
+      "options": [
+        "Export rules limited it to 40 bits, and only 25 proved significant",
+        "It used AES",
+        "It had no key",
+        "It was open source"
+      ],
+      "answer": 0,
+      "explain": "Players also had little processing power."
+    },
+    {
+      "q": "How did muslix64 get around AACS?",
+      "options": [
+        "He captured decryption keys from a software player while it ran",
+        "He broke AES",
+        "He cracked the Media Key Block",
+        "He used a leaked password"
+      ],
+      "answer": 0,
+      "explain": "He then decrypted the disc's files himself."
+    },
+    {
+      "q": "How can AACS revoke a cracked player?",
+      "options": [
+        "Newer discs carry an updated Media Key Block that cracked players can't use",
+        "Players phone home nightly",
+        "Studios recall them",
+        "A fuse burns out"
+      ],
+      "answer": 0,
+      "explain": "Players update their stored MKB on the fly."
+    },
+    {
+      "q": "What did Steve call the weak link in HD content protection?",
+      "options": [
+        "HDCP, protecting the link from player to screen",
+        "AES",
+        "The disc's UDF format",
+        "The remote control"
+      ],
+      "answer": 0,
+      "explain": "Its weaknesses had already been published."
+    },
+    {
+      "q": "Why did Steve say the DMCA eliminated fair use for some media?",
+      "options": [
+        "It criminalizes circumventing any encryption, even for personal copies",
+        "It bans all copying",
+        "It shortened copyright",
+        "It only covers CDs"
+      ],
+      "answer": 0,
+      "explain": "Unencrypted CDs can still be ripped legally."
+    }
+  ]
+}
