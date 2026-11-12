@@ -1,0 +1,425 @@
+{
+  "number": 184,
+  "title": "Listener Feedback #60",
+  "subtitle": "A Q&A on scareware, a public-key YubiKey idea, VPNs vs SSL, NoScript, eInk and WPA",
+  "date": "2009-02-19",
+  "description": "Steve and Leo field twelve listener questions: the fake \"AV 2009\" scareware that MSRT now removes, a listener's idea for a public-key authentication dongle that needs no third party, whether you still need a VPN if you only use SSL, living with NoScript, why static-mode YubiKey keeps drawing questions, how a site reads your LAN IP through NAT, whether auto-updates can be trojans, a VPN that dodged ISP throttling, how eInk makes grey levels, and WPA versus application-layer encryption. Plus an Apple update, the Pirate Bay trial, and a PayPal dongle bypass Steve found himself.",
+  "transcript": "https://www.grc.com/sn/sn-184.txt",
+  "audio": "http://media.GRC.com/sn/SN-184.mp3",
+  "chapters": [
+    {
+      "title": "Apple's Update and Its Tight Lips",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A quiet week, the main security news being Apple. A ~44MB Mac OS X update fixes more than two dozen flaws, including arbitrary code execution in Safari's RSS handling and in Core Text, an info-disclosure bug in Remote Events, and a denial of service in the AFP server, plus a Java update that just says it \"addresses security and compatibility issues.\""
+        },
+        {
+          "s": "leo",
+          "t": "Apple is always tight-lipped. They don't want to say too much, but I'd really like to know what they fixed, and what they haven't."
+        },
+        {
+          "s": "steve",
+          "t": "We're used to Microsoft's fuller disclosure, which has bitten Microsoft. Much of the Mac's code is UNIX software, so techies especially want to know whether a known flaw in, say, their BIND version is patched."
+        }
+      ]
+    },
+    {
+      "title": "The Pirate Bay Trial",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In other news, the trial of the four Pirate Bay founders has begun in Stockholm, on charges of accessory and conspiracy to break copyright law. Their defense is that the files aren't on their servers, only tiny torrent metafiles are. Prosecutors seek about $14 million, and the men could face up to two years in prison."
+        },
+        {
+          "s": "leo",
+          "t": "Day one already lost a charge: prosecutors couldn't prove the torrents were actually hosted on Pirate Bay. The remaining charge, making copyrighted works available, is hard to prove when all they publish is the torrent file."
+        },
+        {
+          "s": "steve",
+          "t": "I don't wish them ill, but their brazenness grates. Companies send takedown letters and they post them and laugh. And I guarantee SpinRite is one of the torrents there, so they're stealing from me too."
+        }
+      ]
+    },
+    {
+      "title": "A PayPal Dongle Bypass Steve Found",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I have my own PayPal horror story, a complete dongle bypass I stumbled onto. Buying vintage computers on eBay, I logged in with my username and password, reached the screen that recognized my security key, then clicked Back two screens to add a comment to the seller."
+        },
+        {
+          "s": "steve",
+          "t": "When I came forward again, the login fields were greyed out from before, so I clicked Login and went straight through, never touching my football. I've now reproduced it twice. It bypasses the entire second factor."
+        },
+        {
+          "s": "leo",
+          "t": "Handy tip if you forget your key, I suppose. But seriously, it's another PayPal programming lapse."
+        },
+        {
+          "type": "fact",
+          "title": "One-time passwords, defeated by a bug",
+          "t": "PayPal's football generated a one-time code precisely so a captured code couldn't be replayed. A navigation bug that skips the prompt entirely defeats that protection no matter how strong the token, a reminder that authentication is only as good as the flow enforcing it."
+        }
+      ]
+    },
+    {
+      "title": "KatMouse, Fringe and a Free Osborne",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A few follow-ups. Many listeners wrote to thank me for recommending KatMouse; people are changing habits, scrolling background windows without raising them. And \"Dollhouse\" underwhelmed me, but my favorite show on TV is \"Fringe,\" a J.J. Abrams series I look forward to every week."
+        },
+        {
+          "s": "steve",
+          "t": "A collectibles offer: listener Lance Reichert has a late-model Osborne 1 and a Kaypro IV, with software and manuals, free for the cost of shipping. He set up a throwaway Gmail address, kaypro.iv at gmail.com, for anyone interested."
+        },
+        {
+          "s": "leo",
+          "t": "I wanted that Osborne so badly, the original \"luggable\" at 30 pounds with a tiny screen. Both came with WordStar."
+        },
+        {
+          "s": "steve",
+          "t": "Careful, Leo, I still use WordStar's Ctrl-key editing in Brief, my old DOS editor, with macros I wrote 20 years ago."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Catches a Loose Cable",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A different kind of SpinRite story, from Tim in Perth. A PC showed \"non-system disk,\" and when he ran SpinRite it reported a cabling error, not a drive error. He reseated the SATA cable, rebooted, and everything came up fine. SpinRite never touched the drive, yet solved it."
+        },
+        {
+          "s": "steve",
+          "t": "I added that in SpinRite 3.1. IDE and later drives CRC-check the data crossing the cable, so SpinRite can shuttle data to the drive's buffer without reading or writing the platters and detect CRC errors. A loose cable is an electrical problem, not a magnetic one, so it stops and tells you before wasting your time."
+        },
+        {
+          "type": "fact",
+          "title": "Diagnose before you treat",
+          "t": "SpinRite also warns when the real fault is BIOS drive settings, not the disk. Reporting the actual problem instead of grinding away on a healthy drive is a hallmark of a mature tool, and saves users from \"fixing\" the wrong thing."
+        }
+      ]
+    },
+    {
+      "title": "The \"AV 2009\" Scareware",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Question one, from Alesia: \"Microsoft's MSRT removed AV 2009 from my computer and now I have no antivirus. Where can I download it again?\" We're laughing with you, not at you, because AV 2009 is itself a virus."
+        },
+        {
+          "s": "steve",
+          "t": "Right, it's malware, and MSRT removing it is good news. Don't go looking for another copy; it'll find you."
+        },
+        {
+          "s": "leo",
+          "t": "It poses as Norton-like names such as AV 360. You hit a hacked site, a fake popup claims you're infected, and whether you click OK or Cancel it runs a phony scan and offers the \"free\" fix, which is the virus. Malwarebytes removes it well, and MSRT does too."
+        },
+        {
+          "s": "leo",
+          "t": "For real antivirus, free ones like AVG, Avira AntiVir and Avast exist, but I'd spend about $30 a year for a faster, better-supported product; I use NOD32."
+        },
+        {
+          "type": "fact",
+          "title": "Scareware",
+          "t": "\"Rogue\" or \"scareware\" programs like AV 2009 fake an infection to frighten users into installing malware or paying for a useless \"cleaner.\" It was a booming scam in this era, spread by hacked sites and malicious ads, and relied almost entirely on social engineering rather than any software flaw."
+        }
+      ]
+    },
+    {
+      "title": "A Public-Key Authentication Dongle",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jan Hertsens asks why a YubiKey-like device doesn't use public-key crypto: keep the private key on the device, hand out the public key, and then any site can verify you with no trusted third party. Trust No One. Would it work?"
+        },
+        {
+          "s": "steve",
+          "t": "It would. The device holds a private key it never divulges. A site that has your public key encrypts a one-time nonce with it; you feed that into the device, it decrypts with the private key and types the answer back, proving you hold the matching private key, no third party needed."
+        },
+        {
+          "s": "steve",
+          "t": "Two catches. First, data must flow into the device, so it can't be a simple keyboard anymore, though the keyboard LED lines (Caps/Num/Scroll Lock) could serialize data in. Second, public-key math needs a real processor, which changes the cost and form factor. The YubiKey is cheap precisely because it just encrypts a counter and types it out."
+        },
+        {
+          "s": "leo",
+          "t": "It's risky carrying your private key around, but no riskier than the YubiKey's secret key. And you'd want a local passphrase to authorize the device, making it multifactor too."
+        },
+        {
+          "s": "steve",
+          "t": "It could absolutely work someday; it just needs more power in the key. The point of today's third party is that they know your shared secret; public-key crypto removes that need."
+        }
+      ]
+    },
+    {
+      "title": "Do You Need a VPN If You Use SSL?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Darren in Redwood City asks: on open hotel WiFi, if anything sensitive is already over SSL, bank or Gmail, why pay for a VPN? A firewall protects his computer; a VPN doesn't."
+        },
+        {
+          "s": "steve",
+          "t": "If you're genuinely vigilant, he's right for ordinary browsing. But most email runs as plain POP, IMAP or SMTP in the clear, and even Gmail defaults to a non-SSL session after login unless you force HTTPS. A VPN covers everything at once, so you don't have to police every connection moment to moment."
+        },
+        {
+          "s": "leo",
+          "t": "Gmail now has an \"Always use HTTPS\" setting, highly recommended. The nightmare is ISP mail that sends your password in the clear; capture it once and someone has your email until you change the password."
+        }
+      ]
+    },
+    {
+      "title": "Living With NoScript",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Larry in Streamwood loves NoScript's protection but hates deciding which blocked domain controls the button he needs, and usually gives up and allows the whole page. Doesn't that defeat the purpose?"
+        },
+        {
+          "s": "steve",
+          "t": "Not really. The recurring theme is: know the risks and know your options. I allow the main page and that works 99.9% of the time. The value is that you arrive and get to evaluate before scripts run; with blanket scripting on, clicking a link leaves you blind."
+        },
+        {
+          "s": "steve",
+          "t": "Remember Alesia's scareware. The popup that started it was scripting; with scripting disabled she'd never have had the chance to be tricked. NoScript is a tool, use it how you like, but having the choice is the point. (And after you turn off its noisy popup notices, it stays out of the way.)"
+        }
+      ]
+    },
+    {
+      "title": "A Knuckle-Rap on Emailing an Executable",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Alistair points out that last Q&A you suggested emailing a friend an encrypted file plus the AxDecrypt program, yet all sensible advice says never run emailed attachments. Fair?"
+        },
+        {
+          "s": "steve",
+          "t": "Fair, and I don't disagree. My assumption is you already know this person, your attorney or a trusted friend, and have arranged it: tell them you encrypted it with AxCrypt and have them download AxDecrypt themselves. That's different from spam telling a stranger to run an attachment to \"decrypt\" it."
+        },
+        {
+          "s": "steve",
+          "t": "Afterward our newsgroup noted some ZIP tools now do real AES encryption, unlike the old trivially crackable ZIP passwords. A platform-neutral encrypted ZIP would be a nice option; I'll look into it."
+        }
+      ]
+    },
+    {
+      "title": "Static YubiKey Keeps Drawing Questions",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jonathan resists the static-password YubiKey: it's no more secure than writing down a strong password, still vulnerable to keyloggers, and no better than a key stored in a text file on a thumb drive."
+        },
+        {
+          "s": "steve",
+          "t": "He's right, and the questions keep coming because listeners understood why one-time passwords are special. I should have been clearer: switching a YubiKey to static mode changes everything. Think of it as two entirely separate devices sharing one piece of plastic; the one-time magic is simply gone."
+        },
+        {
+          "s": "steve",
+          "t": "Static mode gives you 64 characters, 256 bits of entropy, the same every time, entered with a finger-touch. That's useful where keylogging isn't the threat, like TrueCrypt preboot with no OS or network running, and you can add your own typed password for a second factor. It's a different tool for a different domain, not the be-all solution."
+        },
+        {
+          "s": "leo",
+          "t": "That makes sense, as long as you understand the distinction."
+        }
+      ]
+    },
+    {
+      "title": "Reading Your LAN IP Through NAT",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike in Salisbury visited IP-Lookup.net, which showed not just his WAN IP but, behind a link, his Mac's internal LAN address. How do they bust through NAT? Should he worry?"
+        },
+        {
+          "s": "steve",
+          "t": "It's scripting. Your own computer knows its LAN IP, so a script simply reports it. It failed for me in Firefox with JavaScript and even Java deliberately off, but worked in IE. NAT isn't pierced; your browser is just told to display what it already knows."
+        },
+        {
+          "s": "leo",
+          "t": "This is an old privacy-scare trick. Worse, old sites used scripting to show you the contents of your own C: drive, which terrified people, your browser was just told to list it."
+        },
+        {
+          "s": "steve",
+          "t": "And yes, a script could fold that local IP into a URL and send it to the server, so it's not necessarily only displayed locally."
+        },
+        {
+          "type": "fact",
+          "title": "Client-side versus server-side",
+          "t": "Code running in your browser (client-side) can see things about your machine, like its LAN IP or, historically, local files a link points at, and can relay them to a server. That's a property of what the browser is told to do, not a failure of NAT, which only translates addresses on outbound packets."
+        }
+      ]
+    },
+    {
+      "title": "Can Auto-Updates Be Trojans?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jack in Longmont asks: when Windows, iTunes, Acrobat or TurboTax prompt me to install an update, how do I know it's really them and not a trojan popup?"
+        },
+        {
+          "s": "steve",
+          "t": "If you're running their software, you've already trusted it with the full run of your computer, and vendors behave because misbehavior would wreck their business overnight. A fake \"I'm iTunes\" popup can only appear if something malicious is already running on your machine."
+        },
+        {
+          "s": "steve",
+          "t": "The real threat is interception: a DNS spoof could make iTunes fetch its \"update\" from a malicious server. Microsoft cryptographically signs its update downloads to prevent exactly that, and we hope Apple, Adobe and Intuit do the same, though there's no guarantee every vendor takes every precaution."
+        },
+        {
+          "type": "fact",
+          "title": "Signed updates",
+          "t": "The defense against a hijacked update channel is code signing: the updater accepts only packages carrying the vendor's valid cryptographic signature, so a spoofed server can't substitute malware. Update mechanisms that skip signature checks have repeatedly become attack vectors."
+        }
+      ]
+    },
+    {
+      "title": "A VPN That Dodged Throttling",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Todd in New York had a music service, Rhapsody, buffering constantly on his condo's Verizon Avenue connection, until he noticed it streamed flawlessly while connected to a client's network over VPN. Drop the VPN, it stalled; VPN on, perfect. Is Verizon throttling, and does the encrypted tunnel defeat it?"
+        },
+        {
+          "s": "steve",
+          "t": "He's exactly right. Application-specific throttling needs to see the traffic, and a VPN encrypts every packet, including source and destination ports, so it's just noise. Deep packet inspection can't tell streaming audio from anything else, so it can't single it out to drop or deprioritize."
+        },
+        {
+          "s": "leo",
+          "t": "They were probably watching the port, giving low priority to streaming-audio traffic. That happens to our streams too, which is why we also carry audio on port 80, the web port nobody throttles."
+        }
+      ]
+    },
+    {
+      "title": "How eInk Makes Grey Levels",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John in Candler asks how the Kindle 2 gets 16 grey levels if eInk is just black-and-white balls that rotate."
+        },
+        {
+          "s": "steve",
+          "t": "There are several eInk technologies. The early one did use bicolored spheres in oil, flipped electrostatically. But the Sony and Kindle screens use many tiny black particles per pixel, pushed toward the front or pulled to the back. By moving a controlled percentage of particles, they get shades of grey."
+        },
+        {
+          "s": "steve",
+          "t": "Under a loupe you can see stray particles that didn't fully migrate, which is also why a faint ghost of the previous page sometimes lingers. It's a statistical thing, a bit like an Etch-A-Sketch, or like a laser printer charging a drum to attract toner particles."
+        }
+      ]
+    },
+    {
+      "title": "Kindle, Sony and Keeping Documents Private",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Regina in Great Mills prefers the Sony PRS-505 for a security reason: she drags Word and PDF files straight onto it, keeping control, whereas she believes the Kindle requires emailing documents to Amazon for conversion. As a government employee she can't send proprietary docs to a third party."
+        },
+        {
+          "s": "steve",
+          "t": "You can do exactly the same with the Kindle. Plug it in by USB and it mounts as a drive; drag and drop your files, disconnect, and it indexes them. Nothing has to leave your control."
+        },
+        {
+          "s": "leo",
+          "t": "The Kindle doesn't read PDF directly, but you can convert with Mobipocket's authoring tool, the format Amazon bought and uses. We liked the Sony too; we just prefer the Kindle for its wireless."
+        },
+        {
+          "s": "steve",
+          "t": "Specifically the wireless. The Economist even wondered whether eBooks might save newspapers, since people now read them all day after a morning download."
+        }
+      ]
+    },
+    {
+      "title": "WPA Versus Application-Layer Encryption",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our last question, from Mark in San Luis Obispo: every link between you and a server is untrusted, not just the wireless one, so protect data at the application layer, SMTP over TLS, HTTPS, IMAPS. If you're doing that, an open access point, a coffee shop or office visitor network, is fine."
+        },
+        {
+          "s": "steve",
+          "t": "Good points, but the lesson is: know your situation. Starbucks switched from secure T-Mobile to wide-open AT&T WiFi; students logging into AT&T may think they're encrypted on the radio, and they're not. I'm tempted to sniff a few hours there to show the problem."
+        },
+        {
+          "s": "steve",
+          "t": "My rule: if you have no reason not to run WPA, run WPA; if you have no reason not to encrypt, encrypt. WPA gives strong authentication and protects the wireless link regardless of whether each app uses TLS. And the man who had to use his employer's forced-open WiFi was right to use a VPN; sometimes you can't turn on WPA."
+        },
+        {
+          "s": "leo",
+          "t": "Two reasons I use WPA: keep others off my access point, because if a neighbor does something illegal through it the ISP contacts me, not them; and encryption, in case I forget to secure something at the application layer, like non-secure FTP sending passwords in the clear."
+        },
+        {
+          "s": "steve",
+          "t": "There's opportunistic attack, someone at Starbucks vacuuming up all traffic, and directed attack, someone targeting you across your links waiting for one unprotected moment. Being as secure as you can all the time is most prudent. We have the tools; use them."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is \"AV 2009\" that Microsoft's MSRT removed from Alesia's computer?",
+      "options": [
+        "Fake antivirus (scareware) that is itself malware",
+        "A legitimate free antivirus Microsoft disliked",
+        "A corrupted copy of Norton Antivirus",
+        "A Windows component removed by mistake"
+      ],
+      "answer": 0,
+      "explain": "AV 2009 is rogue \"scareware\" that fakes an infection to trick users into installing it; MSRT correctly removes it, and users should not try to reinstall it."
+    },
+    {
+      "q": "In the proposed public-key authentication dongle, how does it prove your identity without a trusted third party?",
+      "options": [
+        "It decrypts a nonce the site encrypted with your public key, using the private key it never reveals",
+        "It sends your private key to the site for verification",
+        "It looks up your identity in a central registry",
+        "It generates a new public key for each login"
+      ],
+      "answer": 0,
+      "explain": "The device holds a private key it never divulges; decrypting a site's public-key-encrypted nonce proves possession of the matching private key, so anyone with your public key can verify you."
+    },
+    {
+      "q": "Why might you still want a VPN on open WiFi even if your bank and webmail use SSL?",
+      "options": [
+        "Much other traffic, like plain POP/IMAP/SMTP email, travels in the clear and a VPN covers everything at once",
+        "SSL can be read by anyone on an open network",
+        "A VPN is required to connect to any HTTPS site",
+        "Firewalls stop working on open WiFi"
+      ],
+      "answer": 0,
+      "explain": "SSL protects only the connections that use it; email and other protocols often run unencrypted, so a VPN protects all traffic without requiring moment-to-moment vigilance."
+    },
+    {
+      "q": "How did a website display the visitor's internal LAN IP address from \"behind\" a NAT router?",
+      "options": [
+        "Client-side script reported the IP the visitor's own computer already knows",
+        "It brute-forced the router's NAT table",
+        "The router leaked it in the HTTP headers",
+        "NAT does not actually hide internal addresses"
+      ],
+      "answer": 0,
+      "explain": "NAT isn't pierced; the browser runs a script (Java/JavaScript) that reads and reports the machine's own LAN IP, and could even send it back to the server."
+    },
+    {
+      "q": "Why did Todd's VPN connection defeat his ISP's apparent throttling of streaming audio?",
+      "options": [
+        "The VPN encrypts every packet including the ports, so throttling can't identify which traffic to slow",
+        "The VPN gave him a faster physical connection",
+        "The VPN server cached the music locally",
+        "Encrypted traffic is always given higher priority"
+      ],
+      "answer": 0,
+      "explain": "Application-specific throttling depends on seeing the traffic's protocol/ports; inside an encrypted tunnel everything looks like noise, so deep packet inspection can't single out the stream."
+    },
+    {
+      "q": "How do the Kindle and Sony eInk screens produce grey levels?",
+      "options": [
+        "They move a controlled percentage of many tiny black particles per pixel toward or away from the surface",
+        "They dim a backlight behind each pixel",
+        "They flip bicolored balls to a grey third side",
+        "They refresh black-and-white pixels rapidly to fake grey"
+      ],
+      "answer": 0,
+      "explain": "These screens use numerous black particles per pixel; shifting a fraction of them yields shades of grey, which is also why faint ghosting of the prior page can remain."
+    }
+  ]
+}
