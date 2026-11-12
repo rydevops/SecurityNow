@@ -1,0 +1,310 @@
+{
+  "number": 185,
+  "title": "Cryptographic HMACs",
+  "subtitle": "How a keyed hash (HMAC) authenticates a message, and why it survives a weak hash",
+  "date": "2009-02-26",
+  "description": "The last crypto building block before SSL: Hashed Message Authentication Codes. Steve explains why signing an unkeyed hash like MD5 is fragile, how a key can be folded into a hash, why the naive ways fail, and how HMAC's nested design with the 0x36 and 0x5C pads stays strong even on a weakened hash. Plus a Windows AutoRun fix, a FreeBSD telnet flaw, an IE7 exploit a week after the patch, the data-retention \"Internet SAFETY Act,\" an unpatched Adobe Reader zero-day, and the Kindle 2.",
+  "transcript": "https://www.grc.com/sn/sn-185.txt",
+  "audio": "http://media.GRC.com/sn/SN-185.mp3",
+  "chapters": [
+    {
+      "title": "A \"Non-Security Security Update\" for AutoRun",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft shipped an out-of-band update it awkwardly calls a \"non-security security update.\" It fixes AutoRun, the Windows feature that runs an autorun.inf file's instructions when you insert a CD or drive, which is how the infamous Sony rootkit got installed years ago."
+        },
+        {
+          "s": "steve",
+          "t": "Savvy users disable AutoRun, but it turns out the old registry key, NoDriveTypeAutoRun, didn't fully work: network shares could still auto-run even when you thought you'd turned it off. This update, now pushed through Automatic Update, actually disables it, and changing shell32.dll means a reboot."
+        },
+        {
+          "s": "steve",
+          "t": "In two weeks I'll cover this in detail, because the new version adds granularity: you can disable AutoRun per drive type, removable, network, CD-ROM, RAM disk, unknown, so you could kill it for thumb drives while keeping it for audio CDs."
+        },
+        {
+          "s": "leo",
+          "t": "That's nice. Frederique keeps her RoboForm passwords on a U3 drive that auto-runs, which is a good, safe use, so you wouldn't want to kill it everywhere."
+        }
+      ]
+    },
+    {
+      "title": "A FreeBSD Telnet Flaw",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A somewhat obscure one: recent changes in FreeBSD 7 introduced a remote-code-execution flaw in its telnet daemon. Even before login, telnet lets you set environment variables like baud rate, and that path can be exploited."
+        },
+        {
+          "s": "steve",
+          "t": "I'd be surprised if listeners expose telnet to the Internet, port 23 scans and brute-force login attempts are common, but if you do run FreeBSD 7 telnet with any Internet-facing access, patch it immediately. At minimum move it off port 23."
+        }
+      ]
+    },
+    {
+      "title": "Exploit Wednesday Hits IE7",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "After Patch Tuesday comes \"Exploit Wednesday.\" Less than a week after the critical IE7 patch, attackers reverse-engineered it and built a live exploit. It arrives as a Word document with an embedded ActiveX object; open the document and IE is sent to a malicious site whose script leverages the IE7 flaw."
+        },
+        {
+          "s": "steve",
+          "t": "It installs a persistent backdoor and ships your confidential data off to a server in China. Our listeners have patched, but corporations often delay patching to vet updates, which is exactly the window these attackers exploit."
+        },
+        {
+          "type": "fact",
+          "title": "The patch-to-exploit gap",
+          "t": "The Conficker/Downadup worm was still spreading in February 2009 off a hole Microsoft fixed in October 2008, proof of how long unpatched machines linger. Reverse-engineering a patch to build an exploit within days is why that gap is so dangerous."
+        }
+      ]
+    },
+    {
+      "title": "The Data-Retention \"Internet SAFETY Act\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two bills, Senate S.436 and House HR 1076, both named the Internet SAFETY Act (Stopping Adults Facilitating the Exploitation of Today's Youth). They invoke child protection, but read the text: providers must retain for at least two years all records identifying the user of each temporarily assigned network address."
+        },
+        {
+          "s": "steve",
+          "t": "The Justice Department reads \"electronic communication service\" so broadly that it covers anyone running DHCP, every home router, every WiFi hotspot, business, library and school handing out automatic IP addresses. As written, every home user would log who used their connection for two years."
+        },
+        {
+          "s": "leo",
+          "t": "This data-retention idea keeps coming back, and it mirrors an EU law, though the EU doesn't reach into homes. It's really about enabling lawsuits, with the child-porn framing because nobody can argue against protecting children."
+        },
+        {
+          "s": "steve",
+          "t": "There's a trivial dodge, assign IPs statically by MAC instead of DHCP, but it shouldn't come to that. We have the DMCA, so we know bad laws can pass. US listeners: write your representatives and explain, plainly, that this would force every home user to keep two years of logs."
+        }
+      ]
+    },
+    {
+      "title": "An Unpatched Adobe Reader Zero-Day",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's a zero-day in Adobe Acrobat Reader being actively exploited, with no patch yet. Adobe's workaround is to disable JavaScript in Reader, which blocks current instances but doesn't fix the root cause. A v9 patch won't come until March 11th, and versions 7 and 8 not until March 18th."
+        },
+        {
+          "s": "steve",
+          "t": "An independent researcher put out an unofficial replacement DLL, but I never recommend unofficial DLLs. Disable Reader's JavaScript, or just be cautious until the patch."
+        },
+        {
+          "s": "steve",
+          "t": "Sandboxie users have it easy: add acrord32.exe as a forced program so Reader always runs sandboxed. PDFs opened in a sandboxed browser are already contained. PDFs are a constant source of trouble now, so that's worth doing as a general measure."
+        },
+        {
+          "type": "fact",
+          "title": "Why JavaScript in a PDF?",
+          "t": "Acrobat embeds a full JavaScript engine for forms and interactive features, and flaws in it, or in how Reader parses a document, became a favorite exploit path. Disabling PDF JavaScript closes much of that attack surface at little cost to ordinary reading."
+        }
+      ]
+    },
+    {
+      "title": "The Kindle 2 Arrives",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My Kindle 2 came. It's a clear second-generation device: longer battery life, and clever page buttons that now pivot from the outer edge inward, so just gripping the device no longer flips pages. The old LCD strip and scroll wheel are gone, replaced by a five-way joystick, which I find too smooth to push sideways easily."
+        },
+        {
+          "s": "steve",
+          "t": "The surprise is text-to-speech. I expected it to be useless and it's genuinely listenable, with good intonation, though it clips some words and, amusingly, can't pronounce \"Kindle\" well. Page turns are far faster, you can delete items right on screen, and it now marks whole articles and manages back issues sensibly."
+        },
+        {
+          "s": "leo",
+          "t": "Andy Ihnatko said the metal back makes it look like an iPod for Andre the Giant, and he's right. It's still $359 and ships with no cover at all, which is a real misstep; you get covers from third parties."
+        },
+        {
+          "s": "steve",
+          "t": "I'm keeping my beloved first Kindle, boxed, for the GRC archive."
+        }
+      ]
+    },
+    {
+      "title": "The PayPal Dongle Bypass, Confirmed",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I confirmed last week's PayPal security-token bypass, and found the minimal version. Coming from eBay (which needs no token) to PayPal's login, enter your email and password, reach the token prompt, then just hit the back arrow."
+        },
+        {
+          "s": "steve",
+          "t": "Now the login screen says you're already logged in: the fields are greyed out and the button reads \"Continue\" instead of \"Login.\" Click it and you're into PayPal with no security token at all. That defeats the very reason you asked PayPal for a token."
+        },
+        {
+          "s": "leo",
+          "t": "Not good."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite House Call",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A SpinRite story from William Burlingame. His daughter's PC wouldn't boot and she had no backups, only a recovery disk that would wipe her data. He ran SpinRite in Recover mode for about an hour; despite two unrecoverable errors on the map, the system booted and they backed up everything to an external drive."
+        },
+        {
+          "s": "steve",
+          "t": "The recurring theme in these emails is \"the system wouldn't boot,\" because that's the all-or-nothing, life-flashing moment. Run quarterly, SpinRite catches and fixes developing problems, or swaps out failing sectors, long before a disk reaches that point."
+        },
+        {
+          "s": "leo",
+          "t": "Colleen's become our SpinRite maintenance queen here. And as drives get bigger and hold more, this matters more."
+        }
+      ]
+    },
+    {
+      "title": "Message Authentication Codes and Digests",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now the last building block for SSL: Message Authentication Codes. Encryption hides a message's contents; a MAC is the complement, it detects any change, whether the message is encrypted or not."
+        },
+        {
+          "s": "steve",
+          "t": "The traditional integrity check is a message digest, a hash: MD5 is 128 bits, SHA-1 is 160, and the recommended SHA-2 family runs 256 bits and up. Running content through the hash yields a fixed token; anyone running the same content gets the same token, which is why download sites post an MD5 or SHA-1."
+        },
+        {
+          "s": "steve",
+          "t": "To sign a document you hash it, then encrypt just that small token with your private key (signing the whole thing with slow public-key crypto is impractical). The recipient hashes the document themselves, decrypts your signature with your public key, and the two match only if nothing changed."
+        }
+      ]
+    },
+    {
+      "title": "Why Signing an Unkeyed Hash Is Fragile",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the weakness. Because the signature is the encrypted hash output, if an attacker with some control over the document can make a change that produces the same hash, the old signature still validates, even though the document differs. That's exactly the MD5 chosen-prefix attack that forged SSL certificates."
+        },
+        {
+          "s": "steve",
+          "t": "A properly designed MAC doesn't have this problem, and crucially it's far less dependent on the underlying hash's strength. An HMAC built on MD5, even in its weakened state, loses none of its integrity. That robustness is the whole point."
+        },
+        {
+          "type": "fact",
+          "title": "Keyed vs unkeyed",
+          "t": "A plain hash (MD5, SHA-1) is unkeyed: same input always gives same output, great for public checksums but forgeable if the hash is broken. A keyed MAC folds a secret into the computation, so an attacker who can't produce the key can't forge a valid tag, even against a weak hash."
+        }
+      ]
+    },
+    {
+      "title": "From CBC-MAC to Keyed Hashes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One way to get a keyed tag is a CBC-MAC: chain a block cipher over the text (encrypt a block, XOR into the next, repeat) and the final block is a keyed fingerprint. It works, but ciphers were historically slower in software, patent-encumbered, and export-restricted as \"munitions.\""
+        },
+        {
+          "s": "steve",
+          "t": "Hashes had none of those burdens, they can't encrypt, only digest, so they were never export-controlled, and free implementations abounded. So the goal became: fold a key into a fast, unencumbered hash function."
+        },
+        {
+          "s": "steve",
+          "t": "The naive idea, just stick the key at the front of the message, is insecure, because hash attacks exploit length extensions, exactly the MD5 prefix problem. Putting key-plus-length first is also weak. Key at both ends is better but still not ideal, because the attacker can see the hash's output and use it as leverage."
+        }
+      ]
+    },
+    {
+      "title": "Building HMAC",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The fix, now the formal HMAC standard that has survived all analysis, is to hash twice. Recall that MD5 and SHA-1 process input in 512-bit blocks, carrying an internal state forward."
+        },
+        {
+          "s": "steve",
+          "t": "Take your key, pad it to 512 bits, and XOR it with the repeating byte 0x36; use that as the first block so the hash starts in a strong key-dependent state, then hash the rest of the message. That's the inner hash."
+        },
+        {
+          "s": "steve",
+          "t": "Then take the key again, XOR it with the repeating byte 0x5C, use that as the first block of a second hash, and hash the inner hash's output through it. That nested result is your MAC."
+        },
+        {
+          "s": "steve",
+          "t": "It's strong because the big lever in attacking a hash is seeing the first hash's result; by masking it inside a second hash, the attacker never gets at the intermediate value. Nobody has broken it, and even weak MD5 as the core doesn't weaken the output."
+        },
+        {
+          "s": "steve",
+          "t": "HMAC is used in SSL, it's ideal for communications, and I'll use it in CryptoLink, because a keyed MAC is much stronger than signing a non-keyed hash, which is exactly where the SSL-certificate forgery came from."
+        },
+        {
+          "s": "leo",
+          "t": "OpenPGP puts a hash string on signed messages, verifying both sender and content integrity. Is that an HMAC? My guess is it keys a MAC off the private key, but we'll look at SSL, and PGP, in detail soon."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why can a weak hash like MD5 still be used safely inside an HMAC?",
+      "options": [
+        "HMAC's keyed, nested-hash construction keeps attackers from exploiting the hash's collision weaknesses",
+        "MD5 is automatically upgraded to SHA-256 inside HMAC",
+        "HMAC only hashes the key, never the message",
+        "HMAC encrypts the output so the hash never matters"
+      ],
+      "answer": 0,
+      "explain": "HMAC folds a secret key into two nested hash passes; because the attacker can't see or manipulate the inner hash's output, MD5's collision weakness gives them no leverage."
+    },
+    {
+      "q": "Why is signing an unkeyed hash (as in the forged SSL certificates) fragile?",
+      "options": [
+        "If an attacker can craft a different document with the same hash, the original signature still validates",
+        "Unkeyed hashes are always transmitted in the clear",
+        "Public keys can't encrypt a hash token",
+        "The hash reveals the private key"
+      ],
+      "answer": 0,
+      "explain": "The signature is just the encrypted hash output, so a hash collision (like MD5's chosen-prefix attack) lets a changed document carry a still-valid signature."
+    },
+    {
+      "q": "What was wrong with the simplest idea of keying a hash by prepending the key to the message?",
+      "options": [
+        "Hash length-extension weaknesses let attackers exploit it, the same flaw behind the MD5 prefix attack",
+        "It made the hash too slow to compute",
+        "It required exporting the key as a munition",
+        "Prepending a key is impossible with MD5"
+      ],
+      "answer": 0,
+      "explain": "Hashes process data sequentially and are vulnerable to length-extension, so a key simply prepended (or key-plus-length) can be attacked; HMAC's two-pass design avoids this."
+    },
+    {
+      "q": "In HMAC, what are the bytes 0x36 and 0x5C used for?",
+      "options": [
+        "They pad and are XORed with the key to seed the inner and outer hash passes, respectively",
+        "They are the fixed length of the output tag",
+        "They encrypt the message before hashing",
+        "They are the MD5 and SHA-1 version numbers"
+      ],
+      "answer": 0,
+      "explain": "HMAC XORs the key with repeating 0x36 for the inner hash's first block and with 0x5C for the outer hash's, giving two different key-dependent starting states."
+    },
+    {
+      "q": "Why did cryptographers historically prefer hashes over ciphers for building MACs?",
+      "options": [
+        "Hashes were faster in software, patent-free, and not export-restricted, since they can't encrypt",
+        "Hashes are impossible to reverse-engineer",
+        "Ciphers cannot process data in blocks",
+        "Hashes require no key at all"
+      ],
+      "answer": 0,
+      "explain": "A hash only digests, never encrypts, so it escaped munitions export rules and the patents and slower software performance that burdened ciphers at the time."
+    },
+    {
+      "q": "Microsoft's out-of-band \"non-security security update\" fixed what longstanding problem?",
+      "options": [
+        "The NoDriveTypeAutoRun setting didn't actually disable AutoRun on network shares as users expected",
+        "It patched a remote code execution bug in telnet",
+        "It removed the Sony rootkit from infected machines",
+        "It disabled JavaScript in PDF files"
+      ],
+      "answer": 0,
+      "explain": "The update made AutoRun-disabling actually work (notably for network shares) and added per-drive-type granularity, pushed through Automatic Update and requiring a reboot."
+    }
+  ]
+}
