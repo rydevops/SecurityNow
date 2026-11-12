@@ -1,0 +1,504 @@
+{
+  "number": 99,
+  "title": "Trusted Platform Module (TPM)",
+  "subtitle": "Why the misunderstood TPM chip is benign and useful",
+  "date": "2007-07-05",
+  "description": "Steve plans new mailbag episodes and shares listener mail: an InfoCard trademark tip, a blind listener's plea for accessible CAPTCHAs, an economist's defense of EV certificates, and a JPL security pro whose card was hit despite a valid certificate. Then Steve explains the Trusted Platform Module: a motherboard crypto chip with a true random number generator, a locked-in private key, sealed storage and platform attestation, which protects against malicious software, not against the owner.",
+  "transcript": "https://www.grc.com/sn/sn-099.txt",
+  "audio": "http://media.GRC.com/sn/SN-099.mp3",
+  "chapters": [
+    {
+      "title": "Back From Harvard, and a New Mailbag Format",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's Security Now!, the podcast that tells you why you should be afraid and what to do about it."
+        },
+        {
+          "s": "steve",
+          "t": "We don't want to be accused of alarming people, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "\"Scared\" is the wrong word. It's about what to be aware of and how to protect yourself. Half the value is learning these interesting technologies."
+        },
+        {
+          "s": "steve",
+          "t": "I gave the keynote at the conference Harvard hosted last week, and I mentioned there that my own security awareness has grown from listening to myself talk to you."
+        },
+        {
+          "s": "steve",
+          "t": "And many listeners say it's fine when we wander off topic."
+        },
+        {
+          "s": "leo",
+          "t": "That's why we do podcasts. Today: TPM, the Trusted Platform Module. It's been very controversial."
+        },
+        {
+          "s": "steve",
+          "t": "I've been researching it for months, and it was elusive until it clicked. I know why its reputation got mis-marked, so don't let me forget that."
+        },
+        {
+          "s": "steve",
+          "t": "We're recording two episodes today, 99 and next week's 100, which is a mod-4 Q&A. Listener participation has jumped, and the mailbag is overflowing with stories and tangents, not just questions."
+        },
+        {
+          "s": "steve",
+          "t": "So I'm thinking episodes at mod 4 plus 2 become mailbag episodes. We'd alternate regular shows, mailbag and Q&A."
+        },
+        {
+          "s": "leo",
+          "t": "So starting with 102 we'll do mailbag episodes."
+        }
+      ]
+    },
+    {
+      "title": "Mailbag: Aberystwyth, InfoCard and CAPTCHAs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You can't believe how many people told us how to pronounce Aberystwyth."
+        },
+        {
+          "s": "leo",
+          "t": "Our own Will Harris grew up next door. He called right away: \"C'mon, mate, it's Aberystwyth.\""
+        },
+        {
+          "s": "steve",
+          "t": "Thanks to everyone who posted. We now know."
+        },
+        {
+          "s": "steve",
+          "t": "Next, an anonymous listener in Sacramento, about last week's CardSpace episode. I said I preferred the working name InfoCard. He says InfoCard was an Apple trademark, from a product back in the iMac days, so Microsoft couldn't use it."
+        },
+        {
+          "s": "steve",
+          "t": "That may be true. I don't know it for a fact."
+        },
+        {
+          "s": "steve",
+          "t": "And Bill Holton of Gainesville, Florida writes that he is human. That reminded me I'd promised CAPTCHAs this week under \"Are You Human?\" But I was all geared up for TPM, so that'll come later."
+        },
+        {
+          "s": "leo",
+          "t": "Not next week, since that's our Q&A."
+        },
+        {
+          "s": "steve",
+          "t": "Bill says most computers don't think he's human, because he's blind. The growing use of CAPTCHAs is locking him and others out of more sites."
+        },
+        {
+          "s": "leo",
+          "t": "CAPTCHAs are a notorious problem for people with poor vision."
+        },
+        {
+          "s": "steve",
+          "t": "He asks us to call for non-visual CAPTCHAs, including for the deaf-blind, who can't use even the audio CAPTCHAs Google and Yahoo! are adopting. And he suggests trying the audio ones to see how unusable they are."
+        },
+        {
+          "s": "leo",
+          "t": "My email page uses Carnegie Mellon's reCAPTCHA, which has audio. Listen to this. They distort the audio the way they distort the text."
+        },
+        {
+          "s": "steve",
+          "t": "The same trick, applied to sound. And sometimes I can't type the visual ones correctly."
+        },
+        {
+          "s": "leo",
+          "t": "Me too. You only have to do it once on my site to get my email address. Accessibility is getting harder with Flash and scripting. We're redesigning the radio show site with accessibility as a high priority. Many blind people listen to radio and podcasts."
+        }
+      ]
+    },
+    {
+      "title": "An Economist's Case for EV Certificates",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The last submission is long but interesting. Jeremy Clark of Ottawa, Canada thinks I got EV certificates all wrong."
+        },
+        {
+          "s": "steve",
+          "t": "Recall my grousing about VeriSign's costly certificates that turn IE7's bar green to fight phishing. Jeremy says EV certificates signal legitimacy, not security, and were created specifically to combat phishing."
+        },
+        {
+          "s": "steve",
+          "t": "His analogy: banks once built elaborate buildings. Not out of competition, or other industries would have architectural arms races too. A legitimate bank could afford a beautiful building, while fraudsters who'd open a bank and skip town with the deposits could not."
+        },
+        {
+          "s": "steve",
+          "t": "Economists call this a \"signaling game\": a signal only the legitimate party can afford. Online, people judge a site by its slick layout, but anyone can copy that, so it's a poor signal."
+        },
+        {
+          "s": "steve",
+          "t": "An expensive EV certificate is the online equivalent of the nice bank building. It only makes sense if you plan to stick around. And if you can't afford one, he argues, you probably aren't a phishing target, unlike PayPal, eBay, Amazon or an online bank."
+        },
+        {
+          "s": "steve",
+          "t": "I thought that was a really good point."
+        },
+        {
+          "s": "leo",
+          "t": "I see a flaw. Once users associate the green bar with safety, a legitimate site that can't afford one looks less trustworthy. It matters to the end user."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. That's the foundation of my gripe. I just don't want to pay. It's extortion."
+        },
+        {
+          "s": "leo",
+          "t": "And he assumes economic gain. Someone could phish GRC.com to push a fake security program that's a Trojan horse."
+        },
+        {
+          "s": "steve",
+          "t": "VeriSign recently sent me a satisfaction survey, and I told them exactly how I felt about paying every couple of years. There's not much lock-in. I'd even pay $15,000 once if I could then have a reduced annual rate and keep the green."
+        },
+        {
+          "s": "leo",
+          "t": "People giving away free security software have no income from it and can't afford this. There are ways to validate somebody without making them pay so much. That's pure greed. We're not in the 18th century anymore."
+        },
+        {
+          "s": "steve",
+          "t": "I think Jeremy had a typo. It's $1,500, not $15,000."
+        },
+        {
+          "s": "leo",
+          "t": "Even that's a lot."
+        },
+        {
+          "type": "fact",
+          "title": "Price check",
+          "t": "As Steve reported last week, VeriSign's EV certificate cost $1,500 for one year or $2,695 for two."
+        }
+      ]
+    },
+    {
+      "title": "A Valid Certificate Isn't Enough",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One more. Eric Espinoza of Pasadena is a systems security guy at a government organization; his email gives away a well-known propulsion laboratory."
+        },
+        {
+          "s": "steve",
+          "t": "After seeing \"Blood Diamond,\" his girlfriend no longer wanted mined diamonds. She asked for earrings from \"Diamond Essence,\" advertised in the L.A. Times. It turned out they passed off cubic zirconia as lab diamonds, but that's another story."
+        },
+        {
+          "s": "steve",
+          "t": "He's thorough. Before entering his card, he Googled the name for horror stories, checked the certificate, and checked the issuer's Certificate Revocation List. All looked good."
+        },
+        {
+          "s": "steve",
+          "t": "The next morning his card company called. Ten different places had tried to rack up over $2,000. The bank blocked all but $10."
+        },
+        {
+          "s": "steve",
+          "t": "To confirm the source, he tried again with a PayPal one-use virtual MasterCard, loaded with just the purchase amount and barred from drawing on other accounts. Bam: a ton of charges, all declined."
+        },
+        {
+          "s": "steve",
+          "t": "I didn't know PayPal offered that. I'm going to look into it."
+        },
+        {
+          "s": "leo",
+          "t": "Many Visa and MasterCard issuers do. Really neat."
+        },
+        {
+          "s": "steve",
+          "t": "A manager insisted it was probably spyware on his machine. Eric said his bank would be calling with the facts. He told VeriSign, and the site is now signed by Thawte instead."
+        },
+        {
+          "s": "steve",
+          "t": "His point: a valid certificate isn't always enough, and there's nothing better. One-time cards with simple dispute procedures limit the damage. Since crooks often test a card with a $1 charge, that's all they'd get."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves an Artist's Portfolio",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of good things to share, a SpinRite story from Aaron Jensen in, I think, Lumby, British Columbia. He's a systems technician for a large manufacturer who also supports clients and family on the side, and has heard every episode."
+        },
+        {
+          "s": "steve",
+          "t": "Before our SpinRite stories, he knew GRC only for ShieldsUP!."
+        },
+        {
+          "s": "steve",
+          "t": "Early in the podcast's run, a customer's daughter's laptop kept partially booting into Windows and rebooting, in an endless loop. She's an artist, and it held gigabytes of photos, many of paintings long since sold. They were her only portfolio record."
+        },
+        {
+          "s": "steve",
+          "t": "He bought his first SpinRite, ran it overnight, and the next day it booted without an error. They backed everything up. She still uses that drive, and backs it up much more often."
+        },
+        {
+          "s": "steve",
+          "t": "He kept that copy, since it's licensed to him, and helped her parents buy their own. In three or four more rescues since, he's helped each owner buy a copy. Even his mom kept all her data when her old drive crashed."
+        },
+        {
+          "s": "steve",
+          "t": "He says developers who sink their experience into an app that does just one job almost always do it better than anything else. And he congratulated ShieldsUP! on its recent milestones."
+        },
+        {
+          "s": "steve",
+          "t": "Using his copy to fix someone, then helping them buy their own, is the perfect model."
+        },
+        {
+          "s": "leo",
+          "t": "It's nice to have good customers."
+        }
+      ]
+    },
+    {
+      "title": "What the TPM Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I want to get to TPM. We've waited long enough."
+        },
+        {
+          "s": "steve",
+          "t": "It's a chip on the motherboard, the \"platform.\" It needn't be a PC; PDAs and cell phones could have one. It's meant to be integrated. On IBM's TPM-equipped ThinkPads it's on a small daughterboard, but it's never user-removable. It's a microcontroller, a little smart engine."
+        },
+        {
+          "s": "steve",
+          "t": "The good news: it's completely open. The specification is freely downloadable, there's GPL'd open-source code, and Linux has drivers for it."
+        },
+        {
+          "s": "steve",
+          "t": "Its reputation got off to a rocky start because of Microsoft's Palladium, the controversial plan to lock systems down so tightly that nothing could escape. People also saw Palladium as another step in Microsoft's DRM campaign."
+        },
+        {
+          "s": "steve",
+          "t": "TPM is related only peripherally, pardon the pun. It's a component Palladium could use, but it isn't Palladium, and it isn't DRM. Microsoft called its hardware side an SCP, a Secure Crypto Processor."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has patented its approach every which way. It says other OSes could use it, but it could foreclose that with its patents."
+        },
+        {
+          "s": "steve",
+          "t": "So TPM is the solution likely to win, with industry and multiplatform support. I have it on my new quad-core motherboard and my ThinkPad T60, and I've enabled it. The spec has it disabled by default, because of privacy sensitivities that I think are misplaced."
+        },
+        {
+          "type": "fact",
+          "title": "Palladium",
+          "t": "Microsoft announced Palladium in 2002 and renamed it the Next-Generation Secure Computing Base, but it never shipped as planned. Pieces of the idea later appeared in features such as BitLocker, which can use the TPM."
+        }
+      ]
+    },
+    {
+      "title": "Inside the Chip",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "What it provides is crypto services. It moves sensitive crypto operations into hardware for one purpose: to keep malicious software away from them."
+        },
+        {
+          "s": "steve",
+          "t": "It's like a coprocessor with nonvolatile memory. A TPM-aware BIOS lets you disable it completely, which also disables BIOS and OS driver access, or reinitialize it so it forgets everything and starts fresh."
+        },
+        {
+          "s": "steve",
+          "t": "It has a true random number generator, not a pseudorandom one. It draws on non-algorithmic physical effects like thermal noise, electron tunneling or clock jitter. Software is 100 percent deterministic, so an algorithm can be very good pseudorandom but never truly random."
+        },
+        {
+          "s": "steve",
+          "t": "It has a monotonic counter that only counts up and has so many bits it can never wrap around, which defeats replay attacks. It doesn't constantly write the counter to nonvolatile memory, since that memory wears out. When power starts to fail, it saves the count, so it never reuses a number."
+        },
+        {
+          "s": "steve",
+          "t": "It does full RSA public-key crypto, generating key pairs and performing RSA operations. The spec requires at least 2,048-bit key length, aimed at the future. And it has built-in SHA-1 hashing, 160 bits minimum."
+        },
+        {
+          "s": "steve",
+          "t": "When initialized, it uses its random number generator to make a key pair. No command will ever make it export the private key. No monitoring the pins with a scope."
+        },
+        {
+          "s": "leo",
+          "t": "I'm always suspicious of \"never.\" Hackers are ingenious."
+        },
+        {
+          "s": "steve",
+          "t": "Sure, there could be a bug in the chip or its microcode. But the spec never allows the private key to leave the chip, and the crypto is designed so it never needs to."
+        },
+        {
+          "type": "fact",
+          "title": "Weaker than hoped",
+          "t": "Researchers have since shown TPMs aren't invulnerable: the 2017 ROCA flaw made keys from some Infineon chips factorable, and attackers with physical access have sniffed keys on the bus between a separate TPM chip and the CPU."
+        }
+      ]
+    },
+    {
+      "title": "Attestation and Sealed Storage",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next is \"hardware platform attestation.\" A platform has BIOS settings, drive serial numbers and more. The chip can snapshot those and hash them into a 160-bit value, then later attest that nothing has changed since: same drive, same settings, whatever you chose to cover."
+        },
+        {
+          "s": "steve",
+          "t": "It can do the same during OS boot. Linux already hashes its kernel and modules as it boots, so you can verify nothing changed since the snapshot. It's a way to boot into a secure, known state."
+        },
+        {
+          "s": "leo",
+          "t": "It sounds great. The worries were more about things like revoking documents or emails after they'd been sent, but that's not TPM itself."
+        },
+        {
+          "s": "steve",
+          "t": "That's a perfect segue. People feared it could give DRM something more serious to lock onto. But here's the point: there's no protection from the user. The protection is from malicious software."
+        },
+        {
+          "s": "steve",
+          "t": "The spec doesn't try to protect itself from the owner or someone physically present. You could reset your TPM and reauthorize yourself. Its defenders say it's just better security, which can be used for or against users, but that's not security's fault."
+        },
+        {
+          "s": "leo",
+          "t": "It's not inherent in security at all."
+        },
+        {
+          "s": "steve",
+          "t": "Like the Internet: it's not bad because bad things can happen with it. I like that TPM moves sensitive operations out of software, where they're fundamentally open to compromise."
+        },
+        {
+          "s": "steve",
+          "t": "You still need a secure path to it. Some changes require a full reboot into the BIOS, a limited environment with a better-guaranteed path between keyboard, display and TPM."
+        },
+        {
+          "s": "steve",
+          "t": "Its nonvolatile memory stores keys, certificates and other data where nothing can reach them. Lock it to require a power-on unlock, and it won't release anything until you provide something that hashes to its stored value. It's a hardware-enforced crypto vault."
+        },
+        {
+          "s": "steve",
+          "t": "My ThinkPad's fingerprint swipe unlocks the BIOS and my password-protected hard drive, and all that is stored in the TPM."
+        },
+        {
+          "s": "steve",
+          "t": "And it provides carefully designed second-factor authentication, something you have: the laptop, phone or PDA with the chip inside."
+        },
+        {
+          "s": "leo",
+          "t": "But a weak password still hurts if someone steals your laptop?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, but version 1.2 of the spec adds dictionary attack prevention. If it sees someone guessing, it first lengthens its response time, then locks out."
+        }
+      ]
+    },
+    {
+      "title": "Who's Behind It, and Should You Use It?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Who made TPM? Intel and Microsoft?"
+        },
+        {
+          "s": "steve",
+          "t": "The Trusted Computing Group, an independent alliance of more than 100 companies, a Who's Who of the industry. I'm glad it wasn't spec'd by Microsoft. Intel's newer chipsets build the functionality right in."
+        },
+        {
+          "s": "leo",
+          "t": "And many others make TPM microcontrollers."
+        },
+        {
+          "s": "steve",
+          "t": "It's multiplatform, evolving and a complete open spec, with all the PDFs at trustedcomputinggroup.org. It's our foundation for moving crypto into hardware, where no system subversion can reach it."
+        },
+        {
+          "s": "leo",
+          "t": "Has it hindered you on your T60?"
+        },
+        {
+          "s": "steve",
+          "t": "No. I just like knowing it's there. When I swipe a finger, its characteristics are hashed and given to the TPM to compare. I enrolled two fingers on each hand, which is good, because I've got a Band-Aid on my right forefinger."
+        },
+        {
+          "s": "leo",
+          "t": "A close thing. Lenovo has it, and Dell offers some machines with it. If you're getting a laptop especially, look for one with TPM."
+        },
+        {
+          "s": "steve",
+          "t": "For portable computing it offers really good security. I foresee PDAs and phones with fingerprint sensors feeding a built-in TPM to confirm the owner."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is our 100th episode, a Q&A. I didn't get balloons. Few podcasts, and no other TWiT show, can claim 100. We'll celebrate next week."
+        },
+        {
+          "type": "fact",
+          "title": "TPM today",
+          "t": "Windows 11 requires a TPM 2.0, and phones use similar secure hardware to protect keys and fingerprint or face data, much as Steve predicted."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the TPM designed to protect against?",
+      "options": [
+        "Malicious software, not the computer's owner",
+        "The owner copying music",
+        "Power failures",
+        "Network eavesdroppers only"
+      ],
+      "answer": 0,
+      "explain": "The owner can always reset it."
+    },
+    {
+      "q": "Why did the TPM get a bad reputation?",
+      "options": [
+        "It was linked to Microsoft's controversial Palladium plan",
+        "It slowed computers",
+        "It cost too much",
+        "It was closed and secret"
+      ],
+      "answer": 0,
+      "explain": "TPM is an open spec and isn't DRM."
+    },
+    {
+      "q": "Why can the TPM produce truly random numbers when software can't?",
+      "options": [
+        "It uses physical effects like thermal noise, while software is deterministic",
+        "It uses a longer algorithm",
+        "It reads the clock",
+        "It downloads them"
+      ],
+      "answer": 0,
+      "explain": "An algorithm can only be pseudorandom."
+    },
+    {
+      "q": "What happens to the private key the TPM generates?",
+      "options": [
+        "It never leaves the chip",
+        "It's printed in the BIOS",
+        "It's emailed to the owner",
+        "It's stored on the hard drive"
+      ],
+      "answer": 0,
+      "explain": "The crypto is designed so it never needs to."
+    },
+    {
+      "q": "How does TPM 1.2 resist password guessing?",
+      "options": [
+        "It slows its responses and then locks out",
+        "It erases the hard drive",
+        "It calls the police",
+        "It changes the password"
+      ],
+      "answer": 0,
+      "explain": "It's dictionary attack prevention."
+    },
+    {
+      "q": "Which group created the TPM specification?",
+      "options": [
+        "The Trusted Computing Group, an alliance of more than 100 companies",
+        "Microsoft alone",
+        "Intel alone",
+        "The U.S. government"
+      ],
+      "answer": 0,
+      "explain": "Steve was glad Microsoft didn't spec it."
+    }
+  ]
+}

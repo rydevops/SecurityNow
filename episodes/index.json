@@ -521,132 +521,184 @@
     {
       "number": 75,
       "title": "Vista DRM Wrap-Up & Announcing \"SecurAble\"",
-      "date": "2007-01-18"
+      "subtitle": "Reading Microsoft's own words, then a new GRC freebie",
+      "date": "2007-01-18",
+      "file": "sn-075.json"
     },
     {
       "number": 76,
       "title": "Listener Feedback Q&A #15",
-      "date": "2007-01-25"
+      "subtitle": "Hi-def first impressions, a Blu-ray key hunt and your questions",
+      "date": "2007-01-25",
+      "file": "sn-076.json"
     },
     {
       "number": 77,
       "title": "Microsoft on Vista DRM",
-      "date": "2007-02-01"
+      "subtitle": "Microsoft's 20 answers to Peter Gutmann",
+      "date": "2007-02-01",
+      "file": "sn-077.json"
     },
     {
       "number": 78,
       "title": "DEP in Depth",
-      "date": "2007-02-08"
+      "subtitle": "Why hardware DEP matters, and how to turn it on",
+      "date": "2007-02-08",
+      "file": "sn-078.json"
     },
     {
       "number": 79,
       "title": "Backtracking Spoofed Spam eMail",
-      "date": "2007-02-15"
+      "subtitle": "Reading Received headers to find the real sender",
+      "date": "2007-02-15",
+      "file": "sn-079.json"
     },
     {
       "number": 80,
       "title": "Listener Feedback Q&A #16",
-      "date": "2007-02-22"
+      "subtitle": "Spoofed headers, router-hijacking scripts, port knocking and more",
+      "date": "2007-02-22",
+      "file": "sn-080.json"
     },
     {
       "number": 81,
       "title": "Hard Drive Unreliability",
-      "date": "2007-03-01"
+      "subtitle": "What Google and Carnegie Mellon learned from 200,000 failing drives",
+      "date": "2007-03-01",
+      "file": "sn-081.json"
     },
     {
       "number": 82,
       "title": "Cyber Warfare",
-      "date": "2007-03-08"
+      "subtitle": "State-sponsored hacking is no longer science fiction",
+      "date": "2007-03-08",
+      "file": "sn-082.json"
     },
     {
       "number": 83,
       "title": "UAC in Depth",
-      "date": "2007-03-15"
+      "subtitle": "How Vista's User Account Control really works",
+      "date": "2007-03-15",
+      "file": "sn-083.json"
     },
     {
       "number": 84,
       "title": "Listener Feedback Q&A #17",
-      "date": "2007-03-22"
+      "subtitle": "Radio silence, UAC doubts, SSH ports, spoofing and scripting",
+      "date": "2007-03-22",
+      "file": "sn-084.json"
     },
     {
       "number": 85,
       "title": "Intro to Web Code Injection",
-      "date": "2007-03-29"
+      "subtitle": "Cross-site scripting, and a JavaScript drone called Jikto",
+      "date": "2007-03-29",
+      "file": "sn-085.json"
     },
     {
       "number": 86,
       "title": "Cross-Site Scripting",
-      "date": "2007-04-05"
+      "subtitle": "Twenty-eight holes in one month, and how they steal your session",
+      "date": "2007-04-05",
+      "file": "sn-086.json"
     },
     {
       "number": 87,
       "title": "SQL Injection Exploits",
-      "date": "2007-04-12"
+      "subtitle": "How web forms let attackers rewrite database queries",
+      "date": "2007-04-12",
+      "file": "sn-087.json"
     },
     {
       "number": 88,
       "title": "Listener Feedback Q&A #18",
-      "date": "2007-04-19"
+      "subtitle": "Botnets, a vulnerable bank, spotting zombies and disk tools",
+      "date": "2007-04-19",
+      "file": "sn-088.json"
     },
     {
       "number": 89,
       "title": "Even More Badly Broken WEP",
-      "date": "2007-04-26"
+      "subtitle": "A new attack cracks any WEP network in about a minute",
+      "date": "2007-04-26",
+      "file": "sn-089.json"
     },
     {
       "number": 90,
       "title": "Multifactor Authentication",
-      "date": "2007-05-03"
+      "subtitle": "Something you know, have and are",
+      "date": "2007-05-03",
+      "file": "sn-090.json"
     },
     {
       "number": 91,
       "title": "Marc Maiffret",
-      "date": "2007-05-10"
+      "subtitle": "eEye's founder on Blink, disclosure and the shifting attack surface",
+      "date": "2007-05-10",
+      "file": "sn-091.json"
     },
     {
       "number": 92,
       "title": "Listener Feedback Q&A #19",
-      "date": "2007-05-17"
+      "subtitle": "IPv6, hotel Wi-Fi, TiVo drives, TKIP and Internet background radiation",
+      "date": "2007-05-17",
+      "file": "sn-092.json"
     },
     {
       "number": 93,
       "title": "Microsoft Patent Wars",
-      "date": "2007-05-24"
+      "subtitle": "Software patents and Microsoft's claim against open source",
+      "date": "2007-05-24",
+      "file": "sn-093.json"
     },
     {
       "number": 94,
       "title": "The Fourth Factor",
-      "date": "2007-05-31"
+      "subtitle": "\"Someone you know\" as authentication",
+      "date": "2007-05-31",
+      "file": "sn-094.json"
     },
     {
       "number": 95,
       "title": "OpenID",
-      "date": "2007-06-07"
+      "subtitle": "An open, single sign-on system for the web",
+      "date": "2007-06-07",
+      "file": "sn-095.json"
     },
     {
       "number": 96,
       "title": "Listener Feedback Q&A #20",
-      "date": "2007-06-14"
+      "subtitle": "Certificates, biometric backstops, Keychain, DVR power and city Wi-Fi",
+      "date": "2007-06-14",
+      "file": "sn-096.json"
     },
     {
       "number": 97,
       "title": "Operation: Bot Roast",
-      "date": "2007-06-21"
+      "subtitle": "The FBI goes after bot-herders",
+      "date": "2007-06-21",
+      "file": "sn-097.json"
     },
     {
       "number": 98,
       "title": "Internet Identity Metasystems",
-      "date": "2007-06-28"
+      "subtitle": "Microsoft's CardSpace and an identity layer for the Internet",
+      "date": "2007-06-28",
+      "file": "sn-098.json"
     },
     {
       "number": 99,
       "title": "Trusted Platform Module (TPM)",
-      "date": "2007-07-05"
+      "subtitle": "Why the misunderstood TPM chip is benign and useful",
+      "date": "2007-07-05",
+      "file": "sn-099.json"
     },
     {
       "number": 100,
       "title": "Listener Feedback Q&A #21",
-      "date": "2007-07-12"
+      "subtitle": "The 100th episode: twelve listener questions",
+      "date": "2007-07-12",
+      "file": "sn-100.json"
     },
     {
       "number": 101,
