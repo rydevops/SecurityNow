@@ -1,0 +1,487 @@
+{
+  "number": 116,
+  "title": "Listener Feedback Q&A #27",
+  "subtitle": "IP spoofing, the Rockies ticket crash and Comcast's resets",
+  "date": "2007-11-01",
+  "description": "Steve warns that Firefox's master password can be brute-forced and that IE's saved passwords are readable by a free tool. Listeners ask whether PPP's no-reuse rule weakens it, why TCP connections can't be spoofed, whether Steve should have written his own random number generator, whether a single PC needs a router, whether the Colorado Rockies' ticket crash was an attack, how a proxy phishing site could defeat the PayPal-token trick, how Comcast disrupts file sharing, and how to label form fields for blind users but not bots.",
+  "transcript": "https://www.grc.com/sn/sn-116.txt",
+  "audio": "http://media.GRC.com/sn/SN-116.mp3",
+  "chapters": [
+    {
+      "title": "Saved Passwords Aren't Safe",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 116, a brand-new month, and our 27th Q&A."
+        },
+        {
+          "s": "steve",
+          "t": "The feedback from our listeners is just delightful to read."
+        },
+        {
+          "s": "steve",
+          "t": "Two follow-ups on Firefox's master password, which you and I also discussed on your radio show last weekend. Setting it protects and encrypts the stored sites, usernames and passwords. But several open-source programs can brute-force the master password. So all the rules about really hard-to-guess passwords apply to it."
+        },
+        {
+          "s": "leo",
+          "t": "They'd need access to your system."
+        },
+        {
+          "s": "steve",
+          "t": "Or just your files. It's an offline attack."
+        },
+        {
+          "s": "steve",
+          "t": "IE is worse. On your show I said IE had no way to display saved passwords. But it certainly offers to remember them, and many people say yes. NirSoft, at NirSoft.net, a company I know to be good guys, offers free IE PassView, which shows them all, wide open, since IE has no protection."
+        },
+        {
+          "s": "steve",
+          "t": "I ran it, and it was a blast from the past: every site I'd ever logged into."
+        },
+        {
+          "s": "leo",
+          "t": "I remember they were stored in the registry, unencrypted."
+        },
+        {
+          "s": "steve",
+          "t": "There's something called protected storage, and I think Microsoft is trying to do better. The tool lets you delete them, which is nice, and it'll even dump them into HTML or a file."
+        },
+        {
+          "s": "leo",
+          "t": "Don't let IE remember passwords. Use something encrypted like RoboForm."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite by Email During a Postal Strike",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Robert in Aberdeen, Scotland has used SpinRite since it saved his data after a drive failed 13 busy days into his fortnightly backup cycle, half an hour into a new backup."
+        },
+        {
+          "s": "steve",
+          "t": "His dad's laptop, 400 miles away, refused to boot. Neither had time to visit, and a postal strike prevented mailing the SpinRite CD. So he emailed SpinRite's small ISO, talked his dad through burning and booting it, and an hour later got the thank-you call. And another sale, from the \"here, try this\" method."
+        },
+        {
+          "s": "steve",
+          "t": "He felt, as a fellow geek, that I'd be fine with it. Of course. And I appreciate that his dad bought a copy."
+        },
+        {
+          "s": "leo",
+          "t": "People pay for things they use and love. Lock it down too tight, and they say screw 'em."
+        }
+      ]
+    },
+    {
+      "title": "Does PPP's No-Reuse Rule Weaken It?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave F. in San Francisco thinks Perfect Paper Passwords' policy of never reusing a four-character passcode weakens it. An attacker watching long enough could cross off codes and shrink the keyspace. Better to prevent duplicates only within, say, 12 cards."
+        },
+        {
+          "s": "steve",
+          "t": "It's a terminology problem. I meant never reusing a position in the sequence. Every passcode has the same one-in-16.77-million chance of being any value."
+        },
+        {
+          "s": "steve",
+          "t": "What I don't reuse is the sequence. I never go back to number one. There are a gazillion gazillion, so just keep going forward or choose a new sequence key. It's very unlikely but possible for two nearby codes to match. And guessing gains nothing."
+        },
+        {
+          "s": "leo",
+          "t": "With 16.7 million possibilities, crossing them off wouldn't help a hacker much anyway."
+        }
+      ]
+    },
+    {
+      "title": "Why TCP Connections Can't Be Spoofed",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ron Goodbin of Clifton, New Jersey: you've said a client can't spoof its IP when making a TCP connection. Then what's an IP spoofing attack?"
+        },
+        {
+          "s": "steve",
+          "t": "It's the three-way handshake. The client sends a SYN, short for synchronize, to the server's open port. The server sends back a SYN/ACK, its own SYN plus an acknowledgment, to the incoming packet's source IP. If that was spoofed, the reply goes to the spoofed address, not the sender."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, it has to get back to you."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. You can spoof incoming SYN packets, and that's what a spoofing attack is: flooding a server with made-up source addresses, a bandwidth attack, not trying to connect."
+        },
+        {
+          "s": "leo",
+          "t": "Because you don't care about the return."
+        },
+        {
+          "s": "steve",
+          "t": "To connect, you need a valid IP to receive the SYN/ACK. Then the client sends its ACK. The Internet's designers made it two round trips, which verifies routing in both directions and validates each endpoint's IP."
+        }
+      ]
+    },
+    {
+      "title": "Should Steve Write His Own Random Number Generator?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ferruccio in Sharon, Massachusetts agrees nobody should write their own encryption for production use. So why did you write your own random number generator? It's a solved problem too. Run it by a math and crypto expert, he says."
+        },
+        {
+          "s": "steve",
+          "t": "He turned my point back on me, and he's correct. But the Perfect Passwords page originally used a generator from RSA Labs, the major crypto people, and analysis of a gazillion of its pages found its entropy wasn't as high as it could be."
+        },
+        {
+          "s": "steve",
+          "t": "So I wrote my own. It has 7.9999-something bits of entropy per byte out of a possible 8.0. None reach 8.0, and mine's as good as any. It's the fastest one tested, because it uses my own assembly-language Rijndael."
+        },
+        {
+          "s": "leo",
+          "t": "So you implemented an existing algorithm."
+        },
+        {
+          "s": "steve",
+          "t": "Put anything into a state-of-the-art cipher, and what comes out is pseudorandom. I just run a counter in. I didn't do anything wacko like virtual matrix encryption."
+        },
+        {
+          "type": "fact",
+          "title": "The standard way",
+          "t": "Running a counter through a block cipher is a recognized design: it's essentially \"counter mode,\" and NIST's CTR_DRBG generator, standardized in 2006, works this way with AES."
+        }
+      ]
+    },
+    {
+      "title": "Does One PC Need a Router?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike Gray in Tacoma, which bills itself as the world's most wired city, is plugged directly into the Internet with one computer. Does he need a router, or is his software firewall enough?"
+        },
+        {
+          "s": "steve",
+          "t": "I'd feel naked with a Windows machine on a public IP. Servers sit right on the Internet, but you absolutely want your software firewall running."
+        },
+        {
+          "s": "steve",
+          "t": "Windows' Achilles' heel, as you and Paul discussed on Windows Weekly, is that on the Internet unprotected, it's taken over almost immediately. An original XP build has years of exploits wandering around, so you'd never get a chance to update."
+        },
+        {
+          "s": "leo",
+          "t": "And malware on the same computer can see a software firewall and disable it. A hardware router is a dumb box, much harder to get software onto."
+        },
+        {
+          "s": "steve",
+          "t": "As long as you change its default administrator username and password. Mark Thompson of AnalogX wrote code to log into his 66 routers with standard logins, and more often than not it worked. We know malware tries to log into local routers to change settings, and tries to shut down Windows' firewall."
+        },
+        {
+          "s": "steve",
+          "t": "A firewall must be up all the time, and I'd no longer trust any software firewall to be. At $49, a router is great security as a second line of defense."
+        },
+        {
+          "s": "leo",
+          "t": "For DSL, the router also handles PPPoE, so you don't need the provider's often-junky software."
+        },
+        {
+          "s": "steve",
+          "t": "And software behind a router gets a nonroutable 192.168 address. Software can't give away information it doesn't have, even your own."
+        },
+        {
+          "s": "leo",
+          "t": "It's cheaper than a software firewall."
+        }
+      ]
+    },
+    {
+      "title": "Was the Rockies Ticket Crash an Attack?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian F. in Denver, a SpinRite user and his local GRC enthusiast, asks about the Colorado Rockies. I did interviews on this for our affiliate KCOL. The Rockies sold World Series tickets online only, and after 500 tickets, the servers went down. They claimed malicious attackers, citing over 8.5 million connection attempts in 90 minutes. A DDoS, or fans hitting reload?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't think it's too many for that popularity. And what's a \"hit\"? A modern DDoS sends 8.5 million packets a minute."
+        },
+        {
+          "s": "steve",
+          "t": "Web pages have so much technology behind them now, anything but optimized, says Mr. Assembly Language. Cookies, code behind the site, maybe seat selection. Who knows how much processing each purchase took."
+        },
+        {
+          "s": "leo",
+          "t": "We know more now. They had a CAPTCHA, and thought it malicious because of all the bogus CAPTCHA entries. That's probably scalpers using bots."
+        },
+        {
+          "s": "leo",
+          "t": "The next day, after unspecified changes, they sold all 50,000 tickets in about two and a half hours."
+        },
+        {
+          "s": "steve",
+          "t": "That shows something in their system caused a serious slowdown, not an attack."
+        },
+        {
+          "s": "leo",
+          "t": "Dave Marcus of McAfee Avert Labs said they should have kicked off users trying to trick the system. \"I wouldn't call it malicious,\" he said, just someone trying to buy more tickets than allowed in an automated way. The Rockies' spokesman called it malicious because it disrupted ticket distribution, but that's not a DDoS."
+        },
+        {
+          "s": "steve",
+          "t": "They'll know better next time."
+        }
+      ]
+    },
+    {
+      "title": "A Proxy Could Fake the Token Prompt",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Don Ramm in Chula Vista isn't convinced by withholding the PayPal token code to see if PayPal asks for it. Couldn't a phishing site relay your password to PayPal instantly, see PayPal ask for the token, and then ask you?"
+        },
+        {
+          "s": "steve",
+          "t": "He's absolutely right. I didn't mean it was foolproof. Security is often far from perfect, so we raise the bar. I've done it on several purchases since, while still doing my standard anti-phishing checks. Right now, phishing sites probably aren't checking with PayPal."
+        },
+        {
+          "s": "leo",
+          "t": "Not enough people use keys to make it worthwhile."
+        },
+        {
+          "s": "steve",
+          "t": "But Don is clever. A proxy attack can emulate a site even with that kind of active behavior."
+        }
+      ]
+    },
+    {
+      "title": "A Token Survives the Washing Machine",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "James Lewis of Colorado Springs reports the PayPal token is washing-machine safe. He searched his house and found it in the washer. After drying overnight, it generated codes again, but they weren't valid on PayPal or eBay. He guesses the wash reset its timer. He reactivated the key, and it was good again."
+        },
+        {
+          "s": "steve",
+          "t": "I love that. It came back to life but out of sequence with its time-based codes, so he resynced it."
+        },
+        {
+          "s": "leo",
+          "t": "So it stopped for a while, and that's how it fell out of step."
+        }
+      ]
+    },
+    {
+      "title": "Comcast's Forged Resets",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeffrey Wurzbach in San Diego asks about the AP's report that Comcast shapes traffic with what looks like a man-in-the-middle attack, interrupting peer-to-peer connections by telling your software to disconnect. Is it app specific, or just heavy upstream traffic? Is it ethical, or even legal? The EFF and others say no."
+        },
+        {
+          "s": "leo",
+          "t": "It's hard to know from mainstream reports."
+        },
+        {
+          "s": "steve",
+          "t": "I asked Mark Thompson, who wrote a popular BitTorrent client. Between us, some ISPs have done something like this for years, and some clients pushed back."
+        },
+        {
+          "s": "steve",
+          "t": "BitTorrent shares a bitmap of which pieces of a file you have and need. Some ISPs wanted to allow downloading but not uploading, so they'd interrupt connections as the bitmap neared completion."
+        },
+        {
+          "s": "steve",
+          "t": "You don't need to be a man in the middle. A passive observer seeing a TCP connection just sends a TCP reset packet, and it drops. You spoof the source IP and need a sequence number within the valid range, which is easy when you're watching their traffic."
+        },
+        {
+          "s": "leo",
+          "t": "So it needs your IP and that sequence number."
+        },
+        {
+          "s": "steve",
+          "t": "The source and destination IPs, or the receiving stack rejects it."
+        },
+        {
+          "s": "leo",
+          "t": "Apparently this matches the technology of a Canadian company, Sandvine. Sandvine won't say who uses it, and Comcast won't say what it uses, but BitTorrent Inc. president Ashwin Navin says it's consistent with how Sandvine works. I don't think Comcast wrote this."
+        },
+        {
+          "s": "steve",
+          "t": "It's high-tech for a typical ISP, so a third-party add-on makes sense. I'm glad it's getting attention. It touches Net Neutrality, which we haven't discussed: ISPs treating classes of traffic differently, like an ISP with phone service giving Skype a lower quality of service."
+        },
+        {
+          "s": "leo",
+          "t": "Sandvine bills its Intelligent Traffic Management as saving ISP bandwidth by \"managing and redirecting\" file-sharing traffic. Redirecting, like go away."
+        },
+        {
+          "s": "steve",
+          "t": "Snipping the string between two computers."
+        },
+        {
+          "type": "fact",
+          "title": "The ruling",
+          "t": "In 2008 the FCC ordered Comcast to stop interfering with BitTorrent traffic. Comcast complied, but won a 2010 court case limiting the FCC's authority, setting off years of Net Neutrality fights."
+        }
+      ]
+    },
+    {
+      "title": "Randomized On-Screen Keyboards",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew Paulson in Madison, South Dakota, for an undergraduate research project, asks whether a bank's on-screen keyboard with randomized key layouts would be immune to keyloggers."
+        },
+        {
+          "s": "steve",
+          "t": "We discussed a jumping keyboard recently. Security is relative. A randomized keyboard beats a fixed one, which beats a physical keyboard prone to keystroke logging. The more you confuse and slow bad guys, the lower your chance of compromise."
+        },
+        {
+          "s": "steve",
+          "t": "But with perfect information, even an on-screen keyboard can be mapped. That's why Perfect Paper Passwords never reuses a login. Logging in obsoletes that login, so knowledge of it is useless. Moving keys around is sort of a puzzle, and it'll confuse your users: where did the E go?"
+        },
+        {
+          "s": "leo",
+          "t": "It'll drive them crazy."
+        }
+      ]
+    },
+    {
+      "title": "Random Numbers to Go",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Frank S. Werren of Sherman, New York works on closed networks with no Internet. He'd like the Perfect Passwords generator as a standalone utility. He trusts your software."
+        },
+        {
+          "s": "steve",
+          "t": "The Perfect Paper Passwords EXE is 11K and needs a 17K DLL, about 28K, 8K of it Authenticode. It has a very high-quality pseudorandom generator. Type \"PPP\" followed by empty quotes, and it generates a sequence key: 384 extremely random bits in hex. So grab the EXE and DLL for a portable, high-quality generator."
+        },
+        {
+          "s": "leo",
+          "t": "From the command line. I never thought of that."
+        }
+      ]
+    },
+    {
+      "title": "What OpenID Delegation Is For",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Fred Zanegood of Orlando asks for details on OpenID delegation. He understands it creates an easier alias for VeriSign's long identity. How else is it used? Does SeatBelt replace adding HTML to your site?"
+        },
+        {
+          "s": "steve",
+          "t": "You could give a site steve.gibson.pip.verisignlabs.com, and it would go there directly. Delegation lets you give a nicer URL you control. The site first looks in that page's metatags for OpenID delegation instructions. So I could give it GRC.com, and its metatags would point to my real OpenID provider."
+        },
+        {
+          "s": "leo",
+          "t": "So it's just easier to say GRC.com or Leoville.com."
+        },
+        {
+          "s": "steve",
+          "t": "It's just a pointer to another site."
+        },
+        {
+          "s": "leo",
+          "t": "A convenience, with no added security."
+        }
+      ]
+    },
+    {
+      "title": "Clever Idea: Phonetic Alt Text",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tim Knittel of Lexington, Kentucky wins this week's clever idea award, which is not a contest and has no prize."
+        },
+        {
+          "s": "leo",
+          "t": "He says blind users and spambots treat alt tags differently. Spambots read them. Blind users listen to them. So \"ee-meyl\" sounds the same as \"email\" to a screen reader, but a bot doesn't recognize it. \"Suhb-jikt\" for subject, \"yohr neym\" for your name, and so on."
+        },
+        {
+          "s": "steve",
+          "t": "That's why he won."
+        },
+        {
+          "s": "leo",
+          "t": "And there's no canonical phonetic spelling for a bot to learn."
+        },
+        {
+          "s": "steve",
+          "t": "A bot does a string match on the alt tag. No spambot will start interpreting phonetics. It hides the fields from bots while staying completely screen-reader friendly."
+        },
+        {
+          "s": "leo",
+          "t": "Send questions at GRC.com/feedback. We tried email, and the spammers found it immediately."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why can't an attacker spoof the IP address of a TCP connection?",
+      "options": [
+        "The server's SYN/ACK goes back to the stated address, so a fake sender never receives it",
+        "TCP is encrypted",
+        "Routers block spoofing",
+        "IP addresses are secret"
+      ],
+      "answer": 0,
+      "explain": "Spoofed SYNs are used only for floods."
+    },
+    {
+      "q": "How did Steve's random number generator differ from inventing a new cipher?",
+      "options": [
+        "It runs a counter through a well-known cipher, Rijndael",
+        "It used a secret new formula",
+        "It was copied from RSA",
+        "It used virtual matrices"
+      ],
+      "answer": 0,
+      "explain": "Good cipher output is pseudorandom."
+    },
+    {
+      "q": "Why does a hardware router protect better than a software firewall alone?",
+      "options": [
+        "Malware on the PC can't easily disable a separate box",
+        "It's faster",
+        "It encrypts everything",
+        "It scans for viruses"
+      ],
+      "answer": 0,
+      "explain": "Change its default admin password."
+    },
+    {
+      "q": "What likely caused the Rockies' ticket site trouble?",
+      "options": [
+        "Heavy demand, slow site code and scalpers' bots, not a DDoS",
+        "A foreign hacker",
+        "A power outage",
+        "Fake tickets"
+      ],
+      "answer": 0,
+      "explain": "They sold out the next day after changes."
+    },
+    {
+      "q": "How can an ISP cut a BitTorrent connection without being in the middle?",
+      "options": [
+        "By sending a forged TCP reset packet",
+        "By changing the file",
+        "By slowing all traffic",
+        "By blocking DNS"
+      ],
+      "answer": 0,
+      "explain": "Sandvine's equipment was suspected."
+    },
+    {
+      "q": "What was Tim Knittel's trick for screen-reader-friendly form labels?",
+      "options": [
+        "Phonetic alt text like \"ee-meyl\" that sounds right but bots don't match",
+        "Audio CAPTCHAs",
+        "Bigger fonts",
+        "Removing labels"
+      ],
+      "answer": 0,
+      "explain": "Screen readers listen, bots read."
+    }
+  ]
+}
