@@ -1,0 +1,686 @@
+{
+  "number": 141,
+  "title": "RSA Conference 2008",
+  "subtitle": "Steve's week at the big security show, and the YubiKey",
+  "date": "2008-04-24",
+  "description": "After a ClamAV buffer overflow, a wormable ICQ flaw, browser updates, XP SP3's arrival and bots cracking Hotmail's CAPTCHA, Steve reports on the RSA Conference 2008: keynotes worth watching from Symantec, the cryptographers panel and Jeff Hawkins, why extended validation certificates now make sense to him, and the conference's gloomy mood. And he describes the coolest thing he found, from a Swedish inventor he met at the top of an escalator: the YubiKey, a tiny battery-free one-time password token that pretends to be a USB keyboard.",
+  "transcript": "https://www.grc.com/sn/sn-141.txt",
+  "audio": "http://media.GRC.com/sn/SN-141.mp3",
+  "chapters": [
+    {
+      "title": "The Identity and Authentication Show",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Our 141st episode."
+        },
+        {
+          "s": "leo",
+          "t": "Go ahead and rub it in. TWiT's only at 140. Though TWiT had a year's head start."
+        },
+        {
+          "s": "steve",
+          "t": "So we've been catching up quickly. Watch out."
+        },
+        {
+          "s": "steve",
+          "t": "The RSA trip was really interesting and worthwhile. If you listen to this podcast, you pretty much have a grip on everything going on. The whole show was identity and authentication. You could rename it the Identity and Authentication Show."
+        },
+        {
+          "s": "leo",
+          "t": "That's what we've been talking about for weeks."
+        },
+        {
+          "s": "steve",
+          "t": "Like with Dave Jevans from IronKey, there was nothing there we haven't covered. If you listen, you really are up to speed. I'd still highly recommend it for listeners in the security business. It's aimed at enterprises, at authenticating your 100,000 employees. But the breakout sessions, where one to three people talk about a topic, are interesting to anybody."
+        },
+        {
+          "s": "leo",
+          "t": "I read an interview where a showgoer said he didn't understand what one product on the floor was meant to do."
+        },
+        {
+          "s": "steve",
+          "t": "Everybody had tokens and press-the-button authentication. Every booth claimed \"the industry's strongest authentication solution.\" Somehow everyone had that."
+        },
+        {
+          "s": "leo",
+          "t": "Hype and security go together."
+        },
+        {
+          "s": "steve",
+          "t": "With press credentials, vendors would say come closer, and I'd say, no, don't scan me. The badges were RFID-enabled, so if you got scanned, you got phone calls. I got one this morning. And standing at a booth, you couldn't tell from the backdrop what they did. Same as the neighbors on either side."
+        },
+        {
+          "s": "steve",
+          "t": "I spent three days going between breakout sessions and dedicated the last day to the huge exhibit floor. That morning, in a really bizarre way, I found the coolest new authentication gizmo of the show."
+        },
+        {
+          "s": "steve",
+          "t": "A woman was standing at the top of the escalator, looking forlorn. She's the inventor, founder and CEO of a company in Sweden. She'd had a deal to be in a vendor's booth, came over from Sweden with a bunch of her devices, and they reneged. So on the last day she was looking for any way to get her message out, and I walked by with my press badge. It's a multifactor authentication solution we've never talked about, and nobody else has it."
+        }
+      ]
+    },
+    {
+      "title": "A Laptop the Manufacturer Gave Up On",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Dan Stoddard wrote that a friend's laptop showed the Windows logo briefly, then blue-screened. The manufacturer said there was no way to recover his data."
+        },
+        {
+          "s": "steve",
+          "t": "Dan tried the Windows repair utility from the install CD, then a BartPE boot CD that couldn't access the drive, then the drive on a USB adapter. All failed. Normally he'd have declared it dead. But after months of hearing our SpinRite stories, he bought it and made a boot CD in minutes."
+        },
+        {
+          "s": "steve",
+          "t": "He was skeptical, but as SpinRite worked he could see raw data flashing across the screen, and realized the data was still there. A couple of hours later, the laptop booted normally with all his files. He's now a SpinRite believer."
+        },
+        {
+          "s": "steve",
+          "t": "Please don't let the number of stories I get deter you from sending yours."
+        },
+        {
+          "s": "leo",
+          "t": "Steve's reward isn't the money. It's the emails."
+        },
+        {
+          "s": "steve",
+          "t": "I just love it that it works."
+        }
+      ]
+    },
+    {
+      "title": "A Hole in the Antivirus",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The most important news: a huge problem in ClamAV, the popular open-source antivirus. Because it's open source, the bad guys have the same access as the good guys. There's proof-of-concept code. Its email scanner has a buffer overflow, so a deliberately malformed email can take over the machine scanning it."
+        },
+        {
+          "s": "steve",
+          "t": "ClamAV often runs on email servers, scanning all mail coming into a company. As far as we know it's not exploited in the wild yet, and updates are available. If your company might use ClamAV, make sure it's updated. Not the signatures, which update constantly. The code itself. Just receiving spam could take over the server."
+        },
+        {
+          "s": "leo",
+          "t": "So spammers could send it to everybody, hoping to snag someone not updated."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. And the last place you want a buffer overrun is in the antivirus you added to be more secure."
+        },
+        {
+          "s": "leo",
+          "t": "Almost all antivirus products have had problems like this."
+        },
+        {
+          "s": "steve",
+          "t": "I don't mean to pick on them. Remember: code wants to be wrong."
+        },
+        {
+          "s": "leo",
+          "t": "And ClamAV is the engine inside many third-party products, so check what engine yours uses."
+        }
+      ]
+    },
+    {
+      "title": "ICQ, Browsers and XP SP3",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Remember ICQ, the original instant messenger with the little flower logo? I think I was user number 4444 or something. It's really not for me. But it has a weird vulnerability in the status display that shows whether a friend is online. A malicious status report could take over your machine."
+        },
+        {
+          "s": "steve",
+          "t": "That could make a flash worm: take over one machine, send malformed statuses to everyone on its list, and repeat, flashing through the whole ICQ network. If you use ICQ, make sure it's updated."
+        },
+        {
+          "s": "steve",
+          "t": "All the browsers have updated too. Firefox is at 2.0.0.14, Safari for Windows and Mac at 3.1.1, and Opera went from 9.26 to 9.27, all with important fixes."
+        },
+        {
+          "s": "steve",
+          "t": "I'm liking Opera a lot. You discover features as you go. Right-click a page, and you can block content, clicking ads and things to add their domains to a block list. It has a built-in download manager. I'm working with many browsers for a topic coming in maybe a month. It's taking longer than expected, as everything I do does, but it'll be comprehensive."
+        },
+        {
+          "s": "steve",
+          "t": "Firefox 3 beta looks nice and stable. I put Safari for Windows in a VM. It looks identical to the Mac's, except you can drag any edge of the window to resize it, just like Windows. I don't know why the Mac refuses to do that. It's a constant annoyance."
+        },
+        {
+          "s": "steve",
+          "t": "And Microsoft says Windows XP Service Pack 3 comes through Windows Update on April 29th. Thank God you can clone VMs instead of re-patching every XP install. SP3 saves us 100-plus patches."
+        },
+        {
+          "s": "leo",
+          "t": "Unlike Vista SP1, it's just a rollup and doesn't change functionality."
+        },
+        {
+          "s": "steve",
+          "t": "Is that the case? I think it may do a little something."
+        },
+        {
+          "s": "leo",
+          "t": "I'll ask Paul Thurrott. Listen to Windows Weekly."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Microsoft delayed SP3 on Windows Update until May 6, 2008, after finding a conflict with one of its business products. SP3 also added a few features, such as Network Access Protection support."
+        }
+      ]
+    },
+    {
+      "title": "Bots Cracking Hotmail's CAPTCHA",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A botnet now has a 10 to 15 percent success rate cutting through Hotmail's CAPTCHA. We covered CAPTCHAs in our \"Are You Human?\" episode."
+        },
+        {
+          "s": "steve",
+          "t": "Botnets are the preferred spam generators, since tens of thousands of machines can't be blacklisted by IP. They'd love Hotmail accounts, since mail from Hotmail, with hundreds of thousands of legitimate users, can't simply be blocked."
+        },
+        {
+          "s": "steve",
+          "t": "A 10 to 15 percent rate would annoy a human, but a bot doesn't care. It succeeds every eight or nine tries, creates an account, and uses it until Hotmail notices. And researchers in the U.K. published an automated approach with a 60 percent success rate. Microsoft will have to go back to the drawing board."
+        },
+        {
+          "s": "leo",
+          "t": "So much spam comes from Hotmail and Gmail accounts. And it's getting worse."
+        },
+        {
+          "s": "steve",
+          "t": "Spam used to be annoying ads for mortgages and organ enlargements. Now it's malicious: take over your computer when you click a link, or sometimes with no action at all."
+        }
+      ]
+    },
+    {
+      "title": "The Show and Its Keynotes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "RSA, the company, was founded by Rivest, Shamir and Adleman, who did the original public-key work and held patents that have since expired, after the 17-year patent life. It's a big, strong security company, and its annual RSA Conference in San Francisco was fantastic and very well put together."
+        },
+        {
+          "s": "steve",
+          "t": "I'm tempted to end the podcast now, after telling listeners to go watch the keynotes. I made a short URL: snipurl.com/rsa2008. They're in Windows Media or Flash."
+        },
+        {
+          "s": "leo",
+          "t": "The interactive webcast shows the video with the slides. Nice."
+        },
+        {
+          "s": "steve",
+          "t": "Click a day in the lower left to see its keynotes."
+        },
+        {
+          "s": "steve",
+          "t": "This year's theme was Alan Turing, the cryptographer and mathematician of the Turing test and the Turing machine, who cracked Enigma. \"Turing Lives\" ran through the whole show. The first half of the opening ceremony, about Turing, is worth watching."
+        },
+        {
+          "s": "steve",
+          "t": "The second half is a dance number. They relyriced the Commodores' \"Brick House\" into \"She's a Botnet,\" with subtitles."
+        },
+        {
+          "s": "leo",
+          "t": "Why, why, why? How did the security pros react?"
+        },
+        {
+          "s": "steve",
+          "t": "It was lighthearted and fun. You wondered, is this what I paid for? The good news is it isn't. There was tons of high-quality content."
+        }
+      ]
+    },
+    {
+      "title": "The Keynotes Worth Watching",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I recommend John Thompson of Symantec. He brings out their head of malicious software. Some canned humor doesn't work, but listeners will be fascinated by the statistics. Symantec's global monitoring network shows that users now encounter more malicious software than good software. This year the scale tipped."
+        },
+        {
+          "s": "steve",
+          "t": "My two favorites: first, the cryptographers panel at the end of Tuesday, April 8, with Whit Diffie and Martin Hellman of the Diffie-Hellman key exchange, and Ron Rivest. I knew Diffie and Hellman in the early '70s, when I had summer jobs at Stanford's AI lab while they did their early crypto work. It was fun to chat with them again."
+        },
+        {
+          "s": "steve",
+          "t": "Diffie is wonderful, with his white beard and long hair. He's exactly what you want in a cryptographer, and very funny. These are the founders of the crypto industry talking for 45 minutes about what matters."
+        },
+        {
+          "s": "steve",
+          "t": "One point, maybe Hellman's: humans do a bad job of judging low-probability events. We confuse very seldom with never. The chance of terrorists commandeering airliners wasn't zero, as we found out on September 11th."
+        },
+        {
+          "s": "leo",
+          "t": "People forget New York City is quite earthquake prone. There just hasn't been a big one in a couple of hundred years."
+        },
+        {
+          "s": "steve",
+          "t": "Great example. Something about how our brains are wired means we don't get statistics."
+        },
+        {
+          "s": "steve",
+          "t": "My other favorite was about how the brain is wired: Jeff Hawkins, founder of Palm, Handspring and Numenta, and author of \"On Intelligence,\" one of our Audible recommendations. Numenta's HTM, Hierarchical Temporal Memory, models in software exactly how the brain is neurologically wired, far more closely than old neural networks, which were a bunch of goo you threw things at. They get much better results."
+        },
+        {
+          "s": "steve",
+          "t": "He's odd and neat. He shows image recognition trained on boats, cats, dogs and more, and what it then correctly recognizes. Even I'm thinking, that's a boat, but how could it possibly know? Numenta's technology is downloadable. I highly recommend it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's Craig Mundie and Christopher Leach, their chief information security officer, discussed perfect identity versus perfect privacy, under the theme \"End to End Trust.\" And Homeland Security Secretary Michael Chertoff, added late, spoke for about 45 minutes."
+        },
+        {
+          "s": "leo",
+          "t": "I'm thrilled they put these online. People will watch and say, I want to be there next time."
+        },
+        {
+          "s": "steve",
+          "t": "I'll give listeners notice before next year's conference. There were 14 breakout tracks every hour. I needed five of me. Those were recorded, but only attendees can download them."
+        }
+      ]
+    },
+    {
+      "title": "Why Steve Now Wants an EV Certificate",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On Wednesday I stumbled into a session with a strange name, about securing the Internet with strong authentication. It was all about Extended Validation certificates. And I was pleased the panel was as upset as I am about the proliferation of certificate authorities."
+        },
+        {
+          "s": "steve",
+          "t": "Longtime listeners remember my rant when I found IE's list of certificate authorities had exploded from maybe 11 to an insane number. Anyone should have the right to become one, but the more there are, the greater the chance of a mistake. The famous one: someone malicious got a Microsoft certificate. It was revoked."
+        },
+        {
+          "s": "leo",
+          "t": "A certificate doesn't guarantee safety. It's just revocable if someone misbehaves."
+        },
+        {
+          "s": "steve",
+          "t": "The standards have been lowered over time. Go Daddy sells a $29.95 or so certificate that only validates the domain. Now an SSL certificate means only that you're connected to the domain you think, nothing about who owns it."
+        },
+        {
+          "s": "steve",
+          "t": "I buy VeriSign certificates, about $1,295 for three years. They check my Dun & Bradstreet, there's faxing, and Sue gets a phone call. But nothing tells the user which kind I have. Both give the same lock icon."
+        },
+        {
+          "s": "leo",
+          "t": "Who gave Go Daddy the right to be a CA?"
+        },
+        {
+          "s": "steve",
+          "t": "Look through the CA list."
+        },
+        {
+          "s": "leo",
+          "t": "I know, the Hong Kong Post Office."
+        },
+        {
+          "s": "steve",
+          "t": "Each browser maker keeps its own master list: Firefox, Opera, Safari and IE. But they pretty much all have to include the same ones, or their browser can't reach sites using those certificates and falls behind competitors."
+        },
+        {
+          "s": "leo",
+          "t": "Shouldn't there be a standard for what a CA requires?"
+        },
+        {
+          "s": "steve",
+          "t": "And thank you, Leo, that's exactly what EV certificates are. A formal document specifies what every CA must do to issue them. A CA that cuts corners risks losing its ability to set the EV bit, which is literally one bit in a standard X.509 certificate."
+        },
+        {
+          "s": "steve",
+          "t": "They're more expensive. VeriSign's one-year EV certificate is $995, two years $1,790. Go Daddy's is about half that: $499.99 for one year, $800 for two."
+        },
+        {
+          "s": "steve",
+          "t": "Apparently qualifying can take up to three months. They verify the people who control the domain and the server, and the company's ownership, management, structure and executives. It's seriously rigorous. As much as I hate the price, I'm sold."
+        },
+        {
+          "s": "steve",
+          "t": "IE7 was the first browser to support them, so demand was slow. About 5,000 have been issued, versus about 850,000 ordinary SSL certificates."
+        },
+        {
+          "s": "leo",
+          "t": "Do EV sites look different?"
+        },
+        {
+          "s": "steve",
+          "t": "That's what's so wonderful. Go to https://www.verisign.com or PayPal in IE7, Firefox 3 or the Opera 9.5 beta. The address bar turns green, and the company behind it is named on the right. In IE7, click the name and it says VeriSign verified this company. All that right-click, properties, view the certificate work is done for you."
+        },
+        {
+          "s": "leo",
+          "t": "I've seen studies that consumers don't know what the green bar means."
+        },
+        {
+          "s": "steve",
+          "t": "That's today. Domain-only certificates are now so cheap that phishing sites buy them from Go Daddy, so they show a lock too. Consumers are freaked out about online banking and shopping, so this is going to happen."
+        },
+        {
+          "s": "steve",
+          "t": "I knew about EV certificates, but wasn't sold until this panel. It included Mozilla's head of security and the guy who misspelled \"referer\" back at CERN. These are serious good guys explaining that SSL certificates came to mean nothing because standards weakened. We need to hope the same doesn't happen here."
+        },
+        {
+          "s": "steve",
+          "t": "I'm also thinking of switching GRC to 100 percent SSL. Especially for a security site, unsniffable connections all the time make sense."
+        },
+        {
+          "s": "leo",
+          "t": "Who supports it? PayPal is green. eBay isn't."
+        },
+        {
+          "s": "steve",
+          "t": "Safari doesn't support it yet. It's a chicken and egg, like the early web: why have websites with no users, and why have users with no websites? That solved itself. People who want EV assurance will use browsers that show it, so Safari will have to support it, and high-end sites that aren't green will have to belly up to the bar."
+        },
+        {
+          "s": "leo",
+          "t": "I'm not doing eCommerce, so I won't spend that for a certificate."
+        },
+        {
+          "s": "steve",
+          "t": "It hurts. Thank you for this little pile of bits."
+        },
+        {
+          "s": "leo",
+          "t": "If they're really doing that validation, I understand the price. And even a cheap certificate gives you SSL encryption. If every site did it, we wouldn't worry so much about VPNs."
+        },
+        {
+          "s": "steve",
+          "t": "And email clients now support SSL connections, so it's simple and no longer expensive to keep things encrypted."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "EV certificates never caught on with users. By 2019, Chrome, Firefox and Safari had dropped the green bar and company name from the address bar, and free domain-validated certificates made HTTPS nearly universal."
+        }
+      ]
+    },
+    {
+      "title": "Are We Winning?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Overall, are we winning against the bad guys?"
+        },
+        {
+          "s": "steve",
+          "t": "No. The sense from the keynotes and sessions was doom and gloom, like we're losing. The 'Net was designed for sharing, not securing. We're trying to bolt security on afterward."
+        },
+        {
+          "s": "steve",
+          "t": "Another favorite quote, maybe from Symantec: \"Do not protect the network, protect the information.\" I could almost foresee a day when DRM, so reviled as a tool for publishers, is ubiquitous and as useful to end users."
+        },
+        {
+          "s": "steve",
+          "t": "I protect my keychain files with TrueCrypt, but need admin rights to open them. Imagine if every file, even a text file, came in a securable wrapper that knew who may open it. No network perimeters, no \"somebody got in, now what can they do.\" We're so far from that I can't imagine how we'd get there. But it makes sense."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't protecting the data be easier than protecting the network?"
+        },
+        {
+          "s": "steve",
+          "t": "I think it's much harder. But protecting the network isn't doing the job."
+        },
+        {
+          "s": "steve",
+          "t": "Here I am in my fortress, behind tons of protection. But when I leave the house with files on my keychain, they're outside my network. The answer is files that protect themselves and know who can open them. It's impossible today, a whole other infrastructure, with everyone having public and private keys. But it's an interesting idea."
+        },
+        {
+          "s": "leo",
+          "t": "Seems we could do both."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. I was being facetious about everyone taking down their firewalls. And it is the RSA Conference, all about selling security. But there was a sense of a cloud."
+        },
+        {
+          "s": "leo",
+          "t": "I feel it too."
+        },
+        {
+          "s": "steve",
+          "t": "And end users feel it. Security is getting too hard, with all these factors, and they're afraid to do things online."
+        },
+        {
+          "s": "steve",
+          "t": "I try to use PayPal and Google Checkout to limit how many sites get my credit card. But many sites, including my own, don't take them. And my card still got loose."
+        },
+        {
+          "s": "leo",
+          "t": "And spam is out of control, and now a security hazard. It feels like they're gaining on us. It frustrates me that people take something incredible and trash it just to make a little extra money."
+        },
+        {
+          "s": "steve",
+          "t": "At this point it's fair to say the bad guys are winning. But my sense is we're going to win. We started from nowhere, with standalone operating systems stuck onto the 'Net. It took until XP Service Pack 2 to get a firewall on by default."
+        },
+        {
+          "s": "steve",
+          "t": "There will always be problems. But we'll get authentication. When everyone has SSL certificates because they're cheap, sniffing goes away, since your email password won't cross an access point in the clear. Incrementally, we'll win, though maybe not in our lifetimes."
+        },
+        {
+          "s": "steve",
+          "t": "It has to be done through standards, so it's baby steps, like EV certificates. And it's clear the web browser is our window to the world. With Web 2.0, it is the application."
+        }
+      ]
+    },
+    {
+      "title": "The YubiKey",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now your Swedish lady and her amazing authentication system."
+        },
+        {
+          "s": "steve",
+          "t": "The coolest thing I saw at the conference. Stina Ehrensvärd, E-h-r-e-n-s-v-a-r-d. Go to www.Yubico.com, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "There she is, the CEO."
+        },
+        {
+          "s": "steve",
+          "t": "Look at that thing. It's a tiny USB device that is a USB keyboard, with a one-time password system."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, it shows up as a keyboard, using the standard HID driver."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly."
+        },
+        {
+          "s": "leo",
+          "t": "But I don't see any keys."
+        },
+        {
+          "s": "steve",
+          "t": "See the little circle? It glows green, and it's a touch button."
+        },
+        {
+          "s": "steve",
+          "t": "It's a tiny plastic wafer, just the four USB contact fingers and the electronics. I'm sensitive to junk on my keyring. Much as I love the IronKey, this weighs nothing."
+        },
+        {
+          "s": "steve",
+          "t": "She asked if I was press and could she have a minute. She said it's a one-time password authenticator, and I said, yeah, the floor is full of those. Then she said, it's a keyboard. And I said, what? Oh my god, that is so cool."
+        },
+        {
+          "s": "steve",
+          "t": "First, no battery. Unlimited shelf life. It's powered by the USB port, so you do need to plug it in."
+        },
+        {
+          "s": "leo",
+          "t": "So it actually types your password."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, which means it can be wacky and long."
+        },
+        {
+          "s": "leo",
+          "t": "What's going on inside?"
+        },
+        {
+          "s": "steve",
+          "t": "A nonvolatile counter increments each time it's powered up. A second counter starts at zero at each power-up and counts each code generated. It's encrypted with 128-bit AES. So it's a one-time password system."
+        },
+        {
+          "s": "steve",
+          "t": "I pushed on the ring and it didn't move. It's a touch surface. Touch it and wait about a second, a delay she built in so it won't misfire, and it types a long string of gibberish. Each time, a different string, turned into ASCII and typed by this thing pretending to be a keyboard."
+        },
+        {
+          "s": "leo",
+          "t": "So at PayPal's login, after my password, instead of reading my football, I'd touch this and it would type the code for me."
+        }
+      ]
+    },
+    {
+      "title": "Why Steve Loves It",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's what I really like. I think VeriSign's cards and footballs are cool. But their business model requires big companies to buy lots of them, with VeriSign's servers doing the authentication. I've vetted that protocol, and it's 100 percent private. But my next product, a next-generation VPN, can't use VeriSign. I'm not Bank of America, PayPal or eBay."
+        },
+        {
+          "s": "steve",
+          "t": "I could use this. They offer a low-level SDK in C and Java, open source with all the code, so I could build authentication right into a VPN client for roaming users. And they're $4 each, depending on quantity."
+        },
+        {
+          "s": "steve",
+          "t": "They also have back-end servers and a web service if you want them, and they're fully OpenID compliant, so you can use it as your OpenID authentication."
+        },
+        {
+          "s": "leo",
+          "t": "I'm liking it more and more."
+        },
+        {
+          "s": "steve",
+          "t": "They have a PAM module for logging into Linux, Macs and anything with PAM, and web clients in Java, C#, .NET, Python, PHP and Ruby."
+        },
+        {
+          "s": "steve",
+          "t": "One difference: a VeriSign card or football works at a web kiosk where you can't reach the USB port. But for a corporate VPN with roaming laptops, this is a really nice multifactor solution. And every operating system supports USB keyboards. It's a universal standard."
+        },
+        {
+          "s": "leo",
+          "t": "And it saves me typing a crazy, goofy password."
+        },
+        {
+          "s": "steve",
+          "t": "What it types looks like one of GRC's nutso Perfect Passwords, but all ASCII, so it doesn't need escaping on the web. Each touch generates the next one. A super-secure one-time password system, tiny enough for your keychain."
+        },
+        {
+          "s": "leo",
+          "t": "If we offered subscription video streams, we could mail subscribers one of these. At four bucks, that's very affordable."
+        },
+        {
+          "s": "steve",
+          "t": "In a show where everyone claimed the world's most amazing authentication, here was one thing new. And you're not setting up an account with someone else. You can do the authentication yourself in your own server or utility."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "The YubiKey became one of the most widely used hardware security keys. Yubico helped create the FIDO U2F and FIDO2 standards for phishing-resistant logins, now supported by major browsers and websites."
+        },
+        {
+          "s": "leo",
+          "t": "Her front page quotes a \"Steve Osborrn\": \"The coolest authentication hardware device ever.\" I think she means you. I Googled, and there's no security researcher named Steve Osborrn."
+        },
+        {
+          "s": "steve",
+          "t": "I read that this morning and wondered who he was. Maybe a language gap. If it's me, she has my permission to change Osborrn to Gibson."
+        }
+      ]
+    },
+    {
+      "title": "Not Always Zero Config",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Wizmo's wanlock helped a radio caller whose wireless kept dropping."
+        },
+        {
+          "s": "steve",
+          "t": "But my tech guy, Greg, has had that problem constantly, and turning off Wireless Zero Configuration didn't fix it. After months of Googling, it turned out to be his laptop's modem drivers. He disabled them, and the problem disappeared."
+        },
+        {
+          "s": "leo",
+          "t": "That's why computer problems are so tough. It's a million things in a complex system."
+        },
+        {
+          "s": "steve",
+          "t": "We'll be link-happy in this week's show notes."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What made the ClamAV flaw especially dangerous?",
+      "options": [
+        "Simply receiving a malformed email could let an attacker take over the server scanning it",
+        "It deleted signatures",
+        "It only affected Macs",
+        "It disabled firewalls"
+      ],
+      "answer": 0,
+      "explain": "Many other products use ClamAV as their engine."
+    },
+    {
+      "q": "Why did Steve worry about the ICQ vulnerability?",
+      "options": [
+        "A malicious status update could take over a machine, enabling a flash worm through the network",
+        "It leaked passwords",
+        "It crashed Windows",
+        "It sent spam"
+      ],
+      "answer": 0,
+      "explain": "Each infected machine could attack everyone on its friends list."
+    },
+    {
+      "q": "What does a domain-validated SSL certificate actually prove?",
+      "options": [
+        "Only that you're connected to the domain you think, not who owns it",
+        "That the company is trustworthy",
+        "That the site is malware-free",
+        "The owner's identity"
+      ],
+      "answer": 0,
+      "explain": "EV certificates verify the organization behind the site."
+    },
+    {
+      "q": "What did Symantec's keynote report about software users encounter?",
+      "options": [
+        "Users now encounter more malicious software than legitimate software",
+        "Viruses were declining",
+        "Macs had the most malware",
+        "Antivirus stopped all of it"
+      ],
+      "answer": 0,
+      "explain": "The scale tipped in that year."
+    },
+    {
+      "q": "How does the YubiKey deliver its one-time password?",
+      "options": [
+        "It acts as a USB keyboard and types the code when you touch it",
+        "It shows it on a display",
+        "It sends it by text message",
+        "It needs a special driver"
+      ],
+      "answer": 0,
+      "explain": "Every operating system supports USB keyboards."
+    },
+    {
+      "q": "Why did Steve like the YubiKey for his planned VPN product?",
+      "options": [
+        "Its open-source SDK lets developers do the authentication themselves, without a big vendor's servers",
+        "It's free",
+        "It works without USB",
+        "It has a battery"
+      ],
+      "answer": 0,
+      "explain": "VeriSign's model suits big companies."
+    }
+  ]
+}
