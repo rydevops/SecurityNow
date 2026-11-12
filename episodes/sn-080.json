@@ -1,0 +1,603 @@
+{
+  "number": 80,
+  "title": "Listener Feedback Q&A #16",
+  "subtitle": "Spoofed headers, router-hijacking scripts, port knocking and more",
+  "date": "2007-02-22",
+  "description": "Errata on the \"Received\" header, a script attack that changes home routers' DNS, the HD DVD cracking frenzy, Google's drive study and Gmail opening up. Then listener questions: finding email headers, password character sets, cleverer header forgeries, the mysterious \"Free Public WiFi,\" Apple's UAC ad, storing drives for archives, a VPN that seems bypassed, encrypting before online backup, how spammers get addresses, and port knocking.",
+  "transcript": "https://www.grc.com/sn/sn-080.txt",
+  "audio": "http://media.GRC.com/sn/SN-080.mp3",
+  "chapters": [
+    {
+      "title": "Errata: It's Just \"Received:\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A landmark Security Now!, Episode 80, our 16th Q&A, with Steve in Irvine, California, and a terrier barking across the street."
+        },
+        {
+          "s": "steve",
+          "t": "Listeners will count the barks. After last week's well-received episode on backtracking spoofed email, I looked at some headers and realized, with a classic \"doh,\" that the header I kept calling \"Received by\" is just \"Received:\". Not one person complained."
+        },
+        {
+          "s": "leo",
+          "t": "We knew what you meant."
+        },
+        {
+          "s": "steve",
+          "t": "As an assembly language programmer, I've got to dot my i's."
+        }
+      ]
+    },
+    {
+      "title": "A Script That Hijacks Your Router",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "From the SANS newsletter: a new malicious JavaScript exploit can change DNS settings on home routers still using default passwords. Next time the router reboots, users are redirected to spoofed, possibly malicious websites. About half of router owners never change the default password."
+        },
+        {
+          "s": "steve",
+          "t": "I confess I haven't changed mine. I block all WAN-side administration, so nobody can reach it from outside. But a script running in your browser can find your local router, log in behind your back, and modify its settings. It's a hack from outside that you invited in by running scripts."
+        },
+        {
+          "s": "leo",
+          "t": "This was a proof-of-concept from Symantec. I don't think it's in the wild."
+        },
+        {
+          "s": "steve",
+          "t": "One SANS editor noted that consumer products walk users through a wide-open setup, then say, click here for security, but it might ruin performance or your network."
+        },
+        {
+          "s": "leo",
+          "t": "Translation: we don't want to support it."
+        },
+        {
+          "s": "steve",
+          "t": "He says the Wi-Fi Alliance's Wi-Fi Protected Setup aims to make default Wi-Fi configurations secure, and other consumer network products should follow."
+        },
+        {
+          "s": "steve",
+          "t": "The second editor sees a major trend: browser scripts used as remote-control sentinels inside an organization's firewall, manipulating routers and internal applications. He expects it to increase massively and suggests disabling scripts, or enabling them only for trusted sites."
+        },
+        {
+          "type": "fact",
+          "title": "Drive-by pharming",
+          "t": "Symantec called this attack \"drive-by pharming.\" Real attacks using it were found within a year. Routers now usually ship with unique passwords, and browsers increasingly block websites from reaching into local networks."
+        },
+        {
+          "s": "leo",
+          "t": "I'm not a big fan of that advice. Turn off scripting and say goodbye to the Net. Almost every site, including ours, uses JavaScript. I used NoScript, and you end up approving most sites anyway."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is that scripting is not safe. Yet it's so useful it's hard to fly without it."
+        },
+        {
+          "s": "leo",
+          "t": "How unsafe? JavaScript is sandboxed. It can't erase a file."
+        },
+        {
+          "s": "steve",
+          "t": "Not by itself. But in IE it can invoke ActiveX controls, which break right out of the sandbox."
+        },
+        {
+          "s": "leo",
+          "t": "Then the problem is ActiveX, not JavaScript. And I'm surprised you haven't changed your password. We always say: change the default password, turn off Universal Plug and Play, and turn on WPA."
+        },
+        {
+          "s": "steve",
+          "t": "In my defense, it's the router on my cable modem, a backup connection I use sparingly."
+        },
+        {
+          "s": "leo",
+          "t": "So there's a clear fix that has nothing to do with JavaScript."
+        }
+      ]
+    },
+    {
+      "title": "Other Errata",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Moving on, as Kevin says on Diggnation. The Doom9 forum thread continues to go crazy, uncovering processing keys and volume IDs, really pulling HD DVD encryption apart. Our show notes link to it."
+        },
+        {
+          "s": "leo",
+          "t": "It's a feeding frenzy. Copy protection riles up the masses, and they crack it."
+        },
+        {
+          "s": "steve",
+          "t": "Next, we were swamped with requests about Google's new paper, I believe from USENIX, on the reliability of the hundreds of thousands of drives in its services. It's shocking. Seagate's spec claimed 0.34 percent failure per year. After a couple of years, Google sees about 8 percent per year."
+        },
+        {
+          "s": "steve",
+          "t": "People said drive reliability matters too, so next week we'll discuss it. I won't turn it into a SpinRite commercial. It's a beautiful study."
+        },
+        {
+          "s": "steve",
+          "t": "Also, I heard you or Amber say Gmail no longer needs invitations. A recent Q&A asked how to get invited, so anyone can sign up now. And ShieldsUP! crossed 48 million uses."
+        },
+        {
+          "s": "leo",
+          "t": "We'll party at 50 million."
+        },
+        {
+          "s": "steve",
+          "t": "Finally, listeners loved Peter F. Hamilton's \"Pandora's Star\" and its sequel \"Judas Unchained.\" I just finished my third reading of \"Fallen Dragon.\""
+        },
+        {
+          "s": "leo",
+          "t": "I've read \"Pandora's Star\" and I'm halfway through \"Judas,\" and \"Fallen Dragon\" is the best of the three. \"Pandora's Star\" is 900 pages and ends with a character going over a waterfall and aliens approaching."
+        },
+        {
+          "s": "steve",
+          "t": "It's literary, almost Dickensian, with lots of character development. His \"Night's Dawn\" trilogy is three hardbacks, six paperbacks: fantastic ideas, but it goes on and on. For people who'd rather read than watch TV, there's nothing better."
+        },
+        {
+          "s": "steve",
+          "t": "And a listener sent a testimonial titled \"SpinRite saves a business.\" I'll share it some week."
+        }
+      ]
+    },
+    {
+      "title": "Finding Your Email's Headers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our spam episode stimulated a lot of questions. Chris Mckamie of Taft, California asks: how do I see the headers in my email?"
+        },
+        {
+          "s": "steve",
+          "t": "A great practical question. In Eudora, the button is labeled \"Blah blah blah,\" as in, you don't really need to see this."
+        },
+        {
+          "s": "steve",
+          "t": "In Outlook Express, right-click the message in the list, choose Properties at the bottom, then the Details tab. It shows the headers, and a Message Source button shows the whole message. Every mail client has some way. Look in Help or the menus for \"show all headers.\""
+        }
+      ]
+    },
+    {
+      "title": "Full ASCII or Hex Passwords?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe McDaniel of Tallahassee, Florida uses GRC's passwords page, at GRC.com/passwords. If a strong hash reduces a password to a cryptographic key, is a full-ASCII password any better than a hex-only one?"
+        },
+        {
+          "s": "steve",
+          "t": "I often solve problems by going to an extreme. Hex has 16 characters, four bits each. Printable ASCII gives about seven bits. Now go further: only 0 and 1, one bit per character. A 64-character password then has only 2 to the 64th possibilities."
+        },
+        {
+          "s": "steve",
+          "t": "A smaller alphabet means fewer possible passwords for a brute-forcer. And someone glancing at all ones and zeros knows it's easier than something that looks like your typewriter broke. So use the full set."
+        },
+        {
+          "s": "leo",
+          "t": "But two to the 64th is still a lot. And doesn't hashing make it random?"
+        },
+        {
+          "s": "steve",
+          "t": "WPA, which most people use these for, hashes what you give it down to a 256-bit key. You want to give it more entropy than that. Sixty-four hex characters supply only 256 bits, mapped onto 256. Give the hash as rich a source as you can."
+        },
+        {
+          "type": "fact",
+          "title": "The details",
+          "t": "Printable ASCII has 95 characters, about 6.6 bits each. In WPA, a 64-character hex string is used directly as the 256-bit key, while a passphrase of 8 to 63 characters is stretched into one. Either way, a long random password from a large alphabet is what matters."
+        }
+      ]
+    },
+    {
+      "title": "Forging Two Headers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian DeHamer of San Diego asks: what if a spambot added two fake Received headers, one showing GRC as the origin and a second showing GRC passing it to another server, with GRC's real IP? Wouldn't that hide it?"
+        },
+        {
+          "s": "steve",
+          "t": "Many listeners thought this through cleverly. The answer is to scrutinize the chain. Each server's header should link to the next. Somewhere the chain will probably break, and the break shows where it really came from."
+        },
+        {
+          "s": "leo",
+          "t": "So you'd still know something was wrong. But this is meant to fool people who aren't savvy."
+        },
+        {
+          "s": "steve",
+          "t": "It'd be really good if people, or servers, scrutinized the whole chain."
+        },
+        {
+          "s": "leo",
+          "t": "Eden Li of Beijing, China, by way of Arizona, goes further: since the sender controls its headers, can't it fake a valid path from GRC to itself, so it looks like GRC used the bot as a relay?"
+        },
+        {
+          "s": "steve",
+          "t": "That wins the prize for cleverest hack. The chain would be unbroken, and it would look like GRC relayed through some random consumer machine. It works. The giveaway: a reverse DNS lookup on that IP shows a Comcast.net or other consumer address, not a mail server."
+        },
+        {
+          "s": "leo",
+          "t": "And you'd never relay mail through that. But spammers probably never bother, because nobody looks that closely, and the spam gets through anyway."
+        },
+        {
+          "s": "leo",
+          "t": "Ted Hosmann of Monterey, California asks: couldn't spammers add 10, 20 or 30 headers as red herrings?"
+        },
+        {
+          "s": "steve",
+          "t": "They could bury themselves in fake headers. But the topmost header added by the first real server still records the bot's connection. It would just make a curious recipient's eyes cross."
+        },
+        {
+          "s": "leo",
+          "t": "The morals: SMTP is hideously insecure. It validates nothing. And spammers don't care if you figure it out."
+        },
+        {
+          "s": "steve",
+          "t": "It amazes me spam still works. Who clicks on that stuff?"
+        },
+        {
+          "s": "leo",
+          "t": "The best way to fight it is don't buy anything. And don't click \"unsubscribe.\""
+        },
+        {
+          "s": "steve",
+          "t": "All that does is confirm you exist."
+        }
+      ]
+    },
+    {
+      "title": "The Mysterious \"Free Public WiFi\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Thom in Cortland, New York took his university laptop home, and it automatically connected to an open hotspot called \"Free Public WiFi.\" Suspecting a scam, he shut it down immediately. Was he at risk?"
+        },
+        {
+          "s": "leo",
+          "t": "When I got this on the radio, I said it's probably a scam. It's actually a Windows bug. If you once joined an ad hoc network called \"Free Public WiFi,\" Windows later broadcasts that name itself. Others see it, join, get nothing, but it persists and spreads like a virus. Dwight Silverman's blog at the Houston Chronicle explains it. Microsoft plans a fix in the next XP Service Pack."
+        },
+        {
+          "s": "steve",
+          "t": "Machine to machine instead of to an access point. And in general, just connecting is probably not a problem if you have a personal firewall. Attacks on hotspots involve what you do, like logging into email without encryption. If you recognize it and shut down, there's no opportunity for infection."
+        },
+        {
+          "s": "leo",
+          "t": "And it's a bad idea to join ad hoc networks. Infrastructure networks use base stations, like at a coffee shop. Ad hoc networks come off someone's computer. That would be very trusting."
+        },
+        {
+          "type": "fact",
+          "title": "The fix",
+          "t": "The bug was in Windows XP's wireless software, which would advertise the last ad hoc network you'd joined when it found no other. Microsoft fixed it in XP Service Pack 3 (2008)."
+        }
+      ]
+    },
+    {
+      "title": "Apple's UAC Ad",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Detrick of Westerville, Ohio saw Apple's new Mac ad mocking Vista's User Account Control. But Macs also require approval for system changes and installs, and Vista's UAC doesn't even ask for a password. It just seems aggressive because the desktop fades. Is one better?"
+        },
+        {
+          "s": "leo",
+          "t": "Bill Gates was incensed, saying Apple's lying, since Microsoft copied what Apple's done for years."
+        },
+        {
+          "s": "steve",
+          "t": "You know Macs better. Doesn't Vista's UAC seem more in your face?"
+        },
+        {
+          "s": "leo",
+          "t": "Some of the ad comes from early betas, when it took four clicks to get anything done. The shipping version is much less intrusive. If it's not asking for a password, you're running as an administrator, so consider a limited user account."
+        },
+        {
+          "s": "steve",
+          "t": "Then you'll be asked for a password whenever one pops up."
+        },
+        {
+          "s": "leo",
+          "t": "Only for system changes, like on the Mac. That's good."
+        },
+        {
+          "s": "leo",
+          "t": "In the ad, PC introduces itself, and a stern security guard representing Vista interrupts every exchange: \"Mac has issued a salutation. Cancel or allow?\" PC keeps saying \"Allow,\" explaining he could turn it off but then get no warnings. \"You are coming to a sad realization. Cancel or allow?\""
+        },
+        {
+          "s": "leo",
+          "t": "It's hysterical, but Chris is right. It's what Apple's done for years, and probably the number one reason Macs have been more secure than XP. Kind of disingenuous."
+        },
+        {
+          "s": "steve",
+          "t": "UAC has much more technology than that dialog, and we'll cover it. But security in today's structure always trades off convenience, like our scripting debate. Malware can reach everything in Windows, and the dialog gives you a chance to catch it acting behind your back."
+        },
+        {
+          "s": "leo",
+          "t": "I don't find it onerous. It reminds me I'm modifying the system."
+        }
+      ]
+    },
+    {
+      "title": "Archiving on Hard Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tony Chen of Orlando, Florida, a UNIX sysadmin, notes that today's dense drives constantly correct errors with ECC. Do errors happen only while powered? Is a drive sitting in a box safe from degradation? He backs up to drives rather than DVD-Rs, since he can recover a drive with DiskWarrior or SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "First, on TWiT a few weeks ago you said something interesting. All the studies I've read say recordable media is more reliable than pressed media. Pressed DVDs have a long-term oxidation problem that photo-based CD-R and DVD-R don't."
+        },
+        {
+          "s": "leo",
+          "t": "We said it the other way around."
+        },
+        {
+          "type": "fact",
+          "title": "Discs again",
+          "t": "Most archival research has found recordable discs, with organic dyes, generally less durable than pressed discs, though quality varies widely. \"M-DISC\" recordables, introduced in 2009, were built for archiving."
+        },
+        {
+          "s": "steve",
+          "t": "As for drives on a shelf, there used to be a problem called \"stiction.\" Head and platter were so smooth they'd molecularly bond when the drive sat off for a long time."
+        },
+        {
+          "s": "steve",
+          "t": "That's partly why heads park near the spindle. If the drive is bumped, the platter edges flap wildly but the center barely moves. And at the center, the head has little leverage against the spindle motor, so less torque is needed to break it loose at startup."
+        },
+        {
+          "s": "steve",
+          "t": "When SpinRite was young, the common wisdom was to power up and bonk the drive with a screwdriver handle to free the head. It often worked. With modern lubricants, stiction isn't a problem anymore."
+        },
+        {
+          "s": "leo",
+          "t": "Bonk it with a screwdriver. People went, what?"
+        },
+        {
+          "s": "steve",
+          "t": "So a removable FireWire or USB drive on a shelf, kept from temperature extremes, should be fine for 10 or 20 years. It's more stable than drives in constant use, which, as Google found, start failing after a couple of years."
+        },
+        {
+          "s": "leo",
+          "t": "Alex Lindsay says video editors just wrap up a project's drive and set it aside as the backup."
+        }
+      ]
+    },
+    {
+      "title": "Is My VPN Being Bypassed?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeff P. of St. Louis, Missouri logged into his work VPN from home and opened an internal site, but got a \"Page Not Found\" search page from Charter, his ISP. Charter recently started redirecting 404 errors. GRC showed different IPs with and without the VPN. How can Charter see his traffic through a VPN?"
+        },
+        {
+          "s": "steve",
+          "t": "It can't. A VPN is an impenetrable encrypted tunnel. First, check the browser's proxy settings. Some attacks have turned proxying on, so web traffic could bypass the VPN, and Charter would answer. Second, check the hosts file, in case something crept in to redirect DNS."
+        },
+        {
+          "s": "leo",
+          "t": "Also, many VPN clients have a setting not to route web traffic through the VPN, deliberately. I suspect that's it."
+        },
+        {
+          "s": "steve",
+          "t": "Companies may not want you using that much of the VPN's bandwidth by policy."
+        },
+        {
+          "s": "leo",
+          "t": "And DNS servers can be configured to catch failures. VeriSign got famously in trouble redirecting unknown domains to its own advertising page. OpenDNS does it too. It fixes typos like .cmo and shows useful search pages, and that's how it makes money. Many ISPs are starting to do the same, with ads."
+        }
+      ]
+    },
+    {
+      "title": "Encrypting Before Online Backup",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Todd Zervas of Riverside, California wants online backup, since making DVDs and moving them off-site is a pain. But can operators see his files: his financial data, his daughter's novels? Can he add his own encryption?"
+        },
+        {
+          "s": "steve",
+          "t": "I love the question. I even own the domain cryptkeepers.com, because I liked the idea of secure online backup. It's not on my to-do list."
+        },
+        {
+          "s": "steve",
+          "t": "I wouldn't worry about malice. But if they can decrypt, they could be legally compelled to, especially with the Patriot Act. You want to hand them an opaque blob."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt is perfect. Use a file as its container, mounted as a drive letter. The OS sees one file. Sync that file with the backup service. Only you can make sense of it. That's what I do with precious data: I burn TrueCrypt containers to DVD and send them to my attorney and my mom."
+        },
+        {
+          "s": "leo",
+          "t": "I like Carbonite, a sponsor of my radio show. It backs up constantly in the background. I back up our raw podcast tracks, since I've lost some. Its privacy statement says it encrypts with SSL, but will share your files if legally compelled. Every service says that."
+        },
+        {
+          "s": "steve",
+          "t": "So give them a pre-encrypted blob, and nobody can do anything with it."
+        },
+        {
+          "s": "leo",
+          "t": "The court can still come to you. That's between you and the court."
+        },
+        {
+          "type": "fact",
+          "title": "Zero-knowledge backup",
+          "t": "Many backup services now offer \"zero-knowledge\" encryption, where only you hold the key. VeraCrypt replaced TrueCrypt for containers like Steve's."
+        }
+      ]
+    },
+    {
+      "title": "How Spammers Get Your Address",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Frautschi of Rockville, Maryland asks: could friends and family be unwittingly giving our addresses to spammers?"
+        },
+        {
+          "s": "steve",
+          "t": "What makes me cringe most is when someone with my protected address sends me an e-card. \"Your Valentine has sent you a card.\" Mom, don't do that. They've handed your address to a website."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe it's reputable. But Mom didn't read the privacy policy."
+        },
+        {
+          "s": "steve",
+          "t": "Websites are scraped, too. And we got spam to our sales and support addresses, though our site protects them from scraping. People who'd written to us got malware that harvested addresses from their machines."
+        },
+        {
+          "s": "steve",
+          "t": "Running an SMTP server, I've watched spam servers connect and just guess, alphabetically: albert@grc.com, andrew@grc.com. If you ever change addresses, make it unguessable. When I was steve@grc.com, it was not pretty."
+        },
+        {
+          "s": "leo",
+          "t": "My filtering service, MailRoute, forwards only my real addresses but shows statistics on the rest. I get thousands a day, including to leoshair@leoville.com. Maybe someone added it to a mailing list. Maybe it was my mom."
+        }
+      ]
+    },
+    {
+      "title": "Port Knocking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim Etherington of Ottawa, a fan since the beginning, asks: how good is port knocking for opening closed router ports selectively?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm so high on port knocking. It's gotten bad press from attacks on weak implementations, but it's very clever and can be bulletproof. I've considered using it myself."
+        },
+        {
+          "s": "steve",
+          "t": "Your router has all ports closed. A telecommuter sends a sequence of packets to specific ports."
+        },
+        {
+          "s": "leo",
+          "t": "Shave and a haircut, two bits."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, as long as you want. With 65,536 ports, each knock is about 16 bits, so four is 64 bits, and eight is 128 bits of equivalent security."
+        },
+        {
+          "s": "steve",
+          "t": "The router, in full stealth, rejects those packets but still sees them. The router, or software reading its log in real time, notices an IP sending the secret knock and opens inbound access for that IP."
+        },
+        {
+          "s": "leo",
+          "t": "Astaro's new version 7 might do it. It adds transparent email encryption at the gateway with S/MIME or OpenPGP, SSL VPN, and a free home version that now includes all subscriptions."
+        },
+        {
+          "s": "steve",
+          "t": "It's been around a year or so. You need something on the client to send the knocks, maybe UDP packets. You could even send a single packet containing a long password."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't someone intercept that?"
+        },
+        {
+          "s": "steve",
+          "t": "I've thought about this. Base the packet's content on your current source IP and port. Nobody can spoof your IP to complete a connection, so it would allow traffic only from you."
+        },
+        {
+          "s": "leo",
+          "t": "You're going to implement it."
+        },
+        {
+          "type": "fact",
+          "title": "Single-packet authorization",
+          "t": "Steve's idea resembles Single Packet Authorization, used by tools like fwknop: one encrypted, authenticated packet tells the firewall to open a port briefly for that address. It resists replay and sniffing better than plain knock sequences."
+        }
+      ]
+    },
+    {
+      "title": "99.7 Percent Spam",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A closing comment from Paul Fisher at Hughes in Illinois: you said two-thirds of email is spam. At Hughes, with over 35,000 users worldwide, 99.7 percent of email bound for their servers is identified and blocked as spam, with few false positives. He's glad you make me do a show every week. And he owns SpinRite but has never needed it, hoping owning it keeps his drive healthy."
+        },
+        {
+          "s": "steve",
+          "t": "If the drive knows SpinRite is nearby, it says, okay, I give up, I'll keep working."
+        },
+        {
+          "s": "leo",
+          "t": "My numbers match his, 99.8 or 99.9 percent. Most spammers don't bother hiding."
+        },
+        {
+          "s": "steve",
+          "t": "They use the shotgun approach. A few get through and pay the bills."
+        },
+        {
+          "s": "steve",
+          "t": "We may make closing comments a regular feature. Next week, Google's drive reliability study. And ShieldsUP!'s 48 million is a clean number: I keep a list of the 4,096 most recent users, so someone testing for hours is counted once."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Steve say to view message headers in Outlook Express?",
+      "options": [
+        "Right-click the message, choose Properties, then the Details tab",
+        "Press F1",
+        "Use the View menu's Zoom",
+        "You can't"
+      ],
+      "answer": 0,
+      "explain": "Eudora calls its button \"Blah blah blah.\""
+    },
+    {
+      "q": "Why is a full-ASCII password better than a hex-only one of the same length?",
+      "options": [
+        "Each character carries more bits, so there are far more possible passwords",
+        "Hex is illegal in WPA",
+        "ASCII is encrypted",
+        "Routers reject hex"
+      ],
+      "answer": 0,
+      "explain": "Steve reasoned by taking it to the extreme of binary."
+    },
+    {
+      "q": "How can a forged Received header chain give itself away?",
+      "options": [
+        "A break in the chain, or a consumer IP posing as a relay",
+        "The From line is blank",
+        "The date is wrong",
+        "It can't"
+      ],
+      "answer": 0,
+      "explain": "Reverse DNS reveals consumer addresses."
+    },
+    {
+      "q": "What was \"Free Public WiFi\" really?",
+      "options": [
+        "A Windows bug that spread an ad hoc network name between laptops",
+        "A scam access point",
+        "A city service",
+        "A virus"
+      ],
+      "answer": 0,
+      "explain": "Joining offered no Internet access."
+    },
+    {
+      "q": "How did Steve suggest using online backup safely?",
+      "options": [
+        "Upload only a TrueCrypt container you encrypted yourself",
+        "Trust the provider's SSL",
+        "Email files to yourself",
+        "Use the provider's key"
+      ],
+      "answer": 0,
+      "explain": "Providers can be legally compelled to decrypt what they can read."
+    },
+    {
+      "q": "What is port knocking?",
+      "options": [
+        "A secret sequence of packets to closed ports that tells a firewall to open access for your IP",
+        "Scanning for open ports",
+        "A DDoS attack",
+        "A router reset"
+      ],
+      "answer": 0,
+      "explain": "Each knock adds about 16 bits."
+    }
+  ]
+}
