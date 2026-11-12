@@ -1,0 +1,674 @@
+{
+  "number": 108,
+  "title": "Listener Feedback #23",
+  "subtitle": "Hidden SSIDs, grid cards, token clocks and encrypted drives",
+  "date": "2007-09-06",
+  "description": "Back from fumigation, Steve merges Q&A and mailbag episodes into \"Listener Feedback,\" corrects his claim about binding several VeriSign tokens, sizes up the Corsair padlock drive, and flags a rootkit in Sony's fingerprint USB drive. Listeners ask whether hidden SSIDs and MAC filtering are enough, how to scan infected drives, how Hamachi uses unroutable addresses, about grid-card authentication, formatting versus SpinRite, defraggers, how tokens stay in sync, shorter passwords with two factors, banking in a VM, and attacking encrypted drives with known data.",
+  "transcript": "https://www.grc.com/sn/sn-108.txt",
+  "audio": "http://media.GRC.com/sn/SN-108.mp3",
+  "chapters": [
+    {
+      "title": "Back From the Tent",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The bugs are out of your house."
+        },
+        {
+          "s": "steve",
+          "t": "I'm back, hopefully breathing pure air. The gas is Vikane, made by Dow, I think. It's odorless and colorless, so you wouldn't know you were breathing a potent neurotoxin. So they deliberately mix in tear gas, which you'd certainly know."
+        },
+        {
+          "s": "leo",
+          "t": "Like the odor they add to natural gas."
+        },
+        {
+          "s": "steve",
+          "t": "No bugs since. This area has a serious spider problem, and they're not moving around anymore."
+        },
+        {
+          "s": "steve",
+          "t": "It's three days. They tent the home and fill it with gas for 24 hours, then remove the tent, open the windows and run fans, since Vikane is heavier than air."
+        },
+        {
+          "s": "steve",
+          "t": "At a prep meeting, a homeowner asked what happens if Vikane pours downhill into her home. The Terminix guys rolled their eyes and said, \"Just exhale.\""
+        },
+        {
+          "s": "steve",
+          "t": "They check with sniffers. The label once required under five parts per million, now one. The guy said, \"We always get zero.\" I'm thinking, maybe it's stuck on zero."
+        }
+      ]
+    },
+    {
+      "title": "Everything Is Listener Feedback Now",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Format change. A grumbly listener, still unhappy with our mod 4 equations, said drop the artificial distinction between Q&A and mailbag episodes and call the even episodes Listener Feedback."
+        },
+        {
+          "s": "steve",
+          "t": "I liked it, since I've had trouble sorting questions from comments. Many of today's I found two weeks ago while looking only for comments. People love the Q&A mix, and odd episodes go deeper on fewer topics. If a big issue needs several parts in a row, we'll drop a feedback episode."
+        },
+        {
+          "s": "steve",
+          "t": "So from now on, Mr. Grumbly, they're all Listener Feedback. This is number 23."
+        },
+        {
+          "s": "leo",
+          "t": "Thank you, Mr. Grumbly."
+        }
+      ]
+    },
+    {
+      "title": "Correction: One Token per PIP Account",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Big correction. I assumed that because VeriSign sells you three tokens, you could register several at once. You can't."
+        },
+        {
+          "s": "leo",
+          "t": "Then why sell three?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't know. Listener Walter Soldierer, I think, gave me the contact for Gary Krall, who runs VeriSign's PIP program. Gary said it's an interesting idea, but no."
+        },
+        {
+          "s": "steve",
+          "t": "He mentioned many late nights, so he's the front-line technology guy. Binding more than one token to an account would need substantial changes, like a database format update. He'll add it to his list, but I don't expect it soon."
+        }
+      ]
+    },
+    {
+      "title": "The Padlock Drive, Up Close",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Both Corsair Flash Padlocks arrived. I really like it, but it's larger than the photos suggested, and certainly larger than a thumb drive. I'd call it a large middle-finger drive."
+        },
+        {
+          "s": "steve",
+          "t": "It needs the room for five combination buttons, the key button and status lights. For a gig or two you don't want kids or coworkers reading, it's pretty cool."
+        },
+        {
+          "s": "leo",
+          "t": "These things are getting smaller. If size matters, put TrueCrypt on a regular drive. It's just as secure."
+        }
+      ]
+    },
+    {
+      "title": "Sony Ships a Rootkit Again",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of USB drives, Sony has done it again: a USB drive with a fingerprint reader whose software includes a rootkit."
+        },
+        {
+          "s": "leo",
+          "t": "They can't stay away from it. And they're suing the company that made the original rootkit."
+        },
+        {
+          "s": "steve",
+          "t": "It's been a big mess since the 2005 Sony rootkit scandal. This software creates a subdirectory under the Windows directory and uses rootkit technology to hide it and its files and executables from the Windows API. It's confirmed that virus and malware scanners won't find things hidden there."
+        },
+        {
+          "s": "steve",
+          "t": "Last time, it took about two weeks for malware to use Sony's rootkit to hide itself. A fingerprint drive won't reach as many people as Sony's music CDs did."
+        },
+        {
+          "s": "leo",
+          "t": "And you're knowingly buying it, unlike software snuck onto your system by an audio CD."
+        },
+        {
+          "s": "leo",
+          "t": "Last time hackers exploited it easily because it was badly written: any file with a certain name was hidden. Maybe they didn't repeat that mistake, but I won't count on it."
+        },
+        {
+          "type": "fact",
+          "title": "The 2007 case",
+          "t": "F-Secure found the hidden folder in software for Sony's MicroVault USM-F fingerprint drives. Sony said the hiding was meant to protect the fingerprint software from tampering."
+        }
+      ]
+    },
+    {
+      "title": "More PayPal Grumbling, and a Nerds On Site Rescue",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many listeners agree with us about PayPal's forced checking-account verification and unchangeable default. One had a fraudulent transfer from his checking account and went through hell. PayPal never got it back, since it was gone and not insured, but a third-party insurer on the transaction made restitution. It was a nightmare."
+        },
+        {
+          "s": "steve",
+          "t": "And my first SpinRite report from a Nerds On Site nerd. Raoul Velez wrote, \"My name is Raoul, and I am a nerd.\" He's been a nerd since retiring from the Navy three years ago."
+        },
+        {
+          "s": "steve",
+          "t": "A hotel in the Raleigh area called: its server was down. After talking with the manager, he gave SpinRite a chance. It ran almost seven hours, the server rebooted, and voila, it was working just in time for morning checkouts."
+        },
+        {
+          "s": "steve",
+          "t": "The drive must be replaced, but they bought time to back up critical files. The front desk loved him. \"It's a great thing we have a site license,\" he wrote, and he owns a personal license too. Signed Raoul E. Nerd, Cary, North Carolina."
+        }
+      ]
+    },
+    {
+      "title": "Hidden SSIDs and MAC Filtering Aren't Enough",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our first question: Justin Teal skips WEP and WPA. He turned off his SSID broadcast and uses MAC address filtering. Someone would need to know the network exists and spoof his MAC address. Isn't that enough?"
+        },
+        {
+          "s": "leo",
+          "t": "I still go places that want my MAC address before letting me on. I laugh."
+        },
+        {
+          "s": "steve",
+          "t": "Turn on any of the many available sniffers, see the MAC addresses flying through the air, clone one, and you're automatically permitted."
+        },
+        {
+          "s": "leo",
+          "t": "And the SSIDs are flying through the air too."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Even without beacon broadcasts, the SSID appears in the wireless packets themselves."
+        },
+        {
+          "s": "steve",
+          "t": "What Justin did has a benefit, just not the one he wants. In apartments and condos, people look at available networks and join whatever's open, often without realizing it. Hiding the beacon and filtering MACs prevents that inadvertent use."
+        },
+        {
+          "s": "steve",
+          "t": "But anyone nefarious can still get on easily. Only encryption prevents that. WEP is so badly broken that today's free cracking tools break a WEP key in about a minute. Only WPA is safe, and any version of WPA is safe enough."
+        },
+        {
+          "s": "leo",
+          "t": "There's one thing that works, WPA."
+        },
+        {
+          "type": "fact",
+          "title": "WPA today",
+          "t": "Steve's advice held in 2007, but the original WPA's TKIP encryption was later weakened too. Today, use WPA2 with AES or, better, WPA3, with a strong passphrase."
+        }
+      ]
+    },
+    {
+      "title": "Scanning an Infected Drive as a Slave",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Johnston of Eufaula, Alabama heals family and friends' PCs. He puts an infected drive as a slave in a standalone beige box PC running Windows 2000 and Symantec AV 10, then scans it. He's never noticed ill effects. Could a virus migrate from the slave to his master drive?"
+        },
+        {
+          "s": "steve",
+          "t": "He's kept viruses on the slave from being live. If you boot the infected drive and scan it on itself, malware can fight the scanner. As a data drive, none of its code ever gets a chance to run."
+        },
+        {
+          "s": "steve",
+          "t": "He's assuming his scanning machine is clean. If it weren't, it could infect any drive inserted, a classic old propagation strategy. But nothing on the slave can get to the master. It's a neat idea."
+        },
+        {
+          "s": "leo",
+          "t": "It's a lot of work pulling drives. Many people use a boot CD, which can't be infected. The drawback is keeping it up to date. Frisk, the F-PROT folks, have tools for making DOS-based boot scanners, and there are plenty of Linux ones."
+        }
+      ]
+    },
+    {
+      "title": "How Hamachi Uses Bogon Space",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dale asks a blast-from-the-past question. Episode 32 listed \"bogon\" IP ranges, which are nonroutable. If the 5-dot space is bogon, how does Hamachi use it?"
+        },
+        {
+          "s": "steve",
+          "t": "Many blocks of Internet addresses have never been used. The 4-dot space is in use, but no address starting with 5 has ever been used in history, and there are other such Class A networks."
+        },
+        {
+          "s": "steve",
+          "t": "A router forwards a 4-dot packet using its routing tables, hop by hop. Drop a 5-dot packet on any router and it says, huh? There's no table entry telling it where to go."
+        },
+        {
+          "s": "steve",
+          "t": "Hamachi, the peer-to-peer VPN, puts a normal, routable packet around the 5-dot packet, addressed to the other Hamachi machine's real Internet address. That's routed normally. On arrival, the wrapper comes off, revealing the packet addressed to that machine's 5-dot address."
+        },
+        {
+          "s": "leo",
+          "t": "What about 192.168?"
+        },
+        {
+          "s": "steve",
+          "t": "Those, and 10-dot, are private networks. They're not bogons, they're well known and in use, but you can't route them on the Internet."
+        },
+        {
+          "type": "fact",
+          "title": "5-dot today",
+          "t": "The 5.0.0.0/8 block was assigned to Europe's RIPE registry in 2010 as IPv4 ran out, so Hamachi moved to the 25.0.0.0/8 range."
+        }
+      ]
+    },
+    {
+      "title": "How Often to Run SpinRite, and Grid Cards",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Ryan of Agassiz, British Columbia has owned SpinRite five years. One computer has run seven years with no reformatting. How often should he run it?"
+        },
+        {
+          "s": "steve",
+          "t": "Quarterly is probably often enough, and once a year isn't. People who run it rarely find uncorrectable errors that more frequent runs would have caught in time. It's preventive maintenance. Every three or four months."
+        },
+        {
+          "s": "leo",
+          "t": "And it won't take seven hours if you run it regularly. The three-month story scares people. That only happens if something's wrong."
+        },
+        {
+          "s": "steve",
+          "t": "It zooms along when it's not stuck. And you can interrupt it and nudge it past a problem."
+        },
+        {
+          "s": "leo",
+          "t": "I forgot his other point. His broker issued a card with a unique eight-character ID and 224 columns of three random alphanumeric characters. After his username and password, the site names two columns, and he enters their characters. How secure is that, and what are the weaknesses?"
+        },
+        {
+          "s": "steve",
+          "t": "It's neat, combining something you know and something you have. The card was clearly generated algorithmically from its ID, so the server knows what the card contains."
+        },
+        {
+          "s": "steve",
+          "t": "It's extremely inexpensive. Some systems even have you print your own grid and fold it into your wallet. Its data is pseudorandom, which is no weakness as long as nobody knows the algorithm or the ID, and the ID never appears in the login."
+        },
+        {
+          "s": "leo",
+          "t": "Is it as good as a fob?"
+        },
+        {
+          "s": "steve",
+          "t": "I like that it has no batteries. It's cheap and goes in your wallet. But you could Xerox it. Someone who briefly took your wallet and copied it, and had your username and password, could log on as you. You can't Xerox a fob."
+        },
+        {
+          "s": "steve",
+          "t": "And if something on your computer watched your screen and keyboard during a login, it could record the challenge and your answer."
+        },
+        {
+          "s": "leo",
+          "t": "And it would match every time."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. The card's data is static, while a fob's number never repeats. Still, absent that, it's cheaper than hardware and stronger than a password alone, because what you provide changes each time."
+        }
+      ]
+    },
+    {
+      "title": "Formatting Versus SpinRite, and Defraggers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rob Hartvikson in Italy heard Episode 104 on bit rot. If he's willing to erase and reformat, is that as good as SpinRite?"
+        },
+        {
+          "s": "steve",
+          "t": "Apart from the file system areas, a long format just does a read pass. Most people do quick formats now because long ones take so long. A read pass is better than nothing."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite ups the ante. Normally it reads, writes, reads, writes and reads, flipping every bit twice, so the drive can recognize trouble sectors and map them out. Better than reformatting, but reformatting is better than nothing."
+        },
+        {
+          "s": "leo",
+          "t": "Jeffrey in Columbia, Maryland's Diskeeper Professional license is up. What was that free defragger you recommended?"
+        },
+        {
+          "s": "steve",
+          "t": "It was a good one, not a free one. I mentioned Vopt, now at version 8. But I've started using PerfectDisk, which I bought because I was so impressed."
+        },
+        {
+          "s": "steve",
+          "t": "It defragments the \"metadata,\" the directories and bitmaps the system locks while a volume is in use, with a preboot defrag. It can also defragment your swap file."
+        },
+        {
+          "s": "steve",
+          "t": "Both Vopt and PerfectDisk arrange data for faster booting, and PerfectDisk does it better. It moves boot files to the front of the drive, then rarely used files, then sometimes-modified files, and puts constantly changing files next to the free space. That centralizes fragmentation, minimizes head movement and makes later defrags much faster."
+        },
+        {
+          "s": "steve",
+          "t": "And Windows has a decent defragger, licensed from Diskeeper, under Accessories, System Tools. It may be all you need."
+        },
+        {
+          "s": "steve",
+          "t": "People also asked about the drive-space viewer: it's SpaceMonger. Version 1.4 is the last free one Sean wrote, and it's all I use."
+        },
+        {
+          "s": "leo",
+          "t": "On the Mac there's a free one called, I think, Drive Space X. I always forget the name."
+        },
+        {
+          "type": "fact",
+          "title": "The Mac tool",
+          "t": "The free Mac program Leo named in Episode 100 is Disk Inventory X."
+        }
+      ]
+    },
+    {
+      "title": "How Do Tokens Stay in Sync?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dennis Jones in nearby Carlsbad, California: a new code every 30 seconds means the key must know the time within a second or two, forever. Are its clocks that accurate, or is there some clever way to stay in sync?"
+        },
+        {
+          "s": "steve",
+          "t": "The server allows a window. The server maps the key's serial number to its secret, so it can compute what the key showed 30, 60 or 90 seconds ago and what it will show in the coming intervals. That window can be as large as someone wants to allow for drift."
+        },
+        {
+          "s": "steve",
+          "t": "As soon as you enter a number within the window, the server knows, within 30 seconds, what time your key thinks it is. So each account stores an offset between the key's clock and the server's. Every use resynchronizes them, keeping them from drifting too far apart."
+        }
+      ]
+    },
+    {
+      "title": "A Shorter Password With a Second Factor?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Pearce posted in GRC's Security Now! newsgroup, highly recommended. His PayPal and eBay passwords are 30 random characters from your password page, so he needs a password manager. With the Security Key, can he use a short, memorable password plus the key's digits?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. Two-factor authentication absolutely lets him weaken the first factor."
+        },
+        {
+          "s": "steve",
+          "t": "But here's the threat. The second factor is physical. Someone could borrow it or make off with it. Then all they must crack is the first factor."
+        },
+        {
+          "s": "steve",
+          "t": "So don't weaken it so much it falls to a brute-force or dictionary attack. You no longer need a 30-character bizarro password. Make it long, not in a dictionary, combine words, maybe add a couple of special characters, and make it hard to guess. Then you're okay."
+        },
+        {
+          "s": "leo",
+          "t": "Also, PayPal lets you log in without the dongle by answering security questions. If the password's too weak, that's another reason to be careful."
+        }
+      ]
+    },
+    {
+      "title": "Multiple PIP Accounts, One Token Each",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michele Thomas of Olney, Maryland heard Episode 106 and wants the link for VeriSign's tokens. She signed up for PIP and already has a PayPal token, but wants one in her purse, one at work and one at home."
+        },
+        {
+          "s": "leo",
+          "t": "As Steve said, each token can't share one account."
+        },
+        {
+          "s": "steve",
+          "t": "I'm thinking on the fly. Nobody says you can have only one PIP account. Create stevegibson1, stevegibson2 and stevegibson3, each bound to a different token, and write the number on each token. Give each account the same information. We're back in the game."
+        },
+        {
+          "s": "leo",
+          "t": "VeriSign may not like it, but many people have many OpenIDs anyway."
+        },
+        {
+          "s": "steve",
+          "t": "And Michele, a loyal listener, found the links in Episode 107's show notes on GRC.com/securitynow before I even read her question."
+        },
+        {
+          "s": "leo",
+          "t": "The notes go all the way back to Episode 1, \"As the Worm Turns,\" August 19, 2005."
+        },
+        {
+          "s": "steve",
+          "t": "I also confirmed you can buy more than three. I bought another three, so now I have six. I may use them with my own employees."
+        },
+        {
+          "s": "steve",
+          "t": "PayPal still allows only one, and probably won't change until VIP supports multiple bindings."
+        },
+        {
+          "s": "leo",
+          "t": "They'd keep the algorithm secret, so you couldn't use a token for your own purposes."
+        },
+        {
+          "s": "steve",
+          "t": "I also got SecurID-style tokens directly from VeriSign that use different, time-based technology. A little bar graph shrinks a square every five seconds to warn you the number is about to change. Those come with a CD of XML files holding each token's cryptographic key, though the technology isn't documented. I'd love to use tokens directly without VeriSign's back end, so I'll ask our VeriSign friend."
+        },
+        {
+          "s": "steve",
+          "t": "And the serial number on the back gives nothing away. Even knowing the serial and the algorithm, you'd never know the secret key."
+        }
+      ]
+    },
+    {
+      "title": "Will Hitachi's Encrypting Drive Work in a Mac?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeff Schmidt in Northern California votes for hearing more about Hitachi's Travelstar drives with bulk data encryption."
+        },
+        {
+          "s": "steve",
+          "t": "They use Rijndael AES, the state of the art. A digression: I sent 16 megabytes from the new password generator to those researchers. They're happy now: about 7.999989 bits of entropy per byte, out of a possible 8."
+        },
+        {
+          "s": "steve",
+          "t": "I wrote my own Rijndael cipher in assembly language, because that's me. It generated something like 81 million bytes of pseudorandom data per second, the fastest generator on their chart."
+        },
+        {
+          "s": "leo",
+          "t": "Will the Travelstar work in his MacBook Pro?"
+        },
+        {
+          "s": "steve",
+          "t": "I couldn't find documentation on Hitachi's site, so I'll have to reach someone."
+        },
+        {
+          "s": "leo",
+          "t": "I'm sure it uses a Windows client."
+        },
+        {
+          "s": "steve",
+          "t": "It can't, since the entire drive is encrypted. It has to happen at BIOS time, when the drive boots."
+        },
+        {
+          "s": "steve",
+          "t": "I think they'd use the standard ATA drive-locking password, but hash it into a long key, probably 256 bits for AES. I'm wondering whether a recent extension to the ATA protocol supports bulk encryption, which might need BIOS support instead of just swapping the drive in. I'll track it down."
+        },
+        {
+          "s": "leo",
+          "t": "Then Apple would have to support it in its EFI boot code. Apple uses standard controllers, so if it's in the spec, no problem."
+        }
+      ]
+    },
+    {
+      "title": "Banking in a Virtual Machine",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Edward in Fort Collins, Colorado set up VMware Player with an Ubuntu appliance for his wife, stationed in Korea for a year, to do her banking. She asks: if XP has a keylogger or spyware, can hackers see what she does in VMware?"
+        },
+        {
+          "s": "steve",
+          "t": "That's why it's such a good question. She's probably vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "We've used VMs for containment, keeping something bad inside from modifying the host. He's inverted that, wanting the VM to protect what happens inside it."
+        },
+        {
+          "s": "steve",
+          "t": "But the VM runs on Windows, and everything it does goes through Windows. VMware installs keyboard, drive and network drivers, and nothing stops something in the kernel from chaining onto them and capturing what's in the VM."
+        },
+        {
+          "s": "leo",
+          "t": "When the VM window is active, doesn't it capture keystrokes directly?"
+        },
+        {
+          "s": "steve",
+          "t": "There's no \"directly.\" Keystrokes go through the kernel and its drivers. VMware's acceleration drivers are optional. Without them you're really vulnerable, and even with them you're in the Windows kernel."
+        },
+        {
+          "s": "steve",
+          "t": "The takeaway: keeping something secure inside a VM away from Windows isn't the same as keeping something dangerous inside a VM away from Windows. One works, and the other really doesn't."
+        },
+        {
+          "s": "leo",
+          "t": "The right way is a boot CD. If she must save banking data, solve that separately."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe with an encrypted flash drive."
+        },
+        {
+          "s": "leo",
+          "t": "Unless there's a hardware keystroke logger between keyboard and computer. Then they've got you."
+        },
+        {
+          "s": "steve",
+          "t": "She's probably using a laptop. A CD is a great solution."
+        }
+      ]
+    },
+    {
+      "title": "Known Data on an Encrypted Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last, Rob Strating of Hudsonville, Michigan. Windows always writes known data, like the NTFS boot loader, to known places, much as DOS did with IO.sys and MSDOS.sys. Would that known content make it easier to find the drive's AES key?"
+        },
+        {
+          "s": "steve",
+          "t": "We have great listeners. We've discussed how knowing the plaintext can attack a key. That was a main weakness of WEP. It XORed pseudorandom data with the plaintext, and much packet content never changed, so you could XOR again to recover the sequence."
+        },
+        {
+          "s": "steve",
+          "t": "AES maps each 128-bit block to a different 128-bit block using the secret key. You'd know much of the partition sector, so you'd know its first 128 bits and what they encrypt to."
+        },
+        {
+          "s": "steve",
+          "t": "But you quickly get lost, because of cipher block chaining. Each block's plaintext is XORed with the previous encrypted block before encryption, with a secret 128-bit initialization vector to start. The diagram is on GRC.com/passwords."
+        },
+        {
+          "s": "steve",
+          "t": "So even knowing some plaintext and ciphertext, you're reduced to brute force against 256 plus 128, or 384, bits of secret data. Have a nice day."
+        },
+        {
+          "type": "fact",
+          "title": "Known plaintext",
+          "t": "Strong ciphers like AES are designed to resist known-plaintext attacks, so knowing some decrypted data doesn't help find the key, even without chaining. Chaining, or the per-sector tweaks of the XTS mode most drives now use, hides repeating patterns."
+        },
+        {
+          "s": "leo",
+          "t": "He may be thinking of DVD encryption, CSS, and HD DVD's AACS, where the key has to live in the player."
+        },
+        {
+          "s": "steve",
+          "t": "Or it's found in RAM, being used on the fly. Drive encryption differs. The drive doesn't store the key. It receives it at startup and uses it on the fly."
+        },
+        {
+          "s": "leo",
+          "t": "But where's the key? In the BIOS?"
+        },
+        {
+          "s": "steve",
+          "t": "That's where the Trusted Platform Module comes in."
+        },
+        {
+          "s": "leo",
+          "t": "I'd never assume it can't be gotten to. But cracking drive encryption has less incentive than cracking DVDs."
+        },
+        {
+          "s": "steve",
+          "t": "And users have choices. A fingerprint can unlock the TPM, which releases the key to the drive. For more security, skip the TPM and type your password at every startup or resume. It's hashed into the drive's key, so it isn't stored anywhere in the hardware."
+        },
+        {
+          "type": "fact",
+          "title": "Where the key lives",
+          "t": "Self-encrypting drives typically keep their data key on the drive itself, wrapped with a key derived from your password, so the data can't be read without the password."
+        },
+        {
+          "s": "leo",
+          "t": "That's pretty darn secure. And VMware Fusion just came out. In some benchmarks it's faster than Parallels."
+        },
+        {
+          "s": "leo",
+          "t": "I'll see you in Vancouver next week."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why aren't a hidden SSID and MAC filtering enough?",
+      "options": [
+        "Both the network name and permitted MAC addresses can be sniffed from the air",
+        "They slow the network",
+        "MAC filtering blocks your own devices",
+        "Hidden networks can't be used"
+      ],
+      "answer": 0,
+      "explain": "Only WPA encryption keeps determined intruders out."
+    },
+    {
+      "q": "Why is a static grid card weaker than a changing-code token?",
+      "options": [
+        "Someone could photocopy it or record a login and replay it",
+        "It needs batteries",
+        "It's too expensive",
+        "It can't be carried"
+      ],
+      "answer": 0,
+      "explain": "The card's data never changes."
+    },
+    {
+      "q": "How does a token server handle drift in a token's clock?",
+      "options": [
+        "It accepts codes in a time window and remembers each token's offset",
+        "Tokens get the time by radio",
+        "The token never drifts",
+        "You reset it monthly"
+      ],
+      "answer": 0,
+      "explain": "Every use resynchronizes them."
+    },
+    {
+      "q": "With a second-factor token, how strong must your password be?",
+      "options": [
+        "Strong enough to resist guessing, in case someone gets your token",
+        "Any password works",
+        "It must be 30 random characters",
+        "No password is needed"
+      ],
+      "answer": 0,
+      "explain": "You no longer need a \"bizarro\" password, though."
+    },
+    {
+      "q": "Why doesn't banking inside a VM protect against a keylogger on the host?",
+      "options": [
+        "The VM's keystrokes pass through the host's kernel and drivers",
+        "VMs have no keyboards",
+        "Keyloggers can't run on XP",
+        "Ubuntu blocks it"
+      ],
+      "answer": 0,
+      "explain": "VMs contain danger inside, but don't hide secrets from the host."
+    },
+    {
+      "q": "What did Steve say defeats attacks using known data on an encrypted drive?",
+      "options": [
+        "Cipher block chaining and a secret initialization vector leave only brute force",
+        "Compressing the drive",
+        "Hiding the boot sector",
+        "Changing the password daily"
+      ],
+      "answer": 0,
+      "explain": "He counted 384 bits of secret data."
+    }
+  ]
+}
