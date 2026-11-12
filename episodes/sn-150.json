@@ -1,0 +1,709 @@
+{
+  "number": 150,
+  "title": "Listener Feedback Q&A #44",
+  "subtitle": "Router-hijacking malware, transparent proxies, and dodging ISP snooping",
+  "date": "2008-06-26",
+  "description": "The 150th episode opens with bad audio blamed on video, a Word bulleted-list exploit, an unpatched Firefox flaw and a Mac trojan in Apple's remote desktop agent. Listener questions follow: a trojan that changes your router's DNS, ISPs' transparent proxies, SMART error counts, clearing Firefox's private data, Firefox's third-party cookie default, ways to avoid NebuAd, PayPal \"single-use\" cards that aren't, Hotspot Shield, add-ons that need third-party cookies, whether backups copy traces of erased data, why ISP profiling of email is chilling, and invisible tracking images in email.",
+  "transcript": "https://www.grc.com/sn/sn-150.txt",
+  "audio": "http://media.GRC.com/sn/SN-150.mp3",
+  "chapters": [
+    {
+      "title": "Episode 150, and Last Week's Bad Audio",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 150, our sesquicentennial."
+        },
+        {
+          "s": "steve",
+          "t": "Six to go, and we cross our three-year mark."
+        },
+        {
+          "s": "steve",
+          "t": "Many people wrote that last week's audio sucked. That's pretty much the only word. Partly the microphone, and we hope partly your cable modem, since you're switching to DSL and I have a pair of T1s. Or video may be competing with audio for bandwidth, and winning. I'm back to the Heil microphone I've used for years."
+        },
+        {
+          "s": "leo",
+          "t": "That makes a huge difference. It was mostly the dropouts."
+        },
+        {
+          "s": "steve",
+          "t": "Some astutely noted that you have a Heil, so if I don't, the difference in our audio is noticeable. And I've been told I've always sounded better than other netcasts."
+        },
+        {
+          "s": "leo",
+          "t": "I think that's your bandwidth. Skype goes great for months, then you have a bad day. The only change is video. Maybe we'll stop the video."
+        },
+        {
+          "s": "steve",
+          "t": "Using less total bandwidth gives each packet a better chance. Since the Internet delivers on a best-effort basis, as we crank up our bandwidth, we see more packet loss."
+        },
+        {
+          "s": "leo",
+          "t": "That Internet congestion thing you talked about."
+        },
+        {
+          "s": "steve",
+          "t": "Some people worried audio would be sacrificed at the altar of video. It won't. Far more people listen than watch, and I won't start holding up charts."
+        },
+        {
+          "s": "leo",
+          "t": "Some shows have become very video-centric. Dick on the Giz Wiz is always holding up stuff. But video has brought more people to the party, including advertisers, so we'll find a happy medium."
+        },
+        {
+          "s": "steve",
+          "t": "I'm sending 640 by 480 at 30 frames a second, full broadcast resolution, and it gets reduced for redistribution anyway. I can probably lower the resolution, frame rate or compression without anyone suffering."
+        },
+        {
+          "s": "leo",
+          "t": "If turning off video makes the audio better, that's fine with me."
+        },
+        {
+          "s": "steve",
+          "t": "Several tens of thousands of listeners are breathing a sigh of relief."
+        },
+        {
+          "s": "leo",
+          "t": "But it's fun to see you. Someday someone will want a list of all the books on the big bookshelf behind you."
+        }
+      ]
+    },
+    {
+      "title": "Neal Stephenson's \"Anathem\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I just got a reader's copy of Neal Stephenson's new book, \"Anathem,\" out in September. He wrote \"Cryptonomicon,\" one of my favorites. So I'm reading a paper book, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "Only because it hasn't been read for Audible yet."
+        },
+        {
+          "s": "leo",
+          "t": "Audible said many reviewers listen to review books, and publishers should send out the Audible copy along with the reader's copy. But recording a book this big takes a couple of months."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think Neal has ever written a small book."
+        },
+        {
+          "s": "leo",
+          "t": "At the Science Fiction Museum in Seattle, they have his \"Quicksilver\" manuscript, handwritten with a fountain pen, with all the used ink cartridges and paper."
+        }
+      ]
+    },
+    {
+      "title": "A Korean Listener in China",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Yong-Gu Bae is a Korean living in northern China, far from the Hong Kong Post Office we joke about as a certificate authority, but in a malware hot zone nonetheless. In the export-import business, he travels a lot. Last year his laptop bag was stolen in Barcelona: laptop, camera, external drive and iPod. His most expensive trip ever."
+        },
+        {
+          "s": "steve",
+          "t": "About three months ago he found TWiT, downloaded every episode and transcript, and caught up. He realized I was the Steve Gibson whose Perfect Passwords he'd used for his routers and whose SecurAble he'd downloaded. He wishes he'd listened earlier. Now he uses TrueCrypt on his laptop and Hamachi to reach his office PC. As a former computer science major with lots of drives, he bought SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Two days before a U.S. business trip, working at the office seven days a week, his wife called. Their home PC showed only the Vista logo with green dots moving forever. He ran SpinRite at level 4, and the next day the PC worked fine. He also runs SpinRite inside VMware Workstation, the free 6.5 beta, and notes that heavy VMware use calls for multiple cores and lots of RAM."
+        }
+      ]
+    },
+    {
+      "title": "Word, Firefox and a Mac Trojan",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's a weird Microsoft Word problem in how it parses bulleted lists. A crafted Word document can use a buffer overrun in the display of bulleted lists to execute remote code. As far as I know, it isn't patched yet."
+        },
+        {
+          "s": "steve",
+          "t": "And there's an unspecified remote code execution flaw in all versions of Firefox through version 3, reported to Mozilla and not yet fixed."
+        },
+        {
+          "s": "leo",
+          "t": "And there's a Mac trojan. I'm always a little suspicious, since those reporting it sell Mac security software. But this one is in the wild. It exploits a vulnerability in the Apple Remote Desktop agent, ARDAgent. Until Apple patches it, the fix is to zip up the ARD agent and move it so it won't run. Unless you use remote access, that's no problem."
+        },
+        {
+          "s": "steve",
+          "t": "Someone asked how people running the remote access service could be less vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "If the trojan tries to \"bind\" to a port, the technical term, and that port is already bound by the real application, the trojan can't. That would explain how running a service could make you more secure."
+        },
+        {
+          "s": "leo",
+          "t": "The ARDAgent vulnerability was published, and immediately someone wrote a trojan, found first by SecureMac and then Intego. It can give complete access to the Mac: log keystrokes, take pictures with the built-in camera without your knowledge, take screenshots, turn on file sharing. It usually arrives via iChat, and it's a trojan, so they have to send you an application and you have to open it. So don't."
+        },
+        {
+          "s": "steve",
+          "t": "And Leo, your audio has really improved."
+        },
+        {
+          "s": "leo",
+          "t": "The video was a mistake."
+        }
+      ]
+    },
+    {
+      "title": "Malware That Hijacks Your Router",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Madison in Pawlet, Vermont points to the Washington Post's Brian Krebs, whom I read a lot. A new variant of the widespread Zlob trojan can change the DNS settings in your router. So even if you reformat after an infection, as we recommend, your router may still be compromised. Reset your router too."
+        },
+        {
+          "s": "steve",
+          "t": "We've talked about disabling Universal Plug and Play in routers because malware would surely use it to reconfigure them. Microsoft reports removing tens of millions of copies of Zlob."
+        },
+        {
+          "s": "steve",
+          "t": "This variant has a huge list of routers' default usernames and passwords, plus hundreds of other likely ones. It finds your gateway IP and, behind the scenes, logs into the router's administration page just as you would."
+        },
+        {
+          "s": "steve",
+          "t": "A huge number of people leave the defaults unchanged. I once confessed I was among them, on the separate cable modem router I keep for visitors, since nobody touches my network. I thought, no one can get to the inside administration interface until they're already in. Now malware that gets in can do exactly that."
+        },
+        {
+          "s": "steve",
+          "t": "And it's worse: every machine on your network that gets its settings automatically by DHCP gets the router's DNS, now pointing to a malicious server that sends browsers to the wrong places."
+        },
+        {
+          "s": "leo",
+          "t": "Why?"
+        },
+        {
+          "s": "steve",
+          "t": "You think you're going to PayPal.com and you reach their clone."
+        },
+        {
+          "s": "leo",
+          "t": "It also pops up spyware and posts spammy forum comments. A nasty bug. The chat says Microsoft's removal tool was the Malicious Software Removal Tool."
+        },
+        {
+          "s": "steve",
+          "t": "That's what I was trying to remember. It surprised me too. Every Patch Tuesday it updates and never seems to do anything. But we're careful. Tens of millions of others clearly have Zlob trucking around inside."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft won't give away free antivirus, partly because it sells OneCare. But it looks for Blaster, Sasser and MyDoom. Damping down worms and trojans is a good thing."
+        },
+        {
+          "s": "steve",
+          "t": "And they'd love to fix their horrible security reputation."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "The criminal ring behind this DNS-changing malware, known as DNSChanger, was shut down by the FBI's \"Operation Ghost Click\" in 2011, after infecting about four million computers."
+        }
+      ]
+    },
+    {
+      "title": "ISPs' Transparent Proxies",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian in Toronto worked for an ISP where all port 80 traffic went through its proxy, and he thinks his current ISP does too. The giveaway is stale data that won't purge even after you clear your caches and cookies and do the one-legged hop. You've said SSL traffic can terminate at a proxy, and that ISP tracking can't see SSL. Is that true with a transparent proxy? He also bought SpinRite, which fixed boot problems on his \"mother-outlaw's\" PC. What's a transparent proxy?"
+        },
+        {
+          "s": "steve",
+          "t": "ISPs use them to reduce bandwidth to their upstream providers and, in theory, improve performance. It's \"transparent\" because customers don't configure it. We think we connect directly to remote servers. Actually a hidden proxy, interposed for caching, handles our web requests."
+        },
+        {
+          "s": "steve",
+          "t": "ISPs are just bigger Internet customers buying bandwidth like us. If I pull CNN.com's home page, the proxy notes the URL and the page's metadata, like an expiration time. If CNN says keep this page for an hour, which also spares CNN's servers, other customers get it instantly from the ISP's local copy."
+        },
+        {
+          "s": "steve",
+          "t": "When everything works, that's good. But if the proxy thinks it knows better, nothing you do locally forces it to update. Normally servers mark pages that shouldn't be cached as pre-expired."
+        },
+        {
+          "s": "steve",
+          "t": "As for SSL: unless a certificate has been deliberately installed in your browser to let a proxy intercept, a secure connection bypasses the transparent proxy."
+        },
+        {
+          "s": "steve",
+          "t": "Years ago, developing ShieldsUP!, my cable provider, Cox, used one, so I was testing the proxy's IP instead of my own machine. That's why ShieldsUP! runs visitors through a secure connection, specifically to bypass transparent caching proxies, which can't intercept SSL and don't want to. You established a secure connection for a reason."
+        },
+        {
+          "s": "leo",
+          "t": "So you have to trust your ISP."
+        },
+        {
+          "s": "steve",
+          "t": "Without SSL or a VPN, everything you transmit is visible to your ISP."
+        },
+        {
+          "s": "leo",
+          "t": "That's why we didn't like the Opera Mini browser, which proxies your browsing. AOL did this for years, and old dial-up providers' \"turbo speed\" was just proxying, caching and recompressing graphics."
+        },
+        {
+          "s": "steve",
+          "t": "The difference with Phorm, NebuAd and Adzilla is that ISPs deliberately share the information with a third party. That's not good."
+        },
+        {
+          "s": "leo",
+          "t": "Your ISP knows a lot about you no matter what. Find one you can trust."
+        },
+        {
+          "s": "steve",
+          "t": "But you'd like it to take a court order to divulge information, not a commercial opportunity to sell your profile to advertisers."
+        }
+      ]
+    },
+    {
+      "title": "Millions of SMART Errors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tim McCoy in California sees drives with close to a million seek failures or CRC errors in their SMART data, noticeably affecting performance. How do we convince manufacturers to exchange them? And SpinRite doesn't seem to work with USB keyboards."
+        },
+        {
+          "s": "steve",
+          "t": "There's been a cost to the insane explosion in drive capacity. ECC, error correction code, errors occur at a much higher rate now, because data is so dense that drives depend on on-the-fly error correction for sectors that aren't perfectly readable. Troubling, but that's the way things are."
+        },
+        {
+          "s": "steve",
+          "t": "Seek errors come from track density. Drives use \"track following,\" adjusting the head on the fly to stay over the track, since even minute variations push it off. Drives are increasingly sensitive to vibration from the chassis they're mounted in, and manufacturers now advertise better tracking technology. These are side effects of a trillion bytes in a small box."
+        },
+        {
+          "s": "steve",
+          "t": "As for USB keyboards, SpinRite uses the BIOS, which universally supports older PS/2 keyboards. Most motherboards have an option, usually called \"USB legacy mode,\" that makes a USB keyboard work through the BIOS. Turn it on in the BIOS, and SpinRite works fine."
+        }
+      ]
+    },
+    {
+      "title": "Clearing Firefox's Private Data",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jake in Minnesota has Firefox clear all private data, including cookies, every time he quits. Is that secure, or is he fooling himself?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a useful option. Firefox does what it says, removing your histories and cookies so they don't persist after you close it."
+        },
+        {
+          "s": "leo",
+          "t": "Is that security, or privacy?"
+        },
+        {
+          "s": "steve",
+          "t": "Worth distinguishing. Compromised privacy can compromise security, but I think of them as separate. When you start typing a URL, the browser pops down places you've been. Someone with physical access to your computer could see what you've been doing. That's mostly a privacy concern."
+        }
+      ]
+    },
+    {
+      "title": "Why Firefox Allows Third-Party Cookies by Default",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris W. in Springfield, Virginia, a SpinRite owner since version 3 who just switched to a Mac and wants a Mac version, is disappointed that Firefox enables third-party cookies by default, especially for non-techies. Is it a nod to advertisers? Safari blocks them."
+        },
+        {
+          "s": "steve",
+          "t": "Safari is the only popular browser that disables them by default. I can't believe the Mozilla folks would nod to advertisers. My guess is they don't want to be dinged for incompatibility. Historically, all cookies have been enabled by default, and they don't want to break anything."
+        },
+        {
+          "s": "leo",
+          "t": "A good example: the Foxmarks extension, which syncs my bookmarks, doesn't work with third-party cookies off."
+        },
+        {
+          "s": "steve",
+          "t": "Someone mentions that later."
+        },
+        {
+          "s": "leo",
+          "t": "People almost always default to the less secure, more convenient choice. They don't want the support calls."
+        }
+      ]
+    },
+    {
+      "title": "Ways to Dodge NebuAd",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Don in Burbank uses Charter, which uses NebuAd. Would a proxy like Anonymizer work? A VPN like Public VPN? Could he write a program to pollute the data stream with random pages? Can he take legal action? Switch ISPs? Is his Yahoo! webmail spied on? He'd like easy, medium and hard levels."
+        },
+        {
+          "s": "steve",
+          "t": "The good news is any kind of encryption blocks this completely. It's only unencrypted connections. If you can make an encrypted HTTPS connection to Yahoo!'s webmail, as you can with Google Mail, you're absolutely safe from this."
+        },
+        {
+          "s": "steve",
+          "t": "They say they intercept only port 80 web traffic, not mail you send on port 25 or receive on 110, or IMAP on..."
+        },
+        {
+          "s": "leo",
+          "t": "143, I think."
+        },
+        {
+          "s": "steve",
+          "t": "But I'm worried about email being profiled too. Think of the wealth of behavioral data in people's email. They say you're just put into one of a thousand broad categories. But available information seems to get taken advantage of wherever it's available. That gives me a creepy feeling."
+        },
+        {
+          "s": "leo",
+          "t": "Google does that with Gmail."
+        },
+        {
+          "s": "steve",
+          "t": "To show you relevant ads on Gmail's own pages. The company you're dealing with uses its own data. It's not selling it to some third party."
+        },
+        {
+          "s": "steve",
+          "t": "So any VPN, any SSL connection, anything that encrypts your traffic bypasses these guys."
+        },
+        {
+          "s": "leo",
+          "t": "Anonymizer, Tor, iPhantom and others encrypt from your browser to their host. Of course you must trust them, since they decrypt and pass it along."
+        },
+        {
+          "s": "steve",
+          "t": "And there's a wacky little thing called iPig, with an unfortunate name. It's free and encrypts your connection to their server, where it goes onto the Internet. I vetted its security years ago, and it's a nice solution. There was a bandwidth limit, so not for big music downloads, but fine for casual browsing and email."
+        },
+        {
+          "s": "leo",
+          "t": "iPig. [snort] Sorry."
+        },
+        {
+          "s": "steve",
+          "t": "Thank you for the sound effects, Leo."
+        }
+      ]
+    },
+    {
+      "title": "PayPal \"Single-Use\" Cards That Aren't",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dan Hunt in Central Queensland, Australia can't find PayPal's one-time cards anywhere. He wonders whether we have upgraded Premier accounts, and whether basic accountholders, or Australians, can use them."
+        },
+        {
+          "s": "steve",
+          "t": "My guess is it's an Australia thing. The definite place to look is PayPal Plug-in. When I logged in this morning, it came up full screen."
+        },
+        {
+          "s": "leo",
+          "t": "They're promoting it like crazy."
+        },
+        {
+          "s": "steve",
+          "t": "And a warning. I used a single-use card on a site that pushed a monthly subscription I couldn't opt out of. Their bot recognized the expiration was next month and snuck in another charge. \"Single-use\" doesn't mean it dies after one use."
+        },
+        {
+          "s": "leo",
+          "t": "So it works until it expires?"
+        },
+        {
+          "s": "steve",
+          "t": "Under Secure Cards, it lists your still-active cards, and you check a box to close them manually. So you must shut down the card yourself when you don't want it to clear again. It wasn't an expensive bite, but it was annoying."
+        },
+        {
+          "s": "leo",
+          "t": "That's not single use. We're both verified, not Premier."
+        },
+        {
+          "s": "steve",
+          "t": "Verified means I gave them my bank account and address. Some eBay sellers require it."
+        },
+        {
+          "s": "leo",
+          "t": "And credit cards are handled differently in every country, so it makes sense."
+        },
+        {
+          "s": "steve",
+          "t": "But once verified, PayPal wants your checking account, with no way to default to your credit card, and the one-time cards insist on it too. PayPal needs competition. I'm using Google Checkout more and more. You register your real card and shipping address, and it's single-click, keeps your account information private from the vendor and provides your shipping address."
+        },
+        {
+          "s": "leo",
+          "t": "eBay just announced better buyer protection on PayPal, right after I got ripped off."
+        },
+        {
+          "s": "steve",
+          "t": "What happened with that?"
+        },
+        {
+          "s": "leo",
+          "t": "It's in dispute. I checked that the seller had a 100 percent rating and lots of transactions. But he'd only insured it for $200, and the camera went for $2,150. He's a crook."
+        },
+        {
+          "s": "steve",
+          "t": "Can't you challenge the charge?"
+        },
+        {
+          "s": "leo",
+          "t": "It came out of my PayPal balance, not my credit card. That's why you use a credit card. I'll probably get a check for a hundred-some bucks. In Australia, eBay wanted to require PayPal for all purchases, and the Australian Consumer Commission turned them down. I think the new protections respond to that. Too late for me."
+        }
+      ]
+    },
+    {
+      "title": "Hotspot Shield",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mariusz \"Matt\" Cybulski in Newcastle, Ontario installed Hotspot Shield. ShieldsUP! showed everything stealth except ping, \"no reverse DNS,\" and an IP different from his ISP's. Can his ISP still track him? Is he safe from NebuAd and Phorm? There's nothing worse than a false sense of security. He sometimes needs our propeller-hat episodes more than once."
+        },
+        {
+          "s": "steve",
+          "t": "Hotspot Shield is a nice solution for exactly this. It's free, with a bandwidth limit over a rolling 30-day window, and you can buy more. A little client redirects all your traffic, encrypted, to them. By encrypting your traffic as it passes your ISP, you don't have to worry about this snooping."
+        },
+        {
+          "s": "steve",
+          "t": "As with iPig, all your traffic goes to their servers first, so you'll see some performance hit. The question is how much."
+        },
+        {
+          "s": "leo",
+          "t": "Our chat says iPig stands for iOpus Private Internet Gateway, and it's still around. Is Hotspot Shield a firewall or a VPN?"
+        },
+        {
+          "s": "steve",
+          "t": "A lightweight VPN."
+        },
+        {
+          "s": "steve",
+          "t": "iPig's author and I talked in their forums when it wasn't well documented. It just moves your traffic to their server, changing the outer IP, without full packet-inspecting NAT like our routers do. So NAT-sensitive protocols like FTP won't work. When I mentioned it, he said, oh, that's why FTP doesn't work. But web and email are fine."
+        },
+        {
+          "s": "leo",
+          "t": "That's the frustration. If things don't quite work, how long before you turn it off?"
+        }
+      ]
+    },
+    {
+      "title": "Add-Ons That Need Third-Party Cookies",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Noble in Wellington, New Zealand is glad Firefox 3 can block third-party cookies again, but warns it breaks useful add-ons, like Foxmarks, which Chris and I both use, and Google Reader Notifier. Their cookies count as third-party because they're set without visiting the sites. The solution: keep third-party cookies off and add Foxmarks.com and Google.com to the exceptions list."
+        },
+        {
+          "s": "steve",
+          "t": "We'll talk about cookies in painful detail soon, with strategies for people who want a quick, not-in-your-face solution and for people willing to manage cookies more closely. Next week's Phorm system is cookie overload on steroids. Then I'll unveil my cookie work at GRC."
+        },
+        {
+          "s": "leo",
+          "t": "I'm curious how dangerous cookies really are. People get crazy about them."
+        },
+        {
+          "s": "steve",
+          "t": "With very few exceptions, like Foxmarks, you just don't need third-party cookies. Disable them and whitelist the few you need. They should be off by default."
+        },
+        {
+          "s": "leo",
+          "t": "I just set my browser to accept third-party cookies only from Foxmarks."
+        }
+      ]
+    },
+    {
+      "title": "Do Backups Copy Traces of Erased Data?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joshua Brickner in Loveland, Colorado heard that labs can recover data even after a 35-pass erase."
+        },
+        {
+          "s": "steve",
+          "t": "First, let me correct that mistaken impression."
+        },
+        {
+          "s": "leo",
+          "t": "He asks: drive A had sensitive data, erased with 35 passes, then reused. Later it's backed up to drive B with Time Machine. Would traces of the erased data transfer to B? Must both be destroyed?"
+        },
+        {
+          "s": "steve",
+          "t": "We know that if you just wipe a drive with zeroes, a forensic recovery company can penetrate that most recent erasure. But a couple of passes of pseudorandom noise suppresses what was there before."
+        },
+        {
+          "s": "leo",
+          "t": "Electrical traces left around?"
+        },
+        {
+          "s": "steve",
+          "t": "Like old reel-to-reel audiotape. Record silence over a recording, and technicians could pull the old analog signal out of the background noise. Hard drives are digital, but the waveforms are packed so tightly that what's recorded is more analog than digital. A faint whisper of earlier data remains. Subtract the foreground and amplify, and you can recover one prior layer. Not after writing random noise a couple of times."
+        },
+        {
+          "s": "leo",
+          "t": "Just two or three times."
+        },
+        {
+          "s": "steve",
+          "t": "Two is almost certainly enough. The whisper you'd recover would be the previous noise."
+        },
+        {
+          "s": "steve",
+          "t": "And copying A to B? An absolute, definitive no. A drive's whole point is to return only the most recently written data, digitized cleanly before it crosses the cable. Forensic labs read the analog signal from the heads before the drive digitizes it. Those whispers never leave the drive."
+        },
+        {
+          "type": "fact",
+          "title": "Today's view",
+          "t": "Researchers have found that even a single overwrite makes data effectively unrecoverable on modern drives, so the \"whisper\" Steve describes mattered mainly for older, lower-density drives."
+        }
+      ]
+    },
+    {
+      "title": "The Chilling Effect on Email",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rob in Southern Illinois is very disturbed. Most users don't understand that email is usually plain text, so this technology could expose usernames, passwords, personal and confidential information. It should be stopped. And SpinRite has saved the day many times."
+        },
+        {
+          "s": "leo",
+          "t": "But if you think email is secure, you've got the wrong idea anyway. It's a postcard."
+        },
+        {
+          "s": "steve",
+          "t": "True. But I think Rob's point, and what chilled people, is the slippery slope. ISPs say they're just bandwidth providers, common carriers, a formal definition. They take no responsibility for content, whether porn, spam or hacking. Now they say, but we'll make money selling profiles of you to a third party. That changes the relationship."
+        },
+        {
+          "s": "leo",
+          "t": "Still, email passes through many servers, unencrypted, in the clear."
+        },
+        {
+          "s": "steve",
+          "t": "And even with a secure connection to your server, the recipient's end receives it in the clear. Only end-to-end encryption, encrypting before it leaves your machine so it's noise the whole way until the recipient decrypts it, makes email safe."
+        },
+        {
+          "s": "leo",
+          "t": "I use GNU Privacy Guard, GPG, free and open source. When Gordon Heydon, the great Drupal programmer in Australia who runs our TWiT site, needed the server's root password, you'd better believe I encrypted that email. Email has never been secure."
+        }
+      ]
+    },
+    {
+      "title": "Invisible Images in Email",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark De Nardo in Bethlehem, Pennsylvania reads email on his BlackBerry, which doesn't render HTML, so he sees the source. Emails passing through MX Logic, his company's spam-scanning provider, contain an image from MX Logic called transparent.gif. Is it a tracker? And Outlook, Outlook Express and Windows Live Mail won't let him read plain text to see such things. He's a 50-plus-year-old geek who turned his hobby into a corporate career."
+        },
+        {
+          "s": "steve",
+          "t": "This is absolutely tracking, and why I'm down on third-party content. When the image loads, MX Logic knows you viewed the message. What's disturbing is that the spam scanner is modifying the email it scans, and we don't know why. Maybe it's feedback for them. There's no other information in the URL, so they'd just get the reader's IP and the time it was opened."
+        },
+        {
+          "s": "steve",
+          "t": "These were called \"web beacons\" when they first appeared: one-pixel or transparent images used by third-party servers to track."
+        },
+        {
+          "s": "leo",
+          "t": "Spammers do it too. Email programs render HTML using the browser's engine, IE on Windows and WebKit on the Mac, so they pull the image and tell the server, he's reading it right now."
+        },
+        {
+          "s": "steve",
+          "t": "And then they know it's a real person, not a made-up address. You just verified that you exist."
+        },
+        {
+          "s": "leo",
+          "t": "That's the chief value to a spammer. Turn off HTML preview. HTML is bad for email in so many ways: security, privacy, links that hide where they go, which is how phishing works, and bloat. Yet everything is moving to HTML."
+        },
+        {
+          "s": "steve",
+          "t": "It can carry scripts, too. The last thing you want is your email executing."
+        },
+        {
+          "s": "leo",
+          "t": "Who thought that was a good idea?"
+        },
+        {
+          "s": "steve",
+          "t": "Let's see. They wouldn't be up in Redmond, would they?"
+        },
+        {
+          "s": "leo",
+          "t": "To their credit, Outlook, Outlook Express and Windows Live Mail no longer display images automatically."
+        },
+        {
+          "s": "steve",
+          "t": "That only took about a decade."
+        },
+        {
+          "s": "leo",
+          "t": "My Apple Mail doesn't load images unless I press Load Images. So a hidden tracking image won't phone home."
+        },
+        {
+          "s": "steve",
+          "t": "Correct. It won't render, and it won't ping some random server."
+        },
+        {
+          "s": "leo",
+          "t": "Honey, I'm home."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, have your propeller beanies handy. A deep technical episode on Phorm, arguably the most horrific of the systems supporting ISP betrayal, and exactly what it takes to track someone who doesn't want to be tracked. It bypasses third-party cookie protections."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the new Zlob trojan variant do to routers?",
+      "options": [
+        "Logged in with default passwords and changed their DNS settings to a malicious server",
+        "Burned out their firmware",
+        "Opened every port",
+        "Turned off WiFi"
+      ],
+      "answer": 0,
+      "explain": "Every machine using DHCP then got the bad DNS."
+    },
+    {
+      "q": "Why does ShieldsUP! use a secure connection?",
+      "options": [
+        "To bypass ISPs' transparent caching proxies, which can't intercept SSL",
+        "To speed up scans",
+        "To block ads",
+        "To hide the user's IP"
+      ],
+      "answer": 0,
+      "explain": "Steve once found himself testing his ISP's proxy."
+    },
+    {
+      "q": "What did Steve learn about PayPal's \"single-use\" card numbers?",
+      "options": [
+        "They stay active until manually closed or expired, so a merchant charged him again",
+        "They expire in an hour",
+        "They can't be used for subscriptions",
+        "They're only for eBay"
+      ],
+      "answer": 0,
+      "explain": "You close them under Secure Cards."
+    },
+    {
+      "q": "What reliably defeats ISP-based profiling like NebuAd's?",
+      "options": [
+        "Encrypting your traffic, with HTTPS, a VPN or a service like Hotspot Shield",
+        "Clearing cookies daily",
+        "Using Safari",
+        "Changing your DNS"
+      ],
+      "answer": 0,
+      "explain": "It only sees unencrypted web traffic."
+    },
+    {
+      "q": "Would backing up a securely erased drive copy recoverable traces of the old data?",
+      "options": [
+        "No, drives only ever return the most recently written data",
+        "Yes, all traces copy over",
+        "Only with Time Machine",
+        "Only if it was zeroed once"
+      ],
+      "answer": 0,
+      "explain": "Forensic labs read the heads' analog signal inside the drive."
+    },
+    {
+      "q": "What does a transparent GIF in an email typically do?",
+      "options": [
+        "Tells a server when and from what IP the message was opened",
+        "Speeds loading",
+        "Fixes formatting",
+        "Blocks spam"
+      ],
+      "answer": 0,
+      "explain": "Turning off automatic image loading prevents it."
+    }
+  ]
+}
