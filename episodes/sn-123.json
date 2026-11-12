@@ -1,0 +1,482 @@
+{
+  "number": 123,
+  "title": "Jungle Disk",
+  "subtitle": "Creator Dave Wright on secure backup to Amazon S3",
+  "date": "2007-12-20",
+  "description": "Just before Christmas, Steve's Kindle review climbs Amazon's rankings, Leo reports on a week with his Kindle, and SpinRite revives a PGP-encrypted laptop that IBM's technicians couldn't touch. Then Jungle Disk's creator, Dave Wright, explains his $20 front end for Amazon's S3 storage service: drive-letter access for any backup tool, use on any number of your machines and platforms, a no-install USB mode, a Windows Home Server add-in, and client-side 256-bit AES encryption that Amazon can't read, meeting Steve's \"Trust No One\" test.",
+  "transcript": "https://www.grc.com/sn/sn-123.txt",
+  "audio": "http://media.GRC.com/sn/SN-123.mp3",
+  "guests": {
+    "dave": "Dave Wright"
+  },
+  "chapters": [
+    {
+      "title": "Christmas Week, and Kindle Votes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A few days before Christmas, most TWiT shows have gone dark. But Steve says, \"I'm not missing a show, dagnabit.\""
+        },
+        {
+          "s": "steve",
+          "t": "We're doing shows while you and your family are in Egypt."
+        },
+        {
+          "s": "leo",
+          "t": "I'm training Dane to post them, so if one's late, it's not my fault. I think our hotel in Cairo has wireless. Happy holidays. Today's guest writes Jungle Disk: Dave Wright."
+        },
+        {
+          "s": "steve",
+          "t": "In their forums he goes by \"Jungle Dave.\" A Q&A listener asked whether Jungle Disk and Amazon's S3 service are secure."
+        },
+        {
+          "s": "leo",
+          "t": "The best way to find out is to ask the guy who wrote it. But first, I kept trying to vote for your Kindle review."
+        },
+        {
+          "s": "steve",
+          "t": "You and a large body of our listeners. I kept saying \"snipurl/skr\" and forgot the \".com.\" And you were exactly right: Amazon must have bot prevention. If you jump in from an outside link, the referrer field shows you didn't click from within Amazon, so it can remove the voting buttons."
+        },
+        {
+          "s": "leo",
+          "t": "They probably don't like deep linking."
+        },
+        {
+          "s": "steve",
+          "t": "Enough people, including Elaine, poked around and found it that I went from the fourth long page back to about fifth on the first page."
+        },
+        {
+          "s": "leo",
+          "t": "So many Kindle reviews aren't substantive, many by people who don't own one."
+        },
+        {
+          "s": "steve",
+          "t": "That's not a review. That's an annoyed opinion. If you'd still like to vote, go to the Kindle page, click Read Reviews near the top, and I'm about fifth or sixth down."
+        }
+      ]
+    },
+    {
+      "title": "A Week With the Kindle",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I got my Kindle about a week ago and took it on a five-day trip to New Haven. If you're buying an eBook reader, it's certainly the one to get. Its fonts make it much easier to read."
+        },
+        {
+          "s": "steve",
+          "t": "The fonts are much better."
+        },
+        {
+          "s": "leo",
+          "t": "And you can make them bigger, which as a person over 40 I appreciate. Wireless makes it so much easier. I've never hooked it to a computer. For my newspapers alone, the $100 premium over the Sony is worth it. Most people won't buy any eBook reader until E Ink gets crisper. But between the Sony and the Kindle, the Kindle is far superior."
+        },
+        {
+          "s": "steve",
+          "t": "Sony owners may keep buying Sony content, though Sony has about a quarter of the..."
+        },
+        {
+          "s": "leo",
+          "t": "Much more limited, more expensive and harder to load, needing Windows and USB. Looking for a book on Egypt, I found several hundred in the Kindle store and bought one. $35, which is expensive, but cheaper than the hardcover."
+        },
+        {
+          "s": "steve",
+          "t": "The pyramids are those pointy things, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "And unlike Sony's store, you can get samples. I sampled the top five, rejected one that was so bad, and picked the right one. Before a trip, sample all the bestsellers and finish the ones you like."
+        },
+        {
+          "s": "steve",
+          "t": "And you can associate several Kindles with one account and read a book on all of them. Couples hand books to each other. Periodicals must be subscribed per Kindle, since publishers don't want them shared."
+        },
+        {
+          "s": "leo",
+          "t": "People complain about copy protection, but that's the publishers, not Amazon."
+        },
+        {
+          "s": "steve",
+          "t": "It's not going away. I already have copy-protected content scattered around: Mobipocket, which Amazon bought, Palm, Sony and now Amazon. This feels like a first-generation device that will improve. But if I'm investing in a format, Amazon's going to win. Right out of the gate, it's the best reader there is."
+        },
+        {
+          "s": "leo",
+          "t": "Paperbacks aren't going away, and I'll still buy books. This is for things I read once. But the cover stinks. Sony's design is much more elegant."
+        },
+        {
+          "s": "steve",
+          "t": "I forgave the keyboard because you hold the Kindle by it, since holding it elsewhere changes pages. But I've hardly used it."
+        },
+        {
+          "s": "leo",
+          "t": "I use it to search for and buy books."
+        },
+        {
+          "s": "leo",
+          "t": "Wireless allows something cool. A book quoted \"mute inglorious Milton,\" and I knew the quote. I selected it, chose Search on Google, and immediately found Thomas Gray's \"Elegy Written in a Graveyard,\" with the full poem. There's a built-in dictionary too. You can't do that away from your reference library. It changes how I read."
+        },
+        {
+          "type": "fact",
+          "title": "The poem",
+          "t": "Its full title is \"Elegy Written in a Country Churchyard,\" published in 1751."
+        },
+        {
+          "s": "leo",
+          "t": "I know some listeners say, no more eBook stuff. We'll talk security, don't worry."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves an Encrypted Drive",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A unique SpinRite story from Chris Wickersham in mid-November: \"SpinRite Saves the Encrypted Day.\" He works for American Express, whose desktop support is contracted exclusively to IBM. They use ThinkPads, recently encrypted with a PGP tool, which made him feel safer taking it home."
+        },
+        {
+          "s": "steve",
+          "t": "After a long weekend of work, Monday morning, Windows repeatedly blue-screened during boot with an unmountable boot disk. He traced it to a corrupted driver and hoped IBM could replace it. He hadn't checked his work into CVS Sunday night, so he was anxious."
+        },
+        {
+          "s": "steve",
+          "t": "Shock of all shocks: IBM's technicians couldn't repair the file because of the encryption."
+        },
+        {
+          "s": "leo",
+          "t": "Because it's a big binary blob."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. If it won't mount and boot, it's completely opaque. They couldn't even mount it to recover his data. Several tools failed. So he asked to take it home and try SpinRite. After about an hour, it recovered several damaged sectors, and the machine booted into Windows."
+        },
+        {
+          "s": "leo",
+          "t": "The real surprise is they let him take it home."
+        },
+        {
+          "s": "steve",
+          "t": "He hopes it leads to another site license, since he won't be the last to lose data on an encrypted drive."
+        },
+        {
+          "s": "leo",
+          "t": "If you encrypt, you must back up. There's no file recovery."
+        }
+      ]
+    },
+    {
+      "title": "Meet Dave Wright",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave Wright, author of Jungle Disk, is with us. Where are you?"
+        },
+        {
+          "s": "dave",
+          "t": "I'm in Atlanta."
+        },
+        {
+          "s": "steve",
+          "t": "Dave contacted me after I first looked at Jungle Disk for a listener and was impressed. My open question was whether it supports what I call TNO, Trust No One: storing your data so Amazon can't possibly decrypt it. Dave emailed back that it does. Since then, listeners have kept asking what happened with Jungle Disk."
+        },
+        {
+          "s": "leo",
+          "t": "How does it work as a business?"
+        },
+        {
+          "s": "dave",
+          "t": "A pretty typical software model: a free 30-day trial, though you still sign up for an Amazon S3 account. If you like it, it's a one-time $20 purchase, with free lifetime upgrades."
+        },
+        {
+          "s": "leo",
+          "t": "And it makes S3 straightforward for backup."
+        },
+        {
+          "s": "dave",
+          "t": "It has a built-in automatic backup feature. You tell it which files and directories to keep backed up. But it's fairly unique in exposing S3 storage as a local drive letter, or a mounted volume on the Mac, so you can also use third-party backup or sync software."
+        },
+        {
+          "s": "leo",
+          "t": "Why would I?"
+        },
+        {
+          "s": "dave",
+          "t": "The built-in backup is probably enough for 90 or 95 percent of users. Some want very advanced scheduling or finer control."
+        },
+        {
+          "s": "steve",
+          "t": "I'm a good example. I use FileBack PC, with wildcards, limits on backup frequency and multiple versions. I could aim it at a Jungle Disk volume, and my files would go to Amazon instead of another local drive."
+        }
+      ]
+    },
+    {
+      "title": "Cost, Platforms and USB",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "And Amazon storage is cheap."
+        },
+        {
+          "s": "dave",
+          "t": "Extremely cost effective. The basic rate is 15 cents per gigabyte per month. There are additional fees for uploads and downloads, but over time storage is the bulk of the cost. Most users pay one, two or three dollars a month."
+        },
+        {
+          "type": "fact",
+          "title": "S3 prices",
+          "t": "Amazon has cut S3's price many times. By the 2020s, standard storage cost about 2 cents per gigabyte per month."
+        },
+        {
+          "s": "steve",
+          "t": "It runs on Windows, Mac and Linux. And it runs from a USB drive in a no-install mode, so you can plug it into any machine and have secure roaming access to your whole archive."
+        },
+        {
+          "s": "dave",
+          "t": "Many people wanted to use it remotely without installing it or leaving files behind. Their configuration and encryption keys are on the keychain. Plug it in, copy down or upload files, pull it out, and it's gone from the machine."
+        },
+        {
+          "s": "steve",
+          "t": "Do you get a piece of Amazon's action?"
+        },
+        {
+          "s": "dave",
+          "t": "No. Users pay Amazon monthly. We sell the software. It's so cheap because we think everybody needs backup, and online backup is the way to go. We don't want to limit ourselves at $50 or $100. We want people to sign up and start right away."
+        },
+        {
+          "s": "steve",
+          "t": "So you saw that S3 isn't a turnkey consumer service. It's meant as back-end storage needing front ends."
+        },
+        {
+          "s": "dave",
+          "t": "People ask why they need Jungle Disk if they've signed up with Amazon. There's no S3 website to browse or upload files, and Amazon provides no software. Many companies use S3 behind their own backup or file-sharing services, but don't let you have your own Amazon account. With Jungle Disk, you keep your own account and complete control of your data, and our company doesn't see or have access to it at all."
+        },
+        {
+          "s": "steve",
+          "t": "I've studied your site and FAQ and installed it on several machines. One registered copy can be used on all of one person's machines, with centralized access to this repository in the sky, stored redundantly by Amazon."
+        },
+        {
+          "s": "dave",
+          "t": "Users wanted it on home, work and laptop machines, so per-machine pricing made no sense. Buy one copy and put it on as many machines as you want, with your own S3 account. You get all three platforms, so you can share files between Mac and Windows."
+        }
+      ]
+    },
+    {
+      "title": "Phoning Home, and Servers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In use, the client contacts you a little. What's that?"
+        },
+        {
+          "s": "dave",
+          "t": "A typical update check on startup. It reports the version and some client information, so we know who's using it and when trial periods end. Once you buy it, you can turn that off completely, if you don't want it talking to anyone but Amazon. We recommend keeping it on, since update notices matter if a security issue is ever found."
+        },
+        {
+          "s": "steve",
+          "t": "That's everything our listeners want."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love to back up my web server to S3."
+        },
+        {
+          "s": "dave",
+          "t": "A few people use it on servers, though it's designed as a desktop consumer product. We'll probably develop editions targeted at servers."
+        },
+        {
+          "s": "steve",
+          "t": "Leo and Paul talk a lot about Windows Home Server, and there's a Jungle Disk version for it."
+        },
+        {
+          "s": "dave",
+          "t": "For a Microsoft contest this year, we developed a Home Server add-in based on the same technology but a separate product. You install it on your home server, select files to back up online, and it keeps them backed up. If the server crashes or you delete something, you restore from the Home Server console."
+        },
+        {
+          "s": "dave",
+          "t": "It's in free beta on our website, and response has been very good. We came in second in Microsoft's contest. Home Server users care a lot about protecting data offsite."
+        },
+        {
+          "s": "leo",
+          "t": "Paul was a judge, so I'm sure he voted for you."
+        }
+      ]
+    },
+    {
+      "title": "Building on Amazon's Sparse API",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Amazon deserves praise for providing APIs. Was it easy to write?"
+        },
+        {
+          "s": "dave",
+          "t": "The first version took time. Amazon built S3 as a very generic service with a sparse API, without features handy for backup, so we built a lot around it."
+        },
+        {
+          "s": "leo",
+          "t": "Are they using WebDAV?"
+        },
+        {
+          "s": "dave",
+          "t": "No, a proprietary REST API, plus SOAP. One of Jungle Disk's secrets is that it runs a little local WebDAV server. Your operating system maps a drive and talks WebDAV to it, and it translates requests into S3's API."
+        },
+        {
+          "s": "leo",
+          "t": "That's very clever."
+        },
+        {
+          "s": "steve",
+          "t": "A perfect example of the sparsity is renaming files."
+        },
+        {
+          "s": "dave",
+          "t": "S3 has no way to rename files, since it's bulk object storage. So we used another Amazon service, EC2, which hosts virtual servers in Amazon's datacenters. It renames files directly on Amazon's network, fast and securely, without downloading and re-uploading them."
+        }
+      ]
+    },
+    {
+      "title": "Trust No One Encryption",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And the heart of the Trust No One question: Amazon's keys, versus your own encryption before anything reaches Amazon."
+        },
+        {
+          "s": "dave",
+          "t": "Amazon provides typical authentication with a secret key shared between you and them, which protects access to your account. On top of that, Jungle Disk encrypts on the client, so Amazon never sees unencrypted content. You choose a custom key. It's 256-bit AES. Encrypted content goes up, comes back encrypted, and is decrypted locally with your key. Without the key, you don't get the files."
+        },
+        {
+          "s": "steve",
+          "t": "Does Amazon encrypt data at rest itself?"
+        },
+        {
+          "s": "dave",
+          "t": "They don't say much about the internals. It's a very proprietary storage system, not a file server anyone at Amazon could browse. I don't know whether they add encryption. We always tell users: if you're concerned about privacy, encrypt on your client before it goes up. That's the only way to have complete confidence."
+        },
+        {
+          "s": "steve",
+          "t": "I also like your key migration. If you change your key, older content was encrypted with the old one. A header of metadata on each file identifies which of your keys encrypted it, without revealing anything that would let anyone decrypt it. As long as you keep old keys in Jungle Disk's list, it can still read old files."
+        },
+        {
+          "s": "dave",
+          "t": "Exactly. Change your key anytime. Unless you re-upload to re-encrypt, we keep your previous keys. We track which key each file used in a metadata section Amazon provides, in a way that tells nobody anything about the keys."
+        },
+        {
+          "s": "steve",
+          "t": "It answers a huge need as people become more mobile. I run my life on outlines, and I'd love them synchronized across my machines automatically."
+        },
+        {
+          "s": "dave",
+          "t": "Everybody's talked about storage moving into the cloud, and the big issue is trust. Amazon is a large, trusted company that won't disappear tomorrow or run off with your data. Client-side encryption means nobody, even Amazon, can see it. Together, that lets people finally trust the 'Net with important data."
+        },
+        {
+          "s": "leo",
+          "t": "Jungle Disk is free for 30 days, then $20 for life, at JungleDisk.com. Packaged services like Mozy and Carbonite may be easier, but not as portable. Thank you, Dave."
+        },
+        {
+          "s": "dave",
+          "t": "Thank you very much."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Verdict",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm really glad we covered this. You get a feel for things as you use them, and I have a really good feel about this. The tool's operation and their motivation are very transparent. They even provide open-source files showing how they access Amazon, though for $20 nobody will bother writing their own client. It's solid, open and done right. For using S3 in a truly Trust No One fashion, Jungle Disk does it."
+        },
+        {
+          "s": "leo",
+          "t": "Amazon's API uses simple, existing technologies like REST and SOAP. Lowest common denominator, but it guarantees developers can figure it out."
+        },
+        {
+          "s": "steve",
+          "t": "Keep the feedback coming at GRC.com/feedback. Many people say we used to do more current events in security. My New Year's resolution for '08 is to return a bit to checking in on important security news each week. As someone wrote, it's called Security Now!."
+        },
+        {
+          "s": "leo",
+          "t": "Or it means be secure right now. But sure, whatever you want."
+        },
+        {
+          "s": "leo",
+          "t": "Last chance for 20 percent off at ScotteVest.com with the code LEO. Scott apologizes that they're selling out like hotcakes, and the hoodies and fleeces are back-ordered past Christmas."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is a Q&A. Have a great Christmas, Steve."
+        },
+        {
+          "type": "fact",
+          "title": "Jungle Disk's path",
+          "t": "Rackspace bought Jungle Disk in 2008, a few months after this interview, and kept it running as a backup service for years."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What makes Jungle Disk \"Trust No One\" secure?",
+      "options": [
+        "Files are encrypted with your own 256-bit AES key on your computer before reaching Amazon",
+        "Amazon promises not to look",
+        "It uses SSL only",
+        "Files are split across servers"
+      ],
+      "answer": 0,
+      "explain": "Without your key, nobody can read them."
+    },
+    {
+      "q": "How does Jungle Disk let any backup program use Amazon S3?",
+      "options": [
+        "It presents S3 as a local drive letter through a small local WebDAV server",
+        "It installs a plug-in in each program",
+        "It emails files",
+        "It uses FTP"
+      ],
+      "answer": 0,
+      "explain": "Steve could point FileBack PC at it."
+    },
+    {
+      "q": "What did Jungle Disk use EC2 for?",
+      "options": [
+        "Renaming files directly on Amazon's network, since S3 lacks a rename command",
+        "Encrypting files",
+        "Billing",
+        "Hosting its website"
+      ],
+      "answer": 0,
+      "explain": "It avoids downloading and re-uploading."
+    },
+    {
+      "q": "How does Jungle Disk handle changing your encryption key?",
+      "options": [
+        "It keeps previous keys and tags each file with which key encrypted it",
+        "It deletes old files",
+        "It re-uploads everything instantly",
+        "It asks Amazon"
+      ],
+      "answer": 0,
+      "explain": "The tags reveal nothing about the keys themselves."
+    },
+    {
+      "q": "Why couldn't IBM's technicians repair Chris Wickersham's laptop?",
+      "options": [
+        "Its drive was fully encrypted, so they couldn't reach the corrupted file",
+        "The laptop was too old",
+        "They had no tools",
+        "Windows was missing"
+      ],
+      "answer": 0,
+      "explain": "SpinRite fixed the bad sectors underneath."
+    },
+    {
+      "q": "What did Leo like most about the Kindle compared with Sony's reader?",
+      "options": [
+        "Wireless delivery, free samples and lookups on the web",
+        "Its elegant cover",
+        "Its color screen",
+        "Its price"
+      ],
+      "answer": 0,
+      "explain": "He gets his newspapers delivered every morning."
+    }
+  ]
+}
