@@ -703,317 +703,443 @@
     {
       "number": 101,
       "title": "Are You Human?",
-      "date": "2007-07-19"
+      "subtitle": "CAPTCHAs and the hard problem of telling people from programs",
+      "date": "2007-07-19",
+      "file": "sn-101.json"
     },
     {
       "number": 102,
       "title": "Listener Mailbag #1",
-      "date": "2007-07-26"
+      "subtitle": "The first mailbag: dongles, CAPTCHAs, accessibility and more",
+      "date": "2007-07-26",
+      "file": "sn-102.json"
     },
     {
       "number": 103,
       "title": "PayPal Security Key",
-      "date": "2007-08-02"
+      "subtitle": "PayPal's Michael Vergara on the $5 one-time-password token",
+      "date": "2007-08-02",
+      "file": "sn-103.json"
     },
     {
       "number": 104,
       "title": "Listener Feedback Q&A #22",
-      "date": "2007-08-09"
+      "subtitle": "Two years in: certificate authorities, U3 drives and more",
+      "date": "2007-08-09",
+      "file": "sn-104.json"
     },
     {
       "number": 105,
       "title": "Firewall LeakTesting",
-      "date": "2007-08-16"
+      "subtitle": "How malware slips past outbound-blocking firewalls",
+      "date": "2007-08-16",
+      "file": "sn-105.json"
     },
     {
       "number": 106,
       "title": "Listener Mailbag #2",
-      "date": "2007-08-23"
+      "subtitle": "Changing irises, USB attack drives, honeypot forms and more",
+      "date": "2007-08-23",
+      "file": "sn-106.json"
     },
     {
       "number": 107,
       "title": "PIP & Even More Perfect Passwords",
-      "date": "2007-08-30"
+      "subtitle": "VeriSign's OpenID service and cipher block chaining",
+      "date": "2007-08-30",
+      "file": "sn-107.json"
     },
     {
       "number": 108,
       "title": "Listener Feedback #23",
-      "date": "2007-09-06"
+      "subtitle": "Hidden SSIDs, grid cards, token clocks and encrypted drives",
+      "date": "2007-09-06",
+      "file": "sn-108.json"
     },
     {
       "number": 109,
       "title": "GRC's eCommerce System",
-      "date": "2007-09-13"
+      "subtitle": "Behind the scenes of the store Steve wrote in assembly",
+      "date": "2007-09-13",
+      "file": "sn-109.json"
     },
     {
       "number": 110,
       "title": "Listener Feedback #24",
-      "date": "2007-09-20"
+      "subtitle": "TOR's exit nodes, OpenID privacy and a password tattoo",
+      "date": "2007-09-20",
+      "file": "sn-110.json"
     },
     {
       "number": 111,
       "title": "OpenID Precautions",
-      "date": "2007-09-27"
+      "subtitle": "What to watch for with single sign-on",
+      "date": "2007-09-27",
+      "file": "sn-111.json"
     },
     {
       "number": 112,
       "title": "Listener Feedback #25",
-      "date": "2007-10-04"
+      "subtitle": "SSL proxies, Xbox ports, OpenDNS and a DoubleClick detour",
+      "date": "2007-10-04",
+      "file": "sn-112.json"
     },
     {
       "number": 113,
       "title": "Roaming Authentication",
-      "date": "2007-10-11"
+      "subtitle": "Part 1: letting GRC's staff in securely from anywhere",
+      "date": "2007-10-11",
+      "file": "sn-113.json"
     },
     {
       "number": 114,
       "title": "Listener Feedback #26",
-      "date": "2007-10-18"
+      "subtitle": "Skype supernodes, S3 backups, snake-oil crypto and sidejacking",
+      "date": "2007-10-18",
+      "file": "sn-114.json"
     },
     {
       "number": 115,
       "title": "Perfect Paper Passwords",
-      "date": "2007-10-25"
+      "subtitle": "A free one-time password system on a wallet card",
+      "date": "2007-10-25",
+      "file": "sn-115.json"
     },
     {
       "number": 116,
       "title": "Listener Feedback #27",
-      "date": "2007-11-01"
+      "subtitle": "IP spoofing, the Rockies ticket crash and Comcast's resets",
+      "date": "2007-11-01",
+      "file": "sn-116.json"
     },
     {
       "number": 117,
       "title": "Even More Perfect paper Passwords",
-      "date": "2007-11-08"
+      "subtitle": "PPP version 2 and the \"Peabody Dilemma\"",
+      "date": "2007-11-08",
+      "file": "sn-117.json"
     },
     {
       "number": 118,
       "title": "Listener Feedback #28",
-      "date": "2007-11-15"
+      "subtitle": "Windows' weak random numbers, HushMail's subpoena and more",
+      "date": "2007-11-15",
+      "file": "sn-118.json"
     },
     {
       "number": 119,
       "title": "PayPal and DoubleClick",
-      "date": "2007-11-22"
+      "subtitle": "Why PayPal's links detour through an ad tracker",
+      "date": "2007-11-22",
+      "file": "sn-119.json"
     },
     {
       "number": 120,
       "title": "Listener Feedback #29",
-      "date": "2007-11-29"
+      "subtitle": "ISP-based logins, double encryption, Flash cookies and more",
+      "date": "2007-11-29",
+      "file": "sn-120.json"
     },
     {
       "number": 121,
       "title": "Is Privacy Dead?",
-      "date": "2007-12-06"
+      "subtitle": "How everyday technology tracks us, and what we can do",
+      "date": "2007-12-06",
+      "file": "sn-121.json"
     },
     {
       "number": 122,
       "title": "Listener Feedback #30",
-      "date": "2007-12-13"
+      "subtitle": "Double encryption revisited, SSD wear and leaky wireless keyboards",
+      "date": "2007-12-13",
+      "file": "sn-122.json"
     },
     {
       "number": 123,
       "title": "Jungle Disk",
-      "date": "2007-12-20"
+      "subtitle": "Creator Dave Wright on secure backup to Amazon S3",
+      "date": "2007-12-20",
+      "file": "sn-123.json"
     },
     {
       "number": 124,
       "title": "Listener Feedback #31",
-      "date": "2007-12-27"
+      "subtitle": "Cookie whitelists, data wiping, WD's blocked files and offline patching",
+      "date": "2007-12-27",
+      "file": "sn-124.json"
     },
     {
       "number": 125,
       "title": "Symmetric Ciphers",
-      "date": "2008-01-03"
+      "subtitle": "Why double encryption works, and how AES really operates",
+      "date": "2008-01-03",
+      "file": "sn-125.json"
     },
     {
       "number": 126,
       "title": "Listener Feedback #32",
-      "date": "2008-01-10"
+      "subtitle": "A critical Windows stack flaw, nonces, CBC and Opera Mini's proxy",
+      "date": "2008-01-10",
+      "file": "sn-126.json"
     },
     {
       "number": 127,
       "title": "Corporate Security",
-      "date": "2008-01-17"
+      "subtitle": "The week's threats, and why securing a workplace is so hard",
+      "date": "2008-01-17",
+      "file": "sn-127.json"
     },
     {
       "number": 128,
       "title": "Listener Feedback #33",
-      "date": "2008-01-24"
+      "subtitle": "WPA key length, chained routers, secure deletion and more",
+      "date": "2008-01-24",
+      "file": "sn-128.json"
     },
     {
       "number": 129,
       "title": "Windows SteadyState",
-      "date": "2008-01-31"
+      "subtitle": "Freezing Windows XP so users can't make lasting changes",
+      "date": "2008-01-31",
+      "file": "sn-129.json"
     },
     {
       "number": 130,
       "title": "Listener Feedback #34",
-      "date": "2008-02-07"
+      "subtitle": "Bugging yourself with wireless headsets, the Silent Banker trojan, and more",
+      "date": "2008-02-07",
+      "file": "sn-130.json"
     },
     {
       "number": 131,
       "title": "FREE CompuSec",
-      "date": "2008-02-14"
+      "subtitle": "Whole-drive encryption with pre-boot authentication",
+      "date": "2008-02-14",
+      "file": "sn-131.json"
     },
     {
       "number": 132,
       "title": "Listener Feedback #35",
-      "date": "2008-02-21"
+      "subtitle": "Brittle patching, unknown ciphers, and whole-drive encryption questions",
+      "date": "2008-02-21",
+      "file": "sn-132.json"
     },
     {
       "number": 133,
       "title": "TrueCrypt v5.0",
-      "date": "2008-02-28"
+      "subtitle": "Whole-drive encryption with TrueCrypt 5",
+      "date": "2008-02-28",
+      "file": "sn-133.json"
     },
     {
       "number": 134,
       "title": "Listener Feedback #36",
-      "date": "2008-03-06"
+      "subtitle": "Rainbow tables, latent data, wireless dropouts and more",
+      "date": "2008-03-06",
+      "file": "sn-134.json"
     },
     {
       "number": 135,
       "title": "IronKey",
-      "date": "2008-03-13"
+      "subtitle": "Founder David Jevans on a hardware-encrypted USB drive",
+      "date": "2008-03-13",
+      "file": "sn-135.json"
     },
     {
       "number": 136,
       "title": "Listener Feedback #37",
-      "date": "2008-03-20"
+      "subtitle": "Old Windows, web form security, TrueCrypt versus IronKey and more",
+      "date": "2008-03-20",
+      "file": "sn-136.json"
     },
     {
       "number": 137,
       "title": "RAM Hijacks",
-      "date": "2008-03-27"
+      "subtitle": "How Princeton recovered encryption keys from \"forgotten\" RAM",
+      "date": "2008-03-27",
+      "file": "sn-137.json"
     },
     {
       "number": 138,
       "title": "Listener Feedback #38",
-      "date": "2008-04-03"
+      "subtitle": "Redirects, drive sleep, IronKey's Tor network and more",
+      "date": "2008-04-03",
+      "file": "sn-138.json"
     },
     {
       "number": 139,
       "title": "Network Congestion",
-      "date": "2008-04-10"
+      "subtitle": "What happens when too much data meets too little pipe",
+      "date": "2008-04-10",
+      "file": "sn-139.json"
     },
     {
       "number": 140,
       "title": "Listener Feedback #39",
-      "date": "2008-04-17"
+      "subtitle": "Metafiles again, keyboard-pattern passwords, HTTPS as authentication and more",
+      "date": "2008-04-17",
+      "file": "sn-140.json"
     },
     {
       "number": 141,
       "title": "RSA Conference 2008",
-      "date": "2008-04-24"
+      "subtitle": "Steve's week at the big security show, and the YubiKey",
+      "date": "2008-04-24",
+      "file": "sn-141.json"
     },
     {
       "number": 142,
       "title": "Listener Feedback #40",
-      "date": "2008-05-01"
+      "subtitle": "A mass SQL injection attack, UAC, YubiKey details and more",
+      "date": "2008-05-01",
+      "file": "sn-142.json"
     },
     {
       "number": 143,
       "title": "YubiKey",
-      "date": "2008-05-08"
+      "subtitle": "Stina Ehrensvärd on Yubico, and how the YubiKey works",
+      "date": "2008-05-08",
+      "file": "sn-143.json"
     },
     {
       "number": 144,
       "title": "Listener Feedback #41",
-      "date": "2008-05-15"
+      "subtitle": "Patch Tuesday, Exploit Thursday, and YubiKey for local logins",
+      "date": "2008-05-15",
+      "file": "sn-144.json"
     },
     {
       "number": 145,
       "title": "Secunia's PSI",
-      "date": "2008-05-22"
+      "subtitle": "A free scanner for known holes in your installed software",
+      "date": "2008-05-22",
+      "file": "sn-145.json"
     },
     {
       "number": 146,
       "title": "Listener Feedback #42",
-      "date": "2008-05-29"
+      "subtitle": "Debian's broken random numbers, MAC filtering, stealth ports and more",
+      "date": "2008-05-29",
+      "file": "sn-146.json"
     },
     {
       "number": 147,
       "title": "Microsoft's Baseline Security Analyzer",
-      "date": "2008-06-05"
+      "subtitle": "Two free Microsoft security checkups",
+      "date": "2008-06-05",
+      "file": "sn-147.json"
     },
     {
       "number": 148,
       "title": "Listener Feedback #43",
-      "date": "2008-06-12"
+      "subtitle": "Safari's \"carpet bomb,\" MD5 hashes, short password limits and more",
+      "date": "2008-06-12",
+      "file": "sn-148.json"
     },
     {
       "number": 149,
       "title": "ISP Betrayal",
-      "date": "2008-06-19"
+      "subtitle": "ISPs that let third parties profile everything their customers browse",
+      "date": "2008-06-19",
+      "file": "sn-149.json"
     },
     {
       "number": 150,
       "title": "Listener Feedback #44",
-      "date": "2008-06-26"
+      "subtitle": "Router-hijacking malware, transparent proxies, and dodging ISP snooping",
+      "date": "2008-06-26",
+      "file": "sn-150.json"
     },
     {
       "number": 151,
       "title": "Phracking Phorm",
-      "date": "2008-07-03"
+      "subtitle": "Exactly how Phorm tags you with cookies on every site you visit",
+      "date": "2008-07-03",
+      "file": "sn-151.json"
     },
     {
       "number": 152,
       "title": "Listener Feedback #45",
-      "date": "2008-07-10"
+      "subtitle": "Passwords after death, blocking Phorm, and routers that ignore their settings",
+      "date": "2008-07-10",
+      "file": "sn-152.json"
     },
     {
       "number": 153,
       "title": "DePhormed Politics",
-      "date": "2008-07-17"
+      "subtitle": "Alexander Hanff on the U.K. fight against Phorm",
+      "date": "2008-07-17",
+      "file": "sn-153.json"
     },
     {
       "number": 154,
       "title": "Listener Feedback #46",
-      "date": "2008-07-24"
+      "subtitle": "Cheap stolen bank data, NebuAd's script injection, and a letter from the future",
+      "date": "2008-07-24",
+      "file": "sn-154.json"
     },
     {
       "number": 155,
       "title": "Bailiwicked Domain Attack",
-      "date": "2008-07-31"
+      "subtitle": "How DNS works, and how Dan Kaminsky's attack poisons it",
+      "date": "2008-07-31",
+      "file": "sn-155.json"
     },
     {
       "number": 156,
       "title": "Listener Feedback #47",
-      "date": "2008-08-07"
+      "subtitle": "DNS patching stalls, a poem for Dan Kaminsky, and CryptoLink announced",
+      "date": "2008-08-07",
+      "file": "sn-156.json"
     },
     {
       "number": 157,
       "title": "DNS — After the Patch",
-      "date": "2008-08-14"
+      "subtitle": "A patched server falls in 10 hours, and the 0x20 hack adds free bits",
+      "date": "2008-08-14",
+      "file": "sn-157.json"
     },
     {
       "number": 158,
       "title": "Listener Feedback #48",
-      "date": "2008-08-21"
+      "subtitle": "ISPs confess to Congress, blended threats, and a bank that ignores half your password",
+      "date": "2008-08-21",
+      "file": "sn-158.json"
     },
     {
       "number": 159,
       "title": "Vista Security Bypass",
-      "date": "2008-08-28"
+      "subtitle": "How browser plug-ins undermine Vista's DEP and ASLR",
+      "date": "2008-08-28",
+      "file": "sn-159.json"
     },
     {
       "number": 160,
       "title": "Listener Feedback #49",
-      "date": "2008-09-04"
+      "subtitle": "First looks at Google Chrome, and Wells Fargo's passwords get worse",
+      "date": "2008-09-04",
+      "file": "sn-160.json"
     },
     {
       "number": 161,
       "title": "Google's Chrome",
-      "date": "2008-09-11"
+      "subtitle": "A promising architecture with almost no privacy or security controls",
+      "date": "2008-09-11",
+      "file": "sn-161.json"
     },
     {
       "number": 162,
       "title": "Listener Feedback #50",
-      "date": "2008-09-18"
+      "subtitle": "Bank password defenses, a school locked down with OpenDNS, and Chrome's leftovers",
+      "date": "2008-09-18",
+      "file": "sn-162.json"
     },
     {
       "number": 163,
       "title": "GoogleUpdate & DNS Security",
-      "date": "2008-09-25"
+      "subtitle": "Chrome's updater cleans up after all, Steve switches to Firefox, and why securing DNS is so hard",
+      "date": "2008-09-25",
+      "file": "sn-163.json"
     },
     {
       "number": 164,
@@ -1023,182 +1149,254 @@
     {
       "number": 165,
       "title": "Listener Feedback #51",
-      "date": "2008-10-09"
+      "subtitle": "Sockstress follow-up, Skype logging in China, and a spy camera on eBay",
+      "date": "2008-10-09",
+      "file": "sn-165.json"
     },
     {
       "number": 166,
       "title": "Cross-Site Request Forgery",
-      "date": "2008-10-16"
+      "subtitle": "How a mere image tag can act on sites where you're logged in",
+      "date": "2008-10-16",
+      "file": "sn-166.json"
     },
     {
       "number": 167,
       "title": "Listener Feedback #52",
-      "date": "2008-10-23"
+      "subtitle": "Debunking the WPA \"crack,\" payment services vs. Visa, and why banks ignore case",
+      "date": "2008-10-23",
+      "file": "sn-167.json"
     },
     {
       "number": 168,
       "title": "ClickJacking",
-      "date": "2008-10-30"
+      "subtitle": "A transparent layer makes you click things you never see, on sites that trust you",
+      "date": "2008-10-30",
+      "file": "sn-168.json"
     },
     {
       "number": 169,
       "title": "Listener Feedback #53",
-      "date": "2008-11-06"
+      "subtitle": "Where CryptoLink stands, SYN-blocking fears, and NoScript fatigue",
+      "date": "2008-11-06",
+      "file": "sn-169.json"
     },
     {
       "number": 170,
       "title": "The TKIP Hack",
-      "date": "2008-11-13"
+      "subtitle": "WPA was not \"cracked\" — a clever, very limited flaw in the TKIP protocol",
+      "date": "2008-11-13",
+      "file": "sn-170.json"
     },
     {
       "number": 171,
       "title": "Listener Feedback #54",
-      "date": "2008-11-20"
+      "subtitle": "TKIP follow-ups, a keyboard you can sniff from across the room, and PayPal tips",
+      "date": "2008-11-20",
+      "file": "sn-171.json"
     },
     {
       "number": 172,
       "title": "Sandboxie",
-      "date": "2008-11-27"
+      "subtitle": "A lightweight sandbox that isolates any program's changes from your system",
+      "date": "2008-11-27",
+      "file": "sn-172.json"
     },
     {
       "number": 173,
       "title": "Listener Feedback #55",
-      "date": "2008-12-04"
+      "subtitle": "Sandboxing USB drives, copying a key from 200 feet, and ZoneAlarm's sneaky DNS",
+      "date": "2008-12-04",
+      "file": "sn-173.json"
     },
     {
       "number": 174,
       "title": "Sandbox Limitations",
-      "date": "2008-12-11"
+      "subtitle": "What a sandbox or virtual machine can't protect you from",
+      "date": "2008-12-11",
+      "file": "sn-174.json"
     },
     {
       "number": 175,
       "title": "Listener Feedback #56",
-      "date": "2008-12-18"
+      "subtitle": "A webcam that leaks all your keys, PayPal's weak fallback, and why Sandboxie won't run on 64-bit",
+      "date": "2008-12-18",
+      "file": "sn-175.json"
     },
     {
       "number": 176,
       "title": "Drop My Rights",
-      "date": "2008-12-25"
+      "subtitle": "A tiny Microsoft tool runs risky programs with reduced privileges",
+      "date": "2008-12-25",
+      "file": "sn-176.json"
     },
     {
       "number": 177,
       "title": "Breaking SSL, PDP-8's & UltraCapacitors",
-      "date": "2009-01-01"
+      "subtitle": "A forged certificate authority, a first computer rediscovered, and a battery breakthrough",
+      "date": "2009-01-01",
+      "file": "sn-177.json"
     },
     {
       "number": 178,
       "title": "Listener Feedback #57",
-      "date": "2009-01-08"
+      "subtitle": "Correcting the MD5 story, shouting at hard drives, and Twitter's \"happiness\" hack",
+      "date": "2009-01-08",
+      "file": "sn-178.json"
     },
     {
       "number": 179,
       "title": "Cracking Security Certificates",
-      "date": "2009-01-15"
+      "subtitle": "How certificates work, and how researchers forged a trusted authority with MD5",
+      "date": "2009-01-15",
+      "file": "sn-179.json"
     },
     {
       "number": 180,
       "title": "Listener Feedback #58",
-      "date": "2009-01-22"
+      "subtitle": "Running the MSRT yourself, Conficker's nine million, and the YubiKey's 176 bits",
+      "date": "2009-01-22",
+      "file": "sn-180.json"
     },
     {
       "number": 181,
       "title": "Crypto Rehash",
-      "date": "2009-01-29"
+      "subtitle": "A step-back review of the cryptography behind SSL",
+      "date": "2009-01-29",
+      "file": "sn-181.json"
     },
     {
       "number": 182,
       "title": "Listener Feedback #59",
-      "date": "2009-02-05"
+      "subtitle": "A Q&A on MSRT, YubiKey static mode, keyfiles, VPNs and two PayPal blunders",
+      "date": "2009-02-05",
+      "file": "sn-182.json"
     },
     {
       "number": 183,
       "title": "Modes of Encryption",
-      "date": "2009-02-12"
+      "subtitle": "How ECB, counter mode and cipher block chaining turn a block cipher into real encryption",
+      "date": "2009-02-12",
+      "file": "sn-183.json"
     },
     {
       "number": 184,
       "title": "Listener Feedback #60",
-      "date": "2009-02-19"
+      "subtitle": "A Q&A on scareware, a public-key YubiKey idea, VPNs vs SSL, NoScript, eInk and WPA",
+      "date": "2009-02-19",
+      "file": "sn-184.json"
     },
     {
       "number": 185,
       "title": "Cryptographic HMACs",
-      "date": "2009-02-26"
+      "subtitle": "How a keyed hash (HMAC) authenticates a message, and why it survives a weak hash",
+      "date": "2009-02-26",
+      "file": "sn-185.json"
     },
     {
       "number": 186,
       "title": "Listener Feedback #61",
-      "date": "2009-03-05"
+      "subtitle": "A Q&A on guest WiFi, iFrames, RISC vs CISC, open-source trust, GoToMyPC and encrypted ZIP",
+      "date": "2009-03-05",
+      "file": "sn-186.json"
     },
     {
       "number": 187,
       "title": "Windows Autorun-around",
-      "date": "2009-03-12"
+      "subtitle": "Why disabling Windows Autorun never really worked, and how to actually turn it off",
+      "date": "2009-03-12",
+      "file": "sn-187.json"
     },
     {
       "number": 188,
       "title": "Listener Feedback #62",
-      "date": "2009-03-19"
+      "subtitle": "A Q&A on SSH tunneling, open-hotspot SSL, the YubiKing winners and an MIT battery breakthrough",
+      "date": "2009-03-19",
+      "file": "sn-188.json"
     },
     {
       "number": 189,
       "title": "Internet Explorer 8",
-      "date": "2009-03-26"
+      "subtitle": "A security-focused tour of IE8: InPrivate filtering, SmartScreen, DEP and what's still broken",
+      "date": "2009-03-26",
+      "file": "sn-189.json"
     },
     {
       "number": 190,
       "title": "Listener Feedback #63",
-      "date": "2009-04-02"
+      "subtitle": "A Q&A on TOR exit-node trust, HTTPS interception, Conficker symptoms, cookies and DIY crypto",
+      "date": "2009-04-02",
+      "file": "sn-190.json"
     },
     {
       "number": 191,
       "title": "GhostNet",
-      "date": "2009-04-09"
+      "subtitle": "How a covert cyber-spy network in 103 countries was found, and how its Ghost RAT worked",
+      "date": "2009-04-09",
+      "file": "sn-191.json"
     },
     {
       "number": 192,
       "title": "Listener Feedback #64",
-      "date": "2009-04-16"
+      "subtitle": "A Q&A on why Windows is what it is, patch failures, sandbox protection and killing Conficker",
+      "date": "2009-04-16",
+      "file": "sn-192.json"
     },
     {
       "number": 193,
       "title": "Conficker",
-      "date": "2009-04-23"
+      "subtitle": "A deep technical tour of the most sophisticated worm the Internet had yet seen",
+      "date": "2009-04-23",
+      "file": "sn-193.json"
     },
     {
       "number": 194,
       "title": "Listener Feedback #65",
-      "date": "2009-04-30"
+      "subtitle": "A Q&A on Conficker's domains, brute-forcing public keys, SSDs, microkernels and what Conficker does",
+      "date": "2009-04-30",
+      "file": "sn-194.json"
     },
     {
       "number": 195,
       "title": "The SSL/TLS Protocol",
-      "date": "2009-05-07"
+      "subtitle": "How the Internet's most-used security protocol negotiates a safe connection, step by step",
+      "date": "2009-05-07",
+      "file": "sn-195.json"
     },
     {
       "number": 196,
       "title": "Listener Feedback #66",
-      "date": "2009-05-14"
+      "subtitle": "A Q&A on the TLS key exchange, travel routers, preshared keys, and Windows in the machinery",
+      "date": "2009-05-14",
+      "file": "sn-196.json"
     },
     {
       "number": 197,
       "title": "Windows 7 Security",
-      "date": "2009-05-21"
+      "subtitle": "What Microsoft improved since Vista: BitLocker, UAC, AppLocker, biometrics and more",
+      "date": "2009-05-21",
+      "file": "sn-197.json"
     },
     {
       "number": 198,
       "title": "Listener Feedback #67",
-      "date": "2009-05-28"
+      "subtitle": "A Q&A on Assembly, scripts, sockets, SSL caching, CPU bugs and detecting SSL proxying",
+      "date": "2009-05-28",
+      "file": "sn-198.json"
     },
     {
       "number": 199,
       "title": "The Geek Atlas, IPv6 & a non-VPN",
-      "date": "2009-06-04"
+      "subtitle": "A geeky travel book, why IPv6 still isn't here, and a VPN-free way to reach your home PC",
+      "date": "2009-06-04",
+      "file": "sn-199.json"
     },
     {
       "number": 200,
       "title": "Listener Feedback #68",
-      "date": "2009-06-11"
+      "subtitle": "A milestone Q&A on ATM trojans, non-VPN connections, ClickOnce, TPM and expired certificates",
+      "date": "2009-06-11",
+      "file": "sn-200.json"
     },
     {
       "number": 201,
