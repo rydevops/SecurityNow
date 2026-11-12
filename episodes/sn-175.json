@@ -1,0 +1,338 @@
+{
+  "number": 175,
+  "title": "Listener Feedback Q&A #56",
+  "subtitle": "A webcam that leaks all your keys, PayPal's weak fallback, and why Sandboxie won't run on 64-bit",
+  "date": "2008-12-18",
+  "description": "The 56th Q&A. News: a Linksys WVC54GC webcam that dumps your WEP/WPA keys and login in plaintext to a UDP packet, a 19-flaw Patch Tuesday, a Trillian zero-day, and Microsoft's quiet fourth-Tuesday non-security patches. Then questions: how a sandbox sits inside a TrueCrypt container, staggered Windows updates, why you still need scheduled AV scans, PayPal's insecure \"I don't have my key\" fallback, ZoneAlarm's DNS heartbeat explained, why Sandboxie can't run on 64-bit Windows because of PatchGuard, Wizmo's forced shutdown, fingerprint lockers, and destroying glass-platter drives.",
+  "transcript": "https://www.grc.com/sn/sn-175.txt",
+  "audio": "http://media.GRC.com/sn/SN-175.mp3",
+  "chapters": [
+    {
+      "title": "A Webcam That Leaks Everything",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Shocking news, from Secunia: the Linksys WVC54GC, which I first thought was a router."
+        },
+        {
+          "s": "leo",
+          "t": "It's a wireless G webcam."
+        },
+        {
+          "s": "steve",
+          "t": "Sending a crafted UDP packet to port 916 makes it send back, in plaintext, your login username and password and all your wireless settings, including your WEP and WPA keys. A 2007 Linksys ADSL router had the same port-916 flaw."
+        },
+        {
+          "s": "leo",
+          "t": "And they'd have access to your camera too."
+        },
+        {
+          "s": "steve",
+          "t": "Update to firmware 1.25."
+        },
+        {
+          "type": "fact",
+          "title": "Leaky gear",
+          "t": "Flaws that dump a device's configuration or credentials to an unauthenticated request have recurred in consumer routers and IP cameras over the years, which is why you keep such devices patched and off the public Internet."
+        }
+      ]
+    },
+    {
+      "title": "A 19-Flaw Patch Tuesday, and Fourth-Tuesday Patches",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "December's Patch Tuesday was massive: 19 critical remote code execution flaws. Two in GDI via crafted Windows Metafiles, an oldie but a goodie; two in the new Windows Search service, which I declined to install; four in IE; eight in Word and Outlook via crafted RTF; and three in Excel. This needs a reboot, but take care of it."
+        },
+        {
+          "s": "steve",
+          "t": "Also a Trillian zero-day: receiving a crafted IM runs code. Update to 3.1.12.0."
+        },
+        {
+          "s": "leo",
+          "t": "Do you recommend automatic updates?"
+        },
+        {
+          "s": "steve",
+          "t": "I set mine to download-and-notify, custom mode, so I can audit them, since XP Service Pack 3 and things like Windows Search can cause trouble. For your mom, automatic. I still don't run antivirus, but that's just me."
+        },
+        {
+          "s": "leo",
+          "t": "John Meyer in Orlando found a Microsoft blog noting security patches come the second Tuesday, and non-security patches the fourth Tuesday, except December."
+        },
+        {
+          "s": "steve",
+          "t": "I couldn't find an official policy, but it explains the stuff that trickles in two weeks later. Now listeners know those are non-security updates."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Prepped the Drive",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Dan Baldwin, IT for a radio station, had the sales manager's PC fail to boot. He ran a friend's SpinRite, which found three unrecoverable sectors. Afterward Windows said the OS was damaged, but he used the XP install disc's \"R\" repair, and all was well. Then he bought his own copy, triggering a yabba-dabba-do."
+        },
+        {
+          "s": "steve",
+          "t": "I have no problem with that. The licensed user's name is built into SpinRite, so take responsibility for it. People who'd never buy it aren't lost revenue, and there are trojanized copies on pirate sites, so pirating it isn't even safe."
+        }
+      ]
+    },
+    {
+      "title": "A Sandbox in a TrueCrypt Container",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Creighton in Arizona sandboxes all his Internet activity, and points the sandbox at a TrueCrypt container."
+        },
+        {
+          "s": "steve",
+          "t": "So not only is malware blocked from permanent writes, but nothing he does online is written to disk in the clear, only to the encrypted container, then thrown out. No real overhead."
+        },
+        {
+          "s": "steve",
+          "t": "My own focus on security started when our office got an ISDN line, I scanned the neighborhood, and found people's C: drives hanging out in the open. That launched ShieldsUP!."
+        }
+      ]
+    },
+    {
+      "title": "Staggered Windows Updates",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Garrett Lucas updated three identical XP machines; one wanted five high-priority updates, the other two said none were available."
+        },
+        {
+          "s": "steve",
+          "t": "I've seen the same. The little tray shield seems lazy; Microsoft can't tell every Windows machine on the planet at once that there's a big download, so they stagger the rollout, especially for 500MB service packs. But when I explicitly visit Windows Update, it's never told me there's nothing when there is."
+        }
+      ]
+    },
+    {
+      "title": "Why You Still Need Scheduled Scans",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robert Berry wants to rely on his AV's real-time protection and skip the scheduled full scan that bogs his daughter's laptop at startup."
+        },
+        {
+          "s": "steve",
+          "t": "AV is reactive. If a brand-new virus arrives before your patterns know it, real-time scanning misses it and it's in. Only a later full scan, with updated patterns, will catch what slipped in between updates. So schedule it for a time the machine is on, like end of day, but don't skip it."
+        },
+        {
+          "s": "leo",
+          "t": "Do you recommend an AV product?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't know much about them. Measuring real-world effectiveness is nearly impossible; test suites can be gamed. I run with scripting off and I'm a boring Internet user."
+        },
+        {
+          "s": "leo",
+          "t": "The number-one vector now is clicking a link to a malware-laden page, or a fake \"you need new Flash\" prompt. Naive users install it."
+        },
+        {
+          "s": "steve",
+          "t": "And fake pop-ups that look like Windows, saying they scanned your system and found malware, then sell you a \"fix\" that's a trojan. One report says a third of infections now come in that way."
+        }
+      ]
+    },
+    {
+      "title": "PayPal's Weak Fallback",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Richard Warriner and Theo Jones in the U.K. both got PayPal security keys, with the option to text the code to their phone. But there's still an \"I don't have my key\" link that falls back to security questions, or your bank account number, which you can't fake because PayPal uses it for funds."
+        },
+        {
+          "s": "steve",
+          "t": "I'm really disappointed. The fallbacks are the security questions, your bank account number, and your registered credit card, with no way to disable them. The more ways to log in, the less secure you are, like all those root certificates in our browsers. The only benefit left is the one-time password defeating a sniffer. I'd take responsibility for carrying my football and turn the fallbacks off, but PayPal won't let you."
+        },
+        {
+          "s": "leo",
+          "t": "My bank texts a passcode, which I like."
+        },
+        {
+          "s": "steve",
+          "t": "And carriers are talking about surcharging texts sent to a phone from a non-phone, which is exactly the authentication loop. SMS is almost zero bandwidth and already their biggest profit center."
+        },
+        {
+          "type": "fact",
+          "title": "SMS codes later",
+          "t": "Carriers did add fees for application-to-person SMS, and security guidance now treats SMS one-time codes as weaker than app-based or hardware tokens, because of SIM-swap and interception risks."
+        }
+      ]
+    },
+    {
+      "title": "ZoneAlarm's DNS Heartbeat, Explained",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kyle Hasegawa in Tokyo tested last week's ZoneAlarm claim in a VM with packet capture. ZoneAlarm does not send DNS to its own servers; it looks up zonelabs.com on your configured DNS servers every 10 seconds, with no extra data, and an app can't override the system's DNS list."
+        },
+        {
+          "s": "steve",
+          "t": "That clears it up. The earlier listener saw queries of Zone Labs, not to it. The 10-second heartbeat is almost certainly how ZoneAlarm senses whether you're still connected to the Internet, since the lookup fails when you drop off. Not a phone-home, and consistent with the first report, which didn't examine the contents."
+        }
+      ]
+    },
+    {
+      "title": "Why Sandboxie Won't Run on 64-Bit Windows",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mathieu in Montreal and Peter in Orangevale both learned Sandboxie can't run on 64-bit Windows because of PatchGuard."
+        },
+        {
+          "s": "steve",
+          "t": "To create its forked, cached view, Sandboxie must hook the kernel's API to intercept file and registry writes. That's exactly what rootkits do to hide, and exactly what PatchGuard blocks on 64-bit Windows. An early 64-bit XP had weak PatchGuard that Ronen's 64-bit driver lived with, still on his site, but a later update strengthened it to Vista level, and Sandboxie now crashes the system on load."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft gave firewalls a limited PatchGuard API, but it's not general enough for Sandboxie, and a general workaround would just be used by rootkits. PatchGuard protects the OS's function; Sandboxie protects its configuration, so you still want both. Ronen is fuming, but it's oil and water."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft should provide Sandboxie-style sandboxing natively."
+        },
+        {
+          "s": "steve",
+          "t": "Once they added a firewall; I wouldn't be surprised if a future Windows adds sandboxing. But they won't hire Ronen."
+        },
+        {
+          "type": "fact",
+          "title": "Sandboxie and 64-bit",
+          "t": "Sandboxie did eventually gain 64-bit support, working within Microsoft's approved kernel mechanisms (and Microsoft later added its own Windows Sandbox feature). Ronen Tzur sold Sandboxie in 2013."
+        }
+      ]
+    },
+    {
+      "title": "Wizmo's Forced Shutdown",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Daniel Smith had brand-new PCs that refused to log off or shut down for any user."
+        },
+        {
+          "s": "steve",
+          "t": "Very common. Wizmo's \"nice\" logoff was refused, so he added an exclamation point, the force option, the \"dammit variation.\" Wizmo won. Strangely, after using it once, the normal Windows shutdown worked from then on."
+        },
+        {
+          "s": "leo",
+          "t": "It's probably a run-once task that was stuck, and the force let it complete."
+        }
+      ]
+    },
+    {
+      "title": "Fingerprint Lockers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andrew Green used his knuckle at Universal Orlando's annual-pass scanner, argued, and got a \"Check ID\" sticker instead. And their free lockers used your fingerprint as the key, with no override."
+        },
+        {
+          "s": "steve",
+          "t": "The sad consequence of cheap fingerprint readers everywhere. Your fingerprints are personal property you don't want sent out in digital form."
+        },
+        {
+          "s": "leo",
+          "t": "You see why people decide privacy is dead and give up."
+        },
+        {
+          "s": "steve",
+          "t": "We need a rubber thumb with someone else's print to push against the screen."
+        }
+      ]
+    },
+    {
+      "title": "Destroying Hard Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous admin at a top security company uses a microwave-sized degausser: shove the whole drive in, and two seconds later it won't even spin up, because the servo information is wiped too. It also gives the operators a headache."
+        },
+        {
+          "s": "steve",
+          "t": "Industrial degaussing is clearly effective, wiping the data, sector headers and the prerecorded servo information the heads follow, so the drive doesn't know what happened to it. I'd wonder what else a machine that gives you a headache is emitting."
+        },
+        {
+          "s": "leo",
+          "t": "Randy Hammock just tosses the drive on the sidewalk; if it rattles like sand, the glass or ceramic platters shattered, and a hammer finishes it."
+        },
+        {
+          "s": "steve",
+          "t": "My old test drives were all metal platters, but there's clearly been a shift to glass. If it sounds like sand, your job is done."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the Linksys WVC54GC webcam do when it received a crafted UDP packet?",
+      "options": [
+        "It sent back your login and WEP/WPA keys in plaintext",
+        "It rebooted",
+        "It took a photo",
+        "It blocked the sender"
+      ],
+      "answer": 0,
+      "explain": "The fix was firmware 1.25."
+    },
+    {
+      "q": "Why do you still need periodic full antivirus scans despite real-time protection?",
+      "options": [
+        "A new virus can slip in before patterns know it, and only a later scan catches it",
+        "Real-time scanning is fake",
+        "Scans are faster",
+        "It's required by law"
+      ],
+      "answer": 0,
+      "explain": "Schedule it for when the machine is on."
+    },
+    {
+      "q": "Why is PayPal's \"I don't have my security key\" fallback a weakness?",
+      "options": [
+        "It lets you log in with guessable security questions or your bank number, and can't be disabled",
+        "It emails your password",
+        "It disables the key",
+        "It's a phishing page"
+      ],
+      "answer": 0,
+      "explain": "The more ways to log in, the less secure overall."
+    },
+    {
+      "q": "What is ZoneAlarm's every-10-seconds DNS lookup of zonelabs.com for?",
+      "options": [
+        "Sensing whether you're still connected to the Internet",
+        "Phoning home your data",
+        "Updating virus signatures",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "An app can't override the system's DNS servers anyway."
+    },
+    {
+      "q": "Why can't Sandboxie run on 64-bit Windows?",
+      "options": [
+        "PatchGuard blocks the kernel hooks Sandboxie needs, the same hooks rootkits use",
+        "It's 32-bit only by choice",
+        "It needs more RAM",
+        "Microsoft banned it"
+      ],
+      "answer": 0,
+      "explain": "PatchGuard protects the OS's function, not its configuration."
+    },
+    {
+      "q": "What reliably destroys a modern glass-platter hard drive?",
+      "options": [
+        "Shattering the platters, for example by a drop and a hammer strike",
+        "Deleting the files",
+        "A quick format",
+        "Unplugging it"
+      ],
+      "answer": 0,
+      "explain": "If it rattles like sand, it's done."
+    }
+  ]
+}
