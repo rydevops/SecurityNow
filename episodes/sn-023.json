@@ -1,0 +1,236 @@
+{
+  "number": 23,
+  "title": "GRC's MouseTrap",
+  "subtitle": "Closing the book on MICE",
+  "date": "2006-01-19",
+  "description": "Steve and Leo close the WMF chapter: what's known, facts versus spin, which Windows versions are really vulnerable and why, and GRC's new free MouseTrap tool, which checks whether any Windows or Linux/WINE system has \"MICE.\"",
+  "transcript": "https://www.grc.com/sn/sn-023.txt",
+  "audio": "http://media.GRC.com/sn/SN-023.mp3",
+  "chapters": [
+    {
+      "title": "A Week of Controversy",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 23. Steve, you've been in a firestorm all week."
+        },
+        {
+          "s": "steve",
+          "t": "The two words that set people off were \"backdoor\" and \"deliberate.\""
+        },
+        {
+          "s": "steve",
+          "t": "\"Backdoor\" implies malice, usually something an attacker plants to get in remotely. I never meant Microsoft is malicious. We all run gigabytes of their code on trust. It was just the only word we had for this new kind of hole."
+        },
+        {
+          "s": "leo",
+          "t": "Backdoors have a long history, though. Many PC BIOSes have secret master passwords."
+        },
+        {
+          "s": "steve",
+          "t": "Many programmers wrote to say developers often add private ways back in, not realizing how serious that is."
+        },
+        {
+          "s": "steve",
+          "t": "Now, a correction. My \"magic length of 1\" was a mistake. My test file had only one record. Exploit files with several records, like those from the Metasploit Framework, work with correct lengths, and so did Ilfak's tester. Microsoft's security blog pointed that out, and I verified it."
+        },
+        {
+          "s": "leo",
+          "t": "Does that sink your argument?"
+        },
+        {
+          "s": "steve",
+          "t": "It takes some of the edge off. But when I finally looked inside Windows, holding my breath that I might have to retract everything, I saw code clearly designed to jump into the image and run what's there."
+        }
+      ]
+    },
+    {
+      "title": "Intentional, Not Malicious",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Microsoft's Stephen Toulouse blogged that it was intentional but benign, part of GDI."
+        },
+        {
+          "s": "steve",
+          "t": "No documentation or practice ever had metafiles running code. My page at GRC.com/wmf/wmf.htm shows Microsoft's Windows 3.0 and 3.1 documentation: the abort procedure is meant to run code in the user's application, not in an image."
+        },
+        {
+          "s": "steve",
+          "t": "Code running inside an image doesn't get the Windows loader's help hooking it up to the system. Ilfak had to jump through tricky hoops just to show a dialog box. Nobody would design it that way on purpose for a legitimate use."
+        },
+        {
+          "s": "steve",
+          "t": "Mark Russinovich analyzed the same code and emailed me. He also concluded it was intentional, though he wasn't comfortable calling it a backdoor, and I respect that."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft isn't one mind. We don't know who wrote it or why, and we'll probably never know."
+        },
+        {
+          "type": "fact",
+          "title": "Where the debate landed",
+          "t": "Steve and Mark Russinovich both concluded the code deliberately ran instructions from the image. Microsoft said the mechanism was legacy printing behavior, not a backdoor. Nobody showed malicious intent. The lasting lesson: never let data formats carry executable code."
+        }
+      ]
+    },
+    {
+      "title": "Who Has MICE?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So I needed a less loaded name: Metafile Image Code Execution, or MICE. Does your Windows have MICE? Hence MouseTrap, GRC's free official tester."
+        },
+        {
+          "s": "leo",
+          "t": "Some security people say WINE, the Windows layer for Linux, has the same flaw. Surely the WINE developers didn't add a backdoor?"
+        },
+        {
+          "s": "steve",
+          "t": "They do a phenomenal job. My apps run under WINE. They aim for bug-for-bug compatibility, which means copying what Windows actually does, by reverse engineering, not what the documentation says."
+        },
+        {
+          "s": "steve",
+          "t": "An accidental buffer overflow likely wouldn't survive being rewritten. But behavior that looks intentional, they faithfully copied. So WINE is vulnerable until it's patched, even though Ilfak's quick tester says otherwise."
+        },
+        {
+          "type": "fact",
+          "title": "Bug-for-bug compatibility",
+          "t": "Projects like WINE copy Windows' real behavior, quirks included, so programs work the same. That means they can copy dangerous behavior too, which is why WINE needed its own WMF fix."
+        },
+        {
+          "s": "steve",
+          "t": "Some WINE builds crashed running MouseTrap, so there's also a command-line version, MouseTrapCmd."
+        }
+      ]
+    },
+    {
+      "title": "The Final Answer on Older Windows",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft still says Windows 95, 98 and ME are vulnerable but not critical. They're not vulnerable at all."
+        },
+        {
+          "s": "steve",
+          "t": "Using Microsoft's own debugging symbols, I stepped through those kernels one instruction at a time looking for any way in. There's as much chance of jumping from Earth to the Moon."
+        },
+        {
+          "s": "leo",
+          "t": "The \"extra precautions\" are that they didn't put it in those versions."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't that exactly how attackers find holes: combing through code one step at a time?"
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. So 9x and ME users can stop running the temporary patches."
+        },
+        {
+          "s": "steve",
+          "t": "The one left out is NT4. MouseTrap shows it has MICE, it's been there since NT4, and Microsoft won't patch it."
+        },
+        {
+          "s": "steve",
+          "t": "An NT4 server with no user browsing probably never draws a metafile. But if you browse on NT4, run Ilfak's suppressor or the one from NOD32's Paolo. With either running, MouseTrap reports \"no MICE.\""
+        },
+        {
+          "s": "steve",
+          "t": "Those aren't true patches. They're programs that run continuously to suppress the behavior. NT4 users who care will need to run one forever."
+        },
+        {
+          "type": "fact",
+          "title": "Patch vs. suppression",
+          "t": "A true patch changes the vulnerable code on disk. A suppressor runs in memory and blocks the dangerous call every time. Suppressors are a stopgap: they must keep running and can conflict with other software."
+        }
+      ]
+    },
+    {
+      "title": "What We Learned",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Three good things came from this. First, MouseTrap will always be on GRC's site, because a fresh install of Windows has MICE until it's patched."
+        },
+        {
+          "s": "steve",
+          "t": "Second, millions of 9x and ME users can stop worrying. Some suggest Microsoft's warnings are meant to push upgrades."
+        },
+        {
+          "s": "steve",
+          "t": "Third, NT4 users now know they're exposed."
+        },
+        {
+          "s": "leo",
+          "t": "And on a higher level: with closed-source code, there's always the risk of things going on that you don't know about."
+        },
+        {
+          "s": "steve",
+          "t": "I find myself gravitating toward open source. On that note, I'm in love with OpenVPN. I have it doing everything I want, and how-tos are coming."
+        },
+        {
+          "s": "steve",
+          "t": "And thanks to SpinRite, which for 17 years has paid my bills and lets me spend my time poking around inside Windows and VPNs."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does \"MICE\" stand for?",
+      "options": [
+        "Metafile Image Code Execution",
+        "Microsoft Internet Code Exploit",
+        "Malware In Compressed Executables",
+        "Mouse Input Control Error"
+      ],
+      "answer": 0,
+      "explain": "Steve's less loaded name for the WMF behavior, and MouseTrap detects it."
+    },
+    {
+      "q": "What did Steve correct about his \"magic length of 1\"?",
+      "options": [
+        "It was only needed because his test file had a single record",
+        "Microsoft had removed it",
+        "It only applied to WINE",
+        "It never worked"
+      ],
+      "answer": 0,
+      "explain": "Multi-record exploit files work with correct lengths, so it wasn't a secret key."
+    },
+    {
+      "q": "Why did WINE inherit the WMF flaw?",
+      "options": [
+        "It copies Windows' real behavior, quirks included, by reverse engineering",
+        "WINE's developers planted it",
+        "WINE uses Microsoft's source",
+        "Linux has the same file format"
+      ],
+      "answer": 0,
+      "explain": "Aiming for bug-for-bug compatibility meant copying behavior that looked intentional."
+    },
+    {
+      "q": "Which older Windows version did Steve find vulnerable?",
+      "options": [
+        "Windows NT4",
+        "Windows 95",
+        "Windows 98",
+        "Windows ME"
+      ],
+      "answer": 0,
+      "explain": "9x and ME were never vulnerable, but NT4 is, and Microsoft won't patch it."
+    },
+    {
+      "q": "How do Ilfak's and Paolo's tools differ from a true patch?",
+      "options": [
+        "They suppress the flaw in memory, so they must keep running",
+        "They rewrite Windows permanently",
+        "They delete metafiles",
+        "They only scan for viruses"
+      ],
+      "answer": 0,
+      "explain": "A real patch fixes the code on disk; a suppressor blocks the call each time."
+    }
+  ]
+}

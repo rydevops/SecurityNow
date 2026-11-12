@@ -179,7 +179,7 @@
         {
           "type": "fact",
           "title": "What happened next",
-          "t": "Microsoft denied that it was a backdoor, saying the abort-procedure mechanism dated back to Windows 3.x printing. Mark Russinovich then traced the code and concluded the \"length of 1\" behavior was an unintended side effect of how the records were parsed, not a secret key. Most researchers agreed it was a dangerous legacy design, not a deliberate backdoor."
+          "t": "A week later (Episode 23) Steve retracted the \"magic length of 1\": it was only needed because his test file had a single record, and multi-record exploit files with correct lengths also worked. Microsoft denied a backdoor, saying the abort-procedure mechanism dated back to Windows 3.x printing. Mark Russinovich, after tracing the code, agreed the behavior looked intended but wouldn't call it a backdoor."
         },
         {
           "s": "leo",
@@ -223,15 +223,15 @@
       "explain": "Under Microsoft's definitions, only worm-able flaws counted as critical."
     },
     {
-      "q": "What did later analysis, including Mark Russinovich's, conclude?",
+      "q": "What did Steve retract the following week?",
       "options": [
-        "The length-1 behavior was an accidental parsing side effect, not a planted backdoor",
-        "It was a secret NSA key",
-        "Steve's tester was wrong about everything",
-        "It only affected printers"
+        "The \"magic length of 1\" claim, since exploit files with correct lengths also worked",
+        "That WMF was ever exploited",
+        "That Microsoft patched it",
+        "His KnockKnock tester"
       ],
       "answer": 0,
-      "explain": "Steve raised a legitimate question; the evidence pointed to dangerous legacy design."
+      "explain": "His single-record test file was the reason; he still believed the code-execution behavior was intentional."
     },
     {
       "q": "If KnockKnock still reports a vulnerability after patching, what should you try first?",
