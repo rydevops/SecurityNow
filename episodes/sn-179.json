@@ -1,0 +1,312 @@
+{
+  "number": 179,
+  "title": "Cracking Security Certificates",
+  "subtitle": "How certificates work, and how researchers forged a trusted authority with MD5",
+  "date": "2009-01-15",
+  "description": "Steve lays out, step by step, what a certificate does, how a signing request and public key pair work, and how the chain of trust reaches a self-signed root. Then he explains how MD5 digests data in 512-bit blocks, how chosen-prefix collisions grew from 2004 to 2008, and exactly how researchers induced RapidSSL to issue a certificate whose MD5 hash matched a forged certificate authority they'd precomputed with 200 PlayStation 3s. Plus an SMB remote-code patch, CheckFree's hijacked DNS, 25-cent card-testing charges, and finding PayPal's one-time cards.",
+  "transcript": "https://www.grc.com/sn/sn-179.txt",
+  "audio": "http://media.GRC.com/sn/SN-179.mp3",
+  "chapters": [
+    {
+      "title": "Why Certificates Matter",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today is Cracking Security Certificates. We've mentioned them often but never walked through what one does and how it's made."
+        },
+        {
+          "s": "steve",
+          "t": "A certificate lets our browser both encrypt traffic and, more importantly, authenticate that the certificate a site presents really belongs to it. You see it when a site forgets to renew and your browser warns the certificate expired."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft's using certificates for ActiveX was controversial."
+        },
+        {
+          "s": "steve",
+          "t": "Because you pay an authority to verify you are who you say. VeriSign checks our Dun and Bradstreet number and calls numbers independently known to be GRC's. That's the ecosystem. My Securable freeware is a signed executable, so Windows says it's from Gibson Research rather than \"unknown.\""
+        },
+        {
+          "s": "leo",
+          "t": "Some people don't trust the chain-of-trust idea."
+        },
+        {
+          "s": "steve",
+          "t": "I raised the alarm years ago when I saw how many root authorities had appeared, like the Hong Kong Post Office. Any certificate signed by any of them is trusted with no warning, so the more you trust, the greater the chance one is untrustworthy."
+        }
+      ]
+    },
+    {
+      "title": "An SMB Patch and Hijacked DNS",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "January's Patch Tuesday was small: one flaw, but a critical remote code execution in the Windows file-sharing protocol SMB, on ports 139 and 445, critical for XP and 2000, moderate for Vista and Server 2008. Routers, firewalls and many ISPs block those ports, but it can spread inside a network. Companies that skipped October's out-of-cycle patch are being hit by worms."
+        },
+        {
+          "s": "steve",
+          "t": "A new MSRT shipped too. Microsoft explicitly says it's not an antivirus replacement; it's a post-infection removal tool that looks for evidence of infection, not incoming threats."
+        },
+        {
+          "s": "leo",
+          "t": "So it doesn't block anything ahead of time."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Your AV is the frontline guard; the MSRT cleans up what slipped past."
+        },
+        {
+          "s": "steve",
+          "t": "CheckFree, an electronic bill-paying backend for many banks, had its Network Solutions account hacked and its DNS servers repointed to the Ukraine, serving password-stealing malware. They must notify nearly six million users. The lesson: use a really strong password at your domain registrar, since you log in rarely but the account is high value."
+        },
+        {
+          "s": "leo",
+          "t": "Clickjacking has been used to grab a Gmail account, then request a registrar password reset."
+        },
+        {
+          "type": "fact",
+          "title": "Registrar security",
+          "t": "Hijacking a domain by breaking into its registrar account remains a serious threat. Registrars now offer two-factor authentication and registry/registrar locks to prevent unauthorized DNS or transfer changes."
+        }
+      ]
+    },
+    {
+      "title": "25-Cent Charges",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Boston Globe and Washington Post noted 25-cent charges appearing on many cards. Brian Krebs's theory, more likely than hiding small profits, is that it's a service to verify stolen card numbers are live. You first see 25 cents, then serious charges later. Scan your statements for tiny unexplained charges."
+        }
+      ]
+    },
+    {
+      "title": "Finding PayPal's One-Time Cards",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A correction from the newsgroups: PayPal only shows the \"Plug-in\" menu item, where you reach the one-time cards, after you've once downloaded the plug-in, even if you never use it."
+        },
+        {
+          "s": "leo",
+          "t": "So you have to download the plug-in to get the option, then use the web interface to generate secure cards."
+        },
+        {
+          "s": "steve",
+          "t": "There's a Firefox version of the plug-in too, which is why we both have the option."
+        }
+      ]
+    },
+    {
+      "title": "A Humorous Aside",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "McSweeney's posted joke security questions by Joel Gunz: \"Who did your paternal grandfather vote for in the 1956 presidential election?\" \"In what year did you begin working on your novel?\" \"What is the name of the hedge fund manager your ex-wife married?\""
+        },
+        {
+          "s": "leo",
+          "t": "Comedy, but it makes the point: letting you write your own question is a much better way to do it."
+        },
+        {
+          "s": "steve",
+          "t": "And ThinkGeek's Phantom Keystroker plugs into a USB port and randomly jiggles the mouse, toggles caps lock or types garbage, to make a coworker think their machine is possessed. A warning says it never hits Return or clicks, so it can't do damage."
+        }
+      ]
+    },
+    {
+      "title": "A Drive That Survived Fire and Soda",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Garry Weil at Intel recovered his daughter's PS3 game drive. After the PS3's Restore wouldn't take, he pulled the disk, ran SpinRite at Level 2, which found one unrecoverable sector, and the PS3 worked."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite will fix anything magnetic and spinning. And it's uniquely able to recover all but the unreadable bit of a sector: if only a couple of bytes are bad, nothing else gives you any of the sector, but SpinRite gives you the other 510. In a directory or boot sector, that's the difference between nothing and everything."
+        }
+      ]
+    },
+    {
+      "title": "What a Certificate Does",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A certificate publishes someone's public key, binding an identity to that key. A web server certificate binds the domain name, like www.grc.com, to GRC's public key. A trusted third party attests that binding is true."
+        },
+        {
+          "s": "steve",
+          "t": "You create a certificate signing request: your computer generates a public key pair, where one key encrypts and the other decrypts, either way. You fill in the standard X.509 fields and sign that information with your private key, which means hashing it and encrypting the hash with your private key."
+        },
+        {
+          "s": "steve",
+          "t": "You send the request and your public key, never your private key, to the authority. They decrypt your signature with your public key, rehash the data, and confirm it matches, proving you hold the matching private key. They verify your identity, then issue and sign your certificate."
+        },
+        {
+          "s": "steve",
+          "t": "The server presents that certificate to a browser, which finds the signing authority in its store, repeats the signing math with the authority's public key, and confirms not a single bit changed. There can be intermediate authorities forming a chain, ending at a self-signed root."
+        },
+        {
+          "s": "leo",
+          "t": "There's always a final end to the chain."
+        },
+        {
+          "s": "steve",
+          "t": "You trust your OS or browser vendor who shipped the self-signed roots."
+        }
+      ]
+    },
+    {
+      "title": "How MD5 Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In 2004 researchers found problems in MD5, one of the oldest hashes, after MD2 and MD4. MD5 outputs 128 bits no matter how much you put in. A good hash is computationally infeasible to reverse or to deliberately steer to a chosen output, and tiny changes should completely change the result."
+        },
+        {
+          "s": "steve",
+          "t": "Because many inputs map to 128 bits, collisions must exist, but they're supposed to be useless random ones. MD5 starts from four fixed 32-bit values and digests the data 512 bits at a time through four rounds, padding the final block and appending the original message length."
+        },
+        {
+          "s": "steve",
+          "t": "Researchers found a way to take two chosen plaintexts and, by appending carefully designed data, drive them to the same MD5 hash. That was never supposed to be possible. The work advanced from 2004 to a published result in 2007."
+        },
+        {
+          "type": "fact",
+          "title": "Chosen-prefix collisions",
+          "t": "The MD5 attack used by the researchers was a \"chosen-prefix collision,\" developed by Marc Stevens and colleagues, which lets an attacker start from two arbitrary prefixes and append computed data so both hash identically."
+        }
+      ]
+    },
+    {
+      "title": "Forging a Certificate Authority",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In summer 2008 the researchers decided to shock people into abandoning MD5 by forging a real certificate. They needed an authority to issue exactly the certificate they'd designed, matching a forged one with the same hash. The problem was the parts they couldn't control: the serial number and the validity timestamps."
+        },
+        {
+          "s": "steve",
+          "t": "A bot collected 100,000 certificates. One authority, RapidSSL, used sequential serial numbers, which they confirmed by requesting several in a row, and they timed how fast the counter advanced. They also found it took about six to eight seconds from clicking to issuance, so by synchronizing clocks they could predict the timestamp."
+        },
+        {
+          "s": "steve",
+          "t": "Three days ahead, they built the pair, the forged CA certificate and the one to be issued, and used 200 PlayStation 3s to compute the data to append so both hashed identically. They advanced the serial counter to one short, then at the exact second requested their certificate. The first three tries failed, when someone else requested a certificate or the timing was off, but the fourth succeeded, with the exact serial number and timestamp they'd predicted."
+        },
+        {
+          "s": "steve",
+          "t": "Both certificates had the same MD5 hash, so they lifted the authority's signature off the issued one and put it on their forged one, and it was valid."
+        },
+        {
+          "s": "leo",
+          "t": "Brilliant. But it only worked because RapidSSL was flawed."
+        },
+        {
+          "s": "steve",
+          "t": "Many other issuers use random serial numbers, which would have blown this out of the water, as would encrypting the counter or adding a random private field. It's very like the DNS attack."
+        },
+        {
+          "s": "steve",
+          "t": "And they set the CA flag in their forged certificate, so it wasn't just one fake certificate: it was their own signing authority, trusted by every browser, able to sign any site's certificate."
+        },
+        {
+          "type": "fact",
+          "title": "The fallout",
+          "t": "After this demonstration RapidSSL and others stopped issuing MD5-signed certificates and switched to random serial numbers. Microsoft and browsers moved to distrust MD5 in certificate chains."
+        }
+      ]
+    },
+    {
+      "title": "Why This Research Must Be Allowed",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How repeatable is this?"
+        },
+        {
+          "s": "steve",
+          "t": "They wrote a careful paper and shared their files, but haven't yet revealed the full method; they'll do so later. To their knowledge no one else has done it, but malicious people wouldn't advertise."
+        },
+        {
+          "s": "steve",
+          "t": "This is why we can't criminalize such work. The DMCA scares academics, yet we need people poking at these things. SHA-1, currently stronger, is also under attack and may not last. It cost them about $700, reissuing and canceling many times, which itself should have raised red flags."
+        },
+        {
+          "s": "leo",
+          "t": "Some companies prefer security by obscurity, but the hackers find out and don't tell anyone."
+        },
+        {
+          "s": "steve",
+          "t": "And the limits they faced may not hold in a year or two. If much more were learned about MD5, someone might lift a signature from any existing certificate onto a forged one, and then it's over. We need to get away from MD5."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does a certificate fundamentally do?",
+      "options": [
+        "It binds an identity, like a domain name, to a public key, attested by a trusted authority",
+        "It encrypts your password",
+        "It stores your private key",
+        "It blocks malware"
+      ],
+      "answer": 0,
+      "explain": "A web server certificate binds the domain to the server's public key."
+    },
+    {
+      "q": "Why must there be collisions in a hash like MD5?",
+      "options": [
+        "It reduces any-size input to a fixed 128 bits, so many inputs share an output",
+        "It's a bug",
+        "The key is too short",
+        "Collisions are impossible"
+      ],
+      "answer": 0,
+      "explain": "The attack was to make a useful collision, not a random one."
+    },
+    {
+      "q": "What RapidSSL weakness made the forgery possible?",
+      "options": [
+        "Sequential, predictable serial numbers and a predictable issuance time",
+        "A leaked private key",
+        "No encryption",
+        "A weak password"
+      ],
+      "answer": 0,
+      "explain": "Random serial numbers would have defeated it."
+    },
+    {
+      "q": "What did setting the CA flag in the forged certificate achieve?",
+      "options": [
+        "It made the forgery a full signing authority that could sign any site's certificate",
+        "It hid the certificate",
+        "It extended its expiration",
+        "It encrypted it"
+      ],
+      "answer": 0,
+      "explain": "Every browser would trust certificates it signed."
+    },
+    {
+      "q": "Why does the MSRT not replace antivirus?",
+      "options": [
+        "It's a post-infection removal tool, not a frontline guard against incoming threats",
+        "It's too slow",
+        "It only runs on servers",
+        "It costs money"
+      ],
+      "answer": 0,
+      "explain": "Your AV scans things on the way in."
+    },
+    {
+      "q": "Why should your domain registrar account have an especially strong password?",
+      "options": [
+        "A hijacked registrar account lets attackers repoint your DNS, as happened to CheckFree",
+        "You log in daily",
+        "It's required by law",
+        "Registrars are often hacked"
+      ],
+      "answer": 0,
+      "explain": "You rarely log in, so a long password is easy to keep."
+    }
+  ]
+}
