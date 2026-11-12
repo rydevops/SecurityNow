@@ -1,0 +1,849 @@
+{
+  "number": 143,
+  "title": "YubiKey",
+  "subtitle": "Stina Ehrensvärd on Yubico, and how the YubiKey works",
+  "date": "2008-05-08",
+  "description": "After news that Anonymizer was bought by an intelligence contractor, the FBI's push for ISP data retention, and researchers who automatically turn patches into exploits, Yubico's founder and CEO Stina Ehrensvärd joins from Sweden to tell how a bank's rejection led to the YubiKey and why Yubico chose open source. Then Steve explains exactly what the YubiKey types: a public ID followed by a 128-bit AES-encrypted block holding a private ID, counters, a timestamp, random bits and a checksum.",
+  "transcript": "https://www.grc.com/sn/sn-143.txt",
+  "audio": "http://media.GRC.com/sn/SN-143.mp3",
+  "guests": {
+    "stina": "Stina Ehrensvärd"
+  },
+  "chapters": [
+    {
+      "title": "Never Missed a Week",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We're in our new, highly technical studio that isn't really working yet."
+        },
+        {
+          "s": "steve",
+          "t": "Great to be back for our 143rd week. We've never missed one."
+        },
+        {
+          "s": "leo",
+          "t": "And I don't have to go to Canada anymore, which has simplified things."
+        },
+        {
+          "s": "steve",
+          "t": "Today Stina, CEO and one of the founders of Yubico, joins us by phone from Sweden. Since my RSA episode, they've received hundreds of emails and inquiries. I've been in nearly constant dialogue with her and their technical people, and the news is virtually 100 percent good. It's an even better authentication solution than I expected."
+        },
+        {
+          "s": "steve",
+          "t": "I'm on record that solving authentication is an enabling factor for the Internet's future, as we go from Web 2.0 to 3.0, applications move onto the web, and companies move infrastructure into \"the cloud.\" We once called the alternative Andy of Mayberry authentication, where you know Aunt Bee and you know Opie."
+        },
+        {
+          "s": "leo",
+          "t": "So you give Opie the medicine when he comes to the drugstore for Aunt Bee."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. On the 'Net we need a good way to know who's at the other end. We've talked about VeriSign, and eBay and PayPal's football and card. This is completely open source, with no subscription fee, free authentication for life. As long as you have a USB port, this is the answer."
+        },
+        {
+          "s": "leo",
+          "t": "There's got to be some cost, or Yubico has no business."
+        },
+        {
+          "s": "steve",
+          "t": "They want to sell the hardware. That's all."
+        }
+      ]
+    },
+    {
+      "title": "Anonymizer Joins the Intelligence Community",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Dave Jevans of IronKey blogged on Friday that Anonymizer.com has been acquired by Abraxas, which provides anonymity services for the national security community: the NSA, CIA, DIA and so on. I'd feel much more comfortable if Anonymizer had stayed independent."
+        },
+        {
+          "s": "leo",
+          "t": "There's a persistent rumor, consistently denied, that Facebook was partly sponsored by the CIA. It's kind of credible. If you were the NSA or CIA, what better way to watch people than social networks? Or buying Anonymizer? Tor is looking better and better."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know that anything untoward is going on. But Anonymizer customers should know it's now owned by a company doing a lot of business with the three-letter intelligence agencies."
+        },
+        {
+          "s": "leo",
+          "t": "When you said \"untoward,\" did you mean that as a pun?"
+        },
+        {
+          "s": "steve",
+          "t": "You're at the top of your game this morning."
+        },
+        {
+          "s": "leo",
+          "t": "It's that quinti venti latte."
+        }
+      ]
+    },
+    {
+      "title": "The FBI Wants Your Clickstream Kept",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "At a recent congressional hearing, FBI director Robert Mueller again called for federal data retention laws forcing ISPs to keep records of what their customers do for two years."
+        },
+        {
+          "s": "leo",
+          "t": "He's been trying for a long time."
+        },
+        {
+          "s": "steve",
+          "t": "And he won't say what he wants kept. At minimum, the IP addresses customers had over that time, which wouldn't be very burdensome. But there's talk of going up to and including a website trail."
+        },
+        {
+          "s": "leo",
+          "t": "More than Google's web history, which only tracks searches. Your ISP knows everywhere you go from your DNS requests."
+        },
+        {
+          "s": "steve",
+          "t": "It sees your \"clickstream,\" as it's now called. He immediately marches out child porn peddlers and online predators, and of course everyone sympathizes. But it's creepy to think ISPs would be required to keep two years of logs of everything every individual does online."
+        },
+        {
+          "s": "leo",
+          "t": "The old argument: if you're not doing anything wrong, what do you have to fear?"
+        },
+        {
+          "s": "steve",
+          "t": "Our government doesn't have the best track record with this kind of information aggregation."
+        },
+        {
+          "s": "leo",
+          "t": "No government does. Be suspicious of any government that wants to collect this."
+        }
+      ]
+    },
+    {
+      "title": "Patches Turned Into Exploits Automatically",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Four researchers at Carnegie Mellon, UC Berkeley and the University of Pittsburgh built APEG, an Automated Patch-Based Exploit Generator. It compares Windows before and after a patch and designs an exploit for the vulnerability the patch fixes."
+        },
+        {
+          "s": "steve",
+          "t": "Hackers have been doing this by hand. These researchers automated it, and their point is that if they can, so can the bad guys, with big money behind them. The window of opportunity runs from when a patch reveals a vulnerability until everyone is patched."
+        },
+        {
+          "s": "steve",
+          "t": "They urge Microsoft to shrink that window. Maybe distribute updates encrypted, then release a key so everyone decrypts them at once. Maybe use peer-to-peer networks to push fixes faster. Right now they trickle out. Sometimes my computer doesn't alert me to updates for several days."
+        },
+        {
+          "s": "leo",
+          "t": "Automated zero day. You have to admire their prowess. It all took off once there was money in it."
+        },
+        {
+          "s": "steve",
+          "t": "That's the change of the last five years: from script kiddies saying look, Ma, to organized crime paying hackers. Big money."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Helps Kids With Cancer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The subject: \"SpinRite helps kids with cancer.\" How could data recovery do that? Pete Harmon is a FedEx pilot with a reputation as a computer geek around flight operations. He runs PilotSwap.net for pilots."
+        },
+        {
+          "s": "steve",
+          "t": "A pilot named Bill called. His laptop worked fine in Honolulu and wouldn't boot when he landed in Sydney the next day. The drive just clicked and clicked."
+        },
+        {
+          "s": "steve",
+          "t": "Bill left it in Pete's locker. Pete tried two or three dozen times to boot it from his SpinRite CD, with no luck. So he removed two screws, took the drive home, and connected it to his PC with an EIDE-to-USB cable. It spun up, but was mostly unreadable and noisy."
+        },
+        {
+          "s": "steve",
+          "t": "Booting his PC from the SpinRite CD, he could see Bill's drive. About four hours later the data recovery was done. Back in the laptop, it booted right up, and Bill recovered hundreds of family photos he'd stored for years."
+        },
+        {
+          "s": "steve",
+          "t": "Bill offered to pay. Pete asked him to make a donation instead. Bill wrote back that he'd donated $200 to St. Jude Children's Research Hospital in Pete's name."
+        },
+        {
+          "s": "leo",
+          "t": "Nice story."
+        }
+      ]
+    },
+    {
+      "title": "Meet Stina",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Welcome, Stina. It's been about four weeks since we bumped into each other at the top of the escalators in San Francisco."
+        },
+        {
+          "s": "stina",
+          "t": "That was my lucky day. Thanks for inviting me. It's been literally hundreds of emails from all over the world, people ordering and asking all kinds of questions. Things are taking off."
+        },
+        {
+          "s": "leo",
+          "t": "Are you a security researcher?"
+        },
+        {
+          "s": "stina",
+          "t": "No, I'm a product designer. I went to art school. I married a computer electronics engineer, Jakob, and we've worked as a team for 15 years. He designed the \"modhex\" encoding Steve read about. And Simon, our other Internet security expert, has put a lot into this too."
+        },
+        {
+          "s": "stina",
+          "t": "I ask all the stupid questions. Jakob and I co-founded a company called Cypak, in the RFID space. One application was a smart card with a PIN keypad on the card itself, called PIN-on-Card. It might have been one of the most secure solutions ever invented. We won the European Innovation Award, 200,000 euros. We thought the world needed it. Until we talked with customers."
+        }
+      ]
+    },
+    {
+      "title": "A Bank's Challenge",
+      "beats": [
+        {
+          "s": "stina",
+          "t": "It needed a specific chip in a specific card with a keypad, our reader, and client software. An online bank planned a pilot. Then one of their people called and said, we like the authentication, but not the card reader or the client software. Our customers use every platform and browser, Windows, Mac, Firefox. Client software would mean hiring maybe 30 full-time employees just for support."
+        },
+        {
+          "s": "stina",
+          "t": "He said, you're good inventors. Come back when you've removed the client software and the reader. A good challenge."
+        },
+        {
+          "s": "stina",
+          "t": "Jakob and I looked at the computer, and I asked a stupid question: this computer has a keyboard, and that doesn't need a driver. He said, hmm, you're right. So why not a code generator that acts like a keyboard, using the standard HID driver? That's where the idea started."
+        },
+        {
+          "s": "stina",
+          "t": "We got rid of the client software, then made it a USB fob to get rid of the reader, and reduced 12 buttons to one. That first YubiKey was fat, like any USB memory stick. The bank said, interesting concept, but there's one problem. We prefer to buy security from the big guys."
+        },
+        {
+          "s": "stina",
+          "t": "That was May 2007. With that prototype I started Yubico, without a clear business plan. The only problem seemed to be that I wasn't a big guy."
+        }
+      ]
+    },
+    {
+      "title": "Where the Name Came From",
+      "beats": [
+        {
+          "s": "stina",
+          "t": "Yubico comes from \"ubiquitous.\" I didn't want a name about secure, verified, ID or trust, like all the boring names out there."
+        },
+        {
+          "s": "stina",
+          "t": "Without imagination. I wanted a friendly name, and I envision this everywhere, mass market. So I played with \"ubiquitous\" and ended up with Yubico."
+        },
+        {
+          "s": "stina",
+          "t": "Next I needed someone to say it was good, so I asked who could write a security report. I found Simon, who wrote an independent third-party security report, the one I sent you, Steve. When he finished, he was so enthusiastic he asked to invest and work for me. So I no longer had an independent review, but I had the perfect inventor."
+        },
+        {
+          "s": "leo",
+          "t": "It's a good sign when your security reviewer asks to work for you."
+        },
+        {
+          "s": "stina",
+          "t": "The report goes on our website tomorrow. It was independent when he wrote it."
+        }
+      ]
+    },
+    {
+      "title": "VeriSign, eBay and a Thinner Key",
+      "beats": [
+        {
+          "s": "stina",
+          "t": "Simon is passionate about open-source security. He recommended I fly from Stockholm to an Internet Identity Workshop in California to learn about OpenID, which we think is great, so one YubiKey could work across the whole Internet."
+        },
+        {
+          "s": "stina",
+          "t": "There I met someone from VeriSign, who introduced me to another VeriSign person. He said the YubiKey could interest them, \"if.\" It's always been \"if.\" If it could fit in a wallet, be very, very cheap and come in big volumes."
+        },
+        {
+          "s": "stina",
+          "t": "I flew back and, as a product designer, looked for really thin USB devices. A friend gave me a minimalist USB key: just a little circuit board and a plastic casing. You can't make it smaller, thinner or less expensive. That inspired the current YubiKey."
+        },
+        {
+          "s": "stina",
+          "t": "The VeriSign contact introduced me to someone at eBay. I sent him the fat YubiKey. He wasn't interested and took four weeks to answer. Then one Sunday in October he wrote: \"I have now tested your product. I'm impressed by its simplicity. I think the YubiKey is the only hardware authentication token that would fulfill the requirements for Web 2.0 services.\""
+        },
+        {
+          "s": "stina",
+          "t": "After that he left eBay and started working for Yubico in California. So we had offices in California and Stockholm: Simon, Paul and me."
+        }
+      ]
+    },
+    {
+      "title": "Choosing Open Source",
+      "beats": [
+        {
+          "s": "stina",
+          "t": "In January the thin YubiKey was ready. The first pilot box went to a friend of Paul's who runs a Chinese IPTV company, Dragon IPTV. Within a couple of months we had five pilots. Customers said it worked perfectly and users loved it. But no follow-up orders."
+        },
+        {
+          "s": "stina",
+          "t": "Finally they told us the one problem: you haven't given us a price list, and we don't understand your business model. Is this open source or not?"
+        },
+        {
+          "s": "stina",
+          "t": "Simon and I had envisioned Yubico as an open-source company: a web shop with free SDKs and a developer community, almost no salespeople, no flashy offices, and none of the expensive layers of distributors and resellers that drive up prices in today's security infrastructure. Security professionals we tested it on all warned us it was too risky."
+        },
+        {
+          "s": "stina",
+          "t": "So we stood on one leg. Customers wanted to buy, and we couldn't give them prices because we didn't know who we were. Then I bumped into you, Steve, and you forced the decision. Hundreds of emails asking for prices and SDKs. I called Simon, and another investor who'd been a CEO at Microsoft, the only ones making the big decisions, and on one phone call we decided: we know the risks and challenges, but this is the way that feels right."
+        }
+      ]
+    },
+    {
+      "title": "What It Is, Briefly",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We should explain what the YubiKey is for anyone just tuning in."
+        },
+        {
+          "s": "steve",
+          "t": "I'll cover it in detail after Stina. It's an amazingly small piece of plastic that emulates a USB keyboard. Pictures are in our show notes and at Yubico.com. It contains cryptographic technology that produces a one-time password and types it into your computer."
+        },
+        {
+          "s": "leo",
+          "t": "It shows up as a standard USB HID keyboard, so it works with everything that supports that, which is pretty much everything."
+        },
+        {
+          "s": "steve",
+          "t": "So it's OS independent, solving exactly the reader and client-software problem the bank raised. At RSA, Stina saw my press credentials."
+        },
+        {
+          "s": "stina",
+          "t": "I talked to about five people. You were the fifth."
+        },
+        {
+          "s": "steve",
+          "t": "When she said a one-time password device that's a USB keyboard, my mouth dropped open. It's brilliant. And the design underneath is spectacular."
+        }
+      ]
+    },
+    {
+      "title": "Free Back End, Affordable Keys",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The reason I gave this a whole episode: they've decided to make the back-end authentication free. No subscription, no license. They just sell YubiKeys. Every other company on the RSA floor was about locking you in and signing you up."
+        },
+        {
+          "s": "steve",
+          "t": "Their prices: 1 key, $35; 10, $25 each; 100, $20; 1,000, $16; 10,000, $12; 100,000, $8. The price drops rapidly."
+        },
+        {
+          "s": "steve",
+          "t": "Everything else is open source. They've already posted source code on Google Code showing how to decrypt the YubiKey's output, and they're preparing the documentation for programming the YubiKey."
+        },
+        {
+          "s": "stina",
+          "t": "Some pieces we now need to put in place rapidly, because huge orders are coming in. I envision our developer community being dynamic and growing, but now it's an embryo, so please give us a few weeks. We can produce YubiKeys in large volumes, and anyone can buy them on our website."
+        },
+        {
+          "s": "stina",
+          "t": "Instead of fighting the big guys, we can do this differently. I even envision people in countries with small IT budgets building their own e-democracy, education and payment systems on the YubiKey and open source, far less expensively than today's infrastructures."
+        },
+        {
+          "s": "leo",
+          "t": "People can use your server, or run their own?"
+        },
+        {
+          "s": "stina",
+          "t": "Our server is for pilots, testing, anyone who wants it. We believe most will want to run it themselves. Some small companies or individuals don't want to invest in servers, so it's an option. Our focus is the keys."
+        }
+      ]
+    },
+    {
+      "title": "OpenID and One Key for Everything",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I don't want to carry 20 keys. Could the YubiKey become a standard?"
+        },
+        {
+          "s": "stina",
+          "t": "We met VeriSign at RSA. We don't see it as either/or. They support OpenID. We support OpenID. Other standards are coming, and we'll eventually support OATH too."
+        },
+        {
+          "s": "leo",
+          "t": "If every site supported OpenID, I'd just use my YubiKey. But someone has to verify the one-time password."
+        },
+        {
+          "s": "stina",
+          "t": "Someone has to be the identity provider. Google, Yahoo! and AOL already are."
+        },
+        {
+          "s": "leo",
+          "t": "So your next step is getting a provider like that to adopt the YubiKey."
+        },
+        {
+          "s": "stina",
+          "t": "That would be helpful."
+        },
+        {
+          "s": "steve",
+          "t": "And there's nothing magic about being an OpenID provider. Soon there could be open-source OpenID server software that knows the YubiKey, and you run it yourself."
+        },
+        {
+          "s": "stina",
+          "t": "You don't have to be a big guy. It could be a one-man shop."
+        },
+        {
+          "s": "leo",
+          "t": "And everything is open source, so it's transparent."
+        },
+        {
+          "s": "stina",
+          "t": "We figured out that's the way it has to be."
+        },
+        {
+          "s": "steve",
+          "t": "Completely open spec too. VeriSign's VIP system is a corporate solution for an eBay or PayPal, not for universities, or for my upcoming VPN product. I can absolutely use the YubiKey. My VPN server itself will be able to authenticate users' YubiKeys right within itself. It's transformational."
+        },
+        {
+          "s": "leo",
+          "t": "Thank you, Stina, and congratulations. I haven't seen Steve this excited in a long time."
+        },
+        {
+          "s": "stina",
+          "t": "Thank you very much. Bye bye."
+        }
+      ]
+    },
+    {
+      "title": "Why a Keyboard Changes Everything",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's the thickness of a printed circuit board, with a touch surface that glows a nice green. Remember when I showed you that SanDisk SD card in Vancouver that also had a USB interface?"
+        },
+        {
+          "s": "leo",
+          "t": "It folds open, an SD card with its own USB connector."
+        },
+        {
+          "s": "steve",
+          "t": "Part of it hinges away, leaving the four USB fingers. That's the form factor Stina saw, used for authentication instead of memory."
+        },
+        {
+          "s": "steve",
+          "t": "The football, VeriSign's tokens and RSA's SecurID all show six digits. That's enough for a one-time password, about a one-in-a-million guess."
+        },
+        {
+          "s": "leo",
+          "t": "And since it's used once, nobody can bang on it."
+        },
+        {
+          "s": "steve",
+          "t": "But they realized users don't have to type this string. So it can convey far more information than anyone could ask a user to type. Touch it, and it emits 44 characters of gobbledygook. Zoop."
+        },
+        {
+          "s": "leo",
+          "t": "You still have to click in the right field first."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It just shoots out keystrokes."
+        }
+      ]
+    },
+    {
+      "title": "The Public ID and Modhex",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The first 12 characters never change. They're your YubiKey's public ID, different for every key."
+        },
+        {
+          "s": "leo",
+          "t": "It has to send that, or the server couldn't check the rest."
+        },
+        {
+          "s": "steve",
+          "t": "Precisely. They encode nothing secret. It's essentially a serial number."
+        },
+        {
+          "s": "steve",
+          "t": "USB keyboards don't send ASCII. They send scan codes, which refer to physical key positions. That's a problem internationally, since moving keys around changes which character a scan code produces. So they found keys that sit in the same position on every keyboard layout, and use only those. They call it \"modhex.\" The characters always come out the same."
+        },
+        {
+          "s": "leo",
+          "t": "The standard set every keyboard has."
+        },
+        {
+          "s": "steve",
+          "t": "It's a bizarre set of characters. I'm looking at LVKCCUTLIBFIVJGUTRJNDJBUK..."
+        },
+        {
+          "s": "leo",
+          "t": "Alphabetic, no numbers or punctuation?"
+        },
+        {
+          "s": "steve",
+          "t": "Right. Some sites require a digit first, but this wouldn't go into an ordinary password field. It always goes to whoever does your authentication."
+        },
+        {
+          "s": "steve",
+          "t": "Each character encodes four bits, a 16-character alphabet. So the 12-character public ID is 48 bits. Then come 32 more characters, 44 total."
+        },
+        {
+          "s": "leo",
+          "t": "I interrupted you before you got to all of them."
+        },
+        {
+          "s": "steve",
+          "t": "I had four to go. Thirty-two characters at four bits each is 128 bits. So every authentication sends a 128-bit blob."
+        }
+      ]
+    },
+    {
+      "title": "A Key That Never Comes Out",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The YubiKey holds a write-only 128-bit AES secret key, different for everyone. When Yubico authenticates, it uses the public ID to look up that key's AES key in its database."
+        },
+        {
+          "s": "steve",
+          "t": "The YubiKey encrypts 128 bits of data with its key, using Rijndael, my favorite cipher of all time, converts it to modhex, and types it. The receiver, knowing the same symmetric key, decrypts it back to the 128 bits of plaintext."
+        },
+        {
+          "s": "steve",
+          "t": "You can write an AES key into a YubiKey, but nothing can make it give the key back. You can only press the button and get tokens. So it's very secure."
+        }
+      ]
+    },
+    {
+      "title": "Inside the 128 Bits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "128 bits is 16 bytes, the width of a Rijndael block. The first six bytes are a unique private device ID. Like the six-byte MAC address on every Ethernet adapter, it's planning ahead, so no two YubiKeys ever collide, even if this really takes off."
+        },
+        {
+          "s": "steve",
+          "t": "Next, a two-byte session counter. It's nonvolatile, counting each time the YubiKey powers up. It only increments and never resets."
+        },
+        {
+          "s": "steve",
+          "t": "Next, a three-byte timestamp, a 24-bit counter running at 8Hz, eight ticks a second. It starts at zero when you plug it in and runs about 24 days before wrapping."
+        },
+        {
+          "s": "steve",
+          "t": "That has an anti-phishing benefit. Time is embedded in the output, so the recipient can compare successive tokens in a session. If something intercepted a token and delayed it before using it, the timestamps would be out of sequence. Normally authentication happens within seconds."
+        },
+        {
+          "s": "leo",
+          "t": "Does that solve the football's problem of getting out of sync if you press it too much?"
+        },
+        {
+          "s": "steve",
+          "t": "There's no sync to lose. All you really need to prove is possession of the AES key. Decrypting it correctly and doing a sanity check is the authentication."
+        },
+        {
+          "s": "leo",
+          "t": "So you don't have to generate a matching code. It's a different technology."
+        },
+        {
+          "s": "steve",
+          "t": "Completely. Six digits don't give enough specificity."
+        },
+        {
+          "s": "steve",
+          "t": "Next, a one-byte session use counter, starting at zero each session and incrementing with each token, so every one is unique."
+        },
+        {
+          "s": "steve",
+          "t": "Then two bytes of pseudorandom data. Encrypting single 128-bit blocks directly is ECB, Electronic Code Book mode. Encrypting the same or similar data repeatedly invites a known-plaintext attack, building a map between plaintext and ciphertext. The random bytes, plus the fast-running timestamp, prevent that."
+        },
+        {
+          "s": "steve",
+          "t": "Finally, a two-byte CRC, a Cyclic Redundancy Check, over the whole block."
+        },
+        {
+          "s": "steve",
+          "t": "So you receive the modhex, convert each character to four bits, look up the key's AES key, and decrypt. You get the private ID, session counter, timestamp and session use count, ignore the random bytes, and check the CRC to confirm the decryption is valid. Then you can authenticate and apply anti-spoofing checks."
+        }
+      ]
+    },
+    {
+      "title": "Keyloggers and Session Limits",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our chatroom asks whether a keystroke logger could capture it."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. I'd be happy to read mine out to anyone who wants it."
+        },
+        {
+          "s": "leo",
+          "t": "It's a one-time key. That's what makes it powerful."
+        },
+        {
+          "s": "steve",
+          "t": "One thing I forgot: they took the top bit of the two-byte session counter, so it's 15 bits, up to 32,767. When it reaches that, the YubiKey dies."
+        },
+        {
+          "s": "leo",
+          "t": "It can only generate that many?"
+        },
+        {
+          "s": "steve",
+          "t": "No, that's sessions, power-ups. It's a one-time password generator, so the counter can never be allowed to wrap back to zero."
+        },
+        {
+          "s": "steve",
+          "t": "You can generate as many passwords in a session as you want. And 32,767 sessions is 10 times a day for nine years."
+        },
+        {
+          "s": "leo",
+          "t": "So you'd plug it in when you sit down, touch it whenever you need it, and unplug it at the end of the day."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. And the counter is also nonvolatile memory, which only tolerates so many writes, 10,000 or 100,000. Counting sessions ages it, so that also had to be protected."
+        },
+        {
+          "s": "leo",
+          "t": "Our new office manager, Frederique, uses the USB version of RoboForm for her passwords. People are already used to this. But this is so much slicker and more secure."
+        }
+      ]
+    },
+    {
+      "title": "Why the Open Model Matters",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You can't make it reveal its key. It only spits out tokens meaningful to someone who already has the key. And Yubico has even changed its website in the last couple of weeks. The language about evaluation keys that expire is gone. They've settled on selling keys."
+        },
+        {
+          "s": "leo",
+          "t": "They picked the right model."
+        },
+        {
+          "s": "steve",
+          "t": "VeriSign will never tell me the algorithm in their footballs or cards. You can't authenticate offline, so you couldn't use it for, say, Windows login. You need a network connection, and corporations pay a lot. Here Yubico tells you everything. Sue, Greg and I are going to use these at GRC."
+        },
+        {
+          "s": "leo",
+          "t": "I want to do it too. You could even mail subscribers a YubiKey for a paid show. Not that I recommend DRM, but it could be the ultimate."
+        },
+        {
+          "s": "steve",
+          "t": "Stina mentioned online and downloadable games: a painless hardware key that unlocks downloads and updates."
+        }
+      ]
+    },
+    {
+      "title": "The Downsides",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "If you lose it, there's no replacement with the same identity?"
+        },
+        {
+          "s": "steve",
+          "t": "Correct. And keyring wear: putting it in and pulling it out, it'll degrade mechanically before the counter runs out."
+        },
+        {
+          "s": "leo",
+          "t": "So what then?"
+        },
+        {
+          "s": "steve",
+          "t": "No problem. Report it lost like a credit card, they cancel it and hand you another. In million quantities, they're about $5."
+        },
+        {
+          "s": "leo",
+          "t": "What PayPal charges for the subsidized football."
+        },
+        {
+          "s": "steve",
+          "t": "One real downside: the football and card show numbers, so you can authenticate by phone or at a kiosk where you can't reach the computer. The YubiKey needs a computer whose USB ports you can access."
+        },
+        {
+          "s": "steve",
+          "t": "Their FAQ answers someone whose USB ports are all on the back of the desktop: get a USB extension cord."
+        },
+        {
+          "s": "leo",
+          "t": "Most PCs have front ports now."
+        },
+        {
+          "s": "steve",
+          "t": "Because USB is so ubiquitous, to use a term."
+        },
+        {
+          "s": "steve",
+          "t": "And listeners will think of uses beyond OpenID. A company could YubiKey-enable its corporate portal to keep out spambots and control which sections people reach. Want to query the database? Touch the glowing spot. Reading six digits from a football over and over would be painful. This is just a touch."
+        },
+        {
+          "s": "leo",
+          "t": "And far more secure."
+        },
+        {
+          "s": "steve",
+          "t": "Six changing digits are arguably secure enough. But this sends 128 bits encrypted with a 128-bit Rijndael key. Only the matching key decrypts it."
+        }
+      ]
+    },
+    {
+      "title": "OpenID and Two Factors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A chatter asks whether it works with static passwords on websites. It's really an OpenID-style device. If TWiT.tv added logins with OpenID, you'd give your OpenID, your provider would ask for the YubiKey, and you'd touch it. Would you still need a password?"
+        },
+        {
+          "s": "steve",
+          "t": "That's the flexibility. It's a low-level, perfect crypto toy to use however you want. But you'd probably want a passphrase too, for multifactor authentication: something you know, the passphrase, and something you have, the YubiKey."
+        }
+      ]
+    },
+    {
+      "title": "No Video of Steve",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robodog on Twitter, where we're TWiT Live, says Steve has the pipes for cameras. Can we see Steve next week? And he suggests a whiteboard. Our new TriCaster will let us switch to your Skype video."
+        },
+        {
+          "s": "steve",
+          "t": "There's nothing to see. It's me leaning forward, talking into this beautiful Heil microphone."
+        },
+        {
+          "s": "leo",
+          "t": "Steve doesn't want to wear makeup."
+        },
+        {
+          "s": "steve",
+          "t": "The Screen Savers was TV, and everyone watched. This is an audio podcast, and I'll always focus on conveying information through audio."
+        },
+        {
+          "s": "leo",
+          "t": "You're right. Video must never impinge on the audio. Most of the audience listens."
+        },
+        {
+          "s": "steve",
+          "t": "99.999 percent."
+        },
+        {
+          "s": "leo",
+          "t": "Not that bad. About a thousand people are watching the video right now. We'll add live show notes and links for them."
+        }
+      ]
+    },
+    {
+      "title": "Who Can Use It Now?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So Yubico sells to people building it into systems, not end users?"
+        },
+        {
+          "s": "steve",
+          "t": "It sells to end users too. I know from my email that a bunch of listeners have ordered $35 YubiKeys. Right now it's useful as an OpenID authenticator, and Yubico has published its back-end authentication, with the AES key for every YubiKey it sells, plus open-source web interfaces anyone can use. You could use it for access to your own wiki."
+        },
+        {
+          "s": "leo",
+          "t": "So we could use it internally. And Swedes speak better English than we do."
+        },
+        {
+          "s": "steve",
+          "t": "Authentication is crucial for the future, and I love the policies these guys have adopted."
+        },
+        {
+          "s": "leo",
+          "t": "Elaine's transcripts are so good that Cory Doctorow asked whether she's available for other work. Yes."
+        },
+        {
+          "s": "steve",
+          "t": "She loves it. She's tremendous."
+        },
+        {
+          "s": "leo",
+          "t": "And ShieldsUP has tested more than 50 million firewalls."
+        },
+        {
+          "s": "steve",
+          "t": "I think we're at 73 million now."
+        },
+        {
+          "s": "leo",
+          "t": "Holy comoly."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What problem led Stina to design the YubiKey as a USB keyboard?",
+      "options": [
+        "A bank rejected her earlier card because it needed a reader and client software",
+        "Keyboards are cheaper to make",
+        "Bluetooth was too slow",
+        "Banks required keyboards"
+      ],
+      "answer": 0,
+      "explain": "Every operating system supports USB keyboards without drivers."
+    },
+    {
+      "q": "What are the first 12 characters the YubiKey types?",
+      "options": [
+        "A fixed public ID that tells the server which key to use",
+        "The AES key",
+        "A timestamp",
+        "A random salt"
+      ],
+      "answer": 0,
+      "explain": "The rest is a 128-bit encrypted block."
+    },
+    {
+      "q": "What is \"modhex\"?",
+      "options": [
+        "An encoding using only keys that sit in the same place on every keyboard layout",
+        "A cipher mode",
+        "A hash function",
+        "A type of USB driver"
+      ],
+      "answer": 0,
+      "explain": "USB keyboards send scan codes, not characters."
+    },
+    {
+      "q": "Can a YubiKey be made to reveal its AES secret key?",
+      "options": [
+        "No, the key can be written but never read back",
+        "Yes, with special software",
+        "Only by Yubico",
+        "Yes, over USB"
+      ],
+      "answer": 0,
+      "explain": "You can only make it emit tokens."
+    },
+    {
+      "q": "What do the timestamp and counters in each YubiKey token allow?",
+      "options": [
+        "Detecting delayed, replayed or out-of-order tokens",
+        "Tracking the user's location",
+        "Measuring battery life",
+        "Syncing with a clock"
+      ],
+      "answer": 0,
+      "explain": "Two random bytes also defeat known-plaintext attacks."
+    },
+    {
+      "q": "What happens when the YubiKey's 15-bit session counter reaches 32,767?",
+      "options": [
+        "The key stops working, since the counter must never wrap around",
+        "It resets to zero",
+        "It asks for a new key",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "That's about 10 sessions a day for nine years."
+    }
+  ]
+}
