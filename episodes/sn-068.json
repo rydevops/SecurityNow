@@ -1,0 +1,769 @@
+{
+  "number": 68,
+  "title": "Listener Feedback Q&A #13",
+  "subtitle": "Encrypted drives, spam, VM-aware malware and more",
+  "date": "2006-11-30",
+  "description": "On Vista's business launch day: hybrid drives versus ReadyBoost, Vista on a tablet, and malware that hides from virtual machines. Then listener questions on bad sectors under whole-disk encryption, why a kernel can't check itself, the future of third-party firewalls, fighting spam with SPF, cleaning infected PCs, choosing workstation hardware and RAID, email over open Wi-Fi, drive sizes, VPNs past firewalls, old drivers on 64-bit Vista, VMS's security record, and laptop firewalls.",
+  "transcript": "https://www.grc.com/sn/sn-068.txt",
+  "audio": "http://media.GRC.com/sn/SN-068.mp3",
+  "chapters": [
+    {
+      "title": "Vista Launches for Business",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's our Mod 4 episode. And today is Vista's launch for business. I'm doing interviews, including \"All Things Considered,\" even though consumers can't get it for months."
+        },
+        {
+          "s": "steve",
+          "t": "I've been listening to Windows Weekly with you and Paul. A listener who got Vista through his corporate volume agreement had my experience: dog slow at first, with a graphics rating of 2.0. New NVIDIA beta drivers jumped it to 3.6 and enabled Aero Glass."
+        },
+        {
+          "s": "steve",
+          "t": "Aero Glass bugs me. It's like my contact lenses are fogged up. But with the glass off, Vista performs every bit as well as XP."
+        },
+        {
+          "s": "leo",
+          "t": "You're a Windows 2000 guy."
+        }
+      ]
+    },
+    {
+      "title": "Hybrid Drives and ReadyBoost",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Some enhancements should make it faster, like hybrid drive support."
+        },
+        {
+          "s": "steve",
+          "t": "That's where I was going. Hybrid drives aren't for performance. They're for battery life. Drives spend most of their time spinning and doing nothing, burning power."
+        },
+        {
+          "s": "steve",
+          "t": "A hybrid drive keeps its spindle stopped most of the time. Writes fill a non-volatile buffer inside the drive. When it's nearly full, the drive spins up, flushes the buffer to the magnetic media, and stops again. Instead of mostly spinning, it's rarely spinning."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't the cache help performance?"
+        },
+        {
+          "s": "steve",
+          "t": "Some, like waking up faster. But as you said on Windows Weekly, flash memory doesn't write very fast. The USB boost, ReadyBoost, is the speed feature. You'll probably want both, and I'll benchmark them."
+        },
+        {
+          "s": "leo",
+          "t": "I just ordered a Dell M1210 laptop for Vista, with Core 2 processors. Do we need special ReadyBoost thumb drives?"
+        },
+        {
+          "s": "steve",
+          "t": "I'd guess any reasonably fast USB drive works. It stores what Windows needs while booting, and once USB drivers load, reads from it instead of the disk. Vista boots and runs as quickly as XP. I want to fully back out of my first impression, which came from a debugging, pre-release build."
+        },
+        {
+          "type": "fact",
+          "title": "ReadyBoost",
+          "t": "ReadyBoost was a Vista feature, not XP. It cached frequently read data on flash drives, which mostly helped PCs short on RAM. Drives needed to meet a minimum speed. Today's solid-state drives made both ReadyBoost and hybrid drives largely obsolete."
+        }
+      ]
+    },
+    {
+      "title": "Vista on a Tablet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I also installed Vista on my HP Compaq TC1100 tablet, the same one Jen uses on Call For Help. It's no longer sold, but you can find it on eBay. Vista fetched the Wacom drivers from Windows Update and enabled all the tablet features."
+        },
+        {
+          "s": "steve",
+          "t": "Instead of a cursor under the stylus, there's a tiny twinkly star, and tapping sends out a little ripple. It's gorgeous."
+        },
+        {
+          "s": "leo",
+          "t": "That's Aero Glass, with alpha transparency."
+        },
+        {
+          "s": "steve",
+          "t": "My graphics can't run the glass UI, so I think it's just cursor animation. There's no separate tablet edition. Tablet support seems built into Vista."
+        },
+        {
+          "s": "leo",
+          "t": "The jury's still out on its security. Hackers haven't banged on it yet. After your \"Vista's Virgin Stack\" episode, I take back that it can't be worse."
+        },
+        {
+          "s": "steve",
+          "t": "We'll still see buffer overruns until DEP, Data Execution Prevention, is everywhere."
+        },
+        {
+          "s": "leo",
+          "t": "Any new machine supports it, and I'd hope Vista turns it on by default."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Technology that's not on by default might as well not exist. Vista's firewall will be on by default. Whether DEP is, we'll see."
+        },
+        {
+          "type": "fact",
+          "title": "DEP in Vista",
+          "t": "32-bit Vista turned DEP on only for Windows' own programs by default, and other programs had to opt in. 64-bit Windows applies it to all 64-bit programs."
+        }
+      ]
+    },
+    {
+      "title": "Malware That Hides From VMs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Something significant: of 12 malware specimens caught recently by the SANS Internet Storm Center's honeypot, three were virtual-machine aware."
+        },
+        {
+          "s": "leo",
+          "t": "Blue Pill-style attacks?"
+        },
+        {
+          "s": "steve",
+          "t": "No. They detect being in a VM and behave, to thwart researchers who run malware in VM containers."
+        },
+        {
+          "s": "leo",
+          "t": "As most honeypots do. We learned that in Episode 1."
+        },
+        {
+          "s": "steve",
+          "t": "Worse, a careful user might test software in a VM, see it doesn't hook the kernel or change system files, then install it on their real machine. Only then does it launch."
+        },
+        {
+          "s": "leo",
+          "t": "These guys work hard to keep up."
+        },
+        {
+          "s": "steve",
+          "t": "It's cat and mouse on a level playing field, like virus versus antivirus. That's why I salute Microsoft's 64-bit kernel stance. It's a stepping stone to a hypervisor that locks the kernel down."
+        },
+        {
+          "s": "steve",
+          "t": "The 32-bit Vista ISO was about 2.687GB, the 64-bit about 3.6GB, still one DVD. Vista had drivers for both my machines out of the box."
+        },
+        {
+          "s": "leo",
+          "t": "I'll try 64-bit Vista on my new Dell. Microsoft surely knows every part of that laptop."
+        },
+        {
+          "s": "steve",
+          "t": "And next week I'll announce the first GRC freeware to come directly from Security Now!'s content. Talking about this stuff gave me the idea."
+        }
+      ]
+    },
+    {
+      "title": "Bad Sectors on an Encrypted Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Question 1 is from J. Sisco in Seattle. His company may roll out BitLocker on all its laptops and desktops. Good idea on laptops, given the Veterans Administration losing laptops with private data. If an encrypted drive gets a bad sector, does the whole volume fail? And how would recovery tools handle the random-looking data?"
+        },
+        {
+          "s": "steve",
+          "t": "Really good question. Encryption works at the sector or cluster level, so you lose no more than on an unencrypted drive. No sector depends on any other."
+        },
+        {
+          "s": "steve",
+          "t": "I can't speak for other tools, but SpinRite works fine. It operates at the hardware level, underneath the encryption and file system, so it recovers sectors even when it can't understand them."
+        },
+        {
+          "s": "leo",
+          "t": "What about tools that work at the file-system level?"
+        },
+        {
+          "s": "steve",
+          "t": "They'd have to see through the encryption. It depends on the software and the damage."
+        },
+        {
+          "s": "leo",
+          "t": "And TrueCrypt's one big blob?"
+        },
+        {
+          "s": "steve",
+          "t": "Inside, each sector is encrypted standalone too. Lose a sector, and you lose only what it belonged to."
+        }
+      ]
+    },
+    {
+      "title": "Can a Kernel Check Itself?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe Rodricks in Massachusetts asks, after our kernel lockdown talk: why not keep an MD5 hash of the kernel on a non-writable CD, so the kernel can tell if it's been modified?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question, because the kernel would be testing itself."
+        },
+        {
+          "s": "leo",
+          "t": "You'd need an external OS to check it, like RootkitRevealer."
+        },
+        {
+          "s": "steve",
+          "t": "It shows that nothing can protect itself from code at the same privilege level. Rootkits and kernels fight on a level playing field. A rootkit's first move might be to neuter the kernel's self-check, and the kernel could be kept from knowing."
+        },
+        {
+          "s": "steve",
+          "t": "The fix is a hypervisor, more protected than the kernel, enforcing protection on it the way the kernel protects user applications. Windows has nothing above the kernel yet. That's why PatchGuard stops good guys but not rootkits."
+        }
+      ]
+    },
+    {
+      "title": "The Future of Third-Party Firewalls",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Simon Lingh in Sweden worries: if Microsoft blocks all third-party kernel modification, will there be no more personal firewalls?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. On 64-bit, Microsoft has drawn a line in the sand. But I fully believe it doesn't intend to stop Symantec, McAfee and others from making products. They just must not modify the kernel."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft says it was always possible. There's dispute, but I believe it wasn't, because Microsoft never published the hooks. It took huge reverse engineering. Vista publishes APIs for this, including one that lets kernel drivers filter and monitor all network traffic without modifying the stack. That's never been possible before."
+        },
+        {
+          "s": "leo",
+          "t": "Should only Microsoft control the kernel? Linux's kernel is open source with no kernel protection. Which is more secure?"
+        },
+        {
+          "s": "steve",
+          "t": "Remember, rootkits were invented on UNIX."
+        },
+        {
+          "s": "leo",
+          "t": "Good point. It's fairly easy to rootkit a Linux system."
+        },
+        {
+          "s": "steve",
+          "t": "We're mixing two issues: open versus closed source, and PatchGuard's detection versus true hypervisor prevention. Once Microsoft adds a hypervisor to 64-bit, we'll see a new era of security."
+        },
+        {
+          "s": "steve",
+          "t": "But the new APIs can be abused. Malware that somehow gets a signed driver could hook the stack legitimately and talk past the firewall."
+        },
+        {
+          "s": "leo",
+          "t": "There's no perfect security. It's a process."
+        },
+        {
+          "s": "steve",
+          "t": "Keep this stuff out in the first place. Once it's in, you can't trust the machine."
+        }
+      ]
+    },
+    {
+      "title": "Spam: SPF and Unguessable Addresses",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Next, Paul in the U.K. is fed up with spam. Our listeners' PCs aren't sources, but millions of others are. Filtering isn't enough; it must be fixed at the source. Replace SMTP? Adopt Microsoft's authentication? Limit users to 1,000 messages a month? Certify all email? Or has the horse bolted?"
+        },
+        {
+          "s": "leo",
+          "t": "Bill Gates announced two years ago that spam would be conquered, through authentication."
+        },
+        {
+          "s": "steve",
+          "t": "I'm a fan of authentication. In that famous TWiT where Dvorak said \"I get no spam,\" my gateway had rejected his HTML email. Blocking HTML stopped 99 percent of GRC's spam, and senders got a polite bounce asking for plain text."
+        },
+        {
+          "s": "leo",
+          "t": "Does that still work? A lot of my spam is embedded GIFs."
+        },
+        {
+          "s": "steve",
+          "t": "I finally gave up my address of 20 years, steve@grc.com. Watching servers connect, I saw dictionary attacks guessing names of people who never had GRC accounts. I changed to an address not in any dictionary, and bang, problem solved. So I removed the HTML filter, which mattered for sales and support."
+        },
+        {
+          "s": "steve",
+          "t": "Our sales and support addresses are on our web page, and receipts include the current address, so nobody's inconvenienced."
+        },
+        {
+          "s": "leo",
+          "t": "I can't do that. I'm too dependent on my address. My three-step filtering even caught your email once, in SpamAssassin."
+        },
+        {
+          "s": "steve",
+          "t": "If you change addresses, pick something not in a dictionary."
+        },
+        {
+          "s": "leo",
+          "t": "joe537499 would be fine."
+        },
+        {
+          "s": "steve",
+          "t": "It's cool you got \"joe\" at EarthLink, but it's useless now."
+        },
+        {
+          "s": "leo",
+          "t": "I once got mail from joe@aol.com saying, this is my address, but I can't use it."
+        },
+        {
+          "s": "steve",
+          "t": "Now authentication. Microsoft tried to embrace and extend SPF, the Sender Policy Framework, and wanted to patent and license it. People refused."
+        },
+        {
+          "s": "steve",
+          "t": "SPF only needs a special DNS text record. GRC's lists the servers, by name, IP address or range, that may send GRC mail. When EarthLink receives mail claiming to be from GRC, it queries our DNS for that record."
+        },
+        {
+          "s": "steve",
+          "t": "EarthLink knows the sending server's IP, which can't be spoofed, because SMTP runs over TCP and needs a completed three-way handshake. If that IP isn't listed, it drops the mail. That stops botnet spambots from sending as GRC."
+        },
+        {
+          "s": "steve",
+          "t": "It isn't widely adopted yet, but it's spreading because it's simple. Yahoo! adopted DomainKeys, another approach. Servers can check both, and I've seen Gmail authenticate GRC's server in my headers. Replacing SMTP would obsolete the Internet's entire email structure."
+        },
+        {
+          "s": "leo",
+          "t": "Spam is like cockroaches. We've fought them for 40,000 years. And your trick works for about a year, right?"
+        },
+        {
+          "s": "steve",
+          "t": "Mark Thompson of AnalogX is starting to get spam on his current address, so he'll switch next year. He does what I do. I haven't gotten any yet."
+        },
+        {
+          "s": "leo",
+          "t": "Even filtered, I get too much mail to answer. We're public enough to get a lot, but not successful enough to hire help."
+        },
+        {
+          "s": "steve",
+          "t": "Same here. Your questions come through the form at the bottom of the Security Now! page. If I read and answered them all, I couldn't write this new freeware. And the Security Now! newsgroup at GRC is fantastic: listeners answering each other's questions."
+        },
+        {
+          "type": "fact",
+          "title": "Email authentication now",
+          "t": "SPF, DKIM (which grew from DomainKeys) and DMARC became standard. Since 2024, Google and Yahoo! require bulk senders to use them."
+        }
+      ]
+    },
+    {
+      "title": "Can an Infected PC Clean Itself?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Greg Rudd in Seattle gets it. If a PC is infected, can an anti-spyware program running on it be trusted?"
+        },
+        {
+          "s": "steve",
+          "t": "That's why he gets it. The golden rule: once compromised, you can never trust that machine again."
+        },
+        {
+          "s": "leo",
+          "t": "On Call For Help I increasingly say that. These things burrow in."
+        },
+        {
+          "s": "steve",
+          "t": "And they're tenacious. Delete their files and other things break, because they've inserted themselves between components."
+        },
+        {
+          "s": "steve",
+          "t": "If all you can do is run a remover, do it. Better is to structure your machine. Make a C partition just big enough for the OS and apps, maybe 15GB, and put data on D, E, F."
+        },
+        {
+          "s": "leo",
+          "t": "I make removable drives W, X, Y, Z, so new installs don't shift them."
+        },
+        {
+          "s": "steve",
+          "t": "A small system partition can be imaged practically, onto a couple of DVDs or an external FireWire or USB drive. My main workstation's C is 17GB and only half full. Most of a 250GB drive is media, which doesn't need imaging."
+        },
+        {
+          "s": "leo",
+          "t": "Still using Drive Snapshot?"
+        },
+        {
+          "s": "steve",
+          "t": "I love it. It runs inside Windows, and its images can be mounted as a drive letter. If you're infected, restore your OS from a recent snapshot without losing data."
+        },
+        {
+          "s": "leo",
+          "t": "I'll do that with my new Vista machine. On TV we made one image of just the installed OS, and another with applications, before going online. To update, restore the known-good image, add things, and re-image, so you always move forward from a known-good point."
+        },
+        {
+          "s": "steve",
+          "t": "And Windows gets a little wonky over time anyway, so it's like resetting to almost new."
+        }
+      ]
+    },
+    {
+      "title": "Server, Workstation or Desktop?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric in San Jose asks: Dell offers dual quad-core processors only in servers. Should an enthusiast buy a server? Are home, business and server machines different in performance and quality?"
+        },
+        {
+          "s": "leo",
+          "t": "Part of it is branding. Intel won't let Xeon systems be sold as desktops, so they're workstations or servers."
+        },
+        {
+          "s": "steve",
+          "t": "I'm looking too. I'm still on Windows 2000 with a pair of 866MHz Pentium 3s."
+        },
+        {
+          "s": "leo",
+          "t": "Oh dear. I have one of those as a doorstop."
+        },
+        {
+          "s": "steve",
+          "t": "It's a fantastic, mature environment, and amazing it still runs with all the crud I've installed. Since I rarely change hardware, I'll reach far ahead, for the next five or ten years. I'll go dual dual-core. Dual quad-core may be overkill."
+        },
+        {
+          "s": "leo",
+          "t": "My Mac Pro is dual Xeon, quad core, and I can't get it past 10 or 20 percent. Dual core is plenty."
+        },
+        {
+          "s": "steve",
+          "t": "Ignore the branding. Look at audio, video, PCI slots, maximum memory, and how many processors the board holds. I run three displays, so I need slots for graphics cards. I don't need audio."
+        },
+        {
+          "s": "steve",
+          "t": "And with RAID now on motherboards, I'd run at least a mirror, maybe RAID 5 across three drives."
+        },
+        {
+          "s": "leo",
+          "t": "Aren't motherboard RAIDs software, BIOS-based? Can they do RAID 5 well?"
+        },
+        {
+          "s": "steve",
+          "t": "Intel's boards claim RAID 5. When Linux boots, it benchmarks different ways of computing RAID checksums, and the performance is getting up there. It gives an extra core something to do."
+        },
+        {
+          "s": "leo",
+          "t": "RAID 0 is striping, for speed. RAID 1 is mirroring, for redundancy, though I wouldn't count on it as a backup. RAID 5 needs three drives?"
+        },
+        {
+          "s": "steve",
+          "t": "At least three. Striping has no redundancy, mirroring has 100 percent. RAID 5 adds one drive's worth of checksum information, so if any drive dies, it's rebuilt from the others."
+        },
+        {
+          "s": "leo",
+          "t": "That's how my three-drive NAS works."
+        },
+        {
+          "type": "fact",
+          "title": "How RAID 5 works",
+          "t": "RAID 5 stripes data and XOR parity across all the drives, rather than keeping parity on one. It survives one drive failure. Like mirroring, it doesn't replace backups, since deletions and malware affect every drive."
+        },
+        {
+          "s": "steve",
+          "t": "For a workstation doing email, drive performance isn't a concern."
+        },
+        {
+          "s": "leo",
+          "t": "I disagree. With this much processor, you're I/O bound. For video editing or ripping CDs it matters. I put 10,000 RPM Raptors in almost everything."
+        },
+        {
+          "s": "steve",
+          "t": "Then I agree: get off motherboard software RAID, onto an adapter with its own cache, so the OS can dump data and move on."
+        },
+        {
+          "s": "leo",
+          "t": "So most people don't need four cores. A faster video card or drive helps more."
+        },
+        {
+          "s": "steve",
+          "t": "Unless it's a compute-bound server, 3D rendering, or tons of media compression. When I compress MPEG-2 or MPEG-4, my processors are pinned while the drive just flickers."
+        },
+        {
+          "s": "steve",
+          "t": "I'd like to add a feature to my Wizmo utility that rings a bell when a busy machine goes idle, because I forget compressions running for hours."
+        },
+        {
+          "s": "leo",
+          "t": "So there are three choices: computer, workstation or server. You don't need a server. If you want quad core, get a workstation. And costs go exponential."
+        }
+      ]
+    },
+    {
+      "title": "Email Over Open Wi-Fi",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt Carroll of Milwaukee follows up on Gmail through Outlook over SSL: on unencrypted open Wi-Fi, can my email be intercepted?"
+        },
+        {
+          "s": "steve",
+          "t": "No. With SSL for POP and SMTP, the secure connection is set up first. It can't be sniffed or spoofed, and all your mail goes through that encrypted tunnel."
+        },
+        {
+          "s": "leo",
+          "t": "Webmail is different."
+        },
+        {
+          "s": "steve",
+          "t": "Start Gmail at https://mail.google.com and you stay secure. Start at http:// and only your login is secure."
+        },
+        {
+          "s": "steve",
+          "t": "Open Wi-Fi has other concerns, but your email would be safe."
+        },
+        {
+          "s": "leo",
+          "t": "I still use a VPN, but this protects me if I forget. Protect your email password first, then your email."
+        }
+      ]
+    },
+    {
+      "title": "Choosing a Drive Size",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric Sarratt of Asheville, North Carolina asks: Steve likes the smallest drives he can find. Is there an ideal size, with 500GB drives out? He buys older PATA drives. Should he consider SCSI or SATA?"
+        },
+        {
+          "s": "steve",
+          "t": "PATA is original IDE: parallel versus serial. I buy small drives where I know I won't store media. One GRC server runs a pair of 40GB drives as a mirror. The main server uses SCSI RAID 5. I just trust small drives more."
+        },
+        {
+          "s": "steve",
+          "t": "But Mr. Get the Smallest Drive just upgraded his MacBook Pro from 80 to 160GB, because media was cramping me. It's a Seagate SATA drive, Seagate's first vertical recording drive, storing bits standing up instead of lying down. We've heard about it for a decade."
+        },
+        {
+          "s": "leo",
+          "t": "So there's no magic size?"
+        },
+        {
+          "s": "steve",
+          "t": "Besides cost and size, consider power and heat. Bigger, faster drives burn more power, especially your 10K RPM drives. Make sure your power supply has the oomph, and that your system can shed the heat. Some computer furniture has unventilated enclosures. What are they thinking?"
+        },
+        {
+          "s": "leo",
+          "t": "For my Vista laptop I chose a smaller, faster 80GB 7200 RPM drive over a bigger 5400, despite the heat and battery cost. It's not my main machine, and I want speed."
+        },
+        {
+          "type": "fact",
+          "title": "Vertical recording",
+          "t": "Its proper name is perpendicular recording. It became standard on hard drives from 2006 on, letting capacities grow into many terabytes."
+        }
+      ]
+    },
+    {
+      "title": "Getting Past an ISP's Firewall",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rodney in Trinidad, West Indies wants to use Soulseek or LimeWire past a network firewall on his DSL line. I think his ISP blocks peer-to-peer, as many do in the Caribbean."
+        },
+        {
+          "s": "steve",
+          "t": "A VPN is your friend: a true tunnel. Listen to our VPN episodes. Hamachi won't do, since it's a peer-to-peer VPN between machines. He needs a commercial VPN service, like HotSpotVPN. All his ports would be available, even if his local network filters them."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't an ISP block the VPN?"
+        },
+        {
+          "s": "steve",
+          "t": "It could block PPTP and L2TP. But modern VPNs use SSL on nontraditional ports, and an ISP won't know what to block."
+        }
+      ]
+    },
+    {
+      "title": "Old Drivers on 64-bit Vista",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Voeller of Ashland, Oregon, USA, Earth, asks about 64-bit Vista requiring signed drivers. Why would printers, webcams and TV tuners modify the kernel? Could Vista run old unsigned 32-bit drivers in an isolated mode, like DOS under Windows 98?"
+        },
+        {
+          "s": "steve",
+          "t": "The kernel is a different dog. DOS apps run in a DOS box, and 32-bit apps run on 64-bit XP and Vista through a compatible 32-bit API. But drivers are part of the kernel. A 32-bit driver not recompiled for 64 bits can't run in a 64-bit kernel."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't that how we ran 16-bit drivers in 32-bit?"
+        },
+        {
+          "s": "steve",
+          "t": "A driver sits underneath that protection, participating with the OS rather than being served by it. Windows' I/O architecture is somewhat client-server, so someone could write an emulation layer for well-behaved drivers. The latest FreeBSD runs Windows drivers by emulating the driver interface. But a driver that modifies the kernel would explode, since there's no Windows kernel there."
+        },
+        {
+          "s": "leo",
+          "t": "If you're going 64-bit, run 64-bit drivers."
+        },
+        {
+          "s": "steve",
+          "t": "Converting isn't huge. The I/O architecture stayed much the same. Recompile with a 64-bit compiler, change a few things, and run Microsoft's certification suites."
+        },
+        {
+          "s": "leo",
+          "t": "But some won't spend the money until there's a market."
+        },
+        {
+          "s": "steve",
+          "t": "The chicken and egg. Maybe Microsoft built in so many drivers that it won't be as bad as we fear."
+        },
+        {
+          "s": "leo",
+          "t": "If you need 32-bit drivers, stay with 32-bit Windows."
+        },
+        {
+          "s": "steve",
+          "t": "Or it's time to say goodbye to them."
+        }
+      ]
+    },
+    {
+      "title": "Why Doesn't VMS Get Viruses?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sheldon Smith in Minneapolis, a listener since day one, notes that DEC's VMS was designed to be secure from the start. It moved to DEC's Alpha, and HP's OpenVMS now runs on the Itanium, which he says is Alpha-based. In 20-some years, no viruses and only a handful of worms or Trojans."
+        },
+        {
+          "s": "leo",
+          "t": "Its stack grows up instead of down, as Steve suggests. Hardware address protection walls data off from code. Customers have uptimes in years, and clusters over a decade. Why doesn't big iron have these problems? Mostly because few people run it, I think."
+        },
+        {
+          "type": "fact",
+          "title": "Itanium's roots",
+          "t": "Itanium wasn't Alpha-based. It was a new architecture designed by Intel and HP. OpenVMS was ported to it in 2003, and it now also runs on x86-64 processors."
+        },
+        {
+          "s": "steve",
+          "t": "That touches on the Mac too. Part of why it has fewer problems is that it's a smaller target. And virus writers are often younger programmers writing for the systems they have."
+        },
+        {
+          "s": "leo",
+          "t": "They don't have a PDP in the basement."
+        },
+        {
+          "s": "steve",
+          "t": "You can't write a virus for an OS you don't know intimately. And we're seeing more Mac problems as it grows."
+        },
+        {
+          "s": "leo",
+          "t": "I dispute that. I haven't seen growth in Mac problems, just press about threats never in the wild. Size is part of it, but the Mac is also written differently."
+        },
+        {
+          "s": "steve",
+          "t": "Windows' problems aren't really Microsoft's fault. I've been on them since day one about policy, but these bugs are so hard to catch. If the Mac were scrutinized as much, there'd be problems."
+        },
+        {
+          "s": "steve",
+          "t": "Still, ActiveX is an architectural mistake the Mac doesn't have. IE invoking any ActiveX control rumbling around loose in the system is insanity. Microsoft never breaks compatibility. It waits for a point where it can start fresh."
+        },
+        {
+          "s": "leo",
+          "t": "The Mac has issues in older UNIX applications. But nobody really runs as root on OS X, so it's harder to modify your system, unless you're running BIND."
+        },
+        {
+          "s": "steve",
+          "t": "Vista adds User Account Control, UAC, which deserves its own episode. It's wonderful, but a mixed blessing, hounding you with \"is this you?\" dialogs even as an admin."
+        },
+        {
+          "s": "leo",
+          "t": "They're trying to duplicate the Mac. You no longer enter a password, just click OK. The most vulnerable users click OK all the time."
+        }
+      ]
+    },
+    {
+      "title": "Securing a Laptop on the Road",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The last question, from Jonathan Green in London. At home, behind his Netgear router, ShieldsUP! shows him stealthed. On a work router, some ports are open. What can he do on the laptop itself?"
+        },
+        {
+          "s": "steve",
+          "t": "He's confusing his laptop's security with the router's. ShieldsUP! tests the public IP, which is the router's. NAT is very good security with Universal Plug and Play disabled. He'd see stealth at home even with no firewall on his laptop."
+        },
+        {
+          "s": "steve",
+          "t": "A corporate router will have ports open, like 25 for incoming mail, or 80 for a web server. Home users will be stealthed and corporate routers probably not, but his laptop is probably safe behind either."
+        },
+        {
+          "s": "steve",
+          "t": "In both cases, run your laptop's own firewall. That goes for everyone. I keep the Mac firewall on all the time."
+        },
+        {
+          "s": "leo",
+          "t": "And HotSpotVPN would secure it too."
+        },
+        {
+          "s": "steve",
+          "t": "ShieldsUP! would then test HotSpot's server, which has ports open. And the VPN won't stop people on the local network from reaching your laptop's IP. So run your software firewall."
+        },
+        {
+          "s": "leo",
+          "t": "That concludes this marathon. And Astaro will stay with us through 2007. Next week: Steve's new freeware."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why doesn't whole-disk encryption make a bad sector worse?",
+      "options": [
+        "Each sector is encrypted on its own, so no sector depends on another",
+        "Encrypted drives never get bad sectors",
+        "BitLocker keeps a backup",
+        "The whole volume does fail"
+      ],
+      "answer": 0,
+      "explain": "SpinRite can still recover it, below the encryption."
+    },
+    {
+      "q": "Why can't a kernel reliably check its own hash?",
+      "options": [
+        "Malware at the same privilege level can disable the check",
+        "Hashes are too slow",
+        "CDs can be rewritten",
+        "MD5 is secret"
+      ],
+      "answer": 0,
+      "explain": "Only a hypervisor above the kernel could enforce it."
+    },
+    {
+      "q": "How does SPF verify a sender?",
+      "options": [
+        "The domain's DNS lists which server IPs may send its mail",
+        "Each email is signed with a password",
+        "ISPs share blacklists",
+        "Senders pay a fee"
+      ],
+      "answer": 0,
+      "explain": "The connecting IP can't be spoofed, because SMTP runs over TCP."
+    },
+    {
+      "q": "How did Steve beat dictionary spam to his address?",
+      "options": [
+        "He switched to an address not found in any dictionary",
+        "He blocked HTML mail forever",
+        "He stopped using email",
+        "He used Gmail"
+      ],
+      "answer": 0,
+      "explain": "He'd seen servers guessing names of people who never had accounts."
+    },
+    {
+      "q": "Why did Steve recommend a small system partition?",
+      "options": [
+        "It can be imaged and restored practically after an infection",
+        "Small drives are faster",
+        "Windows requires it",
+        "Viruses can't reach other partitions"
+      ],
+      "answer": 0,
+      "explain": "His own C drive was just 17GB."
+    },
+    {
+      "q": "What did SANS find in three of 12 malware samples?",
+      "options": [
+        "They behaved when they detected a virtual machine",
+        "They were Blue Pill rootkits",
+        "They targeted Macs",
+        "They hid in BitLocker"
+      ],
+      "answer": 0,
+      "explain": "That fools researchers and users testing software in VMs."
+    }
+  ]
+}
