@@ -1,0 +1,456 @@
+{
+  "number": 54,
+  "title": "Blue Pill",
+  "subtitle": "A rootkit that slips your OS into a virtual machine",
+  "date": "2006-08-24",
+  "description": "Joanna Rutkowska's \"Blue Pill\" uses AMD's new hardware virtualization to slide a running Windows Vista into a virtual machine it controls, and claims to be undetectable. Steve explains how traditional rootkits hide and get caught, why Blue Pill is different, how it even fakes timing, and what Microsoft must do. Plus NoScript feedback, Hamachi's sale, and GRC's popular CSS menu.",
+  "transcript": "https://www.grc.com/sn/sn-054.txt",
+  "audio": "http://media.GRC.com/sn/SN-054.mp3",
+  "chapters": [
+    {
+      "title": "NoScript, and Why Policy Matters",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 54. I'm actually on a boat, or maybe in Canada. We record these ahead of time. Great response to last week's virtualization episode."
+        },
+        {
+          "s": "steve",
+          "t": "I also got lots of good feedback from people using NoScript, the Firefox add-on that keeps scripting off until you turn it on for a site, like IE's security zones."
+        },
+        {
+          "s": "leo",
+          "t": "I installed it, but so many sites broke that I turned scripting back on."
+        },
+        {
+          "s": "leo",
+          "t": "Randal Schwartz, our resident naysayer and a security expert I trust, points out that the JavaScript router attack isn't too hazardous if you've changed your router's password."
+        },
+        {
+          "s": "steve",
+          "t": "He's responding to that one instance, which nobody knew about a few weeks ago. What's next? Secure policies protect you from unknown problems."
+        },
+        {
+          "s": "steve",
+          "t": "We learned to keep systems closed and open only the ports we need. Don't run services you don't need, as the D-Link UPnP flaw eEye found in February showed. Scripting is the same. It's virtually necessary now, but from a security standpoint, it's bad."
+        },
+        {
+          "s": "leo",
+          "t": "At least NoScript exists, and it works very well."
+        },
+        {
+          "s": "steve",
+          "t": "You're a Mac guy, Leo, so you're a much smaller target, and Firefox has a better track record than IE. With security, history is all we have. You can't declare something secure."
+        }
+      ]
+    },
+    {
+      "title": "Hamachi's New Owner",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "About Hamachi's sale to LogMeIn: listeners asked about the Hamachi server we mentioned, which would let you run your own Hamachi network."
+        },
+        {
+          "s": "steve",
+          "t": "I talked with Alex Pankratov. He vetted LogMeIn carefully and is comfortable that they respect users' privacy and rights."
+        },
+        {
+          "s": "steve",
+          "t": "But the server never got past alpha. To prevent piracy, it would always have been tied to a hardware appliance, never a download. So there's no alternative to following Hamachi to LogMeIn."
+        },
+        {
+          "s": "leo",
+          "t": "So I was mistaken to point people to it."
+        },
+        {
+          "s": "steve",
+          "t": "I'd forgotten it completely. And Alex says three million users is old news: it's more like 3.9 million."
+        },
+        {
+          "s": "leo",
+          "t": "He should send you a gift."
+        },
+        {
+          "s": "steve",
+          "t": "He thanked us again for putting them on the map. His wife teased him for months about \"Hamachi Rocks.\""
+        },
+        {
+          "s": "leo",
+          "t": "That's why I like open source. I wish there were an open-source solution as easy as Hamachi. OpenVPN is out there, but it's difficult."
+        }
+      ]
+    },
+    {
+      "title": "A Thousand Visitors a Day",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My script-free CSS menu has really taken off: a thousand people a day visit the prototype page and adapt the CSS."
+        },
+        {
+          "s": "steve",
+          "t": "Some said it didn't validate. My standard GRC footer had old HTML that produced 112 validation errors, so I removed it, fixed a couple of things, and now it validates."
+        },
+        {
+          "s": "leo",
+          "t": "You may go down in the web developers' hall of fame, of all things."
+        }
+      ]
+    },
+    {
+      "title": "Meet Blue Pill",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today's topic: there's a Red Pill and a Blue Pill. And it's by one of the few women in this field."
+        },
+        {
+          "s": "steve",
+          "t": "Joanna Rutkowska has worked on rootkit technology for years, publishing papers on rootkitting modern operating systems and detecting them. She's a pure security researcher in the best sense."
+        },
+        {
+          "s": "steve",
+          "t": "About two months ago she published a paper on Blue Pill, then demonstrated it at SyScan and at Black Hat. It fits right into our virtual machine series."
+        },
+        {
+          "s": "steve",
+          "t": "What raised eyebrows was her claim that it's undetectable. Slashdot went insane, Digg had threads, and many people misunderstood what she'd done."
+        }
+      ]
+    },
+    {
+      "title": "Hardware Built for Hypervisors",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next-generation chips include explicit virtualization support, the very thing VMware's technology works around."
+        },
+        {
+          "s": "steve",
+          "t": "AMD's is SVM, code-named Pacifica, in its Athlon 64 and Turion 64 chips. Intel's equivalent, code-named Vanderpool, is now called VT."
+        },
+        {
+          "s": "steve",
+          "t": "First: nobody on 32-bit hardware has anything to worry about. This needs next-generation 64-bit hardware."
+        },
+        {
+          "s": "steve",
+          "t": "Joanna showed that on this hardware, a program can make itself the \"hypervisor.\" The operating system is the \"supervisor\" over its programs, so a hypervisor sits above, or below, the operating system, like VMware's ESX."
+        },
+        {
+          "s": "steve",
+          "t": "She implemented it on the current beta of Vista, Microsoft's next-generation OS."
+        },
+        {
+          "s": "steve",
+          "t": "What made me grin is that it ignored Vista's new kernel protections. Vista requires all 64-bit drivers to be digitally signed. That's controversial, since signatures cost money, and people call it hostile to free software. Microsoft says: do you want security or not?"
+        },
+        {
+          "s": "leo",
+          "t": "If you want open source, write for an open-source operating system."
+        },
+        {
+          "s": "steve",
+          "t": "Joanna cut right through all of it and slipped in a super rootkit."
+        }
+      ]
+    },
+    {
+      "title": "How Ordinary Rootkits Get Caught",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Her point is that traditional rootkits rely on a kludge or hack."
+        },
+        {
+          "s": "steve",
+          "t": "Operating systems keep running processes in a \"linked list\": each process's record points to the next. Task Manager or top follows the chain."
+        },
+        {
+          "s": "steve",
+          "t": "A rootkit finds itself in the list and changes the previous record to point past it, unlinking itself. It keeps running, but no tool sees it."
+        },
+        {
+          "s": "steve",
+          "t": "To hide files, a rootkit \"hooks\" the functions that list a directory. When its own file is next, it skips ahead to the following one."
+        },
+        {
+          "s": "steve",
+          "t": "These rely on specific knowledge of the operating system's internals, and once you know the trick, you can detect it."
+        },
+        {
+          "s": "leo",
+          "t": "You detect the traces, not the rootkit."
+        },
+        {
+          "s": "steve",
+          "t": "Enumerate processes another way, or read the disk directly and compare with what the OS reports. A discrepancy gives it away. That's exactly how Mark Russinovich's RootkitRevealer works."
+        },
+        {
+          "s": "steve",
+          "t": "So once a rootkit's source is public, it can be detected. Joanna's point is that Blue Pill could be fully open source, and it wouldn't help."
+        }
+      ]
+    },
+    {
+      "title": "Taking the Hypervisor's Seat",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How does it work?"
+        },
+        {
+          "s": "steve",
+          "t": "It isn't relying on any obscurity or hack. It simply uses the hardware. Intel, AMD and Microsoft hadn't thought of it, which is why her work matters. New features always need a security look."
+        },
+        {
+          "s": "steve",
+          "t": "Blue Pill turns on AMD's SVM and becomes the hypervisor. The operating system says, \"We don't really know what that is, but have a nice day.\""
+        },
+        {
+          "s": "steve",
+          "t": "Critics said undetectability is impossible. One test: the RDMSR instruction reads a model-specific register, and bit 12 of the EFER register shows whether SVM is on. Blue Pill must intercept that read and fake the bit."
+        },
+        {
+          "s": "leo",
+          "t": "But intercepting it takes time."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. That read normally takes about 90 clock cycles. Under Blue Pill, about 2,100."
+        },
+        {
+          "s": "steve",
+          "t": "I use RDTSC all the time. It reads the time stamp counter, which counts every processor clock cycle, so there's no higher-resolution timer. In the next generation it's 128 bits."
+        },
+        {
+          "type": "fact",
+          "title": "The time stamp counter",
+          "t": "The x86 time stamp counter has remained a 64-bit register on 64-bit processors. That's enough to count clock cycles for well over a century at today's speeds."
+        },
+        {
+          "s": "steve",
+          "t": "But SVM has a \"TSC offset.\" Blue Pill intercepts the timer too, and sets the offset to subtract 2,010 ticks. So the 2,100-tick read reports 90. Even time can be faked."
+        },
+        {
+          "s": "steve",
+          "t": "My first thought was an outside clock, like Internet time from NTP. But that comes in through the operating system and can be faked too."
+        },
+        {
+          "s": "steve",
+          "t": "The fallback is a human timing it: press a button, run the register read a million times, and see whether it took 90 million ticks or far longer."
+        },
+        {
+          "s": "leo",
+          "t": "They couldn't fake a manual check."
+        },
+        {
+          "s": "steve",
+          "t": "I can't see how. But who's going to do that?"
+        },
+        {
+          "s": "steve",
+          "t": "Blue Pill writes nothing to disk. Microsoft Research's SubVirt is similar but must install itself to survive a reboot. Blue Pill is on the fly. Run it by mistake and nothing changes, the screen doesn't even flicker, but now it's beneath your operating system controlling the hardware. Do you run a ten-minute test every hour?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft isn't happy. Vista is \"the most secure operating system ever.\" Here comes Joanna and says, \"Well, no.\""
+        },
+        {
+          "type": "fact",
+          "title": "SubVirt and the debate",
+          "t": "SubVirt, from Microsoft Research and the University of Michigan, was a 2006 proof-of-concept virtual-machine rootkit installed at boot. In 2007, researchers challenged Rutkowska to prove Blue Pill undetectable, and they agreed that timing tricks like those Steve describes made the \"100% undetectable\" claim contested."
+        }
+      ]
+    },
+    {
+      "title": "What Microsoft Must Do",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Could you run your own system in a VM to protect it?"
+        },
+        {
+          "s": "steve",
+          "t": "These features have very good uses. VMware worries because hardware support now does what its proprietary tricks did, and the operating system will absorb it. That's a new responsibility for the OS."
+        },
+        {
+          "s": "steve",
+          "t": "Joanna notes you could turn virtualization off in the BIOS. But then what's the point of having it?"
+        },
+        {
+          "s": "leo",
+          "t": "Many machines ship with it off by default."
+        },
+        {
+          "s": "steve",
+          "t": "Same cat-and-mouse game."
+        },
+        {
+          "s": "leo",
+          "t": "The debate isn't over. Anthony Liguori, who works on a hypervisor at IBM, is her chief critic. Is the problem that a hypervisor exists at all?"
+        },
+        {
+          "s": "steve",
+          "t": "No. The problem is that it's new. New is bad for security, like Vista's virgin stack."
+        },
+        {
+          "s": "steve",
+          "t": "Ultimately the hardware will be fantastic: simpler, easier multiple-OS setups with as close to zero performance penalty as you can get."
+        },
+        {
+          "s": "leo",
+          "t": "I run Windows, Mac and Linux on three machines with a KVM switch. With VMware coming to the Mac, maybe one Mac Pro could run them all side by side."
+        },
+        {
+          "s": "steve",
+          "t": "Like DOS on the 386, with Software Carousel, QEMM and TopView switching programs with a keystroke. Now we'll switch operating systems, robustly, because hardware enforces the barrier."
+        },
+        {
+          "s": "leo",
+          "t": "And if anything goes wrong, you throw it out."
+        },
+        {
+          "s": "steve",
+          "t": "Next week we'll cover sandboxing, lightweight virtualization, which is all about security."
+        },
+        {
+          "s": "leo",
+          "t": "Should we worry about Blue Pill?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Microsoft has promised to close the hole. That must mean turning on SVM and taking ownership of it, filtering those instructions just as Joanna does."
+        },
+        {
+          "s": "leo",
+          "t": "So they'll do their own Blue Pill."
+        },
+        {
+          "s": "steve",
+          "t": "Vista will come pre-Blue Pilled. It's always about who gets there first."
+        },
+        {
+          "type": "fact",
+          "title": "Windows takes the hypervisor seat",
+          "t": "Microsoft later did just that. Windows 10 and 11 can run a Hyper-V hypervisor beneath Windows itself for \"virtualization-based security,\" which protects credentials and kernel code integrity. Holding the hypervisor role first leaves no room for a Blue Pill."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Prediction",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's a prediction for Episode 54, the first of our second year: hypervisor technology will be compromised."
+        },
+        {
+          "s": "steve",
+          "t": "Remember boot-sector viruses? With hardware this powerful, a boot-sector virus could grab SVM rights before Vista boots and fool it completely. Hackers will tackle it because it's there."
+        },
+        {
+          "s": "leo",
+          "t": "Or through EFI, the new BIOS replacement. Even better than a boot sector."
+        },
+        {
+          "s": "steve",
+          "t": "If you get control before the OS boots, the hardware is now powerful enough that it needs very careful attention."
+        },
+        {
+          "type": "fact",
+          "title": "Firmware threats today",
+          "t": "Steve's worry came true for pre-boot malware. \"Bootkits\" and UEFI firmware rootkits, like LoJax in 2018, run before the operating system. Secure Boot, measured boot and TPM attestation are the defenses."
+        },
+        {
+          "s": "leo",
+          "t": "The donations pay for things like a T1 line. We lost a podcast when our consumer DSL went out."
+        },
+        {
+          "s": "steve",
+          "t": "People write that the TWiT podcasts sound better than any others."
+        },
+        {
+          "s": "leo",
+          "t": "And thanks to AOL Radio, which delivers over a terabyte a day."
+        },
+        {
+          "s": "steve",
+          "t": "Keep sending SpinRite success stories, even if I can't post them all. I love reading them."
+        },
+        {
+          "s": "leo",
+          "t": "And ShieldsUP! gave my new D-Link router all green, right out of the box."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does Blue Pill do?",
+      "options": [
+        "Moves a running operating system into a virtual machine that Blue Pill controls",
+        "Encrypts your files",
+        "Steals Wi-Fi passwords",
+        "Replaces the BIOS"
+      ],
+      "answer": 0,
+      "explain": "It uses AMD's SVM hardware virtualization to become the hypervisor."
+    },
+    {
+      "q": "How do traditional rootkits hide a running process?",
+      "options": [
+        "By unlinking themselves from the OS's linked list of processes",
+        "By deleting themselves",
+        "By running only at night",
+        "By encrypting the CPU"
+      ],
+      "answer": 0,
+      "explain": "Comparing different ways of listing processes reveals the trick."
+    },
+    {
+      "q": "Why can't Blue Pill be caught by publishing its source code?",
+      "options": [
+        "It uses legitimate hardware features rather than an OS-specific hack",
+        "It's too large to read",
+        "It changes every day",
+        "It's written in assembly"
+      ],
+      "answer": 0,
+      "explain": "Knowing how traditional rootkits hide lets you detect them; Blue Pill doesn't hide that way."
+    },
+    {
+      "q": "How did Blue Pill hide the slowdown from intercepting a register read?",
+      "options": [
+        "It used the hardware's TSC offset to subtract the extra time",
+        "It made the CPU faster",
+        "It disabled the clock",
+        "It didn't"
+      ],
+      "answer": 0,
+      "explain": "A 2,100-cycle read reported as 90 cycles."
+    },
+    {
+      "q": "What did Steve predict Microsoft would do about Blue Pill?",
+      "options": [
+        "Take the hypervisor role itself so nothing else can",
+        "Remove virtualization from Windows",
+        "Sue AMD",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "\"Vista will come pre-Blue Pilled\": whoever gets there first wins."
+    },
+    {
+      "q": "What future threat did Steve predict?",
+      "options": [
+        "Malware that seizes hypervisor rights before the OS boots",
+        "Viruses in printers",
+        "Faster brute-force attacks",
+        "The end of rootkits"
+      ],
+      "answer": 0,
+      "explain": "Firmware bootkits and UEFI rootkits later became real."
+    }
+  ]
+}
