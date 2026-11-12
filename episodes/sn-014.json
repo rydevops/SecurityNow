@@ -1,0 +1,248 @@
+{
+  "number": 14,
+  "title": "VPNs: The Theory",
+  "subtitle": "Your own private tunnel through any network",
+  "date": "2005-11-17",
+  "description": "The Sony rootkit saga continues, some confusion about cracking WPA passphrases gets cleared up, and GRC gets a new password generator. Then part one of a two-part series on VPNs: how tunnels work and why they're perfect for people on the go.",
+  "transcript": "https://www.grc.com/sn/sn-014.txt",
+  "audio": "http://media.GRC.com/sn/SN-014.mp3",
+  "chapters": [
+    {
+      "title": "Sony Backs Down",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 14, recorded in the dark Call for Help studio in Toronto."
+        },
+        {
+          "s": "steve",
+          "t": "Sony has officially stopped putting its DRM on CDs and is apparently recalling stock from stores."
+        },
+        {
+          "s": "leo",
+          "t": "They said \"temporarily.\" I think they're reserving the right to try a different copy protection."
+        },
+        {
+          "s": "steve",
+          "t": "Someone put it perfectly: the music may be Sony's intellectual property, but it's not Sony's computer."
+        },
+        {
+          "s": "leo",
+          "t": "From what Sony executives are saying, I don't think they get that yet."
+        },
+        {
+          "s": "steve",
+          "t": "Hopefully this sets a precedent for where DRM's boundaries are. One report says it's on as many as 500,000 machines."
+        },
+        {
+          "s": "leo",
+          "t": "Most of which will never be cleaned up. And someone says the software is copied to your machine before you even see the license. Clicking No just keeps it from starting. We'll verify that."
+        },
+        {
+          "type": "fact",
+          "title": "The fallout",
+          "t": "Sony BMG's XCP rootkit was eventually found on hundreds of thousands of networks. The scandal helped establish that copy protection must not secretly change or weaken a customer's computer."
+        }
+      ]
+    },
+    {
+      "title": "WPA Cracking, Clarified",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A listener objected when I called WPA uncrackable, since WPA cracking tools already exist."
+        },
+        {
+          "s": "steve",
+          "t": "He's right that they exist, but they only work against weak passphrases. With truly random gibberish, WPA is effectively uncrackable."
+        },
+        {
+          "s": "steve",
+          "t": "People asked where to get good random passwords. The online generators I found didn't use SSL and could be cached by an ISP, so someone else might be served the same page. So I wrote one: GRC.com/passwords."
+        },
+        {
+          "s": "steve",
+          "t": "It forces an encrypted connection, then generates three strings: 64 hexadecimal characters, 63 characters of any printable symbol, and 63 letters and numbers for equipment that chokes on odd characters."
+        },
+        {
+          "type": "fact",
+          "title": "WPA's two key formats",
+          "t": "WPA-PSK accepts either a passphrase of 8 to 63 printable characters, which it stretches into a key, or exactly 64 hex digits, which are the 256-bit key itself. Both are safe if they're random."
+        },
+        {
+          "s": "leo",
+          "t": "How do you know your random numbers are any good?"
+        },
+        {
+          "s": "steve",
+          "t": "I use RSA Security's BSAFE crypto library, seeded with processor cycle counts, network hardware details and counters that only ever increase. Every page refresh gives you a new set."
+        },
+        {
+          "s": "steve",
+          "t": "If you don't want to trust me completely, generate a few and mix pieces together."
+        },
+        {
+          "s": "leo",
+          "t": "And for the purists: it's not theoretically uncrackable, just practically uncrackable."
+        }
+      ]
+    },
+    {
+      "title": "Why You Need a VPN",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now, VPNs. Businesses use them so telecommuters can connect securely. Can home users?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. We covered open access points, weak Wi-Fi security, then WPA. The next question is how to stay secure on a network you don't control, like Starbucks or a hotel."
+        },
+        {
+          "s": "steve",
+          "t": "An InfoWorld column by Roger Grimes quoted a security expert who travels constantly. She says about half the hotels she stays at use hubs, not switches."
+        },
+        {
+          "s": "steve",
+          "t": "In a typical night, with a password-capture tool called Cain, she collects more than a hundred, 118 in one case, unencrypted passwords from other guests."
+        },
+        {
+          "s": "leo",
+          "t": "In my hotel right now, I can see other guests' iTunes libraries. We're on the same network."
+        },
+        {
+          "s": "steve",
+          "t": "Your firewall keeps people out of your machine, but it can't keep what you send private."
+        },
+        {
+          "s": "leo",
+          "t": "I use SSL for email, so that's protected. Plain FTP to my website isn't, and people often use the same password for FTP as for their site admin. That's why I use secure FTP."
+        },
+        {
+          "s": "steve",
+          "t": "SSL negotiates encryption inside the TCP connection before any of your data goes through. But it only protects that one connection, not everything."
+        }
+      ]
+    },
+    {
+      "title": "How a Tunnel Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The key idea in a Virtual Private Network is the tunnel."
+        },
+        {
+          "s": "steve",
+          "t": "Normally every packet's header, with source and destination addresses and ports, is visible, and so is its unencrypted contents."
+        },
+        {
+          "s": "steve",
+          "t": "A VPN wraps each of your packets inside another packet. Your entire original packet, header and all, becomes the encrypted contents of a new outer packet."
+        },
+        {
+          "type": "fact",
+          "title": "Encapsulation",
+          "t": "Original packet: [your header | your data]. VPN packet: [outer header to the VPN endpoint | encrypted(your header + your data)]. An eavesdropper sees only that you're talking to the VPN server, not where your traffic is going or what it is."
+        },
+        {
+          "s": "steve",
+          "t": "The two ends both have to speak VPN. Usually that's a client on your laptop and a VPN server at the office, or a consumer VPN router at home."
+        },
+        {
+          "s": "steve",
+          "t": "The encryption is typically IPSec, the industrial-strength IP security standard. At the far end, the outer wrapper is removed, the contents are decrypted back into your original packet, and it's sent on its way."
+        },
+        {
+          "s": "steve",
+          "t": "A side note: wrapping makes packets bigger, and Internet packets are limited to about 1,500 bytes. An early Windows XP Service Pack 2 update forgot to shrink packets before wrapping and broke VPNs. Microsoft fixed it fast."
+        },
+        {
+          "type": "fact",
+          "title": "MTU",
+          "t": "The Maximum Transmission Unit is the largest packet a link carries, typically 1,500 bytes on Ethernet. VPN overhead must fit inside it, so tunnel software lowers the inner MTU or fragments packets. Get it wrong and connections mysteriously stall."
+        },
+        {
+          "s": "steve",
+          "t": "Another bonus: nothing between you and the VPN server can tell what you're doing, so it can't block it either. If a hotel blocks outgoing email on port 25, it doesn't matter, because inside the tunnel it's just encrypted data."
+        },
+        {
+          "s": "leo",
+          "t": "The catch is that some networks block the ports VPNs use."
+        },
+        {
+          "s": "steve",
+          "t": "That's for next week, along with the acronym stew of IKE, IPSec, 3DES and AES, and how to configure it all for maximum compatibility."
+        },
+        {
+          "s": "leo",
+          "t": "Until then, services like Anonymizer offer secure tunnels over SSL, which is almost never blocked."
+        },
+        {
+          "s": "steve",
+          "t": "And we're starting listener Q&A episodes: every episode number divisible by four."
+        },
+        {
+          "s": "leo",
+          "t": "Security Now! Mod 4. And thanks to Elaine, who turns our transcripts around in hours."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Steve build GRC's own password generator?",
+      "options": [
+        "Other generators didn't use SSL and could be cached, so others might see your passwords",
+        "He wanted to sell passwords",
+        "Browsers can't make random numbers",
+        "WPA requires it"
+      ],
+      "answer": 0,
+      "explain": "His page forces an encrypted connection and generates fresh random strings each time."
+    },
+    {
+      "q": "What did the traveling security expert capture in hotels?",
+      "options": [
+        "Over 100 unencrypted passwords in a single night",
+        "Other guests' credit cards from the front desk",
+        "Only Wi-Fi network names",
+        "Nothing, because hotels use switches"
+      ],
+      "answer": 0,
+      "explain": "Many hotels used hubs, so a sniffer like Cain picked up everyone's plain-text logins."
+    },
+    {
+      "q": "What does a VPN do to each of your packets?",
+      "options": [
+        "Encrypts the whole packet and wraps it inside a new outer packet",
+        "Compresses it",
+        "Deletes the header",
+        "Sends it twice"
+      ],
+      "answer": 0,
+      "explain": "Eavesdroppers see only the tunnel endpoint, not your destinations or data."
+    },
+    {
+      "q": "Why did an early XP SP2 update break VPNs?",
+      "options": [
+        "Wrapped packets became larger than the ~1,500-byte limit",
+        "It removed IPSec",
+        "It blocked port 80",
+        "It changed everyone's IP"
+      ],
+      "answer": 0,
+      "explain": "Tunneling adds overhead, so inner packets must be shrunk to fit the MTU."
+    },
+    {
+      "q": "Why can't a hotel block your email if you use a VPN?",
+      "options": [
+        "Everything inside the tunnel is encrypted, so the network can't tell what it is",
+        "Hotels never block email",
+        "VPNs use satellites",
+        "Email doesn't use ports"
+      ],
+      "answer": 0,
+      "explain": "Once the tunnel is up, any traffic can go through it unseen."
+    }
+  ]
+}

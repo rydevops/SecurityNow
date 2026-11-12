@@ -1,0 +1,244 @@
+{
+  "number": 13,
+  "title": "Unbreakable WiFi Security",
+  "subtitle": "Making sense of WPA, and the one thing you must get right",
+  "date": "2005-11-10",
+  "description": "The Sony rootkit turns out to phone home and is already being used by a trojan. Then Steve untangles the confusing flavors of WPA and gives a critical must-do tip for every WPA user.",
+  "transcript": "https://www.grc.com/sn/sn-013.txt",
+  "audio": "http://media.GRC.com/sn/SN-013.mp3",
+  "chapters": [
+    {
+      "title": "Sony Update: It Got Worse",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lucky Episode 13. First, the Sony rootkit from last week. It's a huge story."
+        },
+        {
+          "s": "steve",
+          "t": "Kaspersky Lab reports a new backdoor trojan, called Breplibot.b, that names itself $sys$drv.exe. On any PC with Sony's DRM installed, it's instantly invisible."
+        },
+        {
+          "s": "leo",
+          "t": "Exactly what we predicted."
+        },
+        {
+          "s": "steve",
+          "t": "It arrives by spam email and opens a backdoor on your system."
+        },
+        {
+          "s": "leo",
+          "t": "How can scanners detect a rootkit?"
+        },
+        {
+          "s": "steve",
+          "t": "Sony's is easy to spot. Rename any file to start with $sys$. If it disappears, you have it."
+        },
+        {
+          "s": "leo",
+          "t": "One listener keeps a file called $sys$canary on his desktop. If the canary vanishes, you're infected."
+        },
+        {
+          "s": "steve",
+          "t": "Mark Russinovich also confirmed that Sony's player phones home, telling Sony which album you're playing. That's classic spyware behavior, undisclosed, and Sony denied it until packet captures showed it."
+        },
+        {
+          "s": "leo",
+          "t": "\"We don't do it, and if we did, we wouldn't keep the data.\" How can you trust that?"
+        },
+        {
+          "s": "steve",
+          "t": "Under pressure, Sony now offers a tool that removes the hiding but leaves the DRM. You submit your email address to get it. Then hold Shift when inserting those CDs, or turn off AutoRun entirely, and decline the license if it appears."
+        },
+        {
+          "s": "steve",
+          "t": "There's government interest in Ireland, and a San Francisco law firm is preparing a class action."
+        },
+        {
+          "type": "fact",
+          "title": "The canary trick",
+          "t": "Rename a harmless file so it begins with $sys$. If it disappears from Explorer, Sony's XCP rootkit is hiding things on your PC. It's a quick test that needs no special tools."
+        }
+      ]
+    },
+    {
+      "title": "MAC Filtering, Revisited",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I got a lot of mail objecting to what I said about MAC filtering and SSID hiding."
+        },
+        {
+          "s": "leo",
+          "t": "How can anyone object? It's factual."
+        },
+        {
+          "s": "steve",
+          "t": "Fair point from listeners: those features, and changing the default SSID, do stop neighbors from wandering onto your network by accident, and some people find it easier to add a visiting friend's MAC address than share a key."
+        },
+        {
+          "s": "leo",
+          "t": "Here's my analogy: you leave your door unlocked so the kids can get in, but put up a sign saying you have an alarm system. Just give the kids a key."
+        },
+        {
+          "s": "steve",
+          "t": "Call it weak authentication. It keeps out the casual and the accidental, but anyone sniffing the air gets past it. It's not security."
+        }
+      ]
+    },
+    {
+      "title": "WPA, Decoded",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Once WEP was so badly broken, real security experts designed WPA. Even its simplest form, done properly, is effectively uncrackable as long as nobody gets your key."
+        },
+        {
+          "s": "steve",
+          "t": "WPA's TKIP mode keeps changing the keys, which makes the old RC4 cipher safe. WPA2, also called 802.11i, uses AES, the new NIST standard."
+        },
+        {
+          "s": "steve",
+          "t": "Some people assume AES is automatically better. RC4 is plenty strong when used correctly, and WPA uses it correctly. TKIP exists so older routers can be upgraded. AES needs newer hardware."
+        },
+        {
+          "type": "fact",
+          "title": "WPA's two dimensions",
+          "t": "How keys are managed: Personal/PSK, one shared passphrase for everyone, or Enterprise, a RADIUS server giving each user unique, expiring keys. How data is encrypted: TKIP (RC4 with constantly changing keys, for older hardware) or AES-CCMP (WPA2)."
+        },
+        {
+          "s": "steve",
+          "t": "At home you'll use PSK: a pre-shared key. Type one passphrase into the access point and each device, and you're done."
+        },
+        {
+          "s": "steve",
+          "t": "Enterprise mode adds a RADIUS server that authenticates each user and hands out separate keys on the fly."
+        },
+        {
+          "s": "steve",
+          "t": "With a single shared key, anyone on the network can decrypt everyone else's traffic, and a former employee who knows the key is a risk. At home that doesn't matter. At a company, use Enterprise."
+        },
+        {
+          "s": "steve",
+          "t": "My new Belkin router offers AES, but I use TKIP. It's safe enough, uses less processing, and works with a visiting friend's older laptop."
+        },
+        {
+          "s": "steve",
+          "t": "So the baseline is WPA with a pre-shared key and TKIP. It's an acronym gumbo."
+        }
+      ]
+    },
+    {
+      "title": "The Must-Do: Your Passphrase",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the critical part. WPA-PSK can be attacked offline. An attacker captures a small amount of your traffic, takes it home, and runs brute-force or dictionary guesses as long as they like."
+        },
+        {
+          "s": "steve",
+          "t": "Passphrases are weaker than they look. A typical English passphrase has about 2.5 bits of strength per character, not 8. A 20-character phrase is worth only about 50 bits."
+        },
+        {
+          "type": "fact",
+          "title": "How WPA turns a passphrase into a key",
+          "t": "WPA runs your passphrase and network name through PBKDF2: 4,096 rounds of HMAC-SHA1 producing a 256-bit key. That slows each guess, but a phrase made of common words can still fall to an offline dictionary attack. Length and randomness are what protect you."
+        },
+        {
+          "s": "steve",
+          "t": "So don't type a sentence. Use the full 63 characters of random gibberish: upper and lowercase, numbers, symbols, like a comic-book character swearing."
+        },
+        {
+          "s": "steve",
+          "t": "Keep it in a file and copy and paste it into each device. When a friend visits, paste it in and delete it before they leave. They can't memorize it, and neither can you."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't this a lot of fear? How many people really get hacked this way?"
+        },
+        {
+          "s": "steve",
+          "t": "Our goal is to explain the technology. If you think a few English words make you safe, you should know offline cracking exists. Then you decide."
+        },
+        {
+          "s": "leo",
+          "t": "So: if you care about Wi-Fi security, use WPA with a long, random passphrase. TKIP is just for businesses."
+        },
+        {
+          "type": "fact",
+          "title": "TKIP isn't just for business",
+          "t": "Leo mixed up two things here. TKIP is an encryption mode and works fine at home. It's RADIUS-based Enterprise mode, with per-user keys, that's mainly for businesses. Today, use WPA2 or WPA3 with AES where your hardware supports it."
+        },
+        {
+          "s": "steve",
+          "t": "For tinkerers, there's even Linux firmware for the Linksys WRT54G with a small built-in RADIUS server."
+        },
+        {
+          "s": "steve",
+          "t": "Older Windows versions don't have built-in WPA support. A free WPA client from Wireless Security Corp., now owned by McAfee, adds it to Windows 95 and later."
+        },
+        {
+          "s": "leo",
+          "t": "If WEP is all you have, it's still better than nothing. Next week: VPNs."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How can you quickly check for Sony's XCP rootkit?",
+      "options": [
+        "Rename a file to start with $sys$ and see if it disappears",
+        "Look for a Sony logo in the taskbar",
+        "Check the CD tray",
+        "Reboot twice"
+      ],
+      "answer": 0,
+      "explain": "XCP hides anything with that prefix, so the \"canary\" file vanishes."
+    },
+    {
+      "q": "What is the main difference between WPA Personal (PSK) and WPA Enterprise?",
+      "options": [
+        "Enterprise gives each user unique keys from a central server",
+        "Personal uses no encryption",
+        "Enterprise only works with WEP",
+        "Personal requires a RADIUS server"
+      ],
+      "answer": 0,
+      "explain": "With one shared key, users can decrypt each other's traffic. Enterprise prevents that."
+    },
+    {
+      "q": "Why must WPA-PSK passphrases be long and random?",
+      "options": [
+        "Captured traffic can be attacked offline with brute force or a dictionary",
+        "The router forgets short ones",
+        "Short ones slow down Wi-Fi",
+        "The FCC requires it"
+      ],
+      "answer": 0,
+      "explain": "An attacker can guess as long as they like, so only a random, high-entropy passphrase holds up."
+    },
+    {
+      "q": "About how many bits of strength does a typical English passphrase have per character?",
+      "options": [
+        "About 2.5",
+        "8",
+        "16",
+        "64"
+      ],
+      "answer": 0,
+      "explain": "That's why a 20-character sentence is worth only about 50 bits."
+    },
+    {
+      "q": "Why does WPA's TKIP mode still use the RC4 cipher?",
+      "options": [
+        "So older WEP hardware can be upgraded, using RC4 with constantly changing keys",
+        "RC4 is stronger than AES",
+        "AES is illegal",
+        "It's the only cipher Windows supports"
+      ],
+      "answer": 0,
+      "explain": "RC4 is strong when used correctly. WEP's problem was how it used RC4."
+    }
+  ]
+}

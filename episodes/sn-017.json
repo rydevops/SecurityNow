@@ -1,0 +1,246 @@
+{
+  "number": 17,
+  "title": "PPTP and IPSec VPNs",
+  "subtitle": "The original VPN protocols, and why they frustrate road warriors",
+  "date": "2005-12-08",
+  "description": "The oldest VPN protocols: industry-standard IPSec and Microsoft's PPTP and L2TP/IPSec. Why Windows won't connect to third-party VPN routers, and why these older technologies probably aren't ideal for travelers.",
+  "transcript": "https://www.grc.com/sn/sn-017.txt",
+  "audio": "http://media.GRC.com/sn/SN-017.mp3",
+  "chapters": [
+    {
+      "title": "Corrections First",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 17, part three of our VPN series. This is the alphabet-soup edition."
+        },
+        {
+          "s": "steve",
+          "t": "Two corrections from last week. I oversold switches. You can't passively sniff a switched network the way you can a hub, but Ethernet itself was never designed for security, and there are active ways to subvert a whole LAN. We'll get to those after we have solutions."
+        },
+        {
+          "s": "leo",
+          "t": "Like the ARP poisoning a listener mentioned."
+        },
+        {
+          "s": "steve",
+          "t": "And I mangled an acronym I know well. Ethernet's method is CSMA/CD: Carrier Sense Multiple Access with Collision Detection."
+        },
+        {
+          "s": "leo",
+          "t": "I admire your engineer's drive for precision."
+        },
+        {
+          "s": "steve",
+          "t": "That's the only way to write assembly language: pay attention to the carry bit."
+        },
+        {
+          "s": "steve",
+          "t": "Listeners also sent clever tricks for public terminals. Type part of your password in Notepad, switch windows and type nonsense, come back and type more, then copy and paste the pieces together. A simple keystroke logger never sees the real sequence."
+        },
+        {
+          "s": "leo",
+          "t": "Unless there's a camera over your shoulder."
+        },
+        {
+          "type": "fact",
+          "title": "Defeating simple keyloggers",
+          "t": "A keylogger that only records keystrokes can be confused by assembling a password out of order, with mouse clicks and copy-and-paste between windows. Screen recorders and smarter malware aren't fooled, so it reduces risk without making a public PC safe."
+        }
+      ]
+    },
+    {
+      "title": "PPTP: Built Into Every Windows",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "PPTP, the Point-to-Point Tunneling Protocol, is Microsoft's, and every Windows since 95 has it. The Mac supports it too."
+        },
+        {
+          "s": "steve",
+          "t": "Its first version had serious authentication flaws, and the second is still easy to abuse. Microsoft now calls it \"non-strategic\" and is moving to L2TP, the Layer 2 Tunneling Protocol, protected by IPSec."
+        },
+        {
+          "s": "steve",
+          "t": "You can still set one up with no extra software using Windows XP's New Connection Wizard. The show notes have step-by-step links."
+        },
+        {
+          "s": "steve",
+          "t": "This is a true VPN: your laptop gets an IP address from the far network, as if it were plugged in there. Last week's SSH tunnels just redirect specific programs' traffic."
+        },
+        {
+          "type": "fact",
+          "title": "True VPN vs. port forwarding",
+          "t": "A real VPN gives your device an address on the remote network and can carry any traffic. SSH port forwarding only redirects the specific programs you point at the local tunnel ports."
+        }
+      ]
+    },
+    {
+      "title": "Why Bother if It's Unencrypted Later?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "People ask: once your traffic leaves the VPN server, it's unencrypted on the Internet anyway, so what's the point?"
+        },
+        {
+          "s": "steve",
+          "t": "The point is to encrypt it through the most dangerous part: the hotel LAN or the hotspot's radio, where anyone nearby can capture it. Out on the Internet backbone, you're one tiny stream among enormous volumes of traffic. A targeted attack is possible, but casual snooping isn't."
+        }
+      ]
+    },
+    {
+      "title": "The Holy Grail Hits a Wall",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I hoped Windows' built-in client could connect straight to a home VPN router with no extra software."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's client only speaks L2TP/IPSec, which isn't compatible with the standard IPSec that every endpoint router supports. Microsoft has pages and pages explaining why. Everyone else interoperates."
+        },
+        {
+          "s": "steve",
+          "t": "Netgear, D-Link and Linksys sell VPN endpoint routers for about $129 to $139, plus their own client software for about $39. Linksys's may be free."
+        },
+        {
+          "s": "leo",
+          "t": "The box will say \"VPN router.\""
+        }
+      ]
+    },
+    {
+      "title": "IPSec and NAT",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The next problem: IPSec signs each packet so that any change is detected, and NAT routers have to change packets."
+        },
+        {
+          "s": "steve",
+          "t": "IPSec has two modes. AH, the Authentication Header, covers the IP address, so it can never pass through NAT. ESP protects only the inner packet, so it can be made to work."
+        },
+        {
+          "type": "fact",
+          "title": "AH vs. ESP",
+          "t": "IPSec's Authentication Header signs the whole packet, including the outer IP addresses NAT must rewrite, so it can't survive NAT. ESP (Encapsulating Security Payload) encrypts and authenticates the inner contents, which is why it can be made to cross NAT."
+        },
+        {
+          "s": "steve",
+          "t": "The fix is NAT-T, NAT Traversal for IPSec. It wraps each IPSec packet in UDP so it passes through hotel and home NAT routers, and both ends unwrap it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft quietly added NAT-T in XP Service Pack 2. Netgear's FVS318 version 3 supports it; versions 1 and 2 don't and can't be upgraded. All current D-Link VPN routers do, though I had to call D-Link to find that out."
+        },
+        {
+          "s": "steve",
+          "t": "Don't confuse \"VPN passthrough\" with a VPN endpoint. Passthrough just lets one VPN connection from your home get through your router to the office. An endpoint router is a VPN server you can connect to."
+        }
+      ]
+    },
+    {
+      "title": "So What Do I Actually Do?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I'm totally lost. I fly out tomorrow. What do I set up at home?"
+        },
+        {
+          "s": "steve",
+          "t": "If you have a VPN endpoint router, buy its matching client for your laptop, make sure the router supports NAT-T, and set up a strong pre-shared key before you leave."
+        },
+        {
+          "s": "leo",
+          "t": "And then?"
+        },
+        {
+          "s": "steve",
+          "t": "The catch: VPNs use well-known ports (1723, 1701, UDP 500), and hotels, ISPs or corporate firewalls can block them. Some VPN services even say, \"If PPTP doesn't work, try IPSec.\""
+        },
+        {
+          "s": "steve",
+          "t": "PublicVPN.com, at $5.95 a month or $59.95 a year, runs PPTP and L2TP servers, so Windows and Mac need no extra software. But it uses those blockable protocols."
+        },
+        {
+          "s": "steve",
+          "t": "HotSpotVPN, about $8.88 a month on special, is SSL-based. I'm still talking with them, so no endorsement yet."
+        },
+        {
+          "s": "leo",
+          "t": "And on my Mac?"
+        },
+        {
+          "s": "steve",
+          "t": "The Mac supports PPTP, but PPTP has no strong authentication and has been cracked by man-in-the-middle tools."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: OpenVPN, a cross-platform open-source option, and after that Hamachi."
+        },
+        {
+          "type": "fact",
+          "title": "Why PPTP is retired",
+          "t": "PPTP's MS-CHAPv2 authentication was broken repeatedly, most famously when its encryption was shown to reduce to cracking a single DES key. Modern guidance is not to use PPTP at all."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is Steve's answer to \"VPN traffic is unencrypted on the Internet anyway, so why bother\"?",
+      "options": [
+        "The VPN protects you through the most dangerous part, the local LAN or radio link",
+        "VPNs encrypt the whole Internet",
+        "There is no point",
+        "VPNs speed up traffic"
+      ],
+      "answer": 0,
+      "explain": "Anyone nearby can sniff the hotel or hotspot network, so that's where encryption matters most."
+    },
+    {
+      "q": "Why couldn't Windows' built-in client connect to typical home VPN routers?",
+      "options": [
+        "Microsoft only supports L2TP/IPSec, not the standard IPSec those routers use",
+        "Routers block Windows",
+        "Windows has no VPN client",
+        "The routers needed a Mac"
+      ],
+      "answer": 0,
+      "explain": "You had to buy the router maker's client, about $39."
+    },
+    {
+      "q": "Why can't IPSec's AH mode cross a NAT router?",
+      "options": [
+        "AH signs the IP addresses that NAT has to rewrite",
+        "AH is too slow",
+        "AH uses TCP only",
+        "NAT routers block encryption"
+      ],
+      "answer": 0,
+      "explain": "Any change breaks AH's integrity check, so NAT always breaks it."
+    },
+    {
+      "q": "What does NAT-T do?",
+      "options": [
+        "Wraps IPSec packets in UDP so they can pass through NAT routers",
+        "Removes encryption",
+        "Changes the VPN password",
+        "Blocks hotel firewalls"
+      ],
+      "answer": 0,
+      "explain": "It's NAT Traversal for IPSec, added quietly in XP SP2 and in newer VPN routers."
+    },
+    {
+      "q": "What's the difference between \"VPN passthrough\" and a VPN endpoint router?",
+      "options": [
+        "Passthrough lets your VPN cross the router; an endpoint is a VPN server you connect to",
+        "They're the same",
+        "Passthrough is more secure",
+        "Endpoints only work for Macs"
+      ],
+      "answer": 0,
+      "explain": "Road warriors who want to reach home need an endpoint router."
+    }
+  ]
+}
