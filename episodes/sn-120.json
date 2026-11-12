@@ -1,0 +1,783 @@
+{
+  "number": 120,
+  "title": "Listener Feedback #29",
+  "subtitle": "ISP-based logins, double encryption, Flash cookies and more",
+  "date": "2007-11-29",
+  "description": "Recorded ahead for Thanksgiving, Steve shares a SpinRite rescue of a fragile three-drive span and says how often to run it. Listeners ask about a credit union that trusts your ISP's domain as a second factor, encrypting twice, an elaborate JavaScript login without SSL, patching a fresh XP install, where to buy a \"NAT router,\" having PayPal prove itself with a token code, what HTTPS hides at work, Flash cookies that survive cookie deletion, the token's counting digit, storing a long Firefox master password, and WEP-plus-WPA routers. Plus first thoughts on the Kindle.",
+  "transcript": "https://www.grc.com/sn/sn-120.txt",
+  "audio": "http://media.GRC.com/sn/SN-120.mp3",
+  "chapters": [
+    {
+      "title": "Recording Ahead, and a Spanned Drive Rescue",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We're prerecording because of Thanksgiving, and I'm in Vancouver this week, so no errata from last week."
+        },
+        {
+          "s": "steve",
+          "t": "Nobody's heard last week's episode yet."
+        },
+        {
+          "s": "leo",
+          "t": "I hope we hear from PayPal."
+        },
+        {
+          "s": "steve",
+          "t": "I'd love a defense. Elaine, our transcriptionist, was waiting with bated breath for the PayPal and DoubleClick analysis. She says she could quit PayPal, but whatever they have, they already have. She's already in the galactic database."
+        },
+        {
+          "s": "steve",
+          "t": "Last week we talked about RAID for things that can't be lost. Backups still matter even with RAID. Malware can infect a RAID system, and then you have more reliable malware."
+        },
+        {
+          "s": "leo",
+          "t": "I never thought of that."
+        },
+        {
+          "s": "steve",
+          "t": "Brian Kinder, very computer savvy, sent the reverse of a RAID success. His boss kept 11,000 photos from six years of travels on an old Windows 2000 machine. In a panic, he couldn't reach them, and of course there were no backups."
+        },
+        {
+          "s": "leo",
+          "t": "Why would you have 11,000 photos and no backup?"
+        },
+        {
+          "s": "steve",
+          "t": "It worked yesterday and today, so why not tomorrow? A previous \"technician\" had spanned a 160-gig, a 30-gig and an 80-gig drive into one shared volume."
+        },
+        {
+          "s": "leo",
+          "t": "That makes it more likely to fail."
+        },
+        {
+          "s": "steve",
+          "t": "Three times, with three drives. If any one fails, the whole span fails. You multiply the failure probabilities."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite took about a day and a half on all three. The 30-gig drive had many, many errors, but it made it through. The span came up fine, and the photos were back. Now they'll set up sensible redundancy and backups. He's used SpinRite since version 2."
+        },
+        {
+          "s": "steve",
+          "t": "Some say, I can buy a drive for less than SpinRite. But you can only buy one drive for that, and you can use SpinRite on all your drives. And storage is cheap while digital media, photos, music and ripped DVDs, are valuable. The contents are worth more than the container now."
+        },
+        {
+          "s": "leo",
+          "t": "If everybody backed up religiously, they wouldn't need SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "True. Although SpinRite also keeps drives alive longer, and people keep using drives it repaired."
+        },
+        {
+          "s": "steve",
+          "t": "And I never answered last week how often to run it: before your drive fails. Most drives have years of life, apart from infant mortality. Maybe three times a year is enough to help the drive find problems and move endangered data. A day of serious data transfer also lets the drive's SMART system discover problems. It's a good shaking to make sure not too many bits fall out."
+        },
+        {
+          "s": "leo",
+          "t": "Shake your drive regularly to find the loose bits."
+        },
+        {
+          "s": "leo",
+          "t": "When we record, I stream it live on Ustream.tv, with a chatroom at irc.dslextreme.com in #townsquare. Not today: my Verizon connection isn't reliable enough. I may add a T1 or a cable modem for redundancy."
+        }
+      ]
+    },
+    {
+      "title": "Your ISP as a Second Factor",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Erik in Palo Alto got excited when his credit union, Patelco, said it would require multifactor authentication for online banking. He joined the beta."
+        },
+        {
+          "s": "leo",
+          "t": "It authorizes the Internet providers you log in from. He's on SBC, so his first login added SBC to his safe providers list. You can't add one manually. At work, after his account number and password, it said his domain wasn't on the list and offered to email or text him a new password. He got a four-character code, valid for two hours. Now his work's domain is approved too, though he can choose to always be prompted. How good is it?"
+        },
+        {
+          "s": "steve",
+          "t": "I wouldn't quite call it multifactor. New regulations require something more than username and password, and I guess this qualifies, with your connecting domain as the factor."
+        },
+        {
+          "s": "leo",
+          "t": "It would work better on a small ISP. On AOL, anybody on AOL can try to hack you."
+        },
+        {
+          "s": "steve",
+          "t": "They're doing a \"reverse DNS\" lookup. Normal DNS turns www.grc.com into GRC's IP address, I think 4.79.142.203. Reverse DNS takes an IP and gives you the machine's domain name."
+        },
+        {
+          "s": "steve",
+          "t": "They designed this because users' IPs change. Old AOL dialup users get a different IP every call. Cable providers reuse their limited IP pools via DHCP. Leave your modem unplugged a few days and you'll likely get a new one. Mark Thompson in Phoenix says Cox now changes his IP daily."
+        },
+        {
+          "s": "steve",
+          "t": "A reverse lookup on a Cox IP shows the IP, maybe a region like sd.sd for San Diego or oc.oc for Orange County, then cox.net. The bank ignores the front parts and looks at cox.net or aol.com."
+        },
+        {
+          "s": "leo",
+          "t": "They could add the provider's address ranges."
+        },
+        {
+          "s": "steve",
+          "t": "That's the problem: it's not one-to-one. An attacker on AOL would match an AOL user's safe provider. Perfect Paper Passwords gets its strength from every card being unique. If many people shared the same codes, we'd be much less enthusiastic."
+        },
+        {
+          "s": "steve",
+          "t": "And reverse DNS isn't secure. It's answered by servers for whoever controls that IP space. Someone in Russia or China controlling an IP block could claim to be aol.com, and there's no way to know. It's better than nothing, and a random foreign attacker would struggle. But it's not a strong additional factor."
+        },
+        {
+          "s": "leo",
+          "t": "I bet the banking lobby said, don't make it too hard."
+        },
+        {
+          "s": "steve",
+          "t": "If it's too hard, no one will do it. It'd be better as one factor among good ones."
+        }
+      ]
+    },
+    {
+      "title": "VeriSign Tokens for GRC",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I want everybody using these VeriSign cards."
+        },
+        {
+          "s": "steve",
+          "t": "Yesterday I signed an evaluation agreement with VeriSign giving me back-end access to play with the API, which looked clean and robust. I'll report how it goes."
+        },
+        {
+          "s": "leo",
+          "t": "You wouldn't need PPP if this were universal."
+        },
+        {
+          "s": "steve",
+          "t": "I bought six of the credit-card tokens and fully intend to use VeriSign as primary authentication for Sue, Greg and me."
+        },
+        {
+          "s": "leo",
+          "t": "As soon as you publicize PPP, you replace it."
+        },
+        {
+          "s": "steve",
+          "t": "I know. But PPP will always be our fallback if the VeriSign relationship ends."
+        },
+        {
+          "s": "leo",
+          "t": "VeriSign must intend to charge."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. Their model fits PayPal, eBay and Bank of America, maybe not a little guy like me. But I never carried the football. I didn't want a necklace of them. The card is just another credit card in my wallet."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love PayPal's fallback without a token to be what Bank of America does: text a code to your phone or email, instead of the same two easy-to-fake security questions. You always need a back door, so make it a better one."
+        },
+        {
+          "s": "steve",
+          "t": "Agreed. More secure means less convenient. Several times I was at Starbucks wanting to buy something with the football at home."
+        },
+        {
+          "s": "leo",
+          "t": "So you replaced the football with the card?"
+        },
+        {
+          "s": "steve",
+          "t": "No, that's the cool thing. VeriSign now lets five hardware tokens be registered at once, and PayPal supports it through its own interface. The football sits next to me, and my wallet's in the back of the house, since I'm in my sweats. Absolutely no overhead."
+        },
+        {
+          "s": "leo",
+          "t": "And if you lose one, you have the other."
+        }
+      ]
+    },
+    {
+      "title": "Is Twice Encrypted Twice as Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bob Gusek in High Point, North Carolina has experimented with double encryption: encrypt with one key, then again with a second. Brute forcers try keys until they get clear text, but they'll never see it, because it's encrypted twice. Is he missing something?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. A brute-force attack, by dictionary or counting from zero, decrypts until something recognizable appears. With double encryption, even the right outer key just reveals the inner encryption, which looks random like every wrong key's output. So you can't tell you found it. He's absolutely right."
+        },
+        {
+          "s": "steve",
+          "t": "But it really matters only with weak keys. Contemporary symmetric encryption uses 128-bit keys, phenomenally strong if the bits are random. Not if you hash the password \"dog,\" since anyone can hash \"dog\" too. With weak passwords, use two. If nobody knew, you could even use the same one twice, since they'd decrypt once, see noise and move on."
+        },
+        {
+          "s": "steve",
+          "t": "But with a truly random 128-bit key, doing it twice doesn't buy you more. It's already irreversible. A clever idea, though."
+        },
+        {
+          "type": "fact",
+          "title": "Meet in the middle",
+          "t": "Encrypting twice with two independent keys adds surprisingly little against an attacker who knows you did it. A \"meet-in-the-middle\" attack makes double encryption only about twice as hard as single, which is why Triple DES uses three passes."
+        },
+        {
+          "s": "leo",
+          "t": "Doesn't PGP use double encryption?"
+        },
+        {
+          "s": "steve",
+          "t": "There are layers. PGP is public-key based, with a much longer key, probably 124 bits, on the public side. Public-key crypto is too slow for bulk data, so PGP generates a random symmetric key, maybe 128 bits, encrypts the message with it at high speed, and encrypts that key with the public key."
+        },
+        {
+          "type": "fact",
+          "title": "Key sizes",
+          "t": "Public keys are far longer than Steve's figure: PGP's RSA keys were typically 1,024 to 4,096 bits. They must be much longer than symmetric keys to be equally strong."
+        }
+      ]
+    },
+    {
+      "title": "A Fortress Login With No SSL",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew Beacher of Pottstown, Pennsylvania is writing a PHP web app. For convenience, he's skipping SSL and doing one-way encryption in JavaScript. He takes the password, adds a string from GRC's Perfect Passwords page, MD5 hashes it, adds a second string, SHA1 hashes that, then does an HMAC SHA1 with a key from the PHP version of Perfect Paper Passwords, and sends it as hex. The server compares it with passwords stored the same way."
+        },
+        {
+          "s": "leo",
+          "t": "He asks: is this enough without SSL? Should he use HMAC before storing passwords? And what about creating accounts? Folks, that's a lot of hash."
+        },
+        {
+          "s": "steve",
+          "t": "I bet Matthew wears a belt and suspenders. Nobody monitoring the wire will ever figure out what went into the front of that grinder."
+        },
+        {
+          "s": "leo",
+          "t": "How does he sync the Perfect Passwords strings?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm not sure how PPP fits in. But HMAC is something we've never discussed."
+        },
+        {
+          "s": "steve",
+          "t": "Hashes take any amount of input and give a fixed-size fingerprint, also called a digest. MD5 is Message Digest. Newer ones are stronger. Perfect Paper Passwords uses SHA-256, with 256 bits out, versus 128 for MD5 and 160 for SHA-1."
+        },
+        {
+          "s": "steve",
+          "t": "There was a flurry of concern that SHA-1 had been cracked. It wasn't. But it wasn't as perfect as we'd like: different inputs collided, producing the same 156 bits out, more often than statistics would predict. That made people uncomfortable."
+        },
+        {
+          "type": "fact",
+          "title": "SHA-1 later",
+          "t": "SHA-1's output is 160 bits. Researchers produced the first real SHA-1 collision in 2017, and browsers and certificate authorities have since retired it."
+        },
+        {
+          "s": "steve",
+          "t": "HMAC stands for Hash Message Authentication Code. It's a keyed hash. Like Rijndael, whose key determines how 128 bits map to 128 bits, the HMAC's key determines its output for any amount of input."
+        },
+        {
+          "s": "steve",
+          "t": "An ordinary hash lets anyone verify content. Open-source projects publish a build's MD5 hash, so you can hash your download and compare. But anyone gets the same result. With a secret key, an HMAC also proves who produced it: someone with that key and that content. It adds authentication."
+        },
+        {
+          "s": "steve",
+          "t": "So Matthew's scheme strikes me as massive overkill, but he's had fun writing JavaScript."
+        },
+        {
+          "s": "steve",
+          "t": "The big problem is skipping SSL. He's strongly protected the logon. But then the server maintains state somehow, maybe returning a session cookie. Without SSL, that's open to sidejacking."
+        },
+        {
+          "s": "steve",
+          "t": "He went through all this to stop someone sniffing his traffic. But a sniffer sees everything else, including the session cookie, and can instantly impersonate the logged-in user. Nobody will figure out that hex string, but now they don't have to."
+        },
+        {
+          "s": "leo",
+          "t": "He closed the barn door, but the horse was never inside."
+        },
+        {
+          "s": "leo",
+          "t": "He could encrypt the rest of the conversation by hand."
+        },
+        {
+          "s": "steve",
+          "t": "It gets tricky to make it snoop-proof. That's all been worked out with SSL."
+        },
+        {
+          "s": "leo",
+          "t": "You can't tell people not to reinvent the wheel. You do it yourself."
+        },
+        {
+          "s": "steve",
+          "t": "True. Matthew's taken a great first step. I hope he's listening and going, oh, shoot."
+        },
+        {
+          "s": "leo",
+          "t": "He's probably a computer science student learning this stuff."
+        }
+      ]
+    },
+    {
+      "title": "Patching a Fresh XP Install",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Dewey of Crestwood, Kentucky, a SpinRite customer since version 3.1, must reload XP on his father-in-law's computer. Service Pack 3 isn't out yet. He's found third-party slipstreamed hotfixes but only trusts Microsoft. Is there an authoritative list of essential hotfixes since August 2004, to burn to CD before going online? Is visiting update.microsoft.com safe? The PC is behind a NAT router."
+        },
+        {
+          "s": "steve",
+          "t": "They wouldn't fit on a CD. You'd need a DVD."
+        },
+        {
+          "s": "leo",
+          "t": "Service Pack 2 alone was 273 megabytes."
+        },
+        {
+          "s": "steve",
+          "t": "He's right to worry. A raw XP machine on the Internet without protection would be taken over before it got patched."
+        },
+        {
+          "s": "leo",
+          "t": "Unless the firewall is on."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Behind a NAT router or with XP's firewall on, he's safe going only to Microsoft's site."
+        },
+        {
+          "s": "steve",
+          "t": "There are two kinds of attack. Unsolicited packets hit the services that were vulnerable in the original build, which I think was 2600."
+        },
+        {
+          "s": "leo",
+          "t": "I guarantee you it wasn't 2600."
+        },
+        {
+          "type": "fact",
+          "title": "Build check",
+          "t": "Steve was right. Windows XP's original release was build 2600. Vista's was 6000."
+        },
+        {
+          "s": "steve",
+          "t": "The original XP famously shipped with its firewall off. The worms that infected it are still sending packets all over the Internet. We'll probably never clear them."
+        },
+        {
+          "s": "leo",
+          "t": "Some dusty Windows 98 machine in a corner is still spreading Sasser."
+        },
+        {
+          "s": "steve",
+          "t": "The other kind is web pages exploiting long-known flaws, hoping for unpatched visitors. So only go to Windows Update, which is right in the Start menu. I set up XP behind strong NAT, go to Windows Update, and make a fresh pot of coffee. It's 89 and counting patches, with five or six reboots, plus .NET fixes."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft apparently lists patches for manual download, though I don't know how current it is."
+        },
+        {
+          "s": "leo",
+          "t": "Windows Update also has an administrator mode that lets you download updates as standalone files on another computer, to burn and install one by one. Painful, but doable. I can't remember where the setting is now. They've changed it."
+        }
+      ]
+    },
+    {
+      "title": "Where Are the NAT Routers?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "William Marquiss of Mt. Vernon, Washington is starting a small business and wants to hold what he buys. No store employee knows what a NAT router is. Where are they hiding?"
+        },
+        {
+          "s": "steve",
+          "t": "I love it. I can see him in Staples or Circuit City asking for a \"NAT router,\" and they say, we've got routers, but I don't think our routers have NATs."
+        },
+        {
+          "s": "steve",
+          "t": "All those little $49 consumer routers are NAT routers. NAT, Network Address Translation, is what they were created for: sharing one IP. I just say \"NAT router\" because I'm a geek. High-end Cisco routers aren't necessarily NAT routers, though they have NAT capability. Just ask for a router."
+        },
+        {
+          "s": "leo",
+          "t": "A broadband router. Not a switch, hub or bridge."
+        }
+      ]
+    },
+    {
+      "title": "Making PayPal Prove Itself",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andy Leidy of Escondido, California: even with the token, being duped into giving a code to a phishing site could be bad once. Why not reverse it? After you enter your username, PayPal shows a code that should match your token within 30 to 60 seconds. If it matches, you know you're not being phished. Timing would be an issue."
+        },
+        {
+          "s": "steve",
+          "t": "It's really clever. A very good friend, probably smiling as he listens, suggested this for Perfect Paper Passwords, which I've been too swamped to answer. The PPP server knows your sequence, so it could show you the next code, and you'd enter the one after. It uses two codes, but proves the server knows where you are. With PPP there's no timing issue."
+        },
+        {
+          "s": "steve",
+          "t": "We can strengthen Andy's idea with our discovery that the football's first digit counts from 0 to 9. With 30 seconds per code, that's a five-minute cycle, covering clock drift of plus or minus two and a half minutes."
+        },
+        {
+          "s": "steve",
+          "t": "So you press the button and give only the first digit. Knowing your token and where it is, the server can then tell you the other five. Then wait for the next 30-second boundary and enter all six to prove you're you."
+        },
+        {
+          "s": "leo",
+          "t": "But people smart enough to use the football won't get phished. It's Grandma, or my wife, who's not sophisticated."
+        },
+        {
+          "s": "steve",
+          "t": "And all of it assumes you've verified an SSL connection, with a certificate for www.paypal.com chaining back to VeriSign. Without that, a man in the middle could simulate everything. You give the phishing site your 0, it gives it to PayPal, PayPal answers it, and the phisher shows you the five digits. You'd feel more confident when it is a phishing site."
+        },
+        {
+          "s": "leo",
+          "t": "The man in the middle."
+        },
+        {
+          "s": "steve",
+          "t": "It would defeat the many simpler, static phishing sites. But the absolute proof is a verified SSL certificate issued to PayPal and signed by VeriSign. Then you're golden."
+        }
+      ]
+    },
+    {
+      "title": "What HTTPS Does and Doesn't Hide",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jay in New Hampshire told a friend to use a secure connection on public computers, since you just add an S to http. She asked whether the server she's using can decrypt sessions at will. They both work for the government and know Big Brother is watching."
+        },
+        {
+          "s": "steve",
+          "t": "We work for Big Brother, and we realize Big Brother is watching us."
+        },
+        {
+          "s": "steve",
+          "t": "First, you can't always add an S. The server must support SSL on port 443, not 80, with a certificate signed by an authority your browser trusts. Certificates cost money, maybe $700 a year, so usually only sites needing security have them. Sometimes the secure machine has a different name, like secure.domain.com instead of www.domain.com."
+        },
+        {
+          "s": "steve",
+          "t": "I think Jay meant local IT watching her personal browsing at work. SSL encrypts at your browser and decrypts at its destination, so it gets you past local watchers. But the remote server has to decrypt it to serve you. There it's back in the clear."
+        },
+        {
+          "s": "leo",
+          "t": "So you can't always use an S, and it won't protect you everywhere."
+        },
+        {
+          "s": "steve",
+          "t": "If it's a concern, add the S, and you'll get a secure connection if the far side accepts one."
+        }
+      ]
+    },
+    {
+      "title": "Flash Cookies",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dusan Maletic of Babylon, New York was surprised our answer to last week's bank question didn't mention Flash cookies, which he learned about on an earlier episode. All three of his financial institutions plant them to track users, including Bank of America. He's angered that they use something most people don't know exists, without clear disclosure, a typical spyware-like method."
+        },
+        {
+          "s": "leo",
+          "t": "I determined my bank used cookies. Maybe it was Flash cookies."
+        },
+        {
+          "s": "steve",
+          "t": "We showed viewers how to turn them off on your Call For Help show in Toronto a couple of years ago."
+        },
+        {
+          "s": "steve",
+          "t": "At least 40 people wrote that they deleted cookies, emptied their cache, rebooted, even moved their laptop elsewhere, and the bank still knew them. This confirms the practice is spreading."
+        },
+        {
+          "s": "steve",
+          "t": "Google \"Flash player settings manager.\" It takes you to Macromedia's, maybe now Adobe's, site. Most of us have Flash installed, which is why banks use it. It survives casual cookie deletion."
+        },
+        {
+          "s": "steve",
+          "t": "It's a web-based interface: the site runs your Flash player on the page and gives you a tabbed interface you never knew you had. You can see which domains stored Flash cookies, delete them, block them, and even tell it never to turn on your microphone or camera without asking."
+        },
+        {
+          "s": "leo",
+          "t": "I don't see Bank of America. Wouldn't I see Flash running?"
+        },
+        {
+          "s": "steve",
+          "t": "You don't. It's done behind the scenes with JavaScript."
+        },
+        {
+          "s": "leo",
+          "t": "You can uncheck \"allow third-party Flash content to store data.\" I had storage set to zero. I see YouTube, Blip TV, Ustream and, for some reason, Twitter, but not my bank."
+        },
+        {
+          "s": "steve",
+          "t": "Banks probably issue standard and Flash cookies, as much state as they can, and anything returned helps them recognize you."
+        },
+        {
+          "s": "leo",
+          "t": "In that case I want them to recognize me."
+        },
+        {
+          "type": "fact",
+          "title": "Flash cookies' end",
+          "t": "Browsers later added ways to clear Flash data with cookies, and Adobe ended Flash at the end of 2020. Trackers moved on to other storage tricks, which browsers now try to partition by site."
+        }
+      ]
+    },
+    {
+      "title": "The Counting Digit, Confirmed",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dan in Needmore, Pennsylvania tried the token's first digit several minutes apart and got 2, 5 and 9, not sequential."
+        },
+        {
+          "s": "steve",
+          "t": "I read that and thought, oh no. But the football is clock based. The digits change every 30 seconds whether you're looking or not. Press it repeatedly across 30-second boundaries, and you'll see the first digit increment."
+        }
+      ]
+    },
+    {
+      "title": "Storing a Long Firefox Master Password",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "James Kilner in Israel heard you on my radio show, episode 403, say Firefox's master password can be brute-forced, so make it long and complex. But he says you claimed you only type it to view stored passwords."
+        },
+        {
+          "s": "leo",
+          "t": "You didn't say that. I would have corrected you."
+        },
+        {
+          "s": "steve",
+          "t": "I didn't think so, but if I did, let's correct the record."
+        },
+        {
+          "s": "leo",
+          "t": "He enters it every time he starts Firefox and opens a page with a stored password, like Gmail, and again whenever he restarts Firefox because it's leaking memory. So it's not so easy to make it really long. How can he store a long password to paste in?"
+        },
+        {
+          "s": "steve",
+          "t": "Take one of GRC's Perfect Passwords and find a memorable split point in it, like an exclamation point and pound sign. Store it as is, but paste the part after the split first, then the front part. Anyone finding it doesn't know you do this, or where you split it, and as-is it won't work. Or add a few of your own characters somewhere."
+        },
+        {
+          "s": "leo",
+          "t": "I use one that's hard to brute-force but easy to remember."
+        },
+        {
+          "s": "steve",
+          "t": "Some suggested the first letters of a favorite song's lyrics, a pseudorandom stream you can reproduce in your head."
+        },
+        {
+          "s": "leo",
+          "t": "Or the initials of the last ten presidents, capitalized if Republican. N, F, lowercase c for Carter, R, then I left out a Bush, B, lowercase c for Clinton."
+        },
+        {
+          "s": "steve",
+          "t": "I'd need paper and pencil. And if this election goes the way we think, it'll always end with BcBc."
+        }
+      ]
+    },
+    {
+      "title": "Can a WEP Network Coexist With WPA?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeff in Manila, among many, asks about the Buffalo router I suggested on Windows Weekly for the original Zune, which doesn't support WPA. Isn't the WEP side an attack vector into the WPA network?"
+        },
+        {
+          "s": "leo",
+          "t": "No, those routers segregate the two."
+        },
+        {
+          "s": "steve",
+          "t": "I didn't know. Many people wrote. We've discussed active attacks like ARP spoofing, where someone on the WiFi convinces other machines that he's the gateway and routes all traffic through himself. I'm worried the WEP side is on the same switch as the WPA side."
+        },
+        {
+          "s": "leo",
+          "t": "I assumed they did it the right way. I should find out."
+        },
+        {
+          "s": "steve",
+          "t": "You wouldn't want WEP on all the time. I suggested it for visiting friends whose laptops lack WPA, to shrink the exposure window. But a first-generation Zune owner would have it on constantly. If the WEP network touches the WPA network, all bets are off."
+        },
+        {
+          "s": "leo",
+          "t": "Buffalo's AOSS, its one-touch secure system, says that when clients join, it negotiates the highest security the router supports. If one supports WEP and another WPA, it adjusts to a level both support. That's not it, then."
+        },
+        {
+          "s": "steve",
+          "t": "It sounds like it lowers your network's security to the weakest device. And of course the networks must be together, since your Zune needs to reach the server with your music."
+        },
+        {
+          "s": "leo",
+          "t": "I was thinking of two routers, one WEP bridging to a WPA router, giving a Nintendo DS Internet access but not the subnet."
+        },
+        {
+          "s": "steve",
+          "t": "I'm sure it negotiates per device, so a WPA laptop keeps WPA. The problem is you bring in one WEP device."
+        },
+        {
+          "s": "leo",
+          "t": "An attack vector."
+        }
+      ]
+    },
+    {
+      "title": "Clever Observation: Loggers Can Record Timing",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ernie Moreau of Kelowna, British Columbia wins the Clever Observation of the Week Award. About BioPassword's typing-rhythm biometric: this sounds great until keystroke loggers start logging the timing too. Then you're hooped."
+        },
+        {
+          "s": "steve",
+          "t": "Keystroke loggers are evolving seriously. Remember on-screen keyboards that jump around? Loggers are now found that take screenshots, designed to capture the whole login experience. If typing rhythm became popular, they could log the timing and reproduce it to impersonate someone. I'm still skeptical of it anyway."
+        },
+        {
+          "s": "leo",
+          "t": "Send questions at GRC.com/feedback."
+        }
+      ]
+    },
+    {
+      "title": "Waiting for the Kindle",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You and I have both ordered Amazon's new Kindle."
+        },
+        {
+          "s": "leo",
+          "t": "I tried. It's back-ordered until early December for me."
+        },
+        {
+          "s": "steve",
+          "t": "Mine's been shipped."
+        },
+        {
+          "s": "leo",
+          "t": "I don't like the form factor. I have the newest Sony Reader, as you do."
+        },
+        {
+          "s": "steve",
+          "t": "It's the ugliest-looking thing I've ever seen, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "Same E Ink screen, though fewer shades of gray may make it crisper."
+        },
+        {
+          "s": "steve",
+          "t": "That worries me. The first Sony, the PRS-500, had four shades of gray. The 505's screen is much better, and I read on it every morning. I hope the Kindle isn't locked into the old screen."
+        },
+        {
+          "s": "leo",
+          "t": "What put me over the top is newspapers. I get The Wall Street Journal, The New York Times and the San Francisco Chronicle, killing a lot of trees. The Kindle delivers them cheaper every morning. I'd like to clip things, though."
+        },
+        {
+          "s": "steve",
+          "t": "I hate newsprint ink rubbing off on my hands."
+        },
+        {
+          "s": "leo",
+          "t": "You can email documents to your Kindle."
+        },
+        {
+          "s": "steve",
+          "t": "For 10 cents, I think. And I don't think PDFs transfer well."
+        },
+        {
+          "s": "leo",
+          "t": "Word documents, then. I also subscribed to Salon. Wireless is the key. I may use the Sony for books and the Kindle for ephemera."
+        },
+        {
+          "s": "steve",
+          "t": "Amazon did the hardware right, on Sprint's EVDO network, with much better bandwidth than the iPhone's AT&T EDGE. And no extra charge."
+        },
+        {
+          "s": "leo",
+          "t": "I guess it's built into everything you buy, which is all copy protected."
+        },
+        {
+          "s": "steve",
+          "t": "I bought the same book for both the Sony 505 and the Kindle to compare."
+        },
+        {
+          "s": "leo",
+          "t": "Scott Bourne told me the Sony Reader has sold only in the tens of thousands. It's a specialty. The Kindle's gotten so much attention, but I suspect it'll gather dust on a lot of shelves."
+        },
+        {
+          "s": "leo",
+          "t": "Next week? Maybe the Kindle's DRM, or how soon I get spam at my Kindle address."
+        },
+        {
+          "s": "steve",
+          "t": "Or how soon Kindles get hacked."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why isn't trusting the ISP's domain a strong second factor?",
+      "options": [
+        "Many other customers share the same ISP, and reverse DNS can be faked by whoever controls an IP block",
+        "ISPs never change",
+        "It needs a token",
+        "Banks can't do reverse lookups"
+      ],
+      "answer": 0,
+      "explain": "It's not one-to-one like a personal token."
+    },
+    {
+      "q": "Why does Steve say double encryption mainly helps with weak keys?",
+      "options": [
+        "A truly random 128-bit key is already too strong to brute-force",
+        "Two keys are always weaker",
+        "It hides the file size",
+        "It's required by PGP"
+      ],
+      "answer": 0,
+      "explain": "The inner layer looks like random noise."
+    },
+    {
+      "q": "What was the main flaw in Matthew's elaborate JavaScript login without SSL?",
+      "options": [
+        "The session afterward is unencrypted, so a sniffer can steal the session cookie",
+        "MD5 is too slow",
+        "HMAC isn't allowed",
+        "The password is too short"
+      ],
+      "answer": 0,
+      "explain": "That's called sidejacking."
+    },
+    {
+      "q": "What does an HMAC add to an ordinary hash?",
+      "options": [
+        "A secret key, so it also proves who made the hash",
+        "More speed",
+        "Compression",
+        "Encryption of the file"
+      ],
+      "answer": 0,
+      "explain": "Anyone can compute a plain hash."
+    },
+    {
+      "q": "Why can banks recognize you after you delete your browser cookies?",
+      "options": [
+        "They also store Flash cookies, which ordinary cookie deletion doesn't remove",
+        "They read your IP",
+        "They track your mouse",
+        "They use your webcam"
+      ],
+      "answer": 0,
+      "explain": "Flash's settings manager can delete them."
+    },
+    {
+      "q": "Why doesn't having a site show you its token code first stop every phishing attack?",
+      "options": [
+        "A man-in-the-middle site can relay codes between you and the real site",
+        "Tokens can't display codes",
+        "Sites don't know your token",
+        "It takes too long"
+      ],
+      "answer": 0,
+      "explain": "Only a verified SSL certificate proves the site."
+    }
+  ]
+}
