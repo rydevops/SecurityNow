@@ -1,0 +1,392 @@
+{
+  "number": 85,
+  "title": "Intro to Web Code Injection",
+  "subtitle": "Cross-site scripting, and a JavaScript drone called Jikto",
+  "date": "2007-03-29",
+  "description": "Steve begins a series on web-based code injection, including cross-site scripting and SQL injection. After errata on FTP's ports, sci-fi recommendations and first impressions of Sony's e-paper Reader, he describes Billy Hoffman's Jikto, JavaScript that turns visitors' browsers into vulnerability scanners, and explains the root problem: web pages mix displayed text and executable script, so any site that redisplays what users submit can serve an attacker's code.",
+  "transcript": "https://www.grc.com/sn/sn-085.txt",
+  "audio": "http://media.GRC.com/sn/SN-085.mp3",
+  "chapters": [
+    {
+      "title": "Tempest and Port Numbers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve joins us from his ultra-secure, Tempest-hardened lair in Southern California."
+        },
+        {
+          "s": "steve",
+          "t": "Tempest is about emissions. Current in a wire creates a magnetic field, and at high frequencies, radio emissions that travel far. In the spy era, you could passively monitor a computer's emissions and reconstruct what was on its screen or being typed."
+        },
+        {
+          "s": "leo",
+          "t": "\"Van Eck phreaking,\" as Neal Stephenson calls it in \"Cryptonomicon.\""
+        },
+        {
+          "s": "steve",
+          "t": "One erratum: last week I scrambled my ports. FTP uses two ports, 20 and 21: a control channel and a separate data channel."
+        },
+        {
+          "s": "leo",
+          "t": "Doesn't it create a random port for transfers? That's why there's passive FTP."
+        },
+        {
+          "s": "steve",
+          "t": "In normal, \"active\" FTP, the connections go in opposite directions. You connect to the server and tell it which port to connect back to you on. So the client is also a server, accepting the incoming data connection."
+        },
+        {
+          "s": "steve",
+          "t": "Behind a NAT router, the client listens on a high port, but the router blocks the server's connection back, as an unsolicited packet."
+        },
+        {
+          "s": "steve",
+          "t": "Two solutions. \"Passive\" mode makes both connections outgoing from the client. The cooler one, which modern routers support: the router watches FTP's control traffic, interprets the \"connect back to me on this port\" message the way the server will, and opens that port dynamically. It participates in the protocol."
+        },
+        {
+          "s": "leo",
+          "t": "And Telnet and SSH?"
+        },
+        {
+          "s": "steve",
+          "t": "SSH is 22, Telnet is 23. GRC's Port Authority Database will tell you: just go to GRC.com/port=23."
+        },
+        {
+          "type": "fact",
+          "title": "FTP's ports",
+          "t": "The FTP server listens on port 21 for control. In active mode the server connects from its port 20 to the client. In passive mode the server opens a random high port and the client connects to it."
+        }
+      ]
+    },
+    {
+      "title": "Hard Sci-Fi and E-Paper",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Nerds On Site re-upped for three months, so there must be a lot of nerds listening."
+        },
+        {
+          "s": "steve",
+          "t": "These are our people. And listeners who loved Peter F. Hamilton's books asked who else I'd recommend. I like hard sci-fi. I've never understood why wizards and unicorns are in the sci-fi section. That's fantasy."
+        },
+        {
+          "s": "steve",
+          "t": "Michael McCollum is literally a rocket scientist, an aerospace engineer in Arizona who designed pumps on the International Space Station. His site is scifi-az.com, with paperbacks and downloads in PDF, Microsoft Reader and Palm formats."
+        },
+        {
+          "s": "steve",
+          "t": "In \"Gibraltar Earth,\" humans exploring space stumble on evidence of a vastly powerful race that enslaves every species it meets. They don't know we found out, so we scurry home with our tail between our legs. He just released a sequel. His Antares trilogy is spectacular, and he has free short stories. My unrestrained recommendation."
+        },
+        {
+          "s": "leo",
+          "t": "I just got Sony's new e-paper Reader and read Neal Stephenson's \"Quicksilver\" on it. The whole trilogy, three huge books, is only 10MB, and there's 100MB of storage. It's thin and light like a paperback. I got a booklight, since it needs ambient light."
+        },
+        {
+          "s": "steve",
+          "t": "E-paper uses spheres, white on one side and black on the other, rotated electrostatically. Once turned, they hold position with no power. Sony says you can read \"War and Peace\" four times on a charge."
+        },
+        {
+          "type": "fact",
+          "title": "How the Reader worked",
+          "t": "Sony's Reader used E Ink, whose tiny capsules hold charged black and white particles that move up or down. Rotating spheres were an earlier e-paper design called Gyricon."
+        },
+        {
+          "s": "leo",
+          "t": "I have Antares in Microsoft's LIT format, which it can't read, so I'll get the PDF. I wish more authors did PDFs. \"Pandora's Star\" is the only Hamilton in Sony's store."
+        },
+        {
+          "s": "steve",
+          "t": "McCollum's PDFs aren't copy-protected. His license page says he trusts everybody: please pay, don't share, and this can work."
+        },
+        {
+          "s": "leo",
+          "t": "Fifteen bucks for three books. I've paid twice for Antares."
+        },
+        {
+          "s": "steve",
+          "t": "You have a treat in store."
+        },
+        {
+          "s": "leo",
+          "t": "Text size is adjustable. The background is a little gray, page turning isn't very natural, and there's a flicker. But 20 or 30 pages caused no eye fatigue. Great for airplanes."
+        },
+        {
+          "s": "steve",
+          "t": "I'm fanatical about battery life. When a waiter comes over, I turn off my Palm. With this you just lay it down."
+        }
+      ]
+    },
+    {
+      "title": "Paying for SpinRite After the Fact",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Tom, a Windows systems administrator, asked me not to use his last name. His boss never budgeted for SpinRite, and daycare for his two small boys left nothing to buy it himself."
+        },
+        {
+          "s": "steve",
+          "t": "A coworker's dead laptop held his wedding photos and hundreds of dollars of music. Tom knew SpinRite could fix it, so he got a copy through \"some nefarious means.\" Sorry, Steve. It worked, and he recovered everything and made backups."
+        },
+        {
+          "s": "steve",
+          "t": "The coworker asked what he owed. Tom said $89 and explained. The coworker pulled out his credit card, and they bought SpinRite at GRC.com right then. Tom feels better having a legal copy."
+        },
+        {
+          "s": "steve",
+          "t": "I don't have a problem with that. Not everyone who needs it will buy it. I appreciate it when people do, since it keeps me on the air."
+        }
+      ]
+    },
+    {
+      "title": "A New Series: Web Code Injection",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Twenty minutes in, and we haven't said our topic."
+        },
+        {
+          "s": "steve",
+          "t": "Something we've never touched on: web-based code injection, of which cross-site scripting is one major kind. Buffer overruns inject machine code into an application. Here it's web applications, which have a disturbing number of vulnerabilities."
+        },
+        {
+          "s": "steve",
+          "t": "The second type is SQL injection, pronounced \"sequel,\" now the dominant database language, with MySQL, Microsoft's SQL Server and others. SQL is scriptable, and you know how I feel about scripting."
+        },
+        {
+          "s": "steve",
+          "t": "Last Saturday on the East Coast, something made now the time. Since this is audio, this week is an introduction. The next two weeks go deeper, then a Q&A for loose ends."
+        }
+      ]
+    },
+    {
+      "title": "Jikto: Your Browser as an Attack Drone",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Billy Hoffman of SPI Dynamics, a well-regarded security research firm, spoke at ShmooCon, a three-day hacker conference in Washington, D.C. His talk: \"JavaScript Malware for a Grey Goo Tomorrow.\""
+        },
+        {
+          "s": "leo",
+          "t": "Grey goo is the nanotech fear that everything gets reduced to goo."
+        },
+        {
+          "s": "steve",
+          "t": "Thoroughly homogenized. eWEEK's headline: a tool turns any JavaScript-enabled browser into a malicious drone. It's called Jikto. There was an earlier web vulnerability scanner called Nikto."
+        },
+        {
+          "s": "leo",
+          "t": "From \"The Day the Earth Stood Still\": \"Klaatu barada nikto.\""
+        },
+        {
+          "s": "steve",
+          "t": "You had to address the robot, Klaatu, and give him the phrase."
+        },
+        {
+          "type": "fact",
+          "title": "Klaatu and Gort",
+          "t": "Klaatu was the alien visitor. The robot was Gort, and \"Klaatu barada nikto\" was the command that stopped it. Jikto's \"J\" stands for JavaScript."
+        },
+        {
+          "s": "steve",
+          "t": "Jikto is written in JavaScript and searches websites for cross-site scripting vulnerabilities. Hoffman demonstrated it March 24th. It silently runs inside any browser with JavaScript enabled, Windows, Mac, Linux, even a cell phone."
+        },
+        {
+          "s": "steve",
+          "t": "You visit a site, or view email in a web-based reader. The script commandeers your browser, scans other sites for vulnerabilities, and reports to a third party without your knowledge. And it can copy itself onto vulnerable sites and spread to visitors, like a worm. JavaScript wasn't supposed to be able to do this."
+        },
+        {
+          "s": "steve",
+          "t": "CNET's Joris Evers reported Hoffman planned to release it, which stirred controversy. Hoffman said it \"is going to drastically change the scope of evil things you can do with JavaScript. Jikto turns any PC into my little drone.\""
+        },
+        {
+          "s": "steve",
+          "t": "Vulnerability scanners aren't new. Nikto is a traditional PC application. Jikto runs in browsers and distributes the bug hunting across many PCs. We know bot fleets and distributed DoS attacks. Now we have distributed vulnerability scanning."
+        },
+        {
+          "s": "leo",
+          "t": "He didn't release the code, just demonstrated it. If it calls home to a server, you'd be caught."
+        },
+        {
+          "s": "steve",
+          "t": "The code has leaked. Results could go to sites in unfriendly or uncaring nations, or into an IRC channel, where they disappear among relaying servers. And once people know something is possible, it isn't hard to recreate. Google \"Jikto\" and you get pages."
+        },
+        {
+          "s": "leo",
+          "t": "I worry less about the smart guys than script kiddies using leaked code."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Warned About This in 2000",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Researchers have written about this for years. A paper by Microsoft people from February 2000 describes the consequences of cross-site scripting."
+        },
+        {
+          "s": "steve",
+          "t": "A script runs in the wrong security context. Cookies can be read, locked-down plug-ins or native code can be invoked with untrusted data, and user input can be intercepted. Any scripting browser and any web server that supports forms is potentially vulnerable, and HTTPS provides no immunity."
+        },
+        {
+          "s": "steve",
+          "t": "The script can send what it gathers back to the attacker just by fetching a URL, and can follow the user around the domain."
+        },
+        {
+          "s": "steve",
+          "t": "And it works through firewalls. Corporate clients trust servers on their own LAN. If one internal server, say the intranet, doesn't check form fields for special characters, an outside attacker can make clients believe that trusted server asked them to run something. One page on one server can compromise the entire domain, even if that server holds nothing important."
+        }
+      ]
+    },
+    {
+      "title": "The Root Problem: Text and Script Mix",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the gotcha the Web's originators never considered: what happens when users can provide anything that will be redisplayed?"
+        },
+        {
+          "s": "steve",
+          "t": "On day one, web servers served static pages. Then came little dynamic touches like hit counters. Then the Web exploded with interactivity. Forums and Digg let users post content that the server stores and shows to others. That mixes trusted server content with content from untrusted sources."
+        },
+        {
+          "s": "steve",
+          "t": "And there's no separation between displayed text and executed script. A \"less than\" sign, the word \"script,\" and a closing bracket, and everything until the closing tag is run, with attributes saying which language. Several other tags can trigger scripting too. An attacker just needs to get a server to serve script when it thinks it's serving text."
+        },
+        {
+          "s": "steve",
+          "t": "You might think a server could strip anything in brackets. But people want italics, underlining and formatting, and exceptions in parsing have left holes. That's what web vulnerability scanners hunt for."
+        },
+        {
+          "s": "steve",
+          "t": "Web servers even shipped with vulnerable sample pages and scripts. Some versions of Microsoft's IIS installed starter pages that many people left in place. Cross-site scripting has enabled many of the website defacements we hear about."
+        },
+        {
+          "s": "leo",
+          "t": "We'll have to rethink the enabling technology."
+        },
+        {
+          "s": "steve",
+          "t": "Inline scripting mixed with text is powerful, but script isn't sequestered from content. It's just content, and hyperactive content."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, exact examples of the few mistakes a server must make, including how an attacker could capture your cookies, your login credentials for a site like Amazon or eBay, and assume your identity."
+        },
+        {
+          "s": "leo",
+          "t": "Meanwhile, you might run Nikto against your own sites."
+        },
+        {
+          "type": "fact",
+          "title": "Since then",
+          "t": "Cross-site scripting stayed among the most common web flaws for years. Modern defenses include automatic output escaping in web frameworks, Content Security Policy, and cookies marked HttpOnly so scripts can't read them."
+        }
+      ]
+    },
+    {
+      "title": "Correcting the Correction",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Before we go, I'm correcting my own erratum. I know the FTP server listens on port 21, the control channel, and I'm sure I said 20 at one point. The data channel comes from the server's port 20 back to the client."
+        },
+        {
+          "s": "leo",
+          "t": "I always thought it was a random port."
+        },
+        {
+          "s": "steve",
+          "t": "It's random at the client end. Service ports, 1024 and lower, can be opened for listening only by privileged processes in UNIX. So the client opens a high port, say 32654, and tells the server to connect back there from port 20."
+        },
+        {
+          "type": "fact",
+          "title": "Privileged ports",
+          "t": "Strictly, the privileged ports are 0 through 1023."
+        },
+        {
+          "s": "leo",
+          "t": "Our first correction of an erratum in the same show. Is your question form safe from cross-site scripting?"
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't display anything people post. But I confess GRC had a cross-site scripting vulnerability years ago. When IIS had so much trouble parsing URLs, with funky Unicode tricks, I wrote my own filter to intercept incoming URLs before IIS saw them. I called it the APF, the Advanced Prophylactic Filter."
+        },
+        {
+          "s": "steve",
+          "t": "When it blocked a URL, its page showed the illegal URL. Oops. Anything a user provides that the server redisplays, even in an error message, is a cross-site scripting vulnerability. Someone pointed it out, and I quickly fixed it."
+        },
+        {
+          "s": "steve",
+          "t": "It takes vigilance, like buffer overruns. Wikipedia, Digg, forums and blogs all display what people provide, and text and script can cohabit on a page."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What makes cross-site scripting possible?",
+      "options": [
+        "Web pages mix displayed text and executable script, so a site that redisplays user input can serve an attacker's code",
+        "Weak passwords",
+        "Unpatched routers",
+        "Open ports"
+      ],
+      "answer": 0,
+      "explain": "HTTPS provides no protection against it."
+    },
+    {
+      "q": "What does Jikto do?",
+      "options": [
+        "Runs in visitors' browsers and secretly scans other sites for vulnerabilities, reporting to a third party",
+        "Encrypts files",
+        "Blocks scripts",
+        "Cracks Wi-Fi"
+      ],
+      "answer": 0,
+      "explain": "It can also spread like a worm."
+    },
+    {
+      "q": "Why can't a server simply strip everything in angle brackets?",
+      "options": [
+        "Users want formatting like italics, and parsing exceptions leave holes",
+        "It's too slow",
+        "Browsers need brackets",
+        "It breaks HTTPS"
+      ],
+      "answer": 0,
+      "explain": "Scanners hunt for those holes."
+    },
+    {
+      "q": "How did Steve's own site once have a cross-site scripting flaw?",
+      "options": [
+        "An error page redisplayed the illegal URL a user had sent",
+        "A forum",
+        "Its ShieldsUP! test",
+        "A JavaScript menu"
+      ],
+      "answer": 0,
+      "explain": "He quickly removed the redisplay."
+    },
+    {
+      "q": "How do modern NAT routers handle active FTP?",
+      "options": [
+        "They read the FTP control traffic and open the port the server will connect back to",
+        "They block it",
+        "They require passive mode only",
+        "They use port 22"
+      ],
+      "answer": 0,
+      "explain": "Passive mode is the other fix."
+    },
+    {
+      "q": "Why can one weak intranet server compromise a whole network?",
+      "options": [
+        "Clients trust internal servers, so script served from it runs with that trust",
+        "It holds all passwords",
+        "It runs the firewall",
+        "It's the DNS server"
+      ],
+      "answer": 0,
+      "explain": "Microsoft warned of this in 2000."
+    }
+  ]
+}
