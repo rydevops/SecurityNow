@@ -1,0 +1,309 @@
+{
+  "number": 16,
+  "title": "Listener Feedback Q&A #1",
+  "subtitle": "Your questions, Steve's answers",
+  "date": "2005-12-01",
+  "description": "The first listener Q&A episode: written-down passwords, sharing a 63-character Wi-Fi key with guests, public computers, hubs vs. switches, warning neighbors about open Wi-Fi, TKIP vs. AES, webmail security, router surprises, file sharing, man-in-the-middle attacks, WEP-only gadgets and Remote Desktop.",
+  "transcript": "https://www.grc.com/sn/sn-016.txt",
+  "audio": "http://media.GRC.com/sn/SN-016.mp3",
+  "chapters": [
+    {
+      "title": "Q&A Every Fourth Episode",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 16, our first listener Q&A. Every episode divisible by four will be questions."
+        },
+        {
+          "s": "steve",
+          "t": "I read every submission at GRC.com/securitynow.htm. It shows me what we missed. For instance, lots of you suggested LogMeIn.com as a free alternative to GoToMyPC."
+        }
+      ]
+    },
+    {
+      "title": "Passwords in Your Wallet",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "First question: writing strong passwords down and keeping them in my wallet scares me. What if someone finds it?"
+        },
+        {
+          "s": "steve",
+          "t": "Write down a version that's changed in a way only you know. Move the last five characters to the front, or add a secret few characters when you type it. Whoever finds it gets something that doesn't work."
+        },
+        {
+          "s": "leo",
+          "t": "I shift capitalization by a rule. For low-security sites, I weave the site name together with the last four digits of a number only I know."
+        },
+        {
+          "s": "steve",
+          "t": "For forced password changes, add a serial number: 001, 002, 003. The bulk stays random, and you can always work out the current one."
+        },
+        {
+          "type": "fact",
+          "title": "The written-down twist",
+          "t": "Keep the hard-to-remember random part on paper, and the small secret change in your head. Someone needs both to log in, which is a simple form of two-factor thinking."
+        }
+      ]
+    },
+    {
+      "title": "Sharing a Monster Wi-Fi Key",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You said to just copy and paste the 63-character key. How do guests get it?"
+        },
+        {
+          "s": "steve",
+          "t": "Fair point. They're not on your network yet, so paste from where? A floppy or a USB drive works, or email it to them if they can get online some other way."
+        },
+        {
+          "s": "leo",
+          "t": "I like the USB key idea."
+        },
+        {
+          "s": "steve",
+          "t": "Or, if they only need Internet access, switch encryption off while they visit, don't do any banking during that time, and turn it back on when they leave."
+        }
+      ]
+    },
+    {
+      "title": "Public Computers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Can you ever use a hotel, library or airport computer safely?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Even with an encrypted webmail session or a VPN, it's someone else's hardware and software. A keystroke logger could capture everything you type before encryption happens."
+        },
+        {
+          "s": "steve",
+          "t": "Kids plug little hardware keystroke loggers into public keyboards, pretend to read a magazine, then take the logger home and dump everything that was typed."
+        },
+        {
+          "s": "steve",
+          "t": "Security requires control of the computer you're using. Browse on public computers, but don't log into anything that matters, not even webmail."
+        },
+        {
+          "type": "fact",
+          "title": "Trust the endpoint",
+          "t": "Encryption protects data in transit, not on a compromised device. If the keyboard, operating system or browser isn't yours, assume what you type can be recorded."
+        }
+      ]
+    },
+    {
+      "title": "Hubs vs. Switches",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Why do hubs expose the whole network? Are switches one-way like NAT routers?"
+        },
+        {
+          "s": "steve",
+          "t": "With 10BaseT, each computer has its own cable to the hub or switch. A hub repeats everything it receives out of every other port."
+        },
+        {
+          "s": "steve",
+          "t": "In a hotel full of hubs, a packet sent from the 12th floor can be captured by every other room."
+        },
+        {
+          "s": "leo",
+          "t": "So a switch is like dividing a shouting office into rooms?"
+        },
+        {
+          "s": "steve",
+          "t": "Better. A switch is like someone whispering in your ear. It learns which MAC address is on each port and sends each packet only to its destination."
+        },
+        {
+          "s": "steve",
+          "t": "Hubs are disappearing as switches get cheap. I've stockpiled a few, because they're the easiest way to watch traffic on my own network."
+        },
+        {
+          "s": "steve",
+          "t": "Ethernet's original design let anyone talk at any time. If two transmit at once, they collide, hear the collision, wait a random time and retry. Bob Metcalfe's brilliant idea."
+        },
+        {
+          "type": "fact",
+          "title": "CSMA/CD",
+          "t": "Steve expanded it as \"Collision Sense Multiple Access.\" The actual name is Carrier Sense Multiple Access with Collision Detection: listen before talking, detect collisions, and back off for a random time. Switches give each port its own collision domain, so big networks don't drown in collisions."
+        },
+        {
+          "s": "steve",
+          "t": "As networks grow, collisions multiply until nothing gets through. Switches store each packet and forward it to just one port, which keeps big networks working."
+        }
+      ]
+    },
+    {
+      "title": "Warning the Neighbors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A good Samaritan asks: how can I warn neighbors with open Wi-Fi without knocking on doors?"
+        },
+        {
+          "s": "steve",
+          "t": "Don't do anything over their network. Changing someone else's computer is illegal, however good your intentions."
+        },
+        {
+          "s": "steve",
+          "t": "Print a flyer: \"My computer can see your network and it's wide open. I haven't touched it. You should secure it.\" A knee-jerk neighbor could call the police otherwise."
+        }
+      ]
+    },
+    {
+      "title": "WPA, Webmail and Router Surprises",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I use WPA with a pre-shared key and TKIP, with a key from your passwords page. AES is supposed to be better, but my router doesn't offer it. What should I do?"
+        },
+        {
+          "s": "steve",
+          "t": "Nothing. RC4 is a fantastic cipher. WEP just used it badly. WPA-PSK with a 63-character random key is rock solid, and going further only causes compatibility trouble with guests' devices."
+        },
+        {
+          "s": "leo",
+          "t": "Is SSL webmail, like Gmail or my FastMail over IMAP with SSL, safe at a hotspot?"
+        },
+        {
+          "s": "steve",
+          "t": "On your own laptop, yes. If everything stays on the SSL connection, like https://gmail.com, you're safe. On a public computer, no."
+        },
+        {
+          "s": "leo",
+          "t": "A listener's ZoneAlarm, normally silent behind his NAT router, starts showing alerts from real IP addresses a few weeks after each router reset."
+        },
+        {
+          "s": "steve",
+          "t": "I'd bet money Universal Plug and Play is on. Something on his PC, possibly a trojan, is opening ports behind his back, and the router doesn't even show them. Turn UPnP off and reboot the router. Most new routers ship with it off."
+        },
+        {
+          "s": "leo",
+          "t": "Another listener uses only NetBEUI for file and printer sharing, with TCP/IP unbound from sharing."
+        },
+        {
+          "s": "steve",
+          "t": "He's read my ShieldsUP! pages. NetBEUI can't be routed and has no IP addresses or ports, so file sharing literally can't leave the LAN. Behind a NAT router, you're already safe either way."
+        }
+      ]
+    },
+    {
+      "title": "Man-in-the-Middle and Odd Devices",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Someone read that SSL can be attacked by a man in the middle. And if someone watches the whole key exchange, why can't they decrypt everything?"
+        },
+        {
+          "s": "steve",
+          "t": "Next year we'll cover how the Internet works, then cryptography. A half answer now would confuse people."
+        },
+        {
+          "s": "leo",
+          "t": "The short version is public-key cryptography: you can exchange keys in public without giving away the secret."
+        },
+        {
+          "s": "steve",
+          "t": "SSL is vulnerable to a man in the middle only if authentication isn't done properly. That's what certificates are for, and we'll explain it carefully later."
+        },
+        {
+          "type": "fact",
+          "title": "Eavesdropper vs. man in the middle",
+          "t": "A passive eavesdropper only watches. Public-key exchanges defeat them. An active man in the middle pretends to be each side to the other. Defeating that requires authentication, such as certificates that prove who you're talking to."
+        },
+        {
+          "s": "leo",
+          "t": "The Nintendo DS only supports WEP. TiVo too. How do they join a WPA network?"
+        },
+        {
+          "s": "steve",
+          "t": "Palm got it right: my new Palm TX took a 63-character key pasted from an SD card. For WEP-only devices, run two networks."
+        },
+        {
+          "s": "steve",
+          "t": "One access point on WPA for your computers. A second, open one for gadgets and guests, with MAC filtering just to keep neighbors off by accident. The router's built-in switch keeps them apart, and your WPA traffic can't be decrypted anyway."
+        }
+      ]
+    },
+    {
+      "title": "Remote Desktop",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is Windows Remote Desktop secure enough to use at a hotspot like a VPN?"
+        },
+        {
+          "s": "steve",
+          "t": "It's strongly encrypted with 128-bit RC4, so nobody can passively eavesdrop. But it doesn't properly authenticate the server, so it's open to an active man-in-the-middle attack. Cain & Abel can do exactly that."
+        },
+        {
+          "s": "steve",
+          "t": "The attacker has to actively intercept the connection when you log in, so it's mostly theoretical, but it's been done. You decide whether it matters to you."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: PPTP and IPSec VPNs, and how Microsoft made its built-in Windows client incompatible with almost all of the routers that support them."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Steve suggest for passwords written down in your wallet?",
+      "options": [
+        "Write a version that's altered in a way only you know",
+        "Never write anything down",
+        "Write them in invisible ink",
+        "Use your PIN"
+      ],
+      "answer": 0,
+      "explain": "The paper holds the random part; the secret change stays in your head."
+    },
+    {
+      "q": "Why is it never safe to log in to important accounts on a public computer?",
+      "options": [
+        "Keystroke loggers (hardware or software) can record what you type before encryption",
+        "Public computers are slower",
+        "Libraries ban it",
+        "Their screens are too big"
+      ],
+      "answer": 0,
+      "explain": "You don't control the hardware or software, so even an encrypted session can be captured at the keyboard."
+    },
+    {
+      "q": "How does a switch differ from a hub?",
+      "options": [
+        "A switch sends each packet only to the port where its destination lives",
+        "A switch broadcasts to everyone",
+        "A hub encrypts traffic",
+        "They're the same"
+      ],
+      "answer": 0,
+      "explain": "Hubs repeat everything to every port; switches learn MAC addresses and \"whisper\" to just one."
+    },
+    {
+      "q": "A listener's firewall started getting unsolicited traffic through his NAT router. What's the likely cause?",
+      "options": [
+        "Universal Plug and Play opened ports behind his back",
+        "The router was too old",
+        "His ISP was hacking him",
+        "ZoneAlarm was broken"
+      ],
+      "answer": 0,
+      "explain": "Turn off UPnP and reboot the router to close any holes it opened."
+    },
+    {
+      "q": "How can you use WEP-only devices like the Nintendo DS without weakening your main network?",
+      "options": [
+        "Run a separate open network for them and keep your PCs on WPA",
+        "Switch everything to WEP",
+        "Turn off encryption forever",
+        "Use MAC filtering alone"
+      ],
+      "answer": 0,
+      "explain": "Two access points keep gadgets and guests apart from your secure WPA network."
+    }
+  ]
+}

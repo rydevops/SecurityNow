@@ -1,0 +1,273 @@
+{
+  "number": 42,
+  "title": "NAT Traversal",
+  "subtitle": "How two computers behind NAT routers connect directly",
+  "date": "2006-06-01",
+  "description": "NAT routers block unsolicited traffic, which is great for security and terrible for peer-to-peer apps like VoIP. Steve explains how a rendezvous server briefly helps two NAT routers discover each other's ports, so their traffic looks expected and gets through, and why some routers break it.",
+  "transcript": "https://www.grc.com/sn/sn-042.txt",
+  "audio": "http://media.GRC.com/sn/SN-042.mp3",
+  "chapters": [
+    {
+      "title": "Why NAT Is a Great Firewall",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 42. June means graduations, brides and Father's Day. My daughter graduates from eighth grade in a few days. And you promised to tell us how to get our routers to behave."
+        },
+        {
+          "s": "steve",
+          "t": "We're both bullish on NAT routers because they're a natural hardware firewall. They block unsolicited packets, what I call IBR, Internet Background Radiation."
+        },
+        {
+          "s": "steve",
+          "t": "Put a packet capture directly on a cable modem and you'll be amazed how much debris is aimed at your IP: scans for the exploit du jour, Messenger pop-up spam, all kinds of junk."
+        },
+        {
+          "s": "steve",
+          "t": "Software firewalls alert you until you tell them to stop. XP SP2's firewall is silent by default. A firewall telling you \"something just hit me\" is like standing in the rain."
+        },
+        {
+          "s": "leo",
+          "t": "But the router's advantage is also its disadvantage, when there's incoming traffic you actually want."
+        }
+      ]
+    },
+    {
+      "title": "Two Ways to \"Request\" Traffic",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Traffic you request always gets through. It's only unrequested traffic that's blocked."
+        },
+        {
+          "s": "steve",
+          "t": "Then we need to define \"request.\" The explicit way is to open a static port: packets arriving at that port get forwarded to a chosen computer behind the router. That's how you'd run a server, though ISPs now block port 25 for email and frown on home web servers."
+        },
+        {
+          "s": "steve",
+          "t": "The implicit way: when you send traffic out, the router automatically records a mapping in RAM. Replies from that destination are allowed back in and sent to the computer that asked."
+        },
+        {
+          "s": "steve",
+          "t": "The trouble is two VoIP users who both want a direct connection, because latency affects call quality. Both are behind NAT. If one sends data to the other, it leaves fine, but dies at the other router as unsolicited."
+        },
+        {
+          "s": "steve",
+          "t": "Opening a port would let traffic in from anywhere, not just from the person you're calling. We want to avoid that."
+        }
+      ]
+    },
+    {
+      "title": "Ports and Mappings",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "NAT rewrites outgoing packets. It changes the source IP to the router's public IP, and also changes the source port, so when a reply comes back to that port, the router knows which internal computer and conversation it belongs to."
+        },
+        {
+          "s": "leo",
+          "t": "So when I browse to a website, I ask for port 80, but the reply comes back to a different port?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Service ports are 1 through 1023, and client ports run from 1024 to 65535. Your OS usually assigns them sequentially, and the outgoing packet carries that as its source port, with 80 as the destination."
+        },
+        {
+          "s": "leo",
+          "t": "Is that true of all protocols?"
+        },
+        {
+          "s": "steve",
+          "t": "No. DNS often sends from port 53 to port 53, and Windows file sharing uses 445 on both ends. But typical clients, web and email, use high-numbered ports."
+        },
+        {
+          "type": "fact",
+          "title": "Ephemeral ports today",
+          "t": "Modern systems pick client ports randomly from a high range, not sequentially. Random ports make it harder to forge replies, which became important after Dan Kaminsky's 2008 DNS cache-poisoning attack."
+        }
+      ]
+    },
+    {
+      "title": "The Rendezvous Trick",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The clever trick, maybe pioneered by the Kazaa people: both sides send packets at each other's router at the same time. Each outgoing packet creates an expectation of return traffic. If the other side's packets look like that expected reply, they get through."
+        },
+        {
+          "s": "leo",
+          "t": "Doesn't Microsoft Messenger or ICQ deserve credit? They predate Kazaa."
+        },
+        {
+          "s": "steve",
+          "t": "They all had this problem and no solution. Early on, a NAT router really caused trouble for those apps."
+        },
+        {
+          "s": "steve",
+          "t": "The catch is that you can't know which external port your router will assign. So you briefly need a third party, a \"rendezvous\" or \"liaison\" server, that both people can reach."
+        },
+        {
+          "s": "steve",
+          "t": "Both send packets to it. It sees each one's public IP and external port and tells each side the other's. Then each sends packets directly to the other's IP and port. To each router, they look like replies, and they're let right in."
+        },
+        {
+          "s": "leo",
+          "t": "And then the rendezvous server can get out of the way."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. It's not a relay. It's just brief glue."
+        },
+        {
+          "type": "fact",
+          "title": "Hole punching and STUN",
+          "t": "This is called \"UDP hole punching.\" It was standardized in the STUN protocol in 2003, and later in ICE, which WebRTC video calls use today. When hole punching fails, apps fall back to a TURN relay server, like Skype's supernodes."
+        }
+      ]
+    },
+    {
+      "title": "Peer-Hostile Routers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This only works if your router reuses the same external port when your app sends from the same internal port to a different destination: first the rendezvous server, then your friend. Not all NAT routers do."
+        },
+        {
+          "s": "leo",
+          "t": "Is there a good reason not to?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Even the NAT standards suggest keeping the public port the same as long as the internal IP and port are the same. Customers complaining about Skype quality are pushing manufacturers to fix it in firmware."
+        },
+        {
+          "s": "steve",
+          "t": "It's no security compromise. Mappings are still dynamic, and only traffic from the expected IP and port gets back in."
+        },
+        {
+          "type": "fact",
+          "title": "Endpoint-independent mapping",
+          "t": "The behavior Steve describes was formalized in RFC 4787 in 2007, which requires NATs to use \"endpoint-independent mapping.\" Routers that assign a new port for each destination, called \"symmetric NATs,\" still defeat hole punching."
+        },
+        {
+          "s": "leo",
+          "t": "How can I tell if my router is compatible?"
+        },
+        {
+          "s": "steve",
+          "t": "There was a cross-platform program called NAT Check, on SourceForge with servers at MIT. We used it on Call for Help last summer, but its tables are gone. A NAT-checking service was made for GRC. I'll do one after my current project and the OpenVPN docs."
+        },
+        {
+          "s": "leo",
+          "t": "Can I assume a router less than a couple of years old works?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Even recent routers weren't doing it. Packet capture with CommView or Ethereal will show whether your VoIP packets go directly to the other person's IP. That's how we confirmed our Skype connection was direct."
+        },
+        {
+          "s": "steve",
+          "t": "And keep your firmware up to date. NAT Check's table showed the behavior changing between firmware versions."
+        },
+        {
+          "s": "leo",
+          "t": "And our dedicated Skype port compensated for someone else's unfriendly router. Both ends have to be compatible."
+        }
+      ]
+    },
+    {
+      "title": "Other Ideas, and Shorter URLs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One suggestion: if NAT routers logged denied incoming packets and apps could read the log, they could adjust their outgoing traffic to match. Unlike UPnP, it wouldn't let apps open ports, but as far as I know nobody has done it."
+        },
+        {
+          "s": "steve",
+          "t": "So some third party is always involved: Google Talk and Skype use their servers, and peer-to-peer networks use open nodes."
+        },
+        {
+          "s": "leo",
+          "t": "I'll bet Astaro's open-source gateway does NAT traversal well."
+        },
+        {
+          "s": "steve",
+          "t": "I think all the open-source NATs do it correctly."
+        },
+        {
+          "s": "leo",
+          "t": "SpinRite is version 6.0. I've used it since maybe '91 or '92."
+        },
+        {
+          "s": "steve",
+          "t": "And I fixed the server so you can leave off .htm. GRC.com/securitynow works now."
+        },
+        {
+          "s": "leo",
+          "t": "Hallelujah. How long have I been on you about that?"
+        },
+        {
+          "s": "steve",
+          "t": "We're at about 100,000 listeners now."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why do NAT routers make good firewalls?",
+      "options": [
+        "They drop unsolicited incoming packets that don't match outgoing traffic",
+        "They encrypt everything",
+        "They scan for viruses",
+        "They hide your MAC address"
+      ],
+      "answer": 0,
+      "explain": "Only replies to traffic you sent are let back in."
+    },
+    {
+      "q": "Besides the source IP, what does NAT rewrite on outgoing packets?",
+      "options": [
+        "The source port, so it can match replies to the right internal computer",
+        "The destination website",
+        "The packet's contents",
+        "The checksum only"
+      ],
+      "answer": 0,
+      "explain": "The port mapping is how NAT tells multiple machines' traffic apart."
+    },
+    {
+      "q": "What does the rendezvous server do in NAT traversal?",
+      "options": [
+        "Tells each party the other's public IP and external port, then steps aside",
+        "Relays the entire call",
+        "Opens ports on both routers",
+        "Encrypts the call"
+      ],
+      "answer": 0,
+      "explain": "With that information, each side's packets look like expected replies."
+    },
+    {
+      "q": "What router behavior is required for this trick to work?",
+      "options": [
+        "Reusing the same external port when the same internal port sends to a new destination",
+        "Universal Plug and Play",
+        "A static open port",
+        "A dynamic IP"
+      ],
+      "answer": 0,
+      "explain": "Routers that assign new ports per destination break it."
+    },
+    {
+      "q": "How did Steve confirm his Skype calls with Leo were direct?",
+      "options": [
+        "Packet capture showed packets going straight to Leo's IP",
+        "Skype told him",
+        "The call was louder",
+        "He asked his ISP"
+      ],
+      "answer": 0,
+      "explain": "Traffic to a third party's IP would mean a relay."
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "number": 43,
+  "title": "Open Ports",
+  "subtitle": "Open, closed and stealth, and what each means",
+  "date": "2006-06-08",
+  "description": "What a port really is, what opens one, how TCP and UDP ports reveal themselves, why \"stealth\" beats \"closed,\" the ident-port problem, and how to reduce the risk when you have to leave a port open.",
+  "transcript": "https://www.grc.com/sn/sn-043.txt",
+  "audio": "http://media.GRC.com/sn/SN-043.mp3",
+  "chapters": [
+    {
+      "title": "From Default Allow to Default Deny",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 43. For many people, ShieldsUP! was their first introduction to ports."
+        },
+        {
+          "s": "steve",
+          "t": "As far as I know, I coined the term \"stealth,\" from Star Trek's cloaking field, for a TCP port that's neither open nor closed."
+        },
+        {
+          "s": "steve",
+          "t": "In the early Internet, IT people allowed everything and blocked a port when mischief came through it. An IT person who did that today would be fired. Now you deny everything by default and allow only what you know you want."
+        },
+        {
+          "s": "steve",
+          "t": "Old Windows worms are still crawling the Net. Put a fresh, unpatched XP machine on the Internet and start a stopwatch. It's taken over in minutes."
+        },
+        {
+          "s": "leo",
+          "t": "It's endemic. Forgotten, infected machines keep scanning, and it won't go away."
+        },
+        {
+          "s": "steve",
+          "t": "And what they scan for is open ports."
+        }
+      ]
+    },
+    {
+      "title": "What a Port Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The word is confusing. We had serial ports and printer ports. \"Channel\" might be better."
+        },
+        {
+          "s": "steve",
+          "t": "A port is nothing but a 16-bit number in the header of an Internet packet that says which of 65,535 channels it's aimed at. There's no physical switch."
+        },
+        {
+          "s": "leo",
+          "t": "All the data travels in discrete packets, and each header says where it's going, where it came from, and which port."
+        },
+        {
+          "s": "steve",
+          "t": "That was the Internet's great breakthrough: switched packets instead of switched circuits. Ethernet is just one of the electrical technologies that carry them. IBM's Token Ring was another."
+        },
+        {
+          "type": "fact",
+          "title": "Who invented packet switching?",
+          "t": "Paul Baran at RAND, in the early 1960s, and Donald Davies at Britain's National Physical Laboratory independently developed the idea. Davies coined the word \"packet.\" Leonard Kleinrock's queueing theory work helped show it would perform well."
+        },
+        {
+          "s": "steve",
+          "t": "The operating system provides the TCP/IP stack, but it doesn't open ports by itself. Something running on it does: a Windows service, which you can stop to close its ports, or an application, like Skype right now."
+        },
+        {
+          "s": "leo",
+          "t": "And Skype can use any port you tell it to."
+        },
+        {
+          "s": "steve",
+          "t": "Some services use well-known ports by agreement: DNS on 53, the web on 80, and SSL on 443."
+        }
+      ]
+    },
+    {
+      "title": "Open, Closed and Stealth",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "To start a TCP connection, a computer sends a SYN packet. If something is listening on that port, the operating system answers with a SYN/ACK. Anyone on the planet can send a SYN, and a SYN/ACK proves something there will accept a connection."
+        },
+        {
+          "s": "steve",
+          "t": "That's what led to ShieldsUP! When I set up ISDN years ago, I scanned the IPs near mine and found machines with their names and C and D drives wide open through Windows file sharing. Before personal firewalls or NAT routers, Windows listened for file sharing by default."
+        },
+        {
+          "s": "steve",
+          "t": "ShieldsUP! now scans ports 0 through 1056. Port 0 isn't legal, but some routers have accepted traffic on it."
+        },
+        {
+          "s": "steve",
+          "t": "A closed port has no listener, but the stack still answers with an affirmative denial, a TCP reset or an ICMP message. That doesn't reveal a vulnerable service, but it proves a computer is there."
+        },
+        {
+          "s": "steve",
+          "t": "A stealth port says nothing at all, exactly like an IP with no computer behind it."
+        },
+        {
+          "s": "leo",
+          "t": "Some purists say stealth breaks the TCP spec."
+        },
+        {
+          "s": "steve",
+          "t": "The old UNIX guys. But it costs nothing to be invisible."
+        },
+        {
+          "s": "leo",
+          "t": "If bad guys come knocking, the best answer is that there's no \"in here.\""
+        },
+        {
+          "type": "fact",
+          "title": "Port states",
+          "t": "Scanners like Nmap report these as \"open\" (SYN/ACK received), \"closed\" (reset received) and \"filtered\" (no reply, often a firewall silently dropping packets), which is what Steve calls stealth."
+        }
+      ]
+    },
+    {
+      "title": "The Ident Problem",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Some router makers decided not to stealth the ident port, because some services still use it."
+        },
+        {
+          "s": "steve",
+          "t": "When you connect, some ancient IRC, web or FTP servers send a connection request back to port 113, ident, on your machine. Nobody runs an ident server today. The server just wants to know someone's there."
+        },
+        {
+          "s": "steve",
+          "t": "If the port is stealth, TCP is very patient. It resends its SYN, doubling the wait each time, up to five times. Your connection can stall for a minute."
+        },
+        {
+          "s": "steve",
+          "t": "Honestly, GRC is probably at fault. ShieldsUP! showed that people's ident ports weren't stealth, and they demanded stealth from their router makers."
+        },
+        {
+          "s": "steve",
+          "t": "The fix was \"adaptive\" stealthing: hide ident from everyone, except an IP you already have a connection to. That server gets a quick \"no,\" and your connection proceeds."
+        },
+        {
+          "s": "steve",
+          "t": "ShieldsUP! deliberately tests from a different IP than the one you connected to, so a router doing adaptive stealthing still gets credit."
+        },
+        {
+          "s": "leo",
+          "t": "Why bother stealthing even a harmless port?"
+        },
+        {
+          "s": "steve",
+          "t": "Denial of service. If someone with a botnet decides to blast you, they'll pause to see if you're still there. You want them unable to tell."
+        },
+        {
+          "s": "leo",
+          "t": "And scanning all 65,000 ports is quick. Any closed but non-stealth port gives you away."
+        },
+        {
+          "s": "steve",
+          "t": "Hackers know ident often isn't stealthed, so they probe it on purpose."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks to ShieldsUP!, consumer routers now ship with stealth on."
+        },
+        {
+          "s": "leo",
+          "t": "Does having a few open ports throw away stealth's value?"
+        },
+        {
+          "s": "steve",
+          "t": "Probably not. Attackers often scan for one specific port after a new vulnerability, say in MySQL."
+        }
+      ]
+    },
+    {
+      "title": "UDP Ports",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "UDP is just as important, but it has no handshake. DNS sends one query packet and gets one reply, which is far more efficient than setting up and tearing down a TCP connection."
+        },
+        {
+          "s": "steve",
+          "t": "DNS can use TCP too. Zone transfers, which list everything in a domain, require it, and most servers no longer allow them."
+        },
+        {
+          "s": "steve",
+          "t": "Our VoIP call right now streams over UDP, with protocols layered on top."
+        },
+        {
+          "s": "steve",
+          "t": "The TCP handshake is generic for every service. But to find a UDP service, you usually have to speak its particular protocol, like sending a real DNS query to port 53."
+        },
+        {
+          "s": "leo",
+          "t": "So UDP ports are much harder to probe."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, though by the original spec, a UDP packet to a port with no listener gets back an ICMP \"nothing here,\" which reveals the machine. Firewalls and routers stealth that too."
+        },
+        {
+          "s": "steve",
+          "t": "Here's a trick for older routers that won't stealth ident: forward port 113 to an IP on your network that doesn't exist, say .200. The router dutifully sends the packets there, nobody answers, and the port is stealthed. It works for any port."
+        },
+        {
+          "type": "fact",
+          "title": "A small slip",
+          "t": "Steve says the router accepts an incoming \"ICMP packet\" for the forwarded ident port. Ident runs over TCP, so these are TCP connection attempts. The trick works the same way."
+        }
+      ]
+    },
+    {
+      "title": "Living with Open Ports",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Windows used to listen for everything, because Microsoft wanted things to just work. Putting Windows on the Internet was the same as putting it on your network. XP SP2's default firewall finally changed that."
+        },
+        {
+          "s": "steve",
+          "t": "People still download my DCOMbobulator and Unplug n' Pray, which I wrote in a day, months before Microsoft responded."
+        },
+        {
+          "s": "steve",
+          "t": "With a NAT router, open ports on your own computers matter much less. ShieldsUP! tests your public IP. I can't reach 192.168.0.1, which is on millions of machines."
+        },
+        {
+          "s": "steve",
+          "t": "So the frontier is ports you open in your router. An open port means you depend on the security of whatever software is listening, and writing perfect software is very hard."
+        },
+        {
+          "s": "steve",
+          "t": "The classic boondoggle was pcAnywhere: flaw after flaw, and many people never changed the default password, so attackers scanned for its port."
+        },
+        {
+          "s": "steve",
+          "t": "When I started Skype just now, it told me to update because of a security fix."
+        },
+        {
+          "s": "steve",
+          "t": "If you must open ports, use robust, well-tested services. Better yet, run them on a separate machine, an old computer in a \"DMZ,\" not your main one."
+        },
+        {
+          "s": "leo",
+          "t": "Every time I install a router, I change the password, turn off UPnP and run ShieldsUP!."
+        },
+        {
+          "s": "steve",
+          "t": "And turn off WAN-side administration. If you must have it, move it off the standard port and use a strong password."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Telnet Problem",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "At Level 3, I have rack-mounted boxes that let me power-cycle or reach the consoles of GRC's machines remotely. They only support telnet, only on port 23, with an eight-character password."
+        },
+        {
+          "s": "leo",
+          "t": "You're asking for trouble."
+        },
+        {
+          "s": "steve",
+          "t": "I'd only say this on a podcast because I've solved it. An inexpensive Dell managed switch filters those ports so only specific IP ranges I've chosen can even see them."
+        },
+        {
+          "s": "leo",
+          "t": "Super stealth."
+        },
+        {
+          "s": "steve",
+          "t": "You can't leave a well-known service exposed, especially at a well-known company. Someone will start trying A, then B, then C."
+        },
+        {
+          "s": "leo",
+          "t": "And a poem going around as \"Anonymous\" is really Gene Ziegler's 1994 \"A Grandchild's Guide to Using Grandpa's Computer\": \"If a packet hits a pocket on a socket on a port…\""
+        },
+        {
+          "s": "leo",
+          "t": "Astaro tells us its gateway leaves source ports unchanged through NAT."
+        },
+        {
+          "s": "steve",
+          "t": "That's the friendliest NAT there is. It changes the port only when two internal machines use the same source port to the same remote IP."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is Episode 44, a Mod 4, so it's Q&A."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a network \"port\"?",
+      "options": [
+        "A 16-bit number in a packet's header that selects one of 65,535 channels",
+        "A physical socket on your computer",
+        "An IP address",
+        "A type of cable"
+      ],
+      "answer": 0,
+      "explain": "There's no physical switch; it's just a number."
+    },
+    {
+      "q": "How does a closed TCP port differ from a stealth port?",
+      "options": [
+        "A closed port replies with a reset, proving a computer exists; a stealth port doesn't reply at all",
+        "Closed ports accept connections",
+        "Stealth ports are open",
+        "There's no difference"
+      ],
+      "answer": 0,
+      "explain": "Stealth looks exactly like no computer at all."
+    },
+    {
+      "q": "Why can stealthing the ident port slow some connections?",
+      "options": [
+        "Old servers wait through repeated TCP retries for an ident reply that never comes",
+        "It blocks all web traffic",
+        "It disables DNS",
+        "It encrypts the connection"
+      ],
+      "answer": 0,
+      "explain": "Adaptive stealthing answers only servers you're already connected to."
+    },
+    {
+      "q": "Why are UDP services harder to detect than TCP ones?",
+      "options": [
+        "There's no generic handshake; you usually must speak the service's own protocol",
+        "UDP has no ports",
+        "UDP is encrypted",
+        "UDP only works on LANs"
+      ],
+      "answer": 0,
+      "explain": "A TCP SYN works for every service; UDP doesn't have an equivalent."
+    },
+    {
+      "q": "What's Steve's advice if you must leave a port open?",
+      "options": [
+        "Use well-tested software, and ideally run it on a separate machine in a DMZ",
+        "Use the default password",
+        "Open all ports",
+        "Turn off your firewall"
+      ],
+      "answer": 0,
+      "explain": "An open port means trusting whatever software listens behind it."
+    },
+    {
+      "q": "How did Steve protect remote-management boxes that only support telnet?",
+      "options": [
+        "A managed switch lets only chosen IP ranges reach them",
+        "He changed the port",
+        "He unplugged them",
+        "He used a longer password"
+      ],
+      "answer": 0,
+      "explain": "To everyone else, they don't exist."
+    }
+  ]
+}

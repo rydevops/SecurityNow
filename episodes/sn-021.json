@@ -1,0 +1,267 @@
+{
+  "number": 21,
+  "title": "The WMF Vulnerability",
+  "subtitle": "A designed-in backdoor and the patch that saved the week",
+  "date": "2006-01-05",
+  "description": "Everything known about the first serious Windows exploit of 2006, the Windows Metafile vulnerability, with the show's first guest: Ilfak Guilfanov, author of the temporary patch millions of people used while waiting for Microsoft.",
+  "transcript": "https://www.grc.com/sn/sn-021.txt",
+  "audio": "http://media.GRC.com/sn/SN-021.mp3",
+  "chapters": [
+    {
+      "title": "A Backdoor by Design",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 21, January 5, 2006, a three-way Skype call about the WMF vulnerability."
+        },
+        {
+          "s": "steve",
+          "t": "This one came to light because it was being exploited. We don't know how long it was used quietly before that."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft posted a notice on December 27th acknowledging active exploitation."
+        },
+        {
+          "s": "leo",
+          "t": "Some people wonder whether government agencies knew about holes like this."
+        },
+        {
+          "s": "steve",
+          "t": "And this isn't even an accident. The ability to run code was designed into the format. Someone just realized they could use it to run whatever code they wanted."
+        },
+        {
+          "s": "leo",
+          "t": "It comes from an era when programmers assumed users were benevolent."
+        }
+      ]
+    },
+    {
+      "title": "Our Guest: Ilfak Guilfanov",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft's first advice was to unregister a DLL, which wasn't really enough. Then Ilfak Guilfanov stepped in."
+        },
+        {
+          "s": "steve",
+          "t": "Ilfak is lead developer at DataRescue and the creator of the IDA disassembler, the tool people use to pick apart code they don't have source for, including malware."
+        },
+        {
+          "s": "leo",
+          "t": "He joined us from Liège, Belgium, after 10 p.m. his time."
+        },
+        {
+          "s": "steve",
+          "t": "I asked whether it was a buffer overrun or a feature working as designed. Ilfak was clear: it's by design. A metafile can carry a sequence of code to run, inside the file itself, so anything can happen."
+        },
+        {
+          "s": "leo",
+          "t": "And it runs with the privileges of the logged-in user, so an administrator can have a trojan installed. Even a limited user could lose their files."
+        },
+        {
+          "s": "steve",
+          "t": "It has been there at least 15 years. Ilfak thinks people knew of the feature but never looked at it as something to exploit. It was meant to be useful."
+        },
+        {
+          "type": "fact",
+          "title": "Feature, not bug",
+          "t": "There was no overflow and no memory corruption. The Windows Metafile format includes a record (SETABORTPROC) whose purpose is to supply code to run if drawing is cancelled. Any program that drew an attacker's image would run the attacker's code."
+        },
+        {
+          "s": "leo",
+          "t": "What does your patch do, Ilfak?"
+        },
+        {
+          "s": "steve",
+          "t": "He explained that it doesn't block metafiles. It disables just the one function that runs the embedded code."
+        },
+        {
+          "s": "leo",
+          "t": "Does it break anything?"
+        },
+        {
+          "s": "steve",
+          "t": "Some people reported printing problems, such as old printers that no longer printed. He warned about that possibility on his blog from the start."
+        },
+        {
+          "s": "steve",
+          "t": "Unregistering the image-viewer DLL wasn't enough, because Windows looks inside files to identify them, so a disguised metafile could still reach the vulnerable code another way."
+        }
+      ]
+    },
+    {
+      "title": "Windows 98 and ME",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is Windows 95, 98 or ME vulnerable?"
+        },
+        {
+          "s": "steve",
+          "t": "Ilfak isn't sure. Those systems use completely different graphics code, and he doesn't have a 98 machine to test. His checker says a 98 system \"may be\" vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has quietly removed 9x and ME from its advisory and says the issue isn't critical there, so apparently they won't patch it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft officially supports 98 and ME through June 2006, after people protested the earlier end date. I've said that if Microsoft doesn't fix it, I will."
+        }
+      ]
+    },
+    {
+      "title": "Overwhelming Demand",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How did you write it so fast, Ilfak?"
+        },
+        {
+          "s": "steve",
+          "t": "He learned about it from the news like everyone else, saw how dangerous it was, since just browsing could infect you, and wrote a fix for his own computer to share."
+        },
+        {
+          "s": "steve",
+          "t": "Our Episode 20 show notes have now been viewed 252,711 times. Each day last week was busier than the one before."
+        },
+        {
+          "s": "steve",
+          "t": "Ilfak didn't expect any of this. He saw a technical problem, solved it for himself and offered it to whoever wanted it. His later versions only added support for more Windows versions; the protection itself never changed."
+        },
+        {
+          "s": "steve",
+          "t": "In fact, that's how he and I first met: working to add Windows 2000 support to his first release."
+        },
+        {
+          "s": "leo",
+          "t": "PC Magazine, eWeek and Steve all recommended it. Thank you, Ilfak, on behalf of the whole Internet community, for stepping in and taking on the liability."
+        },
+        {
+          "s": "steve",
+          "t": "Hundreds of websites are serving malicious images. Who knows how many machines his patch protected."
+        },
+        {
+          "s": "leo",
+          "t": "And remember, it prevents new infections. It doesn't remove anything already installed."
+        },
+        {
+          "s": "steve",
+          "t": "People ask, \"How do I know if I have this?\" The exploit isn't the infection. It's an open door that can carry anything in."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft's Official Fix",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Microsoft is slow partly because of liability. A bad patch can break things."
+        },
+        {
+          "s": "steve",
+          "t": "Like the update that broke corporate VPNs with a packet-size mistake. Microsoft's official fix leaked Tuesday night and is released today at 2 p.m. Pacific, well before the usual second-Tuesday schedule."
+        },
+        {
+          "s": "steve",
+          "t": "I verified the leaked file's digital signature chain back to the same root certificate as other genuine Microsoft patches. It fixed the vulnerability, and it didn't conflict with Ilfak's patch."
+        },
+        {
+          "s": "steve",
+          "t": "Ilfak's patch blocks the function in memory and doesn't modify the file. Microsoft's actually replaces it. So install Microsoft's update, then uninstall Ilfak's."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's new GDI32.DLL is dated the Wednesday of the week the flaw appeared. They really did jump on this."
+        },
+        {
+          "type": "fact",
+          "title": "MS06-001",
+          "t": "Microsoft released bulletin MS06-001 on January 5, 2006, five days ahead of Patch Tuesday. It removed the dangerous behavior from Windows 2000, XP and Server 2003. Microsoft didn't patch Windows 98 and ME, rating them not critical."
+        },
+        {
+          "s": "steve",
+          "t": "A Microsoft spokesperson said they'll re-examine other features like this. That fits: they'd hunted for buffer overruns, but this was a feature from an era when nobody thought about security."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe a fallback routine, in case a printer didn't support certain drawing commands."
+        },
+        {
+          "s": "steve",
+          "t": "Today, nobody in their right mind would design an image format that can carry executable code."
+        },
+        {
+          "s": "leo",
+          "t": "What about PDFs?"
+        },
+        {
+          "s": "steve",
+          "t": "PDFs are cross-platform, so they can't contain raw Intel code. A metafile here held actual x86 instructions, and Windows simply started running them."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, unless something else breaks: the foundations of how the Internet works."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Was the WMF vulnerability a buffer overrun?",
+      "options": [
+        "No, it was a designed-in feature that ran code embedded in the image",
+        "Yes, a classic overflow",
+        "It was a hardware bug",
+        "It was in the browser only"
+      ],
+      "answer": 0,
+      "explain": "Ilfak confirmed the format itself lets a file supply code to run."
+    },
+    {
+      "q": "Who is Ilfak Guilfanov?",
+      "options": [
+        "Creator of the IDA disassembler, who wrote the emergency WMF patch",
+        "A Microsoft executive",
+        "The author of the exploit",
+        "A Sony lawyer"
+      ],
+      "answer": 0,
+      "explain": "He wrote the fix for his own PC and shared it, and millions used it."
+    },
+    {
+      "q": "Why wasn't unregistering the image-viewer DLL a full fix?",
+      "options": [
+        "Windows identifies files by their contents, so other routes still reached the vulnerable code",
+        "It deleted all images",
+        "It disabled the Internet",
+        "It only worked on Macs"
+      ],
+      "answer": 0,
+      "explain": "Disguised metafiles could still be drawn through other paths."
+    },
+    {
+      "q": "After installing Microsoft's official patch, what did Steve advise?",
+      "options": [
+        "Uninstall Ilfak's temporary patch",
+        "Keep both forever",
+        "Reinstall Windows",
+        "Unregister every DLL"
+      ],
+      "answer": 0,
+      "explain": "Microsoft's fix replaced the vulnerable file, so the in-memory workaround was no longer needed."
+    },
+    {
+      "q": "Why does the WMF patch not \"remove\" infections?",
+      "options": [
+        "The flaw is just an open door; whatever came through it is still there",
+        "Patches always remove malware",
+        "WMF infections are harmless",
+        "Antivirus does it automatically"
+      ],
+      "answer": 0,
+      "explain": "Closing the door doesn't evict anything that already got in."
+    }
+  ]
+}

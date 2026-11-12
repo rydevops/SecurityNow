@@ -1,0 +1,303 @@
+{
+  "number": 25,
+  "title": "How the Internet Works, Part 1",
+  "subtitle": "Packets, TTLs, traceroute and routing",
+  "date": "2006-02-02",
+  "description": "A quick look at the destructive \"Kama Sutra\" virus that strikes on February 3rd and PC World's antivirus rankings, then part one of the long-planned fundamentals series: the history and detailed workings of the global Internet.",
+  "transcript": "https://www.grc.com/sn/sn-025.txt",
+  "audio": "http://media.GRC.com/sn/SN-025.mp3",
+  "chapters": [
+    {
+      "title": "A Destructive Throwback",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 25. First, thanks for the sci-fi book, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "Peter F. Hamilton is my favorite author. I'm rereading \"Pandora's Star\" before the sequel comes out. \"Fallen Dragon\" is the one I sent you."
+        },
+        {
+          "s": "leo",
+          "t": "Now, \"Kama Sutra.\" Not the book: a virus expected to hit hard on Friday the 3rd."
+        },
+        {
+          "s": "steve",
+          "t": "It appeared January 20th. Each infected machine visits a web page counter, which is how people have estimated how many there are."
+        },
+        {
+          "s": "steve",
+          "t": "We don't usually cover individual viruses, since there are a hundred new ones a week. This one is destructive. Most malware now wants to take over your PC for spam or attacks. This one overwrites your Word, Excel, PowerPoint, ZIP, RAR, PDF and Access files with garbage."
+        },
+        {
+          "s": "steve",
+          "t": "If you don't notice and your scheduled backup runs, you could overwrite good backups with ruined files."
+        },
+        {
+          "s": "leo",
+          "t": "It's like the old days, when viruses were destructive."
+        },
+        {
+          "s": "steve",
+          "t": "It triggers 30 minutes after startup on the 3rd of any month. It's also called Blackmal and Nyxem. Symantec has a small, clean free scanner, no registration needed. If your antivirus is updated, you're probably fine, but tell your less careful friends."
+        },
+        {
+          "type": "fact",
+          "title": "Nyxem (Kama Sutra)",
+          "t": "Nyxem.E spread by email in January 2006, promising racy pictures. On the 3rd of each month it overwrote common document types and tried to disable security software. Its web counter turned out to wildly overstate how many machines were infected."
+        },
+        {
+          "s": "leo",
+          "t": "Someone asked why I recommend Symantec's removal tools when I dislike Norton AntiVirus."
+        },
+        {
+          "s": "steve",
+          "t": "A small one-time tool is very different from a huge program that takes over your system. Their researchers are still very good."
+        }
+      ]
+    },
+    {
+      "title": "PC World's Antivirus Rankings",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "People constantly ask which antivirus is best. I'll never do that research myself, but PC World just tested ten."
+        },
+        {
+          "s": "steve",
+          "t": "BitDefender 9 Standard was the best buy, scoring 92, at $30. Then McAfee VirusScan 2006, Kaspersky Anti-Virus Personal 5.0, F-Secure and Norton AntiVirus 2006."
+        },
+        {
+          "s": "steve",
+          "t": "Then Panda, the free AntiVir Personal Edition, the free avast! Home Edition, Trend Micro PC-cillin at $50 in ninth, and AVG Free last."
+        },
+        {
+          "s": "leo",
+          "t": "PC-cillin finished below two free ones. And no NOD32, my favorite."
+        }
+      ]
+    },
+    {
+      "title": "From Circuits to Packets",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This starts our foundation series. We've used these terms glibly for 24 episodes, but even IT directors tell us they always pick up something new."
+        },
+        {
+          "s": "steve",
+          "t": "When I first heard in the early '80s that all the world's computers would be networked, I thought, with my hardware background: what about the wires?"
+        },
+        {
+          "s": "leo",
+          "t": "Back then MCI Mail couldn't even send to CompuServe."
+        },
+        {
+          "s": "steve",
+          "t": "The breakthrough came in the mid-'60s, at MIT and at Stanford Research Institute: move from circuits to packets."
+        },
+        {
+          "s": "steve",
+          "t": "Connecting every computer to every other one takes N times (N−1) links. With packets, you connect to a router, which connects to another and another, and with enough interconnection your data can reach any machine on the planet."
+        },
+        {
+          "s": "leo",
+          "t": "The phone system was literally a circuit, with relays and operators asking \"Number, please?\""
+        },
+        {
+          "type": "fact",
+          "title": "Packet switching",
+          "t": "Instead of reserving a dedicated circuit, data is cut into packets, each carrying its source and destination. Every router forwards each packet independently toward its destination. Links are shared, and traffic can route around failures."
+        }
+      ]
+    },
+    {
+      "title": "IPv4, IPv6 and NAT",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today's Internet runs on IPv4. Versions 1 through 3 were early experiments, and there will never be a version 5."
+        },
+        {
+          "s": "steve",
+          "t": "The original designers imagined a few big networks, like universities. The first byte of the 32-bit address would say which network, and the other 24 bits which machine on it."
+        },
+        {
+          "s": "steve",
+          "t": "32 bits gives about 4.3 billion addresses. IPv6 has 128 bits: about 3.4 × 10^38 addresses."
+        },
+        {
+          "s": "leo",
+          "t": "Enough until we conquer a few more galaxies."
+        },
+        {
+          "s": "steve",
+          "t": "But IPv6 isn't easily compatible with IPv4. Every device along a path has to support it. Windows XP and Server 2003 can do IPv6, but there's almost nowhere to connect to it."
+        },
+        {
+          "s": "steve",
+          "t": "NAT routers relieved the pressure. Homes, companies and even some ISPs share one public address among many machines. IPv6 also has built-in encryption at the IP level, but that isn't enough to force a costly switch. I'd be surprised if it happens."
+        },
+        {
+          "type": "fact",
+          "title": "IPv6 today",
+          "t": "Despite slow adoption, IPv6 grew steadily as IPv4 addresses ran out. The regional registries exhausted their free pools between 2011 and 2019. By the mid-2020s, over 40% of Google's traffic arrived over IPv6, much of it from mobile networks."
+        },
+        {
+          "s": "steve",
+          "t": "Because of NAT, packets on the Internet carry your router's public address, not your machine's private one. Right now my PC is 10.0.0.10. You're probably 192.168.something."
+        },
+        {
+          "s": "steve",
+          "t": "Your public IP address can be traced to your household. Beyond your router, unless it logs who had which private address, nobody can tell which machine it was."
+        },
+        {
+          "s": "steve",
+          "t": "Addresses are scarce enough that last year I had to fill out an \"IP Justification Sheet\" for my network."
+        }
+      ]
+    },
+    {
+      "title": "Inside a Packet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A packet is just a block of binary data in a defined layout: source address, destination address and a protocol number saying what kind of packet it is."
+        },
+        {
+          "s": "steve",
+          "t": "ICMP is protocol 1, TCP is 6, UDP is 17. ICMP handles the Internet's plumbing: pings, error reports and supervisory messages."
+        },
+        {
+          "s": "steve",
+          "t": "Every packet also has a Time To Live, which is really a hop counter, not a time. The sender sets it, say 64 or 128, and each router subtracts one."
+        },
+        {
+          "s": "steve",
+          "t": "If a misconfigured router sends a packet in a loop, the TTL eventually hits zero. That router drops it and sends an ICMP \"time exceeded\" message back to the sender."
+        },
+        {
+          "s": "steve",
+          "t": "Early Windows started at 32. As the Internet grew, some destinations were more than 32 router hops away, so those packets died with nothing wrong. Systems now start at 64, 128 or the maximum, 255."
+        },
+        {
+          "type": "fact",
+          "title": "Why TTL exists",
+          "t": "Without a hop limit, a routing loop could trap packets forever and clog the network. TTL guarantees every packet eventually dies, and the \"time exceeded\" reply tells the sender where it happened."
+        }
+      ]
+    },
+    {
+      "title": "Traceroute and Routing",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Traceroute cleverly turns that error into a map. It sends a packet with TTL 1, and the first router replies with its address. Then TTL 2 for the second router, and so on, until you reach the destination."
+        },
+        {
+          "s": "leo",
+          "t": "I love the elegance. How much was planned ahead?"
+        },
+        {
+          "s": "steve",
+          "t": "That's what's shocking: so much of it was done right the first time, by people who had no idea where this was headed."
+        },
+        {
+          "s": "steve",
+          "t": "How do routers know where to send each packet? If addresses were random, every router would need a four-billion-entry table."
+        },
+        {
+          "s": "steve",
+          "t": "Instead, addresses are hierarchical, like postal mail: state, town, street, number. A router across the world only needs to know that addresses starting with 24 go that way."
+        },
+        {
+          "s": "steve",
+          "t": "Once a packet reaches the ISP that owns that block, the ISP sorts it down to the neighborhood and finally the customer, like a city post office sorting mail by carrier."
+        },
+        {
+          "s": "steve",
+          "t": "Routers share what they can reach with their neighbors, using protocols like BGP, the Border Gateway Protocol."
+        },
+        {
+          "s": "steve",
+          "t": "Classic network classes: Class A uses the first byte as the network, leaving 24 bits for about 16.7 million hosts. Class B uses two bytes. Class C uses three, leaving about 254 hosts."
+        },
+        {
+          "type": "fact",
+          "title": "Classes became CIDR",
+          "t": "Fixed Class A/B/C boundaries wasted addresses, so since 1993 the Internet has used CIDR: any prefix length, written like 203.0.113.0/24. Routers forward each packet using the longest matching prefix in their tables."
+        },
+        {
+          "s": "steve",
+          "t": "If a router goes down, its neighbors notice and choose another route, so the Internet heals itself."
+        },
+        {
+          "s": "leo",
+          "t": "The story that it was designed to survive nuclear attack isn't really true."
+        },
+        {
+          "s": "steve",
+          "t": "No, that's apocryphal. And there are critical exchange points, like MAE-East and MAE-West, that would hurt if they were knocked out. Understanding how it works will help us understand how it fails and how it's attacked."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was the key idea that made the Internet possible?",
+      "options": [
+        "Packet switching: data in independent packets forwarded router to router",
+        "Running a wire between every pair of computers",
+        "Satellite links",
+        "Telephone operators"
+      ],
+      "answer": 0,
+      "explain": "Packets share links and can route around failures, so you don't need N×(N−1) wires."
+    },
+    {
+      "q": "What does a packet's Time To Live actually count?",
+      "options": [
+        "Router hops: each router subtracts one, and the packet dies at zero",
+        "Seconds",
+        "Bytes",
+        "Retries"
+      ],
+      "answer": 0,
+      "explain": "It stops packets from looping forever, and the \"time exceeded\" reply makes traceroute possible."
+    },
+    {
+      "q": "How does traceroute find each router on a path?",
+      "options": [
+        "It sends packets with TTL 1, 2, 3… and records who reports each expiry",
+        "It asks each router for a map",
+        "It reads DNS records",
+        "It pings every IP on the Internet"
+      ],
+      "answer": 0,
+      "explain": "Each router where the TTL runs out sends back a message revealing its address."
+    },
+    {
+      "q": "Why don't routers need a table of every IP address?",
+      "options": [
+        "Addresses are hierarchical, so routers forward by prefix, like postal codes",
+        "Every router knows all 4 billion addresses",
+        "DNS does the routing",
+        "Packets carry full routes"
+      ],
+      "answer": 0,
+      "explain": "A router just needs to know which direction \"24-dot\" is."
+    },
+    {
+      "q": "What relieved the pressure to move to IPv6 in 2006?",
+      "options": [
+        "NAT routers letting many machines share one public address",
+        "Faster modems",
+        "Wi-Fi",
+        "IPv5"
+      ],
+      "answer": 0,
+      "explain": "NAT stretched IPv4 for many years, though IPv6 grew later as addresses ran out."
+    }
+  ]
+}

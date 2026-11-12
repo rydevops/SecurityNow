@@ -1,0 +1,315 @@
+{
+  "number": 24,
+  "title": "Listener Feedback Q&A #3",
+  "subtitle": "Hamachi exposure, firewalls, cookies, crypto strength and more",
+  "date": "2006-01-26",
+  "description": "Recorded together in the Call for Help studio: Hamachi and firewalls, Kerio's new home, recurring tracking cookies, whether the NSA can crack SSL, operating system security, pop-ups, wiping drives, VNC, staying anonymous, and how WPA keys are shared.",
+  "transcript": "https://www.grc.com/sn/sn-024.txt",
+  "audio": "http://media.GRC.com/sn/SN-024.mp3",
+  "chapters": [
+    {
+      "title": "Hamachi Still Needs a Firewall",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 24, recorded in person. Steve brought an entire radio studio in his suitcase."
+        },
+        {
+          "s": "steve",
+          "t": "Never again. It was heavy."
+        },
+        {
+          "s": "leo",
+          "t": "Tony and Greg ask: does Hamachi open us up to danger? Is it safe from a friend's open Wi-Fi?"
+        },
+        {
+          "s": "steve",
+          "t": "Hamachi joins machines as if they were plugged into the same hub. That's great for linking your own machines, but gamers on shared Hamachi networks are letting strangers connect to their PCs."
+        },
+        {
+          "s": "steve",
+          "t": "And your machine keeps its normal IP address too. At a friend's house, you're still on their Wi-Fi with your regular address exposed."
+        },
+        {
+          "s": "steve",
+          "t": "So yes, you still need a firewall. Your router can't see inside Hamachi's tunnel once it's up, but a software firewall can."
+        },
+        {
+          "s": "steve",
+          "t": "If you only trust the others for gaming, allow just the game's port on the Hamachi interface and block everything else, and keep protecting your normal address."
+        },
+        {
+          "type": "fact",
+          "title": "Two addresses, two exposures",
+          "t": "With Hamachi running, your PC has its normal IP address on the local network and a Hamachi address on the virtual network. Each needs its own firewall rules. The tunnel bypasses your router, so filtering has to happen on the PC."
+        }
+      ]
+    },
+    {
+      "title": "Lighter Firewalls and Recurring Cookies",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "ZoneAlarm has become bloated. Is there a lightweight free firewall for XP?"
+        },
+        {
+          "s": "steve",
+          "t": "My favorites were Tiny and Kerio. Good news: Alex Eckelberry of Sunbelt Software liked Kerio so much he bought it."
+        },
+        {
+          "s": "steve",
+          "t": "There will always be a free version. The paid one has dropped from about $45 to $19.95, and it's $14.95 through March. It watches for rootkit-style behavior, like programs launching other programs, which most firewalls miss."
+        },
+        {
+          "s": "steve",
+          "t": "A router or XP SP2's firewall stops outside intrusion. A software firewall is for people who want to know when a program tries to phone home. That's how I found TSAdbot."
+        },
+        {
+          "s": "leo",
+          "t": "Can't malware just turn firewalls off?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It's a cat-and-mouse game, like antivirus. Once something is inside, it can do almost anything, so keep it out in the first place."
+        },
+        {
+          "s": "leo",
+          "t": "Dylan's anti-spyware tools remove tracking cookies, and they're back the next day."
+        },
+        {
+          "s": "steve",
+          "t": "Some tools inflate their numbers by counting every cookie as a threat. Turn off third-party cookies. In Firefox and Opera it's a checkbox. In IE, press the scary \"Advanced\" button in the privacy settings and choose \"accept first-party, block third-party.\""
+        },
+        {
+          "type": "fact",
+          "title": "First- vs. third-party cookies",
+          "t": "A first-party cookie comes from the site you're visiting. A third-party cookie comes from another domain embedded in the page, typically an ad network, and lets it follow you across many sites. Blocking third-party cookies stops most tracking without breaking logins."
+        }
+      ]
+    },
+    {
+      "title": "Can the NSA Crack It?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Charles asks whether SSL and SSH are really safe from the NSA's supercomputers."
+        },
+        {
+          "s": "steve",
+          "t": "Today's cryptography was developed in the open by academic cryptographers with no axe to grind. We know exactly why it holds up."
+        },
+        {
+          "s": "steve",
+          "t": "RSA's security rests on how hard it is to factor the product of two huge primes. Diffie-Hellman rests on the difficulty of logarithms with huge numbers. We don't just hope nobody breaks them. We know how much work breaking them takes."
+        },
+        {
+          "s": "leo",
+          "t": "A brilliant mathematician could find a shortcut someday."
+        },
+        {
+          "s": "steve",
+          "t": "Possibly, but nothing we know says it can be done."
+        },
+        {
+          "type": "fact",
+          "title": "Symmetric vs. public-key key sizes",
+          "t": "A 128-bit symmetric key (like AES) can't be brute-forced. Public-key systems need much longer keys for similar strength, typically 2048-bit RSA today. That's why protocols use slow public-key math only to exchange a fast symmetric key."
+        },
+        {
+          "s": "leo",
+          "t": "So why does SSL say 128 bits while RSA keys are 1,024 or 2,048?"
+        },
+        {
+          "s": "steve",
+          "t": "Protocols use both. The public-key part, for authentication and key exchange, needs long keys. I run OpenVPN at 2,048 bits. It's too slow for bulk data, so it's used only to agree on a 128-bit secret key for fast symmetric encryption."
+        },
+        {
+          "s": "leo",
+          "t": "John says your password generator is impossible to find."
+        },
+        {
+          "s": "steve",
+          "t": "It's on the GRC home page now. Or just go to GRC.com/passwords."
+        }
+      ]
+    },
+    {
+      "title": "Windows, Mac, Linux and Pop-Ups",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul asks: how does Windows' security compare with Linux and the Mac?"
+        },
+        {
+          "s": "steve",
+          "t": "Windows was never designed for the Internet. It ran file and printer sharing wide open for years. Bill Gates came to the Internet late."
+        },
+        {
+          "s": "steve",
+          "t": "Size and complexity are always security's enemies, and Windows is huge. But XP SP2, with its firewall on by default, was a big step. Microsoft finally understands security matters."
+        },
+        {
+          "s": "steve",
+          "t": "The Mac is based on UNIX, the operating system TCP/IP was first built on."
+        },
+        {
+          "s": "leo",
+          "t": "UNIX leaned toward openness at the start too. And new layers like PHP keep adding vulnerabilities."
+        },
+        {
+          "s": "leo",
+          "t": "Angie asks why pop-ups start when she opens her browser."
+        },
+        {
+          "s": "steve",
+          "t": "Scripting. The site you visit sends code your browser runs. If it says \"open a window,\" your browser does. Disable scripting or skip the site."
+        },
+        {
+          "s": "leo",
+          "t": "Server-side scripts like PHP or Perl run on the server, not your PC. Actual spyware is different: it can pop up windows even when your browser isn't open."
+        }
+      ]
+    },
+    {
+      "title": "Wiping Drives and Remote Control",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bert asks whether zeroing a drive removes boot-sector viruses that survive a reformat."
+        },
+        {
+          "s": "steve",
+          "t": "Use Darik's Boot and Nuke, DBAN. Burn the free ISO to a CD and boot from it, and it scrubs the entire drive, boot record and all. It's ideal before you give a computer away."
+        },
+        {
+          "s": "leo",
+          "t": "True low-level formatting isn't possible on modern drives. Simson Garfinkel, who bought used drives on eBay and found passwords and card numbers, told me one pass of zeroes is really enough."
+        },
+        {
+          "type": "fact",
+          "title": "Secure erase today",
+          "t": "For hard drives, one overwrite pass is generally enough. SSDs remap data internally, so use the drive's built-in Secure Erase or full-disk encryption, then discard the key. Simson Garfinkel's 2003 study of used drives found that most had recoverable personal data."
+        },
+        {
+          "s": "leo",
+          "t": "Grant can't host Remote Desktop without XP Pro. Is RealVNC secure? I use VNC all the time."
+        },
+        {
+          "s": "steve",
+          "t": "It's cross-platform, and TightVNC is free too. RealVNC's free edition protects the login, but the session itself is unencrypted."
+        },
+        {
+          "s": "steve",
+          "t": "Run VNC over Hamachi and Hamachi provides the security. Outside a tunnel, use RealVNC's $30 Personal Edition, which encrypts everything."
+        },
+        {
+          "s": "leo",
+          "t": "On the Mac I use a client called Chicken of the VNC."
+        }
+      ]
+    },
+    {
+      "title": "Anonymity and WPA Keys",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian never gives his name online. How does the RIAA find people?"
+        },
+        {
+          "s": "steve",
+          "t": "They collect IP addresses from file-sharing networks, using fake clients, then get court orders forcing ISPs to say who had that address at that time."
+        },
+        {
+          "s": "leo",
+          "t": "Peer-to-peer can't work without exposing your address."
+        },
+        {
+          "s": "steve",
+          "t": "To hide it, there's Tor, The Onion Router, funded by the EFF. Traffic bounces through several volunteer routers that keep no logs, so it's effectively untraceable."
+        },
+        {
+          "type": "fact",
+          "title": "How Tor works",
+          "t": "Tor wraps traffic in layers of encryption and sends it through three relays. Each relay knows only the previous and next hop, so no single relay sees both who you are and where you're going. It's slower, but it hides your IP address from the sites you visit."
+        },
+        {
+          "s": "leo",
+          "t": "Anonymizer and iPhantom also hide your address, and so does iPig. But a commercial service will likely comply with a court order unless it doesn't keep logs."
+        },
+        {
+          "s": "steve",
+          "t": "GRC keeps no logs, except briefly when I'm diagnosing a problem."
+        },
+        {
+          "s": "leo",
+          "t": "Joe asks: isn't the WPA key sent over the air during setup?"
+        },
+        {
+          "s": "steve",
+          "t": "It's called pre-shared because it's never sent over the network. You type it into each device. WPA then derives temporary keys from it on the fly, and the master key never travels. It was engineered right from the start, unlike WEP."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, finally: How the Internet Works."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why do you still need a firewall when using Hamachi?",
+      "options": [
+        "Others on your Hamachi network can reach your PC, and your normal IP address is still exposed",
+        "Hamachi disables encryption",
+        "Routers block Hamachi",
+        "Firewalls speed it up"
+      ],
+      "answer": 0,
+      "explain": "The tunnel bypasses your router, so filter on the PC itself."
+    },
+    {
+      "q": "What stops the same tracking cookies from coming back after every cleanup?",
+      "options": [
+        "Blocking third-party cookies in the browser",
+        "Deleting all cookies daily",
+        "Turning off JavaScript",
+        "Reinstalling Windows"
+      ],
+      "answer": 0,
+      "explain": "Ad networks set cookies from embedded content; first-party cookies are fine."
+    },
+    {
+      "q": "Why does SSL use both a 1,024-bit and a 128-bit key?",
+      "options": [
+        "Slow public-key crypto exchanges a fast symmetric key used for the data",
+        "For compatibility with old browsers",
+        "One encrypts and one compresses",
+        "The government requires it"
+      ],
+      "answer": 0,
+      "explain": "Public-key math needs long keys and is too slow for bulk data."
+    },
+    {
+      "q": "What does Darik's Boot and Nuke do?",
+      "options": [
+        "Boots from CD and wipes an entire drive, including the boot record",
+        "Recovers deleted files",
+        "Scans for spyware",
+        "Defragments the disk"
+      ],
+      "answer": 0,
+      "explain": "It's ideal before disposing of a computer or after a stubborn infection."
+    },
+    {
+      "q": "How is a WPA pre-shared key delivered to your devices?",
+      "options": [
+        "You type it in yourself; it's never sent over the network",
+        "The router broadcasts it",
+        "It's emailed by the ISP",
+        "It's sent during the first connection"
+      ],
+      "answer": 0,
+      "explain": "Only temporary keys derived from it are used on the air."
+    }
+  ]
+}

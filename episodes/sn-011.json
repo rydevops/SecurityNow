@@ -1,0 +1,250 @@
+{
+  "number": 11,
+  "title": "Bad WiFi Security",
+  "subtitle": "Why MAC filtering, hidden SSIDs and WEP don't protect you",
+  "date": "2005-10-27",
+  "description": "Listener questions about open access points, then why MAC address filtering and hiding your network name aren't security, and how badly the original WEP encryption is broken.",
+  "transcript": "https://www.grc.com/sn/sn-011.txt",
+  "audio": "http://media.GRC.com/sn/SN-011.mp3",
+  "chapters": [
+    {
+      "title": "Mailbag: Sharing Your Wi-Fi",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Wireless security is a soup of acronyms, and vendors keep making it worse. I saw a book listing the default WEP keys some routers ship with."
+        },
+        {
+          "s": "leo",
+          "t": "So anyone who knows them gets right in."
+        },
+        {
+          "s": "steve",
+          "t": "Lots of you asked about the legal side of leaving your access point open on purpose. Anything someone does through it traces back to your public IP address and stops there."
+        },
+        {
+          "s": "leo",
+          "t": "So you could be held responsible for what they do."
+        },
+        {
+          "s": "steve",
+          "t": "The RIAA is suing people, and anyone tracking illegal file sharing or malicious activity ends up at your door. I don't want to discourage generosity, but know the risk."
+        },
+        {
+          "s": "leo",
+          "t": "We're not lawyers. The law here is murky. Someone has even been prosecuted for using another person's open access point."
+        },
+        {
+          "s": "steve",
+          "t": "Some listeners pointed out that switches can be defeated. True, as we'll see. But a switch still keeps your wired traffic from being broadcast to the neighborhood."
+        }
+      ]
+    },
+    {
+      "title": "MAC Addresses and ARP",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Every Ethernet adapter has a 48-bit MAC address. The first 24 bits identify the manufacturer, and the last 24 are a serial number, so no two should match on the same network."
+        },
+        {
+          "type": "fact",
+          "title": "MAC vs. IP addresses",
+          "t": "A MAC address is the hardware address of a network interface, used only on the local network segment. An IP address is the Internet-wide address. ARP (Address Resolution Protocol) links them: \"Who has IP 192.168.1.5?\" \"That's me, at MAC 00:1A:2B:…\""
+        },
+        {
+          "s": "steve",
+          "t": "When the gateway needs to deliver a packet locally, it broadcasts an ARP request asking who has that IP address, and the owner answers with its MAC address. That's also how a switch learns which device is on which port."
+        },
+        {
+          "s": "steve",
+          "t": "Faking those answers, called ARP spoofing, is one way to get around a switch."
+        }
+      ]
+    },
+    {
+      "title": "MAC Filtering Isn't Security",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many people skip encryption and use MAC address filtering instead: a list of the only adapters allowed to connect. Is it secure? Not at all."
+        },
+        {
+          "s": "leo",
+          "t": "That surprises me. TechTV and lots of companies rely on it."
+        },
+        {
+          "s": "steve",
+          "t": "Every packet carries its source and destination MAC addresses in the clear. Anyone with a sniffer sees the approved addresses immediately."
+        },
+        {
+          "s": "leo",
+          "t": "So you capture one packet from an approved laptop and copy its MAC address."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Changing your adapter's MAC address is trivial, and nothing stops two devices from using the same one. There are even ways to knock the real device off the access point."
+        },
+        {
+          "s": "steve",
+          "t": "It does stop casual or accidental use. A security consultant visited a client with Wi-Fi trouble. They unplugged his router and he stayed online: he'd been on a neighbor's Apple AirPort all along."
+        },
+        {
+          "s": "leo",
+          "t": "Hiding your network name, the SSID, is the same story. Anyone with a sniffer sees it anyway."
+        },
+        {
+          "type": "fact",
+          "title": "Obscurity isn't access control",
+          "t": "MAC filtering and hidden SSIDs only stop people who aren't looking. Both pieces of information are sent unencrypted in normal Wi-Fi traffic, so any attacker with a free sniffer can read them and get past them."
+        }
+      ]
+    },
+    {
+      "title": "One-Time Pads and RC4",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Which leaves encryption. WEP is a textbook lesson in how not to design a security protocol."
+        },
+        {
+          "s": "steve",
+          "t": "It was designed by well-meaning engineers, not security experts. It uses RC4, a strong cipher when used correctly, and WEP didn't use it correctly."
+        },
+        {
+          "s": "steve",
+          "t": "Start with the one-time pad, which is truly unbreakable: a pad of truly random letters, shared by sender and receiver, where each message letter is shifted by the next pad letter, and the pad is never reused."
+        },
+        {
+          "s": "steve",
+          "t": "Some adversaries reused their pads, and that's exactly how their messages were broken."
+        },
+        {
+          "type": "fact",
+          "title": "The one-time pad",
+          "t": "Combine each character of a message with a truly random key character, using a key as long as the message and never reused. Without the key, every possible message of that length is equally likely, so it's provably unbreakable. Reusing pages broke the Soviet messages decrypted in the US Venona project."
+        },
+        {
+          "s": "leo",
+          "t": "And computers aren't good at randomness. Their output is \"pseudorandom.\""
+        },
+        {
+          "s": "steve",
+          "t": "Right. Computers are deterministic. One famous fix pointed cameras at lava lamps to harvest real randomness."
+        },
+        {
+          "type": "fact",
+          "title": "Lavarand",
+          "t": "Steve credited Sun with the lava lamps. The well-known system was Silicon Graphics' \"Lavarand\" (1996), which turned images of lava lamps into random seeds. Cloudflare uses a wall of lava lamps the same way today."
+        },
+        {
+          "s": "steve",
+          "t": "RC4 is an excellent pseudorandom generator. Seed it with a key and it produces a stream of bytes that is combined with your data, like a one-time pad. Both ends share the same key: a pre-shared key."
+        }
+      ]
+    },
+    {
+      "title": "How WEP Broke",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Early WEP authentication went like this: the access point sends a challenge in the clear, the client encrypts it with the key and sends it back."
+        },
+        {
+          "s": "steve",
+          "t": "An eavesdropper sees both the original and the encrypted version. XOR them and you get the exact keystream, enough to answer a challenge without ever knowing the key."
+        },
+        {
+          "s": "leo",
+          "t": "So a little captured traffic gets you in."
+        },
+        {
+          "s": "steve",
+          "t": "That authentication method was eventually dropped. But there's more. To avoid reusing keystreams, WEP puts a 24-bit counter, the initialization vector, in front of the key. That's why keys are 40 or 104 bits: plus 24 makes 64 or 128."
+        },
+        {
+          "s": "steve",
+          "t": "The IV is sent in the clear, and some values produce weak RC4 keys. RC4's first output bytes are also poorly scrambled, and they encrypt packet headers, which are highly predictable."
+        },
+        {
+          "type": "fact",
+          "title": "Why WEP falls in minutes",
+          "t": "Short 24-bit IVs repeat, weak IVs leak key bits, and predictable headers reveal keystream. Tools collect enough packets, even provoking the access point to send more, and recover the key. Later attacks needed only minutes."
+        },
+        {
+          "s": "steve",
+          "t": "A busy access point used to cycle through its IVs in about seven hours. Attackers can now make it pour out packets, so cracking takes about an hour. There are 10 or 15 free cracking tools."
+        },
+        {
+          "s": "steve",
+          "t": "The 802.11 group was embarrassed, so security experts designed WPA. Its TKIP mode was built to run on older WEP hardware, keeps keys changing, and never uses the master key directly for packets."
+        },
+        {
+          "s": "leo",
+          "t": "WPA is also easier: a passphrase instead of long hexadecimal strings. Windows XP and Mac OS X support it, and your router may only need a firmware update."
+        },
+        {
+          "s": "steve",
+          "t": "But WPA passphrases can be attacked with dictionaries, so pick a long, random one. Next week: locking wireless down properly."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why doesn't MAC address filtering secure Wi-Fi?",
+      "options": [
+        "Approved MAC addresses are visible in every packet and easy to copy",
+        "MAC addresses are encrypted",
+        "Routers ignore the list",
+        "It slows the network too much"
+      ],
+      "answer": 0,
+      "explain": "A sniffer shows the approved addresses, and changing your adapter's MAC address is trivial."
+    },
+    {
+      "q": "What makes a one-time pad unbreakable?",
+      "options": [
+        "Truly random key material as long as the message, never reused",
+        "A very long password",
+        "A secret algorithm",
+        "Changing it every hour"
+      ],
+      "answer": 0,
+      "explain": "Reusing a pad breaks it, which is how some wartime messages were read."
+    },
+    {
+      "q": "What fatal flaw did WEP's original authentication have?",
+      "options": [
+        "An eavesdropper saw both the challenge and its encrypted reply, revealing the keystream",
+        "It had no password",
+        "It used IPv6",
+        "It needed a fingerprint"
+      ],
+      "answer": 0,
+      "explain": "XORing the plain challenge with the response gave an attacker what they needed to respond correctly themselves."
+    },
+    {
+      "q": "Why are WEP keys 40 or 104 bits?",
+      "options": [
+        "A 24-bit initialization vector is added to make 64 or 128 bits",
+        "The FCC requires it",
+        "Those are the RC4 limits",
+        "To save battery"
+      ],
+      "answer": 0,
+      "explain": "The IV is sent unencrypted, and its short length and weak values helped break WEP."
+    },
+    {
+      "q": "What does Steve recommend when switching from WEP to WPA?",
+      "options": [
+        "Choose a long, random passphrase, because WPA can be dictionary-attacked",
+        "Keep the default key",
+        "Turn on MAC filtering instead",
+        "Hide the SSID"
+      ],
+      "answer": 0,
+      "explain": "WPA's design is strong, but a guessable passphrase undermines it."
+    }
+  ]
+}

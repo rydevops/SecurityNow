@@ -1,0 +1,507 @@
+{
+  "number": 40,
+  "title": "Listener Feedback Q&A #7",
+  "subtitle": "Apple's patches, RealVNC, Whois, and a dozen questions",
+  "date": "2006-05-18",
+  "description": "News of 31 Apple fixes, a RealVNC authentication bypass, and the Whois privacy fight, then listener questions on self-made SSL certificates, framed pages, signed ID cards, keyloggers, salted hashes, an upward-growing stack, Skype, laptop encryption, free PGP, open-source security and ISP logging.",
+  "transcript": "https://www.grc.com/sn/sn-040.txt",
+  "audio": "http://media.GRC.com/sn/SN-040.mp3",
+  "chapters": [
+    {
+      "title": "Apple's 31 Fixes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 40, a Mod 4 episode, so it's Q&A. But first, news."
+        },
+        {
+          "s": "steve",
+          "t": "Apple announced 31 vulnerabilities in OS X 10.4.6 and earlier: local and remote code execution, information disclosure, denial of service and privilege escalation. The same fundamental problem of writing secure software."
+        },
+        {
+          "s": "steve",
+          "t": "Just as Apple's \"I'm a Mac, I'm a PC\" ads say Macs don't get viruses, it's starting to stop being true."
+        },
+        {
+          "s": "leo",
+          "t": "Apple never wanted to play the virus card. It was the best-kept secret in computing."
+        },
+        {
+          "s": "steve",
+          "t": "Virus writers wrote for the computers they owned, and kids had PCs. Now Macs are affordable and an increasing target."
+        },
+        {
+          "s": "leo",
+          "t": "But Macs don't have ActiveX, Active Scripting, or every user running as admin."
+        },
+        {
+          "s": "steve",
+          "t": "And population size matters. Someone after a widespread virus, or a botnet, still writes for Windows."
+        }
+      ]
+    },
+    {
+      "title": "RealVNC's Open Door",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A flaw in RealVNC, the popular remote desktop system, completely defeats its authentication. Anyone who finds an exposed RealVNC port can log right in until it's patched."
+        },
+        {
+          "type": "fact",
+          "title": "The RealVNC bypass",
+          "t": "CVE-2006-2369 affected RealVNC 4.1.1. A client could simply ask for \"no authentication,\" and the server accepted it. RealVNC 4.1.2 fixed it."
+        },
+        {
+          "s": "steve",
+          "t": "This is why I say never leave services on default ports. A public web server needs port 80, but if only you use it, pick a random port between 1,024 and 65,535. When a flaw appears, bad guys scan the Internet for the default port."
+        },
+        {
+          "s": "leo",
+          "t": "For call screening on the radio show, we connect over a VPN first, then open RealVNC. It's never exposed to the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "That's a great way to fly. Or use Hamachi to reach a VNC server running locally."
+        },
+        {
+          "s": "leo",
+          "t": "Though a determined attacker who knows your IP could scan every port."
+        },
+        {
+          "s": "steve",
+          "t": "True. IP addresses leak through forums, email and IRC, and knowing it narrows their search dramatically. Update RealVNC now, and move it off the default port."
+        }
+      ]
+    },
+    {
+      "title": "The Whois Debate",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "ICANN is fighting over the future of the Whois database."
+        },
+        {
+          "s": "steve",
+          "t": "A listener registered SecurityNow.info and pointed it at my page. That's nice, but I can't endorse a domain I don't control. I emailed the Whois address and never heard back. If you're listening, I'd happily cover your costs to transfer it."
+        },
+        {
+          "s": "steve",
+          "t": "On one side, political dissidents, bloggers and, yes, TV hosts want anonymity. On the other, fake Katrina relief sites used vague, unverifiable Whois records to hide."
+        },
+        {
+          "s": "leo",
+          "t": "I use Domains By Proxy through GoDaddy. Look up TWiT.tv and you'll see them, not me, but police or ICANN can get my details from them if they need to."
+        },
+        {
+          "s": "steve",
+          "t": "That kind of buffer probably is where this ends up."
+        },
+        {
+          "type": "fact",
+          "title": "Whois after GDPR",
+          "t": "Since Europe's GDPR took effect in 2018, registrars redact most personal Whois data by default. ICANN is replacing the old Whois protocol with RDAP, which can give verified requesters, like law enforcement, more detail."
+        },
+        {
+          "s": "steve",
+          "t": "And listener Weaver in the U.K. pointed out NoScript, at noscript.net, a Firefox extension that blocks JavaScript and Java until you whitelist a site with one click. It works like my IE setup."
+        },
+        {
+          "s": "leo",
+          "t": "JavaScript in Firefox isn't nearly as risky as ActiveX. But Firefox extensions run on your system, so be careful which ones you install."
+        },
+        {
+          "s": "leo",
+          "t": "Another listener noted that malware that edits your hosts file can redirect a trusted site."
+        },
+        {
+          "s": "steve",
+          "t": "But if something can edit your hosts file, you're already hosed. We'll do a whole episode on the hosts file."
+        },
+        {
+          "s": "leo",
+          "t": "Now, a dozen of the 6,010 emails Steve has collected."
+        }
+      ]
+    },
+    {
+      "title": "Self-Made Certificates and Frames",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jason in Atlanta asks: is the SSL certificate his Small Business Server 2003 made for itself as secure as one from VeriSign?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. The encryption is just as strong. The only difference is that VeriSign vouches for the identity."
+        },
+        {
+          "s": "leo",
+          "t": "But browsers won't trust it automatically."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Everyone who uses it has to import it, because browsers come preloaded only with the big certificate authorities."
+        },
+        {
+          "s": "leo",
+          "t": "And if a secure page contains a frame, is the framed page encrypted too?"
+        },
+        {
+          "s": "steve",
+          "t": "Not necessarily. Encryption applies per connection, so a frame loaded from an http URL isn't secure."
+        },
+        {
+          "s": "leo",
+          "t": "Is that the \"part of this page is not encrypted\" warning?"
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. \"Mixed content.\""
+        },
+        {
+          "type": "fact",
+          "title": "Mixed content today",
+          "t": "Modern browsers block insecure scripts and frames on HTTPS pages outright and automatically upgrade many insecure images to HTTPS. With free certificates now universal, most of the web is encrypted."
+        }
+      ]
+    },
+    {
+      "title": "Signed ID Cards",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve in Pinehurst and Ben both ask about President Bush's proposed tamperproof biometric ID cards for guest workers. Could crypto do it?"
+        },
+        {
+          "s": "steve",
+          "t": "Easily, with what we've learned. Print a photo and text on the card, and put the same photo and text on a magnetic stripe. Hash that data, and sign the hash with a government private key."
+        },
+        {
+          "s": "steve",
+          "t": "Any reader anywhere needs only the government's public key. It displays the photo and details from the stripe, an operator compares them to the person, and the signature proves not a single bit was changed."
+        },
+        {
+          "s": "steve",
+          "t": "There's no secret in the readers to steal. It could be freeware on a PC with a stripe reader."
+        },
+        {
+          "s": "leo",
+          "t": "It's just like me signing my email with PGP."
+        },
+        {
+          "type": "fact",
+          "title": "Signed documents today",
+          "t": "E-passports work this way. A chip holds the holder's data and photo, digitally signed by the issuing country, and border systems check the signature against that country's public key. Some chips also include fingerprints."
+        }
+      ]
+    },
+    {
+      "title": "Keyloggers and Salted Hashes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ryan in Ontario asks: can a form filler like RoboForm fool a keylogger?"
+        },
+        {
+          "s": "steve",
+          "t": "Not necessarily. Many form fillers simulate typing, so the same hooks a keylogger uses will see them."
+        },
+        {
+          "s": "leo",
+          "t": "It depends on the keylogger. One that only reads hardware scan codes might miss it."
+        },
+        {
+          "s": "steve",
+          "t": "Our earlier brainstorm still works: type a few characters, click elsewhere, cut and paste, so the final field is right but nothing passively watching can reconstruct it. Bottom line: don't let anything bad onto your system."
+        },
+        {
+          "s": "leo",
+          "t": "Brian in Everett read that MD5 is unreliable. What does \"salting\" a hash mean?"
+        },
+        {
+          "s": "steve",
+          "t": "MD5's 128 bits are getting short. 256- and 512-bit hashes cost little today."
+        },
+        {
+          "s": "steve",
+          "t": "The sites he read about precompute the hashes of common passwords into huge tables. \"dog\" always hashes to the same 128 bits, so a lookup finds it."
+        },
+        {
+          "s": "steve",
+          "t": "Salting adds extra data, even just an underscore, which completely changes the output and defeats precomputed tables. UNIX systems add some junk unique to the system to every password before hashing."
+        },
+        {
+          "type": "fact",
+          "title": "How salting really works",
+          "t": "Unix systems give each password its own random salt, stored next to the hash, so identical passwords hash differently and precomputed \"rainbow tables\" are useless. A single system-wide salt would be much weaker. Fast hashes like MD5 are now considered unsuitable for passwords. Use slow ones like bcrypt, scrypt or Argon2."
+        }
+      ]
+    },
+    {
+      "title": "Should Stacks Grow Up?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Carl in Wisconsin got last week's buffer overrun episode, and asks: why does an overflow write upward? Wouldn't it be safer the other way?"
+        },
+        {
+          "s": "steve",
+          "t": "Brilliant question. The stack grows down, buffers fill up, so an overrun hits data that callers already saved, including return addresses."
+        },
+        {
+          "s": "steve",
+          "t": "If the stack started at the bottom and grew upward, an overrun would run into unused stack space instead. It would really work."
+        },
+        {
+          "s": "leo",
+          "t": "You're turning years of computer science on its head. If it were that simple, wouldn't someone have done it?"
+        },
+        {
+          "s": "steve",
+          "t": "The direction was basically an arbitrary choice made long before this was a problem. Growing down was a little simpler."
+        },
+        {
+          "s": "leo",
+          "t": "I'm sure Randal Schwartz will write in."
+        },
+        {
+          "type": "fact",
+          "title": "Upward-growing stacks",
+          "t": "Some architectures, like HP's PA-RISC, did grow their stacks upward. It helps, but it doesn't end overruns. When a function passes its buffer to a copy routine, that routine's frame sits above the buffer, so overflowing it can still overwrite the copy routine's return address."
+        }
+      ]
+    },
+    {
+      "title": "Skype Questions",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Garrett asks how to configure Skype securely. He's behind NAT, with UPnP off and security settings on high."
+        },
+        {
+          "s": "steve",
+          "t": "He's completely secure. NAT acts as a stateful firewall, nothing can quietly open ports, and his SkypeOut calls connect out to Skype's servers."
+        },
+        {
+          "s": "leo",
+          "t": "Now our secret: why our calls sound so good."
+        },
+        {
+          "s": "steve",
+          "t": "My network is NAT-hostile, so at first our calls went through a \"supernode,\" a third party relaying them. I set a fixed, non-default port in Skype's advanced options and mapped it through my router for UDP."
+        },
+        {
+          "s": "steve",
+          "t": "If either person has a mapped port, the other can always reach it directly, and Skype tells everyone which port to use. No supernode, better quality."
+        },
+        {
+          "s": "leo",
+          "t": "Jason's IT department sent a nastygram: remove Skype, because peer-to-peer lets viruses in."
+        },
+        {
+          "s": "steve",
+          "t": "If it's their laptop, it's their call. Don't escalate it. But being picked as a supernode means you have no firewall. Turn on XP's SP2 firewall and you won't be one."
+        },
+        {
+          "s": "steve",
+          "t": "Annoyingly, Skype has no option to refuse being a supernode."
+        },
+        {
+          "s": "steve",
+          "t": "Skype came from the Kazaa founders, who'd figured out NAT traversal. But it isn't file sharing. It's no riskier than any instant messenger, unless you accept a file someone sends."
+        }
+      ]
+    },
+    {
+      "title": "Google Chat, Laptops and PGP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Russell asks: when I chat inside Gmail over HTTPS, is my chat secure?"
+        },
+        {
+          "s": "steve",
+          "t": "It's encrypted to Google. But it all passes through Google's servers, and who's to say next year they won't let you search everything you ever chatted?"
+        },
+        {
+          "s": "steve",
+          "t": "With NSA eavesdropping and phone records being collected, I'd avoid any third-party relay. I recommend BitWise IM: encrypted, point-to-point and cross-platform. I've helped its author improve its NAT traversal."
+        },
+        {
+          "s": "leo",
+          "t": "Kim in South Africa asks how to protect stolen corporate laptops from boot."
+        },
+        {
+          "s": "steve",
+          "t": "Some IBM ThinkPads lock the drive with a password tied to it at boot, but lose the password and you're hosed. And it's laptop-specific."
+        },
+        {
+          "s": "leo",
+          "t": "They say if someone has physical access, eventually they can get your data."
+        },
+        {
+          "s": "steve",
+          "t": "Not with next week's topic: TrueCrypt. Keep everything sensitive on a separate encrypted drive, and require the password again after standby or inactivity."
+        },
+        {
+          "s": "leo",
+          "t": "Macs have FileVault built in. Lock the firmware so nobody can change the master password."
+        },
+        {
+          "type": "fact",
+          "title": "Full-disk encryption today",
+          "t": "Windows BitLocker, macOS FileVault and Linux LUKS now encrypt whole drives, including the system, usually tied to a TPM security chip. TrueCrypt was discontinued in 2014. Its successor, VeraCrypt, continues it."
+        },
+        {
+          "s": "leo",
+          "t": "Ben can only find the paid PGP Desktop at PGP.com. Where's a free one?"
+        },
+        {
+          "s": "leo",
+          "t": "GNU Privacy Guard, at gnupg.org. Phil Zimmermann originally released PGP freely, and its assets were later sold to a company. GPG is open source, works everywhere, and reads my old PGP keys."
+        },
+        {
+          "s": "steve",
+          "t": "And PGP is now an RFC standard, OpenPGP."
+        },
+        {
+          "type": "fact",
+          "title": "OpenPGP",
+          "t": "OpenPGP was first standardized as RFC 2440 in 1998 and was updated most recently as RFC 9580 in 2024. GnuPG, Proton Mail and many others implement it."
+        }
+      ]
+    },
+    {
+      "title": "Open Source and ISP Logs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David, who just binged all 39 episodes, asks: is open source more or less vulnerable to buffer overruns?"
+        },
+        {
+          "s": "steve",
+          "t": "It's the big unresolved religious war. eEye in Aliso Viejo has a roomful of machines throwing junk at software. When one crashes, they've found a new overrun."
+        },
+        {
+          "s": "steve",
+          "t": "Open source would expose a deliberate backdoor immediately. But a buffer overrun wasn't obvious to the programmer who wrote it, and readers tend to follow along in the same mindset. These bugs are found more by pounding on code than by reading it."
+        },
+        {
+          "s": "leo",
+          "t": "Plus, does anyone ever re-review a module once it's committed? And a popular PHP message board gets far more eyes than an assembly kernel module."
+        },
+        {
+          "s": "steve",
+          "t": "PHP apps are also sticking their faces out on the Net. There are hundreds of PHP exploits a month."
+        },
+        {
+          "s": "steve",
+          "t": "Still, being able to modify the open-source INN news server let me build GRC's custom newsgroups at news.grc.com."
+        },
+        {
+          "type": "fact",
+          "title": "Fuzzing",
+          "t": "Throwing random or malformed input at software to find crashes is called fuzzing. Google's OSS-Fuzz has continuously fuzzed open-source projects since 2016 and found tens of thousands of bugs."
+        },
+        {
+          "s": "leo",
+          "t": "Finally, Paul in the Colorado Rockies asks: what good would legally required ISP logs be if users run a VPN?"
+        },
+        {
+          "s": "steve",
+          "t": "None. Good encryption is indistinguishable from random noise. That's all an ISP would see."
+        },
+        {
+          "s": "leo",
+          "t": "Britain is talking about enforcing a law that makes you hand over your password or decryption key when asked, or go to jail."
+        },
+        {
+          "s": "steve",
+          "t": "So they collect the noise, then compel you to decrypt it. It's not easy to feel so smug about encryption now."
+        },
+        {
+          "type": "fact",
+          "title": "RIPA Part III",
+          "t": "Britain's Regulation of Investigatory Powers Act 2000 included a power to demand decryption keys, but that part only came into force in October 2007. Refusing can bring up to two years in prison, or five in national-security cases."
+        },
+        {
+          "s": "leo",
+          "t": "TrueCrypt's plausible deniability helps: its volumes look like noise."
+        },
+        {
+          "s": "steve",
+          "t": "And you can't prove that encrypted data isn't random noise."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was wrong with RealVNC in May 2006?",
+      "options": [
+        "Its authentication could be completely bypassed",
+        "It was too slow",
+        "It leaked passwords in email",
+        "It only worked on Macs"
+      ],
+      "answer": 0,
+      "explain": "Steve's advice: update, and never leave services on their default ports."
+    },
+    {
+      "q": "Is a self-generated SSL certificate as secure as one bought from VeriSign?",
+      "options": [
+        "Yes, the encryption is equally strong; only the identity vouching differs",
+        "No, it's much weaker",
+        "Only on weekends",
+        "It provides no encryption"
+      ],
+      "answer": 0,
+      "explain": "Users must import it, since browsers only trust known authorities by default."
+    },
+    {
+      "q": "How could crypto make an ID card tamperproof?",
+      "options": [
+        "Sign a hash of its data with a government private key; readers check with the public key",
+        "Use thicker plastic",
+        "Hide the data",
+        "Encrypt it with the holder's password"
+      ],
+      "answer": 0,
+      "explain": "Readers hold no secrets, and any changed bit breaks the signature."
+    },
+    {
+      "q": "What does salting a password hash defeat?",
+      "options": [
+        "Precomputed tables of common passwords' hashes",
+        "Keyloggers",
+        "Network sniffing",
+        "Buffer overruns"
+      ],
+      "answer": 0,
+      "explain": "Extra data changes the hash completely, so lookup tables don't match."
+    },
+    {
+      "q": "Why would an upward-growing stack help against overruns?",
+      "options": [
+        "Overruns would spill into unused stack space rather than saved return addresses",
+        "It would be faster",
+        "It would use less memory",
+        "It would encrypt data"
+      ],
+      "answer": 0,
+      "explain": "Steve called it brilliant, though copy routines' own frames can still be overwritten."
+    },
+    {
+      "q": "What would an ISP log of a VPN user's traffic contain?",
+      "options": [
+        "Data indistinguishable from random noise",
+        "The full web pages",
+        "Passwords",
+        "Nothing at all"
+      ],
+      "answer": 0,
+      "explain": "That's why some governments compel people to decrypt."
+    }
+  ]
+}

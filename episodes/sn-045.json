@@ -1,0 +1,284 @@
+{
+  "number": 45,
+  "title": "The 'Hosts' File",
+  "subtitle": "The little text file your computer checks first",
+  "date": "2006-06-22",
+  "description": "Every Internet-connected computer has a \"hosts\" file that it checks before asking DNS for a domain's IP address. Steve and Leo explain how it works, how Steve once used it to name machines on his network, and how pointing unwanted domains at 127.0.0.1 blocks ad networks, trackers and malware sites.",
+  "transcript": "https://www.grc.com/sn/sn-045.txt",
+  "audio": "http://media.GRC.com/sn/SN-045.mp3",
+  "chapters": [
+    {
+      "title": "A Vacation from What?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 45. I pressed Steve into service a day early because I'm taking a break at the beach house."
+        },
+        {
+          "s": "steve",
+          "t": "I said, \"Vacation from what?\""
+        },
+        {
+          "s": "steve",
+          "t": "I love what I'm doing. If I go somewhere, I spend the time thinking of all I could be getting done at home. Though those two-day trips to Toronto gave me a whole day each way to read and do research."
+        },
+        {
+          "s": "leo",
+          "t": "I can't get him on a geek cruise. Today: something everybody has and many people don't know about. The hosts file."
+        }
+      ]
+    },
+    {
+      "title": "What the Hosts File Is",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "As far as I know, every system with a TCP/IP stack has a hosts file, h-o-s-t-s."
+        },
+        {
+          "s": "leo",
+          "t": "UNIX, Linux, Windows, Mac, even OS/2."
+        },
+        {
+          "s": "steve",
+          "t": "It's like a first DNS lookup. Your system checks it before using the official DNS system to map a name to an IP address."
+        },
+        {
+          "type": "fact",
+          "title": "Older than DNS",
+          "t": "Before DNS existed, every Internet host downloaded a single master file, HOSTS.TXT, maintained at SRI's Network Information Center. By the early 1980s it had become too big to manage, which led to DNS in 1983. Today's hosts file is that system's descendant."
+        },
+        {
+          "s": "steve",
+          "t": "Systems also keep a local DNS cache, with a timer, so they don't keep asking your ISP for the same name and can recheck if an IP might have changed."
+        },
+        {
+          "s": "leo",
+          "t": "Does XP's cache survive a reboot?"
+        },
+        {
+          "s": "steve",
+          "t": "No. One annoyance is \"negative caching\": if a lookup fails because of a momentary glitch, your system remembers that there's no IP and won't try again. Flushing the DNS cache from the command line sometimes restores connectivity."
+        },
+        {
+          "s": "leo",
+          "t": "So it's not a bug?"
+        },
+        {
+          "s": "steve",
+          "t": "It's not a bug, it's a feature."
+        },
+        {
+          "type": "fact",
+          "title": "Flushing the DNS cache",
+          "t": "On Windows, run \"ipconfig /flushdns\" at a command prompt. On a Mac, \"sudo dscacheutil -flushcache\" followed by \"sudo killall -HUP mDNSResponder\" does the same."
+        }
+      ]
+    },
+    {
+      "title": "Where It Lives",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In Windows it's in your Windows directory, under system32, then drivers, then etc. An obscure location."
+        },
+        {
+          "s": "leo",
+          "t": "UNIX and Linux keep it in /etc."
+        },
+        {
+          "s": "steve",
+          "t": "It's a simple table that matches IP addresses to names, very much like DNS. By default it has one line: 127.0.0.1, localhost."
+        },
+        {
+          "s": "steve",
+          "t": "127.0.0.1 is a self-reference in every IP stack. It always means your own machine."
+        },
+        {
+          "s": "steve",
+          "t": "It was originally meant for LANs. Before I ran full DNS at home, I gave all my machines fixed IPs and names, and copied one hosts file to all of them. File sharing worked by name without Windows' flaky browsing."
+        },
+        {
+          "s": "steve",
+          "t": "You can even put a reference in a hosts file to include a master hosts file elsewhere on your network, so one change updates every machine."
+        },
+        {
+          "type": "fact",
+          "title": "An include for which file?",
+          "t": "The include feature Steve remembers belongs to the related LMHOSTS file, which Windows uses for NetBIOS names and supports with a \"#INCLUDE\" directive. The standard hosts file has no include feature."
+        },
+        {
+          "s": "steve",
+          "t": "That only makes sense with fixed IPs. Most people use DHCP behind NAT routers, so their machines' addresses move around."
+        }
+      ]
+    },
+    {
+      "title": "Blocking with 127.0.0.1",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The reason we're really here is security and privacy. Clever people realized the hosts file can stop your machine from reaching domains you don't want it to."
+        },
+        {
+          "s": "steve",
+          "t": "My hosts file has lines like 127.0.0.1, a tab, then fastclick.net, mediaplex.com, doubleclick.net, linkexchange.com, valueclick.com. I don't want their cookies, ads or tracking."
+        },
+        {
+          "s": "steve",
+          "t": "When a web page refers to one of those domains, the browser looks it up, finds 127.0.0.1, its own machine, and the request goes nowhere. The rest of the page loads normally."
+        },
+        {
+          "s": "steve",
+          "t": "It's simple, solid and very efficient, and you can keep adding to the list."
+        },
+        {
+          "s": "leo",
+          "t": "A warning: if you run a web server on your own machine, as I sometimes do for testing, it may try to answer those requests. Use 0.0.0.0 instead."
+        },
+        {
+          "s": "steve",
+          "t": "Then it just goes nowhere."
+        },
+        {
+          "type": "fact",
+          "title": "0.0.0.0 vs. 127.0.0.1",
+          "t": "Many blocklists now use 0.0.0.0, which isn't a valid destination, so connections fail immediately instead of trying your own machine. Both work on most systems."
+        }
+      ]
+    },
+    {
+      "title": "When Bad Guys Use It",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bad guys use it too. Some spyware modifies the hosts file."
+        },
+        {
+          "s": "steve",
+          "t": "Of course. Remove write permission from it, so only an administrator can change it, and don't normally run as administrator. Sometimes just setting it read-only is enough."
+        },
+        {
+          "s": "steve",
+          "t": "People maintain public hosts files listing places you probably don't want to go. Google \"hosts file,\" or see Wikipedia."
+        },
+        {
+          "s": "leo",
+          "t": "Spybot Search & Destroy can populate your hosts file with hundreds of known names, and I think it locks it down too. Microsoft's new Windows Defender also monitors it."
+        },
+        {
+          "s": "steve",
+          "t": "Remember, once something bad gets into your system, you're hosed anyway. The hosts file isn't perfect, but it's reliable, efficient and easy to manage."
+        },
+        {
+          "s": "leo",
+          "t": "Wikipedia notes that Mydoom used it to block access to Symantec and other antivirus sites, so victims couldn't even research how to remove it."
+        },
+        {
+          "s": "steve",
+          "t": "So take a look at your hosts file now and then, to make sure it still looks benign."
+        },
+        {
+          "type": "fact",
+          "title": "Hosts-file hijacking",
+          "t": "Mydoom.B and many later threats added entries for security vendors' sites or redirected banking sites to fake servers. That's why security tools watch the hosts file. Windows Defender now flags many suspicious changes to it."
+        }
+      ]
+    },
+    {
+      "title": "Not a Silver Bullet",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Some say it's a myth that a hosts file protects you from malware."
+        },
+        {
+          "s": "steve",
+          "t": "It can keep you from getting malware in the first place. And plenty of sites aren't malware, just heavy-duty marketing companies tracking you around the Net. Gray, not black."
+        },
+        {
+          "s": "leo",
+          "t": "There's no one silver bullet in security."
+        },
+        {
+          "s": "steve",
+          "t": "It's like stealth. It costs nothing to be invisible, so why not? Just don't think it makes you invincible."
+        },
+        {
+          "s": "steve",
+          "t": "I'll put hosts file references on the Security Now! page, the first show notes I've done in a while."
+        },
+        {
+          "s": "leo",
+          "t": "And I've started making 16KB versions of TWiT and my radio shows, thanks to you."
+        },
+        {
+          "s": "steve",
+          "t": "It's easy to be a bandwidth snob, but lots of people still use modems."
+        },
+        {
+          "type": "fact",
+          "title": "Network-wide blocking",
+          "t": "Tools like Pi-hole apply the same idea to a whole network. A small box acts as your home's DNS server and answers \"nowhere\" for blocked domains on every device, including phones and smart TVs. Encrypted DNS settings can bypass it, though, if a device uses its own resolver."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "When does your computer consult its hosts file?",
+      "options": [
+        "Before asking DNS for a domain's IP address",
+        "Only after DNS fails",
+        "Only when you reboot",
+        "Never on Windows"
+      ],
+      "answer": 0,
+      "explain": "Whatever the hosts file says wins."
+    },
+    {
+      "q": "What does the address 127.0.0.1 always refer to?",
+      "options": [
+        "Your own computer (localhost)",
+        "Your router",
+        "Google",
+        "Your ISP's DNS server"
+      ],
+      "answer": 0,
+      "explain": "Pointing a domain there makes requests to it go nowhere."
+    },
+    {
+      "q": "How does Steve use the hosts file to block ad and tracking networks?",
+      "options": [
+        "He maps their domains to 127.0.0.1",
+        "He deletes his browser cache",
+        "He uses a proxy",
+        "He blocks port 80"
+      ],
+      "answer": 0,
+      "explain": "The browser looks them up locally and can't reach them."
+    },
+    {
+      "q": "What's \"negative caching\"?",
+      "options": [
+        "Remembering that a lookup failed, so the system doesn't retry",
+        "Deleting the hosts file",
+        "Blocking ads",
+        "Encrypting DNS"
+      ],
+      "answer": 0,
+      "explain": "Flushing the DNS cache can fix a false negative."
+    },
+    {
+      "q": "How did the Mydoom worm use the hosts file?",
+      "options": [
+        "It added entries to block antivirus vendors' websites",
+        "It deleted it",
+        "It encrypted it",
+        "It used it to send spam"
+      ],
+      "answer": 0,
+      "explain": "Victims couldn't reach the sites that could help them."
+    }
+  ]
+}

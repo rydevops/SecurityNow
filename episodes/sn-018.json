@@ -1,0 +1,246 @@
+{
+  "number": 18,
+  "title": "Hamachi Rocks!",
+  "subtitle": "A free, zero-configuration, peer-to-peer VPN",
+  "date": "2005-12-15",
+  "description": "Steve spent two weeks testing Hamachi and questioning its lead developer: an ultra-secure, lightweight, polished, cross-platform, free peer-to-peer VPN. It's keeping his traveling laptop securely connected to all his machines back home.",
+  "transcript": "https://www.grc.com/sn/sn-018.txt",
+  "audio": "http://media.GRC.com/sn/SN-018.mp3",
+  "chapters": [
+    {
+      "title": "Why \"Hamachi\"?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 18: Hamachi. Isn't that sushi?"
+        },
+        {
+          "s": "steve",
+          "t": "The developer, Alex Pankratov, previously worked on an IPSec tunneling project called TUNA, for \"Tunneling Architecture.\" The next generation became yellowtail: Hamachi."
+        },
+        {
+          "s": "steve",
+          "t": "After weeks of SSH, SSL, IPSec, L2TP and PPTP, this is what people can actually use. It's built secure from the ground up, it's lightweight and free, and it gets through NAT routers and firewalls by itself."
+        }
+      ]
+    },
+    {
+      "title": "A Network That Doesn't Exist",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When I installed it, my machine got an IP address starting with 5."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't 10 the lowest private range?"
+        },
+        {
+          "s": "steve",
+          "t": "There are three private ranges you'll recognize from inside NAT routers: 10.x.x.x, 172.16 through 172.31, and 192.168.x.x. They can't be routed on the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "Hamachi needed addresses that wouldn't collide with public addresses or with those private ranges. So Alex used 5.x.x.x, which had never been assigned to anyone. That's about 16 million addresses."
+        },
+        {
+          "type": "fact",
+          "title": "Hamachi's 5.x addresses",
+          "t": "RFC 1918 reserves 10/8, 172.16/12 and 192.168/16 for private networks. Hamachi borrowed the then-unused 5.0.0.0/8 block. When IPv4 ran short, 5/8 was assigned to Europe's registry in 2010, and Hamachi moved to 25.x addresses."
+        },
+        {
+          "s": "steve",
+          "t": "Your machine keeps its 5.x address permanently. I can tell you mine, 5.11.66.114, and it doesn't matter, because nobody on the Internet can reach a 5 address."
+        },
+        {
+          "s": "steve",
+          "t": "When I installed a second machine, I'd skipped a few numbers. Five other people had installed it in between, so I installed it on three more machines quickly to keep their addresses close together."
+        }
+      ]
+    },
+    {
+      "title": "How It Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You install one small program on each machine you want to connect. It's for Windows and Linux now, with the Mac coming after version 1.0. Go to hamachi.cc."
+        },
+        {
+          "s": "steve",
+          "t": "Then you create a network and give it a password. I used a 63-character monster from GRC.com/passwords. Machines that join with that password can see each other over encrypted peer-to-peer tunnels."
+        },
+        {
+          "s": "steve",
+          "t": "Each client creates its own public/private key pair and gives only the public key to Hamachi's server, which hands it to machines you authorize. Your private key never leaves your computer, so even Hamachi's server couldn't attack you."
+        },
+        {
+          "type": "fact",
+          "title": "Rendezvous, not relay",
+          "t": "Hamachi's server introduces your machines and works out how to get through each NAT router, then steps aside. The data flows directly between your machines, encrypted with keys the server never has."
+        },
+        {
+          "s": "steve",
+          "t": "Only after I understood that did I install it on my servers at my co-location facility."
+        },
+        {
+          "s": "leo",
+          "t": "And there's no port forwarding on my router?"
+        },
+        {
+          "s": "steve",
+          "t": "None. Each client keeps an outgoing connection to the server, and when two machines want to talk, the server tells them how to reach each other through their NAT routers."
+        },
+        {
+          "s": "steve",
+          "t": "The password you use to join is never saved. It's turned into a token. Join a borrowed machine, then leave, and it can never get back in."
+        }
+      ]
+    },
+    {
+      "title": "Remote Desktop, Made Safe",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "People love Remote Desktop but worry about it, rightly. It doesn't authenticate properly, and Cain & Abel can sit in the middle and log an entire session."
+        },
+        {
+          "s": "steve",
+          "t": "Without Hamachi, you'd also have to open port 3389 to the whole Internet, and everyone knows what that port is."
+        },
+        {
+          "s": "steve",
+          "t": "Run Remote Desktop through Hamachi and it's encrypted and properly authenticated. Then use your home computer's own browser and email from the road."
+        },
+        {
+          "s": "leo",
+          "t": "I watched you do it from Toronto to Irvine. It looked as fast as being there."
+        },
+        {
+          "s": "steve",
+          "t": "I've forgotten I wasn't at my own computer. Once I meant to choose Reboot, hit Shut Down, and powered off a machine in Southern California."
+        },
+        {
+          "s": "leo",
+          "t": "VNC works too, and it's cross-platform."
+        }
+      ]
+    },
+    {
+      "title": "Why It's Fast",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Tunneling TCP inside TCP performs terribly. Both layers retransmit and fight each other, which has given VPNs a bad name. Hamachi carries traffic over UDP, which also gets through NAT routers more easily."
+        },
+        {
+          "s": "steve",
+          "t": "It also shrinks the packets your machine sends so they still fit after being wrapped, which avoids fragmentation."
+        },
+        {
+          "type": "fact",
+          "title": "TCP-over-TCP meltdown",
+          "t": "When a TCP tunnel carries TCP traffic, both layers retry lost data on their own timers. Under packet loss, retries multiply and throughput collapses. UDP-based tunnels like Hamachi, OpenVPN and WireGuard avoid it."
+        },
+        {
+          "s": "steve",
+          "t": "Because it's all in one tunnel, a hotel can't selectively block it, and if you can install software at work, you can reach your home machines. It's perfect for gamers, too."
+        },
+        {
+          "s": "steve",
+          "t": "The free version won't relay traffic. If both ends are behind really unfriendly NAT routers, a future premium version will relay through Hamachi's servers. Fair enough, since that uses their bandwidth."
+        },
+        {
+          "s": "leo",
+          "t": "And he plans to sell the server, so a company could run its own."
+        }
+      ]
+    },
+    {
+      "title": "Two Wi-Fi Networks, Done Right",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Earlier I suggested running a WPA network for your computers and an open one for WEP-only gadgets. Leo asked how to wire it, and I punted."
+        },
+        {
+          "s": "steve",
+          "t": "Because of ARP poisoning, which we'll cover early next year, putting either network behind the other is risky."
+        },
+        {
+          "s": "steve",
+          "t": "The answer is a Y: a wired main router at the border, with each wireless router plugged into it separately. That's three separate subnets, like 192.168.0.x, 1.x and 2.x."
+        },
+        {
+          "s": "steve",
+          "t": "ARP doesn't cross routers, so an attacker on the open network can't use it to reach the secure one."
+        },
+        {
+          "type": "fact",
+          "title": "The Y topology",
+          "t": "Internet → main router → two separate routers, one for trusted devices and one for untrusted ones. Each sits in its own subnet, so local-network attacks like ARP spoofing can't cross from one branch to the other."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: OpenVPN, and HotSpotVPN, a commercial service we've both been using."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Hamachi originally assign addresses beginning with 5?",
+      "options": [
+        "That block was unassigned, so it couldn't collide with public or private addresses",
+        "5 is the lowest private range",
+        "The FCC requires it",
+        "It's faster"
+      ],
+      "answer": 0,
+      "explain": "It avoided conflicts with real Internet addresses and the RFC 1918 private ranges."
+    },
+    {
+      "q": "What does Hamachi's server do?",
+      "options": [
+        "It introduces your machines and helps them get through NAT, but doesn't carry your traffic",
+        "It relays and decrypts all your data",
+        "It stores your private keys",
+        "It hosts your files"
+      ],
+      "answer": 0,
+      "explain": "Your private key never leaves your machine, so the server can't read or attack your traffic."
+    },
+    {
+      "q": "How does Hamachi make Remote Desktop safer?",
+      "options": [
+        "It provides an encrypted, authenticated tunnel, so port 3389 never has to be exposed",
+        "It replaces Remote Desktop",
+        "It disables encryption",
+        "It needs port 3389 open to the world"
+      ],
+      "answer": 0,
+      "explain": "Remote Desktop alone can be attacked by a man in the middle. Inside Hamachi it's protected."
+    },
+    {
+      "q": "Why does Hamachi use UDP rather than TCP for its tunnel?",
+      "options": [
+        "TCP inside TCP performs badly, and UDP passes through NAT more easily",
+        "UDP is encrypted by default",
+        "TCP is illegal",
+        "UDP has no packet size limits"
+      ],
+      "answer": 0,
+      "explain": "Two layers of TCP retransmitting fight each other and slow everything down."
+    },
+    {
+      "q": "How should you connect a secure and an open Wi-Fi network at home?",
+      "options": [
+        "Plug each into a main wired router as separate subnets (a \"Y\")",
+        "Put the open network behind the secure one",
+        "Chain them in a line",
+        "Use one router for both"
+      ],
+      "answer": 0,
+      "explain": "ARP doesn't cross routers, so separate subnets keep the untrusted network away from the trusted one."
+    }
+  ]
+}

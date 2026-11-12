@@ -1,0 +1,274 @@
+{
+  "number": 38,
+  "title": "Browser Security",
+  "subtitle": "Scripts, ActiveX, and surfing with your shields up",
+  "date": "2006-05-04",
+  "description": "Browsers sit on the front line. Steve and Leo separate policy problems from coding mistakes, contrast client-side scripting and Java's sandbox with ActiveX's unrestricted code, and Steve explains how he uses IE's security zones to browse with maximum security. Plus: good news about IP spoofing.",
+  "transcript": "https://www.grc.com/sn/sn-038.txt",
+  "audio": "http://media.GRC.com/sn/SN-038.mp3",
+  "chapters": [
+    {
+      "title": "Policy vs. Mistakes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 38. Everybody uses a browser, and browsers are one of the two prime vectors for security flaws. Email is the other."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe browsers more than anything, because of how the web evolved. Microsoft designed ActiveX so that a website could deliberately download what is basically a DLL and run it, just because you visited the page."
+        },
+        {
+          "s": "steve",
+          "t": "I want to distinguish problems of policy from problems of mistakes. Everyone makes mistakes. My complaint about Windows' open ports was that they were open on purpose: file sharing, DCOM, RPC. Only XP SP2's default firewall finally hid them."
+        },
+        {
+          "s": "leo",
+          "t": "A security hole can be patched and goes away. A bad policy is so global that we suffer from it for years."
+        }
+      ]
+    },
+    {
+      "title": "From Static Pages to Running Code",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Tim Berners-Lee's web was static, read-only HTML pages that linked to each other."
+        },
+        {
+          "s": "leo",
+          "t": "Actually, his first browser, on a NeXT machine, could edit pages too. He wanted physicists to collaborate on documents. That never really left CERN."
+        },
+        {
+          "s": "steve",
+          "t": "Sending data back to the server was an afterthought. You can tell from how forms put parameters after a question mark in the URL."
+        },
+        {
+          "s": "steve",
+          "t": "Then came scripting. Microsoft offered VBScript, then took its OLE technology, renamed it ActiveX, and let websites download compiled code into your system. Very powerful, and horribly insecure."
+        },
+        {
+          "s": "leo",
+          "t": "Netscape's scripting, which became JavaScript, couldn't touch your hard drive. It wasn't a full-blown programming language."
+        },
+        {
+          "s": "steve",
+          "t": "And real Java was built from day one around a sandbox: an interpreter that constrains what downloaded code can do. Sun and Netscape understood the need for restraint. Microsoft didn't."
+        },
+        {
+          "s": "leo",
+          "t": "JavaScript's name was just Netscape's clever marketing."
+        },
+        {
+          "s": "steve",
+          "t": "Java was the cool word about nine years ago. The two languages are unrelated."
+        },
+        {
+          "type": "fact",
+          "title": "JavaScript's name",
+          "t": "Brendan Eich created the language at Netscape in 1995 in about ten days. It was called Mocha, then LiveScript, then renamed JavaScript to ride Java's popularity. Its standard is called ECMAScript."
+        },
+        {
+          "s": "steve",
+          "t": "The classic result: people got Gator and strange search toolbars just by surfing in IE. They never gave permission."
+        },
+        {
+          "s": "leo",
+          "t": "Flash also runs as an ActiveX plug-in in IE."
+        },
+        {
+          "type": "fact",
+          "title": "The end of plug-ins",
+          "t": "Browsers dropped ActiveX, Java applets and other plug-ins over the 2010s. Adobe ended Flash support on December 31, 2020, and Microsoft retired Internet Explorer in 2022. Modern pages run JavaScript in a heavily sandboxed engine instead."
+        }
+      ]
+    },
+    {
+      "title": "Server Side vs. Client Side",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's worth separating server-side scripts, which run on the website's computer, from client-side scripts like JavaScript, Active Script and ActiveX, which run on mine."
+        },
+        {
+          "s": "steve",
+          "t": "Right. ShieldsUP! runs on my server, and all it sends you is plain, dead HTML. That has no security implications for you."
+        },
+        {
+          "s": "steve",
+          "t": "Client-side script is real code your browser reads and runs. It powers the pop-out menus and instant form helpers, like filling in your state from your zip code."
+        },
+        {
+          "s": "steve",
+          "t": "Scripts are supposed to be constrained, so their problems are implementation mistakes. ActiveX is native code with no restraint, so you'd better trust the source."
+        },
+        {
+          "s": "steve",
+          "t": "Even Firefox, which is far safer by policy because it doesn't run ActiveX, just had a scripting flaw. Exploit code that crashes the browser is already public."
+        },
+        {
+          "s": "leo",
+          "t": "And next week: buffer overruns."
+        },
+        {
+          "s": "steve",
+          "t": "The golden goose for malicious hackers. What exactly gets overrun, and why it's so hard to prevent."
+        },
+        {
+          "s": "leo",
+          "t": "There's a real tradeoff. A web-based antivirus scanner can't work without reaching your files, and I hear a Java version of HouseCall has been hard to build."
+        },
+        {
+          "s": "steve",
+          "t": "It's hard to get out of the Java sandbox, which is the point. Every powerful feature, like GoToMyPC's browser client, brings risk along."
+        }
+      ]
+    },
+    {
+      "title": "Surfing with Shields Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "IE has security zones. Any site not listed elsewhere sits in the default Internet zone, which gets your general settings."
+        },
+        {
+          "s": "steve",
+          "t": "I crank the Internet zone to the highest security. No scripting, no ActiveX, nothing."
+        },
+        {
+          "s": "leo",
+          "t": "What percentage of sites still work?"
+        },
+        {
+          "s": "steve",
+          "t": "About 99 percent. Well-designed sites fall back gracefully. Amazon and eBay are all server-side and work fine. And no Flash ads fly across my screen."
+        },
+        {
+          "s": "steve",
+          "t": "Things that need script, like a checkout's \"billing same as shipping\" button, won't work. Nor will Windows Update."
+        },
+        {
+          "s": "steve",
+          "t": "So I put sites I trust into the Trusted Sites zone, which has separate, lower settings: *.microsoft.com, my e-commerce sites, and so on."
+        },
+        {
+          "s": "leo",
+          "t": "What if a phishing email spoofs Microsoft.com?"
+        },
+        {
+          "s": "steve",
+          "t": "The zone matches the domain the browser actually looked up and went to, so faking it would take something like a man-in-the-middle attack."
+        },
+        {
+          "s": "steve",
+          "t": "When an alert comes out saying \"turn off scripting until there's a patch,\" mine is already off. I interview a site first with my shields up, then lower them only for sites I decide to trust."
+        },
+        {
+          "s": "leo",
+          "t": "I'm more cynical. This lets Microsoft say you got bitten because you didn't configure security properly, and 99 percent of IE users don't know zones exist."
+        },
+        {
+          "s": "steve",
+          "t": "It does put the burden on users. Zones have been in IE 5 and 6, and SP2 locked down the Local Machine zone further."
+        },
+        {
+          "s": "steve",
+          "t": "It's not that browsers are worse code than the OS. They're on the front line. Click a link, and you're asking a server who knows where to send you a blob your browser will faithfully run."
+        },
+        {
+          "type": "fact",
+          "title": "Script blocking today",
+          "t": "IE's zones are gone, but the same \"default deny\" idea lives on. Extensions like NoScript (Firefox) and uBlock Origin's advanced mode block scripts by default, and you allow sites one at a time."
+        }
+      ]
+    },
+    {
+      "title": "Good News on Spoofing",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve, you deserve credit. You banged the gong about raw sockets in Windows XP, which let any co-opted machine forge random source IP addresses. About a year ago, Microsoft finally disabled that."
+        },
+        {
+          "type": "fact",
+          "title": "Raw sockets and SP2",
+          "t": "Windows XP Service Pack 2, released in August 2004, restricted raw sockets so programs could no longer easily send spoofed TCP packets. That was about 21 months before this episode, a bit longer than \"about a year.\""
+        },
+        {
+          "s": "leo",
+          "t": "Now MIT's Spoofer Project, at spoofer.csail.mit.edu, is measuring which networks let spoofed packets out. Of a few thousand measurements, about 80 percent of addresses can't spoof anymore."
+        },
+        {
+          "s": "steve",
+          "t": "The worry isn't Granny spoofing. It's bots on her machine launching untraceable denial-of-service attacks. I'd planned a freeware tool called Spoofarino to test this, but SP2 made generating such packets much harder."
+        },
+        {
+          "s": "steve",
+          "t": "It's easy for an ISP: if a packet leaving its network has a source address that couldn't have come from inside, drop it. Then none of its machines are useful for spoofed attacks."
+        },
+        {
+          "type": "fact",
+          "title": "Egress filtering (BCP 38)",
+          "t": "The practice Steve describes was published as BCP 38 in 2000. CAIDA continues the Spoofer Project today, and many networks still allow spoofing, which is why spoofed \"reflection\" DDoS attacks remain common."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What's Steve's distinction between policy problems and mistakes?",
+      "options": [
+        "Policy problems are deliberate designs, like ActiveX running downloaded code; mistakes are bugs",
+        "There's no difference",
+        "Mistakes are worse",
+        "Policy problems are always patched quickly"
+      ],
+      "answer": 0,
+      "explain": "A bug gets patched; a bad policy exposes users for years."
+    },
+    {
+      "q": "Why was ActiveX far more dangerous than JavaScript or Java?",
+      "options": [
+        "It ran native, unrestricted code downloaded from websites",
+        "It was slower",
+        "It was open source",
+        "It only ran on Macs"
+      ],
+      "answer": 0,
+      "explain": "Java ran in a sandbox and JavaScript was constrained; ActiveX could do anything."
+    },
+    {
+      "q": "Which kind of web code runs on your own computer?",
+      "options": [
+        "Client-side script, like JavaScript",
+        "Server-side script",
+        "Plain HTML only",
+        "DNS"
+      ],
+      "answer": 0,
+      "explain": "Server-side code runs on the website's machine and only sends you HTML."
+    },
+    {
+      "q": "How does Steve surf safely in IE?",
+      "options": [
+        "Maximum security in the Internet zone, lowering it only for sites added to Trusted Sites",
+        "He turns off his firewall",
+        "He uses only server-side sites",
+        "He never uses IE"
+      ],
+      "answer": 0,
+      "explain": "About 99 percent of sites still work with scripting off."
+    },
+    {
+      "q": "How can an ISP stop its customers' machines from sending spoofed packets?",
+      "options": [
+        "Drop outgoing packets whose source address isn't one of its own",
+        "Block all UDP",
+        "Disable DNS",
+        "Encrypt all traffic"
+      ],
+      "answer": 0,
+      "explain": "Simple egress filtering makes the ISP's machines useless for spoofed attacks."
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "number": 44,
+  "title": "Listener Feedback Q&A #8",
+  "subtitle": "Proxies, outbound firewalls, VM surfing and more",
+  "date": "2006-06-15",
+  "description": "A dozen listener questions: Hamachi, corporate SSL interception, whether to block outbound ports, surfing inside a virtual machine, alternative Linksys firmware, Hamachi's new UPnP feature, spotting a direct Skype connection, VoIP adapters in the DMZ, whether a virus can damage a CPU, \"firewalking,\" better Skype audio and email reliability.",
+  "transcript": "https://www.grc.com/sn/sn-044.txt",
+  "audio": "http://media.GRC.com/sn/SN-044.mp3",
+  "chapters": [
+    {
+      "title": "Hamachi, and Where to Find Old Episodes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 44, a double Mod 4."
+        },
+        {
+          "s": "steve",
+          "t": "It's even mod 11."
+        },
+        {
+          "s": "leo",
+          "t": "You math showoff. Nick from New Jersey hasn't caught up, and asks what we think of Hamachi."
+        },
+        {
+          "s": "steve",
+          "t": "We love it. There's a whole episode called \"Hamachi Rocks!\" Its author Alex Pankratov's wife apparently teased him about it."
+        },
+        {
+          "s": "steve",
+          "t": "My tech support guy Greg moved to Phoenix and uses Hamachi to remotely manage his side clients' networks. Gamers use it too. Two Xboxes on Hamachi's 5.x network look like they're on the same LAN."
+        },
+        {
+          "s": "leo",
+          "t": "All past episodes and transcripts are at GRC.com/securitynow. And TWiT.tv/sn plus an episode number, like sn18, goes straight to an episode."
+        },
+        {
+          "s": "steve",
+          "t": "People keep trying to grab next week's file before it's posted."
+        },
+        {
+          "s": "leo",
+          "t": "Which is why I now upload to a hidden staging area first."
+        }
+      ]
+    },
+    {
+      "title": "Can IT See My Banking?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ray in Irvine asks: behind a corporate proxy, can IT see my passwords and credit card numbers on SSL sites?"
+        },
+        {
+          "s": "steve",
+          "t": "Sometimes, deliberately. It might be for filtering malware or spam, since you can get infected over a secure connection."
+        },
+        {
+          "s": "steve",
+          "t": "A company can install its own certificate in employees' browsers, then intercept every SSL connection: decrypt it, do whatever it wants, and re-encrypt it. That breaks the security completely at the border."
+        },
+        {
+          "s": "steve",
+          "t": "So right-click the page and look at the certificate. If it was issued to www.paypal.com or Google, you have a direct connection. If not, something is in the middle."
+        },
+        {
+          "s": "leo",
+          "t": "Is that common?"
+        },
+        {
+          "s": "steve",
+          "t": "Increasingly. As spyware worries grow, there's interest in filtering everything, even secure traffic."
+        },
+        {
+          "type": "fact",
+          "title": "Who issued this certificate?",
+          "t": "In a modern browser, click the padlock or site-information icon and view the certificate. Check who issued it, not just who it was issued to. A company's own name as the issuer means your traffic is being inspected."
+        }
+      ]
+    },
+    {
+      "title": "Should You Block Outbound Ports?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "James in London asks: after all the talk of inbound blocking, should we block outbound ports too?"
+        },
+        {
+          "s": "steve",
+          "t": "Neither Leo nor I run outbound-blocking firewalls. But I found the very first spyware on my machine, and coined the term \"spyware,\" while beta testing the first ZoneAlarm with outbound blocking."
+        },
+        {
+          "s": "steve",
+          "t": "And Microsoft was just caught: Windows Genuine Advantage was phoning home daily without saying so in its EULA. Now it's backpedaling and apologizing."
+        },
+        {
+          "s": "steve",
+          "t": "Outbound control is better security, but it means more involvement. Some people find the pop-ups too noisy, though you can train them."
+        },
+        {
+          "s": "steve",
+          "t": "Try a lightweight firewall. Symantec, McAfee and even ZoneAlarm have become kitchen-sink products. Greg updated a client's McAfee and it broke an older machine that couldn't keep up. I now recommend Kerio, which Sunbelt Software owns."
+        },
+        {
+          "s": "leo",
+          "t": "Could a hardware router do this?"
+        },
+        {
+          "s": "steve",
+          "t": "It can't tell which application sent a packet. It can block ports, but malware can simply use port 80 and pretend to be a browser. Software on the computer can trace traffic back to the exact program."
+        }
+      ]
+    },
+    {
+      "title": "Surfing in a Virtual Machine",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mannix in Canberra, Australia asks: is browsing risky sites inside Virtual PC or VMware safer? Could an infection escape? I'm running Windows in Parallels on my MacBook now."
+        },
+        {
+          "s": "steve",
+          "t": "Done correctly, a virtual machine is a secure sandbox that can't modify the world outside it. I use VMware Workstation to keep nine or ten personal firewalls installed in separate VMs."
+        },
+        {
+          "s": "leo",
+          "t": "Unless you share folders or drives with the host."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Virtual networks and file sharing can break the containment. But VMware now has a free player, and people offer preconfigured Linux VMs with browsers, ready for safe surfing. We'll do a whole episode on it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft is even promoting running multiple virtual servers on one server, which seems loony to me."
+        },
+        {
+          "s": "leo",
+          "t": "Intel's new chips support virtualization in hardware, which is why people are excited."
+        },
+        {
+          "s": "steve",
+          "t": "It's been there since the 386, with things like DPMI. They just want a new sticker."
+        },
+        {
+          "type": "fact",
+          "title": "Hardware virtualization",
+          "t": "The 386's virtual 8086 mode could virtualize old DOS programs, but full x86 virtualization needed software tricks, because some instructions couldn't be trapped. Intel VT-x (2005) and AMD-V (2006) added real hardware support, which made today's cloud computing practical. DPMI was a memory interface for DOS programs rather than a virtual machine system."
+        },
+        {
+          "type": "fact",
+          "title": "Escaping a VM",
+          "t": "Escapes are rare but real. Flaws in virtual devices, like 2015's \"VENOM\" bug in a virtual floppy controller, have let code break out to the host. Keep virtualization software updated, and avoid sharing folders with a VM used for risky browsing."
+        }
+      ]
+    },
+    {
+      "title": "Alternative Router Firmware",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave in Richmond asks about replacement firmware for the very hackable Linksys WRT54G. Is OpenWrt more secure?"
+        },
+        {
+          "s": "steve",
+          "t": "Linksys routers run Linux, so people install more powerful Linux builds. Manufacturers tolerate it, as long as you don't call them for support."
+        },
+        {
+          "s": "steve",
+          "t": "Is it more secure? You're taking responsibility from the manufacturer. More powerful services mean more to misconfigure, and if a flaw is found, hackers may scan for routers running it."
+        },
+        {
+          "s": "steve",
+          "t": "But it's all open source, so it's inherently more trustable. Join the project's security list and keep the firmware updated."
+        },
+        {
+          "s": "steve",
+          "t": "I flashed my WRT54G to play with VoIP. You can run a complete SIP system on it."
+        },
+        {
+          "s": "leo",
+          "t": "Wikipedia links to DD-WRT, HyperWRT and others. Sveasoft's was an early one that could run a paid hotspot."
+        },
+        {
+          "type": "fact",
+          "title": "OpenWrt today",
+          "t": "OpenWrt is still active, supports hundreds of routers, and gets security updates long after many manufacturers stop. Builds like OpenWrt and DD-WRT are a common way to keep an older router patched."
+        }
+      ]
+    },
+    {
+      "title": "Hamachi's UPnP Feature",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Darren in Surrey, U.K.: the latest Hamachi beta configures routers with UPnP and says it poses \"zero risk.\" Who's right, Gibson or Hamachi?"
+        },
+        {
+          "s": "steve",
+          "t": "Hamachi's notes say it doesn't depend on Windows' notorious SSDP service, so there's no risk to your system. But it's still configuring your router behind your back to open an inbound port."
+        },
+        {
+          "s": "steve",
+          "t": "Alex does it so his servers don't have to relay traffic between users behind unfriendly NAT routers. The trouble is that routers don't ask you, and in Mark Thompson of AnalogX's research, you can't even see these changes in the router's interface."
+        },
+        {
+          "s": "steve",
+          "t": "Anything else on your system could do the same. I still say UPnP is a bad idea. Disable it in your router."
+        },
+        {
+          "s": "steve",
+          "t": "Instead, tell Hamachi to use a fixed port, not its default, pick a number between 1,024 and 65,535, and forward that port on your router. You get direct connections without UPnP."
+        }
+      ]
+    },
+    {
+      "title": "Is My Skype Connection Direct?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian in Budapest suggests: exchange public IPs in Skype chat, then run \"netstat -nb\" to see if Skype is connected to the other person's IP."
+        },
+        {
+          "s": "steve",
+          "t": "That would work for TCP, but Skype's audio uses UDP. UDP has no connections, just packets. Netstat shows only that something is listening on a UDP port."
+        },
+        {
+          "s": "steve",
+          "t": "We're connected right now, and netstat shows no UDP link to you. We'll do a whole episode on netstat."
+        },
+        {
+          "s": "steve",
+          "t": "In XP, \"-b\" shows which program owns each endpoint. I'm on Windows 2000 and use \"netstat -an.\" Sysinternals has free tools that show live activity and which programs are involved."
+        }
+      ]
+    },
+    {
+      "title": "VoIP Boxes and the DMZ",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kay in Kentucky gets hisses and dead spots on Packet8 calls. People suggest putting the phone adapter in the router's DMZ. Is that safe?"
+        },
+        {
+          "s": "steve",
+          "t": "It's standard advice. All unsolicited packets get forwarded to the adapter, so it can accept incoming calls. It's relatively safe."
+        },
+        {
+          "s": "steve",
+          "t": "Better still, get a second IP and put the adapter outside your router, through a switch or hub, leaving the router locked down."
+        },
+        {
+          "s": "leo",
+          "t": "What's the risk? It's a dumb box."
+        },
+        {
+          "s": "steve",
+          "t": "Probably none to your network. ARP tricks can't cross the router."
+        },
+        {
+          "s": "leo",
+          "t": "Vonage recommends its adapter go outside the router, passing traffic through, so it can manage quality of service."
+        }
+      ]
+    },
+    {
+      "title": "Can a Virus Damage a CPU?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Al in Wildomar asks: can a virus damage a CPU?"
+        },
+        {
+          "s": "steve",
+          "t": "Today's malware wants to acquire computers, not destroy them. We've always remarked that viruses aren't more destructive than they are."
+        },
+        {
+          "s": "steve",
+          "t": "The notable exception was Chernobyl, also called CIH. It erased the first megabyte of hard drives and flashed the BIOS with garbage."
+        },
+        {
+          "type": "fact",
+          "title": "CIH",
+          "t": "CIH, written by a Taiwanese student in 1998, triggered on April 26, the anniversary of the Chernobyl disaster. In 1999 it damaged hundreds of thousands of PCs worldwide, many of which needed new BIOS chips."
+        },
+        {
+          "s": "steve",
+          "t": "But no technology lets software change a CPU. Malware might change CPU speed or voltage settings, but that would just hang your system."
+        },
+        {
+          "s": "steve",
+          "t": "The new extortion viruses, though, encrypt your files and demand money to decrypt them."
+        },
+        {
+          "s": "leo",
+          "t": "They have to collect the money somehow, and that's a good way to catch them."
+        },
+        {
+          "type": "fact",
+          "title": "Ransomware grows up",
+          "t": "2006's crude ransomware gave way to CryptoLocker in 2013. Cryptocurrency solved the criminals' payment problem, and ransomware became a multibillion-dollar business that targets hospitals, cities and companies. The best defense is offline backups."
+        }
+      ]
+    },
+    {
+      "title": "Firewalking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Raphael in Warsaw, Indiana asks about \"firewalking.\""
+        },
+        {
+          "s": "steve",
+          "t": "Traceroute sends packets with short TTLs. TTL counts hops, not time. Each router decrements it, and when it hits zero, the router sends back an \"expired\" message."
+        },
+        {
+          "s": "steve",
+          "t": "Firewalking does the same with real TCP or UDP packets aimed at particular ports. By adjusting the TTL and seeing where packets stop coming back, you can find the IP address of the device that's filtering a protocol, then try to attack it."
+        },
+        {
+          "s": "steve",
+          "t": "It's not very relevant to NAT routers, but it was useful against older devices with known flaws, like an old Cisco firewall. It's a clever use of how the Internet works."
+        }
+      ]
+    },
+    {
+      "title": "Better Skype Audio",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marcus in Kenai, Alaska set Skype to a fixed port. What else does he need for audio like ours?"
+        },
+        {
+          "s": "steve",
+          "t": "Port forwarding. Log into your router and forward that port to the private IP of the computer running Skype."
+        },
+        {
+          "s": "leo",
+          "t": "Say I use 11111. In my Linksys I forward 11111 to 11111, protocol UDP, to my machine's IP. Which, I notice, I have wrong."
+        },
+        {
+          "s": "steve",
+          "t": "One side is enough for a direct connection, but both is better. And do it manually, not with UPnP."
+        },
+        {
+          "s": "leo",
+          "t": "Upstream bandwidth matters too. I have business DSL with about 384K upstream."
+        },
+        {
+          "s": "steve",
+          "t": "And I have a pair of T1s."
+        },
+        {
+          "s": "leo",
+          "t": "It really improved my calls with Dick DeBartolo."
+        }
+      ]
+    },
+    {
+      "title": "Is Email Reliable?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve in Pinehurst asks: what percentage of valid email actually gets delivered?"
+        },
+        {
+          "s": "leo",
+          "t": "I think spam filters drop most of what's lost. Steve's questions didn't reach me at first."
+        },
+        {
+          "s": "steve",
+          "t": "That's the number one cause. E-commerce sites now beg you to whitelist their receipts."
+        },
+        {
+          "s": "steve",
+          "t": "The protocol itself, SMTP, is phenomenally reliable. It retries extensively and falls back to backup MX servers. Spam abused that reliability and broke it."
+        },
+        {
+          "s": "leo",
+          "t": "A Security Focus article just said spam has killed email."
+        },
+        {
+          "s": "steve",
+          "t": "GRC's mailing list has 786,000 subscribers. Send at any real rate, and AOL and EarthLink will flag me as a spammer. So I'll send one final mailing slowly, newest addresses first, from a separate IP range and the domain GRCmail.com, to protect SpinRite receipts."
+        },
+        {
+          "type": "fact",
+          "title": "Email authentication",
+          "t": "SPF, DKIM and DMARC now let receiving servers check whether mail really comes from the domain it claims. Since 2024, Gmail and Yahoo have required them from bulk senders, which helps legitimate mail get through filters."
+        },
+        {
+          "s": "steve",
+          "t": "I'm also adding menus to GRC, with no JavaScript. I'm learning CSS, and what a nightmare that is."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How can you tell if your employer is decrypting your HTTPS traffic?",
+      "options": [
+        "Check the certificate; a company-issued certificate instead of the real site's means interception",
+        "You can't",
+        "The page loads slowly",
+        "The URL changes to http"
+      ],
+      "answer": 0,
+      "explain": "Companies can install their own root certificate in employees' browsers."
+    },
+    {
+      "q": "Why can't a hardware router do application-level outbound blocking?",
+      "options": [
+        "It can't tell which program on your computer sent a packet",
+        "Routers have no memory",
+        "It's illegal",
+        "Outbound traffic is encrypted"
+      ],
+      "answer": 0,
+      "explain": "Malware can also use port 80 to pass as a browser."
+    },
+    {
+      "q": "What breaks a virtual machine's containment for safe surfing?",
+      "options": [
+        "Shared folders, drives or file sharing with the host",
+        "Using a browser",
+        "Running Linux",
+        "Having too little memory"
+      ],
+      "answer": 0,
+      "explain": "Done correctly, a VM can't modify the world outside it."
+    },
+    {
+      "q": "Why does Steve still object to Hamachi's UPnP feature?",
+      "options": [
+        "It opens inbound router ports without asking you, and anything else on your PC could do the same",
+        "Hamachi is spyware",
+        "It slows connections",
+        "It requires a paid account"
+      ],
+      "answer": 0,
+      "explain": "He suggests a manually forwarded fixed port instead."
+    },
+    {
+      "q": "Why doesn't netstat show whether Skype's audio is going directly to the other caller?",
+      "options": [
+        "Skype's audio uses UDP, which has no connections to list",
+        "Skype hides from netstat",
+        "Netstat only works on Linux",
+        "The audio is encrypted"
+      ],
+      "answer": 0,
+      "explain": "Netstat can show only that something is listening on a UDP port."
+    },
+    {
+      "q": "What did the CIH (Chernobyl) virus do?",
+      "options": [
+        "Erased the start of hard drives and overwrote the BIOS",
+        "Burned out CPUs",
+        "Encrypted files for ransom",
+        "Stole passwords"
+      ],
+      "answer": 0,
+      "explain": "Most malware now wants to use your computer, not destroy it."
+    }
+  ]
+}

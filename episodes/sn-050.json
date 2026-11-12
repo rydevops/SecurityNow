@@ -1,0 +1,377 @@
+{
+  "number": 50,
+  "title": "Virtual Machine History & Technology",
+  "subtitle": "From mainframes to the 386 and beyond",
+  "date": "2006-07-27",
+  "description": "Episode 50 kicks off a series on virtual machines. Steve explains emulation (p-code, Java, .NET, Rosetta) versus hardware-assisted virtualization, tells the history from IBM mainframes through the 286, the 386 and DOS memory managers, describes how protected mode and privilege rings isolate programs, and previews the \"Blue Pill\" threat.",
+  "transcript": "https://www.grc.com/sn/sn-050.txt",
+  "audio": "http://media.GRC.com/sn/SN-050.mp3",
+  "chapters": [
+    {
+      "title": "Fifty Episodes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 50, the half-century mark. Two weeks short of our first anniversary."
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't feel like a year. We weren't sure there'd be enough material. Now I have questions coming out my ears. We may switch from Mod 4 to Mod 1 Q&A for a while."
+        },
+        {
+          "s": "leo",
+          "t": "Randal Schwartz, author of \"Learning Perl,\" wrote that some software treats ports from 1000 to 1024 inconsistently, like a decimal versus binary \"K.\" So to be safe, use a port below 1000 for a well-known service."
+        },
+        {
+          "s": "steve",
+          "t": "In my experience, 1024 is where machines start assigning ephemeral client ports."
+        },
+        {
+          "type": "fact",
+          "title": "Port ranges",
+          "t": "The official split is at 1024. Ports 0–1023 are \"well-known\" and need administrator rights on UNIX systems. IANA registers ports 1024–49151 for applications, and 49152–65535 are for temporary client use."
+        }
+      ]
+    },
+    {
+      "title": "What Virtualization Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Virtualization is hot. Intel's new Core chips support it in hardware, and there's VMware and Microsoft's Virtual PC."
+        },
+        {
+          "s": "steve",
+          "t": "It began 40 years ago. IBM had VM/360 for its original System/360 mainframes. It faded in the '80s and '90s and is resurging now, because fast chips, abundant RAM and huge drives make a machine within a machine practical."
+        },
+        {
+          "type": "fact",
+          "title": "IBM's virtual machines",
+          "t": "IBM's first virtual machine systems were CP-40 in 1964 and CP-67 in 1967, both research projects on System/360 hardware. VM/370 became a product in 1972. Its descendant, z/VM, still runs on IBM mainframes today."
+        },
+        {
+          "s": "steve",
+          "t": "Virtualization means adding a layer. One flavor is emulation: software pretending to be another machine."
+        },
+        {
+          "s": "leo",
+          "t": "Apple's Rosetta runs old PowerPC programs on Intel Macs, and OS X ran OS 9 inside a \"Classic\" environment."
+        },
+        {
+          "s": "steve",
+          "t": "The PowerPC software doesn't know it isn't running on a PowerPC. It's a virtual chip."
+        },
+        {
+          "s": "steve",
+          "t": "UCSD Pascal compiled to \"p-code\" for a \"pseudo-machine\" that never existed. Write a p-machine interpreter for an Apple II, and all the UCSD software ran on it at once. Even a Fortran compiler targeted the same p-machine."
+        },
+        {
+          "s": "steve",
+          "t": "Forth worked similarly. The Java Virtual Machine is the same idea, and so is Microsoft's .NET Common Language Runtime, standardized through ECMA and ISO with HP and Intel."
+        },
+        {
+          "s": "leo",
+          "t": "And Perl 6 is being built on a virtual machine called Parrot."
+        },
+        {
+          "type": "fact",
+          "title": "Where they went",
+          "t": "Parrot was eventually abandoned, and Perl 6 was renamed Raku in 2019, running on its own virtual machine, MoarVM. Today, WebAssembly is a widely used portable virtual machine that runs in every major browser."
+        }
+      ]
+    },
+    {
+      "title": "The Cost of Emulation",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Java's interpreter was meant to be a secure sandbox. Code isn't executed directly by the chip, so a stack overrun can't just run on the hardware. If the emulator is written correctly, sandboxed code can never do anything dangerous."
+        },
+        {
+          "s": "steve",
+          "t": "But \"if it's written correctly\" is the Achilles heel of every software scheme."
+        },
+        {
+          "s": "steve",
+          "t": "And emulation is slow. Philippe Kahn's Borland released Turbo Pascal, which compiled to native code and blew UCSD Pascal into history almost overnight."
+        },
+        {
+          "s": "leo",
+          "t": "For 40 bucks."
+        },
+        {
+          "s": "steve",
+          "t": "That started Philippe's war with Bill Gates, who sold languages for about $500."
+        },
+        {
+          "type": "fact",
+          "title": "Turbo Pascal",
+          "t": "Borland launched Turbo Pascal in 1983 at $49.95. Its speed, built-in editor and low price made it a hit, and its designer, Anders Hejlsberg, later created Delphi and C# and helped design .NET."
+        },
+        {
+          "s": "steve",
+          "t": "That's why Mac apps are being recompiled for Intel. No matter how fast your chip is, not having something slowing you down is better."
+        }
+      ]
+    },
+    {
+      "title": "From Real Mode to Protected Mode",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The original PC used the 8086 family. The 8086 had a 16-bit instruction set but an 8-bit bus, and the 8088 was 8-bit all the way."
+        },
+        {
+          "s": "steve",
+          "t": "The 8286 added \"protected mode,\" which radically complicated the chip and began isolating programs from each other. \"Real mode\" was named afterward. DOS was really just a program loader."
+        },
+        {
+          "type": "fact",
+          "title": "Getting the chips right",
+          "t": "The 8086 was 16-bit inside and had a 16-bit data bus. The 8088, used in the original IBM PC, was 16-bit inside with an 8-bit bus. Protected mode arrived with the 80286 in 1982. There was no \"8286.\""
+        },
+        {
+          "s": "steve",
+          "t": "I'm still annoyed that DOS slashes go the wrong way."
+        },
+        {
+          "s": "leo",
+          "t": "UNIX uses forward slashes, and DOS backslashes for reasons nobody understands."
+        },
+        {
+          "s": "steve",
+          "t": "The 286 wasn't enough. The 386 added enough to create virtual machines in hardware, and that's where memory managers like EMM386, QEMM and 386MAX came from."
+        },
+        {
+          "s": "steve",
+          "t": "The PC had a 640-megabyte limit. It shipped with 16 megabytes, expandable to 64. Bill Gates famously said nobody would ever need more than 640 megabytes, and we can't fault him for it."
+        },
+        {
+          "s": "leo",
+          "t": "It seemed like a lot at the time."
+        },
+        {
+          "type": "fact",
+          "title": "Kilobytes, not megabytes",
+          "t": "Steve meant kilobytes throughout. The 1981 IBM PC came with 16KB of RAM, expandable to 64KB on the motherboard, and DOS programs could use 640KB. The famous \"640K ought to be enough\" quote is widely attributed to Gates, but he has denied saying it, and no source has been found."
+        },
+        {
+          "s": "steve",
+          "t": "Expanded memory used bank-switching cards. The 386 could show programs different memory configurations at will, so memory managers emulated expanded memory, then grew. IBM worked on TopView, and Quarterdeck created DESQview, using the 386 to build hardware virtual machines."
+        },
+        {
+          "s": "leo",
+          "t": "We were all QEMM users until Bob Smith's 386MAX at Qualitas came out."
+        }
+      ]
+    },
+    {
+      "title": "A Call from Microsoft",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When Windows 3.0 came out, it only ran with Microsoft's own memory manager, which had none of 386MAX's features."
+        },
+        {
+          "s": "steve",
+          "t": "In my InfoWorld column, I raved about Windows 3.0, then said I couldn't use it, since it didn't work with 386MAX. The next week, more praise, then: who cares, nobody can really use it."
+        },
+        {
+          "s": "steve",
+          "t": "Brad Silverberg at Microsoft called and asked me to stop writing that. I said it is junk unless it runs on a real memory manager. He said, \"I have Bob Smith here with me. Say hello, Bob.\""
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft had given Bob the proprietary information he needed. I warned Brad there was one more column in the pipeline he wouldn't like, and then I told readers 386MAX would soon work with Windows 3.0."
+        },
+        {
+          "s": "leo",
+          "t": "Good days for geeks. You had to figure things out."
+        }
+      ]
+    },
+    {
+      "title": "Rings and Traps",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Software does two fundamental things: read and write memory, and read and write I/O devices. Starting with the 386, a supervisor can trap any attempt to do either."
+        },
+        {
+          "s": "steve",
+          "t": "A bitmap protects individual I/O addresses, and \"page tables\" control what memory a less privileged process can touch. It's all in hardware."
+        },
+        {
+          "s": "leo",
+          "t": "Zero overhead? Come on."
+        },
+        {
+          "s": "steve",
+          "t": "Zero for a program running in that mode. There's some cost when switching modes, or \"ring transitions.\" Intel has four rings: 0 is most privileged, for the operating system, and 3 is least privileged, for applications."
+        },
+        {
+          "s": "steve",
+          "t": "A DOS program in a command window still writes characters straight into what it thinks is text video memory, at B000 or B800 hex. The operating system traps those writes and paints the character in the right font and color in a bitmapped window. DOS has no idea."
+        },
+        {
+          "s": "steve",
+          "t": "Every modern OS, Linux, FreeBSD, Mac OS and Windows, starts in real mode for the BIOS, sets up all the tables, then switches into protected mode. Only then does it get past the original 1-megabyte barrier to gigabytes of memory."
+        },
+        {
+          "type": "fact",
+          "title": "Virtualizing the whole machine",
+          "t": "The 386's \"virtual 8086 mode\" could box in DOS programs, but virtualizing an entire PC operating system was harder, because some x86 instructions couldn't be trapped. VMware solved that in software in 1999, and Intel VT-x and AMD-V added full hardware support in 2005 and 2006."
+        }
+      ]
+    },
+    {
+      "title": "Why This Matters for Security",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "But isolation between processes is very permeable. A debugger can stop another program, single-step it and inject code, and so can malware. That's why netstat can't be trusted on an infected machine."
+        },
+        {
+          "s": "steve",
+          "t": "VMware and Virtual PC, which Microsoft bought from someone else, create much stronger boundaries, mostly enforced by hardware."
+        },
+        {
+          "type": "fact",
+          "title": "Virtual PC's origin",
+          "t": "Connectix created Virtual PC, first for Macs in 1997. Microsoft bought it in 2003. Its technology led to Hyper-V, which also powers Windows' sandboxing features today."
+        },
+        {
+          "s": "steve",
+          "t": "Picture surfing inside a virtual machine. You still have to behave, since you could drag a download out of the sandbox. But if those million MySpace users had been surfing in a VM, the WMF exploit could infect it and go no further. Close the VM, and the infection is snuffed out."
+        },
+        {
+          "s": "leo",
+          "t": "I run Windows in a VM on my MacBook. VMware and Microsoft now offer free versions."
+        },
+        {
+          "s": "steve",
+          "t": "In a couple of years there will be many competing products, easier and easier to use."
+        },
+        {
+          "type": "fact",
+          "title": "Disposable sandboxes today",
+          "t": "Windows Sandbox, built into Windows 10 and 11 Pro, opens a throwaway virtual Windows desktop that's wiped when you close it. Browsers also isolate each website in its own sandboxed process."
+        }
+      ]
+    },
+    {
+      "title": "The Blue Pill",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's a dark side. A researcher has looked at turning virtual machines against us."
+        },
+        {
+          "s": "leo",
+          "t": "Like \"The Matrix.\" A woman researcher has the Blue Pill, and I think her Red Pill detects it."
+        },
+        {
+          "s": "steve",
+          "t": "Take the Blue Pill and nothing looks different, but your operating system is now running inside a virtual machine. Whatever controls it from outside, you'd have no way of seeing."
+        },
+        {
+          "type": "fact",
+          "title": "Blue Pill",
+          "t": "Joanna Rutkowska demonstrated Blue Pill at Black Hat in August 2006, using AMD's new hardware virtualization to slip a running Windows Vista under a thin hypervisor. Her 2004 \"Red Pill\" was a simple trick for detecting whether code is running inside a VM. Researchers debated whether such a rootkit could truly be undetectable."
+        },
+        {
+          "s": "steve",
+          "t": "We'll continue next week."
+        },
+        {
+          "s": "leo",
+          "t": "Is the OpenVPN guide still coming?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. GRC had nowhere to put it. I've spent a month and a half building hierarchical menus in pure CSS, with no scripting, which work in every browser. Then the third-party cookie work, then OpenVPN."
+        },
+        {
+          "s": "steve",
+          "t": "I preach against scripting. I couldn't require you to lower your security to visit a security site."
+        },
+        {
+          "s": "leo",
+          "t": "Our only JavaScript on TWiT.tv is for the Flash player, to work around IE's Eolas patent changes."
+        },
+        {
+          "s": "steve",
+          "t": "And our newsgroups at news.grc.com have a Security Now! group with hundreds of good people."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is emulation?",
+      "options": [
+        "Software pretending to be a different processor or machine",
+        "A type of virus",
+        "Running two monitors",
+        "Overclocking"
+      ],
+      "answer": 0,
+      "explain": "Rosetta, the Java VM and UCSD Pascal's p-machine are all emulators."
+    },
+    {
+      "q": "Why did Turbo Pascal beat UCSD Pascal?",
+      "options": [
+        "It compiled to fast native code and was far cheaper",
+        "It ran in a sandbox",
+        "It was free",
+        "It used p-code"
+      ],
+      "answer": 0,
+      "explain": "Emulating a pseudo-machine in software costs performance."
+    },
+    {
+      "q": "Which Intel processor first made hardware virtual machines practical for PCs?",
+      "options": [
+        "The 386",
+        "The 8088",
+        "The 286",
+        "The Pentium 4"
+      ],
+      "answer": 0,
+      "explain": "It led to memory managers like QEMM, 386MAX and DESQview."
+    },
+    {
+      "q": "In Intel's privilege rings, where do ordinary applications run?",
+      "options": [
+        "Ring 3, the least privileged",
+        "Ring 0",
+        "Ring 1",
+        "Ring 7"
+      ],
+      "answer": 0,
+      "explain": "The operating system runs in ring 0 and supervises everything else."
+    },
+    {
+      "q": "How could surfing inside a virtual machine have protected the MySpace WMF victims?",
+      "options": [
+        "The infection would stay inside the VM and vanish when it closed",
+        "VMs block all ads",
+        "VMs patch Windows automatically",
+        "VMs are faster"
+      ],
+      "answer": 0,
+      "explain": "You still have to avoid dragging infected files out."
+    },
+    {
+      "q": "What is the \"Blue Pill\" threat?",
+      "options": [
+        "Malware that moves your running OS into a virtual machine it controls",
+        "A fake antivirus",
+        "A phishing email",
+        "A sleeping pill for servers"
+      ],
+      "answer": 0,
+      "explain": "Named after \"The Matrix,\" everything looks normal from inside."
+    }
+  ]
+}

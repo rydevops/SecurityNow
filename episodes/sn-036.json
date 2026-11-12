@@ -1,0 +1,313 @@
+{
+  "number": 36,
+  "title": "Listener Feedback Q&A #6",
+  "subtitle": "A baker's dozen of questions",
+  "date": "2006-04-20",
+  "description": "A live WPA crack, why public keys don't reveal private ones, Skype \"supernodes,\" lucky guesses, free digital IDs, private IP addresses in traceroutes, LogMeIn, \"hacked\" SSL, why Steve skips antivirus, SSL session caching, the Firefox spyware myth, and where RSA's primes come from.",
+  "transcript": "https://www.grc.com/sn/sn-036.txt",
+  "audio": "http://media.GRC.com/sn/SN-036.mp3",
+  "chapters": [
+    {
+      "title": "Question Zero: WPA Cracked Live",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 36: a baker's dozen of questions, starting with question zero, like any good programmer."
+        },
+        {
+          "s": "leo",
+          "t": "James in Auckland saw a seminar demo using free Linux tools: Kismet, Aireplay, Ethereal and coWPAtty. They briefly knocked a laptop off Wi-Fi so it would reconnect, captured the WPA handshake, and cracked the passphrase \"12345678\" offline in about 60 seconds."
+        },
+        {
+          "s": "steve",
+          "t": "That's exactly what we described: force a reconnect to capture the handshake, then attack it offline. A dumb passphrase falls almost instantly."
+        },
+        {
+          "s": "leo",
+          "t": "It's short as well as non-random."
+        },
+        {
+          "s": "steve",
+          "t": "Use 63 random characters from GRC.com/passwords. You can't type them, but nobody will ever crack them."
+        },
+        {
+          "type": "fact",
+          "title": "The WPA handshake attack",
+          "t": "Attackers capture the four-way handshake, sometimes forcing it by sending forged \"disconnect\" frames, then test passphrase guesses offline at high speed. Only long, random passphrases resist it. WPA3's SAE handshake was designed to stop offline guessing."
+        }
+      ]
+    },
+    {
+      "title": "Brute Force and Lucky Guesses",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Nathan asks: why can't you work out a private key by trying every possibility?"
+        },
+        {
+          "s": "steve",
+          "t": "You can, in principle. But these keys are 1,024 bits or more. 2^1024 is so enormous you'd be long dead before making any progress."
+        },
+        {
+          "s": "leo",
+          "t": "Jay asks: what if a brute-force attack guesses right on the first try?"
+        },
+        {
+          "s": "steve",
+          "t": "He's right. You'd crack it instantly. On average you'd find it halfway through. But 128 bits is 3.4 × 10^38 possibilities, so the odds of a lucky early hit are vanishingly small."
+        },
+        {
+          "s": "leo",
+          "t": "A very small needle in a very large haystack."
+        }
+      ]
+    },
+    {
+      "title": "Skype Supernodes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Doug asks whether Skype uses our bandwidth even when we aren't on a call."
+        },
+        {
+          "s": "steve",
+          "t": "If your computer can accept unsolicited connections, because it isn't behind a NAT router or firewall, Skype can make it a \"supernode\" that relays other people's calls through your connection. You can't turn that off."
+        },
+        {
+          "s": "steve",
+          "t": "Google Talk used its own servers for relaying. Skype uses unsuspecting users' computers."
+        },
+        {
+          "s": "steve",
+          "t": "Leo and I connect directly because I gave Skype a fixed, forwarded port. Pick a random port between 1,024 and 65,535, not the default. Forward it, and calls will go direct, with better quality."
+        },
+        {
+          "type": "fact",
+          "title": "Supernodes",
+          "t": "Early Skype was peer-to-peer. Well-connected users' PCs became \"supernodes\" that helped route other users' connections, using their bandwidth. Microsoft replaced this with its own servers in 2012."
+        }
+      ]
+    },
+    {
+      "title": "Trust, Traceroutes and Tunnels",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John wants to sign and encrypt email with friends, but digital IDs cost money. Can he make his own keys?"
+        },
+        {
+          "s": "leo",
+          "t": "GnuPG (gnupg.org) is free and makes your own keys. But only you have asserted that a key is yours. Anyone could make a key named \"Steve Gibson.\""
+        },
+        {
+          "s": "leo",
+          "t": "That's why PGP has key-signing parties, where people check each other's ID and sign each other's keys. The more people who sign your key, the more it's trusted."
+        },
+        {
+          "s": "steve",
+          "t": "That's a \"web of trust,\" as opposed to buying a certificate from a company that checks your identity. Either way, ultimately something has to be trusted. GRC's certificate needed Dun & Bradstreet, phone, fax and address checks."
+        },
+        {
+          "type": "fact",
+          "title": "Web of trust vs. certificate authorities",
+          "t": "PGP lets users vouch for each other's keys, building a decentralized web of trust. S/MIME and HTTPS rely on certificate authorities that verify identities and sign certificates. Both still depend on trusting someone. They just distribute that trust differently."
+        },
+        {
+          "s": "leo",
+          "t": "Vincent sees private 10.x addresses in the middle of his traceroutes. Is his ISP using NAT?"
+        },
+        {
+          "s": "steve",
+          "t": "Probably not. Large ISPs often number their internal routers with private addresses to save scarce public ones. Their internal routing tables carry traffic through, then it comes back out to public addresses."
+        },
+        {
+          "s": "leo",
+          "t": "Robin asks: is LogMeIn safe at a hotspot?"
+        },
+        {
+          "s": "steve",
+          "t": "Like GoToMyPC, it encrypts the connection out of the danger zone. Once you browse from your home PC, you're exactly as safe as you would be at home."
+        }
+      ]
+    },
+    {
+      "title": "\"They Can See My Encrypted Pages\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John in Australia says hackers see what he sees, even over SSL, on both XP and Linux."
+        },
+        {
+          "s": "steve",
+          "t": "SSL itself is secure. A keylogger or phishing site is more likely. But there's one real case: some companies run an SSL inspection proxy, install its certificate in every company browser, then decrypt, inspect and re-encrypt all \"secure\" traffic at the network border."
+        },
+        {
+          "s": "leo",
+          "t": "Sneaky!"
+        },
+        {
+          "s": "steve",
+          "t": "It all comes back to authentication."
+        },
+        {
+          "type": "fact",
+          "title": "TLS interception",
+          "t": "Corporate firewalls, school filters and some antivirus software install their own root certificate so they can decrypt HTTPS for inspection. Your browser shows a padlock, but the connection is only secure up to the inspection box. Check the certificate issuer if you're unsure."
+        }
+      ]
+    },
+    {
+      "title": "Why We Skip Antivirus",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike asks why Steve doesn't run antivirus. For the record, I don't either, and neither do most security experts I know."
+        },
+        {
+          "s": "steve",
+          "t": "No force on Earth could make me open an email attachment I'm not expecting. My mail program shows plain text only, and I'm behind multiple layers of routers, so network worms can't reach me."
+        },
+        {
+          "s": "leo",
+          "t": "Most people get infected through attachments, HTML email previews and network worms. Even the built-in XP SP2 firewall stops worms like Blaster and Sasser."
+        },
+        {
+          "s": "steve",
+          "t": "A friend's embroidery shop has to open attachments from strangers, and they rebuild their machines constantly. If your work is like that, run antivirus."
+        },
+        {
+          "s": "leo",
+          "t": "It's like public health advice to cut salt. Not everyone needs to, but the safe general advice is: run antivirus, and never open unexpected attachments. Scanning every few weeks is also prudent."
+        },
+        {
+          "s": "steve",
+          "t": "And \"This email scanned by…\" banners mean nothing. Malware can add those too."
+        }
+      ]
+    },
+    {
+      "title": "SSL Sessions, Firefox and Primes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Willem, who works with corporate PKI, heard that IE reuses SSL session keys. Is that a risk?"
+        },
+        {
+          "s": "steve",
+          "t": "SSL session resumption is part of the standard. Public-key setup is a thousand times slower, so client and server cache the session key under a session ID and reuse it if you reconnect soon. Only the two endpoints know the key, and it expires, typically after hours. It's no risk."
+        },
+        {
+          "type": "fact",
+          "title": "TLS session resumption",
+          "t": "Resuming a session skips the expensive public-key handshake by reusing a previously agreed secret. TLS 1.3 kept resumption but redesigned it, and adds a fresh key exchange so later key theft can't decrypt past sessions."
+        },
+        {
+          "s": "leo",
+          "t": "Matthew heard Firefox installs spyware."
+        },
+        {
+          "s": "steve",
+          "t": "That was a false story from a spyware newsletter, picked up by The Register."
+        },
+        {
+          "s": "leo",
+          "t": "Firefox is open source, so thousands of people can see exactly what it does. But download it from the real source. A bad guy could add spyware and repackage it."
+        },
+        {
+          "s": "steve",
+          "t": "Anti-spyware tools sometimes flag each other because they contain the patterns they're looking for."
+        },
+        {
+          "s": "steve",
+          "t": "That's why I don't publish source for my freeware. I don't want to help anyone make fraudulent copies."
+        },
+        {
+          "s": "leo",
+          "t": "Dave points out: if public-key crypto only encrypts a random symmetric key, the chosen-plaintext attack doesn't really apply."
+        },
+        {
+          "s": "steve",
+          "t": "He's right. I was describing raw asymmetric crypto. Using it only for random session keys, plus random padding, solves that."
+        },
+        {
+          "s": "leo",
+          "t": "Theodore asks: where does RSA get its giant primes? Is there a warehouse of them?"
+        },
+        {
+          "s": "steve",
+          "t": "There are far too many primes to list. Your computer generates its own. Making my OpenVPN keys, my machine printed dots for quite a while, and the 2,048-bit Diffie-Hellman parameters took much longer."
+        },
+        {
+          "type": "fact",
+          "title": "Finding big primes",
+          "t": "Key generators pick a random large odd number and test it with fast probabilistic tests like Miller-Rabin, repeating until one passes. Primes are plentiful: roughly one in every 710 numbers of 1,024 bits is prime. A 2,048-bit RSA key uses two primes of about 309 digits each."
+        },
+        {
+          "s": "leo",
+          "t": "Like the Sieve of Eratosthenes we used to benchmark with."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: putting all five building blocks together in applied crypto."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How was a weak WPA passphrase cracked in the seminar demo?",
+      "options": [
+        "By capturing the handshake and guessing passphrases offline",
+        "By guessing online at the router",
+        "By reading the router's label",
+        "By decrypting AES directly"
+      ],
+      "answer": 0,
+      "explain": "\"12345678\" fell in about 60 seconds; random 63-character passphrases don't."
+    },
+    {
+      "q": "When could Skype use your computer to relay other people's calls?",
+      "options": [
+        "When your PC accepted unsolicited connections (no NAT or firewall)",
+        "Always",
+        "Only during your own calls",
+        "Never"
+      ],
+      "answer": 0,
+      "explain": "Such PCs could become \"supernodes\" serving other users."
+    },
+    {
+      "q": "How can someone see \"encrypted\" HTTPS traffic at work without breaking SSL?",
+      "options": [
+        "A proxy decrypts and re-encrypts it using a certificate installed in company browsers",
+        "SSL has a backdoor",
+        "They read your screen through the monitor",
+        "HTTPS isn't encrypted"
+      ],
+      "answer": 0,
+      "explain": "Check who issued the certificate if you suspect inspection."
+    },
+    {
+      "q": "Is SSL session-key caching a security risk?",
+      "options": [
+        "No; only the two endpoints know the cached key, and it expires",
+        "Yes, it exposes keys to everyone",
+        "Only on Macs",
+        "Only for email"
+      ],
+      "answer": 0,
+      "explain": "It skips the slow public-key handshake when you reconnect soon."
+    },
+    {
+      "q": "Where do RSA key generators get their large primes?",
+      "options": [
+        "They generate random candidates and test them for primality",
+        "From a published list",
+        "From a web service",
+        "They reuse the same few"
+      ],
+      "answer": 0,
+      "explain": "Big primes are plentiful and fast to test, so each key gets its own."
+    }
+  ]
+}

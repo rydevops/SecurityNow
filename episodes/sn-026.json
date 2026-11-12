@@ -1,0 +1,265 @@
+{
+  "number": 26,
+  "title": "How the Internet Works, Part 2",
+  "subtitle": "Ports, UDP and TCP",
+  "date": "2006-02-09",
+  "description": "A quick review of ICMP, then the details of the Internet's two main data-carrying protocols: UDP and TCP.",
+  "transcript": "https://www.grc.com/sn/sn-026.txt",
+  "audio": "http://media.GRC.com/sn/SN-026.mp3",
+  "chapters": [
+    {
+      "title": "Invisible Technology",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 26. I'm on a geek cruise off the Mexican Riviera, reading \"Fallen Dragon,\" thanks to you. The podcast must go on."
+        },
+        {
+          "s": "steve",
+          "t": "Any really effective interface becomes transparent. On the phone, you think about the other person, not the hardware. The Internet works so well we've stopped seeing it."
+        },
+        {
+          "s": "leo",
+          "t": "As Arthur C. Clarke said, any sufficiently advanced technology is indistinguishable from magic. For the human story, read Katie Hafner's \"Where Wizards Stay Up Late.\""
+        },
+        {
+          "s": "steve",
+          "t": "J.C.R. Licklider wrote about a \"Galactic Network\" in the early '60s, when it was literally science fiction."
+        },
+        {
+          "type": "fact",
+          "title": "The people behind it",
+          "t": "J.C.R. Licklider's 1963 memos to the \"Members and Affiliates of the Intergalactic Computer Network\" imagined linked computers. At ARPA, Bob Taylor, frustrated by needing three different terminals to reach three computers, funded the ARPANET in 1969. Bob Metcalfe invented Ethernet at Xerox PARC in 1973."
+        }
+      ]
+    },
+    {
+      "title": "Layers, and ICMP Again",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last week was the lower layers."
+        },
+        {
+          "s": "steve",
+          "t": "Networking is described in layers: Layer 1 is the physical wiring, Layer 2 the local transport over it, and higher layers wrapped inside. The academic seven-layer model doesn't always match what engineers actually built."
+        },
+        {
+          "s": "steve",
+          "t": "Every IP packet has a source address, destination address, Time To Live, a checksum to catch corruption, and a one-byte protocol number. The workhorses are ICMP (1), TCP (6) and UDP (17)."
+        },
+        {
+          "s": "steve",
+          "t": "Ping is ICMP: an \"echo request\" sent to an address, and an \"echo reply\" back if the machine is up and reachable. It's basic plumbing."
+        },
+        {
+          "s": "leo",
+          "t": "I had no idea ICMP was on the same level as TCP and UDP."
+        },
+        {
+          "s": "steve",
+          "t": "It is, but ICMP has no ports. You ping an address, not a port. TCP and UDP add ports."
+        },
+        {
+          "s": "steve",
+          "t": "Nothing is magic about a TCP or UDP packet. It's just the protocol number in the header. A firewall told to block UDP just drops every protocol-17 packet."
+        },
+        {
+          "type": "fact",
+          "title": "The OSI model",
+          "t": "The seven layers are physical, data link, network, transport, session, presentation and application. In practice, the Internet's stack collapses them into roughly four: link (Ethernet, Wi-Fi), internet (IP, ICMP), transport (TCP, UDP) and application (HTTP, DNS, SMTP)."
+        }
+      ]
+    },
+    {
+      "title": "What a Port Really Is",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The IP address gets a packet to a machine. The port says which service on that machine should receive it."
+        },
+        {
+          "s": "steve",
+          "t": "I'll say \"service\" for software and \"server\" for a physical box, since UNIX people use \"server\" for both."
+        },
+        {
+          "s": "steve",
+          "t": "By convention, port 25 is SMTP for sending mail and 110 is POP3. A packet for port 25 goes to whatever is listening there."
+        },
+        {
+          "s": "leo",
+          "t": "So there's no physical port."
+        },
+        {
+          "s": "steve",
+          "t": "Right. It's just a 16-bit number. The name comes from serial and parallel ports, which confuses people."
+        },
+        {
+          "s": "leo",
+          "t": "\"Channel\" might have been a better word."
+        },
+        {
+          "s": "steve",
+          "t": "That's a fantastic analogy. It's too bad we didn't call them channels."
+        },
+        {
+          "type": "fact",
+          "title": "Well-known ports",
+          "t": "Ports run from 0 to 65535. By convention, low numbers belong to standard services: 25 SMTP, 53 DNS, 80 HTTP, 110 POP3, 143 IMAP, 443 HTTPS. A port scanner like ShieldsUP! checks which of these \"channels\" accept connections."
+        }
+      ]
+    },
+    {
+      "title": "UDP: Fire and Forget",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "UDP adds a source port and a destination port, and that's about it. The sender usually picks the source port automatically."
+        },
+        {
+          "s": "steve",
+          "t": "DNS is the classic example. To find Microsoft.com's address, your PC sends one UDP packet to port 53 of your DNS server, and it sends one packet back with the answer."
+        },
+        {
+          "s": "steve",
+          "t": "There's no connection setup. If either packet gets lost, your end waits a few seconds and asks again, and eventually reports an error."
+        },
+        {
+          "s": "leo",
+          "t": "I thought UDP had no response at all."
+        },
+        {
+          "s": "steve",
+          "t": "The protocol itself doesn't handle loss. The application does, if it cares. VoIP, like our call right now, uses UDP because real-time matters more than perfection."
+        },
+        {
+          "s": "leo",
+          "t": "So if Skype loses a packet?"
+        },
+        {
+          "s": "steve",
+          "t": "It probably ignores it. You hear a little blip, and it keeps going."
+        }
+      ]
+    },
+    {
+      "title": "TCP: The Reliable Workhorse",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "TCP does much more. It even combines small writes into larger packets to cut overhead, which means the first bytes can wait a moment. That's bad for real-time."
+        },
+        {
+          "s": "steve",
+          "t": "Connections start with the three-way handshake: SYN, SYN/ACK, ACK. Each side picks a 32-bit starting number for counting the bytes it will send."
+        },
+        {
+          "s": "steve",
+          "t": "The handshake also proves that packets can travel both ways. On the Internet, the route back isn't necessarily the route there."
+        },
+        {
+          "s": "leo",
+          "t": "So why don't more programs use UDP?"
+        },
+        {
+          "s": "steve",
+          "t": "Because TCP does so much for programmers. You ask the operating system for a connection and hand it data, and everything else is taken care of."
+        },
+        {
+          "s": "leo",
+          "t": "So we can blame lazy programmers."
+        },
+        {
+          "s": "steve",
+          "t": "I didn't want to use the L word. I use UDP where I can. My monitoring system for my servers at Level 3 is a custom UDP client and server."
+        },
+        {
+          "s": "steve",
+          "t": "TCP splits your data into packets that fit the network and numbers every byte. The receiver puts out-of-order packets back in order, because packets sent later can arrive sooner."
+        },
+        {
+          "s": "steve",
+          "t": "The receiver acknowledges how much it has received. The sender keeps data until it's acknowledged, and resends anything that isn't."
+        },
+        {
+          "type": "fact",
+          "title": "How TCP makes the unreliable reliable",
+          "t": "Sequence numbers allow reordering and spotting gaps. Acknowledgements tell the sender what arrived. Retransmission timers resend what's missing. Flow control (the window) limits how much can be unacknowledged at once. All of it happens in the operating system, invisible to the application."
+        },
+        {
+          "s": "leo",
+          "t": "Is it over-designed for today?"
+        },
+        {
+          "s": "steve",
+          "t": "No. It has evolved. As the Internet grew, delays grew, so TCP had to become more patient. As links got faster, it had to allow much more unacknowledged data in flight. But the original concepts have held up beautifully."
+        },
+        {
+          "s": "leo",
+          "t": "And TCP/IP is Transmission Control Protocol over Internet Protocol: TCP rides inside IP packets."
+        },
+        {
+          "s": "steve",
+          "t": "With these two episodes as a foundation, we can refer to this casually from now on. Go back and listen if you need to, and read the transcripts."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does a port number do?",
+      "options": [
+        "It tells the receiving machine which service should get the packet",
+        "It identifies the physical network card",
+        "It sets how fast the packet travels",
+        "It picks a route"
+      ],
+      "answer": 0,
+      "explain": "The IP address gets the packet to the machine; the port picks the service, like a channel."
+    },
+    {
+      "q": "Why does DNS normally use UDP?",
+      "options": [
+        "One small query and one small reply need no connection setup",
+        "UDP is encrypted",
+        "TCP can't reach port 53",
+        "UDP guarantees delivery"
+      ],
+      "answer": 0,
+      "explain": "If a reply is lost, the client simply asks again."
+    },
+    {
+      "q": "What does the TCP three-way handshake accomplish?",
+      "options": [
+        "It sets each side's starting sequence numbers and proves two-way delivery works",
+        "It encrypts the connection",
+        "It picks the shortest route",
+        "It assigns IP addresses"
+      ],
+      "answer": 0,
+      "explain": "SYN, SYN/ACK, ACK: each side learns the other's numbering, and both directions are confirmed."
+    },
+    {
+      "q": "Why does voice-over-IP prefer UDP?",
+      "options": [
+        "Timeliness matters more than retransmitting a lost packet",
+        "UDP is more secure",
+        "TCP can't carry audio",
+        "UDP packets are larger"
+      ],
+      "answer": 0,
+      "explain": "A brief glitch is better than a delayed, perfectly retransmitted sound."
+    },
+    {
+      "q": "Which protocol has no concept of ports?",
+      "options": [
+        "ICMP",
+        "TCP",
+        "UDP",
+        "All three use ports"
+      ],
+      "answer": 0,
+      "explain": "You ping an address, not a port. TCP and UDP add port numbers."
+    }
+  ]
+}

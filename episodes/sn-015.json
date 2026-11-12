@@ -1,0 +1,245 @@
+{
+  "number": 15,
+  "title": "VPN Secure Tunneling Solutions",
+  "subtitle": "SSH and SSL tunnels for road warriors",
+  "date": "2005-11-23",
+  "description": "Using SSH and SSL encrypted tunnels for privacy on insecure networks like Wi-Fi hotspots and hotel networks. They work, but they take setup and need a \"server\" at home or the office, so they suit technically inclined travelers more than casual users.",
+  "transcript": "https://www.grc.com/sn/sn-015.txt",
+  "audio": "http://media.GRC.com/sn/SN-015.mp3",
+  "chapters": [
+    {
+      "title": "Sony Fallout and Better Passwords",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 15, recorded the day before Thanksgiving. I'm supposed to be making stuffing, but this is more important."
+        },
+        {
+          "s": "steve",
+          "t": "Sony update: the Texas Attorney General has sued, the EFF has sued, and about six class actions are pending."
+        },
+        {
+          "s": "leo",
+          "t": "Meanwhile the RIAA's Cary Sherman shrugged it off as a security bug in otherwise fine copy protection."
+        },
+        {
+          "s": "steve",
+          "t": "A correction from TWiT: Amazon didn't say my XCP CD was defective. It emailed every buyer explaining Sony's recall and offering a full refund, opened or not. Very clear and thorough."
+        },
+        {
+          "s": "leo",
+          "t": "Retailers with a customer database can do that. Physical stores can't reach their buyers."
+        },
+        {
+          "s": "steve",
+          "t": "People love GRC.com/passwords. Its passwords are \"maximum entropy\": every character is equally likely to be anything, so any chunk of one is just as random. My router only takes a 49-character VPN key, so I use the first 49."
+        },
+        {
+          "s": "steve",
+          "t": "The page only works over SSL and is marked as expired so no proxy will cache it."
+        },
+        {
+          "s": "leo",
+          "t": "Mac users: Keychain Access has a Password Assistant with random, memorable and FIPS 181 options, though it stops at 31 characters."
+        },
+        {
+          "type": "fact",
+          "title": "Maximum-entropy passwords",
+          "t": "If every character is chosen uniformly at random from the full set, the password has the most possible unpredictability per character. Then any substring is just as strong per character, so trimming to fit a device's limit is safe."
+        }
+      ]
+    },
+    {
+      "title": "The Problem on the Road",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "At home, WPA has you covered. In a hotel, about half use cheap hubs, so anyone in any room with a sniffer sees everyone's traffic, wired or wireless."
+        },
+        {
+          "s": "steve",
+          "t": "Most people on the road check email over POP or IMAP, or send over SMTP. Username, password and message contents all go unencrypted."
+        },
+        {
+          "s": "leo",
+          "t": "And once they have your email password, they can read your mail until you change it."
+        },
+        {
+          "s": "steve",
+          "t": "Even cookies matter. The cookie that makes Amazon or eBay greet you by name usually travels unencrypted, and someone who copies it can impersonate you."
+        },
+        {
+          "type": "fact",
+          "title": "Session hijacking",
+          "t": "Sites recognize you by a cookie your browser sends with every request. If that cookie travels without encryption, anyone sniffing the network can copy it and be logged in as you. No password needed."
+        },
+        {
+          "s": "steve",
+          "t": "HTTPS secures the web, and some mail systems offer SSL. But each of those only protects one application. A general tunnel protects everything."
+        }
+      ]
+    },
+    {
+      "title": "SSH Tunneling",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Telnet sent everything unencrypted, including root passwords, when administering UNIX machines remotely. SSH, Secure Shell, replaced it with a strongly encrypted session that looks exactly the same."
+        },
+        {
+          "s": "leo",
+          "t": "I've used SSH to get into my website for years."
+        },
+        {
+          "s": "steve",
+          "t": "SSH tunneling is a clever kludge. Your SSH client listens on an unused local port, say 1111, and forwards anything sent there through the encrypted connection to your SSH server."
+        },
+        {
+          "s": "steve",
+          "t": "Then you point your mail program at localhost (127.0.0.1) port 1111 instead of your ISP's POP server. The unencrypted part never leaves your own computer."
+        },
+        {
+          "type": "fact",
+          "title": "Port forwarding over SSH",
+          "t": "\"ssh -L 1111:mail.isp.com:110 you@home-server\" means: listen on local port 1111 and send everything, encrypted, to home-server, which passes it on to mail.isp.com port 110. It's one tunnel per service."
+        },
+        {
+          "s": "leo",
+          "t": "But every program has to be reconfigured, and you need one tunnel for receiving mail and another for sending."
+        },
+        {
+          "s": "steve",
+          "t": "And you need an SSH server somewhere, a Linux box or a Mac at home, with a port open through your router. Move it off the default port 22, which gets attacked constantly."
+        },
+        {
+          "s": "leo",
+          "t": "On a Mac it's just the Remote Login checkbox in the Sharing preferences, plus port forwarding on the router."
+        },
+        {
+          "s": "steve",
+          "t": "It's free and extremely secure, with strong public-key cryptography. It's just for people who don't mind fiddling."
+        }
+      ]
+    },
+    {
+      "title": "SSL-Based Options",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "SSL is browser-centered, which makes setup much easier. Services like GoToMyPC and Anonymizer run over it."
+        },
+        {
+          "s": "leo",
+          "t": "Port 443 is almost always open, so no router configuration is needed. HotSpotVPN, PublicVPN and Boingo offer this for a monthly fee."
+        },
+        {
+          "s": "steve",
+          "t": "The service sends a Java applet to your browser to act as the client. Nothing has to be installed."
+        },
+        {
+          "s": "steve",
+          "t": "For do-it-yourselfers, there's SSL-Explorer, free and open source on SourceForge. You run the server at home on Windows or Linux and connect to it from any browser with Java."
+        },
+        {
+          "s": "steve",
+          "t": "Routers now handle dynamic DNS themselves, updating a name like yours.dyndns.org whenever your home IP address changes."
+        },
+        {
+          "s": "steve",
+          "t": "SSL-Explorer lets you transfer files, map drives and run Remote Desktop, all over SSL and for free. The catch: a computer at home has to stay on, and some public browsers block Java."
+        }
+      ]
+    },
+    {
+      "title": "The Holy Grail",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So what's your holy grail?"
+        },
+        {
+          "s": "steve",
+          "t": "No software on the client at all. Just a residential VPN router at home and the VPN client that's already built into Windows 2000 and XP, with free downloads for 98, ME and NT4."
+        },
+        {
+          "s": "steve",
+          "t": "Everything, email and browsing included, goes through the tunnel to your router, and from there to your home network or out to the Internet, even if every computer at home is off."
+        },
+        {
+          "s": "leo",
+          "t": "That's for a later episode. Next week is our first Q&A."
+        },
+        {
+          "s": "leo",
+          "t": "One warning for friends and family: the Sober worm is going around in emails claiming to be from the FBI or CIA, saying your IP address was logged at illegal sites. The FBI and CIA don't send emails like that. Don't open the attachment."
+        },
+        {
+          "s": "steve",
+          "t": "I got one too. People open them for the same reason spam still pays: enough people fall for it."
+        },
+        {
+          "type": "fact",
+          "title": "The Sober worm",
+          "t": "Sober variants spread in late 2005 through emails pretending to come from the FBI, CIA or BKA, with a zipped attachment. Opening it infected the PC, which then mailed itself out and could be used as a spam zombie."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Steve say any part of a GRC \"perfect password\" is just as strong?",
+      "options": [
+        "Every character is uniformly random, giving maximum entropy",
+        "They are encrypted",
+        "They repeat every 8 characters",
+        "They come from a dictionary"
+      ],
+      "answer": 0,
+      "explain": "With maximum entropy you can use the first 49 characters if a device limits length."
+    },
+    {
+      "q": "How can someone sniffing hotel traffic impersonate you on a shopping site without your password?",
+      "options": [
+        "By copying the login cookie sent without encryption",
+        "By guessing your birthday",
+        "By calling the site",
+        "By reading your screen"
+      ],
+      "answer": 0,
+      "explain": "Persistent login cookies sent over plain HTTP can be replayed by an eavesdropper."
+    },
+    {
+      "q": "In SSH tunneling, where do you point your email program?",
+      "options": [
+        "At a local port on your own computer (localhost)",
+        "At the hotel's router",
+        "At a public DNS server",
+        "At port 443 on Google"
+      ],
+      "answer": 0,
+      "explain": "The SSH client listens locally and forwards that traffic, encrypted, to the SSH server."
+    },
+    {
+      "q": "Why do commercial secure-tunnel services usually use SSL?",
+      "options": [
+        "Port 443 is almost always open, so it works anywhere",
+        "SSL is faster than everything else",
+        "It needs no encryption",
+        "It only works on Macs"
+      ],
+      "answer": 0,
+      "explain": "Any network that allows secure websites allows SSL, with no router setup."
+    },
+    {
+      "q": "What is Steve's \"holy grail\" for secure roaming?",
+      "options": [
+        "A home VPN router plus the VPN client already built into Windows",
+        "A paid service with a Java applet",
+        "Telnet with a strong password",
+        "Turning off Wi-Fi"
+      ],
+      "answer": 0,
+      "explain": "No extra client software, and every protocol tunneled home through your own router."
+    }
+  ]
+}

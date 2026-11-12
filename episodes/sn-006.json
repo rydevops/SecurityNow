@@ -1,0 +1,198 @@
+{
+  "number": 6,
+  "title": "Information Leakage",
+  "subtitle": "When your keyboard gives you away",
+  "date": "2005-09-22",
+  "description": "Three UC Berkeley researchers recovered typed text just by listening to someone type. Steve and Leo look at the strange world of \"alternative\" information leakage: glowing CRTs, radio emissions, network LEDs and microphones.",
+  "transcript": "https://www.grc.com/sn/sn-006.txt",
+  "audio": "http://media.GRC.com/sn/SN-006.mp3",
+  "chapters": [
+    {
+      "title": "Listening to Keystrokes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 6, September 22, 2005. We're both home again, and today it's electronic eavesdropping: how people can spy on you without touching your computer."
+        },
+        {
+          "s": "steve",
+          "t": "Three Berkeley researchers wrote software that works out what you typed from nothing but the sound of typing. They didn't need a prepared text, just ordinary English."
+        },
+        {
+          "s": "steve",
+          "t": "They record ten minutes of typing, a Pentium 4 crunches it for about 30 minutes, and they recover the text with 96% accuracy."
+        },
+        {
+          "s": "leo",
+          "t": "Does each key really sound different?"
+        },
+        {
+          "s": "steve",
+          "t": "Different enough. They measure the energy of each keystroke's sound. Keys that sound alike get grouped together, then dictionaries and the odds of one letter following another sort out which key was which."
+        },
+        {
+          "s": "steve",
+          "t": "The chilling part: even random passwords come out right about 90% of the time. They end up with a list of around a hundred candidates, and the real password is very likely in it."
+        },
+        {
+          "type": "fact",
+          "title": "How sound becomes text",
+          "t": "The software clusters keystrokes by their acoustic \"signature,\" then uses language statistics (which letters and words usually follow which) like a spelling and grammar checker to decide what was typed. Once it has learned your keyboard, it can recognize non-dictionary input too."
+        },
+        {
+          "s": "leo",
+          "t": "So a recorder in your cubicle replaces a keystroke logger."
+        },
+        {
+          "s": "steve",
+          "t": "With that kind of access you'd just plug a logger into the keyboard cable. The scarier version is a parabolic microphone from across the hall, or a laser bounced off an office window to pick up the sound."
+        }
+      ]
+    },
+    {
+      "title": "A Long History of Leaks",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This is the latest in a long line of leaks from the electrical, mechanical or electromagnetic side effects of computers."
+        },
+        {
+          "s": "leo",
+          "t": "Like TEMPEST and \"Van Eck phreaking\": rebuilding what's on a CRT screen from the radio signals it gives off."
+        },
+        {
+          "s": "leo",
+          "t": "PGP even had a mode that showed text in low-contrast light blue, supposedly to make it harder to pick up."
+        },
+        {
+          "s": "steve",
+          "t": "Recent research has also rebuilt screen images from the light a CRT casts on the room, and apparently from LCDs too."
+        },
+        {
+          "s": "leo",
+          "t": "Bunnie Huang, who hacked the Xbox, told us he could build a gadget that sees a screen around a corner from its flicker."
+        },
+        {
+          "s": "steve",
+          "t": "It takes a very fast light sensor. I built a high-resolution light pen for the Apple II years ago, so I know what's involved. But it's doable."
+        },
+        {
+          "type": "fact",
+          "title": "TEMPEST",
+          "t": "TEMPEST is the military name for spying through a device's unintended emissions, and for the shielding standards that stop it. Rebuilding a monitor's image from its radio emissions was demonstrated by Wim van Eck in 1985, hence \"Van Eck phreaking.\""
+        },
+        {
+          "s": "steve",
+          "t": "About a year ago, an Internet scare said the blinking lights on routers leaked your data, and some ISPs put black electrical tape over them."
+        },
+        {
+          "s": "leo",
+          "t": "You couldn't get 10 megabits through a blinking LED."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Those LEDs show activity, not the actual bits. If they showed every bit, at those speeds they'd look permanently on."
+        }
+      ]
+    },
+    {
+      "title": "Should You Worry?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Did the researchers suggest any defenses?"
+        },
+        {
+          "s": "steve",
+          "t": "Their paper is coming out in the ACM's November issue. They tried quiet Dell keyboards, which were still loud enough for 96% accuracy."
+        },
+        {
+          "s": "steve",
+          "t": "Defenses include two-factor authentication, so the password isn't the only secret, and onscreen keyboards you click with the mouse, which several listeners suggested after our password episodes."
+        },
+        {
+          "s": "leo",
+          "t": "And biometrics, like fingerprint readers."
+        },
+        {
+          "s": "leo",
+          "t": "But isn't the bigger risk on the other end? IBM found that most big shopping sites stored passwords poorly."
+        },
+        {
+          "s": "steve",
+          "t": "Or kept customer data in unencrypted databases. I agree this is the far-out end of the risk spectrum. If someone can get close enough to record your keyboard, there are easier ways to steal your password."
+        },
+        {
+          "s": "steve",
+          "t": "What bugs me is that they'll publish their source code, at keyboard-emanations.org. Someday this could be a free download, like wireless-cracking tools are now."
+        },
+        {
+          "s": "steve",
+          "t": "And legally, recording your typing isn't wiretapping. It isn't considered communication, so it's not protected the way your phone calls or Internet traffic are."
+        },
+        {
+          "type": "fact",
+          "title": "Practical takeaways",
+          "t": "Acoustic and electromagnetic attacks need the attacker close by and plenty of effort, so they're rare. A password is more likely stolen by malware or from a badly protected server. Two-factor authentication protects you in both cases."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Roughly how accurately could the Berkeley software recover typed English from 10 minutes of recorded typing?",
+      "options": [
+        "About 96%",
+        "About 25%",
+        "Exactly 100%",
+        "About 50%"
+      ],
+      "answer": 0,
+      "explain": "Even \"quiet\" keyboards gave them 96% accuracy, and random passwords were in their candidate list about 90% of the time."
+    },
+    {
+      "q": "How did the software tell keys apart?",
+      "options": [
+        "It grouped keystroke sounds, then used language statistics to sort out ambiguous keys",
+        "Each key plays a unique musical note",
+        "It read the keyboard's radio signal",
+        "It watched the user's hands on video"
+      ],
+      "answer": 0,
+      "explain": "Similar-sounding keys were grouped, and dictionary and letter-frequency models worked out which was which."
+    },
+    {
+      "q": "What is \"Van Eck phreaking\"?",
+      "options": [
+        "Rebuilding a screen's image from the radio signals it gives off",
+        "Cracking phone systems with tones",
+        "Reading router LEDs",
+        "Guessing passwords from a dictionary"
+      ],
+      "answer": 0,
+      "explain": "It's part of the TEMPEST family of attacks, which is why secure facilities shield their equipment."
+    },
+    {
+      "q": "Why did Steve dismiss the router-LED scare?",
+      "options": [
+        "The LEDs show activity, not the actual data bits",
+        "LEDs are too dim to see",
+        "Routers have no LEDs",
+        "Electrical tape blocks radio"
+      ],
+      "answer": 0,
+      "explain": "At megabit speeds, an LED showing every bit would look permanently on."
+    },
+    {
+      "q": "Which defense makes acoustic password theft much less useful?",
+      "options": [
+        "Two-factor authentication",
+        "A louder keyboard",
+        "Typing faster",
+        "Using only lowercase letters"
+      ],
+      "answer": 0,
+      "explain": "A second factor that isn't typed means a captured password alone isn't enough."
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "number": 30,
+  "title": "Cryptographic Issues",
+  "subtitle": "Unbreakable encryption for everyone: what does it mean?",
+  "date": "2006-03-09",
+  "description": "The start of a multi-week series on cryptography. First, the social and ethical side: ordinary citizens now have free encryption that no government, corporation or individual can crack in their lifetimes.",
+  "transcript": "https://www.grc.com/sn/sn-030.txt",
+  "audio": "http://media.GRC.com/sn/SN-030.mp3",
+  "chapters": [
+    {
+      "title": "Crypto for the Masses",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 30: the start of our cryptography series. Today the societal issues; over the next few weeks, how it actually works."
+        },
+        {
+          "s": "steve",
+          "t": "Over the next weeks I want to explain public and private keys, certificate authorities and signing chains so clearly that people say, \"Wow, I get it.\" OpenVPN and secure web browsing both use certificates, and you'll understand what that means."
+        },
+        {
+          "s": "steve",
+          "t": "But first, something significant happened in the last decade. Thanks largely to academic cryptographers, ordinary people now have free, simple encryption that no government, no corporation, no one can crack."
+        },
+        {
+          "s": "leo",
+          "t": "That was Phil Zimmermann's goal with PGP: strong encryption for everyone, including dissidents whose lives depend on it."
+        },
+        {
+          "s": "steve",
+          "t": "\"Pretty Good Privacy\" is a modest name. It's far more than pretty good."
+        },
+        {
+          "type": "fact",
+          "title": "PGP",
+          "t": "Phil Zimmermann released Pretty Good Privacy in 1991. The US government investigated him for \"exporting munitions,\" since strong crypto was legally classed as a weapon. The case was dropped in 1996, and the export rules were relaxed in the late 1990s."
+        }
+      ]
+    },
+    {
+      "title": "Privacy vs. Security",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's the current controversy over warrantless NSA surveillance of US citizens after 9/11."
+        },
+        {
+          "s": "leo",
+          "t": "However you feel about it, there's a real concern that terrorists can hide their tracks with freely available crypto. A recent story said Skype calls can't be wiretapped."
+        },
+        {
+          "s": "steve",
+          "t": "Some people say, \"I'm not doing anything wrong, so I have nothing to hide.\" But businesses fear corporate espionage, and executives want teleconferences they know nobody can hear."
+        },
+        {
+          "s": "leo",
+          "t": "It's a balance between public safety and the right to privacy and free expression. It's not for us to decide, but we should talk about it."
+        },
+        {
+          "s": "steve",
+          "t": "Even without encryption, wouldn't bad actors find some other way to communicate?"
+        },
+        {
+          "s": "leo",
+          "t": "I asked Phil Zimmermann exactly that. He says you take the good with the bad, and the crypto is already out there. It was out even when the US classified it as munitions."
+        },
+        {
+          "s": "steve",
+          "t": "Like the gun argument: outlaw it, and bad guys use it anyway."
+        },
+        {
+          "s": "leo",
+          "t": "I sign every email with PGP. It's not encrypted, but you know it came from me and wasn't changed."
+        },
+        {
+          "s": "steve",
+          "t": "And nobody, no government, will be able to eavesdrop on an OpenVPN connection. We use it to stop snoops and hackers, but it stops everyone."
+        }
+      ]
+    },
+    {
+      "title": "Backdoors?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So should governments get a backdoor?"
+        },
+        {
+          "s": "leo",
+          "t": "No. The government may be benign now, but we can't be sure it always will be. And dissidents under totalitarian governments rely on this."
+        },
+        {
+          "s": "steve",
+          "t": "The Clinton administration tried that with the Clipper chip: government-approved encryption with a built-in way for the government to decrypt. It died big-time."
+        },
+        {
+          "type": "fact",
+          "title": "The Clipper chip",
+          "t": "Announced in 1993, Clipper was an NSA-designed encryption chip whose keys were held in escrow by the government. Industry and the public rejected it, and in 1994 researcher Matt Blaze showed its escrow mechanism could be bypassed. It was abandoned by 1996."
+        },
+        {
+          "s": "leo",
+          "t": "Do we know Skype doesn't have a government backdoor?"
+        },
+        {
+          "s": "steve",
+          "t": "They imply they'll cooperate with whoever they need to. And SkypeOut calls to regular phones have to be decrypted by Skype. I've thought about writing my own encrypted VoIP tool. Not because I have anything to hide; it's just creepy to think someone might be listening."
+        },
+        {
+          "s": "leo",
+          "t": "And what about terrorists using it?"
+        },
+        {
+          "s": "steve",
+          "t": "That's the double-edged sword. People have a valid reason for private conversations, and the US Constitution's protections came from people who'd lived under an oppressive government."
+        },
+        {
+          "s": "steve",
+          "t": "The lesson we keep learning: you can't legislate against technology. It's a force of nature."
+        }
+      ]
+    },
+    {
+      "title": "Why We Trust the Math",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "What's so cool about modern cryptography is that there's no hocus-pocus. Remember the cartoon where the professor fills the blackboard with equations and writes, \"…and then a miracle happens\"? There's none of that."
+        },
+        {
+          "s": "steve",
+          "t": "Some crypto rests on factoring. Multiply two huge primes together and it's easy. Finding those primes from the product is incredibly hard."
+        },
+        {
+          "s": "steve",
+          "t": "These are \"one-way functions\": easy in one direction, infeasible to reverse. The world's best mathematicians have attacked them openly for decades without finding a shortcut."
+        },
+        {
+          "s": "leo",
+          "t": "Unless someone at Fort Meade is grinning right now."
+        },
+        {
+          "s": "steve",
+          "t": "Giving his buddy in the next cubicle a thumbs-up. But nobody believes they can, and they're probably annoyed that they can't."
+        },
+        {
+          "s": "steve",
+          "t": "Cryptographers chart how much computing power it would take to break a given key length, how much that would cost, and how that changes as computers improve. So we can say a key is safe for centuries."
+        },
+        {
+          "type": "fact",
+          "title": "One-way functions",
+          "t": "Modern public-key crypto relies on problems that are easy to compute but hard to reverse: multiplying primes vs. factoring (RSA), and exponentiation vs. discrete logarithms (Diffie-Hellman, elliptic curves). The algorithms are public. The secrecy is only in the keys."
+        }
+      ]
+    },
+    {
+      "title": "Where Crypto Is Used",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "VPNs. Shopping sites encrypt your card number only while it crosses the Internet; the merchant decrypts it to process it."
+        },
+        {
+          "s": "leo",
+          "t": "What about DRM?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm skeptical any DRM will last. Your DVD player has to decrypt the disc to play it, so the key is in your home. Now they're pushing encryption all the way to the display with HDCP, but the TV still has to decrypt it."
+        },
+        {
+          "s": "leo",
+          "t": "Digital signatures use crypto to validate text, not hide it."
+        },
+        {
+          "s": "steve",
+          "t": "Signing proves two things: the document hasn't changed since it was signed, and who signed it. Anyone can read it, but nobody can alter it or forge the signature."
+        },
+        {
+          "s": "steve",
+          "t": "Pay-TV and satellite boxes use it too, and they keep getting hacked. Protecting content all the way to the end of the channel is nearly impossible."
+        },
+        {
+          "s": "steve",
+          "t": "And Microsoft and Intel are building crypto into PC hardware to give the operating system tighter control over what users can do."
+        },
+        {
+          "s": "leo",
+          "t": "That's controversial: governments want backdoors, and consumers don't want DRM built into their PCs."
+        },
+        {
+          "s": "steve",
+          "t": "Next: decoder rings and symmetric ciphers, then public-key crypto, then hashes and signatures, and then how the pieces fit together."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was Phil Zimmermann's goal with PGP?",
+      "options": [
+        "Strong encryption anyone could use, including dissidents",
+        "Selling crypto to governments",
+        "Copy-protecting music",
+        "Breaking other ciphers"
+      ],
+      "answer": 0,
+      "explain": "PGP brought public-key crypto to ordinary users."
+    },
+    {
+      "q": "What was the Clipper chip?",
+      "options": [
+        "Government-backed encryption with a built-in way for the government to decrypt",
+        "A faster CPU",
+        "A DRM system for DVDs",
+        "A VPN router"
+      ],
+      "answer": 0,
+      "explain": "It was widely rejected and abandoned."
+    },
+    {
+      "q": "Why does Steve trust modern cryptography?",
+      "options": [
+        "Its methods are public and its strength rests on well-studied math problems with no known shortcuts",
+        "It's kept secret",
+        "The NSA approved it",
+        "No one has tried to break it"
+      ],
+      "answer": 0,
+      "explain": "There's no \"miracle\" step, just open math that experts have attacked for decades."
+    },
+    {
+      "q": "What is a one-way function?",
+      "options": [
+        "Easy to compute one way but infeasible to reverse, like multiplying vs. factoring large primes",
+        "A road sign",
+        "A function that only runs once",
+        "A compression method"
+      ],
+      "answer": 0,
+      "explain": "Public-key systems depend on this asymmetry."
+    },
+    {
+      "q": "Why is Steve skeptical that DRM can last?",
+      "options": [
+        "Your own device must hold the means to decrypt the content",
+        "DRM is illegal",
+        "Crypto is too slow",
+        "Content can't be encrypted"
+      ],
+      "answer": 0,
+      "explain": "If the key is in the customer's home, it can eventually be extracted."
+    }
+  ]
+}
