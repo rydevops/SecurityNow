@@ -1,0 +1,218 @@
+{
+  "number": 12,
+  "title": "Sony's Rootkit DRM",
+  "subtitle": "Copy protection gone bad",
+  "date": "2005-11-02",
+  "description": "Sony's XCP copy protection secretly installs a classic rootkit (see Episode 9). It hides from users, can't be removed safely, can be abused by other malware, and has been linked to repeated blue-screen crashes.",
+  "transcript": "https://www.grc.com/sn/sn-012.txt",
+  "audio": "http://media.GRC.com/sn/SN-012.mp3",
+  "chapters": [
+    {
+      "title": "A Rootkit on a Music CD",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 12, November 2, 2005: a special edition. We did rootkits three episodes ago, and they've come back to bite us."
+        },
+        {
+          "s": "steve",
+          "t": "Quick reminder: a rootkit changes how the operating system works so that software can hide in plain sight."
+        },
+        {
+          "s": "steve",
+          "t": "Mark Russinovich of Sysinternals, who wrote RootkitRevealer, was updating his tool and ran it on his own machine. It found hidden files he didn't recognize."
+        },
+        {
+          "s": "steve",
+          "t": "He traced them to a Sony music CD he'd recently bought. When he inserted it, it showed a license agreement and installed its own player, and with it a true rootkit."
+        },
+        {
+          "s": "leo",
+          "t": "In the past we've told people to hold Shift while inserting a CD to stop its software from running automatically. That usually disabled the copy protection."
+        },
+        {
+          "s": "steve",
+          "t": "The copy protection is XCP, made by a UK company and licensed by Sony BMG. It's been causing problems since at least March: people got blue screens at boot complaining about a missing \"critical\" driver called aries.sys, which is part of XCP."
+        },
+        {
+          "s": "leo",
+          "t": "And the license agreement implies you can uninstall it."
+        },
+        {
+          "s": "steve",
+          "t": "There's no uninstall option at all."
+        }
+      ]
+    },
+    {
+      "title": "Why It's So Bad",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's déjà vu from the Aureate days. Software installed without people understanding it, and their systems became unstable."
+        },
+        {
+          "s": "steve",
+          "t": "People who found it with RootkitRevealer or F-Secure's BlackLight and deleted it lost their CD-ROM drive. It installs a filter driver between Windows and the CD drive, so deleting it breaks the link."
+        },
+        {
+          "s": "leo",
+          "t": "I get calls about disappearing CD-ROM drives all the time. I wonder how many are this."
+        },
+        {
+          "s": "steve",
+          "t": "Mark knew how to repair it. Many people had to reinstall Windows. F-Secure now warns users not to use BlackLight's delete option on it."
+        },
+        {
+          "s": "steve",
+          "t": "It hooks the kernel's system service table, and you can't unload that safely. It also marks its drivers to load in Safe Mode, apparently because people used Safe Mode to get around it."
+        },
+        {
+          "s": "steve",
+          "t": "It calls itself the \"Plug and Play Device Manager\" to blend in."
+        },
+        {
+          "s": "steve",
+          "t": "Worst of all, it hides anything whose name starts with $sys$, not just its own files. Mark renamed Notepad to $sys$notepad.exe and it vanished."
+        },
+        {
+          "s": "leo",
+          "t": "So Sony has given any hacker, however unskilled, a ready-made way to hide malware on your PC."
+        },
+        {
+          "type": "fact",
+          "title": "Why a rootkit in DRM is dangerous",
+          "t": "XCP hid every file, registry key and process whose name started with \"$sys$.\" Malware that simply used that prefix became invisible on any PC with XCP installed, and within weeks malware was doing exactly that."
+        }
+      ]
+    },
+    {
+      "title": "Finding It and Getting Rid of It",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How can people tell if they have it?"
+        },
+        {
+          "s": "steve",
+          "t": "Run RootkitRevealer and look for $sys$ entries: files in the system32 folder and a set of registry keys."
+        },
+        {
+          "s": "leo",
+          "t": "Brian Krebs of The Washington Post says any Sony CD labeled \"Content Enhanced and Protected\" may contain it. He found about 24,000 matching CD listings on Amazon."
+        },
+        {
+          "s": "steve",
+          "t": "Under pressure, Sony now links to a removal tool on the XCP vendor's site. It requires installing an ActiveX control first."
+        },
+        {
+          "s": "leo",
+          "t": "And we know companies' own removal tools can't always be trusted."
+        },
+        {
+          "s": "steve",
+          "t": "Ironically, by analyzing the software, Mark may have technically violated the DMCA."
+        },
+        {
+          "s": "leo",
+          "t": "That's the law our lawmakers gave us, thanks to the recording industry."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Within weeks of this episode, Sony BMG suspended XCP, recalled the affected CDs and offered exchanges, and faced class-action suits and a lawsuit from the State of Texas. Researchers also found that Sony's web-based uninstaller opened a security hole of its own."
+        }
+      ]
+    },
+    {
+      "title": "Protecting Yourself",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's good news: XCP can't install without administrator rights. Admins report that their locked-down work PCs were never infected. Sony's site even explains how to give yourself admin rights so its player works."
+        },
+        {
+          "s": "leo",
+          "t": "Another reason not to run as administrator. And movie discs can do this too. The InterActual player some DVDs install is known to disable DVD-copying software."
+        },
+        {
+          "s": "leo",
+          "t": "If a music or movie disc asks to install software on your computer, say no. I won't buy discs labeled as copy-protected."
+        },
+        {
+          "s": "steve",
+          "t": "Bloggers are writing things like, \"Way to go, Sony, you've really made me want to buy music legally.\""
+        },
+        {
+          "s": "leo",
+          "t": "The bands had no say. Their contracts let the label put anything on the disc."
+        },
+        {
+          "s": "steve",
+          "t": "The big question: will anti-spyware and anti-rootkit scanners flag Sony's software, or look the other way because it's from a big company?"
+        },
+        {
+          "s": "leo",
+          "t": "It should be flagged. Whatever Sony intended, it's a backdoor and it causes blue screens."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How was Sony's rootkit discovered?",
+      "options": [
+        "Mark Russinovich found hidden files with his own RootkitRevealer",
+        "Sony announced it",
+        "An antivirus company published a warning",
+        "A band complained"
+      ],
+      "answer": 0,
+      "explain": "He traced the hidden files to a Sony CD he had bought and played."
+    },
+    {
+      "q": "Why was deleting the rootkit's files dangerous?",
+      "options": [
+        "It installed a filter driver in front of the CD drive, so deleting it made the drive disappear",
+        "It erased the hard drive",
+        "It locked Windows forever",
+        "It sent an alert to Sony"
+      ],
+      "answer": 0,
+      "explain": "Without proper removal, Windows lost its connection to the CD-ROM drive, and some people had to reinstall."
+    },
+    {
+      "q": "What made XCP a gift to other malware authors?",
+      "options": [
+        "It hid every file whose name started with \"$sys$\"",
+        "It turned off the firewall",
+        "It shared passwords",
+        "It installed a web server"
+      ],
+      "answer": 0,
+      "explain": "Any malware could hide just by using that prefix."
+    },
+    {
+      "q": "What stopped XCP from installing on many work PCs?",
+      "options": [
+        "Users there didn't have administrator rights",
+        "Work PCs had no CD drives",
+        "Corporate antivirus blocked all music",
+        "It only installed on Macs"
+      ],
+      "answer": 0,
+      "explain": "Running as a limited user stopped the installer."
+    },
+    {
+      "q": "What simple trick prevented a CD's software from running automatically?",
+      "options": [
+        "Holding Shift while inserting the disc",
+        "Pressing F1",
+        "Inserting it upside down",
+        "Turning off the speakers"
+      ],
+      "answer": 0,
+      "explain": "Holding Shift stops Windows' AutoRun, so the disc's installer never starts."
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "number": 9,
+  "title": "Rootkits",
+  "subtitle": "Malware that makes itself invisible",
+  "date": "2005-10-13",
+  "description": "What rootkits are, why they've suddenly become a real problem for ordinary users, how they hide, and the free tools that can still find them.",
+  "transcript": "https://www.grc.com/sn/sn-009.txt",
+  "audio": "http://media.GRC.com/sn/SN-009.mp3",
+  "chapters": [
+    {
+      "title": "What Is a Rootkit?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 9, October 13, 2005, recorded in Toronto, where we're taping Call for Help. Today: rootkits."
+        },
+        {
+          "s": "steve",
+          "t": "We've mentioned them in passing, but they're no longer just theoretical. Ordinary users need to understand them."
+        },
+        {
+          "s": "steve",
+          "t": "\"Root\" is the all-powerful administrator account on UNIX. UNIX ran the Internet long before Windows, and its admins were savvy, so intruders had to hide."
+        },
+        {
+          "s": "steve",
+          "t": "A rootkit is a set of stealth techniques. It hides files, processes and, on Windows, registry entries, so something can run on your machine and you can't see it, whatever you do."
+        },
+        {
+          "s": "leo",
+          "t": "Shouldn't the operating system simply forbid that?"
+        },
+        {
+          "s": "steve",
+          "t": "No operating system we have was designed around distrust. Our whole security model is upside down: everything is trusted, and we deal with problems afterward."
+        },
+        {
+          "s": "leo",
+          "t": "And for compatibility with Windows 95 and 98 programs, XP has to let software do things it shouldn't."
+        }
+      ]
+    },
+    {
+      "title": "From Hackers to Spyware",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "As anti-spyware scanners get better, spyware authors have adopted rootkit techniques. Source code is easy to find, at sites like rootkit.com and in Phrack magazine's final issue."
+        },
+        {
+          "s": "steve",
+          "t": "Once it's installed, it disappears: not in Task Manager, not in a directory listing, not visible to your antivirus or firewall. It's chilling to play with."
+        },
+        {
+          "s": "steve",
+          "t": "CoolWebSearch is doing this. They know everyone hates them, so they use rootkit techniques to avoid being removed."
+        },
+        {
+          "s": "leo",
+          "t": "And regular anti-spyware tools can't see it?"
+        },
+        {
+          "s": "steve",
+          "t": "Ad-Aware and Spybot don't scan for rootkits yet. Microsoft's Malicious Software Removal Tool has just started, building on Microsoft Research's Strider GhostBuster project."
+        }
+      ]
+    },
+    {
+      "title": "How the Hiding Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Programs, including scanners, ask the operating system for everything. To list a directory, you call \"find first file,\" then \"find next file\" until there are no more."
+        },
+        {
+          "s": "steve",
+          "t": "A rootkit intercepts those answers. When the next file would be its own, it quietly asks for the one after, so no program ever sees it."
+        },
+        {
+          "s": "steve",
+          "t": "Every program has a table of the operating system functions it calls. Change an entry so it points to your code, and the call passes through you first."
+        },
+        {
+          "type": "fact",
+          "title": "The Import Address Table",
+          "t": "Steve called it the \"IAT.\" Its full name is the Import Address Table: the list of addresses where a Windows program finds the system functions it uses. Rewriting entries (\"hooking\") sends calls through other code first. Debuggers and legitimate tools do this too, and so do rootkits."
+        },
+        {
+          "s": "steve",
+          "t": "There are legitimate uses. I hook memory allocation in my own code, adding guard bytes around each block to catch overwrites. The same trick in the wrong hands adds malicious behavior."
+        },
+        {
+          "s": "leo",
+          "t": "Can't a security tool just check that table?"
+        },
+        {
+          "s": "steve",
+          "t": "It still has to ask the operating system to do it. Once trust is broken, it's broken."
+        },
+        {
+          "s": "steve",
+          "t": "One rootkit, called FU, even unlinks itself from the kernel's list of running processes. It keeps running, but nothing can find it."
+        },
+        {
+          "type": "fact",
+          "title": "Direct kernel object manipulation",
+          "t": "The FU rootkit edits the kernel's own records, removing its entry from the linked list of active processes. Task Manager and other tools read that list, so the hidden process disappears from every view while it keeps running."
+        },
+        {
+          "s": "steve",
+          "t": "Behavior can still give it away. It can't stop your router's lights from blinking, and a second computer watching the network will see the traffic, even if it's encrypted."
+        }
+      ]
+    },
+    {
+      "title": "Catching a Liar",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In-system detection has a basic problem: a compromised machine can lie about anything."
+        },
+        {
+          "s": "steve",
+          "t": "Sysinternals' free RootkitRevealer is clever. It lists files and registry entries the normal way, then reads the raw disk (FAT or NTFS structures) and the raw registry files itself, and compares. Any difference means something is hiding."
+        },
+        {
+          "s": "leo",
+          "t": "So hiding itself is exactly what exposes it."
+        },
+        {
+          "s": "steve",
+          "t": "Right. And rootkits must register themselves in the registry to start at boot, so RootkitRevealer checks all the startup locations too."
+        },
+        {
+          "s": "steve",
+          "t": "To fool it, a rootkit would have to rewrite raw disk sectors on the fly, which is a huge jump in difficulty. Today it finds every known rootkit."
+        },
+        {
+          "s": "steve",
+          "t": "Some rootkits started detecting RootkitRevealer and telling it the truth. So now it gives itself a random name and runs as a service."
+        },
+        {
+          "type": "fact",
+          "title": "Cross-view detection",
+          "t": "Compare a \"high-level\" view (what the OS reports) with a \"low-level\" view (raw disk and registry data). Malware can't hide from both without serious extra work, so the difference between the two views reveals it."
+        },
+        {
+          "s": "steve",
+          "t": "The definitive approach is to look from outside: take a snapshot from inside Windows, boot from a CD so the rootkit isn't running, scan the drive and compare. That's Microsoft's GhostBuster idea."
+        },
+        {
+          "s": "steve",
+          "t": "IT people: RootkitRevealer can be run on remote machines with Sysinternals' PsExec. F-Secure's BlackLight beta is another option."
+        }
+      ]
+    },
+    {
+      "title": "Prevention and Removal",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The real cure is a hardened operating system. Traditional advice is not to run as administrator, but too much software breaks."
+        },
+        {
+          "s": "leo",
+          "t": "Every UNIX book says never run as root. Microsoft ships with full privileges."
+        },
+        {
+          "s": "leo",
+          "t": "I set my mom up as a limited user on Windows 2000. She never got spyware or a virus, because she couldn't install anything."
+        },
+        {
+          "s": "steve",
+          "t": "Vista is supposed to make running as a limited user easier, with temporary elevation for installs."
+        },
+        {
+          "s": "leo",
+          "t": "And if you find one, how do you remove it?"
+        },
+        {
+          "s": "steve",
+          "t": "That's a future episode. Identify it and search for instructions, or remove it while it isn't running: boot from a CD, or put the drive in another machine as a second drive."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where does the term \"rootkit\" come from?",
+      "options": [
+        "\"root,\" the all-powerful UNIX administrator account",
+        "A gardening term for hidden roots",
+        "A Microsoft product name",
+        "The root directory of a CD"
+      ],
+      "answer": 0,
+      "explain": "Intruders on carefully watched UNIX machines needed tools that hid their activity after \"getting root.\""
+    },
+    {
+      "q": "How does a typical rootkit hide its files?",
+      "options": [
+        "It intercepts operating system calls and leaves its own entries out of the answers",
+        "It compresses them",
+        "It stores them in the cloud",
+        "It renames them to .txt"
+      ],
+      "answer": 0,
+      "explain": "Hooking calls like \"find next file\" lets it hide from every program that asks."
+    },
+    {
+      "q": "How does RootkitRevealer find hidden files?",
+      "options": [
+        "It compares what Windows reports with what it reads directly from the raw disk and registry",
+        "It looks for known virus signatures",
+        "It asks Microsoft's servers",
+        "It checks file sizes"
+      ],
+      "answer": 0,
+      "explain": "Any difference between the two views reveals something that's hiding."
+    },
+    {
+      "q": "What is the most reliable way to detect a rootkit?",
+      "options": [
+        "Check the drive from outside, booted from clean media, while the rootkit isn't running",
+        "Run more antivirus software",
+        "Reinstall the browser",
+        "Change your password"
+      ],
+      "answer": 0,
+      "explain": "Microsoft's GhostBuster approach compares an in-system snapshot with an outside view."
+    },
+    {
+      "q": "Why did Leo's mom never get spyware on Windows 2000?",
+      "options": [
+        "She ran as a limited user who couldn't install software",
+        "She never went online",
+        "She used ten scanners",
+        "She had a Mac"
+      ],
+      "answer": 0,
+      "explain": "Without admin rights, malware couldn't install itself either."
+    }
+  ]
+}

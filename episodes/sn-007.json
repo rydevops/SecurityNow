@@ -1,0 +1,261 @@
+{
+  "number": 7,
+  "title": "SPYaWAREness",
+  "subtitle": "Where spyware came from, and where it's going",
+  "date": "2005-09-30",
+  "description": "The history, current state and future of spyware: how Steve found the first one, why it became the Internet's biggest headache, how it hides and spreads, and what you can do about it.",
+  "transcript": "https://www.grc.com/sn/sn-007.txt",
+  "audio": "http://media.GRC.com/sn/SN-007.mp3",
+  "chapters": [
+    {
+      "title": "The First Spyware",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 7, September 30, 2005: spyware. Steve, you're the one who found it and named it. How did that happen?"
+        },
+        {
+          "s": "steve",
+          "t": "ShieldsUP! was only a few months old, and Zone Labs asked me to beta test ZoneAlarm. Unlike most firewalls then, it watched outbound traffic, so it caught programs using your connection without your knowledge."
+        },
+        {
+          "s": "steve",
+          "t": "It caught something called TSAdbot, bundled with an early PKZIP for Windows, phoning home. That rattled me, because I watch my machines closely."
+        },
+        {
+          "s": "steve",
+          "t": "A few weeks later people found a DLL from a company called Aureate on their machines. I wrote OptOut, the first anti-spyware tool, and that's where the word \"spyware\" came from."
+        },
+        {
+          "s": "steve",
+          "t": "Aureate bragged that it was on 25 million machines. Freeware authors bundled it to get paid from ads, and it profiled what you did and reported back without asking."
+        },
+        {
+          "s": "leo",
+          "t": "In a way it was a reasonable business idea: support shareware with ads."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think they meant harm. Their crime was not asking. That's why I trademarked \"It's MY Computer.\""
+        },
+        {
+          "type": "fact",
+          "title": "Adware vs. spyware",
+          "t": "Adware shows ads to pay for software. It becomes spyware when it tracks what you do and sends that information back without your informed consent. Burying the disclosure nine pages into a license agreement doesn't count."
+        },
+        {
+          "s": "steve",
+          "t": "OptOut actually fixed people's computers. The Aureate component was a buggy Internet Explorer add-on, a Browser Helper Object, that crashed IE."
+        },
+        {
+          "s": "leo",
+          "t": "And uninstalling the freeware that brought it left the adware behind."
+        },
+        {
+          "s": "steve",
+          "t": "By design. Aureate told developers to leave its \"shared\" components in place. So people undid what they'd done, and their machines didn't get better."
+        }
+      ]
+    },
+    {
+      "title": "The Arms Race",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Those seem like innocent days now."
+        },
+        {
+          "s": "steve",
+          "t": "Spyware and anti-spyware are in an arms race, just like viruses and antivirus. Spyware now uses rootkit techniques to hide."
+        },
+        {
+          "s": "steve",
+          "t": "A rootkit gets into the operating system's kernel and lies to anything that asks. The anti-spyware scanner looks for a file, and the kernel says it isn't there. Even a directory listing won't show it."
+        },
+        {
+          "type": "fact",
+          "title": "Kernel vs. user space",
+          "t": "Applications run in \"user space\" and ask the operating system's kernel to do things for them. Code that gets into the kernel can change those answers for every program, which is how rootkits hide files, processes and registry entries."
+        },
+        {
+          "s": "steve",
+          "t": "Spyware is now the number one problem for typical Internet users. Friends of mine who are computer consultants now specialize in removing it."
+        },
+        {
+          "s": "steve",
+          "t": "The big difference from viruses is money. Most virus writers did it to see if they could, and few viruses were deliberately destructive. Spyware always had a profit motive: Aureate, Conducent, CoolWebSearch, Gator, Cydoor."
+        },
+        {
+          "s": "leo",
+          "t": "And those companies sue. Gator famously went after people."
+        },
+        {
+          "s": "steve",
+          "t": "When I published a list of known and suspected spyware, I got angry letters right away. I couldn't fight that battle, so I took them off \"pending further research.\""
+        },
+        {
+          "s": "steve",
+          "t": "Then Lavasoft came along with Ad-Aware. They were outside the US and harder to sue. I endorsed them on the condition that they always keep a free version."
+        },
+        {
+          "s": "leo",
+          "t": "That's why Ad-Aware and Spybot came from Europe. And once Microsoft got into anti-spyware, everyone agreed it was bad stuff."
+        }
+      ]
+    },
+    {
+      "title": "Why Removal Breaks Things",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One of my employees picked up a browser hijacker. My tech support guy removed it, and her machine lost its Internet connection."
+        },
+        {
+          "s": "steve",
+          "t": "Think of a chain of links between the Internet and your eyes. Spyware inserts itself as a new link. Delete its files, and the chain breaks."
+        },
+        {
+          "s": "steve",
+          "t": "Some vendors' own uninstallers work, because they know how to put the chain back together. With several infections fighting back, people often end up reformatting."
+        },
+        {
+          "type": "fact",
+          "title": "Why \"just delete it\" fails",
+          "t": "Spyware often hooks into Windows networking or the browser, for example as a network-stack add-on or a Browser Helper Object. Deleting its files without undoing those hooks can leave the system pointing at missing components, which breaks connectivity."
+        }
+      ]
+    },
+    {
+      "title": "How You Get It",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The original way in is bundling. Spyware rides along with free software. Now reputable download sites advertise \"no adware, nothing bundled.\""
+        },
+        {
+          "s": "steve",
+          "t": "Use reputable sites like Download.com and SnapFiles. And when a machine is heavily infected, there's almost always music-sharing software like Kazaa on it."
+        },
+        {
+          "s": "steve",
+          "t": "If you treat your computer like a toy, that's what it becomes. Treat it like a tool and respect the risks."
+        },
+        {
+          "s": "leo",
+          "t": "Two helpful sites: SpywareInfo.com and SpywareGuide.com. I look up programs on SpywareGuide before I install them."
+        },
+        {
+          "s": "steve",
+          "t": "The second way in is the browser. Microsoft added ActiveX to Internet Explorer to compete with Netscape, so a website can download and run code on your machine without asking."
+        },
+        {
+          "s": "steve",
+          "t": "The third is bugs in the browser's scripting. I'm anti-scripting. Scripting is code, and flaws in it let a site infect you just by visiting."
+        },
+        {
+          "type": "fact",
+          "title": "ActiveX",
+          "t": "ActiveX controls are native Windows programs a web page can ask Internet Explorer to install and run. With security prompts weak or turned off, malicious sites used them to install toolbars, hijackers and spyware."
+        }
+      ]
+    },
+    {
+      "title": "What to Do",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So use Firefox or Opera, which don't run ActiveX, and keep Windows Update current, using IE only for that."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. And watch out for browsers that are just Internet Explorer underneath with a new look; they have IE's problems."
+        },
+        {
+          "s": "steve",
+          "t": "No single scanner catches everything. The top three, run together, are Microsoft AntiSpyware (still in beta), Lavasoft Ad-Aware and Spybot Search & Destroy. All three are free."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft's doesn't support Windows 98 or ME, sadly. Turn on Spybot's immunization and Microsoft's real-time protection, because preventing infection beats removing it."
+        },
+        {
+          "s": "steve",
+          "t": "What I do is lock down Internet Explorer with zones. Put the sites you trust, like Amazon, eBay, PayPal and your bank, in the Trusted zone, and turn scripting off everywhere else."
+        },
+        {
+          "s": "steve",
+          "t": "Long term, operating systems have to stop assuming all software is good. That costs some convenience, but anyone who's had a bad infestation will say, \"Bring it on.\""
+        },
+        {
+          "s": "leo",
+          "t": "Mac users barely see spyware for now."
+        },
+        {
+          "s": "steve",
+          "t": "Viruses get written for the machines virus writers own, mostly Windows. Spyware follows the money, so it could show up on the Mac if there's profit in it."
+        },
+        {
+          "s": "steve",
+          "t": "And the Security Now! page just got a facelift: HTML transcripts, PDFs, and Show Notes for every episode."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Steve discover the first spyware?",
+      "options": [
+        "ZoneAlarm's outbound monitoring caught bundled ad software phoning home",
+        "A customer mailed him an infected disk",
+        "Microsoft sent him a warning",
+        "He read about it in a magazine"
+      ],
+      "answer": 0,
+      "explain": "Beta testing ZoneAlarm, he saw TSAdbot, bundled with PKZIP for Windows, connecting out. Then came Aureate, and OptOut."
+    },
+    {
+      "q": "What did Steve say was Aureate's real sin?",
+      "options": [
+        "It didn't ask users for permission",
+        "It deleted files",
+        "It stole credit cards",
+        "It slowed down printing"
+      ],
+      "answer": 0,
+      "explain": "The ads might have been fine. Profiling users and phoning home without consent was not. Hence \"It's MY Computer.\""
+    },
+    {
+      "q": "How do rootkit-style techniques help spyware hide?",
+      "options": [
+        "They change the kernel's answers, so files and processes don't show up",
+        "They encrypt the hard drive",
+        "They turn off the monitor",
+        "They delete the antivirus program"
+      ],
+      "answer": 0,
+      "explain": "Code in the kernel can lie to any program that asks, including scanners and directory listings."
+    },
+    {
+      "q": "Why can removing spyware break your Internet connection?",
+      "options": [
+        "The spyware inserted itself as a link in the networking chain, and deleting it leaves a gap",
+        "Removal tools are viruses themselves",
+        "ISPs block cleaned PCs",
+        "Windows locks the network after scans"
+      ],
+      "answer": 0,
+      "explain": "Deleting files without undoing the spyware's system changes leaves Windows depending on missing pieces."
+    },
+    {
+      "q": "Which anti-spyware approach did Steve recommend?",
+      "options": [
+        "Run several free scanners, since no single one catches everything",
+        "Use only one paid scanner",
+        "Rely on the Windows Firewall",
+        "Reinstall Windows monthly"
+      ],
+      "answer": 0,
+      "explain": "Microsoft AntiSpyware, Ad-Aware and Spybot Search & Destroy together cover the most ground."
+    }
+  ]
+}

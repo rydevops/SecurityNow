@@ -1,0 +1,241 @@
+{
+  "number": 10,
+  "title": "Open Wireless Access Points",
+  "subtitle": "Everyone in the coffee shop is reading over your shoulder",
+  "date": "2005-10-20",
+  "description": "The security and privacy risks of unencrypted (\"open\") Wi-Fi at home and in public, and the ways to protect your traffic when strangers can sniff everything sent to and from your PC.",
+  "transcript": "https://www.grc.com/sn/sn-010.txt",
+  "audio": "http://media.GRC.com/sn/SN-010.mp3",
+  "chapters": [
+    {
+      "title": "Rootkit Follow-Up",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 10, October 20, 2005: open wireless access points. First, a follow-up on rootkits."
+        },
+        {
+          "s": "steve",
+          "t": "The day after our last episode, we ran RootkitRevealer on the Call for Help machines. Hardly any came out completely clean."
+        },
+        {
+          "s": "leo",
+          "t": "But much of what it found was harmless."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Norton's secure-delete feature uses rootkit techniques to hide protected deleted files. It's legitimate, not malicious."
+        },
+        {
+          "s": "leo",
+          "t": "And Kaspersky Anti-Virus hides some of its own processes. Andy's machine looked infested until we realized it was just Kaspersky."
+        },
+        {
+          "s": "steve",
+          "t": "That's why the theory matters. RootkitRevealer doesn't find \"rootkits,\" it finds differences between what's really there and what you're shown. Knowing that, you can recognize a false alarm."
+        },
+        {
+          "type": "fact",
+          "title": "False positives",
+          "t": "A detector that flags hidden items will also flag legitimate software that hides things for good reasons, like antivirus self-protection or secure-delete features. Check what's being hidden before you panic."
+        },
+        {
+          "s": "leo",
+          "t": "Give a man a fish and he eats for a day; teach him to fish and he'll know what equipment to buy."
+        }
+      ]
+    },
+    {
+      "title": "Wi-Fi Is a Hub in the Air",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Right now, from my house, I can see three neighbors' access points running wide open."
+        },
+        {
+          "s": "leo",
+          "t": "I walked through town with NetStumbler a couple of weeks ago. About 60% of the access points were unprotected, and I hear that's typical nationwide."
+        },
+        {
+          "s": "steve",
+          "t": "Some people leave theirs open on purpose, to share their broadband."
+        },
+        {
+          "s": "leo",
+          "t": "I used to, until I realized people could see everything I was doing."
+        },
+        {
+          "s": "steve",
+          "t": "On a wired network, a switch sends each packet only to the port it's meant for. A hub repeats everything to everyone."
+        },
+        {
+          "s": "steve",
+          "t": "An open access point works like a hub: anyone within radio range sees all the traffic, unencrypted."
+        },
+        {
+          "s": "leo",
+          "t": "That's the nature of Ethernet. All the traffic is visible to everyone on the network."
+        },
+        {
+          "type": "fact",
+          "title": "Shared media",
+          "t": "Original Ethernet ran over one shared coax cable. Every card heard every frame, and if two transmitted at once they \"collided,\" waited a random time and retried. Radio is shared the same way, so on open Wi-Fi every nearby device can capture every frame."
+        },
+        {
+          "s": "steve",
+          "t": "Packet sniffers are free. Ethereal is my favorite. It reassembles whole conversations: email you send and receive, and usernames and passwords, because POP mail logins go unencrypted."
+        }
+      ]
+    },
+    {
+      "title": "What Encryption Protects",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Shopping and banking sites use SSL, so that's scrambled. Ordinary email and web pages aren't."
+        },
+        {
+          "s": "steve",
+          "t": "A listener asked whether it's safe to submit a form when the padlock isn't showing. The form may still be submitted over HTTPS, but you'd have to check the page's source to be sure, which is why good sites put the form itself on a secure page."
+        },
+        {
+          "s": "leo",
+          "t": "Modern browsers warn you when you're about to send data over an unencrypted connection."
+        },
+        {
+          "s": "steve",
+          "t": "SSL builds an encrypted tunnel before any of your data goes through it, so even the page address you request and your login are protected."
+        },
+        {
+          "type": "fact",
+          "title": "HTTPS",
+          "t": "HTTPS is ordinary web traffic sent through an SSL (now TLS) encrypted tunnel. The address starts with https:// and the browser shows a padlock. On an open hotspot, it's the difference between your password being readable and being scrambled."
+        }
+      ]
+    },
+    {
+      "title": "At Home: Turn On Encryption",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "At home I turn on WEP, or better, WPA."
+        },
+        {
+          "s": "steve",
+          "t": "People plug in new wireless gear, see that it works, and promise to set up encryption tomorrow. Tomorrow never comes."
+        },
+        {
+          "s": "steve",
+          "t": "WEP is badly broken; we'll cover why next week. WPA was designed to run on older WEP hardware and is industrial strength. Still, WEP is far better than nothing."
+        },
+        {
+          "s": "steve",
+          "t": "And on WEP networks, everyone typically shares one key, so anyone with the key can decrypt everyone else's traffic."
+        },
+        {
+          "s": "leo",
+          "t": "And if you share an access point with strangers, anyone on it can try to get into your computer."
+        },
+        {
+          "s": "steve",
+          "t": "That's why you need a personal firewall on your laptop, even if your home router protects your desktop. On XP SP2, the built-in Windows Firewall is enough here."
+        }
+      ]
+    },
+    {
+      "title": "On the Road",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Coffee shops, airports and hotels leave Wi-Fi open so people can connect. So what do you do?"
+        },
+        {
+          "s": "steve",
+          "t": "Imagine everyone in the coffee shop huddled behind you, reading every email you send and receive."
+        },
+        {
+          "s": "steve",
+          "t": "Business users connect back to the office over a VPN, usually IPSec, which strongly encrypts everything between you and the corporate network."
+        },
+        {
+          "s": "steve",
+          "t": "Everyone else can use a secure tunneling service. Your traffic is encrypted from your laptop to the provider, through the air and across the Internet, before it goes out normally, which also protects you from the hotspot's own staff."
+        },
+        {
+          "s": "leo",
+          "t": "I use iPhantom. HotSpotVPN is inexpensive and runs over SSL, so it gets through almost any hotspot. PublicVPN.com works the same way."
+        },
+        {
+          "type": "fact",
+          "title": "The vulnerable hop",
+          "t": "On public Wi-Fi, the riskiest part is the radio link between your laptop and the access point. A VPN or encrypted tunnel covers that hop, and everything up to the provider's server, so local eavesdroppers see only scrambled data."
+        },
+        {
+          "s": "steve",
+          "t": "If you're only browsing and don't mind people seeing which pages you visit, maybe it doesn't matter. But without protection, eavesdropping is completely possible."
+        },
+        {
+          "s": "steve",
+          "t": "One tip for sharing: if your access point is separate from your router, and the router has a built-in switch (most do), your wired traffic stays off the wireless side. You can share Wi-Fi safely, but it takes some thought."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why is an open Wi-Fi access point like a network hub?",
+      "options": [
+        "Everyone within range receives all the traffic",
+        "It routes each packet to only one device",
+        "It encrypts by default",
+        "It blocks sniffers"
+      ],
+      "answer": 0,
+      "explain": "Radio is a shared medium, so unencrypted frames are visible to every nearby device."
+    },
+    {
+      "q": "Which of these could a sniffer on open Wi-Fi typically read in 2005?",
+      "options": [
+        "POP email usernames and passwords",
+        "HTTPS banking pages",
+        "Data inside a VPN tunnel",
+        "WPA-encrypted traffic"
+      ],
+      "answer": 0,
+      "explain": "POP logins were sent in plain text. HTTPS and VPNs encrypt before your data leaves your laptop."
+    },
+    {
+      "q": "Why is shared-key WEP weak even when it's turned on?",
+      "options": [
+        "Everyone on the access point uses the same key, and WEP itself is broken",
+        "It uses too much bandwidth",
+        "It only works at home",
+        "It blocks firewalls"
+      ],
+      "answer": 0,
+      "explain": "Anyone with the key can decrypt others' traffic, and WEP can be cracked. WPA is the better choice."
+    },
+    {
+      "q": "What protects you at a public hotspot whose Wi-Fi you can't control?",
+      "options": [
+        "A VPN or secure tunneling service",
+        "Turning off your screen saver",
+        "A longer SSID",
+        "Sitting close to the router"
+      ],
+      "answer": 0,
+      "explain": "The tunnel encrypts your traffic from your laptop to a trusted server, covering the risky radio hop."
+    },
+    {
+      "q": "Why did RootkitRevealer flag Kaspersky and Norton software?",
+      "options": [
+        "They legitimately hide some of their own files and processes",
+        "They were infected",
+        "They were pirated copies",
+        "RootkitRevealer was broken"
+      ],
+      "answer": 0,
+      "explain": "It reports any difference between real and reported data, so legitimate hiders show up too."
+    }
+  ]
+}

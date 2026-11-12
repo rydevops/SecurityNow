@@ -1,0 +1,233 @@
+{
+  "number": 8,
+  "title": "DDoS Attacks",
+  "subtitle": "When a zombie army comes for you",
+  "date": "2005-10-06",
+  "description": "Distributed denial-of-service attacks are used to extort gaming and gambling sites, and to punish individual users who annoy a \"zombie fleet master.\" Can a router or firewall really stop them? And how do you dodge one aimed at you?",
+  "transcript": "https://www.grc.com/sn/sn-008.txt",
+  "audio": "http://media.GRC.com/sn/SN-008.mp3",
+  "chapters": [
+    {
+      "title": "Steve's Firsthand Experience",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 8, October 6, 2005: DDoS attacks. Steve, you're an expert on this the hard way."
+        },
+        {
+          "s": "steve",
+          "t": "Some years ago, a discussion in our newsgroups upset some young hackers. They controlled a fleet of infected PCs and knocked GRC.com off the Internet for hours."
+        }
+      ]
+    },
+    {
+      "title": "The Original DoS: SYN Floods",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A denial-of-service attack is any traffic that stops you from getting a service you want. The classic one against web servers was the SYN flood."
+        },
+        {
+          "s": "steve",
+          "t": "A TCP connection starts with a three-way handshake: the browser sends SYN, the server sets aside resources and replies SYN/ACK, and the browser finishes with ACK."
+        },
+        {
+          "s": "steve",
+          "t": "Send nothing but SYNs, and the server keeps setting aside resources for connections that never finish, until it runs out and drops real visitors."
+        },
+        {
+          "type": "fact",
+          "title": "The TCP three-way handshake",
+          "t": "SYN (\"let's talk\") → SYN/ACK (\"OK, I'm ready\") → ACK (\"great\"). A SYN flood sends only the first step, often from fake addresses, filling the server's table of half-open connections."
+        },
+        {
+          "s": "steve",
+          "t": "The key point is that it used up the server's memory and processing, not the bandwidth. A single PC could take down a major site."
+        },
+        {
+          "s": "steve",
+          "t": "Servers have since been hardened. When the pending-connection queue fills, they discard the oldest half-open attempts."
+        }
+      ]
+    },
+    {
+      "title": "Going Distributed",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Then came DDoS: distributed denial of service. Malware infects hundreds or thousands of PCs, sometimes tens of thousands, and a \"zombie master\" commands them all to attack one target."
+        },
+        {
+          "s": "steve",
+          "t": "I wasn't hit with SYNs. I was hit with plain old pings, ICMP, and enough of them to clog my connection to the Internet."
+        },
+        {
+          "s": "leo",
+          "t": "So they choked the pipe, not the server."
+        },
+        {
+          "s": "steve",
+          "t": "Think of sunlight on your hand. Normally it's fine, but put a magnifying glass over it and the same light, focused to a point, burns. Traffic from all over the Internet converging on one IP address does the same thing."
+        },
+        {
+          "type": "fact",
+          "title": "Bandwidth floods",
+          "t": "Once the incoming link is full, it doesn't matter how strong the server is: legitimate packets are lost in the flood. Only filtering upstream, at the ISP or beyond, can help."
+        },
+        {
+          "s": "steve",
+          "t": "My first defense was asking my provider, Verio, to block ICMP before it reached me. It worked, until the attackers switched to TCP SYN packets, which I couldn't block without blocking every real visitor."
+        },
+        {
+          "s": "leo",
+          "t": "Can't you just block IP addresses that send too many SYNs?"
+        },
+        {
+          "s": "steve",
+          "t": "The attackers fake the source address on every packet, so you may never see two from the same address."
+        },
+        {
+          "s": "leo",
+          "t": "Windows XP's raw sockets made that easy for zombie PCs. It's better now that Microsoft has removed them."
+        },
+        {
+          "s": "steve",
+          "t": "Better, but ICMP floods don't need raw sockets."
+        },
+        {
+          "type": "fact",
+          "title": "Spoofed source addresses",
+          "t": "The \"from\" address on an IP packet is filled in by the sender, and many networks don't check it. Raw sockets let ordinary Windows XP programs forge it. Microsoft restricted raw sockets in XP Service Pack 2."
+        }
+      ]
+    },
+    {
+      "title": "When You're the Target",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The question I get most: what do ordinary users do? Gamers, chatters and IM users all expose their IP address, and if they annoy the wrong person, they get blasted off the Internet."
+        },
+        {
+          "s": "leo",
+          "t": "Can't you turn off pings in your router?"
+        },
+        {
+          "s": "steve",
+          "t": "By the time the flood reaches your router, your connection is already full. That's why I object to routers and firewalls whose boxes promise DoS protection. They can't deliver it."
+        },
+        {
+          "s": "steve",
+          "t": "All the router can do is block traffic to the targeted computer, which disconnects it anyway."
+        },
+        {
+          "type": "fact",
+          "title": "Why your router can't save you",
+          "t": "A home router sits at the end of the pipe. A flood fills the pipe from the ISP's side, so anything you do at your end is too late. Protection has to happen upstream."
+        }
+      ]
+    },
+    {
+      "title": "Dodging the Bullet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Honestly, the best defense is not to annoy people. The other is to change your IP address, because attacks target your address, not your equipment."
+        },
+        {
+          "s": "steve",
+          "t": "Dial-up users get a new IP address every time they connect. For broadband, unplug the router and power down the cable modem for a while, even a few hours. If you reconnect too quickly, the ISP hands back the same address."
+        },
+        {
+          "s": "steve",
+          "t": "Or change the router's MAC address with its \"clone\" feature, if your ISP doesn't lock you to one. The ISP sees new hardware and assigns a new IP address."
+        },
+        {
+          "s": "leo",
+          "t": "But then someone else inherits the bad address."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Sometimes you get a fresh address that's already under attack, or one that file sharers keep connecting to because the previous owner ran Kazaa."
+        },
+        {
+          "s": "steve",
+          "t": "If you change your address but keep the same gaming name, they'll find you again. An instant-messaging system also gives your new address out automatically."
+        },
+        {
+          "s": "leo",
+          "t": "I use iPhantom, a proxy service that hides my real address. Would that help?"
+        },
+        {
+          "s": "steve",
+          "t": "It would. Only their address is visible, and they likely have far better upstream defenses than a typical ISP."
+        },
+        {
+          "s": "steve",
+          "t": "For security-minded people, it's worth powering everything down now and then, say on a Sunday you're offline, to pick up a new address. Your IP isn't secret, because it often appears in your email headers, but changing it helps."
+        },
+        {
+          "s": "leo",
+          "t": "And keep your own PC patched so it doesn't become one of the zombies."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the original SYN flood actually exhaust?",
+      "options": [
+        "The server's memory and processing for half-open connections",
+        "The victim's bandwidth",
+        "The DNS system",
+        "The victim's hard drive"
+      ],
+      "answer": 0,
+      "explain": "SYN floods filled the server's connection queue. Bandwidth floods came later with DDoS."
+    },
+    {
+      "q": "Why can't a home router protect you from a bandwidth flood?",
+      "options": [
+        "The flood fills your connection before it ever reaches the router",
+        "Routers can't read packets",
+        "Routers only work on Wi-Fi",
+        "Routers are always turned off"
+      ],
+      "answer": 0,
+      "explain": "The choke point is upstream, so filtering has to happen at the ISP or beyond."
+    },
+    {
+      "q": "Why is blocking the \"attacking\" IP addresses ineffective?",
+      "options": [
+        "Attack packets use forged, randomized source addresses",
+        "IP addresses are encrypted",
+        "Attackers use only one IP",
+        "Blocking IPs is illegal"
+      ],
+      "answer": 0,
+      "explain": "With spoofed sources you may never see two packets from the same address."
+    },
+    {
+      "q": "What's the most practical way for an individual to escape a DDoS?",
+      "options": [
+        "Get a new IP address, and change the username that drew the attack",
+        "Buy a faster router",
+        "Turn off the monitor",
+        "Install more antivirus software"
+      ],
+      "answer": 0,
+      "explain": "Attacks target your IP address. Power down long enough or clone a new MAC address to get a new one."
+    },
+    {
+      "q": "What happened when Verio blocked ICMP for GRC?",
+      "options": [
+        "It worked until attackers switched to TCP SYN packets",
+        "It ended attacks permanently",
+        "It broke email",
+        "It made the attack bigger"
+      ],
+      "answer": 0,
+      "explain": "GRC couldn't block TCP SYNs without blocking every legitimate web visitor."
+    }
+  ]
+}
