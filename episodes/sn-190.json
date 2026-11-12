@@ -1,0 +1,389 @@
+{
+  "number": 190,
+  "title": "Listener Feedback #63",
+  "subtitle": "A Q&A on TOR exit-node trust, HTTPS interception, Conficker symptoms, cookies and DIY crypto",
+  "date": "2009-04-02",
+  "description": "Recorded on April Fools' Day as Conficker's trigger date arrives: why running a TOR exit node takes \"balls of steel,\" how a corporate HTTPS-scanning gateway really decrypts your traffic, spotting a Conficker infection, why SpinRite wants a direct drive connection, cookie policy, when running as admin is fine, CryptoLink's rendezvous server, how password-strength meters guess, and why rolling your own hash-based cipher is a bad idea. Plus a new XP image-parsing flaw, GhostNet, and a border-town roaming surprise.",
+  "transcript": "https://www.grc.com/sn/sn-190.txt",
+  "audio": "http://media.GRC.com/sn/SN-190.mp3",
+  "chapters": [
+    {
+      "title": "Conficker's April Fools' Trigger",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're recording on April 1st, Conficker's trigger date. The point for listeners: nothing happens to you today. The C variant simply changes behavior, expanding from checking 250 pseudorandom domains a day to 50,000, making it far harder for defenders to pre-register and block them all, they only have to miss one."
+        },
+        {
+          "s": "steve",
+          "t": "Conficker also has peer-to-peer updating, so if even one node reaches an update, it feeds its peers. There's still more B variant out there than C, and only C changes today. My ordinary friends emailed asking if they should turn off their computers; no, this is a cat-and-mouse escalation, not a doomsday."
+        },
+        {
+          "s": "leo",
+          "t": "Once again, impressive technical skill from these guys. The payload approach is smart: as defenses improve, they update the worm."
+        }
+      ]
+    },
+    {
+      "title": "A New XP Image-Parsing Flaw",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A nasty new integer overflow in Windows XP only (not Vista or 7): in gdiplus.dll, the enhanced metafile handler, formally \"GdiPlus EMF GpFont.SetData Integer Overflow.\" A maliciously crafted image shown on your machine is a takeover: on a web page you visit, in an email you view (even without a preview pane), in an Office document or a PDF, anything that renders the image."
+        },
+        {
+          "s": "steve",
+          "t": "It's not known to be in the wild yet, and there's no patch, so it's a race. Microsoft has two weeks to Patch Tuesday, and this is bad enough that I expect a fix then. Until then there's a window."
+        },
+        {
+          "s": "leo",
+          "t": "Like the old WMF exploit, where we debated whether it was an intentional plant."
+        },
+        {
+          "s": "steve",
+          "t": "That WMF one I think was an intentional feature, a way to run native code from a metafile, left in since Windows 1.0 and forgotten, not a backdoor. This new one is different: just a programmer's integer-overflow mistake, and those are genuinely hard to foresee."
+        },
+        {
+          "type": "fact",
+          "title": "Why images are dangerous",
+          "t": "Image and metafile formats are parsed by complex code deep in the OS graphics stack, so a malformed file can trigger a buffer or integer overflow and run code. That's why \"just viewing\" an image, in a page, email, document or PDF, can compromise a machine."
+        }
+      ]
+    },
+    {
+      "title": "Firefox, Cisco and a Preview of GhostNet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Housekeeping: Firefox is now 3.0.8, fixing two flaws including one needing a malicious XML file (and, on the Mac, the Pwn2Own exploit). And Cisco released eight updates covering 11 security flaws in IOS router firmware, worth attention for anyone maintaining Cisco gear."
+        },
+        {
+          "s": "steve",
+          "t": "The big story is GhostNet, a spy network, named by Toronto researchers, that infiltrated at least 1,295 computers in 103 countries, including embassies and the Dalai Lama's offices, controlled almost entirely from computers in China (though they couldn't prove government involvement). Their report is beautifully written and conservative, so I'll devote next week's episode to it."
+        },
+        {
+          "s": "leo",
+          "t": "We kind of knew this was happening, and I'd be disappointed if our side weren't doing the same."
+        }
+      ]
+    },
+    {
+      "title": "Tools, a PDP-8 Kit, and a Roaming Surprise",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A Firefox find for tab addicts: Tree Style Tab, which shows tabs down the left side in an indented hierarchy (shift-click a link and it nests under its parent) and lets you protect tabs so you don't close them by accident. I end up with tab insanity, so I love it."
+        },
+        {
+          "s": "steve",
+          "t": "For listeners who missed the SBC-6120 PDP-8 kit, there are still some at SpareTimeGizmos.com. And on the multifunction (dual-personality) YubiKey, Stina says it won't ship until after summer, made by a major Swedish automotive key maker, with a discount for existing customers but no trade-in."
+        },
+        {
+          "s": "steve",
+          "t": "One odd tidbit: a conference-goer near the Mexican border got a $199 Verizon EVDO roaming charge because his card was captured by a stronger, less-busy Mexican cell tower. Verizon removed it \"just this once.\" The same happens near the Canadian border."
+        },
+        {
+          "s": "leo",
+          "t": "You can turn off data roaming on most phones, a good idea near a border."
+        }
+      ]
+    },
+    {
+      "title": "TOR Exit Nodes and the Trust Problem",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michael, an expat in Southeast Asia, uses TOR with his exit node pinned to US/Europe IPs, and asks Steve to run a trustworthy TOR server he could choose as his exit node, since a compromised exit node could sniff his login credentials."
+        },
+        {
+          "s": "steve",
+          "t": "I care passionately about being trustworthy, and I'd never abuse it. But I can't run a TOR exit node, because once traffic leaves the wire in my rack at Level 3, I lose all control. TOR peels encryption layer by layer, but at the exit node the innermost layer comes off and traffic goes onto the Internet in the clear."
+        },
+        {
+          "s": "steve",
+          "t": "So a government could subpoena a tap on that wire and I'd never know; my good intentions would be subverted. Exit-node traffic is also more interesting to watch precisely because people chose anonymity."
+        },
+        {
+          "s": "leo",
+          "t": "And there's real personal risk. A blogger (\"balls of steel to run a TOR exit node\") got a dawn police raid because his exit-node IP showed up in a child-porn site's logs; he was never charged, but they seized his computer. You don't know what people route through you."
+        },
+        {
+          "type": "fact",
+          "title": "TOR exit-node exposure",
+          "t": "An exit node is the last hop before the open Internet, so it sees unencrypted traffic and its IP is what remote sites log. Operators can face legal scrutiny for others' activity, which is why trustworthy exit capacity is scarce, exactly Michael's problem."
+        }
+      ]
+    },
+    {
+      "title": "How a Corporate HTTPS-Scanning Gateway Works",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Fred's company shows a daily pop-up: \"HTTPS scanning servers decrypt all HTTPS traffic.\" He doesn't object on the corporate domain but asks, can HTTPS really be decrypted, and what stops any server doing it?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, it's real, and Fred should know it's not just the corporate domain, it's everything, including external HTTPS sites. It works because every client in the company trusts a certificate from the gateway, which then acts like a certificate authority. You connect to the gateway thinking it's the remote server; it decrypts, inspects, and re-encrypts onward."
+        },
+        {
+          "s": "steve",
+          "t": "What stops any other server doing it is exactly that pre-installed trust: without the company's certificate in your machine, a stranger can't impersonate the site. I like that Fred's employer reminds him every single morning; they don't have to."
+        },
+        {
+          "s": "leo",
+          "t": "Courts have ruled companies can monitor their own equipment, but I always urge a posted, written policy, it's fairer and has a deterrent effect. Surprising people, as with the original adware discovery, is what makes them furious."
+        }
+      ]
+    },
+    {
+      "title": "Spotting a Conficker Infection",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jack in Tampa hears mouse clicks and typing coming from his speakers that aren't his, even with the browser closed, and his firewall is denying Firefox requests."
+        },
+        {
+          "s": "steve",
+          "t": "That sounds like he's not in control of his own machine. He's tried many scanners, but modern malware uses rootkits: once under the OS, it can hide from the very tools asking the OS what's there, as Sony's DRM rootkit hid from directory listings. The surest fix is to pull the drive, attach it as a data drive on a clean machine, and scan it there, don't run anything on the infected drive."
+        },
+        {
+          "s": "leo",
+          "t": "Blocking security sites is a classic Conficker symptom."
+        },
+        {
+          "s": "steve",
+          "t": "Right, a quick self-test: try to reach Microsoft.com, SANS.org or Symantec.com, and Windows Update. Conficker blocks those; if you can't get there, game over. With 9 to 15 million machines infected, listeners probably know someone who has it, so spread the word."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite on External and NAS Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul in Calgary has 5.6TB across internal, external USB/eSATA and NAS drives, and asks whether SpinRite works effectively on them."
+        },
+        {
+          "s": "steve",
+          "t": "There's a real difference. eSATA, SATA and parallel ATA all give SpinRite the full ATA command vocabulary, the intimate, low-level access it needs. USB and Firewire basically only let it read and write blocks of sectors, nowhere near the same recovery depth, and a NAS is just read/write over the network."
+        },
+        {
+          "s": "steve",
+          "t": "So for real maintenance or recovery, it's worth pulling the drive out and attaching it to a motherboard so SpinRite has the best possible connection. It can work over USB/Firewire, but for important data I'd always give it the direct ATA link."
+        }
+      ]
+    },
+    {
+      "title": "Cookies: Steve's Policy",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike asks Steve three questions: do you accept cookies, do you worry about them, and should they just be accepted to reduce hassle?"
+        },
+        {
+          "s": "steve",
+          "t": "I accept first-party cookies and never third-party cookies. I'm a middle-of-the-road cookie person, so I don't worry much, because I take one simple countermeasure. For Mike and most people: find the setting to disable third-party cookies (it's in IE, Firefox and Safari), flush existing cookies, and restart the browser."
+        },
+        {
+          "s": "steve",
+          "t": "That solves 99% of the tracking problem for 1% of the effort. Flash cookies are a separate, growing issue we'll cover, but blocking third-party cookies is the big win."
+        }
+      ]
+    },
+    {
+      "title": "When Running as Admin Is Fine",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lee refuses to run as administrator, and was surprised the MSRT won't run from a limited account."
+        },
+        {
+          "s": "steve",
+          "t": "I love his discipline, but that's actually the limited account working as intended, you don't want a limited user able to reach the deepest roots of the OS. MSRT is trusted Microsoft software that legitimately needs full system access, so it must run as admin."
+        },
+        {
+          "s": "steve",
+          "t": "There's a real role for administration beyond installing software; MSRT is a perfect example. Right-click and \"Run as administrator,\" supplying credentials, rather than logging out and in."
+        },
+        {
+          "s": "leo",
+          "t": "And thanks to User Account Control, even an admin account doesn't run fully elevated until you approve it."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, and this is security evolving: running as a limited user used to break software that wrongly assumed admin rights. Years of user pressure fixed that, so the old barrier is largely gone."
+        }
+      ]
+    },
+    {
+      "title": "Reaching Clients Behind NAT, and CryptoLink",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ben at Virginia Tech wants a client-server tool like a zombie's: each machine keeps an outbound TCP connection open to his server so he can remote-control it through NATs and firewalls. He suggests Steve build it into CryptoLink."
+        },
+        {
+          "s": "steve",
+          "t": "I loved Hamachi's zero-configuration ease but disliked that its network died when its servers went down. CryptoLink will offer multiple modes. For drop-in simplicity when both ends are behind NAT, a rendezvous server lets each side connect out, then coordinates a cross-NAT connection, no router configuration."
+        },
+        {
+          "s": "steve",
+          "t": "But I also want a Trust No One mode: someone like Ben who wants inbound connections can open his router, and then anyone anywhere, even behind NAT and ISP port blocks, can connect in, with no dependence on me. You get the best of all approaches."
+        },
+        {
+          "type": "fact",
+          "title": "NAT traversal via rendezvous",
+          "t": "Two machines both behind NAT can't directly reach each other, so a third \"rendezvous\" server observes each side's outbound packets and tells them how to connect, the same hole-punching idea used by VoIP and remote-desktop tools. It trades a little trust in the middleman for connections that \"just work.\""
+        }
+      ]
+    },
+    {
+      "title": "How Password-Strength Meters Work",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Poojan asks how those red-to-green password meters work: \"7EDAHR7J\" rates strong but \"01234567\" only fair, so it's more than length."
+        },
+        {
+          "s": "steve",
+          "t": "They're JavaScript heuristics, rules of thumb, with no standard. There's no agreed definition of a good password or where it turns green. Google was smart enough to flag 01234567, maybe by detecting a sequential run."
+        },
+        {
+          "s": "steve",
+          "t": "A meter typically rewards mixed case, mixed letters and numbers, and length. Put in your name and it says try again. It's a nice closed-loop way to educate ordinary users, even if our listeners already know it all. The real goal is entropy: random and long."
+        }
+      ]
+    },
+    {
+      "title": "Why Not to Roll Your Own Cipher",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dain (a YubiKing winner, and Swedish, not Swiss) proposes turning a hash into a cipher: generate an IV, append a passphrase, then hash repeatedly, appending each hash of the previous result to build a keystream as long as the plaintext, and XOR it with the message. Reversible with the same IV and passphrase. Did he miss something?"
+        },
+        {
+          "s": "steve",
+          "t": "It's clever, and it illustrates the perennial crypto gotcha: this stuff is really hard. It'll produce something, but is it secure? I have no idea, and neither does he, and a cryptographer might instantly see that iterating a hash makes, say, middle bits cancel. Repurposing a primitive designed for one job often has horrible, non-obvious flaws."
+        },
+        {
+          "s": "steve",
+          "t": "My rule: as simple as possible, but no simpler, and never invent your own crypto without a real cryptographer blessing it. Besides, iterated hashing is slow, and we already have AES, bullet-proof and unencumbered."
+        },
+        {
+          "s": "leo",
+          "t": "WEP is the object lesson: smart engineers who weren't crypto experts built something any expert could have seen was flawed."
+        }
+      ]
+    },
+    {
+      "title": "Password Overload and the Bigger Problem",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Richard's bookkeeper client juggles 200+ account names and passwords across 60 clients, some static, some rotating, on PCs and Macs, recorded in an unsecured handwritten journal. A better way?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't have one perfect answer, but step back: this whole nightmare serves the single purpose of authentication, \"am I me?\" A decade from now people will marvel that we wrote 200 passwords on paper. We will solve this, and the pressure is becoming overwhelming."
+        },
+        {
+          "s": "leo",
+          "t": "Pragmatically, a password manager. I recommend RoboForm on Windows, 1Password on Mac, and the open-source, cross-platform KeePass, which uses AES and Twofish, so the database itself is secure."
+        },
+        {
+          "s": "steve",
+          "t": "One question is whether you carry the database (e.g. on a USB key) or put it in the cloud pre-encrypted, as I do with Jungle Disk on Amazon S3 with a key Amazon never sees. The catch: cloud needs connectivity and availability, no good for offline full-disk-encryption login. There's no single answer, but we badly need one."
+        }
+      ]
+    },
+    {
+      "title": "Granularity, BartPE and Drive Snapshot",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John objects that Steve overuses \"granular.\" Does more granular mean bigger or smaller grains?"
+        },
+        {
+          "s": "steve",
+          "t": "Fair point, it's a geek colloquialism; I mean finely grained, but \"more granular\" is arguably meaningless on its own. Understood in context, but I'll be more careful."
+        },
+        {
+          "s": "leo",
+          "t": "Rick offers a tip: instead of fighting Drive Snapshot's DOS restore disk, build a BartPE disk (a free bootable Windows XP CD from pebuilder) that natively understands NTFS, USB and networks, copy your licensed Drive Snapshot .exe onto it, and use the normal GUI to back up and restore."
+        },
+        {
+          "s": "steve",
+          "t": "BartPE is great, I finally used it recently. It needs your original Windows install CD to pull trusted system files (so you don't start from a possibly infected Windows), then builds a bootable ISO that runs Windows from CD, handy for rescue and as a clean antivirus platform. TeraByte even offers a BartPE plug-in for its Image for Windows."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why won't Steve run a TOR exit node despite being trustworthy himself?",
+      "options": [
+        "Once traffic leaves his rack it travels unencrypted and could be subpoenaed or tapped beyond his control",
+        "TOR exit nodes require special government licensing",
+        "His ISP forbids all encrypted traffic",
+        "Exit nodes must decrypt and store every user's password"
+      ],
+      "answer": 0,
+      "explain": "At the exit node the last encryption layer is removed, so traffic is in the clear on the wire he doesn't control; a lawful tap there would subvert users' trust without his knowledge."
+    },
+    {
+      "q": "How can a corporate \"HTTPS scanning\" gateway decrypt employees' HTTPS traffic?",
+      "options": [
+        "Every client trusts a certificate from the gateway, so it can impersonate any site, decrypt, inspect, and re-encrypt",
+        "It brute-forces the SSL session key",
+        "HTTPS is not actually encrypted inside a company network",
+        "It reads the traffic before the browser encrypts it"
+      ],
+      "answer": 0,
+      "explain": "With the gateway's certificate pre-installed as trusted, your connection goes to the gateway (which acts as a CA); without that installed certificate, no outside server could do the same."
+    },
+    {
+      "q": "What is a reliable quick test for a Conficker infection?",
+      "options": [
+        "The machine can't reach Microsoft.com, SANS.org, Symantec.com, or Windows Update",
+        "The CPU fan runs constantly",
+        "The clock resets to April 1st",
+        "Pop-ups appear even offline"
+      ],
+      "answer": 0,
+      "explain": "Conficker blocks access to major security and update sites, so being unable to reach them (and Windows Update) is a strong indicator of infection."
+    },
+    {
+      "q": "Why does SpinRite work best on a drive connected via ATA rather than USB or a NAS?",
+      "options": [
+        "ATA gives SpinRite the full low-level command set for intimate drive access, while USB/network only allow reading and writing blocks",
+        "USB drives spin too slowly to repair",
+        "NAS drives use a different file system SpinRite can't read",
+        "Firewire corrupts data during recovery"
+      ],
+      "answer": 0,
+      "explain": "SATA/eSATA/PATA expose the drive's internal ATA commands SpinRite needs; USB, Firewire and network interfaces basically permit only block read/write, limiting recovery depth."
+    },
+    {
+      "q": "Why does Steve warn against Dain's hash-based cipher, even though it \"works\"?",
+      "options": [
+        "Repurposing a primitive for crypto often has subtle, non-obvious flaws only experts can spot, so you should never roll your own",
+        "Hash functions legally can't be used for encryption",
+        "It would be too fast and therefore insecure",
+        "XOR can never be reversed"
+      ],
+      "answer": 0,
+      "explain": "Producing output isn't the same as being secure; crypto is full of hidden weaknesses (as WEP showed), so never deploy homemade crypto without expert review, especially when AES already solves the problem."
+    },
+    {
+      "q": "How do password-strength meters typically decide a password is \"strong\"?",
+      "options": [
+        "JavaScript heuristics rewarding length plus mixed case, letters, numbers, and penalizing obvious patterns, with no single standard",
+        "A central server checks the password against a master list",
+        "They measure how long it takes you to type",
+        "They require an exact 8-character length"
+      ],
+      "answer": 0,
+      "explain": "The meters run rule-of-thumb JavaScript checks (length, character variety, detecting sequences like 01234567); there's no standard algorithm, and the aim is to nudge users toward entropy."
+    }
+  ]
+}
