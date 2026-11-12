@@ -1,0 +1,481 @@
+{
+  "number": 59,
+  "title": "Comparing 'Parallels' VMs",
+  "subtitle": "Microsoft's emergency VML patch, then Parallels vs. VMware",
+  "date": "2006-09-28",
+  "description": "First, an update on the VML zero-day: Microsoft's out-of-cycle patch, re-registering vgx.dll, and how Data Execution Prevention blocked the attack. Then the delayed main episode: Steve corrects his claim about VMware Server, tests Parallels on PC and Mac, explains dynamic disks and Parallels' Compressor, and reveals the VMware patents that keep checkpointing to itself.",
+  "transcript": "https://www.grc.com/sn/sn-059.txt",
+  "audio": "http://media.GRC.com/sn/SN-059.mp3",
+  "chapters": [
+    {
+      "title": "Microsoft's Emergency Patch",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 59, which was going to be 58. We'd finished recording our Parallels episode when the VML flaw broke out, so we jumped on that first."
+        },
+        {
+          "s": "steve",
+          "t": "We were ahead of the curve. I also went on your KFI radio show that weekend, when there was very little coverage."
+        },
+        {
+          "s": "leo",
+          "t": "The VML flaw let a malicious site infect any system through a little-known graphics format, the Vector Markup Language, no matter how up to date its patches were."
+        },
+        {
+          "s": "steve",
+          "t": "It had all the earmarks of something malicious hackers couldn't resist, and it spread exactly as we predicted, including in mass emails and spam. Vulnerabilities are now sold as commodities, with organized crime involved."
+        },
+        {
+          "s": "steve",
+          "t": "The news: Microsoft decided it was too serious to wait three weeks for October 10th, and issued one of its rare out-of-cycle updates. Windows Update now carries the official fix."
+        },
+        {
+          "s": "leo",
+          "t": "It doesn't seem to be pushed out yet."
+        },
+        {
+          "s": "steve",
+          "t": "It's rolling out slowly. Run Windows Update yourself. Applying it doesn't re-register the DLL you unregistered last week."
+        },
+        {
+          "s": "steve",
+          "t": "So run Windows Update, reboot if it asks (my Windows 2000 machine did, XP may not), then re-register the DLL."
+        },
+        {
+          "s": "steve",
+          "t": "A third party has published a harmless test page that draws red VML rectangles. If the DLL is still unregistered, nothing appears. If you're vulnerable, your browser crashes, harmlessly. If you're patched and registered, you see the rectangles. It's linked in our Episode 58 notes."
+        }
+      ]
+    },
+    {
+      "title": "DEP Stopped It",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Listeners, starting with Ian Shane, wrote that Data Execution Prevention, built into new Intel and AMD processors, blocked this exploit."
+        },
+        {
+          "s": "steve",
+          "t": "There are hardware and software flavors of DEP. This overrun runs code on the stack, which should only hold data. If Windows marks the stack non-executable, it raises an exception."
+        },
+        {
+          "s": "steve",
+          "t": "Both hardware and software DEP caught this VML exploit. The earlier WMF exploit was caught only by hardware DEP."
+        },
+        {
+          "s": "leo",
+          "t": "Hardware DEP needs a processor with NX or XD capability, AMD's and Intel's names for it."
+        },
+        {
+          "s": "steve",
+          "t": "All new processors have it. XP SP2 supports it, but doesn't enable it for everything by default because of false positives. Some people who turn it on need to add exceptions."
+        },
+        {
+          "s": "leo",
+          "t": "Open System Properties, the Advanced tab, the Performance settings, then Data Execution Prevention. The default is essential Windows programs only. I'll turn it on for all programs, and hope it doesn't crash our recording."
+        },
+        {
+          "s": "steve",
+          "t": "The vulnerable DLL loads inside IE, so you want the broadest protection."
+        },
+        {
+          "s": "leo",
+          "t": "I think George Ou, TechRepublic's technical director, who blogs about security for ZDNet, noticed it first. And when buying new hardware, make sure it supports hardware DEP."
+        },
+        {
+          "type": "fact",
+          "title": "DEP today",
+          "t": "Since Windows 8, DEP is always on for 64-bit programs, and modern Windows adds further exploit mitigations like ASLR and Control Flow Guard. Windows Security's \"Exploit protection\" settings show them."
+        }
+      ]
+    },
+    {
+      "title": "Correcting Last Week",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now, the episode we recorded last week. I thought I'd wrapped up virtualization, but you and many listeners asked: what about Parallels?"
+        },
+        {
+          "s": "steve",
+          "t": "Parallels just reached the version 2.2 release candidate for the PC, adding some really nice finishing touches. I have machines with known performance and it's all fresh in my head, so better now than later."
+        },
+        {
+          "s": "leo",
+          "t": "I'd only heard of Parallels as a way to run Windows on a Mac, but they've been around a while."
+        },
+        {
+          "s": "steve",
+          "t": "First, a significant correction. VMware Server has only been free since August, while Workstation costs $189."
+        },
+        {
+          "s": "steve",
+          "t": "I said Server lacked sound and USB. Wrong. When you create a VM in Server, its default devices don't include them, because it's server-oriented. But an \"Add\" button right there lets you add sound and USB, plus serial and parallel ports, more drives and CD-ROMs."
+        },
+        {
+          "s": "steve",
+          "t": "That makes free VMware Server much more appealing. You don't need $189 Workstation for sound and USB."
+        }
+      ]
+    },
+    {
+      "title": "Parallels: Friendly and Fast",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Parallels, at parallels.com, is very much like VMware: actively friendly to Linux, FreeBSD, OS/2 Warp, Solaris and every version of Windows. Microsoft's Virtual PC is almost openly hostile to anything that isn't Windows."
+        },
+        {
+          "s": "steve",
+          "t": "It's $49 for the Intel Mac or PC version."
+        },
+        {
+          "s": "leo",
+          "t": "Now it's $79.99 for the Mac. It was $49 in pre-release. The PC version is $49.99."
+        },
+        {
+          "s": "steve",
+          "t": "Less competition on the Mac, probably."
+        },
+        {
+          "s": "steve",
+          "t": "What's interesting is performance. On the same PC, with complete sound and USB support, Windows installs faster and runs more smoothly in Parallels than in VMware or Virtual PC. I tested the 2.2 release candidate, and it ran without trouble."
+        }
+      ]
+    },
+    {
+      "title": "Dynamic Disks and the Compressor",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Parallels also sells something unique, for about $49 more: the Virtual Machine Compressor."
+        },
+        {
+          "s": "steve",
+          "t": "First, something all these products share. A virtual disk is just a file on the host, and files can grow. So you can have a fixed-size virtual disk, or one that starts small and grows as needed."
+        },
+        {
+          "s": "leo",
+          "t": "Which I think is fantastic."
+        },
+        {
+          "s": "steve",
+          "t": "It makes my assembly-coder skin crawl. Growing files run into each other, which causes fragmentation."
+        },
+        {
+          "s": "steve",
+          "t": "Optimally you'd defragment the host, then create one large contiguous virtual disk. It's like Windows' paging file: people who tune Windows set its minimum and maximum to the same size so it never grows."
+        },
+        {
+          "s": "leo",
+          "t": "Can't you choose a fixed-size disk in these programs?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, and they all say dynamic disks are slower. With a fixed disk, the VM can predetermine where everything is. You can feel the difference unless you have screaming RAID drives."
+        },
+        {
+          "s": "steve",
+          "t": "Parallels' Compressor works on VMware and Virtual PC disks as well as its own, and the results are impressive."
+        },
+        {
+          "s": "steve",
+          "t": "I installed XP in a 4,096MB fixed virtual disk, fully updated and registered. Converting it to a dynamic disk brought it to 2,406MB. The Compressor took it to 1,028MB, still fully bootable. Zipped for transport: 417MB, a tenth of the original."
+        },
+        {
+          "s": "leo",
+          "t": "Is it actually compressing, like ZIP?"
+        },
+        {
+          "s": "steve",
+          "t": "No. It squeezes the air out of the file, and it's still usable. It's a CD image, an ISO, that you boot inside the VM. It knows how Windows wastes space: downloads you don't need, temporary Internet files, Windows temp files. It even compacts the registry."
+        },
+        {
+          "s": "leo",
+          "t": "I made a 10-gigabyte Parallels disk and want to move it to my new Mac Pro."
+        },
+        {
+          "s": "steve",
+          "t": "There's a free demo, so try it. Zipping alone also shrinks a disk a lot."
+        },
+        {
+          "s": "steve",
+          "t": "With Parallels and a 417MB XP image, you could carry a running Windows on a CD or a 512MB USB key."
+        },
+        {
+          "s": "leo",
+          "t": "I installed Windows in Parallels from an ISO I made of the disc, too."
+        }
+      ]
+    },
+    {
+      "title": "Moving Windows Without Reactivating",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "If I activate Windows in a VM and move it to another machine, does Microsoft see a new machine?"
+        },
+        {
+          "s": "steve",
+          "t": "No, it's the same. The VM presents completely virtual hardware, even a virtual network adapter, so the guest sees the same machine wherever it runs."
+        },
+        {
+          "s": "leo",
+          "t": "So I can move it from laptop to desktop with no reactivation. And if I trash it, I restore my 400MB copy. No Windows Genuine Advantage bogosity."
+        },
+        {
+          "s": "steve",
+          "t": "XP bit me early on. I used to install Windows 2000 once, image it, and use Partition Magic to make 20 identical 4GB bootable partitions for testing firewalls. XP said, \"This is a new world. I need to reactivate.\" VMs avoid that."
+        },
+        {
+          "s": "leo",
+          "t": "I paid $300 for a full copy of Windows. There's only one of me. I'd like to run it in VMs on two machines, never at the same time."
+        },
+        {
+          "type": "fact",
+          "title": "Licensing and VMs",
+          "t": "Moving a VM keeps its virtual hardware the same, so Windows usually doesn't ask to reactivate. Whether you may run one license in more than one place is a separate question set by Microsoft's license terms, which have changed over the years."
+        }
+      ]
+    },
+    {
+      "title": "RAM Is the Real Cost",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "All of this is resource hungry. A running VM takes a chunk of RAM away from your host. RAM is the first thing you run out of."
+        },
+        {
+          "s": "leo",
+          "t": "On an Intel Mac, 2GB is the minimum: about a gig for Mac OS and a gig for Windows. My new Mac Pro is a quad-core Woodcrest with 4GB."
+        },
+        {
+          "s": "steve",
+          "t": "On my MacBook Pro, I first used Boot Camp to give Windows a big partition, then shrank it as I liked the Mac more, until Boot Camp was gone."
+        },
+        {
+          "s": "steve",
+          "t": "Now I can tell you there's no perceptible difference running XP in Parallels, full screen or windowed, compared with booting it natively in Boot Camp. For a strong MacBook, Parallels is an absolute solution."
+        },
+        {
+          "s": "steve",
+          "t": "It's even smoother there than on my PC, which has just 1GB and a 2GHz processor. Parallels already supports Intel VT and AMD's virtualization."
+        },
+        {
+          "s": "steve",
+          "t": "For simple browser or email containment, Sandboxie is still much lighter. VMs are for ultimate security and other operating systems."
+        }
+      ]
+    },
+    {
+      "title": "The Patent Behind Checkpoints",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One VMware feature is missing from Parallels and Virtual PC: checkpointing."
+        },
+        {
+          "s": "steve",
+          "t": "VMware Workstation lets you take multiple checkpoints and jump back to any one. It's great for debugging: checkpoint before a risky step and turn back the clock."
+        },
+        {
+          "s": "steve",
+          "t": "It can also use one master disk and branch other VMs off it, storing only their changes, instead of 15 full copies. VMware Server allows just one checkpoint."
+        },
+        {
+          "s": "steve",
+          "t": "I remembered a long list of patent numbers on VMware's site and in its About box, and I had a hunch."
+        },
+        {
+          "s": "leo",
+          "t": "They're patent-happy."
+        },
+        {
+          "s": "steve",
+          "t": "Patent 6,397,242, filed in October 1998, is \"Virtualization System Including a Virtual Machine Monitor for a Computer with a Segmented Architecture.\" That sounds like a generic description of VMs."
+        },
+        {
+          "s": "leo",
+          "t": "Then why are there so many competitors?"
+        },
+        {
+          "s": "steve",
+          "t": "There are limits to what can be patented, and as Intel and AMD build virtualization into hardware, early advantages fade. I counted 13 patents."
+        },
+        {
+          "s": "steve",
+          "t": "Then 6,795,966, filed February 2000 and issued September 21, 2004: \"Mechanism for Restoring, Porting, Replicating, and Checkpointing\" computer systems. It covers capturing a system's entire state as checkpoints, restoring them any number of times, and loading them into other systems, even across a network."
+        },
+        {
+          "s": "leo",
+          "t": "That's why you pay $189."
+        },
+        {
+          "s": "steve",
+          "t": "I'm moderately hostile to the Patent Office giving away what is just engineering."
+        },
+        {
+          "s": "leo",
+          "t": "To me, raw speed matters more."
+        },
+        {
+          "s": "steve",
+          "t": "And Parallels and Virtual PC are completely usable. Parallels can clone disks, so you can stamp out copies: one with plain Windows, one with Office, or 15 ready for different firewalls."
+        },
+        {
+          "s": "leo",
+          "t": "I'm going to need a bigger hard drive. It's a toy chest: today, BSD, Linux or XP?"
+        },
+        {
+          "s": "steve",
+          "t": "I've often wiped a test setup and wished I had it two weeks later. Cheap drives let you keep them."
+        },
+        {
+          "type": "fact",
+          "title": "Snapshots for everyone",
+          "t": "Snapshot features became standard as the patents aged. Parallels Desktop 3.0 added snapshots in 2007, and VirtualBox, Hyper-V and others all offer them today."
+        }
+      ]
+    },
+    {
+      "title": "Testing and Trying",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I'll benchmark my new Mac Pro, including CPU-bound tests like the Junior chess program's benchmark."
+        },
+        {
+          "s": "steve",
+          "t": "CPU power shouldn't drop much in a VM, since that's what the guest and host share most directly. The overhead is in I/O: virtual disks, USB, the network adapter and graphics. That's what you feel."
+        },
+        {
+          "s": "leo",
+          "t": "I click the Start menu, deal a few hands of Solitaire. Parallels feels as responsive as Windows. That matters more than 20 percent on a chess benchmark."
+        },
+        {
+          "s": "leo",
+          "t": "I bought a 30-inch monitor to run Windows and Mac side by side in one window."
+        },
+        {
+          "s": "steve",
+          "t": "Parallels has a 15-day free trial. And all of these can pause a running OS, saving the whole machine's state, so even FreeBSD can be suspended and resumed faster than booting."
+        },
+        {
+          "s": "steve",
+          "t": "Ultimately, VMs give the most robust protection short of a physically separate machine. My test PC was underpowered. On my faster machine with 2GB, I feel no VMware overhead."
+        },
+        {
+          "s": "steve",
+          "t": "So unless you need VMware Workstation's patented checkpointing, or you're on a Mac, the free VMware Server, with sound and USB added, is a great solution."
+        },
+        {
+          "s": "leo",
+          "t": "VMworld is in November at the L.A. Convention Center. You may have an update."
+        }
+      ]
+    },
+    {
+      "title": "Podcast Expo and a New Show",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Visa's last week sponsoring us, Dell continues, and Astaro has supported us from the start, never asking how many people listen."
+        },
+        {
+          "s": "steve",
+          "t": "About 100,000, maybe 120,000 now."
+        },
+        {
+          "s": "steve",
+          "t": "My CSS menu page still gets about 850 visitors a day."
+        },
+        {
+          "s": "leo",
+          "t": "I'll bring you O'Reilly's \"CSS: The Missing Manual\" at Podcast Expo in Ontario, California, on Friday the 29th. I'm giving the keynote, \"Podcasting's Terrible Twos,\" followed by Ron Moore, producer of \"Battlestar Galactica.\""
+        },
+        {
+          "s": "steve",
+          "t": "And tomorrow is the season finale of both Stargate series."
+        },
+        {
+          "s": "leo",
+          "t": "And our new Windows Vista podcast with Paul Thurrott launches tomorrow. We may even get Jim Allchin's exit interview from Microsoft."
+        },
+        {
+          "type": "fact",
+          "title": "Windows Weekly",
+          "t": "The new show with Paul Thurrott became \"Windows Weekly,\" which ran for nearly two decades on TWiT."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "After Microsoft's out-of-cycle VML patch, what extra step did Steve say to take?",
+      "options": [
+        "Re-register vgx.dll, since the patch doesn't do it",
+        "Reinstall Windows",
+        "Leave the DLL unregistered forever",
+        "Turn off DEP"
+      ],
+      "answer": 0,
+      "explain": "A harmless test page shows red rectangles when you're patched and registered."
+    },
+    {
+      "q": "What blocked the VML exploit on some machines even before the patch?",
+      "options": [
+        "Data Execution Prevention, which refuses to run code from the stack",
+        "The Windows Firewall",
+        "Antivirus",
+        "A NAT router"
+      ],
+      "answer": 0,
+      "explain": "Hardware DEP needs a processor with NX or XD support."
+    },
+    {
+      "q": "What did Steve correct about VMware's free Server product?",
+      "options": [
+        "It does support sound and USB; you add them when creating the VM",
+        "It costs $189",
+        "It only runs Linux",
+        "It has unlimited checkpoints"
+      ],
+      "answer": 0,
+      "explain": "They aren't included by default because it's server-oriented."
+    },
+    {
+      "q": "Why are growing (\"dynamic\") virtual disks slower than fixed-size ones?",
+      "options": [
+        "They fragment and prevent the VM from knowing where data is in advance",
+        "They're encrypted",
+        "They use more RAM",
+        "They're compressed"
+      ],
+      "answer": 0,
+      "explain": "All three products say fixed disks perform better."
+    },
+    {
+      "q": "Why did only VMware Workstation offer multiple checkpoints in 2006?",
+      "options": [
+        "VMware held patents on checkpointing virtual machines",
+        "Others didn't think of it",
+        "Microsoft banned it",
+        "It needs special hardware"
+      ],
+      "answer": 0,
+      "explain": "Steve found its 2004 patent on restoring and replicating checkpoints."
+    },
+    {
+      "q": "Why doesn't moving a Windows VM to another computer usually trigger reactivation?",
+      "options": [
+        "The VM presents the same virtual hardware wherever it runs",
+        "Activation is disabled in VMs",
+        "VMs have no network",
+        "Windows can't detect VMs at all"
+      ],
+      "answer": 0,
+      "explain": "Steve once had to reactivate XP after cloning it to new partitions."
+    }
+  ]
+}
