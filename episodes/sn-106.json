@@ -1,0 +1,633 @@
+{
+  "number": 106,
+  "title": "Listener Mailbag #2",
+  "subtitle": "Changing irises, USB attack drives, honeypot forms and more",
+  "date": "2007-08-23",
+  "description": "Before his home is fumigated, Steve explains why he dropped affiliate marketing, shares a TiVo rescue, and notes SpinRite can't boot on Intel Macs. The mailbag covers irises that change with age, an idea to log in with your brain's reaction to music, U3 drives turned into attack tools, why resized images strip out exploits, a clever hidden-field spam trap, Corsair's keypad-locked flash drive, PayPal's insistence on checking accounts, Hitachi's encrypting laptop drives, VeriSign's PIP OpenID service, Astaro as a VMware appliance, and hardware versus software firewalls.",
+  "transcript": "https://www.grc.com/sn/sn-106.txt",
+  "audio": "http://media.GRC.com/sn/SN-106.mp3",
+  "chapters": [
+    {
+      "title": "Fumigation and a Thursday Habit",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's a listener mailbag episode, with Steve in his soon-to-be-tented lair in Irvine, California."
+        },
+        {
+          "s": "steve",
+          "t": "Going through the email gives me such a great feeling. One guy said he just waits for Thursdays."
+        },
+        {
+          "s": "leo",
+          "t": "That's why your consistency matters. No podcast left behind."
+        },
+        {
+          "s": "steve",
+          "t": "Come rain, sleet, snow or termite fumigation, there will be a podcast."
+        },
+        {
+          "s": "leo",
+          "t": "Is it poison, or orange peel injected into your home?"
+        },
+        {
+          "s": "steve",
+          "t": "There was huge anti-fumigation sentiment. People didn't want to leave their homes for a couple of days. I'm now more of an expert than I needed to be."
+        },
+        {
+          "s": "steve",
+          "t": "Spot treatments like orange oil work when you know exactly where a localized problem is and can reach it. Heat treatment cooks them. There's microwaving and electrification. But nothing handles whole-structure problems like fumigation."
+        },
+        {
+          "s": "steve",
+          "t": "We also have spiders coming out of the woodwork and mud wasp nests. The day I'm back, I'll knock down their little mud huts, knowing they're empty or deceased."
+        },
+        {
+          "s": "steve",
+          "t": "So we're recording two podcasts today. Next week I'll be away from my machines, with a laptop at Starbucks."
+        },
+        {
+          "s": "leo",
+          "t": "Are you sleeping at Starbucks too?"
+        },
+        {
+          "s": "steve",
+          "t": "That's what I told a friend."
+        }
+      ]
+    },
+    {
+      "title": "Why GRC Skipped Affiliate Marketing",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "No errata, but a reminder of an unusual use for SpinRite, from our newsgroups."
+        },
+        {
+          "s": "steve",
+          "t": "When I was in Canada with Mark Thompson a couple of weeks ago, he suggested affiliate marketing: paying commissions to people who send buyers to GRC."
+        },
+        {
+          "s": "steve",
+          "t": "I raised it in GRC's newsgroups. That's a traditional NNTP news server, readable in Outlook, Outlook Express or Thunderbird. I use Gravity. It's a fantastic bunch of newsgroups and, mostly, people."
+        },
+        {
+          "s": "steve",
+          "t": "The long discussion put me off the idea. Doing it right means preventing flaky or spamming affiliates who shotgun people toward GRC. I don't want any affiliation, no pun intended, with them."
+        },
+        {
+          "s": "leo",
+          "t": "Lots of antivirus companies use affiliates, and they're hard to control."
+        },
+        {
+          "s": "steve",
+          "t": "I love how simple I've kept my little company. Adding a wildcard that could fail seems like a bad idea."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Fixes a TiVo",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Skip quoted me in that thread saying SpinRite's appeal is too narrow for shotgun marketing. He agreed: it's always bought in time of need. He bought it in distress, saved his drive, and fixed two family drives a year later."
+        },
+        {
+          "s": "steve",
+          "t": "His father, a fan of mine for years for reasons Skip isn't sure of, bought SpinRite preemptively, on principle, and never needed it."
+        },
+        {
+          "s": "steve",
+          "t": "Then his TiVo started randomly skipping and jumping in recorded programs. Remembering our podcast, Skip had him remove the drive and run SpinRite. Voila: one very happy father who kept a couple of science programs, not soaps, and a rock-solid TiVo."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite runs on any drive, including DVRs, which get hot and use their drives heavily. Lots of people have written that it fixed theirs."
+        },
+        {
+          "s": "leo",
+          "t": "It's independent of the operating system and file system. It works way below that, on iPods, Linux boxes, whatever."
+        },
+        {
+          "s": "steve",
+          "t": "Another listener ran SpinRite in VMware on his Linux machine. VMware can give a virtual machine direct physical access to a drive, which SpinRite needs."
+        },
+        {
+          "s": "steve",
+          "t": "Would that work in VMware on a Mac? Intel Macs use EFI, a newer generation than the BIOS SpinRite was born and bred on. SpinRite still depends on BIOS functions EFI lacks, so it can't boot directly on an Intel Mac."
+        },
+        {
+          "s": "leo",
+          "t": "You'd have to pull the drive out."
+        },
+        {
+          "s": "steve",
+          "t": "People do, and it fixes their Macs. But it's a pain in the Mac, especially for preventive maintenance."
+        },
+        {
+          "s": "leo",
+          "t": "I've been playing with VMware Fusion on the Mac. It's $80, much less than the big VMware. Feature for feature it's nearly identical to Parallels, which also runs Windows apps alongside Mac apps. VMware adds virtual appliances."
+        },
+        {
+          "s": "steve",
+          "t": "Which comes up in our mailbag."
+        }
+      ]
+    },
+    {
+      "title": "Your Iris Changes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I'll be your reader. Mike Gunn in San Francisco says irises do change. His kids' optometrist suggests photographing the iris, because aging and conditions like diabetes change how it looks. They can spot disease by comparing against a baseline. And Robert Heron's eye surgery would have changed his."
+        },
+        {
+          "s": "leo",
+          "t": "He also suggests asking your optometrist for a picture of your iris as desktop art. Irises are pretty."
+        },
+        {
+          "s": "steve",
+          "t": "The latest Scientific American has an article on the twitchy movements of our eyes, which Jeff Hawkins discusses in \"On Intelligence.\" Images must keep moving on the retina, creating a changing picture for the brain to process."
+        },
+        {
+          "s": "steve",
+          "t": "It showed a spectacularly symmetrical iris. As a hard contact lens wearer, I stare at mine sometimes. It has some wigs and wags. Maybe that one was young and mine's getting old."
+        },
+        {
+          "s": "leo",
+          "t": "Fingerprints change too. But if systems look at the basic fundamentals, those don't change significantly."
+        }
+      ]
+    },
+    {
+      "title": "Logging In With Your Brain",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Martin Yeomans of Memphis, Tennessee, an occupational therapist and Mensa member, read \"On Intelligence\" and recalled an NPR story on Dartmouth research about the auditory cortex."
+        },
+        {
+          "s": "leo",
+          "t": "Researchers played music while monitoring the auditory cortex. When the music stopped, so did the activity, unless the subject knew the song. Then the brain kept going, filling in the gap."
+        },
+        {
+          "s": "leo",
+          "t": "He suggests national security uses: secretly monitor someone while playing iconic music from the U.S., Europe, the Middle East and China, to see which they know."
+        },
+        {
+          "s": "steve",
+          "t": "Isn't that cool? Your brain gives it away involuntarily."
+        },
+        {
+          "s": "leo",
+          "t": "You could make a pretty good lie detector. And he asks: instead of a password, you learn a song. The system plays snippets and measures your brain's reaction, proving you're you in a way that can't be spoofed."
+        },
+        {
+          "s": "steve",
+          "t": "I researched what kind of brain scan this means. Scalp electrodes pick up brain waves, like alpha, beta and theta. But pinpointing auditory cortex activity needs probes in your gray matter or a detailed brain scan. The article just says \"brain scan.\""
+        },
+        {
+          "s": "steve",
+          "t": "He asks whether it's something you know or something you are. It's asking your brain, involuntarily, whether it knows something."
+        },
+        {
+          "s": "steve",
+          "t": "It's impractical, since we can't yet scan a specific brain region at that resolution without great inconvenience. But a cool idea."
+        }
+      ]
+    },
+    {
+      "title": "U3 Drives as Attack Tools",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Daniel Barber, who must be a sysadmin, is even more worried about U3 than we are."
+        },
+        {
+          "s": "leo",
+          "t": "U3 works by mounting a CD-ROM image. Using the U3 updater, you can flash the drive with a custom CD image, so anything a CD's autorun could launch runs when the drive is inserted."
+        },
+        {
+          "s": "leo",
+          "t": "There's an online community making attack \"appliances\" this way. Switchblade quickly grabs Windows logon hashes and passwords stored in IE and Firefox onto the drive. USB Hacksaw installs a compromised VNC server, opening the host to remote control. We demoed this on Call For Help over a year ago."
+        },
+        {
+          "s": "leo",
+          "t": "He also mentions iPod slurping: people would plug iPods into Apple Store machines and copy software onto them. He's looking into blocking USB drives with Group Policy. I agree autorun drives are a bad idea."
+        },
+        {
+          "s": "steve",
+          "t": "USB, as convenient as it is, is a serious security threat, and corporations are realizing it. Thumb drives are tiny and easy to sneak in and out. Plug in a Switchblade, and it sucks private information from the machine and dismounts."
+        },
+        {
+          "s": "leo",
+          "t": "It's worse. Darren Kitchen on Hak.5 showed one where you plug a drive into a library computer, and it installs a keystroke-logging trojan. A week later you plug in again, and it copies the trojan's log."
+        },
+        {
+          "s": "steve",
+          "t": "Many corporations now disable USB ports. Even benign use is a vector: employees bring infected or spyware-laden apps from home."
+        },
+        {
+          "s": "leo",
+          "t": "Turning off autorun is a simple registry hack."
+        },
+        {
+          "s": "steve",
+          "t": "Security-conscious people do that first. I want to look at a disk in Windows Explorer and deliberately run what I choose."
+        },
+        {
+          "type": "fact",
+          "title": "Disabling AutoRun",
+          "t": "Microsoft later turned off AutoRun for USB drives by default, in a 2011 update for Windows XP and Vista and in Windows 7, largely because of worms like Conficker that spread by USB."
+        }
+      ]
+    },
+    {
+      "title": "Why Resized Images Are Safer",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Abhi Beckert of Cairns, Australia makes a good point about our worry that YouTube videos or JPEGs could infect you. Sites that accept uploaded JPEGs often resize them and change compression, which would destroy buried malware. YouTube converts every upload to Flash video."
+        },
+        {
+          "s": "steve",
+          "t": "He's absolutely right. An exploit image looks like a JPEG but holds deliberately crafted data that overruns a buffer in the display code and runs code hidden in the file."
+        },
+        {
+          "s": "steve",
+          "t": "Resizing or recompressing interprets the image fully and recreates it in a valid format. That blows out any hidden malware. A knockoff site that just posts files as uploaded wouldn't protect you."
+        },
+        {
+          "s": "leo",
+          "t": "But our example was a banner ad served complete, hack and all, by the ad server, as on MySpace and Tom's Hardware. That's different. If a site modifies what you upload, it kills the germs."
+        },
+        {
+          "s": "steve",
+          "t": "To cover the bases: the early-2006 Windows Metafile exploit wasn't a buffer overrun. It used a feature designed into metafiles from the beginning, so a valid image could survive conversion. Flaws in rendering code get pruned out. A designed-in feature doesn't."
+        }
+      ]
+    },
+    {
+      "title": "A Double Honeypot for Spam Bots",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jared in Calgary, Alberta blocks 99.9 percent of his blog spam with what he calls a \"double honeypot.\""
+        },
+        {
+          "s": "leo",
+          "t": "His form has three email fields. One, the second, is hidden with CSS, inherited from a parent container so it's not obvious. Bots tend to fill in all the email fields, or the first two they find."
+        },
+        {
+          "s": "leo",
+          "t": "If the second visible field is empty, the form complains, as for a human. If the invisible field has data, it assumes a bot. There's a warning for users with CSS off. The form reports success, but the comment goes into the bit bucket."
+        },
+        {
+          "s": "leo",
+          "t": "He rarely has to filter spam in WordPress now. The few that get through he thinks are humans, which is happening more, and he can moderate them easily. It doesn't frustrate commenters with games."
+        },
+        {
+          "s": "steve",
+          "t": "He uses the familiar \"enter your email again to confirm.\" You'd be surprised how often people don't type it the same twice."
+        },
+        {
+          "s": "steve",
+          "t": "He slipped a hidden field between the two, so humans fill in the first and third, but bots fill in two in a row or all of them. A simple way to handle at least bot spam."
+        }
+      ]
+    },
+    {
+      "title": "A Flash Drive With a Combination Lock",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brendan of Bismarck, North Dakota found Corsair's Flash Padlock, a thumb drive opened only by the right combination on its built-in keypad."
+        },
+        {
+          "s": "steve",
+          "t": "It's $29.95 for one gig or $39.95 for two. It has five buttons, each with two digits, like some car door keypads, so you can use any digits, like your birth date or Social Security number, horribly insecure as that is."
+        },
+        {
+          "s": "steve",
+          "t": "It's a longer dongle with a three-volt lithium cell. I've ordered two, one to play with and one to open up."
+        },
+        {
+          "s": "steve",
+          "t": "It apparently doesn't encrypt the contents. The company whose technology it uses has a fancier model that uses your code as the key for on-the-fly encryption. I'm almost positive this one acts as a traffic cop between the flash memory and the USB connector. So the NSA or FBI could open it, rewire it and bypass the security chip."
+        },
+        {
+          "s": "steve",
+          "t": "Still, for many people it's a nice solution. No software runs on your system, so it's platform neutral: Windows, Mac, Linux, or a Coke machine with USB."
+        },
+        {
+          "s": "steve",
+          "t": "The battery lets you unlock it before plugging it in. Press the key button, and within five seconds start entering a combination of up to 10 digits, which is hard to brute force. Red, green and blue lights show its status. Once unlocked, you have 15 seconds to plug it in."
+        },
+        {
+          "s": "steve",
+          "t": "Search \"flash padlock.\" I got mine from Amazon, a bit pricier. ATACOM.com has them at $29.95 and $39.95. I'll report back."
+        }
+      ]
+    },
+    {
+      "title": "Why Does PayPal Want My Checking Account?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Miles Bosworth of Asheville, North Carolina bought SpinRite to support the show and has since used it to fix his wife's unbootable laptop and a friend's error-plagued PC."
+        },
+        {
+          "s": "leo",
+          "t": "But he's dubious about PayPal. He only buys with a credit card, and never had a problem. Yet PayPal hounds him to \"get verified\" by giving checking account details, which link to his credit and savings through overdraft protection."
+        },
+        {
+          "s": "leo",
+          "t": "He's also uneasy that PayPal keeps his card details without asking. Years ago, after deleting a card, he couldn't add it again. Amazon gives you the choice at checkout. PayPal's replies were canned boilerplate. We should have asked our guest."
+        },
+        {
+          "s": "leo",
+          "t": "To verify, PayPal makes two tiny deposits of a few cents into your account and asks you the amounts."
+        },
+        {
+          "s": "steve",
+          "t": "I feel exactly the same way. Some sites only ship to a \"PayPal verified address.\" I finally gave in, confirmed the deposits, and was verified."
+        },
+        {
+          "s": "steve",
+          "t": "But now PayPal always defaults to my checking account, which my bookkeeper manages. Once money's pulled from checking, it's gone, and I don't know what protection PayPal gives. I can't find a way to change the default. Every purchase, I must change the funding source to my credit card, then get an \"are you sure\" screen. It's infuriating."
+        },
+        {
+          "s": "leo",
+          "t": "To explain, not justify: PayPal pays credit card fees, so taking money from your account is cheaper. And verification fights fraud, someone posing as someone else. It confirms who you are."
+        },
+        {
+          "s": "leo",
+          "t": "I held out a long time, until I hit a limit on transactions. Since verifying, it's been completely safe. Verification is one way they keep it safe. But they should let you choose your default funding source."
+        },
+        {
+          "s": "leo",
+          "t": "PayPal has a checkered past, and people remember. Strictness, like not letting you re-add a deleted card, is one way it got more reliable. But I'm not making apologies."
+        },
+        {
+          "s": "steve",
+          "t": "We've made very clear how we feel."
+        },
+        {
+          "s": "leo",
+          "t": "I have money in my PayPal account, and it uses that balance first, so it never pulls from my checking."
+        }
+      ]
+    },
+    {
+      "title": "Encrypting Laptop Drives Are Here",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Farren Constable of Manhattan, Kansas says I said drives with built-in encryption wouldn't be available for a while, but distributor ASI already sells laptops with them, maybe exclusively."
+        },
+        {
+          "s": "steve",
+          "t": "I don't remember predicting when. But I discovered a few weeks ago that they exist, and I have one. It's Hitachi, which bought IBM's drive business and once sold under the Travelstar label. Its full range of standard laptop drives offers on-the-fly 256-bit AES encryption."
+        },
+        {
+          "s": "steve",
+          "t": "It's still sealed in its static bag. I want to learn exactly how it works and whether it needs BIOS support. I'll report back."
+        },
+        {
+          "s": "leo",
+          "t": "Is it more secure because it's in the drive?"
+        },
+        {
+          "s": "steve",
+          "t": "You give it a password, maybe the standard BIOS drive password. It hashes that into a 256-bit key, and every sector written passes through AES, so the stored data is encrypted. Reading reverses it."
+        },
+        {
+          "s": "steve",
+          "t": "Without the password, no force on earth can get the data. Ordinary drive locking, like the Corsair padlock's, can be undone with a subpoena to the manufacturer. Not encryption. That's very cool in a laptop."
+        },
+        {
+          "type": "fact",
+          "title": "A later caveat",
+          "t": "In 2018, researchers found that several self-encrypting SSDs had flaws that let attackers bypass the encryption, so Microsoft stopped letting BitLocker rely on drive hardware encryption by default."
+        }
+      ]
+    },
+    {
+      "title": "VeriSign's PIP Takes PayPal Keys",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Edward in nearby Santa Rosa says VeriSign's OpenID service, PIP at pip.verisignlabs.com, now supports the PayPal Security Key. VeriSign's email says PayPal tokens work with PIP, using second-factor credentials from the VeriSign Identity Protection Network, and it can send a one-time PIN by SMS or email if you've forgotten your credentials."
+        },
+        {
+          "s": "steve",
+          "t": "PIP stands for Personal Identity Provider. We'll cover it in detail next week. Several listeners found it."
+        },
+        {
+          "s": "steve",
+          "t": "Our friend from PayPal, I hope still our friend after what we just said, explained that PayPal uses VIP behind its tokens. In follow-up research, I found VeriSign Labs sells its own tokens and bought three more. You can register multiple tokens at once, solving the one-at-home problem."
+        },
+        {
+          "s": "leo",
+          "t": "Edward now uses PIP as his main OpenID account instead of ClaimID. I use ClaimID too, so I'll switch, and use the dongle for OpenID logins. Or fob."
+        },
+        {
+          "s": "steve",
+          "t": "Our mail had a discussion. Officially, a dongle plugs into something, like old parallel-port dongles protecting expensive software. A fob is freestanding."
+        },
+        {
+          "s": "leo",
+          "t": "To me a fob hangs on a watch chain."
+        }
+      ]
+    },
+    {
+      "title": "Astaro as a Virtual Appliance",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "George in Ohio found something about our sponsor Astaro that I don't mention in the ads. His long-running SmoothWall box, the open-source firewall Patrick and I have talked about since Screensavers days, cooked when its processor fan died."
+        },
+        {
+          "s": "leo",
+          "t": "Before committing to Astaro, he visited Astaro.com/securitynow to check hardware compatibility and found a virtual appliance for VMware. He already runs the free VMware Player for testing Linux distros, so he downloaded it and likes what he sees. He's impressed they packaged it for people who want to try the interface first."
+        },
+        {
+          "s": "leo",
+          "t": "I noticed it too, testing VMware Fusion. It's about the fifth most popular appliance. Appliances are something VMware has over Parallels. And Parallels may be in doubt: the company its developers previously worked for says the software is theirs. A European court has not issued a preliminary injunction, but be aware. If you haven't bought Parallels, VMware is a good contender."
+        },
+        {
+          "s": "steve",
+          "t": "My friend Mark Thompson of AnalogX believes Parallels runs circles around VMware, though I haven't verified it."
+        },
+        {
+          "s": "leo",
+          "t": "Others say VMware is faster. They both use the hypervisor mode. A lot of it is psychology."
+        }
+      ]
+    },
+    {
+      "title": "Hardware Versus Software Firewalls",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Danny in Ogden, Utah does tech support for Juniper's firewall and intrusion detection and prevention products. He notes leaktests only apply to software firewalls. Juniper's aren't affected."
+        },
+        {
+          "s": "leo",
+          "t": "That's why we recommend routers."
+        },
+        {
+          "s": "steve",
+          "t": "Danny's right. A box outside the PC can't be disabled by software inside it. That's why I strongly recommend disabling Universal Plug and Play on routers. Software on a PC can use it to open incoming ports statically, and it was created without any security model at all. That's a sore point for me."
+        },
+        {
+          "s": "steve",
+          "t": "But external hardware can't tell which application generated traffic. All it sees is packets. A personal firewall can identify the process and check whether it's authorized."
+        },
+        {
+          "s": "leo",
+          "t": "A high-end router like Juniper's monitors outbound traffic, but can't figure out who did it."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. That's why people like personal firewalls."
+        },
+        {
+          "s": "leo",
+          "t": "Even if a bad guy can lie about it. To me that defeats the point. It can name the process but can't validate it."
+        },
+        {
+          "s": "steve",
+          "t": "And with servicehost.exe, a container for many Windows services, you lose the granularity of knowing which service is doing it."
+        }
+      ]
+    },
+    {
+      "title": "Testing a Phishing Site With a Wrong Code",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Paynter in Sydney, Australia has an observation about the fob, dongle, key, doohickey."
+        },
+        {
+          "s": "leo",
+          "t": "A spoof PayPal site could pop up a window for the key and accept any number. So enter a deliberately wrong number. If it's accepted, it didn't check. Security needs \"not\" logic."
+        },
+        {
+          "s": "steve",
+          "t": "Normally the doohickey authenticates you to the server. Mark's point: by deliberately lying to a possibly spoofed site, you authenticate it."
+        },
+        {
+          "s": "leo",
+          "t": "Most phishing sites don't go on after you enter your name and password. They just say thanks, bye. And even if you gave them your key code, it's good for only 30 seconds."
+        },
+        {
+          "s": "leo",
+          "t": "I've shown my code on our UStream feed during the radio show. People ask what I'm doing. I say don't worry."
+        },
+        {
+          "s": "steve",
+          "t": "We read our changing numbers on your KFI radio show last week. It's okay, because they won't be good."
+        },
+        {
+          "type": "fact",
+          "title": "Real-time phishing",
+          "t": "Mark's trick only catches a lazy fake. A man-in-the-middle phishing site can pass your entries to the real PayPal instantly and report its genuine response, so a wrong code would be rejected just as on the real site. Thirty seconds is plenty for that."
+        },
+        {
+          "s": "leo",
+          "t": "I'll make pip.verisign.com my OpenID provider, so every OpenID login needs the fob."
+        },
+        {
+          "s": "steve",
+          "t": "Given that you use VeriSign as your provider. And VeriSign lets you register multiple credentials and non-fob alternatives. They're coming up to speed nicely."
+        },
+        {
+          "s": "leo",
+          "t": "Next week?"
+        },
+        {
+          "s": "steve",
+          "t": "VeriSign's Identity Protection, VIP, plus changes I made to GRC's popular Perfect Passwords page from feedback, as I do a lot of work on the GRC site."
+        },
+        {
+          "s": "leo",
+          "t": "So the Perfect Passwords page wasn't perfect?"
+        },
+        {
+          "s": "steve",
+          "t": "Perfect enough, but even more perfect now. If \"Even More Perfect Passwords\" weren't a tongue twister, I'd have called it that."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why can't SpinRite boot directly on an Intel Mac?",
+      "options": [
+        "Intel Macs use EFI, which lacks BIOS functions SpinRite relies on",
+        "Macs have no hard drives",
+        "Apple blocks it",
+        "It's written for Linux"
+      ],
+      "answer": 0,
+      "explain": "Users can remove the drive and run it on a PC."
+    },
+    {
+      "q": "How do U3 drives become attack tools like Switchblade?",
+      "options": [
+        "U3 mounts a CD image that can be replaced with one that autoruns attack software",
+        "They overheat the computer",
+        "They erase the hard drive",
+        "They need a password"
+      ],
+      "answer": 0,
+      "explain": "Disabling autorun helps."
+    },
+    {
+      "q": "Why does resizing an uploaded JPEG remove a hidden exploit?",
+      "options": [
+        "The image is fully decoded and re-encoded in a valid format",
+        "Smaller files can't hold code",
+        "Resizing scans for viruses",
+        "JPEGs can't hold exploits"
+      ],
+      "answer": 0,
+      "explain": "Designed-in features, like the Windows Metafile flaw, could survive."
+    },
+    {
+      "q": "How did Jared's \"double honeypot\" catch spam bots?",
+      "options": [
+        "A hidden email field that only bots fill in",
+        "A math question",
+        "Blocking all email addresses",
+        "Requiring a phone number"
+      ],
+      "answer": 0,
+      "explain": "Humans fill in only the visible fields."
+    },
+    {
+      "q": "What's the difference between Hitachi's encrypting drive and an ordinary locked drive?",
+      "options": [
+        "The data itself is encrypted with AES, so it can't be read without the password",
+        "The encrypted one is faster",
+        "Locked drives use stronger codes",
+        "There's no difference"
+      ],
+      "answer": 0,
+      "explain": "A locked drive can be unlocked by the manufacturer."
+    },
+    {
+      "q": "What can a personal software firewall do that a hardware firewall can't?",
+      "options": [
+        "Tell which program on the PC is sending the traffic",
+        "Block inbound packets",
+        "Run without power",
+        "Stop UPnP"
+      ],
+      "answer": 0,
+      "explain": "But malware can lie about which program it is."
+    }
+  ]
+}
