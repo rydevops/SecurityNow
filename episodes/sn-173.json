@@ -1,0 +1,430 @@
+{
+  "number": 173,
+  "title": "Listener Feedback Q&A #55",
+  "subtitle": "Sandboxing USB drives, copying a key from 200 feet, and ZoneAlarm's sneaky DNS",
+  "date": "2008-12-04",
+  "description": "The 55th Q&A. News: worms spreading on the RPC port 445 flaw, the Vista route-add crash, a TrueCrypt update, copying house keys from a photo 200 feet away, Apple briefly recommending antivirus, and BT banning Phorm discussion. Then questions: sandboxing USB drives, PayPal tokens going international, servicing a TPM-locked laptop, destroying a dead hard drive, detecting corporate spyware, how IDE hard-drive locks really work, how an attacker knows a decryption worked, running old software safely, and ZoneAlarm leaking data through DNS.",
+  "transcript": "https://www.grc.com/sn/sn-173.txt",
+  "audio": "http://media.GRC.com/sn/SN-173.mp3",
+  "chapters": [
+    {
+      "title": "Worms on Port 445, and a Vista Crash",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The out-of-cycle RPC \"server service\" patch is being spread against now. Worms like Conficker.A and a bot called IRCBot.BH use the port 445 flaw. The worm even patches the hole in RAM behind itself so no one else gets in."
+        },
+        {
+          "s": "steve",
+          "t": "Worms use both nearby and distant IPs, because port 445 is the Windows file-sharing port, blocked by many ISPs and routers, but file sharing inside a LAN pokes holes in each machine's firewall, so it can still spread locally."
+        },
+        {
+          "s": "steve",
+          "t": "Last week's Vista kernel crash now has a simple trigger Microsoft won't patch until a service pack: \"route add 1.2.3.4/240 4.3.2.1\" at a command prompt uses an illegal subnet mask and crashes Vista."
+        },
+        {
+          "s": "leo",
+          "t": "But they'd have to be at your machine."
+        },
+        {
+          "s": "steve",
+          "t": "Or code already running, or an email that issues that command. A bug is a bug until it's a security threat, like the RPC flaw that started as a crash and became remote code execution."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt, and Keys Copied From 200 Feet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "TrueCrypt is updated to 6.1a, with small bug fixes and a new option to blank or replace the pre-boot password screen for whole-drive encryption."
+        },
+        {
+          "s": "steve",
+          "t": "University of California students showed they can duplicate a traditional house key from a photo taken 200 feet away, modeling it and grinding a duplicate on a numerically controlled machine."
+        },
+        {
+          "s": "leo",
+          "t": "So hide your key in your hand."
+        },
+        {
+          "s": "steve",
+          "t": "What I like is how it highlights something we took for granted: you and I couldn't file a blank down to match a key by eye, but digital photography and modeling can, even from an off-axis photo."
+        },
+        {
+          "s": "leo",
+          "t": "Car keys with chips can't be duplicated that way."
+        }
+      ]
+    },
+    {
+      "title": "Apple and Antivirus, and Phorm",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Apple posted, then quickly pulled, an advisory recommending antivirus, naming McAfee, Symantec and Intego."
+        },
+        {
+          "s": "leo",
+          "t": "Marketing probably freaked out, since \"we don't get viruses\" is a selling point."
+        },
+        {
+          "s": "steve",
+          "t": "As the people who make exploits get Macs, and you can't exploit a machine you don't own, this trouble grows. Also, update iPod Touch and iPhone to 2.2 for web-based remote code execution fixes."
+        },
+        {
+          "s": "steve",
+          "t": "And on Phorm: British Telecom, which secretly hosted Phorm trials, changed its policy to ban all discussion of Phorm on its forums and deleted the old threads, which people are calling censorship."
+        },
+        {
+          "s": "steve",
+          "t": "There's now a Firephorm add-on for Firefox that keeps Phorm opt-out cookies in place and avoids its redirects. Its author strongly recommends changing ISPs."
+        },
+        {
+          "type": "fact",
+          "title": "Phorm's fate",
+          "t": "Phorm never gained UK carrier support after the backlash and moved its operations abroad before winding down. NebuAd had already collapsed."
+        }
+      ]
+    },
+    {
+      "title": "NoScript, One Week Later",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "How's NoScript going for you?"
+        },
+        {
+          "s": "leo",
+          "t": "I took it off. As a journalist I have to see sites in their full experience. A NoScript developer suggested the \"Temporarily Allow Top-Level Sites by Default\" option with \"full addresses,\" which I'll try. If I weren't reviewing sites, I'd absolutely use it."
+        },
+        {
+          "s": "steve",
+          "t": "I'm happily keeping it. The caveat is remembering it's there, since some pages look incomplete until you allow them."
+        }
+      ]
+    },
+    {
+      "title": "Sandboxing USB Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Art, in the newsgroups, asks whether Sandboxie can help with USB drives, given the Pentagon just banned them."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Sandboxie has a \"forced\" drive feature. Ronen suggests forcing your CD/DVD drive so autorun is sandboxed. For USB, I'd force every drive letter not permanently assigned, so anything run from a plugged-in drive is automatically sandboxed and can't make permanent changes."
+        },
+        {
+          "s": "leo",
+          "t": "Would that prevent any infection?"
+        },
+        {
+          "s": "steve",
+          "t": "It does what it does very well, but next week we'll cover the limits of sandboxes and virtual machines. I may have oversold it a bit."
+        }
+      ]
+    },
+    {
+      "title": "PayPal Tokens Go International",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Louis Gerard in Montreal ordered a PayPal Security Key in Canada for $5 Canadian, and Jon Peter Hansen, likely Scandinavian, can't get the football yet."
+        },
+        {
+          "s": "steve",
+          "t": "VeriSign told us they roll these out one country at a time, aiming to cover everywhere PayPal is. Originally the U.S. and U.K., then more regions, and now Canada."
+        },
+        {
+          "s": "leo",
+          "t": "My bank uses SecurPass, texting a code to my cell phone. Everyone has a phone, it's cheaper, and it's equally secure."
+        },
+        {
+          "s": "steve",
+          "t": "It's on CryptoLink's list; software can send SMS, so that'll be one of its authentication options, along with Perfect Paper Passwords."
+        }
+      ]
+    },
+    {
+      "title": "Servicing a TPM-Locked Laptop",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jared Burford asks: if a PC is protected by TPM and a fingerprint, how does a repair technician get in?"
+        },
+        {
+          "s": "steve",
+          "t": "Don't worry, it's solved. The Trusted Platform Module is a vault soldered to the motherboard that software can't read; you can only ask it to verify. The fingerprint is just a shortcut for a big gnarly password, which is your fallback."
+        },
+        {
+          "s": "steve",
+          "t": "Before giving the machine to a technician, go into the setup and change it to a simple password or remove it entirely. The technician uses that, never learns your real password, and you restore the gnarly one when you get it back."
+        },
+        {
+          "s": "leo",
+          "t": "Lenovo and others use these; it wouldn't make sense if no one could ever get in."
+        }
+      ]
+    },
+    {
+      "title": "Destroying a Dead Hard Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sam in Sweden asks how to scrap a completely dead drive he can't wipe with DBAN. Someone also asked about running it through a tape degausser."
+        },
+        {
+          "s": "steve",
+          "t": "External degaussing won't work; you need intimate contact with the platters. Pry off the circuit board and smash it, and destroy the connector to the platters. But the real answer: drill a hole or two straight through the drive, an inch or two from the spindle. The metals are soft. With holes through the platters, no head can ever fly over them. Game over."
+        },
+        {
+          "s": "leo",
+          "t": "The NSA might still try, but for everyone else that's plenty."
+        },
+        {
+          "s": "leo",
+          "t": "Patrick once hit a platter with a hammer on The Screensavers; some drives have glass platters, and it shattered everywhere."
+        }
+      ]
+    },
+    {
+      "title": "Detecting Corporate Spyware",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Another Sam, in a cubicle, asks how to tell whether his employer installed spyware like Spector, maybe something that warns of keyboard hooking."
+        },
+        {
+          "s": "steve",
+          "t": "Good rootkit and virtualization technology, like Joanna Rutkowska's Blue Pill, can hide so well that nothing you run as a user can detect it. The only safe way to use the machine privately is to boot from read-only media, a CD or DVD, that never touches the hard drive, if the BIOS lets you boot from it."
+        },
+        {
+          "s": "leo",
+          "t": "Courts have held that employees have no privacy rights on the boss's equipment."
+        },
+        {
+          "s": "steve",
+          "t": "My consulting advice is to put a notice on every screen stating that all use is monitored. It notifies everyone and tamps down inappropriate behavior."
+        },
+        {
+          "s": "leo",
+          "t": "As a consultant bringing your own machine, you'd want it sanitized at each client, since they could put something on it that spies on the next client."
+        }
+      ]
+    },
+    {
+      "title": "How IDE Hard-Drive Locks Work",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Patrick in Des Moines asks: if you move a password-locked IDE drive to a computer that doesn't support the feature, does it stay locked? And why doesn't the government lock its drives?"
+        },
+        {
+          "s": "steve",
+          "t": "The lock lives in the drive. At the drive's interface, the BIOS says \"here's a password; refuse all access after a power cycle unless I give it again.\" No encryption is involved. The password is written in a maintenance area on the platters."
+        },
+        {
+          "s": "steve",
+          "t": "Move it to a different make and model, which likely maps the passphrase differently, and it stays inert. But the manufacturer, and third-party recovery firms, have undocumented commands to remove the lock, and the data itself is in the clear. So it's much weaker than whole-drive encryption, where everything is noise."
+        },
+        {
+          "s": "leo",
+          "t": "They could even move the platters to a new mechanism."
+        },
+        {
+          "s": "steve",
+          "t": "That new drive would still obey the lock the platters carry, so they'd need microcode that ignores it."
+        }
+      ]
+    },
+    {
+      "title": "How Do You Know a Decryption Worked?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John D in Chicago asks: when brute-forcing, how does an attacker know a guessed key actually decrypted something?"
+        },
+        {
+          "s": "steve",
+          "t": "The cipher doesn't announce success; garbage in, garbage out. Something must inspect the output. For packets, the well-defined header structure, source and destination IPs, is a strong check. For ASCII text, the high bit is almost always off, so a 4K block where most high bits are off is almost certainly a correct decryption, versus 50-50 for random data."
+        },
+        {
+          "s": "leo",
+          "t": "Could a decoy make a false decryption look right?"
+        },
+        {
+          "s": "steve",
+          "t": "That's the double-encryption point I once made that generated so much email. If someone doesn't know you encrypted twice with different keys, they'll only test after one decryption and never get cleartext, just more random data. There's no \"bingo\" from the cipher; it's always a test you apply to the output."
+        }
+      ]
+    },
+    {
+      "title": "Running Old Software Safely",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Thomas in Stockholm wants to safely run older, unsupported software like ACDSee with known flaws. Could he Sandboxie it?"
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. If a malicious JPEG tried to exploit a known decoder overflow, Sandboxie would contain it. After several weeks I see no overhead from Sandboxie running Firefox and Eudora."
+        }
+      ]
+    },
+    {
+      "title": "ZoneAlarm's Sneaky DNS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Pitt in Melbourne used Wireshark and found ZoneAlarm constantly sending DNS requests to its own servers, which his other firewall doesn't block. Why?"
+        },
+        {
+          "s": "steve",
+          "t": "Gregor Freund and I once discussed exactly this as a sneaky way to get data out past firewalls. Programs don't do DNS themselves; they ask the operating system's DNS client service, which every firewall must permit, or you can't surf. ZoneAlarm is using that permission to phone home with whatever it wants, bypassing your control."
+        },
+        {
+          "s": "leo",
+          "t": "To be fair, this is one listener's report; we haven't verified it."
+        },
+        {
+          "s": "steve",
+          "t": "Given the facts, that's my explanation. There's no reason ZoneAlarm should send DNS packets to Zone Labs. I recommended ZoneAlarm version 2.6 long ago; it's since become a bloated nightmare, and we no longer recommend it."
+        },
+        {
+          "type": "fact",
+          "title": "DNS as a covert channel",
+          "t": "Smuggling data out inside DNS queries, which firewalls rarely block, is a real technique now called DNS tunneling, used by both data-exfiltration malware and some tools to bypass captive portals."
+        }
+      ]
+    },
+    {
+      "title": "A Once-Infected PC",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris in Detroit has a friend's PC that caught a virus, had it \"removed,\" and now redirects Google to a fake Microsoft spyware page, with other Google URLs giving 404s. He pointed it at OpenDNS with no luck."
+        },
+        {
+          "s": "steve",
+          "t": "It's probably a modified hosts file, which the PC checks before going out, pointing Google.com at a bogus server that can't serve the other Google URLs. But the bigger issue: the friend tried to remove the virus manually, and it's Apple HEBI, a rootkit."
+        },
+        {
+          "s": "leo",
+          "t": "Once you're infected, the only safe bet is back up your data, format, and reinstall Windows from a known-good source."
+        },
+        {
+          "s": "steve",
+          "t": "A rootkit means you can trust nothing you see, because it makes the OS lie about its own files. Scraping it off is no longer feasible. Clean the boot sector too."
+        },
+        {
+          "s": "leo",
+          "t": "Cocky guys say they can remove anything. You can never be sure you got it all."
+        },
+        {
+          "type": "fact",
+          "title": "Removing an infection",
+          "t": "Security professionals still advise that a confirmed rootkit or deep infection warrants wiping and reinstalling from trusted media, since a kernel-level rootkit can hide from any tool running on the compromised system."
+        }
+      ]
+    },
+    {
+      "title": "Does Sandboxie Make NoScript Redundant?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ken Harrington asks: if a nasty script is trapped in the sandbox, can he uninstall NoScript?"
+        },
+        {
+          "s": "steve",
+          "t": "No, and it's a segue to next week. Sandboxie is a security tool, not a privacy tool. Programs in the sandbox have full read access unless you block it, so a script could watch you type a password into another page in the browser, or send data out, even while making no permanent change. NoScript and Sandboxie are companions, not substitutes."
+        },
+        {
+          "s": "leo",
+          "t": "Why not use both? They're free."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves Lunch",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Hamish in New Zealand got a call that the school cafeteria's cash-register computer wouldn't boot, half an hour before hundreds of hungry students arrived. He ran SpinRite on the small 4GB drive, it repaired a couple of problems in about 20 minutes, and the register came up in time."
+        },
+        {
+          "s": "leo",
+          "t": "SpinRite Saves Lunch."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How can you be sure a completely dead hard drive's data can't be recovered?",
+      "options": [
+        "Drill a hole or two through the platters so no head can ever fly over them",
+        "Run it through a tape degausser",
+        "Delete the files",
+        "Format it"
+      ],
+      "answer": 0,
+      "explain": "External degaussing doesn't reach the platters."
+    },
+    {
+      "q": "Why can ZoneAlarm's phone-home DNS packets slip past a firewall?",
+      "options": [
+        "Programs ask the OS's DNS service, which every firewall must permit",
+        "DNS is encrypted",
+        "Firewalls ignore port 53",
+        "It uses a VPN"
+      ],
+      "answer": 0,
+      "explain": "There's no reason it should send DNS to Zone Labs."
+    },
+    {
+      "q": "If you move a password-locked IDE drive to an unsupported computer, what happens?",
+      "options": [
+        "It stays locked, because the lock lives on the drive itself",
+        "It unlocks automatically",
+        "The data is erased",
+        "It works normally"
+      ],
+      "answer": 0,
+      "explain": "The data is still unencrypted, so a manufacturer can remove the lock."
+    },
+    {
+      "q": "How does an attacker know a brute-forced decryption actually worked?",
+      "options": [
+        "By testing the output against expected structure, like packet headers or ASCII high bits",
+        "The cipher reports success",
+        "It beeps",
+        "It never can"
+      ],
+      "answer": 0,
+      "explain": "Double-encrypting defeats this, since there's no cleartext to recognize."
+    },
+    {
+      "q": "What's the only reliable fix after a rootkit infection?",
+      "options": [
+        "Back up data, wipe the drive, and reinstall from known-good media",
+        "Run another antivirus",
+        "Edit the hosts file",
+        "Change DNS servers"
+      ],
+      "answer": 0,
+      "explain": "A rootkit makes the OS lie about its own files."
+    },
+    {
+      "q": "Why doesn't Sandboxie replace NoScript?",
+      "options": [
+        "It's a security tool, not a privacy tool; sandboxed scripts can still read data",
+        "It's slower",
+        "It blocks all scripts",
+        "It only works on IE"
+      ],
+      "answer": 0,
+      "explain": "A script could watch you type a password in another tab."
+    }
+  ]
+}
