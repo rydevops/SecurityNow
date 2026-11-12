@@ -1,0 +1,853 @@
+{
+  "number": 156,
+  "title": "Listener Feedback Q&A #47",
+  "subtitle": "DNS patching stalls, a poem for Dan Kaminsky, and CryptoLink announced",
+  "date": "2008-08-07",
+  "description": "Over half of tested DNS servers are still vulnerable, Comcast's ports fall in a narrow range, DD-WRT gets a fix, RealPlayer needs version 11, and the first DNS patches slow busy servers. Leo reads Christofer Hoff's poem about the disclosure fight, and Steve recommends Stargate: Continuum. Then questions: sentence-length passwords, protecting a PGP private key, Steve's plans for CryptoLink, bookmarking IP addresses, PayPal skipping its security key, Password Safe, blocking NebuAd with a hosts file, SpinRite on a Microdrive, the case for tracking cookies, Gmail's always-HTTPS setting, Amazon's PayPal rival, and sharing a Mac's connection.",
+  "transcript": "https://www.grc.com/sn/sn-156.txt",
+  "audio": "http://media.GRC.com/sn/SN-156.mp3",
+  "chapters": [
+    {
+      "title": "After the Earthquake",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve Gibson from shaky Irvine, California. On video last week you looked like the Starship Enterprise hitting an asteroid belt."
+        },
+        {
+          "s": "steve",
+          "t": "It was serious. Southern Californians are used to earthquakes. Someone from the Midwest experiences one and says, okay, I'm moving home."
+        },
+        {
+          "s": "leo",
+          "t": "We don't have tornadoes or hurricanes. There's always something. I left it in the show because you rode it out and kept going without a pause."
+        },
+        {
+          "s": "leo",
+          "t": "They called it moderate, a 5.8."
+        },
+        {
+          "s": "steve",
+          "t": "The saving grace was that it was much deeper than usual, five-plus miles down. Near the surface, that size would have been serious. The depth smoothed it out."
+        },
+        {
+          "type": "fact",
+          "title": "The final numbers",
+          "t": "The USGS settled on magnitude 5.4 for the July 29, 2008 Chino Hills earthquake, at a depth of about 14 km (roughly 9 miles)."
+        },
+        {
+          "s": "leo",
+          "t": "And as you said, it's good to release the tension."
+        }
+      ]
+    },
+    {
+      "title": "DNS Servers Still Vulnerable",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's been a relatively calm week, thank goodness, because the DNS problem we covered is causing real trouble. As we record on August 1, more than half the servers being tested, about 53 percent, are still vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "There are so many DNS servers, some not big targets but important ones. Major ISPs will be pressured into fixing this, though there's been reluctance. The good news is consumers who see their DNS can be spoofed are raising a ruckus."
+        },
+        {
+          "s": "steve",
+          "t": "The show notes for Episode 155 now link three testing sites. I'm working on my own, which should be online by our next recording. It'll be like ShieldsUP!, with a lot that nobody else is doing."
+        },
+        {
+          "s": "steve",
+          "t": "This puts the whole spoofing problem back in play. These problems have been there a long time without much attention."
+        },
+        {
+          "s": "steve",
+          "t": "And people are discovering that NAT routers, which many DNS servers sit behind, derandomize the random ports. Even after the patch, if a network appliance doesn't preserve the random port through translation, you lose the randomness."
+        },
+        {
+          "type": "fact",
+          "title": "GRC's DNS test",
+          "t": "Steve's DNS Spoofability Test went live at GRC.com in August 2008 and is still offered there."
+        }
+      ]
+    },
+    {
+      "title": "RealPlayer Update",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The only other news: if you use any RealPlayer before version 11, serious vulnerabilities were recently discovered and fixed. Absolutely update to version 11."
+        }
+      ]
+    },
+    {
+      "title": "Trusting a DNS Test",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An interesting issue came up. If your DNS can be spoofed, how do you know you've reached the real testing site?"
+        },
+        {
+          "s": "steve",
+          "t": "An obvious trick for bad guys would be a fake test site that says don't worry, your DNS is fine."
+        },
+        {
+          "s": "leo",
+          "t": "You're safe. Don't worry."
+        },
+        {
+          "s": "steve",
+          "t": "It's a perfect example of a real security issue. If you can't trust the lookup, you can't trust a site you reach by name. So DNS-OARC made its test easy to reach by IP: 149.20.3.33/test."
+        },
+        {
+          "s": "leo",
+          "t": "So any domain name could be spoofed, but typing the IP directly avoids DNS."
+        },
+        {
+          "s": "steve",
+          "t": "Nothing goes to your DNS server. You connect directly to that IP."
+        },
+        {
+          "s": "leo",
+          "t": "That's a fast way to any site, if you know the address. But nobody remembers dotted quads."
+        },
+        {
+          "s": "steve",
+          "t": "When people run my test at GRC, I'll take them to a dotted-quad address, so any link they copy or bookmark uses the IP. And I'll run it over a secure connection."
+        },
+        {
+          "s": "steve",
+          "t": "But I can't use the certificate with an IP address, since the certificate holds the domain name. So it's one or the other. And who knows, ZoneAlarm has gone so overboard it might block IP addresses."
+        },
+        {
+          "s": "leo",
+          "t": "When I enter the IP, it redirects to a long hash-looking name ending in et.dns-oarc.net, over plain HTTP. Maybe the hash has some security significance."
+        },
+        {
+          "s": "steve",
+          "t": "I'll make GRC proactive. An ISP might regress and stop randomizing ports without anyone knowing. So GRC will test DNS spoofability in the background for every visitor and notify anyone at risk, and do the same for third-party cookies."
+        }
+      ]
+    },
+    {
+      "title": "Comcast's Narrow Port Range",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I use OpenDNS, but the test also sees my Comcast servers. OpenDNS is great. Comcast's source port randomness is \"poor,\" but its transaction ID randomness is great. What does that mean?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm annoyed that \"poor\" is the worst rating. It ought to say \"horrible\" if every query comes from one port. How many ports did it see?"
+        },
+        {
+          "s": "leo",
+          "t": "25 samples, 24 unique ports, not sequential. The scatter plot looks random. But it says only 10 bits of randomness."
+        },
+        {
+          "s": "steve",
+          "t": "That's why it's poor. Many ISPs still aren't using fully random ports, only a restricted range. That usually means something after the DNS server is limiting the outgoing ports. A full patch would use the entire range of about 65,535 ports."
+        },
+        {
+          "s": "leo",
+          "t": "It's definitely not. It's 16,916 through 17,815."
+        },
+        {
+          "s": "steve",
+          "t": "An attacker can see the current range. It's not as easy as a static port, but it restricts the guessing and hugely improves their odds."
+        },
+        {
+          "s": "leo",
+          "t": "Nice try, Comcast."
+        },
+        {
+          "s": "steve",
+          "t": "Customers need to know, to put pressure on them."
+        },
+        {
+          "type": "fact",
+          "title": "About 10 bits",
+          "t": "A range of 900 ports gives about 9.8 bits of randomness, versus nearly 16 bits for the full port range, so an attacker's job is roughly 70 times easier."
+        }
+      ]
+    },
+    {
+      "title": "DD-WRT and Targeted Attacks",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I said last week I believed DD-WRT router firmware was vulnerable. It's confirmed, and there's a patch. If you've flashed your router, you know who you are."
+        },
+        {
+          "s": "steve",
+          "t": "I doubt end users will be targets, since attacking an ISP spoofs everyone who uses it. But once tools are readily available, you can imagine someone targeting a person who upset them in a blog or forum, as we've seen with small DoS attacks."
+        },
+        {
+          "s": "leo",
+          "t": "IRC chat is a real problem. People's IP addresses are easy to find, flame wars are constant, and the script kiddies hang out there. A perfect storm of evilness."
+        }
+      ]
+    },
+    {
+      "title": "A Poem About the DNS Debacle",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Over the lawn blower brigade outside my window, I want to read a poem you sent me. It's \"The DNS Debacle in Poetic Review\" by Christofer Hoff, on his blog Rational Survivability."
+        },
+        {
+          "s": "steve",
+          "t": "He did a really good job."
+        },
+        {
+          "s": "leo",
+          "t": "In rhyming verse, it tells the story: Kaminsky found a nasty flaw and quietly coordinated vendor patches instead of disclosing it all at once, planning to present at Black Hat after 30 days."
+        },
+        {
+          "s": "leo",
+          "t": "Big egos called his bluff and said it was ten-year-old stuff, until he briefed them under handshake promises and they agreed the risk was real. Then Halvar Flake posted a theory, Matasano's blog confirmed it, the post was pulled, but the cat was out of the bag."
+        },
+        {
+          "s": "leo",
+          "t": "So instead of 30 days we got 13. Hoff asks researchers to think about users before racing to put their names on a vulnerability. An exploit is coming, so patch now. And he says Dan's reputation has been smeared, so let's clear it."
+        },
+        {
+          "s": "leo",
+          "t": "\"Vuln\" is short for vulnerability. Researchers don't want to waste a syllable. His blog used to be called Rational Security, but security's dead, don't you know."
+        },
+        {
+          "type": "fact",
+          "title": "About the poem",
+          "t": "Christofer Hoff published \"The DNS Debacle in Poetic Review\" on his blog in July 2008. The script summarizes it rather than quoting the verse."
+        }
+      ]
+    },
+    {
+      "title": "DNS Patches Slow Busy Servers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One more twitch: the first round of DNS updates is causing a performance problem. Paul Vixie, still very involved in DNS, formally acknowledged it. His advice: do not back out to the vulnerable version. They'll fix performance next, but the main problem had to be fixed first."
+        },
+        {
+          "s": "steve",
+          "t": "That makes me think something more is going on. Still, a single port makes many things easier than constantly opening new sockets and coordinating replies. It may be a first-pass implementation."
+        },
+        {
+          "s": "steve",
+          "t": "It only hurts really busy servers, around 10,000 queries per second. Admins are complaining, and Paul implores them to keep the patch."
+        },
+        {
+          "s": "leo",
+          "t": "Is it the overhead of generating random numbers?"
+        },
+        {
+          "s": "steve",
+          "t": "No, that's instantaneous these days. DNS has been tuned over years for one strategy, a fixed port. Random ports need a bunch of new code that hasn't been hand-tuned yet."
+        },
+        {
+          "s": "leo",
+          "t": "It's new code that hasn't been optimized."
+        }
+      ]
+    },
+    {
+      "title": "Stargate: Continuum",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Completely off topic, but near and dear to our hearts: I watched the new direct-to-DVD Stargate movie, Continuum, released two days ago."
+        },
+        {
+          "s": "steve",
+          "t": "I'm a Stargate fan. I watched all 10 seasons of SG-1 and I'm in the fourth or fifth season of Atlantis. It's a time travel movie, which I love, and it was really well done. We didn't see as much of Jack O'Neill as I'd hoped, just cameos. I recommend it without reservation."
+        },
+        {
+          "s": "leo",
+          "t": "I've never seen Stargate. I now have 10 seasons to watch."
+        },
+        {
+          "s": "steve",
+          "t": "They built a complete mythology. The writers cared, there's a huge story arc and lots of neat bad guys. Stargates are wormhole anchors connecting paired gates, and they stay within the mythology."
+        },
+        {
+          "s": "steve",
+          "t": "The movie won't mean much without knowing the characters and past episodes. There was maybe half a bad season around the middle, but overall the series is spectacular."
+        }
+      ]
+    },
+    {
+      "title": "Back From the Dead After 713 Days",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The lawn blowers are marching on, so I'll cut my mic."
+        },
+        {
+          "s": "steve",
+          "t": "I'll read a SpinRite story. Jarvis Weezy's subject line was \"713 Days, 20 Hours, 25 Minutes, and 23 Seconds.\" I thought, did SpinRite run for 713 days? No, it was to get my attention."
+        },
+        {
+          "s": "steve",
+          "t": "August 15, 2006 was the last day he turned on a computer with this drive, running XP Media Center Edition 2005, with disk errors in the event log, and then completely dead. July 29, 2008 was the day SpinRite let him boot that 500GB SATA drive again."
+        },
+        {
+          "s": "steve",
+          "t": "He listens on BART during his commute and kept hearing about SpinRite. Being old school, he was skeptical of software fixing hardware."
+        },
+        {
+          "s": "steve",
+          "t": "He'd caused the damage himself. He hadn't put Dell's green rails on the drive, moved the computer while it was on, and heard a bang as the drive slid forward. It made that horrible clicking, and Hitachi's diagnostics said it was toast. Much wasn't backed up."
+        },
+        {
+          "s": "steve",
+          "t": "He'd been saving to send it to a recovery service. After hearing our listeners' stories, he skeptically tried SpinRite one morning and went to work. He came back to the green \"complete\" screen."
+        },
+        {
+          "s": "steve",
+          "t": "Every sector SpinRite found a problem on, it recovered, and the drive now boots. He found music and videos he'd forgotten, like his Def Poetry Jam DVD compilations. All that waiting to pay for recovery, when SpinRite cost $89. His tech friend said he'd have recommended SpinRite right off the bat. It's signed Jarvis, MCSE, MCSA, MCP, Security+."
+        },
+        {
+          "s": "leo",
+          "t": "He's got the certs."
+        }
+      ]
+    },
+    {
+      "title": "Sentences as Passwords",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "On to questions, which you can send through GRC.com. Sunnz in Canberra, Australia likes the Perfect Passwords page for WPA. But for something like Facebook, would a sentence do? \"My dog is 12 years old and he runs very fast!\" with no spaces. It has upper and lower case, a number and a symbol, and it's easy to remember. Adding a deliberate grammar or spelling mistake might defeat attacks built from sentences."
+        },
+        {
+          "s": "leo",
+          "t": "I do the same thing. My PGP password is a phrase."
+        },
+        {
+          "s": "steve",
+          "t": "First, being easy to remember is a bit of a warning sign. It means it's weaker from some angle."
+        },
+        {
+          "s": "leo",
+          "t": "It's not totally random."
+        },
+        {
+          "s": "steve",
+          "t": "If someone glanced at it written down, or watched you type and caught most letters, they could fill in the gaps using grammar."
+        },
+        {
+          "s": "steve",
+          "t": "But I like the approach, and it's very strong in general. The longer, the better. There are so many possible sentences that, while it's not as strong as random characters of the same length, it has a lot of entropy, far more than a short phrase."
+        },
+        {
+          "s": "steve",
+          "t": "And who would know that's what you're doing? A good system immediately hashes your password into a fixed-length token that can't be reversed, rather than storing your text, which is the worst thing it can do. Nobody would know it wasn't eight characters. So it's probably a good idea."
+        }
+      ]
+    },
+    {
+      "title": "Protecting a PGP Private Key",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Aaron Feickert in North Dakota encrypts his offsite backups with PGP and carries his private key on a USB drive. It has a passphrase. If someone got the key, could they break his backups? Good question, because I don't particularly protect mine."
+        },
+        {
+          "s": "steve",
+          "t": "PGP follows state-of-the-art security thinking. The passphrase is hashed, and the hash symmetrically encrypts the key, which is fast and lightweight."
+        },
+        {
+          "s": "steve",
+          "t": "An attacker would guess passphrases, hash them and try each. That's more feasible than brute-forcing the 160-bit hash itself, which you just can't do. I keep saying public key. I mean private key."
+        },
+        {
+          "s": "steve",
+          "t": "In public key crypto, everyone can see Aaron's public key. If something decrypts with it, only his private key could have encrypted it. So keeping the actual private key secret is crucial."
+        },
+        {
+          "s": "steve",
+          "t": "When stored, as on his USB drive, the private key is further encrypted with the passphrase. If your key management were so good no one could ever get the key, you could argue for skipping the passphrase."
+        },
+        {
+          "s": "steve",
+          "t": "But a long, non-brute-forcible passphrase absolutely obscures it, and brute-forcing the passphrase is the point of attack. USB drives get moved around, and we've told stories of people sucking the contents off found drives. If the key ever leaves your protection, use a passphrase. PGP's implementation is as good as it gets."
+        },
+        {
+          "s": "leo",
+          "t": "iTunes sells all the Stargate seasons. Should I start with season one?"
+        },
+        {
+          "s": "steve",
+          "t": "Start with the original movie, Stargate. It's great fun and the basis for the series."
+        }
+      ]
+    },
+    {
+      "title": "Waiting for a GRC VPN",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bryan in Melbourne has listened since the beginning. He jumped on Hamachi hoping to move to the OpenVPN solution you promised. Hamachi was bought, and options like Back to My Mac and GoToMyPC appeared. He'd rather not route traffic through another party, especially with most servers in the U.S., and wants to reach his home network over a local community wireless network."
+        },
+        {
+          "s": "steve",
+          "t": "I did plan OpenVPN how-tos, and I've got OpenVPN working. But boy, is it a pain. It's a Swiss army knife, so general that the first time I saw the configuration options I wondered how many months it would take."
+        },
+        {
+          "s": "steve",
+          "t": "Earlier Windows versions can't bridge network adapters, which you need. You get address collisions when your home network uses the same range as the network you're connecting from. It's routing table based, so it messes up routing tables. And when you make your own certificates with OpenSSL, their contents are sent in the clear, so those fields want to be empty. It got so involved I said, this is dumb. I'll just do one."
+        },
+        {
+          "s": "steve",
+          "t": "Once the DNS test and the cookie system are done, I'm plowing into CryptoLink, GRC's first formal commercial security product. It'll do NAT traversal and be Hamachi-like, with an easy mode where GRC provides the connection, or a Trust No One mode, TNO, where you set up your own home end."
+        },
+        {
+          "s": "steve",
+          "t": "I never know when. The menu system is done, the cookie system is nearly done, then the DNS test, then CryptoLink."
+        },
+        {
+          "s": "leo",
+          "t": "You ran three pages of bullet points by me confidentially at dinner in Vancouver. My mouth was hanging open."
+        },
+        {
+          "s": "steve",
+          "t": "There's a bunch that no one's done before."
+        },
+        {
+          "s": "leo",
+          "t": "With all your free security tools, you've never done a commercial security product. This will be welcome."
+        },
+        {
+          "type": "fact",
+          "title": "What became of CryptoLink",
+          "t": "CryptoLink never shipped. Steve later set it aside and went on to other projects, including SQRL and SpinRite 6.1."
+        }
+      ]
+    },
+    {
+      "title": "Bookmarking IP Addresses",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Peter Chase in Columbus, Ohio asks: if I put sites' actual IP addresses in my bookmarks, wouldn't that be quicker and safer than a DNS lookup?"
+        },
+        {
+          "s": "steve",
+          "t": "It would avoid spoofing, since your browser connects directly. But there may be side effects, from what's called virtual hosting."
+        },
+        {
+          "s": "steve",
+          "t": "Many websites can share one IP. The browser connects by IP and includes the domain name in a request header, so the server knows which site you want. Hosting services use it for inexpensive sites, and you can pay extra for your own IP. Only the web has this host header."
+        },
+        {
+          "s": "steve",
+          "t": "So an IP alone won't work at a site sharing its IP. But if it works, it'll probably keep working. And if the site changes its IP, your bookmark breaks, since you've lost the indirection DNS provides. Then again, a malicious IP change is what you're avoiding."
+        },
+        {
+          "s": "steve",
+          "t": "So if you can't switch to a trustworthy DNS server like OpenDNS, you could use IPs, with caveats."
+        },
+        {
+          "s": "leo",
+          "t": "You could just ping yahoo.com and write down the address."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. nslookup is another command we all have. Ping resolves the name and shows the IP."
+        },
+        {
+          "s": "leo",
+          "t": "Someone should write a utility."
+        },
+        {
+          "s": "steve",
+          "t": "I have one, ID Serve, on GRC's freeware page. I wrote it to identify which server software a site runs, back when Microsoft's IIS was so broken that just visiting an IIS site was a threat. Among the information it shows is the IP address."
+        },
+        {
+          "s": "leo",
+          "t": "What we really need is something that converts all my bookmarks to IP addresses. I'll work on it on vacation."
+        },
+        {
+          "s": "steve",
+          "t": "When you're not catching up on 10 years of Stargate."
+        }
+      ]
+    },
+    {
+      "title": "PayPal Skips the Security Key",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Scott Griswold in New London, New Hampshire paid GoDaddy through PayPal with his security key ready. After his password, it authorized the payment without asking for the six-digit code. PayPal.com confirmed the payment. It always asks when he logs in directly. I've never had that happen."
+        },
+        {
+          "s": "steve",
+          "t": "Ditto, so I'm mystified. Maybe he'd just logged onto PayPal and his session hadn't expired in the same browser. Or there's a bug at PayPal. I'll report back if others see it. Anyone with the football goes and finds it before buying, because you know you'll need it."
+        }
+      ]
+    },
+    {
+      "title": "Password Safe",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew Justice in Austin, Texas doesn't trust online password storage. Would you write one, maybe using a GPG key? GPG, GNU Privacy Guard, is the open source PGP. That's what I use."
+        },
+        {
+          "s": "steve",
+          "t": "His timing was perfect. Just yesterday a friend demoed a password manager he loves, called Password Safe. It's open source and multiplatform: Linux, Mac and Windows."
+        },
+        {
+          "s": "steve",
+          "t": "I'm very impressed, though I haven't done the due diligence. It can use a shared drive, or I'm thinking Jungle Disk on Amazon S3, and it seems to scale to enterprise use. It does automatic form filling."
+        },
+        {
+          "s": "steve",
+          "t": "I'll do a full episode on it after looking under the covers. My friend is a savvy, security-aware IT guy whose company has used it for some time. It's at passwordsafe.sourceforge.net."
+        },
+        {
+          "type": "fact",
+          "title": "About Password Safe",
+          "t": "Password Safe was originally designed by Bruce Schneier. The official project was Windows-focused, with Linux and Mac versions developed separately. Steve later endorsed LastPass on the show in 2010."
+        }
+      ]
+    },
+    {
+      "title": "Blocking NebuAd",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Peter Fleischman in New York asks if the hosts file can block NebuAd. As a refresher, NebuAd and Phorm are what ISPs use to follow your surfing and target ads, and your ISP sees everything, far more than DoubleClick."
+        },
+        {
+          "s": "steve",
+          "t": "When a page's closing html tag goes by, NebuAd spoofs one packet into the stream. That means tracking the TCP connection and sequence numbers so the packet looks like a continuation. Not rocket science, but you have to really want to."
+        },
+        {
+          "s": "steve",
+          "t": "The packet holds a JavaScript reference that pulls script from a.faireagle.com. So use your hosts file to point both a.faireagle.com and faireagle.com at 127.0.0.1, localhost. You'll have a bit of dead debris at the end of pages, but you won't be trackable by NebuAd."
+        },
+        {
+          "s": "leo",
+          "t": "We should mention that all the ISPs have decided not to use NebuAd, as far as we know. It might even be illegal in England now."
+        },
+        {
+          "type": "fact",
+          "title": "NebuAd vs. Phorm",
+          "t": "NebuAd operated in the U.S.; Phorm was the system in the U.K. U.S. ISPs pulled back from NebuAd under congressional pressure in mid-2008, but, as Steve says, some were still running it then."
+        },
+        {
+          "s": "steve",
+          "t": "Actually, someone in our newsgroups is with a U.S. ISP using NebuAd. It's happening. Do a view source on a web page and look for \"faireagle\" at the very end."
+        },
+        {
+          "s": "leo",
+          "t": "They could change servers, and you'd have to block something else."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. The annoying thing is the hosts file has no wildcards, only exact matches. I'm sure other tools can do this kind of preemption, and they may become more popular."
+        },
+        {
+          "s": "leo",
+          "t": "I'm checking my page source. It doesn't look like Comcast is using it."
+        },
+        {
+          "s": "steve",
+          "t": "Comcast got slapped hard. Next time they'll think twice about messing with people's packets."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe a reason to go to Comcast now, since the FCC slapped them."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite and a Microdrive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Darrell Duffy in Coos Bay, Oregon has a friend with a Nikon D70 and a 2GB Microdrive, a tiny hard drive in a CompactFlash package. After a day of shooting real estate, pictures wouldn't come off. It kept erroring and going offline. XP recovered more than Vista, because XP didn't read the files to update details in list view. SpinRite doesn't do USB thumb drives, but would it help here?"
+        },
+        {
+          "s": "steve",
+          "t": "The first time I heard of this I thought, come on. But there really is a little spinning magnetic platter, holding 2GB."
+        },
+        {
+          "s": "leo",
+          "t": "I think the Microdrive predates CompactFlash in that form factor."
+        },
+        {
+          "s": "steve",
+          "t": "That would make sense, since CompactFlash has an IDE interface. I built a diskless FreeBSD box running BIND 9 for my network. It boots from CompactFlash through a simple IDE adapter, then never writes to it: swap off, /var mapped to RAM disks, and root and user partitions read-only, so I don't burn out the flash."
+        },
+        {
+          "type": "fact",
+          "title": "Which came first",
+          "t": "CompactFlash came first, in 1994. IBM's Microdrive arrived in 1999, built to fit the CompactFlash Type II slot. CompactFlash uses an IDE-compatible interface by design."
+        },
+        {
+          "s": "steve",
+          "t": "To answer Darrell: absolutely. Many customers report success with SpinRite on Microdrives. They're delicate and easily dropped, so they have problems, and SpinRite will probably recover it."
+        },
+        {
+          "s": "leo",
+          "t": "They're being phased out, since they top out at 2GB."
+        },
+        {
+          "type": "fact",
+          "title": "Microdrive sizes",
+          "t": "Later Microdrives reached 4GB, 6GB and 8GB before flash cards made them obsolete."
+        },
+        {
+          "s": "steve",
+          "t": "Who'd use a spinning mechanical thing when solid-state CompactFlash is cheap? But he did use one, and he wants his photos."
+        },
+        {
+          "s": "leo",
+          "t": "Originally they had larger capacity and were faster than CompactFlash. Now flash is bigger and faster than any of them."
+        }
+      ]
+    },
+    {
+      "title": "The Case for Tracking Cookies",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jonathan Kemp in Leicester, England works for a free travel service, unnamed, that lives on affiliate advertising. Cookie blocking and deletion are growing, pushed by security companies, without people understanding the effect on affiliate publishers. Free services need tracking cookies. And I'd add ad blocking, which affects services paid for by ads."
+        },
+        {
+          "s": "steve",
+          "t": "I included this because we'd never given that viewpoint. I'm very anti-tracking, anti-third-party cooking. Cookie. Actually, I enjoy third-party cooking. I'm Mr. Restaurant."
+        },
+        {
+          "s": "steve",
+          "t": "Years ago, when I considered a browser filter with ad blocking, our newsgroups debated the ethics. Does visiting a page mean agreeing to accept everything on it? Why can't I be selective?"
+        },
+        {
+          "s": "steve",
+          "t": "Your point, Leo, is that pages depend on advertising to survive. But I love TiVo, partly for watching on my own schedule, like email and newsgroups, and frankly for commercial skipping. Do I have to sit through commercials for free TV? Can I get up during a break?"
+        },
+        {
+          "s": "leo",
+          "t": "Some people think they should click a banner or buy something to support the show. You don't need to."
+        },
+        {
+          "s": "steve",
+          "t": "These questions aren't cut and dried. They have two sides."
+        },
+        {
+          "s": "leo",
+          "t": "For podcasting there were three models. Donations, which I'd prefer, but only about 2 percent of listeners donate. Subscriptions, but Americans are used to free content. Ricky Gervais had the most popular U.K. podcast, 400,000 downloads, went paid and it was over, so he went back to free. So we're ad-supported, and we choose products we like and keep ads unobtrusive."
+        },
+        {
+          "s": "steve",
+          "t": "I hope the quality of the show justifies the advertising that pays for that quality."
+        },
+        {
+          "s": "leo",
+          "t": "We now have three ads per show, the most we'll ever have, and some people say they'll stop listening. Commercial radio and TV have five times as many. These shows used to be cheap to do. They're not anymore."
+        },
+        {
+          "s": "leo",
+          "t": "And there's the line between third-party cookies and NebuAd. Where does it become a privacy violation?"
+        }
+      ]
+    },
+    {
+      "title": "Gmail's Always-HTTPS Setting",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bobby Clark in Berea, Kentucky notes that Gmail now has a setting to always use HTTPS. You no longer have to type https:// to be sure of a secure connection."
+        },
+        {
+          "s": "steve",
+          "t": "I wanted everyone to know. Mine's on. I just said Gmail would switch you back to non-secure if you arrived that way. Now it stays secure, and that makes it unspoofable, because your browser checks Gmail's certificate. Just make sure HTTPS is up."
+        },
+        {
+          "s": "leo",
+          "t": "I've used the Customize Google Firefox plug-in for that. It should always have been a setting."
+        }
+      ]
+    },
+    {
+      "title": "Amazon Takes On PayPal",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our Exciting, Fantastic, Wonderful, Extra Special News of the Week, from Brian Scallan in London. Has Amazon been listening to you say the market is ripe for a PayPal competitor? They've launched Payments.Amazon.com."
+        },
+        {
+          "s": "steve",
+          "t": "It looks very good. I'm an Amazon fan. UPS pulls up with something from Amazon almost daily. And my replacement Kindle, for the one whose screen I broke, came promptly. It was a completely good experience."
+        },
+        {
+          "s": "steve",
+          "t": "Amazon has enough of a name that sites supporting PayPal might add an Amazon button, as they're doing for Google."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love to replace PayPal for our payments. We get complaints, and PayPal ripped me off. But you need an Amazon account to use this, while PayPal lets people pay by credit card. In effect it gives us merchant services."
+        },
+        {
+          "s": "steve",
+          "t": "Amazon may be pushing to expand its buyer base."
+        },
+        {
+          "s": "leo",
+          "t": "We have a global audience, and Amazon isn't as present everywhere. In Canada it only sells books, at higher prices. Maybe we'll just get a merchant account."
+        },
+        {
+          "s": "steve",
+          "t": "PayPal needs competition. I'm glad a major competitor stepped up."
+        }
+      ]
+    },
+    {
+      "title": "Cool Tip: A Mac as a Router",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our Cool Tip of the Week, from Ryan Morris in Niagara Falls, Ontario. His friend at the University of Waterloo couldn't use routers at school, like the university we discussed last show."
+        },
+        {
+          "type": "fact",
+          "title": "Last show's university",
+          "t": "The dorm network discussed in Episode 154 was Penn State's."
+        },
+        {
+          "s": "leo",
+          "t": "Ryan says a Mac can share its wired connection over WiFi, easily, from its settings, with a password. The Mac gets first priority on bandwidth. It also works in reverse, sharing WiFi through the Ethernet port."
+        },
+        {
+          "s": "leo",
+          "t": "P.S.: SpinRite is the only software he's ever bought, and he has a ton. He's a little pirate. But he didn't pirate yours, and you don't use any copy protection."
+        },
+        {
+          "s": "leo",
+          "t": "When you treat people like thieves, they act like thieves."
+        },
+        {
+          "s": "steve",
+          "t": "It works, and people appreciate it. How many say it's the best $89 they ever spent?"
+        },
+        {
+          "s": "leo",
+          "t": "Any computer can do this. Linux does it fine. It's an ad hoc network. You need two connections: one bringing the Internet in, one distributing it. Many machines have both Ethernet and WiFi."
+        },
+        {
+          "s": "steve",
+          "t": "Ad hoc means computers connecting to each other, as opposed to a base station."
+        },
+        {
+          "s": "leo",
+          "t": "Windows Internet Connection Sharing does the same, with more finicky bits. Great tip."
+        }
+      ]
+    },
+    {
+      "title": "Feedback, and a DNS Benchmark",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I'm off to do the Ronn Owens Show on KGO in San Francisco. Next week I'm taking four days off with the family in the gold country."
+        },
+        {
+          "s": "steve",
+          "t": "Questions come from GRC.com/feedback. I get about 450 submissions each time. People write that it's the fourth time without an answer. I'm sorry; I read everything I can, and it's sincerely appreciated."
+        },
+        {
+          "s": "leo",
+          "t": "GRC.com has SpinRite, plus freebies like ShieldsUP!, Shoot The Messenger, DCOMbobulator and Wizmo, a doohickey for your Windows."
+        },
+        {
+          "s": "steve",
+          "t": "That reminds me. Years ago, during confidential work on a new kind of Internet communication system for the government, I wrote DNSRU, the DNS Research Utility. As far as I know it's the only comprehensive DNS benchmarking tool ever."
+        },
+        {
+          "s": "steve",
+          "t": "Our newsgroup folks kept it alive and asked for it back. I never finished it. It has an expiration that you bypass by holding both shift keys at launch, though there's no newer copy."
+        },
+        {
+          "s": "steve",
+          "t": "I'll dust it off and remove the non-benchmark parts. DNS performance is critical, since it's the first thing your browser does for anything. Faster DNS means a faster Internet experience. It'll be a permanent addition to our freeware."
+        },
+        {
+          "type": "fact",
+          "title": "The DNS Benchmark",
+          "t": "DNSRU became GRC's free DNS Benchmark, released in 2010 and still available at GRC.com."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Comcast's DNS servers fall short in Leo's test?",
+      "options": [
+        "Their source ports stayed within a narrow range of about 900",
+        "They used one fixed port",
+        "Their transaction IDs were sequential",
+        "They had no DNS at all"
+      ],
+      "answer": 0,
+      "explain": "The test showed only about 10 bits of randomness."
+    },
+    {
+      "q": "Why would a typed IP address protect you from a spoofed DNS test site?",
+      "options": [
+        "Your computer connects directly without any DNS lookup",
+        "It forces SSL",
+        "IP addresses are encrypted",
+        "Browsers block fake IPs"
+      ],
+      "answer": 0,
+      "explain": "The trade-off is that the site's certificate won't match an IP address."
+    },
+    {
+      "q": "How does a passphrase protect a stolen PGP private key?",
+      "options": [
+        "The private key is stored encrypted with a key derived from the passphrase",
+        "It deletes the key after three tries",
+        "It alerts the owner",
+        "It splits the key in two"
+      ],
+      "answer": 0,
+      "explain": "The weak point is a passphrase short enough to brute-force."
+    },
+    {
+      "q": "Why might bookmarking a site by IP address fail?",
+      "options": [
+        "Many sites share one IP through virtual hosting and need the domain name in the request",
+        "IPs are too long for bookmarks",
+        "Browsers refuse IP addresses",
+        "IP addresses expire every day"
+      ],
+      "answer": 0,
+      "explain": "The site could also change its IP."
+    },
+    {
+      "q": "How can a hosts file block NebuAd's tracking?",
+      "options": [
+        "Point a.faireagle.com and faireagle.com at 127.0.0.1 so its script can't load",
+        "Add a wildcard for *.nebuad.com",
+        "Delete all cookies daily",
+        "Block port 80"
+      ],
+      "answer": 0,
+      "explain": "Hosts files don't support wildcards."
+    },
+    {
+      "q": "What is a Microdrive?",
+      "options": [
+        "A tiny spinning hard drive in a CompactFlash package",
+        "A flash memory card",
+        "A USB thumb drive",
+        "A floppy disk replacement"
+      ],
+      "answer": 0,
+      "explain": "Because it's a real hard drive, SpinRite can work on it."
+    }
+  ]
+}
