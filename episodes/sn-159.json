@@ -538,13 +538,13 @@
           "t": "So your recommendation is to use the opt-in setting of DEP now?"
         },
         {
+          "s": "steve",
+          "t": "It's a mixed blessing. It will cause some problems, which is why Microsoft didn't set it up that way. When Windows Explorer hit a DEP error, I clicked yes, it shut down, and Windows restarted it for me."
+        },
+        {
           "type": "fact",
           "title": "Which mode",
           "t": "Steve's suggestion was opt-out mode, where DEP is on by default and you exclude only programs that fail."
-        },
-        {
-          "s": "steve",
-          "t": "It's a mixed blessing. It will cause some problems, which is why Microsoft didn't set it up that way. When Windows Explorer hit a DEP error, I clicked yes, it shut down, and Windows restarted it for me."
         },
         {
           "s": "leo",
