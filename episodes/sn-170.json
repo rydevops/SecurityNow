@@ -1,0 +1,396 @@
+{
+  "number": 170,
+  "title": "The TKIP Hack",
+  "subtitle": "WPA was not \"cracked\" — a clever, very limited flaw in the TKIP protocol",
+  "date": "2008-11-13",
+  "description": "Headlines screamed that WPA WiFi was cracked. Steve explains what really happened: a refresher on WEP's XOR encryption, RC4 and the chopchop attack, then how Erik Tews and Martin Beck extended chopchop to TKIP, recovering one packet's key stream and the MIC key, and abused Quality-of-Service channels to bypass replay protection. It never recovers your key or reads your traffic. Fixes: disable TKIP and use AES/CCMP, or turn off QoS. Plus Patch Tuesday, an Android root-shell bug, and clearing up a China/Russia misunderstanding.",
+  "transcript": "https://www.grc.com/sn/sn-170.txt",
+  "audio": "http://media.GRC.com/sn/SN-170.mp3",
+  "chapters": [
+    {
+      "title": "Where Attacks Come From",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today we change gears to the WPA WiFi story."
+        },
+        {
+          "s": "steve",
+          "t": "Everything in the press has been wrong. Gizmodo said, \"WPA Wi-Fi Security Gets Cracked: Your Network Is No Longer Secure.\" Something did happen, but it's incredibly limited and incredibly clever."
+        },
+        {
+          "s": "steve",
+          "t": "First, an errata. A listener felt I'm biased against Russia and China."
+        },
+        {
+          "s": "leo",
+          "t": "A reasonable point."
+        },
+        {
+          "s": "steve",
+          "t": "It would be, if I weren't restating geographical fact. These attacks do originate there, often because many Chinese machines are compromised zombies, not because Chinese people launch them."
+        },
+        {
+          "s": "leo",
+          "t": "And the apparent origin is almost never the real one. A hacker in Dover, Delaware can relay through a Chinese server. When the news said the Obama, McCain and White House campaigns were hacked \"from China,\" that doesn't mean Chinese hackers."
+        },
+        {
+          "s": "steve",
+          "t": "Right. The FBI gets logs and IPs and knocks on a door in China, likely an innocent person whose machine was relaying, with no trace of the real source. Though it's also known that Russian organized crime is behind a lot of cybercrime; FBI friends have traced specific events to specific places."
+        },
+        {
+          "s": "leo",
+          "t": "When I see brute-force SSH attempts in my logs, the IP is usually a Chinese university, either a student or a compromised always-on server. It doesn't tell you where the attacker lives."
+        }
+      ]
+    },
+    {
+      "title": "A netstat Clarification",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week I couldn't explain why a listener's netstat window closed itself. Listeners pointed out he probably typed \"netstat\" in the Start menu's Run box, which launches the command window, runs it and closes it."
+        },
+        {
+          "s": "leo",
+          "t": "It occurred to all our listeners."
+        },
+        {
+          "s": "steve",
+          "t": "To keep the window open, use \"cmd /k netstat -an.\" The /k keeps it up afterward with \"Press any key to close.\""
+        }
+      ]
+    },
+    {
+      "title": "Patch Tuesday and an Android Root Shell",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This Patch Tuesday was small: two remote code execution flaws, in Microsoft's XML parsing, one critical, one important."
+        },
+        {
+          "s": "steve",
+          "t": "The Adobe PDF parsing flaw we discussed is now being actively exploited through web ads that reference a malicious PDF. Move to Reader 9."
+        },
+        {
+          "s": "leo",
+          "t": "Adobe updated Flash too."
+        },
+        {
+          "s": "steve",
+          "t": "And Google updated Android for an embarrassing bug."
+        },
+        {
+          "s": "leo",
+          "t": "It happened on my phone. I typed \"reboot\" at the home screen and it rebooted."
+        },
+        {
+          "s": "steve",
+          "t": "They left a debugging switch set in the release build, so everything typed on the keyboard also went to a root shell with root privileges. Type \"reboot\" anywhere and the phone shuts down."
+        },
+        {
+          "s": "leo",
+          "t": "A patch was pushed the day the article came out."
+        },
+        {
+          "s": "steve",
+          "t": "Worrying too that it was logging keystrokes, so passwords could be in the history buffer."
+        },
+        {
+          "type": "fact",
+          "title": "The Android bug",
+          "t": "It affected the T-Mobile G1, the first Android phone, in 2008. Google patched it quickly."
+        }
+      ]
+    },
+    {
+      "title": "Refresher: How WEP Works",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So the mainstream media got the TKIP hack wrong."
+        },
+        {
+          "s": "steve",
+          "t": "And nothing got it right, PC Magazine as bad as any. It's complicated to execute, what you can do is very limited, but it potentially means something. The researchers are Erik Tews, a Ph.D. candidate at Darmstadt, and Martin Beck at Dresden. Erik brought us the 60-second WEP crack."
+        },
+        {
+          "s": "steve",
+          "t": "First, clear up the acronyms. WPA and WPA2 aren't ciphers or protocols; they're Wi-Fi Alliance certifications. WPA2 can be just as insecure as WPA. AES is the cipher Rijndael. TKIP is a protocol using RC4; CCMP is the protocol using AES."
+        },
+        {
+          "s": "steve",
+          "t": "WEP, Wired Equivalent Privacy, uses a simple pseudorandom byte generator. You XOR the plaintext with the key stream: where a noise bit is 1, it flips the data bit. XOR the same key stream again and the bits flip back, recovering the data. It's trivial to do in hardware."
+        },
+        {
+          "s": "steve",
+          "t": "The generator is RC4, from RSA, leaked but well known. Its weakness: a 256-byte array scrambled by the key, with weak keys and early output that isn't very random."
+        },
+        {
+          "s": "steve",
+          "t": "Both ends share a key, generate the same key stream, and XOR. A 24-bit counter on each packet keeps successive packets from reusing the same key stream, and a four-byte CRC32, the Integrity Check Value or ICV, catches transmission errors."
+        },
+        {
+          "s": "steve",
+          "t": "A key XOR fact: with plaintext, key stream and cipher text, XOR any two to get the third. So if you know the cipher text and some plaintext, you get the key stream. That matters later."
+        }
+      ]
+    },
+    {
+      "title": "The Chopchop Attack",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A hacker known as KoreK found \"chopchop.\" Chop the last byte off a WEP packet and the ICV is now wrong. But he worked out the relationship so he could guess that byte: the access point tells you if the checksum is right. With an average of 128 guesses you learn the byte, and because you chopped it off, you knew its plaintext, so XOR gives you that key stream byte."
+        },
+        {
+          "s": "leo",
+          "t": "You're allowed to keep guessing until the checksum's right?"
+        },
+        {
+          "s": "steve",
+          "t": "A big flaw in WEP. March down the packet and you recover its plaintext and, crucially, the key stream. You never learn the shared key, but one key stream lets you forge your own valid packets, since WEP has no replay protection."
+        },
+        {
+          "s": "steve",
+          "t": "The ICV was meant to catch errors, not to authenticate, so anyone could change the data and recompute a valid CRC."
+        }
+      ]
+    },
+    {
+      "title": "TKIP: Fixing WEP Without New Hardware",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The IEEE's 802.11i committee was huge and slow, so manufacturers couldn't wait and shipped WPA based on the TKIP part. Some also threw in AES, but the final AES details changed, so early \"AES\" gear isn't WPA2-compatible."
+        },
+        {
+          "s": "steve",
+          "t": "TKIP, Temporal Key Integrity Protocol, had to stay compatible with hardware that always stamps a CRC32 and uses RC4. So they added replay protection, a counter, and a stronger eight-byte keyed check called the MIC, the Message Integrity Code, also called Michael, ahead of the old ICV."
+        },
+        {
+          "type": "fact",
+          "title": "The two suites",
+          "t": "WPA required only TKIP. WPA2 requires both TKIP and CCMP, the AES-based protocol. Router menus confusingly label the choice \"TKIP or AES\" when they mean the TKIP or CCMP protocols."
+        },
+        {
+          "s": "steve",
+          "t": "The fundamental flaw is wrapping improvements around WEP's insecure base. But it gave everyone years of much better security than WEP."
+        }
+      ]
+    },
+    {
+      "title": "Extending Chopchop to TKIP",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Tews and Beck applied a chopchop-like attack to TKIP. Capture one small packet, like an ARP packet, where little is unknown. Chop the last byte and send it back. If the CRC is wrong, TKIP silently drops it as a transmission error, so you can keep guessing."
+        },
+        {
+          "s": "steve",
+          "t": "When the CRC finally matches, the MIC is now wrong, which does alarm the network. But they decided two MIC failures within 60 seconds shuts things down, so a single failure a minute apart is tolerated. That's the mistake: a correct guess triggers one MIC failure, telling you you guessed right, and you just wait a minute before the next byte."
+        },
+        {
+          "s": "steve",
+          "t": "Twelve bytes, a bit over twelve minutes, gives you the plaintext of the MIC and ICV. Then, knowing the ICV, you plug in guesses for the unknown IP addresses until the CRC matches. The MIC algorithm is reversible, so knowing all the data and the result, you recover the MIC key, which is per keying session."
+        },
+        {
+          "s": "steve",
+          "t": "Now you have the MIC key and, by XORing known plaintext with the captured cipher text, a sample of the key stream. So you can forge a packet and compute a valid MIC."
+        }
+      ]
+    },
+    {
+      "title": "The Quality-of-Service Loophole",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "But there's replay protection: a counter that increments with each packet, so a reinjected packet is rejected."
+        },
+        {
+          "s": "steve",
+          "t": "The genius: with Quality of Service, 802.11e, there are up to eight channels with separate replay counters. Most traffic uses channel zero, so channels one through seven have counters that never advanced. Send your forged packet on a different QoS channel and it's accepted."
+        },
+        {
+          "s": "steve",
+          "t": "So you decrypt one packet in twelve minutes, then inject a forged packet up to seven times. Later captures take only four to five minutes, since you reuse the MIC key and only need the last four ICV bytes."
+        },
+        {
+          "s": "leo",
+          "t": "So it has to be a router with QoS, and they don't crack your content."
+        },
+        {
+          "s": "steve",
+          "t": "They crack a small packet and some network management, but never your key and never all your traffic. Access points rekey about every hour, and a full 1,500-byte packet would need 1,500 minutes, far more than the 60 you have."
+        },
+        {
+          "s": "leo",
+          "t": "A surprisingly limited hack."
+        },
+        {
+          "s": "steve",
+          "t": "It is. They can only go access-point-to-client, since they need the MIC-failure frame. They haven't shown anything genuinely harmful you can do with it yet, maybe decrypting ARP or small DNS packets."
+        },
+        {
+          "s": "steve",
+          "t": "The paper is published, and code is in the Linux build of Aircrack, since Beck is a contributor. They took it from theory to decrypting one packet, and no further."
+        },
+        {
+          "s": "leo",
+          "t": "Yet it was treated as the end of WiFi encryption."
+        },
+        {
+          "type": "fact",
+          "title": "What came after",
+          "t": "Later work (Ohigashi-Morii and others) sped up and extended the TKIP attack, reinforcing that TKIP should be retired. WPA2 with AES-CCMP remained secure against it; the later unrelated KRACK attack in 2017 hit the handshake in all of WPA/WPA2."
+        }
+      ]
+    },
+    {
+      "title": "What to Do",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So what should people set on their routers?"
+        },
+        {
+          "s": "steve",
+          "t": "If you enable both TKIP and AES, TKIP is still in the air, because broadcasts go to the lowest common denominator. The only way to be sure it's gone is to remove TKIP from the access point. Menus often offer \"TKIP,\" \"AES,\" or \"TKIP+AES\"; don't use the combined one."
+        },
+        {
+          "s": "steve",
+          "t": "Most Macs, PCs and Linux machines from the last few years support AES, so just disable TKIP. Some old WPA-only gear, or oddities like a Nintendo DS or a WEP-only Rovio robot, may force TKIP; if so, the attack isn't that scary, and you can also turn off QoS to defeat it."
+        },
+        {
+          "s": "leo",
+          "t": "I use QoS for Skype, but on a wired router, so it doesn't matter here."
+        },
+        {
+          "s": "steve",
+          "t": "Prioritizing by port isn't the same as marking packets with an 802.11 QoS header, and once traffic leaves your network, routers may not honor it anyway."
+        },
+        {
+          "s": "leo",
+          "t": "So the easiest fix is turning off QoS, since none of this works without it."
+        },
+        {
+          "s": "steve",
+          "t": "The replay protection genuinely works; QoS was their way around it. If your router doesn't support QoS, you're already safe."
+        },
+        {
+          "s": "steve",
+          "t": "Better yet, if your router is WPA2-certified, turn off TKIP and use AES, the CCMP protocol with the Rijndael cipher, and this is of no concern to you. A WPA-only router may also work with AES; just try it."
+        },
+        {
+          "s": "leo",
+          "t": "Is AES preferable anyway?"
+        },
+        {
+          "s": "steve",
+          "t": "This made people nervous, like finding collisions in a hash: not broken, but uncomfortable. I haven't switched my own routers yet, just because I haven't gotten to it. It's not an emergency."
+        },
+        {
+          "s": "leo",
+          "t": "\"WPA Almost Cracked\" isn't as big a headline."
+        },
+        {
+          "s": "steve",
+          "t": "Nor is \"Partial Long-Duration Replay Attack.\""
+        }
+      ]
+    },
+    {
+      "title": "Strong Passwords",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "While people are in their routers, GRC.com/passwords gives an extremely random password over a secure connection, and it never repeats. About 3,200 people use it daily."
+        },
+        {
+          "s": "leo",
+          "t": "WPA is a little vulnerable to brute force."
+        },
+        {
+          "s": "steve",
+          "t": "The only known attack against the AES-CCMP encryption is an offline brute force, guessing your key against a captured packet. Not a big problem with a hard-to-guess password."
+        },
+        {
+          "s": "leo",
+          "t": "The only issue is remembering them, but you just save them somewhere."
+        },
+        {
+          "s": "steve",
+          "t": "You can't even type one into an iPod Touch; you have to cut and paste."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Did the Tews-Beck attack recover the WPA key or let someone read all your traffic?",
+      "options": [
+        "No, it only recovered one packet's key stream and the MIC key",
+        "Yes, the full key",
+        "Yes, all traffic",
+        "Yes, but only on WPA2"
+      ],
+      "answer": 0,
+      "explain": "Access points rekey about every hour, limiting it to small packets."
+    },
+    {
+      "q": "What loophole let the forged packet bypass TKIP's replay protection?",
+      "options": [
+        "Quality-of-Service channels have separate replay counters that hadn't advanced",
+        "There was no replay protection",
+        "The counter was predictable",
+        "It used WEP"
+      ],
+      "answer": 0,
+      "explain": "Most traffic runs only on QoS channel zero."
+    },
+    {
+      "q": "Why does a wrong CRC guess let the attacker keep trying under TKIP?",
+      "options": [
+        "TKIP silently drops it as a transmission error instead of alarming",
+        "It locks the account",
+        "It emails the admin",
+        "It reboots the router"
+      ],
+      "answer": 0,
+      "explain": "A correct guess instead triggers a MIC failure, revealing the right byte."
+    },
+    {
+      "q": "What do WPA and WPA2 actually denote?",
+      "options": [
+        "Wi-Fi Alliance certification levels, not ciphers or protocols",
+        "Two different ciphers",
+        "AES and RC4",
+        "Key lengths"
+      ],
+      "answer": 0,
+      "explain": "WPA2 requires both TKIP and the AES-based CCMP."
+    },
+    {
+      "q": "What's the surest way to protect yourself from this attack?",
+      "options": [
+        "Disable TKIP on the access point and use AES (CCMP)",
+        "Lengthen your SSID",
+        "Hide your network name",
+        "Lower the transmit power"
+      ],
+      "answer": 0,
+      "explain": "Turning off QoS also defeats it if you must keep TKIP."
+    },
+    {
+      "q": "Why did TKIP keep using RC4 and a CRC32 at all?",
+      "options": [
+        "To stay compatible with existing hardware that did those in silicon",
+        "RC4 is unbreakable",
+        "CRC32 authenticates packets",
+        "AES didn't exist"
+      ],
+      "answer": 0,
+      "explain": "The fundamental flaw was wrapping fixes around WEP's base."
+    }
+  ]
+}
