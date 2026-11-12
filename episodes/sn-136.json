@@ -1,0 +1,741 @@
+{
+  "number": 136,
+  "title": "Listener Feedback Q&A #37",
+  "subtitle": "Old Windows, web form security, TrueCrypt versus IronKey and more",
+  "date": "2008-03-20",
+  "description": "An antivirus false alarm about GRC, a detachable key ring and a three-month SpinRite recovery from a lightning-struck drive open the show. Then listener questions: securing Windows 2000 on an old laptop, login forms on insecure pages, choosing between TrueCrypt and IronKey, coLinux, how drives relocate bad sectors, flash write-cycle limits, TrueCrypt timestamps, whether commercial services can read overwritten data, how Steve and Leo stay virus-free without antivirus, a request to learn password cracking, Bluetooth keyboards, and OpenDNS.",
+  "transcript": "https://www.grc.com/sn/sn-136.txt",
+  "audio": "http://media.GRC.com/sn/SN-136.mp3",
+  "chapters": [
+    {
+      "title": "Tied With TWiT",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We've been doing this 136 weeks."
+        },
+        {
+          "s": "leo",
+          "t": "You're tied with TWiT. When I go to Australia, you'll pull ahead, since you record ahead and never miss a week."
+        },
+        {
+          "s": "steve",
+          "t": "So many listeners say they look forward to it every week. One said his problem with Security Now! is that most podcasts can play in the background, but he can't have this one in the background. Sometimes he has to listen multiple times to get everything."
+        },
+        {
+          "s": "leo",
+          "t": "That's okay with us. That's what the transcripts are for."
+        }
+      ]
+    },
+    {
+      "title": "GRC Isn't Infected",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Greg, my tech support guy, asked me to say that GRC has not been infected by viruses or trojans. The Avast antivirus scanner had been warning people for a week that GRC was infected with trojans and spyware. I don't know if it was the Google Analytics scripts. They've fixed it, so update your Avast signatures."
+        },
+        {
+          "s": "leo",
+          "t": "Antivirus products now watch websites, since that's the number-one attack vector."
+        },
+        {
+          "s": "steve",
+          "t": "It makes sense, but it'd be nice if they didn't false-positive. They increasingly rely on heuristics, rules of thumb, instead of specific patterns. Some of my freeware has caused false positives because it deliberately did things like the insecure behavior it tested for. My Windows Metafile vulnerability test did Metafile things that malware could exploit."
+        },
+        {
+          "s": "leo",
+          "t": "That's why they say not to run multiple antivirus programs. One's signatures can look like a virus to another."
+        }
+      ]
+    },
+    {
+      "title": "A Detachable Key Ring",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Under \"I love our listeners\": Mark Odell quoted me from Episode 134, about handing my keys to the mechanic with my little TrueCrypted 4GB thumb drive attached. Keys are a problem with valets anyway. Your registration is in the glove compartment, and they could copy your key. And a thumb drive would be tantalizing."
+        },
+        {
+          "s": "leo",
+          "t": "I never thought about that. I have my SanDisk on there."
+        },
+        {
+          "s": "steve",
+          "t": "His subject was \"It sounds like you could use one of these,\" with a link to a Google search for \"detachable key ring.\""
+        },
+        {
+          "s": "leo",
+          "t": "That's the new snotty reply. Just attach a Google search."
+        },
+        {
+          "s": "steve",
+          "t": "What a concept. And I wouldn't have my keys dangling from my laptop when I plug it in. Thanks, Mark."
+        }
+      ]
+    },
+    {
+      "title": "Three Months of SpinRite on a Lightning-Struck Drive",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Westcott Hyde wrote that it took him six months and a day to catch up on every episode, some six or seven times, through IronKey. Where's his Security Now! degree?"
+        },
+        {
+          "s": "leo",
+          "t": "\"I Survived Security Now!\""
+        },
+        {
+          "s": "steve",
+          "t": "He'd heard of our three-month SpinRite record, without the story. Here's his. An IT buddy asked for help recovering a drive. He'd bought SpinRite \"just in case,\" for himself. Using it on someone else's drive breached etiquette, so he agreed if his buddy's company would buy a copy."
+        },
+        {
+          "s": "steve",
+          "t": "The drive held extremely valuable customer relations data on a platform running in VMware, buried inside VMware's file structure, with no backup of any kind. It had been hit by a lightning strike near the building, despite surge protection."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite showed its Red Screen of Death warning. SpinRite checks the drive's SMART system first. If SMART says the drive is about to die, SpinRite warns you to pull off what you can first, since even normal reads and writes during recovery can push a drive over the edge. It keeps checking SMART and stops if the drive says it's in trouble."
+        },
+        {
+          "s": "steve",
+          "t": "But they had to have this data. So SpinRite ran for days. The drive wouldn't boot, and a Fedora Linux box couldn't see its file structure. SpinRite kept going like the Energizer bunny, with unrecovered sector after unrecovered sector. After six weeks, he could see the file structure but no data."
+        },
+        {
+          "s": "leo",
+          "t": "I can't believe he just left it running."
+        },
+        {
+          "s": "steve",
+          "t": "Three months in, he thought it was hopeless and SpinRite was hype. He'd learned to tune out the drone of the drive. Then, before giving his power bill a break, he checked one last time. The entire file structure appeared, some files were accessible, and the CRM data was there and valid. He backed it up to CD and other media."
+        },
+        {
+          "s": "steve",
+          "t": "\"Lightning plus good drive gone bad plus SpinRite plus time equals a good deed done for the year.\" The IT guy has since left the company. To atone, Westcott pitches SpinRite when talking about Kool-Aid or Starbucks, and his story has sold a couple of copies."
+        },
+        {
+          "s": "leo",
+          "t": "So you can stop SpinRite and continue later?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. When you stop, it shows the percentage complete to four decimal places, so you can resume there. We used to write a little fingerprint file to the drive's root. But SpinRite now runs on unknown file systems, and I won't write in the drive's unused first track. We know what happens when software does that. So it writes nothing to the drive."
+        }
+      ]
+    },
+    {
+      "title": "Dvorak and Leo's RAID Error",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Did you know Dvorak is running SpinRite? Lots of people told me he'd complained somewhere that his family's main gaming machine went down. I crashed my Windows 2000 box last Thursday, so when I got email back on Sunday, I found John had tried every channel to reach me for a copy. Of course I sent one."
+        },
+        {
+          "s": "leo",
+          "t": "He could have gone through me."
+        },
+        {
+          "s": "leo",
+          "t": "My RAID array, which we're recording on, says at boot that it found errors on the second disk. It still works, and SpinRite found nothing. I record three copies of the show, so we're not risking much. Maybe I should rebuild the array."
+        },
+        {
+          "s": "steve",
+          "t": "RAID controllers often have scrubbing technology, usually at the expense of your data, unlike SpinRite. Or just replace the drive. They're cheap enough."
+        }
+      ]
+    },
+    {
+      "title": "Locking Down Windows 2000 on an Old Laptop",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Postdiction in Chicago has an old P3 850 laptop that lost memory, going from 384MB to 128MB. XP is too slow now, but Windows 2000 runs great. How does Steve set up and lock down Windows 2000 on his laptop, to take it into the wild? And isn't 2000 no longer supported?"
+        },
+        {
+          "s": "steve",
+          "t": "First, my laptops are newer and run XP."
+        },
+        {
+          "s": "leo",
+          "t": "Newer, not new. Running Vista anywhere?"
+        },
+        {
+          "s": "steve",
+          "t": "On one machine, and in a VM. At some point I'll need screenshots for the website."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft sold 150 million copies in 2007, but that's only about half of new machines."
+        },
+        {
+          "s": "steve",
+          "t": "And as I mentioned, last Thursday I did something dumb and killed the Windows 2000 workstation I've used for about a decade. I uninstalled and reinstalled its IIS web server, which I use to test things before the public server, following Microsoft's online advice. It brought the house down. No data lost, everything's backed up."
+        },
+        {
+          "s": "steve",
+          "t": "That was the straw that broke the camel's back. I'm now sitting in front of a barely configured XP system on my quad-core machine, and I'm excited. I'm taking it slowly to bolt it down. With every unnecessary process stopped, it boots using 131MB of RAM, where XP often uses 300 or 400."
+        },
+        {
+          "s": "steve",
+          "t": "What makes me comfortable with XP on a laptop is its built-in firewall. Windows 2000 has none. Any portable machine you plug into things must have inbound blocking. Managing outbound traffic per application is much less important."
+        },
+        {
+          "s": "steve",
+          "t": "You could always run the 2000 machine behind a tiny travel router, since routers make good hardware firewalls. But simpler: install any well-regarded personal firewall and make sure it's running. Just don't allow unsolicited incoming traffic."
+        }
+      ]
+    },
+    {
+      "title": "Living With an Unsupported OS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "What about patches? Isn't Microsoft done patching 2000?"
+        },
+        {
+          "s": "steve",
+          "t": "I've been getting updates through last Thursday."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft's site says security updates continue through the life of Windows 2000, which means 2010. They do mainstream support for five years and extended support for five more, with security updates throughout."
+        },
+        {
+          "s": "steve",
+          "t": "Also, the target of opportunity moves. I know people on Windows 98 and ME who only do email and browsing and have never been infected. New exploits target XP and Vista. Your genetics are no longer compatible. It's become like a Mac or Linux: no longer a big target."
+        },
+        {
+          "s": "steve",
+          "t": "It'll be interesting to see what happens with XP."
+        },
+        {
+          "s": "leo",
+          "t": "They planned to stop selling it at the start of the year. After protests, it's now June 30. Support goes on longer."
+        },
+        {
+          "s": "steve",
+          "t": "That we're having this discussion shows that ending support moves people forward. Supporting 2000, XP and Vista in all their flavors is a burden, and Microsoft is desperate to move everyone to Vista."
+        },
+        {
+          "s": "leo",
+          "t": "People still run NT4, unpatched. If I were a hacker, what better target than a completely neglected machine?"
+        },
+        {
+          "s": "steve",
+          "t": "Those are probably servers. NT's IIS had horrible URL exploits early on, but those have surely been nailed down. If it's stable and not broke, don't fix it."
+        },
+        {
+          "s": "leo",
+          "t": "After 10 years, everything that's going to be found has been."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Windows 2000 received its last security updates in July 2010."
+        }
+      ]
+    },
+    {
+      "title": "Login Forms on Insecure Pages",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "TJ Schroemer in Houston types https for DiscoverCard.com, but it always lands on plain http. The help desk says clicking the login button switches to a secure connection. Is that true, or are they blowing smoke?"
+        },
+        {
+          "s": "steve",
+          "t": "We've covered this, but it comes up. First, blame the web designers for the confusion."
+        },
+        {
+          "s": "steve",
+          "t": "The web was designed as a query system. Browsers browsed and servers served. To shoehorn data flowing the other way, they kludged form data onto the query. What you send is part of what you ask."
+        },
+        {
+          "s": "steve",
+          "t": "So when you click login, the browser first establishes an SSL connection, with well-designed handshaking and a temporary key used only for that connection. Then the query with your form data goes through that tunnel. So it is safe."
+        },
+        {
+          "s": "steve",
+          "t": "The trouble is that an ordinary user can't tell whether a button will submit securely without viewing the page source, finding the button and its URL. And page source is so gunked up now that's really hard."
+        },
+        {
+          "s": "leo",
+          "t": "None of it was meant to be human readable. And the browser's lock icon can't tell you either."
+        },
+        {
+          "s": "steve",
+          "t": "A properly designed site shows the form page itself over SSL, even though it doesn't need to, so you see the reassuring colors in a browser that supports extended validation certificates."
+        },
+        {
+          "s": "steve",
+          "t": "IE has an option to warn you when you submit unsecured form data. A poorly designed site could even show a secure form whose button submits insecurely."
+        },
+        {
+          "s": "leo",
+          "t": "I think all browsers have it. The first time, you get a warning with a checkbox to keep warning you, and the default is not to. In Firefox's security settings, check \"Warn me when I submit information that's not encrypted.\" You'll see it a lot, since most forms aren't secure and don't need to be. That's why it defaults off."
+        },
+        {
+          "s": "steve",
+          "t": "Just not very well designed, any of this."
+        },
+        {
+          "s": "leo",
+          "t": "It was all designed before security was an issue, and we're stuck with the legacy."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "A secure form on an insecure page isn't safe, since an attacker can alter the page in transit to send your login elsewhere. Today nearly all sites serve every page over HTTPS, and browsers flag login forms on plain HTTP pages."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt or IronKey?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeffrey in Columbia, Maryland is torn. TrueCrypt on a USB key, or IronKey? Both are worthless if your computer is already compromised. Is TrueCrypt really less secure because software can be brute-forced? Can't TrueCrypt's keyfiles make up for that? TrueCrypt is free, and he doesn't want to trust another company's servers with his password. It's Trust No One. And only a state-sponsored enemy would try to break either. So what's the scare for an everyday user?"
+        },
+        {
+          "s": "steve",
+          "t": "If price were no object and the IronKey were as tiny and cute as my 4GB Kingston, I think I'd use IronKey. But it's huge. I'm not putting that monster on my keychain."
+        },
+        {
+          "s": "steve",
+          "t": "I got lots of compliments on having Dave as a guest. It was fun. But I use TrueCrypt on my little dongle, and my mechanics are free to do anything they want with it."
+        },
+        {
+          "s": "steve",
+          "t": "Is TrueCrypt safe enough? Absolutely. You don't need hardware encryption on the device. Even USB dongles can serve as a second authentication factor. For the really high-end corporate user, IronKey may make sense."
+        },
+        {
+          "s": "steve",
+          "t": "The one interesting danger with TrueCrypt that IronKey doesn't have: my mechanic could copy the encrypted container, which is just a file, give me my keys back, and keep it forever. Keyfiles stored on the same drive would be copied too."
+        },
+        {
+          "s": "steve",
+          "t": "It makes me a little uncomfortable that he could attack that blob with state-sponsored resources. IronKey absolutely prevents that. Still, TrueCrypt is every bit as safe as anyone needs."
+        },
+        {
+          "s": "steve",
+          "t": "And thumb drives cost 20 bucks."
+        },
+        {
+          "s": "leo",
+          "t": "I buy Corsair 16GB drives for sneakernet to Dane in the office. They come with TrueCrypt 4 on them. Neat that Corsair bundles it."
+        }
+      ]
+    },
+    {
+      "title": "coLinux: Linux Alongside Windows",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tyler in Arizona says all the virtual machines feel heavy in performance or size. Then he found Cooperative Linux, coLinux. It's not virtualization. Both kernels run in ring zero as coroutines, neither in charge. Linux sees hardware only through a virtualization layer, so the two don't fight over, say, a USB key. Both run on bare metal."
+        },
+        {
+          "s": "leo",
+          "t": "So there's no perceptible overhead. No VM engine, and every bit of memory and CPU is used by the guest's applications. With Fedora running under coLinux, he plays high-end games with no slowdown. It can even run as a Windows service, making a personal Linux firewall easier."
+        },
+        {
+          "s": "leo",
+          "t": "The downside is security and stability. With no separation, a Linux kernel exploit could jump to Windows, and a Linux kernel panic could blue-screen Windows. It's still very much in development, but beats everything else, he says."
+        },
+        {
+          "s": "steve",
+          "t": "I feel the same as Tyler about persistent VMs. You have to commit a chunk of host memory, which runs out first. That's one reason to keep a swap file even with 3 or 4GB, so VMs can swap out."
+        },
+        {
+          "s": "steve",
+          "t": "Despite losing isolation, more listeners use multiple OSes. coLinux runs the Linux kernel essentially as a driver or service in Windows, giving and taking memory as needed, rather than in a sequestered VM. Google \"colinux.\""
+        },
+        {
+          "s": "leo",
+          "t": "But you wouldn't use it for security, which is why many people use VMs."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe half the reason. Often you just want another OS around."
+        },
+        {
+          "s": "leo",
+          "t": "True. I run VMware or Parallels on my Mac just to run Windows."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "coLinux supported only 32-bit Windows and stopped being developed around 2011. Microsoft's Windows Subsystem for Linux later filled the same role."
+        }
+      ]
+    },
+    {
+      "title": "Do Relocated Sectors Defeat Defragging?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tim Bousky in Singapore asks: if drives relocate bad sectors but keep their numbers, doesn't that erode the benefit of defragmenters like PerfectDisk, since sequential sector numbers won't be physically sequential?"
+        },
+        {
+          "s": "steve",
+          "t": "Technically correct, but drives' relocation strategies differ. Many keep pools of spares scattered around, some at the end of every cylinder, though drives are now a linear array of sectors rather than cylinder, head and sector coordinates."
+        },
+        {
+          "s": "steve",
+          "t": "When a sector is bad and its data can be recovered, which SpinRite gives you much more power over, the drive slides the following sectors down by one into the spare pool at the end of that run. Say 100 sectors, and the tenth is bad. The 90 after it slide down one, keeping everything linear and skipping the bad one. Performance is barely affected."
+        },
+        {
+          "s": "leo",
+          "t": "This is where people rewind a couple of times."
+        },
+        {
+          "type": "fact",
+          "title": "In practice",
+          "t": "Drives \"slip\" sectors like this mainly for defects found at the factory. Defects that appear later are usually remapped to a spare elsewhere, which can add a seek, but rarely enough to matter."
+        }
+      ]
+    },
+    {
+      "title": "Can Flash Drives Handle Portable Apps?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Shawn White in Osaka, Japan says his university runs PortableApps from flash drives: Firefox, OpenOffice, Audacity, GIMP, NVU. How would you estimate the write cycles? As we move toward portable and cloud computing, is MLC enough, or should we use SLC?"
+        },
+        {
+          "s": "steve",
+          "t": "Let's de-acronymize. SLC is single-level cell. MLC is multi-level cell, developed for density. MLC stores two bits per cell by storing four voltage levels: off, one third, two thirds and full. So each cell holds a zero, one, two or three."
+        },
+        {
+          "s": "steve",
+          "t": "MLC handles about a factor of 10 fewer writes, about 10,000 versus SLC's 100,000. A cell that only stores zero or one is easier to read as it degrades. MLC also has a higher error rate, though all of them use error-correcting codes."
+        },
+        {
+          "s": "steve",
+          "t": "High-end flash, like IronKey's, uses wear leveling. A mapping layer means that writing the same logical spot actually writes different physical zones, unlike a hard drive, which writes the same physical sector again and again."
+        },
+        {
+          "s": "steve",
+          "t": "So do the math. A 4GB wear-leveled SLC drive times 100,000 writes is 400 terabytes before it wears out. Compare that to how much you actually write. Most use is far, far less."
+        },
+        {
+          "s": "leo",
+          "t": "But with solid-state hard drives, you might come up against it."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Don't use very little RAM and an SSD for your swap file. Mark Thompson's early experiments showed those can burn out quickly."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt's Timestamp Setting",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim Phelan was also having trouble getting Jungle Disk to back up his TrueCrypt containers. He found the setting in TrueCrypt's interface: under Settings, Preferences, uncheck \"Preserve modification timestamp of file containers.\" It warns that you lose plausible deniability. Then each time you dismount a volume, its timestamp updates."
+        },
+        {
+          "s": "steve",
+          "t": "Many listeners mentioned it. For typical users, the checkbox is easier than the command-line switch. But the switch lets you do it container by container, rather than globally."
+        },
+        {
+          "s": "steve",
+          "t": "And I loved that my guess was right. They preserve the creation date deliberately, for plausible deniability. Uncheck it, and they warn you someone might say, wait, this has today's date. You've been in there today."
+        },
+        {
+          "s": "leo",
+          "t": "They think about everything. True paranoids."
+        }
+      ]
+    },
+    {
+      "title": "Can Anyone Read Overwritten Data?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David O. in the Bay Area says \"only the NSA can do it\" understates the threat. I'm the one who said that. He worked in tech support at a large computer company, where a data recovery service told them they could recover erased and overwritten disks for forensic purposes, using residual magnetic traces. It's not cheap or easy, but anyone can hire them."
+        },
+        {
+          "s": "leo",
+          "t": "So the risk extends to private investigators, angry exes, suspicious bosses and well-heeled snoops. He's not saying overwrite seven times every time you empty the trash. But a simple erase or a zero-all isn't secure enough if someone's motivated."
+        },
+        {
+          "s": "leo",
+          "t": "I agree a simple erase isn't enough. But I question these \"commercial enterprises.\""
+        },
+        {
+          "s": "steve",
+          "t": "And we all agree 35 passes is..."
+        },
+        {
+          "s": "leo",
+          "t": "Too much. Two or three is more than enough."
+        },
+        {
+          "s": "steve",
+          "t": "I really think so."
+        },
+        {
+          "s": "leo",
+          "t": "I'd like to know who these services are. I'm going on people I trust, like Simson Garfinkel, a very bright guy who studied this and said one pass is plenty."
+        },
+        {
+          "type": "fact",
+          "title": "The evidence",
+          "t": "No commercial service has publicly demonstrated recovering data that was fully overwritten on a modern drive. A 2008 study using a magnetic force microscope found individual overwritten bits were barely better than a coin toss to recover."
+        }
+      ]
+    },
+    {
+      "title": "Staying Safe Without Antivirus",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tim O'Malley of Beach Park, Illinois heard us say, in Episode 129 and before, that neither of us uses antivirus. How do you set up your machines so you feel safe?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a combination of setup and, more than anything, our behavior."
+        },
+        {
+          "s": "steve",
+          "t": "I'm much stricter than you about scripting. I surf with scripting disabled. When something doesn't work, I remember, add the site to IE's trusted zone, where scripting is on, and continue."
+        },
+        {
+          "s": "steve",
+          "t": "Second, I've never once used Outlook or Outlook Express. They use IE's browser control to display mail, so every IE and scripting problem is inherited by your email. Who ever thought scripting was useful in email? It caused all kinds of viral problems, though it's getting better."
+        },
+        {
+          "s": "steve",
+          "t": "I use Eudora, with its option not to use the Windows viewer, so I see plain text. Other people's email looks like web pages, and I think, look what I'm missing. But I get all the text. Email is for text."
+        },
+        {
+          "s": "steve",
+          "t": "And behavior. I won't click a link in email. If I'm inclined to believe an attachment is real, I look at it in a hex viewer to see whether it's what it appears to be. I never treat attachments casually."
+        },
+        {
+          "s": "leo",
+          "t": "I just don't surf the Internet with a Windows machine. I use Windows to record and edit the show, but it stays off the 'Net. On the Mac I'm careful, though almost everything I run into is written for Windows. Still, keep an antivirus in your toolkit to scan now and then, in case you've made a mistake."
+        },
+        {
+          "s": "steve",
+          "t": "If a system seems funky, I'll grab the current AVG and scan. Usually the problem is that the thing is 10 years old."
+        }
+      ]
+    },
+    {
+      "title": "\"How Can We Learn Password Cracking?\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Here's one to give you a chill. Sonu Daswani's subject is \"to learn password of any ID,\" and asks, \"Please give us how we can learn password cracking.\""
+        },
+        {
+          "s": "leo",
+          "t": "You've got the wrong show."
+        },
+        {
+          "s": "steve",
+          "t": "We absolutely talk about what bad guys do to crack passwords: rainbow tables, brute force, dictionary attacks. But we explain the technology so we can derive the best defenses, not teach the attacks. There are plenty of sites, and probably podcasts, that will teach him. Not this one."
+        },
+        {
+          "s": "leo",
+          "t": "An intelligent listener could figure out the step between our descriptions and an implementation. What we don't do is hand out scripts for script kiddies."
+        },
+        {
+          "s": "steve",
+          "t": "For example, we've said turning off your SSID broadcast and MAC address filtering don't help. Someone wearing a gray hat knows that, and anyone who isn't up to speed falls victim. I still read advice saying turn off your SSID beacon, or MAC filtering is secure. Good luck with that. Our listeners know better."
+        }
+      ]
+    },
+    {
+      "title": "Are Bluetooth Keyboards Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David in the United Kingdom heard us on wireless keyboard insecurity, so he doesn't bank with his Logitech wireless keyboard. He wants a new iMac with Apple's Bluetooth keyboard. His flatmate got malware on his phone through Bluetooth. Could a Bluetooth keyboard be compromised, even with a keylogger in it?"
+        },
+        {
+          "s": "steve",
+          "t": "We'll do a full episode on Bluetooth security before long. It may be one people need to hear a few times. Don't operate heavy equipment while listening."
+        },
+        {
+          "s": "steve",
+          "t": "For now, the one thing you absolutely want to do is turn off discoverability. Ideally it would switch itself off after 60 seconds, since it's only needed while pairing two devices."
+        },
+        {
+          "s": "steve",
+          "t": "When we recorded The Lab with Leo in Vancouver a couple of months ago, a Bluetooth sniffer found about 20 devices in the studio. The cameraman, the producers, everybody had left theirs discoverable. That's the vulnerability. People turn it on, connect, and forget to turn it off."
+        },
+        {
+          "s": "leo",
+          "t": "A radio caller asked whether Bluetooth encryption had been cracked. It uses AES, so I think it's pretty good."
+        },
+        {
+          "type": "fact",
+          "title": "Actually",
+          "t": "Bluetooth at the time used an older stream cipher called E0, not AES. AES-based encryption came with Bluetooth 4.0 Low Energy and later \"Secure Connections.\""
+        }
+      ]
+    },
+    {
+      "title": "Is OpenDNS Up to Something?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Miles of Westminster, Colorado has used OpenDNS for over a year, as have I. Lately Google was painfully slow and accused him of having a virus, even from his Ubuntu and Fedora systems. Tired of OpenDNS's \"server not responding\" pages, he went back to Comcast's DNS, and Google returned to normal. He thinks OpenDNS is harvesting information from queries, citing Wikipedia. Have you looked into this?"
+        },
+        {
+          "s": "leo",
+          "t": "I use OpenDNS everywhere. I've had Google's warnings too, with and without OpenDNS. I can't trace them to OpenDNS."
+        },
+        {
+          "s": "steve",
+          "t": "I run my own DNS server on UNIX, so I don't use my ISP's. But I love the idea of a good-guy third-party DNS. Everything depends on DNS translating names like Amazon.com, TWiT.tv or GRC.com into IPs. That lets the translator intercede: warn about bad guys, or fix typos, like SourceForge.og instead of .org."
+        },
+        {
+          "s": "steve",
+          "t": "And ISPs often treat DNS as a poor stepchild, with an old, underpowered server that bottlenecks every user. David's ISP apparently has a fast one, but a third-party DNS can make the Internet feel faster."
+        },
+        {
+          "s": "leo",
+          "t": "Both my ISPs, including Comcast, are as fast as OpenDNS, so I use it for other reasons. It has phishing filters, and with a free account, good adult-site filtering. I set it in my router at home, so it covers the whole house. The kids haven't figured out the router does the DNS."
+        },
+        {
+          "s": "leo",
+          "t": "I've talked to these guys. I can't say 100 percent they're benign, but I have a very good feeling about them. They support themselves this way: when a page doesn't exist, you get OpenDNS's search page, with ads down the side and suggested corrections, which I use all the time. I don't have a problem with that, since it's free."
+        },
+        {
+          "s": "leo",
+          "t": "Change the DNS settings on your computer, or on your router and blank them on your computer. And I see no evidence it's tied to the Google warnings. Have you ever seen one?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Interesting that it thinks you're acting like malware and wants you to prove you're human."
+        },
+        {
+          "s": "leo",
+          "t": "I can't see why DNS would matter. Once a name is resolved, Google doesn't know which DNS server I used. Maybe too many requests in too short a time. Or maybe I have spyware and should be running that antivirus."
+        },
+        {
+          "s": "steve",
+          "t": "My hope is about Google changing as it's grown huge. The EU, the last holdout, just approved its purchase of DoubleClick, one of the infamous trackers. OpenDNS is still small, maybe a dozen people. I hope they don't leverage their success into becoming more commercial."
+        },
+        {
+          "s": "leo",
+          "t": "The warning I see on my blog's screenshot says a virus or spyware is sending automated requests from your network, so run a virus check. If listeners know more, we'd love to discuss it."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Cisco acquired OpenDNS in 2015. Google's \"unusual traffic\" warnings are usually triggered by many requests from one IP address, such as a shared network, not by the DNS service."
+        }
+      ]
+    },
+    {
+      "title": "Run Level 4, Leo",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next week is RAM hacking: spraying Freon on memory chips, putting them in the refrigerator, and recovering keys."
+        },
+        {
+          "s": "steve",
+          "t": "Did you run SpinRite on that RAID drive at level 4, or just 2?"
+        },
+        {
+          "s": "leo",
+          "t": "I think 2."
+        },
+        {
+          "s": "steve",
+          "t": "Level 2 is a read-only pass. If a sector causes trouble, it drops into level 4 to massage it. Also, you'd shut the machine down and recabled it, so the drive had a chance to cool off. It might be thermal. Give it level 4."
+        },
+        {
+          "s": "leo",
+          "t": "The error is so useless. It just appears in the BIOS boot message, and then everything's fine."
+        },
+        {
+          "s": "steve",
+          "t": "Fire up SpinRite on your way out the door to Australia. It'll be done when you get back."
+        },
+        {
+          "s": "leo",
+          "t": "People will think SpinRite takes forever. Worst case, overnight."
+        },
+        {
+          "s": "steve",
+          "t": "Someone wrote today that 80GB took about three hours."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Steve say a Windows 2000 laptop needs an added firewall?",
+      "options": [
+        "Windows 2000 has no built-in firewall, and inbound blocking is essential on any portable machine",
+        "To block outbound traffic",
+        "Microsoft requires it",
+        "It speeds up the laptop"
+      ],
+      "answer": 0,
+      "explain": "A travel router would also work."
+    },
+    {
+      "q": "According to Steve, is a login form on a plain HTTP page that submits over HTTPS safe?",
+      "options": [
+        "The submission itself is encrypted, but users can't easily verify it, so sites should show the form over HTTPS",
+        "No, the password is sent in the clear",
+        "Only in Internet Explorer",
+        "Only with extended validation"
+      ],
+      "answer": 0,
+      "explain": "Browsers can warn when form data would go unencrypted."
+    },
+    {
+      "q": "What risk does a TrueCrypt thumb drive carry that an IronKey doesn't?",
+      "options": [
+        "Someone can copy the encrypted container and attack it offline at leisure",
+        "TrueCrypt uses weak encryption",
+        "TrueCrypt can't use keyfiles",
+        "TrueCrypt needs an Internet connection"
+      ],
+      "answer": 0,
+      "explain": "IronKey reveals nothing until you authenticate."
+    },
+    {
+      "q": "How long would a 4GB wear-leveled SLC flash drive last, by Steve's math?",
+      "options": [
+        "About 400 terabytes of writes",
+        "About 4 terabytes",
+        "About 100,000 files",
+        "About a year"
+      ],
+      "answer": 0,
+      "explain": "Most use is far less than that."
+    },
+    {
+      "q": "What's Steve's main Bluetooth security advice for now?",
+      "options": [
+        "Turn off discoverability except while pairing",
+        "Always use AES",
+        "Never use Bluetooth keyboards",
+        "Change your PIN daily"
+      ],
+      "answer": 0,
+      "explain": "A sniffer found about 20 discoverable devices in the studio."
+    },
+    {
+      "q": "What do Steve and Leo say mostly keeps them virus-free without antivirus?",
+      "options": [
+        "Careful behavior, plus limiting scripting and keeping risky machines off the 'Net",
+        "A special firewall",
+        "Running Linux only",
+        "Never using email"
+      ],
+      "answer": 0,
+      "explain": "Steve reads email as plain text in Eudora."
+    }
+  ]
+}
