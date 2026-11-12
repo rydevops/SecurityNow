@@ -1,0 +1,407 @@
+{
+  "number": 55,
+  "title": "Application Sandboxes",
+  "subtitle": "Lightweight virtualization, and what it can't promise",
+  "date": "2006-08-31",
+  "description": "After heavyweight virtual machines, Steve looks at lightweight application sandboxes like Sandboxie, GreenBorder and BufferZone, which wrap one program by intercepting its file and registry changes. He explains why they're excellent for privacy but can't guarantee security, and why a real VM is still the industrial-strength choice. Plus Leo's chess-machine lecture and \"Bruce Schneier Facts.\"",
+  "transcript": "https://www.grc.com/sn/sn-055.txt",
+  "audio": "http://media.GRC.com/sn/SN-055.mp3",
+  "chapters": [
+    {
+      "title": "Chess Machines and AI",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 55, the last day of August. We're taping this before I leave on a geek cruise to Alaska, a chess cruise."
+        },
+        {
+          "s": "steve",
+          "t": "Not tape, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "I'm an old-timer. It's all bits once it leaves the microphone."
+        },
+        {
+          "s": "steve",
+          "t": "When you mentioned Mitch Miller last week, that gave it away."
+        },
+        {
+          "s": "leo",
+          "t": "To go on these cruises I give a lecture, and mine is the history of chess-playing machines. It parallels the history of computing. Babbage was inspired by a chess-playing automaton to imagine a thinking machine, and Turing and others wanted computers to play chess."
+        },
+        {
+          "s": "steve",
+          "t": "It was the holy grail of the original AI movement in the '70s."
+        },
+        {
+          "s": "leo",
+          "t": "What I found is that it's considered solved, so AI researchers have moved on to Go: a 19-by-19 board, more positional and intuitive, very hard to calculate."
+        },
+        {
+          "s": "steve",
+          "t": "And they solved chess by cheating. The goal was for machines to understand. Instead they're so fast and parallel that they use opening books and alpha-beta pruning to choose which lines to explore."
+        },
+        {
+          "s": "leo",
+          "t": "They still need judgment. There are more positions than anyone can calculate."
+        },
+        {
+          "s": "steve",
+          "t": "A ton of technology, but not the way they expected."
+        },
+        {
+          "s": "leo",
+          "t": "Machines won't think the way we do, but they can accomplish the same tasks in their own way. That's my conclusion. There's a great two-hour ACM video from the Computer History Museum with pioneers like David Levy."
+        },
+        {
+          "s": "steve",
+          "t": "Just start that and hit the buffet."
+        },
+        {
+          "type": "fact",
+          "title": "Is chess solved?",
+          "t": "Not in the strict sense. Computers play far better than humans, but no one has worked out the perfect result from the starting position. Only endgames with up to seven pieces are completely solved. Go fell in 2016, when DeepMind's AlphaGo beat Lee Sedol."
+        }
+      ]
+    },
+    {
+      "title": "Layers of Virtualization",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Enough of that. What's this week's topic?"
+        },
+        {
+          "s": "steve",
+          "t": "Continuing our virtual machine series: application sandboxes, lightweight virtualization."
+        },
+        {
+          "s": "steve",
+          "t": "We've covered the history, then VMware, which I'd call medium-to-heavyweight, then Blue Pill, super-heavyweight, operating beneath VMware."
+        },
+        {
+          "s": "steve",
+          "t": "Now we can think of virtualization in levels. AMD's SVM/Pacifica and Intel's VT virtualize the processor itself, so multiple operating systems each think they have their own chip."
+        },
+        {
+          "s": "steve",
+          "t": "One level up is software like VMware on ordinary hardware, which has to do much more work to fake that illusion."
+        },
+        {
+          "s": "leo",
+          "t": "Like time-slicing the processor to look like several."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, with lots of games to make up for missing hardware support. That uses cycles."
+        },
+        {
+          "s": "steve",
+          "t": "Higher still, an operating system gives applications virtual environments. A 20-year-old DOS program in a DOS box writes to video memory at B800 hex, and Windows fakes DOS for it. You could even say Word virtualizes its documents."
+        }
+      ]
+    },
+    {
+      "title": "The Promise of a Sandbox",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Sandboxes grew out of security and privacy concerns. The best-known is Java's: the Java Virtual Machine emulates a fictitious machine, so the emulator decides what the code may do. Unless it allows disk or network access, the program can't touch them."
+        },
+        {
+          "s": "leo",
+          "t": "Unless there's a hole."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, but that's the theory. Now people want the same for ordinary applications on Windows, Mac and Linux: keep them from touching the hard drive or sending data behind your back."
+        },
+        {
+          "s": "steve",
+          "t": "Researching this, I found many claims that just aren't true. Riding the virtualization craze, products say they create a virtual computer inside yours. Most don't."
+        },
+        {
+          "s": "steve",
+          "t": "The list includes Sandboxie, GreenBorder, Fortres Grand's Virtual Sandbox, MetroPipe's Portable Virtual Privacy Machine, SecureOL's VELite, BufferZone and RunSafe."
+        },
+        {
+          "s": "steve",
+          "t": "MetroPipe's actually is real virtualization. It packages the QEMU emulator to boot Linux. On my machine it showed a BIOS, began decompressing the Linux kernel, then exploded. Twice. It's apparently slow anyway, though QEMU is improving."
+        },
+        {
+          "type": "fact",
+          "title": "QEMU",
+          "t": "QEMU, the open-source emulator, matured into one of the most important virtualization tools. Paired with Linux's KVM, it powers much of today's cloud computing."
+        }
+      ]
+    },
+    {
+      "title": "Security vs. Privacy",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Sandboxing serves two goals. One is security: run IE, Firefox or Opera where it can't harm your machine."
+        },
+        {
+          "s": "steve",
+          "t": "The other is privacy. At a friend's house or a public computer, you don't want to leave footprints: cached images, URL history, cookies."
+        },
+        {
+          "s": "steve",
+          "t": "There are horror stories of employers checking browser caches and finding decidedly non-work-related material."
+        },
+        {
+          "s": "steve",
+          "t": "VMware and Virtual PC boot a real operating system and offer robust containment. These lightweight utilities don't."
+        },
+        {
+          "s": "steve",
+          "t": "They work like the rootkits we discussed: kernel components that intercept, or \"hook,\" operating system functions. They filter the file open, read and write calls, and the registry calls, putting a layer of supervision between the application and the OS."
+        },
+        {
+          "s": "steve",
+          "t": "It works, but you can't trust it for security. As Joanna showed with Blue Pill, software that knows what other software is doing can work around it. A program can use undocumented calls that aren't filtered. It's the same cat-and-mouse game as antivirus."
+        },
+        {
+          "s": "steve",
+          "t": "So I'd never absolutely trust one of these pseudo-virtualization solutions for security. Privacy is a different story. All the ones I tried are linked in our Episode 55 notes."
+        }
+      ]
+    },
+    {
+      "title": "How Strong Is a Real VM?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A browser in VMware Player running Ubuntu and Firefox is in a whole operating system inside a virtual machine. That security is virtually absolute."
+        },
+        {
+          "s": "leo",
+          "t": "If I get a network worm like Sasser or Zotob inside the VM, can it spread to the real machine?"
+        },
+        {
+          "s": "steve",
+          "t": "Only if you enable features that allow it. VMware offers shared folders, which I use constantly to let my test VMs see a directory on my real drive. With that convenience comes risk."
+        },
+        {
+          "s": "leo",
+          "t": "So a VM isn't absolutely impervious."
+        },
+        {
+          "s": "steve",
+          "t": "It's a virtually secure tool, but like any tool it can be misused. Download a file inside it, drag it onto your real desktop, and you've breached the barrier."
+        },
+        {
+          "s": "steve",
+          "t": "The lightweight sandboxes don't run a second OS, but they're much easier to install. Installing VMware Player is a commitment, with virtual adapters and a reboot. You don't casually carry it on a USB key."
+        },
+        {
+          "s": "leo",
+          "t": "That may change with hardware virtualization."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. With 64-bit virtualization hardware, starting an empty machine with another OS could be as quick as a hotkey."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Pick: Sandboxie",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The one I'd recommend trying is Sandboxie, at Sandboxie.com. It began as \"Sandbox IE,\" but it now sandboxes any browser or application, even ActiveX."
+        },
+        {
+          "s": "steve",
+          "t": "It's a 245K download, about 900K installed, and needs no reboot. It worked beautifully."
+        },
+        {
+          "s": "steve",
+          "t": "Several others ground my system to a halt with errors. I'd hoped to recommend Fortres Grand's free Virtual Sandbox version 1, an 8MB download with a nice interface. It just didn't work, and it left nothing in Add/Remove Programs. Running setup again offered to uninstall, but nothing documented that."
+        },
+        {
+          "s": "steve",
+          "t": "Sandboxie is file-level sandboxing. When the sandboxed browser opens a file, say its cache, Sandboxie makes a shadow copy and redirects changes there."
+        },
+        {
+          "s": "steve",
+          "t": "If a file is opened read-only, it's smart enough not to copy it. But many apps open files for read and write even when only reading, so it has to copy those."
+        },
+        {
+          "s": "steve",
+          "t": "So it's a bit sluggish starting up, especially on my dual 866MHz Pentium."
+        },
+        {
+          "s": "leo",
+          "t": "Anything would be sluggish on that."
+        },
+        {
+          "s": "steve",
+          "t": "I have so much installed that setting up Windows from scratch is a nightmare. Its developers have worked on it for years, with interception for DCOM, RPC, ActiveX and COM objects."
+        },
+        {
+          "s": "steve",
+          "t": "It needs Windows 2000 or XP. None of these run on 95, 98 or ME."
+        },
+        {
+          "s": "steve",
+          "t": "It's free, with extra features if you register, for maybe $19 or $20. It's at version 2.65 and even runs on 64-bit Windows."
+        },
+        {
+          "type": "fact",
+          "title": "Sandboxie's journey",
+          "t": "Sandboxie was later bought by Invincea, then Sophos, which released it as open source in 2020. The community still maintains it. GreenBorder was bought by Google in 2007, and its team helped shape Chrome's sandbox."
+        }
+      ]
+    },
+    {
+      "title": "Privacy You Can Carry",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Because it's tiny and installs without a reboot, you can use someone else's computer, do anything inside the sandbox, and know that when you shut it down, nothing is left on the disk or in the registry."
+        },
+        {
+          "s": "steve",
+          "t": "It says it protects against malware, and I'm sure it often does. But using software to block other software is inherently error-prone. If malware knew it was in a sandbox, I imagine there's a way out. For privacy, though, I'm sure their technology is robust."
+        },
+        {
+          "s": "steve",
+          "t": "For an industrial-strength sandbox on your own machine, use VMware Player with Ubuntu and Firefox, or Virtual PC. For portable privacy, like checking Gmail without leaving images, cookies or logins behind, use Sandboxie."
+        },
+        {
+          "s": "steve",
+          "t": "Some of these also claim to protect you from keystroke loggers. That makes me roll my eyes."
+        },
+        {
+          "s": "leo",
+          "t": "There are so many ways to log keys, including hardware."
+        },
+        {
+          "s": "leo",
+          "t": "Can I run it from a thumb drive?"
+        },
+        {
+          "s": "steve",
+          "t": "Not run, but it's small enough to carry on a 256MB thumb drive, or email to your Gmail account so you can always install it."
+        },
+        {
+          "s": "leo",
+          "t": "Can I save the sandbox and take my bookmarks with me?"
+        },
+        {
+          "s": "steve",
+          "t": "No. In that sense it's not as robust as VMware."
+        },
+        {
+          "s": "steve",
+          "t": "I didn't go deep, but they have a good site and FAQs. Trust none of these for absolute security, but trust them for privacy. If you use Sandboxie, donate."
+        }
+      ]
+    },
+    {
+      "title": "Bruce Schneier Facts",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You know the Chuck Norris Facts site? Security expert Bruce Schneier has been Chuck Norrised."
+        },
+        {
+          "s": "leo",
+          "t": "\"Bruce Schneier knows Alice and Bob's shared secret.\" \"Diffie and Hellman use only their surnames out of fear of Bruce Schneier.\" \"Bruce Schneier once factored a prime number.\" \"Bruce Schneier doesn't trust Trent. Trent has to trust Bruce Schneier.\""
+        },
+        {
+          "s": "leo",
+          "t": "Totally geeky. Schneier linked to it from his blog."
+        },
+        {
+          "s": "leo",
+          "t": "I'll see you in Toronto next week, and we'll appear on Frank Linhares's techPhile podcast."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks to AOL, which now delivers over a terabyte of downloads a day and will take three new podcasts."
+        },
+        {
+          "s": "leo",
+          "t": "ShieldsUP! must be over 40 million by now."
+        },
+        {
+          "s": "steve",
+          "t": "44.8 million, almost 45."
+        },
+        {
+          "s": "leo",
+          "t": "And SpinRite is spelled that way because it had to be an 8.3 filename."
+        },
+        {
+          "s": "steve",
+          "t": "Twenty years ago, yes. Now it boots FreeDOS from a FAT32 CD or thumb drive, so I could use a longer name. But R-i-t-e is the name."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, the Q&A we postponed: Q&A #10, Episode 56."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How do lightweight sandboxes like Sandboxie work?",
+      "options": [
+        "They intercept a program's file and registry calls and redirect changes to shadow copies",
+        "They boot a second operating system",
+        "They encrypt the hard drive",
+        "They block the Internet"
+      ],
+      "answer": 0,
+      "explain": "That's similar to how rootkits hook the operating system."
+    },
+    {
+      "q": "Why won't Steve fully trust these sandboxes for security?",
+      "options": [
+        "Software blocking other software can be worked around by malware that knows it's sandboxed",
+        "They're too expensive",
+        "They don't run on Windows",
+        "They slow the network"
+      ],
+      "answer": 0,
+      "explain": "For privacy, though, he trusts them."
+    },
+    {
+      "q": "What breaks the containment of a real virtual machine like VMware?",
+      "options": [
+        "Shared folders or dragging files out to the host",
+        "Using a browser inside",
+        "Running Linux",
+        "Saving bookmarks"
+      ],
+      "answer": 0,
+      "explain": "A VM is virtually secure, but like any tool it can be misused."
+    },
+    {
+      "q": "What makes Sandboxie handy for privacy on someone else's PC?",
+      "options": [
+        "It's tiny, installs without a reboot, and leaves no trace when closed",
+        "It's a hardware dongle",
+        "It records keystrokes",
+        "It requires VMware"
+      ],
+      "answer": 0,
+      "explain": "Steve suggests carrying it or emailing it to yourself."
+    },
+    {
+      "q": "What is Java's sandbox based on?",
+      "options": [
+        "An emulator for a fictitious machine that decides what code may do",
+        "A hardware chip",
+        "A firewall",
+        "Encryption"
+      ],
+      "answer": 0,
+      "explain": "The Java Virtual Machine can refuse disk or network access."
+    }
+  ]
+}
