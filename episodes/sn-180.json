@@ -1,0 +1,319 @@
+{
+  "number": 180,
+  "title": "Listener Feedback Q&A #58",
+  "subtitle": "Running the MSRT yourself, Conficker's nine million, and the YubiKey's 176 bits",
+  "date": "2009-01-22",
+  "description": "The 58th Q&A, the day after the inauguration. Steve corrects a \"public/private key\" slip, and notes the MSRT can be run on demand by typing MRT. The Conficker/Downadup worm has infected nine million machines from the unpatched October flaw. Then questions, heavy on login and the YubiKey: off-topic shows, the ultracapacitor as a potential bomb, reconfiguring a YubiKey's static password and its 176-bit strength, why email is rarely encrypted, why a one-time token can't stop a man-in-the-middle, Windows storing WPA keys recoverably, whether a certificate authority keeps your private key, and why employment-based security questions are a bad idea.",
+  "transcript": "https://www.grc.com/sn/sn-180.txt",
+  "audio": "http://media.GRC.com/sn/SN-180.mp3",
+  "chapters": [
+    {
+      "title": "Corrections and the PDP-8",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In my certificate explanation I once said \"public key\" where I meant \"private\"; authorities sign with their private key. Many listeners caught it."
+        },
+        {
+          "s": "steve",
+          "t": "PDP-8 update: the single boards have shipped to U.S. customers, and the beautiful laser-cut, silk-screened front panel is being made. It has an IDE interface and runs the original DEC operating systems via firmware drivers."
+        },
+        {
+          "type": "fact",
+          "title": "The MRT shortcut",
+          "t": "You can run Microsoft's Malicious Software Removal Tool on demand by typing MRT in the Start/Run box, which opens a full interface to do a quick, full or custom scan, with no download and no reboot."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saved My Rear",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jason Hedges, IT director for cell phone stores, had a point-of-sale machine crash hours before a radio remote that would flood the store. His Drive Snapshot images were on a USB drive that wouldn't mount, so he ran SpinRite on the POS machine, and it booted five minutes before the remote. Then he ran SpinRite on the USB drive and recovered all the images."
+        }
+      ]
+    },
+    {
+      "title": "More Off-Topic Shows?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mat Ludlam suggests a separate monthly show on technology topics."
+        },
+        {
+          "s": "steve",
+          "t": "I got only positive feedback on the PDP-8 and ultracapacitor episode, not one complaint. I can't spin off another podcast, but when something's really worth it, we'll pause the flow. TWiT also does deep-dive technology shows."
+        }
+      ]
+    },
+    {
+      "title": "The MSRT, and Conficker",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tom in Vancouver, Washington notes you can run the MSRT on demand: make a shortcut to MRT, or type MRT in Run."
+        },
+        {
+          "s": "steve",
+          "t": "I tried it and it works, with a full UI I'd never seen. A full scan took about three hours and, to my surprise, found seven infected files, all in my mail attachments folder, brought in by email I never clicked, so nothing ran. Worth doing from time to time, though I run no antivirus."
+        },
+        {
+          "s": "leo",
+          "t": "F-Secure estimates the Downadup worm, also called Conficker, has infected nine million machines in two weeks, using the flaw patched out-of-cycle in October."
+        },
+        {
+          "s": "steve",
+          "t": "So that many machines aren't being patched, and likely their MSRT isn't updated either. The January MSRT finds it."
+        }
+      ]
+    },
+    {
+      "title": "The Ultracapacitor as a Bomb",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill Everson asks: if an EEStor ultracapacitor fails or is damaged in a crash, all that energy becomes heat instantly, basically a bomb, needing blast shielding and internal fuses."
+        },
+        {
+          "s": "steve",
+          "t": "The patent shows it's a hierarchical array of tiny capacitors tied together, so I'd be surprised if it weren't internally fused all over, and analyses suggest the finished weight implies shielding. But Bill's right: any car carries a tank's worth of energy. Gasoline has the nice property of not releasing it all at once."
+        },
+        {
+          "s": "leo",
+          "t": "Ray Maxwell was skeptical, and I got email calling it another water-in-your-gas-tank scheme."
+        },
+        {
+          "s": "steve",
+          "t": "It's always that way until it's not. I just want it to be true, like aliens and warp drives."
+        }
+      ]
+    },
+    {
+      "title": "Reconfiguring the YubiKey",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt in Walla Walla asks whether a YubiKey's static password is fixed forever."
+        },
+        {
+          "s": "steve",
+          "t": "Fully reconfigurable. Yubico updated the personalization tool, now much easier. You can switch between one-time and static modes and back, and set different static passwords. The only thing you can't do is return it to using Yubico's servers once you've left one-time mode; but CryptoLink will be able to authenticate it since you'll tell it the AES secret."
+        }
+      ]
+    },
+    {
+      "title": "Why So Little Email Is Encrypted",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Wes in Boise asks why there's no universal secure email standard."
+        },
+        {
+          "s": "steve",
+          "t": "There's no single easy standard everyone's client understands, and frankly no pressure, since most email is just conversation. When I need to send something securely, I encrypt a document and attach it."
+        },
+        {
+          "s": "leo",
+          "t": "People default to interoperability. I sign with GPG and get replies asking what the .sig attachment is. You could standardize on Hushmail internally, but then you can't email a client."
+        },
+        {
+          "s": "steve",
+          "t": "SSL worked because it was added transparently to the web. Email clients vary, and there's no equivalent standard, or the pressure to adopt one."
+        },
+        {
+          "type": "fact",
+          "title": "Email encryption since",
+          "t": "Transport encryption (STARTTLS between mail servers) became common, protecting mail in transit, but end-to-end email encryption with S/MIME or PGP remains niche because of key-management complexity, as Steve described."
+        }
+      ]
+    },
+    {
+      "title": "The YubiKey's 176 Bits",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim at IBM worries the YubiKey's static password uses only a to z lowercase, reducing complexity."
+        },
+        {
+          "s": "steve",
+          "t": "It's worse than that: only 16 characters, four bits each. Yubico chose a subset that maps to the same USB scan codes across keyboard languages, since USB sends scan codes, not ASCII. The static password is 44 characters, so 44 times four bits is 176 bits, just shy of 10^53 possibilities, far beyond 128-bit. And you can append your own passphrase on top."
+        },
+        {
+          "s": "leo",
+          "t": "I want to use the YubiKey to unlock a password manager, which then generates strong site keys."
+        }
+      ]
+    },
+    {
+      "title": "Why a One-Time Token Can't Stop a Man-in-the-Middle",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jon in Duluth notes the PayPal football could be defeated: a fake site takes your username, password and token and immediately logs into the real PayPal."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly right. A one-time password solves a replay attack, logging keystrokes and reusing them later. It does not solve a man-in-the-middle, where a phishing site relays your login live. Nothing but secure authentication, checking the certificate and HTTPS, stops that, and it's still on the user. SiteKey, the \"click your teddy bear\" picture, does nothing against phishing either."
+        },
+        {
+          "s": "leo",
+          "t": "And 25 percent of DNS servers are still spoofable, so the URL can even look right."
+        },
+        {
+          "s": "steve",
+          "t": "Extended validation certificates and the green bar help, since the browser only shows it when everything matches."
+        }
+      ]
+    },
+    {
+      "title": "Windows Stores WPA Keys Recoverably",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Angus Scott-Fleming warns that NirSoft's WirelessKeyView instantly shows Windows' stored WEP/WPA keys, so typing your WPA key into a guest's machine with a YubiKey doesn't keep it secret."
+        },
+        {
+          "s": "steve",
+          "t": "Windows can't store a hash, because it needs the key to connect, like the access point. It runs the WPA standard's PBKDF2 function, 4,096 passes mixing in the SSID, to get the 256-bit key, and stores that. So a tool can't show your original passphrase, but it can show the derived key, which is enough to rejoin your network."
+        },
+        {
+          "s": "leo",
+          "t": "So no operating system can truly hide it, since it must store a usable key. Using a non-Windows manager like Lenovo's is just obscurity."
+        }
+      ]
+    },
+    {
+      "title": "Does the CA Keep Your Private Key?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kerry in Santa Cruz asks whether a Thawte email certificate provider keeps a copy of his private key."
+        },
+        {
+          "s": "steve",
+          "t": "It depends how the certificate was generated. If you make the key pair yourself and send only a signing request and your public key, they never have your private key, a true Trust No One setup. But if it's a web-based system that generates everything for you, they had your private key to give it to you, and you're trusting them not to keep it. Better to generate it yourself."
+        },
+        {
+          "s": "leo",
+          "t": "Certificates are mostly for Outlook. Other clients can use S/MIME or PGP/GPG, where you keep your own key."
+        }
+      ]
+    },
+    {
+      "title": "Firefox Plug-Ins and a Referrer Hack",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Gustin Johnson says Leo, reviewing many sites, is exactly who should run NoScript, and suggests Jsview, ShowIP and Firebug."
+        },
+        {
+          "s": "leo",
+          "t": "I need to see sites as users will, so I can't run NoScript. On the radio a photographer found his site redirects to Antivirus 2009 only when visitors arrive from a Google or Yahoo! search."
+        },
+        {
+          "s": "steve",
+          "t": "That sounds like a modified .htaccess checking the referrer."
+        },
+        {
+          "s": "leo",
+          "t": "It was his host, iPower, whose users' files or passwords were compromised, modifying the .htaccess to redirect search visitors to scareware. Many site owners don't know they've been modified."
+        },
+        {
+          "type": "fact",
+          "title": "Search-referrer redirects",
+          "t": "Injecting code that redirects only visitors arriving from search engines was a common way to hide a site compromise from its owner, who usually reaches the site by typing its address directly."
+        }
+      ]
+    },
+    {
+      "title": "Employment Security Questions",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dan, a civil servant, warns that last week's joke \"civil service exam score\" question is genuinely bad: in many states those scores are public record. Any employment-based security question is a bad idea."
+        },
+        {
+          "s": "steve",
+          "t": "Those were meant as comedy. Someone also noted \"who did your grandfather vote for in the 1943 election\" is weak, since there weren't many choices."
+        },
+        {
+          "s": "leo",
+          "t": "The real lesson: write your own question if you can, and lie about the answer, then remember the lie. It's just another password, which defeats the point of an easy-to-remember question."
+        },
+        {
+          "s": "steve",
+          "t": "Security and convenience are not friends."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How can you run the Malicious Software Removal Tool whenever you want?",
+      "options": [
+        "Type MRT in the Start/Run box to open its full scanning interface",
+        "Reboot the machine",
+        "Buy it from Microsoft",
+        "It can't be run manually"
+      ],
+      "answer": 0,
+      "explain": "It needs no download or reboot."
+    },
+    {
+      "q": "Why is the Conficker/Downadup worm spreading to millions?",
+      "options": [
+        "Many machines never applied the October out-of-cycle patch",
+        "It's unstoppable",
+        "It uses a new zero-day",
+        "Antivirus can't detect it"
+      ],
+      "answer": 0,
+      "explain": "The January MSRT can remove it."
+    },
+    {
+      "q": "How strong is the YubiKey's 44-character static password?",
+      "options": [
+        "About 176 bits, since each of 16 possible characters encodes four bits",
+        "8 bits",
+        "44 bits",
+        "Unbreakable by design"
+      ],
+      "answer": 0,
+      "explain": "Yubico chose characters that map to the same scan codes on any keyboard."
+    },
+    {
+      "q": "Why can't a one-time password token stop a man-in-the-middle attack?",
+      "options": [
+        "A fake site can relay your login to the real site immediately",
+        "Tokens are reused",
+        "It only works on PayPal",
+        "Tokens are unencrypted"
+      ],
+      "answer": 0,
+      "explain": "A one-time code only defeats a replay attack."
+    },
+    {
+      "q": "Why can a tool read the WPA key stored in Windows?",
+      "options": [
+        "Windows must store a usable key, not a hash, to connect",
+        "Windows doesn't encrypt anything",
+        "It's a Windows bug",
+        "The key is in the registry in plain text"
+      ],
+      "answer": 0,
+      "explain": "It stores the PBKDF2-derived key, enough to rejoin the network."
+    },
+    {
+      "q": "When does a certificate provider end up with a copy of your private key?",
+      "options": [
+        "When its web-based system generates the whole key pair for you",
+        "Always",
+        "Never",
+        "Only for email certificates"
+      ],
+      "answer": 0,
+      "explain": "Generating the pair yourself keeps it Trust No One."
+    }
+  ]
+}
