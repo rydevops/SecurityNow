@@ -1,0 +1,631 @@
+{
+  "number": 76,
+  "title": "Listener Feedback Q&A #15",
+  "subtitle": "Hi-def first impressions, a Blu-ray key hunt and your questions",
+  "date": "2007-01-25",
+  "description": "Steve corrects SecurAble's launch timing, shares his first impressions of HD DVD, and explains how muslix64 found Blu-ray keys by sliding through a player's memory. Listener questions cover ASLR and DEP beyond Windows, scripting with DEP, revoked players, malware on home file shares, fake revocation lists, home-made HD video, avoiding Vista, private webmail, testing websites through TOR, limited user accounts, CrossLoop's safety, and drive failure rates.",
+  "transcript": "https://www.grc.com/sn/sn-076.txt",
+  "audio": "http://media.GRC.com/sn/SN-076.mp3",
+  "chapters": [
+    {
+      "title": "Never Missing an Episode",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I'm off to New York for \"Regis & Kelly,\" then another geek cruise. Most podcasts will take a couple of weeks off, but Steve said no, we will not miss an episode."
+        },
+        {
+          "s": "steve",
+          "t": "And I get to catch up on episode numbers."
+        },
+        {
+          "s": "leo",
+          "t": "You'll never catch the daily Giz Wiz or my KFI show. This is Episode 76, a Mod 4 episode, so it's our 15th Q&A."
+        }
+      ]
+    },
+    {
+      "title": "SecurAble's Page Went Up in a Hurry",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, errata. Last week we announced SecurAble. I was still finishing its web page when I saw that you, three hours ahead on the East Coast, had already published the podcast. So GRC.com/securable wasn't there for some early listeners."
+        },
+        {
+          "s": "steve",
+          "t": "I quickly put a page up and kept working on it for days. It's linked from GRC.com's home page too. It's about 108K, big for me, because everything is signed, it carries a kernel driver, and it has text and graphics. You don't install it. Just download and run it. The page has a lot of fun information."
+        },
+        {
+          "s": "leo",
+          "t": "That's my fault. I'll try to publish every Thursday at noon Pacific, with new scheduling software, over the next three weeks while I'm away."
+        },
+        {
+          "s": "steve",
+          "t": "Next week we'll discuss Microsoft's formal blog response to Peter Gutmann's paper."
+        }
+      ]
+    },
+    {
+      "title": "Is High Definition Worth It?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I bought the second-generation Toshiba HD DVD player. Thankfully it recognizes discs in under a minute. The first generation was underpowered for all the decryption mumbo-jumbo."
+        },
+        {
+          "s": "steve",
+          "t": "I watched \"Tomb Raider\" and the first two \"Mission: Impossible\" films from the HD box set. I wasn't impressed with the HD look."
+        },
+        {
+          "s": "steve",
+          "t": "Then I watched \"Pitch Black,\" the sci-fi film where Vin Diesel crashes on a strange planet besieged by unfriendly flying things. It was stunning. Not all HD DVDs are created equal."
+        },
+        {
+          "s": "steve",
+          "t": "The discs say 1080p, 1920 by 1080, far above my first-generation 1280 by 720 projector. Mark Thompson feels content often isn't even digitized at the higher resolution, so people going to great lengths for 1080p may be disappointed."
+        },
+        {
+          "s": "leo",
+          "t": "Columns say a good upscaling 1080i display looks almost identical to a 1080p source."
+        },
+        {
+          "s": "steve",
+          "t": "Watching all four in the same conditions, a properly digitized movie can be phenomenally better. But only one in four was discernibly different."
+        },
+        {
+          "s": "leo",
+          "t": "I use my Xbox 360's HD DVD drive. \"King Kong,\" which came with it, looks fantastic, and so does \"Seabiscuit.\""
+        },
+        {
+          "s": "steve",
+          "t": "There's one more disc I'm salivating over, not for its content but for its picture."
+        },
+        {
+          "s": "leo",
+          "t": "Oh dear, that's one of the worst movies ever made."
+        },
+        {
+          "s": "steve",
+          "t": "But HD DVD reviewers say it's the best-looking disc they've ever seen."
+        },
+        {
+          "s": "leo",
+          "t": "It happened with CDs and DVDs too. Early transfers were bad. In HD you see every defect."
+        },
+        {
+          "s": "steve",
+          "t": "Last night the actors' pores were very visible."
+        },
+        {
+          "s": "leo",
+          "t": "We're shooting \"Call For Help\" in HD now with airbrush makeup."
+        }
+      ]
+    },
+    {
+      "title": "A Dual-Format Player, and Why Steve Still Buys HD",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You discussed dual HD DVD and Blu-ray players on TWiT. Did you notice the price?"
+        },
+        {
+          "s": "leo",
+          "t": "$1,200. It's out now."
+        },
+        {
+          "s": "steve",
+          "t": "I'd heard licensing would prevent dual-format players, but clearly not. So there's hope we won't be stuck in a Betamax-versus-VHS debacle."
+        },
+        {
+          "s": "leo",
+          "t": "I like HD DVD, AACS or not."
+        },
+        {
+          "s": "steve",
+          "t": "I already had the projector, so I ran an HDMI cable to support HDCP. And HD DVDs cost no more than regular DVDs, so why not buy them?"
+        },
+        {
+          "s": "steve",
+          "t": "The only reason not to is if I wanted to do something besides watch. With some regular DVDs, I've stripped out the previews and menus so the movie just plays. Who needs three-year-old previews? And I've compressed them for my Palm."
+        },
+        {
+          "s": "steve",
+          "t": "That's now technically illegal. When I bought those discs, fair use let me decrypt and reauthor them. Then the DMCA made decryption illegal. It's annoying."
+        }
+      ]
+    },
+    {
+      "title": "muslix64's Blu-ray Key Hunt",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of which, muslix64 has now gotten into Blu-ray, too."
+        },
+        {
+          "s": "leo",
+          "t": "Because it's still AACS."
+        },
+        {
+          "s": "steve",
+          "t": "And he didn't even have a Blu-ray disc. Someone playing a Blu-ray movie in Windows, in WinDVD I think, took a snapshot of that process's memory. If it's playing the movie, the key must be in memory. He sent muslix64 the image plus a few chunks of encrypted content, which are just files on the disc."
+        },
+        {
+          "s": "steve",
+          "t": "Here's the fun crypto. The keys are 128 bits, so you can't brute-force every possible key. But you only need to try every candidate in that memory image, which is far smaller."
+        },
+        {
+          "s": "leo",
+          "t": "You don't know where the key is."
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't matter. Treat the first bytes of memory as the key and try decrypting some content. You know what the start of the content should look like, a standard MPEG frame. If that fails, slide over one byte and try again, all the way through memory. Our PCs search the image in a very short time."
+        },
+        {
+          "s": "leo",
+          "t": "Probably faster than the player decrypts AACS."
+        },
+        {
+          "type": "fact",
+          "title": "The method",
+          "t": "An AES-128 key is 16 bytes, so each candidate is a 16-byte window. Testing candidates against content whose beginning you can predict is called a known-plaintext attack."
+        },
+        {
+          "s": "steve",
+          "t": "So software players are a huge vulnerability for this whole class of encryption. Something under the user's control must display an unencrypted result, so everything needed to decrypt has to be right there."
+        },
+        {
+          "s": "leo",
+          "t": "People ask: if you can't crack encrypted email, how can you crack a DVD? That's why. The key has to exist somewhere."
+        },
+        {
+          "s": "steve",
+          "t": "Isn't it a beautiful hack?"
+        }
+      ]
+    },
+    {
+      "title": "Is Windows Ahead of Mac and UNIX?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kenneth Kan of Boston ran SecurAble and enabled hardware virtualization and DEP. These technologies, like randomizing memory at every boot, seem Windows-only. I've never heard of OS X doing it. Is Windows more advanced and secure than UNIX and Mac?"
+        },
+        {
+          "s": "steve",
+          "t": "Address Space Layout Randomization, ASLR, first appeared on, and is best known from, OpenBSD UNIX. It wasn't Windows' idea, and there are even utilities to bring it to older Windows. In two weeks, episode 78, we'll discuss attacks on hardware DEP."
+        },
+        {
+          "s": "leo",
+          "t": "Is hardware DEP available to OS X on Intel?"
+        },
+        {
+          "s": "steve",
+          "t": "It's available to any operating system. Sun's Solaris on RISC chips has always had it. It just hasn't gotten mainstream attention, which is why I made SecurAble and will make DEPuty."
+        },
+        {
+          "type": "fact",
+          "title": "ASLR's history",
+          "t": "ASLR was first implemented by the PaX project for Linux in 2001. OpenBSD adopted it in 2003. Apple added partial ASLR in Mac OS X Leopard later in 2007, and it later became standard on every major OS."
+        }
+      ]
+    },
+    {
+      "title": "Does DEP Make Scripting Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric in Lansing, Michigan asks: with XP SP2 and DEP configured properly, could I set IE7 back from High security to its default, Medium-High? Would DEP prevent unsafe scripting?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. I recommend High security for the Internet zone, which disables scripting, then trusting chosen sites. But even if DEP stopped every buffer overrun, and that's a gray area, scripting is still unsafe."
+        },
+        {
+          "s": "steve",
+          "t": "Hackers can invoke any ActiveX control through IE and talk to it, as in the WinZip attack a couple of months ago. Scripting gives websites access to controls you don't want them using."
+        },
+        {
+          "s": "leo",
+          "t": "It's not just buffer overruns."
+        },
+        {
+          "s": "steve",
+          "t": "Scripting is a bad thing to let websites do to you."
+        },
+        {
+          "s": "leo",
+          "t": "I've used Firefox's NoScript since we talked about it. It's such a pain that I gave up and am taking my chances. Convenience versus security."
+        },
+        {
+          "s": "steve",
+          "t": "Browsing in a VM you discard afterward is really safe, too."
+        }
+      ]
+    },
+    {
+      "title": "What If My Player Is Revoked?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Topher Slater of Portsmouth, Virginia asks: if my video card or HD DVD player's key is revoked, will stores take it back? And if a disc won't play, am I stuck with a $20 piece of plastic I can't return once it's open?"
+        },
+        {
+          "s": "steve",
+          "t": "I believe the threat of revocation is easily blown out of proportion. Revoking commercial players is so bad that it's hard to believe it would happen. It's possible, but it may never happen."
+        },
+        {
+          "s": "leo",
+          "t": "It would be so costly in public relations, it'd be the end of the MPAA."
+        },
+        {
+          "s": "steve",
+          "t": "And the disc wouldn't be worthless. Discs aren't revoked. Players, screens or other links in the chain are."
+        },
+        {
+          "s": "leo",
+          "t": "The real issue is buying an HD DVD player without a properly encrypted monitor, and getting a black screen because the display lacks HDMI, or has HDMI without HDCP. That happens. It's up to the retailer."
+        }
+      ]
+    },
+    {
+      "title": "Stopping Malware on a Home Network",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Hutchinson of Clermont, Florida uses Windows file sharing behind his NAT router for backups. He avoids mapped drives, suspecting malware could use them, but malware can browse My Network Places too. And he has nightmares of a visitor's infected laptop spreading malware over his Wi-Fi. That happens. Zotob hit CNN that way. How can he make it harder without losing convenience?"
+        },
+        {
+          "s": "leo",
+          "t": "Oh come on. Worms like Zotob aren't an issue if you turn on Windows Firewall on each system."
+        },
+        {
+          "s": "steve",
+          "t": "I was being a little facetious. But then the machines still need to share. Malware can easily see mapped drives."
+        },
+        {
+          "s": "leo",
+          "t": "A mapped drive gives a network folder a drive letter, so malware needn't even search the network."
+        },
+        {
+          "s": "steve",
+          "t": "If every machine shares the same workgroup or domain, username and password, mappings need no credentials. Give each machine different usernames and passwords, so a mapping requires logging on, which malware can't do. And don't leave static mappings up. Bring them up and tear them down. It's a hassle, like NoScript."
+        },
+        {
+          "s": "leo",
+          "t": "It's a balancing act. I map, and I'm not too worried. If something bad is on your network, you're dead anyway. And since guests use my network, each machine needs its own firewall, not just the NAT router."
+        },
+        {
+          "s": "steve",
+          "t": "I map all over my network too. I'm just very careful not to let anything bad in."
+        }
+      ]
+    },
+    {
+      "title": "Could a Video Carry Fake Revocations?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Gladstone in Auckland, New Zealand, near Peter Gutmann, asks: premium content isn't only on discs. Could a crafty hacker make a \"viral video\" carrying revocation lists for innocent drivers, neutering Vista? Is there a single private key that could bring the house of cards down?"
+        },
+        {
+          "s": "leo",
+          "t": "So a YouTube video that disables your video card while you watch it?"
+        },
+        {
+          "s": "steve",
+          "t": "A single central authority, the AACS licensing body, maintains the master revocation list. Players hold only the public key that lets them read it. Nobody else has the private key used to produce it. So nobody can make up a naughty revocation list that working players will believe."
+        },
+        {
+          "s": "steve",
+          "t": "AACS has leveraged public-key and symmetric crypto every way you can imagine. They've really thought these scenarios through."
+        },
+        {
+          "type": "fact",
+          "title": "Signed, not secret",
+          "t": "Revocation lists are digitally signed with the licensing authority's private key, and players verify the signature with its public key. The AACS Licensing Administrator is a separate body from 5C, which runs DTCP."
+        }
+      ]
+    },
+    {
+      "title": "Will DRM Cripple Home HD Video?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mr. and Mrs. Sven Thomas of Caronport, Saskatchewan shoot high-definition video with Sony camcorders. Will Vista cripple their personal HD content because it isn't signed?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely not, because their recordings aren't encrypted."
+        },
+        {
+          "s": "leo",
+          "t": "So you can make an HD disc and give it to friends. High definition itself isn't the issue."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. It's always been true for standard DVDs. Home movies transferred to DVD are unencrypted and freely copyable."
+        }
+      ]
+    },
+    {
+      "title": "Avoiding Vista",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dee Smith of Leesburg, Virginia builds a new system every two years. He wants a Core 2 Duo that does justice to his new 24-inch Dell monitor, has no interest in HD players, and will stay with XP Pro to avoid Big Brother Bill. Suggestions?"
+        },
+        {
+          "s": "steve",
+          "t": "Do what I'm doing. I just built a Core 2 Quad machine I named Quadmire, and I'm installing XP Pro. I stay one major step behind, and I'm still on Windows 2000. If you don't get enough benefit from Vista to tolerate losing control, stay with XP."
+        },
+        {
+          "s": "steve",
+          "t": "I think Microsoft will have a much harder time killing XP than it wants. Enterprise customers have forced it to keep supporting old versions before."
+        },
+        {
+          "type": "fact",
+          "title": "XP's long life",
+          "t": "Microsoft did keep XP alive for years. It extended XP sales because of demand, and finally ended support in April 2014, more than 12 years after XP's release."
+        },
+        {
+          "s": "leo",
+          "t": "Could Microsoft make a stripped-down Windows? It makes cut-down XP versions for markets like China."
+        },
+        {
+          "s": "steve",
+          "t": "Our newsgroups discussed that. It would be a great solution, but the protected video and audio paths changed Windows' kernel so deeply that they can't simply be removed."
+        },
+        {
+          "s": "leo",
+          "t": "And politically, Hollywood sees every PC as a piracy device. It wants no PC sold without this, and Microsoft is acquiescing. That's why DRM is in every copy of Vista."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's blog response, by David Marsh, covers a lot of this. That's next week."
+        }
+      ]
+    },
+    {
+      "title": "Private Webmail",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rich in the Highlands of Scotland was horrified to see \"We collect personal information on this site\" at the bottom of Yahoo! Mail, and that it switches from HTTPS to HTTP after login. Gmail requires an invitation. He uses Yahoo! for eBay and Amazon. Where can he get private, secure email?"
+        },
+        {
+          "s": "steve",
+          "t": "That's a question for you, Leo. I like Gmail. If anyone he knows has Gmail, they can invite him. I have about a hundred invitations."
+        },
+        {
+          "s": "leo",
+          "t": "I'll send him one. But I don't know that Google is better. Its business is advertising, like Yahoo!'s."
+        },
+        {
+          "s": "steve",
+          "t": "And we know Google archives everything forever, which is frightening."
+        },
+        {
+          "s": "leo",
+          "t": "Every website collects some information, like your IP. Yahoo!'s notice may just be lawyers disclaiming. The most aggressively private service is probably Hushmail. Mail is secured with built-in PGP, and it sells mail, not ads, with a free version. Phil Zimmermann worked with them for a while."
+        },
+        {
+          "s": "steve",
+          "t": "COTSE is another strong one."
+        },
+        {
+          "s": "leo",
+          "t": "I'll look at it. It calls itself your shield from the Internet, so it probably proxies too. SpamCop.net is also privacy-focused, and great for reporting spam. But email isn't private unless you encrypt it."
+        },
+        {
+          "type": "fact",
+          "title": "Since then",
+          "t": "Gmail opened to everyone without invitations in February 2007. Later in 2007, court records showed Hushmail could be compelled to capture a user's passphrase and hand over decrypted mail, a reminder that end-to-end encryption you control matters most."
+        }
+      ]
+    },
+    {
+      "title": "Testing a Website Through TOR",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "\"Anonymous Sender\" tests web applications from outside his company's firewall using an iMac running OS 9 on a 56K modem. Could TOR, from OS X or XP, let them reach their site as if from outside? Any pitfalls?"
+        },
+        {
+          "s": "steve",
+          "t": "That's brilliant. It ought to work great. They've been dialing an ISP to surf back to themselves. Traffic through TOR arrives from outside. And they could use a short route to reduce latency."
+        }
+      ]
+    },
+    {
+      "title": "A Threat to Disable Everyone's Drivers?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bob Sudduth of Dayton, Ohio. You were born in Dayton?"
+        },
+        {
+          "s": "steve",
+          "t": "I was barely conscious. My sister was born in Fairborn, two years after me, and we left soon after. I've never been back."
+        },
+        {
+          "s": "leo",
+          "t": "Bob asks: what stops hackers from extorting companies with, \"Pay us millions, or we'll disable all your drivers everywhere\"?"
+        },
+        {
+          "s": "steve",
+          "t": "Many people asked this. Same answer: only the AACS authority has the private keys, guarded as an absolute secret, so nobody can spoof its information anywhere in the chain."
+        },
+        {
+          "s": "steve",
+          "t": "Even in producing a disc, nobody knows more than they must. The content provider, the disc manufacturer and the playback device each get different keys that interlock. It's beautifully engineered. It's just a pain to have."
+        }
+      ]
+    },
+    {
+      "title": "Why Surf as a Limited User?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ed from Philadelphia asks: what are the security benefits of surfing under a user account instead of an administrator account? This applies to Macs and every OS, not just Windows."
+        },
+        {
+          "s": "steve",
+          "t": "It comes from UNIX, where the administrative account is \"root.\" Even servers ran as non-root users so a compromise couldn't do much damage."
+        },
+        {
+          "s": "steve",
+          "t": "Programs run with your privileges. If yours are limited, so are theirs. For example, they can't load code into the kernel, which only administrators can do."
+        },
+        {
+          "s": "leo",
+          "t": "Some programs don't work well without admin rights. It's much easier under Vista than XP."
+        },
+        {
+          "s": "steve",
+          "t": "We'll do a whole episode on Vista's User Account Control, UAC. Users see a box popping up asking permission, but much more is going on under the hood."
+        },
+        {
+          "s": "leo",
+          "t": "As a limited user, you're asked for the administrator password, which I think is more secure. Apple works similarly, even for administrators. On Vista and OS X I always run as a limited user. My regret is that Vista's first account is automatically an administrator."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft knows that would be too hard to sell. But even for an administrator, anything trying to modify the OS triggers a well-protected dialog, so malware can't change things behind your back."
+        }
+      ]
+    },
+    {
+      "title": "Is CrossLoop Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeff Smith of Alpena, Michigan heard me mention CrossLoop on KFI. It's a simple remote desktop program that's great for a family computer geek. Are there security risks?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a cross between VNC and Hamachi. It uses the open-source VNC code, I think TightVNC's, and adds Hamachi-style NAT traversal. Both people run the same app with host and guest tabs, and a 12-digit number authenticates the session. All good."
+        },
+        {
+          "s": "steve",
+          "t": "The only downside, true of Hamachi too, is that you trust the third-party server that both sides contact to negotiate their direct connection. It could play games if it wanted."
+        },
+        {
+          "s": "steve",
+          "t": "There's no reason to mistrust the CrossLoop people, and I was convinced Hamachi's author, Alex Pankratov, was a good guy. But I like complete control. It's a typical trade: to avoid configuring a static port mapping on your router, you give up a little security, probably not enough to worry about."
+        },
+        {
+          "s": "leo",
+          "t": "Twelve questions and answers. Fifteen Q&As means 180."
+        },
+        {
+          "s": "steve",
+          "t": "I had 600 postings when I checked, so we won't run out. Use the form at the bottom of GRC.com/securitynow. You can be anonymous, but we like reading names and places on the air."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves Mom's Christmas",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On December 23rd a customer wrote our sales address, which Sue monitors even over the holidays. He was at his mom's, troubleshooting her drive, with his SpinRite license at home. Sue found his purchase in the e-commerce system I wrote, and sent his transaction code, which lets owners download SpinRite from anywhere."
+        },
+        {
+          "s": "leo",
+          "t": "Keep your code with you at all times. I'm fixing my mom's computer next week."
+        },
+        {
+          "s": "steve",
+          "t": "He burned the ISO to CD and ran SpinRite. A failing Windows Explorer component had stopped everything after boot. Now her email and web work, and he said it was her best Christmas present."
+        },
+        {
+          "s": "steve",
+          "t": "Setting up SATA drives for my new system, I saw that Seagate's new Barracuda 7200.9 spec claims 0.34 percent failure per year. That's about one in 300 drives dying each year."
+        },
+        {
+          "s": "leo",
+          "t": "Think of the millions they sell. And this wasn't even a drive failure, just a data error. It must be more like one in a hundred."
+        },
+        {
+          "s": "steve",
+          "t": "Reliability seems to be coming down. With drives approaching a terabyte, eight terabits, how do you get them all back?"
+        },
+        {
+          "type": "fact",
+          "title": "Real failure rates",
+          "t": "Large 2007 studies by Google and Carnegie Mellon found real-world annual drive failure rates of roughly 2 to 8 percent, far above manufacturers' specifications. Backblaze's ongoing reports today show about 1 to 2 percent for modern drives."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did muslix64 find a Blu-ray key without the disc?",
+      "options": [
+        "He tried every possible key position in a player's memory snapshot against known content",
+        "He brute-forced all 128-bit keys",
+        "He bought the key",
+        "He hacked Blu-ray's servers"
+      ],
+      "answer": 0,
+      "explain": "Memory is far smaller than the 128-bit keyspace."
+    },
+    {
+      "q": "Why isn't scripting safe even with DEP enabled?",
+      "options": [
+        "Scripts can invoke and drive ActiveX controls, not just exploit buffer overruns",
+        "DEP turns off for IE",
+        "Scripts are encrypted",
+        "DEP slows scripts"
+      ],
+      "answer": 0,
+      "explain": "The WinZip attack worked this way."
+    },
+    {
+      "q": "How can you make home file shares harder for malware to use?",
+      "options": [
+        "Use different usernames and passwords per machine and avoid static mappings",
+        "Map every drive",
+        "Turn off the firewall",
+        "Use one shared password"
+      ],
+      "answer": 0,
+      "explain": "Then a mapping requires logon credentials."
+    },
+    {
+      "q": "Why can't a hacker distribute a fake AACS revocation list?",
+      "options": [
+        "Only the licensing authority has the private key that players verify lists against",
+        "Revocation lists are secret",
+        "Players ignore videos",
+        "Lists expire daily"
+      ],
+      "answer": 0,
+      "explain": "Players hold only the matching public key."
+    },
+    {
+      "q": "Will Vista's DRM affect your own home HD videos?",
+      "options": [
+        "No, because they aren't encrypted",
+        "Yes, all HD is restricted",
+        "Only on Blu-ray",
+        "Only on 64-bit Vista"
+      ],
+      "answer": 0,
+      "explain": "Unencrypted discs can always be freely copied."
+    },
+    {
+      "q": "What's the risk of NAT-traversal tools like CrossLoop and Hamachi?",
+      "options": [
+        "You must trust the third-party server that brokers connections",
+        "They disable firewalls",
+        "They're always unencrypted",
+        "They require admin rights"
+      ],
+      "answer": 0,
+      "explain": "The alternative is mapping a port on your router yourself."
+    }
+  ]
+}
