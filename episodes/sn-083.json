@@ -1,0 +1,437 @@
+{
+  "number": 83,
+  "title": "UAC in Depth",
+  "subtitle": "How Vista's User Account Control really works",
+  "date": "2007-03-15",
+  "description": "Steve finishes the \"full radio silence\" series for Windows Wi-Fi with one more checkbox to clear, notes a quiet Patch Tuesday and a fake Vista key generator, then explains what's behind Vista's User Account Control prompt: application manifests, the shield icon, integrity levels, the secure desktop, installer detection, and the filtered token that makes even administrators run as standard users. He sees Vista as Microsoft finally pushing developers toward security.",
+  "transcript": "https://www.grc.com/sn/sn-083.txt",
+  "audio": "http://media.GRC.com/sn/SN-083.mp3",
+  "chapters": [
+    {
+      "title": "Maintaining Full Radio Silence",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today, Vista's User Account Control, UAC, and whether it really protects you. But first, more from previous episodes."
+        },
+        {
+          "s": "steve",
+          "t": "Believe it or not, we've snuck in an entire show on keeping Windows Wi-Fi quiet. In Episode 81 we showed the dialogs to stop connecting to ad hoc networks. In 82, the Wireless Client Update. But even after the update, Windows still tries to broadcast the names of networks you've used, because Microsoft added a checkbox that's checked by default."
+        },
+        {
+          "s": "leo",
+          "t": "So even with the patch, it's still promiscuous unless you uncheck it."
+        },
+        {
+          "s": "steve",
+          "t": "The box lets Windows connect to networks that aren't broadcasting their names. If the network isn't broadcasting, your computer does. Episode 81's show notes now include the new instructions, and this episode links to them."
+        },
+        {
+          "s": "leo",
+          "t": "Ad hoc only, or infrastructure too?"
+        },
+        {
+          "s": "steve",
+          "t": "Both. I've started calling it \"maintaining full radio silence.\" If you forget to disable Wi-Fi while carrying a laptop, you don't want it sending anything."
+        },
+        {
+          "s": "leo",
+          "t": "I could edit those chunks together into Episode 84."
+        },
+        {
+          "type": "fact",
+          "title": "The checkbox",
+          "t": "In XP, the option was labeled \"Connect even if this network is not broadcasting.\" Hidden networks force clients to announce the network's name, which is why hiding an SSID doesn't add security."
+        }
+      ]
+    },
+    {
+      "title": "A Quiet Patch Tuesday and a Fake Key Generator",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Also, the second Tuesday of the month brought no major Windows security updates."
+        },
+        {
+          "s": "leo",
+          "t": "That doesn't mean there are no flaws. I saw several critical XP flaws Microsoft wasn't ready to patch. But nobody's said there are flaws in Vista. That's encouraging."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has sometimes released urgent patches outside its monthly cycle when it couldn't wait."
+        },
+        {
+          "s": "leo",
+          "t": "Vista's been out almost two months with no major exploits. People are attacking its activation, but I don't care about that."
+        },
+        {
+          "s": "steve",
+          "t": "I heard on one of your podcasts about a tool that generates valid Vista keys, so someone else's legitimate key could be rejected as already used."
+        },
+        {
+          "s": "leo",
+          "t": "It was bogus. Its author admitted it: 25 alphanumeric characters is too big for any brute-force cracker. Someone noted that if it had worked, it would steal from other users whose keys it duplicated. But a BIOS hack that bypasses activation apparently does work."
+        },
+        {
+          "s": "steve",
+          "t": "Encouraging, but predictable. Windows 95, 98, 2000, I won't talk about ME, and XP had so many problems because Microsoft was slow to get a clue. All you need is a firewall. XP had one, disabled by default, until Service Pack 2. I recognize the pattern now: slowly but surely creeping forward."
+        },
+        {
+          "s": "steve",
+          "t": "Researching UAC, I can see why Vista took so long, even after Microsoft threw out the other goodies promised for \"Longhorn.\" There's a lot there."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft's Pattern: Add It, Then Enable It",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Vista keeps SP2's firewall on by default, so that whole class of open-port problems is resolved. A few years ago, during the worms, many people had no home routers, and we were still talking about software firewalls."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's trend is to add better technology but not enable it at first, to warn everyone it's coming."
+        },
+        {
+          "s": "leo",
+          "t": "They don't want to break everything, so they give you a heads up."
+        },
+        {
+          "s": "steve",
+          "t": "Like hardware DEP. I've learned that IrfanView won't run with DEP because it uses ASPack, an executable compressor. A compressor must decompress the program into data memory and run it there, exactly what DEP stops."
+        },
+        {
+          "s": "steve",
+          "t": "But UPX, the leading EXE compressor, is DEP-compatible. Its authors mark that memory executable, so DEP has no problem."
+        },
+        {
+          "s": "leo",
+          "t": "Why doesn't a hacker just mark his own pages executable?"
+        },
+        {
+          "s": "steve",
+          "t": "He has to be running to mark them."
+        },
+        {
+          "s": "leo",
+          "t": "He can't run the code until he can run the code."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Similarly, people note malware could fake UAC's dimmed screen to trick users into typing administrator credentials, and non-admin users type them constantly. But malware must already be running to spoof UAC. What UAC prevents is malware getting installed in the first place."
+        }
+      ]
+    },
+    {
+      "title": "Pressure on Developers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Some programs, like Synergy, which shares my mouse and keyboard over the network, are befuddled by the UAC screen."
+        },
+        {
+          "s": "steve",
+          "t": "There's more going on than meets the eye. But first: Irfan is now under tremendous pressure to make IrfanView DEP-compatible. Early adopters turn DEP on, find it incompatible, and email him. Someone forwarded his reply. English isn't his native language, and it was clear he wondered why everyone was suddenly complaining. Can you say Security Now!?"
+        },
+        {
+          "s": "steve",
+          "t": "It's like the early days of software firewalls. Security-conscious early adopters turned them on and pressured incompatible software to get fixed, paving the way for Microsoft's built-in firewall."
+        },
+        {
+          "s": "steve",
+          "t": "I foresee DEP enabled by default someday, once DEP-unfriendly programs are a small enough minority that it's their fault."
+        },
+        {
+          "s": "steve",
+          "t": "Looking at Vista, I've concluded that, glacial as Microsoft is, they really got it. Security is the big deal. It was Jim Allchin's final gift to Microsoft. He was there 17 years, led the project with deep networking experience, and retired the moment Vista shipped."
+        }
+      ]
+    },
+    {
+      "title": "Manifests and the Shield Icon",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "UAC puts gentle pressure on developers throughout the system. People complain the prompt appears too much. But developers can control that. Unless an application marks itself UAC-aware, Windows falls back to prompting too often."
+        },
+        {
+          "s": "steve",
+          "t": "I made SecurAble Vista-compatible by appending an \"application manifest\" to the executable declaring it needs administrative privileges, since it briefly installs a kernel driver to read the hardware directly from ring 0. So it asks right up front."
+        },
+        {
+          "s": "steve",
+          "t": "Since SecurAble just shows results, there's no point waiting. But a more complex app can wait until you do something needing privileges. Look at Vista's clock-setting dialog: the button that changes the time has a little shield on it. Users will learn that shield means a UAC prompt."
+        },
+        {
+          "s": "steve",
+          "t": "Even administrators are prompted now, so developers are motivated to minimize admin use. Microsoft's analysis found most applications don't really need admin privileges. They were casually written, since most users ran as admins. A little pressure will make applications friendlier by never showing the dialog."
+        },
+        {
+          "s": "leo",
+          "t": "So if a developer does nothing, it defaults to the most secure behavior?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft knows old apps from defunct companies must still run, so unidentified apps get the in-your-face behavior we see at Vista's launch."
+        },
+        {
+          "s": "leo",
+          "t": "It's not too bad. And it answers XP and 2000's problem of applications not running at all unless you're an admin."
+        },
+        {
+          "s": "steve",
+          "t": "SecurAble first failed silently without admin rights. Vista quietly fails some low-level calls without telling the application, perhaps so malware doesn't know it failed."
+        }
+      ]
+    },
+    {
+      "title": "Integrity Levels",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Another new layer is UIPI, User Interface Privilege Isolation. Vista adds \"integrity levels\" for processes: low, medium, high and system."
+        },
+        {
+          "s": "steve",
+          "t": "A lower-integrity process can't validate a higher one's window handle, or send or post it messages. It also can't attach thread or journal hooks, or inject DLLs, a common way of making a privileged application run your code. These were long-standing, serious Windows security problems."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft couldn't just turn them off without breaking too much, so it added this notion of how much an application is trusted. Internet Explorer runs at the lowest integrity, as do email applications, since they're likely vectors and have no need to touch other programs."
+        },
+        {
+          "type": "fact",
+          "title": "Correction",
+          "t": "In Vista, Internet Explorer's Protected Mode runs at low integrity, but email programs like Outlook and Windows Mail run at the normal, medium level."
+        },
+        {
+          "s": "steve",
+          "t": "Macro recorders work by sending keystrokes and clicks to other programs, and malware can do the same. Now less-trusted programs are limited."
+        },
+        {
+          "s": "steve",
+          "t": "This will break some things. As with kernel patch protection, which Microsoft could enforce on 64-bit but not 32-bit, they're moderating the pushback. But Vista finally pushes back on applications: it's time we all cleaned up our act. Leo, I can foresee Windows becoming the most secure operating system around."
+        },
+        {
+          "s": "leo",
+          "t": "That explains why Chris Pirillo went back to XP because so much doesn't work. It's the tradeoff we always talk about: security versus convenience and compatibility. It's encouraging that Vista isn't compatible with some apps. It can't be, if it wants to be secure."
+        },
+        {
+          "s": "steve",
+          "t": "Joanna Rutkowska, who created Blue Pill, now uses Vista as a main system. She saw lots of UAC prompts at first, then they quieted down. Chris is a power user, installing things all the time, unlike someone who buys a laptop at Circuit City and just uses it."
+        },
+        {
+          "s": "leo",
+          "t": "If you're buying a new computer without legacy hardware and software, absolutely go Vista. If you're upgrading, maybe wait."
+        },
+        {
+          "s": "steve",
+          "t": "For myself, I'm happy with XP."
+        },
+        {
+          "s": "leo",
+          "t": "You were happy with 2000 until a month ago."
+        },
+        {
+          "s": "steve",
+          "t": "I'm sitting in front of 2000 now. I was annoyed that Microsoft didn't update its time zone rules for the recent daylight saving shift, though it still gets critical fixes. It's pressure on the industry to move off 2000."
+        },
+        {
+          "s": "leo",
+          "t": "There's no technical reason. It's just a setting for when summer time begins. It's commercial pressure to upgrade."
+        },
+        {
+          "s": "steve",
+          "t": "I think so. It makes sense for Chris to let others take the arrows in their backs while applications mature."
+        }
+      ]
+    },
+    {
+      "title": "The Secure Desktop",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "As for your remote-control problem: when UAC dims the screen and shows a dialog, the desktop's bitmap is actually copied, and Windows switches to a separate secure desktop where only system code can operate."
+        },
+        {
+          "s": "steve",
+          "t": "Application code, like macro recorders, Windows hooks, and keyboard and mouse remoting, has no connection to it. Microsoft did this so malware can't click Continue before the user can click Cancel. It's a substantial change."
+        }
+      ]
+    },
+    {
+      "title": "Installer Detection",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Joanna spotted something that annoyed her. So as not to break installers, Vista checks the executable's filename. If it contains \"install,\" \"setup\" or \"update,\" or certain vendor or product names, keywords in the executable, or strings in the environment, Vista decides it's an installer that needs admin privileges."
+        },
+        {
+          "s": "leo",
+          "t": "A hacker wouldn't name his software \"setup.\""
+        },
+        {
+          "s": "steve",
+          "t": "It's a perfect door for a Trojan. Make it look like an installer, and Vista drops its guard. Joanna's complaint was that such programs can install kernel drivers."
+        },
+        {
+          "s": "steve",
+          "t": "But a setup program legitimately may need to. Microsoft would say: we asked you first, so it can't happen behind your back. It's Microsoft avoiding breaking old things while they catch up. Once installers identify themselves properly, Microsoft can quietly back off this flaky heuristic."
+        }
+      ]
+    },
+    {
+      "title": "Even Administrators Run as Standard Users",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Vista encourages a user account, but most people create one account, and it's an admin."
+        },
+        {
+          "s": "steve",
+          "t": "The first account is a sort of limited admin. Later accounts default to standard users. And at logon, Vista actually creates two tokens: a full administrator token, and a \"filtered\" standard user token. Everything you do runs under the filtered one."
+        },
+        {
+          "s": "leo",
+          "t": "So you aren't really running as an admin, even when you are."
+        },
+        {
+          "s": "steve",
+          "t": "That's what's so cool, and I didn't understand it until now. Explorer.exe, the desktop shell that's the parent of everything you run, runs as a standard user. Windows watches for requests for higher privileges and switches to the real admin token only if you approve."
+        },
+        {
+          "s": "leo",
+          "t": "Any attempts to hack around UAC?"
+        },
+        {
+          "s": "steve",
+          "t": "That's the attack surface hackers will go after."
+        },
+        {
+          "s": "leo",
+          "t": "They'll go around, not straight in."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has fixed everything we always knew was wrong with Windows: integrity levels against too-easy inter-application communication and DLL injection, data execution prevention, and ASLR, loading code at unpredictable addresses so hackers can't jump to known locations."
+        },
+        {
+          "s": "steve",
+          "t": "I've been rough on Microsoft about raw sockets, and years without a firewall while exposing exploitable services. Those are fixed. Vista represents a major mindset change. Chris is feeling that pressure. In three or four years, when I'm ready to move, it'll be a much better experience."
+        },
+        {
+          "type": "fact",
+          "title": "UAC after Vista",
+          "t": "UAC drew so many complaints that Windows 7 (2009) cut the number of prompts and added a slider to adjust it. Researchers also found ways to bypass its default settings, so Microsoft says UAC is a convenience feature, not a security boundary."
+        }
+      ]
+    },
+    {
+      "title": "Vista's New Network Stack",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You worried about Vista's rewritten \"virgin stack.\" Any evidence of weakness?"
+        },
+        {
+          "s": "steve",
+          "t": "Not statically, since the firewall blocks access. Once a connection's open, there could be packet-level problems, and I wouldn't be surprised if a malicious server could send bad packets. But they'd have to be solicited. That's a much smaller attack surface than early UNIX stacks, with no firewall and services running by default."
+        },
+        {
+          "s": "leo",
+          "t": "I've been happy running Vista in emulation on my Mac and on one PC. Adobe Audition doesn't work with Vista, with no timeline."
+        },
+        {
+          "s": "steve",
+          "t": "Vista revamped the whole audio subsystem to add DRM."
+        },
+        {
+          "s": "leo",
+          "t": "Audition is based on old code, Cool Edit Pro. Adobe may start fresh with something like Soundbooth."
+        },
+        {
+          "type": "fact",
+          "title": "Audition",
+          "t": "Adobe released Audition 3 with Vista support in late 2007."
+        },
+        {
+          "s": "leo",
+          "t": "Our thanks to Nerds On Site, in their last episode with us. They're in seven countries with 256 competencies and a University of Nerdology, at Iwanttobeanerd.com."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, a dozen listener questions. Use the form at the bottom of GRC.com/securitynow."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Even after the Wireless Client Update, what made XP still broadcast network names?",
+      "options": [
+        "A default-on checkbox for connecting to networks that don't broadcast their names",
+        "WPA",
+        "The firewall",
+        "Bluetooth"
+      ],
+      "answer": 0,
+      "explain": "Steve calls turning it off \"maintaining full radio silence.\""
+    },
+    {
+      "q": "Why does IrfanView fail with DEP on, while UPX-packed programs don't?",
+      "options": [
+        "Its ASPack compressor runs decompressed code from non-executable memory, while UPX marks that memory executable",
+        "IrfanView is a virus",
+        "UPX disables DEP",
+        "IrfanView needs admin rights"
+      ],
+      "answer": 0,
+      "explain": "DEP stops code running from data memory."
+    },
+    {
+      "q": "What does an application manifest let a developer do in Vista?",
+      "options": [
+        "Declare whether the program needs administrative privileges",
+        "Encrypt the program",
+        "Skip DEP",
+        "Run on 64-bit"
+      ],
+      "answer": 0,
+      "explain": "Without one, Vista falls back to prompting more often."
+    },
+    {
+      "q": "What does Vista's secure desktop prevent?",
+      "options": [
+        "Malware clicking Continue on a UAC prompt before the user can respond",
+        "Screen savers",
+        "Viruses",
+        "Remote updates"
+      ],
+      "answer": 0,
+      "explain": "Only system code can touch it."
+    },
+    {
+      "q": "How does Vista guess that a program is an installer?",
+      "options": [
+        "Filenames containing words like \"install,\" \"setup\" or \"update,\" among other clues",
+        "A digital signature",
+        "Its size",
+        "User choice"
+      ],
+      "answer": 0,
+      "explain": "Joanna Rutkowska warned Trojans could exploit it."
+    },
+    {
+      "q": "When you log on as an administrator in Vista, what token do your programs use?",
+      "options": [
+        "A filtered standard user token",
+        "The full admin token",
+        "The system token",
+        "No token"
+      ],
+      "answer": 0,
+      "explain": "The admin token is used only after you approve a prompt."
+    }
+  ]
+}
