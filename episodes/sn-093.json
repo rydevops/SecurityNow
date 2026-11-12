@@ -1,0 +1,534 @@
+{
+  "number": 93,
+  "title": "Microsoft Patent Wars",
+  "subtitle": "Software patents and Microsoft's claim against open source",
+  "date": "2007-05-24",
+  "description": "ShieldsUP! passes 50 million tests, Steve explains why routers should be \"stealthed,\" and the Geek Squad follows up on SpinRite licensing. Then a non-security topic: how trademarks, copyrights and patents differ, how software became patentable, why so many obvious software patents are granted, the Supreme Court's new skepticism, and Microsoft's claim in Fortune that free and open-source software infringes 235 of its patents, which it refuses to name.",
+  "transcript": "https://www.grc.com/sn/sn-093.txt",
+  "audio": "http://media.GRC.com/sn/SN-093.mp3",
+  "chapters": [
+    {
+      "title": "50 Million and the Stealth Debate",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Did we break 50 million?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. A chart on ShieldsUP!'s pages shows unique IPs per day, and about four weeks ago our rate doubled, blasting us past 50 million. I wondered if something automated was inflating it, but the normal weekly cycle, busier early in the week, is there, just amplified. Something got ShieldsUP! a lot of attention, and it's sustaining."
+        },
+        {
+          "s": "leo",
+          "t": "Could be your radio appearances. Congratulations."
+        },
+        {
+          "s": "steve",
+          "t": "It's quick and easy: nothing to install, just visit with your browser."
+        },
+        {
+          "s": "steve",
+          "t": "A tech writer for a Houston paper said Apple's AirPort router showed closed ports instead of stealth. Apple said that's how AirPorts work and it's not a problem. Bruce Schneier told him that as long as nothing's open, it probably doesn't matter."
+        },
+        {
+          "s": "steve",
+          "t": "I don't disagree with Bruce. But Apple's own OS X firewall has a stealth option, so Apple clearly sees value in it, yet doesn't offer it in AirPort."
+        },
+        {
+          "s": "steve",
+          "t": "Technically, stealth breaches the RFCs. The spec says a closed port should answer a SYN with a reset: I'm here, but this port is closed. With no answer, the sender retries several times, doubling the wait each time, for maybe 45 seconds before giving up."
+        },
+        {
+          "s": "leo",
+          "t": "So a reset saves time."
+        },
+        {
+          "s": "steve",
+          "t": "And cleans up the Net a little. But it tells a hacker you're there. Ask almost any user whether they'd rather be seen and closed, or appear not to exist, and they'd choose not to exist. Commercial routers promote stealth. The writer asked if I'm responsible for that. I'm pretty sure I am."
+        },
+        {
+          "s": "leo",
+          "t": "You coined \"stealth.\""
+        },
+        {
+          "s": "steve",
+          "t": "Being a Trekkie: ShieldsUP! comes from \"raise our shields,\" and ports that don't respond at all are cloaked, like the Romulans. I've seen Linksys and Netgear firmware notes saying \"fixes router not being fully stealthed for ShieldsUP.\" Customers complain, makers fix it. A nice little ecosystem."
+        }
+      ]
+    },
+    {
+      "title": "The Geek Squad Follows Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Remember 12-year-old Justin Girard, whose Geek Squad technician fixed his PC with SpinRite, though the Geek Squad has no license? I want to give them credit."
+        },
+        {
+          "s": "steve",
+          "t": "Right after that episode, Geek Squad administration contacted our office: we have no record of fixing a Justin Girard's PC, probably it's under his parents' name, can you help us find out? They don't want their geeks using their own software unlicensed in business."
+        },
+        {
+          "s": "steve",
+          "t": "Justin's note was months old, and he had no receipt or details. Neither of us wanted to get that geek in trouble for saving his computer. But it does stretch my touchy-feely feelings, since SpinRite pays the bills."
+        },
+        {
+          "s": "leo",
+          "t": "They followed up, which is good. They could also buy a site license."
+        },
+        {
+          "s": "steve",
+          "t": "That hasn't happened yet, but it would be great."
+        },
+        {
+          "s": "steve",
+          "t": "And Dennis Constant in Southern California flew to Chicago to help his closest friend recover from heart surgery. The friend's office PC rarely booted and made a horrible click-click sound. Dennis ran SpinRite at Level 2, a faster read-only pass, which helped a little. Then he ran Level 5 overnight before flying home. Days later: it works perfectly, almost like new, and faster than ever."
+        }
+      ]
+    },
+    {
+      "title": "Trademarks, Copyrights and Patents",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Every so often something important comes up that isn't security. This is one."
+        },
+        {
+          "s": "leo",
+          "t": "You have experience here."
+        },
+        {
+          "s": "steve",
+          "t": "I've pursued patents as a consultant, and served as an expert witness in a number of patent trials. I have, if I may say, Richard Stallman-like feelings about software patents."
+        },
+        {
+          "s": "leo",
+          "t": "He thinks they're the spawn of Satan."
+        },
+        {
+          "s": "steve",
+          "t": "Not that extreme. People confuse the three pillars of intellectual property. A trademark protects a name or phrase so nobody can use it in a way that confuses consumers."
+        },
+        {
+          "s": "leo",
+          "t": "We have TWiT trademarked. You could have a TWiT ice cream cone, but not a TWiT podcast."
+        },
+        {
+          "s": "steve",
+          "t": "I trademarked \"It's my computer,\" as a battle cry. A few months ago, Network Solutions' lawyers challenged it as too similar to their \"My computer.\""
+        },
+        {
+          "s": "steve",
+          "t": "We'd done everything right with a very good Los Angeles firm, the one Apple and Ashton-Tate used. We searched for conflicts and published the application so anyone could object. Nobody did, and we got the trademark. Network Solutions hadn't even registered theirs."
+        },
+        {
+          "s": "leo",
+          "t": "But they don't have to?"
+        },
+        {
+          "s": "steve",
+          "t": "Prior use wins. We were going to lose. So my attorney suggested we offer to relinquish it for $5,000. They countered $2,500. I said tell them five, or we'll reconsider our options. We got a check for $5,000, and I gave it up."
+        },
+        {
+          "s": "leo",
+          "t": "Nobody will take SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "With 20 years of prior use. And you must defend a trademark, or lose it."
+        },
+        {
+          "s": "steve",
+          "t": "Copyright prevents substantial copying of a work, like a book or software."
+        },
+        {
+          "s": "leo",
+          "t": "You get it automatically by creating the work."
+        },
+        {
+          "s": "steve",
+          "t": "You just mark it with \"copyright,\" the circled C, and the year."
+        },
+        {
+          "s": "steve",
+          "t": "A patent claims an invention, which must pass three tests: novel, non-obvious to someone skilled in the art, and useful."
+        },
+        {
+          "s": "leo",
+          "t": "You can't patent a bubble sort."
+        },
+        {
+          "s": "steve",
+          "t": "My problem is that the software patents I see seem obvious. I'm no genius, but most of what people claim to have invented looks obvious."
+        },
+        {
+          "s": "leo",
+          "t": "Like Amazon's one-click patent: click one button to buy."
+        },
+        {
+          "s": "steve",
+          "t": "That fails non-obviousness. Crypto algorithms, with their S-boxes and rotations, now that's serious work."
+        }
+      ]
+    },
+    {
+      "title": "How Software Became Patentable",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Originally, the Patent Office held that software is math, and you can discover math but not invent it. So software couldn't be patented."
+        },
+        {
+          "s": "steve",
+          "t": "About 20 years ago, as a consultant, I worked with a client's patent attorney. He said the office won't patent software, so describe it as hardware. The hardware wouldn't be the \"preferred embodiment,\" software would. But patenting the hardware version would also cover software doing the same thing."
+        },
+        {
+          "s": "steve",
+          "t": "Since then things have moved incrementally until they're relatively out of control. People have even patented human genes. How can you patent something in my blood?"
+        },
+        {
+          "type": "fact",
+          "title": "Court decisions",
+          "t": "Courts first rejected pure algorithm patents (Gottschalk v. Benson, 1972), then allowed software within inventions (Diamond v. Diehr, 1981) and broadened it in the 1990s. In 2013 the Supreme Court ruled naturally occurring human genes can't be patented, and in 2014 (Alice v. CLS Bank) it sharply limited patents on abstract software ideas."
+        },
+        {
+          "s": "steve",
+          "t": "Companies built patent portfolios. IBM led, with lots of hardware patents and no doubt the same software-as-hardware strategy. Sun and nearly every computer company followed."
+        },
+        {
+          "s": "steve",
+          "t": "In the famous Apple-Microsoft lawsuit over desktop designs, they ended up smoking a peace pipe with a cross-licensing deal: each licenses the other's patents and promises not to sue. Mostly companies amass patents to trade them that way."
+        },
+        {
+          "s": "steve",
+          "t": "But sometimes they sue. RIM, the BlackBerry company, paid NTP an amazing amount to settle, even though many of the patents might have been invalidated, because fighting would have cost more."
+        },
+        {
+          "type": "fact",
+          "title": "RIM and NTP",
+          "t": "RIM paid NTP $612.5 million in 2006, while the Patent Office was in the process of rejecting NTP's patents."
+        },
+        {
+          "s": "steve",
+          "t": "Many people agree the Patent Office issues patents it shouldn't. Patent attorneys think more patents are better. A bogus patent gives a company a government-sponsored right to sue. As an expert witness, I've seen things that should never have been patented, with money flowing to attorneys, when the office could just have said no, this is obvious."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft's E-Ink Patent",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft was slow to the patent game. In 2002 it applied for 1,411 patents. By 2004, 3,780."
+        },
+        {
+          "s": "steve",
+          "t": "Companies tell programmers to report anything clever to legal. Mark Thompson made a good point: a programmer may invent something specific and genuinely novel. But the patent attorney stretches it as broad as possible, because a broader patent is better."
+        },
+        {
+          "s": "steve",
+          "t": "I've experienced it. I describe what I mean, and my attorney makes it cover any color, chrome and black, even banana splits. The Patent Office says it's too broad, and they negotiate until someone blinks."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft was just granted a patent, around May 17, on making electronic ink flow smoothly on a Tablet PC. I wanted something amazing. It puts ink events in a separate queue that the OS handles with higher priority, so the screen shows ink before updating the clock or dragging windows."
+        },
+        {
+          "s": "steve",
+          "t": "I read it again looking for what I'd missed. Priority queues are a fundamental part of any operating system. IBM surely had them on computers with tubes."
+        },
+        {
+          "s": "leo",
+          "t": "Any multitasking OS has them."
+        },
+        {
+          "s": "steve",
+          "t": "Another used a counter that goes positive or negative to capitalize the next letter after a pen stroke. Maybe some programmer once had something novel, but what's issued is a nightmare that just causes problems."
+        },
+        {
+          "s": "leo",
+          "t": "It's asking for litigation."
+        }
+      ]
+    },
+    {
+      "title": "The Supreme Court Pushes Back",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Hasn't the Supreme Court weakened this?"
+        },
+        {
+          "s": "steve",
+          "t": "It's been taking up patent cases. Microsoft won one against AT&T. Microsoft acknowledged infringing AT&T's voice technology in the U.S., but AT&T wanted to enforce its U.S. patents worldwide. The Court said no, your rights stop at the U.S. border."
+        },
+        {
+          "s": "steve",
+          "t": "The other was a company trying to patent the combination of two previously patented things: an adjustable gas pedal and an electronic throttle. The Patent Office said no, an appeals court said yes, and the Supreme Court said no."
+        },
+        {
+          "s": "steve",
+          "t": "Justice Anthony Kennedy wrote that granting patent protection to advances that would occur in the ordinary course without real innovation retards progress, and may stifle rather than promote the useful arts."
+        },
+        {
+          "s": "leo",
+          "t": "That's the balance patent law is supposed to strike."
+        },
+        {
+          "type": "fact",
+          "title": "The cases",
+          "t": "The cases were Microsoft v. AT&T and KSR v. Teleflex, both decided in April 2007. KSR made it easier to reject patents that merely combine known elements."
+        }
+      ]
+    },
+    {
+      "title": "235 Patents, Unnamed",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Ten days ago, Fortune's senior editor for legal affairs, Roger Parloff, published a feature called \"Microsoft Takes On the Free World.\" Microsoft's general counsel, Brad Smith, and Horacio Gutierrez, vice president of intellectual property and licensing, told him free and open-source software, now called FOSS, infringes Microsoft's patents."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft had grumbled before. This time it gave a number: 235 patents. The Linux kernel violates 42, the user interface and design elements another 65, OpenOffice 45, and email and other programs 83. Microsoft clearly went through its own huge portfolio and scrutinized open source."
+        },
+        {
+          "s": "steve",
+          "t": "Remember last November's strange Microsoft-Novell deal?"
+        },
+        {
+          "s": "leo",
+          "t": "Novell agreed to indemnify its users against Microsoft lawsuits, and paid Microsoft for it."
+        },
+        {
+          "s": "steve",
+          "t": "Though Microsoft paid Novell more. It was cross-licensing: Microsoft wanted to know Novell's networking patents would never be a problem, and vice versa. That protects each company's customers, because under patent law, if your legally bought software does a patented thing, you individually infringe."
+        },
+        {
+          "s": "leo",
+          "t": "So you're liable without knowing."
+        },
+        {
+          "s": "steve",
+          "t": "Gutierrez said this isn't accidental, unknowing infringement, given the overwhelming number. What a crock."
+        },
+        {
+          "s": "leo",
+          "t": "And they won't say which patents. Prove it. Then we could judge whether they're good or bad."
+        },
+        {
+          "s": "steve",
+          "t": "If one is the e-ink patent, they'll have to drop to 234."
+        },
+        {
+          "s": "leo",
+          "t": "I bet some are obvious things like a stack."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft said people need to start paying for its intellectual property."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe you violate their patents too."
+        },
+        {
+          "s": "steve",
+          "t": "Patents have been granted with such abandon that nobody can know. I couldn't read all of Microsoft's, Sun's and IBM's patents and tiptoe through the tulips. I don't think I could write code that didn't violate some bogus patent."
+        },
+        {
+          "s": "leo",
+          "t": "Linus Torvalds says nobody in open source will look, because knowing exposes you."
+        },
+        {
+          "s": "steve",
+          "t": "Knowingly infringing means triple damages."
+        },
+        {
+          "s": "leo",
+          "t": "So Microsoft won't tell, and nobody will look. A standoff."
+        }
+      ]
+    },
+    {
+      "title": "Why Microsoft Won't Name Them",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft is the thousand-pound elephant, intimidating companies into deals. Red Hat, the top Linux distributor, has talked with Microsoft but never made a deal. Novell, number two, must wonder whether it did the right thing."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft is unhappy that people can use Linux and OpenOffice without paying it any tax."
+        },
+        {
+          "s": "leo",
+          "t": "They want more than a tax. They want open source to wither away."
+        },
+        {
+          "s": "steve",
+          "t": "If they listed the patents, the open-source community would have a field day. A distributed legal attack, finding prior art, which immediately invalidates a patent. And Linus would happily code the kernel around the 42."
+        },
+        {
+          "s": "leo",
+          "t": "Unless it's priority queues."
+        },
+        {
+          "s": "steve",
+          "t": "Which isn't a valid patent. The point is, by not naming them, Microsoft prevents anyone from curing the problem it complains about. It doesn't want it cured."
+        },
+        {
+          "s": "steve",
+          "t": "And the Novell deal might steer people toward Novell's Linux. Linux is safe as long as it's widely distributed. Concentrating it in fewer channels seems unsafe. Microsoft is saying: we're so big that even the U.S. government couldn't beat us in the antitrust case, so you don't want us coming after you."
+        },
+        {
+          "s": "leo",
+          "t": "Good people at Novell quit over this."
+        },
+        {
+          "s": "steve",
+          "t": "One of the main Linux kernel guys resigned immediately."
+        },
+        {
+          "type": "fact",
+          "title": "The resignation",
+          "t": "The best-known resignation was by Jeremy Allison, a lead developer of Samba, the software that lets Linux share files with Windows, who left Novell in December 2006 in protest."
+        }
+      ]
+    },
+    {
+      "title": "GPL Version 3 and Mutually Assured Destruction",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I think Microsoft waited too long. Free and open source has reached critical mass. Microsoft's own enterprise customers run hybrid server rooms with Linux and Windows."
+        },
+        {
+          "s": "leo",
+          "t": "And version 3 of the GPL makes the Novell coupons backfire."
+        },
+        {
+          "s": "steve",
+          "t": "Novell gave Microsoft coupons redeemable for its Linux server software, which Microsoft hands to customers. GPL version 2 allowed that. Version 3, due in a month or two, closes the loophole. If a customer redeems a coupon, Microsoft becomes a distributor, and distributors must license their patents royalty-free. So no Linux user could ever be sued by Microsoft."
+        },
+        {
+          "s": "leo",
+          "t": "Eben Moglen wrote GPL 3. I'll put him up against Brad Smith any day."
+        },
+        {
+          "type": "fact",
+          "title": "GPLv3",
+          "t": "Version 3 of the GPL was released on June 29, 2007. The Linux kernel itself stayed on version 2."
+        },
+        {
+          "s": "steve",
+          "t": "And many heavyweights, IBM, HP, Sony and Sun, are throwing their clout behind open source as their alternative to Microsoft. Microsoft can't name the patents because its case is weak, and they could be engineered around. It wants the problem as leverage. It's wrong."
+        },
+        {
+          "s": "leo",
+          "t": "It's mutually assured destruction. I think it'll fade away."
+        },
+        {
+          "s": "steve",
+          "t": "I think Microsoft regrets talking to Fortune. It put the community on notice, and other companies may not follow Novell. Its bluff can now be called."
+        },
+        {
+          "s": "leo",
+          "t": "We're not lawyers. Denise Howell's This Week in Law will cover it."
+        },
+        {
+          "s": "steve",
+          "t": "And if Microsoft actually sued, it would have to name the patents."
+        },
+        {
+          "s": "leo",
+          "t": "Is Congress doing anything?"
+        },
+        {
+          "s": "steve",
+          "t": "There's some motion. We want fewer, stronger patents. But the pharmaceutical industry wants more, easier ones, and it lobbies hard."
+        },
+        {
+          "s": "steve",
+          "t": "Inventions have initial value that fades. When I first moved a mouse on a Macintosh, a bitmap and cursor were amazing. Now everyone has them, and they're just how things are done. Critics say Microsoft is turning to litigation because it's run out of creativity, like an old, mature company."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe this is the beginning of the end."
+        },
+        {
+          "type": "fact",
+          "title": "How it turned out",
+          "t": "Microsoft never sued over the 235 patents. Instead it signed patent licensing deals with many device makers using Linux and Android. In 2018 it joined the Open Invention Network, pledging about 60,000 patents to protect Linux."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What are a patent's three tests?",
+      "options": [
+        "Novel, non-obvious and useful",
+        "Original, registered and profitable",
+        "Written, signed and filed",
+        "Secret, unique and valuable"
+      ],
+      "answer": 0,
+      "explain": "Steve finds most software patents fail non-obviousness."
+    },
+    {
+      "q": "How did attorneys once get software patented when software counted as math?",
+      "options": [
+        "By describing the invention as hardware, which also covered software doing the same thing",
+        "By calling it art",
+        "By copyrighting it",
+        "By patenting the disk"
+      ],
+      "answer": 0,
+      "explain": "Software itself was the \"preferred embodiment.\""
+    },
+    {
+      "q": "What did Microsoft's e-ink patent actually describe?",
+      "options": [
+        "A priority queue so pen strokes are drawn before other work",
+        "A new ink chemical",
+        "A pen design",
+        "Handwriting recognition"
+      ],
+      "answer": 0,
+      "explain": "Priority queues are a basic part of operating systems."
+    },
+    {
+      "q": "Why won't Microsoft name the 235 patents?",
+      "options": [
+        "Naming them would let the community challenge them or code around them",
+        "They're secret by law",
+        "It forgot",
+        "Courts forbid it"
+      ],
+      "answer": 0,
+      "explain": "Steve said it wants the problem as leverage."
+    },
+    {
+      "q": "Why won't open-source developers search for patents they might infringe?",
+      "options": [
+        "Knowingly infringing exposes them to triple damages",
+        "It's illegal to read patents",
+        "Patents are in Latin",
+        "They have no money"
+      ],
+      "answer": 0,
+      "explain": "Linus Torvalds made this point."
+    },
+    {
+      "q": "What did Steve say a stealthed router does differently?",
+      "options": [
+        "It doesn't answer probes to closed ports at all, rather than replying with a reset",
+        "It encrypts traffic",
+        "It blocks all outbound traffic",
+        "It hides its Wi-Fi name"
+      ],
+      "answer": 0,
+      "explain": "Technically it breaches the RFCs, but users prefer it."
+    }
+  ]
+}
