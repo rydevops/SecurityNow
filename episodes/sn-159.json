@@ -1,0 +1,645 @@
+{
+  "number": 159,
+  "title": "Vista Security Bypass",
+  "subtitle": "How browser plug-ins undermine Vista's DEP and ASLR",
+  "date": "2008-08-28",
+  "description": "Steve explains the Black Hat paper \"Bypassing Browser Memory Protections\": how Data Execution Prevention and Address Space Layout Randomization work, why third-party components like Flash, Java and .NET leave them full of holes, and what users and developers can do. Plus remotely exploitable Nokia phones, an Opera update, a DNS typo attack in China, a bank laptop sold on eBay, and the SpinRite testimonial to end all testimonials.",
+  "transcript": "https://www.grc.com/sn/sn-159.txt",
+  "audio": "http://media.GRC.com/sn/SN-159.mp3",
+  "chapters": [
+    {
+      "title": "The Other Black Hat Paper",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 159, the one I've been waiting for. Our majordomo of security, the king of lockdown, Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "I'm having the time of my life writing code, and I'll have another chunk ready in a week or two."
+        },
+        {
+          "s": "steve",
+          "t": "Today is the other big Black Hat presentation besides Dan Kaminsky's. The paper is \"Bypassing Browser Memory Protections.\" I call it the Vista Security Bypass."
+        },
+        {
+          "s": "steve",
+          "t": "There's security news, and, Leo, the SpinRite testimonial to end all testimonials. I worry no one will bother sending another. Greg sent it over the weekend, and as I read it I thought, oh my goodness."
+        },
+        {
+          "s": "leo",
+          "t": "That's a pretty big buildup. I'll be the judge."
+        },
+        {
+          "s": "leo",
+          "t": "By the way, it's not Patch Tuesday, but I got a critical update this morning."
+        },
+        {
+          "s": "steve",
+          "t": "Last week I mentioned stray patches drifting in. It's confirmed that Microsoft messed up some of the first round and has been amending them."
+        }
+      ]
+    },
+    {
+      "title": "100 Million Exploitable Nokia Phones",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The most interesting news, picked up by InformationWeek, ZDNet and The Register: Polish researcher Adam Gowdiak claims, and Nokia has confirmed, two serious flaws in the J2ME mobile Java on Nokia Series 40 handsets. There are more than 100 million of them."
+        },
+        {
+          "s": "steve",
+          "t": "Remember, last week I said radio is bad."
+        },
+        {
+          "s": "steve",
+          "t": "He held Nokia and Sun ransom, asking 20,000 euros from each, just shy of about 3,000 U.S. dollars, before he'd reveal the details."
+        },
+        {
+          "type": "fact",
+          "title": "The exchange rate",
+          "t": "In August 2008, 20,000 euros was worth roughly 30,000 U.S. dollars, not 3,000."
+        },
+        {
+          "s": "steve",
+          "t": "Apparently, knowing a phone's number, you can install and run any code remotely, without the owner's permission or knowledge, on these mostly low-end handsets. Nokia is scrambling to figure out how to mitigate it."
+        }
+      ]
+    },
+    {
+      "title": "Opera 9.52",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Opera keeps getting updates. If you're not on 9.52, check for updates under Help. It fixes seven flaws on Windows, five on the Mac and six on Linux. They're coy about one cross-site scripting flaw, which, as we covered in its own episode, can let browser content confuse a website's code and spoof who you are to another site. Definitely update."
+        }
+      ]
+    },
+    {
+      "title": "DNS Poisoning With Typos",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One last DNS item. Dan says his flaw is being actively exploited, though ISPs won't be anxious to blab about it."
+        },
+        {
+          "s": "steve",
+          "t": "At China Netcom, a large Chinese ISP, someone attacked the name servers cleverly. Everything we discussed involved overwriting valid domains. But nothing stops you from injecting names that don't exist at all."
+        },
+        {
+          "s": "steve",
+          "t": "They stuffed the ISP's servers with misspellings of Amazon, Google, Microsoft and the like. Every one points to a page that tries recently patched exploits, which Chinese machines tend to lag behind on. Make a typo, and instead of \"couldn't reach that site,\" you're exploited."
+        },
+        {
+          "s": "leo",
+          "t": "Exploiting typos isn't new; mistype Amazon and you get ads. But this is a new twist."
+        }
+      ]
+    },
+    {
+      "title": "A Bank Laptop on eBay",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I have one for you. According to eWEEK, a laptop sold on eBay held personal information on more than a million customers of the Royal Bank of Scotland, American Express and NatWest, including credit card application data."
+        },
+        {
+          "s": "leo",
+          "t": "A former employee of a third-party archiving firm, Graphic Data, sold it this month without removing the information."
+        },
+        {
+          "s": "steve",
+          "t": "Why was it on a laptop? An archiver holds highly confidential information for clients."
+        },
+        {
+          "s": "leo",
+          "t": "They scan paperwork, so maybe the laptop was used for that. It had names, addresses, phone numbers, bank account numbers, sort codes, credit card numbers, mothers' maiden names, even signatures. It's a kit. Thank goodness the buyer said whoa and didn't use it."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves Eight Lives",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The subject line: \"SpinRite 6 Saves 8 Lives.\" He asks to stay anonymous. No names, and the location isn't important. Just know it's terrorist country."
+        },
+        {
+          "s": "steve",
+          "t": "He's on a six-man team deep in that country on a rescue, snatch-and-grab mission. With two injured men, one carried on their backs in turns, there are eight. They're 50 miles from safety, and must cross a quarter-mile-deep, 10-mile-wide zone of land mines whose locations they aren't sure of."
+        },
+        {
+          "s": "steve",
+          "t": "In ten days they'd covered 45 miles on foot. They started with three Panasonic Toughbook tablets. Three days in, one took small arms fire. Half the screen still worked, but they trashed it and kept the hard drive for security."
+        },
+        {
+          "s": "leo",
+          "t": "Even a Toughbook won't survive that."
+        },
+        {
+          "s": "steve",
+          "t": "Another was used to defend against an attacker with a large stick. It was on while used as a club on someone's head, and the drive was damaged, though they didn't know it. The third was lost when they had to leave quickly."
+        },
+        {
+          "s": "steve",
+          "t": "They needed that last laptop for communication and GPS. Their solar panels only charged the laptops and radios, not the handheld GPSes, which died days earlier."
+        },
+        {
+          "s": "steve",
+          "t": "Thirty miles into the return, the laptop locked up. On reboot: \"Please insert boot media.\" They swapped in the drive from the shot laptop, the same model. It worked at first, then gave them the Blue Screen of Death."
+        },
+        {
+          "s": "steve",
+          "t": "A SEAL never leaves a man behind, so they kept moving. Without GPS they'd have to go five miles out of the way, closer to enemy soldiers, or cross the minefield blind."
+        },
+        {
+          "s": "leo",
+          "t": "You think this is legit?"
+        },
+        {
+          "s": "steve",
+          "t": "I do. There are a lot of facts here. He mentions it's a SEAL team."
+        },
+        {
+          "s": "steve",
+          "t": "A teammate knew a village two miles away. There they found someone with satellite Internet. They tried a VPN to reach command but couldn't establish an uplink at such low bandwidth, and lacked cables for the satphone's modem. They called command. Nothing could be done. They weren't supposed to be in that country."
+        },
+        {
+          "s": "steve",
+          "t": "He's the team geek. The two \"jocks\" didn't believe it would work. With no credit card or identification, they asked the homeowner, who could spend only $100 a month and had spent most of it on store supplies."
+        },
+        {
+          "s": "steve",
+          "t": "So he went to an illegal pirate site and downloaded SpinRite, which took eight minutes over the satellite link. He says sorry, it was life or death, and he bought it later."
+        },
+        {
+          "s": "leo",
+          "t": "Had you known, you'd have sent it to him."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe we need an emergency SEAL rescue team discount button."
+        },
+        {
+          "s": "steve",
+          "t": "They had blank CDs, so he made a boot CD and ran Level 4 on the 20GB drive. It found about 12 red U's and recovered 10. After nearly four hours, the computer booted, and they navigated across the minefield to safety."
+        },
+        {
+          "s": "steve",
+          "t": "They later learned the enemy was only two miles behind. Probing for mines or going around, they'd have been caught, tortured and killed. So SpinRite saved eight lives that day, he says."
+        },
+        {
+          "s": "steve",
+          "t": "Now many SEAL teams carry SpinRite unofficially, bought by team leaders because the higher-ups won't buy a site license. It's run on every computer before a mission, and any drive with even one red U is replaced afterward. The IT guys have pushed for it, but it \"isn't in the budget.\""
+        },
+        {
+          "type": "fact",
+          "title": "About this story",
+          "t": "The letter was anonymous, so its details couldn't be independently verified. Steve read it as sent."
+        },
+        {
+          "s": "leo",
+          "t": "Somebody has a very good imagination if it's not true."
+        },
+        {
+          "s": "steve",
+          "t": "The details fit. Redundant Toughbooks for communications and navigation, and things never go as planned. And he had to El Kabong somebody."
+        },
+        {
+          "s": "leo",
+          "t": "The chatroom confirms the Navy uses Toughbooks."
+        },
+        {
+          "s": "steve",
+          "t": "Wouldn't solid-state drives make sense here?"
+        },
+        {
+          "s": "leo",
+          "t": "More resilient as battering rams. But then they couldn't use SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "I'd rather they stayed alive. I thank him for the mission, and I'm glad it worked out. And I still want to hear from people whose photos we save."
+        },
+        {
+          "s": "leo",
+          "t": "You couldn't possibly have built that up too much."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft's Protections, Examined",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This presentation was at Black Hat, the more serious conference for security professionals, before DefCon."
+        },
+        {
+          "s": "steve",
+          "t": "I first saw it through Bruce Schneier's blog, where he said this is big. Others pooh-poohed it. Once again, Bruce gets it. It's leading-edge fringe capability, but that's how these things start, and they always evolve."
+        },
+        {
+          "s": "steve",
+          "t": "Its introduction says Microsoft has added memory protections, GS, SafeSEH, DEP and ASLR, that complicate exploiting memory corruption and seem at first insurmountable. The authors discuss each one's limits, and aim to show that Vista's protections are particularly ineffective in browsers, with techniques for reliable remote code execution. And they have done that."
+        },
+        {
+          "type": "fact",
+          "title": "The paper",
+          "t": "\"Bypassing Browser Memory Protections\" was written by Alexander Sotirov of VMware and Mark Dowd of IBM ISS and presented at Black Hat USA in August 2008."
+        },
+        {
+          "s": "steve",
+          "t": "Our Episode 66, \"Windows Vista Security,\" covered DEP, Data Execution Prevention, and ASLR, Address Space Layout Randomization, in depth. I'm going to try to say \"netcast\" from now on, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "I still say podcast colloquially, but what we do on TWiT Live isn't a podcast. It's a netcast."
+        }
+      ]
+    },
+    {
+      "title": "Buffer Overruns and Catch-Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Over and over, vulnerable software has unchecked pointers or the very common buffer overrun. Code allocates buffer space, often on the stack, a variable-size scratchpad, then reads in data it expects to be a certain size."
+        },
+        {
+          "s": "steve",
+          "t": "Careful programmers limit how much they copy. But attackers find code they can feed data it isn't prepared for, putting their own data somewhere unintended and then getting it executed."
+        },
+        {
+          "s": "steve",
+          "t": "It's a cat-and-mouse game. Every Patch Tuesday fixes newly found problems of exactly this sort. Windows is vast and, frankly, capable, and much of the trouble comes from flexibility Microsoft put in, deliberately or not."
+        },
+        {
+          "s": "steve",
+          "t": "For example, a browser can invoke an ActiveX control, which is really a kind of DLL, that was never meant for browsers. If any of its functions has a flaw, a web page can load it and feed it bad data, injecting code over the Internet. That's a remote code exploit."
+        },
+        {
+          "s": "steve",
+          "t": "Fixing what's found is always reactive. Microsoft finally got proactive with XP, then Service Pack 2, then Vista, making things incrementally harder to exploit. These researchers examined each mitigation and asked how to get around it."
+        }
+      ]
+    },
+    {
+      "title": "Data Execution Prevention",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "DEP relies on the processor's NX, No eXecute, bit. Windows has used a flat memory model since Windows 3.1. Segmented 16-bit Windows could mark segments non-executable, but due to an Intel design oversight, flat-model pages couldn't be. We had to wait for newer Intel and AMD processors with NX."
+        },
+        {
+          "s": "steve",
+          "t": "With DEP, only memory expected to hold code is executable. You read and write buffers on the stack; you don't run them. So the stack is marked no-execute. The first instruction executed there never completes, and the OS instantly terminates the process."
+        },
+        {
+          "s": "leo",
+          "t": "What does the user see? A blue screen?"
+        },
+        {
+          "s": "steve",
+          "t": "An annoying warning. DEP can run four ways. Off. Opt-in, a little more secure than off but not much. Opt-out, on by default except for programs you exclude. And always on, which would be wonderful, but known programs require DEP disabled."
+        },
+        {
+          "s": "steve",
+          "t": "I run my laptop in opt-out, and I can vouch that it's painful. Just yesterday Windows Explorer itself gave me a DEP error."
+        },
+        {
+          "s": "steve",
+          "t": "Programs can be linked with an NX compatibility flag saying they're DEP compatible. To Microsoft's credit, they rebuilt Windows and their own applications after checking them, so those run with DEP."
+        },
+        {
+          "s": "steve",
+          "t": "But Windows contains much more than Microsoft's code. Flash, from Macromedia, now Adobe, and Sun's Java virtual machine aren't DEP compatible. Java deliberately has memory that is readable, writable and executable. Flash is on the high 90 percent of Windows machines, so you can count on it."
+        },
+        {
+          "s": "steve",
+          "t": "And Vista defaults to opt-in. Enough programs aren't marked DEP enabled that there are plenty of opportunities to exploit, even at Vista Service Pack 1. Despite Microsoft's talk, DEP isn't really that powerful."
+        },
+        {
+          "s": "leo",
+          "t": "It would be if it ran on everything. Isn't it an old habit of programmers to put code in data areas?"
+        },
+        {
+          "s": "steve",
+          "t": "Sometimes it's useful. A fast interpreter can execute some of the data it reads. Before hardware blitters for moving screen rectangles, Microsoft's original GDI built blitter code on the fly on the stack and ran it, to get acceptable speed on a 4.77MHz 8088. And technically anything downloaded, like an ActiveX control, is data you execute."
+        },
+        {
+          "s": "leo",
+          "t": "Do you do that as an assembly programmer?"
+        },
+        {
+          "s": "steve",
+          "t": "I can't think of a place I have."
+        },
+        {
+          "s": "leo",
+          "t": "Don't modern techniques make it less necessary?"
+        },
+        {
+          "s": "steve",
+          "t": "It's dangerous, and we're moving toward DEP always on. After this paper shows Flash being exploited, it's: Adobe, if you want your code in my machine, make it safe. We've seen several Flash exploits in recent months."
+        },
+        {
+          "s": "steve",
+          "t": "Is executing data absolutely necessary? I'd argue no. Windows' VirtualAlloc lets a program explicitly allocate executable pages when it needs them. For Flash, sitting in a browser, still not to be DEP friendly is laziness. And browsers were this paper's whole focus."
+        }
+      ]
+    },
+    {
+      "title": "Address Space Layout Randomization",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Hackers often use code already in the system. Studying Windows' disassembly, they find that jumping into an odd spot makes existing code do work for them, then return. They chain these together without supplying their own code, as long as it's at a known location."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft realized it loaded the core DLLs, like ntdll.dll, in the same predictable places every time. So ASLR loads them in a different place each boot, and fixed pointers no longer work."
+        },
+        {
+          "s": "steve",
+          "t": "The details: Microsoft takes 8 bits from the timestamp counter, read with the rdtsc instruction I use all the time. It counts clock cycles at about three billion per second, so with all the variation in disk and input timing it's effectively unpredictable. It multiplies that by 64K and adds it to the executable's preferred load address."
+        },
+        {
+          "s": "steve",
+          "t": "The first Vista turned a zero into a one, so position one was twice as likely as the others. A small bug, now fixed. This is in Vista and Windows Server 2008, not XP or 2003."
+        },
+        {
+          "s": "steve",
+          "t": "Here's the problem. ASLR only works if everything is randomized. Only executables and DLLs marked ASLR compatible are moved, because Microsoft learned that some code depends on loading at the base address it specifies."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft randomized the core OS. But ActiveX controls, browser extensions, protocol handlers, and especially image parsers and codecs from other vendors are generally not ASLR compliant. A hacker who knows nothing about your machine can make your browser load one of those at a known location, and exploit it. The researchers demonstrate exactly that."
+        }
+      ]
+    },
+    {
+      "title": "A Wakeup Call for Developers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So what do we do?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a wakeup call for developers everywhere. When I develop CryptoLink, I'll link it with ASLR and the NX compatibility flag on throughout development. If I ever do something position-dependent or write into my own code, I'll instantly know and fix it."
+        },
+        {
+          "s": "steve",
+          "t": "I take my hat off to Microsoft. They've bent over backwards to thwart every exploit mechanism, and gotten proactive. But Windows is extremely heterogeneous, with pieces from everywhere. Other vendors don't need Microsoft's permission. They just need to stop being lazy and make their code work with these protections."
+        }
+      ]
+    },
+    {
+      "title": ".NET's Silent Pass",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is this in the wild yet?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a theoretical paper, covering more than I've mentioned: structured exception handling, stack cookies, heap spraying and more."
+        },
+        {
+          "s": "steve",
+          "t": "But get this. IE7 is much more secure than 6, and I appreciate that it warns you when a page wants to run an ActiveX control you haven't seen. Microsoft is so fond of .NET, which is supposed to run safely in a sandbox like Java, that they don't warn you about it. And it's exploitable the same way ActiveX has been, with no pop-up in IE's default configuration."
+        },
+        {
+          "s": "steve",
+          "t": "The good news: .NET doesn't have much penetration in browsers today, and you can turn off .NET permissions. These researchers demonstrate .NET silently exploiting IE, so I'd immediately turn off .NET execution in Internet Explorer."
+        },
+        {
+          "s": "leo",
+          "t": "Doesn't that turn off a lot of stuff? Like Silverlight for the Olympics, thank goodness they're over."
+        },
+        {
+          "s": "steve",
+          "t": "I've had it off and haven't run into anything. I guarantee Silverlight is classic Microsoft .NET, and it'll be exploited tomorrow."
+        },
+        {
+          "type": "fact",
+          "title": "Silverlight and .NET",
+          "t": "Silverlight ran on its own scaled-down version of the .NET runtime, so it was closely related to .NET. Microsoft ended Silverlight support in 2021."
+        },
+        {
+          "s": "leo",
+          "t": "Just as Flash was."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft assumes they won't have problems. They have never not had problems."
+        },
+        {
+          "s": "leo",
+          "t": "In security you should assume the opposite."
+        }
+      ]
+    },
+    {
+      "title": "What Users Can Do",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "What users can do, as I have, is switch DEP to opt-out with a boot.ini switch. My SecurAble freeware shows instantly whether your processor has the NX bit needed for hardware DEP."
+        },
+        {
+          "s": "steve",
+          "t": "There's also \"software DEP,\" offered when few processors had NX. Calling it not very useful gives it too much credit."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't DEP in the processor?"
+        },
+        {
+          "s": "steve",
+          "t": "Intel and AMD processors have had the NX flag since 2004, so only really old machines lack it."
+        },
+        {
+          "s": "leo",
+          "t": "I think AMD did it first."
+        },
+        {
+          "type": "fact",
+          "title": "NX's arrival",
+          "t": "AMD introduced the NX bit with its 64-bit Athlon and Opteron chips in 2003. Intel followed in 2004 under the name XD, for Execute Disable."
+        },
+        {
+          "s": "steve",
+          "t": "In opt-out mode, applications get DEP by default, and as you find ones that aren't happy, you add them to a \"leave DEP off\" list. It evolves, like a personal firewall that blocks everything until you allow email, IE and Messenger out. It's more secure, but not perfect."
+        },
+        {
+          "s": "steve",
+          "t": "Vista gives us tools to make exploits much harder. Common browser-invokable components, like Silverlight, Flash or even Media Player, that aren't yet safe are now the main target."
+        },
+        {
+          "s": "leo",
+          "t": "How quickly can Microsoft fix this?"
+        },
+        {
+          "s": "steve",
+          "t": "It isn't Microsoft's problem. The researchers use Java and Flash exploits. Third parties with popular code need to belly up and make it work with DEP and ASLR. Windows used to be the low-hanging fruit. We ate all that. Now it's the popular non-Microsoft components, which lag behind Microsoft."
+        }
+      ]
+    },
+    {
+      "title": "The Paper's Conclusion",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The conclusion sums it up. Windows' latest memory protections raise the bar, but in browsers an attacker still has a good chance of bypassing them."
+        },
+        {
+          "s": "steve",
+          "t": "Two factors cause this. The attacker controls much of the browser's state: HTML, JavaScript, VBScript, DOM scripting, .NET, Java and Flash give unprecedented control over its memory layout. And plug-ins run in the browser's own process with the same privilege, so a flaw in Flash, or a missing protection in any third-party DLL, exposes the whole browser."
+        },
+        {
+          "s": "steve",
+          "t": "They expect future Windows releases and third-party plug-ins to address it."
+        },
+        {
+          "s": "leo",
+          "t": "\"Future versions of Windows\" sounds like not tomorrow."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has gotten bitten each time it tried turning these on. And get this: 64-bit Vista turns DEP on for all 64-bit processes, but Internet Explorer is a 32-bit process even there, so it's governed by the system's DEP policy, not enforced. Microsoft, get going."
+        }
+      ]
+    },
+    {
+      "title": "Other Operating Systems",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Do Linux and OS X use these techniques, and are they vulnerable?"
+        },
+        {
+          "s": "steve",
+          "t": "ASLR isn't new. Windows is the last OS to implement it. Microsoft is the big target. Now we're seeing more Mac exploits and Apple security patches at an unprecedented rate, because hackers have Macs now."
+        },
+        {
+          "s": "steve",
+          "t": "Fundamentally these systems are phenomenally complicated, and complexity is the enemy of security. You can't be sure of every side effect, and bugs will bite you."
+        },
+        {
+          "s": "leo",
+          "t": "Apparently IE8 will have DEP on."
+        },
+        {
+          "s": "steve",
+          "t": "The IE8 beta and Firefox 3 both carry the NX compatibility flag, opting in to DEP. Some people say Firefox 2 works fine for them. But Firefox 3 was developed and vetted with DEP on, so Vista and later turn it on for Firefox 3, and you want that buffer overrun protection."
+        },
+        {
+          "s": "leo",
+          "t": "So your recommendation is to use the opt-in setting of DEP now?"
+        },
+        {
+          "type": "fact",
+          "title": "Which mode",
+          "t": "Steve's suggestion was opt-out mode, where DEP is on by default and you exclude only programs that fail."
+        },
+        {
+          "s": "steve",
+          "t": "It's a mixed blessing. It will cause some problems, which is why Microsoft didn't set it up that way. When Windows Explorer hit a DEP error, I clicked yes, it shut down, and Windows restarted it for me."
+        },
+        {
+          "s": "leo",
+          "t": "Not so bad."
+        }
+      ]
+    },
+    {
+      "title": "Not Big News, a Reality Check",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "There were lots of questions, even among experts: does this mean Vista isn't secure?"
+        },
+        {
+          "s": "steve",
+          "t": "It's not big news. It's a wakeup call, a reality check that these protections exist but aren't used universally, and until they are, we won't be increasingly safe."
+        },
+        {
+          "s": "leo",
+          "t": "Next week, Q&A."
+        },
+        {
+          "s": "steve",
+          "t": "Send questions through GRC.com/feedback."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did the Polish researcher's Nokia discovery alarm the industry?",
+      "options": [
+        "Flaws in mobile Java could let attackers silently run code on over 100 million Series 40 phones",
+        "It cracked GSM encryption",
+        "It let calls be recorded",
+        "It disabled phones remotely"
+      ],
+      "answer": 0,
+      "explain": "He asked Nokia and Sun for 20,000 euros each."
+    },
+    {
+      "q": "What does Data Execution Prevention do?",
+      "options": [
+        "It marks data memory like the stack as non-executable, so injected code there can't run",
+        "It encrypts memory",
+        "It scans for viruses",
+        "It randomizes DLL locations"
+      ],
+      "answer": 0,
+      "explain": "It relies on the processor's NX bit."
+    },
+    {
+      "q": "Why is ASLR weakened in practice?",
+      "options": [
+        "Third-party DLLs and plug-ins not marked ASLR compatible still load at fixed, known addresses",
+        "The random number is predictable",
+        "It only works on 64-bit Windows",
+        "It's off by default for Windows itself"
+      ],
+      "answer": 0,
+      "explain": "Microsoft randomized the core OS components."
+    },
+    {
+      "q": "What did the researchers find about .NET in Internet Explorer?",
+      "options": [
+        "It could be used to exploit IE silently, with no warning prompt by default",
+        "It was always blocked",
+        "It required administrator rights",
+        "It ran only on Vista 64"
+      ],
+      "answer": 0,
+      "explain": "Steve advised turning off .NET execution in IE."
+    },
+    {
+      "q": "Which DEP mode does Steve run, despite some annoyances?",
+      "options": [
+        "Opt-out, where DEP is on by default except for programs you exclude",
+        "Off",
+        "Opt-in",
+        "Software DEP"
+      ],
+      "answer": 0,
+      "explain": "Even Windows Explorer once tripped a DEP error."
+    },
+    {
+      "q": "Whose code is now the main obstacle to these protections working?",
+      "options": [
+        "Popular third-party components like Flash and Java",
+        "Microsoft's core DLLs",
+        "Linux drivers",
+        "The BIOS"
+      ],
+      "answer": 0,
+      "explain": "Microsoft had already rebuilt its own code to be compatible."
+    }
+  ]
+}
