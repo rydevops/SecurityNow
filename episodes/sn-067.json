@@ -1,0 +1,407 @@
+{
+  "number": 67,
+  "title": "Kernel Patch Protection",
+  "subtitle": "What PatchGuard really does, and why it's still good news",
+  "date": "2006-11-23",
+  "description": "On Thanksgiving, Steve corrects a run of errata: allSnap's overloaded site, Gmail anonymity through mail clients, the patched XML flaw and a new WinZip ActiveX hole, which processors are 64-bit, and Vista's real speed. Then he explains how Vista's Kernel Patch Protection works, why it has already been defeated, and why it still matters.",
+  "transcript": "https://www.grc.com/sn/sn-067.txt",
+  "audio": "http://media.GRC.com/sn/SN-067.mp3",
+  "chapters": [
+    {
+      "title": "A Thanksgiving Edition",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The turkey dinner's over, the football game's done. Happy Thanksgiving, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "Our Thanksgiving Day edition, on Thursday. This week, a bunch of errata, then a focus on Vista's Kernel Patch Protection, because believe it or not, it's already been hacked, and it doesn't work."
+        },
+        {
+          "s": "leo",
+          "t": "Oh boy. Let's clear up the earlier episodes first."
+        }
+      ]
+    },
+    {
+      "title": "allSnap and Gmail Anonymity",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, allSnap. Most Google links pointed to its old GeoCities site, and our mention burned up its bandwidth, so they shut it down. We essentially slashdotted it. I served the file myself and wrote to the author, a Canadian, who'd moved it. Our show notes link to both."
+        },
+        {
+          "s": "leo",
+          "t": "You're not alone in your love for this program."
+        },
+        {
+          "s": "steve",
+          "t": "Second, I misspoke about Gmail. On a trip to Toronto I'd compared Yahoo!, Hotmail and Gmail on the web. Yahoo! and Hotmail embed the sender's IP address in the mail's headers. Only Gmail didn't."
+        },
+        {
+          "s": "steve",
+          "t": "But I said that anonymity carried over to a mail client using Gmail's servers, and it doesn't. With Outlook or Eudora, your IP address is in the headers. To hide it, use Gmail in a web browser."
+        },
+        {
+          "s": "leo",
+          "t": "That's counterintuitive. Why would a POP client add the IP?"
+        },
+        {
+          "s": "steve",
+          "t": "It has to. Each SMTP server appends a \"Received\" header as mail moves along, and servers check those headers to catch forwarding loops."
+        },
+        {
+          "s": "leo",
+          "t": "And you'd use HTTPS in the browser?"
+        },
+        {
+          "s": "steve",
+          "t": "That doesn't affect anonymity, but you'd want it so nobody eavesdrops."
+        },
+        {
+          "type": "fact",
+          "title": "Gmail headers today",
+          "t": "Gmail still leaves the sender's IP address out of web-sent mail. Since then, Outlook.com and Yahoo! have also mostly hidden it."
+        }
+      ]
+    },
+    {
+      "title": "Patched XML, and a WinZip ActiveX Hole",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Third, the XML Core Services flaw was fixed in November's Patch Tuesday, so you can remove that kill bit. Then again, a web page invoking that control is purely an exploit, so you could leave it."
+        },
+        {
+          "s": "steve",
+          "t": "But there's a new and scary kind of exploit. WinZip's FileView ActiveX control is vulnerable, and like the XML control, any web page can invoke it through IE."
+        },
+        {
+          "s": "leo",
+          "t": "Don't you get a permission request for ActiveX?"
+        },
+        {
+          "s": "steve",
+          "t": "That's when the website provides the control."
+        },
+        {
+          "s": "leo",
+          "t": "Ah, here the control comes from your own system."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. That's the problem with widely deployed third-party software like WinZip. I have it on all my machines. Once Microsoft battens down, websites can still reach through your browser into Windows' guts and invoke components never meant for the Internet."
+        },
+        {
+          "s": "leo",
+          "t": "Is there a kill bit?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, but WinZip already fixed it. It affects WinZip 10.0 before build 7245. Update to 7245 or later and you're fine."
+        }
+      ]
+    },
+    {
+      "title": "Correction: 64-bit Chips Are Common",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Fourth, many people wrote to us both about 32 and 64 bits."
+        },
+        {
+          "s": "leo",
+          "t": "I got a lot of email. Holy cow."
+        },
+        {
+          "s": "steve",
+          "t": "I heard you on TWiT Sunday. It's not just high-end Xeons. For years, many Pentium 4, Celeron D and Pentium D processors have had it. Intel calls it EM64T, Extended Memory 64 Technology: full 64-bit technology that can be turned on. Not all of those chips have it, though."
+        },
+        {
+          "s": "leo",
+          "t": "And AMD's Turions. I'm sitting next to an AMD FX-64 that I've had for a year. I was having a brain seizure. But you need more than the chip. Everything else must be compatible."
+        },
+        {
+          "s": "steve",
+          "t": "You also need a 64-bit-aware BIOS. And what's really slowing adoption is the dearth of 64-bit drivers."
+        },
+        {
+          "s": "leo",
+          "t": "I was a fool, and I learned very quickly."
+        }
+      ]
+    },
+    {
+      "title": "Correction: Vista Flies",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Fifth, Vista's performance. I officially correct the record: Vista flies on this machine."
+        },
+        {
+          "s": "leo",
+          "t": "You said it was terrible."
+        },
+        {
+          "s": "steve",
+          "t": "On RC2 it was. I'd used an MSDN download that turned out to be the so-called \"checked build,\" a debugging build. Vista's bigger and probably not faster than XP, but on that 3GHz Pentium 4 with the NVIDIA card it's absolutely fast enough."
+        },
+        {
+          "s": "steve",
+          "t": "I also installed it on my older HP Compaq TC1100 tablet, and it runs at full speed, without the blurry glass UI I dislike anyway. On tablets it shows a twinkly star cursor, and a little ripple spreads where you touch the stylus. It's wonderful."
+        },
+        {
+          "s": "steve",
+          "t": "I was going to call this episode \"Embracing Vista,\" before I looked closer at Kernel Patch Protection."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite and Sponsor Story",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last, a listener bought SpinRite to thank us. When a system died, the SpinRite CD had it back in 45 minutes, so he bought three more licenses to bring his office to a site license."
+        },
+        {
+          "s": "steve",
+          "t": "He also thanked us for Astaro's sponsorship. He manages about 30 small satellite offices and wanted to control inappropriate surfing with a firewall and IDS he could manage from one place. After hearing Astaro on the show, he tried a demo box. He's deployed 13 and is rolling out 18 more."
+        },
+        {
+          "s": "leo",
+          "t": "Two great products."
+        }
+      ]
+    },
+    {
+      "title": "The Kernel Gets No Respect",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now Vista's Kernel Patch Protection, the thing Symantec, Adobe and others complained about."
+        },
+        {
+          "s": "steve",
+          "t": "I'm pro-Vista on security. The rewritten network stack worries me, as we said in \"Vista's Virgin Stack.\" But Microsoft's policies are pro-security. When XP SP2 turned the firewall on by default, the world changed, even though firewalls already existed."
+        },
+        {
+          "s": "leo",
+          "t": "Novice users are the real threat. Experts protect themselves, so default settings matter."
+        },
+        {
+          "s": "steve",
+          "t": "That's why built-in Windows Defender will make a huge difference in 2007's new machines."
+        },
+        {
+          "s": "steve",
+          "t": "Now, since the first Windows, Microsoft has used undocumented APIs only it knew about. Developers figured that out and used them too. Over the years, a culture developed that shows the kernel no respect."
+        },
+        {
+          "s": "leo",
+          "t": "The kernel being the most important part of the OS."
+        },
+        {
+          "s": "steve",
+          "t": "It provides the fundamental services that make the computer go. It never protected itself from change. Microsoft said don't hack the kernel, but Symantec, McAfee, Zone Labs, Kerio, everybody ignored it. Until Vista, there was no way to build a personal firewall without hooking the kernel."
+        },
+        {
+          "s": "steve",
+          "t": "And malware hooks it too. Sony's DRM rootkit filtered everything the OS did, so a directory listing skipped over itself."
+        },
+        {
+          "s": "steve",
+          "t": "Bad hooks also destabilize Windows. The Aureate spyware I first found hooked IE so badly it broke the OS. When I released OptOut to remove it, people wrote back saying I'd fixed their computer."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft would love to bring this protection to 32-bit Windows, but it can't. Even obscure printer drivers make little kernel changes. Mostly it works, but it's implicated in destabilizing Windows."
+        },
+        {
+          "s": "steve",
+          "t": "So with 64-bit, which needs brand-new kernel drivers anyway, Microsoft is proactively enforcing \"no one modifies the kernel.\" It's called Kernel Patch Protection, nicknamed PatchGuard."
+        }
+      ]
+    },
+    {
+      "title": "Why PatchGuard Can Be Beaten",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the problem. The kernel is trying to protect itself while running at the same privilege level as the code it protects against. That's fundamentally impossible."
+        },
+        {
+          "s": "leo",
+          "t": "That sounds bad."
+        },
+        {
+          "s": "steve",
+          "t": "Compare SSL: its spec is public, and knowing how it works doesn't let an attacker beat it. Knowing how PatchGuard works does."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft knows this, so it obfuscates and misdirects. Labels are deliberately misnamed. Routines say they do one thing and do another. A pseudorandom generator, seeded from RDTSC, the Read Time Stamp Counter that counts every clock cycle, scrambles PatchGuard's data structures so they're hard to find in memory."
+        },
+        {
+          "s": "steve",
+          "t": "But it all lives in memory, and white papers with sample code that circumvents PatchGuard are already on the Net."
+        },
+        {
+          "s": "leo",
+          "t": "That's security through obscurity. When you're a prime target like Windows, it won't hold long."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. And PatchGuard isn't really prevention. It's modification detection. It checks every five to ten minutes, timed by a kernel timer. One attack simply turns off the timer, and there's tested sample code for it."
+        },
+        {
+          "s": "leo",
+          "t": "You just blew the whole thing in one sentence."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft must have known it isn't secure."
+        }
+      ]
+    },
+    {
+      "title": "Why It Still Matters",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the tricky part. That it can be circumvented means one thing. That it's there at all means another."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft is telling Symantec, McAfee, Zone Labs and every deliberate kernel modifier: no more. We wish we'd done this going from 16 to 32 bits. Anyone who defeats PatchGuard does so at their own peril."
+        },
+        {
+          "s": "leo",
+          "t": "Symantec, McAfee and Zone Labs won't. But guess who will."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It's really strong good-guy prevention, not malware prevention yet. Microsoft is saying it's really, really serious about not touching the kernel."
+        },
+        {
+          "s": "steve",
+          "t": "That frees Microsoft to change the kernel. Compatibility matters more to Microsoft than anything, bless their hearts, and everyone digging into the kernel kept it from making changes. Now it can say: if you modify it, don't come crying to us, because we will break things."
+        },
+        {
+          "s": "leo",
+          "t": "It's like a fence around a new lawn that says \"Keep Off the Grass.\" You can walk on it, but that makes you a bad guy."
+        }
+      ]
+    },
+    {
+      "title": "The Next Step: A Hypervisor",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And this is a stepping stone. Next, Microsoft will build its own Blue Pill: hypervisor technology running underneath the kernel. That makes PatchGuard's kludge unnecessary."
+        },
+        {
+          "s": "steve",
+          "t": "We've talked about ring 0, very privileged, and ring 3, where user code runs. Code in a different ring can be controlled. But drivers modifying the kernel sit in the kernel itself. A hypervisor supervising the kernel can lock it down with hardware."
+        },
+        {
+          "s": "steve",
+          "t": "But you can only lock it down if nothing already depends on modifying it. That's why Microsoft is making it really hard now, then later lock it with hardware it hasn't deployed. That's where we'll get real malware prevention. I salute Microsoft."
+        },
+        {
+          "s": "leo",
+          "t": "Baby steps. And PatchGuard is only in 64-bit?"
+        },
+        {
+          "s": "steve",
+          "t": "Correct. It's even been in 64-bit XP, which is why it's been studied so carefully. It's cat and mouse: Microsoft works around the workarounds, and researchers work around those."
+        },
+        {
+          "type": "fact",
+          "title": "How it turned out",
+          "t": "Microsoft updated PatchGuard repeatedly as bypasses appeared. Its hardware lockdown arrived years later: Windows 10's Hypervisor-Protected Code Integrity (HVCI), also called memory integrity, is on by default on many Windows 11 PCs."
+        },
+        {
+          "s": "steve",
+          "t": "I wanted to correct myself. A couple of weeks ago I oversold PatchGuard as preventing kernel modification. It really raises the bar, and it lets Microsoft change the kernel, as it has the right to, for our sake."
+        },
+        {
+          "s": "leo",
+          "t": "It gives me hope that Microsoft understands the problem and is making progress. Vista reaches consumers January 30th."
+        },
+        {
+          "s": "steve",
+          "t": "And I may have a surprise next week, speaking of my free programs. I'm bad about pre-announcing things, so I won't say more."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does PatchGuard actually do?",
+      "options": [
+        "Periodically detects kernel modifications",
+        "Prevents all kernel writes in hardware",
+        "Scans for viruses",
+        "Signs drivers"
+      ],
+      "answer": 0,
+      "explain": "It checks every five to ten minutes."
+    },
+    {
+      "q": "Why did Steve say PatchGuard can't truly protect the kernel?",
+      "options": [
+        "It runs at the same privilege level as the code it guards against",
+        "It's open source",
+        "It only runs at boot",
+        "It needs a TPM"
+      ],
+      "answer": 0,
+      "explain": "Knowing how it works lets you beat it, unlike SSL."
+    },
+    {
+      "q": "What's PatchGuard's real value, according to Steve?",
+      "options": [
+        "It stops legitimate vendors from patching the kernel, freeing Microsoft to change it",
+        "It stops all rootkits",
+        "It speeds up Vista",
+        "It replaces antivirus"
+      ],
+      "answer": 0,
+      "explain": "The good guys won't defeat it, though bad guys will."
+    },
+    {
+      "q": "Why was Steve's Vista so slow at first?",
+      "options": [
+        "He'd installed a \"checked\" debugging build",
+        "His graphics card was faulty",
+        "Vista needs 8GB of RAM",
+        "Aero was broken"
+      ],
+      "answer": 0,
+      "explain": "On release code, Vista ran fine even on his old tablet."
+    },
+    {
+      "q": "Why does a mail client using Gmail reveal your IP address?",
+      "options": [
+        "Mail servers add Received headers, used to catch forwarding loops",
+        "Gmail logs it for ads",
+        "SSL exposes it",
+        "POP requires it"
+      ],
+      "answer": 0,
+      "explain": "Gmail's web interface left it out."
+    },
+    {
+      "q": "Which WinZip builds fixed the FileView ActiveX flaw?",
+      "options": [
+        "WinZip 10.0 build 7245 and later",
+        "Only WinZip 11",
+        "None yet",
+        "WinZip 9"
+      ],
+      "answer": 0,
+      "explain": "Any web page could invoke the vulnerable control."
+    }
+  ]
+}

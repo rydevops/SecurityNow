@@ -1,0 +1,546 @@
+{
+  "number": 52,
+  "title": "A Busy Week for Security Troubles",
+  "subtitle": "Black Hat fallout, eBay botnets and a script-free menu",
+  "date": "2006-08-10",
+  "description": "Black Hat and DEFCON brought a flood of news. Steve and Leo cover botnets faking eBay reputations, LogMeIn buying Hamachi, an unpatched D-Link UPnP overflow, JavaScript that attacks your home network, a Centrino Wi-Fi driver flaw, Google's StopBadware warnings and AOL's leaked search logs. Plus Steve's script-free CSS menus and SpinRite on Intel Macs.",
+  "transcript": "https://www.grc.com/sn/sn-052.txt",
+  "audio": "http://media.GRC.com/sn/SN-052.mp3",
+  "chapters": [
+    {
+      "title": "Anniversary, or Not?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 52, and maybe an anniversary, depending on how sticky you want to be about definitions."
+        },
+        {
+          "s": "steve",
+          "t": "Listeners say that if we'd numbered from zero, like programmers, 52 would be the anniversary. Instead we're one off."
+        },
+        {
+          "s": "leo",
+          "t": "It's like the millennium debate: does it end with 2000 or 2001, since there was no year 0? A semantic quibble. Happy anniversary, but we can't celebrate until the end of this episode."
+        },
+        {
+          "s": "leo",
+          "t": "This would normally be our Mod 4 Q&A."
+        },
+        {
+          "s": "steve",
+          "t": "But Black Hat and DEFCON in Vegas revealed so much, much of it worrisome, that the questions move to the next Mod 4. There are links galore in this week's show notes, so don't drive off the road writing things down."
+        }
+      ]
+    },
+    {
+      "title": "GRC's Script-Free Menus",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, my menus. Many people sent me supposedly script-free CSS menus, and none worked for me."
+        },
+        {
+          "s": "steve",
+          "t": "Over two months, with the great people in our newsgroups, I developed one that's robust in a way nothing else on the web seems to be. It runs on every Mac and Windows browser, old and new, almost shoe-leather browsers."
+        },
+        {
+          "s": "leo",
+          "t": "How, without JavaScript checking which browser you're using?"
+        },
+        {
+          "s": "steve",
+          "t": "It's hard. For a while we relied on \"CSS hacks,\" which exploit specific browsers' parsing bugs."
+        },
+        {
+          "s": "leo",
+          "t": "And if they fix the browser, the hack breaks."
+        },
+        {
+          "s": "steve",
+          "t": "Right, so I worked them all out. It's virtually hack-free, except maybe one rule I keep from Safari."
+        },
+        {
+          "s": "steve",
+          "t": "I've put it in the public domain, with a banner at the top of mainmenu.css, and commented almost line by line. It's at GRC.com/menu2/invitro.htm."
+        },
+        {
+          "s": "steve",
+          "t": "I surf with all scripting disabled, and about 10 percent of Internet users do now. Sites whose navigation needs scripting simply don't work for us. I couldn't have GRC require it."
+        },
+        {
+          "s": "leo",
+          "t": "I'm sure people will borrow heavily from it."
+        },
+        {
+          "s": "steve",
+          "t": "I hope so. Then I wouldn't have to lower my security to use their menus."
+        },
+        {
+          "type": "fact",
+          "title": "CSS-only menus today",
+          "t": "Modern CSS features like :hover, :focus-within and the <details> element make script-free menus much easier, and they help accessibility too. Most sites still use JavaScript for navigation."
+        }
+      ]
+    },
+    {
+      "title": "Botnets Fake eBay Reputations",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next, eBay. Leo, do you use it?"
+        },
+        {
+          "s": "leo",
+          "t": "All the time. I bought two things this week."
+        },
+        {
+          "s": "steve",
+          "t": "I've bought a stash of old HP 11C calculators there, the best calculator ever made. Everyone relies on feedback to know a seller is real."
+        },
+        {
+          "s": "steve",
+          "t": "Now botnets are creating fake eBay users. They do one-cent Buy It Now transactions with each other so they can leave each other glowing feedback."
+        },
+        {
+          "s": "steve",
+          "t": "Then those high-confidence fake accounts list expensive items, take buyers' money and never ship."
+        },
+        {
+          "s": "leo",
+          "t": "Is there any way to spot that?"
+        },
+        {
+          "s": "steve",
+          "t": "eBay surely knows and will do what it can, maybe CAPTCHAs, those distorted words you type to prove you're human."
+        },
+        {
+          "s": "leo",
+          "t": "CAPTCHAs are everywhere now. You can't comment on Digg without one."
+        },
+        {
+          "s": "leo",
+          "t": "I rely on those ratings. Maybe automated comments will look suspiciously uniform."
+        },
+        {
+          "s": "steve",
+          "t": "I'm proud of my 100 percent rating. For a high-value item, exchange messages with the seller to build some confidence. Buyer beware."
+        },
+        {
+          "type": "fact",
+          "title": "Reputation fraud",
+          "t": "Fake reviews and feedback rings are still a major problem on marketplaces. Platforms now use machine learning to detect coordinated accounts, and payment protections like PayPal's buyer protection matter more than star ratings."
+        }
+      ]
+    },
+    {
+      "title": "LogMeIn Buys Hamachi",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In other news, LogMeIn has bought Hamachi. I trusted Alex Pankratov, and I hope they keep it free."
+        },
+        {
+          "s": "steve",
+          "t": "When we first covered Hamachi, it had about a quarter million users. By last December, about three-quarters of a million. In April, two million. Now three million."
+        },
+        {
+          "s": "leo",
+          "t": "So we helped them grow by an order of magnitude."
+        },
+        {
+          "s": "steve",
+          "t": "I think Security Now! put them on the map, along with Call for Help."
+        },
+        {
+          "s": "leo",
+          "t": "Word of mouth takes over once you hit critical mass. I'm glad Alex will make some money."
+        },
+        {
+          "s": "steve",
+          "t": "It was a beautifully conceived system, with a beautiful interface even in beta."
+        },
+        {
+          "s": "leo",
+          "t": "It was never open source, which always bothered me. If it were, anyone could fork it, and there would always be a free version. Smart for him, but that's why I rarely recommend closed-source solutions."
+        },
+        {
+          "type": "fact",
+          "title": "Hamachi's fate",
+          "t": "LogMeIn kept Hamachi going as LogMeIn Hamachi. Over the years the free tier was cut back and it became mostly a paid product. Open overlay networks like Tailscale, ZeroTier and Nebula now fill the same role."
+        }
+      ]
+    },
+    {
+      "title": "D-Link's Unpatched Router Flaw",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next, a bad router problem. The bright young white-hat hackers at eEye in Aliso Viejo found a flaw in D-Link routers. They told D-Link in late February and gave it six months. D-Link has done nothing."
+        },
+        {
+          "s": "steve",
+          "t": "It's a classic stack buffer overrun in the routers' Universal Plug and Play service: the DI-524, DI-604, DI-624, DI-784, EBR-2310, WBR-1310 and WBR-2310."
+        },
+        {
+          "s": "steve",
+          "t": "eEye says one specially crafted request gives an attacker complete control of the router. They can then install modified firmware and compromise the entire network."
+        },
+        {
+          "s": "leo",
+          "t": "So it effectively turns off your firewall."
+        },
+        {
+          "s": "steve",
+          "t": "It does anything it wants. The UPnP service only faces the LAN side, so an attacker first needs LAN access: malware on your machine, or your Wi-Fi, if it has no WEP or WPA."
+        },
+        {
+          "s": "steve",
+          "t": "After half a year, there just isn't enough pressure on D-Link. Maybe talking about it helps."
+        },
+        {
+          "s": "leo",
+          "t": "That's how eEye works. Six months' notice, then publish. Companies complain you're telling hackers, but by then many may already know."
+        },
+        {
+          "s": "leo",
+          "t": "My router isn't wireless. Is turning off UPnP enough?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, because the overflow is in that server. We've always said: unless you know you need UPnP, turn it off. Now there's an even bigger reason."
+        },
+        {
+          "type": "fact",
+          "title": "Responsible disclosure",
+          "t": "Researchers typically give vendors a deadline, often 90 days today, before publishing. Google's Project Zero popularized the 90-day standard. Deadlines exist because public pressure is often the only thing that gets a fix shipped."
+        }
+      ]
+    },
+    {
+      "title": "JavaScript Attacks Your Home Network",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now, you know how much I love client-side scripting. I'm biting my tongue."
+        },
+        {
+          "s": "leo",
+          "t": "I agree about Active Script, which has no sandbox. But surely we're safe with JavaScript."
+        },
+        {
+          "s": "steve",
+          "t": "Thank you, Leo. Researchers at SPI Dynamics have shown how standard JavaScript, with no bugs or exploits at all, can port-scan your internal network, identify devices, and take them over and reprogram them."
+        },
+        {
+          "s": "leo",
+          "t": "Just by visiting a website?"
+        },
+        {
+          "s": "steve",
+          "t": "There's a proof of concept online now, and it was presented at Black Hat, so all the bad guys know."
+        },
+        {
+          "s": "steve",
+          "t": "SPI describes it: you read a blog on MySpace or check Yahoo! mail, and JavaScript on the page scans your home network, identifies your Linksys router's model, turns on its wireless and turns off its encryption. Now imagine that happening to a million people in 24 hours."
+        },
+        {
+          "s": "steve",
+          "t": "It works in a coffee shop or an office. JavaScript can learn your private IP address, which tells the scanner which range to probe. It then finds internal web servers, which are often less protected than Internet-facing ones."
+        },
+        {
+          "s": "leo",
+          "t": "And MySpace just spread the WMF exploit to a million computers."
+        },
+        {
+          "type": "fact",
+          "title": "Attacking routers from the browser",
+          "t": "This kind of attack became known as cross-site request forgery against routers and, later, DNS rebinding. Browsers now restrict public websites from reaching private network addresses, and router makers ship unique passwords instead of shared defaults."
+        }
+      ]
+    },
+    {
+      "title": "Scripting and Webmasters",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Nothing on my sites works without JavaScript."
+        },
+        {
+          "s": "steve",
+          "t": "Mine does. Because it's possible."
+        },
+        {
+          "s": "leo",
+          "t": "With all due respect, your site doesn't do all that much."
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't jump up and down and dance around, I know. The point is that you're running script from untrusted sites. It's unfortunate, but here's proof of what valid, bug-free JavaScript can do."
+        },
+        {
+          "s": "leo",
+          "t": "I'm turning off JavaScript right now. On TWiT.tv, only the Flash player breaks."
+        },
+        {
+          "s": "steve",
+          "t": "I trust you, Leo. TWiT is in my trusted list in IE, so it dances the way you want."
+        },
+        {
+          "s": "steve",
+          "t": "As a webmaster, turn scripting off, use your own site, and ask your designers to do better for the growing number of visitors who browse with scripting disabled."
+        },
+        {
+          "s": "leo",
+          "t": "But all the AJAX functionality we've come to expect is JavaScript."
+        },
+        {
+          "s": "steve",
+          "t": "SPI addresses AJAX specifically: JavaScript is becoming more pervasive, and now we've seen it isn't safe."
+        },
+        {
+          "s": "leo",
+          "t": "My sites use little. Without it, the iTunes button won't launch iTunes. So even a simple site relies on it."
+        }
+      ]
+    },
+    {
+      "title": "Centrino's Wi-Fi Driver Bug",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One more bad one. Intel's Centrino Wi-Fi drivers for Windows have a bug in frame processing that bypasses Wi-Fi security completely."
+        },
+        {
+          "s": "leo",
+          "t": "Is this the MacBook demo from Black Hat?"
+        },
+        {
+          "s": "steve",
+          "t": "That's another flaw. This one affects only Windows drivers, and it's been patched. Our show notes link to a tester that shows whether your Centrino version is vulnerable, and to Intel's fix. It's a 130MB download."
+        },
+        {
+          "s": "steve",
+          "t": "It happens before decryption, so no encryption protects you. A malformed packet could run code at the driver's privilege level, the kernel."
+        },
+        {
+          "s": "leo",
+          "t": "Ring 0, where drivers run."
+        },
+        {
+          "s": "steve",
+          "t": "One of my tablets had the buggy driver. If your laptop has a Centrino sticker, patch it now."
+        },
+        {
+          "s": "leo",
+          "t": "At Black Hat they also showed flaws in many Wi-Fi drivers without revealing details. They attacked a MacBook, using a third-party card, because \"Mac users are so smug.\" Windows machines are just as vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "A wireless flaw is especially scary. People have talked about a wireless worm jumping laptop to laptop in an airport or coffee shop, or across a corporate campus."
+        },
+        {
+          "type": "fact",
+          "title": "The Black Hat MacBook demo",
+          "t": "David Maynor and Jon Ellch's demonstration became controversial, since it used a third-party card. Apple later patched several AirPort driver flaws, in September 2006, while saying they weren't the ones shown."
+        },
+        {
+          "s": "leo",
+          "t": "It sounds like the hackers are winning. Do you have any good news?"
+        }
+      ]
+    },
+    {
+      "title": "Good News: StopBadware",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I do. The StopBadware coalition is building a comprehensive list of sites known to carry malware, and Google has started working with it."
+        },
+        {
+          "s": "steve",
+          "t": "Click a Google result for a site known or believed to host spyware or malware, and you'll see a StopBadware warning first, asking if you want to continue."
+        },
+        {
+          "s": "steve",
+          "t": "In their study before launch, about 10 percent of search results led to sites with known badware."
+        },
+        {
+          "s": "leo",
+          "t": "That's a lot of power. The partners include Google, Lenovo, Sun and Consumer Reports, with Harvard's Berkman Center and the Oxford Internet Institute. It has to be absolutely objective."
+        },
+        {
+          "s": "leo",
+          "t": "And it's risky for Google. They'll get sued."
+        },
+        {
+          "s": "steve",
+          "t": "Google gets sued all the time by sites unhappy with their ranking. It's the kind of thing you wish you'd thought of. Before long, every search engine will do it."
+        },
+        {
+          "type": "fact",
+          "title": "Safe Browsing today",
+          "t": "Google's warnings grew into Safe Browsing, which now protects Chrome, Firefox and Safari users by checking sites against lists of malware and phishing pages."
+        }
+      ]
+    },
+    {
+      "title": "AOL's \"Anonymous\" Search Logs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "One more story, about privacy. Last week AOL published 20 million web search queries, with users replaced by numbers."
+        },
+        {
+          "s": "leo",
+          "t": "A New York Times reporter tracked down user No. 4417749 from her searches, for landscapers in her town and people with her last name, and interviewed her."
+        },
+        {
+          "s": "leo",
+          "t": "AOL pulled the data and apologized, saying a team released it without authorization, hoping to help researchers."
+        },
+        {
+          "s": "steve",
+          "t": "Imagine everything you searched for in a year being published. And after this year's NSA revelations, it's creepy to think someone may be interpreting our intentions."
+        },
+        {
+          "s": "steve",
+          "t": "It's my argument about third-party cookies too. Aggregators say the data is anonymous. It starts out anonymous, but aggregate enough of it and it stops being anonymous."
+        },
+        {
+          "type": "fact",
+          "title": "The AOL search leak",
+          "t": "The August 2006 release covered about 650,000 users over three months. The Times identified user 4417749 as a 62-year-old widow in Georgia. Two AOL employees were fired, and the case is still cited as proof that \"anonymized\" data often isn't."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: VMware, which I've used for years, continuing our virtualization series."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite on a Mac?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Someone told me they bought SpinRite without needing it, just to give back."
+        },
+        {
+          "s": "steve",
+          "t": "I would never ask anyone to spend $89 if they don't need it. I just want to plant the seed. Sooner or later almost everyone sees \"No operating system found.\""
+        },
+        {
+          "s": "leo",
+          "t": "Can I run it on an Intel Mac?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't know yet. I like my Mac so much that I split its 80GB drive with Boot Camp, then shrank Windows to 10GB, then removed it, because Parallels runs Windows in a window at full speed. That's perfect for my realtor friend, who needs one Windows-only listing app."
+        },
+        {
+          "s": "leo",
+          "t": "SpinRite doesn't care about the file system."
+        },
+        {
+          "s": "steve",
+          "t": "Right. It works on physical sectors beneath the file system, recovering data and swapping bad sectors for spares. It even fixes TiVo drives. But it's assembly language at the bare metal, and it expects a PC BIOS."
+        },
+        {
+          "s": "leo",
+          "t": "And Macs don't have a traditional BIOS."
+        },
+        {
+          "s": "steve",
+          "t": "Mac users do run it by moving the drive to a PC."
+        },
+        {
+          "s": "steve",
+          "t": "People also find us through Google searches that land on Elaine's transcripts."
+        },
+        {
+          "s": "leo",
+          "t": "And Podzinger, a BBN company, is creating computer transcripts of all our shows, so you'll be able to search the audio and jump straight to where Steve discusses something."
+        },
+        {
+          "s": "steve",
+          "t": "For Firefox users, NoScript does what I recommend: scripting off by default, and whitelist sites you trust, like Google, Amazon and TWiT.tv."
+        },
+        {
+          "s": "leo",
+          "t": "I almost gave Explorer a point for its zones. I'm glad to know about NoScript."
+        },
+        {
+          "s": "leo",
+          "t": "And TWiT is now my full-time job. Advertising pays the hosts, donations pay for infrastructure, and the audience is growing."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How are botnets being used to defraud eBay buyers?",
+      "options": [
+        "Fake accounts trade one-cent purchases to give each other glowing feedback, then run scams",
+        "They bid up prices",
+        "They steal passwords from eBay's servers",
+        "They send phishing emails only"
+      ],
+      "answer": 0,
+      "explain": "A perfect rating can be manufactured."
+    },
+    {
+      "q": "Where was the flaw in several D-Link routers?",
+      "options": [
+        "A buffer overrun in the routers' Universal Plug and Play service",
+        "The web admin password",
+        "The Wi-Fi radio",
+        "The power supply"
+      ],
+      "answer": 0,
+      "explain": "Turning off UPnP protects you, which Security Now! had long recommended."
+    },
+    {
+      "q": "What did SPI Dynamics show plain, bug-free JavaScript could do?",
+      "options": [
+        "Scan your internal network and reconfigure devices like your router",
+        "Only show pop-ups",
+        "Read your hard drive",
+        "Nothing harmful"
+      ],
+      "answer": 0,
+      "explain": "Simply viewing a page could reach devices behind your firewall."
+    },
+    {
+      "q": "Why didn't Wi-Fi encryption protect against the Centrino driver bug?",
+      "options": [
+        "The flaw was in frame processing before decryption",
+        "Encryption was disabled",
+        "Intel used WEP only",
+        "It affected only wired networks"
+      ],
+      "answer": 0,
+      "explain": "A malformed packet could run code in the kernel."
+    },
+    {
+      "q": "What does Google's partnership with StopBadware do?",
+      "options": [
+        "Warns you before you visit a search result known to host malware",
+        "Removes ads",
+        "Blocks all scripting",
+        "Scans your PC"
+      ],
+      "answer": 0,
+      "explain": "About 10% of search results were linked to badware in their study."
+    },
+    {
+      "q": "What did the AOL search-log release show?",
+      "options": [
+        "\"Anonymized\" data can identify people",
+        "Search engines delete all logs",
+        "Only AOL users search",
+        "Numbers protect privacy"
+      ],
+      "answer": 0,
+      "explain": "A reporter found user 4417749 from her searches alone."
+    }
+  ]
+}

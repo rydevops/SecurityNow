@@ -1,0 +1,616 @@
+{
+  "number": 77,
+  "title": "Microsoft on Vista DRM",
+  "subtitle": "Microsoft's 20 answers to Peter Gutmann",
+  "date": "2007-02-01",
+  "description": "In fairness to Microsoft, Leo reads and Steve weighs the Vista team's blog response to Peter Gutmann's paper, by Dave Marsh, lead program manager for Vista's content protection. Some answers clear up real fears: protections apply only to the protected content, image constraint stays near DVD quality, and revocation stops only premium playback. Others, Steve says, are spin.",
+  "transcript": "https://www.grc.com/sn/sn-077.txt",
+  "audio": "http://media.GRC.com/sn/SN-077.mp3",
+  "chapters": [
+    {
+      "title": "Giving Microsoft Its Say",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We need a live studio audience. This week we revisit our episode with Peter Gutmann."
+        },
+        {
+          "s": "steve",
+          "t": "In fairness, I wanted to give Microsoft's response airtime. Rather than just give a link, let's audio-ize it, since this is an audio podcast. Microsoft was obviously not happy."
+        },
+        {
+          "s": "steve",
+          "t": "Dave Marsh's name is on all the documentation and slides. He's the one who unveiled this at WinHEC, the main person behind Vista's AACS support. On Saturday, January 20, Nick White of the Vista Team Blog posted Dave's 20 questions and answers addressing Peter's paper."
+        },
+        {
+          "s": "steve",
+          "t": "Many points are fair. We're most useful if we paint a balanced picture. It's been fun to look at AACS's dark side, but many people will use Vista, often because it's on their new PC. So I want to back off any overstatement."
+        },
+        {
+          "s": "leo",
+          "t": "I'll play Dave Marsh and read. Stop me when you want to comment."
+        }
+      ]
+    },
+    {
+      "title": "\"We Didn't Choose the Rules\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave says Vista includes content protection so protected content like HD DVD and Blu-ray can play on Vista PCs. Such content carries usage policies that every playback device must enforce: Vista, other operating systems, and standalone players. If Vista couldn't support the required protections, that content couldn't play on Vista at all."
+        },
+        {
+          "s": "steve",
+          "t": "He's saying Microsoft didn't create this. And that's absolutely true. AACS lets content providers dictate what devices can play. Only if Microsoft provides a provably secure infrastructure can Windows play it at all."
+        },
+        {
+          "s": "leo",
+          "t": "Which is what rebuttals on Peter's own site said: they had no choice."
+        },
+        {
+          "s": "steve",
+          "t": "Vista is just another AACS implementation, like any consumer player."
+        },
+        {
+          "s": "leo",
+          "t": "Peter argued Microsoft could refuse, with 90 percent of the market. That's a business argument, not security, and I don't know that any of us can judge it."
+        },
+        {
+          "s": "steve",
+          "t": "Would Hollywood scrap content protection to get movies on PCs? Clearly not. They'd say fine, no secure platform, no HD. That's already true for Linux, which lacks this protection. And look at XP users and muslix64's known-plaintext attack. If Microsoft refused, Vista simply wouldn't play HD content."
+        }
+      ]
+    },
+    {
+      "title": "\"Nothing New Here\"? Partly",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave says policies on content aren't new to Windows, and that much of the functionality in the paper was in earlier Windows, without significant consumer problems, as XP's widespread media use shows."
+        },
+        {
+          "s": "steve",
+          "t": "That's absolutely not true. I defend his need for this in Vista. But the paper was all about the bad parts of Vista's DRM. We had no tilt bits and no encrypted video path. I'm sorry."
+        },
+        {
+          "s": "leo",
+          "t": "He gives examples. DVD playback has required Macrovision protection on analog TV outputs since the 1990s, and Windows supported it. Restricting S/PDIF audio for some content has existed since Windows Millennium Edition. And the Certified Output Protection Protocol, COPP, released for XP over two years ago, lets applications detect outputs and enable HDCP, CGMS-A and Macrovision."
+        },
+        {
+          "s": "steve",
+          "t": "And those haven't been a big problem."
+        },
+        {
+          "s": "leo",
+          "t": "Though people have always been upset about Macrovision."
+        },
+        {
+          "s": "steve",
+          "t": "It always will cause problems. It's a yucky analog technology that messes up a good video signal."
+        }
+      ]
+    },
+    {
+      "title": "Only the Protected Content Is Affected",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave says Vista's infrastructure is designed to minimize the impact on other content and activities on the same PC."
+        },
+        {
+          "s": "steve",
+          "t": "Anecdotally, people report Vista is a worse media platform than XP, even for unprotected content: stuttering, jerky pictures that are smooth again on XP. There may be some impact even with unprotected content."
+        },
+        {
+          "s": "leo",
+          "t": "To be fair, it could just be early drivers. It's too soon to say."
+        },
+        {
+          "s": "leo",
+          "t": "Dave's example: if you view medical images while playing video that requires image constraint, only that video is constrained, not the medical image. And if you listen to protected audio while viewing medical images, no video protections activate."
+        },
+        {
+          "s": "steve",
+          "t": "Peter read the system as all-or-nothing, and from what I saw that was entirely reasonable. But David puts that concern to rest. Protected content anywhere doesn't put the whole system into paranoid mode."
+        },
+        {
+          "s": "leo",
+          "t": "Software doesn't always match its specs, though, either way."
+        },
+        {
+          "s": "leo",
+          "t": "Dave also says the protections don't make Vista PCs less reliable. If anything, they'll improve driver quality control."
+        },
+        {
+          "s": "steve",
+          "t": "At best that's unsupportable."
+        },
+        {
+          "s": "leo",
+          "t": "It's spin, let's face it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has raised the penalty for driver mistakes that leak content, so you could argue drivers will get better. Let history decide."
+        },
+        {
+          "s": "leo",
+          "t": "Or it could mean more crashes, since it's less tolerant of faults."
+        },
+        {
+          "s": "steve",
+          "t": "With tilt bits all over the place, let's hope they don't go off."
+        },
+        {
+          "s": "leo",
+          "t": "Dave says Microsoft doesn't decide which protections are active. Vista offers à la carte options that applications enable as each content owner's policy requires, like any consumer device."
+        },
+        {
+          "s": "steve",
+          "t": "Fair, though I didn't read Peter as saying otherwise. Microsoft facilitates whatever the content provider wants."
+        },
+        {
+          "s": "steve",
+          "t": "As we go through the 20, some are questions Dave wanted to answer rather than concerns a fair reader of Peter's paper would have."
+        }
+      ]
+    },
+    {
+      "title": "Same Rules as Consumer Players",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Question 1: do these requirements apply equally to consumer HD DVD and Blu-ray players? Generally yes. For example, HD DVD and Blu-ray always require HDCP on DVI and HDMI outputs. Some differences, as with DVD's CSS, are historical and come from the content's licenses."
+        },
+        {
+          "s": "steve",
+          "t": "Completely fair. Vista becomes an HD player, just like one off the shelf."
+        },
+        {
+          "s": "leo",
+          "t": "The subtext: we're just like everybody else."
+        },
+        {
+          "s": "leo",
+          "t": "Question 2: when are the protections used? Only when the content's policy requires them. If content doesn't require a protection, it isn't used."
+        },
+        {
+          "s": "steve",
+          "t": "Again, very fair. Microsoft isn't adding DRM where none existed. AACS binds policy to the content, and Vista is just a fair playback device."
+        }
+      ]
+    },
+    {
+      "title": "Constrained to About 960 by 540",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Question 3: is playback reduced on some outputs? Image constraint applies only when required, only to that content. In practice it means no worse than standard-definition TV. For HD DVD and Blu-ray, the constraint is 520,000 pixels per frame, about 960 by 540, still above DVD's native resolution. Dave feels that's still a great experience on an HD screen."
+        },
+        {
+          "s": "steve",
+          "t": "That's a fair and accurate rendition. A laptop with an HD DVD drive and a built-in screen would need Vista, since XP can't do this, and it will simply work as a player."
+        },
+        {
+          "s": "leo",
+          "t": "It's actually a little better than DVD's 480p."
+        },
+        {
+          "s": "steve",
+          "t": "A little. Peter's issue was the artificial constraint itself. Dave says it's not Microsoft's imposition. If content isn't encrypted all the way to the screen, where it jumps off and travels by light into your eyeballs, the provider requires constriction. A provider could demand even blurrier, 200,000 or 100,000 pixels. Microsoft has no control. Dave assumes they won't."
+        },
+        {
+          "type": "fact",
+          "title": "The numbers",
+          "t": "960 by 540 is 518,400 pixels, just under the 520,000-pixel limit. A standard U.S. DVD frame is 720 by 480, or 345,600 pixels."
+        },
+        {
+          "s": "leo",
+          "t": "Will this affect medical imaging applications? No, constraints apply only to protected content, not the desktop."
+        },
+        {
+          "s": "steve",
+          "t": "The HD video's window may be blurred, but a separate window showing crisp medical images won't be. From the architecture diagrams, they clearly can protect one video path separately from all others."
+        },
+        {
+          "s": "leo",
+          "t": "He's so adamant, I think we can trust it, or the whole document is in doubt."
+        }
+      ]
+    },
+    {
+      "title": "Open-Source Drivers and Board Costs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Do things like the Hardware Functionality Scan stop the open-source community from writing drivers, as Peter strongly argued? Dave: no. HFS uses chip characteristics beyond those needed to write a driver, so all the information needed for drivers can still be disclosed."
+        },
+        {
+          "s": "steve",
+          "t": "Classic two-way spin. Peter says full documentation would let someone emulate the hardware. Dave says some things must stay secret for HFS, but not things needed to write a fully functional driver. I agree with him."
+        },
+        {
+          "s": "leo",
+          "t": "Writing open-source drivers has always depended on the hardware company exposing enough. That's always been a crapshoot."
+        },
+        {
+          "s": "steve",
+          "t": "They can keep some things private without hurting the driver."
+        },
+        {
+          "s": "leo",
+          "t": "Will Vista's board robustness recommendations raise graphics card costs and reduce build options? Dave: everything was moving onto one chip anyway, volume drives chip cost, so avoiding optional external chips is better, and a happy side effect is fewer vulnerable traces on the board."
+        },
+        {
+          "s": "steve",
+          "t": "That's a big spin. Dave felt defensive about hardware changes, and his answer isn't convincing. This was our original premise: adding AACS heavily impacts Windows, in hardware as well as software. It's not Microsoft's problem to defend. Board makers would prefer populating boards as they choose, as Peter said. Discount that one."
+        },
+        {
+          "s": "leo",
+          "t": "It's like Martha Stewart saying \"It's a good thing.\""
+        }
+      ]
+    },
+    {
+      "title": "CPU Load",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Will content protection increase CPU use? Peter said Vista checks for piracy 30 times a second."
+        },
+        {
+          "s": "steve",
+          "t": "And with a plug-in video card, power users' choice, the bus encryption runs at very high bandwidth. That's a huge burden."
+        },
+        {
+          "s": "leo",
+          "t": "Dave says yes. But more functionality inevitably uses more CPU, balanced against robust protection and new experiences like HD DVD and Blu-ray."
+        },
+        {
+          "s": "steve",
+          "t": "A total spin answer."
+        },
+        {
+          "s": "leo",
+          "t": "At least he didn't deny it."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. Microsoft had no choice but to encrypt from the driver across the bus to the card, so a bus probe can't grab HD video. It's so demanding that standard AES can't keep up in software, and I understand Intel designed a faster, abbreviated variant. I think a system playing HD content will pin its processor. But if you're watching a movie, you're probably not writing letters home."
+        },
+        {
+          "s": "leo",
+          "t": "Peter suggested it uses CPU even when you're not watching."
+        },
+        {
+          "s": "steve",
+          "t": "That's a gray area in the spec, but bus encryption runs only when content asks for it. It would be nuts to leave that on all the time. I'm sure they don't."
+        }
+      ]
+    },
+    {
+      "title": "Questions Nobody Asked",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Aren't there already output protections in XP? I don't think anyone asked."
+        },
+        {
+          "s": "steve",
+          "t": "A perfect example of a question nobody asks."
+        },
+        {
+          "s": "leo",
+          "t": "Dave says yes: DVD's CSS requires protections like Macrovision and limited resolution on standard-definition component outputs, which XP has supported for some time."
+        },
+        {
+          "s": "steve",
+          "t": "I've never seen any API or spec mentioning resolution limits on component outputs. That's news to me, but I'll take Dave at his word."
+        },
+        {
+          "s": "leo",
+          "t": "Is content protection tied to high-definition video? Dave: HD has unique requirements, but many apply to commercial content generally. Who asked that, and why?"
+        },
+        {
+          "s": "steve",
+          "t": "I think it means: this isn't just about HD. Streaming video and audio can ask for it too. Vista is a big, happy DRM platform for anybody who wants it."
+        }
+      ]
+    },
+    {
+      "title": "S/PDIF, Component Outputs and Echo Cancellation",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "What about S/PDIF? Dave: Vista doesn't require turning it off, but can for certain content, as Windows has for years. Vista can also constrain audio quality for content that requires it, only that content's audio, and he says that's not widely used today."
+        },
+        {
+          "s": "steve",
+          "t": "So audio could be downsampled and its resolution limited, the way video is, if the provider asks. You can make it muddy."
+        },
+        {
+          "s": "leo",
+          "t": "And nobody's doing this yet, even for video, as far as I can tell. Will component video outputs be disabled? Dave: Vista doesn't require it, but enforces whatever the content owner's policy sets, including image constraint."
+        },
+        {
+          "s": "steve",
+          "t": "So it's not their fault outputs can be turned off. They're the middleman, which is fair."
+        },
+        {
+          "s": "leo",
+          "t": "Cable boxes might force HDMI for HD content, too."
+        },
+        {
+          "s": "leo",
+          "t": "Will echo cancellation work less well with premium content? Dave says applications get enough information to build high-quality echo cancellation. What's he talking about?"
+        },
+        {
+          "s": "steve",
+          "t": "Echo cancellation feeds some of the output back in, 180 degrees out of phase, so you don't send it back up the line. Peter noted that constrained audio would make it less effective. But you need echo cancellation for things like VoIP calls, which aren't protected content. So it was a theoretical point that would never affect anyone."
+        }
+      ]
+    },
+    {
+      "title": "Unified Drivers and Revocation",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Will unified graphics drivers disappear, as Peter said? Dave: no. In fact, every graphics driver shipped with Vista is a unified driver."
+        },
+        {
+          "s": "steve",
+          "t": "That doesn't address Peter's point. If one driver covers a whole line of cards, revoking it revokes them all. Let's hope none are revoked, or whole families of cards die en masse."
+        },
+        {
+          "s": "leo",
+          "t": "Apparently Microsoft doesn't think mass revocation will happen."
+        },
+        {
+          "s": "steve",
+          "t": "I think they assume a replacement driver, with new keys, would always arrive before the old one is revoked."
+        },
+        {
+          "s": "leo",
+          "t": "Will HDMI audio outputs show as S/PDIF outputs? Dave says they'd better show as different types, since they're different connectors, which helps users configure things."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know why we care about this one."
+        },
+        {
+          "s": "leo",
+          "t": "What is revocation and where is it used? Dave says renewal and revocation are important for robust protection. In the rare event revocation is needed, Microsoft will work with the hardware maker to provide a new driver, ideally in advance."
+        },
+        {
+          "s": "leo",
+          "t": "And revocation only affects a driver's ability to receive certain commercial content. Otherwise the driver keeps working normally. So your card still works. You just can't watch HD discs."
+        },
+        {
+          "s": "steve",
+          "t": "That's huge news. Peter's paper presumed revoked drivers would stop functioning, and we all went along without thinking. Dave says no: only the HD capability is revoked. You can still watch non-HD movies, and your desktop works. When you hear it, it's like, duh, of course."
+        },
+        {
+          "s": "leo",
+          "t": "We've said revocation seems unlikely. But it's built in, so assume it may be used someday. And Peter said you could be revoked just for not paying dues, like a company going out of business."
+        },
+        {
+          "s": "steve",
+          "t": "Another nightmare that's very unlikely. I'd be surprised if a company not renewing automatically got its earlier license revoked. The danger is if revocation became necessary, the maker was out of business, and Microsoft lacked the source code to fix the driver. Those users would be in bad shape."
+        }
+      ]
+    },
+    {
+      "title": "Device Keys Versus Title Keys",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It may not be academic. With muslix64's work, card keys may leak. Isn't it true each card or player has a unique key, and you need yours to use muslix's software?"
+        },
+        {
+          "s": "steve",
+          "t": "Simplified: imagine the title's decryption key is encrypted under every valid player key and stored on the disc. Your player decrypts the copy matching its key to get the title key. If the disc omits your player's copy, it can't decrypt the title. That didn't simplify anything, did it?"
+        },
+        {
+          "s": "leo",
+          "t": "It made sense. So if people distribute player keys online, wouldn't they be revoked?"
+        },
+        {
+          "s": "steve",
+          "t": "Those particular discs are forever cracked. You can imagine a site listing decryption keys for every cracked disc."
+        },
+        {
+          "s": "leo",
+          "t": "So they're giving out keys for discs, not hardware."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, \"title keys.\" A title key decrypts that disc's content to play anywhere. And title keys are already leaking."
+        },
+        {
+          "s": "leo",
+          "t": "So that has nothing to do with hardware revocation."
+        },
+        {
+          "type": "fact",
+          "title": "Title keys",
+          "t": "AACS actually encrypts each disc's title keys with a \"volume unique key,\" derived from a media key that the Media Key Block delivers only to non-revoked devices. Steve's version captures the idea: revoked devices simply can't unlock new discs."
+        },
+        {
+          "s": "leo",
+          "t": "Does revocation complicate writing drivers? Dave: new functionality brings complexity, but with the benefit of HD DVD and Blu-ray playback. So yes."
+        },
+        {
+          "s": "steve",
+          "t": "More complex, but it had to be."
+        }
+      ]
+    },
+    {
+      "title": "Tilt Bits and Voltage Spikes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Will tilt bits cause problems without an attack, say from voltage spikes, which are constant in PCs? Dave says that's pure speculation. Each hardware maker decides what it regards as an attack. Even if playback stopped, the user could press Play again after the drivers reinitialize, which takes about a second. And it only applies to the highest-grade content, like HD DVD and Blu-ray. He doubts it would ever happen."
+        },
+        {
+          "s": "leo",
+          "t": "But these are checked 30 times a second."
+        },
+        {
+          "s": "steve",
+          "t": "Every 30 milliseconds. It'd be annoying if a two-hour movie took three hours."
+        },
+        {
+          "s": "leo",
+          "t": "You'd keep pressing the spacebar."
+        },
+        {
+          "s": "steve",
+          "t": "Time for a new power supply. Card makers won't put tilt bits on their power lines, especially now."
+        },
+        {
+          "s": "leo",
+          "t": "I got the impression from Peter that voltage changes are exactly what cards must watch for."
+        },
+        {
+          "s": "steve",
+          "t": "I think Peter was offended as a purist. Windows needs every benefit of the doubt to be as reliable as it is: voltage fluctuations, USB and FireWire devices plugging in. This removes the benefit of the doubt. Any doubt sets a tilt bit, and Windows resets its display system. We'll see."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love to hear from a video card maker, who deals with the real world."
+        },
+        {
+          "s": "steve",
+          "t": "Peter quotes ATI throughout about costs passed on to consumers, especially heavy encryption on plug-in cards."
+        }
+      ]
+    },
+    {
+      "title": "Performance and Gaming",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Does Vista's OMAC authenticated communication hurt graphics performance? Dave: it's only active while commercial content plays, so the impact is limited to then."
+        },
+        {
+          "s": "steve",
+          "t": "And it probably slows you down a lot then."
+        },
+        {
+          "s": "leo",
+          "t": "Must graphics chips provide hardware video decoding? Dave: no, but it's highly recommended for HD."
+        },
+        {
+          "s": "steve",
+          "t": "Again, not Microsoft's to defend. HD itself is a much greater burden than a small YouTube window. The more your graphics card does, the less the rest of the system must."
+        },
+        {
+          "s": "leo",
+          "t": "Will content protection affect PC gaming? That's the question I hear most. Dave: it's designed for commercial audio and video and typically isn't used in games. A game would have to request it."
+        },
+        {
+          "s": "steve",
+          "t": "It's off whenever it's not specifically needed. What we don't know, maybe service packs away, is whether Vista will be a smooth gaming platform. Anecdotes say it's not as good as XP yet."
+        },
+        {
+          "s": "leo",
+          "t": "Vista's not out as we record, but it will be when you hear this. It'll take a month or two to know. DirectX 9 and 10 may matter more. DirectX 10 changes everything."
+        }
+      ]
+    },
+    {
+      "title": "Reassured, Mostly",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm glad we did this. David clarified some big concerns Peter raised. Microsoft feels painted into a corner, which I think is unfair, since it chose to make Vista a DRM platform. This makes me less excited about moving to it, though I wasn't moving anyway."
+        },
+        {
+          "s": "leo",
+          "t": "He reassured us that protection affects only HD playback, not the whole system. With this stuff, you always wonder if you're overreacting. We won't know until people use it."
+        },
+        {
+          "s": "steve",
+          "t": "If XP already has quality restriction and Macrovision, it isn't giving anyone trouble. But XP has nothing like this massive redesign to push AACS policy all the way to the user."
+        },
+        {
+          "s": "leo",
+          "t": "Imagine the years of talks among Microsoft, Hollywood and hardware makers. It's not easy to implement."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: Data Execution Prevention. I believe nothing is more important than preventing buffer overruns, the way remote hackers run their own code on your machine. XP since SP2 and Vista support hardware DEP, which any processor from about the last two years has. That's why I wrote SecurAble. Unfortunately, Microsoft defaults it to off in most cases, for backward compatibility, so Windows is much less secure than it could be."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was Dave Marsh's central defense of Vista's content protection?",
+      "options": [
+        "Content owners' policies require it, or HD content couldn't play on Vista at all",
+        "Microsoft wanted it",
+        "It improves security",
+        "It's optional in Vista"
+      ],
+      "answer": 0,
+      "explain": "Steve agreed Hollywood would never drop protection for PCs."
+    },
+    {
+      "q": "According to Microsoft, what happens when a graphics driver is revoked?",
+      "options": [
+        "It loses only the ability to play certain premium content",
+        "The card stops working",
+        "Windows won't boot",
+        "The driver is deleted"
+      ],
+      "answer": 0,
+      "explain": "Steve called this huge news."
+    },
+    {
+      "q": "How far does image constraint reduce HD video?",
+      "options": [
+        "To about 520,000 pixels per frame, roughly 960 by 540",
+        "To 320 by 240",
+        "To black",
+        "To 480i"
+      ],
+      "answer": 0,
+      "explain": "That's still a little above DVD resolution."
+    },
+    {
+      "q": "Which Microsoft answer did Steve call \"a big spin\"?",
+      "options": [
+        "That everything was moving to one chip anyway, so board costs won't rise",
+        "That revocation is rare",
+        "That protections apply only to protected content",
+        "That HD needs HDCP"
+      ],
+      "answer": 0,
+      "explain": "He said hardware costs weren't Microsoft's to defend."
+    },
+    {
+      "q": "When does Vista's high-bandwidth bus encryption run?",
+      "options": [
+        "Only while protected content that requires it is playing",
+        "All the time",
+        "Only during games",
+        "At boot"
+      ],
+      "answer": 0,
+      "explain": "Steve expects it to pin the processor during HD playback."
+    },
+    {
+      "q": "Why did Steve think Peter's echo-cancellation worry wouldn't matter in practice?",
+      "options": [
+        "Echo cancellation is for things like VoIP calls, which aren't protected content",
+        "Vista lacks echo cancellation",
+        "Audio is never constrained",
+        "Microsoft removed it"
+      ],
+      "answer": 0,
+      "explain": "Constrained audio applies only to protected content."
+    }
+  ]
+}

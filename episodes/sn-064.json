@@ -1,0 +1,497 @@
+{
+  "number": 64,
+  "title": "Listener Feedback Q&A #12",
+  "subtitle": "Proxies that read SSL, blacklists, cookies and more",
+  "date": "2006-11-02",
+  "description": "Listener questions on corporate proxies that decrypt SSL and how to spot them, how SSL works, blacklisted email servers, IE Tab's risks, stopping a router's ping replies, detecting Vista in a VM, vetting recommended products, surviving DDoS, Firefox 2.0 hiding its third-party cookie setting, stale proxy caches, malware changing DNS settings, and IE7's zones. Plus a SpinRite rescue.",
+  "transcript": "https://www.grc.com/sn/sn-064.txt",
+  "audio": "http://media.GRC.com/sn/SN-064.mp3",
+  "chapters": [
+    {
+      "title": "A Power-of-Two Q&A",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 64: eight by eight squares on a chessboard, four by four by four. So it's a Mod 4 episode, your questions."
+        },
+        {
+          "s": "steve",
+          "t": "The form at the bottom of GRC.com/securitynow sends questions to me. I can't answer individually, there are so many. Every time I prepare one of these, I wish we could answer more, so we may switch to Mod 2 someday."
+        }
+      ]
+    },
+    {
+      "title": "Can a Corporate Proxy Read SSL?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michael Klein in Fairfield, California must use a proxy at work. Does SSL stop a corporate proxy from snooping? Could it set up two SSL connections, decrypt, scan, and re-encrypt, like a man in the middle, and fake a certificate so you think you're secure?"
+        },
+        {
+          "s": "steve",
+          "t": "He's exactly right. Some corporate proxies do this. Your browser's SSL connection ends at the proxy, which opens its own to the website, decrypting and usually scanning in between."
+        },
+        {
+          "s": "steve",
+          "t": "But the browser must be complicit. The proxy has its own signing certificate, and the company preinstalls it in every corporate browser."
+        },
+        {
+          "s": "steve",
+          "t": "When you visit, say, Gmail, the proxy creates a certificate for Google on the fly and signs it itself. Normally Google's certificate is signed by Equifax or VeriSign, whose certificates are built into your browser. Here, your browser also trusts \"Ajax Company,\" so no warning appears."
+        },
+        {
+          "s": "leo",
+          "t": "Can't you look at the certificate and see that?"
+        },
+        {
+          "s": "steve",
+          "t": "That's exactly the point I wanted to make. Right-click the secure page, open its properties and view the certificate's signing chain. Normally the root is VeriSign, Equifax or Microsoft. If it's your company's name, your traffic is being decrypted at the proxy."
+        },
+        {
+          "s": "leo",
+          "t": "An employee might shrug, \"Oh, I'm going through the company.\""
+        },
+        {
+          "s": "steve",
+          "t": "But then you know for certain they're decrypting it. You don't know what they do with it."
+        },
+        {
+          "s": "leo",
+          "t": "And if they tried it without a company certificate?"
+        },
+        {
+          "s": "steve",
+          "t": "You'd get a warning that the certificate doesn't match."
+        }
+      ]
+    },
+    {
+      "title": "How Does SSL Work?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jon in New York asks: what is SSL, and how does it actually work?"
+        },
+        {
+          "s": "steve",
+          "t": "I looked back and realized we never explained SSL's mechanism after our crypto series, so it gets its own episode."
+        },
+        {
+          "s": "steve",
+          "t": "The short version: SSL began at Netscape. Early boundary problems were fixed, and now SSL, also called TLS, Transport Layer Security, is a terrific solution."
+        },
+        {
+          "s": "steve",
+          "t": "It authenticates the other end with certificates, so a man in the middle can't intervene, and it encrypts so strongly that a passive sniffer couldn't decrypt it in the lifetime of the universe."
+        },
+        {
+          "s": "leo",
+          "t": "It's what your bank, Gmail and my email provider use."
+        },
+        {
+          "s": "steve",
+          "t": "The \"s\" in https stands for \"secure.\""
+        },
+        {
+          "type": "fact",
+          "title": "TLS today",
+          "t": "SSL is long obsolete. Its successor, TLS, is now at version 1.3 (2018), which removed weak options and made connections faster. Nearly all web traffic now uses it."
+        }
+      ]
+    },
+    {
+      "title": "Blacklisted Email",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tom Krauska in St. Louis can't email his sister and a friend. They bounce with \"550 … blocked … Comcast … blocked for spam.\" He was told Comcast blocks port 25, and his ISP only supports port 25."
+        },
+        {
+          "s": "steve",
+          "t": "That's not a port 25 problem. It's a false spam trigger. Their ISP checks \"real-time blacklists\" of suspected spammers, and his ISP's mail server is on one."
+        },
+        {
+          "s": "leo",
+          "t": "It's probably not him."
+        },
+        {
+          "s": "steve",
+          "t": "It can't be, unless he runs his own mail server. Other customers' machines are likely infected with spam bots, so the ISP's server got blacklisted."
+        },
+        {
+          "s": "leo",
+          "t": "You're being kind. Blacklists have false positives for all sorts of reasons. Most zombies run their own mail engines, which is why ISPs block port 25. Maybe the ISP hosted a spammer. I've had addresses blacklisted, and it's very hard to get off."
+        },
+        {
+          "s": "steve",
+          "t": "Since his ISP blocks port 25, he can't reach other servers directly. He needs a third-party email service."
+        },
+        {
+          "s": "leo",
+          "t": "Use Gmail, Yahoo! or Hotmail. FastMail lets you send through its server."
+        },
+        {
+          "s": "steve",
+          "t": "I've looked and didn't think Gmail allowed that."
+        },
+        {
+          "s": "leo",
+          "t": "Lifehacker says you can: use your Gmail account with Google's SMTP server over a TLS connection."
+        },
+        {
+          "s": "steve",
+          "t": "I'm going to do that. I have an application for it."
+        },
+        {
+          "type": "fact",
+          "title": "Sending through Gmail",
+          "t": "The server is smtp.gmail.com, over TLS on port 587. Today Google requires an app password or OAuth sign-in for it. SPF, DKIM and DMARC now matter as much as blacklists for whether mail is delivered."
+        }
+      ]
+    },
+    {
+      "title": "IE Tab Inherits IE's Holes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jason Bennett in Chesterland, Ohio asks: is the IE Tab add-on for Firefox, which shows a page with IE inside Firefox, vulnerable to IE's flaws?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. IE Tab doesn't bring its own browser. It embeds Windows' Internet Explorer component in a Firefox tab, the same viewer Outlook uses for mail. Any IE vulnerability bites you there."
+        },
+        {
+          "s": "leo",
+          "t": "Anything that uses IE to render HTML is at risk."
+        }
+      ]
+    },
+    {
+      "title": "Silencing Pings",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Phil Hendy in Swindon, U.K. is fully stealthed in ShieldsUP! except for ping replies. How does he stop them, and what would he lose?"
+        },
+        {
+          "s": "steve",
+          "t": "We get this a lot. Some routers still answer pings, so he fails my true stealth test."
+        },
+        {
+          "s": "steve",
+          "t": "First, look through the router's security or WAN settings for an option to block ICMP echo requests."
+        },
+        {
+          "s": "steve",
+          "t": "Or use the DMZ setting, which forwards unsolicited traffic to one machine, and point it at an IP address that doesn't exist on your network, like 192.168.0.222. The ping arrives, has nowhere to go, and is dropped."
+        },
+        {
+          "s": "leo",
+          "t": "Clever. But menus have so many places for this to hide, with no standard."
+        },
+        {
+          "s": "steve",
+          "t": "Also update your router's firmware. Manufacturers keep adding features, and a newer build may offer it."
+        }
+      ]
+    },
+    {
+      "title": "Can Microsoft Detect a VM?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian in Minnesota heard that only Vista Ultimate may legally run in a virtual machine. Can Microsoft even tell?"
+        },
+        {
+          "s": "steve",
+          "t": "Legal enforceability aside, yes, it can be detected. Recall Blue Pill: virtualization is hard to do perfectly, especially time. Some instructions take far longer in a VM, and while the VM can fake the timer, it would also have to intercept Internet time servers."
+        },
+        {
+          "s": "steve",
+          "t": "With Microsoft increasingly enforcing licenses with technology, I'd expect it to see through the virtualization layer."
+        },
+        {
+          "s": "leo",
+          "t": "Ultimate costs around $300. Paul and I discussed whether it's enforceable on Windows Weekly. Microsoft's view is that home users don't need VMs, but I think more home users will use them for security."
+        },
+        {
+          "type": "fact",
+          "title": "Vista's VM rules",
+          "t": "Vista's license originally allowed only the Business and Ultimate editions in virtual machines. Microsoft dropped that restriction for Home Basic and Home Premium in 2008. Ultimate's full retail price was $399."
+        }
+      ]
+    },
+    {
+      "title": "Do We Vet What We Recommend?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Daryl in Kansas tried MojoPac and moka5, then wondered if he'd installed a rootkit. McAfee SiteAdvisor gave moka5 a green check, but had no results for MojoPac. Do you check these things?"
+        },
+        {
+          "s": "steve",
+          "t": "I'd never casually mention a product from a questionable site. When I mention an underground site, I say so clearly. I check companies' backgrounds: venture financing, or founders who are Stanford professors, in moka5's case."
+        },
+        {
+          "s": "leo",
+          "t": "This is the guy who discovered spyware, Daryl. He's not going to put spyware on your system."
+        }
+      ]
+    },
+    {
+      "title": "Surviving a DDoS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "\"Agent Smith,\" somewhere in Australia, just survived his company's first serious DDoS attack, with management demanding \"Get us back on the air now.\" Any new countermeasures besides big pipes, redundant hardware and not angering attackers?"
+        },
+        {
+          "s": "steve",
+          "t": "Bot networks are now so large that a big enough attack is really a problem. It's all about scale. When GRC was here on two T1s, about 3 megabits total, a handful of machines could take me off the Net."
+        },
+        {
+          "s": "steve",
+          "t": "Protection companies have very big pipes and proxies that answer every connection request. Spoofed requests get replies that go nowhere. Only real visitors complete the handshake and get passed through to the actual server, cowering behind it."
+        },
+        {
+          "s": "steve",
+          "t": "Gambling sites and others that must stay online use these services. It's changed the cost of connectivity: high-value targets pay for protection even when they aren't attacked."
+        },
+        {
+          "s": "steve",
+          "t": "A small company can't protect itself from a big attack. Attacks come from tens or even hundreds of thousands of bots. Unplug your equipment and take a vacation."
+        },
+        {
+          "s": "leo",
+          "t": "Changing your IP address doesn't help if they attack your name, and DNS changes take ages to propagate."
+        },
+        {
+          "s": "steve",
+          "t": "That much bandwidth has to go somewhere."
+        }
+      ]
+    },
+    {
+      "title": "Firefox 2.0 Hides a Cookie Setting",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Scallan in London says Firefox 2.0, out last week, lets you allow or block cookies, but no longer distinguishes first-party from third-party cookies. Is it less safe?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm so disappointed. Every earlier Firefox let you accept cookies only from the site you're visiting, which is what I recommend. I've invested heavily in third-party cookie research for GRC, and I know what percentage of people have them on."
+        },
+        {
+          "s": "leo",
+          "t": "What's a third-party cookie?"
+        },
+        {
+          "s": "steve",
+          "t": "A cookie is a token a site gives your browser, which it sends back with later requests. Netscape invented it, like SSL."
+        },
+        {
+          "s": "steve",
+          "t": "Each page request is a separate transaction, so without cookies a site can't tell the same person viewed two pages. It can't use your IP address, because ISP proxies hide it. So your browser includes, say, its Google cookie with every request to Google. That keeps you logged into Gmail or eBay."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is that every asset on a page can carry cookies, not just the page itself."
+        },
+        {
+          "s": "leo",
+          "t": "Banner ads and images."
+        },
+        {
+          "s": "steve",
+          "t": "Advertisers like DoubleClick realized: give the user a cookie with our ad image, and that token follows them around the Net. A first-party cookie is between you and the site you're visiting. A third-party cookie comes with something from another site, like an ad server."
+        },
+        {
+          "s": "leo",
+          "t": "So CNET can't follow me, and MSNBC can't, but the advertiser common to all of them can."
+        },
+        {
+          "s": "steve",
+          "t": "And it compiles a profile of everywhere you go. Some \"win a prize\" sites were fronts run by ad companies to attach your name, address and phone number to that profile."
+        },
+        {
+          "s": "steve",
+          "t": "Ad servers also receive the \"referrer,\" which includes what you typed into search engines. So they know if you spent three weeks searching about HIV."
+        },
+        {
+          "s": "leo",
+          "t": "I just installed Firefox 2.0, and he's right. One checkbox, \"Accept cookies from sites,\" plus exceptions."
+        },
+        {
+          "s": "steve",
+          "t": "The good news is that it's still configurable, just not in the interface. Go to about:config and set network.cookie.cookieBehavior to 1, which accepts only first-party cookies. Search for \"Firefox 2.0 third-party cookies\" for details."
+        },
+        {
+          "s": "leo",
+          "t": "The name doesn't even mention third parties. What a step backward."
+        },
+        {
+          "s": "steve",
+          "t": "My GRC cookie work is coming, right after the menus, along with the OpenVPN guides."
+        },
+        {
+          "type": "fact",
+          "title": "Third-party cookies today",
+          "t": "Firefox later restored the option and, since 2019, blocks known trackers by default. In 2022 it added Total Cookie Protection, which gives each site its own cookie jar. Safari blocks third-party cookies outright."
+        }
+      ]
+    },
+    {
+      "title": "Stale Caches and Changed DNS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Gary Swann in England asks: if my ISP uses a transparent proxy, how do I know I'm getting the latest page, even if I reload?"
+        },
+        {
+          "s": "steve",
+          "t": "There's no way around it. Hopefully the cache, and the web server's expiration and do-not-cache headers, are set up correctly. Otherwise you can route around your ISP, through a service like Anonymizer or Tor."
+        },
+        {
+          "s": "leo",
+          "t": "Monty Janak of Needville, Texas asks: could malware change my DNS settings to send me to a malicious DNS server?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Your computer uses whatever DNS server it's told to. People in our newsgroups find faster servers, and Leo, you tried OpenDNS."
+        },
+        {
+          "s": "leo",
+          "t": "Briefly. I changed back."
+        },
+        {
+          "s": "steve",
+          "t": "But if something can change your DNS settings, you're already in trouble."
+        },
+        {
+          "s": "leo",
+          "t": "On a Mac, changing them requires your password."
+        },
+        {
+          "type": "fact",
+          "title": "DNS hijacking",
+          "t": "The DNSChanger malware, shut down by the FBI in 2011, did exactly this to about four million computers, redirecting victims to ads and scams. Some malware changes the router's DNS setting instead, affecting every device at home."
+        }
+      ]
+    },
+    {
+      "title": "Is IE7 Safe Now?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Scott Burr in Beaverton, Oregon asks: now that IE7 is out, is it safe to use? It still can't turn off JavaScript for selected sites."
+        },
+        {
+          "s": "steve",
+          "t": "It's as good as IE6, and the mechanism still exists: zones. Every site is in the Internet zone by default. Set that zone's security to High, and scripting is off everywhere."
+        },
+        {
+          "s": "steve",
+          "t": "Then add sites you trust, like *.google.com, *.microsoft.com and *.ebay.com, to Trusted Sites, which uses lower security. Gmail needs scripting, for example. That's how I surf: scripting only where I've chosen to trust."
+        },
+        {
+          "s": "leo",
+          "t": "After this Firefox change, I might use IE7. At least it can block third-party cookies without a strange config file."
+        }
+      ]
+    },
+    {
+      "title": "\"Too Good to Be True\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week's listener waited two and a half days for SpinRite. Here's another."
+        },
+        {
+          "s": "steve",
+          "t": "A man's PC showed a blue screen: \"unmountable boot volume.\" A Dell technician said to reformat and lose everything. Check Disk couldn't even see the drive, and Maxtor's utility said to return it. Recovery quotes ran from $400 to $2,700."
+        },
+        {
+          "s": "steve",
+          "t": "He thought the testimonials might be fake, but spent $89. After four hours, SpinRite said 2 percent complete, so he left it over the weekend. Monday morning it had finished, Windows booted, and he saved his 80GB drive and all his settings."
+        },
+        {
+          "s": "leo",
+          "t": "They're not made up."
+        },
+        {
+          "s": "steve",
+          "t": "And we've never missed a week. If I have anything to say about it, we never will."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How can you tell if your company's proxy is decrypting your HTTPS traffic?",
+      "options": [
+        "The certificate's signing chain ends in your company's name instead of a public authority",
+        "The page loads slowly",
+        "The URL changes",
+        "You can't tell"
+      ],
+      "answer": 0,
+      "explain": "Companies must preinstall their certificate in employees' browsers."
+    },
+    {
+      "q": "Why were Tom's emails to Comcast users rejected?",
+      "options": [
+        "His ISP's mail server was on a real-time spam blacklist",
+        "Comcast blocked his port 25",
+        "His password was wrong",
+        "His sister blocked him"
+      ],
+      "answer": 0,
+      "explain": "Sending through a third-party service like Gmail is the workaround."
+    },
+    {
+      "q": "Why does the IE Tab add-on carry IE's vulnerabilities into Firefox?",
+      "options": [
+        "It embeds Windows' Internet Explorer component in the tab",
+        "It downloads IE",
+        "It disables Firefox security",
+        "It doesn't"
+      ],
+      "answer": 0,
+      "explain": "Any app that uses IE to render HTML is exposed."
+    },
+    {
+      "q": "How can you stop a router that won't let you disable ping replies?",
+      "options": [
+        "Point its DMZ at a nonexistent internal IP so unsolicited packets go nowhere",
+        "Turn off the firewall",
+        "Unplug it nightly",
+        "Use a longer password"
+      ],
+      "answer": 0,
+      "explain": "Updating its firmware may also add the option."
+    },
+    {
+      "q": "Why are third-party cookies a privacy problem?",
+      "options": [
+        "Ad servers present on many sites can track you across all of them",
+        "They slow browsing",
+        "They contain viruses",
+        "They expire too fast"
+      ],
+      "answer": 0,
+      "explain": "Referrer headers even reveal what you searched for."
+    },
+    {
+      "q": "How did Steve say to block third-party cookies in Firefox 2.0?",
+      "options": [
+        "Set network.cookie.cookieBehavior to 1 in about:config",
+        "Turn off all cookies",
+        "Use IE Tab",
+        "It's impossible"
+      ],
+      "answer": 0,
+      "explain": "The option disappeared from Firefox 2.0's settings screen."
+    }
+  ]
+}

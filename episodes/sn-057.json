@@ -1,0 +1,430 @@
+{
+  "number": 57,
+  "title": "Virtual PC versus VMware",
+  "subtitle": "Microsoft's free VM against the industry leader",
+  "date": "2006-09-14",
+  "description": "Steve wraps up the virtualization series by comparing Microsoft's free Virtual PC and Virtual Server with VMware's free Server and paid Workstation. He traces both products' history, finds Virtual PC smaller but slower and missing USB, and explains why he's sticking with VMware. Plus Patch Tuesday and a reader's SpinRite rescue.",
+  "transcript": "https://www.grc.com/sn/sn-057.txt",
+  "audio": "http://media.GRC.com/sn/SN-057.mp3",
+  "chapters": [
+    {
+      "title": "Educating, Not Alarming",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Get your tinfoil hats out: it's Security Now! Some people say you worry too much, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "We're not telling people to worry. We're explaining what there would be to worry about. I'm not saying the sky is falling. I'm saying, see that crack up there? Keep an eye on it."
+        },
+        {
+          "s": "steve",
+          "t": "Some people never see spyware, others are buried by it. Our job is to keep people apprised and put things in context."
+        },
+        {
+          "s": "steve",
+          "t": "We're recording just after Patch Tuesday. Several of this month's fixes are critical, so if you aren't running Windows Update, run it from the Start menu."
+        },
+        {
+          "s": "leo",
+          "t": "There was a serious Office problem this time."
+        },
+        {
+          "s": "steve",
+          "t": "And a couple of older problems were re-rated critical. Always more to do."
+        }
+      ]
+    },
+    {
+      "title": "Why Run an OS Inside an OS?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today we wrap up virtualization. Should we redefine it for people who missed the last few episodes?"
+        },
+        {
+          "s": "steve",
+          "t": "Listeners asked how Microsoft's free Virtual PC and Virtual Server compare. That's our focus, and our wrap-up."
+        },
+        {
+          "s": "steve",
+          "t": "We've covered VMware, the heavyweight, and Sandboxie, a lightweight application sandbox. Sandboxie's author thanked us. Lots of people went to try it."
+        },
+        {
+          "s": "steve",
+          "t": "Machines have so much spare power that they can emulate themselves. You open a window, watch it boot, and install another operating system inside, nested in yours."
+        },
+        {
+          "s": "steve",
+          "t": "With Vista coming, you might try it in a virtual machine instead of dedicating hardware or dual booting. And for security, anything done in the VM stays there unless you deliberately move it out."
+        },
+        {
+          "s": "leo",
+          "t": "Like Las Vegas. What happens in the virtual machine stays in the virtual machine."
+        }
+      ]
+    },
+    {
+      "title": "Two Family Trees",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The two mainstream heavyweights are VMware and Microsoft's Virtual PC. There are others, like Xen, QEMU and Bochs, often small open-source projects on SourceForge, but they're niche."
+        },
+        {
+          "s": "steve",
+          "t": "VMware began on Linux in the late '90s, around 1997, so Linux users could run the one or two Windows apps they needed."
+        },
+        {
+          "type": "fact",
+          "title": "VMware's start",
+          "t": "VMware was founded in 1998, and its first product, VMware Workstation, shipped in 1999 for Linux and Windows hosts."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft bought its technology from Connectix in early 2003. Connectix had the same idea on the Mac: run Windows for the few apps Mac users needed. Its product was called Virtual PC because it was a virtual PC in a Mac."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft said it bought Connectix so legacy customers could run Windows NT 4 applications on Server 2003, which broke compatibility with some older software."
+        },
+        {
+          "s": "leo",
+          "t": "That makes sense. Old apps make lots of assumptions about the system."
+        },
+        {
+          "s": "steve",
+          "t": "A company may have a mission-critical app from 15 years ago whose vendor is gone, or that internal IT wrote. Why move it off NT?"
+        }
+      ]
+    },
+    {
+      "title": "Windows-First, but It Runs Everything",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Connectix's product had become very OS-neutral. Since Microsoft bought it, each version has been slower, and less friendly to other operating systems."
+        },
+        {
+          "s": "steve",
+          "t": "Today Virtual PC asks which Windows you want, with a begrudging \"Other\" at the bottom, which it doesn't support."
+        },
+        {
+          "s": "steve",
+          "t": "In fairness, it seems to be just marketing. At VPC.visualwin.com, volunteers have listed 1,448 operating systems tested in Virtual PC."
+        },
+        {
+          "s": "leo",
+          "t": "NetWare, NetBSD, Plan 9 and lots of Linux distributions."
+        },
+        {
+          "s": "steve",
+          "t": "About 95 or 96 percent say yes. Even Astaro's security products run in it. So Microsoft hasn't actually hurt non-Windows support. It just doesn't support it formally."
+        }
+      ]
+    },
+    {
+      "title": "The Head-to-Head",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "After all that, I don't think Virtual PC is the right answer."
+        },
+        {
+          "s": "steve",
+          "t": "It does have benefits. Virtual PC 2004 is an 18MB download. VMware Server, VMware's free product, is 145MB, and like the Player, it sinks its teeth into your system with virtual network adapters. Workstation still costs money."
+        },
+        {
+          "s": "leo",
+          "t": "That's ten times bigger."
+        },
+        {
+          "s": "steve",
+          "t": "Virtual PC has a nice, simple interface, internal networking between VMs, virtual NAT and virtual DHCP. A VM can even have its own public IP, which answers last week's question about two web servers."
+        },
+        {
+          "s": "steve",
+          "t": "And it emulates your sound card. But its Achilles heel is that it has no USB support, and people complain about that everywhere."
+        },
+        {
+          "s": "leo",
+          "t": "That seems like a big deal."
+        },
+        {
+          "s": "steve",
+          "t": "It feels like Microsoft really bought this for servers, where nobody needs sound or USB."
+        },
+        {
+          "s": "leo",
+          "t": "Is Microsoft even moving it forward?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft says Virtual PC for the Mac is at the end of the line and won't move to Intel Macs. Like Internet Explorer for the Mac."
+        },
+        {
+          "s": "leo",
+          "t": "That made sense, since there are better options: Parallels now, and VMware coming."
+        },
+        {
+          "s": "steve",
+          "t": "And VMware's Mac version will run the same VM files, so you can copy an XP virtual machine from a PC to a Mac and open the same instance."
+        },
+        {
+          "type": "fact",
+          "title": "What came next",
+          "t": "Microsoft released Virtual PC 2007 free, then Windows Virtual PC for Windows 7, which finally added USB. It was then replaced by Hyper-V, built into Windows. Virtual PC for Mac was discontinued in 2006."
+        }
+      ]
+    },
+    {
+      "title": "Slower Than It Should Be",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The other real problem: it's clearly slower than VMware, and it used to be speedy."
+        },
+        {
+          "s": "leo",
+          "t": "Ironic, since the hardware supports virtualization better now."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft says it added its Trustworthy Computing work, and that slowed it down."
+        },
+        {
+          "s": "steve",
+          "t": "I ran Virtual PC and the free VMware Server side by side on a dual Xeon, hyperthreaded, with 2GB of RAM. Installing XP in Virtual PC had long stretches where nothing seemed to happen. VMware is clearly faster."
+        },
+        {
+          "s": "steve",
+          "t": "But VMware Server doesn't support USB either. Microsoft's Virtual Server 2005 and VMware Server are both server-oriented, with no USB or sound."
+        },
+        {
+          "s": "leo",
+          "t": "Which supports your theory."
+        },
+        {
+          "s": "steve",
+          "t": "So I'm glad I originally invested in VMware Workstation. It has strong USB and sound support, a complete desktop solution. It just isn't free."
+        }
+      ]
+    },
+    {
+      "title": "Not for Trying Vista",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "People talk about using Virtual PC to host Vista."
+        },
+        {
+          "s": "leo",
+          "t": "Unless you have a lot of time, not recommended."
+        },
+        {
+          "s": "steve",
+          "t": "On Sunday I spoke to the North Orange County Computer Club. The presenter before me gave a first look at Vista, and people complain it's a resource hog. Jerry Pournelle's current column says so too, and it's not even clear Vista runs well on integrated graphics."
+        },
+        {
+          "s": "leo",
+          "t": "It runs, but you lose the Aero Glass interface."
+        },
+        {
+          "s": "steve",
+          "t": "Inside Virtual PC, which is slower than your machine to begin with, you'd get an unfair impression of Vista. You'd spend a week getting it booted."
+        },
+        {
+          "s": "steve",
+          "t": "For safe web browsing, Sandboxie is a near-zero-overhead option for any major browser."
+        },
+        {
+          "s": "leo",
+          "t": "So Virtual PC's only real advantage is that it's free."
+        },
+        {
+          "s": "steve",
+          "t": "If you're a Windows user curious about Linux or FreeBSD, sound and USB matter less, and VMware formally supports Linux."
+        },
+        {
+          "s": "steve",
+          "t": "I'll confess: I was rehearsing saying, \"I'm no Microsoft apologist, but Virtual PC is smaller, lighter and really nice.\""
+        },
+        {
+          "s": "leo",
+          "t": "You didn't need to rehearse that."
+        },
+        {
+          "s": "steve",
+          "t": "No. Then I tried installing XP in it."
+        },
+        {
+          "s": "leo",
+          "t": "It's old technology they bought and haven't kept up. And there's a reason they give it away."
+        },
+        {
+          "s": "steve",
+          "t": "Their focus is server virtualization, or just running old NT apps on new Windows."
+        },
+        {
+          "s": "leo",
+          "t": "VMware Workstation is worth the money. You can get a free evaluation serial number to try it, with USB, sound and Linux support."
+        },
+        {
+          "s": "steve",
+          "t": "I'm back and happy with VMware, and everyone now knows why."
+        },
+        {
+          "s": "leo",
+          "t": "Parallels' next version, with hardware virtualization support, is still a release candidate. I'd love a Mac virtualization episode from you."
+        },
+        {
+          "s": "steve",
+          "t": "I have a new MacBook, so I have no excuse."
+        },
+        {
+          "s": "leo",
+          "t": "I doubt VMware will give the Mac version away. They saw Parallels marching into their territory."
+        }
+      ]
+    },
+    {
+      "title": "A Teacher's SpinRite Save",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the SpinRite letter I promised. I've been getting lots of success stories lately."
+        },
+        {
+          "s": "steve",
+          "t": "Russ Palmeri's laptop, which he needed the next day to teach anatomy and physiology, took 20 minutes to reach the desktop, with three- or four-minute delays for everything."
+        },
+        {
+          "s": "steve",
+          "t": "Dell's diagnostics passed the hardware, including the drive. System Restore crashed. Next was reinstalling XP and all his programs: hours of drudgery."
+        },
+        {
+          "s": "steve",
+          "t": "He'd bought SpinRite just to thank us for the podcast, and worried it would need expertise. He says it's very well designed to guide you. He booted the CD, chose recovery option 2 and left it."
+        },
+        {
+          "s": "steve",
+          "t": "It found a bad sector, chewed on it and finished. Windows ran Check Disk and came right up."
+        },
+        {
+          "s": "steve",
+          "t": "He wrote: in math, the most beautiful proofs are called \"elegant,\" and SpinRite is an elegant utility. He's proud to have his name used."
+        },
+        {
+          "s": "leo",
+          "t": "You don't require anyone to buy it. Only buy it if you need it."
+        },
+        {
+          "s": "steve",
+          "t": "I just want to plant the seed. Another listener's Maxtor failed Maxtor's own diagnostics, which said return it to the factory. SpinRite fixed it."
+        },
+        {
+          "s": "leo",
+          "t": "If the drive is physically damaged, nothing will fix it."
+        },
+        {
+          "s": "steve",
+          "t": "But if anything can recover data from a drive, SpinRite can."
+        }
+      ]
+    },
+    {
+      "title": "The Series Wraps Up",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Have we covered virtualization in every aspect?"
+        },
+        {
+          "s": "steve",
+          "t": "For now. Listeners who followed along understand the state of the art. We'll come back as sandboxing evolves and VMware reaches the Mac."
+        },
+        {
+          "s": "steve",
+          "t": "And remember the privacy angle: browsing leaves traces. Sandboxie installs quickly on someone else's machine and leaves nothing behind when you close it."
+        },
+        {
+          "s": "leo",
+          "t": "What's next week?"
+        },
+        {
+          "s": "steve",
+          "t": "It's going to be a surprise for everyone."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Microsoft say it bought Connectix's Virtual PC?",
+      "options": [
+        "To run old Windows NT 4 applications on Windows Server 2003",
+        "To compete with Parallels",
+        "To run Linux",
+        "To build Xbox games"
+      ],
+      "answer": 0,
+      "explain": "Some legacy NT apps didn't run on newer Windows."
+    },
+    {
+      "q": "What's Virtual PC 2004's biggest missing feature?",
+      "options": [
+        "USB support",
+        "Sound",
+        "Networking",
+        "Windows support"
+      ],
+      "answer": 0,
+      "explain": "People complained about the missing USB everywhere."
+    },
+    {
+      "q": "What did Steve find when he ran Virtual PC and VMware Server side by side?",
+      "options": [
+        "VMware was clearly faster",
+        "They were identical",
+        "Virtual PC was faster",
+        "Neither could run XP"
+      ],
+      "answer": 0,
+      "explain": "Installing XP in Virtual PC had long stretches of nothing happening."
+    },
+    {
+      "q": "What did the volunteer list at VPC.visualwin.com show?",
+      "options": [
+        "Virtual PC runs about 1,400 operating systems despite only formally supporting Windows",
+        "It runs only Windows",
+        "It can't run Linux",
+        "It's discontinued"
+      ],
+      "answer": 0,
+      "explain": "Microsoft's \"Windows only\" stance appears to be marketing."
+    },
+    {
+      "q": "Why does Steve recommend against trying Vista inside Virtual PC?",
+      "options": [
+        "The slow VM would give an unfair impression of an already demanding OS",
+        "It's illegal",
+        "Vista detects VMs and refuses",
+        "It deletes the host"
+      ],
+      "answer": 0,
+      "explain": "Vista was already called a resource hog."
+    },
+    {
+      "q": "Which VMware product does Steve keep using, and why?",
+      "options": [
+        "Workstation, because it supports USB and sound as a full desktop solution",
+        "Player, because it's free",
+        "Server, for USB",
+        "ESX, for sound"
+      ],
+      "answer": 0,
+      "explain": "It isn't free, but it's the complete solution."
+    }
+  ]
+}

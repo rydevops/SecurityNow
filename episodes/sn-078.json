@@ -1,0 +1,400 @@
+{
+  "number": 78,
+  "title": "DEP in Depth",
+  "subtitle": "Why hardware DEP matters, and how to turn it on",
+  "date": "2007-02-08",
+  "description": "With SecurAble launched, Steve explains why he considers hardware Data Execution Prevention the most important Internet security technology yet: how it stops buffer overruns, why it's usually disabled by BIOSes and Windows, Windows' four DEP modes, why some programs break, the limits of \"return-to-libc\" bypasses, ASLR's role, and why \"software DEP\" isn't DEP at all.",
+  "transcript": "https://www.grc.com/sn/sn-078.txt",
+  "audio": "http://media.GRC.com/sn/SN-078.mp3",
+  "chapters": [
+    {
+      "title": "Posting From a Boat",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I may be afloat somewhere in the Caribbean, but that's no reason to skip Security Now!."
+        },
+        {
+          "s": "steve",
+          "t": "Are we depending on your new software to post this automatically?"
+        },
+        {
+          "s": "leo",
+          "t": "Feeder, from Reinvented Software, now has scheduled posting. If the Mac didn't crash, this went up at noon Pacific. I can check from the boat by satellite, but it's very slow and about 40 cents a minute."
+        },
+        {
+          "s": "steve",
+          "t": "Lots of latency, too."
+        },
+        {
+          "s": "leo",
+          "t": "Huge. Email's okay, web surfing is painful. We recorded several episodes before I left, so no errata this week."
+        }
+      ]
+    },
+    {
+      "title": "How Hardware DEP Stops Buffer Overruns",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today, Data Execution Prevention."
+        },
+        {
+          "s": "steve",
+          "t": "At the risk of beating this into the ground, I want everyone who could use it to use it. The biggest problem is that it isn't enabled by default, by BIOSes or by Windows. Microsoft introduced it in XP Service Pack 2, when only some AMD processors and Intel's Itanium supported it."
+        },
+        {
+          "s": "steve",
+          "t": "We covered buffer overruns in detail in Episode 39. Software that doesn't limit incoming data can accept too much. It falls off the end of the buffer, and due to computer architecture, the computer may execute that data."
+        },
+        {
+          "s": "steve",
+          "t": "Overruns are extremely hard to catch 100 percent of, and hackers love them. They send data that's really code into your computer, it runs, and you've lost control. It's epidemic."
+        },
+        {
+          "s": "steve",
+          "t": "So chip makers added a way to flag memory pages as non-executable. Intel calls it Execute Disable. AMD calls it NX, for No Execute. Or maybe I've got that backwards."
+        },
+        {
+          "type": "fact",
+          "title": "The names",
+          "t": "Steve had it right: Intel's version is the XD (Execute Disable) bit, and AMD's is the NX (No Execute) bit."
+        },
+        {
+          "s": "steve",
+          "t": "AMD, early to the game, also calls it EVP, Enhanced Virus Protection, an annoying marketing term. It's not about viruses. It's about preventing data from executing."
+        },
+        {
+          "s": "steve",
+          "t": "The operating system marks a program's code as executable, but the memory it allocates for communications buffers, and even its stack, as non-executable."
+        },
+        {
+          "s": "steve",
+          "t": "That virtually solves the vulnerability, even for unknown exploits. If a hacker injects code into a data buffer, the system intercepts it before it runs, shuts the program down, and tells you it violated Data Execution Prevention."
+        },
+        {
+          "s": "steve",
+          "t": "Antivirus only protects against known problems and is always playing catch-up with patterns. Hardware DEP cures a systemic vulnerability in all software. It's fantastic."
+        }
+      ]
+    },
+    {
+      "title": "Why Some Programs Break",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The problem is that good programs can cause false positives, since this was never enforced. A version of Ad-Aware, my former favorite anti-spyware tool, had trouble. And with DEP in always-on mode, the popular image viewer IrfanView, currently version 3.99, won't open. Windows shuts it down first."
+        },
+        {
+          "s": "leo",
+          "t": "Irfan is a long-time, old-school hacker. He's probably putting code on his stack."
+        },
+        {
+          "s": "steve",
+          "t": "Before Windows' DEP modes matter, the BIOS must not turn DEP off at boot. Some BIOSes have setup options to enable it if the chip supports it."
+        },
+        {
+          "s": "steve",
+          "t": "SecurAble checks whether your chip has it, and whether something, probably your BIOS, disabled it. My HP TC1100 tablet's Pentium M supports DEP, but its BIOS disables it with no way to enable it. Very annoying. So my follow-on utility, DEPuty, will fix things like that in what I hope are clever ways."
+        },
+        {
+          "s": "steve",
+          "t": "Many newsgroup people running SecurAble, at GRC.com/securable, were surprised to find their chips support DEP. For about two years, virtually all AMD chips and all of Intel's, even my older Pentium M, have had it."
+        },
+        {
+          "s": "steve",
+          "t": "Almost everyone except me found a BIOS setting defaulted to disabling it. I think BIOS makers feared compatibility problems. Any well-behaved BIOS lets you turn it back on."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft recently got all major hardware vendors to agree to leave hardware DEP enabled at boot, since defaults rule. So future machines will let Windows decide."
+        }
+      ]
+    },
+    {
+      "title": "Windows' Four DEP Modes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Then Windows must enable it. There are four modes: always-off, always-on, opt-in and opt-out."
+        },
+        {
+          "s": "steve",
+          "t": "Oddly, always-on differs from opt-out even when nothing is opted out, and I can't find documentation anywhere on Microsoft's site. IrfanView runs fine in opt-out without being opted out, but Windows blocks it in always-on. So always-on gives some additional protection."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's default is opt-in. Microsoft says some Windows binaries are protected. We don't know how many. Better than none."
+        },
+        {
+          "s": "leo",
+          "t": "Why wouldn't I trust Microsoft's software?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's own bugs have been the vector for many of these overruns."
+        },
+        {
+          "s": "leo",
+          "t": "I hope they don't exempt Internet Explorer."
+        },
+        {
+          "s": "steve",
+          "t": "Some IE toolbars have problems with DEP. We're in frontier mode. If you can, run always-on, clearly the strongest. It works for me except for IrfanView, and Irfan can fix that."
+        },
+        {
+          "s": "steve",
+          "t": "Nobody has talked about this since SP2, partly because the hardware wasn't there. That's why I'm writing freeware and talking about it. Many vulnerabilities of the last year were already stopped cold for anyone with hardware DEP properly enabled."
+        }
+      ]
+    },
+    {
+      "title": "Why Would a Program Run Code From Data?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Why would someone need to execute code from data memory?"
+        },
+        {
+          "s": "steve",
+          "t": "I can't speak for Irfan. But say he has several image display algorithms compressed in his program. He allocates memory and decompresses his own code into it. Windows presumes that's data and marks it non-executable, though he intends to run it."
+        },
+        {
+          "s": "leo",
+          "t": "I've seen self-modifying code placed in a data area. It's an efficient hack, but a hack."
+        },
+        {
+          "s": "steve",
+          "t": "Famously, Microsoft's original bitblit routines, which move rectangles of pixels when you drag a window, were built and run on the stack to be self-optimizing. There was once a real reason. But it's trivial to fix: allocate the memory as executable."
+        },
+        {
+          "s": "leo",
+          "t": "So when you allocate memory, you can say whether it's data or code."
+        },
+        {
+          "s": "steve",
+          "t": "It's so simple. I hope people living with DEP turned on will hit programs that don't work, back off to opt-out and exclude them if they must, and create pressure on programmers to make them DEP-friendly. Then always-on becomes feasible. And all XP users have this since SP2. You don't need Vista."
+        }
+      ]
+    },
+    {
+      "title": "Turning It On Safely",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Can you walk us through turning on hardware DEP in XP?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm reluctant. We've had reports of Windows not booting after switching to always-on, or increasing the strength. All of Microsoft's drivers are fine, and many of my systems boot fine in always-on. But a third-party driver could cause a problem, and you can't know in advance."
+        },
+        {
+          "s": "steve",
+          "t": "It's done by editing boot.ini, a hidden system file in the root of your boot drive. It's a little freaky, like editing the registry. Power users can create multiple boot profiles, as I have, giving a menu at boot: always-off, always-on, opt-in or opt-out."
+        },
+        {
+          "s": "steve",
+          "t": "DEPuty will do that for you, letting you experiment safely, and once always-on works, make it the default. The SecurAble page links to Microsoft's Knowledge Base article on editing boot.ini, though it doesn't cover the dual-boot trick. Experts only. If you fear to tread, DEPuty will get you there safely."
+        },
+        {
+          "s": "leo",
+          "t": "Windows' System Properties has a DEP setting. Does that do the same?"
+        },
+        {
+          "s": "steve",
+          "t": "No. It switches between opt-in and opt-out, but can't enable the much stronger always-on."
+        },
+        {
+          "s": "leo",
+          "t": "With good reason, if it could keep you from booting. Though boot.ini is just a text file you could fix from recovery mode."
+        },
+        {
+          "s": "steve",
+          "t": "Again, I'd hate to recommend something that stops people's machines from booting. That's why Microsoft backed off. I salute them for including it at all."
+        },
+        {
+          "type": "fact",
+          "title": "The boot.ini switch",
+          "t": "In XP, the setting is the /noexecute= option in boot.ini, with values OptIn, OptOut, AlwaysOn or AlwaysOff. Vista and later use the bcdedit command instead. Windows 10 and 11 enforce DEP for all 64-bit programs."
+        }
+      ]
+    },
+    {
+      "title": "Can DEP Be Bypassed?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A newsgroup member asked: why so hyped about DEP when \"return to libc\" gets around it? He's right that there are ways around it. I researched them. Return to libc is very clever but very limited, and not a complete bypass."
+        },
+        {
+          "s": "steve",
+          "t": "On the SecurAble page, I quote the author of one sophisticated workaround paper. He says it shouldn't be taken to mean DEP isn't powerful. It absolutely is, and the paper shows the options for executing arbitrary code are rapidly diminishing."
+        },
+        {
+          "s": "steve",
+          "t": "Here's how it works. Program code is in executable memory. So instead of running code in the buffer, the overflow jumps to existing code at a known location that does what the hacker wants. The classic example is Windows' own routine for opting a program out of DEP. Jump there, and on return, your buffer can execute."
+        },
+        {
+          "s": "steve",
+          "t": "I can't even say that's possible. But that's the kind of clever trick involved. It's a real stretch, so my enthusiasm isn't daunted."
+        },
+        {
+          "type": "fact",
+          "title": "How it played out",
+          "t": "The paper Steve cites, by skape and Skywing (2005), showed exactly that trick: calling Windows' own function to switch DEP off. In 2007, researchers generalized return-to-libc into return-oriented programming (ROP), which chains snippets of existing code. That's why DEP works best combined with ASLR and newer defenses like Control Flow Guard."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't you need real access to the system to do that?"
+        },
+        {
+          "s": "steve",
+          "t": "That leads to a Vista feature XP lacks: ASLR, Address Space Layout Randomization. That exploit's crux was knowing where code sits in memory. If the system randomizes where its programs load, hackers can't know."
+        },
+        {
+          "s": "steve",
+          "t": "XP doesn't have it, but some freeware adds it to XP. We'll talk about it in the future. ASLR adds the final touch to hardware DEP."
+        },
+        {
+          "type": "fact",
+          "title": "ASLR for XP",
+          "t": "The freeware was likely WehnTrust, which added address randomization to Windows 2000 and XP. Microsoft later released EMET, a free toolkit that brought several such protections to older Windows."
+        }
+      ]
+    },
+    {
+      "title": "\"Software DEP\" Isn't DEP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "What's XP's default? Always-off, or software?"
+        },
+        {
+          "s": "steve",
+          "t": "I think opt-in. And everything I've talked about, and everything SecurAble reports, is hardware DEP, because software DEP really isn't."
+        },
+        {
+          "s": "steve",
+          "t": "I imagine a manager years ago asking his coders how to fix buffer overruns. They said chip makers will add a hardware feature soon. He said, we're doing Service Pack 2 now, not in three years. What can we do? \"Nothing.\" \"Wrong answer. Give me something.\""
+        },
+        {
+          "s": "steve",
+          "t": "A programmer said there was once a hack using Structured Exception Handling, SEH, and we could check that better. \"Is that software DEP?\" \"No.\" \"Let's call it that.\""
+        },
+        {
+          "s": "steve",
+          "t": "That conversation is synthetic. I don't know it happened. But the evidence suggests something like it. Software DEP blocks one very limited class of exploit, nothing like blocking code execution in a buffer. In Microsoft's defense, it helped a little, and it existed before hardware support."
+        },
+        {
+          "s": "leo",
+          "t": "The best they could do. And I just checked: the default is opt-in."
+        },
+        {
+          "s": "steve",
+          "t": "So if your BIOS hasn't disabled it, you're in opt-in mode, protecting some of Microsoft's own code, which Microsoft made sure wouldn't false-trigger. We just need the rest of the industry to be similarly responsible."
+        },
+        {
+          "s": "steve",
+          "t": "Grab SecurAble and see if you have hardware DEP. Power users can follow Microsoft's article to switch from opt-in to opt-out, which seems really safe, and maybe try always-on, the strongest, though it causes more problems. I hope we create pressure for developers to become always-on compatible."
+        },
+        {
+          "s": "leo",
+          "t": "I just ran SecurAble and got a boing: hardware DEP available. No hardware virtualization on my AMD FX-64, but that's okay. I'm turning DEP on."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Past the Splash Screen",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Mark Kramer in Pasadena bought SpinRite in November, after hearing us, just in case. After the holidays, his XP SP2 PC hung at the Windows splash screen every boot."
+        },
+        {
+          "s": "steve",
+          "t": "He was going to restore a month-old image, then remembered SpinRite 6. He booted from the floppy, followed the prompts, and in about 45 minutes it was done. The PC went right to his Windows login, and everything seems normal."
+        },
+        {
+          "s": "leo",
+          "t": "You get those every day."
+        },
+        {
+          "s": "steve",
+          "t": "It's hard to choose. With drives so big, and even Seagate claiming 0.34 percent failure per year, people store things they really need."
+        },
+        {
+          "s": "leo",
+          "t": "Some tuned in expecting Johnny Depp. Wrong podcast. And I just edited my boot.ini while we talked, so I'm rebooting. I'm brave. I'm bold. I'm scared."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does hardware DEP stop buffer overrun attacks?",
+      "options": [
+        "The processor refuses to execute code in memory pages marked as data",
+        "It scans for viruses",
+        "It encrypts the stack",
+        "It limits buffer sizes"
+      ],
+      "answer": 0,
+      "explain": "Windows then shuts the program down with a warning."
+    },
+    {
+      "q": "Why was hardware DEP often not working on capable PCs?",
+      "options": [
+        "BIOSes disabled it by default, and Windows only protected some of its own programs",
+        "Chips lacked it",
+        "It requires Vista",
+        "It slows PCs"
+      ],
+      "answer": 0,
+      "explain": "Microsoft later got vendors to stop disabling it."
+    },
+    {
+      "q": "What is Windows XP's default DEP mode?",
+      "options": [
+        "Opt-in",
+        "Always-on",
+        "Opt-out",
+        "Always-off"
+      ],
+      "answer": 0,
+      "explain": "It protects only some Windows binaries."
+    },
+    {
+      "q": "Why might a program like IrfanView fail with DEP always on?",
+      "options": [
+        "It runs code from memory it allocated as data",
+        "It has a virus",
+        "It needs admin rights",
+        "It uses too much RAM"
+      ],
+      "answer": 0,
+      "explain": "Allocating that memory as executable fixes it."
+    },
+    {
+      "q": "How does a \"return-to-libc\" attack try to get around DEP?",
+      "options": [
+        "It jumps to existing executable code at a known location",
+        "It disables the BIOS",
+        "It encrypts its payload",
+        "It deletes boot.ini"
+      ],
+      "answer": 0,
+      "explain": "ASLR counters it by randomizing where code is."
+    },
+    {
+      "q": "What does Microsoft's \"software DEP\" actually do?",
+      "options": [
+        "Checks Structured Exception Handling against one limited class of exploit",
+        "The same as hardware DEP",
+        "Encrypts memory",
+        "Blocks all overruns"
+      ],
+      "answer": 0,
+      "explain": "Steve said it \"really isn't\" DEP."
+    }
+  ]
+}

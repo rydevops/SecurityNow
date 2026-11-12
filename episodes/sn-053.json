@@ -1,0 +1,432 @@
+{
+  "number": 53,
+  "title": "VMware",
+  "subtitle": "Virtual machines, the free Player and ready-made appliances",
+  "date": "2006-08-17",
+  "description": "On the show's first anniversary, Steve recaps what virtual machines are and why they matter for security, then tours VMware: Workstation, the bare-metal ESX server, the free VMware Player and its downloadable \"appliances,\" including a ready-to-run Ubuntu browser. He explains snapshots for track-free browsing and why a VM keeps malware in a sandbox.",
+  "transcript": "https://www.grc.com/sn/sn-053.txt",
+  "audio": "http://media.GRC.com/sn/SN-053.mp3",
+  "chapters": [
+    {
+      "title": "One Year of Security Now!",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's Thursday, so it's time for our security czar, Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "And now I'm the birthday czar. This is the official anniversary: Episode 53."
+        },
+        {
+          "s": "leo",
+          "t": "It doesn't seem like a year, and I expect we'll go on for many more. Security isn't going anywhere."
+        },
+        {
+          "s": "steve",
+          "t": "With Vista coming, we'll be busy."
+        },
+        {
+          "s": "leo",
+          "t": "Three weeks ago we started on virtualization. Shall we recap?"
+        },
+        {
+          "s": "steve",
+          "t": "I worried people wouldn't care about our walk down memory lane, but lots of you enjoyed the history: emulators, UCSD Pascal and all that."
+        },
+        {
+          "s": "leo",
+          "t": "We remember 4.77 megahertz, and we were happy to have it!"
+        }
+      ]
+    },
+    {
+      "title": "What a Virtual Machine Is",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The best definition: a virtual machine is software pretending to be a computer, a computer running within a computer."
+        },
+        {
+          "s": "steve",
+          "t": "The old way was pure emulation. Even BASIC was often compiled into \"byte code,\" a pseudo machine language that the interpreter executed as if it were hardware."
+        },
+        {
+          "s": "steve",
+          "t": "For security, the point is that software in the virtual computer isn't running on the raw hardware unconstrained, so you can put limits around it. That's \"sandboxing\": a restricted environment where software can do useful things but not harmful ones."
+        },
+        {
+          "s": "steve",
+          "t": "It can be pure software, a hybrid, or in theory pure hardware."
+        },
+        {
+          "s": "leo",
+          "t": "And new Intel processors support it in hardware, so the penalty is much smaller."
+        },
+        {
+          "s": "steve",
+          "t": "I predict we're on the cusp of a big rise in virtual computing. It died out for a couple of decades, then came back as RAM, drives and processors grew enough to absorb the overhead."
+        }
+      ]
+    },
+    {
+      "title": "VMware's Head Start",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "VMware was early to take the Intel processor, which wasn't designed for virtualization, and figure out how to trap privileged instructions that normally can't be trapped."
+        },
+        {
+          "s": "steve",
+          "t": "It has 20 or 30 patents on workarounds. Now Intel, and surely AMD, are making the hardware friendlier, so VMware is losing some of that advantage."
+        },
+        {
+          "s": "steve",
+          "t": "Operating systems are also absorbing it. I expect Linux to add more virtualization soon. FreeBSD already has \"jails\": you can log in as root, but you're a jailed root user who can't get out."
+        },
+        {
+          "s": "leo",
+          "t": "Rumor says Apple might add it to Leopard, due next spring. They didn't mention it at the Worldwide Developers Conference, but said they weren't showing everything."
+        },
+        {
+          "s": "steve",
+          "t": "And at that conference, VMware announced VMware for the Mac. You can sign up for the beta."
+        },
+        {
+          "type": "fact",
+          "title": "VMware Fusion",
+          "t": "The Mac version shipped as VMware Fusion in August 2007. Leopard arrived in October 2007 without built-in virtualization; Apple offered Boot Camp for running Windows natively instead."
+        }
+      ]
+    },
+    {
+      "title": "Disposable Machines",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We both use Parallels to run Windows on our Intel Macs, and I'm very happy with it."
+        },
+        {
+          "s": "steve",
+          "t": "It's very VMware-like; even the icons look similar. What's special about VMware is that every product in its line can run the same virtual machines."
+        },
+        {
+          "s": "leo",
+          "t": "These programs don't take a partition. They create one large file that looks like a hard drive. So I could copy my Windows file to a Linux box with VMware and run it there?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. I've long used VMware to evaluate personal firewalls. A firewall sinks its roots into your kernel, and after uninstalling you're never sure it's all gone."
+        },
+        {
+          "s": "leo",
+          "t": "And each test starts from an identical system."
+        },
+        {
+          "s": "steve",
+          "t": "In VMware Workstation you press a power button and watch a virtual BIOS count memory and boot. I install Windows and my apps, save it, then stamp out copies like cookies: ten identical machines named ZoneAlarm, Kerio, Norton, McAfee and so on, each with one firewall installed."
+        },
+        {
+          "s": "steve",
+          "t": "A tabbed interface jumps instantly between them. They can network with each other and the host, share files and drag and drop. If I forgot to test something, I just click through all ten."
+        },
+        {
+          "s": "leo",
+          "t": "You need a big hard drive."
+        },
+        {
+          "s": "steve",
+          "t": "And a contemporary machine. You can't run it on your grandmother's computer."
+        },
+        {
+          "s": "leo",
+          "t": "And lots of RAM, since you're running two operating systems at once."
+        },
+        {
+          "s": "steve",
+          "t": "You can pause, suspend or shut down a VM. The result is a master .vmx file, maybe 300 or 400 megabytes, that any VMware product can run. Just don't stamp your licensed copy of Windows all over the place. With open-source software, you can share it freely."
+        },
+        {
+          "s": "leo",
+          "t": "Windows activation travels inside the VM, so moving it to another host doesn't change the \"machine.\""
+        }
+      ]
+    },
+    {
+      "title": "ESX: No Host Required",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "VMware also has ESX, which installs directly on bare hardware. It started from Linux and is moving to VMware's own code."
+        },
+        {
+          "s": "leo",
+          "t": "No operating system needed at all?"
+        },
+        {
+          "s": "steve",
+          "t": "None. Hosting companies can run up to 128 virtual machines on one server, each sandboxed with controlled access to the disk. When a client leaves, delete their VM and stamp out a new one from a template."
+        },
+        {
+          "s": "leo",
+          "t": "How close to full speed is it?"
+        },
+        {
+          "s": "steve",
+          "t": "On good hardware, you really can't tell the difference."
+        },
+        {
+          "s": "leo",
+          "t": "Parallels runs snappily on my 2GB MacBook. Adobe Audition with many tracks and voice dictation both work fine."
+        },
+        {
+          "type": "fact",
+          "title": "Hypervisors",
+          "t": "ESX is a \"type 1\" hypervisor that runs directly on hardware. Workstation, Player and Parallels are \"type 2,\" running on top of a host OS. Today's cloud services run on type 1 hypervisors like ESXi, KVM, Xen and Hyper-V."
+        }
+      ]
+    },
+    {
+      "title": "Snapshots and Privacy",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's where security comes in: VMs are super secure, and they also give you privacy."
+        },
+        {
+          "s": "steve",
+          "t": "VMware can discard all changes when you power off. Every boot starts from the original image."
+        },
+        {
+          "s": "leo",
+          "t": "So it throws out any changes you make."
+        },
+        {
+          "s": "steve",
+          "t": "It keeps them during your session, but not across sessions. Browsers save cookies, cached images and pages, and it's a lot of work to clean up all that debris. A VM set up this way guarantees your real machine was never touched, and the next boot starts fresh from the master image."
+        },
+        {
+          "s": "leo",
+          "t": "Not ideal if you want to keep your work, though."
+        },
+        {
+          "s": "steve",
+          "t": "True. And VMware knows the world is catching up. Microsoft bought Connectix, which became its Virtual PC line, and is giving a player away free. VMware's player can even run Virtual PC images."
+        },
+        {
+          "s": "leo",
+          "t": "The formats are that close?"
+        },
+        {
+          "s": "steve",
+          "t": "VMware reverse-engineered Microsoft's deeply."
+        },
+        {
+          "type": "fact",
+          "title": "Snapshots",
+          "t": "Snapshots save a VM's exact state so you can return to it instantly. Security researchers analyze malware this way: infect a VM, watch it, then roll back to a clean snapshot in seconds."
+        }
+      ]
+    },
+    {
+      "title": "The Free Player and Appliances",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "With the free player, you can't create images. You need someone else's?"
+        },
+        {
+          "s": "steve",
+          "t": "Right, but that's where it gets cool. The player is about 30MB, but it installs deeply: virtual network adapters, and a reboot. Not something to try casually."
+        },
+        {
+          "s": "steve",
+          "t": "VMware's site lists maybe 50 or 60 \"appliances,\" ready-made virtual machines from other people, including many flavors of UNIX and Linux. Is it pronounced Ubuntu?"
+        },
+        {
+          "s": "leo",
+          "t": "Ubuntu, the Linux I use and love. Mark Shuttleworth, who made a fortune in the dot-com boom, funds it, and it's free. They'll even mail you a disc."
+        },
+        {
+          "s": "steve",
+          "t": "There's a ready-to-go Firefox browser appliance built on Ubuntu, and it works perfectly. It's a 271MB download that unzips to a gigabyte."
+        },
+        {
+          "s": "leo",
+          "t": "And since Ubuntu is free, there's no licensing problem."
+        },
+        {
+          "s": "steve",
+          "t": "It has the GNOME desktop and looks very Windows-like. I installed its calculator through the package manager, which uses Debian .deb files."
+        },
+        {
+          "s": "leo",
+          "t": "It uses apt-get. I put Ubuntu on my old PowerBook, but I could have just used this."
+        },
+        {
+          "s": "steve",
+          "t": "That's what I wanted listeners to know. You don't need a spare machine or a dual boot to play with Linux."
+        },
+        {
+          "s": "leo",
+          "t": "I'd look beyond the default browser appliance, though. It's an older Ubuntu with just Firefox."
+        },
+        {
+          "s": "steve",
+          "t": "I saw one that can install Opera 9. And PC-BSD, a well-reviewed FreeBSD with a full GUI. FreeBSD is my favorite UNIX."
+        }
+      ]
+    },
+    {
+      "title": "Is the Sandbox Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "People always ask: can a virus cross from the virtual machine into your real one?"
+        },
+        {
+          "s": "steve",
+          "t": "Just don't pull programs out of the VM onto your real machine. Access to your real drives is off by default, though the technology supports drag and drop."
+        },
+        {
+          "s": "steve",
+          "t": "The OS inside has no idea it isn't booting on a real machine. Malware in there thinks it's having a party, but it's a virtual party. VMware intercepts every contact with physical memory and devices."
+        },
+        {
+          "s": "steve",
+          "t": "It also presents the most standard, generic hardware, a standard USB controller and a generic Ethernet card every OS supports, so there are no driver issues."
+        },
+        {
+          "s": "leo",
+          "t": "As long as the player supports your real hardware."
+        },
+        {
+          "s": "steve",
+          "t": "The browser appliance was set to save its state, so when I closed it and ran it again, it continued exactly where I left off."
+        },
+        {
+          "type": "fact",
+          "title": "VM escapes",
+          "t": "Escapes are rare but possible. Flaws in virtual devices have occasionally let code break out to the host. Keep virtualization software updated, and don't share folders with a VM you use for risky browsing."
+        },
+        {
+          "s": "leo",
+          "t": "How much does Workstation cost?"
+        },
+        {
+          "s": "steve",
+          "t": "About $199, and it's a godsend for experiments. It's also making a serious dent in corporate computing, running many servers inside one."
+        },
+        {
+          "s": "leo",
+          "t": "There's also Virtual PC and Parallels, which also has Windows and Linux versions. It's getting crowded. Anyone concerned about security should try the free player and browser appliance."
+        },
+        {
+          "s": "steve",
+          "t": "You'll want a gigabyte of disk for it, and plenty of RAM."
+        },
+        {
+          "s": "steve",
+          "t": "I own Parallels, but I'll probably get VMware for the Mac for the cross-platform compatibility."
+        },
+        {
+          "s": "leo",
+          "t": "Parallels is only about $40. But one copy of Windows or Linux that runs on all my machines would be really cool."
+        }
+      ]
+    },
+    {
+      "title": "Wrapping Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next week: lighter-weight sandboxing that doesn't need a whole VMware or Virtual PC."
+        },
+        {
+          "s": "steve",
+          "t": "And I've been lazy about posting SpinRite testimonials. We get so many that the page is getting too long."
+        },
+        {
+          "s": "leo",
+          "t": "Take off the old ones."
+        },
+        {
+          "s": "steve",
+          "t": "But the old ones are good too."
+        },
+        {
+          "s": "leo",
+          "t": "Our license allows noncommercial redistribution with credit to Steve Gibson and TWiT.tv. ISPs and cable companies ask almost every week. For commercial use, contact us."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What's the simplest definition of a virtual machine?",
+      "options": [
+        "Software pretending to be a computer, running inside a real one",
+        "A faster processor",
+        "A cloud service",
+        "A type of virus"
+      ],
+      "answer": 0,
+      "explain": "Its value for security is that the software inside can be constrained."
+    },
+    {
+      "q": "Why is VMware losing some of its early advantage?",
+      "options": [
+        "New Intel and AMD chips support virtualization in hardware",
+        "Its patents expired",
+        "It stopped making products",
+        "Microsoft banned it"
+      ],
+      "answer": 0,
+      "explain": "VMware's workarounds for hostile hardware matter less as chips change."
+    },
+    {
+      "q": "What does VMware ESX do differently from Workstation?",
+      "options": [
+        "Installs directly on bare hardware with no host OS",
+        "Runs only on Macs",
+        "Runs only one VM",
+        "Plays only appliances"
+      ],
+      "answer": 0,
+      "explain": "Hosting companies can run up to 128 VMs on one server."
+    },
+    {
+      "q": "How can a VM help you browse without leaving tracks?",
+      "options": [
+        "Set it to discard all changes, so every session starts from the original image",
+        "Use a private window",
+        "Delete cookies daily",
+        "Disable the network"
+      ],
+      "answer": 0,
+      "explain": "Nothing you do touches your real machine."
+    },
+    {
+      "q": "What is a VMware \"appliance\"?",
+      "options": [
+        "A ready-made virtual machine you can run in the free Player",
+        "A kitchen gadget for servers",
+        "A hardware firewall",
+        "A paid add-on"
+      ],
+      "answer": 0,
+      "explain": "Steve tried an Ubuntu-based Firefox browser appliance."
+    },
+    {
+      "q": "What's the main precaution when surfing inside a VM?",
+      "options": [
+        "Don't copy programs out of the VM onto your real machine",
+        "Never close it",
+        "Use only Windows inside it",
+        "Turn off the host firewall"
+      ],
+      "answer": 0,
+      "explain": "Malware inside is contained unless you carry it out yourself."
+    }
+  ]
+}

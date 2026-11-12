@@ -1,0 +1,643 @@
+{
+  "number": 74,
+  "title": "Peter Gutmann on Vista DRM",
+  "subtitle": "The costs of Vista's content protection",
+  "date": "2007-01-11",
+  "description": "Security researcher Peter Gutmann joins Steve and Leo to discuss his controversial paper, \"A Cost Analysis of Windows Vista Content Protection.\" They cover why Microsoft built Hollywood's protections into Vista, disabled outputs and deliberately degraded video, secret hardware specs that hurt open-source drivers, encrypted buses, \"tilt bits,\" constant polling, and how the costs spread to every PC, even those not running Vista.",
+  "transcript": "https://www.grc.com/sn/sn-074.txt",
+  "audio": "http://media.GRC.com/sn/SN-074.mp3",
+  "guests": {
+    "peter": "Peter Gutmann"
+  },
+  "chapters": [
+    {
+      "title": "Setting Up the Interview",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is part two. Last week we covered AACS, the content protection in Vista and every high-definition disc player. It was prompted by a paper that spread like wildfire over Christmas."
+        },
+        {
+          "s": "steve",
+          "t": "By Peter Gutmann, a well-respected security analyst in New Zealand. Last week gave the legal and technical history. AACS is phenomenally complex. I'll never try explaining its subset-difference tree for revoking players on Security Now!. It's mind-numbing."
+        },
+        {
+          "s": "steve",
+          "t": "Leo, you said HD DVDs load quickly on your Xbox 360."
+        },
+        {
+          "s": "leo",
+          "t": "It's got three 3GHz PowerPCs."
+        },
+        {
+          "s": "steve",
+          "t": "Very different from a consumer player built to be cheap."
+        },
+        {
+          "type": "fact",
+          "title": "The Xbox 360's chip",
+          "t": "The Xbox 360's Xenon processor was one chip with three PowerPC cores running at 3.2GHz."
+        },
+        {
+          "s": "steve",
+          "t": "Peter's paper is about the cost of Microsoft deciding Vista should deliver this content. Parts of the PC that were fully documented, where anyone could build a display card, no longer are. To play, you sign up, pay hefty license fees, and get certificates that can be revoked if you misbehave. One AACS document says you could be revoked for failing to pay annual dues."
+        },
+        {
+          "s": "leo",
+          "t": "So my card would stop working in my PC?"
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Hardware the consumer bought could be shut down."
+        },
+        {
+          "s": "leo",
+          "t": "Never buy a card from a company about to go bankrupt. This is just nuts."
+        }
+      ]
+    },
+    {
+      "title": "Meet Peter Gutmann",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Peter, tell us about your background."
+        },
+        {
+          "s": "peter",
+          "t": "It's academia and industry. I have an open-source security toolkit, cryptlib, dual-licensed under a Sleepycat-style license, GPL or commercial. Otherwise, I play with whatever security stuff interests me."
+        },
+        {
+          "s": "peter",
+          "t": "Just before Christmas I had spare time. People had been discussing Vista privately, so I read the specs and was kind of frightened at what was in there. So I wrote an analysis to let people know exactly what's hiding inside Vista."
+        },
+        {
+          "s": "steve",
+          "t": "We first corresponded in 2002, when I asked about licensing his toolkit for core crypto. Peter has also done often-quoted work on deeply erasing magnetic media, another connection to SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Someone in our newsgroups posted his paper. By page two on the plane, I was riveted. It opens people's eyes to the real-world consequences of turning Vista into a next-generation DRM platform."
+        },
+        {
+          "type": "fact",
+          "title": "Gutmann's erasure work",
+          "t": "Peter Gutmann's 1996 paper on secure deletion gave rise to the 35-pass \"Gutmann method.\" He later noted that modern drives need far less, since a single overwrite is generally enough."
+        },
+        {
+          "s": "leo",
+          "t": "The paper's summary: Vista reworks core OS elements to protect premium content, typically high-definition video from Blu-ray and HD DVD. This costs system performance, stability, technical support, and hardware and software money."
+        },
+        {
+          "s": "leo",
+          "t": "And it affects the whole PC industry, since it covers all hardware that could ever touch Vista, even hardware used with a Mac or a Linux server. The executive-executive summary: the Vista content protection specification could very well be the longest suicide note in history."
+        },
+        {
+          "s": "peter",
+          "t": "The best source is the first in my references, \"Output Content Protection and Windows Vista,\" presented at WinHEC 2005 by Dave Marsh, who as far as I can tell manages DRM at Microsoft. It's extraordinarily detailed. Microsoft isn't keeping this secret."
+        }
+      ]
+    },
+    {
+      "title": "Who Wants This?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "AACS's specs say nothing about \"constriction,\" degrading video quality. Is that Microsoft appeasing content owners without fully disabling unprotected outputs?"
+        },
+        {
+          "s": "peter",
+          "t": "Hollywood is terrified of the analog hole. They can't close it, so they try to make content through it so poor it's not worth copying."
+        },
+        {
+          "s": "steve",
+          "t": "You protected anonymous sources by restating what they told you. How much of this is Hollywood's push, and how much is Microsoft delivering something no one wants?"
+        },
+        {
+          "s": "peter",
+          "t": "A bit of both. Hollywood has pushed its wish list for years, and technical analyses show it's impossible. Bruce Schneier said trying to make content uncopyable is like trying to make water not wet."
+        },
+        {
+          "s": "peter",
+          "t": "The specs are full of legal CYA. Instead of \"do this,\" they say manufacturers must demonstrate their commitment to content protection. I think Microsoft is doing the same: demonstrating to Hollywood that it's really committed."
+        },
+        {
+          "s": "leo",
+          "t": "That's a lousy spec, just \"prove it.\""
+        },
+        {
+          "s": "peter",
+          "t": "It's driven by legal worries. If they specify something and it's broken, they're liable."
+        },
+        {
+          "s": "steve",
+          "t": "And graphics card makers bear a tremendous burden, pushed to make cards and drivers perform at a level we've never asked of them."
+        },
+        {
+          "s": "peter",
+          "t": "With no hard rules. Just \"show a lot of compliance,\" and if it's not enough, you're in hot water."
+        }
+      ]
+    },
+    {
+      "title": "Couldn't Microsoft Just Say No?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul Thurrott says Microsoft's alternative is to be a second-class citizen for content. Play by Hollywood's rules or don't play."
+        },
+        {
+          "s": "peter",
+          "t": "That's a red herring, and I addressed it in a recent update. Microsoft owns about 95 percent of the desktop market. It could tell Hollywood: this degrades performance, reliability and stability. Take it or leave it. Hollywood can't afford to ignore 95 percent of the market."
+        },
+        {
+          "s": "leo",
+          "t": "So Apple and Linux distributions could safely ignore it."
+        },
+        {
+          "s": "peter",
+          "t": "That \"suicide note\" line comes from the British Labour Party's 1983 election manifesto. Microsoft's is longer. Labour's was so bad that opponents printed it as propaganda. Apple could do the same, saying look how bad Vista is, buy our computers. The Linux people certainly will."
+        },
+        {
+          "type": "fact",
+          "title": "The original note",
+          "t": "Labour MP Gerald Kaufman called his own party's 1983 manifesto \"the longest suicide note in history.\" Labour lost that election badly."
+        }
+      ]
+    },
+    {
+      "title": "The PC Was an Open Platform",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Peter's paper makes clear the PC has always been open. My first IBM PC, with a big 10MB drive, came with technical manuals containing schematics and the BIOS source code. That came from Apple; the Apple II did the same."
+        },
+        {
+          "s": "leo",
+          "t": "It kick-started the PC revolution."
+        },
+        {
+          "s": "steve",
+          "t": "My first PC application, FlickerFree, replaced part of the IBM BIOS that scrolled the CGA display poorly. IBM backed away from openness with the horrible Micro Channel Architecture, which was pretty much stillborn. But the PC has been fully documented ever since. What upsets me is that Microsoft's plan requires closing major chunks of the architecture."
+        }
+      ]
+    },
+    {
+      "title": "Disabled Outputs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Section 1, disabling functionality. S/PDIF digital audio won't work with protected content. And video cards sold as supporting HDMI with HDCP may not actually work?"
+        },
+        {
+          "s": "peter",
+          "t": "HDMI is a slight variation of the DVI output on flat panels. Protecting it requires HDCP encryption keys on each card. That costs money, so manufacturers omitted them. Supposedly HD-ready cards won't work, because they can't do the encryption."
+        },
+        {
+          "s": "leo",
+          "t": "And S/PDIF has no protection at all, so it's disabled."
+        },
+        {
+          "s": "peter",
+          "t": "That hurts audiophiles who connect digital or optical outputs to expensive amplifiers."
+        },
+        {
+          "s": "leo",
+          "t": "Only while playing protected content, like an HD DVD."
+        },
+        {
+          "s": "peter",
+          "t": "Yes. But it's problematic. If you're on a Skype call with protected music playing in the background, everything goes through the same sound system. Protected content infects all other content."
+        },
+        {
+          "s": "leo",
+          "t": "We wouldn't be doing this interview, because I use optical outputs."
+        },
+        {
+          "s": "peter",
+          "t": "Most manufacturers would probably just shut it down. But the specs say to partially shut it down, depending on how much protected content is present. Quiet protected audio shuts down some, and more as the volume increases."
+        }
+      ]
+    },
+    {
+      "title": "Deliberately Fuzzy Video",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "And to fight the analog hole, outputs without HDCP get reduced quality, maybe 480i."
+        },
+        {
+          "s": "peter",
+          "t": "Microsoft says any display with more than 520,000 pixels, about 800 by 600, must have its output degraded when premium content is present. Vista's Aero interface needs 1024 by 768. So basically anything connected to a Vista machine running Aero gets degraded."
+        },
+        {
+          "s": "peter",
+          "t": "You need an HDCP-enabled card and an HDCP-enabled display."
+        },
+        {
+          "s": "leo",
+          "t": "So my display won't work."
+        },
+        {
+          "s": "peter",
+          "t": "Microsoft requires a \"constrictor\" in the card that downscales video to an extremely low resolution and scales it back up. But since cards don't have it yet, people trying to play premium content apparently just get no output at all."
+        },
+        {
+          "s": "steve",
+          "t": "I'd read that current HD DVDs play over component outputs on consumer players, because the content's policy isn't yet that restrictive."
+        },
+        {
+          "s": "peter",
+          "t": "They're afraid of consumer rejection. Spend thousands on an HD player and a huge plasma, insert a disc, and it doesn't play? So they're not using constriction yet. But on web forums I see over and over: I bought a computer with an HD drive, put in a disc, and it didn't play. Maybe Windows doesn't handle it well."
+        },
+        {
+          "s": "leo",
+          "t": "My Xbox 360, also Microsoft, has no HDMI or HDCP, plays HD DVDs over component, and looks great."
+        },
+        {
+          "s": "peter",
+          "t": "It's hard to predict, since Vista isn't officially out. But beta testers' standard complaint is that discs don't play."
+        }
+      ]
+    },
+    {
+      "title": "Secret Hardware Hurts Open Source",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Open-source drivers will now be very hard to write."
+        },
+        {
+          "s": "peter",
+          "t": "Microsoft worries about someone emulating a sound or video card, so Vista sends decrypted content to a fake device. People did exactly that under XP, with loopback devices and fake drivers."
+        },
+        {
+          "s": "leo",
+          "t": "To capture keys?"
+        },
+        {
+          "s": "peter",
+          "t": "Not so much keys as content. So Microsoft requires HFS, a Hardware Functionality Scan. The driver probes the hardware with undocumented features to determine if it's genuine and can't be faked."
+        },
+        {
+          "s": "peter",
+          "t": "So you can no longer document the device's internals, or someone could write an emulator."
+        },
+        {
+          "s": "leo",
+          "t": "No specs, no source code."
+        },
+        {
+          "s": "peter",
+          "t": "The language is wishy-washy: some aspects must stay proprietary. But to write drivers you need to know how a card works."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't only the premium playback part be secret, so Linux drivers work but can't play HD movies?"
+        },
+        {
+          "s": "peter",
+          "t": "You can't partition it that way. They require exercising real functionality, like the graphics rendering engine. Leaving that undocumented is a nasty denial of service on open-source drivers."
+        }
+      ]
+    },
+    {
+      "title": "Encrypted Buses and a Protected Environment",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft's spec also distinguishes integrated graphics, with no exposed bus, from separate graphics cards with a \"user-accessible bus.\" Someone could snoop content going to the card. So it's encrypted on the fly with a modified AES-128, which is very hard at that bandwidth."
+        },
+        {
+          "s": "peter",
+          "t": "The threat model is probably \"Hacking the Xbox.\" Its author broke the original Xbox's security by attaching an FPGA-based logic analyzer to the system bus. They're taking very unusual, probably excessive measures against that. And by Microsoft's own documents, current processors lack the horsepower to do both video processing and high-bandwidth encryption."
+        },
+        {
+          "type": "fact",
+          "title": "Hacking the Xbox",
+          "t": "The book's author is Andrew \"bunnie\" Huang, who extracted the original Xbox's secret boot key in 2002 by sniffing a high-speed bus."
+        },
+        {
+          "s": "steve",
+          "t": "Vista also has a \"protected environment,\" where processes are much less accessible from outside than in XP, so nothing can snoop on them."
+        },
+        {
+          "s": "peter",
+          "t": "That's one of the sad things. Imagine if all that work had gone into protecting against viruses, malware and rootkits instead."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. It's a phenomenal amount of work for something it's not clear most users will use, done instead of Longhorn features that were stripped out."
+        }
+      ]
+    },
+    {
+      "title": "Tilt Bits",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "And ironically, it's more susceptible to malware. Peter, explain tilt bits."
+        },
+        {
+          "s": "peter",
+          "t": "The name comes from pinball machines, which sense physical interference."
+        },
+        {
+          "s": "leo",
+          "t": "Lift the machine to get the ball in the hole, and it tilts."
+        },
+        {
+          "s": "peter",
+          "t": "Microsoft requires hardware to do the same, and it makes your system less reliable. Typical PCs are thrown together from random parts with different tolerances, many cheap and nasty. They tolerate voltage fluctuations, odd bus signals, and driver bugs that set bits wrong."
+        },
+        {
+          "s": "peter",
+          "t": "But those glitches could also be signs of attack. So hardware must watch for them and set tilt bits in a register. Vista polls them, and if any are set, reacts in some vaguely specified but drastic way."
+        },
+        {
+          "s": "leo",
+          "t": "Shut down? Crash? Blue screen?"
+        },
+        {
+          "s": "peter",
+          "t": "It's vague enough that I have to quote Microsoft: it initiates a complete reset of the graphics system, which it also calls a restart. Presumably the graphics subsystem, not the whole PC."
+        },
+        {
+          "s": "steve",
+          "t": "And the whole system must reauthenticate to be self-consistent."
+        },
+        {
+          "s": "peter",
+          "t": "Whether it takes half a second or 10 seconds, some slight glitch triggers serious reconfiguration before anything else happens."
+        },
+        {
+          "s": "leo",
+          "t": "Which is prime for a denial-of-service attack by malware."
+        },
+        {
+          "s": "peter",
+          "t": "Trigger a tilt bit and watch Vista drive itself nuts. A blogger said tilt bits are quite clearly insane. What hardware maker would voluntarily make its hardware less stable?"
+        }
+      ]
+    },
+    {
+      "title": "Polling 30 Times a Second",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Does this slow the system down?"
+        },
+        {
+          "s": "peter",
+          "t": "I'd imagine so. A huge layer of bloat intercepts all audio and video output. Vista is continuously polling hardware and checking tilt bits."
+        },
+        {
+          "s": "steve",
+          "t": "The spec requires drivers to poll the hardware every 30 milliseconds, about 30 times a second, to catch anyone playing games. Even when your system is idle."
+        },
+        {
+          "s": "leo",
+          "t": "That's an insanely paranoid operating system. Is it hacking me? Is it hacking me?"
+        },
+        {
+          "s": "steve",
+          "t": "And Vista may become retroactively hostile to things people did under 2000 and XP, like decrypting DVDs. It's taking things away."
+        },
+        {
+          "s": "peter",
+          "t": "Though someone pointed out that Vista's protection is so obnoxious it will drive people to piracy."
+        },
+        {
+          "s": "leo",
+          "t": "You quote muslix64, who cracked HD DVD."
+        },
+        {
+          "s": "peter",
+          "t": "He wasn't a pirate. He bought a system with all the HD components and couldn't play his video. If that happens to an average guy, he'll find software online to crack the protection that's preventing him from playing content he bought."
+        }
+      ]
+    },
+    {
+      "title": "Burdening Grandmothers to Please Hollywood",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Physics says you can't control the remote delivery platform, so it will be cracked. The most motivated crackers are commercial pirates. That's a huge burden on grandmothers who'll never pirate anything, for something that can't work."
+        },
+        {
+          "s": "peter",
+          "t": "Again, it's about showing commitment. Microsoft can tell Hollywood: we did our best, now give us the premium content."
+        },
+        {
+          "s": "steve",
+          "t": "So the message to Hollywood is that PCs won't be the little media piracy systems they've been for 20 years."
+        },
+        {
+          "s": "leo",
+          "t": "So the paranoia comes from Hollywood, not Microsoft?"
+        },
+        {
+          "s": "peter",
+          "t": "It's hard to tell what goes on inside Microsoft. Any technical person reading the specs would say this will never work, and half of it is nuts. But high-level managers who don't understand the technology may agree with Hollywood and do it anyway."
+        },
+        {
+          "s": "leo",
+          "t": "Your paper says a cheap $50 Chinese set-top player will eventually play HD content better. Why turn the PC into an HD media device at all?"
+        },
+        {
+          "s": "peter",
+          "t": "Right, exactly."
+        }
+      ]
+    },
+    {
+      "title": "Everyone Pays, Even Mac and Linux Users",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Vista goes on sale next month, in February. A year later there'll be a huge installed base. This may mute enthusiasm for upgrading. But implementing it inserts cost throughout the infrastructure. The whole Windows PC ecosystem becomes more expensive."
+        },
+        {
+          "type": "fact",
+          "title": "Vista's launch",
+          "t": "Vista actually reached consumers on January 30, 2007, a few weeks after this recording."
+        },
+        {
+          "s": "peter",
+          "t": "And not just Windows. Hardware makers don't care what OS runs. Graphics cards become more expensive across the board, even ones never used with Windows."
+        },
+        {
+          "s": "leo",
+          "t": "So putting it in Windows puts it in everything."
+        },
+        {
+          "s": "peter",
+          "t": "With Windows at 90 or 95 percent, graphics and sound card makers must add Vista-specific features, even if Mac OS X, Linux or FreeBSD ignore them."
+        },
+        {
+          "s": "leo",
+          "t": "Our show notes link to the paper. It's technical but easily read."
+        },
+        {
+          "s": "steve",
+          "t": "Has John Dvorak weighed in?"
+        },
+        {
+          "s": "leo",
+          "t": "Not yet. We're trying to get Microsoft's rebuttal on Windows Weekly. The proof will be in the pudding. If this happens as Peter predicts, you'll see rebellion. Nobody wants their computer \"bricked.\" That's the new term we'll all learn."
+        },
+        {
+          "s": "steve",
+          "t": "Imagine if Microsoft had put that effort into protecting us from spyware and malware instead."
+        },
+        {
+          "s": "leo",
+          "t": "Consumers will vote with their dollars. A business considering Vista gets no benefit from this. Businesses don't want HD content."
+        }
+      ]
+    },
+    {
+      "title": "Is It Active on a Basic PC?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Peter, on a business PC with no HD drive and no certified graphics card, would Vista's content protection just stay passive, with no tilt-bit trouble?"
+        },
+        {
+          "s": "peter",
+          "t": "The nastiest parts probably wouldn't activate. The specs are vague on how much is active. But much of it is built so deeply into the OS that a large chunk is there no matter what. That's deliberate. If one version of Vista lacked it, everyone would use that one."
+        },
+        {
+          "s": "leo",
+          "t": "So it has to be in all of them."
+        },
+        {
+          "s": "steve",
+          "t": "I've read the Output Content Protection document. Whole subsystems were redesigned and moved, from kernel mode to user mode, and there's the protected environment. Those deep changes will have side effects."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe that's why Vista took so long. Microsoft might have been ready in 2004 when Hollywood said, hold on, guys."
+        },
+        {
+          "s": "steve",
+          "t": "Historically, content protection fights delayed DAT's consumer introduction by years, and some think that killed it."
+        },
+        {
+          "s": "peter",
+          "t": "Beta testers complain Vista drivers are less functional and less stable than XP's. Off the record, device makers say they're putting huge effort into content protection, frantically trying to finish drivers in time. It's driving them nuts, and ATI and NVIDIA get nothing out of crippling their own drivers."
+        },
+        {
+          "s": "peter",
+          "t": "Many drivers weren't ready when Vista went to manufacturing, so the first thing after installing it will be downloading drivers that actually work."
+        },
+        {
+          "s": "steve",
+          "t": "Whenever I fire up my Vista machine, it says there are new updates."
+        },
+        {
+          "s": "peter",
+          "t": "Even with unprotected content, forums report dropped frames and stuttering audio. Maybe it's beta drivers, or maybe the content protection gunk is getting in the way."
+        },
+        {
+          "s": "leo",
+          "t": "Peter, you're like Paul Revere: Vista is coming. We'll only know the consequences once it's in widespread use. Thank you so much."
+        }
+      ]
+    },
+    {
+      "title": "Steve Vouches for the Facts",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Peter Gutmann of the University of Auckland has stirred up a hornet's nest, and we haven't heard much from Microsoft. This is his opinion, though factually backed."
+        },
+        {
+          "s": "steve",
+          "t": "Leo, I've read all the Microsoft and AACS documents. Peter takes the view that this is bad and expensive. But I can independently vouch for his factual accuracy. Making the screen fuzzy when it isn't protectable, shutting down outputs, I read those myself in documents on Microsoft's site."
+        },
+        {
+          "s": "leo",
+          "t": "Of course it's accurate. We just won't know the real price for a few months."
+        },
+        {
+          "s": "steve",
+          "t": "And people are separately reporting that Vista doesn't play media robustly. It may take Microsoft a while to get this working smoothly."
+        },
+        {
+          "type": "fact",
+          "title": "What happened",
+          "t": "In 2007 Microsoft published a detailed rebuttal disputing many of Gutmann's predictions, and widespread \"bricking\" never occurred. HD DVD died in 2008, and streaming soon replaced discs for most viewers, though HDCP and DRM remain in streaming today."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Peter Gutmann's paper analyze?",
+      "options": [
+        "The costs of the content protection built into Windows Vista",
+        "Vista's firewall",
+        "AACS's cryptographic strength",
+        "Linux security"
+      ],
+      "answer": 0,
+      "explain": "He called its spec possibly \"the longest suicide note in history.\""
+    },
+    {
+      "q": "Why would S/PDIF digital audio be disabled?",
+      "options": [
+        "It has no protection, so it's shut off while protected content plays",
+        "It's too slow",
+        "Vista doesn't support sound cards",
+        "It causes tilt bits"
+      ],
+      "answer": 0,
+      "explain": "Protected content could even affect a Skype call's audio."
+    },
+    {
+      "q": "What does the Hardware Functionality Scan require?",
+      "options": [
+        "Drivers probe undocumented hardware features to prove the device is genuine",
+        "Antivirus scanning",
+        "Disk checks",
+        "User passwords"
+      ],
+      "answer": 0,
+      "explain": "That makes open-source drivers much harder to write."
+    },
+    {
+      "q": "What are \"tilt bits\"?",
+      "options": [
+        "Hardware flags set by glitches that might signal an attack, triggering a graphics reset",
+        "Error correction codes",
+        "Display rotation settings",
+        "Encryption keys"
+      ],
+      "answer": 0,
+      "explain": "Malware could trigger them as a denial of service."
+    },
+    {
+      "q": "Why did Peter call Microsoft's \"second-class citizen\" argument a red herring?",
+      "options": [
+        "With about 95 percent of desktops, Microsoft could have refused Hollywood's terms",
+        "Hollywood owns Microsoft",
+        "Apple already complied",
+        "It's illegal to refuse"
+      ],
+      "answer": 0,
+      "explain": "Hollywood can't ignore 95 percent of the market."
+    },
+    {
+      "q": "Why would the costs reach Mac and Linux users too?",
+      "options": [
+        "Hardware makers must build Vista's protections into all their cards",
+        "Apple licensed AACS",
+        "Linux copied Vista",
+        "They must buy Vista"
+      ],
+      "answer": 0,
+      "explain": "Graphics cards get pricier whatever OS they run."
+    }
+  ]
+}

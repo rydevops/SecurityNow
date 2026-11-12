@@ -1,0 +1,567 @@
+{
+  "number": 56,
+  "title": "Listener Feedback Q&A #10",
+  "subtitle": "Vista's Teredo, hosts files, remote access and more",
+  "date": "2006-09-07",
+  "description": "Listener questions on whether Microsoft is doing enough for Vista, protecting the hosts file, VNC inside a VPN, Vista's Teredo NAT traversal, Windows Update for limited users, hosts-file placeholder images, physical vs. cyber crime, SmoothWall, two web servers on one machine, whether a software firewall is still needed, Microsoft's bugs, and trusting security software.",
+  "transcript": "https://www.grc.com/sn/sn-056.txt",
+  "audio": "http://media.GRC.com/sn/SN-056.mp3",
+  "chapters": [
+    {
+      "title": "Farewell to Amber",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 56. Steve was in Toronto with me last week as we said farewell to Amber, and he sat on my bed with his sock puppet weeping crocodile tears."
+        },
+        {
+          "s": "steve",
+          "t": "For people who weren't there, this sounds very strange."
+        },
+        {
+          "s": "leo",
+          "t": "Listen to Frank Linhares's techPhile podcast. We recorded it in my hotel room with Mike from commandN, Amber and Frank. Steve said, \"I'm never coming back. There's nobody to hug.\""
+        },
+        {
+          "s": "leo",
+          "t": "It's Mod 4, so it's Q&A."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, a head-to-head comparison of VMware's products and Microsoft's Virtual PC, since you asked about the free options. And I have a great SpinRite note to read."
+        }
+      ]
+    },
+    {
+      "title": "Is Microsoft Doing Enough for Vista?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John from Piedmont, California says the bugs Symantec found in Episode 51 were fixed in later betas, and Microsoft gave Vista to 2,500 hackers at Black Hat to pound on. Isn't Microsoft behaving responsibly?"
+        },
+        {
+          "s": "steve",
+          "t": "I think Microsoft is doing what it can. Our point was philosophical. Microsoft opened Windows XP to hackers too, and XP was a security catastrophe."
+        },
+        {
+          "s": "steve",
+          "t": "A short window of public pounding isn't how security problems get found. What finally changed Windows was running the firewall by default. Had that been done from the start, we'd have had none of those XP worms."
+        },
+        {
+          "s": "leo",
+          "t": "Surely the firewall will be on in Vista."
+        },
+        {
+          "s": "steve",
+          "t": "But Vista will build in peer-to-peer technology with NAT traversal, running by default. And it's a new stack, repeating mistakes fixed 20 years ago in the first UNIX stacks."
+        },
+        {
+          "s": "leo",
+          "t": "So even if they're patched, the fact that they made them isn't encouraging."
+        },
+        {
+          "s": "steve",
+          "t": "It proves a stack written from scratch will be a problem. I respect Microsoft for not dragging old code along forever. But starting over has a security cost."
+        }
+      ]
+    },
+    {
+      "title": "Can You Lock the Hosts File?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave Rozendal in Michigan asks, about Episode 45: can you password-protect the hosts file?"
+        },
+        {
+          "s": "steve",
+          "t": "On an NTFS drive, make it writable only by the administrator, and run as a non-administrative user. Then something you run by mistake can't change it without a privilege elevation, which is much more work."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't a non-admin user be unable to change it anyway, as a system file?"
+        },
+        {
+          "s": "steve",
+          "t": "Right, but most people who aren't security conscious run as admin."
+        },
+        {
+          "s": "steve",
+          "t": "And if malware is already in your system, you're in serious trouble. A blocking hosts file may still stop some malware from phoning home. But some malware edits the hosts file to block antivirus companies, and even Microsoft, so you can't update to detect it."
+        },
+        {
+          "s": "steve",
+          "t": "Everyone wants security to be black and white. It isn't. It's layers, like running three anti-spyware tools instead of one. \"Absolute protection\" is an oxymoron in security."
+        }
+      ]
+    },
+    {
+      "title": "VNC Inside a VPN",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Art in Washington, DC wants about a thousand users to reach their office desktops from home. They have a VPN, but worry that home PCs have viruses and that consultants could download sensitive data too easily."
+        },
+        {
+          "s": "leo",
+          "t": "His idea: let users only see their office screen, with VNC over the VPN. VNC is rumored to have flaws, GoToMyPC and GoToMeeting cost money, and the Java tool WebHuddle seems buggy. Many users are on Windows 2000, and about 100 are on Macs."
+        },
+        {
+          "s": "leo",
+          "t": "Remote Desktop clients work from Macs and Windows 2000. It's the host that needs XP Professional."
+        },
+        {
+          "s": "steve",
+          "t": "Windows 2000 Server can run Terminal Services, but not the desktop version. The client runs anywhere."
+        },
+        {
+          "s": "steve",
+          "t": "Art doesn't want the VPN to make home PCs peers on the corporate network, where a virus could crawl up the wire. That's a very useful concern. So he restricts the VPN to VNC. Does the VPN fix VNC's security problems? Yes."
+        },
+        {
+          "s": "steve",
+          "t": "There are many VNC variants, free and paid. Run them inside your VPN, and the risk of an exposed VNC server goes away."
+        },
+        {
+          "type": "fact",
+          "title": "Zero trust",
+          "t": "Art's instinct, giving remote users access to specific applications instead of the whole network, is now called \"zero trust network access.\" Companies increasingly replace broad VPN access with per-application access."
+        }
+      ]
+    },
+    {
+      "title": "Vista's Teredo",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Fabian in Bonn, Germany read the Symantec report. It says Vista uses NAT traversal called Teredo, which makes Vista machines behind a NAT router externally visible."
+        },
+        {
+          "s": "leo",
+          "t": "If it's enabled by default, does a Vista machine register itself with a public server? The report warns that companies relying on private addresses may find Vista hosts reachable unless strict egress filtering is in place. Doesn't that void your NAT router advice? Or is it only with IPv6?"
+        },
+        {
+          "s": "steve",
+          "t": "This is Microsoft extending functionality beyond what's well proven, and the reports say it's on by default."
+        },
+        {
+          "s": "leo",
+          "t": "It's still beta. I doubt Microsoft will ship peer-to-peer turned on, when it wants businesses that hate peer-to-peer to adopt Vista."
+        },
+        {
+          "s": "steve",
+          "t": "Let's hope not. Like Universal Plug and Play, these things end up on when people don't need them. Windows calls out and registers with a server, just like Skype and Hamachi clients do. Now it's at the OS level."
+        },
+        {
+          "s": "steve",
+          "t": "How many years did Windows run services we didn't need?"
+        },
+        {
+          "type": "fact",
+          "title": "What Vista shipped",
+          "t": "Vista did ship with Teredo enabled, though it stayed dormant unless an application needed IPv6 connectivity. Microsoft removed the Teredo servers in 2018, and Teredo is now disabled in Windows by default."
+        }
+      ]
+    },
+    {
+      "title": "Updates for Limited Users",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave Matthews in Richmond, Virginia took your advice to stop running as administrator five months ago, and rarely needs admin. But coworkers ask: do security patches install under a normal account?"
+        },
+        {
+          "s": "steve",
+          "t": "Windows Update runs as a system-level service with system privileges, since it replaces core files. So I'm pretty sure a non-privileged user gets the notice and can install."
+        },
+        {
+          "s": "leo",
+          "t": "I don't think so. A limited user can't install anything else."
+        },
+        {
+          "s": "steve",
+          "t": "There's also the water-cooler concern: we keep giving up control to Microsoft. Updates used to be voluntary. Now you're nagged if Automatic Updates is off. Many companies turn it off by policy to vet patches first."
+        },
+        {
+          "s": "leo",
+          "t": "A Microsoft MVP for Windows security explains: set Automatic Updates to notify before or after downloading, and limited users see nothing until an admin logs on. Set it to install automatically, and most updates install for limited users, and they'll be forced to reboot if needed."
+        },
+        {
+          "s": "leo",
+          "t": "But service packs with a license agreement, like SP2, won't install for limited users. So an admin should log in periodically."
+        },
+        {
+          "s": "steve",
+          "t": "In a company, people reboot each morning and the updates happen."
+        },
+        {
+          "s": "leo",
+          "t": "And antivirus won't update either. Running as a limited user has drawbacks, but it's the only safe way."
+        },
+        {
+          "s": "steve",
+          "t": "It restricts malware in your session too. But there are many ways around it. Debuggers can open and modify other processes, so there's no real isolation. We hope Vista is more robust."
+        },
+        {
+          "s": "leo",
+          "t": "On UNIX, nobody changes a system file without an admin login, period."
+        },
+        {
+          "type": "fact",
+          "title": "UAC",
+          "t": "Vista's answer was User Account Control: even administrators run with standard rights and must approve elevation. Windows Update now installs through a system service regardless of who's logged in."
+        }
+      ]
+    },
+    {
+      "title": "A Picture Instead of a Red X",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Anish asks: can the hosts file redirect blocked ad sites to show an image instead of a broken-image icon?"
+        },
+        {
+          "s": "steve",
+          "t": "Not with the hosts file alone. You'd get red X's."
+        },
+        {
+          "s": "leo",
+          "t": "If you ran a small web server on 127.0.0.1, it could return a picture."
+        },
+        {
+          "s": "steve",
+          "t": "It would have to accept any request for any filename and always return something."
+        },
+        {
+          "s": "leo",
+          "t": "So instead of red X's, a sunset."
+        },
+        {
+          "s": "steve",
+          "t": "It gets complicated. There are filters that can do it."
+        }
+      ]
+    },
+    {
+      "title": "Physical vs. Cyber Crime",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Scott Burr in Beaverton, Oregon says anyone could break into his home and carry off his computer, so why worry about hackers?"
+        },
+        {
+          "s": "steve",
+          "t": "The difference is that cybercrime can be done from a great distance, with relative anonymity. Someone throwing a brick through your window is physically exposed to capture."
+        },
+        {
+          "s": "leo",
+          "t": "And it's a small set of people who can reach your door. Your computer can be attacked from anywhere in the world."
+        },
+        {
+          "s": "steve",
+          "t": "And an intruder can scan vast numbers of systems, like throwing bricks through every window at once."
+        },
+        {
+          "s": "steve",
+          "t": "Government Computer News reported that terabytes of data have been downloaded from secure government networks by IP addresses in China."
+        },
+        {
+          "s": "leo",
+          "t": "There's every evidence of large hacker groups in China. My logs show hundreds of attempts a day from China to break in over SSH."
+        },
+        {
+          "s": "steve",
+          "t": "And apparently we have cyberwarfare teams of our own."
+        },
+        {
+          "type": "fact",
+          "title": "Titan Rain",
+          "t": "US investigators called this series of intrusions, traced to China and dating from about 2003, \"Titan Rain.\" It hit defense contractors, NASA and military networks. It foreshadowed today's state-sponsored \"advanced persistent threats.\""
+        },
+        {
+          "s": "leo",
+          "t": "Physical theft is a real risk for laptops, though, like the Veterans Administration's. If you have important data on your laptop, encrypt it with TrueCrypt."
+        },
+        {
+          "s": "steve",
+          "t": "People keep losing laptops with unbelievable amounts of private data. The tools are free, and we're not using them."
+        }
+      ]
+    },
+    {
+      "title": "SmoothWall vs. a Store-Bought Router",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Keith Rocheck in Cleveland asks about SmoothWall, the Linux firewall distribution Patrick Norton loves, versus a router off the shelf."
+        },
+        {
+          "s": "steve",
+          "t": "A $49 router from Fry's or Target is plug-and-done. Or take a retired PC, even an old 486, add a second network card, or a third for a true DMZ, and boot SmoothWall or m0n0wall from a free ISO."
+        },
+        {
+          "s": "leo",
+          "t": "Some run from flash, with no moving parts."
+        },
+        {
+          "s": "steve",
+          "t": "If you want solutions, buy the appliance. If you want control, like bandwidth limits, quality of service and remote login, it's a full Linux system."
+        },
+        {
+          "s": "leo",
+          "t": "People asked on The Screen Savers how to stop roommates hogging bandwidth. Run a proxy like Squid on SmoothWall and turn them down."
+        },
+        {
+          "type": "fact",
+          "title": "Open-source firewalls today",
+          "t": "m0n0wall's successors, pfSense and OPNsense, are popular open-source firewalls for small offices and enthusiasts. Steve himself uses pfSense."
+        }
+      ]
+    },
+    {
+      "title": "Two Web Servers, One Port",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tim in the U.K. asks: if he runs a web server on port 80 on his PC and another in a virtual machine, which gets the requests?"
+        },
+        {
+          "s": "steve",
+          "t": "A VM can have its own private virtual network inside the host, so the host reaches the VM's server at that internal address."
+        },
+        {
+          "s": "steve",
+          "t": "But two TCP servers can't listen on the same IP and port. Once one process is listening, the system refuses the second with an error."
+        },
+        {
+          "s": "steve",
+          "t": "UDP is different, since it's just packets, so multiple services can be notified. Not web servers."
+        },
+        {
+          "s": "steve",
+          "t": "So the host's server wins, unless the VM gets its own external IP address."
+        },
+        {
+          "s": "leo",
+          "t": "Parallels on my Mac does something similar with CDs. Whichever OS is in front grabs the disc, and the other doesn't see it."
+        },
+        {
+          "s": "leo",
+          "t": "Some virtualization programs can forward a port to the VM."
+        },
+        {
+          "s": "steve",
+          "t": "I'll learn Virtual PC this week for our comparison."
+        },
+        {
+          "s": "leo",
+          "t": "At Call for Help, we're considering Mac Pros running Windows and Mac side by side instead of separate PCs."
+        }
+      ]
+    },
+    {
+      "title": "Do I Still Need a Software Firewall?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Meisenzahl in Rochester, New York has two XP machines behind a Linksys router, uses free ZoneAlarm, and it's getting bloated. With NAT, the XP firewall, AVG and Ad-Aware, is a third-party firewall superfluous?"
+        },
+        {
+          "s": "steve",
+          "t": "Leo, do you run one?"
+        },
+        {
+          "s": "leo",
+          "t": "I say on the air that a NAT router is sufficient. It doesn't slow your machine or cause compatibility woes, and it gives you 90 percent of the protection."
+        },
+        {
+          "s": "steve",
+          "t": "No force on Earth could get me to plug a machine straight into the Internet unprotected. Its lifetime is measured in minutes, and zero-day exploits are found only when they're used."
+        },
+        {
+          "s": "steve",
+          "t": "My whole network is behind NAT, with no firewalls on any machines, and I've never had a problem."
+        },
+        {
+          "s": "leo",
+          "t": "And something like Astaro is a hardware firewall, even better."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. On the road, like in Toronto, I'm behind XP's software firewall."
+        },
+        {
+          "s": "leo",
+          "t": "XP's firewall is small and doesn't slow you down."
+        },
+        {
+          "s": "steve",
+          "t": "McAfee, Symantec and ZoneAlarm have become huge. Don't be afraid to drop them if they cause problems. Their value is warning you about software phoning home, which is how ZoneAlarm, version 2.6, the sweet spot, excited me originally. If I needed one, I'd use Kerio."
+        }
+      ]
+    },
+    {
+      "title": "Is Microsoft Just a Big Target?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul Sanza in Louisiana says forums bash Microsoft for every bug, but Windows is too big to be bug-free. Is Microsoft lax, or are critics expecting the impossible?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft is the big target. Its problem is that flaws are found in old versions it no longer fixes, like 95 and 98."
+        },
+        {
+          "s": "steve",
+          "t": "Linux has problems too, and its code base has tripled as features were added. Any mature security list shows flaws in Windows, Linux, UNIX, OpenBSD and FreeBSD."
+        },
+        {
+          "s": "steve",
+          "t": "The fair criticism was policy: running unneeded services with no firewall on machines given to naive users. SP2's default firewall made a huge difference."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft made decisions when security wasn't an issue, and legacy software keeps them stuck."
+        },
+        {
+          "s": "leo",
+          "t": "But the number of buffer overruns is staggering. C#, Java and other modern languages check ranges. C++ will happily copy a string anywhere."
+        },
+        {
+          "s": "steve",
+          "t": "If there's a buffer, it can probably be overrun. And programmers don't like those constraints."
+        },
+        {
+          "s": "steve",
+          "t": "Mark Thompson told me Vista isn't just a new stack. It's completely rewritten from scratch."
+        },
+        {
+          "type": "fact",
+          "title": "Was Vista rewritten?",
+          "t": "Not entirely. Vista replaced major subsystems, including networking, audio and display drivers, but it was built on the Windows Server 2003 code base. And memory-safe languages are now a major focus at Microsoft, which reports that about 70 percent of its serious bugs were memory-safety errors."
+        }
+      ]
+    },
+    {
+      "title": "Can You Trust Your Security Software?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Walli Ferguson in Athens, Tennessee had so many problems that McAfee and Norton wouldn't install. He cleaned his PC, finding a rootkit."
+        },
+        {
+          "s": "leo",
+          "t": "Walli, I hope you reinstalled from scratch. Cleaning won't do it."
+        },
+        {
+          "s": "leo",
+          "t": "He appreciates Microsoft OneCare, but asks what stops Microsoft from looking at his private files. You do have to trust your security software."
+        },
+        {
+          "s": "steve",
+          "t": "He's asking, what if Windows had a backdoor? I questioned the WMF feature myself. But I don't think Microsoft could survive a provable backdoor."
+        },
+        {
+          "s": "steve",
+          "t": "Strings in Windows mention an \"NSA key,\" and people panicked that the NSA could access our computers. It's an acronym collision."
+        },
+        {
+          "type": "fact",
+          "title": "_NSAKEY",
+          "t": "In 1999, a researcher found a second public key named \"_NSAKEY\" in Windows' CryptoAPI library. Microsoft said it was a backup key and that \"NSA\" referred to its own NSA (security) technical review. Nothing has shown it gave the agency access."
+        },
+        {
+          "s": "leo",
+          "t": "You're always trusting the vendor."
+        },
+        {
+          "s": "steve",
+          "t": "That's your point about open source: you can verify, though most people use binaries."
+        },
+        {
+          "s": "leo",
+          "t": "For encryption especially, use open source. It's the only way to be sure there's no backdoor."
+        },
+        {
+          "s": "steve",
+          "t": "Questions go in the form at the bottom of GRC.com/securitynow."
+        },
+        {
+          "s": "steve",
+          "t": "And next week, a listener who bought SpinRite just to support us, then needed it."
+        },
+        {
+          "s": "leo",
+          "t": "And welcome Visa, our newest sponsor."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does Steve say finally made Windows XP more secure?",
+      "options": [
+        "Turning on its firewall by default in Service Pack 2",
+        "Giving copies to hackers",
+        "Removing the network stack",
+        "Banning old programs"
+      ],
+      "answer": 0,
+      "explain": "Open ports were then hidden behind the firewall."
+    },
+    {
+      "q": "Why does Steve say a hosts file can't be \"absolute protection\"?",
+      "options": [
+        "Security is layers; some malware edits the hosts file itself",
+        "Hosts files are encrypted",
+        "It only works on Macs",
+        "It's too small"
+      ],
+      "answer": 0,
+      "explain": "\"Absolute protection\" is an oxymoron in security."
+    },
+    {
+      "q": "Does running VNC inside a VPN fix VNC's security weaknesses?",
+      "options": [
+        "Yes; no VNC server is exposed to the Internet",
+        "No, never",
+        "Only on Macs",
+        "Only with WEP"
+      ],
+      "answer": 0,
+      "explain": "Art also limits remote users to their own screens."
+    },
+    {
+      "q": "What worried Fabian about Vista's Teredo?",
+      "options": [
+        "It registers with a public server so outsiders can reach machines behind NAT",
+        "It disables the firewall",
+        "It deletes IPv4",
+        "It slows the stack"
+      ],
+      "answer": 0,
+      "explain": "It undermines the protection NAT routers provide."
+    },
+    {
+      "q": "Can two web servers on one machine both listen on the same IP and port 80?",
+      "options": [
+        "No; the second gets an error",
+        "Yes, they share it",
+        "Only with UDP",
+        "Only in a VM"
+      ],
+      "answer": 0,
+      "explain": "Giving the VM its own IP address avoids the conflict."
+    },
+    {
+      "q": "What's Steve's view on third-party software firewalls behind a NAT router?",
+      "options": [
+        "Fine to drop if they cause problems; never go unprotected on the open Internet",
+        "Always required",
+        "Useless",
+        "Only for Macs"
+      ],
+      "answer": 0,
+      "explain": "He runs none behind NAT, and uses XP's firewall on the road."
+    }
+  ]
+}

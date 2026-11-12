@@ -1,0 +1,479 @@
+{
+  "number": 70,
+  "title": "Achieving Internet Anonymity",
+  "subtitle": "How Freenet and TOR actually work",
+  "date": "2006-12-14",
+  "description": "After last week's social look at anonymity, Steve explains why the Internet resists it, how traffic analysis defeats simple proxies, how Freenet stores encrypted content under hashed keys across its users' drives, and, step by step, how TOR's onion routing builds circuits and moves fixed-size, layered-encrypted packets so no single router knows the whole path.",
+  "transcript": "https://www.grc.com/sn/sn-070.txt",
+  "audio": "http://media.GRC.com/sn/SN-070.mp3",
+  "chapters": [
+    {
+      "title": "Recording Ahead for the Holidays",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We've never missed an episode."
+        },
+        {
+          "s": "steve",
+          "t": "We never will. We recorded last week's three days early, and this one a week and two days early, because we'll be together in Toronto next week."
+        },
+        {
+          "s": "leo",
+          "t": "Much of the TWiT network sleeps over Christmas and New Year's, but there'll always be a Security Now!."
+        },
+        {
+          "s": "steve",
+          "t": "I'm competitive. Every time TWiT pauses, our episode numbers creep closer."
+        },
+        {
+          "s": "leo",
+          "t": "You're at 70, TWiT's around 80. I'm going to Mexico for Christmas, so TWiT will take a week off. I'll lose a few more just for you."
+        }
+      ]
+    },
+    {
+      "title": "Why the Social Side Mattered",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last week we concluded that if you believe in free speech, you have to support some kind of anonymity."
+        },
+        {
+          "s": "steve",
+          "t": "I worried it was a fluff episode, without deep technology. We'll make up for it today. But powerful entities, like the RIAA, the government with DMCA copyright enforcement, and foreign governments regulating speech, take anonymity very seriously. And our own government has disclosed it's wiretapping as much of our telecommunications as it can."
+        },
+        {
+          "s": "leo",
+          "t": "And we just learned businesses will have to save all emails and instant messages for three years. So you have no privacy at work, especially at work. When I talk to Phil Zimmermann of PGP, I raise this, but like most engineers he'd rather talk technology."
+        },
+        {
+          "type": "fact",
+          "title": "The e-discovery rules",
+          "t": "Leo was likely thinking of changes to the U.S. Federal Rules of Civil Procedure, effective December 1, 2006. They made email and other electronic records formally subject to discovery in lawsuits, pushing companies to keep them, but set no single retention period."
+        },
+        {
+          "s": "steve",
+          "t": "Today we'll use the crypto foundation we laid in earlier episodes, public-key or asymmetric, and symmetric cryptography. I built it so we could discuss the fascinating ways crypto is assembled to achieve goals like this."
+        }
+      ]
+    },
+    {
+      "title": "The Internet Wasn't Built for Anonymity",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is crypto always the foundation of anonymity?"
+        },
+        {
+          "s": "steve",
+          "t": "Not necessarily. Write a note with your other hand and pass it through people who each know only the one before, and you've anonymized it without crypto. But on the Internet, crypto gives provable, enforceable separation of sender and receiver."
+        },
+        {
+          "s": "steve",
+          "t": "Anonymity is hard because the Internet was never designed to provide it. Every endpoint is identified by an IP address, which doesn't name you but uniquely tags every sender and receiver."
+        },
+        {
+          "s": "leo",
+          "t": "So it's the first thing to get rid of."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Anything we add is a layer on top of a structure never meant for anonymity."
+        },
+        {
+          "s": "steve",
+          "t": "Email headers are another example. Send through Gmail from your own mail client, or through Hotmail or Yahoo!'s web pages, and your IP is in the headers. SMTP records the path to prevent routing loops, where misconfigured servers would forward mail in circles forever."
+        },
+        {
+          "s": "leo",
+          "t": "So the Internet's very structure requires identification."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Everything is back-trackable to the electrical source of the data. Now, Freenet briefly, then TOR in detail."
+        }
+      ]
+    },
+    {
+      "title": "Why a Single Proxy Isn't Enough",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many anonymizers, like Anonymizer.com, a decade old, only let you visit websites anonymously. They strip your IP address, cookies and other debris from requests."
+        },
+        {
+          "s": "steve",
+          "t": "Remember, an ordinary proxy announces who it's working for. Cable companies run caching proxies so many customers fetching the same pages and GIFs don't use outside bandwidth, which costs more. But their requests usually carry a tag saying \"on behalf of\" your IP."
+        },
+        {
+          "s": "steve",
+          "t": "An anonymizing proxy omits those optional headers and makes requests as if for itself. That's anonymity, but not very robust."
+        },
+        {
+          "s": "leo",
+          "t": "Doesn't the proxy know where requests came from?"
+        },
+        {
+          "s": "steve",
+          "t": "If it keeps records. But imagine a government watching traffic to and from it. With one user, it's obvious: packets in, packets out to the web server, responses back."
+        },
+        {
+          "s": "leo",
+          "t": "That's the trivial case. Many people use these."
+        },
+        {
+          "s": "steve",
+          "t": "But timing and packet sizes still let you match traffic. Many users make it harder, but nowhere near impossible. Traffic captured can even be analyzed at leisure later. TOR's designers, and to a lesser degree Freenet's, saw traffic analysis as anonymity's Achilles' heel."
+        }
+      ]
+    },
+    {
+      "title": "Freenet: An Encrypted, Distributed Store",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Freenet is all about storage, creating what it calls dark networks. Users share unused drive space, like SETI screensavers share CPU cycles, or Kazaa and LimeWire users share bandwidth and storage."
+        },
+        {
+          "s": "steve",
+          "t": "Traditional file sharing isn't strongly encrypted. Someone posing as a user can download known copyrighted files and know who has them. Files sit on drives under their real names, so after an RIAA subpoena, investigators just list a directory."
+        },
+        {
+          "s": "steve",
+          "t": "Freenet completely solved that. I'm not advocating breaking copyright. We covered the social side last week. I'm just explaining how it works."
+        },
+        {
+          "s": "steve",
+          "t": "Whoever submits a file, political or anything else, gives it a name, say \"Batman_Begins_DVD.iso.\" That name is hashed with 160-bit SHA-1."
+        },
+        {
+          "s": "steve",
+          "t": "A cryptographic hash turns text into a likely-unique value that looks random. Change one character, and about half the bits flip. And there's no way to go backwards from the 160 bits to the name."
+        },
+        {
+          "s": "steve",
+          "t": "You can try a dictionary attack: guess a name and see if the hash matches. But many strings can theoretically produce the same 160 bits, so even a match isn't proof. You get deniability."
+        },
+        {
+          "s": "steve",
+          "t": "A single flat namespace caused collisions, so Freenet added private namespaces. Your own handle is hashed with the file description, so users can't collide."
+        },
+        {
+          "s": "steve",
+          "t": "The protocol is very complex. Our show notes link to a PDF that describes it. All nodes are identical peers that know only their local neighbors, deliberately, for anonymity."
+        },
+        {
+          "s": "steve",
+          "t": "An inserted file is absorbed into the network. Nodes index by hash proximity, so the system self-organizes. Anyone, anywhere, can retrieve it using the plain-text handle and description, which are hashed to find it and to generate keys that decrypt it."
+        },
+        {
+          "s": "steve",
+          "t": "If someone busts down your door because you run a Freenet node, all that's on your drive is random bits."
+        },
+        {
+          "type": "fact",
+          "title": "SHA-1 since then",
+          "t": "SHA-1 is no longer considered collision-resistant. Researchers produced the first practical SHA-1 collision in 2017, and modern systems use SHA-256 or newer."
+        }
+      ]
+    },
+    {
+      "title": "The Dilemma of Hosting Unknown Content",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "People are thinking: I'm letting people store pirated movies on my drive? Why is that good?"
+        },
+        {
+          "s": "steve",
+          "t": "Now you see why I spent last week on the social side, and why I said I'm not advocating this."
+        },
+        {
+          "s": "leo",
+          "t": "I bet there's far more pirated or illegal stuff than whistle-blower documents. Like 99.99 percent."
+        },
+        {
+          "s": "steve",
+          "t": "It's a powerful archive for anything. As Freenet's papers say: free speech requires anonymity, copyright requires enforcement, and enforcement requires a lack of anonymity. So with free speech, you won't have copyright enforcement."
+        },
+        {
+          "s": "leo",
+          "t": "Ah ha. Now I understand why you said that last week."
+        },
+        {
+          "s": "steve",
+          "t": "It's a legal, social and political dilemma, and our society has lots of those. Bad stuff is what needs to hide, so participants' drives probably store some really bad stuff."
+        },
+        {
+          "s": "leo",
+          "t": "After last week, I almost installed it to support freedom. I decided not to for that reason. It's a tough choice."
+        },
+        {
+          "s": "steve",
+          "t": "Anonymity itself is double-edged. In my newsgroups it helps people say what they really think, and I don't want anyone holding them accountable. But we've also been trolled by people abusing it."
+        }
+      ]
+    },
+    {
+      "title": "TOR: A Network of Proxies",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now TOR, which interests a lot of people. With one proxy, one user is obvious. With two, timing and sizes still disambiguate them. Adding users makes it harder, but not really hard. A single proxy just can't be anonymous enough."
+        },
+        {
+          "s": "steve",
+          "t": "So the idea of a network of proxies was created: TOR, The Onion Router. It's very clever. Nearly a thousand onion routers are running now. The Electronic Frontier Foundation has been a major funder, because it believes in free speech."
+        },
+        {
+          "s": "steve",
+          "t": "TOR, in its second generation, is a general-purpose TCP conduit, not protocol-specific like an HTTP web proxy. You can run any protocol through it."
+        },
+        {
+          "s": "steve",
+          "t": "The originator randomly chooses some routers from around the globe. More routers mean more hops and more latency."
+        },
+        {
+          "s": "leo",
+          "t": "People complain Anonymizer slows them down, too."
+        },
+        {
+          "s": "steve",
+          "t": "There's no way around it. But hopping with this protocol is where real anonymity comes from. And the system stays robust even when governments or bad actors run malicious routers to break it."
+        },
+        {
+          "s": "steve",
+          "t": "Many routers are run by trustworthy organizations, like the EFF. Anonymizer provides a great service, but as the sole operator, a subpoena could force it to do things it would rather not. A global network of independent nodes, none of which you need to trust, is the perfect solution."
+        },
+        {
+          "type": "fact",
+          "title": "TOR today",
+          "t": "TOR began at the U.S. Naval Research Laboratory, and since 2006 it has been run by the nonprofit Tor Project. It now has roughly 7,000 relays and millions of daily users. Its site is torproject.org."
+        }
+      ]
+    },
+    {
+      "title": "Building the Onion",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is there a default? You don't do this by hand every time."
+        },
+        {
+          "s": "steve",
+          "t": "The software chooses for you. I'm describing the protocol. Every router has a public key pair: a public key anyone can use to encrypt, and a private key, never revealed, that alone decrypts."
+        },
+        {
+          "s": "steve",
+          "t": "The user starts with the far router and builds an \"onion,\" named for its layers."
+        },
+        {
+          "s": "leo",
+          "t": "You didn't see \"Shrek.\" Ogres are like onions. They've got layers."
+        },
+        {
+          "s": "steve",
+          "t": "I did not see \"Shrek.\" He's a big green thing is all I know. So are TOR routers. This is really complicated, so pay attention."
+        },
+        {
+          "s": "steve",
+          "t": "The user randomly generates a symmetric key for the last router in the chain, and encrypts it with that router's public key. Now there's a blob only the last router can open."
+        },
+        {
+          "s": "steve",
+          "t": "Next, a new random symmetric key for the second-to-last router, plus the identity of the next router, which is the last one, plus that first blob. All of it is encrypted with the second-to-last router's public key. Now the onion has two layers."
+        },
+        {
+          "s": "steve",
+          "t": "Step back again: another symmetric key, routing instructions to the next router, and the two-layer onion, all encrypted with the third-to-last router's public key. Three layers. And so on, back to the first router, where we inject our traffic."
+        },
+        {
+          "s": "steve",
+          "t": "That first router uses its private key to remove the outer layer. Nobody listening can see this. Inside, it finds its symmetric key, the next router's identity, and an opaque blob only the next router can open."
+        },
+        {
+          "s": "steve",
+          "t": "Each router learns only how to decrypt what it receives and where to send the result. It doesn't know the rest of the path, or even how many routers there are."
+        },
+        {
+          "s": "leo",
+          "t": "That seems impervious, even to a corrupt router."
+        },
+        {
+          "s": "steve",
+          "t": "It is just deliciously robust. I just love it."
+        },
+        {
+          "type": "fact",
+          "title": "TOR's real circuit building",
+          "t": "Steve described the original onion-routing design. TOR's second generation builds circuits \"telescopically\" instead: the client negotiates a key with each relay in turn, through the relays already in the circuit, using Diffie-Hellman exchanges. That adds forward secrecy, so recorded traffic can't be decrypted later even if a relay's long-term key is stolen."
+        }
+      ]
+    },
+    {
+      "title": "Sending Data Through the Circuit",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "But that's a lot of encrypting and decrypting."
+        },
+        {
+          "s": "steve",
+          "t": "Public-key crypto is about a hundred times slower than symmetric, but it's only done once. The onion carries no data. It just creates a circuit, a secure route that delivers a symmetric key to every router along it."
+        },
+        {
+          "s": "steve",
+          "t": "To send data, we first pad it to a fixed size. Traffic analysis uses packet sizes, so all packets between TOR routers are the same size, and size gives no clues."
+        },
+        {
+          "s": "leo",
+          "t": "PGP does that too. Great technique."
+        },
+        {
+          "s": "steve",
+          "t": "Then we encrypt the data with the last router's symmetric key, then the second-to-last's, and so on back up the chain. Symmetric encryption is very fast and doesn't change the size. It just flips bits."
+        },
+        {
+          "s": "steve",
+          "t": "The first router strips its layer with its symmetric key. The data is still encrypted with keys it never saw. It forwards it to the next router in that circuit, which looks up the circuit ID, strips its own layer and forwards it."
+        },
+        {
+          "s": "steve",
+          "t": "Watching a router tells you nothing. Packets are all the same size, and since a decryption happens between in and out, and good encryption looks random, incoming and outgoing data don't correlate. Packets of noise in, packets of noise out, to and from routers everywhere."
+        },
+        {
+          "s": "steve",
+          "t": "At the last node, the final layer comes off, and there's your original data. And baby, that is anonymous."
+        },
+        {
+          "s": "leo",
+          "t": "That's the title of this show: \"Baby, That's Anonymous.\" If last week was fluffy, you've more than made up for it."
+        },
+        {
+          "s": "steve",
+          "t": "A year ago I promised that once we understood symmetric and asymmetric crypto, we could talk about what you can do with it. This is it. TOR is slow compared to a direct connection to Microsoft, Yahoo! or Google, but those sites know everything about you. Multiple hops are the price of real anonymity."
+        },
+        {
+          "type": "fact",
+          "title": "Fixed-size cells",
+          "t": "TOR sends data in fixed 512-byte cells. Even so, as its designers warn, an observer who can watch both ends of a connection can still correlate traffic timing."
+        }
+      ]
+    },
+    {
+      "title": "Using TOR Without Hosting Content",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tor.eff.org is a good place to start. And unlike Freenet, you're not volunteering for anything you might not be comfortable with."
+        },
+        {
+          "s": "steve",
+          "t": "Right. You can run an onion router, offering your node and bandwidth to strengthen the network. But you never offer storage space, and you can simply be a user."
+        },
+        {
+          "s": "leo",
+          "t": "I'm a big believer in free speech and privacy, and these two technologies matter for preserving them."
+        },
+        {
+          "s": "steve",
+          "t": "My position is, if somebody needs it or wants it, it's cool that it's available."
+        },
+        {
+          "s": "steve",
+          "t": "And now I get to work on my new freeware. I have a couple of weeks."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves a Parish's Data",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A listener was handed a Catholic parish's computer with a completely dead drive. Two Windows-based tools both locked up about 60 percent through their tests."
+        },
+        {
+          "s": "steve",
+          "t": "He bought SpinRite, which he'd been meaning to, since people come begging to him for help. It took a long time, but he got the data off. A few files were corrupted, but the parish said he had the most valuable ones."
+        },
+        {
+          "s": "leo",
+          "t": "That's who should have it, the people others come to."
+        },
+        {
+          "s": "steve",
+          "t": "Watching SpinRite work also convinced them to replace the drive and start backing up. A win for everybody."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why is the Internet naturally hostile to anonymity?",
+      "options": [
+        "Every packet carries IP addresses that tag sender and receiver",
+        "Encryption is illegal",
+        "Browsers log everything",
+        "DNS is public"
+      ],
+      "answer": 0,
+      "explain": "Email headers also record each server's path."
+    },
+    {
+      "q": "How does Freenet keep stored files unreadable?",
+      "options": [
+        "Content is encrypted under keys derived from hashed names, so a node holds only random bits",
+        "Files are hidden in folders",
+        "Each node encrypts with its own password",
+        "Files are split into ZIPs"
+      ],
+      "answer": 0,
+      "explain": "A file can't be found without knowing its name."
+    },
+    {
+      "q": "Why does TOR pad all packets to the same size?",
+      "options": [
+        "Packet sizes would otherwise help traffic analysis",
+        "To speed routing",
+        "It's required by TCP",
+        "To save bandwidth"
+      ],
+      "answer": 0,
+      "explain": "Sizes helped unmask single-proxy users."
+    },
+    {
+      "q": "What does each TOR router know about a circuit?",
+      "options": [
+        "Only the previous and next hops, and its own key",
+        "The whole path",
+        "The sender's identity",
+        "The final website"
+      ],
+      "answer": 0,
+      "explain": "It doesn't even know how many routers there are."
+    },
+    {
+      "q": "Why does TOR use public-key crypto only once per circuit?",
+      "options": [
+        "It's about 100 times slower than symmetric encryption",
+        "It's less secure",
+        "It's patented",
+        "Routers lack keys"
+      ],
+      "answer": 0,
+      "explain": "Data then moves under fast symmetric layers."
+    },
+    {
+      "q": "How does using TOR differ from joining Freenet?",
+      "options": [
+        "TOR users needn't host anyone's stored content",
+        "TOR stores files on your drive",
+        "Freenet is faster",
+        "TOR requires payment"
+      ],
+      "answer": 0,
+      "explain": "Relay operators donate bandwidth, not storage."
+    }
+  ]
+}

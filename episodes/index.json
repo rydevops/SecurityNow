@@ -351,11 +351,5356 @@
       "file": "sn-050.json"
     },
     {
+      "number": 51,
+      "title": "Vista's Virgin Stack",
+      "subtitle": "Why a brand-new network stack worries Steve",
+      "date": "2006-08-03",
+      "file": "sn-051.json"
+    },
+    {
+      "number": 52,
+      "title": "A Busy Week for Security Troubles",
+      "subtitle": "Black Hat fallout, eBay botnets and a script-free menu",
+      "date": "2006-08-10",
+      "file": "sn-052.json"
+    },
+    {
+      "number": 53,
+      "title": "VMware",
+      "subtitle": "Virtual machines, the free Player and ready-made appliances",
+      "date": "2006-08-17",
+      "file": "sn-053.json"
+    },
+    {
+      "number": 54,
+      "title": "Blue Pill",
+      "subtitle": "A rootkit that slips your OS into a virtual machine",
+      "date": "2006-08-24",
+      "file": "sn-054.json"
+    },
+    {
+      "number": 55,
+      "title": "Application Sandboxes",
+      "subtitle": "Lightweight virtualization, and what it can't promise",
+      "date": "2006-08-31",
+      "file": "sn-055.json"
+    },
+    {
+      "number": 56,
+      "title": "Listener Feedback Q&A #10",
+      "subtitle": "Vista's Teredo, hosts files, remote access and more",
+      "date": "2006-09-07",
+      "file": "sn-056.json"
+    },
+    {
+      "number": 57,
+      "title": "Virtual PC versus VMware",
+      "subtitle": "Microsoft's free VM against the industry leader",
+      "date": "2006-09-14",
+      "file": "sn-057.json"
+    },
+    {
+      "number": 58,
+      "title": "Two New Critical Windows Problems",
+      "subtitle": "A VML zero-day in the wild, and a patch that corrupts files",
+      "date": "2006-09-21",
+      "file": "sn-058.json"
+    },
+    {
+      "number": 59,
+      "title": "Comparing \"Parallels\" VMs",
+      "subtitle": "Microsoft's emergency VML patch, then Parallels vs. VMware",
+      "date": "2006-09-28",
+      "file": "sn-059.json"
+    },
+    {
+      "number": 60,
+      "title": "Listener Feedback Q&A #11",
+      "subtitle": "ActiveX, USB in VMs, parental controls and patents",
+      "date": "2006-10-05",
+      "file": "sn-060.json"
+    },
+    {
+      "number": 61,
+      "title": "ISP Privacy and Security",
+      "subtitle": "Two more IE zero-days, then what your ISP can see",
+      "date": "2006-10-12",
+      "file": "sn-061.json"
+    },
+    {
+      "number": 62,
+      "title": "Internet Proxies",
+      "subtitle": "Caching, filtering and the privacy tradeoffs of proxies",
+      "date": "2006-10-19",
+      "file": "sn-062.json"
+    },
+    {
+      "number": 63,
+      "title": "MojoPac",
+      "subtitle": "Your Windows desktop and apps on a USB stick",
+      "date": "2006-10-26",
+      "file": "sn-063.json"
+    },
+    {
+      "number": 64,
+      "title": "Listener Feedback Q&A #12",
+      "subtitle": "Proxies that read SSL, blacklists, cookies and more",
+      "date": "2006-11-02",
+      "file": "sn-064.json"
+    },
+    {
+      "number": 65,
+      "title": "Why Is Security So Difficult?",
+      "subtitle": "Security as the absence of all insecurity",
+      "date": "2006-11-09",
+      "file": "sn-065.json"
+    },
+    {
+      "number": 66,
+      "title": "Windows Vista Security",
+      "subtitle": "Why 64-bit Vista is the secure one",
+      "date": "2006-11-16",
+      "file": "sn-066.json"
+    },
+    {
+      "number": 67,
+      "title": "Kernel Patch Protection",
+      "subtitle": "What PatchGuard really does, and why it's still good news",
+      "date": "2006-11-23",
+      "file": "sn-067.json"
+    },
+    {
+      "number": 68,
+      "title": "Listener Feedback Q&A #13",
+      "subtitle": "Encrypted drives, spam, VM-aware malware and more",
+      "date": "2006-11-30",
+      "file": "sn-068.json"
+    },
+    {
+      "number": 69,
+      "title": "The Social Implications of Internet Anonymity",
+      "subtitle": "Free speech, trolls, Freenet, and why anonymity is hard",
+      "date": "2006-12-07",
+      "file": "sn-069.json"
+    },
+    {
+      "number": 70,
+      "title": "Achieving Internet Anonymity",
+      "subtitle": "How Freenet and TOR actually work",
+      "date": "2006-12-14",
+      "file": "sn-070.json"
+    },
+    {
+      "number": 71,
+      "title": "SecurAble",
+      "subtitle": "Steve's new freeware checks your chip's security features",
+      "date": "2006-12-21",
+      "file": "sn-071.json"
+    },
+    {
+      "number": 72,
+      "title": "Listener Feedback Q&A #14",
+      "subtitle": "TOR follow-ups, passwords after death, SPF and CVV codes",
+      "date": "2006-12-28",
+      "file": "sn-072.json"
+    },
+    {
+      "number": 73,
+      "title": "Digital Rights Management (DRM)",
+      "subtitle": "From cassette copies to AACS",
+      "date": "2007-01-04",
+      "file": "sn-073.json"
+    },
+    {
+      "number": 74,
+      "title": "Peter Gutmann on Vista DRM",
+      "subtitle": "The costs of Vista's content protection",
+      "date": "2007-01-11",
+      "file": "sn-074.json"
+    },
+    {
+      "number": 75,
+      "title": "Vista DRM Wrap-Up & Announcing \"SecurAble\"",
+      "subtitle": "Reading Microsoft's own words, then a new GRC freebie",
+      "date": "2007-01-18",
+      "file": "sn-075.json"
+    },
+    {
+      "number": 76,
+      "title": "Listener Feedback Q&A #15",
+      "subtitle": "Hi-def first impressions, a Blu-ray key hunt and your questions",
+      "date": "2007-01-25",
+      "file": "sn-076.json"
+    },
+    {
+      "number": 77,
+      "title": "Microsoft on Vista DRM",
+      "subtitle": "Microsoft's 20 answers to Peter Gutmann",
+      "date": "2007-02-01",
+      "file": "sn-077.json"
+    },
+    {
+      "number": 78,
+      "title": "DEP in Depth",
+      "subtitle": "Why hardware DEP matters, and how to turn it on",
+      "date": "2007-02-08",
+      "file": "sn-078.json"
+    },
+    {
+      "number": 79,
+      "title": "Backtracking Spoofed Spam eMail",
+      "subtitle": "Reading Received headers to find the real sender",
+      "date": "2007-02-15",
+      "file": "sn-079.json"
+    },
+    {
+      "number": 80,
+      "title": "Listener Feedback Q&A #16",
+      "subtitle": "Spoofed headers, router-hijacking scripts, port knocking and more",
+      "date": "2007-02-22",
+      "file": "sn-080.json"
+    },
+    {
+      "number": 81,
+      "title": "Hard Drive Unreliability",
+      "subtitle": "What Google and Carnegie Mellon learned from 200,000 failing drives",
+      "date": "2007-03-01",
+      "file": "sn-081.json"
+    },
+    {
+      "number": 82,
+      "title": "Cyber Warfare",
+      "subtitle": "State-sponsored hacking is no longer science fiction",
+      "date": "2007-03-08",
+      "file": "sn-082.json"
+    },
+    {
+      "number": 83,
+      "title": "UAC in Depth",
+      "subtitle": "How Vista's User Account Control really works",
+      "date": "2007-03-15",
+      "file": "sn-083.json"
+    },
+    {
+      "number": 84,
+      "title": "Listener Feedback Q&A #17",
+      "subtitle": "Radio silence, UAC doubts, SSH ports, spoofing and scripting",
+      "date": "2007-03-22",
+      "file": "sn-084.json"
+    },
+    {
+      "number": 85,
+      "title": "Intro to Web Code Injection",
+      "subtitle": "Cross-site scripting, and a JavaScript drone called Jikto",
+      "date": "2007-03-29",
+      "file": "sn-085.json"
+    },
+    {
+      "number": 86,
+      "title": "Cross-Site Scripting",
+      "subtitle": "Twenty-eight holes in one month, and how they steal your session",
+      "date": "2007-04-05",
+      "file": "sn-086.json"
+    },
+    {
+      "number": 87,
+      "title": "SQL Injection Exploits",
+      "subtitle": "How web forms let attackers rewrite database queries",
+      "date": "2007-04-12",
+      "file": "sn-087.json"
+    },
+    {
+      "number": 88,
+      "title": "Listener Feedback Q&A #18",
+      "subtitle": "Botnets, a vulnerable bank, spotting zombies and disk tools",
+      "date": "2007-04-19",
+      "file": "sn-088.json"
+    },
+    {
+      "number": 89,
+      "title": "Even More Badly Broken WEP",
+      "subtitle": "A new attack cracks any WEP network in about a minute",
+      "date": "2007-04-26",
+      "file": "sn-089.json"
+    },
+    {
+      "number": 90,
+      "title": "Multifactor Authentication",
+      "subtitle": "Something you know, have and are",
+      "date": "2007-05-03",
+      "file": "sn-090.json"
+    },
+    {
+      "number": 91,
+      "title": "Marc Maiffret",
+      "subtitle": "eEye's founder on Blink, disclosure and the shifting attack surface",
+      "date": "2007-05-10",
+      "file": "sn-091.json"
+    },
+    {
+      "number": 92,
+      "title": "Listener Feedback Q&A #19",
+      "subtitle": "IPv6, hotel Wi-Fi, TiVo drives, TKIP and Internet background radiation",
+      "date": "2007-05-17",
+      "file": "sn-092.json"
+    },
+    {
+      "number": 93,
+      "title": "Microsoft Patent Wars",
+      "subtitle": "Software patents and Microsoft's claim against open source",
+      "date": "2007-05-24",
+      "file": "sn-093.json"
+    },
+    {
+      "number": 94,
+      "title": "The Fourth Factor",
+      "subtitle": "\"Someone you know\" as authentication",
+      "date": "2007-05-31",
+      "file": "sn-094.json"
+    },
+    {
+      "number": 95,
+      "title": "OpenID",
+      "subtitle": "An open, single sign-on system for the web",
+      "date": "2007-06-07",
+      "file": "sn-095.json"
+    },
+    {
+      "number": 96,
+      "title": "Listener Feedback Q&A #20",
+      "subtitle": "Certificates, biometric backstops, Keychain, DVR power and city Wi-Fi",
+      "date": "2007-06-14",
+      "file": "sn-096.json"
+    },
+    {
+      "number": 97,
+      "title": "Operation: Bot Roast",
+      "subtitle": "The FBI goes after bot-herders",
+      "date": "2007-06-21",
+      "file": "sn-097.json"
+    },
+    {
+      "number": 98,
+      "title": "Internet Identity Metasystems",
+      "subtitle": "Microsoft's CardSpace and an identity layer for the Internet",
+      "date": "2007-06-28",
+      "file": "sn-098.json"
+    },
+    {
+      "number": 99,
+      "title": "Trusted Platform Module (TPM)",
+      "subtitle": "Why the misunderstood TPM chip is benign and useful",
+      "date": "2007-07-05",
+      "file": "sn-099.json"
+    },
+    {
+      "number": 100,
+      "title": "Listener Feedback Q&A #21",
+      "subtitle": "The 100th episode: twelve listener questions",
+      "date": "2007-07-12",
+      "file": "sn-100.json"
+    },
+    {
+      "number": 101,
+      "title": "Are You Human?",
+      "date": "2007-07-19"
+    },
+    {
+      "number": 102,
+      "title": "Listener Mailbag #1",
+      "date": "2007-07-26"
+    },
+    {
+      "number": 103,
+      "title": "PayPal Security Key",
+      "date": "2007-08-02"
+    },
+    {
+      "number": 104,
+      "title": "Listener Feedback Q&A #22",
+      "date": "2007-08-09"
+    },
+    {
+      "number": 105,
+      "title": "Firewall LeakTesting",
+      "date": "2007-08-16"
+    },
+    {
+      "number": 106,
+      "title": "Listener Mailbag #2",
+      "date": "2007-08-23"
+    },
+    {
+      "number": 107,
+      "title": "PIP & Even More Perfect Passwords",
+      "date": "2007-08-30"
+    },
+    {
+      "number": 108,
+      "title": "Listener Feedback #23",
+      "date": "2007-09-06"
+    },
+    {
+      "number": 109,
+      "title": "GRC's eCommerce System",
+      "date": "2007-09-13"
+    },
+    {
+      "number": 110,
+      "title": "Listener Feedback #24",
+      "date": "2007-09-20"
+    },
+    {
+      "number": 111,
+      "title": "OpenID Precautions",
+      "date": "2007-09-27"
+    },
+    {
+      "number": 112,
+      "title": "Listener Feedback #25",
+      "date": "2007-10-04"
+    },
+    {
+      "number": 113,
+      "title": "Roaming Authentication",
+      "date": "2007-10-11"
+    },
+    {
+      "number": 114,
+      "title": "Listener Feedback #26",
+      "date": "2007-10-18"
+    },
+    {
+      "number": 115,
+      "title": "Perfect Paper Passwords",
+      "date": "2007-10-25"
+    },
+    {
+      "number": 116,
+      "title": "Listener Feedback #27",
+      "date": "2007-11-01"
+    },
+    {
+      "number": 117,
+      "title": "Even More Perfect paper Passwords",
+      "date": "2007-11-08"
+    },
+    {
+      "number": 118,
+      "title": "Listener Feedback #28",
+      "date": "2007-11-15"
+    },
+    {
+      "number": 119,
+      "title": "PayPal and DoubleClick",
+      "date": "2007-11-22"
+    },
+    {
+      "number": 120,
+      "title": "Listener Feedback #29",
+      "date": "2007-11-29"
+    },
+    {
+      "number": 121,
+      "title": "Is Privacy Dead?",
+      "date": "2007-12-06"
+    },
+    {
+      "number": 122,
+      "title": "Listener Feedback #30",
+      "date": "2007-12-13"
+    },
+    {
+      "number": 123,
+      "title": "Jungle Disk",
+      "date": "2007-12-20"
+    },
+    {
+      "number": 124,
+      "title": "Listener Feedback #31",
+      "date": "2007-12-27"
+    },
+    {
+      "number": 125,
+      "title": "Symmetric Ciphers",
+      "date": "2008-01-03"
+    },
+    {
+      "number": 126,
+      "title": "Listener Feedback #32",
+      "date": "2008-01-10"
+    },
+    {
+      "number": 127,
+      "title": "Corporate Security",
+      "date": "2008-01-17"
+    },
+    {
+      "number": 128,
+      "title": "Listener Feedback #33",
+      "date": "2008-01-24"
+    },
+    {
+      "number": 129,
+      "title": "Windows SteadyState",
+      "date": "2008-01-31"
+    },
+    {
+      "number": 130,
+      "title": "Listener Feedback #34",
+      "date": "2008-02-07"
+    },
+    {
+      "number": 131,
+      "title": "FREE CompuSec",
+      "date": "2008-02-14"
+    },
+    {
+      "number": 132,
+      "title": "Listener Feedback #35",
+      "date": "2008-02-21"
+    },
+    {
+      "number": 133,
+      "title": "TrueCrypt v5.0",
+      "date": "2008-02-28"
+    },
+    {
+      "number": 134,
+      "title": "Listener Feedback #36",
+      "date": "2008-03-06"
+    },
+    {
+      "number": 135,
+      "title": "IronKey",
+      "date": "2008-03-13"
+    },
+    {
+      "number": 136,
+      "title": "Listener Feedback #37",
+      "date": "2008-03-20"
+    },
+    {
+      "number": 137,
+      "title": "RAM Hijacks",
+      "date": "2008-03-27"
+    },
+    {
+      "number": 138,
+      "title": "Listener Feedback #38",
+      "date": "2008-04-03"
+    },
+    {
+      "number": 139,
+      "title": "Network Congestion",
+      "date": "2008-04-10"
+    },
+    {
+      "number": 140,
+      "title": "Listener Feedback #39",
+      "date": "2008-04-17"
+    },
+    {
+      "number": 141,
+      "title": "RSA Conference 2008",
+      "date": "2008-04-24"
+    },
+    {
+      "number": 142,
+      "title": "Listener Feedback #40",
+      "date": "2008-05-01"
+    },
+    {
+      "number": 143,
+      "title": "YubiKey",
+      "date": "2008-05-08"
+    },
+    {
+      "number": 144,
+      "title": "Listener Feedback #41",
+      "date": "2008-05-15"
+    },
+    {
+      "number": 145,
+      "title": "Secunia's PSI",
+      "date": "2008-05-22"
+    },
+    {
+      "number": 146,
+      "title": "Listener Feedback #42",
+      "date": "2008-05-29"
+    },
+    {
+      "number": 147,
+      "title": "Microsoft's Baseline Security Analyzer",
+      "date": "2008-06-05"
+    },
+    {
+      "number": 148,
+      "title": "Listener Feedback #43",
+      "date": "2008-06-12"
+    },
+    {
+      "number": 149,
+      "title": "ISP Betrayal",
+      "date": "2008-06-19"
+    },
+    {
+      "number": 150,
+      "title": "Listener Feedback #44",
+      "date": "2008-06-26"
+    },
+    {
+      "number": 151,
+      "title": "Phracking Phorm",
+      "date": "2008-07-03"
+    },
+    {
+      "number": 152,
+      "title": "Listener Feedback #45",
+      "date": "2008-07-10"
+    },
+    {
+      "number": 153,
+      "title": "DePhormed Politics",
+      "date": "2008-07-17"
+    },
+    {
+      "number": 154,
+      "title": "Listener Feedback #46",
+      "date": "2008-07-24"
+    },
+    {
+      "number": 155,
+      "title": "Bailiwicked Domain Attack",
+      "date": "2008-07-31"
+    },
+    {
+      "number": 156,
+      "title": "Listener Feedback #47",
+      "date": "2008-08-07"
+    },
+    {
+      "number": 157,
+      "title": "DNS — After the Patch",
+      "date": "2008-08-14"
+    },
+    {
+      "number": 158,
+      "title": "Listener Feedback #48",
+      "date": "2008-08-21"
+    },
+    {
+      "number": 159,
+      "title": "Vista Security Bypass",
+      "date": "2008-08-28"
+    },
+    {
+      "number": 160,
+      "title": "Listener Feedback #49",
+      "date": "2008-09-04"
+    },
+    {
+      "number": 161,
+      "title": "Google's Chrome",
+      "date": "2008-09-11"
+    },
+    {
+      "number": 162,
+      "title": "Listener Feedback #50",
+      "date": "2008-09-18"
+    },
+    {
+      "number": 163,
+      "title": "GoogleUpdate & DNS Security",
+      "date": "2008-09-25"
+    },
+    {
+      "number": 164,
+      "title": "SockStress",
+      "date": "2008-10-02"
+    },
+    {
+      "number": 165,
+      "title": "Listener Feedback #51",
+      "date": "2008-10-09"
+    },
+    {
+      "number": 166,
+      "title": "Cross-Site Request Forgery",
+      "date": "2008-10-16"
+    },
+    {
+      "number": 167,
+      "title": "Listener Feedback #52",
+      "date": "2008-10-23"
+    },
+    {
+      "number": 168,
+      "title": "ClickJacking",
+      "date": "2008-10-30"
+    },
+    {
+      "number": 169,
+      "title": "Listener Feedback #53",
+      "date": "2008-11-06"
+    },
+    {
+      "number": 170,
+      "title": "The TKIP Hack",
+      "date": "2008-11-13"
+    },
+    {
+      "number": 171,
+      "title": "Listener Feedback #54",
+      "date": "2008-11-20"
+    },
+    {
+      "number": 172,
+      "title": "Sandboxie",
+      "date": "2008-11-27"
+    },
+    {
+      "number": 173,
+      "title": "Listener Feedback #55",
+      "date": "2008-12-04"
+    },
+    {
+      "number": 174,
+      "title": "Sandbox Limitations",
+      "date": "2008-12-11"
+    },
+    {
+      "number": 175,
+      "title": "Listener Feedback #56",
+      "date": "2008-12-18"
+    },
+    {
+      "number": 176,
+      "title": "Drop My Rights",
+      "date": "2008-12-25"
+    },
+    {
+      "number": 177,
+      "title": "Breaking SSL, PDP-8's & UltraCapacitors",
+      "date": "2009-01-01"
+    },
+    {
+      "number": 178,
+      "title": "Listener Feedback #57",
+      "date": "2009-01-08"
+    },
+    {
+      "number": 179,
+      "title": "Cracking Security Certificates",
+      "date": "2009-01-15"
+    },
+    {
+      "number": 180,
+      "title": "Listener Feedback #58",
+      "date": "2009-01-22"
+    },
+    {
+      "number": 181,
+      "title": "Crypto Rehash",
+      "date": "2009-01-29"
+    },
+    {
+      "number": 182,
+      "title": "Listener Feedback #59",
+      "date": "2009-02-05"
+    },
+    {
+      "number": 183,
+      "title": "Modes of Encryption",
+      "date": "2009-02-12"
+    },
+    {
+      "number": 184,
+      "title": "Listener Feedback #60",
+      "date": "2009-02-19"
+    },
+    {
+      "number": 185,
+      "title": "Cryptographic HMACs",
+      "date": "2009-02-26"
+    },
+    {
+      "number": 186,
+      "title": "Listener Feedback #61",
+      "date": "2009-03-05"
+    },
+    {
+      "number": 187,
+      "title": "Windows Autorun-around",
+      "date": "2009-03-12"
+    },
+    {
+      "number": 188,
+      "title": "Listener Feedback #62",
+      "date": "2009-03-19"
+    },
+    {
+      "number": 189,
+      "title": "Internet Explorer 8",
+      "date": "2009-03-26"
+    },
+    {
+      "number": 190,
+      "title": "Listener Feedback #63",
+      "date": "2009-04-02"
+    },
+    {
+      "number": 191,
+      "title": "GhostNet",
+      "date": "2009-04-09"
+    },
+    {
+      "number": 192,
+      "title": "Listener Feedback #64",
+      "date": "2009-04-16"
+    },
+    {
+      "number": 193,
+      "title": "Conficker",
+      "date": "2009-04-23"
+    },
+    {
+      "number": 194,
+      "title": "Listener Feedback #65",
+      "date": "2009-04-30"
+    },
+    {
+      "number": 195,
+      "title": "The SSL/TLS Protocol",
+      "date": "2009-05-07"
+    },
+    {
+      "number": 196,
+      "title": "Listener Feedback #66",
+      "date": "2009-05-14"
+    },
+    {
+      "number": 197,
+      "title": "Windows 7 Security",
+      "date": "2009-05-21"
+    },
+    {
+      "number": 198,
+      "title": "Listener Feedback #67",
+      "date": "2009-05-28"
+    },
+    {
+      "number": 199,
+      "title": "The Geek Atlas, IPv6 & a non-VPN",
+      "date": "2009-06-04"
+    },
+    {
+      "number": 200,
+      "title": "Listener Feedback #68",
+      "date": "2009-06-11"
+    },
+    {
+      "number": 201,
+      "title": "SecureZIP",
+      "date": "2009-06-18"
+    },
+    {
+      "number": 202,
+      "title": "Listener Feedback #69",
+      "date": "2009-06-25"
+    },
+    {
+      "number": 203,
+      "title": "Boyer & Moore",
+      "date": "2009-07-02"
+    },
+    {
+      "number": 204,
+      "title": "Listener Feedback #70",
+      "date": "2009-07-09"
+    },
+    {
+      "number": 205,
+      "title": "Lempel & Ziv",
+      "date": "2009-07-16"
+    },
+    {
+      "number": 206,
+      "title": "Mega Security News Update",
+      "date": "2009-07-23"
+    },
+    {
+      "number": 207,
+      "title": "Listener Feedback #71",
+      "date": "2009-07-30"
+    },
+    {
+      "number": 208,
+      "title": "Listener Feedback #72",
+      "date": "2009-08-06"
+    },
+    {
+      "number": 209,
+      "title": "Vitamin D",
+      "date": "2009-08-13"
+    },
+    {
+      "number": 210,
+      "title": "Listener Feedback #73",
+      "date": "2009-08-20"
+    },
+    {
+      "number": 211,
+      "title": "Voting Machine Hacking",
+      "date": "2009-08-27"
+    },
+    {
+      "number": 212,
+      "title": "Listener Feedback #74",
+      "date": "2009-09-03"
+    },
+    {
+      "number": 213,
+      "title": "Cracking GSM Cellphones",
+      "date": "2009-09-10"
+    },
+    {
+      "number": 214,
+      "title": "Listener Feedback #75",
+      "date": "2009-09-17"
+    },
+    {
+      "number": 215,
+      "title": "Security Maxims",
+      "date": "2009-09-24"
+    },
+    {
+      "number": 216,
+      "title": "Listener Feedback #76",
+      "date": "2009-10-01"
+    },
+    {
+      "number": 217,
+      "title": "The Fundamentally Broken Browser Model",
+      "date": "2009-10-08"
+    },
+    {
+      "number": 218,
+      "title": "Listener Feedback #77",
+      "date": "2009-10-15"
+    },
+    {
+      "number": 219,
+      "title": "Badly Broken Browsing",
+      "date": "2009-10-22"
+    },
+    {
+      "number": 220,
+      "title": "Listener Feedback #78",
+      "date": "2009-10-29"
+    },
+    {
+      "number": 221,
+      "title": "The Oxymoron of \"JavaScript Security\"",
+      "date": "2009-11-05"
+    },
+    {
+      "number": 222,
+      "title": "Listener Feedback #79",
+      "date": "2009-11-12"
+    },
+    {
+      "number": 223,
+      "title": "A security vulnerability in SSL",
+      "date": "2009-11-19"
+    },
+    {
+      "number": 224,
+      "title": "Listener Feedback #80",
+      "date": "2009-11-26"
+    },
+    {
+      "number": 225,
+      "title": "\"Same Origin\" Troubles",
+      "date": "2009-12-03"
+    },
+    {
+      "number": 226,
+      "title": "Listener Feedback #81",
+      "date": "2009-12-10"
+    },
+    {
+      "number": 227,
+      "title": "Cyberwarfare",
+      "date": "2009-12-17"
+    },
+    {
+      "number": 228,
+      "title": "Listener Feedback #82",
+      "date": "2009-12-24"
+    },
+    {
+      "number": 229,
+      "title": "The Rational Rejection of Security Advice",
+      "date": "2009-12-31"
+    },
+    {
+      "number": 230,
+      "title": "Listener Feedback #83",
+      "date": "2010-01-07"
+    },
+    {
+      "number": 231,
+      "title": "Mega Security Update & CES Observations",
+      "date": "2010-01-14"
+    },
+    {
+      "number": 232,
+      "title": "Listener Feedback #84",
+      "date": "2010-01-21"
+    },
+    {
+      "number": 233,
+      "title": "Let's Design a Computer (part 1)",
+      "date": "2010-01-28"
+    },
+    {
+      "number": 234,
+      "title": "Listener Feedback #85",
+      "date": "2010-02-04"
+    },
+    {
+      "number": 235,
+      "title": "Machine Language",
+      "date": "2010-02-11"
+    },
+    {
+      "number": 236,
+      "title": "Listener Feedback #86",
+      "date": "2010-02-18"
+    },
+    {
+      "number": 237,
+      "title": "Indirection: The Power of Pointers",
+      "date": "2010-02-25"
+    },
+    {
+      "number": 238,
+      "title": "Listener Feedback #87",
+      "date": "2010-03-04"
+    },
+    {
+      "number": 239,
+      "title": "Stacks, Registers & Recursion",
+      "date": "2010-03-11"
+    },
+    {
+      "number": 240,
+      "title": "Listener Feedback #88",
+      "date": "2010-03-18"
+    },
+    {
+      "number": 241,
+      "title": "Hardware Interrupts",
+      "date": "2010-03-25"
+    },
+    {
+      "number": 242,
+      "title": "Listener Feedback #89",
+      "date": "2010-04-01"
+    },
+    {
+      "number": 243,
+      "title": "State Subversion of SSL",
+      "date": "2010-04-08"
+    },
+    {
+      "number": 244,
+      "title": "Listener Feedback #90",
+      "date": "2010-04-15"
+    },
+    {
+      "number": 245,
+      "title": "The Security of Open vs CLosed",
+      "date": "2010-04-22"
+    },
+    {
+      "number": 246,
+      "title": "Listener Feedback #91",
+      "date": "2010-04-29"
+    },
+    {
+      "number": 247,
+      "title": "The \"Multi\"-verse",
+      "date": "2010-05-06"
+    },
+    {
+      "number": 248,
+      "title": "The Portable Dog Killer",
+      "date": "2010-05-13"
+    },
+    {
+      "number": 249,
+      "title": "Listener Feedback #92",
+      "date": "2010-05-20"
+    },
+    {
+      "number": 250,
+      "title": "Operating Systems",
+      "date": "2010-05-27"
+    },
+    {
+      "number": 251,
+      "title": "Listener Feedback #93",
+      "date": "2010-06-03"
+    },
+    {
+      "number": 252,
+      "title": "RISCy Business",
+      "date": "2010-06-10"
+    },
+    {
+      "number": 253,
+      "title": "Listener Feedback #94",
+      "date": "2010-06-17"
+    },
+    {
+      "number": 254,
+      "title": "What We'll Do for Speed",
+      "date": "2010-06-24"
+    },
+    {
+      "number": 255,
+      "title": "Listener Feedback #95",
+      "date": "2010-07-01"
+    },
+    {
+      "number": 256,
+      "title": "LastPass",
+      "date": "2010-07-08"
+    },
+    {
+      "number": 257,
+      "title": "Listener Feedback #96",
+      "date": "2010-07-15"
+    },
+    {
+      "number": 258,
+      "title": "Five Years of Vulnerabilities",
+      "date": "2010-07-22"
+    },
+    {
+      "number": 259,
+      "title": "Listener Feedback #97",
+      "date": "2010-07-29"
+    },
+    {
+      "number": 260,
+      "title": "DNS Rebinding",
+      "date": "2010-08-05"
+    },
+    {
+      "number": 261,
+      "title": "Listener Feedback #98",
+      "date": "2010-08-12"
+    },
+    {
+      "number": 262,
+      "title": "Strict Transport Security",
+      "date": "2010-08-19"
+    },
+    {
+      "number": 263,
+      "title": "Listener Feedback #99",
+      "date": "2010-08-26"
+    },
+    {
+      "number": 264,
+      "title": "Side-Channel Privacy Leakage",
+      "date": "2010-09-02"
+    },
+    {
+      "number": 265,
+      "title": "Listener Feedback #100",
+      "date": "2010-09-09"
+    },
+    {
+      "number": 266,
+      "title": "Inside OAuth",
+      "date": "2010-09-16"
+    },
+    {
+      "number": 267,
+      "title": "Listener Feedback #101",
+      "date": "2010-09-23"
+    },
+    {
+      "number": 268,
+      "title": "CryptoSystem Backdoors",
+      "date": "2010-09-30"
+    },
+    {
+      "number": 269,
+      "title": "Listener Feedback #102",
+      "date": "2010-10-07"
+    },
+    {
+      "number": 270,
+      "title": "The Evercookie",
+      "date": "2010-10-14"
+    },
+    {
+      "number": 271,
+      "title": "Listener Feedback #103",
+      "date": "2010-10-21"
+    },
+    {
+      "number": 272,
+      "title": "Firesheep",
+      "date": "2010-10-28"
+    },
+    {
+      "number": 273,
+      "title": "Listener Feedback #104 & The FireStorm",
+      "date": "2010-11-04"
+    },
+    {
+      "number": 274,
+      "title": "Benchmarking DNS",
+      "date": "2010-11-11"
+    },
+    {
+      "number": 275,
+      "title": "Listener Feedback #105",
+      "date": "2010-11-18"
+    },
+    {
+      "number": 276,
+      "title": "Testing DNS Spoofability",
+      "date": "2010-11-25"
+    },
+    {
+      "number": 277,
+      "title": "Listener Feedback #106",
+      "date": "2010-12-02"
+    },
+    {
+      "number": 278,
+      "title": "Tag Me (with RFID)",
+      "date": "2010-12-09"
+    },
+    {
+      "number": 279,
+      "title": "Listener Feedback #107",
+      "date": "2010-12-16"
+    },
+    {
+      "number": 280,
+      "title": "Bluetooth",
+      "date": "2010-12-23"
+    },
+    {
+      "number": 281,
+      "title": "The Portable Dog Killer, Encore",
+      "date": "2010-12-30"
+    },
+    {
+      "number": 282,
+      "title": "Listener Feedback #108",
+      "date": "2011-01-06"
+    },
+    {
+      "number": 283,
+      "title": "Bluetooth Hacking",
+      "date": "2011-01-13"
+    },
+    {
+      "number": 284,
+      "title": "Listener Feedback #109",
+      "date": "2011-01-20"
+    },
+    {
+      "number": 285,
+      "title": "Fuzzy Browsers",
+      "date": "2011-01-27"
+    },
+    {
+      "number": 286,
+      "title": "Listener Feedback #110",
+      "date": "2011-02-03"
+    },
+    {
+      "number": 287,
+      "title": "BitCoin CryptoCurrency",
+      "date": "2011-02-10"
+    },
+    {
+      "number": 288,
+      "title": "Listener Feedback #111",
+      "date": "2011-02-17"
+    },
+    {
+      "number": 289,
+      "title": "Proxied Surfing",
+      "date": "2011-02-24"
+    },
+    {
+      "number": 290,
+      "title": "Listener Feedback #112",
+      "date": "2011-03-03"
+    },
+    {
+      "number": 291,
+      "title": "Stuxnet",
+      "date": "2011-03-10"
+    },
+    {
+      "number": 292,
+      "title": "Listener Feedback #113",
+      "date": "2011-03-17"
+    },
+    {
+      "number": 293,
+      "title": "IE9",
+      "date": "2011-03-24"
+    },
+    {
+      "number": 294,
+      "title": "Listener Feedback #114",
+      "date": "2011-03-31"
+    },
+    {
+      "number": 295,
+      "title": "The Comodo SSL Breach",
+      "date": "2011-04-07"
+    },
+    {
+      "number": 296,
+      "title": "Listener Feedback #115",
+      "date": "2011-04-14"
+    },
+    {
+      "number": 297,
+      "title": "Pass-Sentences??",
+      "date": "2011-04-21"
+    },
+    {
+      "number": 298,
+      "title": "Listener Feedback #116",
+      "date": "2011-04-28"
+    },
+    {
+      "number": 299,
+      "title": "Going Random, Part 1 of 2",
+      "date": "2011-05-05"
+    },
+    {
+      "number": 300,
+      "title": "Listener Feedback #117",
+      "date": "2011-05-12"
+    },
+    {
+      "number": 301,
+      "title": "Going Random, Part 2 of 2",
+      "date": "2011-05-19"
+    },
+    {
+      "number": 302,
+      "title": "Listener Feedback #118",
+      "date": "2011-05-26"
+    },
+    {
+      "number": 303,
+      "title": "Password Haystacks",
+      "date": "2011-06-02"
+    },
+    {
+      "number": 304,
+      "title": "Listener Feedback #119",
+      "date": "2011-06-09"
+    },
+    {
+      "number": 305,
+      "title": "Ghostery",
+      "date": "2011-06-16"
+    },
+    {
+      "number": 306,
+      "title": "Listener Feedback #120",
+      "date": "2011-06-23"
+    },
+    {
+      "number": 307,
+      "title": "The Future of Identity",
+      "date": "2011-06-30"
+    },
+    {
+      "number": 308,
+      "title": "Listener Feedback #121",
+      "date": "2011-07-07"
+    },
+    {
+      "number": 309,
+      "title": "How the Internet Works, Part 1",
+      "date": "2011-07-14"
+    },
+    {
+      "number": 310,
+      "title": "Listener Feedback #122",
+      "date": "2011-07-21"
+    },
+    {
+      "number": 311,
+      "title": "Anatomy of a Security Mistake",
+      "date": "2011-07-28"
+    },
+    {
+      "number": 312,
+      "title": "Listener Feedback #123",
+      "date": "2011-08-04"
+    },
+    {
+      "number": 313,
+      "title": "How The Internet Works: ICMP & UDP",
+      "date": "2011-08-11"
+    },
+    {
+      "number": 314,
+      "title": "Listener Feedback #124",
+      "date": "2011-08-18"
+    },
+    {
+      "number": 315,
+      "title": "Off The Grid",
+      "date": "2011-08-25"
+    },
+    {
+      "number": 316,
+      "title": "Listener Feedback #125",
+      "date": "2011-09-01"
+    },
+    {
+      "number": 317,
+      "title": "TCP Part 1 – Getting Connected",
+      "date": "2011-09-08"
+    },
+    {
+      "number": 318,
+      "title": "Listener Feedback #126",
+      "date": "2011-09-15"
+    },
+    {
+      "number": 319,
+      "title": "Certificate Authority (CA) Trust - Time to Change it?",
+      "date": "2011-09-22"
+    },
+    {
+      "number": 320,
+      "title": "Listener Feedback #127",
+      "date": "2011-09-29"
+    },
+    {
+      "number": 321,
+      "title": "The Beauty of B.E.A.S.T.",
+      "date": "2011-10-05"
+    },
+    {
+      "number": 322,
+      "title": "Listener Feedback #128",
+      "date": "2011-10-12"
+    },
+    {
+      "number": 323,
+      "title": "TCP Pt.2 - Attacking TCP",
+      "date": "2011-10-19"
+    },
+    {
+      "number": 324,
+      "title": "Listener Feedback #129",
+      "date": "2011-10-26"
+    },
+    {
+      "number": 325,
+      "title": "TCP Pt.3 - Necessary Refinements",
+      "date": "2011-11-02"
+    },
+    {
+      "number": 326,
+      "title": "Listener Feedback #130",
+      "date": "2011-11-09"
+    },
+    {
+      "number": 327,
+      "title": "Internet Privacy Update",
+      "date": "2011-11-16"
+    },
+    {
+      "number": 328,
+      "title": "Listener Feedback #131",
+      "date": "2011-11-23"
+    },
+    {
+      "number": 329,
+      "title": "Browser ID",
+      "date": "2011-11-30"
+    },
+    {
+      "number": 330,
+      "title": "Listener Feedback #132",
+      "date": "2011-12-07"
+    },
+    {
+      "number": 331,
+      "title": "Mega Security News Update",
+      "date": "2011-12-14"
+    },
+    {
+      "number": 332,
+      "title": "Listener Feedback #133",
+      "date": "2011-12-21"
+    },
+    {
+      "number": 333,
+      "title": "Science Fiction Holiday Special",
+      "date": "2011-12-28"
+    },
+    {
+      "number": 334,
+      "title": "Listener Feedback #134",
+      "date": "2012-01-04"
+    },
+    {
+      "number": 335,
+      "title": "Wi-Fi Protected (In)Security",
+      "date": "2012-01-09"
+    },
+    {
+      "number": 336,
+      "title": "Listener Feedback #135",
+      "date": "2012-01-18"
+    },
+    {
+      "number": 337,
+      "title": "WPS: A Troubled Protocol",
+      "date": "2012-01-25"
+    },
+    {
+      "number": 338,
+      "title": "Listener Feedback #136",
+      "date": "2012-02-01"
+    },
+    {
+      "number": 339,
+      "title": "\"ScriptNo\" for Chrome",
+      "date": "2012-02-08"
+    },
+    {
+      "number": 340,
+      "title": "Listener Feedback #137",
+      "date": "2012-02-15"
+    },
+    {
+      "number": 341,
+      "title": "Can \"Anonymous\" Take Down the Internet?",
+      "date": "2012-02-22"
+    },
+    {
+      "number": 342,
+      "title": "Listener Feedback #138",
+      "date": "2012-02-29"
+    },
+    {
+      "number": 343,
+      "title": "HTTP & SPDY",
+      "date": "2012-03-06"
+    },
+    {
+      "number": 344,
+      "title": "Listener Feedback #139",
+      "date": "2012-03-14"
+    },
+    {
+      "number": 345,
+      "title": "Buffer Bloat",
+      "date": "2012-03-21"
+    },
+    {
+      "number": 346,
+      "title": "Listener Feedback #140",
+      "date": "2012-03-28"
+    },
+    {
+      "number": 347,
+      "title": "iOS Password Mis-Managers",
+      "date": "2012-04-04"
+    },
+    {
+      "number": 348,
+      "title": "Listener Feedback #141",
+      "date": "2012-04-11"
+    },
+    {
+      "number": 349,
+      "title": "Cloud Solutions",
+      "date": "2012-04-19"
+    },
+    {
+      "number": 350,
+      "title": "Twitter Feedback Q&A #142 / Cloud Security",
+      "date": "2012-04-25"
+    },
+    {
+      "number": 351,
+      "title": "Three Hybrid Cloud Solutions",
+      "date": "2012-05-02"
+    },
+    {
+      "number": 352,
+      "title": "Listener Feedback #143",
+      "date": "2012-05-09"
+    },
+    {
+      "number": 353,
+      "title": "DMARC - eMail Security",
+      "date": "2012-05-16"
+    },
+    {
+      "number": 354,
+      "title": "Listener Feedback #144",
+      "date": "2012-05-23"
+    },
+    {
+      "number": 355,
+      "title": "Poking Holes in TCP",
+      "date": "2012-05-30"
+    },
+    {
+      "number": 356,
+      "title": "Listener Feedback #145",
+      "date": "2012-06-06"
+    },
+    {
+      "number": 357,
+      "title": "Flame On!",
+      "date": "2012-06-13"
+    },
+    {
+      "number": 358,
+      "title": "Listener Feedback #146",
+      "date": "2012-06-20"
+    },
+    {
+      "number": 359,
+      "title": "Coddling Our Buffers",
+      "date": "2012-06-27"
+    },
+    {
+      "number": 360,
+      "title": "Listener Feedback #147",
+      "date": "2012-07-11"
+    },
+    {
+      "number": 361,
+      "title": "Paul Vixie & DNS Changer",
+      "date": "2012-07-18"
+    },
+    {
+      "number": 362,
+      "title": "Listener Feedback #148",
+      "date": "2012-07-25"
+    },
+    {
+      "number": 363,
+      "title": "Ali Baba's Cave",
+      "date": "2012-08-01"
+    },
+    {
+      "number": 364,
+      "title": "Mat Honan's Very Bad Weekend",
+      "date": "2012-08-08"
+    },
+    {
+      "number": 365,
+      "title": "Listener Feedback #149",
+      "date": "2012-08-15"
+    },
+    {
+      "number": 366,
+      "title": "Password Cracking Update: The Death of \"Clever\"",
+      "date": "2012-08-22"
+    },
+    {
+      "number": 367,
+      "title": "What a Busy Week!",
+      "date": "2012-08-29"
+    },
+    {
+      "number": 368,
+      "title": "Listener Feedback #150",
+      "date": "2012-09-05"
+    },
+    {
+      "number": 369,
+      "title": "Internet Identity Update",
+      "date": "2012-09-11"
+    },
+    {
+      "number": 370,
+      "title": "Mark Russinovich & Other News",
+      "date": "2012-09-19"
+    },
+    {
+      "number": 371,
+      "title": "Listener Feedback #151",
+      "date": "2012-09-26"
+    },
+    {
+      "number": 372,
+      "title": "NFC - Near Field Communications",
+      "date": "2012-10-03"
+    },
+    {
+      "number": 373,
+      "title": "Listener Feedback #152",
+      "date": "2012-10-10"
+    },
+    {
+      "number": 374,
+      "title": "ECC - Elliptic Curve Cryptography",
+      "date": "2012-10-17"
+    },
+    {
+      "number": 375,
+      "title": "Listener Feedback #153",
+      "date": "2012-10-24"
+    },
+    {
+      "number": 376,
+      "title": "Fully Homomorphic Encryption",
+      "date": "2012-10-31"
+    },
+    {
+      "number": 377,
+      "title": "Listener Feedback #154",
+      "date": "2012-11-07"
+    },
+    {
+      "number": 378,
+      "title": "Microsoft: Security, Privacy & DNT",
+      "date": "2012-11-14"
+    },
+    {
+      "number": 379,
+      "title": "Listener Feedback #155",
+      "date": "2012-11-21"
+    },
+    {
+      "number": 380,
+      "title": "DTLS - Datagram Transport Layer Security",
+      "date": "2012-11-28"
+    },
+    {
+      "number": 381,
+      "title": "Listener Feedback #156",
+      "date": "2012-12-05"
+    },
+    {
+      "number": 382,
+      "title": "QR Codes",
+      "date": "2012-12-12"
+    },
+    {
+      "number": 383,
+      "title": "Listener Feedback #157",
+      "date": "2012-12-19"
+    },
+    {
+      "number": 384,
+      "title": "Once Upon a Time",
+      "date": "2012-12-26"
+    },
+    {
+      "number": 385,
+      "title": "Listener Feedback #158",
+      "date": "2013-01-02"
+    },
+    {
+      "number": 386,
+      "title": "Disconnect WidgetJacking",
+      "date": "2013-01-09"
+    },
+    {
+      "number": 387,
+      "title": "Listener Feedback #159",
+      "date": "2013-01-16"
+    },
+    {
+      "number": 388,
+      "title": "Memory Hard Problems",
+      "date": "2013-01-23"
+    },
+    {
+      "number": 389,
+      "title": "Listener Feedback #160 & UPnP Exposure Disaster",
+      "date": "2013-01-30"
+    },
+    {
+      "number": 390,
+      "title": "\"Mega\" Security Overview",
+      "date": "2013-02-06"
+    },
+    {
+      "number": 391,
+      "title": "Listener Feedback #161",
+      "date": "2013-02-13"
+    },
+    {
+      "number": 392,
+      "title": "The Internet Underworld",
+      "date": "2013-02-20"
+    },
+    {
+      "number": 393,
+      "title": "Listener Feedback #162",
+      "date": "2013-02-27"
+    },
+    {
+      "number": 394,
+      "title": "Tor v2 with Hidden Services",
+      "date": "2013-03-06"
+    },
+    {
+      "number": 395,
+      "title": "Listener Feedback #163",
+      "date": "2013-03-13"
+    },
+    {
+      "number": 396,
+      "title": "The Telnet-pocalypse",
+      "date": "2013-03-20"
+    },
+    {
+      "number": 397,
+      "title": "Listener Feedback #164",
+      "date": "2013-03-27"
+    },
+    {
+      "number": 398,
+      "title": "Distributed Hash Tables",
+      "date": "2013-04-03"
+    },
+    {
+      "number": 399,
+      "title": "Listener Feedback #165",
+      "date": "2013-04-10"
+    },
+    {
+      "number": 400,
+      "title": "VPN Solutions",
+      "date": "2013-04-17"
+    },
+    {
+      "number": 401,
+      "title": "Listener Feedback #166",
+      "date": "2013-04-24"
+    },
+    {
+      "number": 402,
+      "title": "BitTorrent Sync",
+      "date": "2013-05-01"
+    },
+    {
+      "number": 403,
+      "title": "Listener Feedback #167",
+      "date": "2013-05-08"
+    },
+    {
+      "number": 404,
+      "title": "How Facebook Monetizes",
+      "date": "2013-05-15"
+    },
+    {
+      "number": 405,
+      "title": "Listener Feedback #168",
+      "date": "2013-05-22"
+    },
+    {
+      "number": 406,
+      "title": "Chatting Off the Record With OTR",
+      "date": "2013-05-29"
+    },
+    {
+      "number": 407,
+      "title": "Listener Feedback #169",
+      "date": "2013-06-05"
+    },
+    {
+      "number": 408,
+      "title": "The State of Surveillance (How the NSA's PRISM program works.)",
+      "date": "2013-06-12"
+    },
+    {
+      "number": 409,
+      "title": "Listener Feedback #170",
+      "date": "2013-06-19"
+    },
+    {
+      "number": 410,
+      "title": "Interesting & Useful Intel History",
+      "date": "2013-06-26"
+    },
+    {
+      "number": 411,
+      "title": "Listener Feedback #171",
+      "date": "2013-07-03"
+    },
+    {
+      "number": 412,
+      "title": "SSL & Perfect Forward Secrecy",
+      "date": "2013-07-10"
+    },
+    {
+      "number": 413,
+      "title": "How Much Tinfoil?",
+      "date": "2013-07-17"
+    },
+    {
+      "number": 414,
+      "title": "Inflection Points",
+      "date": "2013-07-24"
+    },
+    {
+      "number": 415,
+      "title": "Listener Feedback #172",
+      "date": "2013-07-31"
+    },
+    {
+      "number": 416,
+      "title": "Black Hat 2013, Tor & More",
+      "date": "2013-08-07"
+    },
+    {
+      "number": 417,
+      "title": "Listener Feedback #173",
+      "date": "2013-08-14"
+    },
+    {
+      "number": 418,
+      "title": "Considering PGP",
+      "date": "2013-08-21"
+    },
+    {
+      "number": 419,
+      "title": "Listener Feedback #174",
+      "date": "2013-08-28"
+    },
+    {
+      "number": 420,
+      "title": "Bitmessage",
+      "date": "2013-09-04"
+    },
+    {
+      "number": 421,
+      "title": "The Perfect Accusation",
+      "date": "2013-09-11"
+    },
+    {
+      "number": 422,
+      "title": "Listener Feedback #175",
+      "date": "2013-09-18"
+    },
+    {
+      "number": 423,
+      "title": "Fingerprint Biometrics",
+      "date": "2013-09-25"
+    },
+    {
+      "number": 424,
+      "title": "SQRL: Secure QR Login",
+      "date": "2013-10-02"
+    },
+    {
+      "number": 425,
+      "title": "SQRL and Q&A #176",
+      "date": "2013-10-09"
+    },
+    {
+      "number": 426,
+      "title": "SQRL: Anti-Phishing & Revocation",
+      "date": "2013-10-16"
+    },
+    {
+      "number": 427,
+      "title": "A Newsy Week!",
+      "date": "2013-10-23"
+    },
+    {
+      "number": 428,
+      "title": "Listener Feedback #177",
+      "date": "2013-10-30"
+    },
+    {
+      "number": 429,
+      "title": "\"Monkey\" Was 26th!",
+      "date": "2013-11-06"
+    },
+    {
+      "number": 430,
+      "title": "Listener Feedback #178",
+      "date": "2013-11-13"
+    },
+    {
+      "number": 431,
+      "title": "What Is RADIUS?",
+      "date": "2013-11-20"
+    },
+    {
+      "number": 432,
+      "title": "Coin, CryptoLocker, Patent Trolls & More",
+      "date": "2013-11-27"
+    },
+    {
+      "number": 433,
+      "title": "\"BULLRUN\": How the NSA breaks Internet encryption",
+      "date": "2013-12-04"
+    },
+    {
+      "number": 434,
+      "title": "Listener Feedback #179",
+      "date": "2013-12-11"
+    },
+    {
+      "number": 435,
+      "title": "Listener Feedback #180",
+      "date": "2013-12-18"
+    },
+    {
+      "number": 437,
+      "title": "New Year's News Catchup",
+      "date": "2014-01-07"
+    },
+    {
+      "number": 438,
+      "title": "NSA's ANT: What We've Learned",
+      "date": "2014-01-14"
+    },
+    {
+      "number": 439,
+      "title": "Listener Feedback #181",
+      "date": "2014-01-21"
+    },
+    {
+      "number": 440,
+      "title": "Listener Feedback #182",
+      "date": "2014-01-28"
+    },
+    {
+      "number": 441,
+      "title": "Password Policies (2014)",
+      "date": "2014-02-04"
+    },
+    {
+      "number": 442,
+      "title": "Listener Feedback #183",
+      "date": "2014-02-11"
+    },
+    {
+      "number": 443,
+      "title": "Sisyphus",
+      "date": "2014-02-18"
+    },
+    {
+      "number": 444,
+      "title": "Goto: Fail",
+      "date": "2014-02-25"
+    },
+    {
+      "number": 445,
+      "title": "Listener Feedback #184",
+      "date": "2014-03-04"
+    },
+    {
+      "number": 446,
+      "title": "iOS Security (part 1 of 3)",
+      "date": "2014-03-11"
+    },
+    {
+      "number": 447,
+      "title": "iOS Security (part 2 of 3)",
+      "date": "2014-03-18"
+    },
+    {
+      "number": 448,
+      "title": "iOS Security (part 3 of 3)",
+      "date": "2014-03-25"
+    },
+    {
+      "number": 449,
+      "title": "Listener Feedback #185",
+      "date": "2014-04-01"
+    },
+    {
+      "number": 450,
+      "title": "How the Heartbleeds",
+      "date": "2014-04-08"
+    },
+    {
+      "number": 451,
+      "title": "TrueCrypt & Heartbleed Part 2",
+      "date": "2014-04-15"
+    },
+    {
+      "number": 452,
+      "title": "Listener Feedback #186",
+      "date": "2014-04-22"
+    },
+    {
+      "number": 453,
+      "title": "Certificate Revocation Part 1",
+      "date": "2014-04-29"
+    },
+    {
+      "number": 454,
+      "title": "Certificate Revocation Part 2",
+      "date": "2014-05-06"
+    },
+    {
+      "number": 455,
+      "title": "Listener Feedback #187",
+      "date": "2014-05-13"
+    },
+    {
+      "number": 456,
+      "title": "Harvesting Entropy",
+      "date": "2014-05-20"
+    },
+    {
+      "number": 457,
+      "title": "Listener Feedback #188",
+      "date": "2014-05-27"
+    },
+    {
+      "number": 458,
+      "title": "TrueCrypt: WTF?",
+      "date": "2014-06-03"
+    },
+    {
+      "number": 459,
+      "title": "Listener Feedback #189",
+      "date": "2014-06-10"
+    },
+    {
+      "number": 460,
+      "title": "Authenticated Encryption",
+      "date": "2014-06-17"
+    },
+    {
+      "number": 461,
+      "title": "Listener Feedback #190",
+      "date": "2014-06-24"
+    },
+    {
+      "number": 462,
+      "title": "Cloud Storage Solutions",
+      "date": "2014-07-01"
+    },
+    {
+      "number": 463,
+      "title": "Listener Feedback #191",
+      "date": "2014-07-08"
+    },
+    {
+      "number": 464,
+      "title": "Listener Feedback #192",
+      "date": "2014-07-15"
+    },
+    {
+      "number": 465,
+      "title": "iOS Surveillance?",
+      "date": "2014-07-22"
+    },
+    {
+      "number": 466,
+      "title": "Listener Feedback #193",
+      "date": "2014-07-29"
+    },
+    {
+      "number": 467,
+      "title": "Browser Password Managers (and \"BadUSB\")",
+      "date": "2014-08-05"
+    },
+    {
+      "number": 468,
+      "title": "Listener Feedback #194",
+      "date": "2014-08-12"
+    },
+    {
+      "number": 469,
+      "title": "Big Routing Tables",
+      "date": "2014-08-19"
+    },
+    {
+      "number": 470,
+      "title": "Listener Feedback #195",
+      "date": "2014-08-26"
+    },
+    {
+      "number": 471,
+      "title": "PGP: Time for an Upgrade?",
+      "date": "2014-09-02"
+    },
+    {
+      "number": 472,
+      "title": "Listener Feedback #196",
+      "date": "2014-09-09"
+    },
+    {
+      "number": 473,
+      "title": "Google vs. SHA-1",
+      "date": "2014-09-16"
+    },
+    {
+      "number": 474,
+      "title": "Listener Feedback #197",
+      "date": "2014-09-23"
+    },
+    {
+      "number": 475,
+      "title": "Shocked by the Shell",
+      "date": "2014-10-01"
+    },
+    {
+      "number": 476,
+      "title": "Listener Feedback #198",
+      "date": "2014-10-07"
+    },
+    {
+      "number": 477,
+      "title": "Payment Tokenization",
+      "date": "2014-10-14"
+    },
+    {
+      "number": 478,
+      "title": "Poodle Bites",
+      "date": "2014-10-21"
+    },
+    {
+      "number": 479,
+      "title": "Listener Feedback #199",
+      "date": "2014-10-28"
+    },
+    {
+      "number": 480,
+      "title": "Listener Feedback #200",
+      "date": "2014-11-04"
+    },
+    {
+      "number": 481,
+      "title": "Certificate Transparency",
+      "date": "2014-11-11"
+    },
+    {
+      "number": 482,
+      "title": "Listener Feedback #201",
+      "date": "2014-11-18"
+    },
+    {
+      "number": 483,
+      "title": "\"Regin\" & Let's Encrypt",
+      "date": "2014-11-25"
+    },
+    {
+      "number": 484,
+      "title": "Listener Feedback #202",
+      "date": "2014-12-02"
+    },
+    {
+      "number": 485,
+      "title": "Expensive Lessons",
+      "date": "2014-12-09"
+    },
+    {
+      "number": 486,
+      "title": "Listener Feedback #203",
+      "date": "2014-12-16"
+    },
+    {
+      "number": 487,
+      "title": "SQRL's Vegas Presentation",
+      "date": "2014-12-23"
+    },
+    {
+      "number": 488,
+      "title": "The (In)Security of 2014",
+      "date": "2014-12-30"
+    },
+    {
+      "number": 489,
+      "title": "Listener Feedback #204",
+      "date": "2015-01-06"
+    },
+    {
+      "number": 490,
+      "title": "The Enigma",
+      "date": "2015-01-13"
+    },
+    {
+      "number": 491,
+      "title": "Cryptographic Backdoors",
+      "date": "2015-01-20"
+    },
+    {
+      "number": 492,
+      "title": "Listener Feedback #205",
+      "date": "2015-01-27"
+    },
+    {
+      "number": 493,
+      "title": "Tor: Not so Anonymous",
+      "date": "2015-02-03"
+    },
+    {
+      "number": 494,
+      "title": "Listener Feedback #206",
+      "date": "2015-02-10"
+    },
+    {
+      "number": 495,
+      "title": "HTTP/2",
+      "date": "2015-02-17"
+    },
+    {
+      "number": 496,
+      "title": "Listener Feedback #207",
+      "date": "2015-02-24"
+    },
+    {
+      "number": 497,
+      "title": "Vehicle Hacking",
+      "date": "2015-03-03"
+    },
+    {
+      "number": 498,
+      "title": "FREAK & RowHammer",
+      "date": "2015-03-10"
+    },
+    {
+      "number": 499,
+      "title": "Listener Feedback #208",
+      "date": "2015-03-17"
+    },
+    {
+      "number": 500,
+      "title": "Windows Secure Boot",
+      "date": "2015-03-24"
+    },
+    {
+      "number": 501,
+      "title": "Listener Feedback #209",
+      "date": "2015-03-31"
+    },
+    {
+      "number": 502,
+      "title": "The TrueCrypt Audit",
+      "date": "2015-04-07"
+    },
+    {
+      "number": 503,
+      "title": "Listener Feedback #210",
+      "date": "2015-04-14"
+    },
+    {
+      "number": 504,
+      "title": "Great Firewalls & Cannons",
+      "date": "2015-04-21"
+    },
+    {
+      "number": 505,
+      "title": "Listener Feedback #211",
+      "date": "2015-04-28"
+    },
+    {
+      "number": 506,
+      "title": "Law Enforcement Backdoors",
+      "date": "2015-05-05"
+    },
+    {
+      "number": 507,
+      "title": "Listener Feedback #212",
+      "date": "2015-05-12"
+    },
+    {
+      "number": 508,
+      "title": "Exploiting (Automobile) Keyless Entry",
+      "date": "2015-05-19"
+    },
+    {
+      "number": 509,
+      "title": "LOGJAM: Imperfect Forward Secrecy",
+      "date": "2015-05-26"
+    },
+    {
+      "number": 510,
+      "title": "Listener Feedback #213",
+      "date": "2015-06-02"
+    },
+    {
+      "number": 511,
+      "title": "Listener Feedback #214",
+      "date": "2015-06-09"
+    },
+    {
+      "number": 512,
+      "title": "Mozilla's Tracking Protection",
+      "date": "2015-06-16"
+    },
+    {
+      "number": 513,
+      "title": "Listener Feedback #215",
+      "date": "2015-06-23"
+    },
+    {
+      "number": 514,
+      "title": "Tor's Astoria Client",
+      "date": "2015-06-30"
+    },
+    {
+      "number": 515,
+      "title": "A Crazy News Week!",
+      "date": "2015-07-07"
+    },
+    {
+      "number": 516,
+      "title": "SQRL Revisited",
+      "date": "2015-07-14"
+    },
+    {
+      "number": 517,
+      "title": "Listener Feedback #216",
+      "date": "2015-07-21"
+    },
+    {
+      "number": 518,
+      "title": "HORNET: A fix for TOR?",
+      "date": "2015-07-28"
+    },
+    {
+      "number": 519,
+      "title": "The Win10 Privacy Tradeoff",
+      "date": "2015-08-04"
+    },
+    {
+      "number": 520,
+      "title": "The Quest for Surfing Safety",
+      "date": "2015-08-11"
+    },
+    {
+      "number": 521,
+      "title": "Security Is Difficult",
+      "date": "2015-08-18"
+    },
+    {
+      "number": 522,
+      "title": "Listener Feedback #217",
+      "date": "2015-08-25"
+    },
+    {
+      "number": 523,
+      "title": "uBlock Origin",
+      "date": "2015-09-01"
+    },
+    {
+      "number": 524,
+      "title": "Listener Feedback #218",
+      "date": "2015-09-08"
+    },
+    {
+      "number": 525,
+      "title": "Disconnect",
+      "date": "2015-09-15"
+    },
+    {
+      "number": 526,
+      "title": "iOS Content Blockers",
+      "date": "2015-09-22"
+    },
+    {
+      "number": 527,
+      "title": "Listener Feedback #219",
+      "date": "2015-09-29"
+    },
+    {
+      "number": 528,
+      "title": "Breaches & Vigilante Worms9",
+      "date": "2015-10-06"
+    },
+    {
+      "number": 529,
+      "title": "Listener Feedback #220",
+      "date": "2015-10-13"
+    },
+    {
+      "number": 530,
+      "title": "Doing It Wrong",
+      "date": "2015-10-20"
+    },
+    {
+      "number": 531,
+      "title": "Listener Feedback #221",
+      "date": "2015-10-27"
+    },
+    {
+      "number": 532,
+      "title": "Verifying iOS App Conduct",
+      "date": "2015-11-03"
+    },
+    {
+      "number": 533,
+      "title": "Listener Feedback #222",
+      "date": "2015-11-10"
+    },
+    {
+      "number": 534,
+      "title": "Encryption: Law Enforcement's Whipping Boy",
+      "date": "2015-11-17"
+    },
+    {
+      "number": 535,
+      "title": "Listener Feedback #223",
+      "date": "2015-11-24"
+    },
+    {
+      "number": 536,
+      "title": "Listener Feedback #224",
+      "date": "2015-12-01"
+    },
+    {
+      "number": 537,
+      "title": "A Mega News Week",
+      "date": "2015-12-08"
+    },
+    {
+      "number": 538,
+      "title": "Listener Feedback #225",
+      "date": "2015-12-15"
+    },
+    {
+      "number": 539,
+      "title": "Listener Feedback #226",
+      "date": "2015-12-22"
+    },
+    {
+      "number": 541,
+      "title": "New Year's News",
+      "date": "2016-01-05"
+    },
+    {
+      "number": 542,
+      "title": "Listener Feedback #227",
+      "date": "2016-01-12"
+    },
+    {
+      "number": 543,
+      "title": "LostPass",
+      "date": "2016-01-19"
+    },
+    {
+      "number": 544,
+      "title": "Listener Feedback #228",
+      "date": "2016-01-26"
+    },
+    {
+      "number": 545,
+      "title": "Three Dumb Routers",
+      "date": "2016-02-02"
+    },
+    {
+      "number": 546,
+      "title": "Router Q&A Follow-up",
+      "date": "2016-02-09"
+    },
+    {
+      "number": 547,
+      "title": "GRC is DOWN",
+      "date": "2016-02-16"
+    },
+    {
+      "number": 548,
+      "title": "DDoS Attack Mitigation",
+      "date": "2016-02-23"
+    },
+    {
+      "number": 549,
+      "title": "Listener Feedback #229",
+      "date": "2016-03-01"
+    },
+    {
+      "number": 550,
+      "title": "CacheBleed",
+      "date": "2016-03-08"
+    },
+    {
+      "number": 551,
+      "title": "Listener Feedback #230",
+      "date": "2016-03-15"
+    },
+    {
+      "number": 552,
+      "title": "D.R.O.W.N.",
+      "date": "2016-03-22"
+    },
+    {
+      "number": 553,
+      "title": "Too Much News",
+      "date": "2016-03-29"
+    },
+    {
+      "number": 554,
+      "title": "Listener Feedback #231",
+      "date": "2016-04-05"
+    },
+    {
+      "number": 555,
+      "title": "WhatsApp",
+      "date": "2016-04-12"
+    },
+    {
+      "number": 556,
+      "title": "SMTP STS",
+      "date": "2016-04-19"
+    },
+    {
+      "number": 557,
+      "title": "Listener Feedback #232",
+      "date": "2016-04-26"
+    },
+    {
+      "number": 558,
+      "title": "Listener Feedback #233",
+      "date": "2016-05-03"
+    },
+    {
+      "number": 559,
+      "title": "Dumb SmartThings",
+      "date": "2016-05-10"
+    },
+    {
+      "number": 560,
+      "title": "Z-Wave Goodbye",
+      "date": "2016-05-17"
+    },
+    {
+      "number": 561,
+      "title": "Listener Feedback #234",
+      "date": "2016-05-24"
+    },
+    {
+      "number": 562,
+      "title": "IoT Infancy (pt.1)",
+      "date": "2016-05-31"
+    },
+    {
+      "number": 563,
+      "title": "IoT Infancy (pt.2)",
+      "date": "2016-06-07"
+    },
+    {
+      "number": 564,
+      "title": "Listener Feedback #235",
+      "date": "2016-06-14"
+    },
+    {
+      "number": 565,
+      "title": "Control-Flow Enforcement Technology (CET)",
+      "date": "2016-06-21"
+    },
+    {
+      "number": 566,
+      "title": "Listener Feedback #236",
+      "date": "2016-06-28"
+    },
+    {
+      "number": 567,
+      "title": "Hacking Certificates",
+      "date": "2016-07-05"
+    },
+    {
+      "number": 568,
+      "title": "Listener Feedback #237",
+      "date": "2016-07-12"
+    },
+    {
+      "number": 569,
+      "title": "Messenger, CryptoDrop, & Riffle",
+      "date": "2016-07-19"
+    },
+    {
+      "number": 570,
+      "title": "Listener Feedback #238",
+      "date": "2016-07-26"
+    },
+    {
+      "number": 571,
+      "title": "Phishing & Filtering",
+      "date": "2016-08-02"
+    },
+    {
+      "number": 572,
+      "title": "DEF CON & Black Hat, Part 1",
+      "date": "2016-08-09"
+    },
+    {
+      "number": 573,
+      "title": "News & Memory",
+      "date": "2016-08-16"
+    },
+    {
+      "number": 574,
+      "title": "Routers & Micro Kernels",
+      "date": "2016-08-23"
+    },
+    {
+      "number": 575,
+      "title": "Pegasus & Trident",
+      "date": "2016-08-30"
+    },
+    {
+      "number": 576,
+      "title": "Flip Feng Shui",
+      "date": "2016-09-06"
+    },
+    {
+      "number": 577,
+      "title": "Listener Feedback #239",
+      "date": "2016-09-13"
+    },
+    {
+      "number": 578,
+      "title": "GRC’s XSS Adventure",
+      "date": "2016-09-20"
+    },
+    {
+      "number": 579,
+      "title": "A Very Busy Week",
+      "date": "2016-09-27"
+    },
+    {
+      "number": 580,
+      "title": "Listener Feedback #240",
+      "date": "2016-10-04"
+    },
+    {
+      "number": 581,
+      "title": "Yahoo & Primal Worries",
+      "date": "2016-10-11"
+    },
+    {
+      "number": 582,
+      "title": "Listener Feedback #241",
+      "date": "2016-10-18"
+    },
+    {
+      "number": 583,
+      "title": "Drammer",
+      "date": "2016-10-25"
+    },
+    {
+      "number": 584,
+      "title": "Listener Feedback #242",
+      "date": "2016-11-01"
+    },
+    {
+      "number": 585,
+      "title": "The Windows AtomBomb",
+      "date": "2016-11-08"
+    },
+    {
+      "number": 586,
+      "title": "The BlackNurse Attack",
+      "date": "2016-11-15"
+    },
+    {
+      "number": 587,
+      "title": "Mobile & IoT Nightmares",
+      "date": "2016-11-22"
+    },
+    {
+      "number": 588,
+      "title": "Listener Feedback #243",
+      "date": "2016-11-29"
+    },
+    {
+      "number": 589,
+      "title": "Listener Feedback #244",
+      "date": "2016-12-06"
+    },
+    {
+      "number": 590,
+      "title": "Listener Feedback #245",
+      "date": "2016-12-13"
+    },
+    {
+      "number": 591,
+      "title": "Law Meets Internet",
+      "date": "2016-12-20"
+    },
+    {
+      "number": 592,
+      "title": "Holiday Special: \"The Portable Dog Killer\"",
+      "date": "2016-12-27"
+    },
+    {
+      "number": 593,
+      "title": "I'm NOT a Robot! (Really)",
+      "date": "2017-01-03"
+    },
+    {
+      "number": 594,
+      "title": "A look into PHP malware",
+      "date": "2017-01-10"
+    },
+    {
+      "number": 595,
+      "title": "Whats up with WhatsApp?",
+      "date": "2017-01-17"
+    },
+    {
+      "number": 596,
+      "title": "Password Complexity Calculations",
+      "date": "2017-01-24"
+    },
+    {
+      "number": 597,
+      "title": "Traitors in our Midst",
+      "date": "2017-01-31"
+    },
+    {
+      "number": 598,
+      "title": "Two Armed Bandits",
+      "date": "2017-02-07"
+    },
+    {
+      "number": 599,
+      "title": "TLS Interception INsecurity",
+      "date": "2017-02-14"
+    },
+    {
+      "number": 600,
+      "title": "The MMU Side-Channel Attack",
+      "date": "2017-02-21"
+    },
+    {
+      "number": 601,
+      "title": "The First SHA-1 Collision",
+      "date": "2017-02-28"
+    },
+    {
+      "number": 602,
+      "title": "Let's Spoof",
+      "date": "2017-03-07"
+    },
+    {
+      "number": 603,
+      "title": "Vault 7",
+      "date": "2017-03-14"
+    },
+    {
+      "number": 604,
+      "title": "Taming Web Ads",
+      "date": "2017-03-21"
+    },
+    {
+      "number": 605,
+      "title": "Google -vs- Symantec",
+      "date": "2017-03-28"
+    },
+    {
+      "number": 606,
+      "title": "Proactive Privacy",
+      "date": "2017-04-04"
+    },
+    {
+      "number": 607,
+      "title": "Proactive Privacy (Really, this time!)",
+      "date": "2017-04-11"
+    },
+    {
+      "number": 608,
+      "title": "News & Feedback Potpourri",
+      "date": "2017-04-18"
+    },
+    {
+      "number": 609,
+      "title": "The Double Pulsar",
+      "date": "2017-04-25"
+    },
+    {
+      "number": 610,
+      "title": "Intel's Mismanagement Engine",
+      "date": "2017-05-02"
+    },
+    {
+      "number": 611,
+      "title": "Go FCC Yourself",
+      "date": "2017-05-09"
+    },
+    {
+      "number": 612,
+      "title": "Makes You WannaCry",
+      "date": "2017-05-16"
+    },
+    {
+      "number": 613,
+      "title": "WannaCry Aftermath",
+      "date": "2017-05-23"
+    },
+    {
+      "number": 614,
+      "title": "Vulnerabilities Galore!",
+      "date": "2017-05-30"
+    },
+    {
+      "number": 615,
+      "title": "Legacy’s Long Tail",
+      "date": "2017-06-06"
+    },
+    {
+      "number": 616,
+      "title": "Things Are Getting Worse",
+      "date": "2017-06-13"
+    },
+    {
+      "number": 617,
+      "title": "When Governments React",
+      "date": "2017-06-20"
+    },
+    {
+      "number": 618,
+      "title": "Research: Useful & Otherwise",
+      "date": "2017-06-27"
+    },
+    {
+      "number": 619,
+      "title": "All the Usual Suspects",
+      "date": "2017-07-11"
+    },
+    {
+      "number": 620,
+      "title": "Calm Before the Storm",
+      "date": "2017-07-18"
+    },
+    {
+      "number": 621,
+      "title": "Crypto Tension",
+      "date": "2017-07-25"
+    },
+    {
+      "number": 622,
+      "title": "Hack the Vote",
+      "date": "2017-08-01"
+    },
+    {
+      "number": 623,
+      "title": "Inching Forward",
+      "date": "2017-08-08"
+    },
+    {
+      "number": 624,
+      "title": "Twelve and Counting",
+      "date": "2017-08-15"
+    },
+    {
+      "number": 625,
+      "title": "Security Politics",
+      "date": "2017-08-22"
+    },
+    {
+      "number": 626,
+      "title": "Shattering Trust",
+      "date": "2017-08-29"
+    },
+    {
+      "number": 627,
+      "title": "Sharknado",
+      "date": "2017-09-05"
+    },
+    {
+      "number": 628,
+      "title": "The Equifax Fiasco",
+      "date": "2017-09-12"
+    },
+    {
+      "number": 629,
+      "title": "Apple Bakes Cookies",
+      "date": "2017-09-19"
+    },
+    {
+      "number": 630,
+      "title": "The Great DOM Fuzz-Off",
+      "date": "2017-09-25"
+    },
+    {
+      "number": 631,
+      "title": "Private Contact Discovery",
+      "date": "2017-10-03"
+    },
+    {
+      "number": 632,
+      "title": "The DNSSEC Challenge",
+      "date": "2017-10-10"
+    },
+    {
+      "number": 633,
+      "title": "KRACKing WiFi",
+      "date": "2017-10-17"
+    },
+    {
+      "number": 634,
+      "title": "IoT Flash Botnets",
+      "date": "2017-10-24"
+    },
+    {
+      "number": 635,
+      "title": "Reaper Redux",
+      "date": "2017-10-31"
+    },
+    {
+      "number": 636,
+      "title": "ROCA Pain",
+      "date": "2017-11-07"
+    },
+    {
+      "number": 637,
+      "title": "Schneier on Equifax",
+      "date": "2017-11-14"
+    },
+    {
+      "number": 638,
+      "title": "Quad Nine",
+      "date": "2017-11-21"
+    },
+    {
+      "number": 639,
+      "title": "News & Feedback",
+      "date": "2017-11-28"
+    },
+    {
+      "number": 640,
+      "title": "More News & Feedback",
+      "date": "2017-12-05"
+    },
+    {
+      "number": 641,
+      "title": "The iOS 11 Security Tradeoff",
+      "date": "2017-12-12"
+    },
+    {
+      "number": 642,
+      "title": "BGP",
+      "date": "2017-12-19"
+    },
+    {
+      "number": 644,
+      "title": "NSA Fingerprints",
+      "date": "2018-01-02"
+    },
+    {
+      "number": 645,
+      "title": "The Speculation Meltdown",
+      "date": "2018-01-09"
+    },
+    {
+      "number": 646,
+      "title": "The InSpectre",
+      "date": "2018-01-16"
+    },
+    {
+      "number": 647,
+      "title": "The Dark Caracal",
+      "date": "2018-01-23"
+    },
+    {
+      "number": 648,
+      "title": "Post Spectre?",
+      "date": "2018-01-30"
+    },
+    {
+      "number": 649,
+      "title": "Meltdown & Spectre Emerge",
+      "date": "2018-02-06"
+    },
+    {
+      "number": 650,
+      "title": "Cryptocurrency Antics",
+      "date": "2018-02-13"
+    },
+    {
+      "number": 651,
+      "title": "Russian Meddling Technology",
+      "date": "2018-02-20"
+    },
+    {
+      "number": 652,
+      "title": "WebAssembly",
+      "date": "2018-02-27"
+    },
+    {
+      "number": 653,
+      "title": "\"MemCrashed\" DDoS Attacks",
+      "date": "2018-03-06"
+    },
+    {
+      "number": 654,
+      "title": "AMD Chipset Disaster",
+      "date": "2018-03-13"
+    },
+    {
+      "number": 655,
+      "title": "Pwn2Own 2018",
+      "date": "2018-03-20"
+    },
+    {
+      "number": 656,
+      "title": "TLS v1.3 Happens",
+      "date": "2018-03-27"
+    },
+    {
+      "number": 657,
+      "title": "ProtonMail",
+      "date": "2018-04-03"
+    },
+    {
+      "number": 658,
+      "title": "Deprecating TLS 1.0 & 1.1",
+      "date": "2018-04-10"
+    },
+    {
+      "number": 659,
+      "title": "Never a Dull Moment",
+      "date": "2018-04-17"
+    },
+    {
+      "number": 660,
+      "title": "Azure Sphere",
+      "date": "2018-04-24"
+    },
+    {
+      "number": 661,
+      "title": "Securing Connected Things",
+      "date": "2018-05-01"
+    },
+    {
+      "number": 662,
+      "title": "Spectre – NextGen",
+      "date": "2018-05-08"
+    },
+    {
+      "number": 663,
+      "title": "Ultra-Clever Attacks",
+      "date": "2018-05-15"
+    },
+    {
+      "number": 664,
+      "title": "SpectreNG Revealed",
+      "date": "2018-05-22"
+    },
+    {
+      "number": 665,
+      "title": "VPNFilter",
+      "date": "2018-05-29"
+    },
+    {
+      "number": 666,
+      "title": "Certificate Transparency",
+      "date": "2018-06-05"
+    },
+    {
+      "number": 667,
+      "title": "Zippity Do or Don’t",
+      "date": "2018-06-12"
+    },
+    {
+      "number": 668,
+      "title": "Lazy FP State Restore",
+      "date": "2018-06-19"
+    },
+    {
+      "number": 669,
+      "title": "Cellular Location Privacy",
+      "date": "2018-06-26"
+    },
+    {
+      "number": 670,
+      "title": "Wi-Fi Protected Access v3",
+      "date": "2018-07-03"
+    },
+    {
+      "number": 671,
+      "title": "STARTTLS Everywhere",
+      "date": "2018-07-10"
+    },
+    {
+      "number": 672,
+      "title": "All Up in Their Business",
+      "date": "2018-07-17"
+    },
+    {
+      "number": 673,
+      "title": "The Data Transfer Project",
+      "date": "2018-07-24"
+    },
+    {
+      "number": 674,
+      "title": "Attacking Bluetooth Pairing",
+      "date": "2018-07-31"
+    },
+    {
+      "number": 675,
+      "title": "New WiFi Password Attack",
+      "date": "2018-08-07"
+    },
+    {
+      "number": 676,
+      "title": "The Mega FaxSploit",
+      "date": "2018-08-14"
+    },
+    {
+      "number": 677,
+      "title": "The Foreshadow Flaw",
+      "date": "2018-08-21"
+    },
+    {
+      "number": 678,
+      "title": "Never a Dull Moment",
+      "date": "2018-08-28"
+    },
+    {
+      "number": 679,
+      "title": "SonarSnoop",
+      "date": "2018-09-04"
+    },
+    {
+      "number": 680,
+      "title": "Exploits & Updates",
+      "date": "2018-09-11"
+    },
+    {
+      "number": 681,
+      "title": "The Browser Extension Ecosystem",
+      "date": "2018-09-18"
+    },
+    {
+      "number": 682,
+      "title": "SNI Encryption",
+      "date": "2018-09-25"
+    },
+    {
+      "number": 683,
+      "title": "The Facebook Breach",
+      "date": "2018-10-02"
+    },
+    {
+      "number": 684,
+      "title": "The Supply Chain",
+      "date": "2018-10-09"
+    },
+    {
+      "number": 685,
+      "title": "Good Samaritans?",
+      "date": "2018-10-16"
+    },
+    {
+      "number": 686,
+      "title": "Libssh's Big Whoopsie!",
+      "date": "2018-10-23"
+    },
+    {
+      "number": 687,
+      "title": "Securing the Vending Machine",
+      "date": "2018-10-30"
+    },
+    {
+      "number": 688,
+      "title": "PortSmash",
+      "date": "2018-11-06"
+    },
+    {
+      "number": 689,
+      "title": "Self-Decrypting Drives",
+      "date": "2018-11-13"
+    },
+    {
+      "number": 690,
+      "title": "Are Passwords Immortal?",
+      "date": "2018-11-20"
+    },
+    {
+      "number": 691,
+      "title": "ECCploit",
+      "date": "2018-11-27"
+    },
+    {
+      "number": 692,
+      "title": "GPU RAM Image Leakage",
+      "date": "2018-12-04"
+    },
+    {
+      "number": 693,
+      "title": "Internal Bug Discovery",
+      "date": "2018-12-11"
+    },
+    {
+      "number": 694,
+      "title": "The SQLite RCE Flaw",
+      "date": "2018-12-18"
+    },
+    {
+      "number": 695,
+      "title": "Best of 2018",
+      "date": "2018-12-25"
+    },
+    {
+      "number": 696,
+      "title": "Here Comes 2019!",
+      "date": "2019-01-08"
+    },
+    {
+      "number": 697,
+      "title": "Zerodium",
+      "date": "2019-01-15"
+    },
+    {
+      "number": 698,
+      "title": "Which Mobile VPN Client?",
+      "date": "2019-01-22"
+    },
+    {
+      "number": 699,
+      "title": "Browser Extension Security",
+      "date": "2019-01-29"
+    },
+    {
+      "number": 700,
+      "title": "700 & Counting",
+      "date": "2019-02-05"
+    },
+    {
+      "number": 701,
+      "title": "Adiantum",
+      "date": "2019-02-12"
+    },
+    {
+      "number": 702,
+      "title": "Authenticity on the Internet",
+      "date": "2019-02-19"
+    },
+    {
+      "number": 703,
+      "title": "Out in the Wild",
+      "date": "2019-02-26"
+    },
+    {
+      "number": 704,
+      "title": "Careers in Bug Hunting",
+      "date": "2019-03-05"
+    },
+    {
+      "number": 705,
+      "title": "Spoiler",
+      "date": "2019-03-12"
+    },
+    {
+      "number": 706,
+      "title": "Open Source eVoting",
+      "date": "2019-03-19"
+    },
+    {
+      "number": 707,
+      "title": "Tesla, Pwned",
+      "date": "2019-03-26"
+    },
+    {
+      "number": 708,
+      "title": "Android Security",
+      "date": "2019-04-02"
+    },
+    {
+      "number": 709,
+      "title": "URL \"Ping\" Tracking",
+      "date": "2019-04-09"
+    },
+    {
+      "number": 710,
+      "title": "DragonBlood",
+      "date": "2019-04-16"
+    },
+    {
+      "number": 711,
+      "title": "DNSpionage",
+      "date": "2019-04-23"
+    },
+    {
+      "number": 712,
+      "title": "Credential Stuffing Attacks",
+      "date": "2019-04-30"
+    },
+    {
+      "number": 713,
+      "title": "Post-Coinhive Cryptojacking",
+      "date": "2019-05-07"
+    },
+    {
+      "number": 714,
+      "title": "Android \"Q\"",
+      "date": "2019-05-14"
+    },
+    {
+      "number": 715,
+      "title": "CPU.fail",
+      "date": "2019-05-21"
+    },
+    {
+      "number": 716,
+      "title": "RDP: Really Do Patch",
+      "date": "2019-05-28"
+    },
+    {
+      "number": 717,
+      "title": "The Nansh0u Campaign",
+      "date": "2019-06-04"
+    },
+    {
+      "number": 718,
+      "title": "Update Exim Now!",
+      "date": "2019-06-11"
+    },
+    {
+      "number": 719,
+      "title": "Exim Under Siege",
+      "date": "2019-06-18"
+    },
+    {
+      "number": 720,
+      "title": "Bug Bounty Business",
+      "date": "2019-06-25"
+    },
+    {
+      "number": 721,
+      "title": "Exposed Cloud Databases",
+      "date": "2019-07-02"
+    },
+    {
+      "number": 722,
+      "title": "Gem Hack & Ghost Protocol",
+      "date": "2019-07-09"
+    },
+    {
+      "number": 723,
+      "title": "Encrypting DNS",
+      "date": "2019-07-16"
+    },
+    {
+      "number": 724,
+      "title": "Hide Your RDP Now!",
+      "date": "2019-07-23"
+    },
+    {
+      "number": 725,
+      "title": "Urgent/11",
+      "date": "2019-07-30"
+    },
+    {
+      "number": 726,
+      "title": "Steve's File Sync Journey",
+      "date": "2019-08-06"
+    },
+    {
+      "number": 727,
+      "title": "Black Hat and DEF CON",
+      "date": "2019-08-13"
+    },
+    {
+      "number": 728,
+      "title": "The KNOB Is Broken",
+      "date": "2019-08-20"
+    },
+    {
+      "number": 729,
+      "title": "Next Gen Ad Privacy",
+      "date": "2019-08-27"
+    },
+    {
+      "number": 730,
+      "title": "The Ransomware Epidemic",
+      "date": "2019-09-03"
+    },
+    {
+      "number": 731,
+      "title": "DeepFakes",
+      "date": "2019-09-10"
+    },
+    {
+      "number": 732,
+      "title": "SIMjacking",
+      "date": "2019-09-17"
+    },
+    {
+      "number": 733,
+      "title": "Top 25 Bug Classes",
+      "date": "2019-09-24"
+    },
+    {
+      "number": 734,
+      "title": "The Joy of Sync",
+      "date": "2019-10-01"
+    },
+    {
+      "number": 735,
+      "title": "Makes Ya WannaCry",
+      "date": "2019-10-08"
+    },
+    {
+      "number": 736,
+      "title": "CheckM8",
+      "date": "2019-10-15"
+    },
+    {
+      "number": 737,
+      "title": "Biometric Mess",
+      "date": "2019-10-22"
+    },
+    {
+      "number": 738,
+      "title": "A Foregone Conclusion",
+      "date": "2019-10-29"
+    },
+    {
+      "number": 739,
+      "title": "DoH & BlueKeep",
+      "date": "2019-11-05"
+    },
+    {
+      "number": 740,
+      "title": "Credential Delegation",
+      "date": "2019-11-12"
+    },
+    {
+      "number": 741,
+      "title": "TPM-FAIL",
+      "date": "2019-11-19"
+    },
+    {
+      "number": 742,
+      "title": "Pushing DoH",
+      "date": "2019-11-26"
+    },
+    {
+      "number": 743,
+      "title": "Android \"StandHogg\"",
+      "date": "2019-12-03"
+    },
+    {
+      "number": 744,
+      "title": "VPN-geddon Denied",
+      "date": "2019-12-10"
+    },
+    {
+      "number": 745,
+      "title": "PlunderVolt",
+      "date": "2019-12-17"
+    },
+    {
+      "number": 746,
+      "title": "A Decade of Hacks",
+      "date": "2019-12-23"
+    },
+    {
+      "number": 747,
+      "title": "The Best of 2019",
+      "date": "2019-12-31"
+    },
+    {
+      "number": 748,
+      "title": "A Malware Lexicon",
+      "date": "2020-01-07"
+    },
+    {
+      "number": 749,
+      "title": "Win 7 - R. I. P.",
+      "date": "2020-01-14"
+    },
+    {
+      "number": 750,
+      "title": "The CurveBall CryptoAPI",
+      "date": "2020-01-21"
+    },
+    {
+      "number": 751,
+      "title": "SHAmbles",
+      "date": "2020-01-28"
+    },
+    {
+      "number": 752,
+      "title": "The Little Red Wagon",
+      "date": "2020-02-04"
+    },
+    {
+      "number": 753,
+      "title": "Promiscuous Cookies",
+      "date": "2020-02-11"
+    },
+    {
+      "number": 754,
+      "title": "The Internet of Troubles",
+      "date": "2020-02-18"
+    },
+    {
+      "number": 755,
+      "title": "Apple's Cert Surprise",
+      "date": "2020-02-25"
+    },
+    {
+      "number": 756,
+      "title": "Kr00k",
+      "date": "2020-03-03"
+    },
+    {
+      "number": 757,
+      "title": "The Fuzzy Bench",
+      "date": "2020-03-10"
+    },
+    {
+      "number": 758,
+      "title": "The SMBGHOST Fiasco",
+      "date": "2020-03-17"
+    },
+    {
+      "number": 759,
+      "title": "TRRespass",
+      "date": "2020-03-24"
+    },
+    {
+      "number": 760,
+      "title": "Folding Proteins",
+      "date": "2020-03-31"
+    },
+    {
+      "number": 761,
+      "title": "Zoom Go Boom!",
+      "date": "2020-04-07"
+    },
+    {
+      "number": 762,
+      "title": "Virus Contact Tracing",
+      "date": "2020-04-14"
+    },
+    {
+      "number": 763,
+      "title": "The COVID Effect",
+      "date": "2020-04-21"
+    },
+    {
+      "number": 764,
+      "title": "RPKI",
+      "date": "2020-04-28"
+    },
+    {
+      "number": 765,
+      "title": "An Authoritarian Internet?",
+      "date": "2020-05-05"
+    },
+    {
+      "number": 766,
+      "title": "Thunderspy",
+      "date": "2020-05-12"
+    },
+    {
+      "number": 767,
+      "title": "WiFi 6",
+      "date": "2020-05-19"
+    },
+    {
+      "number": 768,
+      "title": "Contact Tracing Apps R.I.P.",
+      "date": "2020-05-26"
+    },
+    {
+      "number": 769,
+      "title": "Zoom's E2EE Design",
+      "date": "2020-06-02"
+    },
+    {
+      "number": 770,
+      "title": "Zoom's E2EE Debacle",
+      "date": "2020-06-09"
+    },
+    {
+      "number": 771,
+      "title": "Lamphone",
+      "date": "2020-06-16"
+    },
+    {
+      "number": 772,
+      "title": "Ripple20",
+      "date": "2020-06-23"
+    },
+    {
+      "number": 773,
+      "title": "Ripple20 Too",
+      "date": "2020-06-30"
+    },
+    {
+      "number": 774,
+      "title": "123456",
+      "date": "2020-07-07"
+    },
+    {
+      "number": 775,
+      "title": "Tsunami",
+      "date": "2020-07-14"
+    },
+    {
+      "number": 776,
+      "title": "A Tale of Two Counterfeits",
+      "date": "2020-07-21"
+    },
+    {
+      "number": 777,
+      "title": "rwxrwxrwx",
+      "date": "2020-07-28"
+    },
+    {
+      "number": 778,
+      "title": "BootHole",
+      "date": "2020-08-04"
+    },
+    {
+      "number": 779,
+      "title": "Geneva",
+      "date": "2020-08-11"
+    },
+    {
+      "number": 780,
+      "title": "Microsoft's 0-Day Folly",
+      "date": "2020-08-18"
+    },
+    {
+      "number": 781,
+      "title": "SpiKey",
+      "date": "2020-08-25"
+    },
+    {
+      "number": 782,
+      "title": "I Know What You Did Last Summer",
+      "date": "2020-09-01"
+    },
+    {
+      "number": 783,
+      "title": "IoT Isolation Strategies",
+      "date": "2020-09-08"
+    },
+    {
+      "number": 784,
+      "title": "BlindSide & BLURtooth",
+      "date": "2020-09-15"
+    },
+    {
+      "number": 785,
+      "title": "Formal Verification",
+      "date": "2020-09-22"
+    },
+    {
+      "number": 786,
+      "title": "ZeroLogon++",
+      "date": "2020-09-29"
+    },
+    {
+      "number": 787,
+      "title": "Why Win7 Lives On",
+      "date": "2020-10-06"
+    },
+    {
+      "number": 788,
+      "title": "Well-Known URIs",
+      "date": "2020-10-13"
+    },
+    {
+      "number": 789,
+      "title": "Anatomy of a Ryuk Attack",
+      "date": "2020-10-20"
+    },
+    {
+      "number": 790,
+      "title": "The 25 Most Attacked Vulnerabilities",
+      "date": "2020-10-27"
+    },
+    {
+      "number": 791,
+      "title": "Chrome's Root Program",
+      "date": "2020-11-03"
+    },
+    {
+      "number": 792,
+      "title": "\"Slipstream\" NAT Firewall Bypass",
+      "date": "2020-11-10"
+    },
+    {
+      "number": 793,
+      "title": "SAD DNS",
+      "date": "2020-11-17"
+    },
+    {
+      "number": 794,
+      "title": "Cicada",
+      "date": "2020-11-25"
+    },
+    {
+      "number": 795,
+      "title": "DNS Consolidation",
+      "date": "2020-12-01"
+    },
+    {
+      "number": 796,
+      "title": "Amazon Sidewalk",
+      "date": "2020-12-08"
+    },
+    {
+      "number": 797,
+      "title": "SolarWinds",
+      "date": "2020-12-15"
+    },
+    {
+      "number": 798,
+      "title": "The Best of 2020",
+      "date": "2020-12-22"
+    },
+    {
+      "number": 799,
+      "title": "SunBurst & SuperNova",
+      "date": "2020-12-29"
+    },
+    {
+      "number": 800,
+      "title": "SolarBlizzard",
+      "date": "2021-01-05"
+    },
+    {
+      "number": 801,
+      "title": "Out With the Old",
+      "date": "2021-01-12"
+    },
+    {
+      "number": 802,
+      "title": "Where the Plaintext Is",
+      "date": "2021-01-19"
+    },
+    {
+      "number": 803,
+      "title": "Comparative Smartphone Security",
+      "date": "2021-01-26"
+    },
+    {
+      "number": 804,
+      "title": "NAT Slipstreaming 2.0",
+      "date": "2021-02-02"
+    },
+    {
+      "number": 805,
+      "title": "SCADA Scandal",
+      "date": "2021-02-09"
+    },
+    {
+      "number": 806,
+      "title": "C.O.M.B.",
+      "date": "2021-02-16"
+    },
+    {
+      "number": 807,
+      "title": "Dependency Confusion",
+      "date": "2021-02-23"
+    },
+    {
+      "number": 808,
+      "title": "CNAME Collusion",
+      "date": "2021-03-02"
+    },
+    {
+      "number": 809,
+      "title": "Hafnium",
+      "date": "2021-03-09"
+    },
+    {
+      "number": 810,
+      "title": "ProxyLogon",
+      "date": "2021-03-16"
+    },
+    {
+      "number": 811,
+      "title": "What the FLoC?",
+      "date": "2021-03-23"
+    },
+    {
+      "number": 812,
+      "title": "GIT Me Some PHP!",
+      "date": "2021-03-30"
+    },
+    {
+      "number": 813,
+      "title": "A Spy in Our Pocket",
+      "date": "2021-04-06"
+    },
+    {
+      "number": 814,
+      "title": "PwnIt and OwnIt",
+      "date": "2021-04-13"
+    },
+    {
+      "number": 815,
+      "title": "Homogeneity Attacks",
+      "date": "2021-04-20"
+    },
+    {
+      "number": 816,
+      "title": "The Mystery of AS8003",
+      "date": "2021-04-27"
+    },
+    {
+      "number": 817,
+      "title": "The Ransomware Task Force",
+      "date": "2021-05-04"
+    },
+    {
+      "number": 818,
+      "title": "News from the DarkSide",
+      "date": "2021-05-11"
+    },
+    {
+      "number": 819,
+      "title": "The WiFi Frag Attacks",
+      "date": "2021-05-18"
+    },
+    {
+      "number": 820,
+      "title": "The Dark Escrow",
+      "date": "2021-05-25"
+    },
+    {
+      "number": 821,
+      "title": "Epsilon Red",
+      "date": "2021-06-01"
+    },
+    {
+      "number": 822,
+      "title": "Extrinsic Password Managers",
+      "date": "2021-06-08"
+    },
+    {
+      "number": 823,
+      "title": "TLS Confusion Attacks",
+      "date": "2021-06-15"
+    },
+    {
+      "number": 824,
+      "title": "Avaddon Ransonomics",
+      "date": "2021-06-22"
+    },
+    {
+      "number": 825,
+      "title": "Halfway through 2021",
+      "date": "2021-06-29"
+    },
+    {
+      "number": 826,
+      "title": "The Kaseya Saga",
+      "date": "2021-07-06"
+    },
+    {
+      "number": 827,
+      "title": "REvil's Clever Crypto",
+      "date": "2021-07-13"
+    },
+    {
+      "number": 828,
+      "title": "REvil Vanishes!",
+      "date": "2021-07-20"
+    },
+    {
+      "number": 829,
+      "title": "SeriousSAM & PetitPotam",
+      "date": "2021-07-27"
+    },
+    {
+      "number": 830,
+      "title": "The BlackMatter Interview",
+      "date": "2021-08-03"
+    },
+    {
+      "number": 831,
+      "title": "Apple's CSAM Mistake",
+      "date": "2021-08-10"
+    },
+    {
+      "number": 832,
+      "title": "Microsoft's Culpable Negligence",
+      "date": "2021-08-17"
+    },
+    {
+      "number": 833,
+      "title": "Microsoft's Reasoned Neglect",
+      "date": "2021-08-24"
+    },
+    {
+      "number": 834,
+      "title": "Life: Hanging by a PIN",
+      "date": "2021-08-31"
+    },
+    {
+      "number": 835,
+      "title": "TPM 1.2 vs 2.0",
+      "date": "2021-09-07"
+    },
+    {
+      "number": 836,
+      "title": "The Meris Botnet",
+      "date": "2021-09-14"
+    },
+    {
+      "number": 837,
+      "title": "Cobalt Strike",
+      "date": "2021-09-21"
+    },
+    {
+      "number": 838,
+      "title": "autodiscover.fiasco",
+      "date": "2021-09-28"
+    },
+    {
+      "number": 839,
+      "title": "\"Something Went Wrong\"",
+      "date": "2021-10-05"
+    },
+    {
+      "number": 840,
+      "title": "0-Day Angst",
+      "date": "2021-10-12"
+    },
+    {
+      "number": 841,
+      "title": "Minh Duong's Epic Rickroll",
+      "date": "2021-10-19"
+    },
+    {
+      "number": 842,
+      "title": "The More Things Change...",
+      "date": "2021-10-26"
+    },
+    {
+      "number": 843,
+      "title": "Trojan Source",
+      "date": "2021-11-02"
+    },
+    {
+      "number": 844,
+      "title": "Bluetooth Fingerprinting",
+      "date": "2021-11-09"
+    },
+    {
+      "number": 845,
+      "title": "Blacksmith",
+      "date": "2021-11-16"
+    },
+    {
+      "number": 846,
+      "title": "HTTP Request Smuggling",
+      "date": "2021-11-23"
+    },
+    {
+      "number": 847,
+      "title": "Bogons Begone!",
+      "date": "2021-11-30"
+    },
+    {
+      "number": 848,
+      "title": "XSinator",
+      "date": "2021-12-07"
+    },
+    {
+      "number": 849,
+      "title": "Log4j & Log4Shell",
+      "date": "2021-12-14"
+    },
+    {
+      "number": 850,
+      "title": "It's a Log4j Christmas",
+      "date": "2021-12-21"
+    },
+    {
+      "number": 851,
+      "title": "Best of 2021",
+      "date": "2021-12-28"
+    },
+    {
+      "number": 852,
+      "title": "December 33rd",
+      "date": "2022-01-04"
+    },
+    {
+      "number": 853,
+      "title": "URL Parsing Vulnerabilities",
+      "date": "2022-01-11"
+    },
+    {
+      "number": 854,
+      "title": "Anatomy of a Log4j Exploit",
+      "date": "2022-01-18"
+    },
+    {
+      "number": 855,
+      "title": "Inside the NetUSB Hack",
+      "date": "2022-01-25"
+    },
+    {
+      "number": 856,
+      "title": "The \"Topics\" API",
+      "date": "2022-02-01"
+    },
+    {
+      "number": 857,
+      "title": "The Inept Panda",
+      "date": "2022-02-08"
+    },
+    {
+      "number": 858,
+      "title": "InControl",
+      "date": "2022-02-15"
+    },
+    {
+      "number": 859,
+      "title": "A BGP Routing Attack",
+      "date": "2022-02-22"
+    },
+    {
+      "number": 860,
+      "title": "Trust Dies in Darkness",
+      "date": "2022-03-01"
+    },
+    {
+      "number": 861,
+      "title": "Rogue Nation Cyber Consequences",
+      "date": "2022-03-08"
+    },
+    {
+      "number": 862,
+      "title": "QWACs On? or QWACs Off?",
+      "date": "2022-03-15"
+    },
+    {
+      "number": 863,
+      "title": "User After Free",
+      "date": "2022-03-22"
+    },
+    {
+      "number": 864,
+      "title": "Targeted Exploitation",
+      "date": "2022-03-29"
+    },
+    {
+      "number": 865,
+      "title": "Port Knocking",
+      "date": "2022-04-05"
+    },
+    {
+      "number": 866,
+      "title": "Spring4Shell",
+      "date": "2022-04-12"
+    },
+    {
+      "number": 867,
+      "title": "A Critical Windows RPC RCE",
+      "date": "2022-04-19"
+    },
+    {
+      "number": 868,
+      "title": "The 0-Day Explosion",
+      "date": "2022-04-26"
+    },
+    {
+      "number": 869,
+      "title": "Global Privacy Control",
+      "date": "2022-05-03"
+    },
+    {
+      "number": 870,
+      "title": "That \"Passkeys\" Thing",
+      "date": "2022-05-10"
+    },
+    {
+      "number": 871,
+      "title": "The New EU Surveillance State",
+      "date": "2022-05-17"
+    },
+    {
+      "number": 872,
+      "title": "Dis-CONTI-nued: The End of Conti?",
+      "date": "2022-05-24"
+    },
+    {
+      "number": 873,
+      "title": "DuckDuckGone?",
+      "date": "2022-05-31"
+    },
+    {
+      "number": 874,
+      "title": "Passkeys, Take 2",
+      "date": "2022-06-07"
+    },
+    {
+      "number": 875,
+      "title": "The PACMAN Attack",
+      "date": "2022-06-14"
+    },
+    {
+      "number": 876,
+      "title": "Microsoft's Patchy Patches",
+      "date": "2022-06-21"
+    },
+    {
+      "number": 877,
+      "title": "The \"Hertzbleed\" Attack",
+      "date": "2022-06-28"
+    },
+    {
+      "number": 878,
+      "title": "The ZuoRAT",
+      "date": "2022-07-05"
+    },
+    {
+      "number": 879,
+      "title": "The Rolling Pwn",
+      "date": "2022-07-12"
+    },
+    {
+      "number": 880,
+      "title": "RetBleed",
+      "date": "2022-07-19"
+    },
+    {
+      "number": 881,
+      "title": "The MV720",
+      "date": "2022-07-26"
+    },
+    {
+      "number": 882,
+      "title": "Rowhammer's Nine Lives",
+      "date": "2022-08-02"
+    },
+    {
+      "number": 883,
+      "title": "The Maker's Schedule",
+      "date": "2022-08-09"
+    },
+    {
+      "number": 884,
+      "title": "TLS Private Key Leakage",
+      "date": "2022-08-16"
+    },
+    {
+      "number": 885,
+      "title": "The Bumblebee Loader",
+      "date": "2022-08-23"
+    },
+    {
+      "number": 886,
+      "title": "Wacky Data Exfiltration",
+      "date": "2022-08-23"
+    },
+    {
+      "number": 887,
+      "title": "Embedding AWS Credentials",
+      "date": "2022-09-06"
+    },
+    {
+      "number": 888,
+      "title": "The EvilProxy Service",
+      "date": "2022-09-13"
+    },
+    {
+      "number": 889,
+      "title": "Spell-Jacking",
+      "date": "2022-09-20"
+    },
+    {
+      "number": 890,
+      "title": "DarkNet Politics",
+      "date": "2022-09-27"
+    },
+    {
+      "number": 891,
+      "title": "Poisoning Akamai",
+      "date": "2022-10-04"
+    },
+    {
+      "number": 892,
+      "title": "Source Port Randomization",
+      "date": "2022-10-11"
+    },
+    {
+      "number": 893,
+      "title": "Password Change Automation",
+      "date": "2022-10-18"
+    },
+    {
+      "number": 894,
+      "title": "Data Breach Responsibility",
+      "date": "2022-10-25"
+    },
+    {
+      "number": 895,
+      "title": "After 20 years in GCHQ",
+      "date": "2022-11-01"
+    },
+    {
+      "number": 896,
+      "title": "Something for Everyone",
+      "date": "2022-11-08"
+    },
+    {
+      "number": 897,
+      "title": "Memory-Safe Languages",
+      "date": "2022-11-15"
+    },
+    {
+      "number": 898,
+      "title": "Wi-Peep",
+      "date": "2022-11-22"
+    },
+    {
+      "number": 899,
+      "title": "Freebie Bots & Evil Cameras",
+      "date": "2022-11-29"
+    },
+    {
+      "number": 900,
+      "title": "LastPass, Again",
+      "date": "2022-12-06"
+    },
+    {
+      "number": 901,
+      "title": "Apple Encrypts the Cloud",
+      "date": "2022-12-13"
+    },
+    {
+      "number": 902,
+      "title": "A Generic WAF Bypass",
+      "date": "2022-12-20"
+    },
+    {
+      "number": 903,
+      "title": "The Best of 2022",
+      "date": "2022-12-27"
+    },
+    {
+      "number": 904,
+      "title": "Leaving LastPass",
+      "date": "2023-01-03"
+    },
+    {
+      "number": 905,
+      "title": "1",
+      "date": "2023-01-10"
+    },
+    {
+      "number": 906,
+      "title": "The Rule of Two",
+      "date": "2023-01-17"
+    },
+    {
+      "number": 907,
+      "title": "Credential Reuse",
+      "date": "2023-01-24"
+    },
+    {
+      "number": 908,
+      "title": "Data Operand Independent Timing",
+      "date": "2023-01-31"
+    },
+    {
+      "number": 909,
+      "title": "How ESXi Fell",
+      "date": "2023-02-07"
+    },
+    {
+      "number": 910,
+      "title": "Ascon",
+      "date": "2023-02-14"
+    },
+    {
+      "number": 911,
+      "title": "A Clever Regurgitator",
+      "date": "2023-02-21"
+    },
+    {
+      "number": 912,
+      "title": "The NSA @ Home",
+      "date": "2023-02-28"
+    },
+    {
+      "number": 913,
+      "title": "A Fowl Incident",
+      "date": "2023-03-07"
+    },
+    {
+      "number": 914,
+      "title": "Sony Sues Quad9",
+      "date": "2023-03-14"
+    },
+    {
+      "number": 915,
+      "title": "Flying Trojan Horses",
+      "date": "2023-03-21"
+    },
+    {
+      "number": 916,
+      "title": "Microsoft's Email Extortion",
+      "date": "2023-03-28"
+    },
+    {
+      "number": 917,
+      "title": "Zombie Software",
+      "date": "2023-04-04"
+    },
+    {
+      "number": 918,
+      "title": "A Dangerous Interpretation",
+      "date": "2023-04-11"
+    },
+    {
+      "number": 919,
+      "title": "Forced Entry",
+      "date": "2023-04-18"
+    },
+    {
+      "number": 920,
+      "title": "An End-to-End Encryption Proposal",
+      "date": "2023-04-25"
+    },
+    {
+      "number": 921,
+      "title": "OSB OMG and other news!",
+      "date": "2023-05-02"
+    },
+    {
+      "number": 922,
+      "title": "Detecting Unwanted Location Trackers",
+      "date": "2023-05-09"
+    },
+    {
+      "number": 923,
+      "title": "Location Tracker Behavior",
+      "date": "2023-05-16"
+    },
+    {
+      "number": 924,
+      "title": "VCaaS - Voice Cloning as a Service",
+      "date": "2023-05-23"
+    },
+    {
+      "number": 925,
+      "title": "Brave's Brilliant Off the Record Request",
+      "date": "2023-05-30"
+    },
+    {
+      "number": 926,
+      "title": "Windows Platform Binary Table",
+      "date": "2023-06-06"
+    },
+    {
+      "number": 927,
+      "title": "Scanning the Internet",
+      "date": "2023-06-13"
+    },
+    {
+      "number": 928,
+      "title": "The Massive MOVEit Maelstrom",
+      "date": "2023-06-20"
+    },
+    {
+      "number": 929,
+      "title": "Operation Triangulation",
+      "date": "2023-06-27"
+    },
+    {
+      "number": 930,
+      "title": "Rowhammer Indelible Fingerprinting",
+      "date": "2023-07-11"
+    },
+    {
+      "number": 931,
+      "title": "Satellite Insecurity, Part 1",
+      "date": "2023-07-18"
+    },
+    {
+      "number": 932,
+      "title": "Satellite Insecurity, Part 2",
+      "date": "2023-07-25"
+    },
+    {
+      "number": 933,
+      "title": "TETRA:BURST",
+      "date": "2023-08-01"
+    },
+    {
+      "number": 934,
+      "title": "Revisiting Global Privacy Control",
+      "date": "2023-08-08"
+    },
+    {
+      "number": 935,
+      "title": "\"Topics\" Arrives",
+      "date": "2023-08-15"
+    },
+    {
+      "number": 936,
+      "title": "When Heuristics Backfire",
+      "date": "2023-08-22"
+    },
+    {
+      "number": 937,
+      "title": "The Man in the Middle",
+      "date": "2023-08-29"
+    },
+    {
+      "number": 938,
+      "title": "Apple Says No",
+      "date": "2023-09-05"
+    },
+    {
+      "number": 939,
+      "title": "LastMess",
+      "date": "2023-09-12"
+    },
+    {
+      "number": 940,
+      "title": "When Hashes Collide",
+      "date": "2023-09-19"
+    },
+    {
+      "number": 941,
+      "title": "We told you so!",
+      "date": "2023-09-26"
+    },
+    {
+      "number": 942,
+      "title": "Encrypting Client Hello",
+      "date": "2023-10-03"
+    },
+    {
+      "number": 943,
+      "title": "The Top 10 Cybersecurity Misconfigurations",
+      "date": "2023-10-10"
+    },
+    {
+      "number": 944,
+      "title": "Abusing HTTP/2 Rapid Reset",
+      "date": "2023-10-17"
+    },
+    {
+      "number": 945,
+      "title": "The Power of Privilege",
+      "date": "2023-10-24"
+    },
+    {
+      "number": 946,
+      "title": "Citrix Bleed",
+      "date": "2023-10-31"
+    },
+    {
+      "number": 947,
+      "title": "Article 45",
+      "date": "2023-11-07"
+    },
+    {
+      "number": 948,
+      "title": "What is a Bit Flipped?",
+      "date": "2023-11-14"
+    },
+    {
+      "number": 949,
+      "title": "Ethernet turned 50",
+      "date": "2023-11-21"
+    },
+    {
+      "number": 950,
+      "title": "Leo Turns 67",
+      "date": "2023-11-28"
+    },
+    {
+      "number": 951,
+      "title": "Revisiting Browser Trust",
+      "date": "2023-12-05"
+    },
+    {
+      "number": 952,
+      "title": "Quantum Computing Breakthrough",
+      "date": "2023-12-12"
+    },
+    {
+      "number": 953,
+      "title": "\"Active Listening\"",
+      "date": "2023-12-19"
+    },
+    {
+      "number": 954,
+      "title": "Best of 2023",
+      "date": "2023-12-26"
+    },
+    {
+      "number": 955,
+      "title": "The Mystery of CVE-2023-38606",
+      "date": "2024-01-02"
+    },
+    {
+      "number": 956,
+      "title": "The Inside Tracks",
+      "date": "2024-01-09"
+    },
+    {
+      "number": 957,
+      "title": "The Protected Audience API",
+      "date": "2024-01-16"
+    },
+    {
+      "number": 958,
+      "title": "A Week of News and Listener Views",
+      "date": "2024-01-23"
+    },
+    {
+      "number": 959,
+      "title": "Stamos on \"Microsoft Security\"",
+      "date": "2024-01-30"
+    },
+    {
+      "number": 960,
+      "title": "Unforeseen Consequences",
+      "date": "2024-02-06"
+    },
+    {
+      "number": 961,
+      "title": "Bitlocker: Cracked or Chipped?",
+      "date": "2024-02-13"
+    },
+    {
+      "number": 962,
+      "title": "The Internet Dodged a Bullet",
+      "date": "2024-02-20"
+    },
+    {
+      "number": 963,
+      "title": "Web Portal? Yes Please!",
+      "date": "2024-02-27"
+    },
+    {
+      "number": 964,
+      "title": "PQ3",
+      "date": "2024-03-05"
+    },
+    {
+      "number": 965,
+      "title": "Passkeys vs 2FA",
+      "date": "2024-03-12"
+    },
+    {
+      "number": 966,
+      "title": "Morris The Second",
+      "date": "2024-03-19"
+    },
+    {
+      "number": 967,
+      "title": "GoFetch",
+      "date": "2024-03-26"
+    },
+    {
+      "number": 968,
+      "title": "A Cautionary Tale",
+      "date": "2024-04-02"
+    },
+    {
+      "number": 969,
+      "title": "Minimum Viable Secure Product",
+      "date": "2024-04-09"
+    },
+    {
+      "number": 970,
+      "title": "GhostRace",
+      "date": "2024-04-16"
+    },
+    {
+      "number": 971,
+      "title": "Chat (out of) Control",
+      "date": "2024-04-23"
+    },
+    {
+      "number": 972,
+      "title": "Passkeys: A Shattered Dream?",
+      "date": "2024-04-30"
+    },
+    {
+      "number": 973,
+      "title": "Not So Fast",
+      "date": "2024-05-07"
+    },
+    {
+      "number": 974,
+      "title": "Microsoft's head in the Clouds",
+      "date": "2024-05-14"
+    },
+    {
+      "number": 975,
+      "title": "312 Scientists & Researchers Respond",
+      "date": "2024-05-21"
+    },
+    {
+      "number": 976,
+      "title": "The 50 Gigabyte Privacy Bomb",
+      "date": "2024-05-28"
+    },
+    {
+      "number": 977,
+      "title": "A Large Language Model in Every Pot",
+      "date": "2024-06-04"
+    },
+    {
+      "number": 978,
+      "title": "The rise and fall of code.microsoft.com",
+      "date": "2024-06-11"
+    },
+    {
+      "number": 979,
+      "title": "The Angle of the Dangle",
+      "date": "2024-06-18"
+    },
+    {
+      "number": 980,
+      "title": "The Mixed Blessing of a Crappy PRNG",
+      "date": "2024-06-25"
+    },
+    {
+      "number": 981,
+      "title": "The End of Entrust Trust",
+      "date": "2024-07-02"
+    },
+    {
+      "number": 982,
+      "title": "The Polyfill.io Attack",
+      "date": "2024-07-09"
+    },
+    {
+      "number": 983,
+      "title": "A Snowflake's Chance",
+      "date": "2024-07-16"
+    },
+    {
+      "number": 984,
+      "title": "CrowdStruck",
+      "date": "2024-07-23"
+    },
+    {
+      "number": 985,
+      "title": "Platform Key Disclosure",
+      "date": "2024-07-30"
+    },
+    {
+      "number": 986,
+      "title": "How Revoking!",
+      "date": "2024-08-06"
+    },
+    {
+      "number": 987,
+      "title": "Revisiting Revocation",
+      "date": "2024-08-13"
+    },
+    {
+      "number": 988,
+      "title": "National Public Data",
+      "date": "2024-08-20"
+    },
+    {
+      "number": 989,
+      "title": "Cascading Bloom Filters",
+      "date": "2024-08-27"
+    },
+    {
+      "number": 990,
+      "title": "Is Telegram an Encrypted App?",
+      "date": "2024-09-03"
+    },
+    {
+      "number": 991,
+      "title": "RAMBO",
+      "date": "2024-09-10"
+    },
+    {
+      "number": 992,
+      "title": "Password Manager Injection Attacks",
+      "date": "2024-09-17"
+    },
+    {
+      "number": 993,
+      "title": "Kaspersky exits the U.S.",
+      "date": "2024-09-24"
+    },
+    {
+      "number": 994,
+      "title": "Recall's Re-Rollout",
+      "date": "2024-10-01"
+    },
+    {
+      "number": 995,
+      "title": "uBlock Origin & Manifest V3",
+      "date": "2024-10-08"
+    },
+    {
+      "number": 996,
+      "title": "BIMI (up Scotty)",
+      "date": "2024-10-15"
+    },
+    {
+      "number": 997,
+      "title": "Credential Exchange Protocol",
+      "date": "2024-10-22"
+    },
+    {
+      "number": 998,
+      "title": "The Endless Journey to IPv6",
+      "date": "2024-10-29"
+    },
+    {
+      "number": 999,
+      "title": "AI Vulnerability Discovery",
+      "date": "2024-11-05"
+    },
+    {
       "number": 1000,
       "title": "One Thousand!",
       "subtitle": "Twenty years, four digits, and a full week of news",
       "date": "2024-11-12",
       "file": "sn-1000.json"
+    },
+    {
+      "number": 1001,
+      "title": "Artificial General Intelligence (AGI)",
+      "date": "2024-11-19"
+    },
+    {
+      "number": 1002,
+      "title": "Disconnected Experiences",
+      "date": "2024-11-26"
+    },
+    {
+      "number": 1003,
+      "title": "A Light-Day Away",
+      "date": "2024-12-03"
+    },
+    {
+      "number": 1004,
+      "title": "A Chat with GPT",
+      "date": "2024-12-10"
+    },
+    {
+      "number": 1005,
+      "title": "6-Day Certificates? Why?",
+      "date": "2024-12-17"
+    },
+    {
+      "number": 1006,
+      "title": "The Best of 2024",
+      "date": "2024-12-24"
+    },
+    {
+      "number": 1007,
+      "title": "AI Training & Inference",
+      "date": "2025-01-07"
+    },
+    {
+      "number": 1008,
+      "title": "HOTP and TOTP",
+      "date": "2025-01-14"
+    },
+    {
+      "number": 1009,
+      "title": "Attacking TOTP",
+      "date": "2025-01-21"
+    },
+    {
+      "number": 1010,
+      "title": "DNS over TLS",
+      "date": "2025-01-28"
+    },
+    {
+      "number": 1011,
+      "title": "Jailbreaking AI",
+      "date": "2025-02-04"
+    },
+    {
+      "number": 1012,
+      "title": "Hiding School Cyberattacks",
+      "date": "2025-02-11"
+    },
+    {
+      "number": 1013,
+      "title": "Chrome Web Store is a mess",
+      "date": "2025-02-18"
+    },
+    {
+      "number": 1014,
+      "title": "FREEDOM Administration Login",
+      "date": "2025-02-25"
+    },
+    {
+      "number": 1015,
+      "title": "Spatial-Domain Wireless Jamming",
+      "date": "2025-03-04"
+    },
+    {
+      "number": 1016,
+      "title": "The Bluetooth Backdoor",
+      "date": "2025-03-11"
+    },
+    {
+      "number": 1017,
+      "title": "Is YOUR System Vulnerable to RowHammer?",
+      "date": "2025-03-18"
+    },
+    {
+      "number": 1018,
+      "title": "The Quantum Threat",
+      "date": "2025-03-25"
+    },
+    {
+      "number": 1019,
+      "title": "EU OS",
+      "date": "2025-04-01"
+    },
+    {
+      "number": 1020,
+      "title": "Multi-Perspective Issuance Corroboration",
+      "date": "2025-04-08"
+    },
+    {
+      "number": 1021,
+      "title": "Device Bound Session Credentials",
+      "date": "2025-04-15"
+    },
+    {
+      "number": 1022,
+      "title": "Windows Sandbox",
+      "date": "2025-04-22"
+    },
+    {
+      "number": 1023,
+      "title": "Preventing Windows Sandbox Abuse",
+      "date": "2025-04-29"
+    },
+    {
+      "number": 1024,
+      "title": "Don't Blame Signal",
+      "date": "2025-05-06"
+    },
+    {
+      "number": 1025,
+      "title": "Secure Conversation Records Retention",
+      "date": "2025-05-13"
+    },
+    {
+      "number": 1026,
+      "title": "Rogue Comms Tech Found in US Power Grid",
+      "date": "2025-05-20"
+    },
+    {
+      "number": 1027,
+      "title": "Artificial Intelligence",
+      "date": "2025-05-27"
+    },
+    {
+      "number": 1028,
+      "title": "AI Vulnerability Hunting",
+      "date": "2025-06-03"
+    },
+    {
+      "number": 1029,
+      "title": "The Illusion of Thinking",
+      "date": "2025-06-10"
+    },
+    {
+      "number": 1030,
+      "title": "Internet Foreground Radiation",
+      "date": "2025-06-17"
+    },
+    {
+      "number": 1031,
+      "title": "How Salt Typhoon gets in",
+      "date": "2025-06-24"
+    },
+    {
+      "number": 1032,
+      "title": "Pervasive Web Fingerprinting",
+      "date": "2025-07-01"
+    },
+    {
+      "number": 1033,
+      "title": "Going on the Offensive",
+      "date": "2025-07-08"
+    },
+    {
+      "number": 1034,
+      "title": "Introduction to Zero Knowledge Proofs",
+      "date": "2025-07-15"
+    },
+    {
+      "number": 1035,
+      "title": "Cloudflare's 1.1.1.1 Outage",
+      "date": "2025-07-22"
+    },
+    {
+      "number": 1036,
+      "title": "Inside the SharePoint 0-day RCE",
+      "date": "2025-07-29"
+    },
+    {
+      "number": 1037,
+      "title": "Chinese Participation in MAPP",
+      "date": "2025-08-05"
+    },
+    {
+      "number": 1038,
+      "title": "Perplexity's Duplicity",
+      "date": "2025-08-12"
+    },
+    {
+      "number": 1039,
+      "title": "The Sad Case of ScriptCase",
+      "date": "2025-08-19"
+    },
+    {
+      "number": 1040,
+      "title": "Clickjacking \"Whac-A-Mole\"",
+      "date": "2025-08-26"
+    },
+    {
+      "number": 1041,
+      "title": "Covering all the bases",
+      "date": "2025-09-02"
+    },
+    {
+      "number": 1042,
+      "title": "Letters of Marque",
+      "date": "2025-09-09"
+    },
+    {
+      "number": 1043,
+      "title": "Memory Integrity Enforcement",
+      "date": "2025-09-16"
+    },
+    {
+      "number": 1044,
+      "title": "The EU's Online Age Verification",
+      "date": "2025-09-23"
+    },
+    {
+      "number": 1045,
+      "title": "News and Listener Views",
+      "date": "2025-09-30"
+    },
+    {
+      "number": 1046,
+      "title": "Google's Developer Registration Decree",
+      "date": "2025-10-07"
+    },
+    {
+      "number": 1047,
+      "title": "RediShell's CVSS 10.0",
+      "date": "2025-10-14"
+    },
+    {
+      "number": 1048,
+      "title": "Mic-E-Mouse",
+      "date": "2025-10-21"
+    },
+    {
+      "number": 1049,
+      "title": "DNS Cache Poisoning Returns",
+      "date": "2025-10-28"
+    },
+    {
+      "number": 1050,
+      "title": "Here Come the AI Browsers",
+      "date": "2025-11-04"
+    },
+    {
+      "number": 1051,
+      "title": "Amazon sues Perplexity",
+      "date": "2025-11-11"
+    },
+    {
+      "number": 1052,
+      "title": "Global Cellphone Tracking",
+      "date": "2025-11-18"
+    },
+    {
+      "number": 1053,
+      "title": "Banning VPNs",
+      "date": "2025-11-25"
+    },
+    {
+      "number": 1054,
+      "title": "Bots in the Belfry",
+      "date": "2025-12-02"
+    },
+    {
+      "number": 1055,
+      "title": "React's Perfect 10",
+      "date": "2025-12-09"
+    },
+    {
+      "number": 1056,
+      "title": "Australia",
+      "date": "2025-12-16"
+    },
+    {
+      "number": 1057,
+      "title": "GhostPoster",
+      "date": "2025-12-23"
+    },
+    {
+      "number": 1059,
+      "title": "MongoBleed",
+      "date": "2026-01-06"
+    },
+    {
+      "number": 1060,
+      "title": "3-Day Certificates",
+      "date": "2026-01-13"
+    },
+    {
+      "number": 1061,
+      "title": "More GhostPoster",
+      "date": "2026-01-20"
+    },
+    {
+      "number": 1062,
+      "title": "VoidLink: AI-Generated Malware",
+      "date": "2026-01-27"
+    },
+    {
+      "number": 1063,
+      "title": "Mongo's Too Easy",
+      "date": "2026-02-03"
+    },
+    {
+      "number": 1064,
+      "title": "Least Privilege",
+      "date": "2026-02-10"
+    },
+    {
+      "number": 1065,
+      "title": "Attestation",
+      "date": "2026-02-17"
+    },
+    {
+      "number": 1066,
+      "title": "Password Leakage",
+      "date": "2026-02-24"
+    },
+    {
+      "number": 1067,
+      "title": "KongTuke's CrashFix",
+      "date": "2026-03-03"
+    },
+    {
+      "number": 1068,
+      "title": "The Call is Coming from Inside the House",
+      "date": "2026-03-04"
+    },
+    {
+      "number": 1069,
+      "title": "You can't hide from LLMs",
+      "date": "2026-03-10"
+    },
+    {
+      "number": 1070,
+      "title": "CISA's Free Internet Scanning",
+      "date": "2026-03-17"
+    },
+    {
+      "number": 1071,
+      "title": "Bucketsquatting",
+      "date": "2026-03-24"
+    },
+    {
+      "number": 1072,
+      "title": "LiteLLM",
+      "date": "2026-03-31"
+    },
+    {
+      "number": 1073,
+      "title": "The FCC Bans New Consumer Routers",
+      "date": "2026-04-07"
+    },
+    {
+      "number": 1074,
+      "title": "What Mythos Means",
+      "date": "2026-04-14"
+    },
+    {
+      "number": 1075,
+      "title": "Yes. Exactly.",
+      "date": "2026-04-21"
+    },
+    {
+      "number": 1076,
+      "title": "FAST16.SYS",
+      "date": "2026-04-28"
+    },
+    {
+      "number": 1077,
+      "title": "A Browser AI API?",
+      "date": "2026-05-05"
+    },
+    {
+      "number": 1078,
+      "title": "DigiCert Does It Right",
+      "date": "2026-05-12"
+    },
+    {
+      "number": 1079,
+      "title": "Daybreak and Codename MDASH",
+      "date": "2026-05-19"
+    },
+    {
+      "number": 1080,
+      "title": "Vulnerability Debt Repayment",
+      "date": "2026-05-26"
+    },
+    {
+      "number": 1081,
+      "title": "AI Captures the Flag",
+      "date": "2026-06-02"
+    },
+    {
+      "number": 1082,
+      "title": "The Malicious Use of AI",
+      "date": "2026-06-09"
+    },
+    {
+      "number": 1083,
+      "title": "Patch Tuesday à la AI",
+      "date": "2026-06-16"
+    },
+    {
+      "number": 1084,
+      "title": "The Residential Proxy Threat",
+      "date": "2026-06-23"
+    },
+    {
+      "number": 1085,
+      "title": "A SOTA State-Sponsored Campaign",
+      "date": "2026-06-30"
+    },
+    {
+      "number": 1086,
+      "title": "The Apex Agentic Adversary",
+      "date": "2026-07-07"
+    },
+    {
+      "number": 1087,
+      "title": "HalluSquatting, GhostApproval & GitLost",
+      "date": "2026-07-14"
+    },
+    {
+      "number": 1088,
+      "title": "A nefarious novel use for AI",
+      "date": "2026-07-21"
+    },
+    {
+      "number": 1089,
+      "title": "Models Go Rogue & ExploitGym",
+      "date": "2026-07-28"
+    },
+    {
+      "number": 1090,
+      "title": "Black Hat - The Hidden Flaws in AI Security Nobody Saw Coming",
+      "date": "2026-08-05"
+    },
+    {
+      "number": 1091,
+      "title": "The Post BlackHat State of AI",
+      "date": "2026-08-11"
+    },
+    {
+      "number": 1092,
+      "title": "Restraint Abliteration",
+      "date": "2026-08-18"
+    },
+    {
+      "number": 1093,
+      "title": "Tokens in the Stream",
+      "date": "2026-08-25"
+    },
+    {
+      "number": 1094,
+      "title": "AI Patching Shortcomings",
+      "date": "2026-09-01"
+    },
+    {
+      "number": 1095,
+      "title": "AI-Driven Expertise Loss",
+      "date": "2026-09-08"
+    },
+    {
+      "number": 1096,
+      "title": "Are we the Krell?",
+      "date": "2026-09-15"
+    },
+    {
+      "number": 1097,
+      "title": "Mega Patch Tuesday Fallout",
+      "date": "2026-09-22"
+    },
+    {
+      "number": 1098,
+      "title": "How worried should we be?",
+      "date": "2026-09-29"
+    },
+    {
+      "number": 1099,
+      "title": "An Alien Mind",
+      "date": "2026-10-06"
+    },
+    {
+      "number": 1100,
+      "title": "Booby Trapping LLMs",
+      "date": "2026-10-13"
+    },
+    {
+      "number": 1101,
+      "title": "ECDSA's Curves Origins",
+      "date": "2026-10-20"
+    },
+    {
+      "number": 1102,
+      "title": "A Strategic Plug Pull",
+      "date": "2026-10-27"
+    },
+    {
+      "number": 1103,
+      "title": "Exposing Bad Consumer Crypto",
+      "date": "2026-11-03"
+    },
+    {
+      "number": 1104,
+      "title": "The Hole in OpenSSH",
+      "date": "2026-11-10"
     }
   ]
 }

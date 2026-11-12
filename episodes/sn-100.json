@@ -1,0 +1,612 @@
+{
+  "number": 100,
+  "title": "Listener Feedback Q&A #21",
+  "subtitle": "The 100th episode: twelve listener questions",
+  "date": "2007-07-12",
+  "description": "For the 100th episode, Steve and Leo answer a dozen listeners: a risky university password-reset plan, a 128 GB host for virtual machines, a flood of postcard spam, failing laptop drives, TreeSize versus SpaceMonger, whether stolen biometrics are lost forever, the ID Vault token, VPNs and home printers, Firefox add-ons versus ActiveX, ISPs and botnets, cellular encryption and protecting stored fingerprints. Plus a SpinRite rescue for an Alaska prosecutor.",
+  "transcript": "https://www.grc.com/sn/sn-100.txt",
+  "audio": "http://media.GRC.com/sn/SN-100.mp3",
+  "chapters": [
+    {
+      "title": "Episode 100",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's Security Now!, our 100th episode. We need streamers. We're recording on the 4th of July, and no fireworks."
+        },
+        {
+          "s": "leo",
+          "t": "Congratulations, Steve, and thanks for letting us carry this on TWiT. After TWiT, it's the flagship podcast, the one everybody talks about."
+        },
+        {
+          "s": "steve",
+          "t": "I'm really happy we did it. I wouldn't be doing it without you. You make me get up every morning and think about next week."
+        },
+        {
+          "s": "steve",
+          "t": "At my Harvard keynote, I was surprised how many people in the audience were listeners. Sure, it's that kind of audience. But this matters to people."
+        },
+        {
+          "s": "leo",
+          "t": "100 divided by 4 is 25, so it's a Q&A, our 21st."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves an Alaska Prosecutor",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, a story I love. David Mitchell, a part-time network admin and full-time student, recommended SpinRite to his brother. It didn't help; his drive was making noises, so it was likely hardware."
+        },
+        {
+          "s": "steve",
+          "t": "His mom is a district attorney in Alaska. A man electrocuted himself and took out the small town's power grid, and afterward her Windows wouldn't boot."
+        },
+        {
+          "s": "steve",
+          "t": "She had serious cases before a grand jury. The best IT could do was have her ship the PC to Anchorage for repair, risking her case files. So from the East Coast, David had her use his brother's paid-for copy of SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Her email to him was headed \"You are the man!\" with about 15 exclamation points. After days of failure, and tears on the phone with her office manager, she scrounged a floppy for SpinRite on her day off. It worked. She restored Windows from the original CD and was back up."
+        },
+        {
+          "s": "steve",
+          "t": "And David says he'll get on her about backups."
+        },
+        {
+          "s": "leo",
+          "t": "Is a family license okay?"
+        },
+        {
+          "s": "steve",
+          "t": "If you need to fix your mom's computer, by all means."
+        },
+        {
+          "s": "leo",
+          "t": "But if it fixes two computers, maybe buy a second license. I'm trying to make you money."
+        }
+      ]
+    },
+    {
+      "title": "A Risky Password-Reset Plan",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our first question is from Evan Moore in Leesburg, Virginia. The authentication and TPM episodes have spurred a lot of interest, and this is an authentication puzzler."
+        },
+        {
+          "s": "leo",
+          "t": "His university has a form for off-campus students and faculty to have log-in credentials emailed to the address on file. But many don't know which address that is, or can't get into old Gmail or Hotmail accounts."
+        },
+        {
+          "s": "leo",
+          "t": "The new plan asks for first and last name, date of birth, full Social Security number and the address on file. And a controversial new field: any email address you'd like the credentials sent to. Some on staff worry that skips confirming the person controls the address on file. It's meant to cut calls to student services."
+        },
+        {
+          "s": "steve",
+          "t": "It's a perfect authentication question. They're letting someone whose identity isn't certain pick where the credentials go."
+        },
+        {
+          "s": "steve",
+          "t": "Verifying control of that new address wouldn't help. A bad guy would create a random Yahoo! account, enter it, then click the confirmation link sent there."
+        },
+        {
+          "s": "steve",
+          "t": "The old process assumed a person physically in the office, with identification, giving the address for lost credentials. That's reasonable. Remotely, with no other check, it's a clear breach."
+        },
+        {
+          "s": "steve",
+          "t": "We hear constantly about Social Security numbers leaking. If a name and SSN are all someone needs to supply a new email address, they've commandeered that student's account."
+        },
+        {
+          "s": "steve",
+          "t": "They're softening security because users won't take responsibility, like remembering which email account they use. People forget things, but users must bear some responsibility."
+        },
+        {
+          "s": "leo",
+          "t": "I also don't like using Social Security numbers as identifiers at all."
+        },
+        {
+          "s": "steve",
+          "t": "His feeling that something's wrong is right. It's a fundamental change to the security architecture they built, and not for the better."
+        }
+      ]
+    },
+    {
+      "title": "A Big Host for Virtual Machines",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul in Edmonton, Alberta, about Episode 96's VMware resource question: Polywell sells a machine with eight dual-core Opteron processors and up to 128 gigabytes of DDR2 RAM. Works well for VMware."
+        },
+        {
+          "s": "steve",
+          "t": "I love that. Each VM thinks it's a real machine, so you give it half a gig or more, which is taken from the host."
+        },
+        {
+          "s": "steve",
+          "t": "The Opteron is AMD's 64-bit processor. A 32-bit address space can only reach 4 gigabytes, and 64 bits breaks that barrier. So you'd use 64-bitness not for 64-bit math, but to run 20 or 30 independent 32-bit machines, each with its own 4 gigs. Overkill maybe, but very cool."
+        },
+        {
+          "s": "leo",
+          "t": "I'm pricing one now. They're really designed as servers."
+        },
+        {
+          "s": "steve",
+          "t": "But a perfect host for multiple VMs."
+        }
+      ]
+    },
+    {
+      "title": "The Postcard Spam Flood",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Next, Chris Rydin of Troy, Michigan, the tech guy at his company, is flooded with bot spam."
+        },
+        {
+          "s": "leo",
+          "t": "His mail servers, which serve many companies, saw nearly identical messages: \"You received a postcard from\" a neighbor, a friend and so on, with a link to catcher.hk that installs a worm. It was more than half of everything the servers rejected, with spoofed headers posing as reputable companies."
+        },
+        {
+          "s": "leo",
+          "t": "Friends got it at home too, but he finds little reporting. His antivirus called it html/postcard.N@trojan. What's going on?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a classic spam-sending botnet. The .hk link means Hong Kong, so it's probably the botnet trying to spread itself."
+        },
+        {
+          "s": "steve",
+          "t": "Recall from the Bot Roast episode that bot-herder gangs compete to take over each other's bots. They spray massive spam from hundreds of thousands of compromised machines."
+        },
+        {
+          "s": "steve",
+          "t": "The Hong Kong site will be taken down quickly. So the trick is how many people click \"a postcard from a friend\" before then. If you're already infected, this bot may try to take over, and you get bots warring on your machine."
+        },
+        {
+          "s": "leo",
+          "t": "Postcard trojans go back to 2004 and 2005. You see fewer alerts now because spam and antivirus filters are effective. I never see these."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. He was looking at the antispam server, and more than half of what it filtered was this. Few get through, but it's a numbers game. The more they send, the more get through."
+        },
+        {
+          "s": "leo",
+          "t": "I'll ask my antispam guys at MailRoute if they're seeing them."
+        }
+      ]
+    },
+    {
+      "title": "Are Hard Drives Less Reliable?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark in Wapakoneta, Ohio, his family's fix-it guy since Episode 1: Until six months ago he'd never seen a dead drive. The last four computers he fixed all needed new ones, and three were laptops. Are drives getting less reliable?"
+        },
+        {
+          "s": "steve",
+          "t": "The Google study we covered months ago showed drives are less reliable than manufacturers state, by at least a factor of nine, if I remember right. And newer drives do seem to fail more often."
+        },
+        {
+          "s": "steve",
+          "t": "I worry about drives in laptops and iPods. They're inherently exposed to physical abuse. At Starbucks, laptop heaven thanks to T-Mobile, I see people clunk their laptops down. A few small spinning platters store tens of billions of bits. I shiver."
+        },
+        {
+          "s": "leo",
+          "t": "And laptop drives run a lot hotter."
+        },
+        {
+          "s": "steve",
+          "t": "Heat is a real problem. I try never to move my laptop while the drive spins, and if I must, I set it down one corner at a time. Maybe I'm carried away, but I've never had a laptop drive die."
+        },
+        {
+          "s": "leo",
+          "t": "My most recent failure was an iPod a month or so ago. My new iPhone uses solid-state memory and gets very hot charging. Do heat and bumps hurt solid-state memory?"
+        },
+        {
+          "s": "steve",
+          "t": "Electronics don't like heat at all, but there's no physical problem. That's why I've only owned solid-state iPods."
+        },
+        {
+          "s": "leo",
+          "t": "For 600 bucks I'm treating my iPhone with kid gloves anyway."
+        },
+        {
+          "type": "fact",
+          "title": "The studies",
+          "t": "Two 2007 studies, Google's and Carnegie Mellon's, found real-world drive failure and replacement rates several times higher than manufacturers' specs. The Carnegie Mellon study found rates up to about 13 times higher in some cases."
+        }
+      ]
+    },
+    {
+      "title": "TreeSize Versus SpaceMonger",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Next, Nitin Saini of Tampa, Florida, about Episode 96's disk-space tools. He wasn't impressed by SpaceMonger and prefers TreeSize from jam-software.com. It has a free version, a standalone exe under a megabyte."
+        },
+        {
+          "s": "steve",
+          "t": "I'm a TreeSize user too, with the paid version. They're very different."
+        },
+        {
+          "s": "steve",
+          "t": "SpaceMonger gives you a nested-rectangle map of your whole drive, sized by what each area occupies, for a quick sense of what's going on."
+        },
+        {
+          "s": "steve",
+          "t": "TreeSize quickly parses the drive and lists the 100 largest files, sorted. It has bar graphs and file-type charts I don't much care about. But that sorted list always turns up things you don't need. I like them both for different purposes."
+        },
+        {
+          "s": "leo",
+          "t": "On the Mac I use the free Disk Inventory X, which shows a color map and a list of files."
+        }
+      ]
+    },
+    {
+      "title": "Can You Change Your Eyeball?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Geoff in Ottawa worries about unchangeable biometrics. A smart friend says retinal scans and the like will replace credit cards within ten years."
+        },
+        {
+          "s": "leo",
+          "t": "Geoff replied that there are two kinds of data: data that's been lost or stolen, and data that will be. A retinal scan is just ones and zeros. If a bad guy got it, wouldn't he have your password forever? Aren't reissuable tokens, like credit card numbers, better? His friend said strong encryption prevents that. Never is a long time."
+        },
+        {
+          "s": "steve",
+          "t": "It comes up often. You can change a lost password or card, and should change passwords periodically anyway. You can't change your fingerprint, iris, retina or DNA."
+        },
+        {
+          "s": "steve",
+          "t": "The mitigating factor is \"feature extraction.\" These systems don't save your retina or fingerprint image, as on CSI. That'd be a phenomenal amount of data."
+        },
+        {
+          "s": "steve",
+          "t": "A fingerprint is analyzed for features: ridges that dead-end, merge or stop. Those are reduced to simpler characteristics, then hashed into a 128- or 168-bit value, and that's stored. A hash is lossy and one-way, so you can't go back to the features, let alone a fake fingerprint."
+        },
+        {
+          "s": "leo",
+          "t": "But the features are immutable. If they got your eye, they got your features."
+        },
+        {
+          "s": "steve",
+          "t": "The database would just be hashes, and they're not reversible. And different scanners extract or choose different features, so the same finger maps to different hashes. It's not compromised forever."
+        },
+        {
+          "s": "leo",
+          "t": "It'd have to be pretty severely compromised."
+        },
+        {
+          "type": "fact",
+          "title": "Not quite a hash",
+          "t": "Two scans of the same finger never match exactly, so most systems store a feature template and compare it with fuzzy matching, not an exact hash. Steve's broader point stands: templates aren't images, and vendors' formats differ. But a stolen template is a real risk, which is why it's best kept in protected hardware."
+        }
+      ]
+    },
+    {
+      "title": "What Is ID Vault?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robert James in San Francisco asks about the ID Vault advertised by Kevin Mitnick and me. I did one ad on KGO once; this is the problem with radio ads. Is it like RoboForm or KeePass? The link is guardid.com/idvault."
+        },
+        {
+          "s": "steve",
+          "t": "I figured you were the expert."
+        },
+        {
+          "s": "leo",
+          "t": "Their site even says security experts have long known two-factor authentication, something you know plus something you have, is more secure. They obviously listen."
+        },
+        {
+          "s": "leo",
+          "t": "It's a smart card in a USB dongle, coded to you, like an ATM card. Software on top remembers passwords. At first I thought the database was on the computer, but no, it's on the USB key, secured by that chip. Plug it in, choose your account, enter your PIN, and you're signed on, with your passwords with you."
+        },
+        {
+          "s": "steve",
+          "t": "So it's two-factor authentication with a key-ring hardware token."
+        },
+        {
+          "s": "steve",
+          "t": "I can't wait for OpenID-style sign-on of some form. Just one token to log in anywhere would be so nice."
+        },
+        {
+          "s": "leo",
+          "t": "This could be your OpenID key."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. An OpenID server could check for the dongle to verify your physical presence."
+        },
+        {
+          "s": "leo",
+          "t": "The main thing is their million-dollar guarantee: if someone steals your financial credentials and uses them, they'll reimburse up to a million dollars."
+        },
+        {
+          "s": "steve",
+          "t": "I'd like to see someone collect. So much could go wrong that it'd be hard to prove it was their fault."
+        }
+      ]
+    },
+    {
+      "title": "VPNs and the Home Printer",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Laura in Arbor Vitae, Wisconsin, which I'd pronounce as Latin, has a VPN question. Her employer's VPN gives her a 172.16 address, so she can't print to her 192.168 home printer. She understands why. If she uses Hamachi or OpenVPN to reach home while traveling, can she reach her TiVo, printer and other computers, or just the one machine?"
+        },
+        {
+          "s": "steve",
+          "t": "From our \"Hamachi Rocks\" episode: Hamachi gives every machine its own 5.x.y.z address in unassigned Internet space. So she'd reach only that machine, which is effectively on the five-dot network, not her home 192.168 network. A printer attached directly to that machine would work."
+        },
+        {
+          "s": "steve",
+          "t": "Hamachi is an Ethernet, MAC-layer link, not an IP one. Broadcasts like ARP flow across it, so Windows file and printer sharing work."
+        },
+        {
+          "s": "steve",
+          "t": "OpenVPN is different. I promised an OpenVPN how-to about a year and a half ago and stalled, because it feels like the wrong solution."
+        },
+        {
+          "s": "steve",
+          "t": "It can use a \"tap\" or \"tun\" driver. With tap, a remote machine appears on your network like her company VPN does, seeing all its resources. With tun, it doesn't."
+        },
+        {
+          "s": "steve",
+          "t": "But tap requires bridging the OpenVPN adapter to the system adapter. Windows 2000 needs third-party software for that. XP can do it, and presumably Vista. It's far more complex than I'd like, and you must fight everything to make it work. So I'm looking for a better solution."
+        },
+        {
+          "s": "leo",
+          "t": "Corporate IT sets this up so you can use the office printers once you're in."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Your remote machine is just like it's on the corporate network."
+        },
+        {
+          "type": "fact",
+          "title": "The five-dot network",
+          "t": "The 5.0.0.0/8 block Hamachi borrowed was assigned to Europe's registry in 2010 as IPv4 ran out. Hamachi then moved to the 25.0.0.0/8 range and IPv6."
+        }
+      ]
+    },
+    {
+      "title": "Are Firefox Add-Ons Safer Than ActiveX?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim in San Diego: Many IE vulnerabilities relate to ActiveX. Do Firefox add-ons pose the same danger, or are they more secure?"
+        },
+        {
+          "s": "steve",
+          "t": "ActiveX is Microsoft's component technology, a componentized DLL. Until recently, Windows and IE in their default configuration would download and run controls without the user's knowledge. IE7 finally shows a bar when a site tries, and I see that all the time."
+        },
+        {
+          "s": "leo",
+          "t": "Wasn't the user supposed to approve, with a certificate?"
+        },
+        {
+          "s": "steve",
+          "t": "Things like CoolWebSearch, a notoriously horrible control, found their way into browsers constantly. The advice was not to run unsigned controls, but bad guys signed theirs."
+        },
+        {
+          "s": "steve",
+          "t": "But a Firefox add-on has potentially the same problem. It's software in a very dangerous place. The browser already struggles to stay secure, and you're adding third-party components to a high-traffic, Internet-exposed program. We see more ActiveX problems because IE is the majority, but in theory the danger is as great."
+        },
+        {
+          "s": "leo",
+          "t": "The alternate view: Firefox extensions run in XUL, so they have JavaScript's permissions. They're not DLLs."
+        },
+        {
+          "s": "steve",
+          "t": "That's potentially better. But scripts have buffer overflows too."
+        },
+        {
+          "type": "fact",
+          "title": "Add-on privileges",
+          "t": "Classic Firefox extensions were written in XUL and JavaScript but ran with full browser privileges, able to read files and launch programs, so they weren't limited like web-page scripts. Firefox's later WebExtensions model restricts add-ons to permissions they declare."
+        },
+        {
+          "s": "steve",
+          "t": "Protecting your system from your browser is good. I plan to get Sandboxie's author on for an hour. He's interested. It's a well-behaved sandboxing tool, much lighter than running your browser in a VM with a whole other OS. I think sandboxing hasn't gotten enough press as a solution to all this."
+        }
+      ]
+    },
+    {
+      "title": "Should ISPs Police Botnets?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Next, Ipigi of Montreal, five years at an ISP and a troubleshooter on the side, responds to Episode 97's Bot Roast. It was me who said ISPs should take more responsibility."
+        },
+        {
+          "s": "leo",
+          "t": "He says small ISPs lack the infrastructure and money to intercept and scan traffic, and large ones couldn't log it all. His ISP's connection logs alone, with client name, IP, phone number, time and internal hardware address, are about 20 megabytes a day."
+        },
+        {
+          "s": "leo",
+          "t": "He proposes the FBI give ISPs the IPs and times of malicious traffic. ISPs would tell those customers to get checked, and suspend those who don't comply. He also says owners are responsible for their computers, as you wouldn't blame a mechanic for a neglected car. Many customers think they're protected while running a free Norton trial that expired three years ago."
+        },
+        {
+          "s": "leo",
+          "t": "I agree with that. And nobody's proposing logging all traffic."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. I didn't mean old-school logging and parsing. By the time that's done, the damage is done."
+        },
+        {
+          "s": "steve",
+          "t": "We need a new class of border hardware: an anti-flood router that watches the traffic crossing it, much like bandwidth limiting. Most users mostly download, so upstream traffic is small, except for things like filesharing."
+        },
+        {
+          "s": "steve",
+          "t": "We're years away, but ISP equipment could detect a customer suddenly sending massive amounts of anything, ICMP pings for a DoS or spam to remote port 25, and disconnect them as a terms-of-service violation. As a listener suggested, it could route them to a page saying their computer seems infected and to call support."
+        },
+        {
+          "s": "leo",
+          "t": "There are issues. When Comcast started blocking port 25, people got upset. It's tricky, but there are things they can do."
+        },
+        {
+          "s": "steve",
+          "t": "An FBI arrangement adds too much delay and interaction, and only covers machines the FBI is pursuing. Stopping damaging outbound traffic at the ISP nips it in the bud. We need hardware to automate it."
+        },
+        {
+          "s": "steve",
+          "t": "And I agree users should take more responsibility. Our listeners aren't bot infested. It's the irresponsible people who host this stuff."
+        },
+        {
+          "s": "leo",
+          "t": "We both try to teach people. That's why I'm on the radio six hours a week, and why you came on last week to talk about good passwords. But I'm not confident most users will ever get good at this. So the burden rests upstream: ISPs, Microsoft and on. Or make people take a test before they get a computer."
+        },
+        {
+          "s": "steve",
+          "t": "Then we wouldn't need Security Now!. Back to the Stone Age."
+        }
+      ]
+    },
+    {
+      "title": "Is the Cellular Network Encrypted?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Grant in Riverside, California asks about AT&T's GPRS/EDGE network security. He suspects his Cingular 2125 Windows Mobile 5 smartphone, or the new iPhone, sends email passwords in clear text."
+        },
+        {
+          "s": "steve",
+          "t": "Many people ask about wireless telephony security. The connections are definitely encrypted, so his data isn't in the clear. I just haven't found good information on how. When I do, we'll do a podcast. I want every nitty-gritty detail."
+        },
+        {
+          "s": "steve",
+          "t": "We don't know if it's unbustable, but it's recent enough that there'd be no excuse for not doing it right."
+        },
+        {
+          "type": "fact",
+          "title": "Cellular crypto",
+          "t": "Encryption covers only the radio link to the tower, not the path to the mail server, so unencrypted email logins are still exposed beyond it. And GSM-era ciphers proved weak: A5/1 voice encryption was publicly cracked by 2009, and GPRS's GEA-1 was later found deliberately weakened."
+        }
+      ]
+    },
+    {
+      "title": "Protecting a Stored Fingerprint",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last, Ryan Jones of Melbourne, Australia, with a customer's question: what stops someone stealing your fingerprint stored on a laptop with a scanner, especially with trojans everywhere?"
+        },
+        {
+          "s": "steve",
+          "t": "That speaks exactly to last week's Trusted Platform Module topic. The sensitive data can't be stolen."
+        },
+        {
+          "s": "steve",
+          "t": "The stored fingerprint and the one you just swiped are each hashed through a one-way function and compared. Same guy? Then the TPM provides the associated password to unlock the BIOS and the hard drive. At no point can any of it be stolen."
+        },
+        {
+          "type": "fact",
+          "title": "How matching works",
+          "t": "As noted above, real fingerprint readers compare templates with fuzzy matching rather than exact hashes. The protection comes from keeping the template and the comparison inside secure hardware such as the TPM or a sensor's own chip."
+        }
+      ]
+    },
+    {
+      "title": "100 Episodes and Thanks",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We've completed a hundred episodes. Amazing stuff."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, 101, I think we'll get to CAPTCHAs, proving you're human. After that audio you played last week, I'm not sure I'm human."
+        },
+        {
+          "s": "leo",
+          "t": "We thank you for your donations, which have kept this podcast afloat since day one, and AOL Radio for donating bandwidth since day one: literally hundreds of thousands of dollars' worth."
+        },
+        {
+          "s": "steve",
+          "t": "On our 100th episode, I want to explicitly thank listeners for supporting GRC by buying SpinRite. People say they bought it to support us, and then their drive died and they needed it. I don't want anyone spending $89 just for support, but I feel it, because it's clearly affected sales."
+        },
+        {
+          "s": "leo",
+          "t": "We love doing it, and that's the bottom line."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Steve oppose letting students choose any email address for their reset credentials?",
+      "options": [
+        "Anyone with a name and Social Security number could hijack an account",
+        "Email is always unencrypted",
+        "It costs too much",
+        "Students would forget it"
+      ],
+      "answer": 0,
+      "explain": "Verifying the new address wouldn't help, since an attacker would control it."
+    },
+    {
+      "q": "Why would a 64-bit Opteron host help with virtual machines?",
+      "options": [
+        "It breaks the 4-gigabyte limit, so many VMs can each have their own memory",
+        "It runs 64-bit math faster",
+        "VMware needs 64 bits",
+        "It uses less power"
+      ],
+      "answer": 0,
+      "explain": "Each 32-bit VM can have up to 4 gigs."
+    },
+    {
+      "q": "What was the \"postcard\" spam flooding Chris's servers?",
+      "options": [
+        "A botnet spreading itself with a link to a malicious site",
+        "A greeting card company's ads",
+        "A phishing site for banks",
+        "Legitimate mail"
+      ],
+      "answer": 0,
+      "explain": "Rival bot herders compete to take over each other's bots."
+    },
+    {
+      "q": "How does Steve say fingerprint systems avoid storing your actual fingerprint?",
+      "options": [
+        "By extracting features and storing a reduced representation",
+        "By encrypting the image",
+        "By printing it",
+        "By not storing anything"
+      ],
+      "answer": 0,
+      "explain": "Real systems compare feature templates with fuzzy matching."
+    },
+    {
+      "q": "What does Hamachi give each connected machine?",
+      "options": [
+        "Its own 5.x.y.z address on its own network",
+        "A 192.168 address",
+        "A public web address",
+        "A phone number"
+      ],
+      "answer": 0,
+      "explain": "So Laura could reach only that machine, not her whole home network."
+    },
+    {
+      "q": "What did Steve want ISPs to use against bots?",
+      "options": [
+        "Border equipment that detects floods of outgoing traffic and cuts them off",
+        "Logs of all traffic",
+        "FBI agents",
+        "Free antivirus"
+      ],
+      "answer": 0,
+      "explain": "He said logging and parsing comes too late."
+    }
+  ]
+}

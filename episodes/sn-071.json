@@ -1,0 +1,526 @@
+{
+  "number": 71,
+  "title": "SecurAble",
+  "subtitle": "Steve's new freeware checks your chip's security features",
+  "date": "2006-12-21",
+  "description": "Steve answers listener pushback on anonymity and free speech, and a question about malicious TOR exit routers. Then he unveils his forthcoming freeware, SecurAble, which reports whether a processor supports 64-bit operation, hardware DEP and virtualization, and explains driver signing, how DEP stops buffer overruns, and the undocumented mysteries of Windows' DEP modes.",
+  "transcript": "https://www.grc.com/sn/sn-071.txt",
+  "audio": "http://media.GRC.com/sn/SN-071.mp3",
+  "chapters": [
+    {
+      "title": "Catching Up With TWiT",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The holidays are coming, but Steve insists on catching TWiT, so we're doing two today."
+        },
+        {
+          "s": "steve",
+          "t": "Did you just do number 80? I'm only 10 weeks behind. And I was on 80."
+        },
+        {
+          "s": "leo",
+          "t": "You and Dvorak are fun together."
+        },
+        {
+          "s": "steve",
+          "t": "I infatuate with technology, and John's the counterpoint. Vista is on our minds, but it must be frustrating for listeners who can't get it yet. Still, we're laying the foundation for what I think is an important security enhancement."
+        },
+        {
+          "s": "leo",
+          "t": "The rest of TWiT is taking podcast catch-up weeks while I'm in Mexico. Few people have heard every Security Now!."
+        }
+      ]
+    },
+    {
+      "title": "Does Free Speech Need Anonymity?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today, my new freeware. But first, feedback. TOR questions will wait for next week's Q&A. Many notes were about Episode 69's social side. One is representative."
+        },
+        {
+          "s": "steve",
+          "t": "He wrote that free speech does not require anonymity. In the U.S. you can say almost anything without being dragged away, except things like criminal threats or inciting a riot. And someone speaking anonymously in an oppressive country doesn't have free speech; he's just avoiding persecution."
+        },
+        {
+          "s": "steve",
+          "t": "He said he almost stopped listening, because we parroted Freenet's bad logic: that you must choose between free speech and copyright law. He says Freenet exists to violate copyright, and that anonymity doesn't enable free speech, only a lack of accountability."
+        },
+        {
+          "s": "steve",
+          "t": "I understand that argument. I have no need for anonymity myself. I've sent letters to all 309 homeowners in my association with my name and address, while others left anonymous flyers. Neighbors thanked me for signing. Taking responsibility made it more effective."
+        },
+        {
+          "s": "steve",
+          "t": "But some people are shy, or fear upsetting their neighbors, not the police, and still want their views known. There are two sides."
+        },
+        {
+          "s": "leo",
+          "t": "One fundamental tenet of elections is the secret ballot. That's all you need to say. And I hate \"it's safe here now.\" It isn't always. You must be vigilant about freedom."
+        },
+        {
+          "s": "steve",
+          "t": "It's safe here because we've had the anonymous ballot."
+        },
+        {
+          "s": "leo",
+          "t": "There were times in our history without secret ballots, with poll taxes. These things don't come automatically. I'm uncomfortable with Freenet and don't run it, but TOR is the kind of thing we need to preserve our freedoms. If he doesn't like it, he can go listen to Rush Limbaugh."
+        },
+        {
+          "s": "steve",
+          "t": "There are shades of gray. I don't know who many active people in GRC's newsgroups are, and I don't care. Their unspoofable handles have built identities."
+        }
+      ]
+    },
+    {
+      "title": "Can a Malicious TOR Exit See Your Traffic?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A caller on my radio show asked: if a government agency ran many TOR routers, hoping to be the last router in a chain, couldn't it see your message in the clear?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. The last router sees your decrypted TCP traffic leaving and returning. TOR doesn't provide encryption. You can add your own end-to-end encryption, like HTTPS, which is then anonymized by TOR."
+        },
+        {
+          "s": "steve",
+          "t": "A malicious exit router could also manipulate cookies or inject JavaScript into the pages you retrieve, which could reveal your IP. We'll cover more next week. But the onion's layered encryption remains very effective. A high percentage of routers could be compromised and anonymity would hold."
+        },
+        {
+          "s": "leo",
+          "t": "So TOR is about anonymity, not encryption. Sophisticated traffic analysis can deduce a lot from who's talking to whom, and TOR hides that."
+        },
+        {
+          "s": "steve",
+          "t": "Right. TOR's site has a page acknowledging its open problems. Packets are padded to a fixed length, but because TOR stays low-latency, routers don't add random delays. Random delays would defeat timing analysis, but make it too slow to use. They chose a network people will actually use."
+        },
+        {
+          "type": "fact",
+          "title": "Exit relays",
+          "t": "Researchers have repeatedly caught malicious TOR exit relays tampering with traffic, and the Tor Project removes them when found. Since most web traffic now uses HTTPS, an exit relay usually sees only which site you visit."
+        }
+      ]
+    },
+    {
+      "title": "Three Security Features in Your Chip",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So what's the program?"
+        },
+        {
+          "s": "steve",
+          "t": "It grew out of our 32- versus 64-bit discussion. We mistakenly said nobody had 64-bit systems. Many listeners wrote: I have 64 bits now. Lots of AMD 64 owners do, though most run 32-bit XP."
+        },
+        {
+          "s": "steve",
+          "t": "64-bit XP has existed for years with low adoption, chicken and egg: no drivers because no users, no users because no drivers. But 64-bit gives much better kernel protection, so it will be solved."
+        },
+        {
+          "s": "steve",
+          "t": "My research found that Intel's EM64T, full 64-bit support, has shipped for two or three years. Many people with recent computers may have 64-bit support and not know it."
+        },
+        {
+          "s": "leo",
+          "t": "Andy Grove once told me he was mad that Microsoft wasn't supporting his processors' 64-bit capabilities."
+        },
+        {
+          "s": "steve",
+          "t": "Then there's hardware DEP, Data Execution Prevention, which I'll spend most of today on. And the virtual machine extensions. Intel calls them VT. AMD's are compatible in purpose."
+        },
+        {
+          "type": "fact",
+          "title": "Virtualization names",
+          "t": "Intel's extensions are VT-x, whose instructions are called VMX. AMD's are AMD-V, originally code-named Pacifica, with instructions called SVM. Both let virtual machines run at near-native speed."
+        },
+        {
+          "s": "steve",
+          "t": "Parallels supports them, and I heard Microsoft's Virtual PC now does. VMs can run at the host's full performance. Microsoft has unofficially said a future Vista, probably 64-bit, could use them for a hypervisor that locks the kernel."
+        },
+        {
+          "s": "steve",
+          "t": "Remember, PatchGuard doesn't prevent patches. Every five to 10 minutes it checks for them, and if it finds any, shuts Windows down. A hypervisor below the kernel needs this new hardware."
+        },
+        {
+          "s": "steve",
+          "t": "So the three key hardware security features are: 64 bits, hardware DEP, and virtualization extensions. My program, SecurAble, shows how securable your system is. It's running, and our newsgroup people are using it. It should be out in a couple of weeks."
+        }
+      ]
+    },
+    {
+      "title": "Signing SecurAble's Driver",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "SecurAble is about 26K, in assembly, of course. It'll be bigger because I'm signing it. And I had to write a kernel driver, which will be signed too."
+        },
+        {
+          "s": "leo",
+          "t": "We discussed in Toronto whether 64-bit drivers must be signed by Microsoft, or by anyone."
+        },
+        {
+          "s": "steve",
+          "t": "Only 64-bit Vista, and I think 64-bit XP, load only signed drivers. Microsoft offers a free certificate that works with your existing Authenticode certificate. Mine, from VeriSign, cost about $500, maybe $799 for many years. You cross-sign with Microsoft's certificate, and then you can sign drivers without Microsoft's further involvement."
+        },
+        {
+          "s": "steve",
+          "t": "Windows already warns about downloaded software from an \"unknown publisher.\" Signed, my software says it's from Gibson Research Corporation, and Windows cryptographically verifies it hasn't been modified since I signed it. You can choose to always trust a publisher."
+        },
+        {
+          "s": "leo",
+          "t": "But it's not free. You need an Authenticode certificate. That will discourage shareware and open-source authors."
+        },
+        {
+          "s": "steve",
+          "t": "32-bit systems work as before. And it's like airport security: you endure it, and it's not clear you're secure. Credentials will get loose, and malware authors will find ways to get their junk signed. The Free Software Foundation just launched a campaign against Vista, BadVista.org, partly over this hostility to free software."
+        },
+        {
+          "s": "leo",
+          "t": "You shouldn't have to pay a Microsoft tax to develop software. It'll backfire. Not everyone can afford a certificate, and that could kill an entire ecology."
+        },
+        {
+          "s": "steve",
+          "t": "You'll get a kick out of this. I've had Authenticode certificates for years but couldn't bring myself to use them, because signing adds 4K to my code."
+        },
+        {
+          "s": "leo",
+          "t": "From 26 to 30K!"
+        },
+        {
+          "s": "steve",
+          "t": "A minimal PGP signature is a couple of cryptic lines, not a 4K blob. People who don't care about size end up with big things."
+        },
+        {
+          "s": "steve",
+          "t": "But to take the other side: requiring a name on drivers will increase security."
+        },
+        {
+          "s": "leo",
+          "t": "So give free certificates to open-source developers. SourceForge could do it."
+        },
+        {
+          "s": "steve",
+          "t": "But a shared certificate is completely available to hackers. My Authenticode certificate is a private key tied to Gibson Research Corporation. I keep it encrypted and locked up tight, because it would let bad people claim their software was mine."
+        },
+        {
+          "s": "steve",
+          "t": "Once loose credentials appear, we'll need revocation lists of known bad keys. It raises the bar. There's no perfect solution, but it's probably good."
+        },
+        {
+          "type": "fact",
+          "title": "Code signing now",
+          "t": "Since 2023, publicly trusted code-signing keys must be kept in hardware security modules or tokens, partly because stolen signing certificates were used to sign malware."
+        }
+      ]
+    },
+    {
+      "title": "Requiring Signed Drivers on 32-bit Windows",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You can also require signed drivers administratively on 32-bit XP and Vista, through the Group Policy Editor."
+        },
+        {
+          "s": "leo",
+          "t": "Great. Turn it on, and you're safer."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is, since it's never been on by default, few drivers are signed."
+        },
+        {
+          "s": "leo",
+          "t": "So you'd have the same compatibility issues as 64-bit."
+        },
+        {
+          "s": "steve",
+          "t": "But signing isn't a big deal. A careful user could sign other people's drivers himself, then turn it on. If any hostile junk tried to install, it would be blocked."
+        },
+        {
+          "s": "leo",
+          "t": "An IT department could buy one certificate, sign approved drivers, push the policy company-wide, and nothing else would run."
+        },
+        {
+          "s": "steve",
+          "t": "A cool trick. And it's already not free to develop for Windows. I pay Microsoft about $2,500 a year for MSDN, a constantly updated blob of DVDs."
+        },
+        {
+          "s": "leo",
+          "t": "You could just buy Visual Studio."
+        },
+        {
+          "s": "steve",
+          "t": "True. MSDN is all the OSes and tools. But Visual Studio is still many hundreds of dollars. There are free compilers and libraries, but the sanctioned route isn't free."
+        },
+        {
+          "s": "leo",
+          "t": "On the Mac, Apple gives you all that."
+        },
+        {
+          "s": "steve",
+          "t": "There used to be other compilers, like Watcom and Symantec's."
+        },
+        {
+          "s": "leo",
+          "t": "Mark at AnalogX still uses Watcom, though it hasn't been updated in ages."
+        },
+        {
+          "type": "fact",
+          "title": "Free tools today",
+          "t": "Microsoft now offers Visual Studio Community free to individuals and small teams, and kernel drivers must be signed through its Hardware Dev Center."
+        }
+      ]
+    },
+    {
+      "title": "Hunting for 64 Bits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "SecurAble first shows whether you have Intel's EM64T, or a 64-bit AMD chip running in 32-bit mode without your knowing. That tells you whether you could run 64-bit XP or Vista, with much better security."
+        },
+        {
+          "s": "leo",
+          "t": "That's my project today. Drive Snapshot is imaging my 32-bit Vista laptop right now, in case 64-bit is horrendous. The 64-bit DVD is almost 4GB."
+        },
+        {
+          "s": "steve",
+          "t": "32-bit is about 2.68GB. I've heard 64-bit includes 32-bit versions of everything too, double the trouble. I suspect Microsoft compiled all its drivers for 64-bit too, which would really help."
+        },
+        {
+          "type": "fact",
+          "title": "WOW64",
+          "t": "That's right: 64-bit Windows includes a 32-bit subsystem, called WOW64, with 32-bit copies of system libraries so 32-bit programs run unchanged."
+        }
+      ]
+    },
+    {
+      "title": "DEP: The Most Important Security Feature in a Decade",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Second, hardware DEP. I think it's the single most important security feature in a decade. I'm not kidding. It can stop virtually all buffer overruns, and with incredibly small exceptions, that's what our security problems are."
+        },
+        {
+          "s": "steve",
+          "t": "If a control doesn't limit input that's longer than expected, and programmers usually must do that deliberately, the computer can be remotely compromised. Every second Tuesday, Microsoft patches multiple buffer overruns."
+        },
+        {
+          "s": "steve",
+          "t": "Our computers manage memory in 4K \"pages,\" which are swapped to virtual memory and tracked by the memory management system. Pages have long had read and write permission bits. The chip's silicon enforces them."
+        },
+        {
+          "s": "steve",
+          "t": "Any code violating them causes a hardware exception, which instantly yanks control from the misbehaving program and gives it to the operating system."
+        },
+        {
+          "s": "steve",
+          "t": "In the last couple of years, Intel and AMD added an execute permission bit. It's so obvious. Why didn't we have it 20 years ago? It would have been trivial."
+        },
+        {
+          "s": "leo",
+          "t": "There wasn't a problem 20 years ago."
+        },
+        {
+          "s": "steve",
+          "t": "There's always been a problem. UNIX predates Windows. It's had rootkit problems from day one, and those were buffer overrun exploits."
+        },
+        {
+          "type": "fact",
+          "title": "UNIX's age",
+          "t": "UNIX dates from 1969, so it was nearly 40 years old in 2006, not 20. Some processors had no-execute protections decades before x86 did."
+        },
+        {
+          "s": "leo",
+          "t": "It's sloppy programming, like using strcpy instead of strncpy, with no range checking."
+        },
+        {
+          "s": "steve",
+          "t": "As a programmer, I live in fear that I'll screw up. It's easy to take your eye off the ball for a minute. The developer's mindset is \"get it to work.\" Mine adds \"and it better not have any security flaws.\" But it's easy to make a mistake."
+        }
+      ]
+    },
+    {
+      "title": "Where Code Shouldn't Run",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "With DEP, every page the system doesn't expect code to run in is marked non-executable."
+        },
+        {
+          "s": "leo",
+          "t": "Like the stack."
+        },
+        {
+          "s": "steve",
+          "t": "The stack, and the \"heap,\" where programs allocate memory freely. A 4K buffer can come from either."
+        },
+        {
+          "s": "leo",
+          "t": "Some programmers put executable code in the heap, or even the stack. That's why those programs break with DEP."
+        },
+        {
+          "s": "steve",
+          "t": "Some do. Early Windows, on 4.77MHz processors, did by policy. Dragging a window was so slow you dragged only a dotted outline. The \"blitter,\" which moves rectangles of pixels, was written onto the stack on the fly for speed. The stack was an executable scratchpad."
+        },
+        {
+          "s": "steve",
+          "t": "Most programs no longer do that. And virtually all exploits are buffer overruns that hardware DEP would catch. Many chips from the last few years have it."
+        }
+      ]
+    },
+    {
+      "title": "DEP Disabled by the BIOS",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's what we've learned. Many BIOSes on DEP-capable systems have an option to turn it off. My new little HP Pavilion has one, and mine was on. But many newsgroup people found theirs off by default, so Windows believes it isn't present."
+        },
+        {
+          "s": "steve",
+          "t": "The BIOS uses model-specific registers, MSRs. User-mode code like SecurAble can't access them without blowing up. So I wrote a kernel driver that SecurAble drops out of itself, briefly loads to read the MSRs, sends the answer back, and removes in a blink. SecurAble is still a single small EXE."
+        },
+        {
+          "s": "steve",
+          "t": "So it tells you not only whether Windows sees DEP, but whether you actually have it, disabled by your BIOS."
+        },
+        {
+          "s": "leo",
+          "t": "Sleeve-rolling time."
+        }
+      ]
+    },
+    {
+      "title": "The Mystery of DEP's Modes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This has spawned a second program, probably called \"inDEPth,\" to verify DEP's operation. DEP has mysterious modes."
+        },
+        {
+          "s": "steve",
+          "t": "Opt-In is normal. Only some Windows binaries are opted in, ones Microsoft knows are safe and wants protected. But other applications and ActiveX controls are where the problems are."
+        },
+        {
+          "s": "steve",
+          "t": "Opt-Out means everything not opted out is checked. Then there's Always On. You'd think Always On equals Opt-Out with nothing opted out. It doesn't. People have found programs that work with Opt-Out but fail with Always On."
+        },
+        {
+          "s": "leo",
+          "t": "Why?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a mystery. My hypothesis is that Opt-In and Opt-Out may check only user-mode code, while Always On checks device drivers too. The current Ad-Aware build fails. There's zero documentation on Microsoft's site, so we'll figure it out by experiment."
+        },
+        {
+          "type": "fact",
+          "title": "The likely answer",
+          "t": "Microsoft's documentation later explained that Opt-Out still honors exemptions, including programs Windows' application-compatibility database marks as DEP-incompatible. Always On ignores every exemption. These modes govern user-mode programs, not drivers."
+        }
+      ]
+    },
+    {
+      "title": "A Quick Check Before You Buy",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Listeners suggested sending SecurAble to someone selling a computer, or asking a dealer to run it."
+        },
+        {
+          "s": "leo",
+          "t": "Tell me what I'm buying. Great idea."
+        },
+        {
+          "s": "steve",
+          "t": "If a friend gets a new Dell, say, run SecurAble and tell me what it says. It's a simple display: \"64, yes, yes\" if you have everything, or \"64, yes, no\" if you have DEP but no virtualization extensions."
+        },
+        {
+          "s": "leo",
+          "t": "Please take time off for the holidays."
+        },
+        {
+          "s": "steve",
+          "t": "No, I'm right in the middle of this and having a ball. I'll visit my family in San Mateo for a couple of days. Next week, number 72, is Q&A #14."
+        },
+        {
+          "s": "leo",
+          "t": "And people have drive problems even on the holidays."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe more so when the kids come home from school."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which three hardware features does SecurAble report?",
+      "options": [
+        "64-bit support, hardware DEP and virtualization extensions",
+        "RAM, disk and CPU speed",
+        "TPM, BIOS and firewall",
+        "Encryption, signing and UAC"
+      ],
+      "answer": 0,
+      "explain": "Its display reads like \"64, yes, yes.\""
+    },
+    {
+      "q": "Why did SecurAble need a kernel driver?",
+      "options": [
+        "Only kernel code can read the model-specific registers showing whether the BIOS disabled DEP",
+        "To speed it up",
+        "To install updates",
+        "To sign itself"
+      ],
+      "answer": 0,
+      "explain": "User-mode access to MSRs crashes the program."
+    },
+    {
+      "q": "What does hardware DEP add to memory pages?",
+      "options": [
+        "An execute permission bit",
+        "A read bit",
+        "Encryption",
+        "Compression"
+      ],
+      "answer": 0,
+      "explain": "Read and write bits already existed."
+    },
+    {
+      "q": "Why can a malicious TOR exit router read your traffic?",
+      "options": [
+        "TOR anonymizes but doesn't encrypt the final hop",
+        "TOR has no encryption at all",
+        "Exit routers know your private key",
+        "It can't"
+      ],
+      "answer": 0,
+      "explain": "End-to-end HTTPS protects the content."
+    },
+    {
+      "q": "What surprised Steve about DEP's Always On mode?",
+      "options": [
+        "Some programs failed under it that worked under Opt-Out",
+        "It was slower",
+        "It was undocumented but identical",
+        "It disabled the firewall"
+      ],
+      "answer": 0,
+      "explain": "Microsoft's site had no explanation."
+    },
+    {
+      "q": "What did the BadVista.org campaign object to?",
+      "options": [
+        "Vista's growing hostility to free software, including driver-signing costs",
+        "Aero's speed",
+        "Vista's price",
+        "Its 64-bit support"
+      ],
+      "answer": 0,
+      "explain": "An Authenticode certificate cost Steve about $500."
+    }
+  ]
+}

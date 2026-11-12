@@ -1,0 +1,502 @@
+{
+  "number": 75,
+  "title": "Vista DRM Wrap-Up and Announcing \"SecurAble\"",
+  "subtitle": "Reading Microsoft's own words, then a new GRC freebie",
+  "date": "2007-01-18",
+  "description": "Steve wraps up Vista's content protection by reading directly from Microsoft's \"Output Content Protection and Windows Vista\" document: protected video paths, output shutoffs, driver revocation, tilt bits, \"soft and fuzzy\" video and content-industry robustness rules. He clarifies that revocation affects only premium playback, urges buyers to look for HDCP, and announces SecurAble, his free tool that reveals a CPU's security features.",
+  "transcript": "https://www.grc.com/sn/sn-075.txt",
+  "audio": "http://media.GRC.com/sn/SN-075.mp3",
+  "chapters": [
+    {
+      "title": "Why Not a Separate DRM Edition?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve has come up with yet another application, SecurAble. But first, if you haven't heard last week's episode with Peter Gutmann, pause and go back."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. I wanted to give Peter a chance to explain, and he did. But some points I tried to slip in need making, because there's so much hysteria. Even mainstream articles get Vista's DRM wrong."
+        },
+        {
+          "s": "leo",
+          "t": "Critiques of Peter on the web completely miss his point. Hollywood may have required this, but nobody made Microsoft build it into every version of Vista. Linux, and I hope Apple, will say this belongs in a separate box. I think that's why Apple made Apple TV."
+        },
+        {
+          "s": "steve",
+          "t": "You might suggest a Vista Media Center Edition, like XP had. But this stuff is literally down in the kernel. It required so much change that a separate DRM edition wasn't practical."
+        },
+        {
+          "s": "steve",
+          "t": "And after reading Microsoft's specs for the fifth time, it's clear Vista is a heavily DRM'd OS, not just for HD. Microsoft notes that third parties had to install their own DRM on earlier Windows. Vista fixes that. It's meant to be a DRM platform anyone, not just Hollywood, can rely on."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft's Own Words",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm holding Microsoft's \"Output Content Protection and Windows Vista.\" I highlighted passages to read verbatim, for the record."
+        },
+        {
+          "s": "steve",
+          "t": "The introduction says Microsoft wants a Vista PC to support the needs of both consumers and content owners, respecting business rules for content coming in from cable, satellite, the Internet or next-generation DVDs, while it's on the PC, and as it leaves. This paper covers securing video and audio rendering."
+        },
+        {
+          "s": "leo",
+          "t": "That's the key: video and audio rendering. It doesn't affect other stuff generally. I'm trying to put a good light on this sucker."
+        },
+        {
+          "s": "steve",
+          "t": "It distresses me that many people are swearing off Vista. Vista does many good things for security. Paul Thurrott became a fan by using it, and it's beautiful on my tablet. It'll be on every machine sold next month."
+        },
+        {
+          "s": "steve",
+          "t": "But there's no way around it: Vista is also a pervasive DRM platform. We get security, and content providers get their own security, which sometimes runs against the freedom even honest users want. I like recompressing DVDs I bought to watch on my PDA on planes."
+        },
+        {
+          "s": "leo",
+          "t": "I'm willing to give that up. But protection belongs in a player or external box, so we keep general-purpose computers. The content industry sees every PC, even Linux ones, as a threat."
+        }
+      ]
+    },
+    {
+      "title": "A Linux-Powered HD DVD Player",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of which, I just got Toshiba's second-generation HD DVD player, the HD-A2."
+        },
+        {
+          "s": "leo",
+          "t": "I canceled my order when LG announced a dual-format player."
+        },
+        {
+          "s": "steve",
+          "t": "And if Apple goes Blu-ray, that's a strong driver for it."
+        },
+        {
+          "s": "leo",
+          "t": "Apple and HP will."
+        },
+        {
+          "type": "fact",
+          "title": "Apple and Blu-ray",
+          "t": "HP did back Blu-ray, but Apple never built Blu-ray drives into its Macs. Steve Jobs later called Blu-ray licensing \"a bag of hurt.\""
+        },
+        {
+          "s": "steve",
+          "t": "The Toshiba even has Ethernet, configured with DHCP or a fixed IP like a PC, to update its firmware. In the manual's license section: Linux kernel, BusyBox, glibc, OpenSSL. It's built on Linux and open-source software."
+        },
+        {
+          "s": "leo",
+          "t": "My Panasonic TV's manual has the GPL too. Use open source in your box, just don't modify my Linux. The PC's strength has always been its openness."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft on the Open PC",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft's document says that too. A consumer electronics device is a closed box, where users can't load software or add capture cards, at least in content providers' perception. The Windows PC is an open platform: anyone can load software. Unfortunately, so can malware authors. That part isn't in the document."
+        },
+        {
+          "s": "leo",
+          "t": "Didn't think so."
+        },
+        {
+          "s": "steve",
+          "t": "It says the PC's interfaces and buses are well defined and published, and that openness is essential to a vibrant PC ecosystem. But the industry is working to stop hackers from using it to pirate content."
+        },
+        {
+          "s": "steve",
+          "t": "\"Premium content\" means valuable content that must be protected, each type with its own policy. \"High-level premium content\" means HD DVD and Blu-ray. The content industry could lock PCs out by refusing them license keys, unless a PC is at least as secure as a consumer electronics appliance."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft worked with Intel, ATI, NVIDIA, S3 and Matrox, to resist attacks while preserving the Windows experience and users' privacy."
+        },
+        {
+          "s": "leo",
+          "t": "I don't know if that's possible. Is your PC an open platform or a consumer electronics device?"
+        }
+      ]
+    },
+    {
+      "title": "Output Protection and Revocable Drivers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "More acronyms: PVP-OPM, the Protected Video Path's Output Protection Management. It runs in Vista's protected environment, checks for unsafe situations, and stops premium content if it finds one."
+        },
+        {
+          "s": "steve",
+          "t": "Graphics card makers must provide: output protection on every output, at minimum the ability to turn each off; drivers that reliably report outputs and settings; HDCP on DVI and HDMI, and Macrovision and CGMS-A on analog TV outputs, or they're turned off; and a \"constrictor,\" a downscaler followed by an upscaler, to reduce premium video's information when an unprotected output like analog VGA is present."
+        },
+        {
+          "s": "steve",
+          "t": "Makers must prove their driver talks to genuine hardware. If an implementation proves insufficient, through a hack or \"a valid complaint from content owners,\" the driver might need to be revoked, and a new one deployed with more Hardware Functionality Scan tests."
+        },
+        {
+          "s": "leo",
+          "t": "So your computer could stop working. And as Peter said, just because a company stopped paying its fee."
+        },
+        {
+          "s": "steve",
+          "t": "The document warns that a single driver for many chips is risky. The protected environment will, \"after due process,\" revoke any driver leaking premium content, so one revocation could hit all of a company's products."
+        },
+        {
+          "s": "leo",
+          "t": "Peter said unified drivers will disappear. You used to download one NVIDIA file for any NVIDIA card."
+        },
+        {
+          "s": "steve",
+          "t": "And that raises costs, passed on to users. That's Peter's point about cost."
+        }
+      ]
+    },
+    {
+      "title": "Tilt Bits and \"Soft and Fuzzy\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On tilt bits, the document says a driver sets one when it suspects a hacker, say, if an output status message's hash doesn't match. Then Vista does a full reset of the graphics subsystem, including reauthentication."
+        },
+        {
+          "s": "steve",
+          "t": "They're also used for the User Accessible Bus, a separate graphics card's exposed bus. The goal is no unencrypted content anywhere, from soup to nuts, all the way to your eyeball."
+        },
+        {
+          "s": "leo",
+          "t": "They'd love to put an HDMI port in your brain."
+        },
+        {
+          "s": "steve",
+          "t": "They worry about someone pointing a camcorder at the screen."
+        },
+        {
+          "s": "leo",
+          "t": "We'll cover that in the 2021 edition of Security Now!."
+        },
+        {
+          "s": "steve",
+          "t": "The document says there's no requirement for when a driver sets a tilt bit. Adopting it shows the manufacturer's intent to protect premium content."
+        },
+        {
+          "s": "leo",
+          "t": "Peter talked about intent. The spec isn't clear. They want you to prove you care."
+        },
+        {
+          "s": "steve",
+          "t": "It reads like Microsoft is helping makers defend against lawsuits. The more intent shown, the better their case if the industry sues them for leaking content."
+        },
+        {
+          "s": "steve",
+          "t": "On constriction, it says some premium content's policy will forbid full-resolution analog VGA output. You can't change the display's scanning rate, so the information content is reduced to the owner's specified resolution. And here's the line: \"Basically, a high-resolution picture needs to be degraded to make it soft and fuzzy.\""
+        },
+        {
+          "s": "leo",
+          "t": "I just want to shoot them now. That's infuriating."
+        }
+      ]
+    },
+    {
+      "title": "Robustness Rules Need \"Interpretation\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's more. \"Content industry agreement robustness rules\" govern even how manufacturers lay out circuit boards. They're set by the content industry and described in the 5C, DTCP and AACS documents."
+        },
+        {
+          "s": "leo",
+          "t": "Lawyers who know nothing, not engineers."
+        },
+        {
+          "s": "steve",
+          "t": "And: \"Interpretation is required for some of these documents, and it is sometimes difficult to determine conclusively what is allowed.\""
+        },
+        {
+          "s": "leo",
+          "t": "Simultaneous translation! Even they admit it's a foreign language."
+        },
+        {
+          "s": "steve",
+          "t": "Manufacturers must interpret the rules themselves, and make sure their implementation isn't revoked after a valid complaint from content owners."
+        },
+        {
+          "s": "leo",
+          "t": "We can't tell you what they'll complain about, but you'd better not get a complaint."
+        },
+        {
+          "s": "steve",
+          "t": "Finally: if Hollywood reports a chip maker allowing \"hacker friendly\" cards with its chips, and it can't stop them, the final recourse is revoking that chip's driver."
+        }
+      ]
+    },
+    {
+      "title": "Revocation Only Stops Premium Playback",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So they can reach into a Vista PC remotely and make my video card stop working? Through Windows Update?"
+        },
+        {
+          "s": "steve",
+          "t": "Through Vista updating its license keys. Ideally the fix is a new driver with new keys. You'd no longer choose whether to update: update or suffer revocation. But if a popular card were hackable, content providers could require that all cards of that hardware stop playing premium content."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, so the card still works on the computer. I just couldn't play an HD disc."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. And it's all controlled by policy cryptographically bound to each piece of protected content. It's the provider's choice."
+        },
+        {
+          "s": "leo",
+          "t": "I'll still use my PC normally. I'm less perturbed, since I'd watch HD DVDs on my TV anyway."
+        },
+        {
+          "s": "steve",
+          "t": "That's why I wanted to make this point. As far as we know, current HD DVDs allow full-resolution component output. My new Toshiba has HDMI and component. Imagine buying it and finding a disc that refuses to play over component. It may never happen. It's possible, but we don't know."
+        },
+        {
+          "s": "steve",
+          "t": "And killing hundreds of thousands of working video cards would be so bad that you have to wonder if the industry would ever do it."
+        },
+        {
+          "s": "leo",
+          "t": "I don't blame them for keeping the right. I just hate having it held over our heads. So your point is, don't avoid Vista merely for this."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Laptops, with integrated video, may make great Vista movie players. But I hope this doesn't destabilize Vista, as Peter warned. There are anecdotal reports that it's flaky."
+        },
+        {
+          "s": "leo",
+          "t": "Someone told me DirectX 9 games often freeze or die on Vista. Could be many reasons."
+        },
+        {
+          "s": "steve",
+          "t": "And reports of trouble playing movies, depending on connectors."
+        },
+        {
+          "s": "leo",
+          "t": "HD content often won't play."
+        }
+      ]
+    },
+    {
+      "title": "Buy Displays With HDCP",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The last mile in Vista is from your box to your display. Composite, S-video and component video are all analog and can't be protected."
+        },
+        {
+          "s": "leo",
+          "t": "That's the analog hole."
+        },
+        {
+          "s": "steve",
+          "t": "Vista will add Macrovision and other protection to them, so compliant recorders refuse to record. DVI and HDMI can carry HDCP, which authenticates the display back to the computer. If you're buying displays you want future-proof, make sure they support HDCP over DVI or HDMI."
+        },
+        {
+          "s": "leo",
+          "t": "Some displays have HDMI without HDCP, and those won't play HD content. And \"HDCP-capable\" cards sold until now aren't."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think it's that they won't play, but that the constrictor makes it fuzzy, if the content's policy asks. I've heard no current HD content does."
+        },
+        {
+          "s": "leo",
+          "t": "Also anecdotally, people with DVI or component connections say it won't play at all. Maybe some discs do this, or the hardware does it on its own."
+        },
+        {
+          "s": "steve",
+          "t": "I'm completely DVI-based, and not one of my computer monitors has HDCP. They were never meant to be secure delivery screens."
+        },
+        {
+          "s": "leo",
+          "t": "So it's such an interlocking mess that there are all sorts of reasons it might not work."
+        },
+        {
+          "s": "steve",
+          "t": "Every part of the chain is now locked in licenses, proprietary IP and revocable certificates. It is truly a big change. I wish every Vista weren't laden with it."
+        },
+        {
+          "s": "steve",
+          "t": "But I'm sorry about the FUD, because Vista does so many good things for security. People who want freedom with their content will probably stay on XP, and they need Vista's security less than ordinary consumers who'll simply get it."
+        },
+        {
+          "s": "leo",
+          "t": "Who will just buy new computers with Vista."
+        }
+      ]
+    },
+    {
+      "title": "SecurAble Is Here",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Do you have an announcement?"
+        },
+        {
+          "s": "steve",
+          "t": "The first GRC freeware to come from the Security Now! podcast is available: SecurAble, at GRC.com/securable."
+        },
+        {
+          "s": "steve",
+          "t": "I knew you'd like that URL, Leo. Our newsgroup has pounded on it and caught my typos. It's been an eye-opener. Many people with machines bought in the last couple of years have hardware DEP and don't know it."
+        },
+        {
+          "s": "leo",
+          "t": "So it tells you that you could turn on DEP."
+        },
+        {
+          "s": "steve",
+          "t": "We've learned so much about DEP that my next freeware will be DEPuty. Hardware DEP, properly enabled, which it never is by default because it causes some problems, is the single greatest defense against buffer overrun attacks ever seen. Most attacks of the last few years would have been stopped cold. It's in XP since Service Pack 2. And software DEP isn't DEP at all. It's virtually useless."
+        },
+        {
+          "type": "fact",
+          "title": "Software DEP",
+          "t": "Windows' \"software DEP\" doesn't block code from running in data memory. It only checks a program's registered exception handlers (SafeSEH), so it stops a narrow class of attacks."
+        },
+        {
+          "s": "leo",
+          "t": "What else does SecurAble tell you?"
+        },
+        {
+          "s": "steve",
+          "t": "Whether your chip has 64-bit capability, and Intel's or AMD's virtualization extensions, which offload work from VM software so VMs can run at full speed. VMs are good for security."
+        },
+        {
+          "s": "leo",
+          "t": "Speaking of VMs, VMware showed me its Mac beta at Macworld. I asked how they'll beat Parallels at a third the cost. \"Wait and see.\" The beta is free, with release around mid-year."
+        },
+        {
+          "type": "fact",
+          "title": "VMware on the Mac",
+          "t": "VMware Fusion 1.0 shipped in August 2007. SecurAble is still available free from GRC."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite: \"Best Program Ever\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A short letter titled \"Best Program Ever!!!!!!\": his drive had unreadable sectors and wouldn't boot. He ran SpinRite, and it booted on the first try. He backs it 100 percent."
+        },
+        {
+          "s": "leo",
+          "t": "How often should you run it?"
+        },
+        {
+          "s": "steve",
+          "t": "About every quarter, as preventive maintenance. Another listener bought it just to support Security Now!, and had already made a bootable floppy when his system died. SpinRite runs in Windows to create bootable CDs, floppies or USB drives. Make one before you need it, though our licensing lets you make it on another machine."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is episode 76, divisible by four, so it's a Q&A. I imagine lots of Vista DRM questions."
+        },
+        {
+          "s": "leo",
+          "t": "People have been sending questions to me. Is there a better way?"
+        },
+        {
+          "s": "steve",
+          "t": "Go to GRC.com/securitynow and scroll to the bottom. There's a form that sends them right to me."
+        },
+        {
+          "s": "leo",
+          "t": "The bottom line: Vista's security benefits outweigh these concerns. But it comes out January 29th. If you're on the fence, waiting a few weeks won't kill you."
+        },
+        {
+          "type": "fact",
+          "title": "Release date",
+          "t": "Vista actually went on sale to consumers on January 30, 2007."
+        },
+        {
+          "s": "steve",
+          "t": "And if Vista will run your home theater, make sure your projector has a digital connection, not analog, which could be shut down or fuzzified. Mark Thompson loves SageTV as his TiVo replacement, but protected content would need an all-digital, encrypted path."
+        },
+        {
+          "s": "leo",
+          "t": "Take that, Hollywood. I wonder how Elaine will transcribe our grunts and groans."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why couldn't Microsoft ship a separate DRM edition of Vista?",
+      "options": [
+        "The protection is built deep into the kernel",
+        "It's illegal",
+        "Hollywood forbade it",
+        "It would cost too much to print"
+      ],
+      "answer": 0,
+      "explain": "Vista is meant to be a DRM platform for everyone."
+    },
+    {
+      "q": "What does revoking a graphics driver for leaking content stop?",
+      "options": [
+        "Playback of premium content on that hardware",
+        "The whole video card",
+        "Windows Update",
+        "The PC from booting"
+      ],
+      "answer": 0,
+      "explain": "Ordinary use of the card continues."
+    },
+    {
+      "q": "What does Microsoft's document say constriction does?",
+      "options": [
+        "Degrades a high-resolution picture to make it \"soft and fuzzy\"",
+        "Speeds up video",
+        "Encrypts the screen",
+        "Shrinks windows"
+      ],
+      "answer": 0,
+      "explain": "It applies when unprotected outputs like analog VGA are present."
+    },
+    {
+      "q": "What should buyers look for in a future-proof display, per Steve?",
+      "options": [
+        "HDCP over DVI or HDMI",
+        "A VGA port",
+        "Component inputs",
+        "A larger screen"
+      ],
+      "answer": 0,
+      "explain": "HDMI alone isn't enough without HDCP."
+    },
+    {
+      "q": "What did Steve find inside Toshiba's HD-A2 HD DVD player?",
+      "options": [
+        "Linux and open-source software like BusyBox and OpenSSL",
+        "Windows CE",
+        "A Mac OS",
+        "An Xbox processor"
+      ],
+      "answer": 0,
+      "explain": "It even has Ethernet for firmware updates."
+    },
+    {
+      "q": "What did Steve call the single greatest defense against buffer overruns?",
+      "options": [
+        "Properly enabled hardware DEP",
+        "Software DEP",
+        "Antivirus",
+        "A NAT router"
+      ],
+      "answer": 0,
+      "explain": "SecurAble reveals whether your CPU supports it."
+    }
+  ]
+}

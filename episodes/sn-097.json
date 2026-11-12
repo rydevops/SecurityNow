@@ -1,0 +1,411 @@
+{
+  "number": 97,
+  "title": "Operation: Bot Roast",
+  "subtitle": "The FBI goes after bot-herders",
+  "date": "2007-06-21",
+  "description": "After correcting last week's SPF answer and a courthouse SpinRite save, Steve and Leo discuss the FBI's \"Operation Bot Roast,\" which arrested three bot-herders and identified over a million infected PCs. Steve explains what bots and denial-of-service attacks are, how bot-herders command their zombies through IRC chat rooms, his own 2001 infiltration of a botnet, how investigators trace herders, and why ISPs could end the problem.",
+  "transcript": "https://www.grc.com/sn/sn-097.txt",
+  "audio": "http://media.GRC.com/sn/SN-097.mp3",
+  "chapters": [
+    {
+      "title": "Other Security Podcasts",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Everybody's favorite security podcast. Are there any others?"
+        },
+        {
+          "s": "steve",
+          "t": "Listeners say ours stands alone, so I've listened to some others. They're different. To each his own."
+        },
+        {
+          "s": "leo",
+          "t": "Listen to as many as you want. CNET does one, and a friend in town does one."
+        },
+        {
+          "s": "steve",
+          "t": "How many gigs do you have free? We'll fill it up."
+        },
+        {
+          "s": "leo",
+          "t": "Today, an FBI operation and some amazing statistics."
+        },
+        {
+          "s": "steve",
+          "t": "Wednesday before last, the FBI announced \"Operation Bot Roast.\""
+        },
+        {
+          "s": "leo",
+          "t": "You don't think of the FBI as jokesters."
+        }
+      ]
+    },
+    {
+      "title": "Correcting Last Week's SPF Answer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An erratum from Justin Alcorn of Cleveland Heights. In Episode 96, everything I said about SPF was correct, except I didn't answer the question. Mike's problem was the opposite: his ISP checks SPF on incoming mail."
+        },
+        {
+          "s": "leo",
+          "t": "I twisted it around, because my problem is the reverse."
+        },
+        {
+          "s": "steve",
+          "t": "When someone whose domain publishes an SPF record emails Mike's family address, his brother's server forwards it to the ISP. The ISP checks the sender's SPF record, sees the mail arriving from the forwarding server, which isn't authorized, and drops it as spoofed. Which is exactly what SPF is for."
+        },
+        {
+          "s": "leo",
+          "t": "So only some mail is lost. Wouldn't that happen to me? Mail to leo@leoville.com is forwarded to FastMail."
+        },
+        {
+          "s": "steve",
+          "t": "Forwarders are a serious problem for SPF. Email has always used middlemen. If a server was busy or offline, mail went to a backup MX server, which forwarded it on with retries. SPF authenticates the originating server directly to the destination, implying no middlemen."
+        },
+        {
+          "s": "steve",
+          "t": "Justin suggests either having the ISP whitelist the forwarder, not likely, or having his brother implement the Sender Rewriting Scheme, SRS. The forwarding server rewrites the envelope's \"from\" address to its own domain, which its own SPF record authorizes. That may be more than his brother can do."
+        },
+        {
+          "s": "leo",
+          "t": "I don't know why I'm not having the problem."
+        },
+        {
+          "s": "steve",
+          "t": "Many senders still have no SPF record. When a receiver finds none, most ISPs let the mail through, since they don't know either way. A matching record means high confidence it's valid. A mismatch means it's likely spoofed and goes to spam."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite at the Courthouse",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Harry Liddenfeld, a listener since Episode 1, backs up as we always say. He inherited his courthouse's security card access system from the county. The county backed up its 500-person database to an out-of-hand pile of CDs."
+        },
+        {
+          "s": "steve",
+          "t": "When the computer crashed two years ago, the county said some backup CDs were corrupt, so they spent days re-entering the whole database by hand."
+        },
+        {
+          "s": "leo",
+          "t": "At least they could."
+        },
+        {
+          "s": "steve",
+          "t": "He vowed never again. He bought Norton Ghost and a second drive, imaged the system and backed up data weekly. When the main drive failed, he booted from the ghosted drive and was running in minutes."
+        },
+        {
+          "s": "steve",
+          "t": "Two days later that drive started having issues, and the county still wanted CDs. Fearing he'd lose everything, he bought SpinRite himself, since the county wouldn't. He ran it at Level 2 at 10 a.m. By 3 p.m. everything was back to normal."
+        },
+        {
+          "s": "steve",
+          "t": "And the original failed drive, which wouldn't boot, booted normally after SpinRite, faster than ever. He now keeps a second ghosted drive off-site."
+        },
+        {
+          "s": "leo",
+          "t": "SpinRite isn't a backup solution, but it's nice to have in your toolkit."
+        },
+        {
+          "s": "steve",
+          "t": "He did everything right, and the drive he relied on began to fail. Out of curiosity, he ran SpinRite on the dead one too."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe that's why the county didn't want to pay. They didn't want to know."
+        }
+      ]
+    },
+    {
+      "title": "Three Bot-Herders Arrested",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Eight days ago, the FBI's press releases, unlike its typical ones, named an ongoing project, Operation Bot Roast, and announced the arrest of three \"bot-herders\": James Brewer of Arlington, Texas; Jason Michael Downey of Covington, Kentucky; and Robert Alan Soloway of Seattle, Washington."
+        },
+        {
+          "s": "steve",
+          "t": "The FBI says it has confirmed at least a million consumer PCs infected with bots."
+        },
+        {
+          "s": "leo",
+          "t": "That's low compared with Vint Cerf's estimate of 160 million."
+        },
+        {
+          "s": "steve",
+          "t": "And three major gangs are now fighting turf wars over bots, because spammers pay them by how many bots they control. Hundreds of millions of innocent Windows PCs, as far as I know all bots are Windows-based, are raw material. The gangs deliberately target and steal each other's already-infected computers."
+        },
+        {
+          "type": "fact",
+          "title": "The convictions",
+          "t": "Robert Soloway, dubbed the \"Spam King,\" was sentenced in 2008 to nearly four years in prison. The FBI announced a second phase, Bot Roast II, in November 2007."
+        }
+      ]
+    },
+    {
+      "title": "When GRC Disappeared",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I got directly involved on Friday, May 4, 2001, over six years ago. I was working that evening, and GRC dropped off the Net. I'd known about denial-of-service attacks in theory but never experienced one. Fond memories of my DoS innocence, which GRC lost in spades."
+        },
+        {
+          "s": "leo",
+          "t": "Explain DoS and botnets for new listeners."
+        },
+        {
+          "s": "steve",
+          "t": "DoS stands for denial of service. Today it typically means a flood of Internet traffic aimed at a few targets, from many computers around the globe, each sending as much as it can. Targets include web servers, individuals, and even the main DNS servers that hold the Internet together."
+        },
+        {
+          "s": "steve",
+          "t": "The FBI's advisory says the government now considers botnets a growing threat to national security, the national information infrastructure, and the U.S. economy."
+        }
+      ]
+    },
+    {
+      "title": "What Makes a Bot a Bot",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "People get infected with spyware, malware and viruses. One class is bots: code that runs in your machine like a Trojan and survives attempts to remove it."
+        },
+        {
+          "s": "steve",
+          "t": "My friend Bob in Vancouver, whom you met, has done IT work for 20 years and knows what every Windows file is for. An employee brought a Trojan in on a laptop, and it spread through the company. On one machine it keeps coming back, and it's driving him nuts."
+        },
+        {
+          "s": "steve",
+          "t": "That's the evolution of the last five years. You've said spyware used to be removable. Now you often must roll back to a restore point or an image from before the infection."
+        },
+        {
+          "s": "steve",
+          "t": "What makes a bot a bot is that it lodges itself virtually irremovably and enlists itself to receive commands. The most popular way is still to join a hidden, password-protected IRC chat room where all of a given bot-herder's bots convene."
+        },
+        {
+          "s": "leo",
+          "t": "\"Bot-herder\" is perfectly descriptive."
+        }
+      ]
+    },
+    {
+      "title": "Infiltrating a Botnet in 2001",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Six years ago, after someone gave me a bot, I reverse-engineered it, read the IRC specifications, and wrote my own benign bots that joined the chat room as if they'd infected a computer. That let me watch, and I ended up talking with some of the bot-herders. My document at GRC has the transcripts."
+        },
+        {
+          "s": "steve",
+          "t": "The bot was called \"evilbot.\" Bots logged in and saluted: \"Evilbot 3296 reporting for duty.\" I watched them come and go as their owners turned their computers on and off. That network had a few hundred. Today's have tens or hundreds of thousands."
+        },
+        {
+          "s": "steve",
+          "t": "The bot-herder logs in and issues commands everyone in the chat sees: attack this domain or IP, or pick up a list of addresses and start sending spam. It's centralized control of a worldwide network of slave computers."
+        },
+        {
+          "s": "steve",
+          "t": "It grew out of script kiddies home from school, blasting each other off the network to control IRC chat rooms. When the channel op went offline..."
+        },
+        {
+          "s": "leo",
+          "t": "The moderator?"
+        },
+        {
+          "s": "steve",
+          "t": "The channel op, yes. Then someone else could take over and kick other users off. Capture the flag. Horseplay among teenagers, but illegal, since they used other people's machines."
+        },
+        {
+          "s": "steve",
+          "t": "Now it's evolved into huge spam networks and denial-of-service attacks for rent. Someone hires a botnet to blast a competing gambling site off the Net at a critical moment during a horse race or a boxing match. This goes on all the time."
+        },
+        {
+          "s": "leo",
+          "t": "I've seen these networks fill up: boom, boom, boom, another computer every second."
+        },
+        {
+          "s": "steve",
+          "t": "I listened to kids put out a new bot in the evening, and by the time they got home from school the next day, it had 3,000 hosts."
+        }
+      ]
+    },
+    {
+      "title": "How the FBI Tracks Them",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's taken the FBI years to get organized, but it clearly is now. Brewer's bots infected several Chicago-area hospitals, bringing down critical PCs running intensive care software and saturating their bandwidth. Messing with hospitals raises red flags at the FBI."
+        },
+        {
+          "s": "steve",
+          "t": "I'd guess the FBI did what I did: captured a bot, infected one of its own honeypot machines, watched it connect to bot-herder central, and backtracked to the herder."
+        },
+        {
+          "s": "steve",
+          "t": "That's the system's weakness. IRC insulates the herder from his bots, but herders don't know whose computers they've commandeered. Brewer surely didn't know his bots were hurting hospitals. Machines get infected just by visiting websites or opening email."
+        },
+        {
+          "s": "steve",
+          "t": "So the FBI can deliberately infect honeypots and trace them back. This isn't fun and games anymore. There's serious money now. Soloway's network sent tens of millions of pieces of spam."
+        },
+        {
+          "s": "leo",
+          "t": "Are they using special tools?"
+        },
+        {
+          "s": "steve",
+          "t": "They're tight-lipped, so as not to be defeated. The gangs spit out maybe 20 new bots a day, including anti-bot bots, so they evolve very fast. But nothing stops good guys from infecting their own machines and backtracking."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has been involved since 2004. Its Malicious Software Removal Tool, updated each Patch Tuesday, probably gets signatures for known bots, to remove them where it can."
+        }
+      ]
+    },
+    {
+      "title": "Why the FBI Can't Just Clean Them",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "But as we found during Code Red, there's no legal way to directly remove the malware, even for the FBI, which probably has a million infected IP addresses. That's where the number comes from."
+        },
+        {
+          "s": "steve",
+          "t": "An IP only tells you the ISP. The FBI must subpoena the ISP for the owner's name and address at that moment. ISPs may want to help, but their terms of service promise customers privacy, so they need the subpoena to protect themselves. And bots evolve, and users change IPs."
+        },
+        {
+          "s": "leo",
+          "t": "That makes it hard."
+        },
+        {
+          "s": "steve",
+          "t": "The FBI talked about working with CERT, at Carnegie Mellon, to notify users. A SANS Institute expert asked how. They've tried with their DShield service for years and learned how ineffective it is. Infected users aren't the people listening to Security Now!. They glibly click any link in email, and they don't check DShield for their IP."
+        },
+        {
+          "s": "leo",
+          "t": "Imagine getting an email from the FBI saying you're compromised. Our listeners would say, yeah right, I'm clicking that."
+        },
+        {
+          "s": "steve",
+          "t": "And with only an IP, you can't send email at all."
+        }
+      ]
+    },
+    {
+      "title": "ISPs Could End This Overnight",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "That's why the first line of defense should be ISPs, telling customers whose addresses are compromised."
+        },
+        {
+          "s": "steve",
+          "t": "ISPs could see abnormal outgoing traffic from specific customers over a week. But that involves them in quality of service, and if they take responsibility and fail, they could be liable."
+        },
+        {
+          "s": "leo",
+          "t": "They're putting us online. They have some responsibility."
+        },
+        {
+          "s": "steve",
+          "t": "They see all the traffic crossing their networks, but they'd need to log and classify it to see one source sending heavy traffic to many destinations. Nobody has compelled them to."
+        },
+        {
+          "s": "steve",
+          "t": "And the FBI says most of these bots are in the U.S., not China, where we can't reach them."
+        },
+        {
+          "s": "leo",
+          "t": "Very important."
+        },
+        {
+          "s": "steve",
+          "t": "So some congressman could float legislation making ISPs responsible for thwarting this. That would end it overnight."
+        },
+        {
+          "s": "steve",
+          "t": "Over a million people have downloaded my PDF about rolling up my sleeves and infiltrating those networks six years ago. I think listeners would find it interesting."
+        },
+        {
+          "s": "leo",
+          "t": "And GRC has free tools like ShieldsUP!, DCOMbobulator, Shoot The Messenger, LeakTest, and the non-security Wizmo, which I love."
+        },
+        {
+          "type": "fact",
+          "title": "Since then",
+          "t": "Botnets moved from IRC to web-based and peer-to-peer control, and later to hijacked routers, cameras and other devices, like 2016's Mirai. Some ISPs now notify or quarantine infected customers, and law enforcement takes down botnets in coordinated international operations."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does SPF cause trouble for mail forwarding services?",
+      "options": [
+        "SPF assumes mail comes directly from an authorized server, so forwarded mail looks spoofed",
+        "Forwarders encrypt mail",
+        "SPF blocks all forwarding",
+        "Forwarders lack DNS"
+      ],
+      "answer": 0,
+      "explain": "The Sender Rewriting Scheme can fix it."
+    },
+    {
+      "q": "How do bot-herders usually command their bots, per Steve?",
+      "options": [
+        "Through a hidden, password-protected IRC chat room",
+        "By email",
+        "Through Windows Update",
+        "Over the phone"
+      ],
+      "answer": 0,
+      "explain": "Steve wrote fake bots to join one in 2001."
+    },
+    {
+      "q": "How did bot-herding begin?",
+      "options": [
+        "Teenagers knocking each other offline to take control of IRC chat rooms",
+        "As a government project",
+        "As a Microsoft test",
+        "For online banking"
+      ],
+      "answer": 0,
+      "explain": "It grew into spam and DoS-for-hire."
+    },
+    {
+      "q": "How can investigators trace a bot-herder?",
+      "options": [
+        "Infect a honeypot and follow its connection back to the controller",
+        "Ask Microsoft",
+        "Read the spam",
+        "Guess passwords"
+      ],
+      "answer": 0,
+      "explain": "Herders don't know whose computers they've taken."
+    },
+    {
+      "q": "Why can't the FBI simply clean infected computers?",
+      "options": [
+        "Accessing them without permission is illegal, even for the FBI",
+        "It lacks the IPs",
+        "The bots are encrypted",
+        "ISPs refuse"
+      ],
+      "answer": 0,
+      "explain": "It would need subpoenas just to identify the owners."
+    },
+    {
+      "q": "Why did Steve and Leo say ISPs are key?",
+      "options": [
+        "They see all traffic leaving their networks and could spot and stop infected customers",
+        "They write the bots",
+        "They control Windows",
+        "They own the IRC servers"
+      ],
+      "answer": 0,
+      "explain": "The FBI said most bots are in the U.S."
+    }
+  ]
+}

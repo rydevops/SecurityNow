@@ -15,6 +15,7 @@
   --ink: #0b1a33;
   --leo: #dcebff;
   --steve: #0d2a55;
+  --guest: #f4e7c8;
   --ok: #3ccf8e;
   --bad: #ff6b6b;
   --topbar: 56px;
@@ -191,6 +192,12 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .ep__bar { flex: 1; max-width: 120px; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .1); overflow: hidden; }
 .ep__bar i { display: block; height: 100%; background: var(--accent); }
 .ep__go { color: var(--accent-2); }
+/* Placeholder: aired, but not adapted yet */
+.ep--soon { cursor: default; opacity: .55; }
+.ep--soon:hover { border-color: inherit; }
+.ep--soon:active { transform: none; }
+.ep__soon { padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; font-size: .7rem; letter-spacing: .02em; }
+.range--soon { opacity: .6; }
 .index__note, .empty { color: var(--muted); font-size: .85rem; text-align: center; margin-top: 22px; }
 
 /* =========================================================
@@ -384,6 +391,7 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .bubble__who { display: block; font-size: .72em; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .2em; opacity: .7; }
 .bubble--leo   { align-self: flex-start; background: var(--leo); color: var(--ink); border-bottom-left-radius: .25em; }
 .bubble--steve { align-self: flex-end;   background: var(--steve); color: #f1f6ff; border-bottom-right-radius: .25em; }
+.bubble--guest { align-self: center;     background: var(--guest); color: var(--ink); border: 1px solid rgba(13, 42, 85, .18); }
 .is-past { opacity: .62; }
 @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
 

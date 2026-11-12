@@ -1,0 +1,490 @@
+{
+  "number": 51,
+  "title": "Vista's Virgin Stack",
+  "subtitle": "Why a brand-new network stack worries Steve",
+  "date": "2006-08-03",
+  "description": "A Symantec study confirms that Windows Vista has a networking stack written from scratch, and it has brought back attacks other systems fixed a decade ago. Steve explains what a network stack is, why security can only be proven over time, and why early Vista adopters should be careful. Plus: a fake security consultant, errata, and SpinRite's early-warning numbers.",
+  "transcript": "https://www.grc.com/sn/sn-051.txt",
+  "audio": "http://media.GRC.com/sn/SN-051.mp3",
+  "chapters": [
+    {
+      "title": "A Consultant Who Listens Closely",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 51, and a story first. The chief security officer of a major Israeli financial institution wrote to me."
+        },
+        {
+          "s": "leo",
+          "t": "His board keeps hiring outside consultants to double-check him, eight in the last couple of years. The newest one sent him long, very erudite emails, but in person he couldn't put two sentences together."
+        },
+        {
+          "s": "leo",
+          "t": "Then the consultant sent a cropped screenshot of an open port. The security officer recognized it as ShieldsUP!, started listening to this podcast, and realized the consultant was just parroting Security Now!"
+        },
+        {
+          "s": "steve",
+          "t": "He's listening to it without understanding it."
+        },
+        {
+          "s": "leo",
+          "t": "So if you're pretending to be a security expert based on what Steve says, do some extra research."
+        },
+        {
+          "s": "steve",
+          "t": "Or listen to each episode a few times. After our Netstat episode, people in forums said you get much more out of it if you sit at a computer and type along."
+        },
+        {
+          "s": "leo",
+          "t": "TechTV viewers did that too. We learned not to give out a URL until the site had loaded."
+        },
+        {
+          "s": "steve",
+          "t": "Mention ShieldsUP! back when I had a couple of T1s, and the \"slashdot effect\" collapsed my site."
+        }
+      ]
+    },
+    {
+      "title": "Errata: 640K and Software Carousel",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last week we started a series on virtualization, and we'll get back to it. First, errata."
+        },
+        {
+          "s": "steve",
+          "t": "Sharp-eared listeners caught me saying Bill Gates thought we'd never need more than 640 megabytes."
+        },
+        {
+          "s": "leo",
+          "t": "640K. Anybody who's been around a while makes that slip."
+        },
+        {
+          "s": "steve",
+          "t": "Everything is gigabytes now, three orders of magnitude beyond those days. 640K was ten times what the Apple II had."
+        },
+        {
+          "s": "leo",
+          "t": "The Apple II had 48K."
+        },
+        {
+          "s": "steve",
+          "t": "Plus a RAM card, so a 64K address space. Ten times that is 640K."
+        },
+        {
+          "s": "steve",
+          "t": "Someone also reminded me of the DOS utility I actually used: Software Carousel. It was cleaner than DESQview or IBM's TopView. Press Alt-2 or Alt-3 and you instantly switched to a whole separate DOS, using expanded and extended memory."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is a special Mod 4 Q&A: Episode 52, a full year, and we haven't taken a single week off. Virtualization resumes in Episode 53."
+        }
+      ]
+    },
+    {
+      "title": "\"Brand New,\" and This Time It's True",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "But something flabbergasted me this week. Microsoft's Vista marketing listed a \"brand new networking stack.\" They always say things like that, and it's never true."
+        },
+        {
+          "s": "steve",
+          "t": "Windows XP was Windows 2000 with rolling green hills and a blue-and-green candy coating, raw sockets and all."
+        },
+        {
+          "s": "steve",
+          "t": "Then Symantec published a report. Two of its engineers poked at three beta versions of Vista, and found the stack really is brand new, written from scratch."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't that a good idea, given all the problems with the old one?"
+        },
+        {
+          "s": "steve",
+          "t": "People assume new is good. In security, fresh is the last thing you want your code to be."
+        },
+        {
+          "s": "steve",
+          "t": "There's an interesting rumor here. Windows 2000 had a different stack from 95, 98 and NT, and it was born fully mature, with old problems already solved. People suspected Microsoft lifted it from one of the open-source BSDs."
+        },
+        {
+          "s": "steve",
+          "t": "OS fingerprinting tools like Nmap send specially crafted packets and identify a system by subtle differences in its responses. Windows 2000 responded exactly like a BSD of the time. And like the BSDs, it had raw sockets."
+        },
+        {
+          "s": "steve",
+          "t": "I have no proof. But Vista's disastrous stack lends more credence to the idea that Microsoft got the Windows 2000 stack from somewhere."
+        },
+        {
+          "type": "fact",
+          "title": "The BSD rumor",
+          "t": "Some Windows networking utilities, like ftp.exe, have long carried BSD copyright notices, which is allowed under the BSD license and helped fuel the rumor. Nobody has shown that the Windows 2000 TCP/IP stack itself was copied from BSD."
+        }
+      ]
+    },
+    {
+      "title": "What a Network Stack Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's step back. I've heard \"TCP stack,\" but what is it, and what does it do?"
+        },
+        {
+          "s": "steve",
+          "t": "A stack is a stack of layers. Networking people think in layers, like the famous OSI model, from electrical connections at the bottom up to applications at the top. Each layer does one kind of thing."
+        },
+        {
+          "s": "steve",
+          "t": "Packets are nested envelopes. An Ethernet frame contains an IP packet, which contains a protocol packet like TCP, UDP or ICMP."
+        },
+        {
+          "s": "steve",
+          "t": "The bottom layer accepts the Ethernet frame, removes that envelope, and passes the IP packet up. The IP layer reads its header and passes the contents up to the protocol layer, and so on."
+        },
+        {
+          "s": "steve",
+          "t": "Sending works in reverse. Each layer wraps what it gets from above in its own envelope, until the Ethernet layer puts it on the wire. At the far end, it's unwrapped layer by layer, like nesting dolls, back up to the application."
+        },
+        {
+          "s": "steve",
+          "t": "It's modular, so different layers can be swapped in, like Token Ring or PPPoE instead of Ethernet. That's why it has stood the test of time."
+        },
+        {
+          "s": "leo",
+          "t": "And all network communication goes through it."
+        },
+        {
+          "s": "steve",
+          "t": "Any Internet-connected machine, UNIX or modern Windows, has a stack. It's fundamental."
+        },
+        {
+          "type": "fact",
+          "title": "Encapsulation",
+          "t": "Each layer adds a header on the way out and removes it on the way in. An email you send is wrapped in TCP, then IP, then an Ethernet or Wi-Fi frame. That's why one stack can carry many applications over many kinds of network."
+        }
+      ]
+    },
+    {
+      "title": "Security Is Proven, Not Claimed",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Writing a new stack, to support new protocols or fix bugs, doesn't sound like such a big deal."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is that it's incredibly complex. The summer before XP shipped, Microsoft said XP would be its most secure operating system ever."
+        },
+        {
+          "s": "leo",
+          "t": "I've heard that phrase about Vista."
+        },
+        {
+          "s": "steve",
+          "t": "Any security person rolls their eyes. You can't say something will be secure. Security is proven, not claimed. And XP turned out to be the least secure Windows ever, worm land for years."
+        },
+        {
+          "s": "steve",
+          "t": "Finally, with Service Pack 2, the firewall is on and the problems have been found. Now we can take a deep breath. And the bad news is that Vista is \"the most secure operating system Microsoft has ever made.\""
+        },
+        {
+          "s": "leo",
+          "t": "To be fair, Symantec has an interest in insecurity, since it sells security products."
+        },
+        {
+          "s": "steve",
+          "t": "True. Symantec has sued Microsoft, claiming it misused trade secrets from Veritas licensing in XP and Vista, and Microsoft is moving into anti-spyware and antivirus. But the report is well written and fair. It stresses that these are betas, and notes problems fixed in later betas. It's linked from both our show notes pages."
+        },
+        {
+          "s": "leo",
+          "t": "And publishing it may help Microsoft fix things."
+        },
+        {
+          "type": "fact",
+          "title": "The Symantec report",
+          "t": "Symantec's \"Windows Vista Network Attack Surface Analysis,\" published in 2006, examined several Vista beta builds. It documented the new stack's support for IPv6, tunneling protocols and peer-to-peer features, and the crashes and regressions found along the way."
+        }
+      ]
+    },
+    {
+      "title": "Old Mistakes, New Mistakes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Remember the LAND attack I mentioned a few weeks ago? Send Windows a spoofed packet whose source and destination are both its own address, and the stack answers itself and melts down."
+        },
+        {
+          "s": "leo",
+          "t": "Was that patched in XP?"
+        },
+        {
+          "s": "steve",
+          "t": "It was fixed in Windows 95. And it's back in Vista's beta. All the mistakes fixed in every earlier Windows stack, and in every other mature stack, have returned."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't that be textbook? We learned this 15 years ago."
+        },
+        {
+          "s": "steve",
+          "t": "It was found and fixed in a later build. We have good security tools for nailing these now. But it proves this stack is brand new."
+        },
+        {
+          "s": "leo",
+          "t": "So they didn't borrow it from anyone, unless it was the Windows 95 team."
+        },
+        {
+          "s": "steve",
+          "t": "Starting over can make sense. Code evolves until it's patchy. That's supposedly why the Apache server is called Apache: a patchy server."
+        },
+        {
+          "type": "fact",
+          "title": "Why \"Apache\"?",
+          "t": "\"A patchy server\" is a popular joke, and early developers did play on it. The Apache Software Foundation says the name was chosen out of respect for the Native American Apache nations."
+        },
+        {
+          "s": "steve",
+          "t": "The new stack builds in IPv6, which XP and Server 2003 only offered as an add-on. It also adds native peer-to-peer support with NAT traversal, like Skype uses. So Microsoft bit the bullet and started again. Nothing could be worse for security."
+        },
+        {
+          "s": "steve",
+          "t": "Another example: when a packet arrives for a protocol the stack doesn't support, it politely sends back an ICMP message saying so. TCP is protocol 6, UDP is 17. That makes it trivial to probe which protocols a stack does support."
+        },
+        {
+          "s": "steve",
+          "t": "The researchers found some unexpected ones, sent random data to one, and boom: Blue Screen of Death."
+        },
+        {
+          "s": "steve",
+          "t": "Those are easy fixes, and later builds fixed more. But everyone in the industry will tell you a networking stack takes years to mature."
+        },
+        {
+          "s": "steve",
+          "t": "And there are brand-new problems. IP options carry a length field telling the stack how far to skip to the next option. In Vista, set it to zero and it skips zero bytes, lands where it was, and loops forever. The system locks up hard and needs a full reset."
+        },
+        {
+          "type": "fact",
+          "title": "The zero-length loop",
+          "t": "A length of zero means \"move ahead zero bytes,\" so a parser that doesn't reject it reads the same option forever. Mature stacks learned to treat zero and other impossible lengths as malformed packets."
+        }
+      ]
+    },
+    {
+      "title": "Advice for Early Adopters",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "These are betas, full of bugs. You're not saying these problems will persist, just that a new stack is untested. And the spotlight is on Microsoft to ship something secure."
+        },
+        {
+          "s": "steve",
+          "t": "But by definition, nothing brand new is secure."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft is running the world's largest beta, 2 million copies, and some security experts will be pounding on it."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not crying wolf. I still use Windows 2000 as my main platform and GRC's server platform."
+        },
+        {
+          "s": "leo",
+          "t": "Which Microsoft won't support much longer."
+        },
+        {
+          "type": "fact",
+          "title": "Windows 2000's end",
+          "t": "Microsoft ended extended support for Windows 2000 in July 2010."
+        },
+        {
+          "s": "leo",
+          "t": "I thought much of Vista was based on Server 2003. Clearly the stack isn't."
+        },
+        {
+          "s": "steve",
+          "t": "Its many mistakes prove Microsoft told the truth this time. It's a virgin."
+        },
+        {
+          "s": "steve",
+          "t": "XP's new code was badly broken in ways no beta testing found. Those problems were discovered years later, by people looking closely."
+        },
+        {
+          "s": "leo",
+          "t": "Windows is so dominant that the world's top hackers will attack Vista the minute it ships."
+        },
+        {
+          "s": "steve",
+          "t": "It isn't even Microsoft's fault. It made a tough decision, citing performance, stability and extensibility. I respect making the hard choice. But only years of battle hardening will make Vista secure."
+        },
+        {
+          "s": "steve",
+          "t": "And they're talking about shipping in January 2007, which means freezing the code within months for PC makers."
+        },
+        {
+          "s": "leo",
+          "t": "They promised enterprises December, so they'll freeze it in about two months."
+        },
+        {
+          "s": "steve",
+          "t": "Last week it was still crashing when you sent data to a certain protocol. I can't imagine it being both stable and on time."
+        },
+        {
+          "s": "leo",
+          "t": "They'll ship. Our advice: don't be the first to upgrade. I'm teaching two Vista security classes on PC World's geek cruise in February, so I can't hold off, and neither can you."
+        },
+        {
+          "s": "steve",
+          "t": "I ignored XP except for screenshots of my apps with the candy coating. Not this time. Try it as a dual boot on weekends, but don't move your whole office over soon."
+        },
+        {
+          "s": "leo",
+          "t": "We'll take a bullet so you don't have to."
+        },
+        {
+          "s": "steve",
+          "t": "It's going to be hacker heaven. We'll be busy."
+        },
+        {
+          "type": "fact",
+          "title": "What happened with Vista",
+          "t": "Vista shipped to businesses in November 2006 and to consumers in January 2007. Its new stack was eventually reworked and refined, and it remains the basis of networking in Windows 10 and 11."
+        },
+        {
+          "s": "steve",
+          "t": "Meanwhile, our virtualization series continues, especially sandboxing with virtual machines."
+        },
+        {
+          "s": "leo",
+          "t": "That would be the perfect way to try Vista."
+        },
+        {
+          "s": "steve",
+          "t": "Running Vista in a sandbox will probably make a lot of sense. I think the virtualization product Microsoft is giving away free only runs on its server platform."
+        },
+        {
+          "s": "leo",
+          "t": "We'll find out. And we hope to interview one of the kings of virtualization."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite's Early Warning",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Most people buy SpinRite for a disaster, but it's also great for maintenance."
+        },
+        {
+          "s": "steve",
+          "t": "Run it every three or four months, or when the computer seems slow, and it shows the drive its problems so the drive can fix them."
+        },
+        {
+          "s": "leo",
+          "t": "On the radio I said SMART monitors haven't helped me much. SpinRite shows how many corrections a drive is making."
+        },
+        {
+          "s": "steve",
+          "t": "As it runs, SpinRite reads the drive's private SMART data, counts the corrections since it last looked, and divides by the data read. That gives corrections per megabyte. If that number starts climbing, your drive is in trouble long before it dies."
+        },
+        {
+          "s": "steve",
+          "t": "Nothing else can do it, because it only makes sense while the drive is working. SpinRite applies a calibrated load and watches how hard the drive has to work."
+        },
+        {
+          "s": "leo",
+          "t": "I didn't realize error correction is active all the time."
+        },
+        {
+          "s": "steve",
+          "t": "It used to handle only defects. Now bits are so small that we can't make perfect recording surfaces at that scale, so ECC is standard operating procedure. There are 500-gig drives at Fry's."
+        },
+        {
+          "s": "leo",
+          "t": "I buy several smaller drives instead. The areal density scares me."
+        },
+        {
+          "s": "steve",
+          "t": "We're old dogs. I ask my computer guy for the smallest Maxtor he can still get."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is Mod 4, and our anniversary. My wife will bake a cake."
+        },
+        {
+          "s": "steve",
+          "t": "We're not going to run out of material."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Symantec's report reveal about Windows Vista?",
+      "options": [
+        "Its networking stack was written from scratch",
+        "It reused XP's stack unchanged",
+        "It had no networking",
+        "It used Linux's stack"
+      ],
+      "answer": 0,
+      "explain": "Steve's point: brand-new code can't be called secure until it's battle-tested."
+    },
+    {
+      "q": "What does a network \"stack\" do?",
+      "options": [
+        "Wraps and unwraps data in nested layers, from Ethernet through IP to TCP or UDP",
+        "Stores passwords",
+        "Compresses files",
+        "Manages the display"
+      ],
+      "answer": 0,
+      "explain": "Each layer handles one envelope, which keeps the design modular."
+    },
+    {
+      "q": "Which decade-old attack reappeared in Vista's beta?",
+      "options": [
+        "The LAND attack, a packet claiming to come from the target itself",
+        "Code Red",
+        "The Ping of Death",
+        "WEP cracking"
+      ],
+      "answer": 0,
+      "explain": "It had been fixed since Windows 95, which proved the stack was new."
+    },
+    {
+      "q": "What did a zero-length IP option do to Vista's beta?",
+      "options": [
+        "Sent the stack into an endless loop that froze the system",
+        "Nothing",
+        "Deleted files",
+        "Opened every port"
+      ],
+      "answer": 0,
+      "explain": "A zero length means \"skip ahead zero bytes,\" so the parser never moves on."
+    },
+    {
+      "q": "What's Steve's rule about claims that new software is secure?",
+      "options": [
+        "Security is proven over time, not claimed in advance",
+        "New code is always safer",
+        "Microsoft's claims are always right",
+        "Only open source can be secure"
+      ],
+      "answer": 0,
+      "explain": "XP was billed as the most secure Windows and became the least secure."
+    },
+    {
+      "q": "What does SpinRite measure as an early warning of drive trouble?",
+      "options": [
+        "Error corrections per megabyte while the drive is under load",
+        "Drive temperature",
+        "File count",
+        "Fan speed"
+      ],
+      "answer": 0,
+      "explain": "Idle drives report little; a rising correction rate under load signals trouble."
+    }
+  ]
+}

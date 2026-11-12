@@ -1,0 +1,459 @@
+{
+  "number": 63,
+  "title": "MojoPac",
+  "subtitle": "Your Windows desktop and apps on a USB stick",
+  "date": "2006-10-26",
+  "description": "After a call with RingCube's CTO, Steve explains how MojoPac really works: not a virtual machine, but a \"friendly rootkit\" that hooks the Windows kernel to run your own portable Windows desktop and applications from a USB device, with nothing left behind on the host. He covers its impressive results, its long list of quirks, licensing, flash memory wear, and why he still recommends trying it.",
+  "transcript": "https://www.grc.com/sn/sn-063.txt",
+  "audio": "http://media.GRC.com/sn/SN-063.mp3",
+  "chapters": [
+    {
+      "title": "Getting Answers from RingCube",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 63. Fall has hit Petaluma: warm days, chilly nights."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know why we're giving 100,000 listeners the weather."
+        },
+        {
+          "s": "steve",
+          "t": "Today, MojoPac. I'd planned to cover U3 and moka5 too, but I finally reached MojoPac's makers, a company called RingCube, and had a conference call with their CTO."
+        },
+        {
+          "s": "steve",
+          "t": "Their site is all features and benefits. I wanted to know what was really happening underneath: is it virtual machine technology, and at what level? Everything it can do flows from how it does it."
+        },
+        {
+          "s": "leo",
+          "t": "Companies have emailed me that their software licenses broke under MojoPac."
+        },
+        {
+          "s": "steve",
+          "t": "Now I understand why. U3 and moka5 are so different that they'll get their own episodes soon."
+        }
+      ]
+    },
+    {
+      "title": "What It Does for You",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Before the technical part, what does it do for the user?"
+        },
+        {
+          "s": "steve",
+          "t": "I installed MojoPac on a 512 \"K\" thumb drive. I mean megabytes."
+        },
+        {
+          "s": "steve",
+          "t": "Then I installed my favorite newsreader, Gravity, and my outlining tool, ThoughtManager Desktop. I work from an outline every time I'm in front of the microphone with you. I imported my outlines and downloaded 3,000 messages from GRC's news server."
+        },
+        {
+          "s": "steve",
+          "t": "I shut MojoPac down, ejected the drive, and plugged it into a different XP machine that had never seen any of this. MojoPac started, asked for my password, and the host's desktop was replaced by mine, exactly as I'd left it, with Gravity, ThoughtManager and all my postings."
+        },
+        {
+          "s": "steve",
+          "t": "So it's a portable Windows environment that runs from any USB 2.0 device: a thumb drive, a phone's memory card, an iPod. Not just your data, but your applications."
+        },
+        {
+          "s": "leo",
+          "t": "Moving data is no big deal. Briefcase did that."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. The difference is applications, any applications. U3, by contrast, requires apps written to run from flash."
+        }
+      ]
+    },
+    {
+      "title": "Not a VM: A Friendly Rootkit",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It isn't virtual machine technology at all. I don't want to say rootkit, but it's friendly rootkit technology."
+        },
+        {
+          "s": "steve",
+          "t": "When you plug in, autorun starts it, if autorun is enabled. Otherwise you run start.exe yourself. It's XP only, not Windows 2000."
+        },
+        {
+          "s": "steve",
+          "t": "start.exe dynamically loads a kernel driver that deeply hooks the Windows native API."
+        },
+        {
+          "s": "leo",
+          "t": "Those words scare me."
+        },
+        {
+          "s": "steve",
+          "t": "I don't want to say \"kludge\" either. But a third-party personal firewall is also a kludge: it does something to Windows that Windows was never designed for, which is why firewalls caused conflicts. MojoPac is the same. It's a kludge with benefits."
+        },
+        {
+          "s": "steve",
+          "t": "Your apps see a C drive, but it's really the MojoPac device remapped. The host's real C drive is inaccessible. Nothing is written to the host's registry or disk, and no browser history is left behind."
+        }
+      ]
+    },
+    {
+      "title": "The Known Quirks",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Because it isn't full virtualization, apps can notice they've moved. Users found that retail Office asked to be reactivated on each new machine. The CTO says the next version will fix that."
+        },
+        {
+          "s": "steve",
+          "t": "It's quirky, the way the first personal firewalls were."
+        },
+        {
+          "s": "leo",
+          "t": "Like DESQview and task switchers that dug into the OS."
+        },
+        {
+          "s": "steve",
+          "t": "Their own knowledge base lists limits. It can't handle Windows installed on a drive other than C. Some failures occur when the host's screensaver or power management kicks in. Kernel-mode printer drivers fail, including Adobe Acrobat's PDF-making printer, though Acrobat Reader works."
+        },
+        {
+          "s": "leo",
+          "t": "I bet that list is long."
+        },
+        {
+          "s": "steve",
+          "t": "Some COM+ apps misbehave. Deleted folders may not show in the Recycle Bin. Don't install Windows Media Player 11 inside it, since you may not be able to recover. Reboots requested by installers may not work."
+        },
+        {
+          "s": "steve",
+          "t": "World of Warcraft can leave the mouse pointer offset from where clicks register, so you hover around to find where it really is."
+        },
+        {
+          "s": "steve",
+          "t": "I found some myself. My desktop's AutoArrange and icon positions don't stick. Right-clicking My Network Places and choosing Properties does nothing, though it works on the host."
+        },
+        {
+          "s": "steve",
+          "t": "And the MojoBar across the top is about the ugliest thing I've ever seen, reminiscent of ZoneAlarm's day-glo orange. Fortunately it's skinnable."
+        },
+        {
+          "s": "steve",
+          "t": "One click on it switches between your MojoPac desktop and the host's. From the host, the MojoPac device looks like a regular drive, and a sync tool can copy over your Documents and Settings."
+        }
+      ]
+    },
+    {
+      "title": "Licenses Turned Upside Down",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You can't move apps already installed on your PC into MojoPac. That's deliberate, and it's hard anyway, since installers do so much to a system."
+        },
+        {
+          "s": "steve",
+          "t": "Portable apps turn software licensing on its head. Most EULAs say \"for use on one computer.\" RingCube says many allow two installs, for a desktop and laptop. I'll give them the benefit of the doubt."
+        },
+        {
+          "s": "steve",
+          "t": "My view: you made one installation, you carry it, you're the only user. It may be outside the letter of a EULA written before MojoPac, but I wouldn't consider it a big breach."
+        },
+        {
+          "s": "steve",
+          "t": "So MojoPac starts with an empty Windows desktop, using a portable Windows user profile, and you reinstall what you want from scratch. That puts licensing responsibility on you."
+        }
+      ]
+    },
+    {
+      "title": "Price, Trial and a Clean Host",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's a 9MB download, not yet digitally signed. I raised that, and they'll fix it."
+        },
+        {
+          "s": "steve",
+          "t": "The launch price is $24.99, doubling to $49.99 on Thursday, November 16, three weeks from today. I think that's a mistake. With so much debris still to clear, why not extend it?"
+        },
+        {
+          "s": "steve",
+          "t": "The free trial is 30 days or 200 boots, raised from 100 because people ran out. Each time you plug it in counts as a boot. I've used 15 already."
+        },
+        {
+          "s": "steve",
+          "t": "And it doesn't whack your machine. The installer makes zero changes to the PC you download it on. When you remove MojoPac, its driver unloads and the host doesn't know anything happened. VMware sits heavily on any machine you install it on."
+        },
+        {
+          "s": "leo",
+          "t": "Apple has had network home directories for about ten years: log in anywhere and get your desktop and apps."
+        },
+        {
+          "s": "steve",
+          "t": "Windows has roaming profiles. But MojoPac also encapsulates you. You can see the host's CD and DVD drives and USB devices, but not its hard drive."
+        },
+        {
+          "type": "fact",
+          "title": "MojoPac's fate",
+          "t": "RingCube later aimed the technology at businesses as \"vDesk\" and was bought by Citrix in 2011. Today, portable app suites like PortableApps.com and full Windows virtual desktops fill much of this role."
+        }
+      ]
+    },
+    {
+      "title": "Who Uses It, and How",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You must be an administrator on the host to load the driver. RingCube will offer universities a version that runs on locked-down limited-user machines, so students could carry their environments on lanyards."
+        },
+        {
+          "s": "steve",
+          "t": "RingCube's own staff use small USB hard drives with their entire PC installed on them. At work and at home they have plain, generic XP installs, and they just plug in."
+        },
+        {
+          "s": "steve",
+          "t": "Then there are people like me, with something on a keychain. I saw no slowdown on a good SanDisk drive. They claim about 5 percent overhead."
+        },
+        {
+          "s": "steve",
+          "t": "Another quirk: if a personal firewall pops up a message, it appears on the hidden host desktop. MojoPac notifies you so you can switch over, and you may need to permit apps there."
+        },
+        {
+          "s": "steve",
+          "t": "These people had courage. They took on something fundamentally hostile to Windows and made it work."
+        },
+        {
+          "s": "steve",
+          "t": "Once you buy it, you can deregister MojoPac and move it to another USB device. It locks to the device's serial number, which is why it needs USB 2.0."
+        }
+      ]
+    },
+    {
+      "title": "Will It Survive Vista?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Shouldn't this be done in the operating system? Microsoft changes one thing and it collapses."
+        },
+        {
+          "s": "steve",
+          "t": "The kernel API is stable and well documented. They say it runs on Vista RC2, presumably 32-bit."
+        },
+        {
+          "s": "steve",
+          "t": "64-bit Vista blocks kernel hooking, as it does for McAfee and Symantec, and Microsoft's promised API is only for monitoring. MojoPac may never work on 64-bit Vista, since its behavior is rootkit-ish."
+        },
+        {
+          "s": "leo",
+          "t": "How do you get it off your system?"
+        },
+        {
+          "s": "steve",
+          "t": "It's never on your system. The installer just copies it to the USB device. On a host, the driver loads in RAM only, and nothing is written to the disk. There's nothing to uninstall."
+        },
+        {
+          "s": "leo",
+          "t": "If it doesn't modify my system, why not try it?"
+        },
+        {
+          "s": "steve",
+          "t": "A year or two from now, we'll look back at Episode 63 and say, it had wacky behavior, but they nailed it down."
+        },
+        {
+          "s": "leo",
+          "t": "People will say Steve was right and Leo was full of it. I still think it belongs in the OS."
+        },
+        {
+          "s": "steve",
+          "t": "I agree, but it isn't there. Vista is done, it won't come in a service pack, so it'll have to be in \"Wista.\""
+        },
+        {
+          "s": "steve",
+          "t": "What happens in MojoPac stays in MojoPac."
+        },
+        {
+          "s": "steve",
+          "t": "Their ReadMe suggests formatting your device as NTFS if you can, for security and speed, though an iPod must stay FAT."
+        },
+        {
+          "s": "steve",
+          "t": "They broke compatibility with TrueCrypt, but they have a workaround, and the next release fixes it. Then TrueCrypt can run inside MojoPac, so you don't need it installed on the host."
+        },
+        {
+          "s": "leo",
+          "t": "For just email and browsing, there are portable versions of Firefox and Thunderbird."
+        },
+        {
+          "s": "steve",
+          "t": "But without encapsulation. Malware in portable Firefox could still reach your C drive."
+        }
+      ]
+    },
+    {
+      "title": "Flash Memory Wears Out",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is flash fast enough to run applications?"
+        },
+        {
+          "s": "steve",
+          "t": "Flash reads about twice as fast as it writes. And each cell survives only about 100,000 writes."
+        },
+        {
+          "s": "steve",
+          "t": "My flash-booting FreeBSD system had no swap partition on flash, and mounted it read-only, logging to RAM. Mark Thompson burned out a flash drive in a couple of days just by booting standard Windows from it."
+        },
+        {
+          "s": "leo",
+          "t": "Flash is cheap. Use it six months and buy another."
+        },
+        {
+          "s": "steve",
+          "t": "RingCube's staff have used MojoPac on flash for six months without a single failure. But avoid $15 checkout-counter drives. Buy Lexar, SanDisk or another good brand."
+        },
+        {
+          "s": "steve",
+          "t": "Better drives write to many chips in parallel for speed, and do \"write leveling\": spreading writes across the whole device, like sector swapping on a hard drive. Otherwise, repeatedly writing the same spot burns out the front of the drive."
+        },
+        {
+          "type": "fact",
+          "title": "Wear leveling",
+          "t": "The usual term is \"wear leveling.\" Today's flash drives and SSDs spread writes across all their memory cells, and modern SSDs are rated for hundreds of terabytes of writes, enough for years of normal use."
+        },
+        {
+          "s": "steve",
+          "t": "Windows also turns off write caching for USB devices, in case you yank one out. You can turn it on for speed, as MojoPac's ReadMe explains, but then always shut down properly."
+        },
+        {
+          "s": "leo",
+          "t": "I thought XP handled yanking it out."
+        },
+        {
+          "s": "steve",
+          "t": "Even in XP, after a big copy the dialog finishes, but the drive's light may flash for a long time while the kernel keeps writing. Right-click the drive, choose Eject, and wait."
+        },
+        {
+          "s": "steve",
+          "t": "It's version 1.0.1. Use the trial to see if what you need works. If it does, it's a great solution."
+        },
+        {
+          "s": "leo",
+          "t": "We tried it on Call for Help when Cali demonstrated it. It's impressive. It just makes me nervous."
+        }
+      ]
+    },
+    {
+      "title": "No Demo for SpinRite",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You really should offer a free trial of SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know how I would. We offer a complete money-back guarantee. And you get the benefit the first time you use it."
+        },
+        {
+          "s": "steve",
+          "t": "A listener's friend's PC wouldn't boot. The Maxtor was going very bad, with over 8GB of photos he couldn't copy. SpinRite ran for two and a half days straight, until a power outage. Afterward, he easily recovered all the photos."
+        },
+        {
+          "s": "leo",
+          "t": "Does it fail gracefully like that?"
+        },
+        {
+          "s": "steve",
+          "t": "That was tested extensively back in SpinRite 1.0. Most people see a 250GB drive done in hours. Two and a half days is extreme, but it beats waiting weeks for a recovery company."
+        },
+        {
+          "s": "leo",
+          "t": "Donations have dwindled since we got advertising, but they pay for infrastructure. Mark yours \"for Steve.\""
+        },
+        {
+          "s": "steve",
+          "t": "I think I use a lot of bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, Episode 64: Q&A, and a power of two, one of my favorite numbers."
+        },
+        {
+          "s": "leo",
+          "t": "When Henry was six or seven, he recited powers of two up to 4096."
+        },
+        {
+          "s": "steve",
+          "t": "I used to memorize them for fun, 10 or 11 digits."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does MojoPac actually work?",
+      "options": [
+        "A driver hooks the Windows kernel to run your portable desktop and apps from a USB device",
+        "It's a full virtual machine",
+        "It reinstalls Windows",
+        "It streams apps from the cloud"
+      ],
+      "answer": 0,
+      "explain": "Steve calls it \"friendly rootkit\" technology."
+    },
+    {
+      "q": "What does MojoPac leave on the host computer?",
+      "options": [
+        "Nothing; its driver loads in RAM and the host's drive is hidden",
+        "A full copy of your apps",
+        "Registry entries",
+        "Browser history"
+      ],
+      "answer": 0,
+      "explain": "It runs your apps on a remapped C drive."
+    },
+    {
+      "q": "Why did retail Office ask to reactivate under MojoPac?",
+      "options": [
+        "MojoPac doesn't fully virtualize hardware, so Office saw a new PC",
+        "Office was pirated",
+        "MojoPac deletes keys",
+        "The USB drive was too slow"
+      ],
+      "answer": 0,
+      "explain": "Full virtual machines hide the hardware change."
+    },
+    {
+      "q": "Why does MojoPac make you reinstall apps instead of copying existing ones?",
+      "options": [
+        "To put licensing responsibility on you, since EULAs assume one computer",
+        "Copying is illegal",
+        "It's faster",
+        "Apps can't run from USB"
+      ],
+      "answer": 0,
+      "explain": "Installers also change the system too much to copy cleanly."
+    },
+    {
+      "q": "Why use a quality flash drive with good \"write leveling\"?",
+      "options": [
+        "It spreads writes across the device so no area wears out early",
+        "It's cheaper",
+        "It encrypts data",
+        "It's required by Windows"
+      ],
+      "answer": 0,
+      "explain": "Flash cells survive only a limited number of writes."
+    },
+    {
+      "q": "Why might MojoPac never run on 64-bit Vista?",
+      "options": [
+        "64-bit Vista blocks the kind of kernel hooking MojoPac depends on",
+        "Vista lacks USB",
+        "It's too slow",
+        "Microsoft bought it"
+      ],
+      "answer": 0,
+      "explain": "Its behavior is \"rootkit-ish\" by design."
+    }
+  ]
+}

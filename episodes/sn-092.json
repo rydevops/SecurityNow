@@ -1,0 +1,537 @@
+{
+  "number": 92,
+  "title": "Listener Feedback Q&A #19",
+  "subtitle": "IPv6, hotel Wi-Fi, TiVo drives, TKIP and Internet background radiation",
+  "date": "2007-05-17",
+  "description": "A SpinRite run of 180 hours, then listener questions: what IPv6 means for ordinary users, IP geolocation as an authentication factor, radio silence and weak signals, staying safe on hotel Wi-Fi, whether some scripting languages are safer, whether you need a software firewall behind a router, the risks of storing biometrics, whether TiVos really write to disk constantly, a credit card plant's weighing booth, getting a Nintendo Wii onto WPA, clipboard password risks, and Internet background radiation.",
+  "transcript": "https://www.grc.com/sn/sn-092.txt",
+  "audio": "http://media.GRC.com/sn/SN-092.mp3",
+  "chapters": [
+    {
+      "title": "A 180-Hour SpinRite Run",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Every fourth episode, your questions."
+        },
+        {
+          "s": "steve",
+          "t": "We're approaching 100, and I have a surprise. And I'm starting a mailbag section for listeners' informed comments."
+        },
+        {
+          "s": "steve",
+          "t": "David Ward of WellMax Computer got a laptop whose owner said the fan was failing. It froze about five minutes into booting XP, and three other techs agreed it was the fan."
+        },
+        {
+          "s": "leo",
+          "t": "Five minutes into booting sounds like it's laboring."
+        },
+        {
+          "s": "steve",
+          "t": "But in Safe Mode it stayed on for an hour, so he knew it was the hard drive, probably a driver struggling with it. SpinRite ran for over 180 hours."
+        },
+        {
+          "s": "leo",
+          "t": "It doesn't normally take that long."
+        },
+        {
+          "s": "steve",
+          "t": "Often a few hours, maybe seven or eight, depending on the drive's condition. During data recovery, I use low-level commands to stop the drive from relocating a damaged sector, because once it does, that data is gone forever. I recover everything possible, then let the drive swap in a spare and write the data back. So SpinRite sometimes cranks on one sector for a long time."
+        },
+        {
+          "s": "steve",
+          "t": "It found many bad sectors, but the laptop booted and ran very well. The customer could only shake his head and say \"Amazing,\" several times."
+        },
+        {
+          "s": "leo",
+          "t": "About a week later."
+        }
+      ]
+    },
+    {
+      "title": "What IPv6 Means for You",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Jones of Willington, Connecticut asks: what is IPv6? Will we have to buy new routers?"
+        },
+        {
+          "s": "steve",
+          "t": "I can't imagine anything more transparent. IPv6 expands addresses from 32 bits to 128. Each added bit doubles the combinations, so though it's \"only\" four times longer, it's a gazillion gazillion gazillion addresses. Thirty-two bits gives about four billion."
+        },
+        {
+          "s": "leo",
+          "t": "Vint Cerf told me nearly 10 years ago that we had to go to IPv6 because we were running out. It turned out we weren't."
+        },
+        {
+          "s": "steve",
+          "t": "NAT changed that landscape. You probably run a dozen computers behind one IP."
+        },
+        {
+          "s": "leo",
+          "t": "Behind my Astaro gateway, yes."
+        },
+        {
+          "s": "steve",
+          "t": "Port mapping reduced the pressure. But the Internet is here to stay, so they made the space so big nobody need worry."
+        },
+        {
+          "s": "leo",
+          "t": "Vint said every molecule in the galaxy could have its own address."
+        },
+        {
+          "s": "steve",
+          "t": "So IP-enabled refrigerators and toothbrushes are no problem. I don't know what happened to version 5."
+        },
+        {
+          "s": "leo",
+          "t": "It's off with 802.11c, getting drunk somewhere."
+        },
+        {
+          "type": "fact",
+          "title": "IPv5",
+          "t": "Version number 5 went to an experimental streaming protocol, ST, in the late 1970s, so the next Internet Protocol became version 6."
+        },
+        {
+          "s": "steve",
+          "t": "IPv6 also builds in things that were grafted onto IPv4, like IPSec security and authentication."
+        },
+        {
+          "s": "steve",
+          "t": "And it'll be transparent because IPv4 tucks into one little corner of IPv6. An IPv6 backbone can carry IPv4 packets. Consumer routers can get firmware updates to translate both ways, or you'd buy a new $40 router. Vista fully supports IPv6 built in. XP could add it."
+        },
+        {
+          "s": "leo",
+          "t": "So don't worry about it."
+        },
+        {
+          "s": "steve",
+          "t": "It will have no effect."
+        },
+        {
+          "type": "fact",
+          "title": "The transition",
+          "t": "In practice IPv6 isn't directly compatible with IPv4. Networks run both side by side, or tunnel one inside the other. By the 2020s roughly 40 to 45 percent of Google's users reached it over IPv6, and IPSec support, once mandatory in IPv6, became optional."
+        }
+      ]
+    },
+    {
+      "title": "Where Are You Connecting From?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rick in Atlanta adds to our multifactor episode: \"IP intelligence,\" using geolocation, domain information and velocity checks to score a transaction's risk, transparently to users. That should please Leo, given his SiteKey complaints."
+        },
+        {
+          "s": "steve",
+          "t": "An interesting additional factor. In a couple of weeks we'll do \"The Fourth Factor,\" which is different. Bank of America already prompts you when your IP changes and its Flash cookie doesn't match. But imagine it saw you connecting from China."
+        },
+        {
+          "s": "leo",
+          "t": "I might be in China. But usually it's somebody else."
+        },
+        {
+          "s": "steve",
+          "t": "Third-party services tell the authenticating site: we don't think this person is in Northern California, they appear to be on an island in the South Pacific. People generally stay local, so it's a red flag."
+        },
+        {
+          "s": "leo",
+          "t": "What are velocity checks?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm not familiar with the term."
+        },
+        {
+          "type": "fact",
+          "title": "Velocity checks",
+          "t": "In fraud detection, \"velocity\" means how fast activity occurs, like many purchases, login attempts or card uses in a short time, or logins from places too far apart to travel between."
+        },
+        {
+          "s": "steve",
+          "t": "Why not use everything you know? The connecting IP can't be spoofed. It could come through proxies or onion routing, but an SSL connection can't go through onions, since you need the far end's matching certificate."
+        },
+        {
+          "s": "leo",
+          "t": "A good hacker in China will make sure his IP doesn't come from China."
+        },
+        {
+          "type": "fact",
+          "title": "SSL over TOR",
+          "t": "In fact, SSL and TLS connections work fine through TOR. The encryption runs end to end, inside TOR's layers."
+        }
+      ]
+    },
+    {
+      "title": "Radio Silence and Weak Signals",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ian Williamson of Ottawa says that since making our \"radio silence\" changes, his laptop struggles to stay connected to weak access points, worse than other laptops. Rechecking \"Connect even if this network is not broadcasting\" improves it. Maybe Microsoft had a reason."
+        },
+        {
+          "s": "steve",
+          "t": "I can't say why that would matter. Maybe an access point could drop a client that isn't beaconing, but he says it depends on signal strength, which sounds questionable. I haven't seen it, and I use Wi-Fi more now that we have WPA. I'd like to hear if listeners can duplicate it."
+        },
+        {
+          "s": "leo",
+          "t": "RF is a black art."
+        },
+        {
+          "s": "steve",
+          "t": "Radio can't work. There are no wires."
+        },
+        {
+          "s": "leo",
+          "t": "RF engineers hear something new every week. You're hearing the station in your teeth?"
+        }
+      ]
+    },
+    {
+      "title": "Hotel Wi-Fi",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave McGee of Toronto and various hotels uses WPA with a 63-character key at home but lives on unsecured hotel Wi-Fi. How should he protect himself? Leo could use the advice too."
+        },
+        {
+          "s": "steve",
+          "t": "Even with WPA, a hotel network is a massive network that's fundamentally spoofable. With ARP spoofing, one person can trick others' ARP tables into routing all their traffic through him, a man in the middle. It's trivial, with free tools."
+        },
+        {
+          "s": "steve",
+          "t": "Make your connections themselves secure, like https://mail.google.com. Ultimately, use a VPN service, like HotSpotVPN, which you and I have used. Your traffic stays in an encrypted tunnel until it's far from the hotel LAN."
+        },
+        {
+          "s": "leo",
+          "t": "Business travelers may have a corporate VPN."
+        },
+        {
+          "s": "steve",
+          "t": "One security researcher sniffed her hotel's traffic for an evening and captured 180 logins and passwords from other guests."
+        }
+      ]
+    },
+    {
+      "title": "Are Some Scripting Languages Safer?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A student in rural Alberta asks: do Perl, PHP and VBScript have ways to sanitize user input? Can you rank scripting languages by insecurity? That's one for Perl guru Randal Schwartz."
+        },
+        {
+          "s": "steve",
+          "t": "Any language with string handling can purify input. Which is safer? None. It's entirely the programmer. The safer language might be the one with more security-aware programmers."
+        },
+        {
+          "s": "leo",
+          "t": "Perl's CPAN has great modules for this, but programmers have to use them. Matt Conover of w00w00 told me: instead of strcpy, use strncpy."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft formally removed every strcpy from Vista. Strcpy copies a null-terminated string from one buffer to another until it hits the terminating zero. Give it a longer string than the destination expects, and it copies past the end. Strncpy adds a maximum count, the destination's size, and stops there no matter what. Bravo, Microsoft. That must have been a ton of work."
+        },
+        {
+          "s": "leo",
+          "t": "And you use assembly language, where you do it all by hand."
+        },
+        {
+          "s": "steve",
+          "t": "So I'm never lulled into a false sense of security. I worry about everything all the time."
+        }
+      ]
+    },
+    {
+      "title": "A Software Firewall Behind a Router?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew Dwyer in New Zealand has a properly configured router but is nervous without a software firewall. Should he really get rid of them?"
+        },
+        {
+          "s": "steve",
+          "t": "The big security suites have become so cumbersome that people remove them and their systems feel young again. I don't mean to pick on McAfee or Symantec."
+        },
+        {
+          "s": "leo",
+          "t": "ZoneAlarm has become like that, too."
+        },
+        {
+          "s": "steve",
+          "t": "Sadly, I can't recommend it anymore. It's come a long way from version 2.61, which I loved. Everyone has inbound blocking from a router or Windows' firewall. The issue is outbound protection. Many people like approving each program's Internet access. I gamble on being really careful, because once something evil is in, it's over anyway."
+        },
+        {
+          "s": "steve",
+          "t": "The caveat is protection within your LAN. If something gets onto one machine, it can spread to others. So at minimum, use the firewall built into XP or Vista."
+        },
+        {
+          "s": "leo",
+          "t": "I leave Windows Firewall on. Outbound protection is dubious, since malware works around it and people click yes yes yes. But if an infected laptop comes into your office, firewalls stop it spreading."
+        }
+      ]
+    },
+    {
+      "title": "Should You Hand Over Your Iris?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dusan Maletic of Babylon, New York was utterly surprised that we'd give biometrics for something like boarding a plane. It'll be stored with low security, almost certainly stolen or altered. How would you prove who you are if someone alters your biometric data? Only the most demanding access should use biometrics."
+        },
+        {
+          "s": "leo",
+          "t": "It's actually an iris scan, not retinal, and it's for crossing the border, not boarding. He's been reading too much Philip K. Dick."
+        },
+        {
+          "s": "steve",
+          "t": "He makes a great point about risk versus reward. We casually said, let's give random people our iris prints so we don't wait in line."
+        },
+        {
+          "s": "leo",
+          "t": "Which is easier to steal, my passport or my iris?"
+        },
+        {
+          "s": "steve",
+          "t": "You'd really miss your iris if it were stolen."
+        },
+        {
+          "s": "leo",
+          "t": "My passport is in less secure hands: mine. And it's multifactor, iris plus passport."
+        },
+        {
+          "s": "steve",
+          "t": "But physical and electronic are different domains. Someone could swap in a dog's iris scan to keep you from going to Vancouver."
+        },
+        {
+          "s": "leo",
+          "t": "And the TSA just lost a hard drive with all its employees' Social Security numbers and addresses. So he has a point."
+        },
+        {
+          "s": "leo",
+          "t": "For the most part TSA screeners are nice people. I don't blame them for the rules about my shoes, or bottled water."
+        }
+      ]
+    },
+    {
+      "title": "Does a TiVo Really Write Constantly?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "TV Indy of Muncie, Indiana doubts that TiVos write to disk all day. Isn't the 30-minute buffer in RAM? His parents' TiVo has run nearly five years on its original drive."
+        },
+        {
+          "s": "steve",
+          "t": "I'm absolutely positive it reads and writes continuously. I have three heavily hacked Series 1 TiVos, with my own expanded Linux kernel to go beyond the 137GB limit, each with a 500GB drive. One hack enlarges the buffer to an hour or two. The Series 1 has barely enough RAM for its Linux kernel, and that much high-quality video is many gigabytes. It's on the disk."
+        },
+        {
+          "s": "steve",
+          "t": "Before unplugging a TiVo, I restart it manually, so it isn't writing when the power goes."
+        },
+        {
+          "s": "leo",
+          "t": "They run hot, too, with a little fan."
+        },
+        {
+          "s": "steve",
+          "t": "Mine have big copper Pentium 4 heat sinks with a secondary fan, jury-rigged on the back of each drive. It works great."
+        }
+      ]
+    },
+    {
+      "title": "A Weighing Booth for Tailgaters",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ted Hosmann of Monterey, California works in a building that embosses over two million credit cards a month, with about 15 million blanks on hand. He swipes a badge, which opens one side of a tube. Inside, his hand is scanned, then the other side opens."
+        },
+        {
+          "s": "leo",
+          "t": "And a weight sensor in the floor detects tailgating. It'd be hard to explain weighing 350 pounds one day and 200 every other day."
+        },
+        {
+          "s": "steve",
+          "t": "When I set up at Level 3, they told me: your crown jewels are here too, so never let anyone tailgate, even someone who walks up with you. I've done it a couple of times: I hope you understand, you'll need to do this yourself. They appreciate it."
+        }
+      ]
+    },
+    {
+      "title": "Getting a Wii Onto WPA",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ryan Sullivan in New York switched from WEP to WPA with AES after our episode, using a password from Steve's page. Now nothing connects, especially his Nintendo Wii, which he uses for YouTube on his big TV."
+        },
+        {
+          "s": "leo",
+          "t": "The Wii is notorious for not supporting WPA. No wait, that's the Nintendo DS."
+        },
+        {
+          "s": "steve",
+          "t": "There are two flavors. WPA's designers wanted to fix WEP, but knew low-end hardware might not handle AES's heavy math. So the original WPA used TKIP, Temporal Key Integrity Protocol, which fixes WEP's problems while still using lightweight RC4. The later, stronger version, WPA2, uses AES."
+        },
+        {
+          "s": "leo",
+          "t": "The Wii supports WPA2 with AES and TKIP."
+        },
+        {
+          "s": "steve",
+          "t": "Your router will offer both. There's absolutely nothing wrong with TKIP. It was also designed by the security geniuses. It's all I use."
+        },
+        {
+          "s": "steve",
+          "t": "Also, try a simpler key first. Some devices may not properly hash those humongous passwords. Try your dog's name for ten minutes. Nobody will brute-force you that fast. Get everything working, then lengthen and complicate the key until something breaks, and back off to the best key that works."
+        },
+        {
+          "s": "steve",
+          "t": "There's no known weakness in TKIP. RC4, once it's discarded its first 256 bytes, takes something like two billion bytes of analysis even to tell it from true randomness. It just needs to be used right."
+        },
+        {
+          "type": "fact",
+          "title": "TKIP and RC4 later",
+          "t": "TKIP's first practical attack appeared in 2008, and the Wi-Fi Alliance deprecated it. Further RC4 weaknesses led to it being banned from TLS in 2015. Today, use WPA2 with AES, or WPA3."
+        }
+      ]
+    },
+    {
+      "title": "Passwords on the Clipboard",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Russell Gadd in the U.K. notes Steve pastes his WPA password from a file on a USB stick. Couldn't it be cached or left on the clipboard? Isn't that as risky as a plain text file on the PC?"
+        },
+        {
+          "s": "steve",
+          "t": "He's got a point. I always overwrite the clipboard afterward, a habit I picked up from TrueCrypt, which clears it. With a 63-character password, I can't avoid the clipboard. And even typed passwords may be stored unencrypted by some software."
+        },
+        {
+          "s": "steve",
+          "t": "The Wi-Fi password protects against outsiders joining your network. Nobody can get it from your PC unless they're already inside. But as Marc Maiffret told us, internal exploits are the next frontier. Some malware exports your clipboard, since something tasty is often sitting there. So use a good password, and clear the clipboard."
+        },
+        {
+          "s": "leo",
+          "t": "If someone's on your machine, you have bigger problems."
+        },
+        {
+          "s": "steve",
+          "t": "And a guy in China with your Wi-Fi password can't use it without driving to your house."
+        },
+        {
+          "s": "leo",
+          "t": "Or to the U.K."
+        }
+      ]
+    },
+    {
+      "title": "Internet Background Radiation",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last, Joseph Melanson of Syracuse, New York asks about what Steve calls \"Internet Background Radiation,\" old worms and junk floating around the Net. Does it slow things down or damage other packets? Could we trap it, or write programs to destroy these worms in the wild?"
+        },
+        {
+          "s": "steve",
+          "t": "Anyone watching router logs sees junk arriving: old Blaster-infected servers, or an innocent person's Trojan hunting for machines with the same hole."
+        },
+        {
+          "s": "steve",
+          "t": "These usually aren't spoofed, since they need replies. So an Internet background radiation cop could in theory trace each source and pull the plug. But it would need legal authority and international treaties."
+        },
+        {
+          "s": "steve",
+          "t": "It's not causing problems: a few packets a minute per address. Busy central routers see more but have the power and bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "I bet a chart would show it flattening. New sources appear about as fast as old ones leave, through updates, dead machines and lost connections. It won't go away, but probably won't get much worse."
+        },
+        {
+          "s": "leo",
+          "t": "A scrubber worm could cause other problems."
+        },
+        {
+          "s": "steve",
+          "t": "And it's illegal. Like Marc's worry that researchers can't legally probe hosted services, which is a little chilling."
+        },
+        {
+          "s": "leo",
+          "t": "SpinRite, the world's finest drive utility for the last decade or so."
+        },
+        {
+          "s": "steve",
+          "t": "Twenty years, Leo. We're at version 6.0."
+        },
+        {
+          "s": "leo",
+          "t": "I'm teasing. And ShieldsUP! will hit 50 million in a day or so."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why didn't the world run out of IPv4 addresses as feared?",
+      "options": [
+        "NAT let many computers share one public address",
+        "IPv6 replaced it in 1998",
+        "ISPs reclaimed addresses",
+        "Computers use fewer ports"
+      ],
+      "answer": 0,
+      "explain": "IPv6 expands addresses from 32 to 128 bits."
+    },
+    {
+      "q": "What's the best protection on hotel Wi-Fi, per Steve?",
+      "options": [
+        "A VPN that tunnels your traffic far beyond the hotel network",
+        "WEP",
+        "A long WPA key",
+        "Turning off the firewall"
+      ],
+      "answer": 0,
+      "explain": "ARP spoofing makes hotel LANs easy to intercept."
+    },
+    {
+      "q": "Why did Microsoft remove strcpy from Vista?",
+      "options": [
+        "It copies until a terminating zero with no size limit, inviting buffer overruns",
+        "It was slow",
+        "It was patented",
+        "It couldn't handle Unicode"
+      ],
+      "answer": 0,
+      "explain": "Strncpy adds a maximum count."
+    },
+    {
+      "q": "Why keep Windows Firewall on behind a router?",
+      "options": [
+        "To stop malware spreading between machines inside your LAN",
+        "For outbound blocking",
+        "To speed browsing",
+        "Routers don't block anything"
+      ],
+      "answer": 0,
+      "explain": "An infected guest laptop is the classic example."
+    },
+    {
+      "q": "What did Steve suggest for a device that won't connect with WPA2 and AES?",
+      "options": [
+        "Try TKIP, and test with a simpler key before strengthening it",
+        "Go back to WEP",
+        "Turn off encryption",
+        "Buy a new router"
+      ],
+      "answer": 0,
+      "explain": "He said TKIP was all he used."
+    },
+    {
+      "q": "Why is Internet background radiation unlikely to get much worse?",
+      "options": [
+        "New sources appear about as fast as old ones disappear",
+        "ISPs filter it all",
+        "Worms expire",
+        "It's illegal"
+      ],
+      "answer": 0,
+      "explain": "It's only a few packets a minute per address."
+    }
+  ]
+}

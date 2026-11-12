@@ -1,0 +1,461 @@
+{
+  "number": 58,
+  "title": "Two New Critical Windows Problems",
+  "subtitle": "A VML zero-day in the wild, and a patch that corrupts files",
+  "date": "2006-09-21",
+  "description": "A breaking-news episode. Sunbelt Software's CTO, Eric Sites, explains how his team found an Internet Explorer zero-day in Windows' VML vector-graphics library being sold in the $20 \"WebAttacker\" kit, how it infects fully patched machines and even Outlook, and how to protect yourself by unregistering vgx.dll. Plus a Microsoft update that corrupts compressed files on Windows 2000.",
+  "transcript": "https://www.grc.com/sn/sn-058.txt",
+  "audio": "http://media.GRC.com/sn/SN-058.mp3",
+  "chapters": [
+    {
+      "title": "Breaking News",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 58, a change of pace. We'd already recorded this week's show when we learned of two serious security flaws, so we'll put off our Parallels discussion until next week."
+        },
+        {
+          "s": "steve",
+          "t": "First, a newly discovered zero-day exploit for Windows and Internet Explorer that can infect people browsing the web."
+        },
+        {
+          "s": "steve",
+          "t": "Second, a mistake in Microsoft's security updates from last month that can corrupt files for Windows 2000 users. There's a fix on Microsoft's site, but the original patch hasn't been fixed."
+        }
+      ]
+    },
+    {
+      "title": "Sunbelt Finds a Zero-Day",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's start with the zero-day. On the line is Eric Sites, Chief Technology Officer and VP of Research and Development at Sunbelt Software."
+        },
+        {
+          "s": "steve",
+          "t": "Sunbelt's Alex Eckelberry bought our favorite personal firewall, Kerio, and rescued it from oblivion."
+        },
+        {
+          "s": "leo",
+          "t": "Eric flew to Czechoslovakia when they acquired it, because they were fans."
+        },
+        {
+          "s": "steve",
+          "t": "Eric says it's one of the only firewalls with intrusion detection and prevention built in, plus web filtering that removes ads and scripting with a checkbox."
+        },
+        {
+          "s": "leo",
+          "t": "I first heard about this from a listener in Blackpool, England, who wrote: \"Steve was right. Turn off JavaScript.\""
+        },
+        {
+          "s": "steve",
+          "t": "Eric says that was the first workaround for the exploit in the wild. But other exploits can be built without scripting, so you need to unregister a file called vgx.dll."
+        },
+        {
+          "s": "leo",
+          "t": "How did Sunbelt uncover it?"
+        },
+        {
+          "s": "steve",
+          "t": "Eric's researchers spend their days revisiting websites known to push malware, using automated tools plus manual checking, which is still necessary. One researcher saw strange pop-ups that normally weren't there."
+        },
+        {
+          "s": "steve",
+          "t": "He traced it several sites away, through iframes, which pull in content from another site, which pulls from another."
+        },
+        {
+          "s": "leo",
+          "t": "An iframe is a frame inside a web page that shows a whole other page."
+        },
+        {
+          "type": "fact",
+          "title": "Iframe chains",
+          "t": "Attackers often hide exploit code several hops away. A compromised or shady page includes an invisible iframe, which loads another, which finally loads the exploit. Blocking one site doesn't stop the chain."
+        }
+      ]
+    },
+    {
+      "title": "The $20 WebAttacker Kit",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Eric tracked it to the \"WebAttacker\" kit, sold on a Russian website with tech support, just like a real software company."
+        },
+        {
+          "s": "leo",
+          "t": "For 20 bucks."
+        },
+        {
+          "s": "steve",
+          "t": "You give them your server credentials, and they install and configure it for you. It exploits the people who visit your site."
+        },
+        {
+          "s": "leo",
+          "t": "Who buys it?"
+        },
+        {
+          "s": "steve",
+          "t": "Mostly people distributing adware, who get paid a few cents for every installation."
+        },
+        {
+          "s": "steve",
+          "t": "The kit detects your browser and version, Firefox or IE, and sends a matching exploit. This new one works on XP SP2 with Internet Explorer and all the latest patches."
+        },
+        {
+          "s": "leo",
+          "t": "No matter how patched your machine is."
+        },
+        {
+          "s": "steve",
+          "t": "It works all the way back to IE 5.0. Sunbelt is still testing IE 7. On Vista, it apparently doesn't work."
+        },
+        {
+          "type": "fact",
+          "title": "Exploit kits",
+          "t": "WebAttacker was one of the first commercial exploit kits. Later kits like MPack, Blackhole and Angler made \"drive-by downloads\" a big criminal business until browsers hardened, plug-ins like Flash and Java disappeared, and automatic updates became the norm."
+        }
+      ]
+    },
+    {
+      "title": "Researching Inside VMware",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Eric, I think I know the answer, but how do you protect your own machines when you visit these malicious sites?"
+        },
+        {
+          "s": "steve",
+          "t": "He says they use VMware."
+        },
+        {
+          "s": "leo",
+          "t": "Boy, was that a softball question, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "We've just been talking about how virtual machines provide robust protection."
+        },
+        {
+          "s": "steve",
+          "t": "Eric's team uses separate Internet connections from their regular networks, VMware plus firewalls for connection logging, packet sniffers and lots of other tools."
+        },
+        {
+          "s": "leo",
+          "t": "Would a firewall have protected me?"
+        },
+        {
+          "s": "steve",
+          "t": "No. To a firewall it looks like Internet Explorer making a normal request."
+        },
+        {
+          "s": "leo",
+          "t": "VML is Vector Markup Language, a vector graphics format?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Eric's team examined both the exploit and the vulnerable vgx.dll. It's a stack buffer overflow. The attack overwrites critical data on the stack, so when the function returns, it runs the attacker's code."
+        },
+        {
+          "s": "steve",
+          "t": "IE6 on XP SP2 has protections against this, but this overflow is big enough to \"blow the stack\" and overwrite those protections too. Exploits on hacker sites aren't reliable against IE6 on SP2. This one in the wild is."
+        },
+        {
+          "s": "steve",
+          "t": "Finding and building new exploits is the WebAttacker makers' lifeblood."
+        },
+        {
+          "s": "leo",
+          "t": "That's what's changed: there's money to be made, not just bragging rights."
+        }
+      ]
+    },
+    {
+      "title": "How Far It's Spreading",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "How long has it been in use?"
+        },
+        {
+          "s": "steve",
+          "t": "Eric says that once they found it, they alerted the security community, antivirus companies and research firms like iDefense. Their logs suggest it's been out about a week."
+        },
+        {
+          "s": "steve",
+          "t": "It's on relatively few sites, but growing very quickly. Sunbelt and its friends at Websense run \"web spiders\" that crawl the Internet looking for it."
+        },
+        {
+          "s": "leo",
+          "t": "How many sites use the WebAttacker kit?"
+        },
+        {
+          "s": "steve",
+          "t": "Eric personally knows of more than a thousand, mostly porn sites, plus crack, serial number and \"warez\" sites."
+        },
+        {
+          "s": "steve",
+          "t": "And it isn't just those thousand. Any site with an iframe pointing back to one of them can infect you."
+        },
+        {
+          "s": "steve",
+          "t": "The exploit also works in email. Outlook displays HTML mail using Internet Explorer's engine, so a crafted email can exploit certain versions of Outlook with no scripting at all."
+        },
+        {
+          "s": "leo",
+          "t": "And then?"
+        },
+        {
+          "s": "steve",
+          "t": "Just view it in the preview pane and the exploit can download whatever it wants. The first site Eric found installed one adware program, Virtumonde, in the morning. By late afternoon, it was installing about 50 pieces of malware, including keyloggers."
+        },
+        {
+          "s": "leo",
+          "t": "How do the malware makers get involved?"
+        },
+        {
+          "s": "steve",
+          "t": "Adware companies run affiliate programs. Sign up, get a tracking code, and money appears in your account every month based on how many installs come from your site."
+        },
+        {
+          "s": "leo",
+          "t": "I'm not going to do it. But it's tempting."
+        }
+      ]
+    },
+    {
+      "title": "When to Go Public",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "There's a constant debate about when to reveal exploits. Microsoft would prefer nobody talk about them."
+        },
+        {
+          "s": "steve",
+          "t": "As a zero-day already in the wild, there's no reason not to get the word out immediately."
+        },
+        {
+          "s": "steve",
+          "t": "Eric says you have to alert security and antivirus companies so they can write signatures. You also always call the vendor. If a flaw isn't in the wild yet, you give the vendor time to fix it, whether a month or six months."
+        },
+        {
+          "s": "leo",
+          "t": "I've talked to people at eEye whose patience wore thin."
+        },
+        {
+          "s": "steve",
+          "t": "Eric says some independent researchers publish to force a fix."
+        },
+        {
+          "s": "leo",
+          "t": "Or to get some notoriety."
+        },
+        {
+          "s": "steve",
+          "t": "When Sunbelt called Microsoft, they got the canned \"we're looking at it.\" Microsoft has now published a TechNet advisory with the details IT departments and security companies need."
+        }
+      ]
+    },
+    {
+      "title": "Unregister vgx.dll Now",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The takeaway: every modern version of IE, 5 and 6, has this buffer overrun, and it's being actively exploited. Microsoft plans to fix it in its early-October update, almost four weeks away, unless it moves sooner."
+        },
+        {
+          "s": "steve",
+          "t": "Meanwhile, you can unregister the vulnerable DLL. Our Security Now! page has a one-line command. Paste it into the Run dialog from the Start menu, and a pop-up confirms the DLL is unregistered. Then reboot, in case IE already loaded it."
+        },
+        {
+          "type": "fact",
+          "title": "The workaround",
+          "t": "Microsoft's advisory gave the command: regsvr32 -u \"%CommonProgramFiles%\\Microsoft Shared\\VGX\\vgx.dll\". Microsoft shipped a fix, MS06-055, on September 26, 2006, about two weeks early, after which the DLL could be re-registered with the same command without \"-u.\""
+        },
+        {
+          "s": "leo",
+          "t": "What do I lose?"
+        },
+        {
+          "s": "steve",
+          "t": "Eric says some ad banners use VML for animation. Vector graphics are new and sparsely used on the web, so I doubt anyone would notice. Your GIFs and JPEGs work fine."
+        },
+        {
+          "s": "steve",
+          "t": "You can't simply delete or rename the DLL, because Windows watches system files and restores them from its cache. That's why you unregister it."
+        },
+        {
+          "s": "steve",
+          "t": "After Microsoft patches it, re-register it. We'll remind you."
+        },
+        {
+          "s": "leo",
+          "t": "Don't do that until we say it's safe."
+        }
+      ]
+    },
+    {
+      "title": "Run as a Limited User",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Eric didn't mention one thing: the exploit runs with the logged-in user's privileges."
+        },
+        {
+          "s": "steve",
+          "t": "We're getting this out immediately, but \"immediately\" is a week after it appeared. Tens of thousands of people have surely been bitten just browsing."
+        },
+        {
+          "s": "steve",
+          "t": "Had they been running as limited users, they'd have been far better protected. Lots of listeners tell me running as a limited user isn't as bad as they feared."
+        },
+        {
+          "s": "steve",
+          "t": "And I loved that Sunbelt uses VMware, knowing nothing can get out of the virtual machine."
+        },
+        {
+          "s": "leo",
+          "t": "It makes sense. Why risk your own hardware?"
+        }
+      ]
+    },
+    {
+      "title": "A Patch That Corrupts Files",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The second problem is no concern for XP users, but it is for Windows 2000."
+        },
+        {
+          "s": "steve",
+          "t": "And it freaked me out. I rarely update my GRC servers, which run in a secure environment where nobody browses the web. But last week I brought one of my ancillary servers completely up to date."
+        },
+        {
+          "s": "leo",
+          "t": "You timed it so well."
+        },
+        {
+          "s": "steve",
+          "t": "One of Microsoft's August 8 updates, a fix for a kernel privilege-escalation flaw, had a regression: it broke something else."
+        },
+        {
+          "s": "steve",
+          "t": "On Windows 2000 only, any NTFS-compressed file larger than 4K that's created or changed can become corrupted. FAT32 doesn't do that kind of compression anyway."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's advice if you're hit: restore from a backup made before the update."
+        },
+        {
+          "s": "leo",
+          "t": "Because you've lost your data."
+        },
+        {
+          "s": "steve",
+          "t": "I compress whole directories deliberately, like my source code, which compresses tremendously."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has released a hotfix for the problem, but hasn't yet fixed the original patch. I installed it on my server right away. It needs a reboot. Windows 2000 users, get it from our Episode 58 page."
+        },
+        {
+          "type": "fact",
+          "title": "Regressions",
+          "t": "A regression is a bug introduced by a fix. Because patches can break things, companies often test updates before deploying them, while home users are usually safest installing them promptly."
+        }
+      ]
+    },
+    {
+      "title": "Spread the Word",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The beauty of podcasting is that we can respond immediately. If this had happened on a Tuesday, we'd have done it on a Tuesday."
+        },
+        {
+          "s": "steve",
+          "t": "This is important enough that I'll link it from the top of GRC.com's home page."
+        },
+        {
+          "s": "steve",
+          "t": "Everyone listening knows Windows users who don't listen. Spread the word, or point them to our page."
+        },
+        {
+          "s": "leo",
+          "t": "Elaine will do an emergency transcript. And SpinRite can't fix this one, since it's file-level corruption and SpinRite works at the drive level."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks to Eric Sites of Sunbelt Software for joining us."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where was the zero-day flaw Sunbelt found?",
+      "options": [
+        "In Windows' VML vector-graphics library, vgx.dll, used by Internet Explorer",
+        "In Firefox",
+        "In the Kerio firewall",
+        "In Windows Update"
+      ],
+      "answer": 0,
+      "explain": "It worked even on fully patched XP SP2."
+    },
+    {
+      "q": "What was the \"WebAttacker\" kit?",
+      "options": [
+        "A $20 Russian exploit kit, with tech support, that infects a website's visitors",
+        "A security scanner",
+        "An antivirus program",
+        "A firewall"
+      ],
+      "answer": 0,
+      "explain": "Buyers were mostly adware distributors paid per install."
+    },
+    {
+      "q": "Why wasn't turning off JavaScript enough?",
+      "options": [
+        "The flaw could be exploited without scripting, even in Outlook email",
+        "JavaScript can't be turned off",
+        "The exploit used Java",
+        "It only affected Macs"
+      ],
+      "answer": 0,
+      "explain": "Unregistering vgx.dll was the reliable workaround."
+    },
+    {
+      "q": "How did Sunbelt's researchers protect their own machines?",
+      "options": [
+        "They browsed malicious sites inside VMware virtual machines on separate connections",
+        "They used Macs",
+        "They turned off their firewalls",
+        "They didn't"
+      ],
+      "answer": 0,
+      "explain": "Malware stays contained in the virtual machine."
+    },
+    {
+      "q": "What did Microsoft's August update break on Windows 2000?",
+      "options": [
+        "NTFS-compressed files larger than 4K could be corrupted",
+        "The network stack",
+        "Printing",
+        "Internet Explorer"
+      ],
+      "answer": 0,
+      "explain": "A hotfix was released, but the original patch wasn't fixed yet."
+    },
+    {
+      "q": "Why would running as a limited user have helped against the VML exploit?",
+      "options": [
+        "The exploit runs with the logged-in user's privileges",
+        "Limited users can't browse",
+        "It blocks VML",
+        "It isn't helpful"
+      ],
+      "answer": 0,
+      "explain": "News of the exploit reached people a week after it appeared."
+    }
+  ]
+}

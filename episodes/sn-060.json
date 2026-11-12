@@ -1,0 +1,462 @@
+{
+  "number": 60,
+  "title": "Listener Feedback Q&A #11",
+  "subtitle": "ActiveX, USB in VMs, parental controls and patents",
+  "date": "2006-10-05",
+  "description": "After an apology for last week's late episode, Steve and Leo answer listener questions: finding show notes, whether ActiveX could re-enable the VML flaw, the Hamachi server that never was, USB in virtual machines, bootable flash keys vs. VMs, MojoPac, protecting children online, an eBay phishing trick, encrypting a whole VM with TrueCrypt, overheating hardware, a home file server, phone browser security, and software patents.",
+  "transcript": "https://www.grc.com/sn/sn-060.txt",
+  "audio": "http://media.GRC.com/sn/SN-060.mp3",
+  "chapters": [
+    {
+      "title": "Sorry We Were Late",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve, we have an apology for last week."
+        },
+        {
+          "s": "steve",
+          "t": "We were so distracted. We're recording this on Saturday because you're off to Toronto next week. Yesterday we were together at the Podcast and Portable Media Expo, and I nearly shook my hand off meeting Security Now! listeners."
+        },
+        {
+          "s": "leo",
+          "t": "It was entirely my fault. We had the episode done, and I just forgot. We remembered in the car, and I uploaded it from the airport over Wi-Fi as they were boarding the plane."
+        },
+        {
+          "s": "steve",
+          "t": "I literally thought it was Thursday. Lots of listeners wrote asking if we were okay. We try never to be late, because people have it in their schedules."
+        },
+        {
+          "s": "leo",
+          "t": "It's more hobby than profession, but it's gratifying to know people actually listen. It's Episode 60, divisible by four, so it's Q&A."
+        }
+      ]
+    },
+    {
+      "title": "Where Are the Show Notes?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Morten Rensen in Aabybro, Denmark, asks: where do I find the show notes?"
+        },
+        {
+          "s": "steve",
+          "t": "On the Security Now! page, each episode has a box. The first icon is the high-quality 64K audio, the second the 16K version for the bandwidth-impaired, and the third is always the show notes. Then three forms of Elaine's transcripts."
+        },
+        {
+          "s": "steve",
+          "t": "Many shows don't have notes, but our VML page was getting something like 8,500 views a day. And we finally met Elaine at the Expo."
+        },
+        {
+          "s": "leo",
+          "t": "I'll try to put more links on TWiT.tv and in the description field your podcast player shows."
+        },
+        {
+          "s": "steve",
+          "t": "You've also just added more podcasts."
+        },
+        {
+          "s": "leo",
+          "t": "Windows Weekly with Paul Thurrott, and a tech-law show with Denise Howell. At the Expo, a Microsoft Vista marketing person said, \"If you get upset with Vista, call me first.\" When I told him Paul would host our Vista show, there was a pause, then: \"One thing about Paul, he's honest.\" That's why we have him."
+        }
+      ]
+    },
+    {
+      "title": "Could ActiveX Undo the VML Fix?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Voeller in Ashland, Oregon asks: could a bad website use ActiveX to re-register the VML DLL and exploit it? And if unregistering was so easy, why didn't Microsoft push that out right away instead of waiting? He calls it criminally negligent."
+        },
+        {
+          "s": "steve",
+          "t": "Let's stop at \"use ActiveX.\" ActiveX downloads native code into your machine and runs it. If a bad site can do that, it can do anything it wants. Re-registering a flawed DLL would be a roundabout way to do it. It's game over."
+        },
+        {
+          "s": "leo",
+          "t": "That's the least they would do."
+        },
+        {
+          "s": "steve",
+          "t": "So limit scripting to sites you trust, or use a browser that doesn't support ActiveX, like Firefox. Post-SP2 versions of IE warn you before a site installs and runs an ActiveX control."
+        },
+        {
+          "s": "leo",
+          "t": "In the past there were bugs that let sites get around that warning. As long as you see it, you hope people are smart enough to say no."
+        }
+      ]
+    },
+    {
+      "title": "The Hamachi Server That Never Was",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Colin McWilliams can't find the Hamachi Server we mentioned in Episode 52. He wants to control his own network."
+        },
+        {
+          "s": "steve",
+          "t": "Many people at the Expo told us how much they love Hamachi, and some worry about its sale. Alex Pankratov told me he really vetted LogMeIn and believes they'll keep it secure and honest."
+        },
+        {
+          "s": "steve",
+          "t": "The server was only an idea. It would have been a hardware appliance, like Google's search appliance, never downloadable software, to prevent piracy. It never got past early alpha. LogMeIn could pursue it, but don't expect it."
+        },
+        {
+          "s": "leo",
+          "t": "We probably shouldn't have mentioned it."
+        }
+      ]
+    },
+    {
+      "title": "USB in Virtual Machines",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Scott in Cincinnati asks: when I plug in a thumb drive, how does the host know it's meant for the virtual machine?"
+        },
+        {
+          "s": "steve",
+          "t": "It's like a CD-ROM: who owns it once it appears? VM USB support makes it dynamic. You configure the VM to grab any USB device that appears while it's running, not just drives."
+        },
+        {
+          "s": "leo",
+          "t": "Does it depend on which window is in front? If I insert a CD and Parallels is running, who gets it?"
+        },
+        {
+          "s": "steve",
+          "t": "You configure that per virtual machine."
+        },
+        {
+          "s": "leo",
+          "t": "I was hoping it went to whichever was front-most. Still, you're running two operating systems at once."
+        }
+      ]
+    },
+    {
+      "title": "Flash Keys, VMs and MojoPac",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Raphael Wolff in Warsaw, Indiana says \"Holy sheetrock! Parallels is amazing.\" He made bootable Windows and DOS flash keys with PE Builder and FlashBoot. How is that different from Parallels, and could the Compressor shrink his flash image?"
+        },
+        {
+          "s": "steve",
+          "t": "A bootable key works, but there's no containment. The Windows on the key can see the host's drives. Run something malicious from the host drive and it could infect your key, or vice versa. Containment is a key benefit of real virtual machines."
+        },
+        {
+          "s": "steve",
+          "t": "And yes, you could compress the image with Parallels Compressor and put the smaller one back."
+        },
+        {
+          "s": "leo",
+          "t": "Listeners told me the Compressor is built into Parallels on the Mac."
+        },
+        {
+          "s": "leo",
+          "t": "Cali Lewis of GeekBrief TV told me about MojoPac, which just left beta. It puts your applications and desktop on a USB drive or iPod and runs them on any PC without installing. It's meant even for gamers who can't install games at work."
+        },
+        {
+          "s": "steve",
+          "t": "Like a bootable Knoppix CD?"
+        },
+        {
+          "s": "leo",
+          "t": "No booting, which is why I wonder about security. Maybe we'll look at it."
+        },
+        {
+          "type": "fact",
+          "title": "Portable environments",
+          "t": "MojoPac ran your applications inside a virtualized Windows layer on the host PC, rather than booting its own OS, so it couldn't fully isolate itself from a compromised host. Windows To Go, a full Windows booted from USB, came later."
+        }
+      ]
+    },
+    {
+      "title": "Protecting Children Online",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Heyliger in Tampa, a network engineer and soon-to-be father, wants to protect his daughter from pornography and chat predators. He'd also like to teach his church how, preferably with simple hardware that covers the whole network."
+        },
+        {
+          "s": "steve",
+          "t": "First, our hosts file episode. People report a phenomenal difference after installing the comprehensive hosts file linked in our notes. It works on every Internet-connected machine, with zero overhead. He could hand out instructions for each kind of computer."
+        },
+        {
+          "s": "steve",
+          "t": "For hardware, what you want is something managed, kept up to date as new threats appear. Astaro's gateway does that. We've talked about reviewing it in a special episode."
+        },
+        {
+          "s": "leo",
+          "t": "Since Astaro is a sponsor, we'd do it as a separate episode, to avoid any appearance of conflict of interest. Astaro hasn't asked."
+        },
+        {
+          "s": "steve",
+          "t": "It's listener-driven. People ask what I think of it, and I don't yet know."
+        },
+        {
+          "s": "leo",
+          "t": "Another option, from a sponsor of my radio show, Phantom Technologies: the iBoss, a parental-control device managed from their end. It's about $90 plus a monthly fee. I use it at home on four or five computers. It doesn't log chats; software can do that."
+        },
+        {
+          "s": "steve",
+          "t": "And nothing we discuss today will be relevant in the five to ten years before his daughter goes online."
+        }
+      ]
+    },
+    {
+      "title": "An eBay Phishing Trick",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Shawn Milochik in Reading, Pennsylvania warns of an eBay phishing scam. As a seller, he received a legitimate message through eBay's own contact system, asking if his item matches one at a link. The link leads to a fake eBay login."
+        },
+        {
+          "s": "leo",
+          "t": "It comes through a legitimate source, and it targets people who definitely have eBay auctions."
+        },
+        {
+          "s": "steve",
+          "t": "It brought me up short. eBay periodically makes you log in again even if you said to stay logged in. I always check a site's certificate when asked for credentials, but I realized I could fall for this."
+        },
+        {
+          "s": "leo",
+          "t": "The simple rule: don't click links in email. HTML email can hide where a link really goes."
+        },
+        {
+          "s": "steve",
+          "t": "You're right, I misread it. It arrives as email."
+        },
+        {
+          "s": "leo",
+          "t": "And if a site asks you to log in, check its certificate to verify it's who you think."
+        }
+      ]
+    },
+    {
+      "title": "Encrypting an Entire VM",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew Bain in Atlanta is helping his aunt, a therapist, keep patient notes confidential, as HIPAA requires, using TrueCrypt. He realized: create a VMware virtual machine inside a TrueCrypt volume, and the entire system, applications and all, is encrypted. Practical, or overkill?"
+        },
+        {
+          "s": "steve",
+          "t": "First, I salute him and his aunt. Years after the high-profile stories, people still carry data they don't own on easily stolen laptops."
+        },
+        {
+          "s": "leo",
+          "t": "The Veterans Administration. Serious people who should know better."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt is perfect, and our Episode 41 covers it. As for an encrypted VM, it would work. TrueCrypt encrypts and decrypts on the fly between the OS and the drive, so nothing decrypted is ever written to disk. But doing that for a whole VM adds overhead. Try it and see if it slows you down too much."
+        },
+        {
+          "s": "leo",
+          "t": "The Commerce Department says it has lost 1,137 laptops since 2001, mostly at the Census Bureau."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe only strict laws holding people accountable for lost data will make them figure out encryption."
+        },
+        {
+          "s": "leo",
+          "t": "IT should just set it up, with no way to disable it."
+        },
+        {
+          "s": "steve",
+          "t": "Then hope they don't write the password on the bottom. You never get around the human problem."
+        },
+        {
+          "type": "fact",
+          "title": "Encryption by default",
+          "t": "Laptop encryption became standard. BitLocker and FileVault now often turn on automatically, and many data-breach laws exempt lost devices whose data was encrypted."
+        }
+      ]
+    },
+    {
+      "title": "Can Malware Overheat Hardware?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kye Dorton of Niceville, Florida, really, is binging episodes. He asks: could malware hijack ACPI to turn off fans under heavy load and cause damage?"
+        },
+        {
+          "s": "steve",
+          "t": "An overheated CPU doesn't die. Hot transistors leak current and the processor hangs. You get a lockup."
+        },
+        {
+          "s": "steve",
+          "t": "Hard drives, though, really don't like heat. SpinRite 6 monitors drive temperature and pauses to let a drive cool. I was surprised how many people hit that: they upgrade from 5,400 to 7,200 RPM drives that draw more power, in cases that can't cool them. So slowing your fans could damage drives over time."
+        },
+        {
+          "type": "fact",
+          "title": "ACPI",
+          "t": "ACPI stands for Advanced Configuration and Power Interface, the standard that lets the operating system manage power, sleep and fans. Modern CPUs throttle or shut down automatically before heat can damage them."
+        },
+        {
+          "s": "leo",
+          "t": "Viruses have written to the BIOS. But today's malware authors want to use your system, not crash it."
+        }
+      ]
+    },
+    {
+      "title": "A Home File Server",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe Rodricks, who gave his location to six decimal places in Massachusetts, wants to turn an old PC into a file server, maybe reachable from outside."
+        },
+        {
+          "s": "steve",
+          "t": "I've had good experience with Samba on Linux or FreeBSD. It's efficient on old hardware. The same machine could be your NAT gateway, and Samba has passwords and IP restrictions if you want outside access. Your Windows machines just use normal file sharing."
+        },
+        {
+          "s": "steve",
+          "t": "I don't run GUIs on my FreeBSD servers at Level 3 or my local gateway. UNIX is configured with text files, and Windows has great editors. So I use Samba, firewalled so only my fixed IP ranges can see it, and edit their files from Windows Explorer."
+        },
+        {
+          "s": "leo",
+          "t": "Jeremy Allison of Samba will be on FLOSS Weekly soon. And FreeNAS is a FreeBSD-based network-attached storage system, just 32MB, that can boot from flash. It won best consumer NAS in VMware's virtual appliance challenge."
+        },
+        {
+          "type": "fact",
+          "title": "FreeNAS",
+          "t": "FreeNAS evolved into TrueNAS, still a popular open-source storage system built on ZFS."
+        }
+      ]
+    },
+    {
+      "title": "Phone Browsers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Lawson in Johannesburg asks: phones browse the web with Opera Mini, but they don't have firewalls. Is that a security problem?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Phones have already had exploitable buffer overruns. I love reading news on my Treo 700p. Its Blazer browser doesn't support JavaScript, and I mostly read small WAP pages."
+        },
+        {
+          "s": "steve",
+          "t": "But phones will get more powerful, and people will want everything their workstations do. Along will come all the same security problems."
+        },
+        {
+          "s": "leo",
+          "t": "For now, they're low-powered and not a very attractive target."
+        },
+        {
+          "type": "fact",
+          "title": "Phones as targets",
+          "t": "Smartphones became prime targets. Spyware like NSO Group's Pegasus has used zero-click exploits in messaging apps, which is why phone makers now sandbox apps tightly and patch monthly."
+        }
+      ]
+    },
+    {
+      "title": "Software Patents",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Voeller also didn't like that VMware's patents keep others from saving a VM's state. He says console game emulators saved state long before, and sent a search for posts predating patent 6,496,847."
+        },
+        {
+          "s": "steve",
+          "t": "I'm very uncomfortable with software patents. The Patent Office issues patents it shouldn't, then companies fight and only the attorneys win."
+        },
+        {
+          "s": "steve",
+          "t": "The law says an invention must not be obvious to someone skilled in the art. Often a company first into an area solves problems, and anyone hitting the same problem would find the same solution. When people invent the same thing independently, that argues it's engineering, not invention."
+        },
+        {
+          "s": "steve",
+          "t": "Give me a problem and I'll solve it. Did I invent something, or just engineer a solution? I think we'll see more trouble from patents issued in the last decade as companies run out of steam and turn to litigation."
+        },
+        {
+          "s": "leo",
+          "t": "Europe resisted software patents but is starting to allow them. And some companies exist just to acquire patents and sue."
+        },
+        {
+          "s": "steve",
+          "t": "Courts originally held that software was mathematics, which can't be patented. People got around it by describing a hardware embodiment. Eventually the Patent Office gave up and allowed software patents. Now people patent genes they merely found."
+        },
+        {
+          "type": "fact",
+          "title": "Courts push back",
+          "t": "The US Supreme Court tightened the rules in Alice v. CLS Bank (2014), invalidating many software patents on abstract ideas. In 2013, in Association for Molecular Pathology v. Myriad Genetics, it ruled that naturally occurring DNA can't be patented."
+        },
+        {
+          "s": "leo",
+          "t": "We've answered all 12. See you next week, for #61."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "If a website can run ActiveX on your PC, why worry about it re-registering the VML DLL?",
+      "options": [
+        "It can already run any native code it wants; you're compromised anyway",
+        "ActiveX can only change DLLs",
+        "ActiveX is safe",
+        "It can't do anything"
+      ],
+      "answer": 0,
+      "explain": "Limit scripting to trusted sites, or use a browser without ActiveX."
+    },
+    {
+      "q": "How is a bootable Windows flash key different from running Windows in a VM?",
+      "options": [
+        "It provides no containment; it can see and infect the host's drives",
+        "It's faster and safer",
+        "It can't run programs",
+        "It needs the Internet"
+      ],
+      "answer": 0,
+      "explain": "Virtual machines keep the guest isolated."
+    },
+    {
+      "q": "What made the eBay phishing scam Shawn described so effective?",
+      "options": [
+        "It arrived through eBay's real messaging system and targeted actual sellers",
+        "It used a virus",
+        "It came by phone",
+        "It stole credit cards directly"
+      ],
+      "answer": 0,
+      "explain": "The rule still applies: don't click links in email."
+    },
+    {
+      "q": "What happens to a CPU that overheats, according to Steve?",
+      "options": [
+        "It hangs rather than dying, though hot hard drives can be damaged",
+        "It melts",
+        "It runs faster",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "SpinRite 6 pauses to let hot drives cool."
+    },
+    {
+      "q": "What's Steve's main objection to many software patents?",
+      "options": [
+        "They often cover obvious engineering solutions rather than true inventions",
+        "They expire too fast",
+        "They're too cheap",
+        "They only cover hardware"
+      ],
+      "answer": 0,
+      "explain": "Independent discovery suggests engineering, not invention."
+    },
+    {
+      "q": "What does Steve use to manage his FreeBSD servers' text configuration files from Windows?",
+      "options": [
+        "Samba file sharing, restricted to his own IP ranges",
+        "A GUI on each server",
+        "Telnet",
+        "FTP"
+      ],
+      "answer": 0,
+      "explain": "Windows' editors become his management tool."
+    }
+  ]
+}

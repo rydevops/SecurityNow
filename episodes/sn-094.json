@@ -1,0 +1,427 @@
+{
+  "number": 94,
+  "title": "The Fourth Factor",
+  "subtitle": "\"Someone you know\" as authentication",
+  "date": "2007-05-31",
+  "description": "ShieldsUP! traffic has doubled overnight. Then Steve and Leo build on multifactor authentication with a fourth factor, someone you know: an RSA design that lets a colleague vouch for someone who forgot their token, the PGP web of trust and key-signing parties, eBay reputation and its abuse, the dangers of self-launching U3 USB drives, and Steve's wish for a third-party token-based login service.",
+  "transcript": "https://www.grc.com/sn/sn-094.txt",
+  "audio": "http://media.GRC.com/sn/SN-094.mp3",
+  "chapters": [
+    {
+      "title": "ShieldsUP!'s Mystery Surge",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Did you ever figure out ShieldsUP!'s bump?"
+        },
+        {
+          "s": "steve",
+          "t": "No, but it's still there, about 49,000 uses a day now."
+        },
+        {
+          "s": "leo",
+          "t": "Somebody's plugging it. Maybe a router or security program says, \"Test us.\""
+        },
+        {
+          "s": "steve",
+          "t": "I think so. And the weekly cycle shows it's slower on weekends, so sorry, Leo, it's not the radio show. It doubled overnight, as if some high-traffic site discovered it."
+        },
+        {
+          "s": "steve",
+          "t": "You can see it: go to ShieldsUP! at GRC.com, enter, and choose item 12, \"Site History,\" at the bottom. The weekly sine wave used to be there. Now its amplitude is higher, and in one day the traffic doubled and stayed."
+        },
+        {
+          "s": "leo",
+          "t": "Very clear. 50,597,626 shields tested and counting."
+        }
+      ]
+    },
+    {
+      "title": "Authentication Is Here to Stay",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today we follow up on multifactor authentication."
+        },
+        {
+          "s": "steve",
+          "t": "More broadly, authentication will only become more important. As online banking grows and our lives depend on proving over the Internet that we are who we say we are, the applications expand. We started 94 weeks ago with passwords. Expect authentication to be an ongoing thread."
+        },
+        {
+          "s": "leo",
+          "t": "Define authentication."
+        },
+        {
+          "s": "steve",
+          "t": "Proving remotely that you are you. Remember Opie, whom the druggist trusted to pick up Aunt Bee's pills because he knew him. We covered three factors: something you know, like a password..."
+        },
+        {
+          "s": "leo",
+          "t": "Something only you know."
+        },
+        {
+          "s": "steve",
+          "t": "Right, which discriminates you from everyone else, if you keep it to yourself. Something you have, a physical token like RSA's SecurID, whose LCD number changes every minute. The server knows your token's seed, so it can verify that somebody has your token, hopefully you. Many listeners said they also enter a PIN or password with it."
+        },
+        {
+          "s": "leo",
+          "t": "Something you know and something you have, like an ATM card."
+        },
+        {
+          "s": "steve",
+          "t": "That solves a lost token being abused. An ATM needs a machine, while SecurID works on any website. On a PC you'd need a magnetic stripe reader."
+        },
+        {
+          "s": "leo",
+          "t": "Smart card systems do that."
+        },
+        {
+          "s": "steve",
+          "t": "And the third factor, something you are: biometrics, things about you that can be measured, like retinas, irises, hand geometry and fingerprints."
+        },
+        {
+          "s": "steve",
+          "t": "I've used my IBM ThinkPad's fingerprint scanner for weeks and really like it. The BIOS and the scanner's processor authenticate me through the Trusted Platform Module, TPM, on the motherboard, which has been controversial for its potential abuse. Only then does it unlock my hard drive, so nobody could read the drive even by removing it. I could add a password for two factors, but I'm careful with my laptop."
+        }
+      ]
+    },
+    {
+      "title": "Someone You Know",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now the fourth factor."
+        },
+        {
+          "s": "steve",
+          "t": "I stumbled on it four weeks ago in an RSA research paper that puts science to it. The fourth factor is someone you know, a return to the past: the pharmacist knew Opie."
+        },
+        {
+          "type": "fact",
+          "title": "The paper",
+          "t": "\"Fourth-Factor Authentication: Somebody You Know,\" by RSA Laboratories researchers including Ron Rivest, the \"R\" in RSA, was presented in 2006."
+        },
+        {
+          "s": "steve",
+          "t": "How do you prove that over the Internet? RSA's model uses SecurID. Say Sally lost her token but must log in at work. She calls Bob: I did it again, I left my SecurID at home, can you authenticate me?"
+        },
+        {
+          "s": "leo",
+          "t": "That's the kind of thing a spy would do."
+        },
+        {
+          "s": "steve",
+          "t": "Good point, and the paper quantifies how this weakens the system. If Sally emails Bob, that's weak, because email is so easily spoofed."
+        },
+        {
+          "s": "steve",
+          "t": "So when Bob vouches for her, he chooses from a drop-down list of how he knows it's her: talked to her, met her face to face, she phoned me, she emailed me. Even disallowed choices are listed, so Bob tells the truth. Pick email, and the system says: sorry, Bob, she'll have to do better."
+        },
+        {
+          "s": "steve",
+          "t": "This is about human factors, prone to social engineering, so they give Bob every chance to be honest rather than just think it's probably Sally."
+        }
+      ]
+    },
+    {
+      "title": "How the Vouching Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, Sally tells the system she has no token, and it gives her a one-time code. She gives it to Bob."
+        },
+        {
+          "s": "steve",
+          "t": "Bob, believing it's Sally, authenticates himself normally with his own SecurID, and submits Sally's code. The system says: we gave this to Sally a minute ago, and we know you're Bob. Here's a matching code for her."
+        },
+        {
+          "s": "steve",
+          "t": "Bob gives it to Sally, and she submits it. That proves she talked with Bob, since the only way to have it is for the code to flow from the system through Bob to her and back. It sounds confusing, but in practice it's easy."
+        },
+        {
+          "s": "leo",
+          "t": "Is this the web of trust?"
+        },
+        {
+          "s": "steve",
+          "t": "We'll get to that. This is a fallback for when a strong two-factor system loses its strongest factor, the token you left at home. Practical strong systems need fallbacks."
+        },
+        {
+          "s": "steve",
+          "t": "The classic fallback is personal questions: your favorite teacher, first pet, birthplace. Those can be found by data mining. Your mother's maiden name is often on the Internet."
+        },
+        {
+          "s": "leo",
+          "t": "It's terminally weak."
+        },
+        {
+          "s": "steve",
+          "t": "And static. Everyone has one mother with one maiden name. RSA's design uses one-time codes, so nothing can be replayed. Someone who sees Sally's scribbled code can't reuse it."
+        },
+        {
+          "s": "steve",
+          "t": "And Bob is on the hook. Logs record that Sally was authenticated through Bob at this time. If it wasn't Sally, or she did something wrong, Bob answers for it."
+        }
+      ]
+    },
+    {
+      "title": "The PGP Web of Trust",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The web of trust is a longstanding variation. We've discussed public key infrastructure, PKI. GRC's SSL certificate, used whenever customers buy SpinRite, is signed by VeriSign. Browsers trust VeriSign to verify it's really me, and I jump through hoops every couple of years: phone numbers, addresses, Dun & Bradstreet listings."
+        },
+        {
+          "s": "steve",
+          "t": "Paul... no, Phil Zimmermann wanted PGP to have a public key infrastructure without a central authority. So people sign each other's keys, asserting: this person is who they say."
+        },
+        {
+          "s": "steve",
+          "t": "Sally may not know Bob. But Sally knows Jeff, and Jeff has signed Bob's key, and Sally has signed Jeff's. If Sally trusts Jeff, and Jeff asserts he knows Bob, Sally can be very sure she has Bob's real key."
+        },
+        {
+          "s": "leo",
+          "t": "Like Bob and Carol and Ted and Alice."
+        },
+        {
+          "s": "steve",
+          "t": "But it's only as secure as the weakest link. Extend the chain much further, and you're trusting people you don't know. With two links, Sally knows Jeff wouldn't vouch for Bob unless he really knew him."
+        },
+        {
+          "s": "leo",
+          "t": "And with PGP, you don't know everyone personally."
+        },
+        {
+          "s": "steve",
+          "t": "Studies show any two people on Earth are linked by about six degrees of separation. If PGP were pervasive and everyone signed their contacts' keys, you'd have a robust web of trust. Even ten links away, if every link is trustworthy, you can be sure."
+        }
+      ]
+    },
+    {
+      "title": "Key-Signing Parties",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "There are obvious problems. Hundreds of people have signed my key, probably none of whom really know it's mine. They got email from me and signed it. I've done the same."
+        },
+        {
+          "s": "leo",
+          "t": "In the early days you'd meet in person. People still hold key-signing parties."
+        },
+        {
+          "s": "steve",
+          "t": "Computer club special interest groups get together and show driver's licenses: this is my photo and my name, sign my key. The more people who sign, the more integrity it has. What are the chances they're all wrong?"
+        },
+        {
+          "s": "leo",
+          "t": "It's possible if they were all fooled."
+        },
+        {
+          "s": "steve",
+          "t": "A bad guy could go to key-signing parties with a fake ID and get many people vouching for him, then exploit that robust impersonation."
+        },
+        {
+          "s": "steve",
+          "t": "eBay reputation is similar. I always check a seller's reputation. Now there are bot networks that create fake reputations, making tiny trades among themselves."
+        },
+        {
+          "s": "leo",
+          "t": "They sign each other's certificates, in effect."
+        },
+        {
+          "s": "steve",
+          "t": "Probably the same penny went back and forth. They build a deep, rich-looking history that extends into eBay's real web."
+        },
+        {
+          "s": "leo",
+          "t": "So it's not perfect, but sufficient for PGP's purposes."
+        },
+        {
+          "s": "steve",
+          "t": "You want to meet the people who matter. When we get together in Vancouver, we sign each other's keys, game over."
+        },
+        {
+          "s": "leo",
+          "t": "Or I could just email you my key to sign."
+        },
+        {
+          "s": "steve",
+          "t": "That would work. I was trying to think if a man in the middle could attack that, but no, I've signed my own key, so you could verify my signature on it."
+        },
+        {
+          "type": "fact",
+          "title": "A correction",
+          "t": "A self-signature only proves the key's owner signed it, not who that owner is. An attacker intercepting the email could substitute his own self-signed key. That's why PGP users compare key fingerprints in person or over a trusted channel, such as a phone call where they recognize the voice."
+        }
+      ]
+    },
+    {
+      "title": "The Danger of U3 Drives",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I found something cheap and cool: a $20 one-gigabyte USB drive with a built-in fingerprint scanner. It says it only works on Windows 2000 and XP."
+        },
+        {
+          "s": "leo",
+          "t": "We demonstrated it in our lab. It carries software, like a U3 drive, that launches automatically to authenticate. It could run on Vista, they just haven't written it yet."
+        },
+        {
+          "s": "steve",
+          "t": "I hoped it did everything internally."
+        },
+        {
+          "s": "leo",
+          "t": "It has its own internal encryption key, but the software runs on the PC."
+        },
+        {
+          "s": "steve",
+          "t": "U3 gives me a queasy feeling: plug in a USB drive, and it launches software with no way to override it."
+        },
+        {
+          "s": "leo",
+          "t": "I've seen hacks using a U3 drive with a rootkitted keystroke logger. Plug it in, it checks whether it's installed, installs itself in 30 seconds, and the hacker walks away. A week later, the same drive downloads the logged passwords. If you use a library or Internet café machine, assume it's been compromised this way."
+        },
+        {
+          "s": "steve",
+          "t": "The perfect example of too much convenience."
+        },
+        {
+          "s": "leo",
+          "t": "Can you disable autorun in Windows?"
+        },
+        {
+          "s": "steve",
+          "t": "The drive creates a virtual CD drive plus a data drive."
+        },
+        {
+          "s": "leo",
+          "t": "Good, because you can turn off CD auto-launching."
+        },
+        {
+          "s": "steve",
+          "t": "I had to use their removal software to get my four gigs back."
+        },
+        {
+          "s": "leo",
+          "t": "Don't buy U3 drives, and disable autorun on systems you want secure. Hak5's Darren Kitchen showed how to build a bad, bad one."
+        },
+        {
+          "type": "fact",
+          "title": "AutoRun's end",
+          "t": "Microsoft disabled AutoRun for USB drives in Windows 7 and pushed that change to XP and Vista in 2011, after worms like Conficker spread through it. U3 was discontinued in 2009."
+        }
+      ]
+    },
+    {
+      "title": "A Wish for Token-Based Logins",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The more I think about SecurID, the more I like it. I wish individuals could get tokens, with a service websites could use to authenticate people."
+        },
+        {
+          "s": "steve",
+          "t": "Logging in with my email address and a password makes me uncomfortable. It's static, and it takes tremendous discipline not to reuse it."
+        },
+        {
+          "s": "steve",
+          "t": "Imagine the site gives you a challenge. A little app authenticates you to a trusted third party using your time-varying token. The service signs or transforms the challenge, and you paste the result back. The site knows more surely it's you, and you gave it nothing you've used anywhere else. It's never the same twice."
+        },
+        {
+          "s": "leo",
+          "t": "OpenID could support that. Most OpenID providers just authenticate by email, but if someone added strong authentication, any OpenID site could use it."
+        },
+        {
+          "s": "steve",
+          "t": "Users who don't want it wouldn't buy a token. I'd buy one in a heartbeat. And sites wouldn't each need the infrastructure."
+        },
+        {
+          "s": "leo",
+          "t": "If nobody's doing it, it's a great business opportunity."
+        },
+        {
+          "s": "steve",
+          "t": "Crypto is mature and public. Certificates whose signatures extend trust, public keys anyone can encrypt to that only your private key decrypts: beautiful building blocks. Nothing's more mission-critical than secure authentication. I foresee people carrying tokens on their key rings every day."
+        },
+        {
+          "s": "leo",
+          "t": "It might be how you get into your car."
+        },
+        {
+          "type": "fact",
+          "title": "What followed",
+          "t": "OpenID evolved into OpenID Connect, behind today's \"Sign in with Google\" and similar buttons. Hardware security keys and passkeys now deliver much of the one-time, phishing-resistant login Steve wished for."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the \"fourth factor\" of authentication?",
+      "options": [
+        "Someone you know who vouches for you",
+        "Somewhere you are",
+        "Something you forgot",
+        "A second password"
+      ],
+      "answer": 0,
+      "explain": "RSA's design uses it when someone loses a token."
+    },
+    {
+      "q": "In RSA's design, how does Sally prove she talked to Bob?",
+      "options": [
+        "She submits a one-time code the system issued to Bob for her after he authenticated himself",
+        "She emails the help desk",
+        "She answers security questions",
+        "Bob types her password"
+      ],
+      "answer": 0,
+      "explain": "Logs record that Bob vouched for her."
+    },
+    {
+      "q": "Why is \"mother's maiden name\" a weak fallback?",
+      "options": [
+        "It can often be found online, and it never changes",
+        "It's too long",
+        "It's encrypted",
+        "It's illegal to ask"
+      ],
+      "answer": 0,
+      "explain": "One-time codes avoid both problems."
+    },
+    {
+      "q": "How does the PGP web of trust work?",
+      "options": [
+        "People sign each other's keys, so trust can extend through people you know",
+        "A central authority signs every key",
+        "Keys are stored by banks",
+        "It uses SSL certificates"
+      ],
+      "answer": 0,
+      "explain": "It's only as strong as its weakest link."
+    },
+    {
+      "q": "How have bots abused eBay's reputation system?",
+      "options": [
+        "By trading tiny amounts among themselves to build fake histories",
+        "By hacking eBay's servers",
+        "By deleting bad feedback",
+        "By stealing passwords"
+      ],
+      "answer": 0,
+      "explain": "It's like signing each other's keys."
+    },
+    {
+      "q": "Why did Steve and Leo distrust U3 USB drives?",
+      "options": [
+        "They automatically launch software, which attackers can use to install malware in seconds",
+        "They're too slow",
+        "They lose data",
+        "They need passwords"
+      ],
+      "answer": 0,
+      "explain": "Disabling autorun helps."
+    }
+  ]
+}

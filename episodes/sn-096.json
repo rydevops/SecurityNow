@@ -1,0 +1,591 @@
+{
+  "number": 96,
+  "title": "Listener Feedback Q&A #20",
+  "subtitle": "Certificates, biometric backstops, Keychain, DVR power and city Wi-Fi",
+  "date": "2007-06-14",
+  "description": "Mailbag notes on PasswordMaker, the finer points of PGP trust, and a SpinRite save for a home-school convention. Then listener questions: checking a bank's certificate, what happens if your fingerprint fails, hashed passwords, Mac OS X's Keychain, protecting a DVR from power outages, whether drives last longer on or off, fooling fingerprint scanners, cores versus virtual machines, forwarded email bouncing, early Blink reports, SpaceMonger, and the risks of citywide Wi-Fi.",
+  "transcript": "https://www.grc.com/sn/sn-096.txt",
+  "audio": "http://media.GRC.com/sn/SN-096.mp3",
+  "chapters": [
+    {
+      "title": "Approaching 100",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Our 20th Q&A. Listeners now tell me which one they want to appear on."
+        },
+        {
+          "s": "leo",
+          "t": "It doesn't quite work like that. Episode 100 will be a Q&A, too."
+        },
+        {
+          "s": "steve",
+          "t": "Gee, is 100 evenly divisible by 4?"
+        }
+      ]
+    },
+    {
+      "title": "Mailbag: PasswordMaker and PGP Trust",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Justin Alcorn of Cleveland Heights, Ohio says too many people think a username and password is two-factor authentication, including a government agency that lost a laptop and assured the public it was protected by two-factor authentication."
+        },
+        {
+          "s": "leo",
+          "t": "Which is worse, disinformation or ignorance?"
+        },
+        {
+          "s": "steve",
+          "t": "He recommends PasswordMaker, a Firefox add-on. It hashes one master password with the domain of the site you're on, creating a unique, random-looking password for each site. It's the same every time, so you can regenerate it on any computer, or with its online JavaScript version. There's an IE add-on too."
+        },
+        {
+          "s": "leo",
+          "t": "I use something similar from Zarate Labs."
+        },
+        {
+          "s": "steve",
+          "t": "He also notes two things I skipped about PGP's web of trust. You choose how much to trust each signer: a little for people who sign anything, a lot for careful people. The trust of a key's signers adds up to decide whether you trust it. And before signing a key, verify its fingerprint, so you don't sign one handed to you by a man in the middle. He's absolutely right."
+        },
+        {
+          "s": "steve",
+          "t": "And Christopher Adams works at the church hosting Albuquerque's largest Christian home-school association meeting next week. The laptop with all the event data crashed, and its backup was at the North Pole with Santa, the Easter Bunny and the Keebler Elves."
+        },
+        {
+          "s": "leo",
+          "t": "There's no backup."
+        },
+        {
+          "s": "steve",
+          "t": "The problem was its power adapter, but after repeatedly losing power abruptly, the drive failed too. He put it in a desktop with a $5 adapter and ran SpinRite. Four and a half hours later the 60GB drive worked perfectly. They bought four copies for a site license, and it's his case study for a RAID file server with backups."
+        },
+        {
+          "s": "leo",
+          "t": "You don't mind reminding people they wouldn't need SpinRite if they backed up."
+        },
+        {
+          "s": "steve",
+          "t": "For mission-critical data, don't rely on a single spindle."
+        }
+      ]
+    },
+    {
+      "title": "Checking Your Bank's Certificate",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Brown of Cumming, Georgia asks: how do I check my bank's certificate to be sure I'm on the right site?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm security conscious, without antivirus, behind NAT, with no scripting, and I generally feel safe. But before entering my credit card anywhere, I check that I've got https and the browser says it's secure. Then I right-click the page, choose Properties and View Certificate. I always do this on PayPal, since the bigger the target, the more likely it's spoofed. I make sure it's for www.paypal.com."
+        },
+        {
+          "s": "steve",
+          "t": "Then check the chain of trust: who signed it. If Boris Badenov signed it, it means nothing. It should be a standard authority like Equifax or VeriSign. If your corporate certificate is installed in your browser, your company's proxy could be decrypting and re-encrypting your connection."
+        },
+        {
+          "s": "leo",
+          "t": "You must be on https for there to be a certificate. In Firefox, right-click, choose Page Info, then the Security tab. Amazon's is from RSA Data Security. Who's yours from?"
+        },
+        {
+          "s": "steve",
+          "t": "I've always used VeriSign."
+        },
+        {
+          "type": "fact",
+          "title": "Browsers today",
+          "t": "Modern browsers show certificate details by clicking the padlock or site-information icon beside the address. Certificate authorities like Let's Encrypt now issue free certificates, so a padlock alone proves only that the connection is encrypted to that domain."
+        }
+      ]
+    },
+    {
+      "title": "What If Your Fingerprint Fails?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul Dickson of Phoenix, Arizona thinks collecting biometrics for identification should be illegal. If your laptop's data is locked with your fingerprint and you lose a finger, or your family needs the data, what then? Nurses often lose their fingerprints, maybe from caustic chemicals. And would a replacement scanner read your finger the same way?"
+        },
+        {
+          "s": "leo",
+          "t": "Illegal is going a little far, but good points."
+        },
+        {
+          "s": "steve",
+          "t": "My fingerprint is a convenience. If it fails, I can always fall back to a password. When my fingerprint matches, it provides the password to the BIOS to unlock the machine and hard drive."
+        },
+        {
+          "s": "steve",
+          "t": "I also enrolled several fingers, and I consciously alternate between index fingers to keep them both happy. And because my fingerprint types my super-strong password for me, I could choose a much stronger one than I'd bother typing."
+        },
+        {
+          "s": "leo",
+          "t": "I didn't know there was a password backstop."
+        },
+        {
+          "s": "steve",
+          "t": "And Hitachi has announced, maybe already shipping, the perfect laptop drive: bulk AES encryption built in. You give the drive its cryptographic key at power-on, and everything written to the surface is encrypted on the fly, without slowing it down. It's not just a lock a recovery company could get past. It'll be standard equipment before long."
+        },
+        {
+          "type": "fact",
+          "title": "Self-encrypting drives",
+          "t": "Drives with built-in encryption became common under the Opal standard. But a 2018 study found serious flaws in several models' encryption, so Windows' BitLocker stopped trusting drive hardware encryption by default."
+        }
+      ]
+    },
+    {
+      "title": "Storing Passwords in Plain Text",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Everett of Virginia heard our SQL injection episode. Do real websites store passwords in plain text? Isn't it standard to store salted hashes, so a stolen list is useless?"
+        },
+        {
+          "s": "steve",
+          "t": "He's right that there are well-known ways to do it right. That doesn't mean Joe PHP Programmer, who just bought \"PHP for Dummies,\" and in his case it's correctly named, will. He can store passwords in a text file if he wants. Nothing in the language suggests otherwise. With Web 2.0, security is entirely the developer's responsibility. A programmer who doesn't know to store and compare hashes won't."
+        },
+        {
+          "type": "fact",
+          "title": "Password storage now",
+          "t": "Fast hashes like MD5 or SHA-1 proved too easy to brute-force. Sites should use deliberately slow, salted algorithms like bcrypt, scrypt or Argon2."
+        }
+      ]
+    },
+    {
+      "title": "The Mac OS X Keychain",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Thomas Brock of Santa Monica, a longtime Windows developer who bought his first Mac a year ago, always clicks Allow when told something wants his keychain. What is it?"
+        },
+        {
+          "s": "steve",
+          "t": "Leo, this one's yours."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks for the warning. Keychain is one of OS X's nicest features: a secure store for passwords, used by Safari and most Mac programs. It's unlocked when you log in, if it shares your login password. You can give it a separate password."
+        },
+        {
+          "s": "leo",
+          "t": "The second layer is what he's seeing. When a program is new, updated or reinstalled, the first time it reaches for the Keychain, the Mac asks permission. That's one reason the Mac is more secure. Like UAC, pause and ask who's asking and whether it makes sense. If you just updated Safari, then yes."
+        },
+        {
+          "s": "steve",
+          "t": "I just updated Skype from 2.0 to 2.6, and it asked exactly that. I knew why, so I allowed it."
+        },
+        {
+          "s": "leo",
+          "t": "You can say no, and Skype won't fill in your password. Apple did passwords right: strongly encrypted, not stored in plain text. Keychain can also generate and store secure passwords, like a password manager built in. You can make it relock after, say, 30 minutes. Look in Applications, Utilities, Keychain Access to see what's stored, change preferences, and run First Aid."
+        },
+        {
+          "s": "steve",
+          "t": "And OS X gives applications a Keychain interface. Windows has nothing like it."
+        }
+      ]
+    },
+    {
+      "title": "Should a DVR Be on a UPS?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bob G. of Auburn, Alabama has a Charter cable Moxi DVR. Since we said DVRs write constantly, should he put it on a UPS? His area has 15- to 20-second outages. The installer said no."
+        },
+        {
+          "s": "steve",
+          "t": "Of course, because they think of it as an appliance. We showed DVRs must write to disk constantly, since they don't have nearly enough RAM for 30 minutes."
+        },
+        {
+          "s": "leo",
+          "t": "I like that you reasoned it out logically rather than looking it up."
+        },
+        {
+          "s": "steve",
+          "t": "These boxes survive outages, since they're always on. But cutting power while a drive writes destroys that sector. They're built to tolerate it, but it adds up. Give it a UPS. And if you can get the drive out, past the funky screws, run SpinRite to clean it up."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't DVRs use journaled file systems?"
+        },
+        {
+          "s": "steve",
+          "t": "TiVo uses ext2, an old, small Linux kernel."
+        },
+        {
+          "s": "leo",
+          "t": "NTFS, ext3, ReiserFS and OS X are journaled. Doesn't that help?"
+        },
+        {
+          "s": "steve",
+          "t": "Somewhat. A journal records changes so the system can roll back to a consistent state and possibly roll forward. But NTFS protects its structure, not your data. And nothing prevents a power failure mid-write from making a bad sector without a proper checksum. That's one of the things SpinRite fixes."
+        },
+        {
+          "s": "leo",
+          "t": "On a DVR, a bad sector is just a video glitch."
+        },
+        {
+          "s": "steve",
+          "t": "But they're cumulative. Or he could tell the cable company it went bad and get another."
+        }
+      ]
+    },
+    {
+      "title": "Do Drives Last Longer On or Off?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lars Solberg in Norway heard on a big Norwegian IT podcast that drives live longer if left powered on than used as shelf backups. That contradicts what he remembers from us."
+        },
+        {
+          "s": "steve",
+          "t": "Many people want a show on backups, which I've avoided so as not to pander to SpinRite. But we're both right. The danger is power cycling: heating and cooling, on and off. I never turn off a machine I'll use again in an hour, only one I won't use for days."
+        },
+        {
+          "s": "steve",
+          "t": "Running all the time, like GRC's servers at Level 3, or off all the time, on a shelf, are both much better than constantly cycling."
+        },
+        {
+          "s": "leo",
+          "t": "Do drives on a shelf suffer stiction or gummy bearings?"
+        },
+        {
+          "s": "steve",
+          "t": "Maybe after decades. Stiction has largely been solved. I have original version 1 IDE drives for testing SpinRite, and they still fire up. I also just bought archive-grade gold DVDs that record only at 1x and are built for 100-year storage."
+        },
+        {
+          "s": "leo",
+          "t": "But you need an interface to read them. Copy important data to newer media every five years or so."
+        },
+        {
+          "s": "steve",
+          "t": "Try finding an ESDI controller."
+        },
+        {
+          "s": "leo",
+          "t": "Or SCSI. Or Zip disks, or an Orb drive."
+        },
+        {
+          "s": "steve",
+          "t": "I have labeled drives from old machines, like my 1988 C drive. Nostalgia, but nothing I need."
+        },
+        {
+          "s": "leo",
+          "t": "Look, an autoexec.bat!"
+        }
+      ]
+    },
+    {
+      "title": "Can a Dusted Fingerprint Fool a Scanner?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bruce in Gilbert, Arizona notes that scanners have been fooled with Play-Doh. Couldn't someone dust a stolen laptop for prints? Your home-row keys even show which finger is which."
+        },
+        {
+          "s": "steve",
+          "t": "There are two classes of scanner. Large rectangular ones you press your finger on are inherently insecure. A static photocopy can work: wow, this guy's got a high-contrast thumb."
+        },
+        {
+          "s": "steve",
+          "t": "I trust only dynamic ones: the thin strip you swipe across, just a few rows of sensors high. They're capacitive, like a stud finder sensing density behind a wall. You need a 3D copy, moved across the sensor, which tracks your finger's motion row by row. Much harder to fool."
+        },
+        {
+          "type": "fact",
+          "title": "Spoofing swipes",
+          "t": "Researchers have fooled even capacitive sensors with molded gelatin or silicone fingers made from lifted prints. That's why phones now add liveness detection and secure hardware, and use fingerprints mainly as a convenience backed by a PIN."
+        }
+      ]
+    },
+    {
+      "title": "More Cores for Virtual Machines?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Alex Banks in Los Angeles asks: would dual quad-core processors help heavy virtual machine use?"
+        },
+        {
+          "s": "steve",
+          "t": "The big load for VMs is RAM. Each VM takes a fixed chunk of the host's memory, 512MB or a gig, for its own OS. And more processors just move the bottleneck elsewhere, like memory or disk."
+        },
+        {
+          "s": "leo",
+          "t": "Often I/O."
+        },
+        {
+          "s": "steve",
+          "t": "When we were DDoS'd six or seven years ago, I studied building a system to respond. The PCI bus instantly bottlenecked. No processor could push enough through it to the network card. Too much engine and not enough wheel."
+        },
+        {
+          "s": "leo",
+          "t": "My quad-core Mac Pro runs Parallels beautifully. I don't think eight cores would help much."
+        },
+        {
+          "s": "steve",
+          "t": "My quad-core machine is shockingly fast at compressing media, when the software understands multiple threads. Now the SETI@home people will want my cores."
+        },
+        {
+          "s": "leo",
+          "t": "PlayStation 3s, with their Cell processors, rack up distributed-computing cycles."
+        },
+        {
+          "s": "steve",
+          "t": "Video tools like Avid Liquid 7, which I'm using for my homeowners association's DVD, now offload effects to the graphics processor."
+        }
+      ]
+    },
+    {
+      "title": "Forwarded Email Bouncing",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike in Long Island uses addresses at a family domain his brother runs, which forwards mail to Mike's ISP address. The ISP seems to bounce some forwarded mail as spam and won't admit it. Should he move to a host like FastMail?"
+        },
+        {
+          "s": "leo",
+          "t": "It's not ham-fisted. You'll see more of it."
+        },
+        {
+          "s": "steve",
+          "t": "ISPs are finally fighting spam. We've discussed SPF, and Yahoo!'s DomainKeys, and I think Google uses both. They authenticate the server as the mail's source."
+        },
+        {
+          "s": "steve",
+          "t": "When mail claims to be from a domain but comes through a different server, receivers check whether that domain authorized the server. If his brother controls the family domain's DNS, he can add an SPF text record authorizing Mike's ISP's servers to send its mail."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft has a Sender ID wizard that builds the record for you. Which end needs it?"
+        },
+        {
+          "s": "steve",
+          "t": "The sender's domain. The receiver sees firstname@lastname.net and asks lastname.net's DNS who may send its mail."
+        },
+        {
+          "s": "leo",
+          "t": "I need that. I use leo@leoville.com but send through other servers, and put my ISP address in Reply-To, which confuses people."
+        },
+        {
+          "s": "steve",
+          "t": "SPF is rich: IP ranges, network addresses, lists. Really cool."
+        },
+        {
+          "s": "leo",
+          "t": "And really complicated. If you don't get email from me, that may be why."
+        }
+      ]
+    },
+    {
+      "title": "Early Reports on Blink",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Del in Wyoming, Michigan asks how eEye's Blink has held up after a few weeks."
+        },
+        {
+          "s": "steve",
+          "t": "Wyoming, Michigan, sure enough. Leo, you installed it."
+        },
+        {
+          "s": "leo",
+          "t": "It asks permission for unknown outbound traffic, so pop-ups at first. On my limited tests, it slowed the machine appreciably, as you'd expect. It's a strong firewall that immediately blocked my Synergy keyboard-and-mouse sharing until I opened that port. I had no bugs, but I can't test how well it protects."
+        },
+        {
+          "s": "steve",
+          "t": "In GRC's Security Now! newsgroup, at news.grc.com, reports were mixed. One person's newsreader traffic was flagged as hostile, a false positive. Some noticed a slowdown, others didn't."
+        },
+        {
+          "s": "steve",
+          "t": "Independent \"leak tests\" rated Blink poorly, but it doesn't compete there. Leak tests check containment after something gets in. Blink tries to stop bad stuff getting in."
+        },
+        {
+          "s": "leo",
+          "t": "The tests are Matousec's. It rated Blink very poorly, along with ZoneAlarm Free, and called Comodo's free firewall best."
+        },
+        {
+          "s": "steve",
+          "t": "Comodo deliberately fixed every exploit those tests check. That makes it best at leak tests, but says nothing about an exploit arriving through a protocol you allow. That's what Blink blocks, and as far as I know nothing else does."
+        },
+        {
+          "s": "leo",
+          "t": "If you want to lock down a teenager using file sharing, or a not-so-savvy mom, and can tolerate a slowdown, Blink is a good choice."
+        },
+        {
+          "s": "steve",
+          "t": "Given its record of blocking things months before they're patched, it's still valuable."
+        }
+      ]
+    },
+    {
+      "title": "SpaceMonger, Again",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brandon asks the name of that program showing disk usage."
+        },
+        {
+          "s": "steve",
+          "t": "SpaceMonger, free version 1.4. Its author Sean now sells version 2. It maps your drive as nested rectangles, so those nine forgotten 4.7GB DVDs jump out, and you right-click to delete them."
+        },
+        {
+          "s": "leo",
+          "t": "Look for \"Old SpaceMonger.\" There's an open-source one on SourceForge."
+        },
+        {
+          "s": "steve",
+          "t": "I don't like it as much. I used to use DiskMapper, which hasn't kept up."
+        }
+      ]
+    },
+    {
+      "title": "The Risks of Citywide Wi-Fi",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeff B., somewhere in Tennessee, says his city is installing citywide Wi-Fi, promoted as attracting businesses, with nothing about security. His polite newspaper comment about protecting yourself never appeared, while praise did."
+        },
+        {
+          "s": "leo",
+          "t": "He notes all ordinary traffic can be snooped, plus ARP poisoning and SSL man-in-the-middle attacks. Even people avoiding banking send cookies with every request, so accounts can be hijacked. And though the city says it won't replace home Internet, people will drop cable and DSL in a heartbeat."
+        },
+        {
+          "s": "leo",
+          "t": "I talk about this on the radio show constantly, since it reaches a general audience. Security Now! listeners already know."
+        },
+        {
+          "s": "steve",
+          "t": "Truly public Wi-Fi has no security. Unless users tunnel out with a VPN, everything is wide open. And sniffing session cookies sent without SSL makes hijacking easy. Imagine the horror stories once this is widespread."
+        },
+        {
+          "s": "steve",
+          "t": "I was skeptical, but my T-Mobile hotspot account impressed me: WPA only, through their own client."
+        },
+        {
+          "s": "leo",
+          "t": "But open municipal Wi-Fi is inherently insecure."
+        },
+        {
+          "s": "steve",
+          "t": "Even a shared WPA key would let anyone who logs in decrypt the traffic. You'd need enterprise WPA with per-user keys, a seriously expensive infrastructure. And to be widely adopted, the barrier must be very low, and very low means open. We may go through a lot of pain first."
+        },
+        {
+          "type": "fact",
+          "title": "Later fixes",
+          "t": "WPA3's \"Enhanced Open\" mode, introduced in 2018, encrypts each user's connection on open networks without a password. And nearly all websites now use HTTPS, which protects cookies from sniffing."
+        }
+      ]
+    },
+    {
+      "title": "LeakTest's Strange Popularity",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Bots now fill out our question form at the bottom of GRC.com/securitynow, so I'll have to stop them. A future episode will be \"Are You Human?\""
+        },
+        {
+          "s": "steve",
+          "t": "I'm worried about time for my special 100th-episode plan. I've also been asked to keynote a conference on spyware at Harvard in a couple of weeks."
+        },
+        {
+          "s": "leo",
+          "t": "Don't worry. The milestone itself is the success. And TWiT will hit 100 first. Sorry, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "Wait till 200. We'll lap them."
+        },
+        {
+          "s": "leo",
+          "t": "GRC has ShieldsUP! and LeakTest to test firewalls."
+        },
+        {
+          "s": "steve",
+          "t": "My LeakTest is the dumbest of them all, yet it's my most downloaded thing. New tools top it for a couple of weeks, then it's back on top: 6,661,892 downloads, about a thousand a day."
+        },
+        {
+          "s": "leo",
+          "t": "That's why firewall makers tune for leak tests. You should have charged a dollar."
+        },
+        {
+          "s": "steve",
+          "t": "You don't understand the overhead of collecting a dollar. A listener asked what I'm most and least proud of in my homemade e-commerce system. There was one funny mistake. That may become an episode."
+        },
+        {
+          "s": "leo",
+          "t": "Everybody who used ShieldsUP!, send Steve a dollar."
+        },
+        {
+          "s": "steve",
+          "t": "No, buy SpinRite."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How should you verify a bank's site before entering sensitive data?",
+      "options": [
+        "Confirm https, view the certificate, and check that a trusted authority signed it",
+        "Look for a logo",
+        "Check the page's color",
+        "Trust the email link"
+      ],
+      "answer": 0,
+      "explain": "A corporate certificate could mean your traffic is being decrypted."
+    },
+    {
+      "q": "What protects Steve if his fingerprint can't be read?",
+      "options": [
+        "A strong password fallback, which the fingerprint normally types for him",
+        "Nothing",
+        "A backup finger only",
+        "A recovery service"
+      ],
+      "answer": 0,
+      "explain": "He also enrolled several fingers."
+    },
+    {
+      "q": "What does the Mac OS X Keychain do?",
+      "options": [
+        "Stores passwords in an encrypted vault and asks permission when new programs want them",
+        "Locks the screen",
+        "Encrypts the disk",
+        "Blocks malware"
+      ],
+      "answer": 0,
+      "explain": "Allow access only when you know why it's asking."
+    },
+    {
+      "q": "Why is power cycling hard on hard drives?",
+      "options": [
+        "Repeated heating and cooling, and power loss during writes, cause wear and bad sectors",
+        "It erases data",
+        "It confuses the BIOS",
+        "It voids warranties"
+      ],
+      "answer": 0,
+      "explain": "Always on or always off are both better."
+    },
+    {
+      "q": "Why are swipe fingerprint scanners harder to fool than press-down ones?",
+      "options": [
+        "They're capacitive and need a moving, three-dimensional finger",
+        "They use lasers",
+        "They're more expensive",
+        "They read DNA"
+      ],
+      "answer": 0,
+      "explain": "A photocopy can fool flat optical scanners."
+    },
+    {
+      "q": "How can forwarded mail from a family domain avoid being rejected?",
+      "options": [
+        "Add an SPF record to the domain authorizing the ISP's mail servers",
+        "Use HTML mail",
+        "Turn off spam filters",
+        "Send at night"
+      ],
+      "answer": 0,
+      "explain": "Receivers check the sending domain's DNS."
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "number": 82,
+  "title": "Cyber Warfare",
+  "subtitle": "State-sponsored hacking is no longer science fiction",
+  "date": "2007-03-08",
+  "description": "Steve first flags an XP Wi-Fi fix that Windows Update never delivers, the Wireless Client Update, which stops laptops broadcasting the names of networks they know. A SpinRite rescue saves a car tuner's business. Then he reads a Federal Computer Week report on Chinese attacks against U.S. military networks, and he and Leo weigh how real the threat is, how networks get breached, and why officials might inflate it.",
+  "transcript": "https://www.grc.com/sn/sn-082.txt",
+  "audio": "http://media.GRC.com/sn/SN-082.mp3",
+  "chapters": [
+    {
+      "title": "Not Just Your Computers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Time to talk about protecting your computers, your family, and our national borders. I blew that up a bit."
+        },
+        {
+          "s": "steve",
+          "t": "Actually, today we are talking about national borders: state-sponsored cyber warfare. There's more going on than people might guess."
+        }
+      ]
+    },
+    {
+      "title": "The XP Update You Have to Ask For",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, secure Wi-Fi never seems resolved. Last week we showed how to stop XP from automatically joining ad hoc networks. Sharp people in GRC's newsgroups asked, Steve, did you forget the Wireless Client Update from late last year? Then it rang a bell."
+        },
+        {
+          "s": "steve",
+          "t": "This is really annoying. A completely patched XP SP2 system won't have it. Microsoft released it on October 17, 2006, to fix a whole bunch of holes in Wireless Zero Configuration, also called Wireless Auto Configuration. But it's not among the automatic updates."
+        },
+        {
+          "s": "leo",
+          "t": "So you have to specifically request it."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, and it's really important. Microsoft's description says that without it, Windows tries to connect to every network in your preferred list. If no infrastructure networks are present, it sends probe requests to connect to the first ad hoc network in the list, and an observer could monitor those requests and establish an unsecured connection."
+        },
+        {
+          "s": "steve",
+          "t": "So a laptop someone's carrying, when not connected, sends out probes about once a minute, naming networks it has connected to, in case one is a network that doesn't broadcast its SSID. It's spilling the beans."
+        },
+        {
+          "s": "leo",
+          "t": "Here are people I trust. Come on, pretend you're one of them."
+        },
+        {
+          "s": "steve",
+          "t": "Anyone passively sniffing Wi-Fi learns the names of networks people around them have used. It's not huge, but who wants their PC broadcasting that?"
+        },
+        {
+          "s": "leo",
+          "t": "I'd guess that's how \"Free Public WiFi\" spreads."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. One machine broadcasts it, another connects and now has it."
+        },
+        {
+          "s": "steve",
+          "t": "With the update, Windows no longer probes for ad hoc networks in the list. You must choose one manually in the \"Choose a Wireless Network\" dialog. That makes sense. It's Microsoft still erring toward convenience over privacy and security, even after Service Pack 2."
+        },
+        {
+          "s": "leo",
+          "t": "And Wireless Zero Config isn't convenient. People complain all the time about dropped connections because it's promiscuous."
+        },
+        {
+          "s": "steve",
+          "t": "The update also stops it from jumping to another network with a stronger signal. This isn't a cell phone, where I want to switch towers."
+        },
+        {
+          "s": "steve",
+          "t": "I checked a fully patched XP SP2 machine. Its wzcsvc.dll, the Wireless Zero Config service, was dated 6/21/05. The update moves a whole set of files to 8/18/06. They're listed on Microsoft's page, so you can check."
+        },
+        {
+          "s": "leo",
+          "t": "Is it in Windows Update's optional patches?"
+        },
+        {
+          "s": "steve",
+          "t": "No, Leo. It's not in Windows Update at all. You have to ask for it by name. Search Microsoft or Google for \"wireless client update,\" or use our show notes."
+        },
+        {
+          "s": "leo",
+          "t": "It's the first Google result, with a download link. It modifies six files. Presumably it's fixed in Vista."
+        },
+        {
+          "s": "steve",
+          "t": "We can presume, since Vista came out only last month. I still can't find where Vista hides these settings."
+        },
+        {
+          "s": "leo",
+          "t": "I used to tell radio callers to disable the Wireless Zero Config service. Now there's something better. You should come on the radio show and tell everybody."
+        },
+        {
+          "type": "fact",
+          "title": "Later fixes",
+          "t": "The Wireless Client Update is Microsoft's KB917021. XP Service Pack 3 (2008) included it, and Vista shipped with the improved behavior. Vista went on sale January 30, 2007."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves a Tuner's Business",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Michael Diaz in New Jersey, a network administrator, uses SpinRite regularly to diagnose problems and refresh older PCs' drives. His friend is an automotive specialty tuner who customizes late-model Ford Mustangs with 400, 500, even 600-plus horsepower. Driving those on the street needs a very good tune, done in software from a laptop."
+        },
+        {
+          "s": "steve",
+          "t": "The friend called frantic: his laptop got a Blue Screen of Death and rebooted in a loop. Michael's first question: do you back it up? \"Uh, no.\" His reputation and years of work were on the line."
+        },
+        {
+          "s": "steve",
+          "t": "The drive was clicking, never a good sign. SpinRite quickly found bad sectors and ran many hours, finishing with a plethora of red U's, like virtual Swiss cheese. But the clicking stopped, and Windows booted."
+        },
+        {
+          "s": "leo",
+          "t": "Red U's are unrecoverable sectors."
+        },
+        {
+          "s": "steve",
+          "t": "They mean SpinRite couldn't recover all of a sector's data. But SpinRite uniquely can read most of a sector even if it can't get it all. DynaStat accepts imperfect reads. Out of a sector's 4,096 bits it might get 4,090. If that sector is critical to the file system, a little fuzziness can bring the whole file system back."
+        },
+        {
+          "s": "steve",
+          "t": "Not trusting the drive, Michael quickly copied the tuning files and custom tuning software, none of which had copies. Soon the clicking returned and the drive died. SpinRite didn't have to fix the drive. It kept it alive long enough to save the business, in a scene where reputation is everything."
+        },
+        {
+          "s": "leo",
+          "t": "The moral: back up."
+        },
+        {
+          "s": "steve",
+          "t": "Please. It generally takes one of those close calls to get someone clued in."
+        }
+      ]
+    },
+    {
+      "title": "\"Chinese Hackers Attack Anything and Everything\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Cyber warfare. It sounds like \"WarGames,\" with Matthew Broderick."
+        },
+        {
+          "s": "steve",
+          "t": "Without specifics, it's easy to dismiss as sci-fi. So I'll start with a Federal Computer Week article dated February 13, from Norfolk, Virginia, titled \"Cyber officials: Chinese hackers attack anything and everything.\""
+        },
+        {
+          "s": "steve",
+          "t": "First, there's something in the U.S. called the Naval Network Warfare Command, Netwarcom."
+        },
+        {
+          "s": "leo",
+          "t": "Napoleon Solo should be an agent there."
+        },
+        {
+          "s": "steve",
+          "t": "Its cyber defenders track hundreds of suspicious events daily. A senior official, speaking on background, said the main threat comes from Chinese hackers waging all-out warfare on Defense Department networks."
+        },
+        {
+          "s": "leo",
+          "t": "They're waging all-out warfare against my website too. I think it's general."
+        },
+        {
+          "s": "steve",
+          "t": "He said Chinese attacks, probably with government support, far outstrip others in volume, skill and sophistication. It's become a campaign-style, \"force-on-force\" engagement, which doesn't sound good. They'll exploit anything and everything. China's involvement can't be confirmed, but the attacks are so deliberate it's hard to believe they're not government-driven."
+        },
+        {
+          "s": "steve",
+          "t": "Motives include technology theft, intelligence gathering, research on Defense Department operations, and planting dormant presences in its networks for future action."
+        },
+        {
+          "s": "steve",
+          "t": "And get this: a Chinese military white paper says China plans to be able to win an \"informationized war\" by the middle of this century."
+        }
+      ]
+    },
+    {
+      "title": "How the Attacks Work",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In November 2006, Chinese hackers disabled the Naval War College's network, forcing it to shut down email and computer systems for several weeks. Forensics showed they wanted information on war games being developed there."
+        },
+        {
+          "s": "steve",
+          "t": "The college was vulnerable because it wasn't on the Navy Marine Corps Intranet and lacked the latest protections. The official said China focuses on weak points."
+        },
+        {
+          "s": "steve",
+          "t": "China also uses \"spear phishing.\" Ordinary phishing broadcasts to anyone. Spear phishing targets specific people, here Defense Department employees, with content tuned to look authentic to them."
+        },
+        {
+          "s": "steve",
+          "t": "They use Trojans and worms in innovative ways. One plants a virus as a distraction, then comes in \"slow and low\" to hide while defenders are busy. They also use coordinated, multipronged attacks."
+        },
+        {
+          "s": "steve",
+          "t": "Chinese hackers became notorious after intrusions beginning in 2003 were traced to researchers in Guangdong Province. The Defense Department called it Titan Rain, then renamed it and classified the new name. That group is still active."
+        }
+      ]
+    },
+    {
+      "title": "U.S. Policy Lags Behind",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "General James Cartwright, commander of Strategic Command, said U.S. cyber warfare strategy is dysfunctional: offensive, defensive and reconnaissance efforts don't communicate."
+        },
+        {
+          "s": "steve",
+          "t": "General Ronald Keys of Air Combat Command said current policy prevents the U.S. from pursuing threats based in foreign countries. Technology has outpaced policy. He wants more aggressive measures, and said it may take a cyber version of 9/11 for the country to rethink its approach."
+        },
+        {
+          "s": "steve",
+          "t": "Netwarcom calls its approach \"active defense\": building perimeter defenses, mitigating attacks and restoring damaged networks. The Navy is moving from monitoring to full command and control. The Air Force announced in October 2006 a Cyber Command based at Barksdale Air Force Base, Louisiana."
+        },
+        {
+          "s": "steve",
+          "t": "Officials call the threat revolutionary: no battle lines, intangible intelligence, attacks without warning. And they say education and training of users, not enforcement, is the most effective defense."
+        },
+        {
+          "s": "leo",
+          "t": "We've said that for a long time. That's what we do."
+        },
+        {
+          "type": "fact",
+          "title": "Cyber Command",
+          "t": "The Air Force's cyber command was scaled back into the 24th Air Force in 2009. The Pentagon created the joint U.S. Cyber Command, which became fully operational in 2010."
+        },
+        {
+          "s": "steve",
+          "t": "Remember our discussion about whether good guys could fix worm-infected machines? We know their IPs, and could disinfect them with the same hole. But it's illegal. Similarly, the military says U.S. law and policy keep it from doing to others what's apparently being done to us."
+        },
+        {
+          "s": "leo",
+          "t": "After years of being lied to by our government, I'm not sure I completely trust this. I'd hate to see it used as an excuse to lock down what we can do online. But it's probably pretty clear that it's going on."
+        }
+      ]
+    },
+    {
+      "title": "How Secure Networks Get Breached",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "What strikes me is how hard it is for them to protect themselves. These systems were apparently directly on the Internet. Defense Department people surf at home and click on links, and may bring those casual habits to work. With scripting on, a basketful of exploits can compromise even fully patched browsers. With national secrets at stake, I'm surprised these networks are exposed."
+        },
+        {
+          "s": "leo",
+          "t": "You'd think the Defense Department could lock its systems down."
+        },
+        {
+          "s": "steve",
+          "t": "Here's a story I've never told. About five years ago, a white-hat hacker told me he'd gotten into Microsoft's internal networks. I said I didn't want anything to do with it. Go tell Microsoft. He wanted to send proof. I said no. If you want to embarrass Microsoft, talk to a reporter."
+        },
+        {
+          "s": "steve",
+          "t": "I referred him to a reporter I knew, who, under reporter confidentiality, received documents proving the penetration. We both urged him to tell Microsoft."
+        },
+        {
+          "s": "steve",
+          "t": "He'd gotten in through a less secure Windows 2000 machine at a remote Microsoft office in a foreign country. From there, he found a machine with two network adapters, straddling a less secure intranet and a much higher-security one. Someone needed both at once, with no hard division. He set up a relay there and hopped into the stronger network."
+        },
+        {
+          "s": "steve",
+          "t": "So even a network designed to be secure, if it's complex enough, has loopholes that aren't obvious. Someone exerting pressure from outside can find a leak."
+        },
+        {
+          "s": "leo",
+          "t": "Do hackers always win? If the Defense Department and Microsoft can't secure themselves, what hope do we have?"
+        },
+        {
+          "s": "steve",
+          "t": "Some Defense Department systems are completely off the Internet, like those movie rooms with a lone high-security computer. But people want convenience: I need the Internet and internal documents. That's a point of vulnerability, and richly interconnected networks give ways to worm around inside."
+        },
+        {
+          "s": "leo",
+          "t": "If you're in China, we're glad you're listening. Please don't hack us."
+        }
+      ]
+    },
+    {
+      "title": "Is the Threat Overstated?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm a little skeptical of \"it must be the Chinese government.\" Teenagers run botnets of tens of thousands of bots and launch huge attacks. If we didn't know 13-year-olds ran them, we might think it was a major government operation. People are curious, like my white-hat hacker. It's all illegal, but plenty of non-government people poke at other countries' networks. I wouldn't be surprised if we do too."
+        },
+        {
+          "s": "leo",
+          "t": "My logs show hundreds of daily attempts to log in by Telnet and SSH, almost all from Chinese IPs, often universities. The government isn't trying to break into TWiT.tv. They're automated, brute-force attempts, even against services I don't run."
+        },
+        {
+          "s": "steve",
+          "t": "Site defacing happens all the time. And with domestic politics, there's some tendency to inflate the threat for bigger budgets."
+        },
+        {
+          "s": "leo",
+          "t": "As if that would ever happen."
+        },
+        {
+          "s": "steve",
+          "t": "Which isn't to say it's not possible. The U.S. was caught off guard on 9/11 and has since made itself safer. This official says it may take something like that here."
+        },
+        {
+          "s": "leo",
+          "t": "After 9/11 there was a cybersecurity czar. I imagine it's still part of Homeland Security."
+        },
+        {
+          "s": "steve",
+          "t": "I'm sure there's a title on a door somewhere. It comes down to money. We've heard the FBI's network is horribly antiquated, almost punch cards. Maybe they'll get rid of WordStar and WordPerfect one of these days."
+        },
+        {
+          "type": "fact",
+          "title": "What came after",
+          "t": "Attribution later grew much stronger. In 2013, the security firm Mandiant publicly tied a long-running hacking group, APT1, to a specific Chinese military unit, and in 2014 the U.S. indicted five of its officers."
+        },
+        {
+          "s": "leo",
+          "t": "Our sponsor Nerds On Site has a video of you on its site."
+        },
+        {
+          "s": "steve",
+          "t": "It's me telling them the story of the young technician fired for using SpinRite to save the old lady's data. Their first reaction: who is he? We want to hire him."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does XP's Wireless Client Update stop?",
+      "options": [
+        "Laptops broadcasting probes naming networks they've connected to",
+        "All Wi-Fi traffic",
+        "WPA encryption",
+        "Firewall alerts"
+      ],
+      "answer": 0,
+      "explain": "Windows Update doesn't deliver it automatically."
+    },
+    {
+      "q": "How could \"Free Public WiFi\" spread between laptops?",
+      "options": [
+        "Unpatched XP probed for remembered ad hoc networks, so others connected and remembered the name too",
+        "Through email",
+        "Via a virus",
+        "From router firmware"
+      ],
+      "answer": 0,
+      "explain": "The update ends automatic ad hoc probing."
+    },
+    {
+      "q": "What is spear phishing?",
+      "options": [
+        "Deceptive email targeted at specific people, tuned to look authentic to them",
+        "Phishing by phone",
+        "Fishing with spears",
+        "A DDoS attack"
+      ],
+      "answer": 0,
+      "explain": "The report said China aimed it at Defense Department users."
+    },
+    {
+      "q": "Why was the Naval War College vulnerable in 2006?",
+      "options": [
+        "It wasn't on the Navy Marine Corps Intranet and lacked the latest protections",
+        "It used Macs",
+        "It had no Internet",
+        "Its staff leaked passwords"
+      ],
+      "answer": 0,
+      "explain": "Officials said attackers target weak points."
+    },
+    {
+      "q": "How did Steve's white-hat hacker reach Microsoft's secure intranet?",
+      "options": [
+        "Through a machine with two network adapters straddling a weaker and a stronger network",
+        "By guessing a password",
+        "Through email",
+        "Physically, at Redmond"
+      ],
+      "answer": 0,
+      "explain": "He first entered via a remote office's Windows 2000 machine."
+    },
+    {
+      "q": "Why was Steve skeptical of blaming the Chinese government?",
+      "options": [
+        "Teenagers can run huge botnets, and officials may inflate threats for budgets",
+        "China has no Internet",
+        "Attacks were all American",
+        "The article was fiction"
+      ],
+      "answer": 0,
+      "explain": "He didn't doubt the attacks themselves."
+    }
+  ]
+}

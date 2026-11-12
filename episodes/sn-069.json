@@ -1,0 +1,417 @@
+{
+  "number": 69,
+  "title": "The Social Implications of Internet Anonymity",
+  "subtitle": "Free speech, trolls, Freenet, and why anonymity is hard",
+  "date": "2006-12-07",
+  "description": "Before next week's technical look at anonymity, Steve and Leo discuss its social side: why free speech needs anonymity, how GRC's newsgroups give anonymous posters unspoofable identities, Freenet's distributed encrypted storage, why free speech and copyright enforcement collide, how traffic analysis can unmask proxy and Tor users, and governments' discomfort with anonymity.",
+  "transcript": "https://www.grc.com/sn/sn-069.txt",
+  "audio": "http://media.GRC.com/sn/SN-069.mp3",
+  "chapters": [
+    {
+      "title": "After a 97-Minute Marathon",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "After last week's marathon, almost an hour and a half..."
+        },
+        {
+          "s": "steve",
+          "t": "97 minutes, actually. People in our GRC newsgroup loved it. One said it might be the best Security Now! ever. We just hit the sweet spot with the questions."
+        },
+        {
+          "s": "leo",
+          "t": "I like the Q&As' variety. Listeners ask questions we experts don't think to ask. We know too much."
+        },
+        {
+          "s": "steve",
+          "t": "Listening to you on KFI, the breadth of your knowledge is phenomenal."
+        },
+        {
+          "s": "leo",
+          "t": "That's good training. I'm probably leaving the KFI show at the end of the month. I've worked seven days a week for three years, and it eats my weekends. If I seem dumber next year, you'll know why."
+        },
+        {
+          "s": "steve",
+          "t": "The birthday you recently had might explain some of the hair loss."
+        }
+      ]
+    },
+    {
+      "title": "Why Talk About Anonymity's Social Side",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This week: Internet anonymity."
+        },
+        {
+          "s": "steve",
+          "t": "Listeners have asked through the Security Now! page about TOR, The Onion Router, an anonymity-enhancing network. I've been researching it. But I realized anonymity raises moral and ethical issues, like any powerful technology."
+        },
+        {
+          "s": "steve",
+          "t": "Famously, Einstein worried about how his contribution to the atom bomb would be used. Later in life he became a real peace advocate, partly regretting his role."
+        },
+        {
+          "type": "fact",
+          "title": "Einstein and the bomb",
+          "t": "Einstein didn't work on the Manhattan Project. His role was signing the 1939 letter urging President Roosevelt to research atomic weapons, which he later called a great mistake."
+        },
+        {
+          "s": "leo",
+          "t": "It's a mixed bag. Whistle-blowers and people fighting repressive regimes need anonymity. Phil Zimmermann, who created PGP, told me you don't get to choose. You either allow anonymity or you don't."
+        },
+        {
+          "s": "steve",
+          "t": "You arguably can't have free speech without it. People are intimidated when what they say has consequences."
+        },
+        {
+          "s": "steve",
+          "t": "I've been self-conscious sending political email since 9/11, knowing the U.S. government scans email more aggressively. When I use hot keywords, my behavior is modified. I'm no terrorist, but I get twitchy about triggering some automated system."
+        },
+        {
+          "s": "leo",
+          "t": "That's why I use PGP. One of these days we'll get you using it. But it also raises the specter of terrorists using encryption."
+        }
+      ]
+    },
+    {
+      "title": "Anonymous but Unspoofable",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On the benefit side, GRC's newsgroups require no authentication. Most people use handles."
+        },
+        {
+          "s": "steve",
+          "t": "But we stamp every posting with a cryptographic hash of the poster's login. It's tied to no name or personal information, but it can't be spoofed. Everyone stays anonymous, yet nobody can impersonate anyone."
+        },
+        {
+          "s": "steve",
+          "t": "It also lets people securely delete their own postings if they regret them. Newsgroups traditionally let no one delete, or anyone delete, which invites people deleting others' posts."
+        },
+        {
+          "s": "steve",
+          "t": "I'm an advocate of anonymity, because I think it gets the truth. People say what they really think."
+        },
+        {
+          "s": "steve",
+          "t": "But there's a downside. When I was vocal about raw sockets in Windows XP, our newsgroups drew trolls. It was really awful."
+        },
+        {
+          "s": "steve",
+          "t": "I refused to delete their postings. People asked why I let them badmouth me on my own server. My feeling was that they had as much right to post negative things as others had to post positive ones."
+        },
+        {
+          "s": "steve",
+          "t": "I was vindicated: raw sockets were removed from XP in Service Pack 2. But it was a rough time. Identified, those people probably wouldn't have posted that way. Online behavior is more outrageous because people feel less accountable."
+        },
+        {
+          "s": "leo",
+          "t": "BuggyBear2937 is very easily annoyed, and lets us all know. I'm making that up. On sites with real names, you don't see that."
+        },
+        {
+          "s": "steve",
+          "t": "But over time, an anonymous handle that can't be spoofed builds trust. I'll never know who many of our valued contributors are."
+        },
+        {
+          "s": "leo",
+          "t": "They've built an identity, even if it doesn't match their name. And forums have Ignore buttons. If someone proves to be a complete butthead, you stop seeing them. Maybe we need innovative solutions instead of requiring real names."
+        },
+        {
+          "s": "steve",
+          "t": "The press and police have anonymous informants too. Deep Throat built up a relationship with Bob Woodward during Watergate. Informants who prove their integrity may need to stay anonymous, and we decide that more good than harm is done."
+        },
+        {
+          "type": "fact",
+          "title": "Deep Throat",
+          "t": "Deep Throat's identity stayed secret for over 30 years. In 2005, former FBI associate director Mark Felt revealed it was him."
+        }
+      ]
+    },
+    {
+      "title": "Freenet: Taking the Good With the Bad",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Freenet is a perfect example of powerful technology where you take the good with the bad. It creates private, encrypted networks for storing content."
+        },
+        {
+          "s": "steve",
+          "t": "That's different from Anonymizer.com, around for a decade, which lets you surf anonymously so sites don't know who you are. As we'll discuss next week, that anonymity can be penetrated unless done with far more care than people assume."
+        },
+        {
+          "s": "steve",
+          "t": "Freenet is pro-anonymity, pro-privacy and pro-free speech. Everyone participating contributes hard drive space, and the encrypted content is stored across all those computers. Anonymizer only lets you browse. Freenet lets you post content."
+        },
+        {
+          "s": "steve",
+          "t": "But you have no idea how your drive is used. It could hold uplifting articles about what a government is really doing, or really distasteful child pornography. By joining, you enable it to be stored on your computer."
+        }
+      ]
+    },
+    {
+      "title": "Free Speech Versus Copyright",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Copyright comes into this too. Enforcing copyright requires monitoring communications. But free speech can't be guaranteed where communications are monitored."
+        },
+        {
+          "s": "steve",
+          "t": "So logically, you can't have both freedom of speech and copyright enforcement. If Freenet is used to share copyrighted movies and music, that's against the law. But robust free speech requires anonymity, and anonymity means copyright can't be enforced."
+        },
+        {
+          "s": "steve",
+          "t": "These technologies can be abused. As you said, terrorists could use networks like this to communicate securely."
+        },
+        {
+          "s": "leo",
+          "t": "But with encrypted email, you can still tell who's writing to whom."
+        },
+        {
+          "s": "steve",
+          "t": "Right. PGP shows the endpoints communicating. Freenet has no demonstrable point-to-point connection. Data is deposited in the shared database and retrieved."
+        },
+        {
+          "s": "leo",
+          "t": "So with PGP, snoopers know you and I are talking. Over Freenet, nobody knows who I'm talking to."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Freenet, I think now at version 0.7, has added threaded bulletin-board discussions with assured anonymity, full encryption, and no way to trace who sees what."
+        },
+        {
+          "type": "fact",
+          "title": "Freenet today",
+          "t": "Freenet 0.7 was released in 2008. In 2023 the original project was renamed Hyphanet, and the Freenet name passed to a new successor network."
+        }
+      ]
+    },
+    {
+      "title": "Why Real Anonymity Is Hard",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How does Freenet work?"
+        },
+        {
+          "s": "steve",
+          "t": "Next week, because it's complicated. But here's a preview. Anonymizer is essentially a proxy. If someone monitors traffic on both sides of a simple proxy, they can match the patterns coming and going."
+        },
+        {
+          "s": "steve",
+          "t": "Packet sizes and timing vary. If the government could watch traffic to and from Anonymizer, it could associate connections through the proxy and punch a hole in the whole thing."
+        },
+        {
+          "s": "steve",
+          "t": "The TOR project itself says it only minimally hides these correlations. Even with its multi-hop, multilayered design, an attacker watching traffic at the initiator and the responder can confirm the correspondence with high probability."
+        },
+        {
+          "s": "leo",
+          "t": "The correspondence between you and me, say."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. TOR is normally used for anonymous surfing, and it isn't that robust. The TOR people understand the problem. The only real fix is much greater latency: routers holding packets a long time before releasing them."
+        },
+        {
+          "s": "steve",
+          "t": "That works for downloading files anonymously. But VoIP needs real time, and web surfing involves tons of real-time interaction as a page's parts are assembled. So real-time anonymity is almost impossible to get."
+        },
+        {
+          "s": "steve",
+          "t": "One exception is a big cache. When a site in Google's results is down, you use Google's cached copy, and your request never leaves Google. Over an SSL connection, nobody outside Google could tell what you were viewing."
+        },
+        {
+          "s": "steve",
+          "t": "That's analogous to Freenet: an encrypted database of discussions and content, opaque from outside. Nobody can tell what you put in or pull out."
+        },
+        {
+          "s": "leo",
+          "t": "And there's local encryption, like PGP or GNU Privacy Guard, GPG, which I use. It encrypts content but doesn't hide where it's going."
+        },
+        {
+          "s": "steve",
+          "t": "Right. The content is opaque, but it isn't anonymous. And people often need anonymity."
+        }
+      ]
+    },
+    {
+      "title": "Governments Push Back",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "For years there were anonymous remailers, routing mail through multiple proxies to hide the sender. But some were subpoenaed by governments, so they weren't hidden enough."
+        },
+        {
+          "s": "steve",
+          "t": "The Java Anonymous Proxy project spreads anonymous proxies around the globe. Germany didn't want them operating in its dominion and took legal action requiring a backdoor. This kind of anonymity makes governments very uncomfortable."
+        },
+        {
+          "s": "leo",
+          "t": "And others, like the Church of Scientology, which compromised the Penet remailer."
+        },
+        {
+          "type": "fact",
+          "title": "Penet",
+          "t": "Finland's anon.penet.fi was the most famous remailer. After the Church of Scientology took legal action in 1995 forcing it to reveal a user's identity, its operator, Johan Helsingius, shut it down in 1996."
+        },
+        {
+          "s": "steve",
+          "t": "We could have skipped the social side. But the Internet offers enormous freedom of speech and anonymity, and that comes with responsibility and a dark side."
+        },
+        {
+          "s": "leo",
+          "t": "I believe in free speech despite the downside. No anonymity at all is far worse."
+        },
+        {
+          "s": "steve",
+          "t": "Democracy, lowercase \"d,\" requires informed citizens and good communication. China's rulers have a different philosophy. Governments have historically fought good communication because they want control. It's the lack of control that makes the system work long term."
+        },
+        {
+          "s": "leo",
+          "t": "Technology sometimes verges on politics. Next week: the technology, and why real anonymity is so hard."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Versus a New Dell",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A listener's brand-new Dell Latitude, a Core Duo with a gig of RAM, began booting slowly and crashing programs. SpinRite found problems halfway through its scan."
+        },
+        {
+          "s": "steve",
+          "t": "He emailed Dell that SpinRite had been run and he needed a new drive. With no questions asked, Dell shipped one the next day with prepaid return shipping. They didn't even want other software to confirm it."
+        },
+        {
+          "s": "leo",
+          "t": "Sometimes drives come out of the factory bad."
+        },
+        {
+          "s": "steve",
+          "t": "It can pass initial tests and have infant mortality. Dell said, that's all we need to know."
+        },
+        {
+          "s": "leo",
+          "t": "I just bought a Dell M1210 with Core 2 Duo 2GHz processors, 2GB of RAM and a 7200 RPM drive, top of the line for about $2,000. The dream computer used to cost $3,000 or $4,000."
+        }
+      ]
+    },
+    {
+      "title": "Steve's New Freeware, Delayed",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week I promised new security freeware. We're recording this and next week early, and I've gotten tangled in tricky details. It'll be cooler and more valuable than I expected, but more challenging. I'll announce it when it's running, bulletproof and tested, in a couple of weeks."
+        },
+        {
+          "s": "leo",
+          "t": "You're in heaven coding a new project. In assembly?"
+        },
+        {
+          "s": "steve",
+          "t": "It's exactly the right language here. I'm down in Intel processors' registers, setting bits, dealing with protected mode and privileged instructions."
+        },
+        {
+          "s": "steve",
+          "t": "It runs on Vista. I bought a new MacBook with an Intel Core 2 Duo to test recent chips."
+        },
+        {
+          "s": "steve",
+          "t": "And I'll disabuse you of the notion that Vista needs a lot of power. It's completely usable on my HP TC1100, with a Pentium M around 1.2GHz. The earlier TC1000 used a Transmeta chip, which HP realized was a mistake."
+        },
+        {
+          "s": "steve",
+          "t": "No Aero Glass, but I don't need it. There's stroke recognition: scroll by stroking up or down, and copy, paste, cut or delete with stylus strokes. I'm seriously considering skipping XP and going to Vista."
+        },
+        {
+          "s": "leo",
+          "t": "Mr. Skeptic!"
+        },
+        {
+          "s": "steve",
+          "t": "Paul says Microsoft really got it right. There's a lot to like."
+        },
+        {
+          "s": "leo",
+          "t": "My M1210 runs XP until my MSDN subscription arrives, and I don't even want to try it. I want Vista."
+        },
+        {
+          "type": "fact",
+          "title": "The mystery freeware",
+          "t": "The program Steve was writing in assembly, testing processor features on Vista and new Intel chips, was SecurAble. It reports whether a CPU supports 64-bit, hardware DEP and hardware virtualization."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Steve argue free speech requires anonymity?",
+      "options": [
+        "People speak less freely when their words have consequences",
+        "Laws require it",
+        "It's faster",
+        "Encryption needs it"
+      ],
+      "answer": 0,
+      "explain": "He admitted censoring his own political email after 9/11."
+    },
+    {
+      "q": "How do GRC's newsgroups let posters stay anonymous but unspoofable?",
+      "options": [
+        "Each post is stamped with a cryptographic hash of the poster's login",
+        "Real names are required",
+        "Posts are moderated",
+        "IP addresses are shown"
+      ],
+      "answer": 0,
+      "explain": "It also lets posters securely delete their own posts."
+    },
+    {
+      "q": "Why did Steve say free speech and copyright enforcement can't coexist?",
+      "options": [
+        "Enforcing copyright requires monitoring communications, which chills free speech",
+        "Copyright laws are too new",
+        "Courts forbid it",
+        "Freenet blocks lawyers"
+      ],
+      "answer": 0,
+      "explain": "Free speech requires anonymity, which defeats monitoring."
+    },
+    {
+      "q": "How can a simple anonymizing proxy be defeated?",
+      "options": [
+        "By matching traffic patterns on both sides of it",
+        "By guessing passwords",
+        "By reading its cache",
+        "It can't be"
+      ],
+      "answer": 0,
+      "explain": "Even TOR says it only minimally hides these correlations."
+    },
+    {
+      "q": "Why is real-time anonymity so hard to achieve?",
+      "options": [
+        "Hiding traffic patterns requires long delays, which real-time uses like browsing and VoIP can't tolerate",
+        "Encryption is too slow",
+        "Proxies are illegal",
+        "Browsers leak passwords"
+      ],
+      "answer": 0,
+      "explain": "Delays work fine for anonymous file downloads."
+    },
+    {
+      "q": "What does PGP hide, and what doesn't it?",
+      "options": [
+        "It hides content, but not who is communicating with whom",
+        "It hides both",
+        "It hides neither",
+        "It hides only the sender"
+      ],
+      "answer": 0,
+      "explain": "Freenet shows no point-to-point connection at all."
+    }
+  ]
+}

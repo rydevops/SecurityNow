@@ -1,0 +1,410 @@
+{
+  "number": 65,
+  "title": "Why Is Security So Difficult?",
+  "subtitle": "Security as the absence of all insecurity",
+  "date": "2006-11-09",
+  "description": "Steve and Leo get philosophical about security of every kind. After confirming secure Gmail access from mail clients, a new XML Core Services zero-day and its kill-bit fix, and the allSnap freeware, Steve proposes a definition of security that explains why it's so hard: \"they come to us\" versus \"we come to them.\"",
+  "transcript": "https://www.grc.com/sn/sn-065.txt",
+  "audio": "http://media.GRC.com/sn/SN-065.mp3",
+  "chapters": [
+    {
+      "title": "Facts, Not Fear",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve, I trust you implicitly. If Steve says do it, I do it. And you don't sell a security product, which gives you more credibility. When Symantec says viruses are rising, I wonder who benefits."
+        },
+        {
+          "s": "leo",
+          "t": "Your only critics say you're Chicken Little. Your defense?"
+        },
+        {
+          "s": "steve",
+          "t": "Not everyone is the same. Today's new zero-day matters if you surf with scripting enabled in IE and visit random sites. If you mostly stay on MSN or Amazon, you can probably wait for Microsoft's patch."
+        },
+        {
+          "s": "steve",
+          "t": "And remember, you and I don't run any antivirus software. We're not pumping out fear. We give the facts as flatly as we can, and people decide."
+        },
+        {
+          "s": "leo",
+          "t": "Don't tell anybody."
+        }
+      ]
+    },
+    {
+      "title": "Gmail From Your Mail Client",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A follow-up from last week's Q&A: Gmail absolutely lets you use your regular mail client to fetch and send mail through its servers, over secure SSL connections. I don't think you can even turn the security off."
+        },
+        {
+          "s": "leo",
+          "t": "On the cruise, Dan Frakes of Macworld, I think, said some webmail logs you in securely, then drops to an unencrypted connection."
+        },
+        {
+          "s": "steve",
+          "t": "Gmail does that. Go to http://mail.google.com and you're secure only while logging in. But start with https://mail.google.com, and it keeps the whole session secure."
+        },
+        {
+          "s": "leo",
+          "t": "I'm doing it now. It stays https."
+        },
+        {
+          "s": "steve",
+          "t": "I set up my old Eudora 5.1 using Google's step-by-step knowledge-base article. Mail sent through Gmail didn't reveal my IP address, which adds a nice layer of anonymity."
+        },
+        {
+          "type": "fact",
+          "title": "Gmail today",
+          "t": "Since 2010, Gmail uses HTTPS for the entire session by default, and browsers now warn about unencrypted sites."
+        }
+      ]
+    },
+    {
+      "title": "A New IE Zero-Day: XML Core Services",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We also have a zero-day, as you mentioned."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not sure how big it is yet. It's a slower start than we've seen. It's not in something IE was meant to use, like last time's XML parser. It's in XML Core Services, an ActiveX control that lets Windows developers add XML awareness to their applications."
+        },
+        {
+          "s": "steve",
+          "t": "Unless you limit it, IE can invoke any ActiveX control on your system. Exploit code is on the Net and is installing malware, though not widely yet."
+        },
+        {
+          "s": "steve",
+          "t": "Patch Tuesday is next week, which gives Microsoft little time. If they miss it, this has a month to grow."
+        },
+        {
+          "type": "fact",
+          "title": "The fix",
+          "t": "This flaw (CVE-2006-5745) was patched in Microsoft's security bulletin MS06-071 on November 14, 2006, the following Tuesday."
+        },
+        {
+          "s": "leo",
+          "t": "Your zone technique would protect you here, right?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. My Internet zone is set to High security, with scripting disabled. Trusted Sites stay at Medium. When a site I care about doesn't work, I decide whether it's worth lowering my guard, and add it to Trusted Sites. So I'd be safe by default, unless I trusted the wrong site."
+        },
+        {
+          "s": "leo",
+          "t": "The key to this, and to firewalls, is to deny everything first, then explicitly allow sites."
+        },
+        {
+          "s": "steve",
+          "t": "Early firewalls worked backwards: something bad happened, and admins blocked that port. Now firewalls block everything by default and allow only what they're configured to."
+        }
+      ]
+    },
+    {
+      "title": "The Kill Bit",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "For this exploit, IE has a \"kill bit.\" Each ActiveX control is identified by a GUID, a Globally Unique ID: curly braces around groups of hex digits. I'm seeing them more and more on Microsoft's site and in Vista."
+        },
+        {
+          "s": "steve",
+          "t": "Our show notes link to a little .reg file, straight from Microsoft's page. Run it, and it adds a registry entry setting the kill bit for this control. IE should never need it."
+        },
+        {
+          "s": "leo",
+          "t": "Does it block all ActiveX?"
+        },
+        {
+          "s": "steve",
+          "t": "No, only IE's use of this one control. The registry key may not already exist, so the script adds it."
+        },
+        {
+          "s": "leo",
+          "t": "So each control has its own ID, a CLSID, and you set the kill bit for each one."
+        },
+        {
+          "type": "fact",
+          "title": "Kill bits",
+          "t": "Setting a control's kill bit tells Internet Explorer never to load it. Microsoft often shipped kill bits in its updates to disable vulnerable ActiveX controls. Internet Explorer itself was retired in 2022."
+        }
+      ]
+    },
+    {
+      "title": "allSnap",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last, freeware I can't live without, which I saw demoed on Call For Help in Toronto: allSnap."
+        },
+        {
+          "s": "steve",
+          "t": "My tech support guy Greg asked me yesterday, \"You know what I can no longer live without?\" I said, \"allSnap?\" He said yes. It installs a global hook that makes every window's edges sticky, snapping them to the screen's edges and to other windows."
+        },
+        {
+          "s": "steve",
+          "t": "Google \"allSnap\" for the free download. Whenever I use a Windows machine without it, I install it before going any further."
+        },
+        {
+          "s": "leo",
+          "t": "Now I wonder if I need one for the Mac."
+        },
+        {
+          "s": "steve",
+          "t": "I wish the Mac had it."
+        },
+        {
+          "type": "fact",
+          "title": "Snapping today",
+          "t": "Windows 7 added Aero Snap in 2009, and macOS Sequoia added window tiling in 2024."
+        }
+      ]
+    },
+    {
+      "title": "Security Is the Absence of All Insecurity",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today's topic has been on my mind for months. Talking with friends and family about the war in Iraq, denial-of-service attacks and this zero-day, it all comes down to: why is security so difficult?"
+        },
+        {
+          "s": "leo",
+          "t": "You mean making a secure operating system, or users securing themselves?"
+        },
+        {
+          "s": "steve",
+          "t": "No, even why it's so hard for the United States to be secure. Terrorism, DoS attacks, buggy ActiveX controls. I knew the answer intuitively but couldn't communicate it. So here's my definition: security is the absence of all insecurity."
+        },
+        {
+          "s": "leo",
+          "t": "Eliminating all danger, or in computers, all chance of losing privacy or integrity."
+        },
+        {
+          "s": "steve",
+          "t": "The only way to be secure is to have nothing that's not secure. That even answers Steve Ballmer's famous outrage about why we still have buffer overruns."
+        }
+      ]
+    },
+    {
+      "title": "Two Kinds of Bugs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I cringe when people say all software has bugs. I'm a developer, and I'd like to think mine doesn't. But software is incredibly complex."
+        },
+        {
+          "s": "steve",
+          "t": "I realized there are two classes of bugs. One is what users stumble over in normal use. Anyone using Windows is accustomed to that: you close it, restart, find a workaround."
+        },
+        {
+          "s": "steve",
+          "t": "The other class only appears under deliberate abuse: doing something the author didn't expect or protect against. Looking for problems is fundamentally different from stumbling on them."
+        },
+        {
+          "s": "steve",
+          "t": "And code keeps growing. Software used to come on a couple of 1.44MB floppies. Now it's CDs holding hundreds of megs. Software can work fine functionally, yet hide exploitable flaws for anyone actively hunting. That's what hackers do."
+        }
+      ]
+    },
+    {
+      "title": "They Come to Us, or We Come to Them",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Hackers reach us in two ways: they come to us, or we come to them."
+        },
+        {
+          "s": "steve",
+          "t": "The early Windows disasters, before Service Pack 2, were worms: Code Red, Nimda, Blaster. They came to us, exploiting open services across a huge base of Windows machines."
+        },
+        {
+          "s": "steve",
+          "t": "SP2 turned the firewall on by default. In one day, \"they come to us\" largely ended."
+        },
+        {
+          "s": "leo",
+          "t": "It just fixed it."
+        },
+        {
+          "s": "steve",
+          "t": "Overnight. I never blamed Microsoft for mistakes, only for its policy of running services with open ports. Anyone with a NAT router, which drops unexpected incoming traffic, was already protected. But the worms showed most Windows machines weren't behind one."
+        },
+        {
+          "s": "steve",
+          "t": "What's left is \"we come to them,\" and I don't see it going away. Our browsers reach out onto the Internet."
+        },
+        {
+          "s": "leo",
+          "t": "That makes it easier for hackers."
+        },
+        {
+          "s": "steve",
+          "t": "They lay traps, and some users fall in. But fewer machines are affected, because big sites like Google, Amazon, MSN and CNET aren't run by hackers. Mostly, people poking into dark corners expose themselves. That's worth remembering when we're accused of crying wolf."
+        },
+        {
+          "s": "leo",
+          "t": "But MySpace is one of the most popular sites, with 50 million users, and it's absolutely a vector for infection."
+        },
+        {
+          "s": "steve",
+          "t": "Very good point. There, \"we come to them\" can infect a huge population."
+        }
+      ]
+    },
+    {
+      "title": "Why Total Security Is Out of Reach",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "To boil it down like Socrates: security is the absence of insecurity, so being secure means no bugs. All software has bugs, bugs create holes, so all software is inherently insecure."
+        },
+        {
+          "s": "steve",
+          "t": "And this zero-day is a lesson, because the flaw wasn't in IE but in a Windows component IE could invoke. My stopwatch app may have exploitable bugs, but it never goes on the Internet, so they can't hurt me."
+        },
+        {
+          "s": "leo",
+          "t": "In Windows, so much is available to IE. Making the browser part of the OS makes things worse."
+        },
+        {
+          "s": "steve",
+          "t": "Windows is componentized. OLE became ActiveX."
+        },
+        {
+          "s": "leo",
+          "t": "It's designed to be network-aware, and IE is always running."
+        },
+        {
+          "s": "steve",
+          "t": "Next, mainstream applications keep adding Internet features to sell new versions. If Windows is ever locked down enough not to be the main target, popular network-enabled apps will be next. Then every third-party programmer must be careful about bugs, and I don't ever see that happening."
+        },
+        {
+          "s": "leo",
+          "t": "The Defense Department tried bulletproof languages like Ada, meant to keep programmers from making errors. I don't know what happened to it."
+        },
+        {
+          "type": "fact",
+          "title": "Ada and memory safety",
+          "t": "Ada is still used in aviation and defense. Today, memory-safe languages like Rust are the main push against buffer overruns. U.S. agencies began urging developers to adopt them in 2023."
+        },
+        {
+          "s": "leo",
+          "t": "So you've really explained why security is impossible. It's a process with no end."
+        },
+        {
+          "s": "steve",
+          "t": "And not all 100,000 of our listeners will have their machines destroyed. But some sizable percentage of Windows users is infected every day. I saw that two-thirds of average Windows computers have spyware or malware."
+        },
+        {
+          "s": "leo",
+          "t": "From my KFI radio show, it's endemic. It's the top concern of Windows users, and it's not hysteria."
+        },
+        {
+          "s": "steve",
+          "t": "An unpatched XP machine put directly on the Net is still compromised in minutes. But with today's firewalls and NAT routers, \"they come to us\" is over. We still have \"we come to them.\""
+        },
+        {
+          "s": "leo",
+          "t": "And we're coming to them more and more."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: Microsoft's security initiatives, what's in Vista, and 32-bit versus 64-bit. I have some surprising news."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite for Donated PCs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A loyal customer since 1997 volunteers for the Alberta Diabetes Foundation, which receives donated computers. Whenever one won't boot and its drive seems dead, he runs SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "He's often called donors to ask if they'd like their data back, after a shop had declared the machine DOA. When they ask how to thank him, he says, \"Thank Steve Gibson and GRC by purchasing SpinRite.\""
+        },
+        {
+          "s": "leo",
+          "t": "That's a really nice story."
+        },
+        {
+          "s": "steve",
+          "t": "He bets GRC is who they think of next time they see \"OS not found.\" I'll also rearrange the Security Now! page now that we have 65 episodes. The feedback form is at the bottom."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Steve define security?",
+      "options": [
+        "The absence of all insecurity",
+        "A strong firewall",
+        "Antivirus plus updates",
+        "Encryption everywhere"
+      ],
+      "answer": 0,
+      "explain": "So any single flaw breaks it, which is why it's so hard."
+    },
+    {
+      "q": "Which change largely ended the \"they come to us\" era of worms?",
+      "options": [
+        "XP Service Pack 2 turning the firewall on by default",
+        "IE7",
+        "Antivirus software",
+        "Vista"
+      ],
+      "answer": 0,
+      "explain": "NAT routers had already protected users who had them."
+    },
+    {
+      "q": "What does setting an ActiveX control's kill bit do?",
+      "options": [
+        "Stops IE from using that one control",
+        "Blocks all ActiveX",
+        "Deletes the control",
+        "Turns off scripting"
+      ],
+      "answer": 0,
+      "explain": "Each control is identified by a GUID."
+    },
+    {
+      "q": "Where was this week's zero-day flaw?",
+      "options": [
+        "In XML Core Services, an ActiveX control IE could invoke",
+        "In IE's renderer",
+        "In Windows Firewall",
+        "In Outlook"
+      ],
+      "answer": 0,
+      "explain": "It wasn't part of IE itself."
+    },
+    {
+      "q": "What two classes of bugs did Steve describe?",
+      "options": [
+        "Ones users stumble over, and ones found only by deliberate abuse",
+        "Hardware and software bugs",
+        "Old and new bugs",
+        "Local and remote bugs"
+      ],
+      "answer": 0,
+      "explain": "Hackers actively hunt for the second kind."
+    },
+    {
+      "q": "How do you keep Gmail secure for the whole session in 2006?",
+      "options": [
+        "Start at https://mail.google.com",
+        "Use a strong password",
+        "Use IE7",
+        "Clear cookies"
+      ],
+      "answer": 0,
+      "explain": "Starting at http:// only secured the login."
+    }
+  ]
+}
