@@ -1,0 +1,414 @@
+{
+  "number": 86,
+  "title": "Cross-Site Scripting",
+  "subtitle": "Twenty-eight holes in one month, and how they steal your session",
+  "date": "2007-04-05",
+  "description": "After Microsoft's emergency animated-cursor patch and a closer look at Sony's e-paper Reader, Steve reads through the 28 cross-site scripting vulnerabilities reported in March 2007 alone, in products from WordPress and Webmin to Oracle, IBM and Cisco. He explains how injected script can hand an attacker your login cookie, why these flaws enable targeted attacks, and why web developers who aren't security experts keep creating them.",
+  "transcript": "https://www.grc.com/sn/sn-086.txt",
+  "audio": "http://media.GRC.com/sn/SN-086.mp3",
+  "chapters": [
+    {
+      "title": "The Animated Cursor Patch",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our second episode this week, after Monday's special on the animated cursor vulnerability."
+        },
+        {
+          "s": "steve",
+          "t": "Make sure everyone has run Windows Update. As expected, Microsoft pushed an out-of-cycle fix for just this problem on Tuesday the 3rd, a week before its regular Patch Tuesday on April 10th. It's being widely exploited, hunting for unpatched users, and may never go away completely."
+        },
+        {
+          "s": "leo",
+          "t": "The vulnerability existed for months. Exploits appeared by March 30 or earlier. Many computers, maybe millions, must have been bitten."
+        },
+        {
+          "s": "steve",
+          "t": "Listeners wrote about specific people infected this way. What's annoying is that Microsoft sat on it. eEye reported it December 20, 2006. Microsoft says it planned to patch on the 10th, but it wasn't in a big hurry. eEye once showed a calendar of vulnerabilities Microsoft had left unpatched for six or nine months."
+        },
+        {
+          "s": "leo",
+          "t": "Security experts complain about that a lot. Microsoft doesn't want to push untested patches, especially with automatic updating."
+        },
+        {
+          "s": "steve",
+          "t": "Indeed, after applying it, I got a wacky error about an address-space conflict with a DLL, I think htmlhelp.dll, and others reported the same. And Microsoft keeps pushing \"responsible disclosure,\" meaning don't hurry us."
+        },
+        {
+          "s": "leo",
+          "t": "Some might call that irresponsible."
+        },
+        {
+          "type": "fact",
+          "title": "The patch",
+          "t": "The fix was Microsoft security bulletin MS07-017, released April 3, 2007. Microsoft quickly published a follow-up fix for the DLL conflict Steve saw, which affected some Realtek audio software."
+        }
+      ]
+    },
+    {
+      "title": "eEye's Blink",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "eEye offers something free called Blink."
+        },
+        {
+          "s": "steve",
+          "t": "It's a well-known, reputable protective layer around Windows. They also have Retina. Everything's in the eye theme. I guess it deals with Windows cataracts."
+        },
+        {
+          "s": "leo",
+          "t": "It seems to be part antivirus, part antispyware, part Internet security."
+        },
+        {
+          "s": "steve",
+          "t": "It auto-updates, and eEye adds protection for flaws it finds right away. So during that window when Microsoft knew but hadn't fixed this, Blink users were protected, from December 20th until now. Antivirus is always catching up. eEye leads the pack, though I don't know how much it covers flaws others report."
+        },
+        {
+          "s": "leo",
+          "t": "But don't mix it with other security software. And it's not on Vista, which is bad, because this is Vista's first serious vulnerability, there since it shipped. Improved security is Vista's sole recommendation."
+        },
+        {
+          "s": "steve",
+          "t": "It's old code, affecting all Windows versions including 2000. Animated cursors have been a source of trouble before. Microsoft may have created this while fixing those, or missed it."
+        },
+        {
+          "s": "steve",
+          "t": "But IE7 with Vista's enhanced Protected Mode wasn't vulnerable. That's Vista's security at work. I'm not sure it's on by default."
+        },
+        {
+          "s": "leo",
+          "t": "That's why we do special episodes. Subscribe to the podcast so you get them."
+        }
+      ]
+    },
+    {
+      "title": "Living With the Sony Reader",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Following up on e-books: my Sony Reader, the PRS-500, arrived, and I'm converted. Looking back at my Palm, there's no comparison. I'd like some kind of optional edge lighting, but Sony's clip-on booklight, with two bright white LEDs, works great."
+        },
+        {
+          "s": "steve",
+          "t": "I have complaints, but I'm an early adopter. My first Sony MiniDisc recorder was a big black blob with an external battery pack. Each year they got smaller, with longer battery life, until today's gorgeous little ones. This Reader has that first-generation feeling."
+        },
+        {
+          "s": "steve",
+          "t": "Last week I described it wrongly. It's an \"electrophoretic\" E Ink display. The screen is 800 by 600, in portrait, with beautiful anti-aliased characters. Underneath is an ultra-high-resolution layer of tiny white particles, titanium dioxide I think, in a dark oil. Electrostatic pads pull them to the front for white or push them back for dark."
+        },
+        {
+          "s": "steve",
+          "t": "Ghosting from the previous page happens when not all particles move fully. Sony can refresh quickly or thoroughly, like how hard you shake an Etch-a-Sketch. I now press \"next\" while reading the last line, knowing it'll take a moment."
+        },
+        {
+          "s": "leo",
+          "t": "You've adapted. But why isn't it paper white?"
+        },
+        {
+          "s": "steve",
+          "t": "Even pulled to the front, the white particles are surrounded by dark goo, lowering reflectivity. It also reflects the light's color: yellow under incandescent light, bluer outdoors, and fantastic under white LEDs."
+        },
+        {
+          "s": "steve",
+          "t": "And paging forward should get preference. I go back maybe one page in a hundred."
+        },
+        {
+          "s": "leo",
+          "t": "For $349, it's like ten hardcovers, holding a hundred books. But e-books aren't much cheaper than hardcovers."
+        },
+        {
+          "s": "steve",
+          "t": "Sony always starts big and bulky, then refines. The price will fall. It runs MontaVista embedded Linux."
+        },
+        {
+          "s": "leo",
+          "t": "The question is whether it sells well enough for Sony to keep going."
+        },
+        {
+          "s": "steve",
+          "t": "It's DRM'd, but Sony's store lets you install a book on five or six devices, with the computer counting as one. That seems liberal. I like Palm's model: you unlock a book with the credit card number you bought it with, and you won't give that to friends."
+        },
+        {
+          "s": "steve",
+          "t": "I've never seen the battery indicator come off full. Books are about 350K, so the 100MB built in holds all you'll ever carry. Only playing music moved the battery meter."
+        },
+        {
+          "s": "leo",
+          "t": "Can you read and listen at the same time?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. I put on ambient music by an artist called Liquid Mind, with headphones, and read. There are no playlists, and it sorts by ID3 tags, so I edited the tags to force my order. It's an afterthought, but it works."
+        },
+        {
+          "s": "steve",
+          "t": "Michael McCollum will offer his books in Sony Reader format. I converted \"Gibraltar Earth\" from his HTML with wacky Python and Java tools, and I'm rereading it before the sequel, \"Gibraltar Sun.\" I'd start with his Antares trilogy."
+        },
+        {
+          "s": "leo",
+          "t": "His PDFs won't go on the Reader as-is, so I hope he re-encodes them. I bought this because Hamilton's \"Judas Unchained\" weighs about eight pounds on a plane."
+        },
+        {
+          "type": "fact",
+          "title": "What came next",
+          "t": "Amazon's Kindle arrived that November and reshaped e-books. Sony left the consumer e-reader market in 2014."
+        }
+      ]
+    },
+    {
+      "title": "A Nerd Trusts SpinRite's Warning",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A note from one of the Nerds On Site, Dave Everett in Michigan. A PC kept blue-screening and freezing, but chkdsk found nothing. Within a minute or two, SpinRite warned that the drive was in danger of complete failure and he should stop and back up."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite 6 polls the drive's SMART system while it works. SMART isn't as smart as we'd like, but when it raises a red flag, it never false-positives. If SpinRite sees its own use making the drive panic, it stops and warns you."
+        },
+        {
+          "s": "steve",
+          "t": "Skeptical, he put in a new drive anyway. Then, for kicks, he ran SpinRite on the \"bad\" drive in another PC. Five minutes in came a familiar clunking. \"You don't need to be a nerd to know that's not good.\" The drive crashed hard. He thanked us for accurate results that make them better techs."
+        },
+        {
+          "s": "leo",
+          "t": "\"Inspected by Nerd No. 5.\""
+        }
+      ]
+    },
+    {
+      "title": "March 2007: 28 Cross-Site Scripting Holes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "On to cross-site scripting. Folks, in case you didn't know, Steve doesn't like scripting."
+        },
+        {
+          "s": "steve",
+          "t": "Rather than make blanket statements, I wanted to show recent problems. I started listing 2007 and gave up. Just March had 28."
+        },
+        {
+          "s": "leo",
+          "t": "Where do you find these?"
+        },
+        {
+          "s": "steve",
+          "t": "The SANS Institute's mailing list. Every week it reports six, seven, eight, nine new cross-site scripting vulnerabilities. You'll hear the phrase \"fails to sanitize user-supplied input\" a lot."
+        },
+        {
+          "s": "steve",
+          "t": "Built2Go News Manager Blog version 1.0. OrangeHRM, a human resource application, with unspecified holes on its login page before 2.1 alpha 5. Webmin, the web-based UNIX administration interface written in Perl, through its chooser.cgi script before version 1.330."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, everybody uses Webmin. I do."
+        },
+        {
+          "s": "steve",
+          "t": "WordPress 2.1.1, through the \"post\" parameter of its admin post.php script. Webpress. Docebo, a content management system. PhotoStand, a photo blog. PhpWebGallery. Active Calendar. Trac, a wiki and issue tracker. Guestbook applications. vCard Pro, a virtual greeting card application."
+        },
+        {
+          "s": "steve",
+          "t": "VirtueMart, an e-commerce application. DirectAdmin, a site administration panel. Oracle Portal, part of Oracle's application server. IBM Rational ClearQuest. Multiple Cisco products. The Horde framework. PHProjekt, for sharing information and documents, probably more than intended. MindTouch DekiWiki. Oracle Application Server again. Another WordPress problem. Interstage Application Server. Overlay Weaver, a search engine. aBitWhizzy, a WYSIWYG editor, with directory traversal too. Mephisto, a blog written in Ruby. And CcCounter, a hit counter."
+        },
+        {
+          "s": "leo",
+          "t": "All in March?"
+        },
+        {
+          "s": "steve",
+          "t": "Just March. I was going to do all of '07."
+        },
+        {
+          "s": "leo",
+          "t": "Glad you didn't. They're mostly web-based tools that anyone can enter data into."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Look how long it took to get Microsoft up to speed on security. Now PHP, Ruby, JavaScript and Web 2.0 tools empower webmasters to build amazing, active sites, and suddenly they all have to be security experts. They're not."
+        }
+      ]
+    },
+    {
+      "title": "Stealing Your Session Cookie",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Whenever user-supplied input can contain script that the application shows back to them or others, browsers run code written by attackers. You don't need buffer overruns. DEP won't protect you. SSL won't either."
+        },
+        {
+          "s": "steve",
+          "t": "Scripting is arguably too powerful: visual content and interpreted content mix freely. In the middle of a page you could open a script tag, write document.cookie, and close it. The browser immediately switches on its interpreter and evaluates the cookie, which until now was a secret between you and the server. Your browser thinks that's fine, since the page came from that server. Script can even ride in the arguments of URLs, like search queries."
+        },
+        {
+          "s": "steve",
+          "t": "Hackers know how to add a malicious server's URL to such a script, so that server receives the cookie for whatever site served the page. That completely breaks the idea of cookies as safe authentication."
+        },
+        {
+          "type": "fact",
+          "title": "The mechanics",
+          "t": "Simply evaluating document.cookie doesn't display or send it. An attack script typically sends it out by loading an image or URL from the attacker's server with the cookie added, such as new Image().src pointing there."
+        },
+        {
+          "s": "steve",
+          "t": "I tell eBay and Amazon to keep me logged in. Amazon smartly asks for my password again when I add a mailing address. Because cookies maintain your session as you move between pages, anyone returning your cookie is believed to be you."
+        },
+        {
+          "s": "steve",
+          "t": "If Amazon had a cross-site scripting flaw, an attacker could capture logged-in users' cookies, open sessions as them, buy whatever they wanted with stored credit cards, and ship it to a new address. You'd know nothing until your statement showed $5,000 you didn't spend."
+        },
+        {
+          "s": "steve",
+          "t": "Only the vulnerable site's credentials leak. Amazon and eBay had no trouble in March, though eBay was notoriously abused this way in the past. You'd better hope your bank has no such flaw. And the double whammy: banking sites require scripting."
+        },
+        {
+          "s": "steve",
+          "t": "With scripting off, your browser skips the script tags. Something's missing from the page, but there's no vulnerability."
+        }
+      ]
+    },
+    {
+      "title": "Targeted Attacks and Social Engineering",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This isn't like the animated cursor exploit, used worldwide immediately. These flaws are specific to applications, so attacks are targeted. Sending everyone to a vulnerable blog is pointless if they have no login there to steal."
+        },
+        {
+          "s": "steve",
+          "t": "But combine it with social engineering. On a vulnerable forum, chat with people, learn about them, then send a link: hey, check this out. It leads to a page with the flaw, their browser hands over their credentials, and the attacker can impersonate them."
+        },
+        {
+          "s": "leo",
+          "t": "Social engineering plus hacking. More and more, that's how it's done."
+        },
+        {
+          "s": "steve",
+          "t": "Recall the attacks on the Defense Department. Cross-site scripting penetrates firewalls. An email with a link to an intranet server inside the security perimeter uses the browser's trust in that server to gain access and establish a stronghold inside."
+        },
+        {
+          "s": "leo",
+          "t": "China may be where the attack bandwidth comes from, not necessarily the attackers, who can bounce through proxies."
+        },
+        {
+          "s": "steve",
+          "t": "China has historically been a big worm infection target, meaning many unpatched Windows machines."
+        },
+        {
+          "s": "steve",
+          "t": "And many sites never update these web packages. We're all slaved to Microsoft's Patch Tuesday. But a shopping cart or blog gets installed, the developer's contract ends, and nobody maintains it. Sites even display their PHP package versions, and hackers note that they can hack them anytime."
+        },
+        {
+          "s": "leo",
+          "t": "It's not just PHP. Some are Perl scripts in cgi-bin. Programmers just aren't used to validating input."
+        },
+        {
+          "s": "steve",
+          "t": "As a developer, I know the mindset: just get it working, the boss is breathing down my neck, I'm three weeks late. And the hacks are clever. Filters look for the script tag, but there are ways to obscure it with Unicode escapes, or use permitted script to expand into forbidden script. Hackers pound on it, while developers are happy it doesn't crash the server."
+        },
+        {
+          "s": "steve",
+          "t": "Many developers are barely coders: I learned PHP to build my blog."
+        },
+        {
+          "s": "leo",
+          "t": "PHP originally stood for Personal Home Page. It was designed for exactly that."
+        },
+        {
+          "s": "steve",
+          "t": "It's easy to learn, made for amateurs, who almost by definition won't know these problems."
+        },
+        {
+          "s": "steve",
+          "t": "Our show notes link to two white papers with code samples, and to OWASP, the Open Web Application Security Project, with scanners, tools and guidelines. Web designers who listen, Google \"OWASP.\""
+        },
+        {
+          "type": "fact",
+          "title": "OWASP today",
+          "t": "OWASP is best known for its \"Top 10\" list of web application risks. Cross-site scripting has appeared on every edition, and is now grouped with other injection flaws."
+        },
+        {
+          "s": "leo",
+          "t": "Next week, another kind of remote injection."
+        },
+        {
+          "s": "steve",
+          "t": "SQL injection, \"sequel\" injection."
+        },
+        {
+          "s": "leo",
+          "t": "A lot of forums have had problems with it. I've been subject to it myself."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why couldn't DEP or SSL stop a cross-site scripting attack?",
+      "options": [
+        "The browser willingly runs script that appears to come from the trusted site",
+        "They weren't enabled",
+        "SSL is too old",
+        "DEP only protects servers"
+      ],
+      "answer": 0,
+      "explain": "No buffer overrun or eavesdropping is involved."
+    },
+    {
+      "q": "How can cross-site scripting let an attacker take over your Amazon or eBay session?",
+      "options": [
+        "Injected script sends your login cookie to the attacker, who presents it as you",
+        "It guesses your password",
+        "It reads your email",
+        "It installs a keylogger"
+      ],
+      "answer": 0,
+      "explain": "Sites believe whoever returns your cookie."
+    },
+    {
+      "q": "What phrase kept appearing in March 2007's vulnerability reports?",
+      "options": [
+        "\"Fails to sanitize user-supplied input\"",
+        "\"Buffer overflow\"",
+        "\"Weak password\"",
+        "\"Unpatched kernel\""
+      ],
+      "answer": 0,
+      "explain": "Steve read 28 such reports from that month."
+    },
+    {
+      "q": "Why are cross-site scripting attacks usually targeted?",
+      "options": [
+        "Each flaw is in a specific site or application where the victim must have a login",
+        "They need physical access",
+        "They only work on Macs",
+        "They require admin rights"
+      ],
+      "answer": 0,
+      "explain": "Attackers often add social engineering."
+    },
+    {
+      "q": "Why do these web applications stay vulnerable for so long?",
+      "options": [
+        "Sites often install them and never update them",
+        "They can't be patched",
+        "Updates are illegal",
+        "Browsers block updates"
+      ],
+      "answer": 0,
+      "explain": "Hackers note the versions sites display."
+    },
+    {
+      "q": "What did eEye's Blink do during the animated cursor flaw?",
+      "options": [
+        "Protected its users from the time eEye reported the flaw until Microsoft patched it",
+        "Nothing",
+        "Caused the flaw",
+        "Disabled cursors"
+      ],
+      "answer": 0,
+      "explain": "Microsoft took months to release the patch."
+    }
+  ]
+}
