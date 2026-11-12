@@ -157,6 +157,11 @@
           "t": "My guess is Amazon covers the downloads in some deal with Sprint. Technically it has a Sprint number, but it's only for books. For someone like my mom, who won't dock a reader to her Mac, you'd search and buy books right on the reader, and they'd magically appear."
         },
         {
+          "type": "fact",
+          "title": "The Kindle",
+          "t": "Amazon launched the Kindle on November 19, 2007, at $399, with free \"Whispernet\" downloads over Sprint's network. Amazon had bought Mobipocket in 2005."
+        },
+        {
           "s": "leo",
           "t": "I'll get one too. But the 505 is close enough that I'm comfortable. I want paper white with black text, but it's close."
         },
@@ -199,11 +204,6 @@
         {
           "s": "steve",
           "t": "I'm a Treo user, so I like physical buttons. I wish the iPod touch had Bluetooth so I could use a real keyboard."
-        },
-        {
-          "type": "fact",
-          "title": "The Kindle",
-          "t": "Amazon launched the Kindle on November 19, 2007, at $399, with free \"Whispernet\" downloads over Sprint's network. Amazon had bought Mobipocket in 2005."
         }
       ]
     },
