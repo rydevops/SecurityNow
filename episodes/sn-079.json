@@ -1,0 +1,531 @@
+{
+  "number": 79,
+  "title": "Backtracking Spoofed Spam eMail",
+  "subtitle": "Reading Received headers to find the real sender",
+  "date": "2007-02-15",
+  "description": "Spambots spoof reputable domains like GRC.com and TWiT.tv as the source of their junk. After covering February's record Patch Tuesday, including a remotely exploitable flaw in Windows Defender itself, Steve explains how SMTP's \"Received\" headers record each hop's unspoofable IP address, how forged headers give themselves away, how to look up the real zombie sender, and how SPF records stop spoofing.",
+  "transcript": "https://www.grc.com/sn/sn-079.txt",
+  "audio": "http://media.GRC.com/sn/SN-079.mp3",
+  "chapters": [
+    {
+      "title": "A Quarter of All PCs Are Bots",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Time for everybody's favorite security maven. Wikipedia says a maven is a trusted expert who passes knowledge on to others. You da maven, man."
+        },
+        {
+          "s": "steve",
+          "t": "You're fast with that dictionary. On a recent TWiT you discussed the expanding zombie botnet fleets."
+        },
+        {
+          "s": "leo",
+          "t": "Vint Cerf, the father of the Internet, said that of 600 million PCs, he believed 150 million, a quarter, are infected. Some people I've talked to think that's low."
+        },
+        {
+          "s": "steve",
+          "t": "It's phenomenal. These fleets are used for spamming and for denial-of-service attacks. Today I want to talk about spoofed email."
+        },
+        {
+          "s": "leo",
+          "t": "And botnets were just used to attack the Internet's DNS root servers, which you've always said are the weak link. I'd love to discuss that on a future show."
+        },
+        {
+          "type": "fact",
+          "title": "The root server attack",
+          "t": "On February 6, 2007, botnets flooded several of the Internet's 13 DNS root server addresses for hours. Two were badly affected, but users barely noticed, partly because root servers are spread across many machines worldwide using a technique called anycast."
+        }
+      ]
+    },
+    {
+      "title": "A Record Patch Tuesday",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, big news. On Tuesday, Microsoft tied its record for the largest batch of fixes ever: six critical and six important updates fixing about 20 problems, for Windows 2000, XP and even Vista. Microsoft's advance email was much longer than usual."
+        },
+        {
+          "s": "leo",
+          "t": "You get an email warning you?"
+        },
+        {
+          "s": "steve",
+          "t": "You can subscribe on Microsoft's site. I use it because I don't like Windows Update running behind my back. On my creaky Windows 2000 machine I'm not moving from IE6 to IE7, and I don't want .NET 3.0's 50 megs of blob. Like many listeners, I want control."
+        },
+        {
+          "s": "leo",
+          "t": "I let it do anything it wants."
+        },
+        {
+          "s": "steve",
+          "t": "For most users that's probably right, or at least have it download and tell you. But do an explicit Windows Update now. Six of these were zero-day vulnerabilities, discovered being exploited before anyone knew they existed. Only in selective, targeted attacks, or you'd have heard from us, but they were found in use and reverse-engineered."
+        }
+      ]
+    },
+    {
+      "title": "A Hole in IE's Instantiation of COM Objects",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The first that caught my eye: \"Vulnerability in HTML Help ActiveX control could allow remote code execution.\" That's the typical browser exploit: a page lets a remote site have its way with you. With firewalls on by default, that's mostly what we'll see now, not large-scale worms."
+        },
+        {
+          "s": "leo",
+          "t": "The worms are still out there, but you're protected with Windows Firewall on."
+        },
+        {
+          "s": "steve",
+          "t": "Any patched system won't fall to old Code Red or MSBlast, which we'll probably never get rid of. But exposing services you don't need is fundamentally wrong, so keep the firewall up."
+        },
+        {
+          "s": "leo",
+          "t": "What should people do until they're patched? Stop surfing?"
+        },
+        {
+          "s": "steve",
+          "t": "Be very wary of scripting. Bulletin 016, the cumulative IE6 and IE7 update, fixed several problems. One: if a script instantiates, as it's called, a COM object never intended for IE, and there are a bazillion, a flaw in the process allows remote code execution. So it's not just ActiveX controls meant for IE anymore. It's a mess."
+        },
+        {
+          "s": "leo",
+          "t": "Which affect Vista?"
+        },
+        {
+          "s": "steve",
+          "t": "IE7's stronger default security blocks that particular exploit. But if a company had permitted some COM objects in IE6 for its intranet, upgrading to IE7 carries those permissions forward, so you're still vulnerable. IE7 on Vista isn't vulnerable to the 016 problems."
+        }
+      ]
+    },
+    {
+      "title": "Windows Defender's Own Flaw",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The other one that caught my eye was in Microsoft's own Malware Protection Engine: remote code execution in how it parses PDF files. That's Windows Defender, in Vista."
+        },
+        {
+          "s": "leo",
+          "t": "Defender has a bug that lets a bad guy execute code on your system?"
+        },
+        {
+          "s": "steve",
+          "t": "Via a PDF. And Defender scans incoming files without user intervention, trying to protect you."
+        },
+        {
+          "s": "steve",
+          "t": "IBM's ISS X-Force team found it. A specially crafted PDF, sent by email, web or FTP, can trigger a heap overflow, often without any user interaction. An arbitrary integer from the PDF is used in a memory allocation calculation without proper bounds checking."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly what we've discussed: a very large integer wraps around to a small value in the math, a small buffer is allocated, a large amount of data overflows it, and wham, your system is compromised."
+        },
+        {
+          "s": "steve",
+          "t": "As articles noted, the one thing you want secure is the software securing you. All eight Microsoft products built on the same engine, including Windows OneCare and several email-scanning products, share the flaw."
+        },
+        {
+          "s": "leo",
+          "t": "Any Vista-specific patches?"
+        },
+        {
+          "s": "steve",
+          "t": "Only Defender, which you can also put on XP."
+        },
+        {
+          "s": "leo",
+          "t": "So no zero-day exploits particular to Vista. That's encouraging."
+        },
+        {
+          "s": "steve",
+          "t": "The common code Vista carried forward is the problem. Though Defender was clearly written recently."
+        },
+        {
+          "s": "leo",
+          "t": "It's based on Giant's anti-spyware program, which is fairly old. They could have inherited bad code. I'll let them off the hook."
+        },
+        {
+          "s": "steve",
+          "t": "I'd let them off because this is so hard to find. As a programmer, I've stared at my own integer math and just not seen how it could be misused."
+        },
+        {
+          "s": "leo",
+          "t": "But when accepting outside input, those are the places you check."
+        },
+        {
+          "s": "steve",
+          "t": "Especially since a PDF is basically a form of encapsulated PostScript, a programming language. Opening one runs code, which is why a static file has integers driving memory allocation."
+        },
+        {
+          "type": "fact",
+          "title": "PDF and PostScript",
+          "t": "PDF grew out of PostScript but dropped most of its programming features. Its complex structure and optional JavaScript still made PDF readers a favorite attack target for years."
+        },
+        {
+          "s": "steve",
+          "t": "I'd love to test whether hardware DEP would have stopped this. Exploits often surface a few weeks after a patch, targeting the unpatched. Exploitation often increases after a patch. Get current."
+        },
+        {
+          "s": "leo",
+          "t": "It's been almost three weeks with no Vista-specific exploit. I'm on a countdown clock, waiting for the first. I'm saying half full."
+        },
+        {
+          "s": "steve",
+          "t": "For you to say half full about Windows security, Leo..."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe I just want it to be true. My system hasn't even offered the update yet."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft probably meters notifications to manage the load on its servers, especially with patches this size."
+        }
+      ]
+    },
+    {
+      "title": "\"Bring It On, Baby\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Russell Gordon had heard so many SpinRite testimonials that he was almost eagerly anticipating using it."
+        },
+        {
+          "s": "leo",
+          "t": "Lucky boy."
+        },
+        {
+          "s": "steve",
+          "t": "He's a controls engineer programming PLCs, Programmable Logic Controllers, the hardened industrial computers. He was at a brewery in Texas, changing how its beer was filtered."
+        },
+        {
+          "s": "steve",
+          "t": "His laptop started reporting corrupt memory, with the drive light on constantly. After a forced restart: \"ntoskrnl.exe is missing or corrupt.\" Then nothing. Dead laptop."
+        },
+        {
+          "s": "steve",
+          "t": "He wasn't worried: \"Bring it on, baby.\" The BIOS still recognized the drive. He bought SpinRite, ran it at Level 2 overnight, and all but one of many problems were recoverable. In the morning, Windows ran perfectly. \"Thanks to SpinRite, Texas will still have a good supply of Shiner Beer.\""
+        },
+        {
+          "s": "leo",
+          "t": "We don't recommend dropping your laptop just to use SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Astaro's new version 7 can encrypt and decrypt email at the gateway, which is so cool. Machines inside your network don't need any of that."
+        }
+      ]
+    },
+    {
+      "title": "Spoofed From GRC.com",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now our topic: one particular use of botnets."
+        },
+        {
+          "s": "steve",
+          "t": "When bots, maybe on 150 million machines, aren't blowing websites off the Net, they send spam. People have complained that GRC sent them spam. I guarantee I didn't. They attach it: a horrible blob of keywords to get past filters, often with a malicious binary attachment. Something in the headers convinced them I sent it."
+        },
+        {
+          "s": "leo",
+          "t": "The From address is xyz33@grc.com. I get people saying someone's using my TWiT.tv address all the time."
+        },
+        {
+          "s": "steve",
+          "t": "Spammers keep lists of reputable domains, like ours, CNET and Amazon, and randomly spoof them to ride their junk through filters on that credibility."
+        },
+        {
+          "s": "leo",
+          "t": "Do antispam filters fall for a return address?"
+        },
+        {
+          "s": "steve",
+          "t": "It takes more than that. But in the samples I've been sent, the headers give reason to believe it came from us. Those headers also reveal where spam really came from."
+        }
+      ]
+    },
+    {
+      "title": "Email's Store-and-Forward Design",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Email was designed as \"store and forward,\" with post offices. In the good old days, SMTP servers, using the Simple Mail Transfer Protocol, listened on port 25 for anyone and accepted email."
+        },
+        {
+          "s": "steve",
+          "t": "Mail for its own domain was stored locally. Users retrieved it with POP, the Post Office Protocol, on port 110, or the more recent IMAP, with more features."
+        },
+        {
+          "s": "steve",
+          "t": "Mail for someone else was still accepted and forwarded. The server looked up the recipient domain's MX, or Mail Exchange, records in DNS, connected to that server and passed it on."
+        },
+        {
+          "s": "steve",
+          "t": "Spammers quickly exploited that. A server like this is an \"open relay,\" and spammers dumped spam on it to be forwarded for them."
+        }
+      ]
+    },
+    {
+      "title": "The Received Header",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The designers saw a danger. Servers were deliberately friendly, retrying for days to deliver. With misconfigured DNS, a server might forward mail back to where it came from, or around a circle of servers, forever."
+        },
+        {
+          "s": "steve",
+          "t": "So every server that receives a message adds a new header at the top. Headers are lines like To:, From:, Subject: and Date:. This one starts \"Received,\" identifying the server. If mail comes back to a server that already received it, the server sees that and bounces it with an error."
+        },
+        {
+          "s": "leo",
+          "t": "To prevent an endless loop."
+        },
+        {
+          "type": "fact",
+          "title": "The real format",
+          "t": "The header begins \"Received:\" and typically reads \"from\" the sending host, with its IP address, \"by\" the receiving server, followed by a timestamp."
+        },
+        {
+          "s": "steve",
+          "t": "And critically, the header records the IP address of the connection the server accepted on port 25. As we've said, TCP's three-way handshake validates both endpoints' IPs, so that IP can't be spoofed. It's definitely the IP of whatever sent that mail."
+        },
+        {
+          "s": "steve",
+          "t": "Each hop adds a Received header on top of the last, so you get a trace of the path the email took. Public servers rarely relay anymore, since open relays are quickly found. But inside Yahoo!, Google, Cox or Hotmail, mail passes through several internal servers, so you may see many Received lines."
+        },
+        {
+          "s": "steve",
+          "t": "Normally you'd see two: a Cox user's client sends to Cox's SMTP server, which adds a Received line, then Cox sends to GRC's server, which adds another."
+        }
+      ]
+    },
+    {
+      "title": "How the Forgery Gives Itself Away",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Spoofing is clever the first time you see it. A bot wants you to believe GRC sent its spam. Since Received headers stack newest first, it sends mail that already carries a fake Received header at the top, claiming GRC's server received it."
+        },
+        {
+          "s": "steve",
+          "t": "The SMTP server the bot connects to stamps its own Received header above that. Now it looks like someone at GRC sent mail to our server, which passed it on."
+        },
+        {
+          "s": "steve",
+          "t": "But it falls apart under scrutiny. GRC's mail server has a known IP in GRC's network. The real server's header, the second one up, shows the IP it actually connected to: not GRC's, but the infected computer's."
+        },
+        {
+          "s": "leo",
+          "t": "So you can actually tell who these zombies are."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It can't be faked, because the receiving server records the TCP connection's IP."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't a rogue SMTP server fake those addresses?"
+        },
+        {
+          "s": "steve",
+          "t": "It's the actual TCP connection's IP. There's no way to spoof that."
+        }
+      ]
+    },
+    {
+      "title": "Looking Up the Zombie",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I write back to people who complain, explaining how to read the headers, to educate them. Then I use my favorite site, DNSstuff.com. Its easy web-based tools include a \"reverse DNS\" lookup. I paste in the IP from the second Received header."
+        },
+        {
+          "s": "steve",
+          "t": "I often learn whose network the zombie is in, whether it's DSL or cable, and that it's probably a semi-static IP. Then I tell them: this is the source, not me, but some random zombie in Norway, China, Russia, one of the 150 million."
+        },
+        {
+          "s": "leo",
+          "t": "I just did one. It's in Mexico, posing as TWiT.tv. Many zombies are in the U.S., too."
+        },
+        {
+          "s": "steve",
+          "t": "Current stats say about 20 percent of spam originates in the U.S., 17 percent in Russia, and I think 20 percent in China. And 67 percent of all email is now spam. Look at your own spam's Received headers. The IPs are real, and often they're end users' infected machines."
+        },
+        {
+          "s": "leo",
+          "t": "The one I'm looking at was an end-user machine. Fascinating."
+        }
+      ]
+    },
+    {
+      "title": "SPF: Stopping Spoofing at the Door",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last, an anti-spam measure GRC and many others use: SPF, the Sender Policy Framework. Its name has mutated a few times."
+        },
+        {
+          "s": "steve",
+          "t": "DNS has record types: an A record gives a machine's address, an MX record its mail servers. A text record is freeform. GRC has one, in SPF's format, declaring the valid range of IPs for GRC email, basically GRC's network."
+        },
+        {
+          "s": "steve",
+          "t": "A receiving SMTP server knows the connecting IP. If the sender claims to be GRC, the server looks up GRC's SPF record. If the IP isn't in the range, it knows the mail is spoofed and can drop the connection, tarpit it, or discard the mail."
+        },
+        {
+          "s": "leo",
+          "t": "No false positives?"
+        },
+        {
+          "s": "steve",
+          "t": "It can't false-positive. But relaying is a problem."
+        },
+        {
+          "s": "leo",
+          "t": "Business people forward business mail to a home account, then reply from home using the business address."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. My tech support guy Greg, in Phoenix, sometimes sends GRC mail through Cox and gets bounces as SPF comes online. It's only as good as its adoption, but it's trivial to add. A web form builds the exact DNS line for you."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't you add Greg to your SPF record?"
+        },
+        {
+          "s": "steve",
+          "t": "I wouldn't whitelist all of Cox's or Comcast's network. But SPF can use domain names, not just IPs. All our outgoing mail comes from client.grc.com. Greg's router, which anchors his IP, could use a dynamic DNS service, and I could add that name to GRC's record."
+        },
+        {
+          "s": "leo",
+          "t": "So he needs no cooperation from his ISP. The recipient checks GRC's DNS."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. They ask our DNS, and we say yes, that IP is authorized."
+        },
+        {
+          "s": "leo",
+          "t": "So to send Leoville.com mail through FastMail, I'd change Leoville.com's records, not FastMail's."
+        }
+      ]
+    },
+    {
+      "title": "What ISPs Can Do",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Couldn't ISPs validate that return addresses are in their network?"
+        },
+        {
+          "s": "steve",
+          "t": "ISPs could do many things. Many now block outbound port 25, so you can only send through the ISP's server. That shuts down bots, though they then dump spam on their own ISP, which often forwards it."
+        },
+        {
+          "s": "leo",
+          "t": "That's why the U.S. is down to 20 percent. Big ISPs used to refuse to block port 25. Now spam is moving to Mexico, Romania and Russia, where ISPs are less enlightened."
+        },
+        {
+          "s": "steve",
+          "t": "And a bot could use an SMTP server on another port."
+        },
+        {
+          "s": "leo",
+          "t": "The SPF wizard is at OpenSPF.org. Microsoft has one too. Part of the spaghetti is competing standards."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft wanted intellectual property protection on its version and to license it free, and the open-source community said no. Microsoft has muddied the waters. The other popular one is the more sophisticated DomainKeys, I think adopted early by Yahoo!."
+        },
+        {
+          "s": "steve",
+          "t": "For high-profile, reputable domains like ours, it's very possible to prove we weren't the source. If you know how to read headers, you can't be fooled."
+        },
+        {
+          "s": "leo",
+          "t": "Send me your boilerplate. Business owners ask me why they get bounced spam using their domain. As long as domain authentication isn't required, it'll continue."
+        },
+        {
+          "s": "steve",
+          "t": "And though we can find the infected machines, there are 150 million of them all over the globe. What are you going to do?"
+        },
+        {
+          "type": "fact",
+          "title": "SPF's limits",
+          "t": "SPF checks the server's identity on the envelope, not the From: line people see. DMARC, introduced in 2012, ties SPF and DKIM to the visible From: address, and lets domain owners tell receivers to reject failures."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is episode 80, a Q&A. Submit questions with the form at the bottom of GRC.com/securitynow."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why can't a Received header's connecting IP be spoofed?",
+      "options": [
+        "It comes from a TCP connection, which needs a completed three-way handshake",
+        "It's encrypted",
+        "ISPs verify it",
+        "It's signed by DNS"
+      ],
+      "answer": 0,
+      "explain": "It's recorded by the receiving server itself."
+    },
+    {
+      "q": "How does a spambot make mail look like it came from GRC?",
+      "options": [
+        "It adds a fake Received header claiming GRC's server handled it",
+        "It hacks GRC's server",
+        "It uses GRC's password",
+        "It changes DNS"
+      ],
+      "answer": 0,
+      "explain": "The next real header still shows the bot's own IP."
+    },
+    {
+      "q": "Why were Received headers originally added to email?",
+      "options": [
+        "To detect forwarding loops between servers",
+        "To track spam",
+        "For billing",
+        "To encrypt mail"
+      ],
+      "answer": 0,
+      "explain": "Each server adds one as it receives the message."
+    },
+    {
+      "q": "What did February 2007's Windows Defender flaw involve?",
+      "options": [
+        "A crafted PDF causing an integer overflow and heap overflow",
+        "A virus in Defender's updates",
+        "A password leak",
+        "A firewall bug"
+      ],
+      "answer": 0,
+      "explain": "Defender scans incoming files automatically."
+    },
+    {
+      "q": "How does SPF detect spoofed mail?",
+      "options": [
+        "The domain's DNS lists which IPs may send its mail, and the receiver checks the connecting IP",
+        "It reads Received headers",
+        "It scans attachments",
+        "It asks the sender to confirm"
+      ],
+      "answer": 0,
+      "explain": "Relayed mail can fail the check."
+    },
+    {
+      "q": "Roughly what share of email was spam in early 2007, per Steve?",
+      "options": [
+        "About two-thirds",
+        "About 10 percent",
+        "About a third",
+        "Over 99 percent"
+      ],
+      "answer": 0,
+      "explain": "He cited 67 percent."
+    }
+  ]
+}
