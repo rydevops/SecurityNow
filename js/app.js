@@ -104,6 +104,9 @@
      STATE
      ========================================================= */
   let catalog = [];           // from episodes/index.json
+  // Index entries without a "file" are placeholders: episodes that aired
+  // but haven't been adapted yet. They're listed, but can't be opened.
+  const isReady = (e) => !!(e && e.file);
   const episodeCache = new Map(); // in-memory only, for this page session
   let ep = null;              // current episode JSON
   let steps = [];             // flattened beats + a final "quiz" step
@@ -150,7 +153,7 @@
      ========================================================= */
   function renderCover() {
     const last = store.get('last');
-    const resume = last && catalog.find((e) => e.number === last);
+    const resume = last && catalog.find((e) => e.number === last && isReady(e));
     const btn = $('#cover-start');
     btn.textContent = resume && store.get('progress:' + last, 0) > 0
       ? `Continue Episode ${resume.number}`
@@ -176,10 +179,12 @@
 
     for (let r = 0; r <= lastRange; r++) {
       const lo = r * RANGE + 1, hi = (r + 1) * RANGE;
-      const count = catalog.filter((e) => rangeOf(e.number) === r).length;
+      const inRange = catalog.filter((e) => rangeOf(e.number) === r);
+      const ready = inRange.filter(isReady).length;
       const b = el('button', 'range', `${pad(lo)}–${pad(hi)}`);
       b.setAttribute('aria-pressed', String(r === activeRange));
-      b.title = `${count} episode${count === 1 ? '' : 's'} available`;
+      b.title = `${ready} of ${inRange.length} episode${inRange.length === 1 ? '' : 's'} ready to read`;
+      if (inRange.length && !ready) b.classList.add('range--soon');
       b.onclick = () => { activeRange = r; $('#ep-search').value = ''; renderIndex(); };
       ranges.appendChild(b);
     }
@@ -207,13 +212,15 @@
     }
     for (const e of items) {
       const li = el('li');
-      const b = el('button', 'ep');
+      const ready = isReady(e);
+      const b = el('button', ready ? 'ep' : 'ep ep--soon');
       const num = el('div', 'ep__num'); num.appendChild(el('span', '', pad(e.number)));
       const body = el('div', 'ep__body');
       body.appendChild(el('div', 'ep__title', e.title));
       if (e.subtitle) body.appendChild(el('div', 'ep__sub', e.subtitle));
       const meta = el('div', 'ep__meta');
       meta.appendChild(el('span', '', formatDate(e.date)));
+      if (!ready) meta.appendChild(el('span', 'ep__soon', 'Coming soon'));
       const pct = store.get('pct:' + e.number, 0);
       if (pct > 0) {
         const bar = el('span', 'ep__bar'); const fill = el('i'); fill.style.width = pct + '%'; bar.appendChild(fill);
@@ -224,8 +231,15 @@
       const goIcon = el('span', 'ep__go');
       goIcon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
       b.append(num, body, goIcon);
-      b.setAttribute('aria-label', `Episode ${e.number}: ${e.title}`);
-      b.onclick = () => go(`#/episode/${e.number}`);
+      if (ready) {
+        b.setAttribute('aria-label', `Episode ${e.number}: ${e.title}`);
+        b.onclick = () => go(`#/episode/${e.number}`);
+      } else {
+        goIcon.hidden = true;
+        b.setAttribute('aria-disabled', 'true');
+        b.setAttribute('aria-label', `Episode ${e.number}: ${e.title}. Coming soon.`);
+        b.onclick = () => toast(`Episode ${e.number} hasn’t been adapted yet.`);
+      }
       li.appendChild(b);
       list.appendChild(li);
     }
@@ -243,7 +257,7 @@
      ========================================================= */
   async function openEpisode(n) {
     const meta = catalog.find((e) => e.number === n);
-    if (!meta) { toast(`Episode ${n} isn’t available yet.`); go('#/episodes'); return; }
+    if (!isReady(meta)) { toast(`Episode ${n} isn’t available yet.`); go('#/episodes'); return; }
     try {
       if (!episodeCache.has(n)) episodeCache.set(n, await getJSON(`episodes/${meta.file}`));
     } catch {
@@ -510,7 +524,7 @@
       : 'Nice work! Replay the episode to catch what you missed.'));
 
     const row = el('div', 'card__row');
-    const next = catalog.find((e) => e.number > ep.number);
+    const next = catalog.find((e) => e.number > ep.number && isReady(e));
     if (next) {
       const b = el('button', 'btn btn--primary', `Next: Episode ${next.number}`);
       b.onclick = () => go(`#/episode/${next.number}`);

@@ -82,6 +82,9 @@ Rules and conventions for working in this repository. Follow them on every task.
   - **Picture of the Week:** add a `{ "type": "picture", "caption", "t" }` beat where Steve introduces it. `caption` is Steve's short title and `t` is your own description of the picture. The card links to the show notes so readers can see the original.
   - **Don't copy Picture of the Week images (or other images from the notes) into the repo.** They're usually third-party photos with no license, unlike the Creative Commons transcripts. Only set `"image": "assets/potw/<file>"` for an image the owner has confirmed may be published. The app only loads local images from `assets/potw/`.
 - Register the episode in `episodes/index.json` (the index sorts by number and groups episodes in ranges of 100, so it scales into the thousands).
+  - Every aired episode is already listed. Episodes that haven't been adapted are **placeholders**: `{ "number", "title", "date" }` with no `file`. The index shows them dimmed with "Coming soon", and they can't be opened.
+  - When you adapt an episode, update its existing entry: add `"subtitle"` and `"file"`, and keep the number and date. Don't add a second entry.
+  - Placeholder titles and dates come from GRC's archive (`https://www.grc.com/securitynow.htm` and `https://www.grc.com/sn/past/<year>.htm`). When new episodes air, add placeholders for them the same way. Weeks with no new episode (no archive entry and no transcript, such as some holiday weeks) are left out.
 - Validate the JSON (`python3 -m json.tool`), click through the episode in a browser, and bump `version.json`.
 
 ## 7. Code conventions
