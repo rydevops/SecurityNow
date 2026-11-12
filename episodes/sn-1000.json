@@ -6,6 +6,13 @@
   "description": "Did Bitwarden go closed source? Germany protects security researchers, Australia plans an age limit for social media, Windows Server 2025 installs itself by surprise, and Microsoft hardens UAC. Plus fines from Russia and South Korea, Synology's critical zero-click flaw, a typosquatting Python package, Google's MFA mandate, Mozilla Foundation layoffs, and listener feedback.",
   "transcript": "https://www.grc.com/sn/sn-1000.txt",
   "audio": "https://media.grc.com/sn/sn-1000.mp3",
+  "notes": "https://www.grc.com/sn/sn-1000-notes.pdf",
+  "links": [
+    { "label": "Dave's Garage on YouTube", "url": "https://grc.sc/dave", "note": "Steve's shortcut to Dave Plummer's channel" },
+    { "label": "uBlock Origin filter list to hide YouTube Shorts", "url": "https://github.com/gijsdev/ublock-hide-yt-shorts", "note": "The list Darrell sent in" },
+    { "label": "CVE-2024-10443 (Synology RISK:STATION)", "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-10443" },
+    { "label": "Subscribe to GRC's Security Now! mailing list", "url": "https://www.grc.com/mail.htm" }
+  ],
   "chapters": [
     {
       "title": "Episode One Thousand",
@@ -24,6 +31,7 @@
     {
       "title": "Picture of the Week",
       "beats": [
+        { "type": "picture", "caption": "What they intended was not what happened", "t": "A paved footpath runs beside a city park. Two staggered metal barriers stand across it so bikes and scooters have to slow down and weave through. Right beside them, a bare, muddy track is worn into the grass where riders simply went around." },
         { "s": "steve", "t": "Picture a paved path beside a lovely green park. Someone wanted to stop bikes and scooters from speeding along it." },
         { "s": "steve", "t": "So they added overlapping barriers that make you zig-zag through. My caption: \"What they intended was not what happened.\"" },
         { "s": "leo", "t": "Because everyone just rode around them on the grass. You can see the ruts!" },
@@ -138,6 +146,7 @@
         { "s": "steve", "t": "In the short term, yes. Old, unpatched software gives malicious AI a lot of targets. But there's an asymmetry: AI can only find flaws that exist. It can't create new ones." },
         { "s": "steve", "t": "Once defensive AI stops new vulnerabilities from being introduced, attackers run out of things to find. In the long run, the good guys win." },
         { "s": "steve", "t": "Several listeners sent ways to hide YouTube Shorts using only uBlock Origin filters, without installing another browser extension that could later be sold to someone who tracks you." },
+        { "type": "fact", "title": "Hide YouTube Shorts with uBlock Origin", "t": "Open uBlock Origin's Dashboard. Either add a few rules on the \"My filters\" tab, or, on \"Filter lists\", paste the address of a ready-made list under \"Import...\" and click Apply changes. Steve checked the list Darrell sent: 71 well-commented lines. It's linked in the chapter menu under \"From the show notes.\"" },
         { "s": "steve", "t": "And the viral photo of a fire hose crossing train tracks under tire ramps? It was a joke by Belgian firefighters in Bornem. That track was closed for a week of maintenance." },
         { "s": "steve", "t": "Jim asked how we can trust AI chatbots that disagree on basic facts, or won't answer at all. My view: what we get from AI is just another opinion, and the full truth is often more complicated than a simple answer." },
         { "s": "leo", "t": "Those refusals are guardrails added by people, not the AI deciding. And because answers come from a computer, people give them too much weight. Researchers warned about that in the \"Stochastic Parrots\" paper." },

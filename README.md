@@ -13,6 +13,7 @@ A Progressive Web App that turns episodes of **Security Now!** with Steve Gibson
 - Tap, swipe or use the arrow keys to move through an episode. Tapping the left end of the stage goes back; tapping the right end goes forward. Progress is saved in the browser.
 - The hosts stay at the edges of any screen, including ultrawide.
 - **Reading settings** (gear button): text size, a typewriter effect and its speed
+- **Show notes:** episodes with GRC show notes link to the PDF, list useful links from it in the chapter menu, and include a Picture of the Week card
 - Installable PWA (manifest + service worker)
 
 ## No caching / auto-update

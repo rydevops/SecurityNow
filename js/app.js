@@ -319,7 +319,12 @@
     markDrawer(step.ci);
   }
 
+  // Only http(s) links, and only local images under assets/potw/
+  const safeUrl = (u) => (/^https?:\/\//i.test(u || '') ? u : null);
+  const safeImage = (u) => (/^assets\/potw\/[\w.-]+\.(jpe?g|png|webp)$/i.test(u || '') ? u : null);
+
   function beatNode(beat) {
+    if (beat.type === 'picture') return pictureNode(beat);
     if (beat.type === 'fact') {
       const f = el('div', 'fact');
       const label = el('div', 'fact__label');
@@ -334,9 +339,36 @@
   }
 
   // Screen readers get each new line in full at once, not character by character
+  // Picture of the Week. If `image` is set (a local file we have the right
+  // to publish), it is shown. Otherwise the card describes the picture and
+  // links to the original in GRC's show notes.
+  function pictureNode(beat) {
+    const f = el('figure', 'potw');
+    const label = el('div', 'fact__label');
+    label.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 8"/></svg>';
+    label.appendChild(document.createTextNode('Picture of the Week'));
+    f.appendChild(label);
+    const img = safeImage(beat.image);
+    if (img) {
+      const i = el('img', 'potw__img');
+      i.src = img; i.alt = beat.alt || beat.t; i.loading = 'lazy';
+      f.appendChild(i);
+    }
+    if (beat.caption) f.appendChild(el('div', 'potw__caption', `“${beat.caption}”`));
+    f.appendChild(el('figcaption', 'typed', beat.t));
+    const href = safeUrl(beat.source || (ep && ep.notes));
+    if (href) {
+      const a = el('a', 'potw__link', img ? 'Open the show notes ↗' : 'See the picture in the show notes ↗');
+      a.href = href; a.target = '_blank'; a.rel = 'noopener';
+      f.appendChild(a);
+    }
+    return f;
+  }
+
   function announce(beat) {
-    $('#rd-live').textContent = beat.type === 'fact'
-      ? `Key fact. ${beat.title}. ${beat.t}`
+    $('#rd-live').textContent =
+      beat.type === 'fact' ? `Key fact. ${beat.title}. ${beat.t}`
+      : beat.type === 'picture' ? `Picture of the Week: ${beat.caption || ''}. ${beat.t}`
       : `${HOST_NAMES[beat.s] || beat.s}: ${beat.t}`;
   }
 
@@ -576,6 +608,22 @@
     const a = $('#drawer-transcript');
     a.href = ep.transcript || '#';
     a.hidden = !ep.transcript;
+    const n = $('#drawer-notes');
+    n.href = safeUrl(ep.notes) || '#';
+    n.hidden = !safeUrl(ep.notes);
+    // Useful links listed in the show notes
+    const links = (ep.links || []).filter((l) => safeUrl(l.url));
+    $('#drawer-links-wrap').hidden = !links.length;
+    const ul = $('#drawer-links');
+    ul.innerHTML = '';
+    links.forEach((l) => {
+      const li = el('li');
+      const la = el('a', '', l.label + ' ↗');
+      la.href = l.url; la.target = '_blank'; la.rel = 'noopener';
+      li.appendChild(la);
+      if (l.note) li.appendChild(el('span', 'drawer__note', l.note));
+      ul.appendChild(li);
+    });
     const list = $('#drawer-list');
     list.innerHTML = '';
     const titles = [...ep.chapters.map((c) => c.title), 'Test Yourself'];

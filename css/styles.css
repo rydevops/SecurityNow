@@ -420,6 +420,26 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 }
 .divider b { display: block; font-size: 1.25em; color: var(--ink); margin-top: .15em; }
 
+/* --- Picture of the Week --- */
+.potw {
+  align-self: stretch; margin: 0; font-size: .925em; line-height: 1.45;
+  padding: .85em 1em; border-radius: .9em;
+  background: #fff; color: var(--ink);
+  border: 1px solid rgba(13, 42, 85, .12); border-left: 4px solid var(--accent);
+  box-shadow: 0 6px 18px rgba(13, 42, 85, .12);
+  animation: pop .35s ease both;
+}
+.potw .fact__label { color: #2f6fc0; }
+.potw__img { display: block; width: 100%; height: auto; margin: .6em 0 .2em; border-radius: .6em; background: #e6edf7; }
+.potw__caption { font-weight: 800; font-size: 1.05em; margin: .3em 0 .25em; }
+.potw figcaption { color: #334a6e; }
+.potw__link {
+  display: inline-block; margin-top: .6em; padding: .45em .9em; border-radius: 999px;
+  background: #eef4fd; border: 1px solid rgba(13, 42, 85, .15);
+  color: #2f6fc0; font-weight: 700; font-size: .9em; text-decoration: none;
+}
+.potw__link:hover { border-color: #2f7fe0; }
+
 /* --- quiz & finale cards --- */
 .card {
   align-self: stretch; font-size: .96em; line-height: 1.4;
@@ -537,7 +557,10 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 }
 .chapter.is-done .chapter__n { background: var(--accent); color: #fff; }
 .drawer__links { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
-.drawer__links a { color: var(--accent-2); font-size: .9rem; }
+.drawer__links a { display: block; color: var(--accent-2); font-size: .9rem; padding: .25rem 0; }
+.drawer__sub { margin: 0 0 .4rem; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.drawer__list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; }
+.drawer__note { display: block; color: var(--muted); font-size: .78rem; margin-top: -.15rem; }
 @keyframes fade { from { opacity: 0; } }
 @keyframes slide { from { transform: translateX(100%); } }
 

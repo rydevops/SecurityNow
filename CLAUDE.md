@@ -60,6 +60,12 @@ Rules and conventions for working in this repository. Follow them on every task.
   - Don't invent facts. Background added in "Key fact" cards must be accurate and general.
   - If a host gets a fact wrong on the show, keep the line as they said it, and give the correct fact in a card that notes the difference (see Sasser's timing in Episode 1 and the card-number check in Episode 5).
 - Structure: `episodes/sn-NNN.json` with `number`, `title`, `subtitle`, `date`, `description`, `transcript`, `audio`, and `chapters[]`. Each chapter has `beats[]`; a beat is either a dialogue line `{ "s", "t" }` or a fact card `{ "type": "fact", "title", "t" }`. End with a 4–6 question `quiz[]` (`q`, `options`, `answer` index, `explain`). Write `options` in any order. The app places the correct answer in a different slot for each question (`optionOrder()` in `app.js`), so quizzes never fall into a pattern. Write wrong answers that are plausible.
+- **Show notes:** also check `https://www.grc.com/sn/sn-NNN-notes.pdf` (same numbering as transcripts). Early episodes have none, and the URL returns 404. When notes exist:
+  - Set `"notes"` to the PDF URL. The chapter menu then shows a "Show notes (PDF)" link.
+  - Add `"links": [{ "label", "url", "note"? }]` for useful links from the notes (tools, CVEs, projects). These appear under "From the show notes." Only http(s) URLs are shown.
+  - Add details from the notes that help the reader, like steps, settings or lists, as paraphrased fact cards.
+  - **Picture of the Week:** add a `{ "type": "picture", "caption", "t" }` beat where Steve introduces it. `caption` is Steve's short title and `t` is your own description of the picture. The card links to the show notes so readers can see the original.
+  - **Don't copy Picture of the Week images (or other images from the notes) into the repo.** They're usually third-party photos with no license, unlike the Creative Commons transcripts. Only set `"image": "assets/potw/<file>"` for an image the owner has confirmed may be published. The app only loads local images from `assets/potw/`.
 - Register the episode in `episodes/index.json` (the index sorts by number and groups episodes in ranges of 100, so it scales into the thousands).
 - Validate the JSON (`python3 -m json.tool`), click through the episode in a browser, and bump `version.json`.
 
