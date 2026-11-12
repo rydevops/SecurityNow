@@ -1,0 +1,571 @@
+{
+  "number": 137,
+  "title": "RAM Hijacks",
+  "subtitle": "How Princeton recovered encryption keys from \"forgotten\" RAM",
+  "date": "2008-03-27",
+  "description": "After a zero-day attack through Microsoft's Jet Database, patched Office patches and snooping in candidates' passport files, Steve explains how static and dynamic RAM work to put Princeton's cold boot research in perspective: how quickly DRAM forgets without power, how chilling it slows the fade, and how expanded key schedules let researchers rebuild AES and DES keys despite errors. He also covers USB boot dongles, network booting, FireWire, ExpressCard and docking ports, and what it all means in practice.",
+  "transcript": "https://www.grc.com/sn/sn-137.txt",
+  "audio": "http://media.GRC.com/sn/SN-137.mp3",
+  "chapters": [
+    {
+      "title": "A Year Older Guru",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm a year older guru now. I'm not a big birthday person, but I've survived another one, and I think I'm about halfway done. My grandfather lived to 103. I'd like to beat him by a year."
+        },
+        {
+          "s": "leo",
+          "t": "You're wiry and thin, which bodes well."
+        },
+        {
+          "s": "steve",
+          "t": "Cabernet is good for you, and I do 64 minutes a day on the stair climber. At my annual physical, the doctor said if all his patients took care of themselves like me, he wouldn't have a job. I told him we'll be doing this in 20 years."
+        },
+        {
+          "s": "leo",
+          "t": "Happy birthday."
+        },
+        {
+          "s": "leo",
+          "t": "Today's topic is the one we missed by recording our TrueCrypt show early: the news that drive encryption could be cracked with some arcane techniques."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not sure whether it's a hot story or a cold one, since a lot of it involves spraying Freon on RAM chips. These Princeton guys did a fantastic job."
+        }
+      ]
+    },
+    {
+      "title": "A Zero-Day in Microsoft's Jet Database",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, an important issue Microsoft has acknowledged and that is being actively exploited: a flaw in its Jet Database engine, which comes with Office, and especially with Word. It affects Windows 2000, XP and Server 2003 SP1. Server 2003 SP2 and Vista use a different Jet edition and aren't affected."
+        },
+        {
+          "s": "steve",
+          "t": "It was a zero-day, found in the wild. Database files use the .mdb extension, which most systems won't run directly. So victims get an email with two attachments: a Word document and a database file with its extension changed. Opening the Word document makes the database file run, triggering the exploit."
+        },
+        {
+          "s": "steve",
+          "t": "Sometimes both arrive in one ZIP file. Either way, it works the same."
+        },
+        {
+          "s": "steve",
+          "t": "It's being used in targeted attacks, for industrial espionage and against government systems, sent to specific recipients rather than spammed. There's no fix. The only defense is the standard one: don't open email attachments."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's advisory says they're working out every exploit vector and will fix it on April's Patch Tuesday or, if it's serious enough, out of cycle. We're recording the next two episodes early, so if there's news we can't cover, that's why."
+        },
+        {
+          "s": "leo",
+          "t": "It's Security Advisory 950627. I'll put a link in the show notes. Jet has had vulnerabilities going back years."
+        },
+        {
+          "s": "leo",
+          "t": "People yell at me for saying \"don't open attachments.\" Technically it's don't open executable attachments. But people can't tell what's executable. Here are a .doc and an .mdb, neither technically executable."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Attackers used to change extensions to fool filters, so Microsoft started opening files by content instead. But Word can run scripts, and documents can contain executable code, just like a web page."
+        }
+      ]
+    },
+    {
+      "title": "Office Is Under Attack",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Windows Update has been busy. A March 11 Excel patch had a \"regression error,\" breaking something else, so they had to patch the patch a few days later. And exploit code is now public for some of this month's big Office fixes, which means more attacks. Stay patched."
+        },
+        {
+          "s": "steve",
+          "t": "Security Focus summarized it: flaws in Office have become standard weapons for targeted attacks on high-level managers and executives. From 2002 through 2006, 10 or fewer high-severity flaws were reported each year in Office's five major applications. Last year, the National Vulnerability Database recorded at least 26. And this month Microsoft patched dozens."
+        },
+        {
+          "s": "leo",
+          "t": "I thought attacks had shifted from email attachments to the web."
+        },
+        {
+          "s": "steve",
+          "t": "Office exploits are more targeted. The pool of victims is smaller, and attackers want to keep them secret as long as possible. The longer this Jet flaw stays unpatched, the better for the bad guys, so they're not spraying it everywhere."
+        }
+      ]
+    },
+    {
+      "title": "Snooping in the Candidates' Passport Files",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Late last week there was a furor. First, Barack Obama's passport file had been opened on three occasions, in January, February and March. Then it turned out Hillary Clinton's and John McCain's files had been opened too, all by contractors working for the State Department."
+        },
+        {
+          "s": "steve",
+          "t": "The cool thing is that the State Department's security monitoring software caught them."
+        },
+        {
+          "s": "leo",
+          "t": "Too bad it couldn't block them."
+        },
+        {
+          "s": "steve",
+          "t": "These employees needed access for their jobs. They just shouldn't have looked. I read stories like this constantly: police officers poking around databases out of curiosity. They're authorized to access the database, but using that access to satisfy curiosity violates privacy."
+        },
+        {
+          "s": "steve",
+          "t": "And it's still rare for organizations to have monitoring. Most rely on policy, without anything verifying that it's followed. So this was a good thing."
+        }
+      ]
+    },
+    {
+      "title": "Six Out of Seven \"Dead\" Drives",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Ravi Keecheril has an MythTV box made entirely of discarded hard drives. At his company, failed drives go to a dark storage room on their way to the hard drive graveyard. He's mentioned SpinRite, but they'd rather grab a new drive from inventory, usually bigger."
+        },
+        {
+          "s": "steve",
+          "t": "So he asked his boss if he could have the old ones. Sure. Of the seven he's taken home, SpinRite has completely resurrected six, and they're working happily ever after."
+        },
+        {
+          "s": "leo",
+          "t": "So what looks like a failed drive often just has an error on the medium that can be fixed, and the drive is fine. Six of seven is huge."
+        },
+        {
+          "s": "steve",
+          "t": "Given SpinRite's track record, it really does seem to be the case."
+        }
+      ]
+    },
+    {
+      "title": "Ed Felten's Team at Princeton",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ed Felten at Princeton is a brilliant security researcher, always pushing the envelope. He first became known in the copy protection wars."
+        },
+        {
+          "s": "steve",
+          "t": "I see him cited all over the place."
+        },
+        {
+          "s": "leo",
+          "t": "He's analyzed Diebold voting machines too."
+        },
+        {
+          "s": "steve",
+          "t": "I just read that he and Princeton were set to analyze another voting machine problem, and the company with the apparently defective machines threatened to sue to stop them. It's an example where our DMCA does us no real service."
+        },
+        {
+          "s": "leo",
+          "t": "He did a great paper on the music industry's digital music initiative challenge. He cracked it in a few weeks, but bowed out because he couldn't publish his results."
+        },
+        {
+          "type": "fact",
+          "title": "The details",
+          "t": "In March 2008, Sequoia Voting Systems threatened legal action, citing its license agreement, to stop Felten's team from examining its machines for New Jersey. In 2001, the recording industry's threats delayed Felten's paper on the SDMI challenge, but his team later published it."
+        },
+        {
+          "type": "fact",
+          "title": "The cold boot team",
+          "t": "The cold boot paper was led by J. Alex Halderman, then a Princeton graduate student, with Felten and seven other coauthors."
+        }
+      ]
+    },
+    {
+      "title": "Hype Versus Reality",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Our listeners flooded us with reports. There was some hype. The email made clear people believed whole-drive encryption had been cracked. That's not the case, though what they did was extremely cool. They discovered RAM's contents stay available longer than people believed."
+        },
+        {
+          "s": "steve",
+          "t": "It was understood that RAM could hold a sort of latent image until explicitly cleared. But no one in the literature had sat down to measure how long. Seconds? Minutes? Hours? Nobody thought days."
+        }
+      ]
+    },
+    {
+      "title": "How Static RAM Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Let's back up to the technology. We've talked about flash. Volatile memory is either static or dynamic. The earliest computers used static memory. \"Static\" doesn't mean it survives power-off. It means it doesn't need to be continually refreshed, as dynamic memory does."
+        },
+        {
+          "s": "steve",
+          "t": "Static memory is cool. An inverter is a piece of logic that turns a zero on its input into a one on its output, and a one into a zero."
+        },
+        {
+          "s": "steve",
+          "t": "Connect two inverters in a loop: the first one's output to the second one's input, and the second one's output back to the first one's input. If the first one gets a zero, it outputs a one. The second gets that one and outputs a zero, back into the first. It's stable. As long as there's power, it holds forever."
+        },
+        {
+          "s": "steve",
+          "t": "Now briefly force the first one's input up to a one. It outputs a zero, the second outputs a one, and that one is now stable. That's a \"bistable multivibrator,\" also called a flip-flop, the basis of static RAM. Build a ton of them, with ways to read each one and force it into either state."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is that each bit, with its transistors, resistors and addressing logic, takes a lot of silicon. As the industry tried to cram more bits into less space, chips got too big."
+        }
+      ]
+    },
+    {
+      "title": "How Dynamic RAM Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So engineers made something simpler: dynamic RAM. Each bit is essentially just a capacitor, with a little logic around it. A capacitor stores charge electrostatically, by pulling electrons off one plate or pushing them on. Left alone, it holds. There's a bit."
+        },
+        {
+          "s": "steve",
+          "t": "But as capacitors get very, very small, their capacity to store electrons shrinks, and leakage creeps in. Thermal effects let electrons wander off the reservation. So they can't hold their charge indefinitely."
+        },
+        {
+          "s": "steve",
+          "t": "The solution is refresh. All the bits are continuously scanned. A charged capacitor immediately starts discharging toward its ground state. As long as you read it before it drains too far, you can tell. Only 50 percent full? It must have been a one. So you recharge it."
+        },
+        {
+          "s": "steve",
+          "t": "Cut the power and refresh stops. Every capacitor starts discharging at its own rate, depending on its physics and temperature."
+        }
+      ]
+    },
+    {
+      "title": "How Fast DRAM Forgets",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So the researchers asked: cut the power, count to three, turn it back on. How many bits decay?"
+        },
+        {
+          "s": "steve",
+          "t": "At normal operating temperature, which is pretty hot inside a computer, decay rates vary a lot with the technology. Newer, denser RAM, with smaller capacitors, loses about half its bits in as little as a second or two without refresh. The best older chips they found took up to about 10 seconds to lose half."
+        },
+        {
+          "s": "steve",
+          "t": "Since temperature strongly affects the electron migration through the capacitors' insulation, they asked how to extend the time. They turned cans of spray \"air\" upside down, so liquid comes out and chills things to about minus 50 degrees Celsius."
+        },
+        {
+          "s": "steve",
+          "t": "Freezing the DRAM dramatically slowed the decay. They could pull a chip from a computer, keep it cold on a desk with the spray, plug it into another computer an hour later, and read out most of its data. They also dunked chips in liquid nitrogen."
+        },
+        {
+          "s": "leo",
+          "t": "They'd have to do that quickly, since you only have a second or two."
+        },
+        {
+          "s": "steve",
+          "t": "They sprayed while the machine was on."
+        },
+        {
+          "type": "fact",
+          "title": "The details",
+          "t": "Canned \"air\" dusters usually contain refrigerants like tetrafluoroethane rather than old CFC Freon. At about minus 50°C, the researchers saw under 1 percent decay after 10 minutes. In liquid nitrogen, only about 0.17 percent of bits decayed after an hour."
+        }
+      ]
+    },
+    {
+      "title": "Rebuilding Keys From Damaged Memory",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The coolest part was what they did with snapshots that had known bit errors. They went after the keys for whole-drive encryption, like BitLocker and TrueCrypt."
+        },
+        {
+          "s": "steve",
+          "t": "Take a strong 256-bit AES key. Change one bit, and it doesn't work at all. So you'd think any drift makes it useless."
+        },
+        {
+          "s": "steve",
+          "t": "But remember key expansion. Symmetric ciphers run a number of rounds, each a reversible scrambling of the bits. One round isn't secure, so they iterate. Each round needs data derived from the key."
+        },
+        {
+          "s": "steve",
+          "t": "In AES, the key is mixed in a cryptographically secure way with a fixed table of data that every implementation shares, producing data that's XORed into each round. That's the key schedule or key setup."
+        },
+        {
+          "type": "fact",
+          "title": "More precisely",
+          "t": "AES's key schedule derives each round key from the one before, using the cipher's fixed S-box and round constants. That deterministic structure is what makes the expanded schedule redundant."
+        },
+        {
+          "s": "steve",
+          "t": "They realized that expanded schedule works like error-correcting code, like the ECC on a hard disk. The key's own bits have no redundancy, but the expansion has a tremendous amount. They worked out the math to reconstruct the exact key from a damaged key and schedule, and it works."
+        },
+        {
+          "s": "steve",
+          "t": "BitLocker uses AES too, in a different way. DES's key schedule is extremely straightforward, so even with a high degree of decay they could reconstruct DES and even Triple DES keys."
+        },
+        {
+          "s": "steve",
+          "t": "Often they simply hit reset, a cold boot, so RAM went unrefreshed briefly, then captured it. They also did work with public-key crypto."
+        },
+        {
+          "s": "steve",
+          "t": "The expanded keys are always in memory while in use, because expanding the key every time you read or write a sector would be prohibitive. So with a snapshot of memory, even with errors, they reconstructed the keys of virtually every whole-drive encryption product they tried."
+        }
+      ]
+    },
+    {
+      "title": "Physical Access Is Required",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Impressive. But this isn't something a hacker can easily do to you."
+        },
+        {
+          "s": "steve",
+          "t": "You'd hardly let someone grab your laptop, turn it over and spray Freon on the memory, if they could even find it. It would be obvious."
+        },
+        {
+          "s": "leo",
+          "t": "And they need your laptop while you're logged on. Once you log off, the key is gone?"
+        },
+        {
+          "s": "steve",
+          "t": "In their Mac work, logging off scrubs your keys. I'm happy this came to the industry's attention while TrueCrypt is under active development. Imagine the email the poor TrueCrypt guys got."
+        },
+        {
+          "s": "steve",
+          "t": "What it means is that whenever you don't actively need the encrypted resource, TrueCrypt, BitLocker or Apple's encryption should actively scrub the keys from memory. Zeroes or nonsense is fine. Unlike hard drives, these little capacitors hold no history of what was there before."
+        },
+        {
+          "s": "steve",
+          "t": "Although some studies suggest memory can \"burn in,\" like the phosphors screensavers were invented to protect. If the same data sat in the same place for a long time, physical changes might reveal it. In modern operating systems that's unlikely, since paging moves data around physical memory. But it's something careful designers should keep in mind."
+        }
+      ]
+    },
+    {
+      "title": "Other Ways to Grab RAM",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Other fallout: you could make a bootable USB dongle with a tiny OS that snapshots memory. It has to be small, since it runs in the same memory you're capturing."
+        },
+        {
+          "s": "steve",
+          "t": "The researchers also used PXE, Intel's network-boot specification. Reboot the system, let the motherboard's network boot ROM load a tiny OS, and suck the RAM out over the network."
+        },
+        {
+          "s": "steve",
+          "t": "And the FireWire issue has floated around for years. FireWire's Open Host Controller Interface may be more open than intended. FireWire is really a bus, and its spec supports direct memory access. A gadget plugged into a laptop's FireWire port can request DMA and read the system's RAM."
+        },
+        {
+          "s": "leo",
+          "t": "So a device could read RAM without all the freezing."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. And we've talked about how uncomfortable it is that operating systems run code automatically from a plugged-in USB drive. That's what makes TrueCrypt's traveler mode convenient. Nothing says it couldn't run a little program that copies all of RAM to the thumb drive."
+        },
+        {
+          "s": "steve",
+          "t": "There's more. A laptop's PCMCIA or ExpressCard slot is the system bus, so a card there can reach memory. So can docking connectors, which vary by laptop."
+        },
+        {
+          "s": "steve",
+          "t": "So, perspective: physical access to our systems is almost never secure. If you let someone spray Freon on your RAM and walk off with it, that's not secure."
+        }
+      ]
+    },
+    {
+      "title": "What It Means in Practice",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's of academic interest that DRAM can be slowed from forgetting, and that clever algorithms can repair a few bit errors to rebuild keys. But turn your laptop off and count to 10, and your data is gone."
+        },
+        {
+          "s": "steve",
+          "t": "Now that this has attention, the TrueCrypt guys will minimize any window of exposure. For instance, making it fast and easy to dismount a volume and wipe the key, or automatically dismounting when you hibernate or suspend, requiring you to reauthenticate."
+        },
+        {
+          "s": "leo",
+          "t": "But the whole point of full-disk encryption is protection when someone has physical access. Otherwise why bother?"
+        },
+        {
+          "s": "steve",
+          "t": "Right. If you leave your laptop at the airport or someone sneaks away with it, you want it impossible to use again without full-strength authentication. Standby keeps the RAM refreshed. That's why it uses a little battery. Hibernation copies RAM to the drive and powers off completely."
+        },
+        {
+          "s": "leo",
+          "t": "Can they get the key from the hibernation image?"
+        },
+        {
+          "s": "steve",
+          "t": "We know it's encrypted now. I'd bet the keys are wiped, the image is encrypted and written out, and you must reauthenticate coming out of hibernation. That's the way it's got to be, though we'd want to confirm it."
+        },
+        {
+          "s": "leo",
+          "t": "Until then, shut it down. How long should you wait?"
+        },
+        {
+          "s": "steve",
+          "t": "Ten seconds, really. Newer RAM is down to a second or two. They only got around 10 seconds with some older, less dense RAM."
+        },
+        {
+          "s": "leo",
+          "t": "So shut down, hold onto it for 10 seconds, and you're safe."
+        },
+        {
+          "s": "steve",
+          "t": "Then give it to anybody you want."
+        },
+        {
+          "s": "leo",
+          "t": "More to the point, if you leave it in a taxi, none of this works unless the system was running and logged in."
+        },
+        {
+          "s": "steve",
+          "t": "I'd argue TrueCrypt with hibernation is even safer, since it wipes the keys explicitly, so the moment hibernation finishes, it's safe. If you power down with volumes mounted, wait a few seconds. Most people turn the machine off and then wrap up the cables and pack the case. By the time it's stowed, it's forgotten everything it knew."
+        },
+        {
+          "s": "leo",
+          "t": "The USB key vulnerability amazes me."
+        },
+        {
+          "s": "steve",
+          "t": "It's a perfect Security Now! episode. Academically intriguing, but it won't affect anyone's life. DRAM doesn't forget instantly, but it does very quickly."
+        }
+      ]
+    },
+    {
+      "title": "BitLocker's Weak Default",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Apparently Microsoft designed BitLocker with some awareness of this. But the researchers point out that in BitLocker's basic mode, the TPM, the Trusted Platform Module on the motherboard, hands BitLocker its keys at boot without requiring any authentication."
+        },
+        {
+          "s": "leo",
+          "t": "Then you've got a problem anyway. Turn it on and, hello."
+        },
+        {
+          "s": "steve",
+          "t": "Anyone could take it, turn it on and attack the running system. Security-conscious users understand that requiring authentication, while a bit of a headache, protects you from exactly that."
+        },
+        {
+          "s": "leo",
+          "t": "I never mind logging in."
+        },
+        {
+          "s": "leo",
+          "t": "Again, the problem was that we recorded the TrueCrypt episode ahead of time, and this broke the week before it aired. As you can see, it's nothing to freak out about."
+        },
+        {
+          "s": "steve",
+          "t": "I won't say nothing to worry about. It did raise concern, and the threat is now understood. I'm glad the TrueCrypt and BitLocker folks know."
+        }
+      ]
+    },
+    {
+      "title": "Pulling Ahead of TWiT",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You're pulling ahead of TWiT while I'm in Australia. We're pretaping Security Now! for the next two weeks. Only The Tech Guy, which started in 2004 and does two a week, and the Daily Giz Wiz, five a week, are ahead of you."
+        },
+        {
+          "s": "steve",
+          "t": "That's cheating. Couldn't you number them 1.1, 1.2, 1.3?"
+        },
+        {
+          "s": "leo",
+          "t": "And don't forget SpinRite, for the drives the boss puts in the dark closet."
+        },
+        {
+          "s": "steve",
+          "t": "I hope the boss is wiping those drives."
+        },
+        {
+          "s": "leo",
+          "t": "You know he's not."
+        },
+        {
+          "s": "steve",
+          "t": "It's a little hard to wipe a dead drive."
+        },
+        {
+          "s": "leo",
+          "t": "So: SpinRite, then wipe it."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is Q&A, plus some fun news: someone made a paper Enigma machine, like the famous German one. Download a PDF and build your own."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What makes dynamic RAM need constant refreshing?",
+      "options": [
+        "Each bit is a tiny capacitor that slowly leaks its charge",
+        "Its flip-flops lose state",
+        "It's stored on a disk",
+        "Refreshing encrypts it"
+      ],
+      "answer": 0,
+      "explain": "Static RAM uses inverter pairs that hold their state with power."
+    },
+    {
+      "q": "How did the Princeton researchers keep data in RAM chips longer?",
+      "options": [
+        "They chilled the chips with inverted canned air or liquid nitrogen to slow the decay",
+        "They added batteries",
+        "They copied the RAM to disk",
+        "They used flash memory"
+      ],
+      "answer": 0,
+      "explain": "Cold slows the electron leakage."
+    },
+    {
+      "q": "How could they recover an encryption key from RAM with some bits flipped?",
+      "options": [
+        "The expanded key schedule kept in memory is redundant, so it works like error correction",
+        "They brute-forced the whole key",
+        "They read the key from disk",
+        "Errors don't affect keys"
+      ],
+      "answer": 0,
+      "explain": "DES keys were especially easy to rebuild."
+    },
+    {
+      "q": "Which of these can give an attacker direct access to a laptop's memory?",
+      "options": [
+        "A device on the FireWire port, which supports direct memory access",
+        "The headphone jack",
+        "The power adapter",
+        "The keyboard"
+      ],
+      "answer": 0,
+      "explain": "ExpressCard slots and docking ports are also on the system bus."
+    },
+    {
+      "q": "What does Steve recommend to protect an encrypted laptop from this attack?",
+      "options": [
+        "Turn it off and wait about 10 seconds before it leaves your control",
+        "Spray the RAM with Freon",
+        "Keep it in standby",
+        "Remove the hard drive"
+      ],
+      "answer": 0,
+      "explain": "Standby keeps RAM refreshed, so it doesn't help."
+    },
+    {
+      "q": "What weakness did the researchers note in BitLocker's basic mode?",
+      "options": [
+        "The TPM releases the keys at boot without requiring any authentication",
+        "It uses DES",
+        "It doesn't use AES",
+        "It can't encrypt laptops"
+      ],
+      "answer": 0,
+      "explain": "Requiring a PIN or key at boot avoids this."
+    }
+  ]
+}
