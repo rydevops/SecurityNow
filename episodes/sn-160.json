@@ -1,0 +1,772 @@
+{
+  "number": 160,
+  "title": "Listener Feedback Q&A #49",
+  "subtitle": "First looks at Google Chrome, and Wells Fargo's passwords get worse",
+  "date": "2008-09-04",
+  "description": "Google's new Chrome browser arrives with cookie leaks and a worrying license, NebuAd and Phorm fall on hard times, and VMware sets kill bits on its ActiveX controls. Steve responds to doubts about last week's SEAL story. Then questions: disappearing SATA drives, malicious e-card links, how long to wait on Chrome, a VPN-only campus network, Microsoft's DEP logo requirements, cross-site request forgery, Nintendo DS and WEP, OpenDNS on an old router, what \"full stealth\" means, TreeWalk DNS, case-insensitive bank passwords, why typing IP addresses won't save you from DNS spoofing, and what a DEP alert might really mean.",
+  "transcript": "https://www.grc.com/sn/sn-160.txt",
+  "audio": "http://media.GRC.com/sn/SN-160.mp3",
+  "chapters": [
+    {
+      "title": "A Quiet Week, and Chrome",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve Gibson, now in our fourth year of security podcasting, or netcasting."
+        },
+        {
+          "s": "steve",
+          "t": "It's been a very quiet week, thankfully. We have a Q&A, some tidbits, and a short SpinRite follow-up to last week's story."
+        },
+        {
+          "s": "steve",
+          "t": "The big news is Google's new browser, Chrome."
+        },
+        {
+          "s": "leo",
+          "t": "I've been using it. I like it."
+        },
+        {
+          "s": "steve",
+          "t": "Tons of people wrote in through GRC.com/feedback, and I thank everyone who does. Everyone wants to know what I think of Chrome's security. It's only a couple of days old, and I haven't looked closely. When you emailed to record early, I was building a new VMware box for it."
+        },
+        {
+          "s": "steve",
+          "t": "I don't like installing things I may regret. XP is better at removing junk, but it's wear and tear. A little VMware world is easy."
+        },
+        {
+          "s": "steve",
+          "t": "Sometimes you have to. For my cookie work, Firefox 2 and 3 can't coexist on one machine, and Firefox 2 and IE had bizarre cookie collisions. I've got IE 5, 6, 7 and 8 in separate VMs too, since IE versions won't share a machine either."
+        }
+      ]
+    },
+    {
+      "title": "Chrome's Cookie Problems",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We'll absolutely do a Chrome episode. Early news: Safari remains the only browser with third-party cookies disabled by default. Chrome enables them, though you can change it."
+        },
+        {
+          "s": "steve",
+          "t": "Using my not-yet-public cookie analysis system, the guys in my newsgroups found Chrome has \"cross-context leakage.\" It blocks third-party cookies coming in, not going out."
+        },
+        {
+          "s": "steve",
+          "t": "Say PayPal bounces you through DoubleClick and back. During that hop you briefly have a first-party relationship with DoubleClick and get its cookie. IE, Safari and Chrome then block incoming third-party cookies but not outgoing ones. So even with third-party cookies \"blocked,\" you leak that DoubleClick cookie at other sites. Not what you intended."
+        },
+        {
+          "s": "steve",
+          "t": "And from early newsgroup comments, there's no per-site whitelisting or blacklisting for cookies."
+        },
+        {
+          "s": "leo",
+          "t": "The setting is odd. It says \"restrict how third-party cookies can be used,\" not block them, and never says what the restrictions are."
+        }
+      ]
+    },
+    {
+      "title": "Chrome's Sandboxing and Speed",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The most compelling idea is sandboxing. Each tab is its own browser instance, so a crashing tab doesn't take down the whole browser, which does happen in IE. And they talk about restricting what code in each window can do. The question is what that really means."
+        },
+        {
+          "s": "steve",
+          "t": "One listener likes how fast Chrome launches. He never opens Firefox unless he'll surf for 15 minutes, because it's so slow to start. Then he confesses he's loaded it with add-ons."
+        },
+        {
+          "s": "leo",
+          "t": "Not a fair comparison. Chrome has no extensions at all."
+        },
+        {
+          "s": "steve",
+          "t": "There will be, and Google says plug-ins and add-ons crossing the boundary could defeat the sandbox. There's also a process monitor showing how much RAM each page and plug-in uses, which enforces accountability."
+        },
+        {
+          "s": "leo",
+          "t": "According to the comic book, you can also tell which process caused a problem, which you can't in Firefox. That will help weed out buggy extensions. And it's multithreaded, which you ought to love with that four-way Xeon."
+        },
+        {
+          "s": "steve",
+          "t": "Sitting around saying give me something to do."
+        },
+        {
+          "type": "fact",
+          "title": "Chrome's design",
+          "t": "Chrome launched on September 2, 2008, introduced with a comic book by Scott McCloud. Each tab ran in its own process, and its V8 engine compiled JavaScript to machine code for speed."
+        }
+      ]
+    },
+    {
+      "title": "NebuAd and Phorm Collapse",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Increasingly good news for people, and bad news for NebuAd and Phorm. NebuAd has lost its CEO and apparently all its customers. Phorm's stock has fallen 75 percent from its peak, 11 days after its announcement. Everyone figured out what was going on."
+        },
+        {
+          "s": "leo",
+          "t": "People say privacy is dead. This shows that if people are aware and stand up, we can defeat this stuff."
+        },
+        {
+          "s": "steve",
+          "t": "Nobody would object if it were opt-in, in return for some benefit. Instead it benefited publishers, promising higher CPM rates for better-targeted ads. There's enough awareness now that they couldn't sneak around under cover of darkness."
+        }
+      ]
+    },
+    {
+      "title": "VMware Sets Its Kill Bits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Lastly, VMware users: Workstation went from 6.0.4 to 6.0.5, largely a security update. One change I really liked was a policy fix, not a bug fix. VMware now sets the \"kill bits\" on all its ActiveX controls."
+        },
+        {
+          "s": "steve",
+          "t": "As we've discussed, IE can be asked to invoke any ActiveX control on the system, even one never designed for IE, to exploit its behaviors. And VMware has some powerful controls. None were meant for IE, so now they can't be used there."
+        },
+        {
+          "s": "steve",
+          "t": "That's brilliant policy, and everyone should do it. Any vendor whose ActiveX control isn't meant as a browser add-on should make sure it can't be exploited. They avoid bad press, and users stay safe."
+        }
+      ]
+    },
+    {
+      "title": "Doubts About the SEAL Story",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Did people write in saying last week's SEAL story couldn't be true? We get this kind of mail, and you can never verify it."
+        },
+        {
+          "s": "steve",
+          "t": "I heard both ways. One Mr. Sour Grapes wrote to the office, and Sue forwarded it: how gullible can you be? I'll never believe anything you say again. I didn't respond; he's made up his mind."
+        },
+        {
+          "s": "steve",
+          "t": "There was no evidence either way. I just read what we received. Either he's a very competent creative writer or it's true. Our listeners' testimonials show it's entirely possible."
+        },
+        {
+          "s": "steve",
+          "t": "The space station has a copy of SpinRite, because they've had laptop problems in orbit, and it's hard to run to Fry's from there. I hope it was true. I'd love the idea it helped in the field."
+        },
+        {
+          "s": "steve",
+          "t": "This week's email, from someone who heard us, is titled \"SpinRite Saves Many Lives,\" but it's way toned down. He works for a large medical group whose doctors read X-rays from home after hours. One doctor's computer was stuck at the Windows screen, and he needed it the next day for a large hospital. He ran SpinRite overnight, and it came back running perfectly, saving many hours of reloading Windows and tricky configurations."
+        },
+        {
+          "s": "leo",
+          "t": "See? It saves lives."
+        },
+        {
+          "s": "steve",
+          "t": "Please don't make up fantastic-sounding SpinRite stories, or I'll start being suspicious. I only want real testimonials. Next week I'll tell how SpinRite saved 200 kittens."
+        }
+      ]
+    },
+    {
+      "title": "Disappearing SATA Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Skauge in Bergen, Norway isn't SATAsfied. Of two new 1TB Samsung SpinPoint F1 SATA2 drives, one crashed after a week, and the other randomly disappears from the system. Now one of his two 250GB Samsungs disappears too, though SpinRite Level 4 finds no faults on either."
+        },
+        {
+          "s": "leo",
+          "t": "He recently upgraded to a Thermaltake Toughpower 850-watt power supply and an Asus GeForce 9800 GTX with 512MB. His old supply was a 480-watt Tagan. Could the new power supply be responsible?"
+        },
+        {
+          "s": "steve",
+          "t": "It really sounds power related. I'm not sure what \"disappearing\" means. I've said I'm unimpressed with SATA connectors."
+        },
+        {
+          "s": "steve",
+          "t": "The tradeoff is that SATA was designed for hot swapping, so a drive can slide on rails into a backplane with minimal enclosure. But why not add optional latches so a cable locks in? They're not very stable. Still, restarting a few times wouldn't fix a bad connection."
+        },
+        {
+          "s": "steve",
+          "t": "Contemporary high-speed drives use more power. A high-end card like the 9800 GTX probably has its own drive-style power connectors because the motherboard can't feed it. With four drives too, the supply may not be footing the bill."
+        },
+        {
+          "s": "leo",
+          "t": "We had to buy a 1,200-watt power supply for the ultimate gaming machine. It cost $600, as much as a PC."
+        },
+        {
+          "s": "steve",
+          "t": "Power supplies made in Taiwan or China are checked, but one could be an infant mortality case with hum or bad regulation on the 5- or 12-volt line. This seems to be about something the drives need, and that's power."
+        },
+        {
+          "s": "leo",
+          "t": "Windows also loses drives sometimes. But SpinRite says the drives themselves are fine."
+        },
+        {
+          "s": "steve",
+          "t": "And restarting also restarts Windows, so maybe Windows forgave the drive. We take power for granted, but with graphics cards needing their own connectors and power-hungry motherboards, it's become really important. We're heating our rooms too."
+        }
+      ]
+    },
+    {
+      "title": "Malicious E-Cards",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A public service announcement from Spencer B. in Utah: he's getting about five emails a day from GreetingCard.org, linking straight to \"e-card.exe.\""
+        },
+        {
+          "s": "steve",
+          "t": "Obvious to our listeners, but worth passing on to everyone you care about. My mom and less tech-savvy friends send me greeting cards all the time, and it annoys me that they give my email address, which I guard, to a third-party site. That's how spam happens."
+        },
+        {
+          "s": "steve",
+          "t": "Some are beautiful Flash animations. But after you've safely opened ten, you click one like this and, bang, you're infected by whatever the EXE installs."
+        },
+        {
+          "s": "leo",
+          "t": "Do we know it's malware, or are we presuming because it's an EXE?"
+        },
+        {
+          "s": "steve",
+          "t": "You're right, we don't know."
+        },
+        {
+          "s": "leo",
+          "t": "It could be a greeting card."
+        },
+        {
+          "s": "steve",
+          "t": "Get out your VMware and fire it up."
+        },
+        {
+          "s": "leo",
+          "t": "I don't open my mom's e-greetings either. And it bugs me she gave my address away without permission."
+        },
+        {
+          "s": "steve",
+          "t": "There's also a lot of spam claiming a missed FedEx, DHL or UPS delivery, with a link to an \"invoice\" to reschedule. It uses an emotional hook: someone sent me something, and I want it."
+        },
+        {
+          "s": "leo",
+          "t": "These guys are good at social engineering. Educate everybody: don't open attachments, don't click links in email."
+        },
+        {
+          "s": "steve",
+          "t": "And I tell my friends not to send me anything."
+        }
+      ]
+    },
+    {
+      "title": "How Long to Wait on Chrome?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lil Banchik in Long Island, New York: you say nothing is secure until people pound on it. How long would be long enough for Chrome, especially since its license lets Google install updates at any time without warning?"
+        },
+        {
+          "s": "steve",
+          "t": "Google says Chrome will get a continually updated blacklist of bad sites, pinging Google for updates, plus security patches. That's good. Is Chrome succeeding?"
+        },
+        {
+          "s": "leo",
+          "t": "Everybody downloaded it Tuesday. But people are concerned about the license: you keep copyright, but by submitting, posting or displaying content \"through the services,\" you give Google a perpetual, irrevocable, worldwide, royalty-free license to reproduce, modify, publish and distribute it, including to companies Google works with. That could mean your email and blog posts."
+        },
+        {
+          "s": "leo",
+          "t": "I'll give Google the benefit of the doubt. Lawyers add this language to avoid being sued over caching."
+        },
+        {
+          "s": "steve",
+          "t": "Are we sure \"services\" isn't their web services, like Google Calendar, where you post content to Google, rather than the browser as a conduit?"
+        },
+        {
+          "s": "leo",
+          "t": "\"Services\" is defined as Google's products, software, services and websites. Everything."
+        },
+        {
+          "type": "fact",
+          "title": "The license fix",
+          "t": "Within days of the outcry, Google revised Chrome's license to remove the content clause, saying it had been copied from its general terms by mistake, and applied the change retroactively."
+        },
+        {
+          "s": "steve",
+          "t": "So what's the attraction of another browser? Firefox is popular, pounded on and good at version 3."
+        },
+        {
+          "s": "leo",
+          "t": "We debated it on MacBreak Weekly, and Merlin Mann asked why we need another. One credible reason is that Google wants a browser that does really well at cloud computing."
+        },
+        {
+          "s": "steve",
+          "t": "Their services have always run in other people's browsers."
+        },
+        {
+          "s": "leo",
+          "t": "Google Docs, Gmail and any JavaScript web app run much better in Chrome, with the fastest JavaScript engine out there. It's multithreaded, so the speed is real, and it has Google Gears built in so those apps work offline. Google can say other browsers don't do this well."
+        },
+        {
+          "s": "steve",
+          "t": "It looks clean and simple."
+        },
+        {
+          "s": "leo",
+          "t": "But Google's real business is advertising, and critics say it's creating a giant spy on your system. That's a legitimate concern, and the license might put me over the top."
+        },
+        {
+          "s": "steve",
+          "t": "With SSL, they could scrape what you post before their browser encrypts it. They certainly could. That does seem too sweeping."
+        },
+        {
+          "s": "leo",
+          "t": "Lawyers protect against all exposure, but in this day and age it takes one blogger reading the license and everyone knows."
+        },
+        {
+          "s": "steve",
+          "t": "Well, all our listeners do now."
+        }
+      ]
+    },
+    {
+      "title": "A VPN-Only Campus Network",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ryan Sullivan, a college freshman in New York, says his campus uses Cisco. Everyone logs in with their college email and password over a VPN, IPSec over UDP, to reach the Internet, and passwords change every 60 days. His very high-tech school is full of skilled students. Can another student do anything to him?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. I'm impressed with his school. Every student must run Cisco's VPN client, so all student traffic on the campus network is encrypted to a back-end VPN server."
+        },
+        {
+          "s": "steve",
+          "t": "The only vulnerability I see is single-factor authentication at his laptop. Use a BIOS power-on password, which is stronger than a Windows password, and a Windows password too. A fellow student could install a keystroke logger to capture his login and impersonate him, and the campus may log activity by login."
+        },
+        {
+          "s": "steve",
+          "t": "Forcing 60-day password changes teaches good security. When they hit a corporate job that never changes passwords, they'll say: we did that as freshmen."
+        },
+        {
+          "s": "leo",
+          "t": "But isn't his worry that on a shared network others can see his machine, like in a hotel?"
+        },
+        {
+          "s": "steve",
+          "t": "Without encryption, yes. Here it's encrypted to the VPN server. After that, it's unclear. A scan might go through the tunnel and look for IPs at the other end, depending on whether there's NAT. We don't know how it's set up. But no raw packet sniffing will work on the student network, because everything is encrypted. That's really great."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Tightens the Thumbscrews",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Martin Nothnagel in Berlin notes that Microsoft can push vendors toward DEP. Its Windows Logo requirements say printer driver components must run with DEP enabled and with User Account Control as a non-administrative user. Drivers shipping in 2009 or later must comply to be signed and certified."
+        },
+        {
+          "s": "steve",
+          "t": "I'd forgotten to mention that. It's effective June 1, 2009, giving everyone plenty of time. And as the OS tightens, signed drivers will become a requirement too."
+        },
+        {
+          "s": "leo",
+          "t": "They already are in 64-bit Vista."
+        },
+        {
+          "s": "steve",
+          "t": "I wondered whether Windows might end up more secure than open source platforms, which can't enforce requirements like these. Microsoft has made plenty of mistakes, but it's raising the bar and setting an example, and other OSes will be motivated to say, we're doing that too. It would be bizarre if Windows became the most secure OS in the world."
+        },
+        {
+          "s": "leo",
+          "t": "Not a bad thing. If it's the most used, it should be the most secure."
+        }
+      ]
+    },
+    {
+      "title": "Cross-Site Request Forgery",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kashyap, a security professional in Hyderabad, India, asks for an in-depth look at the lesser-known but effective cross-site request forgery."
+        },
+        {
+          "s": "steve",
+          "t": "As I read it I thought, we did a whole episode on that. Well, on cross-site scripting, which was the same sort of thing."
+        },
+        {
+          "s": "steve",
+          "t": "It's a chance to remind everyone that GRC has a site-wide search box, and a Security Now! search, in the upper right. I typed \"cross-site scripting\" and got PDFs, text pages and podcasts. After 160 weeks, with Elaine transcribing everything and Google indexing it, you'll instantly find our coverage of almost any topic in audio and text."
+        },
+        {
+          "s": "leo",
+          "t": "So cross-site request forgery is basically the same as cross-site scripting."
+        },
+        {
+          "s": "steve",
+          "t": "Yeah, a different term for the same concept."
+        },
+        {
+          "type": "fact",
+          "title": "Two different attacks",
+          "t": "Cross-site request forgery (CSRF) is not the same as cross-site scripting (XSS). XSS injects a script into a trusted site's pages. CSRF tricks your browser into sending an unwanted request to a site where you're logged in, such as a hidden form that transfers money, riding on your existing cookies. Sites defend against it with unpredictable per-form tokens and, today, SameSite cookies."
+        }
+      ]
+    },
+    {
+      "title": "Nintendo DS and WEP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Terry Voth in Toronto says his son's Nintendo DS is probably North America's biggest driver of WEP, since it supports nothing else. He flinched when his son asked to switch to WEP. If a Pavlovian response anticipates a reward, a Gibsonian response anticipates a security threat."
+        },
+        {
+          "s": "leo",
+          "t": "Instead of your three-router Y configuration, he wonders about plugging a WEP router into his main WPA router's DMZ port. He thinks nothing on the DMZ can reach his network, and the worst case is a neighbor stealing his son's Pokemon. Is he right?"
+        },
+        {
+          "s": "steve",
+          "t": "Unfortunately not. A real DMZ, on an industrial-strength firewall, is its own interface on its own network, outside the one you protect, with firewall policy blocking traffic back in."
+        },
+        {
+          "s": "steve",
+          "t": "Consumer routers misuse the term. It just means unsolicited traffic goes to that port or IP, for running a web or FTP server."
+        },
+        {
+          "s": "steve",
+          "t": "A NAT router normally only passes traffic back in after a machine inside sends something out, creating a return path. A service, by definition, receives unsolicited traffic. Google doesn't know I'm going to contact them."
+        },
+        {
+          "s": "steve",
+          "t": "Originally you configured one machine's IP to get that traffic. But routers hand out IPs by DHCP in the order machines appear, so you'd have to bind the IP to the machine's MAC address. A labeled DMZ port avoids all that, which is why it's popular."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, there really is a DMZ port. I'm used to assigning it by IP."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. The problem is it's not a separate network. WEP is really badly broken. As in our \"Even More Badly Broken WEP\" episode, freely available software cracks it in under a minute."
+        },
+        {
+          "s": "steve",
+          "t": "Without true subnet separation, free tools let someone do ARP spoofing, Address Resolution Protocol spoofing, from across the street, pretending to be your gateway and receiving your entire household's traffic."
+        },
+        {
+          "s": "steve",
+          "t": "The only secure way I know, and I've thought about it a lot, is three routers: one forming the Y, and two doing NAT, as one-way valves. ARP traffic never crosses a router boundary unless it's set up for bridging, which consumer routers can't do."
+        },
+        {
+          "s": "leo",
+          "t": "So the three-router Y works."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, and routers are so cheap now."
+        },
+        {
+          "s": "leo",
+          "t": "Another 40 bucks, dude. Nintendo also sells a USB WiFi key to share a computer's connection with the DS. But that wouldn't help."
+        },
+        {
+          "s": "steve",
+          "t": "You'd have created a probably very insecure hotspot wired into that machine."
+        },
+        {
+          "s": "leo",
+          "t": "Is WEP cheaper to implement than WPA?"
+        },
+        {
+          "s": "steve",
+          "t": "No, it's just history. WPA also uses RC4, which is fantastic crypto that WEP implemented wrong. RC4's small mixing pool doesn't randomize itself at first, so throwing away the first 256 bytes helps. Bad keys plus known packet contents let people crack WEP. WPA fixes those mistakes and isn't more computationally difficult. Toys like the DS need to support the security a security-aware household runs."
+        },
+        {
+          "type": "fact",
+          "title": "WPA and WPA2",
+          "t": "The original WPA used TKIP, built on RC4. WPA2 replaced it with AES-based CCMP, which is what home networks should use. The later Nintendo DSi and 3DS supported WPA and WPA2."
+        }
+      ]
+    },
+    {
+      "title": "OpenDNS on an Old Router",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Edward Hanson in Rexton, New Brunswick switched his D-Link DI-604 router to OpenDNS after our DNS episodes. The only way to enter the addresses was to switch from Dynamic to Static PPPoE. Is that less secure? And ShieldsUP! always says \"full stealth.\" Is he invisible to miscreants?"
+        },
+        {
+          "s": "steve",
+          "t": "PPPoE is Point to Point Protocol over Ethernet, often used for DSL. PPP was what dialup used to assign your IP and DNS. PPPoE does the same over Ethernet. The earliest DSL used static IPs. I have a friend with five static IPs who'll never give them up."
+        },
+        {
+          "s": "steve",
+          "t": "Static isn't less secure. It's a little more brittle. If the ISP changes something, he might lose connectivity, switch back to dynamic to see the new settings, then re-enter them. Until his ISP has strong DNS servers, it's worth it."
+        },
+        {
+          "s": "leo",
+          "t": "Dynamic PPPoE wants to set both the IP and the DNS servers."
+        },
+        {
+          "s": "steve",
+          "t": "Precisely. We'll do a show on DHCP soon. It can do much more than hand out an IP and DNS."
+        },
+        {
+          "s": "leo",
+          "t": "When you can override DNS manually, who wins, DHCP or your settings?"
+        },
+        {
+          "s": "steve",
+          "t": "Your settings. Windows has separate choices for obtaining your IP automatically and for specifying your own DNS servers. So even with the router's settings, he could configure DNS in Windows and it would ignore what PPPoE provides."
+        },
+        {
+          "s": "leo",
+          "t": "He just wants it in the router so all his systems get it."
+        },
+        {
+          "s": "steve",
+          "t": "As for \"full stealth\": ShieldsUP! sends a broad spectrum of probes, ICMP, funky packets to illegal ports like port 0. Some routers answer pings even when told to be stealthy. Second-generation ShieldsUP! opens a wide scoop for any traffic at all from your IP. Full stealth means nothing, not a single packet of any kind, came back."
+        },
+        {
+          "s": "leo",
+          "t": "But completely safe from miscreants? No."
+        },
+        {
+          "s": "steve",
+          "t": "If someone gets your IP, they can still blindly flood it with a denial of service attack. They won't know you're there, but they can hold you off the 'Net. And there's spam and all kinds of other things."
+        },
+        {
+          "s": "leo",
+          "t": "It's not common for someone to sniff around and find a hole anymore. You invite them in by opening an attachment or clicking a link that leads to an exploit."
+        },
+        {
+          "s": "steve",
+          "t": "ShieldsUP! mostly gives you information. Some people don't care whether their router answers pings. Full stealth just means you're full stealth. If that matters to you, we're happy to confirm it."
+        },
+        {
+          "s": "leo",
+          "t": "Part of your strategy, not sufficient by itself."
+        }
+      ]
+    },
+    {
+      "title": "TreeWalk DNS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike Graham in Hopatcong, New Jersey rolls his own DNS. He once used a free utility called TreeWalk DNS, a local DNS service on his own machine, to replace his ISP's poor service. Its forums say it's not vulnerable to spoofing, since only the local machine can access it. Do you know it? It's at ntcanuck.com."
+        },
+        {
+          "s": "steve",
+          "t": "Intimately, because it was developed in our forums by a couple of guys, and it's widely used by the security-conscious folks in GRC's newsgroups."
+        },
+        {
+          "s": "steve",
+          "t": "For anyone who doesn't know old-fashioned Usenet forums: GRC runs worthwhile security groups at news.grc.com, real INN news on a FreeBSD server, readable with Outlook or any newsreader. Not being web-based keeps them sober, with no flame wars or script kiddies."
+        },
+        {
+          "s": "steve",
+          "t": "Many there run TreeWalk, a nicely packaged BIND 9, and they've been beta testing my DNS facility. They'll set theirs to one port, confirm GRC sees it, then switch back to random ports and confirm that works. It's not for the faint of heart."
+        },
+        {
+          "s": "leo",
+          "t": "Didn't BIND have the poisoning problem?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, and BIND is what just got patched, so you need the latest version. Yahoo! stayed on BIND 8, saying nothing was wrong with it, until Kaminsky's news. Then it abandoned BIND 8 for BIND 9."
+        },
+        {
+          "s": "leo",
+          "t": "The latest TreeWalk I see is from 2005."
+        },
+        {
+          "s": "steve",
+          "t": "Then you got me. I didn't do the homework. I run BIND 9 on my own FreeBSD machine and never used TreeWalk."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe it's a front end and you need the latest BIND. That would solve it. BIND is a pain to install, so anything easier is appreciated."
+        },
+        {
+          "type": "fact",
+          "title": "Keep BIND current",
+          "t": "Any BIND-based resolver had to be running a version patched in July 2008 or later to get source port randomization, so a package from 2005 would need its BIND updated."
+        }
+      ]
+    },
+    {
+      "title": "Wells Fargo: Not Case Sensitive Either",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Danny Howerton in Ogden, Utah tested his Wells Fargo password after our last show. It's also not case sensitive. Their technical department confirmed it and said they'd submit a ticket to security, but doubted it would change unless many people asked."
+        },
+        {
+          "s": "steve",
+          "t": "You've seen login warnings that \"passwords are case-sensitive,\" as they should be. Using case, like capitalizing the vowels and lowercasing the consonants, gives a short phrase much more robust security."
+        },
+        {
+          "s": "leo",
+          "t": "Didn't you say it adds bits?"
+        },
+        {
+          "s": "steve",
+          "t": "Each letter whose case could vary doubles the guesses, adding an effective bit. Clearly people were having trouble logging in, so Wells Fargo made it easier for them, and for the bad guys. Plus they ignore extra characters at the end."
+        },
+        {
+          "s": "leo",
+          "t": "It's like an eight-character, all-uppercase password. Ridiculous."
+        },
+        {
+          "s": "steve",
+          "t": "They buckled to consumers who couldn't log in. How upset will those consumers be when their accounts are emptied because of this policy? It's time to start training people about case-sensitive passwords."
+        },
+        {
+          "type": "fact",
+          "title": "Wells Fargo today",
+          "t": "Wells Fargo made its online banking passwords case-sensitive in later years."
+        }
+      ]
+    },
+    {
+      "title": "Savvy Observation: You Can't Escape DNS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Savvy Observation of the Week, from Tim Knittel in Lexington, Kentucky. In Episode 156 a listener asked about bypassing DNS by typing sites' IP addresses. Tim says it won't protect him."
+        },
+        {
+          "s": "leo",
+          "t": "First, not all sites use relative links. Enter the IP, and the next link takes you to example.com by name. My site does that, rewriting to TWiT.tv."
+        },
+        {
+          "s": "leo",
+          "t": "Second, external links and subdomain links use names. Click coolstuff.example.com, and bye bye."
+        },
+        {
+          "s": "leo",
+          "t": "Third, everything else uses DNS automatically: email, newsgroups, RSS readers, podcast catchers, Windows Update, even the browser checking for updates. DNS is too integral to computing to be on the 'Net without it."
+        },
+        {
+          "s": "steve",
+          "t": "That's why I thought it was a good point. I got excited by the idea of using the IP itself. You can reach the site, and that first page works. But if it redirects you to a URL, your browser looks up the name and can be spoofed."
+        },
+        {
+          "s": "steve",
+          "t": "You're only safe if you go by IP and stay by IP. And everything else uses DNS too."
+        }
+      ]
+    },
+    {
+      "title": "Very Good Point: What a DEP Alert Means",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marc Argent makes the Very Good Point of the Week. If Flash triggers a DEP alert, how do you know whether it's an exploit or just poor programming by Adobe? Blindly disabling DEP could be dangerous. And we checked: Silverlight works fine with DEP on."
+        },
+        {
+          "s": "leo",
+          "t": "So if I get a DEP alert in Flash, is someone attacking me?"
+        },
+        {
+          "s": "steve",
+          "t": "I loved his point, because I too glibly said turn DEP on and start excluding things that have problems. What if the problem is an exploit?"
+        },
+        {
+          "s": "steve",
+          "t": "You can only tell by careful observation. If it happened when a website launched some Flash, I'd be suspicious it was exploiting a flaw, and I wouldn't disable DEP."
+        },
+        {
+          "s": "steve",
+          "t": "When I hit DEP errors, it's usually not 'Net related. I'm dragging something to a tray or starting an app, and it blows up, so it's just incompatible. But if the Internet, email or something from elsewhere caused it, think: maybe DEP is protecting me from exactly what it's for. Don't just exclude that product forever."
+        }
+      ]
+    },
+    {
+      "title": "Wrapping Up",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Send questions to GRC.com/feedback."
+        },
+        {
+          "s": "steve",
+          "t": "Please do. I can't respond to, or even read, all of it. There were 450-some submissions since I last emptied the box. I read all I can."
+        },
+        {
+          "s": "leo",
+          "t": "The question we read is often representative of many similar ones."
+        },
+        {
+          "s": "steve",
+          "t": "Many people wrote about Chrome, and we'll cover it in our usual depth once I'm up to speed."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What \"cross-context leakage\" did Steve's newsgroup testers find in Chrome?",
+      "options": [
+        "It blocked incoming third-party cookies but still sent ones it already had",
+        "It deleted all cookies",
+        "It shared passwords between tabs",
+        "It blocked first-party cookies"
+      ],
+      "answer": 0,
+      "explain": "A cookie picked up during a redirect could then be sent at other sites."
+    },
+    {
+      "q": "What security change in VMware Workstation 6.0.5 did Steve praise?",
+      "options": [
+        "Setting kill bits so its ActiveX controls can't be used in Internet Explorer",
+        "Encrypting virtual disks",
+        "Removing USB support",
+        "Adding a firewall"
+      ],
+      "answer": 0,
+      "explain": "None of the controls were meant for browsers."
+    },
+    {
+      "q": "Why can't a consumer router's \"DMZ port\" safely isolate a WEP network?",
+      "options": [
+        "It isn't a separate network, so attacks like ARP spoofing can still reach your other machines",
+        "It blocks all traffic",
+        "It disables NAT",
+        "It only works with WPA"
+      ],
+      "answer": 0,
+      "explain": "Steve's three-router Y configuration keeps the networks apart."
+    },
+    {
+      "q": "What does \"full stealth\" in ShieldsUP! mean?",
+      "options": [
+        "Nothing at all came back from your IP in response to any probe",
+        "You're immune to all attacks",
+        "Your IP is hidden from everyone",
+        "Your router has antivirus"
+      ],
+      "answer": 0,
+      "explain": "Someone could still flood your IP with a denial of service attack."
+    },
+    {
+      "q": "What new weakness did a listener find in Wells Fargo's passwords?",
+      "options": [
+        "They weren't case sensitive",
+        "They had to be numbers only",
+        "They were emailed in plain text",
+        "They never expired"
+      ],
+      "answer": 0,
+      "explain": "Extra characters at the end were also ignored."
+    },
+    {
+      "q": "Why won't typing a site's IP address protect you from DNS spoofing?",
+      "options": [
+        "Links, redirects and other programs still look up domain names through DNS",
+        "IP addresses can be spoofed too",
+        "Browsers refuse IP addresses",
+        "IP addresses change every hour"
+      ],
+      "answer": 0,
+      "explain": "Email, updates and RSS readers all use DNS automatically."
+    }
+  ]
+}
