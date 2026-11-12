@@ -643,11 +643,19 @@
         },
         {
           "s": "leo",
-          "t": "And this for $79?"
+          "t": "And all this for $79."
         },
         {
           "s": "david",
-          "t": "That's the 1GB. The 4GB is $149, shipping now, with 8GB by the end of the month. They're not cheap to make."
+          "t": "Right. It's a good deal. They're not cheap to make, and there's a lot of technology and thought in them. We're shipping 4GB devices now, and hope to have 8GB by the end of the month."
+        },
+        {
+          "s": "leo",
+          "t": "How much is the 4GB?"
+        },
+        {
+          "s": "david",
+          "t": "$149."
         },
         {
           "s": "steve",
