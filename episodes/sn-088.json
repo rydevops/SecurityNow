@@ -1,0 +1,494 @@
+{
+  "number": 88,
+  "title": "Listener Feedback Q&A #18",
+  "subtitle": "Botnets, a vulnerable bank, spotting zombies and disk tools",
+  "date": "2007-04-19",
+  "description": "Listener questions: would turning PCs off starve botnets, a listener who found a cross-site scripting hole in his bank, UAC failing to elevate, whether malware can undo GRC's fixes and open firewall holes, WPA-PSK's safety, how to tell if a PC is a zombie, favorite defrag and disk-space tools, stopping SSH tunnels, a Webmin break-in, a dorm room with a public IP, and why Jikto borrows your browser.",
+  "transcript": "https://www.grc.com/sn/sn-088.txt",
+  "audio": "http://media.GRC.com/sn/SN-088.mp3",
+  "chapters": [
+    {
+      "title": "Even Experts Learn Something",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 88, divisible by four more than once, so it's the grippingest of all: your questions."
+        },
+        {
+          "s": "steve",
+          "t": "The variety helps, and listeners now send comments worth sharing too. People who've been in IT 45 years write that every episode teaches them one or two things."
+        },
+        {
+          "s": "leo",
+          "t": "The people who say \"I know everything\" are the ones to watch out for. Your thirst for knowledge is insatiable."
+        },
+        {
+          "s": "steve",
+          "t": "The show drives me into more detail on things I'd only known in general."
+        }
+      ]
+    },
+    {
+      "title": "Would Turning PCs Off Starve Botnets?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Donald Parker of Laurel, Maryland. Whenever I see Maryland, I think National Security Administration. He asks: doesn't the botnet epidemic exist because people leave broadband PCs on 24/7? Limiting their connected time would limit the bots."
+        },
+        {
+          "type": "fact",
+          "title": "Leo's slip",
+          "t": "The NSA, headquartered near Laurel at Fort Meade, Maryland, is the National Security Agency."
+        },
+        {
+          "s": "steve",
+          "t": "It wouldn't solve it completely. When I researched denial-of-service attacks, I got into the IRC channel where a major botnet's bots phoned home as they came online: \"Bot #34926 ready for action.\""
+        },
+        {
+          "s": "leo",
+          "t": "It's terrifying how fast thousands join."
+        },
+        {
+          "s": "steve",
+          "t": "Tracing their IPs, many were dial-up back then. Even a machine not always on starts its bad stuff when it connects."
+        },
+        {
+          "s": "leo",
+          "t": "With 100,000 bots worldwide, even if half are off, that's 50,000."
+        },
+        {
+          "s": "steve",
+          "t": "Dial-up bots are limited by 56K modems, so broadband is the bigger problem, with much more upstream bandwidth. Always-on broadband is the worst case. But it's a sliding scale, not an elimination."
+        },
+        {
+          "s": "leo",
+          "t": "Donald wrote again. He says he's the only person on the planet who knows how to defeat bot herders. A distributed attack needs a distributed defense: every broadband PC should be forced to disconnect automatically when unused, since hackers use the computers more than their owners."
+        },
+        {
+          "s": "steve",
+          "t": "People leave machines on for many reasons, like downloading big podcasts overnight."
+        },
+        {
+          "s": "leo",
+          "t": "Universities and businesses leave computers on for legitimate reasons. Of 600 million Windows PCs, maybe 100 million are on at any moment. Plenty."
+        },
+        {
+          "s": "steve",
+          "t": "And I'm not one for turning machines on and off. Mine are all on all the time. I know that's not politically correct for energy use, but heating and cooling is wear and tear. Newer machines spin down drives and blank monitors when idle. And unplugging from the Net is a pain."
+        }
+      ]
+    },
+    {
+      "title": "A Listener Finds a Hole in His Bank",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt in New Zealand was inspired by our cross-site scripting episode to check his bank's site. It's vulnerable. And it mishandles its session ID cookie. Together, an attacker could craft a link that plants a persistent cookie in a customer's browser, even if they don't log in. When they later return and log in, the session ID is the same, so the attacker can hijack the session and make transfers. He's dealing with the bank and won't say more."
+        },
+        {
+          "s": "steve",
+          "t": "I left out details inappropriate for a huge anonymous audience, but he really seems to know what he's talking about."
+        },
+        {
+          "type": "fact",
+          "title": "Session fixation",
+          "t": "This is called \"session fixation\": the attacker sets the session ID before the victim logs in. Sites prevent it by issuing a brand-new session ID at login."
+        },
+        {
+          "s": "steve",
+          "t": "I cautioned him. Nobody likes being told their banking site is vulnerable. Well-meaning hackers have been brought up on charges."
+        },
+        {
+          "s": "leo",
+          "t": "Adrian Lamo comes to mind."
+        },
+        {
+          "s": "steve",
+          "t": "Some did it the wrong way. But our laws are so restrictive that a bank's attorney could argue his experiments were hacking, outside the site's terms of service. People who only wanted to help have faced lawsuits and criminal charges. If you find something like this, start anonymously, and don't put a bull's-eye on yourself."
+        }
+      ]
+    },
+    {
+      "title": "UAC Won't Elevate",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Nathan Clark of Allendale, Michigan likes Vista Home Premium more than he expected. But sometimes a program needing administrative rights won't switch over properly, and he must log out and back in."
+        },
+        {
+          "s": "steve",
+          "t": "Having programmed UAC support for SecurAble, I understand it. You log in with limited rights, and UAC elevates them. But Windows grants some resources stamped with your rights at the moment you ask. If a program gets them before Windows knows it needs privileges, they keep the limited rights. They aren't regranted when UAC elevates."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft solved running with too much privilege without making you log out and back in, mostly elegantly. But some programs assume the rights you log in with are the rights you'll have all session. Microsoft changed that rule. The program needs updating, or it may never be happy elevating midstream."
+        }
+      ]
+    },
+    {
+      "title": "Can Malware Undo GRC's Fixes?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris in Connecticut used Steve's free Shoot The Messenger and UnPlug n' Pray to disable unneeded services. What stops malware from turning them back on? And programs like Retrospect Backup offer to open ports in Windows Firewall. Couldn't malware do that silently? Are these measures helpful or window dressing?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. Before and through XP, I wrote quick freeware to turn off services Microsoft ran by default that had known vulnerabilities. The Messenger service caused pop-ups and listened on an open port that could be exploited. Universal Plug and Play was found vulnerable. I was annoyed that Microsoft ran them for everyone."
+        },
+        {
+          "s": "steve",
+          "t": "With Service Pack 2, Windows Firewall is on, so open ports are behind it. But he's right: there's a documented, officially supported way for any software, good or bad, to open a hole in the firewall without turning it off and raising alarms."
+        },
+        {
+          "s": "steve",
+          "t": "That's why a router is still good with a personal firewall. Software inside can't reconfigure a NAT router if you've disabled Universal Plug and Play on it."
+        },
+        {
+          "s": "steve",
+          "t": "So you can still turn those services off, but it's not that necessary now, and things may depend on them."
+        },
+        {
+          "s": "leo",
+          "t": "But on the computer, malware can do anything."
+        },
+        {
+          "s": "steve",
+          "t": "Once compromised, you can never trust it again."
+        },
+        {
+          "s": "leo",
+          "t": "That's why I say software firewalls can be disabled."
+        },
+        {
+          "s": "steve",
+          "t": "Before SP2, the firewall was off, so hackers didn't bother. Now it's always on, with a published API so instant messaging works without manual setup. Good programs use it, and so can malware."
+        }
+      ]
+    },
+    {
+      "title": "Is WPA-PSK Crackable?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Aaron Burns in the U.K. heard WPA-PSK can be cracked offline with a dictionary attack. But with a 63-character random password, it's virtually uncrackable, right?"
+        },
+        {
+          "s": "leo",
+          "t": "People ask me weekly. It's crackable the way PGP is: with a bad password."
+        },
+        {
+          "s": "steve",
+          "t": "Properly said, the only known attack on WPA with a pre-shared key is discovering the key by taking encrypted data offline and having a powerful computer try all keys or dictionary combinations. With a long key that looks like gobbledygook, from GRC.com/passwords, generated over a secure connection and never repeated, you're as secure as you can be. You can even mix pieces from several refreshes."
+        },
+        {
+          "s": "steve",
+          "t": "Last week brought huge progress in cracking WEP, the original, insecure protocol. It's next week's topic. Any WEP network can now be cracked in about a minute."
+        },
+        {
+          "s": "steve",
+          "t": "I don't even know my own WPA password. It's 63 characters of junk in a text file on a USB drive. I plug it in, paste it, and remove it."
+        },
+        {
+          "s": "leo",
+          "t": "And you only enter it once."
+        },
+        {
+          "s": "steve",
+          "t": "XP and Vista are happier with WPA than WEP."
+        }
+      ]
+    },
+    {
+      "title": "Is Pop's PC a Zombie?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Jones of Midland fixes his less computer-literate relatives' machines. The nightmare, next to the family fortune going to Nigeria, is Pop's PC becoming a zombie. How do you tell?"
+        },
+        {
+          "s": "steve",
+          "t": "A friend recently said his system felt slow. I ran Task Manager, via Control-Alt-Delete, and browsed the process list. Many names are cryptic, but you develop familiarity."
+        },
+        {
+          "s": "steve",
+          "t": "If something looks suspicious, like pqrdzx.exe, I search for the file, right-click, and check Properties. The Version tab usually shows it's Corel's or an HP scanner driver. If not, its location often gives a clue, like under an app installed last week."
+        },
+        {
+          "s": "steve",
+          "t": "That fails against rootkits. A kernel rootkit edits the linked list of running processes, making the entry before it point past it, unlinking itself, so Task Manager never sees it. Task Manager works more often than not, so it's my first stop."
+        },
+        {
+          "s": "steve",
+          "t": "Second is Netstat, which we covered in a whole episode. In a command window it shows network activity, open ports and connections, and in XP and Vista, which process is responsible. Far fewer processes should be listening or talking."
+        },
+        {
+          "s": "leo",
+          "t": "So it's not like antivirus. There are too many ways in."
+        },
+        {
+          "s": "steve",
+          "t": "And things happen before the antivirus companies catch up."
+        },
+        {
+          "s": "leo",
+          "t": "AVG just announced a free rootkit detector, among other choices."
+        }
+      ]
+    },
+    {
+      "title": "Favorite Disk Tools",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Babak in San Jose asks which defrag and maintenance tools Steve prefers under Windows, besides SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "For defragging, Vopt from Golden Bow Software, still my favorite."
+        },
+        {
+          "s": "leo",
+          "t": "Jerry Pournelle sang its praises."
+        },
+        {
+          "s": "steve",
+          "t": "I'm less and less impressed by Microsoft's defragger, and Vista's took all the meat out."
+        },
+        {
+          "s": "leo",
+          "t": "You're not supposed to need it with NTFS."
+        },
+        {
+          "s": "steve",
+          "t": "But I don't want little red teeth all over my drive. I like everything in little blue blocks. Windows' Disk Cleanup is worth running too: it empties the trash and deletes cached browser junk, often hundreds of megabytes. Vopt has a deeper cleanup."
+        },
+        {
+          "s": "steve",
+          "t": "Defragging also means less head movement, so less wear and heat."
+        },
+        {
+          "s": "leo",
+          "t": "But don't defrag every day, or you overexercise the drive."
+        },
+        {
+          "s": "steve",
+          "t": "And defragging revisits areas of the drive, letting it notice problems, a little like SpinRite, though SpinRite covers the whole surface."
+        },
+        {
+          "s": "leo",
+          "t": "Vopt works with Vista, $40 at Vopt.com."
+        },
+        {
+          "s": "steve",
+          "t": "My other favorite is SpaceMonger. Version 1.4 is free. Its author Sean charges for 2.0, but 1.4 is all anyone needs."
+        },
+        {
+          "s": "steve",
+          "t": "It shows your folders and files as nested rectangles, sized by how much space they take. Big chunks jump out: videos you forgot about, audio files buried deep in My Documents."
+        },
+        {
+          "s": "steve",
+          "t": "At my slow friend's house, I downloaded it on the spot. He had six or seven forgotten downloaded DVDs, 4.7GB each. It stood out like a glaring problem."
+        },
+        {
+          "s": "leo",
+          "t": "There's a similar OS X application. I'll find it."
+        },
+        {
+          "s": "steve",
+          "t": "The original program like this was burdened with patent claims, but Sean found the nested rectangle idea came from a university and was placed in the public domain."
+        },
+        {
+          "type": "fact",
+          "title": "Treemaps",
+          "t": "The technique is called a treemap, invented by Ben Shneiderman at the University of Maryland around 1990. Disk Inventory X is a popular free Mac equivalent, and WinDirStat does it on Windows."
+        }
+      ]
+    },
+    {
+      "title": "Can You Block SSH Tunnels?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jon in Katy, Texas runs a small corporate LAN with a Cisco router and stateful firewall. How can he allow outbound SSH but block tunnels that bypass his proxy and leak data?"
+        },
+        {
+          "s": "steve",
+          "t": "There's nothing he can do."
+        },
+        {
+          "s": "leo",
+          "t": "If you allow outbound SSH, you allow tunneling."
+        },
+        {
+          "s": "steve",
+          "t": "It's encrypted, so you can't see inside. The only idea: proxy SSH and force users to accept a certificate the proxy holds. That's a corporate-authorized man in the middle: terminate SSH at the firewall, decrypt and filter it, then open a second SSH connection outward. Possible, but not easy."
+        },
+        {
+          "s": "leo",
+          "t": "A corporate VPN instead?"
+        },
+        {
+          "s": "steve",
+          "t": "A VPN is an encrypted tunnel too. Allow it out, and you can't monitor what users do."
+        }
+      ]
+    },
+    {
+      "title": "A Webmin Break-In",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jason Anderson in Wisconsin heard Webmin in our cross-site scripting list. His Gentoo Linux server had recently been compromised through it. He'd installed Webmin and never updated it."
+        },
+        {
+          "s": "leo",
+          "t": "The attacker found his Webmin credentials, logged in by SSH and set up a PayPal phishing site in an Apache subdirectory. A week later Road Runner called: he was hosting a phishing site, and his domain was being revoked."
+        },
+        {
+          "s": "leo",
+          "t": "He removed it and checked his bash history. Remember, attackers can alter those logs. His SSH logs showed no brute force: they logged in correctly the first time. He traced it to his very old Webmin and upgraded immediately."
+        },
+        {
+          "s": "leo",
+          "t": "His lesson: whatever software is on your server must be updated regularly. He now has a script check for updates daily and email him. Many Linuxes do that now. And SpinRite has saved professors' hard drives, and millions in grant applications, at his university office."
+        },
+        {
+          "s": "steve",
+          "t": "His forensics fit exactly what we described: from that vulnerability, they got a command shell and did whatever they wanted."
+        }
+      ]
+    },
+    {
+      "title": "A Dorm Room With a Public IP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian K., a Penn State student, runs Vista under Boot Camp on his Mac. ShieldsUP! shows the same IP as his computer. His dorm took his MAC address and gave him a static IP. Is he directly on the Internet?"
+        },
+        {
+          "s": "steve",
+          "t": "That means he's not behind a NAT router. ShieldsUP! shows the public IP connecting to it. Behind a home router, your computer is 192.168-something, while ShieldsUP! sees the router's public address."
+        },
+        {
+          "s": "steve",
+          "t": "The school probably runs a DHCP server that matches MAC addresses to public IPs. So he depends entirely on his software firewall, which would make me nervous. NAT routers are about $49. Put one in his room, and he gets Wi-Fi and multiple computers, too."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't the campus firewall all inbound traffic?"
+        },
+        {
+          "s": "steve",
+          "t": "Good point. It could."
+        },
+        {
+          "s": "leo",
+          "t": "It's Penn State. I can't believe they wouldn't. But we can never assume."
+        },
+        {
+          "s": "steve",
+          "t": "Strange things happen at universities."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe it also reminds students that file sharing is traced to their own address."
+        }
+      ]
+    },
+    {
+      "title": "Why Jikto Borrows Your Browser",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Victor Rodriguez of Arvada, Colorado asks: why would someone use my browser to hunt for cross-site scripting holes, rather than their own system?"
+        },
+        {
+          "s": "steve",
+          "t": "To avoid being traced. You can spoof UDP floods, but not TCP connections. A scanned server logs the real IP. Logs, a court order to the ISP, and the FBI knocks. With Jikto, it's your IP."
+        },
+        {
+          "s": "leo",
+          "t": "And you get an army. It's the ultimate distributed computing, without permission."
+        },
+        {
+          "s": "leo",
+          "t": "Next week?"
+        },
+        {
+          "s": "steve",
+          "t": "A dramatic breakthrough in cracking WEP. What used to take a long time now takes under a minute."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why wouldn't turning broadband PCs off defeat botnets?",
+      "options": [
+        "Plenty of machines are on at any moment, and bots connect whenever their PC does",
+        "Bots need dial-up",
+        "Routers prevent it",
+        "Botnets don't exist"
+      ],
+      "answer": 0,
+      "explain": "Many PCs stay on for legitimate reasons."
+    },
+    {
+      "q": "How can software silently get through Windows Firewall?",
+      "options": [
+        "Through Microsoft's documented interface for opening ports",
+        "By turning it off",
+        "It can't",
+        "By rebooting"
+      ],
+      "answer": 0,
+      "explain": "A NAT router with UPnP disabled still blocks it."
+    },
+    {
+      "q": "What is the only known attack on WPA with a pre-shared key?",
+      "options": [
+        "Capturing traffic and brute-forcing the key offline",
+        "Sniffing the key in the air",
+        "A firmware backdoor",
+        "Cracking AES"
+      ],
+      "answer": 0,
+      "explain": "A long random key defeats it."
+    },
+    {
+      "q": "Why can't Task Manager always reveal a zombie?",
+      "options": [
+        "Rootkits can unlink themselves from Windows' list of running processes",
+        "It's too slow",
+        "Bots run at night",
+        "It only shows programs"
+      ],
+      "answer": 0,
+      "explain": "Netstat is another check."
+    },
+    {
+      "q": "Why can't a firewall stop outbound SSH tunnels?",
+      "options": [
+        "SSH traffic is encrypted, so the firewall can't see what's inside",
+        "SSH uses UDP",
+        "Firewalls don't check port 22",
+        "Tunnels are illegal"
+      ],
+      "answer": 0,
+      "explain": "Only an SSH proxy acting as a man in the middle could inspect it."
+    },
+    {
+      "q": "Why does Jikto use visitors' browsers to scan sites?",
+      "options": [
+        "The scanned site logs the browser's real IP, not the attacker's, and it gets an army of scanners",
+        "Browsers are faster",
+        "It needs cookies",
+        "To avoid DEP"
+      ],
+      "answer": 0,
+      "explain": "TCP connections can't be spoofed."
+    }
+  ]
+}
