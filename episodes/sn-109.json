@@ -8,15 +8,36 @@
   "audio": "http://media.GRC.com/sn/SN-109.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #109",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 109, for September 13, 2007: Steve's eCommerce System."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, everybody's favorite security podcast, the number one tech podcast in the nation. You'll pick up your award in a couple of weeks in Ontario, California, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today's main topic is something I built myself: the eCommerce system behind GRC's store, which I wrote in assembly language."
+        },
+        {
+          "s": "steve",
+          "t": "First, some news: a new feedback page, free help with defragging, VeriSign and Bank of America tokens, and a SpinRite story with a Linux twist."
+        }
+      ]
+    },
+    {
       "title": "An Award, and a Week of Coding",
       "beats": [
         {
           "s": "leo",
-          "t": "Security Now!, the number one tech podcast. You'll pick up your award in a couple of weeks in Ontario, California, while I'm in Vancouver, Canada."
+          "t": "I'll be in Vancouver, Canada while you pick up your award."
         },
         {
           "s": "steve",
-          "t": "We owe it to our listeners. I didn't even know the competition was happening until our quick plea for votes."
+          "t": "First, a word about that award. We owe it to our listeners. I didn't even know the competition was happening until our quick plea for votes."
         },
         {
           "s": "leo",
@@ -57,7 +78,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Around Episode 101, I told listeners they could email the address our Security Now! feedback form sends to. About 24 hours later, spam began."
+          "t": "First, an update on how to write to me. Around Episode 101, I told listeners they could email the address our Security Now! feedback form sends to. About 24 hours later, spam began."
         },
         {
           "s": "leo",
@@ -110,7 +131,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last week a listener asked for the free defragger I'd mentioned. I said Vopt, now at 8.2 I think, isn't free, and I now use PerfectDisk."
+          "t": "A follow-up on the defragging question from last week. A listener asked for the free defragger I'd mentioned. I said Vopt, now at 8.2 I think, isn't free, and I now use PerfectDisk."
         },
         {
           "s": "steve",
@@ -204,7 +225,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Matt in New Brunswick, Canada had uncorrectable errors on his Linux machine. He backs up nightly at 3 a.m. to an external drive and monthly to DVD-R, he's the paranoid type, so he cared more about replacement cost than data."
+          "t": "Now a SpinRite story with a Linux twist. Matt in New Brunswick, Canada had uncorrectable errors on his Linux machine. He backs up nightly at 3 a.m. to an external drive and monthly to DVD-R, he's the paranoid type, so he cared more about replacement cost than data."
         },
         {
           "s": "steve",
@@ -233,7 +254,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "When I started, people said, you're writing an eCommerce system?"
+          "t": "Now to the main topic: GRC's homemade store. First, why I wrote it myself. When I started, people said, you're writing an eCommerce system?"
         },
         {
           "s": "leo",
@@ -282,7 +303,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My system doesn't use or require cookies or scripting, and it has no messy URLs, just about eight characters identifying the page. So how does it save state?"
+          "t": "The first design problem was how to keep track of an order without cookies or scripts. My system doesn't use or require cookies or scripting, and it has no messy URLs, just about eight characters identifying the page. So how does it save state?"
         },
         {
           "s": "steve",
@@ -323,7 +344,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My system stores nothing on the server. You fill out the first form and submit it. Since I require no scripting, the server checks it: the email looks like an email, and the card number passes the Mod 9 check, a simple formula that catches typos and transpositions."
+          "t": "Here is the answer. My system stores nothing on the server. You fill out the first form and submit it. Since I require no scripting, the server checks it: the email looks like an email, and the card number passes the Mod 9 check, a simple formula that catches typos and transpositions."
         },
         {
           "type": "fact",
@@ -373,7 +394,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You've seen the warnings on purchase buttons: click only once, or you may be charged twice."
+          "t": "A second problem every store faces is the double-click. You've seen the warnings on purchase buttons: click only once, or you may be charged twice."
         },
         {
           "s": "leo",
@@ -447,7 +468,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I also wanted no separate registration code. When you buy SpinRite, you get a unique download link, and the copy you download already contains your name, serial number and other data, prelicensed for you."
+          "t": "Next, how downloads work. I also wanted no separate registration code. When you buy SpinRite, you get a unique download link, and the copy you download already contains your name, serial number and other data, prelicensed for you."
         },
         {
           "s": "steve",
@@ -488,7 +509,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My last story I thought was humorous, though a couple of customers didn't. I built a generic hacker lockout. An eCommerce system should be intolerant of people guessing card numbers, or trying street addresses for a stolen card."
+          "t": "My last story is about a bug in the store that I thought was humorous, though a couple of customers didn't. I built a generic hacker lockout. An eCommerce system should be intolerant of people guessing card numbers, or trying street addresses for a stolen card."
         },
         {
           "s": "steve",
@@ -537,7 +558,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "When did you last fix a bug in it?"
+          "t": "Does the store have a name? And when did you last fix a bug in it?"
         },
         {
           "s": "steve",
@@ -574,7 +595,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Do you comment?"
+          "t": "Let's talk about the code itself. Since you write everything in assembly, do you comment it?"
         },
         {
           "s": "steve",
@@ -635,7 +656,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "How big is SpinRite?"
+          "t": "One last question about your coding. How big is SpinRite?"
         },
         {
           "s": "steve",

@@ -8,15 +8,32 @@
   "audio": "http://media.GRC.com/sn/SN-105.mp3",
   "chapters": [
     {
-      "title": "Year Three, and a Podcast Award",
+      "title": "Welcome to Security Now! #105",
       "beats": [
         {
           "s": "leo",
-          "t": "It's Security Now!, now entering our third year."
+          "t": "This is Security Now! with Steve Gibson, Episode 105, for August 16, 2007: LeakTests."
+        },
+        {
+          "s": "leo",
+          "t": "Hey, it's time for Security Now!, a chance to look at security in all its guises with the expert, Steve Gibson of GRC.com. And we're now entering our third year of podcasting."
         },
         {
           "s": "steve",
-          "t": "Episode 105 is the first of year three. And I want to thank our listeners. It's 100 percent their work that won us the People's Choice award for Best Science & Technology Podcast this year."
+          "t": "Thanks, Leo. First some good news about an award, a few corrections, August's Patch Tuesday, and a SpinRite story."
+        },
+        {
+          "s": "steve",
+          "t": "Then today's topic: personal firewall leaktests, the tools that show how malware can slip past a firewall that is supposed to stop programs from reaching the Internet."
+        }
+      ]
+    },
+    {
+      "title": "Year Three, and a Podcast Award",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Let's start with good news. Episode 105 is the first of year three. And I want to thank our listeners. It's 100 percent their work that won us the People's Choice award for Best Science & Technology Podcast this year."
         },
         {
           "s": "steve",
@@ -41,7 +58,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Several people noted that Australia's capital isn't Sydney. It's the only city there I was really aware of."
+          "t": "Some corrections from last week. Several people noted that Australia's capital isn't Sydney. It's the only city there I was really aware of."
         },
         {
           "s": "leo",
@@ -74,7 +91,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two days ago, the second Tuesday, the 14th, Microsoft dropped nine security updates, including serious problems in its XML core services."
+          "t": "Now to this month's security news. Two days ago, the second Tuesday, the 14th, Microsoft dropped nine security updates, including serious problems in its XML core services."
         },
         {
           "s": "steve",
@@ -103,10 +120,6 @@
         {
           "s": "leo",
           "t": "It keeps changing. I'm grudgingly impressed by the bad guys' ingenuity."
-        },
-        {
-          "s": "steve",
-          "t": "A perfect segue. That's exactly what our listeners will feel after today's topic: personal firewall leaktests."
         }
       ]
     },
@@ -115,7 +128,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "First, a SpinRite story from Ken, first name only, for security. He's listened since Episode 1. His father bought him SpinRite, and he's only used it for maintenance scans, which will likely keep him from ever needing recovery."
+          "t": "Before today's topic, a SpinRite story from Ken, first name only, for security. He's listened since Episode 1. His father bought him SpinRite, and he's only used it for maintenance scans, which will likely keep him from ever needing recovery."
         },
         {
           "s": "steve",
@@ -136,7 +149,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Some history. I believe I coined the term \"leaktest,\" because I wrote the first one."
+          "t": "Now to today's topic: personal firewall leaktests. And I think you'll end up feeling that same grudging admiration for the bad guys. First, some history. I believe I coined the term \"leaktest,\" because I wrote the first one."
         },
         {
           "s": "leo",
@@ -221,7 +234,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "That was just the beginning. There are now about 15 leaktests, far more powerful and clever. What annoys me is that none got enough attention to make firewalls address them."
+          "t": "My LeakTest was just the beginning. There are now about 15 leaktests, far more powerful and clever. What annoys me is that none got enough attention to make firewalls address them."
         },
         {
           "s": "steve",
@@ -246,7 +259,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The first, TooLeaky, does something obvious that wasn't initially caught. It launches a fresh, real copy of IE and sends your data as query parameters."
+          "t": "Let me walk through some of the newer ones, starting with how malware can borrow a trusted program. The first, TooLeaky, does something obvious that wasn't initially caught. It launches a fresh, real copy of IE and sends your data as query parameters."
         },
         {
           "s": "steve",
@@ -263,7 +276,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Next, FireHole, by Robin Keir, a super-sharp security guy who hangs out in our newsgroups. It was an early demonstration of cross-process DLL injection."
+          "t": "Next, tests that inject code into trusted programs. FireHole, by Robin Keir, a super-sharp security guy who hangs out in our newsgroups. It was an early demonstration of cross-process DLL injection."
         },
         {
           "s": "steve",
@@ -301,7 +314,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "MBtest uses the WinPcap drivers I mentioned a few weeks ago, installing them in the network stack below the firewall. The firewall watches traffic in the IP stack, but it isn't installed low enough to see it."
+          "t": "Other tests go under, around or through the firewall instead. MBtest uses the WinPcap drivers I mentioned a few weeks ago, installing them in the network stack below the firewall. The firewall watches traffic in the IP stack, but it isn't installed low enough to see it."
         },
         {
           "s": "steve",
@@ -347,7 +360,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So there are this many known ways for malware to get past every personal firewall today. Look up yours in the chart. Many exploits have never been handled, though every firewall maker knows them."
+          "t": "So what does all this add up to? There are this many known ways for malware to get past every personal firewall today. Look up yours in the chart. Many exploits have never been handled, though every firewall maker knows them."
         },
         {
           "s": "steve",

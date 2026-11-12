@@ -8,15 +8,32 @@
   "audio": "http://media.GRC.com/sn/SN-102.mp3",
   "chapters": [
     {
-      "title": "Mod 4 Plus 2, and Geeks Versus Nerds",
+      "title": "Welcome to Security Now! #102",
       "beats": [
         {
           "s": "leo",
-          "t": "Today is our first Mailbag edition."
+          "t": "This is Security Now! with Steve Gibson, Episode 102, for July 26, 2007: Steve's Mailbag."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, where we talk about securing your computer, your access and your life. Steve, today is our first Mailbag edition."
         },
         {
           "s": "steve",
-          "t": "I loved an email whose sender I can't credit. The subject: \"So sorry you won't ever do any mailbag episodes.\""
+          "t": "It is, Leo. Instead of one big topic, we're going through listener mail."
+        },
+        {
+          "s": "steve",
+          "t": "We'll start with the name of the format, then follow up on PayPal's security key, SpinRite stories, antivirus and CAPTCHAs. After that: biometrics, TOR, image spam, digital signatures, and a Catch-22 from AT&T."
+        }
+      ]
+    },
+    {
+      "title": "Mod 4 Plus 2, and Geeks Versus Nerds",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Let's start with the format itself. I loved an email whose sender I can't credit. The subject: \"So sorry you won't ever do any mailbag episodes.\""
         },
         {
           "s": "steve",
@@ -61,7 +78,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Much of the mail is about Episode 101, on CAPTCHAs and on the PayPal Security Key. Many noticed that we couldn't find it during recording."
+          "t": "Let's begin with PayPal's Security Key, since much of the mail is about Episode 101, on CAPTCHAs and the Security Key. Many noticed that we couldn't find it during recording."
         },
         {
           "s": "leo",
@@ -122,7 +139,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two SpinRite stories, one so extreme I need a second to compensate."
+          "t": "Now to SpinRite. Two stories, one so extreme I need a second to compensate."
         },
         {
           "s": "steve",
@@ -142,7 +159,7 @@
         },
         {
           "s": "steve",
-          "t": "On balance, Jeff Harrison in Kentucky bought SpinRite from hearing about it here. A laptop user's drive completely failed with no backup, despite the instructions and USB drives they'd been given. SpinRite ran about 1.5 hours and recovered all but one file, and the application's backup covered that, so they lost only about three days of one file."
+          "t": "At the other extreme, Jeff Harrison in Kentucky bought SpinRite from hearing about it here. A laptop user's drive completely failed with no backup, despite the instructions and USB drives they'd been given. SpinRite ran about 1.5 hours and recovered all but one file, and the application's backup covered that, so they lost only about three days of one file."
         },
         {
           "s": "leo",
@@ -171,7 +188,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Jim Kramer read Jeff Hawkins' \"On Intelligence\" when it came out and bought the audio version too. He says nothing on how the brain works beats Hawkins."
+          "t": "A follow-up on the book I recommended last week, \"On Intelligence.\" Jim Kramer read Jeff Hawkins' \"On Intelligence\" when it came out and bought the audio version too. He says nothing on how the brain works beats Hawkins."
         },
         {
           "s": "steve",
@@ -196,7 +213,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Peter Lilley in Sydney, Australia asks whether it's safe to skip antivirus if you \"know what you're doing,\" as I've suggested."
+          "t": "A letter that challenges something I've said about antivirus. Peter Lilley in Sydney, Australia asks whether it's safe to skip antivirus if you \"know what you're doing,\" as I've suggested."
         },
         {
           "s": "steve",
@@ -270,7 +287,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Nils Andersen has a SecurID from E*TRADE. He ordered PayPal's key too, but fears a future with a pocketful of dongles, hunting for the right one."
+          "t": "Back to PayPal's key, and the worry about carrying a different token for every site. Nils Andersen has a SecurID from E*TRADE. He ordered PayPal's key too, but fears a future with a pocketful of dongles, hunting for the right one."
         },
         {
           "s": "leo",
@@ -307,7 +324,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Bill Holton wrote again: \"I'm still human.\" He notes a Turing Test has a human judge trying to tell a computer from a person. CAPTCHA turns it on its head, with a computer as judge."
+          "t": "Returning to last week's CAPTCHA topic, Bill Holton wrote again: \"I'm still human.\" He notes a Turing Test has a human judge trying to tell a computer from a person. CAPTCHA turns it on its head, with a computer as judge."
         },
         {
           "s": "steve",
@@ -328,7 +345,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Next, a long but important posting from Darrell Shandrow, an \"accessibility evangelist\" you've spoken with, Leo."
+          "t": "Also on CAPTCHAs, a long but important posting from Darrell Shandrow, an \"accessibility evangelist\" you've spoken with, Leo."
         },
         {
           "s": "steve",
@@ -389,7 +406,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Matthew Middleton, a 22-year-old software developer and TWiT listener, had never bought online except where he could mail a check. His fear was based on knowledge, not ignorance."
+          "t": "Here's a nice result of Episode 101. Matthew Middleton, a 22-year-old software developer and TWiT listener, had never bought online except where he could mail a check. His fear was based on knowledge, not ignorance."
         },
         {
           "s": "steve",
@@ -406,7 +423,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Robert Gauld of Aberdeen, U.K. leaves sites that show him visual CAPTCHAs. Why not show pictures, a cat, dog, house or bird, with dropdowns to choose what each shows?"
+          "t": "Back to the design of CAPTCHAs. Robert Gauld of Aberdeen, U.K. leaves sites that show him visual CAPTCHAs. Why not show pictures, a cat, dog, house or bird, with dropdowns to choose what each shows?"
         },
         {
           "s": "leo",
@@ -431,7 +448,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Chris Ackerman, an IT manager in Plymouth, Minnesota, runs AVG 7.5 Network Edition for over 300 users. Symantec and McAfee became resource pigs, and too costly."
+          "t": "A follow-up on the AVG false positive that flagged SecurAble. Chris Ackerman, an IT manager in Plymouth, Minnesota, runs AVG 7.5 Network Edition for over 300 users. Symantec and McAfee became resource pigs, and too costly."
         },
         {
           "s": "steve",
@@ -448,7 +465,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Simon in Exeter, U.K. caught a \"funny error\": I joked a clone could get your fingerprint. But clones and identical twins have different fingerprints."
+          "t": "A couple of notes on biometrics, which we covered in Episode 100. Simon in Exeter, U.K. caught a \"funny error\": I joked a clone could get your fingerprint. But clones and identical twins have different fingerprints."
         },
         {
           "s": "leo",
@@ -498,7 +515,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Dan in Oregon is an avid user of TOR, The Onion Router, which bounces your traffic through publicly available onion routers so no one can feasibly backtrack it."
+          "t": "A note on anonymity online. Dan in Oregon is an avid user of TOR, The Onion Router, which bounces your traffic through publicly available onion routers so no one can feasibly backtrack it."
         },
         {
           "s": "steve",
@@ -515,7 +532,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian Hogg of Kitchener, Ontario is a good friend. He made a puppet of me for his dotBoom video podcast, along with Kevin Rose, Alex Albrecht and Amber MacArthur puppets."
+          "t": "A note on spam tricks, from a good friend, Brian Hogg of Kitchener, Ontario. He made a puppet of me for his dotBoom video podcast, along with Kevin Rose, Alex Albrecht and Amber MacArthur puppets."
         },
         {
           "s": "steve",
@@ -544,7 +561,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Justin in San Antonio, Texas wants a segment on digital and electronic signatures, for paperless approval of security requests. We did justice to that in our early security series on hashing and crypto."
+          "t": "A request for a topic we've touched on before. Justin in San Antonio, Texas wants a segment on digital and electronic signatures, for paperless approval of security requests. We did justice to that in our early security series on hashing and crypto."
         },
         {
           "s": "leo",
@@ -573,7 +590,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Will Morenz of Wheatfield, Indiana responds to Episode 100's university that wanted to let users enter any email address for reset credentials."
+          "t": "A follow-up on password resets. Will Morenz of Wheatfield, Indiana responds to Episode 100's university that wanted to let users enter any email address for reset credentials."
         },
         {
           "s": "steve",

@@ -8,15 +8,32 @@
   "audio": "http://media.GRC.com/sn/SN-108.mp3",
   "chapters": [
     {
-      "title": "Back From the Tent",
+      "title": "Welcome to Security Now! #108",
       "beats": [
         {
           "s": "leo",
-          "t": "The bugs are out of your house."
+          "t": "This is Security Now! with Steve Gibson for September 6, 2007, Episode 108: Listener Feedback #23."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, and we're in September already. Steve Gibson, the year is waning, fall is on its way, and the bugs are out of your house."
         },
         {
           "s": "steve",
-          "t": "I'm back, hopefully breathing pure air. The gas is Vikane, made by Dow, I think. It's odorless and colorless, so you wouldn't know you were breathing a potent neurotoxin. So they deliberately mix in tear gas, which you'd certainly know."
+          "t": "Thanks, Leo. I'm back from the fumigation. We've also merged the Q&A and mailbag formats into a single Listener Feedback show."
+        },
+        {
+          "s": "steve",
+          "t": "First some news: a correction about PIP tokens, the Corsair padlock drive, a Sony fingerprint-drive rootkit, and a SpinRite story. Then questions on WiFi, scanning infected drives, Hamachi, authentication cards, defragging, token clocks, encrypted drives and virtual machines."
+        }
+      ]
+    },
+    {
+      "title": "Back From the Tent",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, how the fumigation went. I'm back, hopefully breathing pure air. The gas is Vikane, made by Dow, I think. It's odorless and colorless, so you wouldn't know you were breathing a potent neurotoxin. So they deliberately mix in tear gas, which you'd certainly know."
         },
         {
           "s": "leo",
@@ -45,7 +62,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Format change. A grumbly listener, still unhappy with our mod 4 equations, said drop the artificial distinction between Q&A and mailbag episodes and call the even episodes Listener Feedback."
+          "t": "Now a change to the show's format. A grumbly listener, still unhappy with our mod 4 equations, said drop the artificial distinction between Q&A and mailbag episodes and call the even episodes Listener Feedback."
         },
         {
           "s": "steve",
@@ -66,7 +83,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Big correction. I assumed that because VeriSign sells you three tokens, you could register several at once. You can't."
+          "t": "A big correction to last week's PIP discussion. I assumed that because VeriSign sells you three tokens, you could register several at once. You can't."
         },
         {
           "s": "leo",
@@ -87,7 +104,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Both Corsair Flash Padlocks arrived. I really like it, but it's larger than the photos suggested, and certainly larger than a thumb drive. I'd call it a large middle-finger drive."
+          "t": "A follow-up on the Corsair flash drive with a combination keypad. Both Corsair Flash Padlocks arrived. I really like it, but it's larger than the photos suggested, and certainly larger than a thumb drive. I'd call it a large middle-finger drive."
         },
         {
           "s": "steve",
@@ -138,11 +155,11 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many listeners agree with us about PayPal's forced checking-account verification and unchangeable default. One had a fraudulent transfer from his checking account and went through hell. PayPal never got it back, since it was gone and not insured, but a third-party insurer on the transaction made restitution. It was a nightmare."
+          "t": "A PayPal follow-up first. Many listeners agree with us about PayPal's forced checking-account verification and unchangeable default. One had a fraudulent transfer from his checking account and went through hell. PayPal never got it back, since it was gone and not insured, but a third-party insurer on the transaction made restitution. It was a nightmare."
         },
         {
           "s": "steve",
-          "t": "And my first SpinRite report from a Nerds On Site nerd. Raoul Velez wrote, \"My name is Raoul, and I am a nerd.\" He's been a nerd since retiring from the Navy three years ago."
+          "t": "On a brighter note, my first SpinRite report from a Nerds On Site nerd. Raoul Velez wrote, \"My name is Raoul, and I am a nerd.\" He's been a nerd since retiring from the Navy three years ago."
         },
         {
           "s": "steve",
@@ -159,7 +176,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Our first question: Justin Teal skips WEP and WPA. He turned off his SSID broadcast and uses MAC address filtering. Someone would need to know the network exists and spoof his MAC address. Isn't that enough?"
+          "t": "That's the news. Now for the listener feedback. Our first question: Justin Teal skips WEP and WPA. He turned off his SSID broadcast and uses MAC address filtering. Someone would need to know the network exists and spoof his MAC address. Isn't that enough?"
         },
         {
           "s": "leo",
@@ -201,7 +218,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David Johnston of Eufaula, Alabama heals family and friends' PCs. He puts an infected drive as a slave in a standalone beige box PC running Windows 2000 and Symantec AV 10, then scans it. He's never noticed ill effects. Could a virus migrate from the slave to his master drive?"
+          "t": "Next, a question about cleaning infected PCs. David Johnston of Eufaula, Alabama heals family and friends' PCs. He puts an infected drive as a slave in a standalone beige box PC running Windows 2000 and Symantec AV 10, then scans it. He's never noticed ill effects. Could a virus migrate from the slave to his master drive?"
         },
         {
           "s": "steve",
@@ -222,7 +239,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dale asks a blast-from-the-past question. Episode 32 listed \"bogon\" IP ranges, which are nonroutable. If the 5-dot space is bogon, how does Hamachi use it?"
+          "t": "Next, a networking question. Dale asks a blast-from-the-past question. Episode 32 listed \"bogon\" IP ranges, which are nonroutable. If the 5-dot space is bogon, how does Hamachi use it?"
         },
         {
           "s": "steve",
@@ -256,7 +273,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark Ryan of Agassiz, British Columbia has owned SpinRite five years. One computer has run seven years with no reformatting. How often should he run it?"
+          "t": "Next, a SpinRite question. Mark Ryan of Agassiz, British Columbia has owned SpinRite five years. One computer has run seven years with no reformatting. How often should he run it?"
         },
         {
           "s": "steve",
@@ -272,7 +289,7 @@
         },
         {
           "s": "leo",
-          "t": "I forgot his other point. His broker issued a card with a unique eight-character ID and 224 columns of three random alphanumeric characters. After his username and password, the site names two columns, and he enters their characters. How secure is that, and what are the weaknesses?"
+          "t": "Mark's second question is about a login method. His broker issued a card with a unique eight-character ID and 224 columns of three random alphanumeric characters. After his username and password, the site names two columns, and he enters their characters. How secure is that, and what are the weaknesses?"
         },
         {
           "s": "steve",
@@ -309,7 +326,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rob Hartvikson in Italy heard Episode 104 on bit rot. If he's willing to erase and reformat, is that as good as SpinRite?"
+          "t": "Next, a question about drive maintenance. Rob Hartvikson in Italy heard Episode 104 on bit rot. If he's willing to erase and reformat, is that as good as SpinRite?"
         },
         {
           "s": "steve",
@@ -321,7 +338,7 @@
         },
         {
           "s": "leo",
-          "t": "Jeffrey in Columbia, Maryland's Diskeeper Professional license is up. What was that free defragger you recommended?"
+          "t": "And a defragmenting question. Jeffrey in Columbia, Maryland's Diskeeper Professional license is up. What was that free defragger you recommended?"
         },
         {
           "s": "steve",
@@ -359,7 +376,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dennis Jones in nearby Carlsbad, California: a new code every 30 seconds means the key must know the time within a second or two, forever. Are its clocks that accurate, or is there some clever way to stay in sync?"
+          "t": "A question about how the PayPal key works. Dennis Jones in nearby Carlsbad, California: a new code every 30 seconds means the key must know the time within a second or two, forever. Are its clocks that accurate, or is there some clever way to stay in sync?"
         },
         {
           "s": "steve",
@@ -376,7 +393,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Pearce posted in GRC's Security Now! newsgroup, highly recommended. His PayPal and eBay passwords are 30 random characters from your password page, so he needs a password manager. With the Security Key, can he use a short, memorable password plus the key's digits?"
+          "t": "A question about password strength when you add a second factor. John Pearce posted in GRC's Security Now! newsgroup, highly recommended. His PayPal and eBay passwords are 30 random characters from your password page, so he needs a password manager. With the Security Key, can he use a short, memorable password plus the key's digits?"
         },
         {
           "s": "steve",
@@ -401,7 +418,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Michele Thomas of Olney, Maryland heard Episode 106 and wants the link for VeriSign's tokens. She signed up for PIP and already has a PayPal token, but wants one in her purse, one at work and one at home."
+          "t": "Back to VeriSign's tokens. Michele Thomas of Olney, Maryland heard Episode 106 and wants the link for VeriSign's tokens. She signed up for PIP and already has a PayPal token, but wants one in her purse, one at work and one at home."
         },
         {
           "s": "leo",
@@ -450,7 +467,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeff Schmidt in Northern California votes for hearing more about Hitachi's Travelstar drives with bulk data encryption."
+          "t": "A question about encrypting drives. Jeff Schmidt in Northern California votes for hearing more about Hitachi's Travelstar drives with bulk data encryption."
         },
         {
           "s": "steve",
@@ -491,7 +508,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Edward in Fort Collins, Colorado set up VMware Player with an Ubuntu appliance for his wife, stationed in Korea for a year, to do her banking. She asks: if XP has a keylogger or spyware, can hackers see what she does in VMware?"
+          "t": "A question about virtual machines. Edward in Fort Collins, Colorado set up VMware Player with an Ubuntu appliance for his wife, stationed in Korea for a year, to do her banking. She asks: if XP has a keylogger or spyware, can hackers see what she does in VMware?"
         },
         {
           "s": "steve",
@@ -540,7 +557,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Last, Rob Strating of Hudsonville, Michigan. Windows always writes known data, like the NTFS boot loader, to known places, much as DOS did with IO.sys and MSDOS.sys. Would that known content make it easier to find the drive's AES key?"
+          "t": "Last question, on attacking an encrypted drive. Rob Strating of Hudsonville, Michigan. Windows always writes known data, like the NTFS boot loader, to known places, much as DOS did with IO.sys and MSDOS.sys. Would that known content make it easier to find the drive's AES key?"
         },
         {
           "s": "steve",

@@ -11,15 +11,32 @@
   },
   "chapters": [
     {
-      "title": "Never Missing a Week",
+      "title": "Welcome to Security Now! #103",
       "beats": [
         {
           "s": "leo",
-          "t": "It's Security Now! Episode 103, chugging along."
+          "t": "This is Security Now! with Steve Gibson, Episode 103, for August 2, 2007: PayPal Security Key."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now! Episode 103. Hard to believe, we're just chugging along. Steve Gibson is here from his fortress of security."
         },
         {
           "s": "steve",
-          "t": "Next week is 104 episodes, two times 52."
+          "t": "Thanks, Leo. Today we have a special guest, Michael Vergara of PayPal, to answer the many questions listeners sent about PayPal's $5 Security Key, which we first discussed in Episode 101."
+        },
+        {
+          "s": "steve",
+          "t": "Before that, a bit of housekeeping, a WiFi gadget I've ordered, and a SpinRite story with a twist. Then we'll talk to PayPal."
+        }
+      ]
+    },
+    {
+      "title": "Never Missing a Week",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A little housekeeping first. Next week is Episode 104, which is two times 52, two full years of weekly shows."
         },
         {
           "s": "leo",
@@ -56,7 +73,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Setting up a new machine, I needed low-level packet I/O, the kind ShieldsUP! uses, through the well-known WinPcap library."
+          "t": "First, a gadget for anyone interested in WiFi security. Setting up a new machine, I needed low-level packet I/O, the kind ShieldsUP! uses, through the well-known WinPcap library."
         },
         {
           "s": "steve",
@@ -101,7 +118,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This SpinRite story highlights something I've never mentioned. Steve Shank's motto is \"Keeping clients' computers safe and profitable for over 20 years,\" so he's been at it as long as SpinRite has. His subject: \"SpinRite Testimonial with a Twist.\""
+          "t": "Now a SpinRite story that highlights something I've never mentioned. Steve Shank's motto is \"Keeping clients' computers safe and profitable for over 20 years,\" so he's been at it as long as SpinRite has. His subject: \"SpinRite Testimonial with a Twist.\""
         },
         {
           "s": "steve",
@@ -146,7 +163,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Michael Vergara is on the line from PayPal's headquarters."
+          "t": "Now for our main event: the PayPal Security Key we talked about in Episodes 101 and 102. Michael Vergara, PayPal's Director of Account Protection, is on the line from PayPal's headquarters."
         },
         {
           "s": "michael",
@@ -175,7 +192,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Some listeners were told the key was unavailable. They wondered if we'd slashdotted you. Is it regional?"
+          "t": "Let's start with the question many listeners asked. Some were told the key was unavailable. They wondered if we'd slashdotted you. Is it regional?"
         },
         {
           "s": "michael",
@@ -204,7 +221,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Describe how it works for those who missed it."
+          "t": "For listeners who missed Episode 101, describe how the Security Key works."
         },
         {
           "s": "michael",
@@ -357,7 +374,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "How widespread is VIP?"
+          "t": "Let's talk about who else is in the VIP Network. How widespread is it?"
         },
         {
           "s": "michael",
@@ -398,7 +415,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Can you associate two dongles with one account?"
+          "t": "Some practical questions about the tokens themselves. Can you associate two dongles with one account?"
         },
         {
           "s": "michael",
@@ -451,7 +468,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "How can it be only $5, not 50?"
+          "t": "The last big question: the price. How can it be only $5, not 50?"
         },
         {
           "s": "michael",
@@ -484,7 +501,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "PayPal also now offers a virtual card service. Is that yours?"
+          "t": "There's another PayPal security product I've been trying. PayPal also now offers a virtual card service. Is that yours?"
         },
         {
           "s": "michael",
@@ -541,7 +558,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Was I over-effusive?"
+          "t": "That's our conversation with PayPal. Was I over-effusive?"
         },
         {
           "s": "steve",
