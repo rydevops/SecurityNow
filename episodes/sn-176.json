@@ -1,0 +1,268 @@
+{
+  "number": 176,
+  "title": "\"DropMyRights\"",
+  "subtitle": "A tiny Microsoft tool runs risky programs with reduced privileges",
+  "date": "2008-12-25",
+  "description": "A Christmas Day episode on DropMyRights, a small free utility by Microsoft's Michael Howard that runs chosen Internet-facing programs, like your browser and email, as a non-admin even while you stay admin. Steve explains Windows' access-token security model, software restriction policies, and how this compares to UNIX's \"log in limited, escalate when needed.\" Plus a DNSChanger trojan that spoofs DHCP, Firefox 2's last version losing anti-phishing, and the YubiKey as a 32-character static password.",
+  "transcript": "https://www.grc.com/sn/sn-176.txt",
+  "audio": "http://media.GRC.com/sn/SN-176.mp3",
+  "chapters": [
+    {
+      "title": "A DHCP-Spoofing DNSChanger",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today we cover DropMyRights, a poor man's Sandboxie that runs chosen applications without admin rights even while you're admin."
+        },
+        {
+          "s": "steve",
+          "t": "In the news, the DNSChanger trojan has a fascinating new version. It installs a valid NDIS network driver that gives it raw sockets, then pretends to be a DHCP server. One infected machine on a LAN races the real DHCP server to answer a booting machine's request, and if it wins, it reconfigures that machine's DNS to a malicious server."
+        },
+        {
+          "s": "steve",
+          "t": "So on any LAN, even WiFi at Starbucks, one infected laptop can redirect everyone else's DNS. A malicious DNS can serve correct answers for most sites but send BankofAmerica.com to a clone."
+        },
+        {
+          "s": "leo",
+          "t": "It's not automatic just from being on a Starbucks network."
+        },
+        {
+          "s": "steve",
+          "t": "No, nothing against Starbucks. It's if the trojan is on a machine there. Default Windows uses DHCP, so a rogue DHCP server anywhere on the LAN can answer."
+        },
+        {
+          "s": "leo",
+          "t": "Does a static IP avoid this?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, since you're not using DHCP at all, nothing sets your DNS. You can also map a MAC address to a fixed IP in the router to get static assignment through DHCP, which is handy for port forwarding."
+        },
+        {
+          "type": "fact",
+          "title": "Rogue DHCP",
+          "t": "A rogue DHCP server handing out malicious DNS is a real attack. Modern switches offer \"DHCP snooping\" to block unauthorized DHCP replies, and HTTPS certificate checks limit the damage of a spoofed DNS answer."
+        }
+      ]
+    },
+    {
+      "title": "Firefox 2's Last Version",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Firefox 2's final version ships December 16 and loses its anti-phishing feature, because it used the first anti-phishing API that Google will no longer support."
+        },
+        {
+          "s": "leo",
+          "t": "You shouldn't be using 2 anyway."
+        },
+        {
+          "s": "steve",
+          "t": "Version 3 has been out since June. If you depend on anti-phishing, you might stay on the supported 2 before this last one, but you'll be on an unsupported browser with no security updates. Better to move to 3."
+        }
+      ]
+    },
+    {
+      "title": "The YubiKey as a Static Password",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "YubiKey news. Yubico's new personalization tool lets you take over your key with your own AES secret, or set it to emit a fixed 32-character random password instead of a one-time code."
+        },
+        {
+          "s": "steve",
+          "t": "That's useful for offline authentication, like TrueCrypt whole-drive encryption at pre-boot, where there's no Internet for the normal one-time mode. Thirty-two random ASCII characters is about 192 bits, seriously strong, and since passwords are entered blanked, nobody sees it."
+        },
+        {
+          "s": "leo",
+          "t": "You could use it for your WPA key."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Put the cursor in a guest's password field, touch the button, confirm, and they're on your network without ever learning the key. Keystroke loggers are the only caveat, and they're not an issue at pre-boot."
+        },
+        {
+          "s": "steve",
+          "t": "And Password Safe now supports the YubiKey in full one-time-password mode too."
+        },
+        {
+          "s": "leo",
+          "t": "They're going to sell a lot of YubiKeys."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite, Gandalf Reborn",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Earl Pearce bought SpinRite in 2006, saw no miracles, then hit an unmountable-boot-volume blue screen so brief he had to video the screen and single-step it to read it. After a couple of drive-heat warnings, SpinRite fixed it and the system worked great. He called me Gandalf reborn."
+        }
+      ]
+    },
+    {
+      "title": "Windows' Security Model",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I didn't realize DropMyRights was a side project by a Microsoft employee."
+        },
+        {
+          "s": "steve",
+          "t": "It's a tiny utility leveraging technology built into Windows since XP. The security model has two kinds of objects: an access token, a collection of rights you get when you log in, and security descriptors, the requirements attached to files, directories, processes, threads, registry keys, services, printers, shares and more."
+        },
+        {
+          "s": "steve",
+          "t": "Any process you run inherits your rights, and nearly everything it does is checked against each object's descriptor. There are many privileges: restore, backup, load driver, shutdown, debug, even change the system time. Debug is powerful, letting a process read another's memory. Backup and restore bypass other access restrictions, since a backup must read everything."
+        },
+        {
+          "s": "steve",
+          "t": "The granddaddy is admin. Malware wants admin rights to write to system32, terminate processes, disable the Windows firewall, or delete keys under HKEY_LOCAL_MACHINE."
+        },
+        {
+          "s": "steve",
+          "t": "XP added Software Restriction Policies, letting policies apply by an executable's hash, name or location, which corporate IT uses to lock systems down."
+        }
+      ]
+    },
+    {
+      "title": "How DropMyRights Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Michael Howard, a security-minded Microsoft engineer, blogged four years ago that he runs as admin but realized some programs, like IE, are too dangerous to have full admin rights. So he wrote DropMyRights."
+        },
+        {
+          "s": "steve",
+          "t": "You prefix a shortcut's command with dropmyrights.exe, passing the real program as its argument. It creates a process token with non-admin rights and runs the program under them. So Firefox and Eudora run as non-admin while the rest of your session stays admin."
+        },
+        {
+          "s": "leo",
+          "t": "It's like Run As in reverse."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Instead of a limited user escalating, you're an admin de-escalating specific apps."
+        },
+        {
+          "s": "leo",
+          "t": "On UNIX and Linux you always log in as a normal user and escalate with sudo when needed. Wouldn't that be better on Windows?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely, but the two systems came from different directions. UNIX had a superuser and normal users from day one, so applications assume they're not root. Windows grew from DOS and Windows 95, where there was one all-powerful user, so developers running as admin never tested as non-admin, and their software broke for limited users."
+        },
+        {
+          "s": "leo",
+          "t": "It really goes back to DOS: one user, one process."
+        }
+      ]
+    },
+    {
+      "title": "The Five Levels",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Software restriction policy defines five levels: trusted (essentially admin), normal (non-admin), constrained, untrusted, and disallowed. DropMyRights offers normal, constrained, or untrusted."
+        },
+        {
+          "s": "steve",
+          "t": "Untrusted is so restricted that not even Notepad runs. Constrained is sketchy too: HKEY_CURRENT_USER is read-only, the user profile directory is inaccessible, and even SSL negotiation fails, so you can't run a browser. Just dropping to normal removes admin privileges, which is what you want, and Firefox and Eudora run fine."
+        },
+        {
+          "s": "steve",
+          "t": "I asked Ronen why Sandboxie doesn't do this. He said it already strips many privileges from sandboxed programs: restore, backup, load driver, debug, and system time. He didn't want to duplicate another tool, but he's adding the full DropMyRights capability in the next Sandboxie beta, so you can optionally run a sandbox as non-admin."
+        },
+        {
+          "s": "steve",
+          "t": "DropMyRights still matters for 64-bit users who can't run Sandboxie, or anyone not using it. If you run as admin, use it on your Internet-facing programs."
+        },
+        {
+          "s": "leo",
+          "t": "Run As is too inconvenient for people to run as limited users, though Vista makes it easier."
+        },
+        {
+          "s": "steve",
+          "t": "Vista's User Account Control is the evolution of this: you log in limited and briefly elevate. For those of us not on Vista, DropMyRights is a clean, weightless way to run risky apps with reduced rights."
+        },
+        {
+          "s": "steve",
+          "t": "I suspect you could even do this with policies alone, no DropMyRights.exe, by creating extra categories beyond trusted and disallowed. I want to poke at that."
+        },
+        {
+          "type": "fact",
+          "title": "Where this led",
+          "t": "Internet Explorer later gained \"Protected Mode,\" which ran the browser with low integrity rights automatically, and UAC made elevate-when-needed the norm. Running everyday programs with least privilege remains a core security practice."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does DropMyRights do?",
+      "options": [
+        "It runs a chosen program as non-admin even while you're logged in as admin",
+        "It gives a program more rights",
+        "It encrypts files",
+        "It blocks scripts"
+      ],
+      "answer": 0,
+      "explain": "It's like Run As in reverse."
+    },
+    {
+      "q": "How does the new DNSChanger trojan redirect a whole LAN's DNS?",
+      "options": [
+        "It races the real DHCP server to answer booting machines with a malicious DNS",
+        "It cracks WPA",
+        "It edits each PC's hosts file",
+        "It spoofs the router"
+      ],
+      "answer": 0,
+      "explain": "One infected machine can affect everyone on the network."
+    },
+    {
+      "q": "Why do many Windows programs break when run as a non-admin?",
+      "options": [
+        "Developers ran as admin and never tested with limited rights",
+        "Windows forbids it",
+        "Non-admins can't run any program",
+        "It needs 64-bit"
+      ],
+      "answer": 0,
+      "explain": "UNIX apps assume they're not root from the start."
+    },
+    {
+      "q": "Why is the \"untrusted\" restriction level nearly useless?",
+      "options": [
+        "It's so restricted that not even Notepad will run",
+        "It requires a password",
+        "It only works on servers",
+        "It disables the network"
+      ],
+      "answer": 0,
+      "explain": "Dropping to \"normal\" is enough to remove admin rights."
+    },
+    {
+      "q": "What can a YubiKey set to a 32-character static password be used for?",
+      "options": [
+        "Offline authentication like a TrueCrypt pre-boot password or a WPA key",
+        "One-time web logins only",
+        "Nothing offline",
+        "Encrypting email"
+      ],
+      "answer": 0,
+      "explain": "It's about 192 random bits and entered blanked."
+    },
+    {
+      "q": "Why does admin privilege matter so much to malware?",
+      "options": [
+        "It can write to system32, kill processes, disable the firewall and edit HKEY_LOCAL_MACHINE",
+        "It speeds up the CPU",
+        "It hides files",
+        "It installs fonts"
+      ],
+      "answer": 0,
+      "explain": "Running risky apps as non-admin limits the damage."
+    }
+  ]
+}
