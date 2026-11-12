@@ -336,11 +336,11 @@
         },
         {
           "s": "leo",
-          "t": "Then how do you decrypt it?"
+          "t": "Then how do you decrypt it? I guess decryption isn't considered observation."
         },
         {
           "s": "steve",
-          "t": "The intended receiver's measurement isn't an intrusion. An eavesdropper's is detected."
+          "t": "Exactly."
         }
       ]
     },
