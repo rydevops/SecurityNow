@@ -1,0 +1,348 @@
+{
+  "number": 186,
+  "title": "Listener Feedback #61",
+  "subtitle": "A Q&A on guest WiFi, iFrames, RISC vs CISC, open-source trust, GoToMyPC and encrypted ZIP",
+  "date": "2009-03-05",
+  "description": "Twelve listener questions after the Gray-Haired Computing special: restoring yellowed plastic with Retr0bright, why Apple's guest networking is done right, a PDP-8 Lunar Lander memory, why an iFrame to a secure page shows no padlock, \"mini\" versus RISC, the real story of AES-encrypted ZIP from PKWARE's CTO, whether open source is less secure, GoToMyPC's threat model, who can read your unencrypted email, and defragging huge drives. Plus an Excel zero-day, a live Adobe Reader exploit, Flash fixes, the Koobface worm, and the Kindle 2's battery.",
+  "transcript": "https://www.grc.com/sn/sn-186.txt",
+  "audio": "http://media.GRC.com/sn/SN-186.mp3",
+  "chapters": [
+    {
+      "title": "News: Excel Zero-Day, Adobe and Koobface",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A new zero-day Excel remote-code-execution exploit is in the wild. Open a malicious attachment, even one disguised with a non-Excel name, and it triggers Excel and runs code. It hits Office 2000 through 2007 on Windows and Office 2004 and 2008 on the Mac, so the bug is old; Microsoft acknowledges it in article 968272 and a patch should come next Patch Tuesday."
+        },
+        {
+          "s": "steve",
+          "t": "The Adobe Reader flaw we flagged is now being actively exploited, with patches due March 11th (v9) and March 18th (v7/8). And Flash Player has multiple holes; an update exists, so get 10.0.22.87, or 9.0.159.0 on the old branch."
+        },
+        {
+          "s": "steve",
+          "t": "Facebook and MySpace are a growing battleground. The Koobface worm is back: it messages your friends a link to a fake YouTube page that says you need to \"update your player,\" which is actually malware installing a backdoor."
+        },
+        {
+          "s": "leo",
+          "t": "I've seen this; people's accounts get hacked and send a bland, plausible link. I message them to change their password and warn their friends."
+        },
+        {
+          "type": "fact",
+          "title": "Koobface",
+          "t": "Koobface (\"Facebook\" anagrammed) spread across social networks from 2008, luring users to fake video pages that pushed a bogus codec/player update. It built a large botnet before coordinated takedowns years later, and it worked by abusing the trust between friends, not any single software flaw."
+        }
+      ]
+    },
+    {
+      "title": "Errata: Kindle 2 Battery and Hysteresis",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Following up on the Kindle 2: I dislike its non-replaceable battery. Lithium-ion has both a cycle life and a shelf life of a few years, so even light use degrades it; both my Kindle 1s lost noticeable battery life within a year. The touted 25% gain isn't showing up."
+        },
+        {
+          "s": "leo",
+          "t": "Not at all. I've drained mine in a night or two, with no audio, though the radio stays on because it's a software switch, easy to leave on."
+        },
+        {
+          "s": "steve",
+          "t": "They should let it wake hourly, check for new content, and sleep again. And had they used WiFi instead of only EVDO, the Kindle could have gone international."
+        },
+        {
+          "s": "steve",
+          "t": "Also, a clean example of hysteresis I owed you: a snap-action keyboard key. The force to trigger the snap on the way down and the point it releases on the way up are different, so plotting force against position gives a loop, not a line. That's the hysteresis curve."
+        }
+      ]
+    },
+    {
+      "title": "Retr0bright for Yellowed Plastic",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike shares a retro-PC tip: the Retr0bright project (Retr0bright with a zero), a cheap way to reverse the yellowing of old beige computers."
+        },
+        {
+          "s": "steve",
+          "t": "Several listeners sent this. Chemical engineers worked out that the yellowing comes from the fire-retardant chemistry in the plastic, which is why monitors yellow worst, and UV drives it. Their formula, used with UV light, returns dark-yellowed plastic to its original light grey. The before-and-after shots are phenomenal."
+        }
+      ]
+    },
+    {
+      "title": "Apple's Guest Networking Done Right",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chad notes Apple added guest networking to AirPort Extreme and Time Capsule. What do they do?"
+        },
+        {
+          "s": "steve",
+          "t": "They did it exactly right. It's a separate configurable network with its own SSID and crypto key; anyone who connects reaches only the Internet, never your LAN. You can run WPA2 with a long password you don't mind sharing, and guests still can't touch your machines. It's just what you'd want."
+        },
+        {
+          "s": "steve",
+          "t": "But don't assume every vendor's guest networking is this good. Some don't block LAN access, some offer no encryption. Test it before trusting it."
+        },
+        {
+          "s": "leo",
+          "t": "We run WiFi for guests behind our wired router. Enough, or do we need the three-router setup?"
+        },
+        {
+          "s": "steve",
+          "t": "You need the three-router configuration for real, spoof-proof isolation; a WiFi router inside your LAN still has access upstream to that LAN."
+        },
+        {
+          "type": "fact",
+          "title": "Why a guest network isolates",
+          "t": "Proper guest networking puts visitors on a separate subnet that can route only to the Internet, not to your internal hosts. A nested router that still reaches the LAN above it doesn't provide that separation, which is why Steve recommends a dedicated three-router layout or a purpose-built guest feature."
+        }
+      ]
+    },
+    {
+      "title": "A PDP-8 Lunar Lander Memory",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Gary in Tehachapi recalls his first computer, a PDP-8 running Lunar Lander loaded from paper tape, showing velocity and altitude on the front-panel lights, with a toggle switch to fire the engine."
+        },
+        {
+          "s": "steve",
+          "t": "Perfect example for the little PDP-8 \"toggle toys\" I'm planning. I love Lunar Lander: it's pure, simple calculus, velocity and force, yet tricky, burning the engine just enough to touch down without crashing."
+        },
+        {
+          "s": "steve",
+          "t": "The PDP-8 is popular in Assembly and machine-architecture classes precisely because it's minimal, six instructions plus a math and an I/O instruction, eight total, since the opcode was only three bits. The constraint is what makes it interesting to learn."
+        }
+      ]
+    },
+    {
+      "title": "Why an iFrame to a Secure Page Shows No Padlock",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill in Auckland found that a secure page with a non-secure image warns of mixed content, but a non-secure page embedding an iFrame to a secure page shows no warning and no padlock. Isn't that the same leakage risk?"
+        },
+        {
+          "s": "steve",
+          "t": "Two things. First, browsers reuse the page's own protocol for relative asset URLs, so https pages load https assets automatically; designers rely on that to avoid mixed-content warnings. Explicitly loading an http asset into an https page triggers the warning because users on a secure page get nervous."
+        },
+        {
+          "s": "steve",
+          "t": "Second, iFrames (inline frames) embed a whole page within a page. They're powerful and useful, which with me means \"uh-oh,\" because they're very exploitable. Browser makers work hard to isolate an iFrame from reaching outside itself, so scripts in the outer page can't read the secure frame's cookies."
+        },
+        {
+          "s": "steve",
+          "t": "My advice: avoid iFrames where you can. I had to use one in my cookie-forensics project, and it surfaced real iFrame cookie-handling bugs, including an obscure one in Opera. They're best avoided."
+        }
+      ]
+    },
+    {
+      "title": "\"Mini\" Versus RISC",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Wayne disagrees that \"mini\" referred to the instruction set; he says minicomputers were \"mini\" versus room-filling mainframes, and the minimal instruction set is RISC."
+        },
+        {
+          "s": "steve",
+          "t": "Wayne's conflating two things. Gordon Bell's own DEC design papers describe aiming at a minimal computer, and the PDP-8 truly is: no high-level ICs, just AND/OR gates and flip-flops. That's separate from RISC versus CISC."
+        },
+        {
+          "s": "steve",
+          "t": "Going to the PDP-11, Bell deliberately built a rich, complex instruction set because people programmed in Assembly and he wanted it enjoyable, a CISC design. Later it turned out compilers didn't use the fancy instructions, so the industry moved to RISC: fewer, faster instructions compilers can recombine. That's reduced instructions, but in machines that are hardly \"mini\" anymore."
+        }
+      ]
+    },
+    {
+      "title": "Thanks to Elaine the Transcriptionist",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tyler asks whether Steve's transcriptionist, Elaine, could handle eight hours of audio he needs transcribed."
+        },
+        {
+          "s": "steve",
+          "t": "She's On-Site Media (On-SiteMedia.com), and I can't recommend her enough. Her transcripts are painstakingly accurate; she researches every term and product name. She's not the cheapest, but I care about quality, so I won't consider anything else for the show."
+        }
+      ]
+    },
+    {
+      "title": "The Real Story of Encrypted ZIP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe Sturonas, CTO of PKWARE, inventors of the ZIP format, responds to our mention that ZIP now uses AES. PKWARE updated the standard to support strong encryption: AES with a passphrase (symmetric), X.509 v3 certificates (asymmetric), or both, plus SHA-1/SHA-2 digital signatures on individual files or the whole archive, as strong as PGP."
+        },
+        {
+          "s": "steve",
+          "t": "It's a hybrid cryptosystem, exactly the right approach: an asymmetric key pair encrypts the symmetric AES key that encrypts the files, so the slow public-key math touches only the small key. It's the same model as PGP and SSL."
+        },
+        {
+          "s": "leo",
+          "t": "It's in SecureZIP, and SecureZIP Express for Windows is free for non-commercial use, with a wizard for a free certificate, at SecureZIP.com. It runs on mainframe, AS/400, UNIX, Linux and Windows, though not listed for Mac."
+        },
+        {
+          "type": "fact",
+          "title": "Phil Katz and ZIP",
+          "t": "PKWARE's founder Phil Katz created the ZIP format (the \"PK\" in PKZIP). It won out over the earlier ARC format after a legal dispute and became the de facto archive standard for decades; the encryption Joe describes was layered onto that long-stable format."
+        }
+      ]
+    },
+    {
+      "title": "Is Open Source Less Secure?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tom in Ontario worries open source lets anyone insert malware and distribute a trojaned Linux."
+        },
+        {
+          "s": "steve",
+          "t": "I'm more pro-open-source than you might expect. The master source has a few custodians; patches are submitted, scrutinized by many eyes, and checked in only if they look right. The process has as much chance to catch a problem as closed source, maybe more."
+        },
+        {
+          "s": "steve",
+          "t": "The one danger is taking a whole system from \"Joe's Linux.\" Someone can fork the open code maliciously; they probably can't get it back into the master tree, but they could hand you their evil build. That's a reason I hesitated to publish source for my tools, someone could mutate it and claim it's GRC's."
+        },
+        {
+          "s": "leo",
+          "t": "But that risk exists for closed source too; I can disassemble SpinRite, add a bad branch, reassemble it, and claim it's mine. You have to trust your source either way. Open source isn't more risky, and if someone ships modified open-source code closed, they're violating the license, so don't take it from them."
+        }
+      ]
+    },
+    {
+      "title": "GoToMyPC and the Threat Model",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David asks why GoToMyPC is called safe at an Internet café. It isn't, in that sense; if the café PC has a keylogger, SSL doesn't help, and even on your own laptop someone could watch you type."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, and even my CryptoLink wouldn't protect against that. It's a perfect threat-model lesson: a VPN or SSL tunnel protects against a class of problems, eavesdropping on the wire, but not a compromised endpoint or someone shoulder-surfing your password."
+        },
+        {
+          "s": "steve",
+          "t": "A one-time-password token, like the VeriSign football, would change that threat model, since a captured code can't be replayed. Software can only protect you from so much."
+        }
+      ]
+    },
+    {
+      "title": "Who Can Read Your Unencrypted Email",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Riley asks: if an email isn't encrypted, how hard is it to grab its contents between his mail server and the destination server?"
+        },
+        {
+          "s": "steve",
+          "t": "Good question, because people struggle to picture the Internet's innards. Using SSL to your mail server protects it up to that server, but SSL decrypts there, so it sits in plaintext and travels onward unprotected."
+        },
+        {
+          "s": "steve",
+          "t": "The real exposure isn't a stranger on a phone pole; it's the ISP's own operations staff, who have access to the data by the nature of their jobs, and Big Brother. We know devices like the FBI's Carnivore were deployed at ISPs to filter traffic for keywords. Law enforcement dislikes VPNs for blinding them, but powerful crypto protects everyone, good and bad."
+        },
+        {
+          "s": "leo",
+          "t": "It's like mailing a postcard: readable by anyone handling it. We trust their disinterest, which is like security through obscurity, it usually works, but anyone who is interested probably doesn't have your interests at heart. Assume any unencrypted email can be read."
+        }
+      ]
+    },
+    {
+      "title": "Defragging Today's Huge Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Pierre read that defragging terabyte drives may do more harm than good, long runtime stressing the drive, and transfer rates so fast the gain is minor."
+        },
+        {
+          "s": "steve",
+          "t": "With SpinRite 6's real-time SMART monitoring I learned many drives, especially laptop drives, overheat easily, so the one real downside is heat, and defraggers don't watch temperature. If you fear defragging might kill the drive, solve that first: back up or run RAID, because drives do die."
+        },
+        {
+          "s": "steve",
+          "t": "As for whether it's worth it, transfer rates rose but data appetite rose just as fast; everything's bigger, offsetting the speed. I still defrag, not fanatically, as part of an occasional cleanup before I take a drive image."
+        },
+        {
+          "s": "leo",
+          "t": "I've long thought defragging is overrated, every few months is plenty."
+        },
+        {
+          "s": "steve",
+          "t": "It's also a poor man's SpinRite: moving data forces the drive to read it, and the drive can retire sectors that are starting to fail. It's not a full verification like SpinRite, but the benefit outweighs the wear, as long as you're not overheating."
+        },
+        {
+          "type": "fact",
+          "title": "Defrag versus modern storage",
+          "t": "On SSDs, which arrived broadly soon after this episode, defragmentation is unnecessary and harmful, since there are no seek times and flash has limited write cycles; modern operating systems detect SSDs and skip it. On spinning disks the heat-and-backup cautions Steve gives still apply."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Apple's guest networking safely let visitors use your WiFi?",
+      "options": [
+        "It puts guests on a separate network with Internet-only access and no reach to your LAN",
+        "It disables encryption so guests connect faster",
+        "It shares your main password but logs each guest",
+        "It routes all guest traffic through Apple's servers"
+      ],
+      "answer": 0,
+      "explain": "Apple's guest network has its own SSID and key and grants only Internet access, keeping guests off your internal machines; not all vendors' guest features do this, so test them."
+    },
+    {
+      "q": "Why does a non-secure page embedding an iFrame to a secure page show no padlock or mixed-content warning?",
+      "options": [
+        "The iFrame is an isolated embedded page; the browser treats its security separately and the outer page stays non-secure",
+        "Secure iFrames are forbidden by the HTML standard",
+        "The padlock only appears for pages with images",
+        "iFrames always downgrade to non-secure"
+      ],
+      "answer": 0,
+      "explain": "An iFrame loads a whole separate page that browsers deliberately isolate; the outer non-secure page doesn't inherit the frame's security, so no padlock shows, and scripts can't read the frame's cookies."
+    },
+    {
+      "q": "According to Steve, why did the industry move from CISC to RISC?",
+      "options": [
+        "Compilers weren't using the complex instructions, so fewer, faster instructions that compilers can recombine won out",
+        "RISC chips were physically smaller, making computers \"mini\"",
+        "Complex instructions were a security risk",
+        "Assembly programmers demanded simpler machines"
+      ],
+      "answer": 0,
+      "explain": "CISC designs like the PDP-11 were built rich for human Assembly programmers, but compilers ignored the fancy instructions, so RISC's simple, fast, recombinable instructions proved more useful."
+    },
+    {
+      "q": "How does PKWARE's strong ZIP encryption combine speed with public-key convenience?",
+      "options": [
+        "A hybrid system encrypts the files with a symmetric AES key, then protects that key with an asymmetric certificate",
+        "It encrypts every file directly with the X.509 private key",
+        "It uses only a passphrase and no public-key crypto",
+        "It compresses the files so strongly that encryption is unnecessary"
+      ],
+      "answer": 0,
+      "explain": "Like PGP and SSL, SecureZIP uses a hybrid cryptosystem: fast AES encrypts the data, and the slow asymmetric key pair encrypts only the small AES key."
+    },
+    {
+      "q": "In the GoToMyPC question, what does an SSL/VPN tunnel NOT protect against?",
+      "options": [
+        "A compromised endpoint such as a keylogger on the machine you're using, or someone watching you type",
+        "Eavesdropping on the encrypted connection itself",
+        "The destination server being offline",
+        "Your own password being too short"
+      ],
+      "answer": 0,
+      "explain": "A tunnel secures data in transit, but a keylogger or shoulder-surfer at the endpoint defeats it; even Steve's CryptoLink couldn't help, which is the threat-model lesson."
+    },
+    {
+      "q": "Who is the realistic threat to your unencrypted email once it reaches your mail server?",
+      "options": [
+        "The ISP's own operations staff, who have access by the nature of their jobs, plus surveillance systems",
+        "Random strangers tapping wires on phone poles",
+        "Anyone who knows your email address",
+        "The recipient's antivirus software"
+      ],
+      "answer": 0,
+      "explain": "SSL protects email only to the server, where it becomes plaintext; the people who tend that infrastructure, and lawful-intercept systems like Carnivore, are the real access points."
+    }
+  ]
+}
