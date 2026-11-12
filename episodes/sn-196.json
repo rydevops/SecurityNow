@@ -1,0 +1,358 @@
+{
+  "number": 196,
+  "title": "Listener Feedback #66",
+  "subtitle": "A Q&A on the TLS key exchange, travel routers, preshared keys, and Windows in the machinery",
+  "date": "2009-05-14",
+  "description": "A Q&A dominated by listener stories of Windows turning up where it shouldn't: nuclear plants, ATMs, MRI machines and kiosks, versus real-time operating systems like VxWorks. Plus the TLS detail Steve skipped (how the shared key is actually exchanged), why a travel router beats the LAN-trusting Windows firewall, why a WiFi preshared key is never transmitted, why the Internet is still up despite botnets, and whether a safer language would help. Plus Conficker in hospital imaging gear, the NoScript/Adblock Plus flap, and a free OCB license for CryptoLink.",
+  "transcript": "https://www.grc.com/sn/sn-196.txt",
+  "audio": "http://media.GRC.com/sn/SN-196.mp3",
+  "chapters": [
+    {
+      "title": "Patch Tuesday, Chrome and a Huge Mac Update",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "May's Patch Tuesday fixed the critical PowerPoint remote-code-execution flaw we discussed. A reminder: IE8 is now offered through Microsoft Update and checked by default, so \"install everything\" users will get it unannounced. I use \"notify but don't download,\" then custom-pick, having been burned by updates incompatible with hardware. And there's the monthly MSRT, worth a deep scan since it's a month more current."
+        },
+        {
+          "s": "steve",
+          "t": "Google tripped over its own feet updating Chrome to fix a graphics integer-overflow flaw, releasing 1.0.154.64 then .65 two days later; make sure you're on .65. And Apple shipped one of its largest-ever OS X updates, 10.5.7, over 700MB for the combo installer, 13,000-plus files changed."
+        },
+        {
+          "s": "leo",
+          "t": "Apple isn't forthcoming about contents, so Rob Griffiths at Macworld dissects the archive. It updates not just Apple's code but bundled open source, Apache, Perl, Python, Ruby, PHP, X11, and fixed a critical JBIG2 flaw in PDF printing. Apple treats point updates almost like new OS releases, beta-tested with developers first."
+        }
+      ]
+    },
+    {
+      "title": "Conficker in Hospital Imaging Machines",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many listeners sent a San Jose Mercury News story: Conficker infected hundreds of medical devices, including MRI machines, at dozens of hospitals. No patients were harmed, but around March 24 researchers saw an imaging machine reaching out over the Internet for instructions, and found 300-plus similar devices compromised worldwide."
+        },
+        {
+          "s": "steve",
+          "t": "The manufacturer said the machines weren't supposed to be Internet-connected, yet they were. Worse, FDA rules required a 90-day notice before the machines could be patched, so for 90 days infected devices could be used in an attack or leak patient data."
+        },
+        {
+          "type": "fact",
+          "title": "Regulated devices, unpatched",
+          "t": "Medical and other regulated equipment often can't be patched promptly because changes must be re-certified, so a device built on a general-purpose OS inherits that OS's vulnerabilities but not its rapid patching. Using an OS that isn't a malware target, and keeping the device off the Internet, avoids the dilemma entirely."
+        }
+      ]
+    },
+    {
+      "title": "The NoScript / Adblock Plus Flap",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many wrote about the NoScript-versus-Adblock-Plus controversy. I run both. The charge was that NoScript's author quietly changed, and obfuscated, his add-on's code so Adblock Plus couldn't block ads on his own NoScript domains, without asking users."
+        },
+        {
+          "s": "leo",
+          "t": "He responded, \"I screwed up big-time... I abused the power and trust... This is absolutely inexcusable,\" and apologized. There was back-and-forth; he disputes the \"obfuscation\" framing but took responsibility and is fixing it."
+        },
+        {
+          "s": "steve",
+          "t": "Lesson learned. Both authors seem well-meaning, and he's correcting it to everyone's satisfaction."
+        }
+      ]
+    },
+    {
+      "title": "A Free OCB License, and SecurAble's Moment",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "For CryptoLink's cipher mode I wanted OCB, invented by cryptographer Phillip Rogaway at UC Davis, because it does encryption and authentication in a single pass with just one extra block operation, roughly twice as efficient as doing CBC plus a separate CBC-MAC. It's patented, so I asked about licensing. He replied: \"You can use OCB for free, now and forever... I have no intention of profiting from a three-man software publishing company.\""
+        },
+        {
+          "s": "steve",
+          "t": "Also, my free SecurAble tool is being cited everywhere because Windows 7 cares whether your chip has the advanced virtualization features, and SecurAble just shows you what your processor supports. Downloads spiked."
+        },
+        {
+          "type": "fact",
+          "title": "Why authenticated encryption in one pass matters",
+          "t": "Classic designs encrypt (for secrecy) and then run a separate MAC (for integrity), roughly doubling the work. Combined authenticated-encryption modes like OCB provide both in essentially one pass, which is why they became the modern standard; OCB's patent is also why many projects of this era chose alternatives."
+        }
+      ]
+    },
+    {
+      "title": "Kindle DX Correction and Router DNS Hijacking",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A correction: the Kindle DX's pixel pitch is actually lower (150 dpi) than the earlier Kindles (167 dpi), but because the screen is physically larger its total resolution is higher, 1200x824, more than a 1024x768 laptop, so PDFs should look good."
+        },
+        {
+          "s": "steve",
+          "t": "A listener flagged that D-Link router firmware will soon take over DNS by default, routing to a marketing-driven service that returns a \"helpful\" page instead of a proper not-found error. That crosses the line; an error should be an error, not an ad page. (Even OpenDNS does this, which is fine when you choose it, but not as a silent router default.)"
+        },
+        {
+          "s": "steve",
+          "t": "Related, and coming when I release the DNS benchmark: many routers no longer forward the ISP's DNS servers to your machines; they insert themselves as your one DNS server. That's often slower, loses DNS's fallback-to-a-second-server resilience, and some replies can even crash the router. The likely recommendation will be to tell your router not to proxy DNS."
+        }
+      ]
+    },
+    {
+      "title": "Is the Drive Safe After SpinRite?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Nathaniel asks whether a Western Digital drive is safe to trust after SpinRite recovered sectors and later showed ECC corrections but no bad sectors. No hard-and-fast answer: a drive should never produce the errors SpinRite finds, but you can't blame a drive that's had no maintenance."
+        },
+        {
+          "s": "steve",
+          "t": "Keep an eye on it. SpinRite's SMART screen shows, uniquely, the rate of error corrections per megabyte read, even the behind-the-scenes ones. If that rate climbs over time, or is far higher than other drives of the same model, treat it as an early warning. Meanwhile, put less critical data on it, or use it in a RAID so redundancy covers a failure."
+        }
+      ]
+    },
+    {
+      "title": "The TLS Key Exchange Steve Skipped",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robert (who listened to the SSL episode four times) notes Steve explained the cached-session case but never how two machines create and secretly share a new symmetric key."
+        },
+        {
+          "s": "steve",
+          "t": "Right, I skipped it. When there's no cached session, after the server sends its certificate and Server Hello Done, the client generates a 48-byte value: its own 2-byte version plus 46 bytes of strong randomness. It encrypts that with the server's public key (from the just-received certificate) and sends it as the Client Key Exchange message."
+        },
+        {
+          "s": "steve",
+          "t": "Eavesdroppers see only encrypted noise; only the server's private key can decrypt it, so now both ends share those 48 bytes (the \"premaster secret\"). The client version is tucked inside precisely to defeat a downgrade attack: the server compares it, now under encryption, to the client's earlier cleartext version claim, and drops the connection if they differ."
+        },
+        {
+          "s": "steve",
+          "t": "Both ends mix their earlier random values with the shared premaster secret through a common hash to derive the master key, then all subsequent keys. They exchange Change Cipher Spec and Finished messages, and the secure channel is established."
+        },
+        {
+          "type": "fact",
+          "title": "The premaster secret",
+          "t": "The client picking the secret and sealing it with the server's public key means only the real server (holding the private key) can read it, giving both ends a shared secret no eavesdropper can learn. Folding the client's true version into that sealed value blocks a man-in-the-middle from forcing a weaker protocol."
+        }
+      ]
+    },
+    {
+      "title": "Travel Routers and the LAN-Trusting Firewall",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marv worries that NAT protects against the Internet, but an infected laptop plugged into the LAN side can still attack other LAN machines, so he carries a travel router to put between his machine and any hotel or conference LAN. Paranoid, or smart?"
+        },
+        {
+          "s": "steve",
+          "t": "Smart. My friend Mark Thompson does the same with a tiny D-Link travel router. A properly-run Windows firewall is similar in spirit, but by default it treats the LAN as trusted, exactly what Conficker exploits by probing the local subnet."
+        },
+        {
+          "s": "leo",
+          "t": "So turning on the Windows firewall protects me?"
+        },
+        {
+          "s": "steve",
+          "t": "Not from LAN threats, by default it trusts the LAN (file sharing on). You can dig into the firewall's advanced exceptions and disable the LAN exception, but a travel router gives you hardware-level protection that local software can't reconfigure. Just set a strong admin password and disable Universal Plug and Play on it."
+        }
+      ]
+    },
+    {
+      "title": "JavaScript in PDFs Does Have a Use",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jason and JD both point out that, contrary to last week, JavaScript in PDFs has real uses: interactive forms (field calculation, input validation, dynamic UI) and embedded Flash content like interactive dashboards."
+        },
+        {
+          "s": "steve",
+          "t": "Fair, and ironically, right after I told everyone to disable it, my own state's absentee-ballot PDF needed JavaScript to auto-fill and wouldn't work. But the key point is you're told: the PDF says it needs JavaScript, so you can decide, just like NoScript, whether to enable it this time."
+        },
+        {
+          "s": "steve",
+          "t": "So I still recommend running with it off. You'd rather be asked before a document runs code than have a silently-downloaded PDF take over your machine without your knowledge."
+        }
+      ]
+    },
+    {
+      "title": "Windows Embedded Versus Real Operating Systems",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Adrian in Thailand worked 30 years in industrial automation, from nuclear plants down to small factories, where critical control always ran homegrown OSes or a real-time OS like VxWorks. Microsoft once pitched Windows Embedded, promising a patch within two weeks that the system would download, install and reboot, as if rebooting a reactor control mid-run were fine."
+        },
+        {
+          "s": "steve",
+          "t": "And Windows' default is download-install-reboot together, so every Windows-powered control system could reboot, and maybe fail to boot, at the same moment. He notes a UK penicillin plant with a 1.5-mile blast radius ran nothing from Microsoft, and NASA's Mars rovers run VxWorks, still going."
+        },
+        {
+          "s": "leo",
+          "t": "Daan in the Netherlands toured a nuclear plant at Petten and saw it run on Windows NT4, told \"it's been running a long time, it's completely secure.\""
+        },
+        {
+          "s": "steve",
+          "t": "The small mercy is NT4 predates the Internet era and is bulletproof by comparison, with no on-the-fly updater. So please don't \"upgrade\" it to XP, Vista or 7. Windows is a consumer OS; it's fine on our laptops, wrong for industry."
+        },
+        {
+          "type": "fact",
+          "title": "Why a real-time OS belongs there",
+          "t": "An RTOS like VxWorks runs a small, fixed, heavily-tested program set with guaranteed timing and no general-purpose attack surface, so it isn't a virus target and never needs a reboot-to-patch cycle. Adrian's 20 years with zero control-system virus failures, versus Windows HMIs catching Conficker, is the contrast."
+        }
+      ]
+    },
+    {
+      "title": "Windows in Kiosks and ATMs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lucas at Walmart saw the self-checkouts and the new Money Center Express run Windows XP, the latter failing half the time and serviced weekly. Andre, who works for an ATM vendor in Jamaica, confirms most ATMs run XP, having migrated from OS/2 to NT to XP, sold on ease of software development."
+        },
+        {
+          "s": "steve",
+          "t": "These keep making my point: Windows is creeping into mission-critical embedded roles where it shouldn't be, and we'll be reading about the consequences. Andre's ATMs are at least sensibly built, isolated network, no local personal data, hardware and comms encryption, crash-handling software, and, he assures us, not written in Visual Basic."
+        },
+        {
+          "s": "leo",
+          "t": "Charles, who builds museum exhibits, explains why they use Windows: touch-screen and multi-monitor driver support that a stripped-down OS like FreeBSD lacks, cheap off-the-shelf hardware, and staff who can't administer an industrial OS."
+        },
+        {
+          "s": "steve",
+          "t": "That I don't mind, a frozen museum kiosk just gets unplugged and plugged back in; no reactor involved. The right question is always whether a crash is merely an aesthetic Blue Screen or an actual danger."
+        }
+      ]
+    },
+    {
+      "title": "WiFi Preshared Keys Are Never Sent",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Barry asks: if his Linux WiFi profile lists just the SSID and the preshared key, couldn't someone spoof his SSID and capture his preshared key when his machine tries to connect?"
+        },
+        {
+          "s": "steve",
+          "t": "No, and this is why I love preshared keys. The key is \"preshared\", configured into both the client and the access point ahead of time, so the client never sends it. Each side simply encrypts what it sends and decrypts what it receives with that key; only the results of using the key travel over the air, and good ciphers leak nothing about the key from their output."
+        },
+        {
+          "s": "steve",
+          "t": "The only attack is brute force, guessing keys and checking, and a long enough key makes that hopeless (being off by one bit looks as wrong as being off by all of them). Preshared symmetric keys are actually stronger than public-key crypto, which is why I'll use symmetric keys in CryptoLink, with continual rekeying into session keys for Perfect Forward Secrecy."
+        }
+      ]
+    },
+    {
+      "title": "Why Is the Internet Still Up?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener asks: if criminals control millions of machines, can't they take down any site, and extort money? Has it happened?"
+        },
+        {
+          "s": "steve",
+          "t": "Constantly. DDoS attacks are at epidemic level because they pay, gambling sites get extorted to stay online during a big event, often paying the second time after refusing the first. The weak link for the attackers is collecting the money, which is where anonymity breaks down."
+        },
+        {
+          "s": "steve",
+          "t": "But the Internet as a whole survives because it's bigger than any botnet. A DDoS is like focusing sunlight with a magnifying glass: devastating on one spot, but while they burn one site they're not burning others. Attacking the DNS root is hard, the 13 root \"addresses\" are really many machines via anycast routing, and DNS is heavily cached, so it diffuses the attack."
+        }
+      ]
+    },
+    {
+      "title": "Would a Safer Language Help?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marv asks whether the choice of language affects reliability and thus security, since Assembly, C and C++ invite buffer overruns, bad pointers and manual memory bugs, while strongly-typed languages (he cites Xerox PARC's MESA) prevent whole classes of errors."
+        },
+        {
+          "s": "steve",
+          "t": "He's right that Assembly, C and C++ are powerful and dangerous; programmers like that power and dislike languages that wrap them in protective layers and add overhead. But no language eliminates all bugs, a plus that should be a minus is still a bug, so a \"safe\" language can give false confidence."
+        },
+        {
+          "s": "steve",
+          "t": "NASA's answer for shuttle code isn't a magic language; it's exhaustive inspection, testing, simulation and regression analysis by top people, which is extraordinarily expensive, which is why commercial software isn't built that way. And Microsoft isn't going to rewrite 100 million lines of C/C++ in MESA."
+        }
+      ]
+    },
+    {
+      "title": "Spying on VPN Users",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dan asks how governments or others spy on people using VPNs, do they need the VPN provider's help?"
+        },
+        {
+          "s": "steve",
+          "t": "This is the recurring point: understand what your security actually protects. A VPN (SSL-based, or my CryptoLink) protects the link, against eavesdropping, modification and leakage between the two endpoints. It does nothing about a compromised endpoint."
+        },
+        {
+          "s": "steve",
+          "t": "So the way to spy on a VPN user is a keystroke logger, even a little hardware one between keyboard and computer, which happily records everything and even gets the VPN's protection when it phones home. Rely on the technology to do its job, but never assume it protects against something it never claimed to."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "In the TLS handshake with no cached session, how do the two machines agree on a shared secret?",
+      "options": [
+        "The client encrypts a 48-byte premaster secret with the server's public key, which only the server's private key can decrypt",
+        "The server emails the key to the client",
+        "Both pick the same key from a public list",
+        "They exchange the key in plaintext and hope no one is listening"
+      ],
+      "answer": 0,
+      "explain": "The client's Client Key Exchange message carries a 48-byte value sealed with the server's public key; only the server can decrypt it, so both ends share it secretly, then derive the master key."
+    },
+    {
+      "q": "Why doesn't turning on the Windows firewall protect a laptop from an infected machine on the same LAN?",
+      "options": [
+        "By default the firewall treats the LAN as trusted (file sharing on), blocking only WAN-side threats",
+        "The firewall only works over WiFi",
+        "It requires a reboot to activate",
+        "LAN traffic is always encrypted"
+      ],
+      "answer": 0,
+      "explain": "Windows trusts the local network by default, so a travel router (or disabling the firewall's LAN exception) is needed to block LAN-based attacks like Conficker's subnet probing."
+    },
+    {
+      "q": "Why can't an attacker steal a WiFi preshared key by spoofing the SSID?",
+      "options": [
+        "The preshared key is configured on both ends beforehand and is never transmitted; only the results of using it go over the air",
+        "The key is encrypted with the router's public key first",
+        "The SSID changes every connection",
+        "The client refuses to connect to unknown access points"
+      ],
+      "answer": 0,
+      "explain": "A \"preshared\" key is set on both the client and the access point in advance, so it never travels; good ciphers also leak nothing about the key from their output, leaving only hopeless brute force."
+    },
+    {
+      "q": "According to Adrian, what runs critical industrial control systems instead of Windows, and why?",
+      "options": [
+        "Homegrown or real-time operating systems like VxWorks, because they're small, tested, not virus targets, and don't need reboot-to-patch",
+        "Linux, because it's free",
+        "An unpatched old copy of Windows",
+        "Nothing; the systems are fully manual"
+      ],
+      "answer": 0,
+      "explain": "Real-time OSes such as VxWorks (also on the Mars rovers) run fixed, heavily-tested software with no general-purpose attack surface, avoiding Windows' reboot-to-patch model that could reboot a reactor control."
+    },
+    {
+      "q": "Why does the Internet as a whole survive even large botnet DDoS attacks?",
+      "options": [
+        "The Internet is bigger than any botnet, and attacking one target means not attacking others; DNS roots are anycast and cached",
+        "Botnets are too small to matter",
+        "ISPs block all botnet traffic automatically",
+        "DDoS attacks are illegal and therefore rare"
+      ],
+      "answer": 0,
+      "explain": "A DDoS focuses bandwidth on one spot like a magnifying glass, devastating locally but finite overall; the root DNS is distributed via anycast and heavily cached, so broad attacks diffuse."
+    },
+    {
+      "q": "Why does a VPN not protect a user from a keystroke logger?",
+      "options": [
+        "A VPN secures the link between endpoints, not a compromised endpoint where a keylogger captures input before it's sent",
+        "VPNs disable all local software",
+        "Keyloggers can't run while a VPN is active",
+        "The VPN provider removes keyloggers"
+      ],
+      "answer": 0,
+      "explain": "A VPN protects data in transit against eavesdropping and tampering, but a keylogger (even a hardware one) records keystrokes at the endpoint, outside the VPN's scope, illustrating the need to understand what a security tool actually covers."
+    }
+  ]
+}
