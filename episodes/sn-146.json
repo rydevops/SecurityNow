@@ -1,0 +1,811 @@
+{
+  "number": 146,
+  "title": "Listener Feedback Q&A #42",
+  "subtitle": "Debian's broken random numbers, MAC filtering, stealth ports and more",
+  "date": "2008-05-29",
+  "description": "Steve backs out of XP SP3 after it breaks his Start menu, PayPal's EV-certified pages turn out to have a cross-site scripting hole, and researchers go public with an unpatched iCal flaw. Questions cover skipping SP3, Debian's OpenSSL blunder that left only 32,768 possible keys, losing a YubiKey, tools for testing your own site (and how Leo's was really hacked), why MAC filtering isn't security, remote support to infected PCs, DLLs in URLs, why Apple's AirPort isn't \"stealth,\" what EV certificates don't promise, swapping a dead drive's circuit board, ISP routers that answer pings, and stale Linux live CDs.",
+  "transcript": "https://www.grc.com/sn/sn-146.txt",
+  "audio": "http://media.GRC.com/sn/SN-146.mp3",
+  "chapters": [
+    {
+      "title": "Three Years Nearly Done",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Episode 146. We're ten weeks from finishing our third year."
+        },
+        {
+          "s": "leo",
+          "t": "You were the second show I did, after TWiT. That's when it hit me that I could do more than one. What a fool."
+        },
+        {
+          "s": "steve",
+          "t": "And adding a second is way less than twice the work."
+        },
+        {
+          "s": "leo",
+          "t": "It's all incremental. Then turning on a video camera, incremental. I've been incrementaling myself to death."
+        },
+        {
+          "s": "steve",
+          "t": "Last Friday, when you canceled your recording with Paul, the chatroom was going crazy all by itself. They don't need you."
+        },
+        {
+          "s": "leo",
+          "t": "Paul was on deadline for his book. When I've turned off video and left the Stickam chat on, there are often 900 people in there all night. It's the community. Old media was about celebrity. Now it's about community."
+        }
+      ]
+    },
+    {
+      "title": "The Broken Feedback Link",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many people noticed I broke GRC.com/feedback. My server adds the .htm when it's left off, and something I did recently broke that. It didn't stop listeners from sending 375 questions in two weeks, but several had to add .htm by hand. It'll be fixed by the time you hear this."
+        },
+        {
+          "s": "leo",
+          "t": "It's a little scary you don't know what broke."
+        },
+        {
+          "s": "steve",
+          "t": "I've been working on cool technology we'll discuss soon, which classifies assets on the site to analyze how browsers handle cookies for each type of asset. Something in there broke it."
+        },
+        {
+          "s": "leo",
+          "t": "Apache, which most UNIX types use, has mod_rewrite for this kind of URL massaging. Does IIS?"
+        },
+        {
+          "s": "steve",
+          "t": "It does nothing. ShieldsUP!, the eCommerce system, the password pages, all of it is my own code. IIS has an API called ISAPI that lets me insert my own code in front of and behind the web server. So I've completely encapsulated Microsoft's server in my own assembly language code."
+        },
+        {
+          "s": "leo",
+          "t": "I use mod_rewrite all the time to turn ugly WordPress URLs, with .php and queries, into much nicer ones."
+        }
+      ]
+    },
+    {
+      "title": "EV Display Without the Phishing Filter",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Someone in our newsgroup found how to get IE7's EV certificate display with the phishing filter off. Near the end of the long list in IE's advanced settings is \"Check for server certificate revocation.\" Check it and restart IE, and the green EV display returns."
+        },
+        {
+          "s": "leo",
+          "t": "That's the most arcane thing I've ever heard."
+        },
+        {
+          "s": "steve",
+          "t": "Who knows why. I didn't verify whether turning off the phishing filter changes that setting. But with the filter off and revocation checking on, you get the EV display."
+        }
+      ]
+    },
+    {
+      "title": "SP3 Broke Steve's Start Menu",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week I was excited about XP Service Pack 3. It bit me, and my tech support guy Greg. On my brand-new main system, twice in the day after installing it, my Start menu died. The menu would come up, but nothing responded. I've never had that happen. Logging out and back in revived it, but that's ridiculous. I backed SP3 out, and it hasn't happened since."
+        },
+        {
+          "s": "leo",
+          "t": "Are you now more vulnerable?"
+        },
+        {
+          "s": "steve",
+          "t": "Windows Update still gives you all the pre-SP3 updates. Then it updates the Windows Genuine Advantage tool and recommends SP3. And people say even the supposedly 66MB download fetches the whole thing."
+        },
+        {
+          "s": "steve",
+          "t": "Googling, I found lots of people having weird problems, like a Control Panel applet that won't run with SP3 and works again without it. Let's give it a month. Microsoft may patch the service pack."
+        },
+        {
+          "s": "leo",
+          "t": "And this is a brand-new machine without a lot of crap."
+        },
+        {
+          "s": "steve",
+          "t": "No age on it at all."
+        }
+      ]
+    },
+    {
+      "title": "PayPal's Green Bar Over a Hole",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of PayPal's EV certificate, PayPal had a cross-site scripting flaw on its EV-certified pages. A couple of weeks ago, PayPal announced that browsers without EV support would soon not be welcome. After a furor, they backpedaled to saying they'd prefer EV-capable browsers."
+        },
+        {
+          "s": "steve",
+          "t": "Meanwhile, with the green bar showing, a demonstrated cross-site scripting vulnerability let an attacker effectively take you to a different server while still showing PayPal's green URL."
+        },
+        {
+          "s": "steve",
+          "t": "So the green bar says nothing about how the site works. It just says they paid more for their certificate and were checked out more."
+        },
+        {
+          "s": "leo",
+          "t": "Checked out for who they are, not for their security."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. A bit of a black eye."
+        }
+      ]
+    },
+    {
+      "title": "An Unpatched iCal Flaw Goes Public",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's an unpatched remote code execution vulnerability in Apple's iCal. Open a malicious iCal file, say from a link in email, and a buffer overrun lets exploit code run."
+        },
+        {
+          "s": "steve",
+          "t": "A security research group told Apple in January. After many excuses and delays, Apple promised a fix by the end of April and didn't deliver. So last week the group went public with the exploits. Apple isn't happy, but I understand. The longer a known hole stays open, the more opportunity for exploitation. We've put up with this on Windows for a long time."
+        },
+        {
+          "s": "leo",
+          "t": "Researchers at w00w00 once told me they'd known of a Windows vulnerability for a year. Maybe Apple's patch caused other problems. But going public puts a lot of pressure on, since hackers know."
+        },
+        {
+          "s": "steve",
+          "t": "They tried responsible disclosure and got tired of waiting."
+        }
+      ]
+    },
+    {
+      "title": "\"SpinRite Failed Me, but It's NVIDIA's Fault\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Alex Walters' subject was \"SpinRite failed me, but it's NVIDIA's fault.\" SMART, the drive's Self-Monitoring, Analysis and Reporting Technology, gave him the dreaded \"back up your data now\" warning. He hadn't backed up that drive in seven and a half years."
+        },
+        {
+          "s": "steve",
+          "t": "Copying files to a fresh 500GB external drive went fine until his brother's basic training graduation photos, which Windows couldn't read. The horror. He booted SpinRite from a floppy, how novel, and went to take a shower, not with the computer. When he came back, his video card had died and taken the machine with it."
+        },
+        {
+          "s": "steve",
+          "t": "A month later, he'd rebuilt the whole machine, hooked up the old drive and ran SpinRite. It clicked along until it recovered everything he wanted. So not quite a SpinRite failure."
+        }
+      ]
+    },
+    {
+      "title": "You Can Skip SP3 and Still Patch",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "\"Steve\" in Florida says when Windows Update offers SP3, small print says that even if you don't install it now, you may still need updates, and a button lets you skip SP3 and get the usual patches for SP2. Everyone can, and probably should."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know what Microsoft will do about this. I'm glad SP3, unlike SP2, forces you to keep the uninstall files. It's a huge blob on your drive, but I needed it to back out."
+        },
+        {
+          "s": "steve",
+          "t": "In retrospect, I didn't take my own advice to let a service pack settle. SP3 is causing problems beyond AMD processors. I have a genuine Intel quad core, and my Start menu dies. I need my Start menu."
+        },
+        {
+          "s": "leo",
+          "t": "Vista SP1 seems not to be a problem for most users."
+        },
+        {
+          "s": "steve",
+          "t": "Vista did something wacky on one of my test machines last week. After two updates, it won't shut down. It shows the spinning wheel, then a blue screen."
+        }
+      ]
+    },
+    {
+      "title": "Debian's OpenSSL Blunder",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jawny G. in British Columbia asks about the Debian and Ubuntu OpenSSL mistake, since you were quoted in an article. What does it mean for open source?"
+        },
+        {
+          "s": "steve",
+          "t": "Many listeners asked. Here's the story. In September 2006, Debian's developers ran tools called Valgrind and Purify over their code. They're automated checkers, like an advanced form of Lint, which helps C programmers find uninitialized variables and questionable syntax."
+        },
+        {
+          "s": "steve",
+          "t": "It flagged a block of memory that was never initialized. The programmers didn't really understand the code. Their changes caused errors, and they ended up commenting out a critical part of OpenSSL's random number generator in Debian. That affects derivatives like Ubuntu."
+        },
+        {
+          "s": "steve",
+          "t": "That memory was uninitialized on purpose, as a little more randomness. You can't count on it, since, as we learned from the RAM freezing research, uninitialized memory tends to come up the same each time, but probably unique per machine. It was far from the only source. OpenSSL feeds in microscopic hard drive timing variations, mouse movements and much more to seed the pseudorandom number generator, the heart of OpenSSL, used to generate all the keys and certificates it produces."
+        },
+        {
+          "s": "steve",
+          "t": "But their change effectively commented all of that out, leaving only the process ID. Linux process IDs are 15 bits, so there were only 32,768 possible keys. They've been brute-forced and reverse-engineered, and tools are surfacing."
+        },
+        {
+          "s": "leo",
+          "t": "The process ID is the seed?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. The original coder intended all that other stuff as the seed. They commented out everything but the process ID."
+        },
+        {
+          "s": "leo",
+          "t": "Somebody modifying code he didn't understand."
+        },
+        {
+          "s": "steve",
+          "t": "So anyone who made a key or certificate pair, such as SSH keys, on Debian or Ubuntu since September '06 has an essentially bogus one, and hacks are already out there. There's a test to check whether yours is one of the bad keys. It was fixed immediately, about two weeks ago. Update OpenSSL, and consider any keys you've generated in that time exploitable."
+        },
+        {
+          "s": "leo",
+          "t": "Who found it?"
+        },
+        {
+          "s": "steve",
+          "t": "A security researcher named Luciano Bello. And our old friend H.D. Moore at Metasploit has an extensive page and is already writing exploit toys."
+        },
+        {
+          "type": "fact",
+          "title": "The scale",
+          "t": "Only 32,768 keys were possible for each key type, size and processor architecture. Debian published blacklists of every weak key so servers could reject them. The flaw is CVE-2008-0166."
+        }
+      ]
+    },
+    {
+      "title": "Is This an Open-Source Problem?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jawny asks about open source's future. Shouldn't you be unable to modify something like a random number generator library?"
+        },
+        {
+          "s": "steve",
+          "t": "They thought they were doing the right thing by running a security tool. But they forked the software, and OpenSSL has fixed other things since."
+        },
+        {
+          "s": "leo",
+          "t": "So the proper process was to go to the OpenSSL group and ask, instead of fixing it themselves."
+        },
+        {
+          "s": "steve",
+          "t": "I read that the OpenSSL people said that after they finished rolling on the floor laughing at what had been done to their carefully created high-quality random number generator, they'd have explained that commenting that line out was a bad idea."
+        },
+        {
+          "type": "fact",
+          "title": "The record",
+          "t": "The Debian developer actually did ask on the OpenSSL developers' mailing list in 2006 and got a reply that seemed to approve removing the lines, a miscommunication both sides later acknowledged."
+        },
+        {
+          "s": "leo",
+          "t": "So this could be called a structural problem with open source. But with proper procedures it isn't. And a researcher found it because it's open source. If Debian were closed, this could happen and you'd never know."
+        }
+      ]
+    },
+    {
+      "title": "What If You Lose Your YubiKey?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave in Grand Rapids, Michigan worries: if the YubiKey is the only thing needed, someone who finds yours at your company could log in as you just by pressing the button. Or do you still need a username and password?"
+        },
+        {
+          "s": "leo",
+          "t": "I've misplaced my YubiKey, actually."
+        },
+        {
+          "s": "steve",
+          "t": "There's been confusion I'm responsible for, because I got so carried away with how cool it is."
+        },
+        {
+          "s": "leo",
+          "t": "I remember you saying it right."
+        },
+        {
+          "s": "steve",
+          "t": "The confusion is people saying, I want one, now what? It's not an end-user tool the way the PayPal football is, which PayPal supports, so you immediately have a use. The YubiKey is more wholesale than retail."
+        },
+        {
+          "s": "leo",
+          "t": "But I can use it with Yubico as an OpenID provider?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. And MashedLife.com, a third-party password and website login service, is YubiKey enabled with a clever approach."
+        },
+        {
+          "s": "steve",
+          "t": "To Dave's point: it's meant to be one additional factor in a multifactor system. Someone could misdesign a system, and a YubiKey doesn't make the rest secure. You want something you know, a passphrase, plus something you have."
+        },
+        {
+          "s": "steve",
+          "t": "Stina told us universities want to give one to every student and faculty member to log on around campus. Their IT departments will provide all the back-end infrastructure."
+        },
+        {
+          "s": "leo",
+          "t": "When I use OpenID, I tell the site my provider, say Yubico.com, and I'm sent there to authenticate, presumably with a username, password and the YubiKey."
+        },
+        {
+          "s": "steve",
+          "t": "I haven't looked at that. But their OpenID service is there, free, and will always be free."
+        },
+        {
+          "s": "leo",
+          "t": "The point of OpenID is that the provider verifies your whole identity and asserts it to the site, which then says, okay, I know you're you."
+        }
+      ]
+    },
+    {
+      "title": "Testing Your Own Site, and How Leo Was Hacked",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kyle Hasegawa in Tokyo has a tip for me, since I wanted to test my server. Security Compass offers two Firefox add-ons: XSS Me, which slams your site with cross-site scripting attacks, and SQL Inject Me, which does the same with SQL injection, then gives in-depth reports. His Drupal 6.2 and homebrew sites passed. Limit testing to your own sites, he says, to avoid a visit from your local FBI agents."
+        },
+        {
+          "s": "steve",
+          "t": "They really hammer the pages you give them with all kinds of attempts."
+        },
+        {
+          "s": "leo",
+          "t": "In my case it was neither. I found out what happened. I was the vulnerability."
+        },
+        {
+          "s": "leo",
+          "t": "The hacker, who says he's not Brazilian, though he doesn't speak English, posted on my blog that I should harden my site, then sent a note explaining how he got in."
+        },
+        {
+          "s": "leo",
+          "t": "You know the private file area on Leoville.com where we put Security Now! for you to download. It's protected only by obscurity, a directory with some PHP code managing it. I have several for various people. On one, and only one, I'd enabled uploads."
+        },
+        {
+          "s": "steve",
+          "t": "Oh, dumb."
+        },
+        {
+          "s": "leo",
+          "t": "And the incoming folder's permissions let an uploaded script execute. He uploaded a PHP script, which I found. It hunts for other vulnerabilities on the server, open directories and downloadable files, especially configuration files. It found one containing my MySQL password. Of the five sites on that server, only two were unprotected enough for him to zap."
+        },
+        {
+          "s": "steve",
+          "t": "I think that's a pretty good hack, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "Probably an automated tool looking for uploadable, executable directories. Foolish of me. We'll walk through that script on TWiT Live sometime. These test tools wouldn't have found it. It was too stupid a vulnerability."
+        }
+      ]
+    },
+    {
+      "title": "Why MAC Filtering Isn't Security",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John in Moncton, New Brunswick asks: my wireless router can restrict access by MAC address. Behind a NAT router, isn't that secure, as long as MACs can't be faked?"
+        },
+        {
+          "s": "steve",
+          "t": "Some listeners are rolling their eyes, but major tech support people keep recommending it as if it makes you completely secure. It absolutely won't."
+        },
+        {
+          "s": "steve",
+          "t": "The MAC address is in the clear even with encryption on. It's the outer address that gets packets to their destination on an Ethernet, 48 bits by definition."
+        },
+        {
+          "s": "leo",
+          "t": "Every network device has a unique 48-bit MAC address."
+        },
+        {
+          "s": "steve",
+          "t": "It's split into two 24-bit halves: one identifies the manufacturer, and the manufacturer numbers the other half sequentially. Together they're unique."
+        },
+        {
+          "s": "leo",
+          "t": "Unless they make more than 14 million cards."
+        },
+        {
+          "s": "steve",
+          "t": "Then they get another manufacturer ID. And if two adapters on a LAN collided, your equipment would warn you, just like an IP address collision. That can happen because newer adapters let users change the MAC address."
+        },
+        {
+          "type": "fact",
+          "title": "The math",
+          "t": "Twenty-four bits gives each manufacturer ID about 16.8 million addresses."
+        },
+        {
+          "s": "leo",
+          "t": "So MACs can be spoofed."
+        },
+        {
+          "s": "steve",
+          "t": "And on a wireless network, a sniffer shows you every MAC address in use."
+        },
+        {
+          "s": "leo",
+          "t": "Then you set your card to one of those."
+        },
+        {
+          "s": "steve",
+          "t": "Trivial. MAC filtering is good only for preventing inadvertent use. Say you can't use WPA, because friends visit constantly or some equipment doesn't support it, and nobody should use WEP, crackable in about a minute. Then anyone in range with a strong signal may connect without even knowing. MAC filtering puts up a soft barrier against that. But anyone who knows what they're doing walks right through. WPA with a strong password is the only solution."
+        },
+        {
+          "s": "leo",
+          "t": "And the same for hiding the SSID. It's sent in the clear too. You have to encrypt."
+        }
+      ]
+    },
+    {
+      "title": "Can Remote Support Infect You?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tom Terrific wants to fix friends' computers remotely with something like GoToMyPC. If their computer is full of malware, could connecting infect him?"
+        },
+        {
+          "s": "steve",
+          "t": "In a perfect world, it's completely safe."
+        },
+        {
+          "s": "leo",
+          "t": "You're just looking through a window into their system."
+        },
+        {
+          "s": "steve",
+          "t": "You see their video and drive their mouse and keyboard. Purely remote I/O. But it's not a perfect world. Far from it."
+        },
+        {
+          "s": "steve",
+          "t": "If the remote software had a vulnerability malware knew about, it could detect you connecting with VNC, GoToMyPC or Remote Desktop and exploit it to cause a buffer overrun at your end."
+        },
+        {
+          "s": "leo",
+          "t": "Any conversation between computers carries that potential."
+        },
+        {
+          "s": "steve",
+          "t": "So if I habitually connected to probably infected machines, I'd do it from a virtual machine at my end. Maybe that's overly cautious. Generally it's not a problem, until it becomes one."
+        },
+        {
+          "s": "leo",
+          "t": "There have been problems with Windows' RPC and man-in-the-middle attacks."
+        },
+        {
+          "s": "leo",
+          "t": "When Auntie Dawn brought her spyware-ridden computer, I didn't connect it to my LAN until I'd reinstalled Windows and scanned it, and then only to update it."
+        },
+        {
+          "s": "steve",
+          "t": "I don't let any foreign machine touch my network. Ever. I have a cable modem connected to nothing else. Even when my buddy Mark Thompson of AnalogX brought a laptop, I said sorry, you can use that cable modem. He completely understood. My internal network is sacrosanct."
+        },
+        {
+          "s": "leo",
+          "t": "A cable modem just for guests? That's serious. Here even the Skype machine is on the LAN, so the TriCaster can see its screen. And people will use our WiFi. Would the three-router setup work?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. That's absolute security."
+        }
+      ]
+    },
+    {
+      "title": "DLLs in a Real Estate URL",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Oscar Aguirre in Gardena, California is house-hunting in Glendale. His realtor's printout footer showed a URL ending in mgrqispi.dll. Googling found many sites with the same file. Should he worry about a server exposing DLL names, or switch realtors?"
+        },
+        {
+          "s": "steve",
+          "t": "We're seeing a proliferation of extensions. ShieldsUP! shows ne.dll, for Net Engine, the DLL containing all my assembly code. You see .php, .pl for Perl, and originally .cgi. Those are executable or interpreted code. .htm and .html are actual text files. ASP is Microsoft's Active Server Pages. Sometimes you see .exe."
+        },
+        {
+          "s": "steve",
+          "t": "There's nothing about a .dll or .exe that should put anyone off. It's just how they implemented their Web 2.0 functionality."
+        },
+        {
+          "s": "leo",
+          "t": "Though it's good practice for webmasters to hide that with mod_rewrite or similar. It's security by obscurity, but if that DLL had a flaw, attackers would know where to aim."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. Oscar used Google to find every site using that file. If a flaw appeared, that's exactly how search engines are used now to find more sites to exploit."
+        },
+        {
+          "s": "steve",
+          "t": "GRC.com/passwords, for example, is aliased to an ne.dll URL, but users don't see it."
+        },
+        {
+          "s": "leo",
+          "t": "And it's cleaner. Tim Berners-Lee said he never intended URLs for human eyes."
+        }
+      ]
+    },
+    {
+      "title": "Why Apple's AirPort Isn't Stealth",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Welles B. Goodrich in Santa Cruz bought an Apple AirPort Extreme. With its NAT firewall on, ShieldsUP! showed ports closed but not stealth, and no setting changed it. His previous routers were always stealth. He switched to a D-Link gaming router with an AirPort Express for WiFi and printing, and he's stealth again. If the AirPort truly has a NAT firewall, why closed? Was he too paranoid? Some subjects may as well be Klingon to this Mac user, but he gains a lot. And SpinRite for the Mac, please."
+        },
+        {
+          "s": "steve",
+          "t": "This is a little controversial. Not everyone, especially old bearded UNIX gurus, agrees stealth has value. When someone posts that they weren't all stealth at GRC, some curmudgeon says that's a crock."
+        },
+        {
+          "s": "leo",
+          "t": "You created the idea of open, closed and stealth."
+        },
+        {
+          "s": "steve",
+          "t": "I coined \"stealth,\" as far as I know. And technically anything stealth breaks the rules. A TCP/IP stack should respond to a ping. That's what ping is for: letting Internet engineers verify packets can get there and back."
+        },
+        {
+          "s": "leo",
+          "t": "A port is a path between your computer and the outside world, and there are 65,535 of them. If a service is listening, like a web server, it answers. That's open. If nothing is listening, it can say, I'm here, but nothing's on this port. That's closed. Or it can say nothing. That's stealth."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. By the RFCs, a TCP connection attempt to a port with no listener should get a reset, affirmatively telling you a machine exists at this IP but that port isn't open. A ping, using ICMP, should get an answer. Stealth deliberately breaks the rules and just drops the packet, as if it went off into the yonder."
+        },
+        {
+          "s": "leo",
+          "t": "Why would I want that?"
+        },
+        {
+          "s": "steve",
+          "t": "It's very useful to Internet engineers wearing white hats. Unfortunately, also to hackers wearing black hats. It confirms there's a machine at that address."
+        },
+        {
+          "s": "steve",
+          "t": "There are four billion IP addresses, and you don't know whether one reaches anything. A rule-following machine says, hey, you found me. Or, that port's closed, guess again. I have 65,535 ports. Maybe one's open."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not saying stealth increases your security. You can argue it's security by obscurity, and I'd say sure. It's more secure to be hidden than not."
+        },
+        {
+          "s": "leo",
+          "t": "Pretty good obscurity. With no response, a hacker can't tell anything is there."
+        },
+        {
+          "s": "steve",
+          "t": "The packets hit and die. That's why NAT routers are typically stealth. ShieldsUP! and GRC are significantly responsible for that. Many early routers answered pings or reported closed ports, and we popularized the idea that stealth is better."
+        },
+        {
+          "s": "leo",
+          "t": "My ShieldsUP! test is all green, all stealth, but I fail because I respond to pings. Why not?"
+        },
+        {
+          "s": "steve",
+          "t": "It tells someone there's something there. It might heighten a malicious person's interest, or tell them when your machine's on while you're away on vacation. It gives away information for no reason. Better to be an absolute enigma."
+        },
+        {
+          "s": "leo",
+          "t": "That's my Comcast router's default. How do I turn off ping?"
+        },
+        {
+          "s": "steve",
+          "t": "There's no universal way. Usually a WAN-side setting, wide area network as opposed to LAN, like \"disable WAN-side ICMP\" or \"respond to pings.\" Most routers now default to off, or people complain."
+        },
+        {
+          "s": "steve",
+          "t": "To answer Welles: there's nothing arguably insecure about the AirPort Extreme. It's a well-known characteristic. All its ports report closed. It responds by the book. It could easily say nothing, but that's not what Apple chose."
+        },
+        {
+          "s": "leo",
+          "t": "And worse, they don't give you a way to change it."
+        },
+        {
+          "s": "steve",
+          "t": "People want it. And yes, the curmudgeons say it's against the rules."
+        },
+        {
+          "s": "leo",
+          "t": "That made sense in a gentle, benign world. I'm glad Yahoo! and Google still answer pings, since I use them to test whether I'm online."
+        },
+        {
+          "s": "steve",
+          "t": "I let GRC be pingable deliberately, so people who can't reach our pages can check whether we're there. We're a big public server, not hiding. But you can't ping my famous cable modem. It's stealth."
+        }
+      ]
+    },
+    {
+      "title": "What EV Certificates Don't Promise",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Gary Warner, director of research at UAB Computer Forensics, warns that if we train users that green bars are safe, we haven't fixed the main problem: webmasters ignoring security, as PayPal showed."
+        },
+        {
+          "s": "leo",
+          "t": "His team at the University of Alabama at Birmingham examined more than 15,000 phishing sites in the first quarter of 2008."
+        },
+        {
+          "s": "steve",
+          "t": "That there are even 15,000 phishing sites is a problem right there."
+        },
+        {
+          "s": "leo",
+          "t": "And they're pulled down as soon as they're found. He says phishing sites now regularly run on sites with valid certificates, mostly hacked servers like a broken-into web store's SSL-certified site. Criminals are also buying certificates. Will the high cost deter them from registering a company and phishing from it? Absolutely not. They pay with stolen funds."
+        },
+        {
+          "s": "leo",
+          "t": "A certificate says, we have documentation that a company owning this site exists. Not that the bank login on this page belongs to the company that registered the site. You could have a certificate for BadGuys.com with a page that looks like BankofAmerica.com. He's been a fan since your TechTalk columns in InfoWorld and bought your \"Passion for Technology\" books."
+        },
+        {
+          "s": "steve",
+          "t": "A perfect illustration. Extended validation means the company was much more thoroughly vetted. VeriSign verified Gibson Research's identity, corporate address and good standing, blah blah blah. It says nothing about our security practices. I do encrypt every node of my B-tree of eCommerce data, which is over the top. But that's not what the certificate says. It asserts only the identity of the company, nothing more."
+        },
+        {
+          "s": "leo",
+          "t": "Most users will see green and think safe."
+        },
+        {
+          "s": "steve",
+          "t": "And remember my disparaging comment about the \"Hacker Safe\" badge on sites everywhere? Get this. It was on the PayPal page with the cross-site scripting vulnerability."
+        },
+        {
+          "s": "leo",
+          "t": "Who knows what they're testing for."
+        }
+      ]
+    },
+    {
+      "title": "Swapping a Dead Drive's Circuit Board",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kyle Hasegawa is back with a trick for really dead drives, short of paying thousands. It's a last resort. Find an identical drive. The model number must match, and the production code is even better. Carefully move the PCB, the circuit board, from the good drive to your dead one. If the board was the problem, you're good to go. If not, you're out a few bucks."
+        },
+        {
+          "s": "steve",
+          "t": "It's a nice midpoint between running SpinRite and forking over $2,500 to a DriveSavers. As you said, recovery companies keep inventories of old drives for exactly this. If the board is fried, they move an equivalent board onto your drive, pull the data off, then put that board back in inventory."
+        },
+        {
+          "s": "steve",
+          "t": "Statistically, though, the problem is far more likely in the enclosure, the heads and platters, especially since drives get dropped and the heads bounce. Many people buy two of the same drive at once, so you may have a matching board. It's worth trying if you're comfortable. I wouldn't count on it, but it's a nice compromise."
+        },
+        {
+          "s": "leo",
+          "t": "Do you have to desolder it?"
+        },
+        {
+          "s": "steve",
+          "t": "I've never seen one that needed desoldering. There's a flat cable, or pins sticking up through a connector. Wiggle it and pull straight away, and it unplugs cleanly, since the reverse happens in manufacturing."
+        },
+        {
+          "type": "fact",
+          "title": "A catch",
+          "t": "Many modern drives store unique calibration data in a chip on the board, so a swapped board often works only if that chip is moved from the original board too."
+        }
+      ]
+    },
+    {
+      "title": "An ISP Router That Shows Its Homepage",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bob J. in Claremont, California says Verizon switched him to an Actiontec modem-router that fails ShieldsUP! by answering pings, which his Linksys never did, and typing his public IP brings up the router's homepage, showing his network setup. He uses a strong password but hates it, and Verizon was useless. Can he disable its NAT and go back to the Linksys? Comcast did the same to us, building the router into the modem."
+        },
+        {
+          "s": "steve",
+          "t": "First, getting the homepage by typing the public IP from inside doesn't mean it's available from outside. Some routers answer on their public IP, but only from inside."
+        },
+        {
+          "s": "leo",
+          "t": "So he needs to test from somewhere else."
+        },
+        {
+          "s": "steve",
+          "t": "Have someone he trusts type it from outside while the IP is the same. If it's exposed, many routers have a WAN configuration option to disable \"WAN administration.\" You absolutely want that disabled. Don't even expose a login page, or someone can pound on it with a brute-force attack."
+        },
+        {
+          "s": "leo",
+          "t": "And put a password on it, change the wireless network name and all those things."
+        },
+        {
+          "s": "steve",
+          "t": "And tell it not to answer pings, if possible. If not, put your Linksys behind it, bolt down the Verizon box's public face as much as you can, and use the Linksys's security, which we know can be locked down tight."
+        }
+      ]
+    },
+    {
+      "title": "Stale Linux Live CDs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "KakeMan in Malaysia picks a bone with recommending a Linux live CD for risky browsing or online banking. Hardy Heron is fresh now, but security holes will be found, and unless you build an up-to-date live CD, you'd be vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "Unless it's as new as a week ago, it may even have the vulnerable OpenSSL random number generator from September '06."
+        },
+        {
+          "s": "leo",
+          "t": "Installed on a hard drive, Linux updates itself like Windows or Mac. A CD can't."
+        },
+        {
+          "s": "steve",
+          "t": "For our listener doing remote support, an alternative to a VM would be multiplatform VNC on a Linux boot CD, as long as your drives aren't available. Belt and suspenders. But KakeMan's right: keep a live CD fresh, because eventually it will have known vulnerabilities."
+        },
+        {
+          "s": "leo",
+          "t": "Bad how? Nothing can be written to the CD, so no virus persists. But while you're online and typing a bank login, an unpatched hole could let someone capture it."
+        },
+        {
+          "s": "steve",
+          "t": "Next week I have a bunch of topics and have to choose one."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Debian's 2006 change to OpenSSL do?",
+      "options": [
+        "Removed nearly all the randomness from key generation, leaving only 32,768 possible keys",
+        "Disabled SSL",
+        "Leaked private keys online",
+        "Slowed encryption"
+      ],
+      "answer": 0,
+      "explain": "Only the process ID remained as a seed."
+    },
+    {
+      "q": "Why doesn't MAC address filtering secure a wireless network?",
+      "options": [
+        "MAC addresses travel in the clear and can easily be copied and spoofed",
+        "It only works with WEP",
+        "Routers ignore it",
+        "It slows the network"
+      ],
+      "answer": 0,
+      "explain": "It only prevents inadvertent use."
+    },
+    {
+      "q": "What does a \"stealth\" port do differently from a \"closed\" one?",
+      "options": [
+        "It ignores the connection attempt instead of replying that the port is closed",
+        "It encrypts traffic",
+        "It accepts connections",
+        "It forwards traffic"
+      ],
+      "answer": 0,
+      "explain": "Stealth technically breaks the rules but reveals nothing."
+    },
+    {
+      "q": "What does an EV certificate actually vouch for?",
+      "options": [
+        "The verified identity of the company that obtained it, not its security",
+        "That the site has no vulnerabilities",
+        "That it's malware-free",
+        "That it uses strong encryption"
+      ],
+      "answer": 0,
+      "explain": "PayPal's EV pages had a cross-site scripting hole."
+    },
+    {
+      "q": "How was Leo's server actually hacked?",
+      "options": [
+        "An upload folder let the attacker run a script that found a configuration file with his database password",
+        "A SQL injection in his forums",
+        "A weak WiFi password",
+        "A cross-site scripting attack"
+      ],
+      "answer": 0,
+      "explain": "Leo says he was the vulnerability."
+    },
+    {
+      "q": "Why should a Linux live CD used for banking be kept current?",
+      "options": [
+        "It can't update itself, so its known vulnerabilities pile up over time",
+        "It wears out",
+        "It stops booting after a year",
+        "It deletes your data"
+      ],
+      "answer": 0,
+      "explain": "An old Ubuntu CD might even have the weak OpenSSL."
+    }
+  ]
+}
