@@ -36,17 +36,17 @@
           "t": "Yahoo!, Odeo, PodNova and iPodX have all dropped out. It's an iTunes world, so it's great to have another big player. Now all they have to do is sell some Zunes."
         },
         {
+          "type": "fact",
+          "title": "The Zune",
+          "t": "Microsoft discontinued Zune hardware in 2011 and shut down the Zune services in 2015."
+        },
+        {
           "s": "steve",
           "t": "Coming up on three years ago, when you asked me to do a weekly podcast, I said, a what cast?"
         },
         {
           "s": "leo",
           "t": "People still say that. You're the number two show on the network, after TWiT, but growth has flattened. I think we've saturated iTunes listeners. Microsoft should help, especially for this show and Windows Weekly."
-        },
-        {
-          "type": "fact",
-          "title": "The Zune",
-          "t": "Microsoft discontinued Zune hardware in 2011 and shut down the Zune services in 2015."
         }
       ]
     },
@@ -94,6 +94,11 @@
           "t": "Exploits are in the wild, for Firefox and in malicious PDFs. XP users should run Windows Update or click the yellow shield very quickly."
         },
         {
+          "type": "fact",
+          "title": "MS07-061",
+          "t": "The fix was security bulletin MS07-061, for a URI-handling flaw in Windows XP and Server 2003 that attackers were already exploiting through malicious PDFs."
+        },
+        {
           "s": "leo",
           "t": "Why isn't Vista hit?"
         },
@@ -116,11 +121,6 @@
         {
           "s": "steve",
           "t": "Absolutely. Microsoft learned a lot. I'd argue they did everything possible without breaking it more than they have. More would have cost backward compatibility, which they won't sacrifice, and arguably shouldn't."
-        },
-        {
-          "type": "fact",
-          "title": "MS07-061",
-          "t": "The fix was security bulletin MS07-061, for a URI-handling flaw in Windows XP and Server 2003 that attackers were already exploiting through malicious PDFs."
         }
       ]
     },
