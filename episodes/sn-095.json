@@ -1,0 +1,381 @@
+{
+  "number": 95,
+  "title": "OpenID",
+  "subtitle": "An open, single sign-on system for the web",
+  "date": "2007-06-07",
+  "description": "From the mailbag: a listener's wish for an OpenID-plus-SecurID service, a self-contained fingerprint USB drive, and SpinRite saving a CPA's server during tax season. Then Steve explains OpenID, the open, license-free single sign-on system that lets a site ask an identity server you choose to vouch for you: how a URL becomes your login, how your browser is redirected for authentication and back, how the site verifies the result, and why it's about identity, not trust.",
+  "transcript": "https://www.grc.com/sn/sn-095.txt",
+  "audio": "http://media.GRC.com/sn/SN-095.mp3",
+  "chapters": [
+    {
+      "title": "Uncle Stevie's Security Hour",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Gather 'round the radio. Uncle Stevie's Security Hour has come."
+        },
+        {
+          "s": "steve",
+          "t": "I think we'd better drop that now."
+        },
+        {
+          "s": "leo",
+          "t": "Today, OpenID."
+        },
+        {
+          "s": "steve",
+          "t": "You mentioned it when we discussed authentication. I wished for a third party that could use something strong like RSA's SecurID, so every site wouldn't need its own authentication scheme. The third party would authenticate you and tell the site, yes, this is Steve. That's exactly what OpenID is."
+        },
+        {
+          "s": "leo",
+          "t": "I'm a fan. These technologies mean little unless lots of people use them."
+        },
+        {
+          "s": "steve",
+          "t": "It has all the feel of the way it should be done, very much like how the web was originally designed. There's still some intellectual property claim to resolve, I think from a Danish company. OpenID.net says explicitly it wants to be as unencumbered as possible. But it feels like the one that will win."
+        }
+      ]
+    },
+    {
+      "title": "Mailbag: SecurID, Fingerprint Drives and a CPA",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The mailbag: Brad Berkemier of North Sioux City, South Dakota would love to run his own OpenID server with SecurID authentication. How much does SecurID cost, and will RSA sell to an individual? If not, Steve should start an OpenID-plus-SecurID business. He'd buy."
+        },
+        {
+          "s": "leo",
+          "t": "You don't have enough to do."
+        },
+        {
+          "s": "steve",
+          "t": "Many listeners echoed that. I haven't researched it, but I'd guess RSA has it locked up, proprietary and dripping in crypto, so no free version can use its tokens. The tokens are so cool that I bought a bunch, including credit-card ones with a ten-key pad. I can't use them without the software. High geek factor."
+        },
+        {
+          "s": "steve",
+          "t": "Last week I wanted that cheap SanDisk fingerprint USB drive. It arrived the day we recorded, and as you said, it only works with Windows and launches its own software, which gives us a queasy feeling."
+        },
+        {
+          "s": "leo",
+          "t": "A U3-like system."
+        },
+        {
+          "s": "steve",
+          "t": "U3 gives me the willies: invasive menus you can't easily remove. SanDisk's is lightweight, but depends on the PC."
+        },
+        {
+          "s": "steve",
+          "t": "Lars Solberg in Norway found what I wanted: BioSlimDisk.com, entirely self-contained, no drivers, OS-independent. He says it encrypts onboard, with AES-256 if he remembers correctly, and works with any device that supports USB sticks. He even uses it on his TV."
+        },
+        {
+          "s": "leo",
+          "t": "It's \"Bio Slim Disk,\" not \"BIOS Lim Disk.\""
+        },
+        {
+          "s": "steve",
+          "t": "And a SpinRite story from Russ Suter, a listener since about Episode 15. He bought SpinRite to support the show with no immediate need. On Friday, March 23rd, in the middle of tax season, a CPA friend called: his server had crashed with all his client documents. Its backups hadn't run successfully in two months."
+        },
+        {
+          "s": "steve",
+          "t": "Russ ran SpinRite on the four-year-old server's tired SCSI drive until midday Monday. Lots of red U's, but many more recovered sectors. It booted and lasted through tax season. By April 15th they installed a new Dell server with a RAID 1 mirror and a complete off-site backup system with reporting. On behalf of hundreds of customers who filed on time, thank you."
+        },
+        {
+          "s": "leo",
+          "t": "Who probably never knew how close they came."
+        },
+        {
+          "s": "steve",
+          "t": "People often get serious after a near-death experience: one massive save, then no single point of failure."
+        },
+        {
+          "s": "leo",
+          "t": "I'd like RAID 5 rather than RAID 1, but that's another story."
+        }
+      ]
+    },
+    {
+      "title": "Single Sign-On, Openly",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It still seems early days. I use several OpenID services, and we interviewed OpenID people on net@nite."
+        },
+        {
+          "s": "steve",
+          "t": "I haven't noticed a site using it yet. You learn a new word, and suddenly everyone uses it."
+        },
+        {
+          "s": "leo",
+          "t": "AOL's using it, and Digg announced it. There's a Drupal module, so TWiT could."
+        },
+        {
+          "s": "steve",
+          "t": "I looked at Digg, and didn't see it yet. AOL definitely uses it: any AOL user's existing login works as an OpenID."
+        },
+        {
+          "s": "leo",
+          "t": "If you have an AOL account, you have an OpenID."
+        },
+        {
+          "s": "steve",
+          "t": "OpenID provides single sign-on. Today every site wants a user ID and password. We've preached using different passwords, so one malicious site can't compromise others, because you authenticate with each site one-on-one."
+        },
+        {
+          "s": "steve",
+          "t": "With single sign-on, you build an identity and trust relationship with one other entity, and sites ask it: is this really that person? Combine that with a SecurID token and PIN, and you get multifactor strength for every site."
+        },
+        {
+          "s": "leo",
+          "t": "That's not new. Microsoft's Passport did this. I still use it on a few sites, like Expedia."
+        },
+        {
+          "s": "steve",
+          "t": "True. What's fantastic about OpenID is that it's absolutely open. Open, open, open."
+        },
+        {
+          "s": "leo",
+          "t": "Nobody owns it."
+        },
+        {
+          "s": "steve",
+          "t": "The protocols are public domain, with implementations in C#, C++, Java, Perl, Python, Ruby, PHP and ColdFusion. No assembly language? I could handle that."
+        },
+        {
+          "s": "steve",
+          "t": "Passport was all about Microsoft. Now Microsoft is embracing OpenID and planning to integrate it with CardSpace for Vista, which we'll cover. A sole-provider system just won't take. With OpenID, users have total control and choose their own authentication servers. There's no central authority."
+        },
+        {
+          "s": "leo",
+          "t": "So TWiT could say, use your TWiT password, or your OpenID."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. I'll skip OpenID's heavy jargon and use general terms."
+        }
+      ]
+    },
+    {
+      "title": "Like PayPal, for Identity",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An analogy many people know: PayPal. On a random site I've never used, I always look for PayPal. I'd rather trust a big provider with a lot to lose, like Amazon. Imagine the disaster if Amazon's passwords, purchase patterns and credit cards escaped. I don't want to give some mom-and-pop site my card."
+        },
+        {
+          "s": "steve",
+          "t": "The site bounces me to PayPal with my shopping cart information. I log in, choose how to pay, and PayPal pays the site and bounces me back. The site, assured it's been paid, ships my goodies. OpenID's simpler modes work much the same way."
+        },
+        {
+          "s": "steve",
+          "t": "I've also become a fan of Google Checkout, because Google already has my shipping and billing addresses. OpenID extensions can likewise send standard information you control back to a site to fill in forms, once you authorize it."
+        }
+      ]
+    },
+    {
+      "title": "How OpenID Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Your OpenID is just a URL of a web page you control, or a friend controls, or a blogging site hosts. And I love that you needn't type http://www. The site knows to add it."
+        },
+        {
+          "s": "steve",
+          "t": "You enter that URL at a site. The site fetches the page and looks in its header for an OpenID tag, containing the address of the server you've chosen to authenticate you. A level of indirection."
+        },
+        {
+          "s": "leo",
+          "t": "So you can use your own site, pointing to a provider."
+        },
+        {
+          "s": "steve",
+          "t": "It's all open source, with servers in PHP and Java. You could run your own at home."
+        },
+        {
+          "s": "leo",
+          "t": "But then it's not trustworthy."
+        },
+        {
+          "s": "steve",
+          "t": "Right, you control it. It's a barebones protocol, like early HTML. Simple, inexpensive, owned by no one, so easy you could copy someone's web page and change the color to green. That's what blasted the web into existence."
+        },
+        {
+          "s": "steve",
+          "t": "In the simplest mode, the site redirects your browser to your authentication server, carrying information including the page to return to. Now your browser and your server can authenticate however they like: a client-side SSL certificate signed by a common authority, a username and password, a SecurID token, a fingerprint swipe. Nobody imposes criteria. It's your service. For your bank, you'd choose a very trustworthy authenticator."
+        },
+        {
+          "s": "steve",
+          "t": "Once satisfied, the server uses some crypto and the site's information to redirect your browser back."
+        },
+        {
+          "s": "steve",
+          "t": "One weakness: all that came through your browser. So the site makes a direct connection to your authentication server and asks it to validate the signature. That prevents anyone from undetectably corrupting the browser bounces. Then you're logged in."
+        }
+      ]
+    },
+    {
+      "title": "Leo's Example",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So three sites: the site I'm logging into, my own site, and my provider. I use ClaimID.com, one of many, like Jyte, each with value-added features. Leoville.com points to ClaimID. To log into TWiT.tv, I'd type Leoville.com. It goes through Leoville.com to ClaimID, which shows its login page. I enter my ClaimID credentials, ClaimID tells TWiT.tv I am who I say, and I'm in."
+        },
+        {
+          "s": "steve",
+          "t": "That's the simplest mode, always bouncing your browser. Extensions let the site contact your server directly first. You could list sites to authenticate automatically, or allow a timeout since your last login, or show a small pop-up to log in, without leaving the page. Anyone can provide those features. I expect Microsoft will use your Windows login for it."
+        },
+        {
+          "s": "leo",
+          "t": "So if you're logged into Windows, you wouldn't enter anything more."
+        },
+        {
+          "s": "steve",
+          "t": "As it gets easier and reaches critical mass, users will pressure sites: I don't want a username and password for your rinky-dink site. Support OpenID. It costs nothing anywhere."
+        }
+      ]
+    },
+    {
+      "title": "Security Depends on Your Choices",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There are scary things. It's all DNS-based, and DNS isn't the most secure protocol, to put it mildly."
+        },
+        {
+          "s": "leo",
+          "t": "So a man-in-the-middle attack?"
+        },
+        {
+          "s": "steve",
+          "t": "OpenID specifies a Diffie-Hellman key exchange in one mode. And you'd want SSL with certificate checks to prevent man-in-the-middle attacks. But none of that is required. Some people complain that it can run insecurely."
+        },
+        {
+          "s": "steve",
+          "t": "Make it scale with the security you need. For posting a blog comment, using your main blogging credentials without creating another account is fine. For your bank, require SSL connections throughout. It's up to the user."
+        },
+        {
+          "s": "steve",
+          "t": "There are free, non-SSL OpenID servers that are useful if you know their limits, and commercial ones. VeriSign has one. Our show notes have lots of links."
+        },
+        {
+          "s": "leo",
+          "t": "I have about four, but settled on ClaimID. Each offers come-ons. ClaimID lets you list pages on the web that are yours and aren't."
+        },
+        {
+          "s": "steve",
+          "t": "OpenID says clearly: it's about identity, not trust. Trust requires identity, but identity implies nothing about trust. That distinction kept it a lowest-common-denominator, open spec."
+        },
+        {
+          "s": "leo",
+          "t": "I wish Microsoft, Apple and Linux would build it into their operating systems."
+        },
+        {
+          "s": "steve",
+          "t": "It's just a matter of time. Instead of juggling passwords with personal schemes, you establish strong authentication with one server, and every other site can ask it."
+        },
+        {
+          "type": "fact",
+          "title": "The phishing risk",
+          "t": "Researchers soon pointed out that a malicious site could redirect you to a fake copy of your OpenID provider's login page and steal your password. Providers that use stronger logins, like hardware keys, resist this."
+        }
+      ]
+    },
+    {
+      "title": "Identity, Not Verification",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "To underscore: this isn't identity verification. You could create an OpenID claiming to be Steve Gibson. It's a single password for many sites, not a web of trust."
+        },
+        {
+          "s": "steve",
+          "t": "But a commercial service could provide full, industrial-strength identity verification, refusing to vouch for anyone it hasn't rigorously checked first, the way VeriSign makes me prove GRC is a California corporation in good standing before it signs my certificate."
+        },
+        {
+          "s": "leo",
+          "t": "It's meaningless until sites use it. If Amazon, Travelocity, Expedia and L.L. Bean adopted it, that would put it over the top."
+        },
+        {
+          "s": "steve",
+          "t": "I remember the chicken and egg of the early web. Why go online before what you want is there? It happened because it was so cheap. Once people want OpenID, sites will feel the pressure."
+        },
+        {
+          "s": "leo",
+          "t": "Next week, Q&A number 20."
+        },
+        {
+          "type": "fact",
+          "title": "What happened to OpenID",
+          "t": "OpenID 2.0 arrived in late 2007, but few big sites accepted outside providers. Its successor, OpenID Connect (2014), built on OAuth 2.0, powers today's \"Sign in with Google,\" \"Sign in with Microsoft\" and similar buttons. Microsoft's CardSpace was discontinued in 2011."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is your OpenID identifier?",
+      "options": [
+        "A URL of a web page that points to your chosen authentication server",
+        "Your email address",
+        "A PGP key",
+        "A secret number"
+      ],
+      "answer": 0,
+      "explain": "You can even host the page yourself."
+    },
+    {
+      "q": "How does OpenID resemble paying with PayPal?",
+      "options": [
+        "You're redirected to a trusted third party to prove who you are, then sent back",
+        "It costs money",
+        "It stores credit cards",
+        "It requires Amazon"
+      ],
+      "answer": 0,
+      "explain": "The site never sees your credentials."
+    },
+    {
+      "q": "Why does the site contact your OpenID server directly after you return?",
+      "options": [
+        "To verify the response that passed through your browser wasn't forged",
+        "To bill you",
+        "To get your password",
+        "To log you out"
+      ],
+      "answer": 0,
+      "explain": "Everything arriving via the browser could be tampered with."
+    },
+    {
+      "q": "What makes OpenID different from Microsoft Passport?",
+      "options": [
+        "It's open, with no central authority, and users choose their own servers",
+        "It's faster",
+        "It's run by AOL",
+        "It requires Windows"
+      ],
+      "answer": 0,
+      "explain": "Even Microsoft planned to support it."
+    },
+    {
+      "q": "What does it mean that OpenID is \"about identity, not trust\"?",
+      "options": [
+        "It shows you control an identity, but says nothing about whether you can be trusted",
+        "It verifies legal identity",
+        "It replaces SSL",
+        "It's a web of trust"
+      ],
+      "answer": 0,
+      "explain": "A commercial provider could add rigorous identity checks."
+    },
+    {
+      "q": "How did Steve say OpenID's security should be set?",
+      "options": [
+        "Scaled to the need, with SSL and strong authentication for things like banking",
+        "Always minimal",
+        "Fixed by the protocol",
+        "Only by websites"
+      ],
+      "answer": 0,
+      "explain": "None of the strong options are required by the spec."
+    }
+  ]
+}
