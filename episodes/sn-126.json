@@ -246,13 +246,13 @@
           "t": "No. Windows protects everything except that first track, so normal spyware-style installation works. It was foreseen years ago as theoretically possible, and now it's real."
         },
         {
-          "s": "steve",
-          "t": "And the iPhone has its first trojan. It causes great grief when removed, because removing it cleanly is difficult, and people mess up their iPhones."
-        },
-        {
           "type": "fact",
           "title": "Mebroot",
           "t": "The MBR rootkit, later called Mebroot, spread through drive-by downloads in early 2008. Windows' later Secure Boot was designed to stop exactly this kind of boot-time takeover."
+        },
+        {
+          "s": "steve",
+          "t": "And the iPhone has its first trojan. It causes great grief when removed, because removing it cleanly is difficult, and people mess up their iPhones."
         },
         {
           "type": "fact",
@@ -482,6 +482,11 @@
           "t": "It's open source, so there could be holes."
         },
         {
+          "type": "fact",
+          "title": "Not open source",
+          "t": "Skype was proprietary, closed-source software, which made outside security review harder."
+        },
+        {
           "s": "steve",
           "t": "Most Skype users are behind NAT routers, which protect them. I'd use one with a single computer at $49."
         },
@@ -500,11 +505,6 @@
         {
           "s": "leo",
           "t": "And if your company says no, you can't. For texting someone two offices down, there are plenty of solutions, including encrypted chat."
-        },
-        {
-          "type": "fact",
-          "title": "Not open source",
-          "t": "Skype was proprietary, closed-source software, which made outside security review harder."
         }
       ]
     },
