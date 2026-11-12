@@ -1,0 +1,647 @@
+{
+  "number": 118,
+  "title": "Listener Feedback #28",
+  "subtitle": "Windows' weak random numbers, HushMail's subpoena and more",
+  "date": "2007-11-15",
+  "description": "Security Now! arrives on the Zune, and November's critical XP patch fixes a shell flaw exploited through Firefox and PDFs. Steve reveals that the PayPal token's first digit simply counts, and explains how HushMail's convenient mode let it hand over mail under subpoena. Listeners ask about PPP in the field and its coming version 3, the Windows 2000 random number weakness, WEP-only gadgets, lottery odds, typing-rhythm biometrics, IP-only access control, salting a stored random password, banning by MAC address, how banks remember your computer, monitoring a home network, and keeping Gmail encrypted.",
+  "transcript": "https://www.grc.com/sn/sn-118.txt",
+  "audio": "http://media.GRC.com/sn/SN-118.mp3",
+  "chapters": [
+    {
+      "title": "iChat, and Security Now! on the Zune",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I'd hoped to try Apple's new iChat, said to use a high-quality codec, but we're still on Skype because Skype works. iChat worked, but it was awful."
+        },
+        {
+          "s": "steve",
+          "t": "We spent a lot of time dialing in Skype, and I have static ports mapped for it. Maybe iChat needs more time."
+        },
+        {
+          "s": "leo",
+          "t": "We didn't do any port forwarding. The codec, AAC-LD, is the one I use for the radio show. LD stands for Load Delay, designed for latent networks. Amber and I want it for audio and video."
+        },
+        {
+          "type": "fact",
+          "title": "Low Delay",
+          "t": "AAC-LD stands for Advanced Audio Coding, Low Delay, a version of AAC that keeps latency short enough for live conversation."
+        },
+        {
+          "s": "leo",
+          "t": "And you're now on the Zune. The new Zunes support podcasts natively, right on the front menu, with a podcast page in the Zune Marketplace. On TWiT.tv's Security Now! page, choose Zune from the subscribe links."
+        },
+        {
+          "s": "leo",
+          "t": "Yahoo!, Odeo, PodNova and iPodX have all dropped out. It's an iTunes world, so it's great to have another big player. Now all they have to do is sell some Zunes."
+        },
+        {
+          "s": "steve",
+          "t": "Coming up on three years ago, when you asked me to do a weekly podcast, I said, a what cast?"
+        },
+        {
+          "s": "leo",
+          "t": "People still say that. You're the number two show on the network, after TWiT, but growth has flattened. I think we've saturated iTunes listeners. Microsoft should help, especially for this show and Windows Weekly."
+        },
+        {
+          "type": "fact",
+          "title": "The Zune",
+          "t": "Microsoft discontinued Zune hardware in 2011 and shut down the Zune services in 2015."
+        }
+      ]
+    },
+    {
+      "title": "A Highly Critical XP Patch",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of Microsoft, Tuesday's monthly update is really important, rated not just critical but highly critical. Refreshingly, it doesn't involve Vista."
+        },
+        {
+          "s": "leo",
+          "t": "I didn't get it on my Vista machine."
+        },
+        {
+          "s": "steve",
+          "t": "It's a glitch in shell32.dll in XP and Server 2003. Specially crafted URIs, like news:, telnet: or http: references, containing a percent sign aren't parsed correctly."
+        },
+        {
+          "s": "steve",
+          "t": "There are multiple exploit vectors. Firefox 2.0.0.5 is vulnerable, as are Netscape Navigator, an IRC client and even PDF files. Adobe immediately pushed out Acrobat and Reader 8.1.1, because opening a crafted PDF could cause remote code execution."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft says IE7 must also be installed, since IE7 changes how other applications process URIs. Adobe fixed its vector October 24th, well before Microsoft fixed the root problem."
+        },
+        {
+          "s": "leo",
+          "t": "So do both updates."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not yet using XP."
+        },
+        {
+          "s": "leo",
+          "t": "Wait. You're still on Windows 2000?"
+        },
+        {
+          "s": "steve",
+          "t": "Paul said so on one of the podcasts. You could hear him scratching his head."
+        },
+        {
+          "s": "steve",
+          "t": "Exploits are in the wild, for Firefox and in malicious PDFs. XP users should run Windows Update or click the yellow shield very quickly."
+        },
+        {
+          "s": "leo",
+          "t": "Why isn't Vista hit?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft hasn't said. It probably has its own shell32.dll. And Vista is more secure."
+        },
+        {
+          "s": "leo",
+          "t": "Have you seen the new Mac ad? Vista gives a speech begging people not to go back to XP, and Mac says, that's okay, I already have."
+        },
+        {
+          "s": "steve",
+          "t": "We know gurus who tried Vista and went back to XP."
+        },
+        {
+          "s": "leo",
+          "t": "I've been pretty happy with Vista, and it's more secure."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. Microsoft learned a lot. I'd argue they did everything possible without breaking it more than they have. More would have cost backward compatibility, which they won't sacrifice, and arguably shouldn't."
+        },
+        {
+          "type": "fact",
+          "title": "MS07-061",
+          "t": "The fix was security bulletin MS07-061, for a URI-handling flaw in Windows XP and Server 2003 that attackers were already exploiting through malicious PDFs."
+        }
+      ]
+    },
+    {
+      "title": "The Token's First Digit Just Counts",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Someone analyzed the codes from his PayPal VeriSign \"football\" token. The first digit isn't random at all. It counts 0, 1, 2, 3 and back around."
+        },
+        {
+          "s": "leo",
+          "t": "I just got 415892. So the next should start with 5?"
+        },
+        {
+          "s": "steve",
+          "t": "And then 6."
+        },
+        {
+          "s": "leo",
+          "t": "Yeah, 5. Wow."
+        },
+        {
+          "s": "steve",
+          "t": "It makes sense for a time-based token, which drifts relative to galactic central. The first digit tells the server where the token is in its ten-step cycle, allowing more drift and a better lock."
+        },
+        {
+          "s": "steve",
+          "t": "But it weakens the system. If you know roughly where a token is in its cycle, you can guess the first digit, so the strength drops from a million to 100,000."
+        },
+        {
+          "s": "leo",
+          "t": "Like the Peabody Paradox: theory versus practice. You still have to know where it is in the sequence of 10. Does your VeriSign card do it?"
+        },
+        {
+          "s": "steve",
+          "t": "No. The cards are event-based, not time-based. A new number comes only when you press the button. I don't think you could fit a timer crystal in something that thin."
+        },
+        {
+          "s": "leo",
+          "t": "Now it's a 9. You're right."
+        },
+        {
+          "s": "steve",
+          "t": "They didn't have to do it that way. The server could search expected codes to synchronize, at a little more cost. And one in 100,000 is arguably still enough for one of multiple factors meant to prevent replay attacks."
+        }
+      ]
+    },
+    {
+      "title": "HushMail's Breach of Faith",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many listeners asked about the very disturbing breach of faith by HushMail."
+        },
+        {
+          "s": "leo",
+          "t": "I feel responsible. I've recommended HushMail since day one, and PGP creator Phil Zimmermann worked with them. But there's still a safe way to use it."
+        },
+        {
+          "s": "steve",
+          "t": "The government subpoenaed the supposedly secure email of certain people. There may be a Canadian connection, I'm not sure."
+        },
+        {
+          "s": "leo",
+          "t": "HushMail has always said even they can't decrypt your mail."
+        },
+        {
+          "s": "steve",
+          "t": "That's sort of true. This is a perfect TNO, Trust No One, topic. The original HushMail was extremely secure but a bit of a pain: a Java applet on your computer did the encryption, so HushMail's servers received truly opaque data. You had to install the Java runtime, a step people didn't want."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not sure why JavaScript couldn't have done it, downloading the encryption each visit. But they weakened the system to increase convenience."
+        },
+        {
+          "s": "leo",
+          "t": "When have we heard that before?"
+        },
+        {
+          "s": "steve",
+          "t": "They added an option where you just connect over SSL, and their servers do the encryption. Then they know the password used to encrypt your mail. So the government could subpoena the mail of, I think, illegal steroid suppliers."
+        },
+        {
+          "s": "leo",
+          "t": "A steroid investigation. They only see the password briefly, and claim they don't log it. The order made them capture it as those people logged in. You can still use the Java applet on your side and be secure, as I understand it."
+        },
+        {
+          "s": "steve",
+          "t": "It's exactly what we said about Amazon S3 and Jungle Disk. I've confirmed you can set them up fully TNO, but not by default. By default, Amazon has the key and could be compelled to turn over your files."
+        },
+        {
+          "s": "steve",
+          "t": "The easy way isn't necessarily secure. Companies can be compelled to release what they have. The only secure thing is not to let them have it."
+        },
+        {
+          "s": "leo",
+          "t": "They should have warned people in bigger letters."
+        },
+        {
+          "s": "steve",
+          "t": "I'd argue that offering that kind of security, they shouldn't have added an insecure alternative at all. People assumed it would stay true, and people will take the easy option."
+        }
+      ]
+    },
+    {
+      "title": "PPP in the Field, and Version 3 Coming",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Aye Mossum in Redlands, California, his workplace's entire IT department, installed Tom Fors' PPP PAM module on his servers. He feels much better carrying the keys in his wallet. Every week or two he implements some new security measure from the show, and SpinRite saved his bacon twice."
+        },
+        {
+          "s": "steve",
+          "t": "Open-source submissions keep coming, and we're taking Perfect Paper Passwords to version 3, a major update."
+        },
+        {
+          "s": "steve",
+          "t": "After last week, many said they'd like to use it commercially, but every four-letter word is possible, and their boss would fire them if a passcard spit out certain ones. Others wanted a character set with no shift key. Someone likes hex, since hex four-letter words are all boring."
+        },
+        {
+          "s": "steve",
+          "t": "Nothing says a character set must be a power of two. I experimented with a funky 35-character set. Now it's a metasystem: any user-specified character set and any token length. Mine is running, and others have PHP and C versions."
+        },
+        {
+          "s": "steve",
+          "t": "A larger alphabet gives more security if you trust users to tell zero from O. One newsgroup participant said it's already overkill alongside his user ID and passphrase, and wants three-character tokens. Version 3 allows that, or longer static passwords printed on cards."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe wait for version 4?"
+        },
+        {
+          "s": "steve",
+          "t": "I've rewritten the pages twice. I'll finish and talk more next week, and then this topic will finally be behind us. Third time's a charm."
+        }
+      ]
+    },
+    {
+      "title": "Is Windows' SSL Broken?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Scallan in London read that Israeli researchers cracked the pseudorandom number generator in Windows 2000, possibly revealing past and future SSL keys, maybe in later versions too. It shattered his confidence in online banking. Can you restore it?"
+        },
+        {
+          "s": "steve",
+          "t": "He's correct that it's generating a lot of concern. Windows' developers made an ad hoc, secure-seeming generator with avoidable problems. To predict its output, you need its state. It lives in user space, one per process. Running IE creates an instance in IE's memory."
+        },
+        {
+          "s": "leo",
+          "t": "That's true of any pseudorandom generator. If you know its state, you know what's next."
+        },
+        {
+          "s": "steve",
+          "t": "Unless you constantly mix in new entropy, like the processor's count of clock cycles since reset. Windows' pool is static, re-randomized only after generating 128K of output, which at IE's rate for SSL keys could cover a whole session, from power-on to shutdown."
+        },
+        {
+          "s": "steve",
+          "t": "But it's not a big problem. A man in the middle, which SSL prevents, gains nothing. You'd have to be inside the Windows machine to read the generator's state, which then reveals both earlier and later keys. And a trojan inside could just grab the data before it's encrypted."
+        },
+        {
+          "s": "steve",
+          "t": "So it's a tempest in a teapot. They didn't examine XP or Vista, and I wouldn't be surprised if Microsoft starts mixing in new data."
+        },
+        {
+          "s": "steve",
+          "t": "Page five of their report says AES in counter mode would be as good as all those hoops. That's what Perfect Paper Passwords uses. Though Windows would need real entropy, since PPP must be deterministic and reproducible."
+        },
+        {
+          "s": "leo",
+          "t": "So unless someone's in your machine, where there's far more to worry about, SSL still protects your banking."
+        },
+        {
+          "s": "steve",
+          "t": "Right. SSL and TLS still keep anyone listening in from reading your traffic."
+        },
+        {
+          "type": "fact",
+          "title": "XP too",
+          "t": "Microsoft later confirmed Windows XP had the same weakness and fixed it in XP Service Pack 3. Vista's generator was not affected."
+        }
+      ]
+    },
+    {
+      "title": "WEP-Only Gadgets",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lil on Long Island notes MP3 players and handheld game systems now sync over WiFi with WEP, so they store your WEP key in flash. Could someone sniff it from the device?"
+        },
+        {
+          "s": "steve",
+          "t": "WEP is broken. Our \"Even More Badly Broken WiFi\" episode covered free tools that crack it in about a minute, easier than typing the key."
+        },
+        {
+          "s": "steve",
+          "t": "The bigger issue: devices like TiVos, the Wii or Nintendo DS may only support WEP, while your network needs WPA. I've seen one Buffalo Technology router that runs both at once, keeping WPA for your laptop while WEP-only devices or visitors use the weaker mode, knowing it's less secure. I hope more routers do this, instead of dragging the whole network down to the weakest device."
+        },
+        {
+          "s": "leo",
+          "t": "Why do they use WEP?"
+        },
+        {
+          "s": "steve",
+          "t": "Probably older designs that haven't been updated. WPA was deliberately designed to be no more computationally costly than WEP. It still uses RC4, just correctly."
+        },
+        {
+          "s": "leo",
+          "t": "We demonstrated that Buffalo router on the lab. Or use a second router for the WEP devices."
+        }
+      ]
+    },
+    {
+      "title": "Better Odds Than the Lottery?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Adrian Jimenez in El Paso notes PPP's 16,777,216 combinations versus the Texas lottery's one in 25 million odds. So he has better odds guessing a passcode? Why not five characters, for about one in a billion? People win the lottery all the time."
+        },
+        {
+          "s": "steve",
+          "t": "With the lottery, a ton of people play at once. That's like guessing every passcode simultaneously, a massive parallel attack the passcode alone couldn't withstand. But it's one factor of several: the user ID, a strong secret passphrase, and a passcode that changes every time. After five wrong guesses, the server can lock out that IP."
+        },
+        {
+          "s": "steve",
+          "t": "Version 3 does allow five characters, and some will feel more comfortable with longer passcodes."
+        },
+        {
+          "s": "leo",
+          "t": "People say somebody has to win. That doesn't make you likely to."
+        },
+        {
+          "s": "steve",
+          "t": "Toss ten heads in a row, and you feel owed tails. You're not. The 11th toss is still 50-50."
+        },
+        {
+          "s": "leo",
+          "t": "For perspective: he says one in 25 million for the Texas lottery. The odds of being struck by lightning are one in 576,000, and of being killed by lightning one in 2.3 million, ten times likelier. The odds of becoming a saint are one in 20 million. California's lottery is one in 13 million, so come here."
+        }
+      ]
+    },
+    {
+      "title": "Typing Rhythm as a Biometric",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "James Earl Ford in Apple Valley asks about BioPassword, which combines your login credentials with the \"behavioral biometric of keystroke dynamics,\" your unique typing rhythm. No special hardware, no change in behavior."
+        },
+        {
+          "s": "steve",
+          "t": "It seems sort of flaky to me. With a large enough sample you could probably tell people apart. But with a user ID and password, it's a third factor that only confirms who you claim to be."
+        },
+        {
+          "s": "steve",
+          "t": "Like at Level 3: my RFID card says who I am, and measuring my hand confirms nobody else has my card. As I understand it, the company licensed Stanford patents from research there."
+        },
+        {
+          "s": "steve",
+          "t": "It'd be better if keys had strain gauges measuring speed, force and pressure, not just timing. Touch typists would have more distinctive patterns than someone pecking with two fingers. I'd want real evidence. And it needs code on your machine, at least JavaScript or an ActiveX control, to time every key."
+        },
+        {
+          "s": "leo",
+          "t": "But a third factor doesn't have to be perfect."
+        },
+        {
+          "s": "steve",
+          "t": "Right. My hand doesn't identify me uniquely. Others surely have my hand size. It just confirms. Using it alone to open the door would be very insecure."
+        }
+      ]
+    },
+    {
+      "title": "Access by IP Alone",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michael Peksa in High Wycombe, U.K., who caught up on about eight days of the back catalog in four months, is rolling out a web app for a large client. Access is limited to his company's and the client's IP ranges, all over SSL. The client wants no passwords, for ease. He argued passwords stop casual access by a visitor or a night cleaner. Is he missing something?"
+        },
+        {
+          "s": "leo",
+          "t": "Intranets have worked this way for years. But it's easy to spoof IPs."
+        },
+        {
+          "s": "steve",
+          "t": "Not for TCP connections, and SSL runs over TCP. I don't think he's missed anything. He wants an excuse to tell the client it's unsafe."
+        },
+        {
+          "s": "steve",
+          "t": "As long as everyone understands any connection from the client's range is authenticated, including malware on any employee's machine, it's a convenience trade-off."
+        },
+        {
+          "s": "steve",
+          "t": "For the night janitor, if the firewall supports time-based rules, allow access only 8:00 to 5:00, Monday through Friday. A password just adds one factor: a human who knows it."
+        },
+        {
+          "s": "steve",
+          "t": "Or require client-side certificates. That limits access to specific machines, like accounting's, not the shipping department's, and creates an audit trail, even if a big corporate NAT hides individual machines' IPs."
+        },
+        {
+          "s": "leo",
+          "t": "I thought it was a terrible idea, but I was wrong."
+        }
+      ]
+    },
+    {
+      "title": "Salting a Stored Random Password",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill in Grand Rapids, Michigan listens while mowing his lawn and now looks forward to it. He uses a long random password from GRC.com/passwords, saved in a text file in My Documents. Worried bad guys might find it, when he pastes it in, he replaces a few characters with his normal password. Does that weaken it?"
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't weaken it. All that random debris makes it impossible to brute-force. An attacker would have to guess what small changes he made, and his own password adds letters and numbers. There's no way anyone will figure it out."
+        },
+        {
+          "s": "steve",
+          "t": "It's essentially multifactor: something you have, the file, plus something you know."
+        }
+      ]
+    },
+    {
+      "title": "Banning by MAC Address",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andrew in Australia helps run a user group plagued by people re-registering through proxies after IP bans. Blacklisting proxies also blocks legitimate AOL users. Can a server see and block a visitor's MAC address?"
+        },
+        {
+          "s": "steve",
+          "t": "A MAC address never leaves the local network."
+        },
+        {
+          "s": "steve",
+          "t": "MAC addresses carry packets between machines on one LAN. A router strips the Ethernet wrapper, routes the IP packet by its address, and rewraps it for the next link. Each hop gets a new Ethernet wrapper. When the packet reaches you, the source MAC address is your own router's."
+        },
+        {
+          "s": "leo",
+          "t": "Anything he can do?"
+        },
+        {
+          "s": "steve",
+          "t": "Client certificates could be revoked, but it's complex, and bad guys just masquerade as new people. In an open environment, it's the fundamental abuse of the Internet's freedom."
+        },
+        {
+          "s": "leo",
+          "t": "It's the bane of anyone running a chatroom, forum or blog. I get hundreds of comment spams a day. You just filter them."
+        }
+      ]
+    },
+    {
+      "title": "Random Beats Policy, Against a Perfect Attacker",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Allan Blomquist in Belmont, California, among many, says you were wrong that keystroke loggers bias attacks toward replaying recent passcodes. An attacker with perfect knowledge, knowing your policy, would cross off recent codes, slightly improving his odds. Against perfect information, you can't beat completely random."
+        },
+        {
+          "s": "steve",
+          "t": "He's absolutely right, and I got a phenomenal number of near-identical comments. But we don't know our attacker will have perfect knowledge. It might be a dumb keystroke logger that just repeats what it saw."
+        },
+        {
+          "s": "steve",
+          "t": "My new code has a key finder that easily finds keys with no repeats within a thousand codes. Codes are still random. Someone with perfect knowledge could reduce his guesses from 16,777,000 to 16,776,000. Knock yourself out."
+        }
+      ]
+    },
+    {
+      "title": "How Does the Bank Remember You?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John in Fort Worth says the FFIEC, the Federal Financial Institutions Examination Council, which I looked up, requires banks to use multifactor authentication. His bank can remember his computer and skip the challenge question. He deleted his cookies and cleared his cache, and it still remembered him. Not by IP, surely?"
+        },
+        {
+          "s": "steve",
+          "t": "My first thought was cookies."
+        },
+        {
+          "s": "leo",
+          "t": "Mine does it, even on my laptop on the road."
+        },
+        {
+          "s": "steve",
+          "t": "If he truly deleted all cookies, then client-side code may be saving information elsewhere. An ActiveX control is basically a DLL from the server running on your machine. It could store footprints in the registry or a random directory. With scripting allowed, all bets are off."
+        },
+        {
+          "s": "leo",
+          "t": "Can JavaScript do that?"
+        },
+        {
+          "s": "steve",
+          "t": "As I understand it, DHTML and AJAX, Asynchronous JavaScript, have some ability to store state on the client. But with scripting disabled, it's hard to see how anything but cookies could save state."
+        },
+        {
+          "s": "leo",
+          "t": "I'll test with a browser I've never used."
+        }
+      ]
+    },
+    {
+      "title": "Watching Your Own Network",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dan Gardner in San Antonio wants free software to track each computer's bandwidth on his network. Radio callers ask this to watch their roommates."
+        },
+        {
+          "s": "steve",
+          "t": "Use Wireshark, the spectacular open-source program formerly called Ethereal. Its statistics features can summarize bandwidth many ways. It's at 0.99.6 or something, almost 1.0. I updated mine yesterday."
+        },
+        {
+          "s": "steve",
+          "t": "But a switch isolates each machine, so you'd only see your own traffic. Sniffing the router's WAN side gets tricky. Easier: run your NAT router into an old-fashioned hub, plug a switch with everyone else into the hub, and plug your computer into the hub. A hub doesn't isolate, so you'll see all the traffic between the router and the switch. You'll find all kinds of interesting things."
+        },
+        {
+          "s": "leo",
+          "t": "And a Squid proxy on a Linux box could limit people's bandwidth. By the way, I turned off scripting, and my bank still knew me."
+        }
+      ]
+    },
+    {
+      "title": "Keeping Gmail Encrypted",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kokaly in Hamilton, Ontario logs into Gmail securely, but then the lock disappears and Firefox says the connection isn't encrypted. Is his mail in clear text?"
+        },
+        {
+          "s": "steve",
+          "t": "Unless you see https:// while reading your mail, you're not encrypted, and your email moves in the clear."
+        },
+        {
+          "s": "steve",
+          "t": "Start at http://mail.google.com, and Gmail uses a secure connection only to log you in, then reverts. Start at https://mail.google.com, and you stay secure the entire session. So add an \"s\" to your bookmark."
+        },
+        {
+          "s": "leo",
+          "t": "In Firefox, the CustomizeGoogle extension can force HTTPS always. And I deleted cookies in the new browser, with scripting off, and the bank no longer knows me. It's cookies. He probably didn't delete them all."
+        },
+        {
+          "s": "steve",
+          "t": "I suspected so."
+        },
+        {
+          "s": "steve",
+          "t": "Next week we'll finally talk about the disturbing relationship between PayPal and DoubleClick. People asked if it fell through the cracks. Perfect Paper Passwords just burned more time than I expected."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is Thanksgiving. After the turkey, tune in to Security Now!."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did a listener discover about the PayPal \"football\" token's codes?",
+      "options": [
+        "The first digit just counts from 0 to 9",
+        "The codes repeat daily",
+        "The last digit is always 5",
+        "It shows the date"
+      ],
+      "answer": 0,
+      "explain": "That cuts the effective strength to about 100,000."
+    },
+    {
+      "q": "How was HushMail able to give mail to investigators?",
+      "options": [
+        "In its convenient mode, its servers did the encryption and briefly saw users' passwords",
+        "It kept backups unencrypted",
+        "Java was cracked",
+        "Users shared passwords"
+      ],
+      "answer": 0,
+      "explain": "Client-side encryption would have prevented it."
+    },
+    {
+      "q": "Why did Steve call the Windows 2000 random number flaw a \"tempest in a teapot\"?",
+      "options": [
+        "Exploiting it requires being inside the user's machine, where an attacker could just read the data",
+        "It was fixed instantly",
+        "Nobody uses SSL",
+        "Only Macs were affected"
+      ],
+      "answer": 0,
+      "explain": "SSL still stops eavesdroppers in the middle."
+    },
+    {
+      "q": "Why can't a website ban visitors by MAC address?",
+      "options": [
+        "MAC addresses are replaced at every router, so the site only sees its own router's",
+        "They're encrypted",
+        "Browsers hide them",
+        "They change hourly"
+      ],
+      "answer": 0,
+      "explain": "They never leave the local network."
+    },
+    {
+      "q": "Why did Steve say an IP-only restriction over SSL is acceptable for a trusted client?",
+      "options": [
+        "TCP connections can't be spoofed, so only the client's network can connect",
+        "SSL hides IP addresses",
+        "Passwords are useless",
+        "Night cleaners can't use computers"
+      ],
+      "answer": 0,
+      "explain": "Time limits or client certificates could add protection."
+    },
+    {
+      "q": "How can you keep Gmail encrypted the whole session in 2007?",
+      "options": [
+        "Start at https://mail.google.com rather than http",
+        "Clear cookies",
+        "Turn off JavaScript",
+        "Use Internet Explorer"
+      ],
+      "answer": 0,
+      "explain": "Otherwise only the login is encrypted."
+    }
+  ]
+}
