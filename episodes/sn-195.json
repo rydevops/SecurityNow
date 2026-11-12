@@ -1,0 +1,295 @@
+{
+  "number": 195,
+  "title": "The SSL/TLS Protocol",
+  "subtitle": "How the Internet's most-used security protocol negotiates a safe connection, step by step",
+  "date": "2009-05-07",
+  "description": "The long-promised SSL/TLS deep dive. Steve traces the protocol from Netscape's broken SSL 1.0 through 2.0, 3.0 and today's TLS 1.2, explains the four things it provides (confidentiality, authentication, tamper-proofing, anti-forgery), the flaws fixed along the way, and walks the full handshake: Client Hello, Server Hello and certificate, Change Cipher Spec, and the Finished messages that hash the whole conversation. Plus the Kindle DX, and an urgent Adobe PDF zero-day you can defend against by turning off JavaScript.",
+  "transcript": "https://www.grc.com/sn/sn-195.txt",
+  "audio": "http://media.GRC.com/sn/SN-195.mp3",
+  "chapters": [
+    {
+      "title": "The Kindle DX and PDFs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Amazon just announced the Kindle DX, a 9.7-inch screen (versus the 6-inch Kindle 1 and 2) with higher resolution and, crucially, native PDF reading, which the earlier Kindles lacked. That's a big deal for me: I printed the 104-page TLS RFC on 52 sheets this morning when I'd rather have read it as a PDF on a device."
+        },
+        {
+          "s": "steve",
+          "t": "PDFs are page-layout specifications and don't reflow, so you can't just shrink the font; you need enough pixels to render a full page, which the small Kindles don't have but the DX does."
+        },
+        {
+          "s": "leo",
+          "t": "It's aimed at the textbook market, where kids haul 30 pounds of books. If Amazon can get textbook prices down, it's a much better solution."
+        }
+      ]
+    },
+    {
+      "title": "An Urgent Adobe PDF Zero-Day",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's a serious new Adobe zero-day, so everyone should do this now: open any PDF to launch Reader (or Acrobat), go to Edit, Preferences, JavaScript, and uncheck \"Enable JavaScript,\" which is on by default."
+        },
+        {
+          "s": "steve",
+          "t": "It's a remote-code-execution exploit found in the wild, affecting Reader and Acrobat versions 7, 8 and 9 on both platforms. There's no reason for JavaScript in a document reader, so turning it off costs you nothing and protects you until Adobe's fix ships next week."
+        },
+        {
+          "s": "leo",
+          "t": "Many listeners use Foxit instead. Though a chatroom note says Foxit also enables JavaScript by default."
+        },
+        {
+          "s": "steve",
+          "t": "Foxit doesn't have this same bug, but a reader doesn't need JavaScript at all; it's probably bullet-point-itis, adding a feature just to match competitors, like the bloat that ruined ZoneAlarm."
+        },
+        {
+          "type": "fact",
+          "title": "Why disable PDF JavaScript",
+          "t": "Document readers embed a JavaScript engine for interactive forms, but it's a large, rarely-needed attack surface. Several of this era's worst Reader exploits ran through it, so turning it off blocked the active attack even before Adobe patched the underlying flaw."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite Hunch Pays Off",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A short one from Doug Davis: his laptop would shut down whenever the virus scanner, or any disk check, tried to scan the disk. He suspected a virus hiding itself, but on a hunch bought SpinRite, ran it, and it fixed the disk so his scanner works again."
+        },
+        {
+          "s": "steve",
+          "t": "I wouldn't even have recommended SpinRite for that symptom, but a failing disk was the real problem, and it fixed his system."
+        }
+      ]
+    },
+    {
+      "title": "SSL, TLS, and Layering",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We say \"SSL,\" but the protocol in use is really TLS, Transport Layer Security, the renamed and improved successor to Netscape's 1994 Secure Sockets Layer. TLS secures any reliable protocol: it assumes it's running over TCP, which handles retransmission and ordering, so it can't run directly over unreliable UDP (there's a separate datagram variant for that)."
+        },
+        {
+          "s": "steve",
+          "t": "TLS inserts itself as a shim between the TCP layer and the application layer (HTTP, FTP, Telnet). Below it, TCP does its three-way handshake; TLS then does its own handshake and negotiation, and only after both security endpoints are satisfied does any application data flow. So the entire application dialogue is wrapped in a confidential tunnel from the very first byte."
+        },
+        {
+          "type": "fact",
+          "title": "The protocol stack",
+          "t": "Ethernet carries IP, IP carries TCP (adding ports and reliability), and applications like HTTP normally ride on TCP. TLS slips in between TCP and the application, so any app gains encryption, authentication and integrity without changing how it talks to the reliable layer beneath."
+        }
+      ]
+    },
+    {
+      "title": "A Spotty History: SSL 1.0 to TLS",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Netscape weren't security people but were smart and asked for feedback. SSL 1.0 was so broken by the crypto community's review that it never shipped. SSL 2.0 (February 1995) was the first version anyone saw, and it was good enough that it was used for years without a famous breach."
+        },
+        {
+          "s": "steve",
+          "t": "SSL 3.0 (1996) fixed 2.0's weaknesses, and in 1999 the IETF took it over, renamed it TLS 1.0 (essentially SSL 3.0), and gave it a rigorous formal specification. We're now at TLS 1.2, and the RFC (5246, 104 pages) is one of the largest but also one of the most beautifully written specs I've read."
+        },
+        {
+          "s": "steve",
+          "t": "Endpoints always negotiate the highest version and strongest ciphers both support, and modern ones won't downgrade all the way to SSL 2.0 (which used MD5), stopping at 3.0 at worst."
+        }
+      ]
+    },
+    {
+      "title": "The Four Things TLS Provides",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "TLS provides confidentiality: ciphers so no eavesdropper can read the traffic, and all handshaking finishes before any application byte is sent. It provides authentication: the server's signed certificate carries a public key the client can verify back to a trusted authority."
+        },
+        {
+          "s": "steve",
+          "t": "It also provides tamper-proofing, because a confidential, authenticated message can still be attacked if someone can alter the stream, and anti-forgery: every packet is serialized through the whole connection, so neither end will accept a duplicate, missing or replayed serial number."
+        },
+        {
+          "type": "fact",
+          "title": "Secrecy isn't enough",
+          "t": "Encryption alone doesn't stop an attacker who can modify or reorder ciphertext, or replay captured packets, from causing harm. TLS adds message authentication and strict sequencing precisely because confidentiality without integrity leaves exploitable gaps, a weakness in early SSL 2.0."
+        }
+      ]
+    },
+    {
+      "title": "What 3.0 Fixed in 2.0",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "SSL 2.0 used the MD5 hash (fine then, not now). SSL 3.0 hedged by computing both an MD5 and an SHA-1 hash and XORing them, so a break in one still left the other's full strength, clever, if a kludge; TLS later dropped that hybrid for SHA-256. 2.0 also reused one key for both encryption and authentication; 3.0 generates separate keys for separate purposes."
+        },
+        {
+          "s": "steve",
+          "t": "Crucially, 2.0's cipher-negotiation handshake wasn't protected, so a man in the middle could trick the server into thinking the client was far less capable, forcing a weak connection. 3.0 added Finished messages: each end hashes everything it sent and received and sends that hash encrypted, so any tampering makes the hashes disagree and the connection is torn down."
+        },
+        {
+          "s": "steve",
+          "t": "2.0 also had no formal end-of-message, so truncation attacks were possible when TCP simply closed; 3.0 added an explicit end marker. And 3.0 (and TLS) added, though still unused, the ability for the client to say which certificate it wants, which would finally make SSL work with virtual hosting."
+        },
+        {
+          "type": "fact",
+          "title": "The virtual-hosting gap",
+          "t": "Because a server traditionally presents one certificate per IP before knowing which site you want, many sites shared one IP couldn't each prove their own identity (wildcard certs weaken authentication). TLS's unused \"tell me which certificate\" feature anticipated what later became SNI, Server Name Indication."
+        }
+      ]
+    },
+    {
+      "title": "TLS 1.2 and HMAC",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "TLS 1.2 tightened the specification, replacing ambiguous \"should\" language with precise \"must\" rules so implementations interoperate instead of just copying each other. It dropped the MD5/SHA-1 hybrid entirely for SHA-256 and added more mandatory alert messages."
+        },
+        {
+          "s": "steve",
+          "t": "It also builds its pseudorandom generator on HMAC, the keyed Message Authentication Code we covered earlier (append the key and one hex pad, hash, then hash that with the key and another pad). You seed HMAC and repeatedly HMAC the result with the seed to produce as much strong pseudorandom material as needed. This is exactly why HMAC was \"the last piece\" before this episode."
+        }
+      ]
+    },
+    {
+      "title": "The Handshake: Client Hello",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "After TCP connects (to port 443 for HTTPS), the client sends a Client Hello message: the highest TLS version it supports, a 32-byte random number (4 bytes of Unix time plus 28 random bytes), a session ID, and lists of every cipher suite and compression method it knows, plus optional extensions."
+        },
+        {
+          "s": "steve",
+          "t": "The session ID enables caching: public-key work is expensive, so if the client reconnects to a server it just spoke to, it offers the prior session ID to propose skipping that work. Compression, when used, is the standard deflate, always applied before encryption, since encrypted data is random and incompressible."
+        },
+        {
+          "s": "steve",
+          "t": "The extensibility is by design: ciphers can be retired if broken and new ones added over time, enumerated by IANA, so the protocol grows without breaking."
+        }
+      ]
+    },
+    {
+      "title": "Server Hello and the Certificate",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The server replies with Server Hello: it picks the highest protocol both support and the best cipher suite and compression method from the client's lists, generates its own 32-byte random number, and decides the session ID. It can return a null ID (no caching), a new ID (its cache didn't match), or the client's ID (agreeing to an abbreviated, resumed handshake)."
+        },
+        {
+          "s": "steve",
+          "t": "Often in the same packet it sends its Certificate message, the whole signature chain back to the certificate authority, with its public key bound in, then Server Hello Done. That's the first stage of authentication: here's who I am and the public key to verify it."
+        }
+      ]
+    },
+    {
+      "title": "Change Cipher Spec and Finished",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Once the client has the Server Hello, certificate and Done, and they've agreed (and resumed if the session ID matched), the client sends a Change Cipher Spec message: everything after this from me is encrypted under what we agreed. The server echoes it back."
+        },
+        {
+          "s": "steve",
+          "t": "Then each sends a Finished message, encrypted under the new cipher, containing a hash of their entire dialogue in sequence. That proves both can exchange encrypted authenticated data and that no packet was lost, inserted or altered, protecting the whole handshake. No application traffic flows until both Finished messages are verified."
+        },
+        {
+          "s": "leo",
+          "t": "You came to an end! I thought that was one long sentence. It's the most complicated thing ever, but it works."
+        },
+        {
+          "s": "steve",
+          "t": "It is complicated, but I can't see how to eliminate any of it."
+        }
+      ]
+    },
+    {
+      "title": "Toward Encrypting Everything",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "TLS has to grow, accommodate wildly different endpoints, phones, Kindles, PCs, even refrigerators, and get stronger as threats do. You can imagine a day when sending email unencrypted seems quaint."
+        },
+        {
+          "s": "leo",
+          "t": "I wish we could use it all the time. It's not that much overhead, is it?"
+        },
+        {
+          "s": "steve",
+          "t": "No. There's a little packet overhead and some public-key work to establish a shared secret symmetric key, but once you have, say, an AES key no eavesdropper can access, bulk traffic uses that fast cipher with very low overhead and strong security. It was painful on a 4.77 MHz 8088; today there's little reason not to encrypt everything."
+        },
+        {
+          "s": "leo",
+          "t": "Someday we'll all use TLS all the time, and sending things in the clear will seem crazy."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does TLS require a reliable transport like TCP rather than running directly over UDP?",
+      "options": [
+        "It assumes anything it sends arrives in order, relying on TCP for retransmission and reassembly",
+        "UDP is too slow for encryption",
+        "UDP packets are too small for certificates",
+        "TCP encrypts packets and UDP doesn't"
+      ],
+      "answer": 0,
+      "explain": "TLS is layered on top of a reliable protocol; TCP handles lost-packet retransmission and ordering, so TLS can assume a clean stream (a separate datagram variant exists for unreliable transports)."
+    },
+    {
+      "q": "What do the Finished messages at the end of the TLS handshake protect against?",
+      "options": [
+        "Tampering with the handshake, since each end verifies an encrypted hash of the entire dialogue",
+        "The server's certificate expiring",
+        "Weak passwords",
+        "Compression errors"
+      ],
+      "answer": 0,
+      "explain": "Each Finished message is an encrypted hash of everything sent and received; if a man in the middle altered any handshake message, the hashes won't match and the connection is torn down."
+    },
+    {
+      "q": "How did SSL 3.0 improve on 2.0's reliance on the MD5 hash?",
+      "options": [
+        "It computed both an MD5 and an SHA-1 hash and XORed them, so a break in one left the other's strength",
+        "It switched immediately to SHA-256",
+        "It stopped hashing entirely",
+        "It encrypted the hash with the public key"
+      ],
+      "answer": 0,
+      "explain": "SSL 3.0 combined MD5 and SHA-1 via XOR as a hedge (TLS later dropped this for SHA-256), so compromising one hash didn't compromise the combined result."
+    },
+    {
+      "q": "What does the session ID in the TLS handshake enable?",
+      "options": [
+        "Resuming a prior connection to skip the expensive public-key negotiation",
+        "Encrypting the certificate",
+        "Identifying the user by name",
+        "Choosing the compression method"
+      ],
+      "answer": 0,
+      "explain": "Caching credentials under a session ID lets a reconnecting client and server agree to an abbreviated handshake, avoiding costly public-key work they already did."
+    },
+    {
+      "q": "Why can TLS negotiate a secure connection between endpoints with very different capabilities?",
+      "options": [
+        "The client lists every cipher/version it supports and the server picks the best both know, with new ciphers addable and broken ones retired",
+        "It forces all clients to use one fixed cipher",
+        "It downgrades everyone to SSL 2.0",
+        "The server dictates the cipher without client input"
+      ],
+      "answer": 0,
+      "explain": "The Client Hello advertises all supported suites and versions; the server selects the strongest common option, and the extensible, IANA-enumerated list lets the protocol evolve without breaking."
+    },
+    {
+      "q": "Once the TLS handshake completes, what actually encrypts the bulk application data?",
+      "options": [
+        "A fast shared-secret symmetric cipher like AES, established securely during the handshake",
+        "The server's public key, used for every packet",
+        "The MD5 hash of the session ID",
+        "Nothing; only the handshake is encrypted"
+      ],
+      "answer": 0,
+      "explain": "The expensive public-key work during the handshake establishes a shared symmetric key; all payload traffic then uses that high-speed, low-overhead cipher, which is why encrypting everything is practical."
+    }
+  ]
+}
