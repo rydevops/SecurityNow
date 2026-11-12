@@ -239,7 +239,12 @@
         },
         {
           "s": "steve",
-          "t": "My two favorites: first, the cryptographers panel at the end of Tuesday, April 8, with Whit Diffie and Martin Hellman of the Diffie-Hellman key exchange, and Ron Rivest. I knew Diffie and Hellman in the early '70s, when I had summer jobs at Stanford's AI lab while they did their early crypto work. It was fun to chat with them again."
+          "t": "My two favorites: first, the cryptographers panel at the end of Tuesday, April 8, with Whit Diffie and Dick Hellman of the Diffie-Hellman key exchange, and Ron Rivest. I knew Diffie and Hellman in the early '70s, when I had summer jobs at Stanford's AI lab while they did their early crypto work. It was fun to chat with them again."
+        },
+        {
+          "type": "fact",
+          "title": "The name",
+          "t": "Hellman's first name is Martin. He co-invented the Diffie-Hellman key exchange with Whitfield Diffie at Stanford in 1976."
         },
         {
           "s": "steve",
