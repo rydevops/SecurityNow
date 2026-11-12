@@ -1,0 +1,478 @@
+{
+  "number": 90,
+  "title": "Multifactor Authentication",
+  "subtitle": "Something you know, have and are",
+  "date": "2007-05-03",
+  "description": "After SpinRite revives a family's TiVo, Steve and Leo explain why passwords alone are weak and how multifactor authentication combines something you know, something you have and something you are. They cover ATM cards, RSA SecurID tokens, SMS codes, printed code sheets, iButtons, Steve's hand-geometry check at his data center, fingerprint scanners, iris scans at the border, and why Bank of America's SiteKey can be defeated by a man in the middle.",
+  "transcript": "https://www.grc.com/sn/sn-090.txt",
+  "audio": "http://media.GRC.com/sn/SN-090.mp3",
+  "chapters": [
+    {
+      "title": "Racing Toward 100",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 90 already. You'll catch TWiT any minute."
+        },
+        {
+          "s": "steve",
+          "t": "One of my personal benchmarks. And I have a special plan for our 100th episode that I think everyone will get a kick out of."
+        },
+        {
+          "s": "leo",
+          "t": "People are already sending gifts for TWiT's 100th. The Daily Giz Wiz just did its 300th, and my radio show podcast is at 350."
+        },
+        {
+          "s": "steve",
+          "t": "Today, something new: multifactor authentication. We covered good passwords early on. But single-factor authentication, typically a username and password, is increasingly viewed with skepticism. Multifactor is the new thing."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Restores Harmony",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "No errata, but a different kind of SpinRite story from Scott Freudenthal in Florida: \"SpinRite saves more than just computers.\" While he was on vacation, his TiVo died, and that's a real serious situation."
+        },
+        {
+          "s": "leo",
+          "t": "There's nothing scarier than \"Grey's Anatomy\" withdrawal."
+        },
+        {
+          "s": "steve",
+          "t": "TiVo's support only offered a new TiVo. He remembered hearing that SpinRite fixed a TiVo drive, tried it, and harmony returned to the family."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite has saved my TiVos and Greg's several times. They run hot day in and day out, and the head constantly moves between recording and playback areas, even when idle, because of the 30-minute buffer."
+        },
+        {
+          "s": "leo",
+          "t": "Does the file system matter?"
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite uses a partition table if it recognizes one, but otherwise fixes whatever's there. My Series 1 TiVos, which I keep because they're more hackable, use a PowerPC with bytes swapped from Intel's order. SpinRite looks for the partition signature 55AA, sees AA55, and just fixes the drive anyway."
+        }
+      ]
+    },
+    {
+      "title": "From Mayberry to the Internet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In the Andy of Mayberry days, Opie went to the drugstore and the pharmacist knew him."
+        },
+        {
+          "s": "leo",
+          "t": "\"Opie, go down to the drugstore and get my heart pills.\""
+        },
+        {
+          "s": "steve",
+          "t": "Being known was real-world authentication. At your usual restaurant, if you forgot your wallet: that's fine, Leo, we know you."
+        },
+        {
+          "s": "steve",
+          "t": "The Internet took that away, yet authentication matters more as applications expand. We've discussed websites authenticating themselves with SSL certificates signed by authorities we trust, like VeriSign or Equifax. But for online banking, the bank needs to know you are you."
+        },
+        {
+          "s": "steve",
+          "t": "Passwords are free and easy, but you get what you pay for. Easily guessed ones are bad. Complex ones get written down, where others can find them. Many passwords burden users. And they can be deliberately shared: just log into my New York Times subscription with my password."
+        },
+        {
+          "s": "steve",
+          "t": "That undermines accountability. If your boss says you did bad things on the server, you can say someone must have stolen your password."
+        }
+      ]
+    },
+    {
+      "title": "Know, Have and Are",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In the trade, passwords are \"single-factor authentication,\" something you know. The other factors are something you have and something you are."
+        },
+        {
+          "s": "leo",
+          "t": "Something you have, like a smartcard. Something you are, like a fingerprint."
+        },
+        {
+          "s": "steve",
+          "t": "Or the pattern of blood vessels in your eye."
+        },
+        {
+          "s": "leo",
+          "t": "Or Opie's face."
+        },
+        {
+          "s": "steve",
+          "t": "Really, it's something only you know, only you have, or only you are. The problem with a password is that someone else might know it."
+        },
+        {
+          "s": "leo",
+          "t": "And if Opie were a twin, his face wouldn't be enough."
+        },
+        {
+          "s": "steve",
+          "t": "An ATM is the most common example of two factors: the PIN you know and the card you have. It's stronger than a password, but Mom could give her card and PIN to a kid to withdraw $100. The machine assumes the owner is present, with no \"something you are.\""
+        },
+        {
+          "s": "leo",
+          "t": "So the more factors the better."
+        },
+        {
+          "s": "steve",
+          "t": "Generally. But more factors tempt organizations to over-trust their authentication. If something breaks it, the exposure is much greater."
+        },
+        {
+          "s": "steve",
+          "t": "Something you know also includes backup questions like your mother's maiden name or your elementary school, which are easily shared."
+        }
+      ]
+    },
+    {
+      "title": "RSA SecurID Tokens",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Something you have is increasingly a token. RSA's SecurID is a little battery-powered LCD on your keychain showing a six-digit number that changes every minute. It's clever, and patented every which way. Sites that use it ask for the current number."
+        },
+        {
+          "s": "steve",
+          "t": "With what we know of crypto, it's simple: take a count of seconds since some date, say 2000, and run it through symmetric encryption with a key unique to your token. The steadily rising count becomes what looks like a random number, and without the key you can't predict the next one."
+        },
+        {
+          "s": "steve",
+          "t": "The token has a serial number unrelated to its secret key. When you log in, the server decrypts your six digits back to the counter and checks that it's within a minute or two of the current time."
+        },
+        {
+          "s": "leo",
+          "t": "That's why it's no good after a minute."
+        },
+        {
+          "s": "steve",
+          "t": "There's a fudge window, since the token's clock may drift. Each time you use it, the server records how far off your token runs, so as long as you use it a few times a year, it stays synchronized."
+        },
+        {
+          "s": "steve",
+          "t": "RSA now offers software versions for Java ME phones, Windows Mobile, Pocket PC, Symbian, Palm Treo and BlackBerry. Software is more hackable than a dedicated token, but cheaper, and people carry their phones."
+        },
+        {
+          "s": "steve",
+          "t": "By the end of this podcast we'll see it's good but not perfect, because it's susceptible to man-in-the-middle attacks, like many of these."
+        },
+        {
+          "type": "fact",
+          "title": "How SecurID works",
+          "t": "Each organization runs its own RSA authentication server holding its tokens' secret \"seeds.\" In 2011 attackers stole seed data from RSA itself, and RSA replaced tens of millions of tokens. Today's phone authenticator apps use the open TOTP standard, built on the same time-based idea."
+        }
+      ]
+    },
+    {
+      "title": "Phones, Code Sheets and iButtons",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Another clever approach uses your cell phone. Most people have one, so possessing it is strong evidence of identity. Log in, and the site texts your registered phone a short code to type in."
+        },
+        {
+          "s": "steve",
+          "t": "It's out-of-band: delivered outside the main connection, like someone phoning you to read you a number, but easily automated."
+        },
+        {
+          "s": "steve",
+          "t": "Another company, also patent-protected, has you print a four-by-four-inch chart of symbols and letters, unique to you, to fold into your wallet. The site shows a series of icons, and you type the matching letters."
+        },
+        {
+          "s": "steve",
+          "t": "It's a challenge-response: you'll never see the same icons twice or type the same answer again, so a keystroke logger capturing your login can't reuse it."
+        },
+        {
+          "s": "leo",
+          "t": "One-time authentication is the key."
+        },
+        {
+          "s": "steve",
+          "t": "Like SecurID. If you make a typo, just retype it. Once accepted, that code is never accepted again."
+        },
+        {
+          "s": "steve",
+          "t": "Dallas Semiconductor's iButton looks like a hearing-aid battery mounted on a key-ring paddle, with a crypto chip inside and no battery. Press it to a reader, and it's powered and exchanges data over two contacts."
+        },
+        {
+          "s": "leo",
+          "t": "But something you have can be lost."
+        },
+        {
+          "s": "steve",
+          "t": "Or loaned."
+        },
+        {
+          "type": "fact",
+          "title": "SMS codes today",
+          "t": "Text-message codes later proved vulnerable to \"SIM swapping,\" where attackers persuade a carrier to move your number to their phone. Authenticator apps and hardware security keys are now preferred."
+        }
+      ]
+    },
+    {
+      "title": "Something You Are",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The third factor is a measurable physical characteristic: fingerprints, speech patterns, retinal scans. There have also been attempts to use typing rhythm."
+        },
+        {
+          "s": "leo",
+          "t": "That keeps coming back."
+        },
+        {
+          "s": "steve",
+          "t": "Many people type with no rhythm at all, and it needs software watching keystrokes, which a web form can't do."
+        },
+        {
+          "s": "steve",
+          "t": "Yesterday I visited my server cabinet at Level 3. They use something I have and something I am. I wave my badge at a reader, which says whose badge it is, but not that it's me."
+        },
+        {
+          "s": "steve",
+          "t": "Then I put my hand on a plate with one-inch posts between my fingers, and it measures my hand's physical characteristics."
+        },
+        {
+          "s": "leo",
+          "t": "Not a scanner?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Surely other people have hands that measure like mine."
+        },
+        {
+          "s": "leo",
+          "t": "But they don't have the card."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. The odds of someone stealing my card who also has my hand size are low. Hand size alone wouldn't identify me in the world. The system doesn't search for a matching hand. It reads my card, then checks the one hand on record for it. Sue or Greg would each have their own card and hand."
+        },
+        {
+          "s": "steve",
+          "t": "There's even a keypad for a PIN, but they decided two of three factors was enough."
+        },
+        {
+          "s": "leo",
+          "t": "And someone could cut your hand off."
+        },
+        {
+          "s": "steve",
+          "t": "Like the spy movies. I don't think it measures heat."
+        }
+      ]
+    },
+    {
+      "title": "How Fingerprint Scanners Work",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Fingerprints are like hand size. A whole set of prints may be unique enough, but forensic scientists prefer DNA. Fingerprint databases are huge, and they don't work like on CSI with faces flashing by."
+        },
+        {
+          "s": "steve",
+          "t": "Scanners find features, swirls, breaks, places where ridges merge like a Y in the road, and their positions form an index to narrow a database search."
+        },
+        {
+          "s": "steve",
+          "t": "PC fingerprint readers work like Level 3's: they only compare against a few enrolled people, you and maybe your family. Training multiple times lets them adapt to slow changes, like a little cut. And a random thief's print being close enough is vanishingly unlikely."
+        },
+        {
+          "s": "steve",
+          "t": "Older readers that photographed a fingertip on a plate could be fooled with rubber cement, \"Mission: Impossible\" style. Newer, cheaper line scanners make you drag your finger across, a dynamic process that's much harder to fake."
+        }
+      ]
+    },
+    {
+      "title": "Why SiteKey Isn't Enough",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Bank of America's SiteKey has gotten a lot of press. You give your username first. The bank looks you up and shows the picture you registered, say a trash can, and a phrase."
+        },
+        {
+          "s": "steve",
+          "t": "It's supposed to prove you're at the real bank, since a phishing site wouldn't have your picture. Then you enter your password."
+        },
+        {
+          "s": "steve",
+          "t": "But it must work from other computers. When you use a new computer or IP address, it asks extra questions. Bank of America uses Flash cookies to recognize computers, by the way, which we'll discuss soon."
+        },
+        {
+          "s": "leo",
+          "t": "I sign on from three or four IPs, and hotels."
+        },
+        {
+          "s": "steve",
+          "t": "Don't admit that here, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "It's my laptop, over SSL."
+        },
+        {
+          "s": "steve",
+          "t": "First, an MIT study showed SiteKey users a login page without their picture. Ninety-seven percent didn't notice."
+        },
+        {
+          "s": "leo",
+          "t": "I'd be happy not to see that stupid picture."
+        },
+        {
+          "type": "fact",
+          "title": "The study",
+          "t": "The study, by Harvard and MIT researchers in 2007, found that 23 of 25 participants, 92 percent, entered their passwords even though their site-authentication image was missing."
+        },
+        {
+          "s": "steve",
+          "t": "Second, the weakness: a phishing site with a convincing fake URL asks for your username and state. It submits them to the real bank, which sees no cookie and asks its extra questions. The phishing site passes them to you, and your answers back."
+        },
+        {
+          "s": "steve",
+          "t": "The bank decides it's really Leo in a hotel and sends your picture, which the phishing site shows you. Then you give it your password."
+        },
+        {
+          "s": "leo",
+          "t": "And people fooled by phishing aren't savvy enough to watch for any of this. That's the whole point."
+        },
+        {
+          "s": "steve",
+          "t": "A non-savvy person gets fooled with a picture of their kitty cat on screen."
+        },
+        {
+          "s": "leo",
+          "t": "My SiteKey phrase insults SiteKey, which makes me feel better."
+        },
+        {
+          "s": "steve",
+          "t": "SiteKey tries to provide authentication that already exists in SSL. If you check that you have a secure connection and that the certificate was issued to Bank of America by a trusted authority, man-in-the-middle attacks fail. But typical users don't. SiteKey gives a false sense of verification, and Yahoo! and others have adopted it."
+        },
+        {
+          "s": "leo",
+          "t": "It's the appearance of security, not the fact of it."
+        }
+      ]
+    },
+    {
+      "title": "Fingerprints, Retinas and the Border",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I like simple biometrics, like a laptop fingerprint scanner, as long as it's handled securely: stored in the BIOS and unlocking the hard drive, not just logging into Windows after it boots, when all bets are off."
+        },
+        {
+          "s": "steve",
+          "t": "This came out of my research into the Trusted Platform Module, TPM, which we'll cover soon. All these involve tradeoffs. Some people want to share their username and password. And some might object to a laser beamed into their eyeball."
+        },
+        {
+          "s": "leo",
+          "t": "U.S. Customs uses fingerprints, a passport, and retinal scans. Canada's CANPASS and the NEXUS program let pre-interviewed, background-checked travelers breeze through with a passport and an eye scan. In Vancouver, I've watched them bend over to the scanner and whip through while the rest of us wait."
+        },
+        {
+          "s": "steve",
+          "t": "Bend over?"
+        },
+        {
+          "s": "leo",
+          "t": "Bend forward. The machine is a little low."
+        },
+        {
+          "type": "fact",
+          "title": "Iris, not retina",
+          "t": "NEXUS kiosks actually used iris scans, photographing the colored part of the eye, not retinal scans, which image blood vessels at the back of the eye."
+        },
+        {
+          "s": "steve",
+          "t": "Eyes seem very hard to spoof under a guard's supervision. I'd like to require my eye scan, so nobody could pretend to be me."
+        },
+        {
+          "s": "steve",
+          "t": "With everything going online, establishing identity matters more, and bad guys gain more from circumventing authentication. Eventually username and password won't be enough for many uses. Maybe we'll all carry a SecurID dongle."
+        },
+        {
+          "s": "leo",
+          "t": "It's amazing we do as good a job as we do."
+        },
+        {
+          "type": "fact",
+          "title": "Today's direction",
+          "t": "Passkeys, introduced by Apple, Google and Microsoft in 2022, replace passwords with keys stored on your device and unlocked by a fingerprint or face. Because they're tied to the real site's address, a phishing site can't relay them."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What are the three authentication factors?",
+      "options": [
+        "Something you know, something you have and something you are",
+        "Name, address and phone",
+        "Password, PIN and username",
+        "Card, key and badge"
+      ],
+      "answer": 0,
+      "explain": "An ATM uses two: card and PIN."
+    },
+    {
+      "q": "How does an RSA SecurID token's number work?",
+      "options": [
+        "A clock count is encrypted with the token's secret key, producing a new code every minute",
+        "It's random and stored on a list",
+        "It's sent by text message",
+        "It's your password reversed"
+      ],
+      "answer": 0,
+      "explain": "The server tracks each token's clock drift."
+    },
+    {
+      "q": "Why did Steve's data center combine a badge with a hand measurement?",
+      "options": [
+        "Hand size alone isn't unique, but checking it against the badge's owner is strong",
+        "Badges can't be lost",
+        "Hands can't be measured",
+        "To save money"
+      ],
+      "answer": 0,
+      "explain": "The scanner compares only to the one hand on record."
+    },
+    {
+      "q": "How can a phishing site defeat SiteKey?",
+      "options": [
+        "By relaying the bank's questions and the user's answers, then showing the user's own picture",
+        "By guessing the picture",
+        "By hacking the bank's database",
+        "It can't"
+      ],
+      "answer": 0,
+      "explain": "SSL certificate checks would expose it."
+    },
+    {
+      "q": "Why is an SMS login code called \"out-of-band\"?",
+      "options": [
+        "It arrives by a channel separate from the web connection",
+        "It's sent by mail",
+        "It's encrypted",
+        "It never expires"
+      ],
+      "answer": 0,
+      "explain": "Possessing the phone is the factor."
+    },
+    {
+      "q": "Why are newer swipe fingerprint scanners harder to fool?",
+      "options": [
+        "Dragging a finger is a dynamic process that's harder to fake",
+        "They use lasers",
+        "They check DNA",
+        "They need passwords"
+      ],
+      "answer": 0,
+      "explain": "Older plate scanners could be fooled with rubber."
+    }
+  ]
+}
