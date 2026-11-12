@@ -124,7 +124,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Ravi Keecheril has an MythTV box made entirely of discarded hard drives. At his company, failed drives go to a dark storage room on their way to the hard drive graveyard. He's mentioned SpinRite, but they'd rather grab a new drive from inventory, usually bigger."
+          "t": "Ravi Keecheril has a MythTV box made entirely of discarded hard drives. At his company, failed drives go to a dark storage room on their way to the hard drive graveyard. He's mentioned SpinRite, but they'd rather grab a new drive from inventory, usually bigger."
         },
         {
           "s": "steve",
@@ -264,7 +264,7 @@
         {
           "type": "fact",
           "title": "The details",
-          "t": "Canned \"air\" dusters usually contain refrigerants like tetrafluoroethane rather than old CFC Freon. At about minus 50°C, the researchers saw under 1 percent decay after 10 minutes. In liquid nitrogen, only about 0.17 percent of bits decayed after an hour."
+          "t": "Canned \"air\" dusters usually contain refrigerants like tetrafluoroethane rather than old CFC Freon. Chilled that way, chips lost only a small fraction of their bits over many seconds to minutes. In liquid nitrogen, only about 0.17 percent of bits decayed after an hour."
         }
       ]
     },
