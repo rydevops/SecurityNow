@@ -1,0 +1,440 @@
+{
+  "number": 169,
+  "title": "Listener Feedback Q&A #53",
+  "subtitle": "Where CryptoLink stands, SYN-blocking fears, and NoScript fatigue",
+  "date": "2008-11-06",
+  "description": "The 53rd Q&A, after the election. Steve lays out the long story and planned features of his unreleased CryptoLink VPN, reassures a listener that he and Leo aren't rooting for ISPs to block incoming connections, weighs PayPal's one-time cards against debit-card protections and identity-theft insurance, and admits he too runs NoScript with scripting globally allowed. Plus an https://gmail.com certificate mismatch, online voting, reading netstat, and an Opera and OpenOffice update. Next week: the author of Sandboxie.",
+  "transcript": "https://www.grc.com/sn/sn-169.txt",
+  "audio": "http://media.GRC.com/sn/SN-169.mp3",
+  "chapters": [
+    {
+      "title": "Sleep and Coffee",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Did you stay up on election night?"
+        },
+        {
+          "s": "steve",
+          "t": "Until about 10, since I'm up at 4:30. I normally give myself eight hours. I'm useless without enough sleep."
+        },
+        {
+          "s": "leo",
+          "t": "A programming teacher told his students, coffee is not a substitute for sleep. And out comes Steve's quart of coffee."
+        }
+      ]
+    },
+    {
+      "title": "Updates",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Opera 9.62 came out, fixing a very serious exploit. Update if you use Opera."
+        },
+        {
+          "s": "steve",
+          "t": "OpenOffice before 2.4.2 has a serious image-based remote code flaw in its handling of Windows Metafile and Enhanced Metafile images, a heap overflow in the display code. Version 3 has the fix. StarOffice may share it."
+        },
+        {
+          "s": "leo",
+          "t": "Mac users on NeoOffice should check too."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's Security Intelligence Report for the first half of 2008: per thousand runs of the Malicious Software Removal Tool, it found three bad things on Vista SP1, ten on XP SP2 and eight on XP SP3."
+        },
+        {
+          "s": "steve",
+          "t": "And eight of the top ten problems involved ActiveX controls, that ill-conceived technology where the browser runs native executable code. Microsoft defended ActiveX but admitted it can't police it. My answer is you don't: you use something sandboxable like JavaScript, not native downloaded code."
+        },
+        {
+          "type": "fact",
+          "title": "Why ActiveX was risky",
+          "t": "ActiveX controls ran with the user's full privileges rather than in a sandbox. Microsoft curbed them over time, and they're gone from modern browsers; the Edge that replaced Internet Explorer dropped ActiveX entirely."
+        },
+        {
+          "s": "steve",
+          "t": "So next week we'll have the author of Sandboxie on. A ton of people in GRC's newsgroups use it with 100 percent good results. It's a lightweight sandbox, and it works for Firefox too."
+        },
+        {
+          "s": "steve",
+          "t": "There's also an RSA Security report on a widespread trojan called Sinowal, also known as Torpig and Mebroot. Next week I'll describe what it does, which drives home why you must keep your machine clean. It's the perfect companion to Sandboxie."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite Rescue",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jake Oswald, not a listener, wrote in. After a Windows XP automatic update and restart, his screen said \"Windows is shutting down\" for hours with no drive activity. A reset gave a corrupted config file error. His employer's tech support, learning it was his home machine, said buy SpinRite because it repairs nine out of ten disk failures. It ran about five hours, and it was fixed."
+        }
+      ]
+    },
+    {
+      "title": "Where CryptoLink Stands",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Two listeners, Guillaume Auclair in Sherbrooke and Rich Schreiber in Erie, ask when CryptoLink is coming and whether it will do split tunneling."
+        },
+        {
+          "s": "steve",
+          "t": "It's representative of many questions. Over a year ago, at that dinner in Vancouver, I recited three pages of bullet-point features, and your mouth was hanging open."
+        },
+        {
+          "s": "leo",
+          "t": "I said if you pull this off it'll be the most significant thing you've done."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is it's just me, and I'm the tortoise. I want things done and bug-free. SpinRite 6 hasn't had a byte changed since 2004."
+        },
+        {
+          "s": "steve",
+          "t": "Last summer I wanted to start, but I had loose ends. I built GRC's script-free menuing system so I'd have somewhere to hang new pages. Then I finished the third-party cookie analyzer, which found cookie bugs in every browser. Firefox 3 got better because of it, restoring the checkbox to disable third-party cookies. Then Kaminsky's DNS flaw hit, and I built a thorough DNS spoofability test, which I'll make public to our listeners first, maybe two or three weeks out. After that, the cookie documentation, and then I finally start CryptoLink."
+        },
+        {
+          "s": "leo",
+          "t": "So no code is written yet?"
+        },
+        {
+          "s": "steve",
+          "t": "None. But it's mapped out, and at least three patents will come from it. One, cryptographically stealthing an open TCP port, is already submitted."
+        },
+        {
+          "s": "steve",
+          "t": "It'll be an incredibly easy-to-use VPN, with native YubiKey, Perfect Paper Passwords and OpenID support, and a Trust No One model with no third party. You run it at home and on your laptop, and your laptop connects to your home, which reissues your traffic, so your traffic is decrypted only at home, not at a central point that attracts traffic analysis."
+        },
+        {
+          "s": "steve",
+          "t": "It'll also do Hamachi-style NAT penetration, so you can email a copy to a friend. Its open port won't be visible, that first patent. And it'll open an array of ports and send packets to all of them, so if an ISP blocks some, others get through."
+        },
+        {
+          "s": "steve",
+          "t": "Two couples in a car, both wives complaining their corporate VPNs wouldn't connect, convinced me: my goal is something that just works, finding a connection no matter what. I'll get something usable out early, with full visibility to the newsgroups, then add feature after feature. The core is in assembler, and once the features settle I'll cast the UI in assembler too."
+        },
+        {
+          "s": "leo",
+          "t": "So it'll be Windows-only."
+        },
+        {
+          "s": "steve",
+          "t": "With assembler, you don't have a choice."
+        },
+        {
+          "s": "steve",
+          "t": "Features on my wish list: plastic connections that silently reconnect when your Internet drops, so your home printer just looks like a local printer wherever you are. A full-enclosure mode that encrypts all your traffic to the remote end, or a mode that only tunnels to your home network. And it won't break when your network shares the same address range as home, which defeats OpenVPN's routing-table approach."
+        },
+        {
+          "type": "fact",
+          "title": "What became of CryptoLink",
+          "t": "CryptoLink was never released. Steve eventually set it aside, and later focused on the SQRL authentication project and on SpinRite 6.1."
+        }
+      ]
+    },
+    {
+      "title": "Not Salivating Over SYN Blocking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "\"Disappointed\" Dan Gardner in San Antonio says in Episode 167 we salivated over ISPs blocking incoming SYN packets, which would sink home web servers and remote desktop. Does it even stop botnets or viruses?"
+        },
+        {
+          "s": "steve",
+          "t": "I wasn't saying it's a good idea. I was saying I see it as inevitable, because most ISP customers are clients, not servers, and it's trivial to do. Some ISPs already NAT all customers with non-routable addresses, and some charge extra to allow servers."
+        },
+        {
+          "s": "leo",
+          "t": "Those of us who run servers maybe should buy a different class of service. But the crux: does it actually improve security?"
+        },
+        {
+          "s": "steve",
+          "t": "\"Completely\" has no place in security. It's trivial, a single router command, and would solve a chunk of problems. But it wouldn't stop botnets."
+        },
+        {
+          "s": "leo",
+          "t": "Why not? Don't they need incoming commands?"
+        },
+        {
+          "s": "steve",
+          "t": "Bots phone outward from the infected machine, and commands come back over that outbound connection. So blocking incoming SYNs does nothing to botnets."
+        },
+        {
+          "s": "leo",
+          "t": "Then it's not that useful."
+        },
+        {
+          "s": "steve",
+          "t": "And ISPs aren't feeling much pain from customers running servers, so there's no motivation, unlike port 25, where mail servers got their networks blacklisted. When something causes pain, ISPs act."
+        }
+      ]
+    },
+    {
+      "title": "One-Time Cards and Debit Protections",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ward Reed in Pensacola says don't use your PayPal one-time card as your primary card, because it acts like a debit card with less protection."
+        },
+        {
+          "s": "steve",
+          "t": "Timely, because I was at PayPal ready to use one and stopped: PayPal only pulls from a checking account and gives no spending limit, so for a sketchy site I couldn't cap it. One listener said American Express withdrew its one-time service. Others recommend Bank of America and Citibank, with Visa and Discover; Citibank has downloadable software."
+        },
+        {
+          "s": "leo",
+          "t": "I checked: MasterCard and Visa apply the same zero-liability policy to debit cards as to credit cards, and PayPal's card runs on MasterCard. Banking law does give banks a little more leeway on debit cards, but the networks' policies cover you."
+        },
+        {
+          "type": "fact",
+          "title": "Debit vs. credit protection",
+          "t": "U.S. law still gives weaker statutory protection to debit cards than credit cards, especially if fraud is reported late, even though the card networks advertise zero-liability policies. Many security experts still prefer a credit card for online purchases."
+        }
+      ]
+    },
+    {
+      "title": "Insuring Against Identity Theft",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Bentsen in Dallas asks about transferring risk with identity-theft insurance, following the Avoid, Transfer, Mitigate approach."
+        },
+        {
+          "s": "steve",
+          "t": "The trouble is knowing what you're buying. Victims spend their own time writing letters and jumping through hoops, and it can ruin their credit. How do you insure against that?"
+        },
+        {
+          "s": "leo",
+          "t": "Services like LifeLock do the prevention, placing fraud alerts and credit locks at the agencies, and offer a service guarantee if your identity is stolen."
+        },
+        {
+          "s": "steve",
+          "t": "So it's both prevention and insurance."
+        },
+        {
+          "s": "leo",
+          "t": "Bruce Schneier wrote \"The Pros and Cons of LifeLock\" in Wired. He says the credit agencies dislike these fraud alerts, but his bottom line is you can do most of it yourself: place the fraud alert, freeze your credit, check it regularly. It's about $120 a year, and they've paid their guarantee 113 times in four years, mostly for problems that predated the service."
+        },
+        {
+          "s": "steve",
+          "t": "We're in a strange place, spreading our name and address to entities we know nothing about. It doesn't scale. The future is more like PayPal and Google Checkout fronting and protecting that information."
+        }
+      ]
+    },
+    {
+      "title": "Hassle-Free Clickjacking Protection",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike in Ohio suggests having nontechnical family install NoScript but enable \"allow scripts globally,\" since you said that still protects against clickjacking."
+        },
+        {
+          "s": "steve",
+          "t": "I verified it: with the current NoScript, allowing scripts globally still gives full clickjacking protection. The demo in last week's show notes shows the hidden Flash permission dialog appear when NoScript is present, even with scripting allowed. So Mike's strategy works."
+        },
+        {
+          "s": "leo",
+          "t": "It's worse than User Account Control, every five minutes. I run it with all scripts on too."
+        }
+      ]
+    },
+    {
+      "title": "An https://gmail.com Certificate Mismatch",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jared in Western Australia gets a certificate error reaching Gmail over SSL in IE7: \"issued for a different website's address.\""
+        },
+        {
+          "s": "steve",
+          "t": "On a hunch I tried https://gmail.com and got it too. Google parks gmail.com pointing at mail.google.com, so the certificate name doesn't match gmail.com. Over SSL, the first thing checked is that the certificate name matches the URL."
+        },
+        {
+          "s": "leo",
+          "t": "So it's a name mismatch."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, and that check is crucial against man-in-the-middle attacks: the man in the middle can't present Google's certificate signed by an authority you trust. Use https://mail.google.com, and it works every time. This would happen in any browser, not just IE7."
+        }
+      ]
+    },
+    {
+      "title": "Secure Online Voting?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kevin Lampo in Lebanon, New Hampshire asks whether a secure SSL website with a credit card could collect votes."
+        },
+        {
+          "s": "steve",
+          "t": "The technology isn't the problem. Public key crypto is a powerful enabler. The problem is everything else. Too many people are motivated to game the system, and so much of what a trustworthy voting system needs just doesn't exist. We're a long way off."
+        },
+        {
+          "s": "leo",
+          "t": "Even eVoting, one step less removed, is dangerous without a paper trail, and people have to check the receipt."
+        },
+        {
+          "s": "steve",
+          "t": "I'm disappointed by butterfly ballots where one in ten people vote wrong, and by Diebold's closed, proprietary \"trust us\" systems."
+        },
+        {
+          "s": "leo",
+          "t": "California's Secretary of State Debra Bowen had the University of California assess the machines, and they were decertified after being hacked several ways. Let's fix online banking first."
+        },
+        {
+          "s": "steve",
+          "t": "Given open source's proven ability to vet problems, let manufacturers make the hardware to spec and force everything else open for academics and security professionals to examine."
+        },
+        {
+          "s": "steve",
+          "t": "At least this election's result was decisive, so we're not recounting hanging chads."
+        }
+      ]
+    },
+    {
+      "title": "Reading netstat",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Almond McClain in Yuma ran netstat, it closed itself, and he found nine connections while running Skype and an old Hamachi. Time to format?"
+        },
+        {
+          "s": "steve",
+          "t": "netstat is a handy command in every Windows version that shows your network connections. I can't explain why it would close its own window; that instance may be buggy."
+        },
+        {
+          "s": "steve",
+          "t": "\"Established\" means a connection to another computer. Many show 127.0.0.1 on both sides, which just means processes inside your own machine talking to each other, nothing to worry about."
+        },
+        {
+          "s": "steve",
+          "t": "I run \"netstat -an.\" In XP, \"netstat -abn\" adds which process owns each connection. You'd see Skype.exe and Hamachi.exe, since Hamachi keeps TCP connections to other clients and Skype keeps one to Skype Central. Anything you don't recognize is where to start researching."
+        }
+      ]
+    },
+    {
+      "title": "NoScript Fatigue, Confessed",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Esbjorn Larsen in Denver loves NoScript but disables it, since most sites use scripting; it even breaks Google search. It's like Vista's UAC, which he turned off."
+        },
+        {
+          "s": "steve",
+          "t": "This is where I confess: I run NoScript in Firefox with scripts enabled globally, so there's an exclamation point on the red S in my tray."
+        },
+        {
+          "s": "leo",
+          "t": "Clicking \"allow\" never seems to stick, so I run it that way too."
+        },
+        {
+          "s": "steve",
+          "t": "My compromise is to turn scripting off when I'm going to sketchy places. It's another reason I'm excited to have Sandboxie's author on: we need a way to leave scripting on and still be protected from what sites do to us."
+        }
+      ]
+    },
+    {
+      "title": "A Simple Fix for the TCP Attack?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sheldon Smith in Apple Valley asks why the target of the TCP stall attack can't just time out and drop the connection, like hanging up on a caller who says \"hold on,\" with shorter timeouts earlier in the sequence."
+        },
+        {
+          "s": "steve",
+          "t": "There are many ways to harden TCP against this. The problem is none are in place today. You risk false positives, since TCP by definition can maintain a connection indefinitely when that's wanted. We can do these things; we just need to, and haven't yet."
+        },
+        {
+          "s": "steve",
+          "t": "The good news is the researchers now have the vendors' attention, so these problems will get solved. It just takes a while, because you must be sure a change doesn't break things or make them worse."
+        },
+        {
+          "s": "leo",
+          "t": "You don't want to break the Internet."
+        }
+      ]
+    },
+    {
+      "title": "A Question for Sandboxie's Author",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dominik in Stuttgart was about to buy Sandboxie but read it doesn't work on Vista 64. Could you ask the author about 64-bit support?"
+        },
+        {
+          "s": "steve",
+          "t": "We'll put it on the list. Next week I'll detail the RSA trojan, whose infections came in through browsers, the perfect lead-in to Sandboxie's lightweight protection."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why is CryptoLink taking so long, according to Steve?",
+      "options": [
+        "It's just him, he works thoroughly, and he had to finish other GRC projects first",
+        "It needs new hardware",
+        "He lost the design",
+        "It's waiting on a patent office"
+      ],
+      "answer": 0,
+      "explain": "No code had even been written yet."
+    },
+    {
+      "q": "Why would blocking incoming SYN packets NOT stop botnets?",
+      "options": [
+        "Bots phone outward, and commands return over that outbound connection",
+        "Bots use no network",
+        "SYN packets aren't used",
+        "Botnets use email"
+      ],
+      "answer": 0,
+      "explain": "ISPs block incoming SYNs only on some ports today."
+    },
+    {
+      "q": "What did Bruce Schneier conclude about services like LifeLock?",
+      "options": [
+        "You can do most of what they do yourself, like fraud alerts and credit freezes",
+        "They're a scam",
+        "They're legally required",
+        "They never pay claims"
+      ],
+      "answer": 0,
+      "explain": "It costs about $120 a year."
+    },
+    {
+      "q": "Why did https://gmail.com produce a certificate error?",
+      "options": [
+        "gmail.com points at mail.google.com, so the certificate name doesn't match the URL",
+        "Google's certificate expired",
+        "IE7 is broken",
+        "The site was spoofed"
+      ],
+      "answer": 0,
+      "explain": "That name check is what blocks man-in-the-middle attacks."
+    },
+    {
+      "q": "In netstat, what does a connection to 127.0.0.1 on both sides mean?",
+      "options": [
+        "Processes inside your own computer are talking to each other",
+        "You've been hacked",
+        "A remote server is connected",
+        "Your firewall failed"
+      ],
+      "answer": 0,
+      "explain": "\"netstat -abn\" shows which process owns each connection."
+    },
+    {
+      "q": "What's the main obstacle to secure online voting, in Steve's view?",
+      "options": [
+        "Everything other than the cryptography, which already exists",
+        "The lack of fast Internet",
+        "Weak encryption",
+        "Too few voters"
+      ],
+      "answer": 0,
+      "explain": "Many people are motivated to game the system."
+    }
+  ]
+}
