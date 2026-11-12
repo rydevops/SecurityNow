@@ -492,7 +492,7 @@
         {
           "type": "fact",
           "title": "Settings later added",
-          "t": "Chrome later added per-site settings for cookies, JavaScript and more, an option to clear cookies when you quit, and, by 2024, third-party cookie blocking in Incognito mode by default."
+          "t": "Chrome later added per-site settings for cookies, JavaScript and more, an option to clear cookies when you quit, and default third-party cookie blocking in Incognito windows."
         }
       ]
     },
