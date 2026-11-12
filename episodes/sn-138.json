@@ -1,0 +1,692 @@
+{
+  "number": 138,
+  "title": "Listener Feedback Q&A #38",
+  "subtitle": "Redirects, drive sleep, IronKey's Tor network and more",
+  "date": "2008-04-03",
+  "description": "A paper Enigma machine and a hard drive that survived a fall down the stairs open the show. Then listener questions: a redirect that won't load, whether to spin drives down, IronKey's private Tor network versus a VPN, slowing password guesses instead of self-destructing, which XP services to disable, whether SSL VPNs protect email, quantum computing, whether a Mac is safer, IronKey upgrades, Firefox prefetching, data left on an Xbox 360 drive, the FormFox add-on, and a preview of the technology of Internet congestion.",
+  "transcript": "https://www.grc.com/sn/sn-138.txt",
+  "audio": "http://media.GRC.com/sn/SN-138.mp3",
+  "chapters": [
+    {
+      "title": "Never Dumbing It Down",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve is an expert at making things intelligible, and I'm proud that we never dumb it down."
+        },
+        {
+          "s": "steve",
+          "t": "I believe that if someone understands something and communicates it well, it doesn't need to be made simple. Last week we explained what's static about static RAM and what's dynamic about dynamic RAM. There's no need to dumb that down if it's explained correctly."
+        },
+        {
+          "s": "leo",
+          "t": "I've made my living assuming people are intelligent. A lot of broadcasting assumes the worst. If you listen to this show, you're a smart person. It's the most challenging show on the network, and that's part of the fun. Your brain grows when you listen."
+        }
+      ]
+    },
+    {
+      "title": "A Paper Enigma Machine",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Bruce Schneier blogged this week about a simple, zero-cost, reduced-capability but functional version of the Enigma cipher machine Germany used in World War II."
+        },
+        {
+          "s": "steve",
+          "t": "Download a PDF, print it onto card stock, cut slots and strips with scissors and glue, and you really get a sense of how it worked."
+        },
+        {
+          "s": "leo",
+          "t": "Alan Turing broke Enigma, right?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, Turing, working at Bletchley Labs in Britain."
+        },
+        {
+          "s": "leo",
+          "t": "The Germans used Enigma to coordinate the submarines harassing British shipping. Cracking it may have been one of the keys to winning the war, and nobody thought it could be done. The real ones were beautiful wooden boxes with gears and a typewriter."
+        },
+        {
+          "type": "fact",
+          "title": "The history",
+          "t": "It was Bletchley Park. Polish mathematicians, led by Marian Rejewski, first broke Enigma in the 1930s and shared their work with Britain, where Turing and many others built on it."
+        },
+        {
+          "s": "steve",
+          "t": "Google \"paper enigma machine.\" Near the top of that page is a link to a software simulator for Windows, or Wine on Linux, that emulates many different Enigma models. It's beautifully done."
+        },
+        {
+          "s": "leo",
+          "t": "Math classes build these. It brings math and history to life."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite and a Computer's Flying Lessons",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're recording right after last week's episode, since you're in Australia, so no news. But here's a wacky SpinRite story from Steve Hall: \"Thanks to SpinRite, my daughter can read better.\""
+        },
+        {
+          "s": "leo",
+          "t": "I'm in Tasmania, mate, photographing Tasmanian devils."
+        },
+        {
+          "s": "steve",
+          "t": "His father replaced a computer after \"an act of Windows-induced frustration,\" in which he gave it flying lessons, from the second floor to the first floor of his house."
+        },
+        {
+          "s": "leo",
+          "t": "He threw it downstairs?"
+        },
+        {
+          "s": "steve",
+          "t": "I think so, since he mentions replacing sections of his Pergo floor. With a new motherboard, the son had it running again on the original hard drive. I'd never use a machine whose drive had fallen a story."
+        },
+        {
+          "s": "steve",
+          "t": "He gave it to his four-year-old daughter for her Hooked on Phonics game. She used it daily, until it stopped booting, saying it couldn't find some key Windows files."
+        },
+        {
+          "s": "leo",
+          "t": "Impact is the worst thing for a drive."
+        },
+        {
+          "s": "steve",
+          "t": "You're bouncing the heads on the surface. It's far worse if it's spinning. Presumably Dad unplugged it first. When a drive powers down, the heads snap into the center near the spindle, where there's less vibration since the platters are anchored there, and a little latch locks them."
+        },
+        {
+          "s": "steve",
+          "t": "The center also helps with \"stiction.\" Heads resting on the surface can stick. At the center they have less leverage to keep the platters from spinning up than at the outer edge."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Many drives, especially laptop drives, now park their heads on a ramp just beyond the platters' outer edge instead, so the heads never touch the surface at rest."
+        },
+        {
+          "s": "steve",
+          "t": "He's a faithful listener, so he bought SpinRite. After 12 hours of clunking away and many recovered sectors, the computer was back. He'll recommend SpinRite \"to many happy daughters everywhere.\""
+        },
+        {
+          "s": "leo",
+          "t": "But do you recommend this?"
+        },
+        {
+          "s": "steve",
+          "t": "No. I'm glad it worked. Listeners have shown me pictures of literally barbecued drives from fires that SpinRite got running long enough to copy the data off."
+        },
+        {
+          "s": "leo",
+          "t": "But a new drive is cheap. Copy the data off and don't trust that drive."
+        },
+        {
+          "s": "steve",
+          "t": "But he's kept it going, so what the heck."
+        }
+      ]
+    },
+    {
+      "title": "A Redirect That Won't Load",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Fred Zanegood in Orlando says AudiblePodcast.com/securitynow doesn't work for him in Firefox, even after whitelisting it in OpenDNS. It works for me."
+        },
+        {
+          "s": "steve",
+          "t": "For me too. But it redirects. The site sees which page you asked for and returns a new URL, which the browser then follows."
+        },
+        {
+          "s": "leo",
+          "t": "Audible uses it to count how many people come from each show. They don't pay us per signup, so it doesn't cost us anything. We just want them to know."
+        },
+        {
+          "s": "steve",
+          "t": "Redirection has been abused, so security-conscious people get uneasy about being bounced somewhere they didn't type. We've discussed PayPal links that actually go through DoubleClick and back."
+        },
+        {
+          "s": "leo",
+          "t": "This all goes through Audible. Nothing shady."
+        },
+        {
+          "s": "steve",
+          "t": "Right. But Firefox has all kinds of security add-ons. He may have redirects disabled, or need to tell his browser that AudiblePodcast.com is okay."
+        },
+        {
+          "s": "leo",
+          "t": "I use redirects for our podcast feeds, like leo.am/podcasts/securitynow, so one URL always works even if I move the RSS feed to a different server."
+        },
+        {
+          "s": "steve",
+          "t": "I do the same for the 64KB versions of Security Now!. A GRC-looking URL redirects to you guys."
+        },
+        {
+          "s": "leo",
+          "t": "Which goes through Podtrac to count downloads, then to AOL or CacheFly for the bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "Years ago, GRC's DNS had a wildcard, so anything-dot-GRC.com reached GRC. We accumulated an unbelievable amount of debris names, and Google found them all. So I redirected every name to www.GRC.com for years, training the world, then shut off the wildcard. Redirects are handy. I wish they hadn't been abused."
+        },
+        {
+          "s": "leo",
+          "t": "Security suites like Norton Internet Security and McAfee often proxy your browsing, and who knows what happens then. Or Fred can just go to Audible.com."
+        }
+      ]
+    },
+    {
+      "title": "Should Your Drives Go to Sleep?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rene van Belzen in the Netherlands uses TinkerTool System on his Mac, which I use too. It warns that switching off desktop hard disks too often may reduce their lifetime. He wants to be green without killing his drives. How long before sleep? 15 minutes? An hour? Never?"
+        },
+        {
+          "s": "steve",
+          "t": "I never sleep mine. In the old days, drives failed at power-up. Working fine at night, you turn it off, and in the morning it won't boot."
+        },
+        {
+          "s": "leo",
+          "t": "Like light bulbs."
+        },
+        {
+          "s": "steve",
+          "t": "A cold filament has lower resistance, so there's an inrush of current at turn-on. That's why bulbs blow then. An old oscillator design, the Wien bridge I think, actually used a light bulb as a regulator, because its resistance rises as current increases."
+        },
+        {
+          "type": "fact",
+          "title": "The bulb",
+          "t": "Steve's memory is right. Bill Hewlett's Wien bridge audio oscillator, the HP200A and Hewlett-Packard's first product, used a small lamp to stabilize its output."
+        },
+        {
+          "s": "steve",
+          "t": "And turning the whole computer off lets it cool to room temperature, which may be low at night, then heat back up. Big thermal swings. I never turn my machines off or spin my drives down, and I've had drives last a long time."
+        },
+        {
+          "s": "leo",
+          "t": "They don't heat up, cool down, expand and contract. And spinning up uses extra power."
+        },
+        {
+          "s": "steve",
+          "t": "But it depends on your duty cycle. If you use it an hour in the evening, I won't tell you to leave it on 24 hours a day. The only time I'm not at my computer is when I'm sleeping or at Starbucks."
+        },
+        {
+          "s": "leo",
+          "t": "I've seen figures that if businesses turned off computers at night, it would power hundreds of thousands of homes."
+        },
+        {
+          "s": "steve",
+          "t": "So for normal users: if you'll use it again today, leave it on. When you're done for the day, shut it down. I don't, and my power bill shows it."
+        },
+        {
+          "s": "leo",
+          "t": "I'm turning off drive sleep on all my systems. And systems last a long time now."
+        },
+        {
+          "s": "steve",
+          "t": "Drives are cheap. And SpinRite fixes them when they die."
+        }
+      ]
+    },
+    {
+      "title": "Is IronKey's Tor Network a VPN?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Scott Hemmeter in nearby Orange, California recalls you said traditional Tor is anonymous but not secure. Is IronKey's private Tor network both? Could it replace his HotSpotVPN service, $10.88 a month, which slows his connection considerably?"
+        },
+        {
+          "s": "steve",
+          "t": "Our Tor episode explained the onion model. Traffic bounces between onion routers, each knowing only which router it came from and which it goes to. The payload is encrypted in layers they can't read."
+        },
+        {
+          "s": "steve",
+          "t": "Only the final router peels the last layer, decrypts the traffic and puts it on the 'Net. Someone watching that exit router can't trace it back to you, but can see your traffic, since it's no longer encrypted."
+        },
+        {
+          "s": "steve",
+          "t": "That's the same with HotSpotVPN. Your traffic is encrypted to their network, then decrypted and released. Unless you also use SSL to the site, like https://mail.google.com for Gmail, which keeps your connection encrypted end to end."
+        },
+        {
+          "s": "steve",
+          "t": "Since our Tor episode, there's been news of malicious Tor nodes. People of varying badness, maybe even state agencies, ran nodes to monitor traffic. You want white hats who believe in anonymity running them."
+        },
+        {
+          "s": "steve",
+          "t": "IronKey runs its own private Tor network, which it completely controls. The client makes an encrypted connection to the first server, much like HotSpotVPN. Traffic bounces among IronKey's servers and emerges from IronKey's exit node."
+        },
+        {
+          "s": "steve",
+          "t": "So it is secure. But Tor trades performance for anonymity, since your data bounces around. I can't vouch for IronKey's speed. Give it a try, but it may not be faster than HotSpotVPN."
+        },
+        {
+          "s": "leo",
+          "t": "And the anonymity is weaker, since it's all one company. Public Tor nodes are run by many unconnected people. With IronKey, one subpoena and they say, okay, it's him."
+        }
+      ]
+    },
+    {
+      "title": "Slow Down Guesses Instead of Self-Destructing?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bryan Moore in Carlsbad, California, which has caves, won't buy an IronKey unless there's a version with slowed-down password failures instead of Flash Trash destruction. He doesn't want e-waste or a doorstop because someone tried to peek."
+        },
+        {
+          "s": "leo",
+          "t": "Self-destruction is likelier than someone guessing his password, he says, and it forces him to keep a less secure backup. Someone doubting the warnings might use up eight tries. Then he'd only have two left without knowing."
+        },
+        {
+          "s": "leo",
+          "t": "Do you get 10 tries for life?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Authenticating successfully within 10 tries resets the counter."
+        },
+        {
+          "s": "leo",
+          "t": "He'd prefer delays: after a few failures, slower responses, then requiring a power cycle, or even a stealth mode where a correct password does nothing until power is cycled. At one guess every 30 seconds, since a year has 31,536,000 seconds, that's about a million guesses a year, and even a weak five-letter uppercase password has 11 million possibilities. The real owner just replugs it and gets a few fast tries."
+        },
+        {
+          "s": "steve",
+          "t": "His attack model differs from many users'. Some absolutely don't want their data in the wrong hands under any circumstances. If I lose it and someone tries to break in, I'm assuming I'm not getting it back. His scenario has someone bring it close to self-destruct, then sneak it back to us so we kick it over the line."
+        },
+        {
+          "s": "steve",
+          "t": "Many OSes use slowed logons. It's annoying when I'm trying to remember which of my many passwords I used, but better than a self-wiping disk. So I appreciate the idea."
+        },
+        {
+          "s": "steve",
+          "t": "But as I said, with my TrueCrypted Kingston, it's uncomfortable that someone without the password can still copy the almost 4GB encrypted file and keep poking at it. They really can't do anything with it. That's TrueCrypt's strength. But IronKey never lets anyone get the raw data, right up to killing itself."
+        },
+        {
+          "s": "leo",
+          "t": "And you shouldn't have only one copy of your data on an IronKey anyway."
+        },
+        {
+          "s": "steve",
+          "t": "Correct, and IronKey offers a backup service, though I don't think I'd use it. I use my key for sneakernet. This morning I copied an outline from my laptop to bring home. Sometimes I use Amazon S3 and Jungle Disk instead. I always have another copy."
+        },
+        {
+          "s": "leo",
+          "t": "If you have only one copy of anything, you'll lose it somehow. The point is protection if you lose the key."
+        },
+        {
+          "s": "leo",
+          "t": "Though I'm the kind of person who'd enter the wrong password 10 times. My bank locks me out after three every time."
+        }
+      ]
+    },
+    {
+      "title": "Which XP Services to Disable",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve in Florida, good name, asks which services you stopped to get your new XP system booting in 131MB. He used BlackViper.com's list, disabled about 20, then found he needed one or two. Do you have a list for different setups: gaming, wireless laptop, print server and so on?"
+        },
+        {
+          "s": "steve",
+          "t": "I first heard of Black Viper when I was up in Vancouver with you. I merged his advice with my own experience, which is more with Windows 2000 and NT than XP, and found his advice exactly correct. Mostly I used it as confirmation."
+        },
+        {
+          "s": "steve",
+          "t": "Some services are weird, and you wonder what they do. It helps to use someone who's experimented and gotten lots of feedback. BlackViper.com is what I use, and it's terrific."
+        },
+        {
+          "s": "leo",
+          "t": "I was glad when he came back. He does Vista too."
+        }
+      ]
+    },
+    {
+      "title": "Does an SSL VPN Protect Your Email?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt in Virginia asks: does an SSL VPN, like WiTopia's or HotSpotVPN's, or I'd add Astaro's, protect non-browser activities? If he checks email in a desktop client, are his login and messages sent through the tunnel? IPSec and L2TP are often blocked at hotspots."
+        },
+        {
+          "s": "steve",
+          "t": "A VPN is absolutely secure as long as all your traffic goes through it. I'm a little uncomfortable with OpenVPN, which changes the routing table dynamically to hopefully route all your traffic through its interface. It's finicky to configure."
+        },
+        {
+          "s": "leo",
+          "t": "OpenVPN isn't the only SSL VPN."
+        },
+        {
+          "s": "steve",
+          "t": "True. Any well-designed SSL VPN should route all your traffic."
+        },
+        {
+          "s": "steve",
+          "t": "SSL, Secure Sockets Layer, was designed by Netscape so people could send credit card information to web servers securely. It reached version 3.0 and evolved into TLS, Transport Layer Security, its formal name now. It's a certificate-based, strongly authenticated and encrypted point-to-point connection you can trust when set up correctly."
+        },
+        {
+          "s": "leo",
+          "t": "So an SSL VPN just uses SSL instead of IPSec or L2TP to build an encrypted tunnel for all your traffic."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Without a VPN, a secure browser connection doesn't protect your email unless you've also configured email for secure connections, which you usually can."
+        },
+        {
+          "s": "steve",
+          "t": "And SSL VPNs are more robust when mobile. IPSec and L2TP use well-known ports that people who don't want VPNs can block, as hotspots often do."
+        },
+        {
+          "s": "leo",
+          "t": "Nobody can block SSL, or people couldn't shop on Amazon."
+        }
+      ]
+    },
+    {
+      "title": "Will Quantum Computers Break Encryption?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kyle Hasegawa in Tokyo asks: what happens when government agencies use quantum computers? Will TrueCrypt be worthless against oppressive states? Quantum computing experts I've asked use exactly that example. But it's early days."
+        },
+        {
+          "s": "steve",
+          "t": "Quantum computing doesn't exist yet, and we're not close. 64-bit symmetric keys are no longer considered safe. But each bit doubles the work. Going from 64 to 128 bits, and from there to 256-bit AES, makes these numbers huge."
+        },
+        {
+          "s": "steve",
+          "t": "If and when quantum computing happens, it'll be way faster than silicon. But I don't think 128-bit or 256-bit encryption will have a problem."
+        },
+        {
+          "s": "leo",
+          "t": "The point of quantum computing is moving beyond binary bits, so you'd get a geometric jump in power too. Some companies claim simple quantum computers."
+        },
+        {
+          "s": "steve",
+          "t": "We'll give our listeners plenty of notice to go to 512-bit keys."
+        },
+        {
+          "s": "leo",
+          "t": "But if you're worried about the government, they'll use it first, and the NSA won't tell you to double your keys."
+        },
+        {
+          "type": "fact",
+          "title": "The current thinking",
+          "t": "Known quantum algorithms would break today's public-key systems like RSA, but only roughly halve the effective strength of symmetric ciphers. So 256-bit AES is still considered safe, and new \"post-quantum\" public-key standards were adopted in 2024."
+        }
+      ]
+    },
+    {
+      "title": "Is a Mac Inherently Safer?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chip Mason in Raleigh, North Carolina, a longtime Windows user, heard about banking trojans and wonders whether to switch to a Mac. Isn't the Mac safe only because its market share is too small to attract hackers? Is its BSD UNIX and Mach kernel inherently more secure? He doesn't want to invest heavily and then find the same problems."
+        },
+        {
+          "s": "steve",
+          "t": "I turn on my little Mac an hour or two before we record so it can update. This morning: a 50MB OS update and a 39MB Safari update, more than 80 OS patches and 13 for Safari. I'm seeing far more Mac security updates than in years past."
+        },
+        {
+          "s": "steve",
+          "t": "My sense is Apple is ahead of the curve, and since it's a smaller target, actual exploits are still much rarer than on Windows. But I don't think there's anything fundamentally more secure about the Mac."
+        },
+        {
+          "s": "steve",
+          "t": "There were about 40 fixes at the end of last year, plus these 80. About half were in open-source components: Apache and PHP had 10 advisories each, and MIT's technology had four. The other half were in Apple's own code."
+        },
+        {
+          "s": "steve",
+          "t": "It's hard to write exploit-proof software. Apple and its applications are in the same boat as Windows. The ante keeps going up as cracking software becomes more valuable. It's the eternal cat-and-mouse game."
+        },
+        {
+          "s": "leo",
+          "t": "We still haven't seen big exploits on the Mac."
+        },
+        {
+          "s": "steve",
+          "t": "The Mac benefits from Windows' horrible history. It took Microsoft amazingly long to turn on a firewall by default. The second XP Service Pack 2 did, everything changed. Apple learned that lesson with much less pain. Windows' reputation may now be worse than it deserves, since Microsoft getting serious about security is recent history."
+        },
+        {
+          "s": "leo",
+          "t": "Windows also suffers from preserving compatibility with legacy hardware and software, which compromises security. Apple has been quick to abandon legacy owners, most recently with the move to Intel."
+        },
+        {
+          "s": "steve",
+          "t": "Our Vista coverage showed exactly that. Vista has a ton of sound new security technology that Microsoft deliberately neutered for backward compatibility."
+        },
+        {
+          "s": "leo",
+          "t": "Apple is a smaller target, and hackers know Windows and profit more from it."
+        },
+        {
+          "s": "steve",
+          "t": "And Macs aren't really pricier anymore. Hackers hack the machines they own. They used to get Windows machines for Christmas and at school. Now hackers have Macs, so we're seeing more Mac hacks."
+        },
+        {
+          "s": "leo",
+          "t": "But I don't see Apple getting past 10, maybe 20 percent market share for years."
+        },
+        {
+          "s": "steve",
+          "t": "Which is good for Mac people."
+        }
+      ]
+    },
+    {
+      "title": "Will IronKeys Be Upgradable?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Hurst in New York asks whether today's IronKeys can be updated with the improvements \"the rep\" mentioned, or whether he'd need a new one."
+        },
+        {
+          "s": "steve",
+          "t": "He wasn't a rep. He's the founder, CEO and chief techno bottle washer, absolutely the guy. And we asked exactly that. David said yes, it'll be retrofittable."
+        },
+        {
+          "s": "leo",
+          "t": "Which was really encouraging."
+        }
+      ]
+    },
+    {
+      "title": "Can Firefox Prefetching Infect You?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Justin Gerard heard on Windows Weekly that Firefox gobbles memory by pre-caching linked pages. If it pre-caches a page with an exploit, could he be infected without clicking? Justin does the Gamer's Edge podcast, which is great."
+        },
+        {
+          "s": "steve",
+          "t": "He's also the 12- or 13-year-old whose Geek Squad technician ran a copy of SpinRite he didn't own. I found him with GRC's sitewide search: three hits on his name, thanks to Elaine's transcripts."
+        },
+        {
+          "s": "leo",
+          "t": "A great kid, who will undoubtedly succeed us and do better."
+        },
+        {
+          "s": "steve",
+          "t": "Great question. Firefox pulls in content referred to by the page you're viewing. But it isn't until a page is displayed that JavaScript runs and images go through the rendering that malicious JPEGs or PNGs exploit. So pre-caching almost certainly wouldn't expose you to pages you didn't click."
+        },
+        {
+          "s": "leo",
+          "t": "It doesn't run until you click."
+        },
+        {
+          "s": "steve",
+          "t": "So it fills its cache with pages you never visit?"
+        },
+        {
+          "s": "leo",
+          "t": "People noticed Firefox 2's huge memory footprint, and that's part of it. I think it's bad 'Net behavior, using bandwidth you shouldn't. Firefox 3 reduces the footprint. And with broadband, it's not that much faster."
+        },
+        {
+          "type": "fact",
+          "title": "The details",
+          "t": "Firefox prefetches only links a page specifically marks for prefetching, such as Google's top search result, not every link on a page."
+        }
+      ]
+    },
+    {
+      "title": "Your Gamer Tag on a Discarded Xbox Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Hudson Seiler of Janesville, Wisconsin bought a dead Xbox 360 hard drive, removed it from Microsoft's proprietary mount to reveal a standard SATA drive, and ran SpinRite. It booted, and to his astonishment, SpinRite completely recovered the previous owner's data. He deleted it and reformatted, and the drive works great."
+        },
+        {
+          "s": "leo",
+          "t": "His warning: your gamer tag could be stolen, along with the debit or credit card information tied to it. Store your gamer tag on a 360 memory unit, so if someone gets your drive, they can't get your card or email information."
+        },
+        {
+          "s": "steve",
+          "t": "A great thing to mention."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft says to detach the drive before sending in your Xbox for repair. But if you sell the drive or the Xbox, that's an issue."
+        }
+      ]
+    },
+    {
+      "title": "Cool Add-On of the Week: FormFox",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Noble of Wellington, New Zealand heard us discuss not knowing where a form will be submitted. His tip: the Firefox extension FormFox."
+        },
+        {
+          "s": "steve",
+          "t": "I haven't tried it, but I posted the link because it sounds very cool."
+        },
+        {
+          "s": "leo",
+          "t": "It installs in my Firefox beta. \"Do you know where your form information is going?\" Mouse over any form, from search boxes to order forms, and it shows where the data goes, including whether it's HTTP or HTTPS."
+        },
+        {
+          "s": "steve",
+          "t": "I wish browsers did this by default: a tooltip on the button showing the URL, green for HTTPS and red if not."
+        },
+        {
+          "s": "leo",
+          "t": "It'd also show if a form routed through somewhere like DoubleClick. Chris says it works a treat, without digging through source code."
+        },
+        {
+          "s": "steve",
+          "t": "Send questions and tips to GRC.com/feedback. Names are optional, but we like sharing them."
+        },
+        {
+          "s": "leo",
+          "t": "And Elaine puts each question's full text in the Q&A transcripts."
+        },
+        {
+          "s": "steve",
+          "t": "She asked me for the text so she could spell names right. Then I realized she could just use the text and save typing."
+        }
+      ]
+    },
+    {
+      "title": "Next Week: The Technology of Congestion",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next week: network neutrality. Not the politics, which are for politicians, but the technology of congestion. A lot of Internet engineering is looking at the real problem of users colliding with each other."
+        },
+        {
+          "s": "steve",
+          "t": "Here's a teaser. Once a network is built, it costs the same whether you use it or not, until congestion. That's when overuse starts costing. And TCP doesn't handle congestion well, and multiple connections tend to abuse how routers handle it. We'll look at what YouTube and downloaded TV shows mean as people's use of the 'Net evolves."
+        },
+        {
+          "s": "leo",
+          "t": "I say there are two kinds of net neutrality issues. A company blocking Skype to sell its own VoIP is anticompetitive. But a few people using BitTorrent to download every movie can ruin everyone's speeds, and the ISP's business. It's not unreasonable to manage that."
+        },
+        {
+          "s": "steve",
+          "t": "I completely agree. The phone system can't handle everyone at once. In emergencies, nobody gets a dial tone. No ISP can provide all the bandwidth it sells at once. It relies on a model of how much people actually use, and that model is being skewed."
+        },
+        {
+          "s": "steve",
+          "t": "I use \"hog\" provisionally, since users can say, my ISP sold me unlimited bandwidth. But the way the Internet fails under overuse isn't optimal, because it was never designed for this."
+        },
+        {
+          "s": "leo",
+          "t": "Some of it is ISPs being cheap. But there's a legitimate need too."
+        },
+        {
+          "s": "leo",
+          "t": "Many shows are on spring break while I'm in Australia, but not Security Now!. Watch Leoville.com for photos from our Lightroom Adventure. The Radio Leo feed at leo.am/podcasts/leo has every show I'm on, and TWiT.tv/node/feed has everything TWiT puts out."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Steve leave his computers on and never spin his drives down?",
+      "options": [
+        "Power cycling and the resulting temperature swings stress drives, and he uses his computers constantly",
+        "It's faster",
+        "Drives can't restart",
+        "To run SpinRite"
+      ],
+      "answer": 0,
+      "explain": "He advises occasional users to shut down when done for the day."
+    },
+    {
+      "q": "How does IronKey's private Tor network compare with the public Tor network?",
+      "options": [
+        "It's secure, since IronKey controls every node, but less anonymous, since one company could be subpoenaed",
+        "It's faster and more anonymous",
+        "It's identical",
+        "It doesn't encrypt traffic"
+      ],
+      "answer": 0,
+      "explain": "Tor generally trades speed for anonymity."
+    },
+    {
+      "q": "Does an IronKey's ten-try counter last for the device's lifetime?",
+      "options": [
+        "No, a successful login resets it",
+        "Yes, 10 tries ever",
+        "It resets daily",
+        "It has no counter"
+      ],
+      "answer": 0,
+      "explain": "Bryan wanted delays instead of self-destruction."
+    },
+    {
+      "q": "Why are SSL VPNs often better at public hotspots than IPSec or L2TP?",
+      "options": [
+        "They use the same ports as secure web traffic, which hotspots can't block",
+        "They're faster",
+        "They need no software",
+        "They're free"
+      ],
+      "answer": 0,
+      "explain": "IPSec and L2TP use well-known ports that are often blocked."
+    },
+    {
+      "q": "Why did Hudson warn about discarded Xbox 360 hard drives?",
+      "options": [
+        "Recovered data can include your gamer tag, tied to your card and email information",
+        "They contain viruses",
+        "They can't be reformatted",
+        "They're encrypted"
+      ],
+      "answer": 0,
+      "explain": "He suggests keeping the gamer tag on a memory unit."
+    },
+    {
+      "q": "What does the FormFox add-on show?",
+      "options": [
+        "Where a form will send your data, including whether it uses HTTPS",
+        "Your saved passwords",
+        "Hidden form fields",
+        "Page scripts"
+      ],
+      "answer": 0,
+      "explain": "Steve wishes browsers did this by default."
+    }
+  ]
+}
