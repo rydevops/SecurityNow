@@ -617,11 +617,6 @@
         {
           "s": "steve",
           "t": "They buckled to consumers who couldn't log in. How upset will those consumers be when their accounts are emptied because of this policy? It's time to start training people about case-sensitive passwords."
-        },
-        {
-          "type": "fact",
-          "title": "Wells Fargo today",
-          "t": "Wells Fargo made its online banking passwords case-sensitive in later years."
         }
       ]
     },
