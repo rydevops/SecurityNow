@@ -1,0 +1,683 @@
+{
+  "number": 157,
+  "title": "DNS - After the Patch",
+  "subtitle": "A patched server falls in 10 hours, and the 0x20 hack adds free bits",
+  "date": "2008-08-14",
+  "description": "Security Now! begins its fourth year. After news of a Mac OS X update, a 12-bulletin Patch Tuesday, the FCC's 3-2 ruling against Comcast, and a Black Hat paper on bypassing Vista's ASLR and DEP, Steve follows up on DNS: Kaminsky's talk, Evgeniy Polyakov's 10-hour attack on a fully patched BIND server, whether SSL depends on DNS, why double queries and TCP won't work, what's holding DNSSEC back, and the clever 0x20 hack that uses letter case for extra randomness.",
+  "transcript": "https://www.grc.com/sn/sn-157.txt",
+  "audio": "http://media.GRC.com/sn/SN-157.mp3",
+  "chapters": [
+    {
+      "title": "Year Four Begins",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "In times like these it's good to have a friend like Steve. It seems like the bad guys are winning."
+        },
+        {
+          "s": "steve",
+          "t": "We have no trouble finding weekly content. And I held something back before we started rolling: 52 episodes a year, times three, is 156. This is the beginning of our fourth year."
+        },
+        {
+          "s": "leo",
+          "t": "Have you missed a week in three years?"
+        },
+        {
+          "s": "steve",
+          "t": "Never one."
+        },
+        {
+          "s": "leo",
+          "t": "He's the Cal Ripken, Jr. of podcasting."
+        },
+        {
+          "s": "leo",
+          "t": "I proposed it to you in Toronto, when you were a guest on Call For Help."
+        },
+        {
+          "s": "steve",
+          "t": "I remember where I was standing, at a corner of the triangle of sets, when you asked what I'd think of a security podcast. I said, \"A what cast?\" Later I hoped you wouldn't bring it up again. I thought I had maybe three weeks of material."
+        },
+        {
+          "s": "steve",
+          "t": "Here we are in year four, and the list of topics is growing, like the SpinRite testimonials, faster than I can read them."
+        },
+        {
+          "s": "steve",
+          "t": "It's been great for SpinRite to have a forum. You even use it as a verb now. It's been my lifeblood for 20 years, so I'm happy to trade everything I know about security for letting people know there's salvation when a drive dies."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite and RAID",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Speaking of which, I ran SpinRite for nine hours Monday on our recording machine. It's RAID 0, it gives weird errors, and it bluescreened during TWiT on Sunday. SpinRite found no errors. I ran level four."
+        },
+        {
+          "s": "steve",
+          "t": "Did you run it on the drives separately? You need to take them out from behind the RAID. SpinRite doesn't modify drive contents, so that's safe."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite is talking to the RAID controller, not the drive, and the controller may be masking errors. At the low level of the ATA interface SpinRite turns off retries and ECC to get a much more intimate relationship with the drive."
+        },
+        {
+          "s": "leo",
+          "t": "That explains it. The RAID controller says there's an error on the first drive. I'll SpinRite each drive tonight."
+        },
+        {
+          "s": "leo",
+          "t": "We're building the ultimate gaming machine to give away. Our builder can weld, ran her own skateboard design company, and designed the water cooling herself. Could you donate a copy of SpinRite? We're using VelociRaptors, the new 10,000 rpm drives, in RAID 0."
+        },
+        {
+          "s": "steve",
+          "t": "In a heartbeat. I'd give each drive to SpinRite before you even install. Many people run it on new drives so it can thrash them, hopefully not to death. You'd rather find out then than later."
+        },
+        {
+          "s": "leo",
+          "t": "I should have done that with the new TriCaster drive. We're having a SpinRite party tonight."
+        }
+      ]
+    },
+    {
+      "title": "Today's Topic",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today is \"DNS - After the Patch.\" Dan Kaminsky found the flaw in February, and secret meetings on Microsoft's campus in March led to patches for virtually every DNS server."
+        },
+        {
+          "s": "steve",
+          "t": "Since then, a Russian researcher has exploited a fully patched BIND 9. It's harder now, but is it hard enough?"
+        },
+        {
+          "s": "steve",
+          "t": "I'll touch on DNSSEC, DNS Security, which has churned along for nine years without getting off the ground. It deserves its own episode. And I'll finish with a way of strengthening DNS that's the very definition of the word \"hack.\""
+        }
+      ]
+    },
+    {
+      "title": "Mac Update and a Mega Patch Tuesday",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Mac OS X got a major update. When I turned mine on this morning it offered iTunes and a big security update that needed the whole shutdown-and-repatch routine."
+        },
+        {
+          "s": "steve",
+          "t": "And we're recording on Tuesday the 12th, the second Tuesday, and it's a mega Patch Tuesday: 12 bulletins, many critical, remote code execution, buffer overruns, the standard routine. Don't ignore this one."
+        }
+      ]
+    },
+    {
+      "title": "The FCC Rules Against Comcast",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Comcast's deep packet inspection selectively dropped BitTorrent connections. The FCC voted three to two against it. Interesting that two people thought it was fine."
+        },
+        {
+          "s": "steve",
+          "t": "The FCC ruled Comcast violated federal policy by throttling BitTorrent users. Comcast says the network neutrality stance is just a policy statement, not an enforceable rule."
+        },
+        {
+          "s": "steve",
+          "t": "Comcast claimed it was ensuring fair shares during heavy use. The FCC said Comcast had a motive: BitTorrent video downloads compete with its paid video-on-demand."
+        },
+        {
+          "s": "leo",
+          "t": "It's anti-competitive. A Canadian ISP does the same with Skype. It's not about protecting the network."
+        },
+        {
+          "s": "steve",
+          "t": "The problem was targeting BitTorrent specifically while letting other heavy uses through. ISPs can enforce terms of service, but network neutrality says limits must apply across the board."
+        },
+        {
+          "s": "leo",
+          "t": "And they weren't even punished."
+        },
+        {
+          "s": "steve",
+          "t": "It was, we're watching you, please don't do that."
+        },
+        {
+          "s": "leo",
+          "t": "And Comcast says it never did."
+        }
+      ]
+    },
+    {
+      "title": "Bypassing Vista's Protections",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Also from Black Hat: two researchers, one from IBM's Internet Security Systems and one from VMware, wrote a meaty paper, about 54 pages, showing how to bypass Vista's ASLR, Address Space Layout Randomization, and DEP, Data Execution Prevention. Those were the big additions beyond XP."
+        },
+        {
+          "type": "fact",
+          "title": "The researchers",
+          "t": "Mark Dowd of IBM ISS and Alexander Sotirov of VMware presented \"Bypassing Browser Memory Protections\" at Black Hat 2008. They showed how browser plug-ins like Java, Flash and .NET could be used to get around ASLR and DEP."
+        },
+        {
+          "s": "steve",
+          "t": "That's our topic in two weeks, \"Vista Security Bypass?\", unless something worse happens. So no need to write in. We'll take a balanced look rather than saying the sky is falling."
+        },
+        {
+          "s": "leo",
+          "t": "Vista has been much more secure than XP for 18 months. I'd be sorry to hear otherwise."
+        },
+        {
+          "s": "steve",
+          "t": "That's one argument against panic. Vista did a whole landscape of things better. The question is how much less secure this makes it."
+        }
+      ]
+    },
+    {
+      "title": "GRC's Whole Experience",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Neil Abrahams in the U.K. wrote about his whole experience with GRC, which nobody's mentioned before. He's an IT consultant, so family call him. His virtual father-in-law's laptop wouldn't boot, even in safe mode or last known good configuration."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe he's virtually married."
+        },
+        {
+          "s": "steve",
+          "t": "He put the drive in a USB caddy to rescue unbacked-up photos, but neither his desktop nor laptop recognized it. He assumed it was physically damaged."
+        },
+        {
+          "s": "steve",
+          "t": "Back in the original laptop, the BIOS saw it. As a longtime ShieldsUP! fan and Security Now! listener from the start, he thought: if the BIOS sees it, SpinRite can fix it. That's proper logic."
+        },
+        {
+          "s": "steve",
+          "t": "He bought SpinRite, installed it on a USB flash drive, booted it and ran Level 2. Twenty minutes later Windows started and he backed up the data, slowly. He says GRC's simplicity, easy payment and downloads make it world class. Less than five minutes to running SpinRite, problem solved in 20."
+        },
+        {
+          "s": "leo",
+          "t": "Making a usable website isn't easy. Pros do it now, and you did it yourself."
+        },
+        {
+          "s": "steve",
+          "t": "I wanted it to be mine."
+        }
+      ]
+    },
+    {
+      "title": "DefCon Hacks",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "There's a whole show in DefCon. Medeco locks cost twice as much because they're supposedly unhackable. Geeks love lock picking for some reason."
+        },
+        {
+          "s": "leo",
+          "t": "They showed that a low-res camera-phone picture of someone's key can be blown up and used to cut a working key out of a credit card. Technology has really advanced hackers' abilities."
+        },
+        {
+          "s": "leo",
+          "t": "And another presentation, which the MBTA must hate, showed how to clone Boston subway cards and ride free forever."
+        },
+        {
+          "type": "fact",
+          "title": "The subway talk",
+          "t": "Three MIT students were scheduled to present their Boston \"Charlie Card\" research at DefCon 2008, but the MBTA won a temporary restraining order that stopped the talk. The court lifted it days later, and the MBTA later worked with the students."
+        },
+        {
+          "s": "steve",
+          "t": "The diversity of those things is what makes DefCon fun. I've never gone, but I read the reports."
+        },
+        {
+          "s": "leo",
+          "t": "Patrick Norton used to go. I said bring a laptop. He said, are you kidding? I'm not getting online at DefCon."
+        }
+      ]
+    },
+    {
+      "title": "How We Got Here",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Thank goodness you explained DNS before, because now the fix is broken."
+        },
+        {
+          "s": "steve",
+          "t": "Yes and no. DNS was never designed to be secure. Just working was a miracle back then, like packets finding their way across the Internet router to router. SSL didn't exist at the start either."
+        },
+        {
+          "s": "steve",
+          "t": "Servers used one fixed outgoing port, and the 16-bit transaction ID just counted upward. Spoofing was child's play. So the transaction ID became a 16-bit pseudorandom number, jumping around 65,536 values."
+        },
+        {
+          "s": "steve",
+          "t": "Some random number generators weren't unpredictable enough. Attackers could observe a few queries, lock onto the generator and spoof replies."
+        }
+      ]
+    },
+    {
+      "title": "Kaminsky's Talk",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Dan's Black Hat talk was everything we expected. Nothing he revealed hadn't already been independently reverse-engineered, just from knowing there was a problem."
+        },
+        {
+          "s": "leo",
+          "t": "It's amazing how the 'Net works. You can't keep a secret."
+        },
+        {
+          "s": "steve",
+          "t": "People guessed, others said no, because of that, how about this, and it was born with Dan saying nothing."
+        },
+        {
+          "s": "steve",
+          "t": "His talk showed he'd thought about it far longer, pushing the limits of how broken DNS is. In a twisted way it's cool that something this bad was found only once people knew to look."
+        },
+        {
+          "s": "steve",
+          "t": "With HD Moore's Metasploit Framework, you could poison an arbitrary domain on an arbitrary name server in about 10 seconds."
+        },
+        {
+          "s": "leo",
+          "t": "Who is HD Moore, and what's Metasploit?"
+        },
+        {
+          "s": "steve",
+          "t": "HD Moore is the hacker who maintains Metasploit, a mature, growing framework that hosts exploits, so adding one takes only a little code. Sample runs on the Internet show it blasting 10,000 queries and spoofed replies, checking whether the target's record was replaced, and repeating. In one case 13 iterations, 10 to 15 seconds, then \"success.\""
+        }
+      ]
+    },
+    {
+      "title": "More Bits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "With a fixed source port, the attacker only needs the 16-bit transaction ID, and with so few combinations you get a collision. So we want more bits."
+        },
+        {
+          "s": "steve",
+          "t": "The protocol couldn't change, so the fix was source port randomization, up to another 16 bits. You lose some, since many systems can't use the first 1,024 service ports, and some can't allocate random ports across the whole space."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's updated DNS server reportedly preallocates about 2,500 ports. That's about 11 bits on top of the 16. So we get, what, 72 bits total. It makes the old attack 2,000 times harder."
+        },
+        {
+          "type": "fact",
+          "title": "The arithmetic",
+          "t": "16 bits of transaction ID plus about 11 bits of port randomness is about 27 bits in total, not 72. That's still roughly 2,000 times harder than 16 bits alone."
+        }
+      ]
+    },
+    {
+      "title": "A Patched Server Falls in 10 Hours",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Late last week a Russian physicist, Dr. Evgeniy Polyakov, blogged that he used two machines on gigabit Ethernet, very closely coupled to the name server, generating a ton of queries and replies."
+        },
+        {
+          "s": "leo",
+          "t": "Far more than normal."
+        },
+        {
+          "s": "steve",
+          "t": "And very difficult across the Internet. It took him 10 hours to get a collision on a fully patched BIND 9 with source port randomization and strong transaction IDs."
+        },
+        {
+          "s": "steve",
+          "t": "His point: that's hard across the Internet, but a trojan inside an organization or ISP has that kind of intimate connection. An overnight or weekend attack, when no one's watching, could succeed. So it's no longer 10 seconds. It's now 10 minutes, and only on an intimately connected network with lots of bandwidth."
+        },
+        {
+          "type": "fact",
+          "title": "Ten hours",
+          "t": "Steve means 10 hours, as he said a moment earlier."
+        },
+        {
+          "s": "steve",
+          "t": "Critics say if you saturate gigabit Ethernet, people notice. Lights blinking, wires smoking."
+        },
+        {
+          "s": "steve",
+          "t": "This week's show notes link to Dan's Black Hat slides, Polyakov's page, and the follow-up blog replies, which make interesting reading."
+        }
+      ]
+    },
+    {
+      "title": "Does SSL Depend on DNS?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Dan said even SSL depends on DNS, since everything does. I sort of take issue, though he has a point."
+        },
+        {
+          "s": "steve",
+          "t": "Nobody uses IP addresses. They're hard to memorize and too static. So technically he's right."
+        },
+        {
+          "s": "steve",
+          "t": "But if DNS were spoofed and you connected to the bad guys, the certificate protects you. Spoofed sites won't bring up SSL at login, while legitimate ones will. As long as you insist on a secure connection and check the certificate, you're protected."
+        },
+        {
+          "s": "steve",
+          "t": "Where Dan is right is how certificates and root certificate updates reach you. A certificate authority like VeriSign, Network Solutions or GoDaddy is a root of trust, and certificate chains are only trustable if every link is. Ultimately everything relied on DNS, so if DNS isn't trustable, he argues, nothing is."
+        },
+        {
+          "s": "steve",
+          "t": "Granted, pedantically. But Microsoft's certificate updates are encrypted and digitally signed and can't be spoofed. Saying SSL is compromised because DNS is stretches theory too far from reality."
+        },
+        {
+          "s": "leo",
+          "t": "Attacks like WEP's got faster and faster. Could these? What is it, 71 bits now?"
+        },
+        {
+          "s": "steve",
+          "t": "That's where we're going: we've done well, but have we done well enough?"
+        }
+      ]
+    },
+    {
+      "title": "Ideas That Won't Fly",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One proposal is to \"debounce\" queries: ask twice and only trust matching answers. If they differ, engage deeper logic, like more queries and majority voting."
+        },
+        {
+          "s": "steve",
+          "t": "The argument against it tells us where DNS is. Two queries would double the traffic on resolvers and authoritative servers. DNS servers and their links are already more than half full. We can't even double the packets."
+        },
+        {
+          "s": "steve",
+          "t": "That rules out switching to TCP. UDP is infinitely spoofable on systems with full raw sockets, like UNIX and Linux, while TCP isn't."
+        },
+        {
+          "s": "steve",
+          "t": "But TCP needs a three-way handshake, the query and reply, then a FIN and FIN/ACK. That's seven packets instead of two. You can send data with the final ACK, a little-known feature, but receiving stacks may not support it, so it's rarely done. Even six packets is three times as many. Worse than double querying."
+        }
+      ]
+    },
+    {
+      "title": "DNSSEC",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Then there's DNSSEC, DNS Security, a very sophisticated next-generation secure DNS simmering for about nine years. Each time groups try to ratify it, they look at real-world costs and back off. Like, if a root server changed its private key, it would have to send out 22 million copies of its public key."
+        },
+        {
+          "s": "steve",
+          "t": "DNSSEC is where we'll end up, because Kaminsky is right in pedantic purity: without a trustworthy foundation, nothing built on it can be trusted. It deserves a complete episode."
+        },
+        {
+          "s": "steve",
+          "t": "It's public key technology. Responses are digitally signed so receivers can verify them. They're not encrypted, since an IP address is public anyway, so they're still sniffable. But they're authenticated."
+        },
+        {
+          "s": "steve",
+          "t": "Signing and verifying take substantial processing, and packets get larger. That overhead is why it hasn't taken off."
+        },
+        {
+          "s": "steve",
+          "t": "John Markoff noted in The New York Times that Sweden and Puerto Rico have adopted DNSSEC, and the U.S. government will likely deploy it for .gov."
+        },
+        {
+          "s": "leo",
+          "t": "Where there's money and a real need for security."
+        },
+        {
+          "s": "steve",
+          "t": "If you were starting from scratch, this is the way to go. It means stronger hardware, maybe accelerators for public key operations. I think we'll see a growing market for those, because public key technology is how you secure traffic that can be eavesdropped."
+        },
+        {
+          "type": "fact",
+          "title": "DNSSEC's arrival",
+          "t": "The U.S. required DNSSEC for .gov domains starting in 2009, and the DNS root zone was signed in July 2010. Adoption by domain owners and resolvers has grown slowly since."
+        }
+      ]
+    },
+    {
+      "title": "The 0x20 Hack",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now for the galactic hack. It adds no overhead and no packets, and works within today's DNS. We want the query to carry more randomness that the responder will send back. What more could it send back? This is hack of the year."
+        },
+        {
+          "s": "steve",
+          "t": "It's called the 0x20 hack."
+        },
+        {
+          "s": "leo",
+          "t": "Hex 20?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. That's the bit that differs between uppercase and lowercase letters in ASCII. Hex 41 is capital A, 61 is lowercase a."
+        },
+        {
+          "s": "steve",
+          "t": "The original DNS spec says case doesn't matter but will be preserved. You can type GRC.com in any mix of cases and get there. TWiT.tv is capital T, capital W, lowercase i, capital T, and it works."
+        },
+        {
+          "s": "steve",
+          "t": "The authoritative server ignores case when matching, but its reply comes back with the same case you sent. That gives us more bits."
+        },
+        {
+          "s": "steve",
+          "t": "So the querying server can randomize the case of every letter in its query. www and com are six letters, plus however many in the name. If the reply's case doesn't match, it's not genuine."
+        },
+        {
+          "s": "leo",
+          "t": "But numbers have no case. How would a dotted quad come back differently?"
+        },
+        {
+          "s": "steve",
+          "t": "The response echoes the query and adds the answer. So you get back the name you asked about, with its case."
+        },
+        {
+          "s": "leo",
+          "t": "But a man in the middle could see your randomized query and copy it back."
+        },
+        {
+          "s": "steve",
+          "t": "Oh, Leo, DNS is completely hosed by a man in the middle. If you can see the query and block the reply, it's a one-query attack."
+        },
+        {
+          "s": "leo",
+          "t": "So this only protects against cache poisoning."
+        },
+        {
+          "s": "steve",
+          "t": "Which is the problem we're solving: a third party guessing queries to spoof replies. Each letter doubles the difficulty. www, com and a four-letter domain give 10 bits, another 1,024 times harder, and many names are longer. It's ugly, but it works."
+        },
+        {
+          "type": "fact",
+          "title": "Where it came from",
+          "t": "The technique was proposed by David Dagon and colleagues at Georgia Tech in the 2008 paper \"Increased DNS Forgery Resistance Through 0x20-Bit Encoding.\" Several major resolvers, including Google Public DNS, later adopted it."
+        }
+      ]
+    },
+    {
+      "title": "No One Else Has to Change",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You'd have to patch DNS servers?"
+        },
+        {
+          "s": "steve",
+          "t": "Not the authoritative servers. They already ignore case and echo it."
+        },
+        {
+          "s": "leo",
+          "t": "So only the querying servers change."
+        },
+        {
+          "s": "steve",
+          "t": "Just as we changed them this month for port randomization. BIND is open source, so it could be a compile-time flag. Your server would query with random case and automatically work with every unchanged server on the 'Net. Companies, ISPs or end users could do it for their own server."
+        },
+        {
+          "s": "leo",
+          "t": "You'd have to remember the case you sent and compare. That's a fast compare."
+        },
+        {
+          "s": "steve",
+          "t": "Servers already check the incoming port and transaction ID. You just also expect matching case. Right now no server cares. Add that, randomize your outgoing case, and your server alone is much harder to spoof."
+        },
+        {
+          "s": "leo",
+          "t": "Is anyone implementing it?"
+        },
+        {
+          "s": "steve",
+          "t": "It's too early. It's hot on the wires right now. People are saying, why not? It's more bits."
+        },
+        {
+          "s": "leo",
+          "t": "People will want to vet it. And there's always some physicist named Evgeniy Polyakov who'll say, ah, but we just do this."
+        },
+        {
+          "s": "steve",
+          "t": "Counterarguments? All-numeric domain names. Fine, but I haven't typed one recently. The protection depends on how many letters a name has."
+        },
+        {
+          "s": "leo",
+          "t": "I have 8888AskLeo.com, for the radio show's number. Still six letters plus com, nine, and 12 with www."
+        },
+        {
+          "s": "steve",
+          "t": "These are free bits nobody was thinking about. A spoofer would have to randomize the case in their replies too and hope for a collision on the port, the transaction ID and every letter. Twelve letters is 4,096 times more difficult."
+        },
+        {
+          "s": "leo",
+          "t": "Someone was really thinking out of the box."
+        },
+        {
+          "s": "steve",
+          "t": "Many in our newsgroups run BIND and feel vulnerable because their NAT router breaks port randomization. With the 0x20 hack compiled in, they'd get more protection, and nobody else on the Internet has to change a thing."
+        }
+      ]
+    },
+    {
+      "title": "Raising the Bar",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's a seesaw battle. Nobody gets the upper hand forever."
+        },
+        {
+          "s": "steve",
+          "t": "True. After the Russian physicist's 10 hours, people realize DNS is too important not to act. This drama may finally give DNSSEC the steam it needs."
+        },
+        {
+          "s": "steve",
+          "t": "At least people know it's better but still not fixed. It's not ultimately fixable this way. All we can do is raise the bar. Case randomization raises it more than Microsoft's port change, which only gives about another 10 bits."
+        },
+        {
+          "s": "leo",
+          "t": "Next week, Q&A. The week after, DNSSEC?"
+        },
+        {
+          "s": "steve",
+          "t": "No, the week after is the Black Hat paper bypassing Vista's protections."
+        },
+        {
+          "s": "leo",
+          "t": "Right. We don't want to get too DNS heavy. And there's nothing end users can do about DNS except pressure their ISPs."
+        },
+        {
+          "s": "steve",
+          "t": "But end users are really freaking out. They can't fix it, but they want to understand it and raise their spoofability awareness: wait, is this really eBay.com? I'll check the certificate."
+        },
+        {
+          "s": "leo",
+          "t": "I'm not even doing that. And these exploits are in the wild now."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Blogs report these tools being used against weak servers right now."
+        },
+        {
+          "s": "steve",
+          "t": "Send questions to GRC.com/feedback for our every-other-week Q&A."
+        },
+        {
+          "s": "leo",
+          "t": "Our first Q&A of year four."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How long did Evgeniy Polyakov's attack take against a fully patched BIND 9 server?",
+      "options": [
+        "About 10 hours over gigabit Ethernet",
+        "About 10 seconds",
+        "About 10 days",
+        "It never succeeded"
+      ],
+      "answer": 0,
+      "explain": "Over the Internet it would take far more packets."
+    },
+    {
+      "q": "Why can't DNS simply send every query twice?",
+      "options": [
+        "DNS servers and links are already over half full, so doubling traffic isn't possible",
+        "The second answer is always wrong",
+        "It's forbidden by the RFC",
+        "It would break caching"
+      ],
+      "answer": 0,
+      "explain": "Switching to TCP would be even worse."
+    },
+    {
+      "q": "How many packets would a TCP-based DNS lookup need, versus two for UDP?",
+      "options": [
+        "About seven",
+        "Three",
+        "Two",
+        "Twenty"
+      ],
+      "answer": 0,
+      "explain": "Sending data with the final ACK could save one."
+    },
+    {
+      "q": "What has slowed DNSSEC's adoption?",
+      "options": [
+        "The overhead of public key signatures and key management",
+        "It encrypts too much data",
+        "It only works on Windows",
+        "It's patented"
+      ],
+      "answer": 0,
+      "explain": "Sweden and Puerto Rico adopted it early."
+    },
+    {
+      "q": "What does the 0x20 hack randomize?",
+      "options": [
+        "The upper and lower case of letters in each DNS query",
+        "The source port",
+        "The transaction ID",
+        "The server's IP address"
+      ],
+      "answer": 0,
+      "explain": "Authoritative servers ignore case but echo it back."
+    },
+    {
+      "q": "Who has to change their software for the 0x20 hack to work?",
+      "options": [
+        "Only the querying resolver",
+        "Every authoritative server",
+        "The root servers",
+        "Every web browser"
+      ],
+      "answer": 0,
+      "explain": "That makes it easy to deploy one server at a time."
+    }
+  ]
+}
