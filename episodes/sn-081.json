@@ -1,0 +1,476 @@
+{
+  "number": 81,
+  "title": "Hard Drive Unreliability",
+  "subtitle": "What Google and Carnegie Mellon learned from 200,000 failing drives",
+  "date": "2007-03-01",
+  "description": "After showing XP users how to stop connecting to ad hoc Wi-Fi networks, and news of a watermarked movie leak and Germany's police Trojan, Steve and Leo dig into two huge studies of hard drive failures. Drives fail far more often than their specs claim, SMART rarely predicts failure, failures rise after just a year or two, and heat matters less than expected.",
+  "transcript": "https://www.grc.com/sn/sn-081.txt",
+  "audio": "http://media.GRC.com/sn/SN-081.mp3",
+  "chapters": [
+    {
+      "title": "From Hard Drives to Security",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve is in his lab, watching hard drives spin. Have you turned off all the noisemakers?"
+        },
+        {
+          "s": "steve",
+          "t": "You'd hear Fred Flintstone yell \"Yabba dabba do\" when a SpinRite order arrives."
+        },
+        {
+          "s": "leo",
+          "t": "We welcome a new sponsor, Nerds On Site, whose independent, certified technicians help people with technology in Canada, the U.S., Mexico, England, Australia, South Africa and Bolivia. They're looking for new nerds at Iwanttobeanerd.com."
+        },
+        {
+          "s": "steve",
+          "t": "They've followed Security Now! from the beginning. I spent about four hours with them in Toronto. People always ask me how to know if their computer has malware. It'd be neat to say, call a nerd."
+        },
+        {
+          "s": "leo",
+          "t": "Today, as promised, Google's study of drive reliability. I first knew you for your Apple II light pen, then for years as the hard drive expert because of SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "I'll never forget The Screen Savers, when Kate did a segment on ShieldsUP!. You weren't paying attention, then realized she was talking about me: \"Wait, Steve is doing Internet security? I thought he was hard drives.\""
+        },
+        {
+          "s": "leo",
+          "t": "When did that shift happen?"
+        },
+        {
+          "s": "steve",
+          "t": "When we set up our first ISDN line at the office. I scanned the IP addresses around ours and found C drives all over, back in the wide-open Windows file sharing days. People couldn't know their C drives were on the Internet. So I launched ShieldsUP!."
+        }
+      ]
+    },
+    {
+      "title": "Turn Off Ad Hoc Wi-Fi in XP",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A follow-up from last week's \"Free Public WiFi\" question. XP connects by default to both infrastructure networks, with access points, and ad hoc networks."
+        },
+        {
+          "s": "leo",
+          "t": "Ad hoc means a laptop or desktop acting as the base station."
+        },
+        {
+          "s": "steve",
+          "t": "Windows calls it \"computer-to-computer.\" Ad hoc networks are a problem. Travelers' laptops have infected each other on airplanes, since some malware uses ad hoc networks to spread."
+        },
+        {
+          "s": "leo",
+          "t": "And connecting is automatic."
+        },
+        {
+          "s": "steve",
+          "t": "Thank you, Microsoft. Our notes for Episode 81 give step-by-step instructions: click the wireless icon in the tray, and a few clicks get you to a setting for \"Access point (infrastructure) networks only.\" XP should default to that, but for compatibility Microsoft lets you connect to anything, even though almost everyone uses access points."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks to Evan Katz of Manhattan, who sent this tip to every address he could find. What about Vista?"
+        },
+        {
+          "s": "steve",
+          "t": "I dug around in Vista for half an hour and couldn't find a similar setting. Maybe Evan will tell us. Nobody should have this on. If XP defaulted to off, \"Free Public WiFi\" wouldn't jump from machine to machine through the registry."
+        },
+        {
+          "s": "leo",
+          "t": "Not a virus, but viral."
+        }
+      ]
+    },
+    {
+      "title": "A Watermarked Leak and a Police Trojan",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two stories from the SANS newsletter. USA Today reports Salvador Nunez Jr. faces prison for uploading a movie. His sister, an Oscar voter, received a screener of the animated \"Flushed Away.\" He uploaded it. Its unique digital watermark traced it back to her, and he confessed to uploading it and one other movie."
+        },
+        {
+          "s": "leo",
+          "t": "They started watermarking screeners because so many leaked."
+        },
+        {
+          "s": "steve",
+          "t": "The other is worrisome. German law enforcement wants to use custom malware to secretly surveil people's computers."
+        },
+        {
+          "s": "leo",
+          "t": "In the U.S. that would be illegal. It's really creepy."
+        },
+        {
+          "s": "steve",
+          "t": "The Register reported a German magistrate refused the police permission. But a unit is still working on what's called the German Trojan, and a bill may legalize it. It's not clear how they'd get it into machines."
+        },
+        {
+          "type": "fact",
+          "title": "The Bundestrojaner",
+          "t": "Germany later legalized police spyware for specific serious cases. Its federal police gained the power in 2009, and in 2011 the Chaos Computer Club analyzed a state-used Trojan and found it exceeded legal limits and was poorly secured."
+        },
+        {
+          "s": "leo",
+          "t": "On TWiT we discussed a 19-year-old in British Columbia who posted a Trojan disguised as a child image in child-porn newsgroups and monitored who downloaded it. A judge in Southern California was prosecuted using that evidence. I admire the results, not the means."
+        },
+        {
+          "s": "steve",
+          "t": "During Code Red and Nimda, a group of us security people asked the attorney general whether we could fix infected machines. We had their IPs, which can't be spoofed. The answer was absolutely not. Modifying a machine you have no rights to is illegal, even to fix it."
+        },
+        {
+          "s": "leo",
+          "t": "An ethical issue we haven't heard the last of."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves Leo's Podcast PC",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "SpinRite saved me this week. I'd lost my CD and serial number, and pestered you, though I could have retrieved it from the website. The machine I record all the podcasts on wouldn't boot. It couldn't find an operating system. I ran SpinRite's maintenance overnight on all the drives, and it's been flawless since."
+        },
+        {
+          "s": "steve",
+          "t": "That is so cool. Anyone who keeps the transaction code from their purchase can download SpinRite again from any web browser. Or write to our sales address, and we'll look you up."
+        }
+      ]
+    },
+    {
+      "title": "\"SMART Is Dumb\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Were you surprised by Google's results?"
+        },
+        {
+          "s": "steve",
+          "t": "Not one bit. A favorite expression at GRC has long been \"SMART is dumb.\""
+        },
+        {
+          "s": "leo",
+          "t": "The SMART capability built into drives."
+        },
+        {
+          "s": "steve",
+          "t": "Self Monitoring and Reporting Technology. Or Smart Monitoring Analysis and Reporting Technology. Early PC drives were dumb: a controller card with cables to drives that were just spinning platters, read-write electronics and a stepper motor, holding 10, 20 or 40 megabytes."
+        },
+        {
+          "s": "leo",
+          "t": "I remember going from 20 to 40 with RLL. A big jump."
+        },
+        {
+          "type": "fact",
+          "title": "The acronym",
+          "t": "SMART stands for Self-Monitoring, Analysis and Reporting Technology."
+        },
+        {
+          "s": "steve",
+          "t": "With IDE, Integrated Drive Electronics, the controller moved onto the drive. It got its own microprocessor and became autonomous."
+        },
+        {
+          "s": "steve",
+          "t": "Compaq was the leading clone maker. It famously had engineers who'd never seen IBM's BIOS source write a compatible BIOS from scratch, from the specification, to avoid copyright infringement."
+        },
+        {
+          "s": "steve",
+          "t": "As IDE drives started failing, Compaq told Seagate, Quantum and Conner, with Western Digital later: you must let us see what's going on inside. Intelligent drives had become opaque, especially now that they relocate sectors autonomously. Compaq's purchasing power was king, so the manufacturers reluctantly agreed."
+        },
+        {
+          "s": "steve",
+          "t": "But to get agreement, the spec had to be very loose: give us health parameters, where lower is worse. Fifteen years later it's still sorrowfully weak. Google found little uniform meaning in many SMART parameters across its drives."
+        },
+        {
+          "s": "leo",
+          "t": "And many failed drives had no SMART errors at all."
+        },
+        {
+          "s": "steve",
+          "t": "SMART's goal was to predict failures. We see dead drives all the time where SMART says everything's fine, and drives that look like they're in their last throes keep going for years."
+        }
+      ]
+    },
+    {
+      "title": "Google's Findings on SMART",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Google tracked SMART data on over 100,000 drives. Its paper says it hoped to build accurate predictive failure models from SMART, which was SMART's whole purpose."
+        },
+        {
+          "s": "leo",
+          "t": "We all hoped that. But anyone with drive experience knew it didn't seem possible."
+        },
+        {
+          "s": "steve",
+          "t": "If it did, we'd all use it more. Google writes that its results were \"surprising, if not somewhat disappointing.\" Over 50 percent of failed drives had no count in any of the four strongest SMART signals: scan errors, reallocation counts, offline reallocation and probational counts. So models based on them can never predict more than half the failures."
+        },
+        {
+          "s": "steve",
+          "t": "And the reverse: a drive with a scan error was 39 times more likely to fail within 60 days. But many drives with scan errors never failed, so even that wasn't predictive enough to justify replacing them."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite 6 shows a real-time monitor of SMART. Unlike a passive scan, SpinRite reads, inverts and rewrites every bit, stressing the whole surface. On weak drives, we often see health parameters driven down during SpinRite's run, then recover. If they don't go critical, it's probably nothing to worry about. But compare its behavior six months later. If it's worse, you get a sense the drive isn't doing well."
+        },
+        {
+          "s": "steve",
+          "t": "And imagine software saying \"replace your drive.\" Who'd believe it?"
+        }
+      ]
+    },
+    {
+      "title": "Failures Rise After One Year",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Google also found infant mortality: new drives had higher failure rates for the first three to six months than drives a year old."
+        },
+        {
+          "s": "steve",
+          "t": "Designers assumed a \"bathtub curve\": high at first, low for maybe five or six years, then rising again with wear. What's so disturbing is that two-year-old drives failed much more than one-year-old drives, and three-year-old drives even more. I think it was 8.6 percent a year at three years old, two in every 25 drives."
+        },
+        {
+          "s": "leo",
+          "t": "So it's still a bathtub, just a narrow one."
+        },
+        {
+          "s": "steve",
+          "t": "A one-year bathtub instead of five or six."
+        }
+      ]
+    },
+    {
+      "title": "Carnegie Mellon's Study",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is this the biggest drive study ever?"
+        },
+        {
+          "s": "steve",
+          "t": "There were smaller ones. At the same conference, FAST '07, the 5th USENIX Conference on File and Storage Technologies, two Carnegie Mellon researchers, Bianca Schroeder and Garth Gibson, used maintenance records from several very large ISPs and reached very similar conclusions. Both papers are linked on our notes page."
+        },
+        {
+          "s": "steve",
+          "t": "Manufacturers quote a million hours mean time to failure, MTTF. That equates to a 0.88 percent annual failure rate. Seagate's Barracuda 7200.9 spec claimed 0.34 percent."
+        },
+        {
+          "s": "steve",
+          "t": "CMU found field replacement rates significantly higher than datasheet MTTFs suggest."
+        },
+        {
+          "s": "leo",
+          "t": "Instead of 0.88 percent, as much as 13 percent."
+        },
+        {
+          "s": "steve",
+          "t": "For drives under five years old, replacement rates exceeded datasheets by a factor of two to ten. For five- to eight-year-old drives, by a factor of 30."
+        },
+        {
+          "s": "steve",
+          "t": "That matches people's real experience, like your drive that wouldn't boot. I read that 350 million drives were made in 2006. And there's almost nothing more important to computer users than their hard drives."
+        },
+        {
+          "s": "leo",
+          "t": "Dying drives, not hackers, are the number one cause of data loss."
+        }
+      ]
+    },
+    {
+      "title": "Does Heat Matter?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Google also looked at temperature."
+        },
+        {
+          "s": "steve",
+          "t": "My wisdom has always been that temperature matters. I've seen drives fail from heat."
+        },
+        {
+          "s": "leo",
+          "t": "I think that was my problem. It's a tight Shuttle case. SpinRite almost immediately said it was too hot and stopped."
+        },
+        {
+          "s": "steve",
+          "t": "Laptop users report that often. Someone sent me a photo of a laptop running SpinRite inside a refrigerator, with the food and a couple of shelves taken out."
+        },
+        {
+          "s": "leo",
+          "t": "My new Dell's 7200 RPM drive has the fans blowing hot air before it even starts working."
+        },
+        {
+          "s": "steve",
+          "t": "Seeking makes heat. To move the head, you accelerate it quickly, it flies across, and you stop it immediately: very high lateral forces. Anything like defragging uses more power, and the energy comes out as sound, which you hear, and heat. SpinRite watches the temperature through SMART and stops at the upper limit of manufacturers' specs. If SpinRite says your drive is too hot, move more air across it, for daily use too."
+        },
+        {
+          "s": "leo",
+          "t": "I opened the case and have a fan blowing across it."
+        },
+        {
+          "s": "steve",
+          "t": "But Google's data spans years, with makes and models changing. The most interesting thing it could have told us, it withheld as proprietary: failures by manufacturer."
+        },
+        {
+          "s": "leo",
+          "t": "I'd have loved to know that."
+        },
+        {
+          "s": "steve",
+          "t": "I have my suspicions. I never buy Western Digital drives. I hedge because people say they've never had trouble with WD."
+        },
+        {
+          "s": "leo",
+          "t": "I put Western Digital Raptors in every new computer. Our web servers run three Raptors each in RAID 5."
+        },
+        {
+          "s": "steve",
+          "t": "The Raptor is a high-end WD drive. CMU found that SCSI and Fibre Channel drives weren't less failure-prone than SATA, though my sense was SCSI drives were built with more love and care."
+        },
+        {
+          "s": "steve",
+          "t": "Drive technology is a moving target, so long-term studies may not tell us much about today's drives. Google found older drives more temperature-sensitive. Maybe aging makes drives sensitive, or maybe newer technology is less susceptible."
+        },
+        {
+          "s": "leo",
+          "t": "The most surprising result was that temperature didn't seem to matter much."
+        },
+        {
+          "s": "steve",
+          "t": "Bizarrely, failure rates were higher for cooler drives. Drives had to get very hot before reliability dropped. They just didn't like running cold, which isn't much of a problem since they heat up quickly."
+        }
+      ]
+    },
+    {
+      "title": "Back Up, and Fewer Heads Are Better",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My takeaway: it would be cool to warn people reliably before a drive fails. But cry wolf once or twice, and nobody believes you. The wisdom is to back up. People never get around to it, or their backup is months old. SpinRite can turn back the clock long enough to pull critical data off."
+        },
+        {
+          "s": "leo",
+          "t": "As HAL 9000 said in \"2001,\" \"I would recommend that we put the unit back in operation and let it fail.\" You won't pull a drive just because SMART says so. Just back up, for crying out loud."
+        },
+        {
+          "s": "steve",
+          "t": "And more often than not, SMART won't warn you before a drive fails."
+        },
+        {
+          "s": "leo",
+          "t": "I'll keep my Western Digital Raptors."
+        },
+        {
+          "s": "steve",
+          "t": "That's okay. After several WD drives died on me, I switched to Quantum and loved them for years. Then Maxtor bought Quantum, and Seagate recently bought Maxtor."
+        },
+        {
+          "s": "leo",
+          "t": "So it's all the same now. Hitachi and IBM are still around."
+        },
+        {
+          "s": "steve",
+          "t": "Hitachi bought IBM's drive business. Drives are phenomenally complex, so they fail."
+        },
+        {
+          "s": "leo",
+          "t": "And my failed drive was a Maxtor, not the Raptor. I use Raptors for media because I believe 10,000 RPM and a 16MB cache help speed."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. Faster spinning means a higher data rate and lower latency before a sector transfer starts."
+        },
+        {
+          "s": "leo",
+          "t": "Cheaper, higher-density drives are probably less reliable across the board."
+        },
+        {
+          "s": "steve",
+          "t": "One study found lower reliability with more heads, which matches my intuition that smaller drives are more reliable. Small drives have one platter. Capacities jump 40, 80, 120, 160 as platters are added, and any head failing brings the drive down. The fewer, the better."
+        },
+        {
+          "type": "fact",
+          "title": "Drive makers today",
+          "t": "Western Digital bought Hitachi's drive business in 2012, leaving three hard drive makers: Seagate, Western Digital and Toshiba. Backblaze's public reports now track failure rates by model, the breakdown Google withheld."
+        },
+        {
+          "s": "leo",
+          "t": "Our notes page has both studies and how to turn off ad hoc networking."
+        },
+        {
+          "s": "steve",
+          "t": "Anyone using Wi-Fi with XP absolutely should."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Google find about SMART's ability to predict failures?",
+      "options": [
+        "Over half of failed drives showed no count in SMART's four strongest signals",
+        "SMART predicted 95 percent of failures",
+        "SMART caused failures",
+        "SMART was perfectly reliable"
+      ],
+      "answer": 0,
+      "explain": "Even scan errors didn't reliably predict failure."
+    },
+    {
+      "q": "What did Steve say XP users should change in their Wi-Fi settings?",
+      "options": [
+        "Connect only to access point (infrastructure) networks, not ad hoc",
+        "Turn off WPA",
+        "Use WEP",
+        "Share their C drive"
+      ],
+      "answer": 0,
+      "explain": "Ad hoc connections can spread malware between laptops."
+    },
+    {
+      "q": "How did real-world failure rates compare with manufacturers' MTTF figures?",
+      "options": [
+        "Field rates ran 2 to 10 times higher, and far more for older drives",
+        "They matched exactly",
+        "Field rates were lower",
+        "Only SCSI drives failed"
+      ],
+      "answer": 0,
+      "explain": "A million-hour MTTF implies just 0.88 percent a year."
+    },
+    {
+      "q": "What surprised researchers about drive temperature?",
+      "options": [
+        "Cooler drives failed more often, unless drives got very hot",
+        "Heat was the main cause of failure",
+        "Temperature was never recorded",
+        "Hot drives lasted longest"
+      ],
+      "answer": 0,
+      "explain": "Older drives were more sensitive to temperature."
+    },
+    {
+      "q": "Why are drives with fewer platters likely more reliable?",
+      "options": [
+        "Every added platter and head is another part that can fail",
+        "They spin faster",
+        "They have more cache",
+        "They use less power"
+      ],
+      "answer": 0,
+      "explain": "Capacities grow by adding platters."
+    },
+    {
+      "q": "Why did Compaq push for SMART?",
+      "options": [
+        "Drives with built-in controllers had become opaque about what was happening inside",
+        "To speed up drives",
+        "To encrypt data",
+        "To lower costs"
+      ],
+      "answer": 0,
+      "explain": "Manufacturers agreed only to a very loose spec."
+    }
+  ]
+}
