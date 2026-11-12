@@ -1,0 +1,627 @@
+{
+  "number": 131,
+  "title": "FREE CompuSec",
+  "subtitle": "Whole-drive encryption with pre-boot authentication",
+  "date": "2008-02-14",
+  "description": "After a huge Patch Tuesday, exploits of Acrobat and Yahoo!'s jukebox, and a Skype fix, Steve and Leo begin a two-part look at whole-drive encryption. They compare drive passwords, encrypting drives and software encryption, explain how pre-boot authentication hides in a drive's first track, and examine FREE CompuSec, a free encryption suite Steve benchmarked at under 10 percent overhead. Leo raises its closed source, and they discuss a judge's ruling that a man can't be forced to reveal his password.",
+  "transcript": "https://www.grc.com/sn/sn-131.txt",
+  "audio": "http://media.GRC.com/sn/SN-131.mp3",
+  "chapters": [
+    {
+      "title": "Microsoft's Super Tuesday",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It was a busy week. The first Tuesday of February was the presidential primaries' Super Tuesday. I'd call last Tuesday Microsoft's Super Tuesday: 12 security updates for Windows, Office, VBScript and JScript, plus a big IE update. Many are critical, meaning remote code execution."
+        },
+        {
+          "s": "steve",
+          "t": "So if your machines aren't updated yet, do it."
+        },
+        {
+          "s": "leo",
+          "t": "My system rebooted itself last night after installing patches. I have it set to download and install critical patches automatically. At least have it download and notify you."
+        },
+        {
+          "s": "steve",
+          "t": "That's what I do too."
+        }
+      ]
+    },
+    {
+      "title": "Apple's Giant Update",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Apple also had a substantial update, about 180MB on my PowerPC Mac Mini that records our Skype calls, and apparently up to 360MB on Intel Macs."
+        },
+        {
+          "s": "leo",
+          "t": "Mine rebooted twice, then installed more and rebooted again. Some of it wasn't security. They fixed some cosmetic things in Leopard that people didn't like."
+        }
+      ]
+    },
+    {
+      "title": "Acrobat, Firefox and Skype",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We mentioned Adobe updating Acrobat without saying what was fixed. That didn't stop the bad guys from figuring it out. The flaw is now being exploited by malicious PDFs to install the ZoneBac trojan, which disables antivirus and alters search results and banner ads."
+        },
+        {
+          "s": "steve",
+          "t": "My copies of Acrobat updated themselves. If you haven't launched Acrobat in a while, do it and let it check for updates."
+        },
+        {
+          "s": "steve",
+          "t": "Firefox also had an important update. Mine downloaded it and asked to restart."
+        },
+        {
+          "s": "leo",
+          "t": "Firefox 3 beta 3 is out too. I hate to say it, but 3 is more stable than 2."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not in betaland yet. Everyone's attention is probably on 3."
+        },
+        {
+          "s": "steve",
+          "t": "On Windows, Skype has had a series of scripting exploits because it uses Internet Explorer's display control. That's like hooking IE into an instant messenger, really asking for trouble."
+        },
+        {
+          "s": "steve",
+          "t": "They fixed them one by one, then realized they needed an architectural fix. They'd been opening the IE control in the local zone, with too-liberal security. Now it opens in the Internet zone, which is locked down by default. That should fix past and future problems."
+        },
+        {
+          "s": "leo",
+          "t": "It's worrisome that a program can choose its zone. Malware would pick a weaker one."
+        },
+        {
+          "s": "steve",
+          "t": "Letting software pick a more secure zone than the default makes sense. The local zone assumes the code is safe. And few would call IE safe."
+        }
+      ]
+    },
+    {
+      "title": "Give Up on ActiveX",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We discussed Yahoo!'s Music Jukebox ActiveX control. Malware is now exploiting it to install backdoors, and Yahoo! has no fix. The only defense is setting the \"kill bit,\" which also stops the jukebox."
+        },
+        {
+          "s": "steve",
+          "t": "There have been so many ActiveX problems that US-CERT, the U.S. Computer Emergency Readiness Team, has thrown up its hands and recommended disabling all ActiveX controls."
+        },
+        {
+          "s": "steve",
+          "t": "Facebook and MySpace widgets now use new ActiveX controls, written in a hurry by people who aren't security aware. An ActiveX control is essentially a DLL, actual code, and can't be sandboxed the way JavaScript or VBScript can. It was a really bad idea for Microsoft to allow it."
+        },
+        {
+          "s": "steve",
+          "t": "Any IE user can set the security level to high, which tells ActiveX no thank you. Firefox doesn't run ActiveX unless you add an extension for it."
+        },
+        {
+          "s": "leo",
+          "t": "And Yahoo! has left the music business, so the jukebox won't be around long anyway."
+        },
+        {
+          "s": "leo",
+          "t": "Remember, many programs that fetch Internet content are really using IE's engine, so they're as vulnerable as IE. On the Mac, many programs use WebKit, Safari's engine, so a WebKit flaw spreads to all of them too."
+        }
+      ]
+    },
+    {
+      "title": "A Geek Squad Agent Risks His Job",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This week's SpinRite story comes from someone who asked for anonymity, because he doesn't want to get fired."
+        },
+        {
+          "s": "leo",
+          "t": "Uh-oh."
+        },
+        {
+          "s": "steve",
+          "t": "He's a Geek Squad agent at Best Buy and never misses an episode. He sees failed drives constantly and knows many would be fine after a few hours of SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "A customer, I'll call him John, came in desperate. His five-year-old Dell laptop kept blue-screening with \"Unmountable boot disk.\""
+        },
+        {
+          "s": "steve",
+          "t": "Best Buy has no SpinRite license, so agents can't use it. He emailed corporate, explaining how much backup business they turn away because drives are too corrupted. They'll see if the budget allows."
+        },
+        {
+          "s": "steve",
+          "t": "His options: send the drive to Best Buy's service center for $1,712.32, tax included, or tell the customer about SpinRite, surely risking his job. SpinRite costs about 25 times less. So he told him."
+        },
+        {
+          "s": "steve",
+          "t": "The customer, a radio personality, emailed: SpinRite had finished when he got home, everything happened as promised, and his computer works again."
+        },
+        {
+          "s": "leo",
+          "t": "It wasn't me, I'll say right now. I have SpinRite. It's the first thing I try, and the drive it fixed about a year ago is still in use."
+        },
+        {
+          "s": "steve",
+          "t": "And a SpinRite site license, 10 copies, is $890, less than half of one of those repairs."
+        }
+      ]
+    },
+    {
+      "title": "Vista SP1 Arrives Early",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Microsoft moved up Vista Service Pack 1. It's released to manufacturing, and MSDN subscribers get it by the 16th. Sometime in March it starts going out to everyone. Paul Thurrott has an FAQ at WinSuperSite.com, and we'll discuss it on Windows Weekly."
+        },
+        {
+          "s": "steve",
+          "t": "How is it different from XP's SP3, which I'm excited about?"
+        },
+        {
+          "s": "leo",
+          "t": "Paul says XP SP3 is really a rollup of all the patches, which you need, since after installing SP2 you spend 10 hours rebooting through the rest. Vista SP1 changes some of how Vista behaves. There's debate about whether it's faster."
+        }
+      ]
+    },
+    {
+      "title": "Protecting a Stolen Workstation",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We've covered TrueCrypt at length. What's today's program?"
+        },
+        {
+          "s": "steve",
+          "t": "It's called FREE CompuSec. I mentioned it a week or two ago. I've been consulting for a friend setting up a small office. She's in human resources and very security conscious. She's why I explored SteadyState, to keep employees from installing their junk."
+        },
+        {
+          "s": "steve",
+          "t": "She reads the Wall Street Journal's stories of stolen laptops full of confidential data. Her workstations will hold confidential HR data. So she asked how to protect them if someone breaks in and steals them. The drives have to be unreadable without authorization."
+        }
+      ]
+    },
+    {
+      "title": "Option One: The Drive Password",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My laptops have a fingerprint reader and a TPM, the Trusted Platform Module on the motherboard. I don't encrypt the whole drive. I use the drive password feature drives, especially laptop drives, have had for years."
+        },
+        {
+          "s": "steve",
+          "t": "Only when I swipe my finger at power-up does the BIOS give the drive the password that unlocks it. Pull the drive, and the only option is to wipe it to zeroes, which unlocks it."
+        },
+        {
+          "s": "steve",
+          "t": "That isn't safe against a government-scale attack. The data isn't actually encrypted on the platters. With enough inducement, I'm sure Hitachi or Seagate could unlock it. But against bad guys, it's sufficient for me."
+        },
+        {
+          "s": "leo",
+          "t": "Somebody called the TV show with a locked drive in an old machine. I found it's part of the IDE spec, ATAPI. Is it encryption or just locking?"
+        },
+        {
+          "s": "steve",
+          "t": "ATA was the original spec, and PI is Packet Interface. Nearly every drive from the last 10 years can be locked, but not encrypted. You can't get in while it's locked, and the system is very mature. Laptops have offered BIOS drive passwords far longer than desktops."
+        },
+        {
+          "s": "steve",
+          "t": "It's very good protection, not encryption. The drive refuses to be a drive until the BIOS gives it the password. But under a grand jury subpoena, the maker could remove the lock."
+        },
+        {
+          "s": "leo",
+          "t": "And the BIOS has to support it."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Code at power-up has to send the password before you can even read the partition sector."
+        },
+        {
+          "type": "fact",
+          "title": "The acronym",
+          "t": "The drive password is part of ATA's \"Security feature set.\" ATAPI, the ATA Packet Interface, is the related standard mainly used by CD and DVD drives."
+        }
+      ]
+    },
+    {
+      "title": "Option Two: Drives That Encrypt Themselves",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The next level is native hard drive encryption, just becoming available. I skipped it on my recent ThinkPads because it cost more than I needed to spend."
+        },
+        {
+          "s": "steve",
+          "t": "These drives use AES, the Rijndael cipher. The BIOS gives the drive a passphrase, which the drive never stores, and it encrypts and decrypts on the fly, with no loss of speed."
+        },
+        {
+          "s": "steve",
+          "t": "Everything on the platters is always encrypted: the swap file, the hibernation file, deleted files, everything. Without the passphrase, it's pseudorandom data, even to a government."
+        },
+        {
+          "s": "steve",
+          "t": "The only attack is brute force: give the drive a guess and see whether the first sector looks like a boot sector. Since each guess means reading the drive, it would be slow. Still, use a strong passphrase."
+        },
+        {
+          "s": "steve",
+          "t": "But my friend's machines were bottom-of-the-line Dell workstations. No TPM, no BIOS drive password, and certainly no encrypting drive."
+        }
+      ]
+    },
+    {
+      "title": "How Pre-Boot Authentication Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So, a couple of months ago, I found FREE CompuSec. Google \"free compusec,\" and it's the first link."
+        },
+        {
+          "s": "leo",
+          "t": "It's from CE-Infosys?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, which is German, with three offices around the globe. Some of it comes out of Singapore. I had to really understand it before trusting it on her machines."
+        },
+        {
+          "s": "steve",
+          "t": "It uses pre-boot authentication, which also matters for the new TrueCrypt. TrueCrypt 5.0 came out of beta on February 5th and was tweaked on February 12th, fixing a problem FREE CompuSec doesn't have."
+        },
+        {
+          "s": "steve",
+          "t": "Here's the idea. A drive's partition sector is executable code. The BIOS loads that 512-byte sector into low memory and runs it. It has just enough code to read the four-entry partition table at its end, find the bootable partition, and load and run it. That's why many tricks are possible."
+        },
+        {
+          "s": "steve",
+          "t": "BootIt NG, my favorite multi-OS boot tool, is one. It's not free, but it's inexpensive and very good, and it installs in the drive's first track."
+        },
+        {
+          "s": "steve",
+          "t": "Here's a quirk of history. Partitions always start on a track boundary. The partition sector is the very first physical sector, which rules out partition data on the rest of that track."
+        },
+        {
+          "s": "steve",
+          "t": "That didn't matter with 17-sector MFM drives, or 26-sector RLL drives. For historical reasons, the maximum logical sectors per track is 63, not 64, since sectors are numbered from 1."
+        },
+        {
+          "s": "steve",
+          "t": "So after the partition sector, the rest of the first track, a little under 32K, sits unused. Clever people tuck programs there."
+        },
+        {
+          "s": "steve",
+          "t": "BootIt NG uses it for a text menu to pick which OS to boot."
+        },
+        {
+          "s": "leo",
+          "t": "I remember a guy on The Screen Savers with hundreds of bootable operating systems on one drive."
+        },
+        {
+          "s": "steve",
+          "t": "Another example: when BIOSes couldn't handle big drives, a large Maxtor drive came with a diskette whose utility altered the partition sector, replacing the BIOS's drive-size table. Today's BIOSes just ask the drive its size."
+        },
+        {
+          "s": "steve",
+          "t": "The final possibility is pre-boot authentication. Encrypt the entire drive except that first track. The code there prompts you for a passphrase, then loads the start of the boot partition, decrypting sectors as they're read into memory."
+        },
+        {
+          "s": "steve",
+          "t": "It stays in control by hooking Interrupt 13, which I know well from SpinRite. That's how the BIOS reads and writes the drive until Windows' own driver takes over. Then a companion Windows driver continues the decryption seamlessly, and Windows sees an ordinary drive."
+        },
+        {
+          "s": "steve",
+          "t": "FREE CompuSec uses 256-bit AES. No force on earth could decrypt the data without your authentication at boot. If the drive or system is stolen, nothing is exposed."
+        }
+      ]
+    },
+    {
+      "title": "Leo's Objection: Closed Source",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Can I be a turd in the punchbowl? It's not open source, is it?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Free, but not open source."
+        },
+        {
+          "s": "leo",
+          "t": "I don't know this company or what backdoors there might be. It's not even a U.S. company, though I wouldn't trust it more if it were. That's why I stick with TrueCrypt."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. My concern was more that I had questions about exactly how things were done, and I couldn't see the source. But it hasn't put me off."
+        },
+        {
+          "s": "leo",
+          "t": "You're a closed-source guy. You use Windows."
+        },
+        {
+          "s": "steve",
+          "t": "There's far more danger in using Windows and Internet Explorer than in this."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Benchmark",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My concern was overhead, since a software driver now sits between Windows and the drive. But drives aren't fast anyway, so it's not like software encryption between Windows and RAM."
+        },
+        {
+          "s": "steve",
+          "t": "I had a Drive Snapshot image of the system from about a year earlier. Running Windows Update on it fragments the drive badly, which gave me a repeatable test."
+        },
+        {
+          "s": "steve",
+          "t": "I restored the image, updated it, and timed Vopt defragmenting it from the command line, using EndTimer from a Windows Resource Kit. Then I restored and updated again, fragmented in exactly the same way, with FREE CompuSec installed."
+        },
+        {
+          "s": "steve",
+          "t": "Without encryption, the defrag took 5 minutes 23 seconds. With FREE CompuSec, 5 minutes 54 seconds. That's 9.74 percent overhead, unnoticeable in normal use."
+        },
+        {
+          "type": "fact",
+          "title": "The arithmetic",
+          "t": "From 5:23 (323 seconds) to 5:54 (354 seconds) is 31 seconds more, about 9.6 percent. Either way, under 10 percent."
+        }
+      ]
+    },
+    {
+      "title": "The Rest of the Suite",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm very impressed. It keeps log files and installs carefully. You can encrypt the whole drive from outside Windows or from inside, while you use it."
+        },
+        {
+          "s": "steve",
+          "t": "That's sort of freaky. It moves from the front of the drive forward, tracking how far it's gotten by sector number. The driver decrypts sectors before that point and passes later ones through in the clear. You can even shut down and restart, and it picks up where it left off."
+        },
+        {
+          "s": "steve",
+          "t": "It also encrypts CDs and DVDs, burned with keys it makes, so they're meaningless noise without the key. All of it is 256-bit AES."
+        },
+        {
+          "s": "steve",
+          "t": "It encrypts removable media, like diskettes and USB drives. You choose per drive whether it's encrypted, and it encrypts and decrypts on the fly."
+        },
+        {
+          "s": "steve",
+          "t": "It encrypts individual files with Diffie-Hellman public-key crypto."
+        },
+        {
+          "s": "leo",
+          "t": "Why public keys?"
+        },
+        {
+          "s": "steve",
+          "t": "For files. Post your public key, and anyone can encrypt a file only you can decrypt."
+        },
+        {
+          "s": "steve",
+          "t": "SafeLan creates fully encrypted folders on a file server, with a key hierarchy six or seven levels deep that controls who can access which files."
+        },
+        {
+          "s": "steve",
+          "t": "And ClosedTalk is a secure voice-over-IP system using the same crypto, so everything on the link is indecipherable noise without the key. It's all available for Linux too, except the VoIP, which is Windows only."
+        }
+      ]
+    },
+    {
+      "title": "FREE CompuSec Versus TrueCrypt 5",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The only thing I know of that competes is TrueCrypt 5."
+        },
+        {
+          "s": "steve",
+          "t": "One TrueCrypt update note said they shrank the pre-boot code by 18K, fixing an out-of-space error many people hit. I think TrueCrypt was storing its code in those 62 free sectors behind the partition sector. FREE CompuSec's partition sector instead loads files from fixed, locked locations on the C drive."
+        },
+        {
+          "s": "steve",
+          "t": "It looks to me like TrueCrypt can encrypt one partition, while FREE CompuSec always encrypts the entire physical drive. That may or may not be a problem. We'll cover TrueCrypt 5 in the next few weeks."
+        },
+        {
+          "s": "steve",
+          "t": "FREE CompuSec also encrypts the hibernation file, which they emphasize, so it must be hard. TrueCrypt can't, so it disables hibernation completely."
+        },
+        {
+          "s": "leo",
+          "t": "Because an unencrypted hibernation file would be a vulnerability."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It's a snapshot of RAM, with your keys, open files and whatever you were doing. And I'm an avid hibernator. It used to be flaky, but Microsoft has put a lot into power management."
+        },
+        {
+          "s": "steve",
+          "t": "So despite its closed source, after a lot of time with it, I'm very impressed and wouldn't hesitate to use it."
+        },
+        {
+          "type": "fact",
+          "title": "TrueCrypt 5",
+          "t": "TrueCrypt 5.0 could encrypt either the system partition or the entire system drive, with pre-boot authentication."
+        },
+        {
+          "s": "leo",
+          "t": "I'm just paranoid. Especially about the VoIP. If I were a government, I'd encourage people to use my \"encrypted\" voice system so I could snoop on them."
+        },
+        {
+          "s": "steve",
+          "t": "That's definitely possible."
+        },
+        {
+          "s": "leo",
+          "t": "With encryption, I like open source, verifiable by someone who knows what they're doing. Had you heard of CE-Infosys?"
+        },
+        {
+          "s": "steve",
+          "t": "No, but a listener said they have a very good reputation."
+        },
+        {
+          "s": "leo",
+          "t": "Their site says 27 years. And if you're encrypting company laptops, a government backdoor isn't the issue. The bad guys are."
+        }
+      ]
+    },
+    {
+      "title": "The Password and the Fifth Amendment",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "There are interesting court cases about encrypted drives. A man crossing the border between Canada and the U.S. had files with nasty names on his laptop. I won't say them out loud."
+        },
+        {
+          "s": "steve",
+          "t": "I wasn't going to mention the content either. Ugh."
+        },
+        {
+          "s": "leo",
+          "t": "He admitted downloading porn and said he deleted any child porn he came across. The files were encrypted, and officials couldn't open them. He refused to give the password, and a judge ruled he has the right to avoid self-incrimination."
+        },
+        {
+          "s": "steve",
+          "t": "The judge said he has a Fifth Amendment right not to incriminate himself."
+        },
+        {
+          "s": "leo",
+          "t": "The content makes it more controversial. But do police have the right to demand passwords? The judge says no. Years ago, another judge said it would be like demanding to look into someone's mind. In this country, unlike England, courts seem to protect your right to keep things encrypted."
+        },
+        {
+          "s": "steve",
+          "t": "It speaks to what people have asked. The FBI and Justice Department say more and more people use state-of-the-art encryption, and when it's done right, there's no backdoor and nothing they can do."
+        },
+        {
+          "s": "steve",
+          "t": "We've talked about the ethics. It's not the technology's fault that it's that good. It protects free speech and privacy, and unfortunately it also protects bad guys."
+        },
+        {
+          "s": "leo",
+          "t": "Frankly, the decision surprised me."
+        },
+        {
+          "s": "steve",
+          "t": "The Washington Post says that on November 29, Judge Jerome J. Niedermeier ruled that forcing Sebastien Boucher, a 30-year-old drywall installer living in Vermont, to enter his laptop password would violate his Fifth Amendment right. The judge said Boucher would face the \"trilemma\" of incriminating himself, lying under oath, or being found in contempt of court."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Prosecutors appealed. In February 2009, a federal district judge reversed the ruling and ordered Boucher to provide an unencrypted copy of the drive, since agents had already seen some of its contents. He later pleaded guilty."
+        },
+        {
+          "s": "leo",
+          "t": "Years ago, the Secret Service told me they usually just ask, and crooks give up the password."
+        },
+        {
+          "s": "leo",
+          "t": "And TrueCrypt has \"plausible deniability.\" Boucher's problem was that the filenames were readable. With TrueCrypt, you wouldn't even know data was there."
+        },
+        {
+          "s": "steve",
+          "t": "Right. TrueCrypt fills a container with pseudorandom data, so forensics can't tell what's in it, or whether there's a hidden volume inside. You can give up your outer password and show what's there, and no one can prove a second password unlocks a hidden compartment."
+        },
+        {
+          "s": "steve",
+          "t": "FREE CompuSec has nothing like that. It encrypts the whole drive."
+        },
+        {
+          "s": "leo",
+          "t": "So it's obvious the drive is encrypted. And I have mixed feelings. A terrorist could show Mickey Mouse with one password while hiding missile silo blueprints. Fortunately, terrorists don't seem very tech savvy."
+        }
+      ]
+    },
+    {
+      "title": "A Bonus: Safe Drive Disposal",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One more benefit of whole-drive encryption, whether in the drive's hardware, FREE CompuSec or TrueCrypt: it solves the problem of discarding a drive."
+        },
+        {
+          "s": "steve",
+          "t": "Nothing on it is meaningful or forensically recoverable. No need for Darik's Boot and Nuke or secure deletion. You can sell it on eBay without worry."
+        },
+        {
+          "s": "leo",
+          "t": "It's an interesting philosophical discussion. Links to the program are in the show notes at GRC.com."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What's the weakness of a hard drive's built-in password lock?",
+      "options": [
+        "The data isn't encrypted, so the manufacturer could remove the lock under subpoena",
+        "It can be guessed in seconds",
+        "It only works on desktops",
+        "It slows the drive"
+      ],
+      "answer": 0,
+      "explain": "Without the password, a thief can only wipe the drive."
+    },
+    {
+      "q": "Where does pre-boot authentication code live on a drive?",
+      "options": [
+        "In the partition sector and the otherwise unused rest of the drive's first track",
+        "In the BIOS chip",
+        "In the Windows directory",
+        "On a separate USB key"
+      ],
+      "answer": 0,
+      "explain": "Partitions start on a track boundary, leaving almost 32K free."
+    },
+    {
+      "q": "What overhead did Steve measure for FREE CompuSec's whole-drive encryption?",
+      "options": [
+        "Under 10 percent, defragmenting a fragmented drive",
+        "About 50 percent",
+        "None at all",
+        "It doubled the time"
+      ],
+      "answer": 0,
+      "explain": "5 minutes 23 seconds rose to 5 minutes 54 seconds."
+    },
+    {
+      "q": "What was Leo's main objection to FREE CompuSec?",
+      "options": [
+        "It isn't open source, so no one can check it for backdoors",
+        "It's too slow",
+        "It costs too much",
+        "It only works on Linux"
+      ],
+      "answer": 0,
+      "explain": "He prefers TrueCrypt for encryption."
+    },
+    {
+      "q": "What could FREE CompuSec do that, per Steve, TrueCrypt 5 could not?",
+      "options": [
+        "Encrypt the hibernation file, so hibernation still works",
+        "Encrypt files",
+        "Use AES",
+        "Work on Windows"
+      ],
+      "answer": 0,
+      "explain": "An unencrypted hibernation file holds a snapshot of RAM, including keys."
+    },
+    {
+      "q": "What did a Vermont judge rule about Sebastien Boucher's laptop password?",
+      "options": [
+        "Forcing him to enter it would violate his Fifth Amendment right against self-incrimination",
+        "He must reveal it",
+        "The laptop could be destroyed",
+        "Encryption is illegal at borders"
+      ],
+      "answer": 0,
+      "explain": "The ruling was later reversed on appeal."
+    }
+  ]
+}
