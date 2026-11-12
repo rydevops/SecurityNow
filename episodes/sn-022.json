@@ -1,0 +1,248 @@
+{
+  "number": 22,
+  "title": "The Windows MetaFile Backdoor?",
+  "subtitle": "Bug, feature, or something deliberate?",
+  "date": "2006-01-12",
+  "description": "Steve takes apart exactly how the recently patched WMF vulnerability works, and explains why to him it doesn't look like another coding error but like something deliberately designed in: a remote code execution \"backdoor.\" We may never know for sure.",
+  "transcript": "https://www.grc.com/sn/sn-022.txt",
+  "audio": "http://media.GRC.com/sn/SN-022.mp3",
+  "chapters": [
+    {
+      "title": "Errata: \"Hacker\" and Thumbnails",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 22. We're putting off \"how the Internet works\" again, because there's a blockbuster."
+        },
+        {
+          "s": "steve",
+          "t": "Some listeners object when I say \"hacker\" instead of \"cracker\" for the bad guys."
+        },
+        {
+          "s": "leo",
+          "t": "Their point: hacking is an old, honorable tradition. UNIX and the Internet were built by hackers."
+        },
+        {
+          "s": "steve",
+          "t": "True, but the public meaning has shifted to the dark side, and \"cracker\" sounds like a saltine. Saying it all the time would confuse people more."
+        },
+        {
+          "s": "leo",
+          "t": "English is subtle. You can tell from context which kind we mean."
+        },
+        {
+          "s": "steve",
+          "t": "Many people unregistered shimgvw.dll on Microsoft's early advice and lost their thumbnails. To restore them, run \"regsvr32 shimgvw.dll\" without the -u. It's in the Episode 22 show notes."
+        }
+      ]
+    },
+    {
+      "title": "Left Out to Dry",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week Microsoft said it wouldn't patch Windows 98, ME or NT. It moved them off its \"critical\" list."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's definition of \"critical\" is a flaw that would let an Internet worm spread with no user action. Anything else, even full compromise of your data, is merely \"important.\""
+        },
+        {
+          "s": "leo",
+          "t": "So a rootkit isn't critical by their definition. That's absurd."
+        },
+        {
+          "s": "steve",
+          "t": "I understand a cutoff for ancient systems. But millions of 9x and ME machines are still online. And programs like IrfanView can display metafiles on those systems, so they may well be exposed."
+        },
+        {
+          "type": "fact",
+          "title": "Microsoft's severity ratings",
+          "t": "In 2006, Microsoft rated a flaw \"Critical\" only if it could let a worm spread without user action. Flaws needing a user to open or view something, even ones allowing full takeover, were usually \"Important.\" That distinction let Microsoft decline to patch Windows 98 and ME for WMF."
+        }
+      ]
+    },
+    {
+      "title": "Taking It Apart",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So I switched into hacker mode, following in Ilfak's footsteps, to find out exactly how this works, and then whether older Windows was vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "I wrote my own tester from scratch. Oddly, on an unpatched Windows 2000 machine, I couldn't make the exploit trigger with metafiles I built correctly."
+        },
+        {
+          "s": "steve",
+          "t": "A metafile is a header followed by records. Each record starts with its length in 16-bit words, then a function number, then its data. The smallest possible record is three words."
+        },
+        {
+          "s": "steve",
+          "t": "The function in question, SETABORTPROC, belongs to printing. When an application hands a page to Windows to print, it can register a \"callback\" routine so Windows can tell it if the user cancels."
+        },
+        {
+          "s": "leo",
+          "t": "So it's simply a callback for cancelled print jobs."
+        },
+        {
+          "s": "steve",
+          "t": "Right, and it makes no sense in a metafile at all, because metafiles aren't printed that way."
+        },
+        {
+          "type": "fact",
+          "title": "Callbacks",
+          "t": "A callback is a routine your program gives the system to call later when something happens, like \"tell me if printing is cancelled.\" Normally it points into the application's own code, not into data like an image file."
+        }
+      ]
+    },
+    {
+      "title": "The Magic Number",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's what I found. When Windows hits this record, it doesn't treat the metafile as a script anymore. It starts executing the bytes right after it."
+        },
+        {
+          "s": "steve",
+          "t": "And it only happens if the record's length field is set to 1. That's an impossible value, since the minimum is 3. Zero, 2, 3 and even the correct length don't trigger it. Only 1."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't exploit code already all over the hacker sites?"
+        },
+        {
+          "s": "steve",
+          "t": "It is, but attackers just want their code to run. They don't care how Windows works. I wanted to understand every byte so my tester would always work."
+        },
+        {
+          "s": "steve",
+          "t": "With the length set to 1, Windows creates a new thread and runs my code. To me that doesn't look like a coding mistake. It looks like something someone put in, with a magic value so ordinary metafiles would never trip over it."
+        },
+        {
+          "s": "leo",
+          "t": "That's a strong accusation. Are you saying Microsoft intentionally put a backdoor in Windows?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't see how it could be accidental. It would give whoever knew about it the ability to run code on any Windows machine that viewed an image, even with ActiveX off and a firewall on."
+        },
+        {
+          "s": "leo",
+          "t": "Could it have been a lone programmer inside Microsoft?"
+        },
+        {
+          "s": "steve",
+          "t": "Possibly. We may never know who. Microsoft's advisory called it a vulnerability and never said it was just a bug, but it didn't explain it either."
+        },
+        {
+          "s": "leo",
+          "t": "For the record, Steve is no open-source zealot or Mac advocate. He's my staunchest Windows-using friend."
+        },
+        {
+          "s": "steve",
+          "t": "I'm finding myself drawn to open source for exactly this reason: transparency."
+        },
+        {
+          "s": "steve",
+          "t": "I looked for a benign purpose. Code running inside the metafile can't use the metafile's drawing context, and it can't return gracefully. Processing is simply over."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has done security reviews of all its code, and metafiles have had real bugs before, so this code would have been scrutinized."
+        },
+        {
+          "s": "leo",
+          "t": "We'd welcome Microsoft on the show to explain."
+        }
+      ]
+    },
+    {
+      "title": "Preliminary Findings",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This is preliminary. I've only probed it from the outside. I suspect older versions of Windows never had it, and I'm going to check. A week from now I may come back with my tail between my legs."
+        },
+        {
+          "s": "steve",
+          "t": "My tester is finished, at least for 2000, XP and 64-bit Windows. Since I think it's a backdoor, I called it KnockKnock."
+        },
+        {
+          "s": "steve",
+          "t": "It's not a hacker tool. It confirms that Windows ran a thread inside the test image, and unlike some testers it doesn't set off antivirus software. It's for listeners, not linked from GRC's home page."
+        },
+        {
+          "s": "steve",
+          "t": "If you still seem vulnerable after Microsoft's patch, reboot. The patch requires it."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Microsoft denied that it was a backdoor, saying the abort-procedure mechanism dated back to Windows 3.x printing. Mark Russinovich then traced the code and concluded the \"length of 1\" behavior was an unintended side effect of how the records were parsed, not a secret key. Most researchers agreed it was a dangerous legacy design, not a deliberate backdoor."
+        },
+        {
+          "s": "leo",
+          "t": "Headline: \"Security Expert Says Microsoft Put a Backdoor in Windows.\" Film at 11. Steve, lock your doors tonight."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is SETABORTPROC normally for?",
+      "options": [
+        "Registering a routine Windows calls if a print job is cancelled",
+        "Drawing rectangles",
+        "Encrypting images",
+        "Playing sounds"
+      ],
+      "answer": 0,
+      "explain": "It's a printing callback, which is why it made no sense inside an image."
+    },
+    {
+      "q": "What surprised Steve about triggering the exploit?",
+      "options": [
+        "It only ran his code if the record's length was set to an impossible value of 1",
+        "It worked with any length",
+        "It required administrator rights",
+        "It only worked on Macs"
+      ],
+      "answer": 0,
+      "explain": "That \"magic\" value is why he suspected something deliberate."
+    },
+    {
+      "q": "Why didn't Microsoft patch Windows 98 and ME?",
+      "options": [
+        "It rated the flaw not \"critical\" on those systems, since it couldn't spread as a worm without user action",
+        "They weren't affected at all",
+        "Microsoft didn't know about them",
+        "The patch was too big"
+      ],
+      "answer": 0,
+      "explain": "Under Microsoft's definitions, only worm-able flaws counted as critical."
+    },
+    {
+      "q": "What did later analysis, including Mark Russinovich's, conclude?",
+      "options": [
+        "The length-1 behavior was an accidental parsing side effect, not a planted backdoor",
+        "It was a secret NSA key",
+        "Steve's tester was wrong about everything",
+        "It only affected printers"
+      ],
+      "answer": 0,
+      "explain": "Steve raised a legitimate question; the evidence pointed to dangerous legacy design."
+    },
+    {
+      "q": "If KnockKnock still reports a vulnerability after patching, what should you try first?",
+      "options": [
+        "Reboot, since the patch needs a restart",
+        "Reinstall Windows",
+        "Turn off the firewall",
+        "Rename the file"
+      ],
+      "answer": 0,
+      "explain": "The patched file isn't active until Windows restarts."
+    }
+  ]
+}

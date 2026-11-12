@@ -1,0 +1,323 @@
+{
+  "number": 20,
+  "title": "Serious Windows Flaw + Q&A #2",
+  "subtitle": "The WMF zero-day, and listener questions",
+  "date": "2005-12-29",
+  "description": "On December 28, a serious new Windows vulnerability appeared and was immediately used by malicious websites to install malware. Steve explains it and a workaround, then answers listener questions.",
+  "transcript": "https://www.grc.com/sn/sn-020.txt",
+  "audio": "http://media.GRC.com/sn/SN-020.mp3",
+  "chapters": [
+    {
+      "title": "The Windows Metafile Zero-Day",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 20, the last of 2005. It's a Q&A week, but there's a big new hole in Windows first."
+        },
+        {
+          "s": "steve",
+          "t": "It exploded yesterday: a Windows Metafile exploit that installs malware just by viewing an image. F-Secure got infected simply because Google Desktop Search indexed a file they'd downloaded."
+        },
+        {
+          "s": "leo",
+          "t": "What's a metafile?"
+        },
+        {
+          "s": "steve",
+          "t": "An image format as old as Windows. It's more like a little script, closer to a PDF than a JPEG: a list of drawing commands for Windows' graphics system."
+        },
+        {
+          "s": "steve",
+          "t": "Blocking .wmf files doesn't help. Windows looks at a file's contents, not its extension, so a metafile can pose as another image type."
+        },
+        {
+          "s": "steve",
+          "t": "It affects IE, Firefox and Opera, since it's Windows itself drawing the image, and an email virus is expected any moment."
+        },
+        {
+          "s": "steve",
+          "t": "It's not even a buffer overflow. Metafiles can name a procedure to run if drawing fails. The attack registers its own code and deliberately fails."
+        },
+        {
+          "s": "leo",
+          "t": "So it's a feature Microsoft assumed nobody would abuse."
+        },
+        {
+          "type": "fact",
+          "title": "The WMF flaw (CVE-2005-4560)",
+          "t": "The SETABORTPROC record in a Windows Metafile lets the file supply code to run when drawing is aborted. Any program that rendered the image, including Explorer thumbnails and desktop search indexers, could run attacker code. Microsoft released an emergency fix, MS06-001, on January 5, 2006, ahead of its normal Patch Tuesday."
+        },
+        {
+          "s": "steve",
+          "t": "Until Microsoft patches it, you can unregister the vulnerable image-viewing DLL. Explorer thumbnails stop working, which is exactly what you want. Step-by-step instructions are in our show notes at grc.com/sn/notes-020.htm."
+        },
+        {
+          "type": "fact",
+          "title": "The workaround",
+          "t": "The widely recommended stopgap was to run \"regsvr32 -u %windir%\\system32\\shimgvw.dll,\" which disables Windows' built-in picture viewer and thumbnails. It reduced exposure but wasn't a complete fix. Installing MS06-001 was."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft normally patches on the second Tuesday of the month, but I expect a fix sooner. Sites were exploiting this within 24 hours."
+        }
+      ]
+    },
+    {
+      "title": "Quick Notes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A listener pointed out: when you copy and paste a long passphrase, don't leave it on the clipboard."
+        },
+        {
+          "s": "leo",
+          "t": "We leave crumbs everywhere: caches, swap files, slack space on the disk."
+        },
+        {
+          "s": "steve",
+          "t": "OpenSSH 4.3 will add VPN-style tunnels, but over TCP. Its developer, Damien Miller, says himself that one dropped packet stalls all the tunneled traffic. UDP-based OpenVPN avoids that."
+        }
+      ]
+    },
+    {
+      "title": "Unsecured Login Pages",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Banks like Washington Mutual and MBNA ask for your login on a page that isn't secure. Is that safe?"
+        },
+        {
+          "s": "steve",
+          "t": "What matters is where the form sends your data, not the page you type it on. If the submit address is https://, your login is encrypted."
+        },
+        {
+          "s": "steve",
+          "t": "But you can't tell without viewing the page's source. A secure-looking page could even submit to an insecure one. That's why I put my own forms on secure pages: you can check the certificate before typing anything."
+        },
+        {
+          "s": "leo",
+          "t": "Bank of America's form does post to HTTPS. They show a padlock graphic and explain that they skip SSL on that page for speed."
+        },
+        {
+          "s": "steve",
+          "t": "A padlock picture proves nothing; anyone can draw one. And SSL overhead is trivial now. Explaining instead of just securing the page is silly."
+        },
+        {
+          "type": "fact",
+          "title": "Where your data goes matters",
+          "t": "A form's \"action\" address decides where your data is sent. An https:// action encrypts it even from an http:// page, but you can't verify the page wasn't tampered with in transit. Modern browsers warn about password fields on insecure pages, and today nearly every site uses HTTPS everywhere."
+        }
+      ]
+    },
+    {
+      "title": "Hamachi, WPA and Remote Desktop",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Hamachi's server was down for a while. Doesn't that show we depend on it?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Existing tunnels now survive a server outage, but you can't set up new connections without it. The same goes for any hosted service. Your own OpenVPN server won't have that problem."
+        },
+        {
+          "s": "leo",
+          "t": "WPA works on my 802.11g cards but not my old 802.11b one."
+        },
+        {
+          "s": "steve",
+          "t": "The b or g doesn't matter. Newer drivers might add WPA, and McAfee's free WPA client can add it to older systems. Turn off its dynamic authentication option; a pre-shared key is all you need."
+        },
+        {
+          "s": "leo",
+          "t": "A network administrator connects to Remote Desktop at home on port 3389, and his firewall only accepts connections from his office's IP address."
+        },
+        {
+          "s": "steve",
+          "t": "Two good moves. First, change the default port. If a Remote Desktop flaw appears, worms will scan 3389 first."
+        },
+        {
+          "s": "steve",
+          "t": "Second, filtering by source IP is strong. TCP's handshake means a spoofed address never gets the reply, so it can't complete a connection. I protect my equipment at my co-location facility the same way."
+        },
+        {
+          "s": "steve",
+          "t": "On its own, Remote Desktop isn't secure. Cain & Abel can sit in the middle and record everything. Use it through a tunnel or behind IP filtering."
+        },
+        {
+          "type": "fact",
+          "title": "Why TCP resists spoofing",
+          "t": "Opening a TCP connection takes a round trip: SYN, then SYN/ACK, then ACK. If you forge your source address, the SYN/ACK goes to the forged address, not to you, so you can't complete the handshake. IP-based allow-lists are therefore meaningful for TCP services."
+        }
+      ]
+    },
+    {
+      "title": "Fingerprints and Firewalls",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "What about fingerprint scanners? A study says most can be fooled with a Play-Doh finger."
+        },
+        {
+          "s": "steve",
+          "t": "Flat scanners keep your print on the glass. Press a bag of water against it and it may think you're back. Swipe sensors, like on my Libretto and on ThinkPads, are better, because your whole print is never left on the sensor."
+        },
+        {
+          "s": "steve",
+          "t": "Any single biometric used alone is a bad idea. At my co-location facility I need a badge and a palm scan. That's two-factor authentication."
+        },
+        {
+          "s": "leo",
+          "t": "As a rule of thumb, if something seems really convenient, there's a problem."
+        },
+        {
+          "type": "fact",
+          "title": "Two-factor authentication",
+          "t": "Combine factors from different categories: something you know (a password), something you have (a badge or token) and something you are (a biometric). Stealing one isn't enough, which is far stronger than any one factor alone."
+        },
+        {
+          "s": "leo",
+          "t": "Is HTTPS webmail like Gmail or FastMail enough at a hotspot?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Just make sure the certificate is genuine. Fake certificates are how phishing and SSL man-in-the-middle attacks work."
+        },
+        {
+          "s": "leo",
+          "t": "Are \"stateful packet inspection\" firewall routers more secure than plain NAT routers?"
+        },
+        {
+          "s": "steve",
+          "t": "A NAT router is already a good firewall. Extra features like IP filtering or time-of-day rules are nice, but don't buy a new router just for them."
+        },
+        {
+          "s": "steve",
+          "t": "Tip: in Windows' Network Connections, you can disable adapters you aren't using. I keep my laptop's extra adapters off until I need them."
+        }
+      ]
+    },
+    {
+      "title": "More Answers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "If I connect to the Internet through my home network from the road, how fast is it?"
+        },
+        {
+          "s": "steve",
+          "t": "Your traffic comes down your home connection and goes back out it, so you're limited by your home upload speed, usually the slowest part."
+        },
+        {
+          "s": "leo",
+          "t": "Does reformatting remove a rootkit?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. A rootkit lives in the operating system, so wiping and reinstalling removes it. Some boot-sector viruses can survive, but that's a different thing."
+        },
+        {
+          "s": "leo",
+          "t": "Sony is settling the class action: cash, trade-ins and an uninstaller."
+        },
+        {
+          "s": "steve",
+          "t": "If this hasn't shown them the light, nothing will."
+        },
+        {
+          "s": "leo",
+          "t": "My DSL provider gives me a private IP address. Can I reach home?"
+        },
+        {
+          "s": "steve",
+          "t": "Your ISP runs a giant NAT router for you, so you can't run servers. Hamachi, which works its way out through NAT, is your only hope."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't a VPN inherently slower?"
+        },
+        {
+          "s": "steve",
+          "t": "Encryption overhead is tiny on modern computers. Slowness and stalls come from tunneling TCP inside TCP, which is why iPig sometimes stalls on lossy connections. IPSec, PPTP and OpenVPN over UDP avoid it."
+        },
+        {
+          "s": "leo",
+          "t": "Does hiding my SSID make me secure?"
+        },
+        {
+          "s": "steve",
+          "t": "We've covered it: it prevents accidental use, not determined access. Please catch up on earlier episodes so we can keep moving forward."
+        },
+        {
+          "s": "leo",
+          "t": "What's port knocking?"
+        },
+        {
+          "s": "steve",
+          "t": "Your router keeps every port closed. You send packets to a secret sequence of closed ports, and when it sees your \"knock,\" it opens a port, ideally only for the address that knocked. Linux and open-source firewalls have it; I hope consumer routers add it."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: how the Internet works. What packets and ports really are."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What made the WMF vulnerability so dangerous?",
+      "options": [
+        "Just viewing or indexing an image could run attacker code",
+        "It required a password",
+        "It only affected Macs",
+        "It needed physical access"
+      ],
+      "answer": 0,
+      "explain": "Browsers, thumbnails and even desktop search could trigger it, with no click needed."
+    },
+    {
+      "q": "On a login form, what determines whether your password is sent encrypted?",
+      "options": [
+        "Whether the form submits to an https:// address",
+        "The padlock graphic on the page",
+        "The page's background color",
+        "Whether you use Firefox"
+      ],
+      "answer": 0,
+      "explain": "The destination matters, but you can't easily verify it, so forms belong on secure pages."
+    },
+    {
+      "q": "Why is filtering Remote Desktop by the office's IP address strong protection?",
+      "options": [
+        "TCP needs a two-way handshake, so a spoofed source can't complete a connection",
+        "IP addresses are encrypted",
+        "Remote Desktop has perfect security",
+        "Routers block all spoofing"
+      ],
+      "answer": 0,
+      "explain": "Forged packets never get the reply, so only the real office IP can connect."
+    },
+    {
+      "q": "Why does Steve distrust single-factor fingerprint scanners?",
+      "options": [
+        "Prints can be lifted or faked, so a biometric alone is weak",
+        "They're too slow",
+        "They need the Internet",
+        "They only work on Macs"
+      ],
+      "answer": 0,
+      "explain": "Combine factors, like a badge plus a palm scan, for real security."
+    },
+    {
+      "q": "What is port knocking?",
+      "options": [
+        "Sending packets to a secret sequence of closed ports to make the router open one for you",
+        "Scanning every port for weaknesses",
+        "A type of DDoS",
+        "Rebooting the router"
+      ],
+      "answer": 0,
+      "explain": "Until it hears the right knock, the router shows no open ports at all."
+    }
+  ]
+}

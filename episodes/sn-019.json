@@ -1,0 +1,251 @@
+{
+  "number": 19,
+  "title": "VPNs Three: Hamachi, iPig and OpenVPN",
+  "subtitle": "Wrapping up the VPN series",
+  "date": "2005-12-22",
+  "description": "Fallout from last week's Hamachi episode, an appealing new zero-configuration contender called iPig, and the many faces of OpenVPN, the Swiss Army knife of VPNs.",
+  "transcript": "https://www.grc.com/sn/sn-019.txt",
+  "audio": "http://media.GRC.com/sn/SN-019.mp3",
+  "chapters": [
+    {
+      "title": "Loose Ends",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 19, recorded early for Christmas. The final chapter on VPNs."
+        },
+        {
+          "s": "steve",
+          "t": "After Hamachi, I'm buried in mail. I can't even read it all right now."
+        },
+        {
+          "s": "steve",
+          "t": "Everyone keeps sending an InformIT article from March about \"cracking WPA.\" WPA hasn't been cracked. The article describes the offline brute-force attack we already covered. That's exactly why GRC.com/passwords exists."
+        },
+        {
+          "s": "steve",
+          "t": "WPA brute-forcing tools are now appearing on hacker sites, so the advice stands: use a long, random passphrase."
+        },
+        {
+          "s": "steve",
+          "t": "Another way to carry a monster passphrase: burn ten of them onto a mini CD-R. Start with the first. If you ever have to give it to a guest, switch the whole network to number two."
+        },
+        {
+          "s": "leo",
+          "t": "At our meet-up people talked about databases of precomputed MD5 hashes."
+        },
+        {
+          "s": "steve",
+          "t": "That's a precomputation attack, for MD5 and SHA-1. Hard drives are so cheap that people hash every likely password once and store the results. Give them a hash and they look up the password. They haven't broken the hash; they've just done all the work ahead of time."
+        },
+        {
+          "type": "fact",
+          "title": "Precomputed hash tables",
+          "t": "Attackers hash huge numbers of likely passwords once and store the results, often compressed as \"rainbow tables.\" Unsalted hashes of common passwords then reverse instantly. Defenses: long random passwords, and on the server side, a unique salt for each password and a deliberately slow hash."
+        },
+        {
+          "s": "steve",
+          "t": "For secure Gmail, start at https://mail.google.com. Some other ways in drop you back to an unencrypted session after you log in."
+        },
+        {
+          "s": "steve",
+          "t": "And GRC has run Usenet newsgroups for years at news.grc.com, now including a Security Now! group. Use any newsreader. I like the free Gravity. GRC.com/discussions has setup help and a read-only web view."
+        }
+      ]
+    },
+    {
+      "title": "Hamachi Aftermath",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The response was phenomenal. One listener had Hamachi installed before the episode ended and is now using it with VNC to reach his home PC from a three-week trip to Europe."
+        },
+        {
+          "s": "steve",
+          "t": "But some corporate networks only allow web traffic on ports 80 and 443 and route everything else through their own servers. Hamachi can't get out of those."
+        },
+        {
+          "s": "leo",
+          "t": "If I ran IT, blocking everything but 80 and 443 sounds smart. And we're not advocating sneaking around your company's security. If you bring in the next Zotob, they won't thank you."
+        },
+        {
+          "s": "leo",
+          "t": "Randal Schwartz, of \"Learning Perl,\" asks how we can trust Hamachi when it isn't open source."
+        },
+        {
+          "s": "steve",
+          "t": "It's a fair point. I'm convinced Alex designed it as he described, which is why I made sure the private key never leaves your machine. But I can't prove it, and listeners should know that. I'll probably end up on OpenVPN."
+        },
+        {
+          "s": "leo",
+          "t": "He also notes OpenSSH 4.3 will add tunneling."
+        },
+        {
+          "s": "steve",
+          "t": "That will be TCP inside TCP. Hamachi and OpenVPN use UDP, which avoids that problem and the fragmentation it causes. Oversized wrapped packets get split, double the chance of loss, and many firewalls simply drop fragments."
+        },
+        {
+          "type": "fact",
+          "title": "Why fragments get dropped",
+          "t": "When a packet is too big for a link, it's split into fragments. Attackers have long used fragments to slip past firewalls, so many firewalls drop them outright. A tunnel that produces oversized packets can fail completely instead of just running slowly."
+        },
+        {
+          "s": "steve",
+          "t": "Remote Desktop over Hamachi: if Hamachi runs as the same user you're logging in as, you'll get a \"user already logged on\" conflict. Run Hamachi as a service, as I happened to be doing, and it works."
+        },
+        {
+          "s": "steve",
+          "t": "Can Hamachi inside your home replace WPA? No. Your regular, non-Hamachi addresses are still reachable on the Wi-Fi. But Hamachi carries broadcasts, so people with multiple routers got file and printer sharing back."
+        },
+        {
+          "s": "leo",
+          "t": "And gamers love it for turning LAN games into Internet games."
+        }
+      ]
+    },
+    {
+      "title": "iPig",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Listeners pointed me to iPig, from iOpus. Terrible name, very compelling. The web page shows a hardware router, which confused me, but it's purely software."
+        },
+        {
+          "s": "leo",
+          "t": "The name stands for iOpus Private Internet Gateway, at least."
+        },
+        {
+          "s": "steve",
+          "t": "I ran the free iPig server at home, installed the client on my laptop, forwarded a port through my router, and got Remote Desktop, my file shares, my LAN and Internet access back out through home. It's the holy grail we were looking for."
+        },
+        {
+          "s": "steve",
+          "t": "The free server allows five accounts. There's also a free hosted service with a 5 GB limit per account, enough for years of email, and maybe a paid tier at about $29.95 a year."
+        },
+        {
+          "s": "steve",
+          "t": "I sniffed the traffic and asked its developer, Mathias Roth in Germany, about the security. It uses 256-bit AES and is designed correctly. Like any pre-shared-key system, it depends on a strong key."
+        },
+        {
+          "s": "steve",
+          "t": "It's Windows-only for now. Change the default port, 11888, so scanners don't find it if a flaw ever turns up."
+        },
+        {
+          "s": "steve",
+          "t": "One open question: protocols like FTP and some video-conferencing protocols put IP addresses inside their packets, so redirecting them may break. Web and email should be fine."
+        }
+      ]
+    },
+    {
+      "title": "OpenVPN, the Swiss Army Knife",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "OpenVPN is probably what you and I will end up using. It's open source on SourceForge and runs on Linux, the BSDs, Windows and the Mac."
+        },
+        {
+          "s": "steve",
+          "t": "It uses UDP by default, which is the best transport for a tunnel. It's also built into m0n0wall and OpenWrt, so it can run on a spare PC firewall or even a Linksys router."
+        },
+        {
+          "s": "steve",
+          "t": "Like Hamachi, it creates a virtual network adapter. That's the clean fix for fragmentation: tell the adapter its packets must be smaller, so they still fit after wrapping."
+        },
+        {
+          "s": "steve",
+          "t": "HotSpotVPN, which we've both been using, is about $10 a month and runs straight OpenVPN. I noticed no slowdown at all."
+        },
+        {
+          "s": "leo",
+          "t": "On Windows it was one installer. On my Mac I also needed Tunnelblick and some configuration."
+        },
+        {
+          "s": "steve",
+          "t": "They pre-build your certificates. Click the link in their email, install, click the taskbar icon, and you're connected."
+        },
+        {
+          "s": "steve",
+          "t": "Running your own OpenVPN server is anything but one click. TCP or UDP, which port, bridging or routing. I'm working through it and will publish simple guides."
+        },
+        {
+          "s": "steve",
+          "t": "The best setup is bridging. It extends your home Ethernet, broadcasts included, to your laptop, so file and printer sharing, NetBEUI and ARP all work."
+        },
+        {
+          "type": "fact",
+          "title": "Bridged vs. routed VPN",
+          "t": "A routed VPN gives the remote client its own subnet, and only IP traffic is forwarded. A bridged VPN makes the client part of the home Ethernet segment, so broadcasts, discovery and non-IP protocols work, at the cost of more traffic and less isolation."
+        },
+        {
+          "s": "steve",
+          "t": "Running any VPN server at home means forwarding a port through your router. Pick an unusual port, and use dynamic DNS so you can always find your home IP address. Many routers now update DynDNS for you."
+        },
+        {
+          "s": "leo",
+          "t": "It's better than trying to talk your spouse through ipconfig."
+        },
+        {
+          "s": "steve",
+          "t": "VPNs are core to Security Now!, so we'll keep coming back as I learn more. Early next year, we'll lay the crypto foundation to explain OpenVPN's certificates."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a \"precomputation attack\" on password hashes?",
+      "options": [
+        "Hashing huge numbers of likely passwords ahead of time and looking up the matches",
+        "Breaking the hash math",
+        "Guessing passwords one at a time online",
+        "Reading passwords from RAM"
+      ],
+      "answer": 0,
+      "explain": "It doesn't break MD5 or SHA-1. It's just a giant lookup table, which long random passwords defeat."
+    },
+    {
+      "q": "Why couldn't some corporate users get Hamachi working?",
+      "options": [
+        "Their firewalls only allowed web traffic on ports 80 and 443",
+        "Hamachi requires a Mac",
+        "Their PCs had no network card",
+        "Hamachi was offline"
+      ],
+      "answer": 0,
+      "explain": "Restrictive firewalls block Hamachi's traffic, which isn't web traffic."
+    },
+    {
+      "q": "Why did Randal Schwartz question trusting Hamachi?",
+      "options": [
+        "It isn't open source, so its security can't be independently verified",
+        "It's too slow",
+        "It's too expensive",
+        "It uses WEP"
+      ],
+      "answer": 0,
+      "explain": "Steve agreed it's a fair point and is likely to switch to open-source OpenVPN."
+    },
+    {
+      "q": "What's the downside of running your own OpenVPN or iPig server at home?",
+      "options": [
+        "You must forward a port through your router, and OpenVPN is complex to set up",
+        "It only works on Sundays",
+        "It disables Wi-Fi",
+        "It needs a static MAC address"
+      ],
+      "answer": 0,
+      "explain": "Pick an unusual port and use dynamic DNS so you can find your home."
+    },
+    {
+      "q": "What does an OpenVPN \"bridged\" setup give you?",
+      "options": [
+        "The remote laptop joins your home Ethernet, so broadcasts and file sharing work",
+        "Faster downloads from any site",
+        "No encryption",
+        "A free static IP"
+      ],
+      "answer": 0,
+      "explain": "Bridging extends the whole home LAN, including non-IP protocols, through the tunnel."
+    }
+  ]
+}
