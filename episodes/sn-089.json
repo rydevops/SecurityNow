@@ -1,0 +1,367 @@
+{
+  "number": 89,
+  "title": "Even More Badly Broken WEP",
+  "subtitle": "A new attack cracks any WEP network in about a minute",
+  "date": "2007-04-26",
+  "description": "ShieldsUP! nears 50 million uses, SpinRite rescues a mother's nine-month dissertation, and Steve and Leo compare notes on their Sony Readers. Then Steve explains a new attack by three German researchers that recovers a 128-bit WEP key from about 40,000 packets: how replayed ARP requests flood the network, how known ARP bytes reveal RC4's keystream, and why per-byte statistics make the crack so fast.",
+  "transcript": "https://www.grc.com/sn/sn-089.txt",
+  "audio": "http://media.GRC.com/sn/SN-089.mp3",
+  "chapters": [
+    {
+      "title": "Nearly 50 Million ShieldsUP! Tests",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Have you hit 50 million on ShieldsUP! yet?"
+        },
+        {
+          "s": "steve",
+          "t": "I looked this morning: 49.2 million. I keep the IPs of the most recent 4,096 users. If an IP is still in the list, I don't count it again. At about 25,000 users a day, the list lasts maybe four hours, so someone coming back later counts again."
+        },
+        {
+          "s": "leo",
+          "t": "They've probably changed something and are testing again."
+        },
+        {
+          "s": "steve",
+          "t": "And an IT person at a major U.K. magazine just wrote a user's guide to ShieldsUP!, tired of answering the same questions."
+        },
+        {
+          "s": "leo",
+          "t": "I tell people to read your explanations after their results. Everything you'd want to know about ports is there."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves a Dissertation",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "No errata, since last week was a Q&A. But a fun testimonial from Duncan Smith, who sounds English."
+        },
+        {
+          "s": "steve",
+          "t": "His mother retired and spent six years on a part-time horticulture degree, with nine months on her final dissertation. To celebrate finishing it, though not yet submitting it, and his father's retirement, they took an eight-week trip of a lifetime to New Zealand."
+        },
+        {
+          "s": "steve",
+          "t": "Then the dreaded call. Her PC was stuck in an endless restart loop, with the drive making \"unusual noises.\" Her PC store and a savvy neighbor said all was lost. No backup. It held all her degree work and years of holiday photos."
+        },
+        {
+          "s": "leo",
+          "t": "It drives me crazy that people don't back up."
+        },
+        {
+          "s": "steve",
+          "t": "I've lived with this for about 20 years. The computer works today and tomorrow, so people assume it always will. And when it's new, it holds nothing irreplaceable. Its value creeps up, so there's never a moment when you think: now I must back up."
+        },
+        {
+          "s": "steve",
+          "t": "Duncan bought SpinRite, started it, and went to bed. In the morning it had finished and the PC booted the first time. An hour later, everything was backed up. He's in his parents' good books, perfectly timed for extra babysitting during his house move."
+        },
+        {
+          "s": "leo",
+          "t": "\"SpinRite Gives You Babysitting Time.\" That gives me a chill. My wife lost her master's thesis without SpinRite, got an incomplete and had to redo the whole year. She did get her degree and license. Maybe that's why she never uses computers now."
+        }
+      ]
+    },
+    {
+      "title": "More on E-Books",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We've become the e-book guys. Listeners keep suggesting free e-book sites."
+        },
+        {
+          "s": "steve",
+          "t": "How do you like \"Gibraltar Earth\"?"
+        },
+        {
+          "s": "leo",
+          "t": "I love it. I'm always a little nervous with books not from regular publishers, but Michael McCollum deserves all praise. I bought the Antares trilogy and \"Gibraltar Sun\" too."
+        },
+        {
+          "s": "steve",
+          "t": "I finished book two and begged Michael not to hurry finishing that universe."
+        },
+        {
+          "s": "leo",
+          "t": "I've read over a thousand pages on the Sony Reader. But it's run down twice, faster than promised. Does yours charge properly?"
+        },
+        {
+          "s": "steve",
+          "t": "Same experience. Red light comes on, red light goes off. Plug it in again and it charges more. Lithium-ion charging stops based on the battery's terminal voltage, which is tricky to get right."
+        },
+        {
+          "s": "steve",
+          "t": "McCollum got the rights back from his publisher and prints and binds his own paperbacks, keeping nearly all the revenue."
+        },
+        {
+          "s": "leo",
+          "t": "These readers let anyone be an author, with the Internet distributing books for the cost of bandwidth."
+        }
+      ]
+    },
+    {
+      "title": "WEP: Weak From the Start",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now WEP."
+        },
+        {
+          "s": "steve",
+          "t": "We last covered it in depth in Episode 11, \"Bad WiFi Security,\" in October 2005. WEP stands for Wired Equivalent Privacy, meant to make radio as private as a wire. It fell far short."
+        },
+        {
+          "s": "steve",
+          "t": "A couple of weeks ago, three researchers at a German technical university published a way to determine the WEP key in under a minute."
+        },
+        {
+          "s": "leo",
+          "t": "How long did it take before?"
+        },
+        {
+          "s": "steve",
+          "t": "It needed on the order of five million captured packets. They've brought it down to about 40,000."
+        },
+        {
+          "s": "steve",
+          "t": "You might think we all use WPA now. But surveys show 25 percent of wireless networks use no encryption, half still use WEP, and only a quarter use WPA. So three-quarters have no encryption or WEP. And WPA is only as good as its password."
+        },
+        {
+          "s": "steve",
+          "t": "Many hotspots use WEP, since it was built in. Often it's first on the menu. When we urged WPA, people wrote that their TiVo or other device didn't support it. Some run two networks: WPA, and WEP for the TiVo, just to keep neighbors off. Until two weeks ago, WEP was probably good enough for that. Not anymore."
+        },
+        {
+          "s": "leo",
+          "t": "Is it easy to do?"
+        },
+        {
+          "s": "steve",
+          "t": "Proof-of-concept code is posted, and it's already in the Aircrack suite."
+        },
+        {
+          "s": "leo",
+          "t": "Five million packets meant sitting on the curb for ages."
+        },
+        {
+          "s": "steve",
+          "t": "Bring your sleeping bag. Here it's 40,000."
+        },
+        {
+          "type": "fact",
+          "title": "The researchers",
+          "t": "The attack, by Erik Tews, Ralf-Philipp Weinmann and Andrei Pyshkin of the Technical University of Darmstadt, is known as the PTW attack, after their initials."
+        }
+      ]
+    },
+    {
+      "title": "Flooding the Network With ARP",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's how it works, and it uses many foundations we've laid. You need lots of packets, and packets you know something about."
+        },
+        {
+          "s": "steve",
+          "t": "Ethernet is glued together by ARP, the Address Resolution Protocol, which we covered in an episode on how ARP spoofing enables man-in-the-middle attacks. It's why you don't just plug into a hotel network."
+        },
+        {
+          "s": "steve",
+          "t": "Network adapters are really addressed by MAC address, since IP is one of many protocols that can run over Ethernet, like Novell's old IPX. So a station broadcasts: who has this IP, say the gateway's? The right adapter replies with its MAC address."
+        },
+        {
+          "s": "leo",
+          "t": "So you can stimulate it."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, tickle the network to flood you with data. And the first 12 bytes of every ARP request never change. ARP replies have the same bytes, except the last one, which flags a request or reply."
+        },
+        {
+          "s": "steve",
+          "t": "One of WEP's many flaws is that it has no protection against \"replay.\" The attacker doesn't know the key, so he can't create packets. But when he sees an ARP packet go by, which he can identify by its length, he captures it and sends copies over and over, and the network keeps answering. WPA never allows reusing a packet."
+        },
+        {
+          "type": "fact",
+          "title": "Corrections",
+          "t": "Token Ring, which Steve also mentioned, is a separate networking technology, not a protocol carried over Ethernet. And because a replayed request draws a fresh reply each time, the attacker gathers thousands of encrypted ARP packets per second."
+        }
+      ]
+    },
+    {
+      "title": "How Known Bytes Reveal the Keystream",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "WEP uses RC4, a pseudorandom stream generator, initialized with a key of 64 or 128 bits. This attack cracks 128-bit keys, which is what anyone using WEP would choose."
+        },
+        {
+          "s": "steve",
+          "t": "That 128 bits is a 24-bit front piece, the \"initialization vector,\" IV, plus a fixed 104-bit secret. Most adapters just count the IV upward. So only the front of the key changes."
+        },
+        {
+          "s": "steve",
+          "t": "RC4 turns the key into a stream of pseudorandom bytes, which are XORed with the data. XOR data with true randomness, and the result is just as random, impossible to decrypt. XOR again with the same randomness, and the plain text falls out."
+        },
+        {
+          "s": "steve",
+          "t": "But reusing or weakening the randomness causes trouble, and that's WEP's main weakness. Since we know the first 12 bytes of ARP packets, XORing them with the encrypted bytes in the air gives us the first 12 bytes of RC4's output for that packet's key."
+        },
+        {
+          "s": "steve",
+          "t": "The IV must travel unencrypted on the front of each packet, so the receiver can rebuild the full key. So for each captured packet, we save its IV and those 12 keystream bytes."
+        }
+      ]
+    },
+    {
+      "title": "Cracking Each Key Byte Separately",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "That was all done before. The older approach needed five million packets because it was error-prone, and it cracked the key one byte at a time, in sequence. A wrong statistical guess meant backtracking and starting over."
+        },
+        {
+          "s": "steve",
+          "t": "These researchers used a different statistical method that determines each key byte independently. When they can't pin down a byte, they narrow it to its most probable values, maybe five, 10 or 20 instead of 256."
+        },
+        {
+          "s": "leo",
+          "t": "So it's a smaller set. It's doable."
+        },
+        {
+          "s": "steve",
+          "t": "For four bytes, 256 to the fourth power is about four billion. Ten to the fourth is 10,000. And RC4 is so fast they can test every remaining combination."
+        },
+        {
+          "s": "steve",
+          "t": "The result: they collect 40,000 packets from a typical Wi-Fi network in about 53 seconds, then process them in under three seconds on a 1.7GHz Pentium M ThinkPad. About 56 seconds, with a 50 percent chance of having the key. Give it two minutes, and it's 98 percent."
+        },
+        {
+          "type": "fact",
+          "title": "The numbers",
+          "t": "The paper reported a 50 percent success rate with 40,000 packets and 95 percent with 85,000, which at typical rates took a couple of minutes."
+        }
+      ]
+    },
+    {
+      "title": "Treat WEP as Open",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I used to say: use WPA, but if you can't, WEP keeps out all but the most determined. No longer."
+        },
+        {
+          "s": "steve",
+          "t": "It's almost faster to crack it than to type in a WEP key you know."
+        },
+        {
+          "s": "leo",
+          "t": "If you can't remember the key, just crack it."
+        },
+        {
+          "s": "steve",
+          "t": "Make a typo? Forget it, crack it in a minute. I predict turnkey tools within a month."
+        },
+        {
+          "s": "leo",
+          "t": "I've wished I knew a WEP key to get online. I wouldn't, but I'm sure less ethical people will."
+        },
+        {
+          "s": "steve",
+          "t": "The takeaway: if a Wi-Fi network isn't using WPA, either don't use it, or provide your own encryption with a VPN or HTTPS, like https://mail.google.com."
+        },
+        {
+          "s": "leo",
+          "t": "Treat a WEP access point as an open access point."
+        },
+        {
+          "s": "steve",
+          "t": "As we said in Episode 11, WEP was designed by well-meaning engineers. WPA was designed by real crypto people. Its only known attack is brute force: capture packets and try keys, starting with dictionary combinations of common words. That's not WPA's fault."
+        },
+        {
+          "s": "steve",
+          "t": "So use a really unguessable password, like the ones at GRC.com/passwords, generated over an encrypted connection and never issued twice. Mine is gibberish on a USB stick. I recognize it visually, but I don't know what it is."
+        },
+        {
+          "s": "leo",
+          "t": "If you can't remember it, it's pretty hard to guess. And catch Steve's mini Security Now! on my radio show, Saturdays and Sundays on Premiere Radio Networks and XM 152."
+        },
+        {
+          "type": "fact",
+          "title": "After WEP",
+          "t": "The Wi-Fi Alliance banned WEP from new certified devices after 2004 and dropped TKIP-based WPA as well. Today WPA3, introduced in 2018, also resists offline password guessing."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did the new attack shrink WEP cracking from millions of packets to about 40,000?",
+      "options": [
+        "It determines each key byte independently using better statistics",
+        "It breaks RC4 completely",
+        "It guesses passwords",
+        "It uses faster computers only"
+      ],
+      "answer": 0,
+      "explain": "The older method cracked bytes in sequence and had to backtrack."
+    },
+    {
+      "q": "Why do attackers capture and replay ARP packets?",
+      "options": [
+        "Replays make the network generate many packets whose first bytes are known",
+        "ARP packets hold the password",
+        "To crash the router",
+        "To hide themselves"
+      ],
+      "answer": 0,
+      "explain": "WEP has no protection against replay."
+    },
+    {
+      "q": "How does knowing an ARP packet's first bytes help crack WEP?",
+      "options": [
+        "XORing them with the encrypted bytes reveals RC4's keystream for that packet",
+        "It reveals the MAC address",
+        "It disables encryption",
+        "It shows the IV"
+      ],
+      "answer": 0,
+      "explain": "The IV is sent unencrypted anyway."
+    },
+    {
+      "q": "What is WEP's 24-bit initialization vector?",
+      "options": [
+        "The changing front part of the key, sent unencrypted with each packet",
+        "The password",
+        "A checksum",
+        "The router's address"
+      ],
+      "answer": 0,
+      "explain": "The other 104 bits stay secret and fixed."
+    },
+    {
+      "q": "What share of wireless networks used WPA in early 2007, per Steve?",
+      "options": [
+        "About a quarter",
+        "About 90 percent",
+        "None",
+        "About half"
+      ],
+      "answer": 0,
+      "explain": "Half used WEP and a quarter had no encryption."
+    },
+    {
+      "q": "What did Steve advise on a WEP network?",
+      "options": [
+        "Treat it as open, and add your own encryption like a VPN or HTTPS",
+        "Use a longer WEP key",
+        "Switch to 64-bit WEP",
+        "Turn off your firewall"
+      ],
+      "answer": 0,
+      "explain": "WPA's only weakness is a guessable password."
+    }
+  ]
+}
