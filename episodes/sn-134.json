@@ -1,0 +1,795 @@
+{
+  "number": 134,
+  "title": "Listener Feedback Q&A #36",
+  "subtitle": "Rainbow tables, latent data, wireless dropouts and more",
+  "date": "2008-03-06",
+  "description": "Princeton's research on data lingering in RAM is previewed, along with mailbag mishaps, Opera fixes and another Adobe program that breaks TrueCrypt's boot loader. Questions cover rainbow tables, how SpinRite works on encrypted drives, recovering overwritten data, secure erasure, Wireless Zero Configuration's deliberate disconnects and Wizmo's new fix, TrueCrypt containers and backups, the \"faster\" TrueCrypt benchmark, Google Analytics scripts on GRC, the Heise Offline Update, a locked laptop drive, NATO's pulping shredders and secure USB drives.",
+  "transcript": "https://www.grc.com/sn/sn-134.txt",
+  "audio": "http://media.GRC.com/sn/SN-134.mp3",
+  "chapters": [
+    {
+      "title": "RAM That Remembers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's been a busy week and a half. I had a hard time sorting the feedback, because something major happened that bears directly on whole-drive encryption."
+        },
+        {
+          "s": "steve",
+          "t": "Researchers at Princeton quantified a long-known but never-focused-on phenomenon: how long data persists in dynamic RAM after power is cut. The assumption was milliseconds. It's more like seconds. They showed how whole-drive encryption keys could be recovered from RAM before it decays."
+        },
+        {
+          "s": "steve",
+          "t": "Related issues surfaced at the same time: FireWire is a vulnerability, and USB dongles could capture un-zeroed RAM after a cold boot."
+        },
+        {
+          "s": "leo",
+          "t": "We were all excited about full-disk encryption, and it fell apart two days after we recorded the show."
+        },
+        {
+          "s": "steve",
+          "t": "It deserves a full episode, after next week's IronKey founder and another Q&A. For anyone worried, the bottom line: if you wait 10 seconds after shutting down, maybe 20 to be really safe, you're fine."
+        },
+        {
+          "s": "steve",
+          "t": "It would be hard to grab your laptop and hijack its RAM without your knowing. But the time is significant, especially if you spray the chips with Freon, which makes the data last much longer."
+        },
+        {
+          "s": "steve",
+          "t": "When I updated my mailbag, there were 745 messages, mostly about this."
+        },
+        {
+          "s": "leo",
+          "t": "That's my fault. We had to prerecord that TrueCrypt show because of my monthly trip to Vancouver, so it came out days after this news. I've rearranged my schedule, so we'll record close to air from now on."
+        },
+        {
+          "type": "fact",
+          "title": "The research",
+          "t": "The February 2008 \"cold boot\" paper by J. Alex Halderman and colleagues showed RAM contents can survive seconds to minutes without power, longer when chilled, and recovered keys for BitLocker, FileVault, TrueCrypt and others."
+        }
+      ]
+    },
+    {
+      "title": "Mailbag Mishaps",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "About 8,500 people subscribe to the ChangeDetection service from buttons on GRC's pages. GRC's pages change constantly, with download counts and days-since-update, so I'd configured their bot to notify only when I say so."
+        },
+        {
+          "s": "steve",
+          "t": "Their system upgrade broke that. For weeks, everyone got mail that pages had changed when they hadn't. I apologize. It was out of my control. I had to track them down through their DNS registration, and only when I showed them a snapshot of the mail they were sending did they fix it."
+        },
+        {
+          "s": "steve",
+          "t": "And my feedback form broke. When I added the new menus site-wide, I broke its \"thank you\" page, so people resubmitted again and again. I got lots of copies. It's fixed."
+        },
+        {
+          "s": "leo",
+          "t": "A perfect storm of a week."
+        },
+        {
+          "s": "steve",
+          "t": "The script-free menus are up, and sitewide search from Google. If a search is too wide, a link narrows it to Security Now!, using Elaine's transcripts."
+        },
+        {
+          "s": "steve",
+          "t": "And Opera fixed three critical security vulnerabilities. My copy didn't check for updates on its own, so Opera users should check manually."
+        }
+      ]
+    },
+    {
+      "title": "Another Adobe Program Hits Track Zero",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Brian Dent was glad TrueCrypt made him create a rescue CD. Adobe's acrotray.exe, which lives in the Windows tray, also writes into track zero and wiped out TrueCrypt's loader."
+        },
+        {
+          "s": "steve",
+          "t": "He typed his password and nothing happened. He saw his life pass before his eyes. Then he remembered the CD, which restored the boot track. By juggling, he found the cause, and others online have the same collision."
+        },
+        {
+          "s": "steve",
+          "t": "So that's two Adobe products, counting Macromedia's Dreamweaver. Something DRM-ish there needs fixing. No one else does DRM that way. That area is for pre-OS code, not software running in the OS."
+        },
+        {
+          "s": "leo",
+          "t": "They do it there because it's harder to hack."
+        },
+        {
+          "s": "steve",
+          "t": "Not really. Now that it's known, you could probably copy it and fool it. They thought it'd be off the radar. Now it's right in the middle of your radar, keeping your system from booting."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Fixes a USB Drive",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A short note from someone who isn't a Security Now! listener, a handle of Mgomgo. He uses SpinRite every couple of years. An important USB drive went goofy, and nothing worked, not even XP's repair utility. In three hours, SpinRite restored the completely unreachable drive. He just thought I'd appreciate positive feedback."
+        },
+        {
+          "s": "steve",
+          "t": "Someone wrote, \"I know you must get tired of these.\" No, I never get tired of hearing SpinRite saved someone."
+        }
+      ]
+    },
+    {
+      "title": "Rainbow Tables Versus TrueCrypt",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Keion, 19, an IT major at Monroe College in the Bronx and a new listener, says we made him encrypt his whole disk with TrueCrypt. But couldn't the password be recovered with rainbow tables or the L0phtCrack live CD? Explain what those are."
+        },
+        {
+          "s": "steve",
+          "t": "We've never talked about rainbow tables. The name comes from Rainbow, the company behind a popular early anti-piracy dongle."
+        },
+        {
+          "type": "fact",
+          "title": "Not quite",
+          "t": "Rainbow tables were named by researcher Philippe Oechslin in 2003 for their use of many different \"reduction functions,\" which he pictured as colors. They aren't tied to the Rainbow dongle company."
+        },
+        {
+          "s": "steve",
+          "t": "They're precomputed hash tables. Hashing is a one-way function, often used to turn a passphrase into a fixed-length key, and it takes time."
+        },
+        {
+          "s": "steve",
+          "t": "If you know a system uses, say, MD5 for passwords, as some Linux and UNIX versions do, people can hash huge numbers of dictionary words, phrases and combinations once, painfully, and save them. Then cracking just runs through the table at high speed."
+        },
+        {
+          "s": "steve",
+          "t": "But they only work on bad passwords. If your passphrase is \"Scott,\" it's in a dictionary and likely in a table. Someone could model TrueCrypt's path from passphrase to key and attack a very weak passphrase."
+        },
+        {
+          "s": "steve",
+          "t": "So use a passphrase that isn't in any dictionary and looks random. Skew letters, scramble things, add noise characters, as we covered in our earliest episodes. Then it won't be in any table."
+        },
+        {
+          "type": "fact",
+          "title": "TrueCrypt's defense",
+          "t": "TrueCrypt mixes a random 512-bit salt into the key derivation and runs it through many thousands of hash iterations, so precomputed tables can't be used against it at all."
+        },
+        {
+          "s": "leo",
+          "t": "And L0phtCrack is just brute force?"
+        },
+        {
+          "s": "steve",
+          "t": "Same issue. Keep your passphrase out of anyone's dictionary or crack library."
+        },
+        {
+          "s": "leo",
+          "t": "With a random password of enough characters, the odds of brute force shrink to nothing."
+        },
+        {
+          "s": "steve",
+          "t": "They try more likely passphrases first, and yours won't be among them."
+        }
+      ]
+    },
+    {
+      "title": "How SpinRite Works on Encrypted Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Benton Greene of Austin, Texas heard that SpinRite doesn't care whether a drive is encrypted. But SpinRite moves data from a bad sector to a good one. On an encrypted drive, it's all noise. How does it know not to overwrite noise that's real data?"
+        },
+        {
+          "s": "steve",
+          "t": "This highlights confusion about how drives handle bad sectors."
+        },
+        {
+          "s": "steve",
+          "t": "When I first wrote SpinRite in the FAT days, it understood the file system. It had to, since drives didn't handle their own defects. The file system marked clusters bad, and SpinRite moved clusters out of bad regions itself."
+        },
+        {
+          "s": "steve",
+          "t": "When drives became intelligent, they took responsibility for relocating their own sectors. SpinRite evolved to work with the drive, showing it where it has a problem. That made SpinRite file system independent, which is why it works on Macs, TiVos, unformatted drives and encrypted drives."
+        },
+        {
+          "s": "steve",
+          "t": "Sectors are numbered from zero to some huge number. Say sector 32627 goes bad. The drive retires that physical sector and gives a spare the same number, 32627. SpinRite writes the recovered data it's holding in RAM into the new sector. The operating system sees no difference."
+        },
+        {
+          "s": "leo",
+          "t": "So the drive keeps track, not SpinRite or the file system."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly."
+        },
+        {
+          "s": "leo",
+          "t": "But an encrypted drive still has a file system."
+        },
+        {
+          "s": "steve",
+          "t": "On the other side of the encryption. The drive doesn't care what you store, and now neither does SpinRite. Together they make sure whatever you store is stored correctly, noise or not. It works that way on all drives."
+        }
+      ]
+    },
+    {
+      "title": "Latent Data Under the Encryption",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ryan in Florida asks: you've said overwritten sectors can retain traces of earlier data. Couldn't unencrypted data be read from a fully encrypted drive? Is the best plan to DBAN, Darik's Boot and Nuke, the drive, reinstall, then encrypt immediately?"
+        },
+        {
+          "s": "steve",
+          "t": "Good point. When you write zeroes over a sector, you read back zeroes. But writing is additive. You strongly suppress the earlier flux reversals without completely eliminating them, so a faint latent image remains."
+        },
+        {
+          "s": "steve",
+          "t": "It's too weak to confuse the drive. But very sensitive equipment, which exists, could subtract out what was most recently written, peeling off a layer of history. So one encryption pass over your drive leaves the unencrypted data latent underneath."
+        },
+        {
+          "s": "steve",
+          "t": "It's the same as secure erasure. The best approach is multiple passes of random data. Truly random data is hard for computers, but good pseudorandom data is good enough."
+        },
+        {
+          "s": "steve",
+          "t": "Utilities that write well-known patterns aren't what you want. If an attacker knows the patterns, he knows what to subtract, layer by layer. With pseudorandom data, he doesn't. State-of-the-art erasers now offer pseudorandom options, and a few passes is all you need."
+        },
+        {
+          "s": "steve",
+          "t": "The ultimate solution: get a brand new drive, install Windows, and give it full-drive encryption before you customize it or put any data on it. Then your data never exists on it unencrypted."
+        }
+      ]
+    },
+    {
+      "title": "How Many Passes?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Each pass makes recovery tougher?"
+        },
+        {
+          "s": "steve",
+          "t": "You push the signal into the noise. After a couple of passes, physics prevents anyone, however sensitive their equipment, from finding a signal several writes back."
+        },
+        {
+          "s": "leo",
+          "t": "Who can read data overwritten once?"
+        },
+        {
+          "s": "steve",
+          "t": "Not some guy in his garage. NSA level."
+        },
+        {
+          "s": "leo",
+          "t": "You're sure it exists?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It sounds like science fiction. But a couple of weeks ago no one would have believed you could freeze a memory chip and read its contents half an hour later."
+        },
+        {
+          "s": "leo",
+          "t": "How many passes?"
+        },
+        {
+          "s": "steve",
+          "t": "With pseudorandom data, three or four would absolutely be enough. It has to be a pattern the attackers don't know."
+        },
+        {
+          "s": "leo",
+          "t": "One pass?"
+        },
+        {
+          "s": "steve",
+          "t": "It's enough for me. Maybe two. With two passes, the top layer is screaming at you, but they can't know what the pseudorandom layer under it was."
+        },
+        {
+          "s": "steve",
+          "t": "Some people do 30. You could earn enough money to buy a new drive at Fry's in that time."
+        },
+        {
+          "s": "leo",
+          "t": "I'm surprised how many drive shredders write ones and zeroes."
+        },
+        {
+          "s": "steve",
+          "t": "It's a misnomer that known patterns help. You want to write noise."
+        },
+        {
+          "s": "leo",
+          "t": "Apple offers zeroing once, a seven-pass erase using DoD 5220.22-M, and a 35-pass erase. They don't say what they write, but I'd hope random."
+        },
+        {
+          "type": "fact",
+          "title": "Today's view",
+          "t": "Research since 2008, including a study that tried to recover overwritten bits with a magnetic force microscope, found a single overwrite is effectively unrecoverable on modern drives. NIST's guidelines now treat one pass as enough for most drives. Retired spare sectors are a separate issue."
+        }
+      ]
+    },
+    {
+      "title": "Wireless and Wired Dropouts",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt in Melbourne, Australia has a Netgear WPN824 RangeMax router. Fed up with wireless dropouts, he wired his PC, but the wired connection drops just as often. He downloads about 50GB a month. Is it dropping, or is a setting wrong? And how can he give the wired connection priority?"
+        },
+        {
+          "s": "steve",
+          "t": "50GB a month may have caught his ISP's attention. ISPs are now throttling bandwidth and interrupting connections. We don't know that's it, but it's possible."
+        },
+        {
+          "s": "steve",
+          "t": "Also, some switches and routers are finicky about cable quality. Most people now run 100 megabits or a gigabit, an amazing amount of signal for a cable looping around the dining room table and probably behind the toaster. Check the cable and connections."
+        },
+        {
+          "s": "steve",
+          "t": "The RJ45 connector has gold contacts designed to wipe themselves clean as you plug in. I've solved problems by jiggling a plug in and out to rewipe them."
+        },
+        {
+          "s": "steve",
+          "t": "As for wireless dropouts, believe it or not, they're by design, and it's Microsoft's fault."
+        },
+        {
+          "s": "leo",
+          "t": "I ask Skype guests on wireless to go wired because of dropouts."
+        },
+        {
+          "s": "steve",
+          "t": "XP's Wireless Zero Configuration deliberately disconnects you periodically to see whether it can find a better access point."
+        },
+        {
+          "s": "steve",
+          "t": "The common wisdom is they assumed people just browse. Click a link, read, click again. You won't notice a brief disconnect if it reconnects quickly."
+        },
+        {
+          "s": "steve",
+          "t": "But people now hold static connections for instant messaging, Skype or VPNs. That model no longer tolerates brief disconnects."
+        }
+      ]
+    },
+    {
+      "title": "Wizmo's First Update in Six Years",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So I made the first update to Wizmo in six years. The new command \"wizmo wanlock\" stops the Wireless Zero Configuration service once you have a connection you like. Put it in a desktop or quick launch shortcut. Stopping the service stops the dropouts."
+        },
+        {
+          "s": "leo",
+          "t": "I recommend people just disable that service."
+        },
+        {
+          "s": "steve",
+          "t": "As long as you don't need it to connect initially. \"wizmo wanopen\" starts it again. It normally autostarts at boot, so you boot, connect, then click wanlock. Without Wizmo, type \"net stop wzcsvc\" at a command prompt. With a strong enough signal, the dropouts should go away."
+        },
+        {
+          "s": "leo",
+          "t": "Didn't Microsoft release, but never push, a fix?"
+        },
+        {
+          "s": "steve",
+          "t": "I know we discussed it, but I'm not sure what it did."
+        },
+        {
+          "s": "steve",
+          "t": "Another problem: some network-savvy people turn off their access point's SSID broadcast, thinking it's more secure. It provides no security, since the SSID is in the packets anyway."
+        },
+        {
+          "s": "leo",
+          "t": "And it slows things down, with your system asking, who are you?"
+        },
+        {
+          "s": "steve",
+          "t": "It's bad for WiFi performance. A friend named his network something like \"NORAD Central Command.\" He lives near a major military base. People will think, I'd better not touch that one."
+        },
+        {
+          "s": "leo",
+          "t": "Or, let's attack that one."
+        },
+        {
+          "s": "steve",
+          "t": "He uses a WPA key from GRC. They won't figure it out."
+        },
+        {
+          "s": "leo",
+          "t": "For wired dropouts, though, I think you've hit the nail on the head. With 50GB a month, probably BitTorrent, his ISP is nudging him."
+        }
+      ]
+    },
+    {
+      "title": "Why Jungle Disk Missed a TrueCrypt File",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Deric Merino in San Diego uses TrueCrypt and Jungle Disk, which we both love. His 200MB TrueCrypt container, created January 1, 2008, always stays 200MB. After he changes files inside, unmounts it and starts a backup, Jungle Disk doesn't see a change, and Explorer still shows 01/01/08. Shouldn't the timestamp or hash change?"
+        },
+        {
+          "s": "steve",
+          "t": "Jungle Disk probably looks at the date first, assuming it changes when a file is written. Hashing a 200MB file each time would take a long time."
+        },
+        {
+          "s": "steve",
+          "t": "I smiled, because it sounds like TrueCrypt doing its job of further obscuring things. I'll bet they deliberately keep the timestamp constant, as if nobody has touched this strange file since it was created. Very cool."
+        },
+        {
+          "s": "steve",
+          "t": "But any backup tool using timestamps won't see a change. Deric's file needs to be touched."
+        },
+        {
+          "s": "steve",
+          "t": "Old computer guys know the \"touch\" command, originally from UNIX, which sets a file's date to now. Developers used it with \"make,\" which rebuilds programs based on what's changed, to force a file to be recompiled."
+        },
+        {
+          "s": "steve",
+          "t": "The UNIX utilities have been ported to Windows. The show notes link to an open-source set including touch. It's tiny, and I use it. Since Deric already unmounts and starts the backup manually, adding one command to his batch file would be trivial."
+        },
+        {
+          "s": "leo",
+          "t": "Could Jungle Disk see the container as in use? It has a setting to back up in-use files."
+        },
+        {
+          "s": "steve",
+          "t": "Not if he's unmounted it."
+        },
+        {
+          "s": "leo",
+          "t": "Programs like rsync use a rolling checksum to detect changes. It's odd Jungle Disk only checks the date, but I guess it's faster."
+        },
+        {
+          "s": "steve",
+          "t": "And rsync is in that package too, I think."
+        },
+        {
+          "type": "fact",
+          "title": "Later TrueCrypt",
+          "t": "TrueCrypt did preserve container timestamps by default, for plausible deniability, and later versions added a preference to update them so backup tools notice changes."
+        }
+      ]
+    },
+    {
+      "title": "Can Deleted Files Be Stolen Remotely?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andrew Dalton in Connecticut asks: his company plans to overwrite deleted sensitive files seven times. What threat does that protect against? Does an attacker need the physical drive, or could one recover conventionally deleted files over the network?"
+        },
+        {
+          "s": "steve",
+          "t": "To read beneath overwritten data, you need serious technology. Perhaps a high-precision analog-to-digital converter on the drive's own heads, or taking the drive apart and examining the platters with special equipment."
+        },
+        {
+          "s": "steve",
+          "t": "Through the drive's normal electrical interface, you always get what was most recently written. That's the drive's whole point. So it can't be done remotely."
+        },
+        {
+          "type": "fact",
+          "title": "Worth noting",
+          "t": "That's true of overwritten data. But a file deleted normally, and not overwritten, stays on the disk until reused, and malware or an intruder on the machine can recover it with ordinary undelete tools. That's what overwriting deleted files prevents."
+        },
+        {
+          "s": "leo",
+          "t": "Only the NSA could do this, and they'd have to take your computer back to Fort Meade."
+        },
+        {
+          "s": "steve",
+          "t": "But it's what was done, for example, after 9/11 with terrorists' hard drives and laptops. They were going to find out what was written there."
+        }
+      ]
+    },
+    {
+      "title": "Was Steve Paying Attention?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rob Pontes of Toronto worries you weren't paying attention. Wouldn't restoring the drive from an image defragment it, explaining TrueCrypt's speedup?"
+        },
+        {
+          "s": "steve",
+          "t": "I was paying attention, and that did occur to me. I verified that Drive Snapshot restores individual sectors in their original fragmented positions. A file-by-file restore would have packed them together and lost the fragmentation I created with all those updates."
+        },
+        {
+          "s": "steve",
+          "t": "But it wasn't an extensive benchmark. FREE CompuSec showed 9 percent overhead on the same defrag. With TrueCrypt I got negative overhead, probably from caching and buffering that favored random reads and writes. The good news is it doesn't slow systems down appreciably. Don't take my quickie test as real-world performance."
+        },
+        {
+          "s": "leo",
+          "t": "And defragging is far heavier disk access than most programs do."
+        }
+      ]
+    },
+    {
+      "title": "Scripts on GRC?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Clement in Melbourne uses Firefox's NoScript and saw three or four scripts blocked on GRC.com and GRCtech.com. He thought your site was script-free. Is it malware?"
+        },
+        {
+          "s": "steve",
+          "t": "Not to worry. I have slipped a little into the dark side, from adding Google's search. While I was in Google Land, they offered their web analytics, and Mark Thompson at AnalogX had been raving about it."
+        },
+        {
+          "s": "leo",
+          "t": "I use it. I love it."
+        },
+        {
+          "s": "steve",
+          "t": "It shows a webmaster where people come from, what searches and search tools they used, how long they stay, how many leave immediately. It needs two little JavaScript snippets at the bottom of each page."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think I'll keep it. I can live without it, and it feels icky, especially throwing NoScript warnings after I built a 100 percent script-free menu. Maybe another week or two."
+        },
+        {
+          "s": "leo",
+          "t": "It shows how hard it is to go script-free, for users and webmasters. You're probably one site in a million without scripts. TWiT.tv has scripts for Flash and analytics, all benign."
+        },
+        {
+          "s": "leo",
+          "t": "The bigger issue: Google Analytics sends Google information about every visitor, like IP address and browser, and we don't tell users. I use it because it's free and excellent. Google bought Urchin. You can pay to host analytics locally, or use log analyzers that need no JavaScript, but you lose features like heat maps."
+        },
+        {
+          "s": "steve",
+          "t": "Have you seen the overlay where you hover over your own links and see the clicks? Oh my goodness."
+        },
+        {
+          "s": "leo",
+          "t": "Where people click, linger and never go. That needs JavaScript to follow the mouse. Logs only show pages, time and referrers."
+        },
+        {
+          "s": "steve",
+          "t": "I don't even have logging on most of the time."
+        },
+        {
+          "s": "leo",
+          "t": "You're one in a million. Apache or IIS out of the box logs every visitor."
+        },
+        {
+          "s": "steve",
+          "t": "Our privacy page says I don't log, as part of the privacy I want visitors to have. If something weird happens, I may turn it on briefly for forensics, then delete the logs."
+        }
+      ]
+    },
+    {
+      "title": "Remember the Heise Offline Update",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Colman Burke in San Francisco reminds us that in Episode 124 we praised the Heise Offline Update. Since then we've griped about patching a Windows reinstall. Did we forget it? He's used it for several XP reinstalls, and it avoided all the headaches except one recent update."
+        },
+        {
+          "s": "leo",
+          "t": "In my defense, I haven't reinstalled since. But I'd forgotten."
+        },
+        {
+          "s": "steve",
+          "t": "Mostly we enjoy grousing about XP's 90-plus post-SP2 patches and wondering where SP3 is. It's a really good system. I just don't reinstall XP often enough to plan for it, and never on my main machine, so I don't mind it grinding along. For anyone in the reinstall business, it really makes sense."
+        },
+        {
+          "s": "steve",
+          "t": "Google \"offline-update,\" and the first link takes you there. Many listeners have praised it and been impressed with how its scripts build the ISOs. It'll matter less once XP SP3 is out."
+        },
+        {
+          "type": "fact",
+          "title": "Later",
+          "t": "The Heise Offline Update grew into the independent \"WSUS Offline Update\" project, which built offline patch packages for many years."
+        }
+      ]
+    },
+    {
+      "title": "The End of XP?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of which, I saw that Microsoft is getting ready to end XP."
+        },
+        {
+          "s": "leo",
+          "t": "They've long said they'd stop selling it June 30th, and there's been protest. They want you to buy Vista. On a new machine, it makes sense."
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't yet, Leo. It needs three or four more years. Service Pack 1 broke a whole bunch of things."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Most XP sales ended June 30, 2008, though Microsoft kept offering it for low-cost netbooks. Support for XP ended in April 2014."
+        },
+        {
+          "s": "leo",
+          "t": "I stay away from Windows when I can. It's old and showing its age."
+        },
+        {
+          "s": "steve",
+          "t": "I run Skype on my little Mac once a week to talk with you. Today I updated Skype and just felt peaceful. You're not holding onto the edge of your desk wondering what could happen."
+        },
+        {
+          "s": "leo",
+          "t": "Windows 2000 was like that."
+        },
+        {
+          "s": "steve",
+          "t": "I'm looking at it right now."
+        },
+        {
+          "s": "leo",
+          "t": "If I could tell Microsoft one thing: keep Windows 2000 around for $50 or $100, patched, with no new features, for people who want a solid, unchanging, secure OS."
+        },
+        {
+          "s": "steve",
+          "t": "In fairness, keeping Windows current is a full-time job. All that legacy code still needs patches, and having that many versions in different states would be a huge task, though they brought it on themselves."
+        },
+        {
+          "s": "leo",
+          "t": "In the long run, UNIX may be a good idea for many users, though not for novices. But is Windows good for novices anymore?"
+        },
+        {
+          "s": "steve",
+          "t": "And Apple took heat for its latest Mac OS upgrade."
+        },
+        {
+          "s": "leo",
+          "t": "Everyone moves away from simplicity. Features accrete, and so do bugs. Windows is worse only because it's older. In 10 years, OS X will be just as creaky, and at some point you have to start from scratch."
+        }
+      ]
+    },
+    {
+      "title": "Kids Locked the Laptop Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Martin in Calgary needs the magic password. His kids set a system password and a hard drive password in his new Toshiba laptop's BIOS and can't remember them. Removing the motherboard battery reset the BIOS password. But the 200GB drive is still locked. He's using the 20GB drive from his fried Xbox 360 for now. There's no jumper. Is it a hardware encryption drive?"
+        },
+        {
+          "s": "steve",
+          "t": "Probably just the ATA drive password many laptop BIOSes support. It's not encrypted, just locked. And the bad news is there's no way to unlock it. No jumper."
+        },
+        {
+          "s": "steve",
+          "t": "With a subpoena, or as the NSA, Toshiba at the factory could certainly remove it. But the ATA password spec does let you remove the password, if the drive first wipes itself. You lose the data but keep the drive. That's a secure design."
+        },
+        {
+          "s": "steve",
+          "t": "You'd need a utility offering that. Perhaps Toshiba has one. I'm not aware of one wandering around. I could write one, but never have."
+        },
+        {
+          "s": "leo",
+          "t": "He just bought it, so maybe there isn't much data. And keep the kids away from the BIOS."
+        },
+        {
+          "s": "leo",
+          "t": "What if it were a hardware-encrypted drive?"
+        },
+        {
+          "s": "steve",
+          "t": "The drive wouldn't have the password. But the same unlock-by-wiping command would work."
+        }
+      ]
+    },
+    {
+      "title": "NATO's Solution to Unshredders",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rene Knigge, at NATO headquarters in the Netherlands, solved the unshredder problem. Their shredders add water, creating irreversible, unscannable pulp."
+        },
+        {
+          "s": "steve",
+          "t": "I just loved that. The shredders have been upgraded with a water reservoir."
+        },
+        {
+          "s": "leo",
+          "t": "And you can make papier-mâché animals afterward."
+        }
+      ]
+    },
+    {
+      "title": "Secure USB Drives, and a Keychain at the Garage",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian W. in Montreal says Computerworld reviewed several \"secure\" USB drives. Some features are funny in a sad way. Kingston refused to say what encryption mode its device uses, calling it proprietary. They recommended IronKey, but didn't note that any USB key plus free TrueCrypt beats most of them."
+        },
+        {
+          "s": "steve",
+          "t": "I have a tiny 4GB Kingston drive, I think, with a little slider. The detents wore out in four days because I couldn't stop sliding it."
+        },
+        {
+          "s": "leo",
+          "t": "I have the same one on my keychain."
+        },
+        {
+          "s": "steve",
+          "t": "Then the slider cracked in half and fell off. Last week I left my keys at the car dealer for service, and I was really glad nothing on it was in the clear. Just TrueCrypt.exe, TrueCrypt.sys and an encrypted container."
+        },
+        {
+          "s": "steve",
+          "t": "A USB drive on someone's keychain is a tasty thing. Plug it in and see what good files he's got. You definitely want that encrypted. Next week, IronKey's founder joins us."
+        }
+      ]
+    },
+    {
+      "title": "A Blockbuster Coming to GRC",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Wizmo's new wanlock is at GRC.com, along with DCOMbobulator, Shoot the Messenger, Unplug n' Pray and SpinRite. Now with script-free menus, and Google Analytics included."
+        },
+        {
+          "s": "steve",
+          "t": "I'm tying up loose ends from research I did in the summer of '06. The menus were one. Another new feature, a blockbuster right up our listeners' alley, is coming soon. It's a new service, not unlike ShieldsUP, and the research behind it uncovered some major revelations. We'll do an episode on it within a few weeks."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why do rainbow tables only threaten weak passphrases?",
+      "options": [
+        "They're built from precomputed hashes of likely passwords, so a random passphrase won't be in them",
+        "They only work on short keys",
+        "They need physical access",
+        "They only attack MD5"
+      ],
+      "answer": 0,
+      "explain": "TrueCrypt's salt also defeats them."
+    },
+    {
+      "q": "How does SpinRite recover data on a drive whose contents are encrypted?",
+      "options": [
+        "It works with the drive, which swaps a spare sector in under the same number, so it never needs to understand the data",
+        "It decrypts the drive first",
+        "It reads the file system",
+        "It can't"
+      ],
+      "answer": 0,
+      "explain": "That's why it also works on Macs and TiVos."
+    },
+    {
+      "q": "Why did Steve recommend overwriting with pseudorandom data rather than known patterns?",
+      "options": [
+        "An attacker who knows the pattern could subtract it to reveal earlier data",
+        "Random data is faster to write",
+        "Patterns damage drives",
+        "Drives reject patterns"
+      ],
+      "answer": 0,
+      "explain": "Steve suggested three or four passes."
+    },
+    {
+      "q": "What causes many wireless dropouts on Windows XP, according to Steve?",
+      "options": [
+        "Wireless Zero Configuration deliberately disconnects to look for a better access point",
+        "Weak WPA keys",
+        "SSID broadcasting",
+        "Router firmware"
+      ],
+      "answer": 0,
+      "explain": "Wizmo's new \"wanlock\" command stops the service."
+    },
+    {
+      "q": "Why didn't Jungle Disk back up Deric's changed TrueCrypt container?",
+      "options": [
+        "TrueCrypt keeps the container's timestamp unchanged, so the backup tool thought it hadn't changed",
+        "The file was too big",
+        "It was still mounted",
+        "Jungle Disk can't read TrueCrypt"
+      ],
+      "answer": 0,
+      "explain": "Steve suggested the \"touch\" command."
+    },
+    {
+      "q": "How can a locked ATA drive password be removed without the password?",
+      "options": [
+        "Only by having the drive erase all its data first",
+        "With a jumper",
+        "By removing the BIOS battery",
+        "It can't be removed at all"
+      ],
+      "answer": 0,
+      "explain": "The manufacturer could unlock it at the factory."
+    }
+  ]
+}
