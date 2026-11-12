@@ -1,0 +1,903 @@
+{
+  "number": 130,
+  "title": "Listener Feedback Q&A #34",
+  "subtitle": "Bugging yourself with wireless headsets, the Silent Banker trojan, and more",
+  "date": "2008-02-07",
+  "description": "A penetration tester eavesdrops on an office's wireless headsets from across the street and talks his way inside for three days, and Symantec details the Silent Banker trojan, which targets over 400 banks. Then listener questions: SpinRite and a GPS, the security of cellular data cards, protecting Excel files, removing preinstalled junk, the dangers of warez sites, SteadyState for roommates, AxCrypt, a university's Class B network, Mac encrypted disk images, Linux firewalls, FREE CompuSec, searching the transcripts and a clever OpenBSD-in-a-VM firewall.",
+  "transcript": "https://www.grc.com/sn/sn-130.txt",
+  "audio": "http://media.GRC.com/sn/SN-130.mp3",
+  "chapters": [
+    {
+      "title": "Kindle Secrets and Amazon Buys Audible",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I'm in the middle of Peter Hamilton's \"Night's Dawn Trilogy,\" the world's longest book. The Kindle shows dots instead of page numbers, and it always has the same number of dots."
+        },
+        {
+          "s": "leo",
+          "t": "A hacker called Igorsk got root on the Kindle, disassembled its code, and found lots of undocumented shortcuts. There's Minesweeper. With the radio on, Alt-1 in the browser opens Google Maps at your nearest cell site."
+        },
+        {
+          "s": "steve",
+          "t": "All I really want is an onscreen clock."
+        },
+        {
+          "s": "leo",
+          "t": "In the reader, Alt-T shows the time. It spells it out, like \"half past six,\" since you're reading. Lab126 built it, and in settings you can enter 126 to see the team's names."
+        },
+        {
+          "s": "steve",
+          "t": "They clearly had some fun."
+        },
+        {
+          "s": "steve",
+          "t": "Speaking of Amazon, Amazon is buying Audible."
+        },
+        {
+          "s": "leo",
+          "t": "Audible just became a sponsor of every show on the network. The day before the announcement, they emailed to say they'd renew through the year. Then Amazon bought them."
+        },
+        {
+          "s": "steve",
+          "t": "And my Kindle review on Amazon has been viewed about 11,000 times, more than twice the #2 review."
+        }
+      ]
+    },
+    {
+      "title": "Yahoo! Joins OpenID",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Yahoo! is now an OpenID authentication provider, which should do a lot to promote OpenID. But it's only single-factor. If you'd use Yahoo! for OpenID, drop them a note asking them to add VeriSign's VIP authentication."
+        },
+        {
+          "s": "leo",
+          "t": "And if Microsoft buys them, who knows. I hope it doesn't happen. I like Yahoo!'s services and their support for open source and OpenID."
+        },
+        {
+          "s": "steve",
+          "t": "Hungry Ballmer is out trying to get them."
+        },
+        {
+          "s": "leo",
+          "t": "He's trying to beat Google."
+        },
+        {
+          "type": "fact",
+          "title": "The bid",
+          "t": "Microsoft offered about $44.6 billion for Yahoo! on February 1, 2008. Yahoo! rejected it, and Microsoft withdrew the offer that May."
+        }
+      ]
+    },
+    {
+      "title": "Jungle Disk Costs Pennies",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm loving Jungle Disk. It just updated to 1.50c, fixing little things. My Amazon bill for last month: 10 cents."
+        },
+        {
+          "s": "leo",
+          "t": "Mine was 3 cents."
+        },
+        {
+          "s": "steve",
+          "t": "I just sent 120MB up so I can pull it down on my laptop later. It's cheap storage in the sky."
+        },
+        {
+          "s": "leo",
+          "t": "And it's WebDAV, so it can look like a mounted disk."
+        },
+        {
+          "s": "steve",
+          "t": "XP and Vista have a WebDAV client built in, so you can map it to a drive letter. On Windows 2000 I browse it like a folder, which is fine unless you want to automate your own backups."
+        }
+      ]
+    },
+    {
+      "title": "Wireless Headsets That Bug the Office",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now two stories that will boggle minds. Years ago, I refused to talk to my attorney on my analog cell phone from the car. It was a radio."
+        },
+        {
+          "s": "leo",
+          "t": "You were right. I've known hackers who made a habit of listening to analog cell calls."
+        },
+        {
+          "s": "steve",
+          "t": "This story on DarkReading.com really drives that home. It's by Steve Stasiukonis, VP and founder of Secure Network Technologies, a penetration testing firm focused on physical security and social engineering."
+        },
+        {
+          "s": "leo",
+          "t": "These are wireless headsets for office desk phones, not cell phones."
+        },
+        {
+          "s": "steve",
+          "t": "Right. A little base station replaces the coiled cord. A large organization hired them to test its security, so this was legal. They asked to test the wireless signals leaving the building too, including those headsets."
+        },
+        {
+          "s": "steve",
+          "t": "They bought a commercial radio scanner, which runs from $80 to several thousand dollars, covering 900 to 928MHz and 1.2GHz, where many headsets operate. From across the street, within seconds, they heard employees discussing the business in detail, including very sensitive topics."
+        },
+        {
+          "s": "steve",
+          "t": "They confirmed the source, locked onto the frequencies and recorded calls. They told the client immediately, rather than waiting for the report. Then they used the recordings to social engineer their way in."
+        },
+        {
+          "s": "steve",
+          "t": "From the conference calls, they picked an employee who had never visited that office and whom its staff had never met. They printed a business card with his identity, and Steve put on his best suit."
+        },
+        {
+          "s": "leo",
+          "t": "This guy likes his work way too much."
+        },
+        {
+          "s": "steve",
+          "t": "Security welcomed him with a smile, showed him a cubicle, the restroom and the coffee, and explained how to get a building access card. He plugged his laptop into the network, started a scanner, and went to lunch. When he returned, he had an access card. Nobody checked who he really was."
+        },
+        {
+          "s": "steve",
+          "t": "The card opened almost everything. For the server room and fitness center, he used more social engineering. By day two he was accepted as an employee. He booked conference rooms, ordered refreshments, and brought in a \"vendor,\" his partner Doug Shields. He spent three days inside."
+        },
+        {
+          "s": "steve",
+          "t": "But the real danger was the broadcasting. They could have made a stock play, tipped a competitor or leaked scandal to the press. After calls ended, the headsets became bugs: they could still hear wearers breathing and other conversations in their offices."
+        },
+        {
+          "s": "steve",
+          "t": "With other clients' permission, they repeated the test and heard financial institutions, healthcare companies, network administrators, C-level executives, legal departments and management teams. Companies afraid of eavesdropping were bugging themselves."
+        },
+        {
+          "s": "steve",
+          "t": "They compare it to early WiFi, popular before it had adequate security. Their advice: recognize these headsets, usually 900MHz and not necessarily encrypted, find out who uses them, and do your own scan. It's worth $80."
+        },
+        {
+          "s": "leo",
+          "t": "These aren't cordless phones?"
+        },
+        {
+          "s": "steve",
+          "t": "No, add-ons to corporate phones."
+        },
+        {
+          "s": "leo",
+          "t": "I have a Plantronics right here."
+        },
+        {
+          "s": "steve",
+          "t": "Very much like that. Analog cell phones had more range, but these work across the street. Anyone could do what they did. People who use them are bugging themselves."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Most modern office headsets use DECT or Bluetooth with encryption, but cheaper or older wireless headsets may not. Researchers have also shown weaknesses in some DECT encryption."
+        }
+      ]
+    },
+    {
+      "title": "The Silent Banker Trojan",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The second story is horrifying and true. A Symantec blog post titled \"Banking in Silence\" describes a trojan called Silent Banker. It touches on much we've discussed."
+        },
+        {
+          "s": "steve",
+          "t": "It downloads a configuration file listing over 400 banks, in the U.S., France, Spain, Ireland, the U.K., Finland, Turkey and more. Its blogger's own bank is among them. It can also get around two-factor authentication."
+        },
+        {
+          "s": "steve",
+          "t": "Most worrying is its man-in-the-middle attack on real transactions. When you send money, it silently swaps in the attacker's account details, while showing you the details you expect. You enter your second-factor code and hand over your money. It works before encryption, so SSL doesn't help."
+        },
+        {
+          "s": "steve",
+          "t": "Symantec couldn't reproduce such a transaction in the lab, but the code shows the feature exists. It uses that route only when easier ones aren't available. If a username and password suffice, it takes those. It also steals certificates and cookies, and if something's missing, it injects extra HTML into the page asking you for it."
+        },
+        {
+          "s": "steve",
+          "t": "I made a shortcut to the post, with its screenshots: SnipURL.com/sn130."
+        },
+        {
+          "s": "steve",
+          "t": "It can redirect users to an attacker's server for a classic man-in-the-middle, currently for one bank. Recent updates change your DNS settings to the attackers' DNS server, which we discussed recently. So even if you remove the trojan, you can stay at risk unless you fix your DNS settings."
+        },
+        {
+          "s": "steve",
+          "t": "It also steals FTP, POP, webmail, protected storage and cached passwords. It carries over 600 porn URLs to show you for referral money. It can download updates and other programs, and turn your machine into a proxy or web server, on port 18102 in tests. Its configuration files update several times a day, more current than Windows."
+        },
+        {
+          "s": "steve",
+          "t": "And it can inject HTML into about 200 URLs as pages display, in both Internet Explorer and Firefox. Its configuration files are compressed and encrypted, but Symantec decrypted them."
+        },
+        {
+          "s": "steve",
+          "t": "It shows how sophisticated trojans are becoming, and how much effort goes into high-value attacks."
+        },
+        {
+          "s": "leo",
+          "t": "I'd never heard the phrase \"banking trojan.\""
+        },
+        {
+          "s": "steve",
+          "t": "It's a whole category now, and this may be the most sophisticated. It's not built for one bank, but scripted for each of 400."
+        },
+        {
+          "s": "leo",
+          "t": "So it sits on your computer and intercepts your banking login."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. You really don't want this if you bank online."
+        },
+        {
+          "s": "leo",
+          "t": "And the loss is yours, not exactly the bank's."
+        },
+        {
+          "s": "steve",
+          "t": "You might find your balance zeroed. It could transfer funds as you log in, or send everything home so someone else can log in as you. Even the cookie that tells the bank your machine is recognized, so it skips the extra questions, can be stolen."
+        }
+      ]
+    },
+    {
+      "title": "Deep Freeze, and TrueCrypt on the Mac",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Many people, starting with Rami, a level designer at Ubisoft Montreal, gave me that name I couldn't remember: Deep Freeze, from Faronics. Like SteadyState, it resets the machine on every reboot."
+        },
+        {
+          "s": "leo",
+          "t": "It's not free, as Microsoft's is, but it's about 45 bucks for the basic version, more with hundreds of seats."
+        },
+        {
+          "s": "leo",
+          "t": "And thanks to Randal Schwartz and many TrueCrypt fans: TrueCrypt 5 is out and works on OS X. I've downloaded it. It's compatible across OS X, Windows and Linux, so an encrypted file, folder or disk can be read on all three."
+        },
+        {
+          "s": "steve",
+          "t": "There was so much interest that today's Q&A covers encryption already built into the Mac."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite, Old Drives and a Pilot's GPS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our first question is from Lin in Kalamazoo, who has listened since Episode 1. Should that have been Episode 0? In true programmer's form, yes. TWiT started with 0."
+        },
+        {
+          "s": "leo",
+          "t": "Lin relistens to old episodes during three hours a day on the road. Six months ago he bought SpinRite. He has 11 computers and 30 hard drives at home. Like the listener last week, he had some dead drives in storage, and revived them and got back data he'd missed."
+        },
+        {
+          "s": "leo",
+          "t": "Any drive works, right? Even old 20MB drives?"
+        },
+        {
+          "s": "steve",
+          "t": "Any IDE drive, and even pre-IDE if you still have the controller."
+        },
+        {
+          "s": "leo",
+          "t": "His longest recovery took 17 days. Our record is about three months. And he asks: his $2,000 aviation Garmin GPS has 512MB of memory it treats as a drive, with a memory issue. DOS can see it over USB. Can SpinRite fix it? He's a pilot and depends on it."
+        },
+        {
+          "s": "steve",
+          "t": "I'd advise against it. I never recommend running SpinRite on non-volatile solid-state memory. It just moves it closer to the end of its life. If DOS sees it, SpinRite will run on it, but I'd pull the data off and reformat it."
+        },
+        {
+          "s": "leo",
+          "t": "I thought USB hid the drive details SpinRite needs."
+        },
+        {
+          "s": "steve",
+          "t": "You can still read and write over USB. SpinRite backs off and uses as much of the interface as it can. You just can't talk to the drive as intimately as on the motherboard."
+        },
+        {
+          "s": "leo",
+          "t": "I didn't know that. If it's really Flash, don't do it."
+        }
+      ]
+    },
+    {
+      "title": "Are Cellular Data Cards Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lin also asks about his Sprint wireless data card on a corporate laptop with sensitive data. I use a Verizon EVDO card myself. Is he behind a NAT router? Does he need a software firewall? It fails ShieldsUP's all-stealth test, but every port is closed or stealthed, and port 22, SSH, is closed. His traceroute shows seven hops in Sprint's 68.x.x.x range."
+        },
+        {
+          "s": "steve",
+          "t": "I don't want to freak everyone out, but both GSM and CDMA cellular technology use encryption designed by engineers, not crypto people."
+        },
+        {
+          "s": "steve",
+          "t": "In fairness, processing power was much more expensive back then. GSM's is based on three shift registers with multiple taps, a way to generate pseudorandom data. They tried to keep it a trade secret. It's been cracked. CDMA's has been cracked too."
+        },
+        {
+          "s": "leo",
+          "t": "Does EVDO use CDMA?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It aggregates a bunch of cell channels in parallel for its speed. I don't know whether there's another layer of encryption on top."
+        },
+        {
+          "s": "steve",
+          "t": "It's not cracked to the degree WiFi is, but there are papers on the 'Net about how. It isn't strong, current crypto. And these networks are so old and widely deployed that they can't be updated without obsoleting everything. You'd have to really want to crack them, but it's been done."
+        },
+        {
+          "s": "leo",
+          "t": "I'm reading that EVDO scrambles transmissions with a 42-bit \"long code.\" Cellular authentication and voice-encryption generates a 128-bit key called Shared Secret Data, which feeds an AES algorithm."
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't sound like public-key technology, and I don't know where the shared secret comes from. Maybe the phone number, or set up ahead of time. It's on my list to research. We'll spend an hour on cellular encryption before long."
+        },
+        {
+          "s": "leo",
+          "t": "So maybe EVDO data is secure, but voice over GSM and CDMA isn't?"
+        },
+        {
+          "s": "steve",
+          "t": "Right. Those rely on initial obfuscation, which you can't really consider encryption."
+        },
+        {
+          "type": "fact",
+          "title": "The record",
+          "t": "GSM's A5/1 cipher, built from three shift registers, has been publicly broken, and CDMA's older CMEA cipher was broken in 1997. Modern 4G and 5G networks use AES-based and other stronger ciphers."
+        }
+      ]
+    },
+    {
+      "title": "Protecting an Excel Spreadsheet",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Lin's last question: he shares Excel spreadsheets so people can use them, but not see his formulas or change anything. Freeware cracks sheet protection in seconds, even with complicated passwords. OpenOffice's protection doesn't help Microsoft Office users. Is there a way?"
+        },
+        {
+          "s": "steve",
+          "t": "He knows Excel's built-in protection is easily cracked. If he wants them to view it but not change it, print it to a PDF. They get the data and charts in a form they can't modify."
+        },
+        {
+          "s": "steve",
+          "t": "External encryption works, but then they need the password to view it, so it doesn't solve his problem."
+        },
+        {
+          "s": "leo",
+          "t": "If they need to enter their own numbers, I think he's out of luck. He has to use what Microsoft offers, and Microsoft isn't doing much."
+        }
+      ]
+    },
+    {
+      "title": "Junk on New Machines",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chuck in Tennessee asks how to deal with all the preinstalled junk on a new machine. Should he buy a copy of Windows for each new machine to start clean? Is that obsessive? And which processes should Task Manager show?"
+        },
+        {
+          "s": "steve",
+          "t": "It comes up often. My two most recent Dells, a laptop and a desktop, had virtually nothing I didn't want. The ThinkPads I recently bought for employees had a bunch of junk. And HP's current offerings, oh my god."
+        },
+        {
+          "s": "steve",
+          "t": "I took Chuck's position: scrape it off and start over. As a paid MSDN developer, about $2,500 to $2,700 a year, I can install Windows on my own machines, though I can't give it away."
+        },
+        {
+          "s": "steve",
+          "t": "But with both the ThinkPad and an HP, even with every driver from their sites, I couldn't get a clean install without yellow exclamation points in Device Manager. On a little HP Pavilion, I never got the CD/DVD drive working. I spent two days on the ThinkPad. Of course, I took a Drive Snapshot before I even booted it the first time, so I could get back to factory state."
+        },
+        {
+          "s": "steve",
+          "t": "So on all four ThinkPads, I just removed stuff with Add/Remove Programs. I always worry about leftover debris, but we've had no trouble. My advice: buy Dell, not HP. HP has got to get a clue."
+        },
+        {
+          "s": "leo",
+          "t": "Dell asks users what they want, which is why they brought back XP, offer Linux and cut the junk. A frustrated HP owner wrote the free PC Decrapifier, at PCdecrapifier.com. It uninstalls junk, resets your home and search pages, removes unnecessary startup items and toolbars like Google's and Yahoo!'s."
+        },
+        {
+          "s": "leo",
+          "t": "Also, some makers still sell a real Windows disk rather than a recovery disk. A recovery disk restores the crap. A real Windows disk, with the hologram, is just Windows. If you get one, you're golden."
+        }
+      ]
+    },
+    {
+      "title": "Service Packs on the Way",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of installing Windows, I noticed on MSDN that XP Service Pack 3 is at release candidate 1. No more 95 or 98 updates and nine reboots for the updates' updates."
+        },
+        {
+          "s": "leo",
+          "t": "Not for a few months, anyway. And Vista SP1 has been released, though it probably won't be pushed out until March. Paul Thurrott and I will discuss both on Windows Weekly."
+        }
+      ]
+    },
+    {
+      "title": "Trimming Running Processes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "As for Task Manager, there's no easy answer about processes. But GRC's Win2K server is jarring for how few it runs. I turned off all the nonsense."
+        },
+        {
+          "s": "steve",
+          "t": "Sometimes I turn off something I later need, like the DHCP client, since I assign every IP on my 10-dot network myself. Then I take the machine somewhere and it won't connect. But reducing running processes is best practice for security, and it boots faster."
+        },
+        {
+          "s": "leo",
+          "t": "Black Viper, who famously did this for XP and went offline, is back at BlackViper.com. He explains every service and which you can turn off, found by trial and error as a gamer."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft gives you one cryptic line, like \"Tracks changes to multiple files over the network.\" Do I need that or not?"
+        },
+        {
+          "s": "leo",
+          "t": "For startup programs you can use MSConfig, but I recommend Autoruns, Mark Russinovich's program from Sysinternals. Google \"Autoruns Microsoft.\""
+        }
+      ]
+    },
+    {
+      "title": "The Dangers of Warez",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener asks why we've never discussed cracks, pirated software and the \"warez\" scene. He doesn't pirate, but is surprised how many people use serials and cracks without considering the security risks."
+        },
+        {
+          "s": "steve",
+          "t": "True confession time. About two months ago, my old copy of Eudora was annoying me. Eudora stores each folder in a single text file, which is nice, but parsing it by scanning headers gets messed up, especially by email quoted inside email."
+        },
+        {
+          "s": "steve",
+          "t": "I went to Eudora.com to see if a newer version fixed it. They said they're no longer publishing Eudora. Version 7.1 was the last, and you can't buy it. They say it's going open source, but really the Mozilla people are putting a Eudora interface on their own mail client."
+        },
+        {
+          "s": "steve",
+          "t": "That's not what I want. I own many registrations from former employees and would gladly pay. So, into the warez sites, on a sacrificial computer, looking for a key generator. I got that machine deeply, horribly infected."
+        },
+        {
+          "s": "steve",
+          "t": "Ethically, I've paid for Eudora many more times than I use it. But nothing hoses your system faster than poking around those dark corners."
+        },
+        {
+          "s": "leo",
+          "t": "Think about it. If you buy a malware kit from a Russian website, what site do you build to draw people in? Porn, or cracks, warez and serial numbers. That's where the exploits are."
+        },
+        {
+          "s": "leo",
+          "t": "I'm ashamed to say that on The Screen Savers, when we urgently needed to show a program, we'd occasionally get a serial number, figuring the company wanted it on TV. I haven't done that in years. I want to buy my software, and it's a sure way to get infected. If you must, use a VMware copy of Windows you then erase."
+        },
+        {
+          "s": "steve",
+          "t": "That machine had command boxes popping up and servers installing. I'm glad I didn't use my \"A\" machine."
+        }
+      ]
+    },
+    {
+      "title": "SteadyState for Roommates?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Aaron Skinner in Omaha runs Windows XP Media Center Edition 2005, shared with roommates and used for online games. Games like Battlefield 2142 seem to need an administrator account. He wants full access for himself and a roommate-and-gaming login that resets at logoff, though game saves might suffer. Media Center must keep recording TV, and his Avast antivirus must update. Would SteadyState work?"
+        },
+        {
+          "s": "steve",
+          "t": "First, as I recall, Avast wasn't among the few antivirus products SteadyState knows how to work with. McAfee was one. Getting around its protection of the C drive takes deliberate cooperation."
+        },
+        {
+          "s": "steve",
+          "t": "Second, recordings. The driver journals every change to the system drive all the time. When the administrator logs off, he chooses to keep or flush. Everyone else's changes are flushed."
+        },
+        {
+          "s": "steve",
+          "t": "So it's probably not the best solution. I'd give the roommates a virtual machine for containment. I think Aaron's use pushes SteadyState too far."
+        },
+        {
+          "s": "leo",
+          "t": "And Deep Freeze would have the same issues."
+        }
+      ]
+    },
+    {
+      "title": "AxCrypt for a Few Files",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Amir Katz, from Kfar Saba, Israel, needs only a little encryption, just a few files, not a TrueCrypt partition. He finds AxCrypt simple and effective. It's open source under the GPL and has a secure-delete feature like SDelete. Is it secure?"
+        },
+        {
+          "s": "steve",
+          "t": "I checked whether I'd ever mentioned AxCrypt, because it's what I use. I hadn't. I found it a couple of months ago. It's free, supported by voluntary donations."
+        },
+        {
+          "s": "steve",
+          "t": "A few weeks ago I recommended Omziff, for a different need: it's a freestanding executable that changes nothing on the system. AxCrypt integrates into Windows, adding right-click menus so you can tell a file to encrypt itself. It's heavier, but I like it very much."
+        },
+        {
+          "s": "steve",
+          "t": "I think AxCrypt is the one that can make a self-decrypting EXE."
+        },
+        {
+          "s": "leo",
+          "t": "Handy for sending to someone."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Run it, and it prompts for the password. It's all 256-bit AES, really good security. It's open source, and you can download the code from the AxCrypt site. I recommend it."
+        },
+        {
+          "type": "fact",
+          "title": "Key size",
+          "t": "AxCrypt 1.x, current at the time, actually used 128-bit AES. Later AxCrypt versions added 256-bit AES."
+        }
+      ]
+    },
+    {
+      "title": "A University's Class B Network",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener at a large university says it owns a Class B public IP range, over 60,000 addresses. A single IP can cost $5 a month in the private sector. Isn't this a huge waste of money, maybe taxpayer-subsidized, and needless exposure to hackers, when 90 percent of users would do fine with private IPs?"
+        },
+        {
+          "s": "steve",
+          "t": "He's totally wrong. IPs don't cost anything, unless you resell them."
+        },
+        {
+          "s": "steve",
+          "t": "Originally, the 32-bit address space was split on byte boundaries. A Class C has one byte of addressing, 256 addresses less a couple. A Class B has two bytes, 64K addresses. A Class A has three bytes, 24 bits of addressing."
+        },
+        {
+          "s": "steve",
+          "t": "Universities were early adopters and were handed big pieces. His university may not need 65,536 addresses, but it has them and won't let them go."
+        },
+        {
+          "s": "leo",
+          "t": "They were given them at the beginning."
+        },
+        {
+          "s": "steve",
+          "t": "Level 3, I think, has all of 4-dot. BBN was another early adopter, with 1-dot or 2-dot or something. The Tier 1 ISPs own huge chunks."
+        },
+        {
+          "s": "steve",
+          "t": "I'm embarrassed to say I have 64 IPs at home and use one, behind a NAT router. It's from my old relationship with Verio. When Verio sold its T1 business to Cogent, my old engineer Andy said, take as many as you need."
+        },
+        {
+          "s": "steve",
+          "t": "Level 3, now hosting GRC's bandwidth, said prove you need more than two. I literally filled out an \"IP Justification Form.\""
+        },
+        {
+          "s": "steve",
+          "t": "Back then, people asked how many Class Bs you needed and just chopped them up, because they weren't valuable. Now they're the most precious resource on the planet."
+        },
+        {
+          "s": "leo",
+          "t": "Aren't they all gone?"
+        },
+        {
+          "s": "steve",
+          "t": "Only about 60 percent of the space is in use. Much of the rest is hoarded by places like the university, which won't give back its Class B."
+        },
+        {
+          "s": "leo",
+          "t": "That helps the record companies. They see 65.92 and know which university it is."
+        },
+        {
+          "s": "steve",
+          "t": "After enough networking, you recognize the blocks: Cox Cable, Comcast, Roadrunner, AOL."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "The central pool of IPv4 addresses ran out in February 2011, and the regional registries followed in later years. Unused blocks now sell for tens of dollars per address, and many organizations have sold off parts of their old Class A and B blocks."
+        }
+      ]
+    },
+    {
+      "title": "Encryption Built Into the Mac",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brad Beyenhof has listened since Episode 1, as it aired. About last time's question on Mac encryption without FileVault, many people wrote in."
+        },
+        {
+          "s": "steve",
+          "t": "Half my recent email was proud Mac users. I want to acknowledge them all."
+        },
+        {
+          "s": "leo",
+          "t": "I should have mentioned it, since I've used it for years. In Disk Utility, create an encrypted disk image, a .dmg file that needs a password to mount. You can save the password in your encrypted Keychain and add it to login items to mount automatically, though that's less secure."
+        },
+        {
+          "s": "leo",
+          "t": "For erasing, besides Secure Empty Trash, which Apple says overwrites files with meaningless data and takes about 20 times longer, Disk Utility's Erase tab can wipe a drive's free space with a 7-pass or 35-pass overwrite. Boot the OS X install disc, and Disk Utility can securely erase the whole drive. No DBAN needed."
+        },
+        {
+          "s": "steve",
+          "t": "Brad covered the bases. I love not installing software I don't need. And since the image is encrypted on its way to the drive, deleted files inside it never sit on the disk in the clear. It's like free secure delete."
+        },
+        {
+          "s": "leo",
+          "t": "And a sparse encrypted image starts small and expands to fit, and mounts like another drive."
+        },
+        {
+          "s": "leo",
+          "t": "Joe in Sacramento adds the same tip: Disk Utility makes an AES-encrypted image of a size you specify, built into OS X."
+        },
+        {
+          "s": "steve",
+          "t": "I love that solution."
+        },
+        {
+          "s": "leo",
+          "t": "Encrypted sparse images are what I use. I keep notes and serial numbers in them, and I feel secure."
+        },
+        {
+          "type": "fact",
+          "title": "The key size",
+          "t": "Joe's note said \"25-bit,\" likely a typo. Disk Utility offered 128-bit AES, and later versions added 256-bit AES."
+        }
+      ]
+    },
+    {
+      "title": "Linux Firewalls Instead of Three Routers?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve Hendry of Kitchener, Ontario thinks Steve missed an obvious solution for sharing WEP and WPA safely. Instead of the kludgey three routers, why not a free Linux firewall like IPCop, Endian Firewall or Smoothwall? They install on an old PC with multiple network cards and keep up to three networks isolated, each less-trusted network unable to see the more trusted one. Endian also comes as an appliance. I'd add Astaro Security Gateway."
+        },
+        {
+          "s": "steve",
+          "t": "He's right, and I'm aware of them. For a high-end user comfortable with multiple NICs and Unix, it makes sense. But you still need your wireless radios, a WPA router and a WEP router."
+        },
+        {
+          "s": "leo",
+          "t": "And a router does the same job as the gateway for 40 bucks, without using up a computer."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. That's why I like the plastic consumer box approach, three routers in a Y. The firewall PC replaces only the Internet-facing router. I don't mean to snub these turnkey solutions, or Astaro. But you've gained configuration power, and configuration responsibility, without simplifying anything."
+        },
+        {
+          "s": "leo",
+          "t": "And it's still the same triangle, with a different appliance."
+        }
+      ]
+    },
+    {
+      "title": "Whole-Drive Encryption: FREE CompuSec",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe also asks about enterprise security. His company uses full-disk encryption, maybe from Check Point. It slows things down, and some computers crashed from corrupted encryption data. Why not Windows' built-in EFS?"
+        },
+        {
+          "s": "steve",
+          "t": "That follows work I've done recently. About a month ago I explored EFS for a project. The problem is that a file you copy out stays encrypted, since EFS tags files with an attribute. I wanted the drive encrypted, but files copied to USB decrypted transparently."
+        },
+        {
+          "s": "steve",
+          "t": "So I found an incredibly nice, free whole-system encryption solution with pre-boot authentication. It alters the boot sector, points to fixed file locations on the drive, and encrypts and decrypts on the fly. It works beautifully with Windows. It's called FREE CompuSec."
+        },
+        {
+          "s": "steve",
+          "t": "I've researched it extensively and checked its security. They really got it nailed. It encrypts the entire physical drive, starting at sector 0, however it's partitioned."
+        },
+        {
+          "s": "steve",
+          "t": "I benchmarked defragmenting a highly fragmented drive with and without it. The overhead was surprisingly small, something like 9 percent. You couldn't feel it. A full show on it is coming."
+        }
+      ]
+    },
+    {
+      "title": "How Slow Is SteadyState's Login?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Glen in Denver hates long logins. How long does SteadyState take: seconds or minutes?"
+        },
+        {
+          "s": "steve",
+          "t": "When you install it, it asks you to defragment, and then grabs half of your free space for its cache. You had 50GB free, now you've got 25."
+        },
+        {
+          "s": "leo",
+          "t": "That's annoying right there."
+        },
+        {
+          "s": "steve",
+          "t": "A nice interface lets you shrink it to 1GB or so. I don't know whether that speeds up login."
+        },
+        {
+          "s": "steve",
+          "t": "The login did take longer, more than seconds, less than minutes. Maybe 30 to 45 seconds of a blank screen and a cursor. I'm Mr. Login Speedfreak, so I noticed. But not enough to stop me using it where I need it."
+        },
+        {
+          "s": "leo",
+          "t": "So it does slow things down."
+        },
+        {
+          "s": "steve",
+          "t": "It slows your login, no doubt. But it installs and uninstalls nicely, so it's easy to try."
+        }
+      ]
+    },
+    {
+      "title": "Quick Tip: Searching the Transcripts",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Livingstone's Quick Tip of the Week: to data-mine the transcripts, type \"site:grc.com transcript\" and your keywords into Google."
+        },
+        {
+          "s": "steve",
+          "t": "It works. I used it today to check whether I'd ever mentioned AxCrypt. Nothing came up, so I tested \"VPN\" and got every podcast where I'd mentioned it, in context, thanks to Elaine's transcripts."
+        },
+        {
+          "s": "steve",
+          "t": "So, change of plans. I said I'd add full-text search to GRC. Instead I'll use this tip and get to work on CryptoLink, which we discussed six months ago and which I've barely advanced. I think listeners will care more about that anyway."
+        },
+        {
+          "s": "leo",
+          "t": "Google does such a good job that I use it for my own sites. And transcripts make a netcast searchable. I should do that for all our shows."
+        }
+      ]
+    },
+    {
+      "title": "Amazing Idea: A Unix Firewall in Every PC",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Read #12 carefully, Leo. It's the Amazing Idea of the Week. Listeners will have to pay attention."
+        },
+        {
+          "s": "leo",
+          "t": "Mike's corporation in Minneapolis says their enterprise solution is Peter's, inverted."
+        },
+        {
+          "s": "steve",
+          "t": "Peter's developers ran their work in VMware so the native Windows could stay patched without breaking their builds, and new developers just got an image."
+        },
+        {
+          "s": "leo",
+          "t": "Mike's company runs a VM on each desktop, but gives the real network card to the VM, so the native Windows can't see it. A virtual network connects Windows to the VM, so all Windows traffic passes through it. The VM runs OpenBSD, a security-hardened BSD Unix. So every Windows system sits behind its own Unix firewall."
+        },
+        {
+          "s": "leo",
+          "t": "Even a rogue system plugged into their network would have a firewall between it and every peer on the segment. And graphics-heavy apps run natively with no performance penalty."
+        },
+        {
+          "s": "leo",
+          "t": "Other advantages: no extra Windows licenses, since OpenBSD is free; it runs in under 32MB of memory, nothing on a 2 or 3GB machine; its packet filtering is far more configurable than Windows'; bulk configuration updates are easier on Unix; and admins can lock it down completely. Not even power users complain they can't reconfigure OpenBSD."
+        },
+        {
+          "s": "steve",
+          "t": "So it's a personal firewall, but it's OpenBSD running on the Windows machine."
+        },
+        {
+          "s": "leo",
+          "t": "Like a UTM on every desk. But how do you tell Windows to get its network from the VM?"
+        },
+        {
+          "s": "steve",
+          "t": "The VM has to publish a virtual network interface for Windows to see. I've never tried it."
+        },
+        {
+          "s": "leo",
+          "t": "Normally the host's NIC is bridged over to the VM."
+        },
+        {
+          "s": "steve",
+          "t": "He offered to explain to anyone interested. That won't fit in a Q&A, so I'll write back and say, okay, give."
+        },
+        {
+          "s": "leo",
+          "t": "That'd be a good show. OpenBSD is a great choice: hardened, and less familiar to Windows and Linux hackers. My worry is Windows sitting right next to that hardware NIC."
+        },
+        {
+          "s": "steve",
+          "t": "You can unbind protocols from a network card. Bind the card only to the VM, and bind Windows networking to the VM's virtual adapter. And with free virtualization like Microsoft's Virtual PC, plus OpenBSD, it could be 100 percent free."
+        },
+        {
+          "s": "leo",
+          "t": "Or VMware Player and a VMware appliance. VMware's virtual appliance marketplace has free security appliances: Astaro, OpenBSD with VMware tools, NetBSD, Stockade, Smoothwall."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe this evolved from someone using one and wondering why Windows couldn't be unbound from the physical interface."
+        },
+        {
+          "s": "leo",
+          "t": "You win, Mike, whoever your corporation is."
+        },
+        {
+          "s": "steve",
+          "t": "I'm going to track him down."
+        },
+        {
+          "s": "leo",
+          "t": "A long episode, but a good one. Send questions to GRC.com/feedback."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did the penetration testers get inside their client's building?",
+      "options": [
+        "They overheard calls on unencrypted wireless headsets and impersonated an employee the office had never met",
+        "They picked the lock",
+        "They hacked the badge system",
+        "They posed as delivery drivers"
+      ],
+      "answer": 0,
+      "explain": "They stayed inside for three days."
+    },
+    {
+      "q": "Why doesn't SSL protect users from the Silent Banker trojan?",
+      "options": [
+        "It works inside the browser, altering transactions before they're encrypted",
+        "It breaks SSL's encryption",
+        "It uses fake certificates only",
+        "Banks don't use SSL"
+      ],
+      "answer": 0,
+      "explain": "It shows users the details they expect while sending the bank the attacker's."
+    },
+    {
+      "q": "Why does Steve say the university's Class B network costs it nothing?",
+      "options": [
+        "Early adopters were simply given large blocks, and IP addresses only cost money when resold",
+        "Taxpayers pay for it",
+        "ISPs give IPs away",
+        "It's using private addresses"
+      ],
+      "answer": 0,
+      "explain": "Steve had to fill out an \"IP Justification Form\" with Level 3."
+    },
+    {
+      "q": "What problem did Steve find with Windows' EFS for his project?",
+      "options": [
+        "Files copied off the drive stay encrypted instead of being decrypted transparently",
+        "It's too slow",
+        "It's not in Windows XP",
+        "It uses weak keys"
+      ],
+      "answer": 0,
+      "explain": "He chose FREE CompuSec's whole-drive encryption instead."
+    },
+    {
+      "q": "How did Steve's warez experiment turn out?",
+      "options": [
+        "His sacrificial computer was deeply infected while he searched for a Eudora key generator",
+        "He found a clean key",
+        "Eudora sued him",
+        "He bought a new copy"
+      ],
+      "answer": 0,
+      "explain": "He'd paid for Eudora many times over."
+    },
+    {
+      "q": "What was clever about Mike's company's desktop firewall?",
+      "options": [
+        "Each PC's network card was given to an OpenBSD virtual machine, so all Windows traffic passed through a Unix firewall",
+        "They used three routers",
+        "Each user had a hardware firewall",
+        "Windows ran inside the VM"
+      ],
+      "answer": 0,
+      "explain": "OpenBSD needed less than 32MB of memory."
+    }
+  ]
+}
