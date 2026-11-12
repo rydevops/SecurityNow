@@ -45,7 +45,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Some listeners thought I was knocking TCP. It's about overhead. A DNS lookup over UDP is two packets. Over TCP it's the handshake (3), the query and answer (2) and the close (2): seven."
+          "t": "Next, some follow-ups. Some listeners thought I was knocking TCP. It's about overhead. A DNS lookup over UDP is two packets. Over TCP it's the handshake (3), the query and answer (2) and the close (2): seven."
         },
         {
           "s": "steve",
@@ -58,7 +58,7 @@
         },
         {
           "s": "steve",
-          "t": "Some ShieldsUP! users suddenly see open ports. We traced it to peer-to-peer programs using Universal Plug and Play to open router ports themselves."
+          "t": "There's also a ShieldsUP! mystery. Some users suddenly see open ports. We traced it to peer-to-peer programs using Universal Plug and Play to open router ports themselves."
         },
         {
           "s": "steve",
@@ -74,7 +74,7 @@
         },
         {
           "s": "steve",
-          "t": "Also, Mac OS X has its first worm. It spreads over iChat and replaces recently used applications with copies of itself."
+          "t": "In other news, Mac OS X has its first worm. It spreads over iChat and replaces recently used applications with copies of itself."
         },
         {
           "s": "leo",
@@ -87,7 +87,7 @@
         },
         {
           "s": "steve",
-          "t": "The OpenVPN how-tos are all I'm working on. I have servers at Level 3 and at home, including a diskless FreeBSD box booting from CompactFlash, and a Windows 2000 server for working out the Windows details."
+          "t": "As for me, the OpenVPN how-tos are all I'm working on. I have servers at Level 3 and at home, including a diskless FreeBSD box booting from CompactFlash, and a Windows 2000 server for working out the Windows details."
         }
       ]
     },
@@ -96,7 +96,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Networking used to belong to one guy at the office. Now everyone at home is learning about subnet masks and DHCP."
+          "t": "Now, today's topic: how home networks work. Networking used to belong to one guy at the office. Now everyone at home is learning about subnet masks and DHCP."
         },
         {
           "s": "steve",
@@ -138,7 +138,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Anything not on the LAN goes to the default gateway, usually your NAT router. The packet is addressed to the remote IP but handed to the router."
+          "t": "So where do packets for the outside world go? Anything not on the LAN goes to the default gateway, usually your NAT router. The packet is addressed to the remote IP but handed to the router."
         },
         {
           "s": "steve",
@@ -171,7 +171,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Most computers are set to \"Obtain an IP address automatically.\" At startup they broadcast: \"I'm new in the neighborhood. Is there a DHCP server?\""
+          "t": "So how does each machine get its address, mask and gateway? Most computers are set to \"Obtain an IP address automatically.\" At startup they broadcast: \"I'm new in the neighborhood. Is there a DHCP server?\""
         },
         {
           "s": "steve",

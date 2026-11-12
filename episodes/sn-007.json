@@ -62,7 +62,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Those seem like innocent days now."
+          "t": "Those seem like innocent days now. How has spyware changed since?"
         },
         {
           "s": "steve",
@@ -108,7 +108,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One of my employees picked up a browser hijacker. My tech support guy removed it, and her machine lost its Internet connection."
+          "t": "And that makes spyware hard to remove. One of my employees picked up a browser hijacker. My tech support guy removed it, and her machine lost its Internet connection."
         },
         {
           "s": "steve",
@@ -130,7 +130,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The original way in is bundling. Spyware rides along with free software. Now reputable download sites advertise \"no adware, nothing bundled.\""
+          "t": "So how do people get spyware in the first place? The original way in is bundling. Spyware rides along with free software. Now reputable download sites advertise \"no adware, nothing bundled.\""
         },
         {
           "s": "steve",
@@ -164,7 +164,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So use Firefox or Opera, which don't run ActiveX, and keep Windows Update current, using IE only for that."
+          "t": "So what should people do? Use Firefox or Opera, which don't run ActiveX, and keep Windows Update current, using IE only for that."
         },
         {
           "s": "steve",
@@ -196,7 +196,7 @@
         },
         {
           "s": "steve",
-          "t": "And the Security Now! page just got a facelift: HTML transcripts, PDFs, and Show Notes for every episode."
+          "t": "One last note: the Security Now! page just got a facelift, with HTML transcripts, PDFs, and Show Notes for every episode."
         }
       ]
     }

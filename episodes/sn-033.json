@@ -66,7 +66,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Stream ciphers, like RC4, mix a keystream into the data. Block ciphers are now the workhorse for bulk encryption: SSL, OpenVPN and the newer WPA mode all use them."
+          "t": "Now, today's topic: block ciphers. Stream ciphers, like RC4, mix a keystream into the data. Block ciphers are now the workhorse for bulk encryption: SSL, OpenVPN and the newer WPA mode all use them."
         },
         {
           "s": "steve",
@@ -108,7 +108,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "If identical plaintext blocks always produced identical ciphertext blocks, patterns would leak. So we use Cipher Block Chaining, CBC: XOR each block with the previous ciphertext block before encrypting it."
+          "t": "Encrypting blocks one at a time has a weakness, though. If identical plaintext blocks always produced identical ciphertext blocks, patterns would leak. So we use Cipher Block Chaining, CBC: XOR each block with the previous ciphertext block before encrypting it."
         },
         {
           "s": "steve",
@@ -126,7 +126,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The classic is DES, the US government's Data Encryption Standard. It's a strong design, but its 56-bit key is now too short. Purpose-built DES-cracking machines have been built."
+          "t": "Now the real ciphers. The classic is DES, the US government's Data Encryption Standard. It's a strong design, but its 56-bit key is now too short. Purpose-built DES-cracking machines have been built."
         },
         {
           "s": "steve",

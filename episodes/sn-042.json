@@ -37,7 +37,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Traffic you request always gets through. It's only unrequested traffic that's blocked."
+          "t": "So when does traffic get through? Traffic you request always gets through. It's only unrequested traffic that's blocked."
         },
         {
           "s": "steve",
@@ -62,7 +62,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "NAT rewrites outgoing packets. It changes the source IP to the router's public IP, and also changes the source port, so when a reply comes back to that port, the router knows which internal computer and conversation it belongs to."
+          "t": "To see why direct connections are hard, you need to know how NAT handles ports. NAT rewrites outgoing packets. It changes the source IP to the router's public IP, and also changes the source port, so when a reply comes back to that port, the router knows which internal computer and conversation it belongs to."
         },
         {
           "s": "leo",
@@ -92,7 +92,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The clever trick, maybe pioneered by the Kazaa people: both sides send packets at each other's router at the same time. Each outgoing packet creates an expectation of return traffic. If the other side's packets look like that expected reply, they get through."
+          "t": "So how do two users behind NAT connect? The clever trick, maybe pioneered by the Kazaa people: both sides send packets at each other's router at the same time. Each outgoing packet creates an expectation of return traffic. If the other side's packets look like that expected reply, they get through."
         },
         {
           "s": "leo",
@@ -130,7 +130,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This only works if your router reuses the same external port when your app sends from the same internal port to a different destination: first the rendezvous server, then your friend. Not all NAT routers do."
+          "t": "There's a catch. This only works if your router reuses the same external port when your app sends from the same internal port to a different destination: first the rendezvous server, then your friend. Not all NAT routers do."
         },
         {
           "s": "leo",
@@ -180,7 +180,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One suggestion: if NAT routers logged denied incoming packets and apps could read the log, they could adjust their outgoing traffic to match. Unlike UPnP, it wouldn't let apps open ports, but as far as I know nobody has done it."
+          "t": "Other ideas have been floated. One: if NAT routers logged denied incoming packets and apps could read the log, they could adjust their outgoing traffic to match. Unlike UPnP, it wouldn't let apps open ports, but as far as I know nobody has done it."
         },
         {
           "s": "steve",
@@ -196,7 +196,7 @@
         },
         {
           "s": "leo",
-          "t": "SpinRite is version 6.0. I've used it since maybe '91 or '92."
+          "t": "On a different note, SpinRite is now version 6.0. I've used it since maybe '91 or '92."
         },
         {
           "s": "steve",

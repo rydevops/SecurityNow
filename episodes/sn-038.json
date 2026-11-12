@@ -33,7 +33,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Tim Berners-Lee's web was static, read-only HTML pages that linked to each other."
+          "t": "To see how we got here, turn back the clock. Tim Berners-Lee's web was static, read-only HTML pages that linked to each other."
         },
         {
           "s": "leo",
@@ -129,7 +129,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "IE has security zones. Any site not listed elsewhere sits in the default Internet zone, which gets your general settings."
+          "t": "So how do I protect myself? IE has security zones. Any site not listed elsewhere sits in the default Internet zone, which gets your general settings."
         },
         {
           "s": "steve",
@@ -187,7 +187,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Steve, you deserve credit. You banged the gong about raw sockets in Windows XP, which let any co-opted machine forge random source IP addresses. About a year ago, Microsoft finally disabled that."
+          "t": "Before we go, some good news. Steve, you deserve credit. You banged the gong about raw sockets in Windows XP, which let any co-opted machine forge random source IP addresses. About a year ago, Microsoft finally disabled that."
         },
         {
           "type": "fact",

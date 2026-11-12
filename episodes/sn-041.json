@@ -50,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Kim asked last week about stolen laptops. A locked hard drive can be unlocked by its manufacturer, and its contents aren't encrypted. The Xbox showed drive locks can be bypassed."
+          "t": "So what is TrueCrypt? Kim asked last week about stolen laptops. A locked hard drive can be unlocked by its manufacturer, and its contents aren't encrypted. The Xbox showed drive locks can be bypassed."
         },
         {
           "s": "steve",
@@ -83,7 +83,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "File containers can be made on the fly, and they work on USB keys. Put TrueCrypt itself on the key and fill the rest with one big container."
+          "t": "TrueCrypt is also portable. File containers can be made on the fly, and they work on USB keys. Put TrueCrypt itself on the key and fill the rest with one big container."
         },
         {
           "s": "steve",
@@ -116,7 +116,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A master key encrypts the whole volume and is stored in a header. But nothing in a TrueCrypt volume looks like anything but random data. Not even the header says what it is."
+          "t": "The design goes further, into plausible deniability. A master key encrypts the whole volume and is stored in a header. But nothing in a TrueCrypt volume looks like anything but random data. Not even the header says what it is."
         },
         {
           "s": "leo",
@@ -162,7 +162,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The newest version can grow file containers dynamically, using NTFS \"sparse files,\" so they take only the space they need."
+          "t": "Then there are everyday conveniences. The newest version can grow file containers dynamically, using NTFS \"sparse files,\" so they take only the space they need."
         },
         {
           "s": "steve",
@@ -230,7 +230,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The hidden header holds the master key for the whole volume. Your password and keyfiles decrypt the header."
+          "t": "Finally, under the hood. The hidden header holds the master key for the whole volume. Your password and keyfiles decrypt the header."
         },
         {
           "s": "leo",

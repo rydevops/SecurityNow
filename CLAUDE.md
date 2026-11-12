@@ -59,6 +59,21 @@ Rules and conventions for working in this repository. Follow them on every task.
   - **Paraphrase.** Don't copy long passages from the transcript or from articles quoted on the show. Short phrases are fine.
   - Don't invent facts. Background added in "Key fact" cards must be accurate and general.
   - If a host gets a fact wrong on the show, keep the line as they said it, and give the correct fact in a card that notes the difference (see Sasser's timing in Episode 1 and the card-number check in Episode 5).
+- **Cover the whole show. Trim words, not facts.** Shows now run two hours or more, and the script should include everything in them, just faster to read:
+  - Read the full transcript, not a summary of it. Cover every segment in the show's order: the opening, Picture of the Week, every news story, GRC and SpinRite updates that carry information, every listener question, and the closing. Skip only sponsor reads, small talk and repeated "coming up" teasers.
+  - There is no length limit. A long episode gets a long script, with more chapters.
+  - Keep every detail a reader would want: names, numbers, CVEs, versions, dates, places, who said what, each host's opinion or reaction, and their recommendations.
+  - Trim by shortening sentences, merging points the hosts repeat, and paraphrasing quoted articles down to the facts. Don't trim by dropping stories or details.
+  - Keep lines to one to three short sentences. Split long explanations into several lines.
+- **Transitions must be smooth.** A reader should never land on a new subject without being told it's coming:
+  - **Open every chapter with a line that names the topic and why it matters** ("Our big story: Synology just patched a critical zero-click flaw…"). Readers can jump to any chapter from the menu, so the first line has to stand on its own. Don't start a chapter mid-thought ("Microsoft fixed that.", "He's right.") or with a pronoun that refers back to the last chapter.
+  - **Bridge every change of subject inside a chapter.** Use a hand-off ("Speaking of fines…", "Staying with Microsoft…"), a host announcing the next item ("Next, a sneaky supply-chain attack."), or a line that links the two stories. Paraphrase the hosts' own hand-offs from the transcript when they have them.
+  - **Group related stories into one chapter** ("Fines from Russia and South Korea"). Unrelated stories get their own chapters.
+  - **Finish a story before moving on.** End it with the takeaway, verdict or reaction the show gave it.
+  - **Introduce each listener question in one line**: who asked, where they're from if given, and what they want to know. Then give the answer.
+  - Short connecting lines are fine, like a host asking the question the next line answers. They must not add facts or opinions the hosts didn't express.
+  - Put a fact card right after the line it explains, never between a question and its answer.
+  - After writing, read only the first line of each chapter, then each line where the subject changes. Each one must make sense on its own.
 - Structure: `episodes/sn-NNN.json` with `number`, `title`, `subtitle`, `date`, `description`, `transcript`, `audio`, and `chapters[]`. Each chapter has `beats[]`; a beat is either a dialogue line `{ "s", "t" }` or a fact card `{ "type": "fact", "title", "t" }`. End with a 4–6 question `quiz[]` (`q`, `options`, `answer` index, `explain`). Write `options` in any order. The app places the correct answer in a different slot for each question (`optionOrder()` in `app.js`), so quizzes never fall into a pattern. Write wrong answers that are plausible.
 - **Show notes:** also check `https://www.grc.com/sn/sn-NNN-notes.pdf` (same numbering as transcripts). Early episodes have none, and the URL returns 404. When notes exist:
   - Set `"notes"` to the PDF URL. The chapter menu then shows a "Show notes (PDF)" link.

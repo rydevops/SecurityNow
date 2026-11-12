@@ -37,7 +37,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The log is the router's version of a personal firewall popping up every time something unsolicited hits you. I think they do it to prove they're useful, until you finally uncheck \"notify me.\""
+          "t": "Here's my take: router logs mostly cry wolf. The log is the router's version of a personal firewall popping up every time something unsolicited hits you. I think they do it to prove they're useful, until you finally uncheck \"notify me.\""
         },
         {
           "s": "steve",
@@ -188,7 +188,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Drives are so big now that many areas are rarely visited. SpinRite reads every sector, inverts the data, writes it back, reads it, inverts it again, and writes and reads it once more."
+          "t": "One last thing: SpinRite. Drives are so big now that many areas are rarely visited. SpinRite reads every sector, inverts the data, writes it back, reads it, inverts it again, and writes and reads it once more."
         },
         {
           "s": "steve",

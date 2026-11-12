@@ -45,7 +45,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A flaw in RealVNC, the popular remote desktop system, completely defeats its authentication. Anyone who finds an exposed RealVNC port can log right in until it's patched."
+          "t": "Next, a serious remote-access flaw. A bug in RealVNC, the popular remote desktop system, completely defeats its authentication. Anyone who finds an exposed RealVNC port can log right in until it's patched."
         },
         {
           "type": "fact",
@@ -79,7 +79,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "ICANN is fighting over the future of the Whois database."
+          "t": "Also in the news: ICANN is fighting over the future of the Whois database."
         },
         {
           "s": "steve",

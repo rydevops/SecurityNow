@@ -59,7 +59,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Today: Netstat, and TCPView, the graphical version Mark Russinovich wrote at Sysinternals. Which, in news that isn't wonderful for the industry, is now a division of Microsoft."
+          "t": "Now our topic: Netstat, and TCPView, the graphical version Mark Russinovich wrote at Sysinternals. Which, in news that isn't wonderful for the industry, is now a division of Microsoft."
         },
         {
           "s": "leo",
@@ -97,7 +97,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I've been on a MacBook lately, which Nerds On Site provided for their conference, testing new menus for GRC in Safari. So I checked Netstat on the Mac too."
+          "t": "So let's get started with Netstat. I've been on a MacBook lately, which Nerds On Site provided for their conference, testing new menus for GRC in Safari. So I checked Netstat on the Mac too."
         },
         {
           "s": "steve",
@@ -155,7 +155,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "When the FBI connected me with a family in Irvine whose machine was sending traffic at us, the first thing I did was open a DOS box and type netstat. They had a whole bunch of connections to port 6667."
+          "t": "Here's a real example of what it reveals. When the FBI connected me with a family in Irvine whose machine was sending traffic at us, the first thing I did was open a DOS box and type netstat. They had a whole bunch of connections to port 6667."
         },
         {
           "s": "steve",
@@ -304,7 +304,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "TCPView shows the same information graphically, refreshing about every five seconds, with green and red highlights as connections appear and disappear. TCPView Pro adds process names on Windows 95, 98 and 2000."
+          "t": "Back to TCPView to finish. It shows the same information graphically, refreshing about every five seconds, with green and red highlights as connections appear and disappear. TCPView Pro adds process names on Windows 95, 98 and 2000."
         },
         {
           "s": "leo",
@@ -324,7 +324,7 @@
         },
         {
           "s": "steve",
-          "t": "SpinRite also shows how many error corrections your drive makes. Drives are now so dense that ECC happens constantly. If the rate rises over time, that's an early warning."
+          "t": "Speaking of what your hardware is doing, SpinRite also shows how many error corrections your drive makes. Drives are now so dense that ECC happens constantly. If the rate rises over time, that's an early warning."
         },
         {
           "s": "steve",

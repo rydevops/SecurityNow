@@ -50,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Right now, from my house, I can see three neighbors' access points running wide open."
+          "t": "Now, today's topic: open wireless access points. Right now, from my house, I can see three neighbors' access points running wide open."
         },
         {
           "s": "leo",
@@ -92,7 +92,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Shopping and banking sites use SSL, so that's scrambled. Ordinary email and web pages aren't."
+          "t": "So what can a sniffer actually read? Shopping and banking sites use SSL, so that's scrambled. Ordinary email and web pages aren't."
         },
         {
           "s": "steve",
@@ -118,7 +118,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "At home I turn on WEP, or better, WPA."
+          "t": "So what should you do at home? I turn on WEP, or better, WPA."
         },
         {
           "s": "steve",
@@ -147,7 +147,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Coffee shops, airports and hotels leave Wi-Fi open so people can connect. So what do you do?"
+          "t": "That covers home. But coffee shops, airports and hotels leave Wi-Fi open so people can connect. So what do you do there?"
         },
         {
           "s": "steve",

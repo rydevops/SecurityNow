@@ -38,7 +38,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Listeners asked: if primes are rare, why not precompute all of them and try each one?"
+          "t": "First loose end: primes. Listeners asked, if primes are rare, why not precompute all of them and try each one?"
         },
         {
           "s": "leo",
@@ -72,7 +72,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Diffie-Hellman's one-way function is exponentiation. RSA's is multiplication. Reversing it is factoring: find the two primes. Know either one and you just divide."
+          "t": "So how hard is factoring? Diffie-Hellman's one-way function is exponentiation. RSA's is multiplication. Reversing it is factoring: find the two primes. Know either one and you just divide."
         },
         {
           "s": "steve",
@@ -123,7 +123,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You keep your private key private. But what if you lose it? Your hard drive crashes, or your token goes missing."
+          "t": "Next loose end: key recovery. You keep your private key private. But what if you lose it? Your hard drive crashes, or your token goes missing."
         },
         {
           "s": "leo",
@@ -164,7 +164,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's a toe-curling concept. Two points define a line. Draw a line on an x-y grid, and let the place it crosses the y-axis be the key."
+          "t": "The solution is a toe-curling concept. Two points define a line. Draw a line on an x-y grid, and let the place it crosses the y-axis be the key."
         },
         {
           "s": "steve",
@@ -206,7 +206,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "A listener says Thawte still offers free personal certificates, though for shorter periods."
+          "t": "Last loose end: certificates. A listener says Thawte still offers free personal certificates, though for shorter periods."
         },
         {
           "type": "fact",

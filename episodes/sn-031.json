@@ -28,7 +28,7 @@
         },
         {
           "s": "steve",
-          "t": "A hoax keeps circulating that every laptop has a hidden hardware keystroke logger sending your typing out over the network. It's not true."
+          "t": "On a lighter note, a hoax keeps circulating that every laptop has a hidden hardware keystroke logger sending your typing out over the network. It's not true."
         },
         {
           "s": "leo",
@@ -58,7 +58,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Picture a decoder ring with two concentric rings of symbols. Ours has 28: A–Z, period and space."
+          "t": "Now, our crypto lesson, starting simple. Picture a decoder ring with two concentric rings of symbols. Ours has 28: A–Z, period and space."
         },
         {
           "s": "steve",
@@ -100,7 +100,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Now drop the inner ring. Each character just moves some number of steps around the ring."
+          "t": "So how do we make it unbreakable? Drop the inner ring. Each character just moves some number of steps around the ring."
         },
         {
           "s": "steve",
@@ -142,7 +142,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Next step: replace ping-pong balls with an algorithm that generates pseudorandom numbers. Good ones are so random that it takes millions of samples to tell."
+          "t": "Pads are impractical, so here's the next step: replace the ping-pong balls with an algorithm that generates pseudorandom numbers. Good ones are so random that it takes millions of samples to tell."
         },
         {
           "s": "leo",
@@ -184,7 +184,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The last piece is Exclusive OR. AND outputs 1 only if both inputs are 1. OR outputs 1 if either is. XOR outputs 1 if either is 1, but not both."
+          "t": "That leaves one last piece: how to combine the keystream with the data. The answer is Exclusive OR. AND outputs 1 only if both inputs are 1. OR outputs 1 if either is. XOR outputs 1 if either is 1, but not both."
         },
         {
           "s": "leo",

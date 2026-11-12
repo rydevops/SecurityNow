@@ -41,7 +41,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Microsoft's first advice was to unregister a DLL, which wasn't really enough. Then Ilfak Guilfanov stepped in."
+          "t": "Microsoft's first advice was to unregister a DLL, which wasn't really enough. That's where tonight's guest, Ilfak Guilfanov, stepped in."
         },
         {
           "s": "steve",
@@ -95,7 +95,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Is Windows 95, 98 or ME vulnerable?"
+          "t": "Ilfak, many listeners still run older Windows. Is Windows 95, 98 or ME vulnerable?"
         },
         {
           "s": "steve",
@@ -116,7 +116,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "How did you write it so fast, Ilfak?"
+          "t": "Ilfak's patch has been downloaded enormously. How did you write it so fast, Ilfak?"
         },
         {
           "s": "steve",
@@ -157,7 +157,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Microsoft is slow partly because of liability. A bad patch can break things."
+          "t": "Now, Microsoft's own fix. Microsoft is slow partly because of liability. A bad patch can break things."
         },
         {
           "s": "steve",

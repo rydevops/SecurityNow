@@ -42,7 +42,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's the current controversy over warrantless NSA surveillance of US citizens after 9/11."
+          "t": "That power raises hard questions. There's the current controversy over warrantless NSA surveillance of US citizens after 9/11."
         },
         {
           "s": "leo",
@@ -83,7 +83,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So should governments get a backdoor?"
+          "t": "Which leads to the big question: should governments get a backdoor?"
         },
         {
           "s": "leo",
@@ -125,7 +125,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "What's so cool about modern cryptography is that there's no hocus-pocus. Remember the cartoon where the professor fills the blackboard with equations and writes, \"…and then a miracle happens\"? There's none of that."
+          "t": "Whatever the politics, the math is solid. What's so cool about modern cryptography is that there's no hocus-pocus. Remember the cartoon where the professor fills the blackboard with equations and writes, \"…and then a miracle happens\"? There's none of that."
         },
         {
           "s": "steve",
@@ -159,7 +159,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "VPNs. Shopping sites encrypt your card number only while it crosses the Internet; the merchant decrypts it to process it."
+          "t": "So where is crypto used today? VPNs, for one. And shopping sites encrypt your card number only while it crosses the Internet; the merchant decrypts it to process it."
         },
         {
           "s": "leo",

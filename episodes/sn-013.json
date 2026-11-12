@@ -66,7 +66,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I got a lot of mail objecting to what I said about MAC filtering and SSID hiding."
+          "t": "Next, some feedback. I got a lot of mail objecting to what I said about MAC filtering and SSID hiding."
         },
         {
           "s": "leo",
@@ -91,7 +91,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Once WEP was so badly broken, real security experts designed WPA. Even its simplest form, done properly, is effectively uncrackable as long as nobody gets your key."
+          "t": "Now our main topic: Wi-Fi security you can't break. Once WEP was so badly broken, real security experts designed WPA. Even its simplest form, done properly, is effectively uncrackable as long as nobody gets your key."
         },
         {
           "s": "steve",

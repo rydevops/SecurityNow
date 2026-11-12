@@ -33,7 +33,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It began toward the end of 1998 and in 1999, with attacks from networks of UNIX machines. The goal is to generate a lot of bandwidth."
+          "t": "Let's start with how a flood works. It began toward the end of 1998 and in 1999, with attacks from networks of UNIX machines. The goal is to generate a lot of bandwidth."
         },
         {
           "s": "steve",
@@ -75,7 +75,7 @@
         },
         {
           "s": "steve",
-          "t": "Microsoft fixed that. The original attacks on servers were TCP protocol attacks, SYN floods."
+          "t": "Microsoft fixed that bug long ago. Another early example: the first attacks on servers were TCP protocol attacks, SYN floods."
         },
         {
           "s": "steve",
@@ -97,7 +97,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Hold your hand in the sun and it feels warm. Focus that same sunlight to a point with a magnifying glass, and you're burned."
+          "t": "Floods are a different animal, and the best way to picture one is a magnifying glass. Hold your hand in the sun and it feels warm. Focus that same sunlight to a point, and you're burned."
         },
         {
           "s": "steve",
@@ -113,7 +113,7 @@
         },
         {
           "s": "steve",
-          "t": "The first big wake-up was a 15-year-old called Mafiaboy, who knocked Yahoo!, Dell, eBay, Amazon and CNN offline. One kid. Estimated damage: about $1.7 billion."
+          "t": "Floods first made headlines with a 15-year-old called Mafiaboy, who knocked Yahoo!, Dell, eBay, Amazon and CNN offline. One kid. Estimated damage: about $1.7 billion."
         },
         {
           "s": "steve",
@@ -135,7 +135,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Those attacks inspired young hackers who hung out on IRC, Internet Relay Chat. A channel operator can kick or ban anyone, which caused fights among teenagers."
+          "t": "Mafiaboy's attacks inspired young hackers who hung out on IRC, Internet Relay Chat. A channel operator can kick or ban anyone, which caused fights among teenagers."
         },
         {
           "s": "steve",
@@ -172,7 +172,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "When GRC was first attacked this way, I reverse-engineered a bot and surreptitiously joined its private channel. You constantly see machines joining and leaving."
+          "t": "I've watched these botnets up close. When GRC was first attacked this way, I reverse-engineered a bot and surreptitiously joined its private channel. You constantly see machines joining and leaving."
         },
         {
           "s": "steve",
@@ -213,6 +213,10 @@
       "title": "How Machines Get Recruited",
       "beats": [
         {
+          "s": "leo",
+          "t": "So how do innocent people's machines get recruited?"
+        },
+        {
           "s": "steve",
           "t": "Any way to get code running on someone's machine has been used: email attachments, shady websites that exploit known flaws, or \"a free utility that will speed up your Internet connection five times.\""
         },
@@ -231,7 +235,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Then came profit. If Mafiaboy did $1.7 billion in damage, wouldn't companies pay to avoid it?"
+          "t": "Then came the profit motive. If Mafiaboy did $1.7 billion in damage, wouldn't companies pay to avoid it?"
         },
         {
           "s": "steve",
@@ -264,7 +268,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The traffic comes from every ISP and network. Nowhere does it look unusual until it converges on the target. You can't practically trace it back."
+          "t": "So can attacks like these be stopped? The traffic comes from every ISP and network. Nowhere does it look unusual until it converges on the target. You can't practically trace it back."
         },
         {
           "s": "steve",
@@ -306,7 +310,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "People think I'm an alarmist. I'm just explaining what is. Still, it doesn't seem to be escalating. Extortionists have to get paid, often by Western Union, and governments now cooperate. Five years ago, police would say \"a what?\""
+          "t": "So how worried should we be? People think I'm an alarmist. I'm just explaining what is. Still, it doesn't seem to be escalating. Extortionists have to get paid, often by Western Union, and governments now cooperate. Five years ago, police would say \"a what?\""
         },
         {
           "s": "leo",
@@ -327,7 +331,7 @@
         },
         {
           "s": "steve",
-          "t": "And a listener got a $1,199 quote from a data recovery company, said \"send it back,\" bought SpinRite, and had his drive working three hours later."
+          "t": "On a happier note, a listener got a $1,199 quote from a data recovery company, said \"send it back,\" bought SpinRite, and had his drive working three hours later."
         },
         {
           "s": "steve",

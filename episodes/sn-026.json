@@ -38,7 +38,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Last week was the lower layers."
+          "t": "Now, part two of how the Internet works. Last week covered the lower layers."
         },
         {
           "s": "steve",
@@ -76,7 +76,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The IP address gets a packet to a machine. The port says which service on that machine should receive it."
+          "t": "That gets a packet to the right machine. Ports take it the rest of the way: the IP address gets a packet to a machine, and the port says which service on that machine should receive it."
         },
         {
           "s": "steve",
@@ -114,7 +114,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "UDP adds a source port and a destination port, and that's about it. The sender usually picks the source port automatically."
+          "t": "Now the two protocols that carry ports, starting with the simpler one. UDP adds a source port and a destination port, and that's about it. The sender usually picks the source port automatically."
         },
         {
           "s": "steve",
@@ -147,7 +147,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "TCP does much more. It even combines small writes into larger packets to cut overhead, which means the first bytes can wait a moment. That's bad for real-time."
+          "t": "TCP, by contrast, does much more. It even combines small writes into larger packets to cut overhead, which means the first bytes can wait a moment. That's bad for real-time."
         },
         {
           "s": "steve",

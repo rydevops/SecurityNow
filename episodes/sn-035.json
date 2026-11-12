@@ -33,7 +33,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Hashes go by many names: message digest, fingerprint, cryptographic checksum, manipulation detection code."
+          "t": "Now, today's topic. Hashes go by many names: message digest, fingerprint, cryptographic checksum, manipulation detection code."
         },
         {
           "s": "steve",
@@ -75,7 +75,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "To sign an email, PGP hashes it into a fingerprint. Just appending the fingerprint isn't enough, since a forger could change the message and recompute it."
+          "t": "So how does signing use a hash? To sign an email, PGP hashes it into a fingerprint. Just appending the fingerprint isn't enough, since a forger could change the message and recompute it."
         },
         {
           "s": "steve",
@@ -113,7 +113,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Download sites often post MD5 or SHA-1 hashes. Hash the file yourself with a free tool and compare. If they match, you have exactly the file they intended."
+          "t": "Hashes have a simpler everyday use too. Download sites often post MD5 or SHA-1 hashes. Hash the file yourself with a free tool and compare. If they match, you have exactly the file they intended."
         },
         {
           "s": "leo",
@@ -131,7 +131,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "How many people must be in a room for better-than-even odds that someone shares your birthday? 253."
+          "t": "Finally, the attack hashes have to withstand. First, a puzzle: how many people must be in a room for better-than-even odds that someone shares your birthday? 253."
         },
         {
           "s": "steve",

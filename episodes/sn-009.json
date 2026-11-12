@@ -45,7 +45,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "As anti-spyware scanners get better, spyware authors have adopted rootkit techniques. Source code is easy to find, at sites like rootkit.com and in Phrack magazine's final issue."
+          "t": "Rootkits started with UNIX intruders, but now spyware uses them. As anti-spyware scanners get better, spyware authors have adopted rootkit techniques. Source code is easy to find, at sites like rootkit.com and in Phrack magazine's final issue."
         },
         {
           "s": "steve",
@@ -70,7 +70,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Programs, including scanners, ask the operating system for everything. To list a directory, you call \"find first file,\" then \"find next file\" until there are no more."
+          "t": "So how does a rootkit hide? Programs, including scanners, ask the operating system for everything. To list a directory, you call \"find first file,\" then \"find next file\" until there are no more."
         },
         {
           "s": "steve",
@@ -117,7 +117,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In-system detection has a basic problem: a compromised machine can lie about anything."
+          "t": "So how do you catch a rootkit? In-system detection has a basic problem: a compromised machine can lie about anything."
         },
         {
           "s": "steve",
@@ -159,7 +159,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The real cure is a hardened operating system. Traditional advice is not to run as administrator, but too much software breaks."
+          "t": "Detection is one thing. The real cure is a hardened operating system. Traditional advice is not to run as administrator, but too much software breaks."
         },
         {
           "s": "leo",
