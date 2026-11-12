@@ -1,0 +1,360 @@
+{
+  "number": 198,
+  "title": "Listener Feedback #67",
+  "subtitle": "A Q&A on Assembly, scripts, sockets, SSL caching, CPU bugs and detecting SSL proxying",
+  "date": "2009-05-28",
+  "description": "Twelve questions and definitions: what Steve means by a \"script,\" what a socket (versus a port) is, why you can't blanket everything in HTTPS (caching), why CPUs so rarely have exploitable bugs, how to tell if your employer is SSL-proxying you, local port scanning with SuperScan, and Steve's own source-control setup. Plus getting started in Assembly with MASM32, false JavaScript warnings in PDFs, the Kindle DX \"kill bit\" flap, Vista SP2, and the Mac Java flaw Apple still hadn't patched.",
+  "transcript": "https://www.grc.com/sn/sn-198.txt",
+  "audio": "http://media.GRC.com/sn/SN-198.mp3",
+  "chapters": [
+    {
+      "title": "Vista SP2, XP SP3 and Adobe's New Schedule",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Good news: Microsoft released Vista Service Pack 2 (also a hybrid SP2 for Server 2008). You need SP1 first, but then SP1 plus SP2 brings a new Vista install current without grinding through a year of individual updates."
+        },
+        {
+          "s": "steve",
+          "t": "Also, the XP SP3 blocker tool expired May 19, so Windows Update is offering SP3 again. SP3 broke some of my systems and my tech guy's, so I'm cautiously adding it to machines that tolerate it. And Apple still hasn't patched a Java flaw known since December 2008, now being exploited in the wild; disable Java applets in Safari and Firefox."
+        },
+        {
+          "s": "steve",
+          "t": "Adobe, under pressure over its endless PDF flaws, announced regular quarterly updates synced to Microsoft's Patch Tuesday. Quarterly isn't often enough for a document reader; I predict a bad flaw will force an out-of-cycle fix. And their habit of patching version 9 first and 7/8 a week later deliberately leaves older users exposed, a flawed policy."
+        },
+        {
+          "type": "fact",
+          "title": "Rolled-up service packs",
+          "t": "A service pack bundles all fixes since the previous one into a single install, so a fresh system needs only the latest base plus the latest pack rather than hundreds of incremental updates. Vista SP2 requires SP1 first because it contains only the changes made after SP1."
+        }
+      ]
+    },
+    {
+      "title": "Errata: Ada, and the Bunnons",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An errata: listeners corrected my dated dismissal of the Ada language, it has many compilers, open and closed, and colleges teach it. Point taken, it's everywhere."
+        },
+        {
+          "s": "steve",
+          "t": "And I loved the new \"Star Trek\", seeing it twice; it's a reset, not just a prequel, which frees it from the original timeline. Terminator Salvation was fine but missed Arnold. As a teenager my friends and I made an 8mm Star Trek film with transporter effects scratched into the emulsion, and alien \"Bunnon\" villains whose voices we made by learning to speak lines backwards, recording that, and reversing the tape."
+        },
+        {
+          "s": "steve",
+          "t": "And I once had dinner with Gene Roddenberry at COMDEX. He explained the original series was canceled after three seasons on raw ratings, but reprocessed later with new demographic (Nielsen) technology it had the most advertiser-perfect audience ever measured, young, upwardly mobile newlyweds."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite and the Money-Back Guarantee",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Bob Blaine wrote: an XP machine wouldn't boot, with an obscure message that turned out to mean a corrupt registry file. SpinRite fixed it so he could get into Windows and back up all his data before replacing the drive."
+        },
+        {
+          "s": "leo",
+          "t": "Worth emphasizing the money-back guarantee, since a new drive costs about the same as SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Right, and the issue isn't buying another drive, it's the irreplaceable data, photo libraries never backed up. Put everything on an $89 terabyte drive and I'll have your money when it fails. There's no demo, because running the demo would already do the recovery, but the guarantee means try it free and get your money back if it doesn't help."
+        }
+      ]
+    },
+    {
+      "title": "Getting Started in Assembly With MASM32",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Alexandre, 18, in Quebec, loves the show's Assembly talk and asks which assembler Steve uses and recommends."
+        },
+        {
+          "s": "steve",
+          "t": "Go to MASM32.com. It's a complete, free, turnkey environment for programming Windows in Assembly, a v10 IDE, all the libraries and include files, sample code, source, and an active enthusiast forum. I use MASM, Microsoft's assembler, because it adds pleasant syntax, .if/.else/.endif, repeat/while loops, and an \"invoke\" keyword for calling the Windows API, that assembles into exactly the code I'd write by hand, with no overhead."
+        },
+        {
+          "s": "steve",
+          "t": "I keep a macro library of little tricks, a \"zero eax\" that does an XOR, a \"roundiv\" rounding division. And readable Assembly is possible; most people are put off by cryptic code running down the left margin, but I format mine so I can come back and read it."
+        },
+        {
+          "s": "leo",
+          "t": "I may teach a programming tutorial at my kid's high school, and starting with Assembly, or that PDP-8 emulator with its eight opcodes, is a great way to learn how a computer actually works."
+        }
+      ]
+    },
+    {
+      "title": "What Exactly Is a \"Script\"?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marsh asks what Steve means by \"scripts,\" given all the web technologies, Java, ASP, Perl, XML."
+        },
+        {
+          "s": "steve",
+          "t": "There's no rigid definition, but a script is generally interpreted step by step rather than compiled to machine code (though interpreted BASIC muddies that). My concern isn't the interpreting; it's specifically that a web browser receives a page from a server you may not trust, finds scripting commands in the HTML, and runs that code, like JavaScript, on your machine."
+        },
+        {
+          "s": "steve",
+          "t": "Server-side scripting (ASP, Perl via CGI) runs on the server and can't touch your machine, so it's far less dangerous. The real issue isn't the word \"script\" at all; it's code from a website running on your hardware, which is also why ActiveX and even that Mac Java flaw are dangerous. NoScript lets you withhold that until you reach a site you trust."
+        },
+        {
+          "type": "fact",
+          "title": "Where the danger actually lives",
+          "t": "Scripting itself is powerful and useful; the risk is specifically client-side code arriving from an untrusted web server and executing in your browser. Server-side scripts run on the server and can't reach your files, which is why the meaningful line is \"whose machine runs the code,\" not \"interpreted versus compiled.\""
+        }
+      ]
+    },
+    {
+      "title": "Sockets and Ports",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Victor asks what a socket is."
+        },
+        {
+          "s": "steve",
+          "t": "The term came from Berkeley's UNIX networking. A socket is an abstraction for an endpoint of communication, the thing your program talks to, much like a file \"handle.\" You create a socket, give it an address, connect it to a socket on a remote machine, and reading and writing it moves data across the network."
+        },
+        {
+          "s": "leo",
+          "t": "I get asked \"what's a port?\" a lot. Same thing?"
+        },
+        {
+          "s": "steve",
+          "t": "No. A port is just a number from 1 to 65535 carried by TCP or UDP packets (IP itself has no ports). It's the final switching stage: a packet arriving for port 80 goes to the web server, port 110 to the email service. A socket is the programmer's-side abstraction; a port is the packet-side abstraction for routing to the right service at an IP."
+        }
+      ]
+    },
+    {
+      "title": "Why Not Encrypt Everything?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Shawn notes downsides to blanketing all web content in HTTPS: browsers don't cache HTTPS content, so every image and script reloads every time, and ISP caching proxies can't cache it either, wasting bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "He's right, and you usually want that, your banking pages shouldn't be written to disk where malware or another user could scrounge them. And bypassing proxies is exactly why ShieldsUP!'s entry page uses HTTPS, so I test your machine, not your ISP's proxy."
+        },
+        {
+          "s": "steve",
+          "t": "But I was distinguishing the secrecy of the content from the security of the connection. I'd like every connection secure by default, even for ordinary email, with an extra \"also don't cache this\" layer for truly sensitive content. It's immature technology we're all making the best of."
+        },
+        {
+          "s": "leo",
+          "t": "I blame myself for saying \"just use HTTPS for everything\", caching really does give a big performance boost."
+        }
+      ]
+    },
+    {
+      "title": "Why CPUs Rarely Have Exploitable Bugs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Simon asks why we never hear of processor microcode flaws being exploited, given how complex modern CPUs are, out-of-order execution, branch prediction, instruction renaming."
+        },
+        {
+          "s": "steve",
+          "t": "Great question. There have been CPU bugs, famously the Pentium FDIV divide flaw that gave wrong spreadsheet answers. But chips are built like NASA shuttle code: they must be right, because a mistake gets baked into millions of units at enormous cost, as Intel learned (the FDIV recall cost a fortune)."
+        },
+        {
+          "s": "steve",
+          "t": "Intel and AMD can afford man-centuries of verification and run huge regression suites emulating the next-generation chip until everything passes before shipping. It's not that CPUs are simple, they're mind-boggling, it's that the right tools, methodology and the sheer cost of error force correctness in a way consumer software economics never do."
+        },
+        {
+          "type": "fact",
+          "title": "The FDIV bug",
+          "t": "The 1994 Pentium floating-point division flaw returned slightly wrong results for certain operands. The recall and replacement cost Intel hundreds of millions and became the cautionary tale that drives the exhaustive verification chipmakers do, which is why exploitable CPU bugs stay rare."
+        }
+      ]
+    },
+    {
+      "title": "False JavaScript Warnings in PDFs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew (a USGS topographic map) and Eric (printed-to-PDF documents) both disabled Reader's JavaScript and now get pop-ups claiming the PDF contains JavaScript."
+        },
+        {
+          "s": "steve",
+          "t": "These are mostly false positives, laziness on Adobe's part, since they're not used to running with JavaScript off. A PDF may carry a lazy tag saying it \"may\" have JavaScript when it doesn't. There are genuine cases, interactive forms like my state's mail-in ballot form, but for static documents you just click \"no\" and everything works fine."
+        },
+        {
+          "s": "steve",
+          "t": "And that's the point: like NoScript, you're told, so you can decide. Keep JavaScript off by default and enable it only when a document you trust actually needs it."
+        }
+      ]
+    },
+    {
+      "title": "XP Mode and Kindle DX \"Kill Bits\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "William asks whether Windows 7's XP Mode properly sandboxes XP, given its integration lets XP apps share the Windows 7 desktop."
+        },
+        {
+          "s": "steve",
+          "t": "I'm skeptical it's a true security sandbox. Users would expect XP-Mode apps to see their documents and hard drive, so Microsoft has likely made the host drive transparently available, which would zero out its value as a sandbox. We'll find out once Windows 7 ships."
+        },
+        {
+          "s": "leo",
+          "t": "And Rick canceled his Kindle DX order over a Slashdot article about hardware \"kill bits.\""
+        },
+        {
+          "s": "steve",
+          "t": "It's singular, one kill bit, and only about text-to-speech: some Random House titles require that they not be read aloud. Amazon built that single bit into its content spec. Slashdot exaggerated it; there don't have to be other kill bits. Just be aware not every book can be read aloud."
+        }
+      ]
+    },
+    {
+      "title": "Detecting SSL Proxying",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve Vance asks how to tell if his employer has installed a certificate and is SSL-proxying (man-in-the-middling) his HTTPS, even though the address bar looks green and normal."
+        },
+        {
+          "s": "steve",
+          "t": "Simple: go to any secure site (ShieldsUP!'s entry page works) and inspect the certificate's chain of trust. For GRC's VeriSign certificate you'll see GRC.com, a VeriSign intermediate, and the trusted root, nothing else."
+        },
+        {
+          "s": "steve",
+          "t": "In a proxying corporate environment, the chain would instead link GRC.com to some non-trusted certificate authority planted in your browser that generated a certificate on the fly, not back to GRC's real certificate. Compare the chain at work versus at home; if they differ, something's going on."
+        },
+        {
+          "s": "leo",
+          "t": "And CryptoLink would help, because it tunnels out?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, CryptoLink is designed to find any opening out, spraying SYN packets to many ports (its packets are self-authenticating, so it can use any port). Only a corporate border so locked down that nothing unproxied escapes could stop it, which is unlikely."
+        }
+      ]
+    },
+    {
+      "title": "Local Port Scanning With SuperScan",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ren wants to verify his travel router leaves no ports open, but ShieldsUP! only scans the Internet-facing router, not an intermediate one on the LAN."
+        },
+        {
+          "s": "steve",
+          "t": "Great question, we've never covered local port scanning. Foundstone (now part of McAfee) makes a free, well-designed, standalone Windows scanner called SuperScan. Set up the travel router with a machine behind it, then from another machine on the same LAN use SuperScan to scan all the ports on that IP."
+        },
+        {
+          "s": "steve",
+          "t": "ShieldsUP! is deliberately an Internet-facing test; SuperScan gives you the intra-LAN test Ren needs. It lost some functionality when Windows removed raw sockets, but it still does plenty. Recommended without hesitation."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Source Control",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Darius asks how Steve keeps source code safe and versioned while moving between GRC and Starbucks."
+        },
+        {
+          "s": "steve",
+          "t": "I don't use SVN. I edit in Brief (my 16-bit DOS editor) and use a tool called FileBack PC with Jungle Disk and Amazon S3 as the repository. FileBack PC is a powerful backup utility with versioning, keep up to 20 copies, no two closer than an hour, exclude .exe/.map/.err, and so on."
+        },
+        {
+          "s": "steve",
+          "t": "Jungle Disk encrypts on the client, so nothing readable ever sits at Amazon, I'm not trusting my source to anyone. Working at Starbucks, everything is transparently copied to S3 with multiple versions, so when I'm home it's all there, and I can reach back in time to recover code I deleted prematurely."
+        },
+        {
+          "s": "leo",
+          "t": "You should try Git someday, but if it works for you, you're still on Assembly and a DOS box anyway."
+        }
+      ]
+    },
+    {
+      "title": "The AirPort Express as a Travel Router",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David offers a travel-router tip: an Apple AirPort Express does what the D-Link does, wall-wart form with swing-out prongs, serves WiFi from a wired connection, and also extends a network, shares a USB printer, and streams iTunes audio to a stereo. One drawback: you configure it with an Apple utility, not a web server, less convenient for Windows."
+        },
+        {
+          "s": "steve",
+          "t": "I love that it plugs straight into the wall like the D-Link Mark Thompson uses: plug into the hotel's wired network and it becomes your WPA-secured wireless router, protecting you while you roam the room."
+        },
+        {
+          "s": "leo",
+          "t": "Apple says you can set it up from Windows with iTunes or their AirPort utility. Everyone makes travel routers now, Linksys, Netgear, D-Link, Asus, Belkin, Apple; you want something small with a built-in plug and no cords to drag around."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the real security risk Steve associates with \"scripting\"?",
+      "options": [
+        "Code arriving from an untrusted website and executing in your browser, not interpretation itself",
+        "Any interpreted language being inherently insecure",
+        "Server-side Perl scripts reading your files",
+        "Compiled programs running too fast to audit"
+      ],
+      "answer": 0,
+      "explain": "The danger is client-side code from a server you may not trust running on your machine (as with JavaScript or ActiveX); server-side scripts can't reach your files, so \"whose machine runs it\" is the real line."
+    },
+    {
+      "q": "How does a socket differ from a port?",
+      "options": [
+        "A socket is the programmer's abstraction for a communication endpoint; a port is a number carried in TCP/UDP packets to route them to the right service",
+        "They are identical",
+        "A socket is hardware, a port is software",
+        "A port holds data, a socket holds the key"
+      ],
+      "answer": 0,
+      "explain": "A socket (from Berkeley UNIX) is what a program reads and writes like a handle; a port is a 1-65535 number in TCP/UDP packets that tells the OS which service (port 80 web, 110 mail) a packet is for."
+    },
+    {
+      "q": "Why does blanketing all web content in HTTPS hurt performance?",
+      "options": [
+        "Browsers and ISP caching proxies won't cache HTTPS content, so everything reloads every time",
+        "HTTPS packets are larger than the network allows",
+        "It requires a new certificate per page",
+        "Encrypted data can't travel over cable modems"
+      ],
+      "answer": 0,
+      "explain": "HTTPS content isn't cached (by design, so sensitive pages aren't written to disk), so images and scripts must be re-downloaded and shared ISP proxies can't help, wasting bandwidth."
+    },
+    {
+      "q": "Why are exploitable CPU/microcode bugs so much rarer than software bugs?",
+      "options": [
+        "Chipmakers can afford exhaustive verification because an error baked into millions of units is enormously costly, like the Pentium FDIV recall",
+        "CPUs are too simple to have bugs",
+        "Microcode is encrypted and unexploitable",
+        "CPU designers never make mistakes"
+      ],
+      "answer": 0,
+      "explain": "The economics force correctness: huge regression testing before shipping, because a flaw replicated across millions of chips (as FDIV showed) costs hundreds of millions, unlike patchable consumer software."
+    },
+    {
+      "q": "How can you tell whether your employer is SSL-proxying (man-in-the-middling) your HTTPS?",
+      "options": [
+        "Inspect the certificate's chain of trust; a planted corporate CA will appear instead of the site's real authority",
+        "Check whether the address bar is green",
+        "See if pages load slower than at home",
+        "Look for a warning pop-up"
+      ],
+      "answer": 0,
+      "explain": "Even with a normal-looking green bar, the certificate chain reveals proxying: it links the site to a non-trusted CA installed in your browser rather than to the site's genuine certificate authority."
+    },
+    {
+      "q": "What does the Kindle DX \"kill bit\" actually control?",
+      "options": [
+        "Whether a particular title may be read aloud by text-to-speech",
+        "Whether Amazon can delete the whole device remotely",
+        "Whether the device can connect to WiFi",
+        "Whether PDFs can be opened"
+      ],
+      "answer": 0,
+      "explain": "Despite Slashdot's framing, it's a single bit, set per title (some Random House books), that disables the read-aloud feature; it doesn't reduce the device's other functionality."
+    }
+  ]
+}

@@ -1,0 +1,700 @@
+{
+  "number": 162,
+  "title": "Listener Feedback Q&A #50",
+  "subtitle": "Bank password defenses, a school locked down with OpenDNS, and Chrome's leftovers",
+  "date": "2008-09-18",
+  "description": "Mac OS X 10.5.5 fixes 33 problems, iTunes 8 crashes Windows, and Steve meets Yubico's Stina Ehrensvärd. Then the 50th Q&A: Trend Micro's victims, Wells Fargo's lockout policy, other case-insensitive banks and why phone banking may be the reason, an insecure corporate timesheet system, rule-bound random passwords, reading data under data, whether Windows is less secure than other systems, a high school that tamed its network with OpenDNS, what \"fixed\" means for Chrome's license, Chrome as an app platform, and what Chrome leaves behind when you remove it.",
+  "transcript": "https://www.grc.com/sn/sn-162.txt",
+  "audio": "http://media.GRC.com/sn/SN-162.mp3",
+  "chapters": [
+    {
+      "title": "Sold Out, and VeriSign",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The king of security, Steve Gibson, like the margarine boy with his little crown."
+        },
+        {
+          "s": "steve",
+          "t": "162 weeks now. It's been a rough week, with the market down again over the AIG scare."
+        },
+        {
+          "s": "leo",
+          "t": "We're fortunate. Despite the downturn, advertisers have kept supporting TWiT to the point we're sold out. Another company wants your show, and we only have three spots. When Visa's buy ends, you'll like the new one, which I'll run by you as always: VeriSign. I think it's because of your focus on their secure login technology."
+        },
+        {
+          "s": "steve",
+          "t": "I have an unread email from Gary at VeriSign, with a bunch of news on their end."
+        },
+        {
+          "s": "leo",
+          "t": "Astaro's been with us more than two years and Audible more than a year. As long as advertisers and the audience support us, we keep going."
+        },
+        {
+          "s": "steve",
+          "t": "And there's no sign of running out of material. I'm saving some horrific new revelations about Chrome for the end. This is our 50th Q&A."
+        }
+      ]
+    },
+    {
+      "title": "Mac OS X 10.5.5",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Apple's OS X 10.5.5 is out."
+        },
+        {
+          "s": "leo",
+          "t": "33 fixes."
+        },
+        {
+          "s": "steve",
+          "t": "A huge number. Including a way users could log in without a password or change another user's password."
+        },
+        {
+          "s": "leo",
+          "t": "Oh my goodness."
+        },
+        {
+          "s": "steve",
+          "t": "Arbitrary code execution, denial of service, and DNS cache poisoning, which we were hoping they'd address."
+        },
+        {
+          "s": "leo",
+          "t": "Their January fix didn't fix it."
+        },
+        {
+          "s": "steve",
+          "t": "They also fixed open source components that weren't really their problem, but they ship them, so they take responsibility."
+        }
+      ]
+    },
+    {
+      "title": "iTunes 8 Crashes Windows",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In bad news, there are huge problems in Windows after the iTunes 8 update. Windows is Blue Screen of Deathing."
+        },
+        {
+          "s": "steve",
+          "t": "Apple installs a newer ASPI module from GEAR, a well-known German maker of CD and DVD burning drivers: GEARAspiWDM.sys. The crashes start when you plug in your iPod, which invokes the driver."
+        },
+        {
+          "s": "steve",
+          "t": "I own GEAR Professional for my main media machine, which has four burners, so I burn a quarter as many times when I share things. Like for friends who missed Fringe."
+        },
+        {
+          "s": "steve",
+          "t": "And lots of people thanked me for pointing them at Fringe and caught the repeat Sunday."
+        },
+        {
+          "s": "leo",
+          "t": "People ask for a Security Now! sci-fi show. I can't tell whether they want less sci-fi here or more."
+        },
+        {
+          "s": "steve",
+          "t": "I get a lot of feedback wanting more."
+        }
+      ]
+    },
+    {
+      "title": "Coffee With Yubico",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The day after we last spoke, I had coffee at 5:30 in the morning with Stina Ehrensvärd of Yubico, in town for the DEMO show. We spent a couple of hours, and they're doing fantastically."
+        },
+        {
+          "s": "steve",
+          "t": "There's much more free, open source software at Yubico.com. They've lined up venture capital to move from a generic chip to their own custom chip, which will dramatically lower costs, and they intend to pass that on to customers."
+        },
+        {
+          "s": "steve",
+          "t": "She asked to share two things. First, they're growing and need business people: sales, marketing, operations and business development, familiar with tech. I'm a hermit in Southern California, but our listeners know security and know the product."
+        },
+        {
+          "s": "leo",
+          "t": "If you listen to this show, you're probably a good candidate."
+        },
+        {
+          "s": "steve",
+          "t": "There are exciting things in the works I can't talk about yet. She met a former PC Magazine editor-in-chief she remembered only as Michael. Michael Miller, I said. He edited my TechTalk column for most of my eight years at InfoWorld. She was holding the YubiKey up asking people if they had an interest in authentication, and Michael, a techie, instantly understood it."
+        },
+        {
+          "s": "steve",
+          "t": "She's moving her family and the company to Northern California to be where the action and talent are."
+        },
+        {
+          "s": "steve",
+          "t": "Second, she'll host a contest for the most innovative YubiKey applications, and I've agreed to judge. Maybe a month from now, with winners perhaps announced at next year's RSA conference, where she'll have her own booth. Last year I bumped into her at the top of the escalator, looking for someone who'd understand what they'd done."
+        }
+      ]
+    },
+    {
+      "title": "TWiT Is Hiring",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We're looking for someone near Petaluma, no suit required, to edit audio. You don't need editing skills, just comfort with computers. Email Dane. Tony is moving to video, which is a full-time job in itself."
+        },
+        {
+          "s": "leo",
+          "t": "We'll put out more video, like interviews with Will Wright and Neal Stephenson, and Robert Llewellyn, who played Kryten in Red Dwarf. If you don't see them live, you never will. CacheFly has committed bandwidth and advertisers are on board. We need an editor."
+        },
+        {
+          "s": "steve",
+          "t": "Someone in GRC's newsgroups captures the stream weekly, and people have wanted to watch it."
+        },
+        {
+          "s": "leo",
+          "t": "I didn't think this would be a video show. But seeing you makes it easier to understand."
+        },
+        {
+          "s": "steve",
+          "t": "It's my creative work with my hands."
+        }
+      ]
+    },
+    {
+      "title": "A Widower's Photos",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Ki Il Song listens on his commute and sometimes falls asleep to TWiT netcasts."
+        },
+        {
+          "s": "steve",
+          "t": "His 75-year-old uncle lost his wife of almost 50 years four or five years ago and was lost and depressed. A close friend told him to move on and gave him a laptop, Internet, email and a digital camera."
+        },
+        {
+          "s": "steve",
+          "t": "He became obsessed, taking the camera everywhere: flowers, landscapes, events, and pictures of old pictures, emailing them to friends all over the world. He became the family photographer, with over 50 gigs of photos and videos."
+        },
+        {
+          "s": "steve",
+          "t": "Then the laptop was stuck in an infinite loop at the Windows boot screen, even in safe mode. Ki Il ran SpinRite for several hours. It found several errors on the first pass, and Windows booted. Two more passes found nothing. The library was saved."
+        },
+        {
+          "s": "leo",
+          "t": "You're happy to see errors when you run SpinRite, because that explains the problem."
+        }
+      ]
+    },
+    {
+      "title": "Trend Micro's Victims",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Vic Thompson in Newcastle, Australia, a retired, as in unpaid, medium-level geek, says a friend was about to sink his PC in the sea after his OS was dismembered by an unknown event. Our mention of Trend Micro explained everything. Very little notification existed anywhere."
+        },
+        {
+          "s": "steve",
+          "t": "Vic was one of several people for whom it clicked. Trend's heuristic matching flagged Windows' own files as malicious and sequestered them, and Windows wouldn't boot, even in safe mode. You need someone else's computer to get Trend's fix for getting those files out of jail."
+        },
+        {
+          "s": "leo",
+          "t": "Presumably they've fixed their definitions."
+        },
+        {
+          "s": "steve",
+          "t": "This is the second time for Trend, and it happened to Symantec once. Maybe they don't test every language version."
+        },
+        {
+          "s": "leo",
+          "t": "Antivirus should hesitate to quarantine Windows system files. You're killing the patient."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is malware deliberately uses names overlapping Windows files, maybe in a different directory."
+        },
+        {
+          "s": "leo",
+          "t": "Or attaches itself to a real Windows file. Most antivirus now says it's a Windows file, I won't touch it, but you have a problem. Trend just killed the patient."
+        },
+        {
+          "s": "steve",
+          "t": "Because automatic is so wonderful. We don't want users taking any responsibility."
+        }
+      ]
+    },
+    {
+      "title": "Wells Fargo's Lockout",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our old friend Opher, who writes to the Daily Giz Wiz, has good news about Wells Fargo. Extra characters on his password are rejected, contrary to last week's report. It's true the username and password aren't case sensitive. But after three failed logins, the session ends and the user ID is locked out."
+        },
+        {
+          "s": "leo",
+          "t": "That drives me crazy, since it often takes me four tries."
+        },
+        {
+          "s": "leo",
+          "t": "To get back in you need your ATM card number and PIN, a security question, and a new password. So Opher thinks the site is plenty secure. He's not an employee, just a happy, secure customer."
+        },
+        {
+          "s": "steve",
+          "t": "That's really good news. A lockout policy is super important. It shuts down password guessing."
+        },
+        {
+          "s": "leo",
+          "t": "You can't brute force with three chances."
+        },
+        {
+          "s": "steve",
+          "t": "Another listener found that the first 14 characters of the password are significant, and only characters after that are ignored. Fourteen is a long, potentially secure password. With three strikes and you're out, and hoops to prove who you are, that really does mitigate the problem a lot."
+        },
+        {
+          "s": "leo",
+          "t": "Most of my financial institutions lock you out. One makes me call, which is a pain. Bank of America, which owns everything now, offers to text a one-time passcode to my cell phone every time I log in, like the football. I turned it on for all my accounts. It drives our bookkeeper crazy."
+        },
+        {
+          "s": "steve",
+          "t": "We've talked about using a phone loop as an extra authentication factor. It works both ways: if your phone starts getting codes you didn't request, you know someone's trying to get into your account."
+        },
+        {
+          "s": "leo",
+          "t": "Every high-security application should use two-factor authentication."
+        },
+        {
+          "s": "steve",
+          "t": "That's what YubiKey does. Plug it in, touch the button, and it proves it's your YubiKey."
+        },
+        {
+          "s": "leo",
+          "t": "Then someone would need me, my YubiKey, my login and my password. Good luck."
+        },
+        {
+          "type": "fact",
+          "title": "Text-message codes today",
+          "t": "SMS codes are better than passwords alone, but they can be stolen through SIM-swap scams and phishing. Authenticator apps and hardware security keys are stronger."
+        }
+      ]
+    },
+    {
+      "title": "Wells Fargo Has Company",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jon Kuhn in Ann Arbor, Michigan tried his mixed-case Perfect Passwords and found Chase, Citibank, Vanguard and his credit union all have case-insensitive passwords."
+        },
+        {
+          "s": "steve",
+          "t": "So Wells Fargo shares the doghouse. Listeners may want to deliberately fail a few logins to confirm their bank shuts guessers down quickly."
+        },
+        {
+          "s": "leo",
+          "t": "There has to be a reason. Older systems?"
+        },
+        {
+          "s": "steve",
+          "t": "Keep reading."
+        }
+      ]
+    },
+    {
+      "title": "The Phone Banking Explanation",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brent McLaren in Ajax, near Toronto, works in IT. At his bank, the online password is shared with telephone banking, so it's limited to six alphanumeric characters with no case sensitivity. Separate passwords for each channel would confuse people."
+        },
+        {
+          "s": "steve",
+          "t": "Isn't that a good point? Imagine explaining a circumflex over the phone, or the pound sign. Reusing one password across channels makes complex ones hard to use."
+        },
+        {
+          "s": "leo",
+          "t": "I started with Bank of America's phone banking around 1984, and early online banking looked like a TTY: white uppercase letters on black, type 1 for this, 2 for that. I bet it's the same back end."
+        },
+        {
+          "s": "steve",
+          "t": "They may have just stuck a web server on the front."
+        }
+      ]
+    },
+    {
+      "title": "An Insecure Timesheet System",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Townsend in Wimbledon, U.K. works for a large blue-chip computer consultancy. Its global timesheet and expense system, fed straight into billing, runs over the Internet without SSL, with no password expiration, no lockouts and case-insensitive passwords. He's formally complained twice. The company says it's never been hacked, so it's safe, and he's scaremongering. Are his concerns real?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. To understand the threat, you ask: if someone unauthorized got in, what's the consequence? It feeds billing."
+        },
+        {
+          "s": "steve",
+          "t": "Never having been hacked doesn't make you safe. It gives you a false sense of security, until a company loses employees' confidential data or credit cards and its reputation is damaged."
+        },
+        {
+          "s": "steve",
+          "t": "He confidentially told me more. I looked at the login page, figured out what package runs behind it, and researched the vendor. It's a well-known, successful third-party product used widely around the world, with incredibly insecure login policies. That's irresponsible. His company has its head in the sand, but the vendor is selling this to clients."
+        },
+        {
+          "s": "leo",
+          "t": "The temptation is to prove it by breaking in. Don't. One frustrated employee grabbed password information and sent it to his president, and went to jail. Our friend Randal Schwartz did something similar at Intel years ago and was arrested and tried. Companies don't like their noses rubbed in it."
+        },
+        {
+          "s": "steve",
+          "t": "I won't name the vendor, since that would point attackers at its clients. Better to email them privately."
+        },
+        {
+          "s": "steve",
+          "t": "Without SSL, logins can be sniffed. Over any wireless link, anyone could log people's credentials."
+        },
+        {
+          "s": "steve",
+          "t": "I compare WiFi to running a wire from your hub out to the lawn with a sign saying \"Free Internet Access.\" David should ask management: is there anyone you'd be unhappy giving free, unfettered access to this system? Because consultants worldwide are logging in from Starbucks and random hotspots, and those logins are sniffable. What damage could someone do? That's what they're making possible."
+        }
+      ]
+    },
+    {
+      "title": "Rules for Random Passwords",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener uses Perfect Paper Passwords but wants rules, like mixed case and at least one digit, which some systems require. Can the web or EXE version do that?"
+        },
+        {
+          "s": "steve",
+          "t": "He actually wrote to Greg in tech support, so I kept him anonymous. PPP was designed for short one-time passcodes, not long-term passwords. But Even More Perfect Paper Passwords allows any length, so both versions make really long, really random passwords."
+        },
+        {
+          "s": "steve",
+          "t": "Requiring mixed case or a digit actually lowers the security of truly random passwords. Those rules exist because people don't generate random passwords. They use all lowercase and no digits, so their passwords end up in dictionaries. Forcing digits in breaks that."
+        },
+        {
+          "s": "steve",
+          "t": "But imposing rules on a high-quality random generator discards a large subset of possible passwords. An attacker who knows the rules can skip those too."
+        },
+        {
+          "s": "steve",
+          "t": "He replied that he understood, but the systems enforce the rules. So change a character's case by hand, or add a digit. PPP lets you specify the alphabet, so include upper and lower case, and list 0 through 9 three times to make digits three times as likely. Or, since it generates endlessly, cross out the ones that break the rules. That's probably the right solution."
+        },
+        {
+          "type": "fact",
+          "title": "Password rules today",
+          "t": "NIST's current guidance advises against forced composition rules and routine expiration, favoring long passwords, checks against known breached passwords, and password managers."
+        }
+      ]
+    },
+    {
+      "title": "Reading Data Under Data",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Carl Schweitzer in Hilbert, Wisconsin asks, why only 0s and 1s? Remembering that forensic labs can detect overwritten data, what equipment does that take, and could it fit in a drive? Could you write over data and still read it, doubling a drive's capacity, maybe with new drivers?"
+        },
+        {
+          "s": "steve",
+          "t": "It's not as crazy as it sounds. Multilevel flash memory stores several levels of charge per cell, more than one bit each. That works because the tolerances let you reliably measure the charge as you dump it out."
+        },
+        {
+          "s": "steve",
+          "t": "With hard drives, recovering overwritten data is theoretically possible but far from reliable. You'd need massive error correction."
+        },
+        {
+          "s": "steve",
+          "t": "Error correction works on bursts of bad bits, because physical defects swallow many bits at once. Uncertain bits under strong new data would be scattered across the drive, so burst correction wouldn't work, and the overhead isn't worth it."
+        },
+        {
+          "s": "leo",
+          "t": "My microphone just fell over. Clonk."
+        },
+        {
+          "s": "steve",
+          "t": "It would also radically slow storage, struggling to subtract the strong new signal to find what was underneath. It makes sense for a government agency desperate to know what was there, not daily use. Besides, wait a week and drives double in size by themselves."
+        },
+        {
+          "s": "leo",
+          "t": "They are doing tricks with layers, so it's not that crazy."
+        }
+      ]
+    },
+    {
+      "title": "Is Windows Really Less Secure?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Blake in Minnesota thinks Windows has the most vulnerabilities because it's attacked the most, so comparing operating systems is more complex than counting flaws."
+        },
+        {
+          "s": "leo",
+          "t": "I disagree. Yes, there are nearly a billion Windows installations. But web servers, often Linux or BSD, are the face many computers present to the world, while most Windows machines sit behind routers. Don't UNIX variants take a lot of the attacks?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, but there it's not the core OS being attacked. It's insecure applications like PHP running on the web-exposed surface."
+        },
+        {
+          "s": "steve",
+          "t": "One of Windows' problems is that it never stays the same. Microsoft keeps adding features and services. There's .NET, a whole new API, while they still support the old Windows API, 16-bit and DOS. And more Java and JavaScript applications run on clients, like Gmail in a Chrome window."
+        },
+        {
+          "s": "steve",
+          "t": "What's targeted least is probably more secure, effectively. Windows benefits from constant pounding and fixing, but it constantly changes, so Microsoft keeps introducing new problems."
+        },
+        {
+          "s": "leo",
+          "t": "Every patch can introduce a flaw."
+        },
+        {
+          "s": "steve",
+          "t": "Install XP and run Windows Update, and you reboot and run it again, because security patches have patches."
+        },
+        {
+          "s": "leo",
+          "t": "It's said FreeBSD is the most secure, designed for security from the ground up."
+        },
+        {
+          "s": "steve",
+          "t": "Do you mean FreeBSD, OpenBSD or NetBSD? OpenBSD is generally considered massively secure."
+        },
+        {
+          "s": "leo",
+          "t": "When NT was designed, security wasn't really the issue."
+        },
+        {
+          "s": "steve",
+          "t": "Actually NT was designed with security in mind, and its original architecture was much more secure than what Microsoft devolved it into. It had a strong client-server model, with User32 and GDI running in user space, separated from the kernel."
+        },
+        {
+          "s": "steve",
+          "t": "That wasn't fast enough, so Microsoft moved GDI into the kernel to cut user-kernel transitions. And last week's GDI+ vulnerabilities, added in XP, were much more serious because that code moved into the kernel. Microsoft is its own worst enemy. OpenBSD puts security first. Microsoft keeps believing the next thing it does will be secure."
+        },
+        {
+          "type": "fact",
+          "title": "GDI and GDI+",
+          "t": "Microsoft moved GDI and the window manager into the kernel in Windows NT 4.0, in 1996. GDI+ (gdiplus.dll), however, is a user-mode library, so its 2008 flaws ran with the privileges of the program using it rather than in the kernel."
+        },
+        {
+          "s": "leo",
+          "t": "They live in a different world. They have to work with businesses. OpenBSD's site says only two remote holes in the default install in more than 10 years. That's a pretty good record. But they're security driven, not customer driven."
+        },
+        {
+          "s": "steve",
+          "t": "I've always given Microsoft the benefit of the doubt on bugs. My complaint is policy. For years they ran services by default. Even today, XP on a machine that's never seen a WiFi card runs the Wireless Zero Configuration service. Why?"
+        },
+        {
+          "s": "steve",
+          "t": "And kill bits. VMware's update set them on its ActiveX controls. All ActiveX controls should be unusable by IE unless explicitly meant for it. It should be a \"live bit,\" off by default, not a \"kill bit.\" Instead IE can reach every ActiveX control in Windows. That's clearly wrong."
+        },
+        {
+          "s": "leo",
+          "t": "I'll defend them. They have to keep software vendors and businesses happy."
+        },
+        {
+          "s": "steve",
+          "t": "Hence things like UAC, which bugs people so much they abandon Vista for XP."
+        },
+        {
+          "s": "leo",
+          "t": "Or turn it off. It's a nontrivial problem."
+        },
+        {
+          "s": "steve",
+          "t": "Complexity is the enemy of security. DOS was once three files. Now nobody knows how many there are."
+        }
+      ]
+    },
+    {
+      "title": "A School Tamed by OpenDNS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Thomas Paulsen in Nordland, Norway, a senior IT consultant, has a client: a private high school whose all-wireless student network, about 10 Linksys access points on a separate ADSL line behind a Cisco PIX 501, was swamped by heavy downloading and peer-to-peer filesharing."
+        },
+        {
+          "s": "leo",
+          "t": "Their policy allowed only normal Internet use, but they couldn't afford services like Websense, and peer-to-peer clients use the HTTP port, random ports and encryption, so blocking protocols is futile."
+        },
+        {
+          "s": "leo",
+          "t": "Driving to see them while listening to us, he thought of OpenDNS and pulled over to jot down a plan. His client's eyes glazed over, but he got the go-ahead."
+        },
+        {
+          "s": "leo",
+          "t": "He created an OpenDNS account for the school, registered its static IP in the dashboard, and blocked categories like peer-to-peer and anonymous proxies."
+        },
+        {
+          "s": "leo",
+          "t": "Then three firewall rules. One: allow UDP port 53 only to OpenDNS's servers. Two: allow HTTP, HTTPS, SMTP, POP3, IMAP and FTP anywhere. Three: drop everything else. That's how I'd configure any router."
+        },
+        {
+          "s": "leo",
+          "t": "The results were immediate. Blocked-site hits ticked away and bandwidth dropped dramatically. OpenDNS's free stats show false positives to tune. Not foolproof, but great control for free."
+        },
+        {
+          "s": "steve",
+          "t": "I wanted to share it because many listeners could use this. Allowing port 53 only to OpenDNS prevents students from configuring a different DNS server. OpenDNS knows the requests come from the school's IP and applies its category rules."
+        },
+        {
+          "s": "steve",
+          "t": "Students could use an IP address directly, but as we've discussed, you quickly get bounced back to domain names, and if OpenDNS won't look them up, there's nothing you can do."
+        },
+        {
+          "s": "steve",
+          "t": "Then just web, email and FTP ports are allowed, which was the school's policy all along. Students weren't abiding by it, because they're students. Simple firewall, beautifully working filtering, and free."
+        },
+        {
+          "s": "leo",
+          "t": "I use OpenDNS at home and the office. You need the firewall to force people to use it."
+        }
+      ]
+    },
+    {
+      "title": "What \"Fixed\" Means",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ben Jaques in Des Moines, Iowa asks what you meant when you said Google \"fixed\" Chrome's license."
+        },
+        {
+          "s": "steve",
+          "t": "One Google blogger was initially snide in his responses. He later apologized, saying he should have understood they were really wrong. That was nice."
+        },
+        {
+          "s": "steve",
+          "t": "The original boilerplate essentially claimed rights to anything you posted using the browser. My reaction was that no one would ever use it. Immediately they said whoops. Even though the browser was two years in the works, maybe it was an oversight. They clarified that you keep the rights to what's yours, and give them nothing. That's why last week we entertained the idea Chrome had a future."
+        },
+        {
+          "s": "leo",
+          "t": "They took the paragraph out. It gave them a license to reproduce, adapt, modify, publish and distribute your content. In their defense, that's typical boilerplate. TechTV's release form claimed my likeness in all media forever, and G4 Comcast now has those rights."
+        },
+        {
+          "s": "steve",
+          "t": "I can't imagine they tried to sneak it by. It said so clearly that they own everything you do."
+        }
+      ]
+    },
+    {
+      "title": "Chrome as an App Machine",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Corby in Reno, Nevada doesn't think Google is competing in the browser market. It's a platform for Google's web apps. Firefox will run alongside it. Soon Google's apps will use APIs only Chrome knows, and Google will control the apps and the data. Will that happen?"
+        },
+        {
+          "s": "leo",
+          "t": "I don't think they'd do that. It would be crazy."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think so either, but I wanted to share his view. The problem is it is a browser, not just an app machine, so it needs contemporary browser features."
+        },
+        {
+          "s": "leo",
+          "t": "Because people will use it that way."
+        },
+        {
+          "s": "steve",
+          "t": "And get bitten by its lack of security and privacy features. By the way, Chrome's share has kept falling, below 0.9 percent, as people uninstall it."
+        },
+        {
+          "s": "steve",
+          "t": "Its security work profiles it as wanting to be a mainstream browser. If Google's apps run in other browsers unmodified, I don't see how it forces others to follow. It's a strange animal."
+        },
+        {
+          "s": "leo",
+          "t": "On TWiT this week Chrome is at 7 percent, down a little, about 8,000 people. Firefox 56, IE 18, Safari 13.9. Our audience likes the latest and greatest."
+        }
+      ]
+    },
+    {
+      "title": "What Chrome Leaves Behind",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The \"Bad Chrome-osome,\" from Richard Chao in Fullerton, California. Installing Chrome apparently also put plug-ins in his Firefox 3, and they stayed after he uninstalled Chrome. When he deleted a folder called Chrome from Firefox's program files, it broke Firefox. Does it put files in IE too? He was never asked."
+        },
+        {
+          "s": "steve",
+          "t": "I remember you chuckling when I made a VMware container for it. Well, I'm glad. When you install Chrome, with no notification, it installs plug-ins for Firefox 3 and IE, including a browser helper object, an ActiveX control, for IE and a plug-in called Google Update. It runs a Google Update service and deliberately leaves all of it in place after you remove Chrome."
+        },
+        {
+          "s": "leo",
+          "t": "Leo here, after the recording. Steve researched further and confirmed that Google Update does remove itself some time after Chrome is uninstalled, as Google's own help pages say. He'll test it more."
+        },
+        {
+          "s": "leo",
+          "t": "And our chatroom pointed out that the folder Richard deleted wasn't Google's Chrome at all. It was Firefox's own \"chrome\" folder, a critical part of Firefox's interface that exists even if you've never installed Chrome. So it may not be as bad as it seemed. Steve will report next week, and I've asked him to compare other applications, like Apple's Safari, which may behave the same way."
+        },
+        {
+          "s": "leo",
+          "t": "Google Update is installed by many Google applications. It reminds me of Aureate saying it couldn't uninstall because other applications might use it. Chrome may leave the updater because you might have Google Earth or Google Toolbar."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did iTunes 8 crash some Windows PCs?",
+      "options": [
+        "A new GEAR CD/DVD driver it installed caused blue screens when an iPod was plugged in",
+        "It deleted system files",
+        "It changed the registry",
+        "It disabled antivirus"
+      ],
+      "answer": 0,
+      "explain": "The driver was GEARAspiWDM.sys."
+    },
+    {
+      "q": "What made Wells Fargo's case-insensitive passwords less dangerous than they seemed?",
+      "options": [
+        "Accounts locked after three failed attempts, stopping brute-force guessing",
+        "Passwords were 30 characters long",
+        "Logins required a YubiKey",
+        "Wells Fargo encrypted passwords twice"
+      ],
+      "answer": 0,
+      "explain": "Unlocking required the ATM card, PIN and a security question."
+    },
+    {
+      "q": "Why might a bank's online passwords be case-insensitive and short?",
+      "options": [
+        "They're shared with telephone banking, where case and symbols can't be entered",
+        "Browsers can't send capitals",
+        "It's required by law",
+        "Hashing doesn't support case"
+      ],
+      "answer": 0,
+      "explain": "One listener's bank limited them to six alphanumeric characters."
+    },
+    {
+      "q": "Why does forcing rules like \"must contain a digit\" on truly random passwords reduce strength?",
+      "options": [
+        "It eliminates many possible passwords, shrinking what an attacker must search",
+        "Digits are easy to guess",
+        "It makes them shorter",
+        "It disables randomness"
+      ],
+      "answer": 0,
+      "explain": "The rules exist because people's own passwords aren't random."
+    },
+    {
+      "q": "How did the Norwegian high school force students to use OpenDNS filtering?",
+      "options": [
+        "Its firewall allowed DNS on port 53 only to OpenDNS's servers",
+        "It installed software on every laptop",
+        "It blocked all websites",
+        "It changed each student's settings by hand"
+      ],
+      "answer": 0,
+      "explain": "Only web, email and FTP ports were allowed out."
+    },
+    {
+      "q": "What was the \"Chrome\" folder a listener deleted from Firefox's directory?",
+      "options": [
+        "A core part of Firefox's own interface, unrelated to Google's browser",
+        "A Google plug-in",
+        "A virus",
+        "Chrome's cache"
+      ],
+      "answer": 0,
+      "explain": "Deleting it broke Firefox."
+    }
+  ]
+}

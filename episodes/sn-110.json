@@ -1,0 +1,798 @@
+{
+  "number": 110,
+  "title": "Listener Feedback #24",
+  "subtitle": "TOR's exit nodes, OpenID privacy and a password tattoo",
+  "date": "2007-09-20",
+  "description": "Steve cheers the long-lived Mars rovers, concedes others did browser-side state first, shortens his OpenID through delegation, and runs SpinRite inside VMware. Listeners ask about Ogg podcasts, the screen-reader trade-off on GRC's feedback form, an eBay CAPTCHA cracker, whether resized JPEGs could turn malicious by chance, encrypting state, Dish DVR drives, OpenID's privacy cost, selling GRC's store, a researcher harvesting passwords from TOR exit nodes, eBay token quirks, RAID mirrors, endless security questions, and a wacky idea to tattoo a password in UV ink.",
+  "transcript": "https://www.grc.com/sn/sn-110.txt",
+  "audio": "http://media.GRC.com/sn/SN-110.mp3",
+  "chapters": [
+    {
+      "title": "Award Week, and Two Little Rovers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Congratulations again on the Podcast Award."
+        },
+        {
+          "s": "steve",
+          "t": "I pick it up the day after next week's episode comes out, and I thank our listeners again."
+        },
+        {
+          "s": "leo",
+          "t": "It's in Ontario, California on the 28th of September."
+        },
+        {
+          "s": "steve",
+          "t": "Between 4:00 and 5:30, and the show is open and free to the public."
+        },
+        {
+          "s": "leo",
+          "t": "I'm committed in Vancouver on the 27th, so I'll be there in spirit. We did the first two together."
+        },
+        {
+          "s": "steve",
+          "t": "This wouldn't be happening without you, Leo. Today we have 12 good questions and one so bizarro it's perfect as the wacky 13th."
+        },
+        {
+          "s": "steve",
+          "t": "First, a shout-out to the two bots on Mars, Spirit and Opportunity. Planned for three-month missions, they're now in their 43rd month."
+        },
+        {
+          "s": "steve",
+          "t": "Last month a global dust storm blocked the sun and cut their solar power badly. JPL feared it would do them in, so they put them into very low power mode, no science, pinging their radios as little as necessary."
+        },
+        {
+          "s": "steve",
+          "t": "The storm passed, wind blew the sand off their panels, and they took off rolling again, working through NASA's long wish list."
+        },
+        {
+          "s": "leo",
+          "t": "That's called over-engineering, and it's the way to go."
+        },
+        {
+          "type": "fact",
+          "title": "The rovers' fate",
+          "t": "Spirit got stuck in soft sand in 2009 and fell silent in 2010. Opportunity kept going until a 2018 dust storm, more than 14 years into its 90-day mission."
+        }
+      ]
+    },
+    {
+      "title": "Not the First to Store State in the Page",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many, many listeners noted that my idea of handing transaction state back to the browser has long been in Microsoft's ASP.NET, as \"View State.\" I found a 2002 article on it."
+        },
+        {
+          "s": "leo",
+          "t": "I don't think you claimed to invent it."
+        },
+        {
+          "s": "steve",
+          "t": "I invented it for myself. It's the question of invention versus engineering, which is why patents are questionable. Some things are just how you solve a problem if you're schooled in the art."
+        }
+      ]
+    },
+    {
+      "title": "Shortening an OpenID With Delegation",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I hoped VeriSign would shorten long PIP addresses like stevegibson.pip.verisignlabs.com. VeriSign's technical guy, who now listens, reminded me of OpenID \"delegation,\" which we covered with OpenID."
+        },
+        {
+          "s": "steve",
+          "t": "On any page you control, your blog or MySpace page, you add a tag. You give that page as your identity, and the site reads the tag to find your real identity server. So I could log on to an OpenID site using just GRC.com."
+        },
+        {
+          "s": "leo",
+          "t": "That's what I do with Leoville.com. But you need a site to do it."
+        }
+      ]
+    },
+    {
+      "title": "Nerds On Site, on an Airplane",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Michael Walker was flying from London back to Toronto on Air Canada and saw a full-minute Nerds On Site ad on the in-flight TV. A nerd is working on a computer, and on its screen, wait for it, is SpinRite."
+        },
+        {
+          "s": "leo",
+          "t": "They're proud they offer SpinRite."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite in a Virtual Machine",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week, a listener ran SpinRite's setup under Wine. Eric Greve of Montreal took it to an extreme. He runs SpinRite on every new hard drive he buys, and he's addicted to buying them."
+        },
+        {
+          "s": "leo",
+          "t": "That's who should have SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe it's a holdover from when drives were dumb. Today's smart drives moderate the need on new drives."
+        },
+        {
+          "s": "leo",
+          "t": "Don't tell them they don't need it."
+        },
+        {
+          "s": "steve",
+          "t": "Experimenting with the free VMware Server on Linux, Eric saw he could give a virtual machine full control of a physical drive. VMware warns that's advanced and dangerous if misconfigured, since both systems could use the drive."
+        },
+        {
+          "s": "steve",
+          "t": "He gave a new VM the SpinRite ISO as its CD drive, and the new drive as its only hard drive, turning off all caching and snapshots. SpinRite worked flawlessly in its own little world while he used the real system normally. He asks about caveats."
+        },
+        {
+          "s": "leo",
+          "t": "So I could do this on a Mac."
+        },
+        {
+          "s": "steve",
+          "t": "In VMware, yes. And SpinRite is assembly, mostly just transferring data. It sits around waiting most of the time, so it won't slow your foreground work."
+        },
+        {
+          "s": "leo",
+          "t": "The drive's controller does the work. Do you still use INT 13?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, the INT 13 BIOS calls, which VMware fully emulates. You can even see the BIOS splash screen when a VM starts. And it's DOS, so it'd be absolutely happy in a 640K virtual machine."
+        },
+        {
+          "s": "leo",
+          "t": "I'll make a SpinRite VM and pop drives into it whenever I need. It must have full physical access to the drive."
+        }
+      ]
+    },
+    {
+      "title": "Why No Ogg Version?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Question 1: Kevin in California asks for an Ogg Vorbis version. He uses open source daily, and Ogg is unpatented, royalty-free and better quality than MP3. I get this question all the time."
+        },
+        {
+          "s": "leo",
+          "t": "For historic reasons, which I deeply regret, TWiT comes in high, medium and low MP3, AAC and Ogg. It probably doubles production time, and I'm thinking of phasing those out. FLOSS Weekly comes in MP3 and Ogg because many of its listeners use Linux and won't accept an MP3 license, as maddog pointed out."
+        },
+        {
+          "s": "leo",
+          "t": "Every player plays MP3. Very few play Ogg. Of TWiT's roughly 150,000 weekly downloads, Ogg is in the hundreds. Yes, I have scripts, but the files must be tagged by hand, uploaded and stored. I wasn't even doing a low-quality version until you asked for a dialup one."
+        },
+        {
+          "s": "steve",
+          "t": "And most people dock players that all play MP3. Do those players send royalties to the MP3 gods?"
+        },
+        {
+          "s": "leo",
+          "t": "It's complicated. Fraunhofer invented it and won the rights, and I think it was acquired by Lucent. Thomson now handles licensing. See mp3licensing.com. The decoder is $1.25 a unit, or $90,000 one time. People act as if MP3 is open, and it's not."
+        },
+        {
+          "s": "steve",
+          "t": "Those are patents, so they won't last forever, like Lempel-Ziv compression, now in the public domain."
+        },
+        {
+          "s": "leo",
+          "t": "Linux users can get MP3 now. It's more about purism. A lot of people talk the talk, but few walk the walk."
+        },
+        {
+          "type": "fact",
+          "title": "MP3's patents",
+          "t": "Fraunhofer is a German research institute, not a Lucent company, though AT&T's Bell Labs, later part of Lucent, also contributed to MP3. The last MP3 patents expired in 2017, and Fraunhofer and Technicolor, formerly Thomson, ended the licensing program."
+        }
+      ]
+    },
+    {
+      "title": "A Screen Reader Trade-Off",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Question 2: an anonymous listener says GRC's redesigned feedback form isn't screen reader friendly."
+        },
+        {
+          "s": "steve",
+          "t": "He's right, by design. The old form was being spammed by bots that, I think, crawl the web looking for familiar field names, like the bots that spam blogs. I'm not a high-value target, and I didn't want to make users do a CAPTCHA."
+        },
+        {
+          "s": "steve",
+          "t": "So I made the labels images. The spam is gone. But the same things that make a form screen-reader friendly, like alt tags, would make it bot friendly."
+        },
+        {
+          "s": "leo",
+          "t": "I'm sorry for our blind listeners. Is there a way around it?"
+        },
+        {
+          "s": "steve",
+          "t": "They can email us, or have someone describe the fields once. I'm not scrambling anything."
+        },
+        {
+          "s": "leo",
+          "t": "I'll be your screen reader. At GRC.com/feedback, tab once for Subject, then Body, Name, Location and Email, then a button labeled \"Send Us Your Thoughts.\" It doesn't change."
+        }
+      ]
+    },
+    {
+      "title": "An eBay CAPTCHA Cracker",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim Wilson in southeast Kentucky, a listener since about Episode 77, found Firefox add-on 4381, which solves eBay's login CAPTCHA."
+        },
+        {
+          "s": "steve",
+          "t": "It looks legitimate. Mozilla's developers looked at it and vouch for it. Someone annoyed by eBay's login CAPTCHA wrote an add-on that recognizes the page, decodes the CAPTCHA on the fly and fills it in."
+        },
+        {
+          "s": "leo",
+          "t": "The developer says it's a proof of concept of how insecure eBay's CAPTCHA is. Mike Shaver of Mozilla, a great guy, says they checked the source, and it's harmless."
+        },
+        {
+          "s": "steve",
+          "t": "eBay may be doing something dumb, like hiding the answer in an easily decoded link, rather than the add-on doing OCR. I didn't dig into it."
+        },
+        {
+          "s": "leo",
+          "t": "eBay may want to fix its CAPTCHA."
+        }
+      ]
+    },
+    {
+      "title": "Can Malware Evolve by Chance?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Clark in the U.K.: resizing squishes malware in a JPEG. But could resizing randomly change an image into malware, or must it be crafted?"
+        },
+        {
+          "s": "steve",
+          "t": "A JPEG can only be malicious if there's a known, unpatched flaw in the code that interprets it, as Windows briefly had. Any resizing or recompression produces a valid JPEG, and no exploit code survives."
+        },
+        {
+          "s": "steve",
+          "t": "One exception: metadata tags might pass through unchanged. But random evolution? You've heard of monkeys typing Shakespeare."
+        },
+        {
+          "s": "leo",
+          "t": "An infinite number of monkeys typing for an infinite time."
+        },
+        {
+          "s": "steve",
+          "t": "And infinite patience reading nonsense. Random bit changes would at best crash your system, not do something malicious. In a block of code, maybe a couple of bits could change without breaking it. Most must be exactly as they are."
+        },
+        {
+          "s": "leo",
+          "t": "It's like shaking carbon, hydrogen, oxygen and nitrogen in a cocktail shaker and hoping a monkey pops out."
+        },
+        {
+          "s": "steve",
+          "t": "That's a great visual."
+        },
+        {
+          "s": "leo",
+          "t": "My daughter is taking AP statistics. John Paulos calls it \"innumeracy,\" the numeric form of illiteracy. Schools should teach critical thinking about numbers, because we're lied to with graphs and polls."
+        },
+        {
+          "s": "steve",
+          "t": "People don't have an intuition for probability. Flip a fair coin five heads in a row, and we feel we're owed tails. We're not. Five heads in a row is one in 32, about three in a hundred, less unlikely than you'd think."
+        },
+        {
+          "s": "leo",
+          "t": "People think they'll win the lottery when they're likelier to be hit by lightning."
+        },
+        {
+          "s": "steve",
+          "t": "And annoyingly, every so often someone does."
+        },
+        {
+          "s": "leo",
+          "t": "Somebody always wins. It ain't gonna be you. That's what built Las Vegas."
+        }
+      ]
+    },
+    {
+      "title": "Why Encrypt State Under SSL?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dennis Wright in the U.K., an actuary, thinks he beat you to your session scheme. For a retirement modeling system, he couldn't assume cookies or JavaScript and didn't want a heavy database. So he shuttled data between client and server in the query string and hidden form fields, without encryption, since it all ran under SSL. Was that a mistake?"
+        },
+        {
+          "s": "steve",
+          "t": "Apparently books on CGI programming describe this too. It's cookies, JavaScript variables, or straight HTML hidden fields, which is what I did."
+        },
+        {
+          "s": "steve",
+          "t": "SSL stopped anyone sniffing his traffic. But I'm sending my transaction's whole state out to a client I can't fully trust not to mess with my server. I don't want it modified, replayed later, which I prevent with a transaction count inside, or decrypted to learn anything."
+        },
+        {
+          "s": "steve",
+          "t": "Browsers might cache those pages despite my expiration and no-cache tags. The data is only the user's own, but I want it locked down. This is my blob, not their blob."
+        },
+        {
+          "s": "leo",
+          "t": "Hands off my blob."
+        },
+        {
+          "s": "steve",
+          "t": "So I encrypt it, sign it and put serial numbers in it. Your browser just sends it back as is. Then I deblobbify it, check that everything makes sense, and proceed."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't it effectively a cookie?"
+        },
+        {
+          "s": "steve",
+          "t": "\"Cookie\" means something specific: data stored on the client and associated with the site. This is an opaque token inside the page itself."
+        },
+        {
+          "s": "leo",
+          "t": "Netscape created cookies. I think they were originally called PCSSIs, Persistent Client Side State Information."
+        },
+        {
+          "s": "steve",
+          "t": "And a session cookie normally points to bulky state saved on the server. Mine isn't a pointer. It's all the data."
+        },
+        {
+          "type": "fact",
+          "title": "The cookie spec",
+          "t": "Netscape's original 1994 cookie specification was titled \"Persistent Client State: HTTP Cookies.\""
+        }
+      ]
+    },
+    {
+      "title": "Backing Up a Dish DVR",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe Gajewski of Buffalo, New York knows his old Dish Network DVR drive will fail. Can SpinRite run on it, and can he clone it himself?"
+        },
+        {
+          "s": "steve",
+          "t": "DirecTV's older DVRs are TiVo-based, so Linux."
+        },
+        {
+          "s": "leo",
+          "t": "They now have two, one TiVo-based and one their own."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know Dish's DVR, but SpinRite can absolutely run safely on the drive. On my PowerPC TiVos, the bytes are swapped, so it's gibberish to SpinRite. It just works sector by sector and reads the drive's SMART data, regardless of formatting, or even with no formatting."
+        },
+        {
+          "s": "steve",
+          "t": "If you can open the DVR and mount the drive on a regular PC motherboard, SpinRite will have no trouble."
+        },
+        {
+          "s": "leo",
+          "t": "I wrote a book on the TiVo. They're standard drives with encryption at the data level. Use something low-level that copies sector by sector."
+        },
+        {
+          "s": "steve",
+          "t": "Linux has several good commands for that."
+        },
+        {
+          "s": "leo",
+          "t": "On TiVos we use dd to dump the data first. DealDatabase.com's forums cover TiVos and some Dish DVRs."
+        },
+        {
+          "s": "steve",
+          "t": "That's where I go for my TiVo hacking."
+        },
+        {
+          "s": "leo",
+          "t": "Nothing was as easy to hack as a Series 1."
+        }
+      ]
+    },
+    {
+      "title": "The Dark Side of OpenID",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "William Dittmann in northwest Indiana wants to tap the brakes on VeriSign's PIP. It resembles Microsoft's Passport. Federated ID systems hurt privacy and anonymity, making VeriSign party to all your memberships and transactions, all traceable to you."
+        },
+        {
+          "s": "leo",
+          "t": "Most people need to prove they opened this account, not that they're unrelated to some other account. He worries that federated ID's popularity will crowd out alternatives, and calls them an information broker's dream. Multiple IDs don't help much, since brokers manage identities better than people do."
+        },
+        {
+          "s": "steve",
+          "t": "I have \"The Dark Side of OpenID\" on my list for a coming episode. It's not just VeriSign."
+        },
+        {
+          "s": "steve",
+          "t": "There are three parties: you, the site, and the identity server. The site sends your browser to the identity server, you authenticate, your browser returns, and the site checks with the server."
+        },
+        {
+          "s": "steve",
+          "t": "That single point of contact is the value, and the vulnerability. Like third-party cookies tracking you via web ads, your OpenID server knows you and every site you log onto, because the protocol connects it to each one."
+        },
+        {
+          "s": "steve",
+          "t": "There are ways to verify identity without this lovers' triangle, where everyone has to know everyone. OpenID doesn't use them."
+        },
+        {
+          "s": "leo",
+          "t": "What are they?"
+        },
+        {
+          "s": "steve",
+          "t": "Not something for now. There's a category called \"zero-knowledge proofs,\" where you prove you know something without revealing what it is."
+        },
+        {
+          "s": "leo",
+          "t": "William may be right that single sign-on has eclipsed interest in those."
+        },
+        {
+          "s": "steve",
+          "t": "That was his salient point. OpenID and PIP are here, they work, and they're exciting and convenient. It's not evil. Just recognize what's going on."
+        }
+      ]
+    },
+    {
+      "title": "\"Extremely Arrogant\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Someone's mad at you. An anonymous listener from North Carolina writes that not selling your eCommerce system is \"extremely arrogant.\" Lots of people would kill for a secure system other than PayPal or Google Checkout. His friend's pet supply site got caught in a PayPal scam. He can't stand it when something far better comes along and its inventor won't sell it."
+        },
+        {
+          "s": "steve",
+          "t": "I didn't mean to come across arrogantly. GRC's model works, with an end-user orientation, solving problems for our listeners."
+        },
+        {
+          "s": "steve",
+          "t": "Friends ask why I don't charge $2 for my freeware. It's not practical. Similarly, we might sell ten copies of the store, and it'd take a year to package, document, support and add everyone's features."
+        },
+        {
+          "s": "steve",
+          "t": "It works perfectly for GRC, not as a general solution. Pet supplies need shipping. I don't handle taxes, since software sales aren't taxable here. In California, sales tax can differ by street. I wanted to share problems and solutions, not go into a different business."
+        },
+        {
+          "s": "leo",
+          "t": "I'm no Objectivist, but this is what Ayn Rand talks about. Being able to write something doesn't mean you owe it to everyone. It would change your whole life: suddenly you're in the business of selling and supporting an eCommerce system. It's arrogant to say someone has an obligation to give it away. Write it yourself, folks."
+        },
+        {
+          "s": "steve",
+          "t": "And last episode I told you how."
+        },
+        {
+          "s": "leo",
+          "t": "See the Episode 109 notes at GRC.com/securitynow for the source code. It reminds me of my favorite book, \"Programmers at Work,\" where great programmers like Gates, Charles Simonyi and Wozniak share code and talk about their craft. It's a work of art."
+        },
+        {
+          "s": "steve",
+          "t": "The screenshot shows how Bam Bam handles our Payflow Pro password. I didn't want it sitting in the registry in the clear where anything crawling into the server could see it. I enter it in the clear, and the first time the system starts, it encrypts it and stores it back encrypted. A surprising number of people said they didn't know assembly could look that way."
+        }
+      ]
+    },
+    {
+      "title": "TOR Anonymizes; It Doesn't Encrypt",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "George in Texas read on Ars Technica that a researcher used five TOR exit nodes to collect login passwords from unencrypted traffic. Wasn't TOR safe? And a TOR node administrator in Germany had his machine seized by the authorities."
+        },
+        {
+          "s": "steve",
+          "t": "That was the second time he was harassed, and he said he can no longer host an exit node."
+        },
+        {
+          "s": "leo",
+          "t": "And the German police got nothing. They're at the wrong point."
+        },
+        {
+          "s": "steve",
+          "t": "The researcher is at derangedsecurity.com. I consider him a little irresponsible, maybe a lot."
+        },
+        {
+          "s": "leo",
+          "t": "The name should tell you something."
+        },
+        {
+          "s": "steve",
+          "t": "He wrote a packet sniffer for high-value email logins, like governments and embassies, and ran it on five TOR servers. It collected thousands of username and password combinations."
+        },
+        {
+          "s": "steve",
+          "t": "Thinking nobody would take it seriously otherwise, and that the data was traveling in the clear anyway, he published them, including embassy email logins. The U.S. government immediately stomped on him and had his site taken down, and a whole bunch of problems resulted."
+        },
+        {
+          "s": "leo",
+          "t": "But did he expose a real issue?"
+        },
+        {
+          "s": "steve",
+          "t": "He exposed that people use TOR for the wrong reason. SSL provides end-to-end security. When you buy SpinRite, an SSL connection protects everything between your machine and GRC's server."
+        },
+        {
+          "s": "steve",
+          "t": "TOR encrypts only between its nodes. After your traffic plays ping-pong among them, the exit node peels off the last layer of the onion and puts your traffic on the Internet in plaintext."
+        },
+        {
+          "s": "steve",
+          "t": "The embassy people thought it was encrypting everything. It was only anonymizing them. Even so, anyone watching could see the server they logged into and read their email."
+        },
+        {
+          "type": "fact",
+          "title": "Dan Egerstad",
+          "t": "The researcher was Swedish consultant Dan Egerstad, who in 2007 published logins for about 100 embassy and government email accounts. Swedish police later raided him."
+        },
+        {
+          "s": "steve",
+          "t": "The German operator was arrested over child pornography. Officials traced someone downloading it from a site, but that person was using TOR, so the requests came from this man's exit node."
+        },
+        {
+          "s": "steve",
+          "t": "He did nothing wrong except run an exit node. That's the double-edged sword: outsiders think your machine is making those requests, made on behalf of people who often want anonymity because what they're doing is illegal in many places."
+        },
+        {
+          "s": "steve",
+          "t": "The other side: anyone running an exit node can scrutinize all traffic through it. The researcher listed exit nodes that can read your traffic, including ones named devilhacker and hackershaven, and one hosted by an illegal hacker group."
+        },
+        {
+          "s": "steve",
+          "t": "Major nodes in Washington, D.C., run anonymously by one person or organization, each handling 5 to 10 terabytes a month. A node at the Space Research Institute and Cosmonauts Training Center, controlled by the Russian government."
+        },
+        {
+          "s": "leo",
+          "t": "The Russian government runs a TOR node."
+        },
+        {
+          "s": "steve",
+          "t": "Nodes at government-controlled academies in the U.S., Russia and Asia, at Taiwan's Ministry of Education, and run by Chinese government officials and criminal identity thieves. A major stock exchange company and a Fortune 500 financial firm. Dedicated servers costing their owners $100 to $500 a month, so presumably they get value in return. Nodes in over 50 countries with unknown owners, some handling over 10 terabytes a month."
+        },
+        {
+          "s": "steve",
+          "t": "When traffic leaves TOR, you don't know who owns the exit or why. It's anonymized but no longer encrypted, and depending on what you do, you may still give your identity away."
+        },
+        {
+          "s": "leo",
+          "t": "The takeaway: TOR is for anonymity, not encryption."
+        }
+      ]
+    },
+    {
+      "title": "An eBay Token Tip",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave Solon in Amish country, Manheim, Pennsylvania, got the $5 key. After a week, eBay kept rejecting his key codes. PayPal let him in after two sequential codes. Then, at eBay, he entered just his password, waited for the prompt, entered the key code, and got in. He plugs k12geek.com/blog, Dvorak-style."
+        },
+        {
+          "s": "steve",
+          "t": "It's a nice little blog for K-12 interests, though slow if too many people visit. By the way, I've decided to formally call these \"tokens.\""
+        },
+        {
+          "s": "leo",
+          "t": "Not a fob, a dongle or anything else."
+        },
+        {
+          "s": "steve",
+          "t": "eBay may have a problem parsing the password and code together. Maybe his password ends in digits. Either way, if you don't append the six digits, you'll be prompted for them separately."
+        },
+        {
+          "s": "leo",
+          "t": "I've never had trouble."
+        },
+        {
+          "s": "steve",
+          "t": "Nor have I."
+        }
+      ]
+    },
+    {
+      "title": "RAID Mirrors and Bad Sectors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Anish in Vestal, New York: RAID 1 mirrors two drives. If one slowly develops unreadable sectors, wouldn't they be copied to the other? And if SpinRite fixed sectors on one drive and not the other, could that break the RAID?"
+        },
+        {
+          "s": "steve",
+          "t": "RAID 1 does the right thing. A smart controller may read half of a block from one drive and half from the other, for up to twice the performance. Writes go to both."
+        },
+        {
+          "s": "steve",
+          "t": "If one drive can't deliver a sector, the controller gets it from the mirror. That's the point. Unreadable sectors on one drive can't contaminate the other."
+        },
+        {
+          "s": "steve",
+          "t": "To run SpinRite on a RAID, temporarily take the drives off the RAID controller, put them on the motherboard's normal controller, and run SpinRite on each individually. The RAID would deliberately hide the bad sectors by serving good data from the other drive. SpinRite needs direct access to show the drive its problems."
+        },
+        {
+          "s": "leo",
+          "t": "Putting a drive back won't confuse the array?"
+        },
+        {
+          "s": "steve",
+          "t": "No. SpinRite never changes the data, so it won't break your mirror. Users do it all the time."
+        },
+        {
+          "s": "leo",
+          "t": "Even if it moves a sector?"
+        },
+        {
+          "s": "steve",
+          "t": "When a drive spares a sector, the new good sector takes the same sector number. It changes the sector underneath the data. It's very cool."
+        }
+      ]
+    },
+    {
+      "title": "Endless Security Questions",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dale in Saginaw, Michigan: a major credit card bank made him answer three personal questions at login, which he often can't. Then it said a technical problem prevented storing his answers, and he'd pick new questions another time. Isn't this an escalation? The more private information we give databases, the harder it is to find something nobody else knows. Why not just use his \"FOB number\"?"
+        },
+        {
+          "s": "leo",
+          "t": "I'd change banks. This happens to me whenever the bank feels like it, and I never get them right."
+        },
+        {
+          "s": "steve",
+          "t": "My first thought: make sure you're not being phished. Maybe their server broke. Or someone wanted your answers but couldn't store them at the real bank, because they weren't the real bank."
+        },
+        {
+          "s": "steve",
+          "t": "As a Security Now! listener, it's your duty to check: go back, confirm an SSL connection, and follow the certificate's chain of trust to someone sensible, not the Hong Kong Post Office. Actually I'm kidding; that one probably is."
+        },
+        {
+          "s": "steve",
+          "t": "But Dale's right. This spreads personal information around, and it's not safe to tell everyone your first pet's name or favorite teacher."
+        },
+        {
+          "s": "leo",
+          "t": "You don't have to give the real answer. Just keep track of what you told them. My favorite pet changes every time."
+        },
+        {
+          "s": "steve",
+          "t": "But then you have to track it, and it's worse than passwords."
+        }
+      ]
+    },
+    {
+      "title": "Wacky Number 13: A UV Password Tattoo",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener in Arkansas installed TrueCrypt after our episode. It said his password was too short, so he made a longer one he thought he could remember. Weeks later he couldn't. Nothing of value was lost."
+        },
+        {
+          "s": "leo",
+          "t": "But what about head trauma, or dying, when his family needs his documents? That's a really important question. His solution: a blacklight tattoo."
+        },
+        {
+          "s": "steve",
+          "t": "He really wrote this."
+        },
+        {
+          "s": "leo",
+          "t": "He'd tattoo one of your generated passwords on a rarely exposed body part in ultraviolet ink, invisible in normal light, and split it into eight eight-character chunks. Then he'd remember the order, like wrist, toe, ankle. He knows it's not for spies, but asks about the average Joe protecting his tax return."
+        },
+        {
+          "s": "steve",
+          "t": "Take a 64-character Perfect Password, chop it into an eight-by-eight block, and ask your local parlor if they have UV ink."
+        },
+        {
+          "s": "leo",
+          "t": "You'd have to trust your tattoo guy. Go to eight different tattoo guys."
+        },
+        {
+          "s": "steve",
+          "t": "But each must work under black light, so he'd see his chunk. That's why you'd put them in different places: bottom of the left foot, bottom of the right, the left armpit, which you'd have to shave."
+        },
+        {
+          "s": "leo",
+          "t": "Better than a Nike swoosh on your hip."
+        },
+        {
+          "s": "steve",
+          "t": "Depending on how secure your password is, you might have to completely disrobe to mount your volume."
+        },
+        {
+          "s": "leo",
+          "t": "The real problem is it's too permanent."
+        },
+        {
+          "s": "steve",
+          "t": "Like a retina scan or fingerprint. And there aren't that many orderings of eight chunks: eight times seven times six, down to one. And you'd have to tell your attorney: take my clothes off, shave my armpits, get a black light, and here's the sequence."
+        },
+        {
+          "type": "fact",
+          "title": "The math",
+          "t": "Eight chunks can be ordered 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40,320 ways, few enough for a computer to try them all in moments, if the chunks themselves were known."
+        },
+        {
+          "s": "leo",
+          "t": "And hope you don't sag. I'm sure he was tongue-in-cheek."
+        },
+        {
+          "s": "steve",
+          "t": "So many emails say please never stop doing this weekly podcast."
+        },
+        {
+          "s": "steve",
+          "t": "Rest assured, listeners, we're enjoying it too."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Steve say GRC's feedback form couldn't be screen-reader friendly?",
+      "options": [
+        "Whatever helps a screen reader identify fields would help spam bots too",
+        "Screen readers are banned",
+        "The form uses Flash",
+        "It needs JavaScript"
+      ],
+      "answer": 0,
+      "explain": "Leo read the tab order aloud for blind listeners."
+    },
+    {
+      "q": "Why does Steve encrypt and sign the order data he hands back to the browser, even under SSL?",
+      "options": [
+        "So the customer can't alter, replay or read the server's state",
+        "SSL is too slow",
+        "Browsers require it",
+        "To compress it"
+      ],
+      "answer": 0,
+      "explain": "SSL only protects the data in transit."
+    },
+    {
+      "q": "What privacy problem did listener William raise about OpenID and PIP?",
+      "options": [
+        "The identity provider learns every site you log into",
+        "Your password is public",
+        "Sites can steal your token",
+        "It's too expensive"
+      ],
+      "answer": 0,
+      "explain": "Steve called it \"the dark side of OpenID.\""
+    },
+    {
+      "q": "What did the TOR exit-node password harvesting show?",
+      "options": [
+        "TOR anonymizes traffic but doesn't encrypt it after the exit node",
+        "TOR's encryption was broken",
+        "TOR is illegal",
+        "All TOR nodes are run by governments"
+      ],
+      "answer": 0,
+      "explain": "Use SSL end to end for privacy."
+    },
+    {
+      "q": "How should you run SpinRite on drives in a RAID mirror?",
+      "options": [
+        "Take them off the RAID controller and run SpinRite on each drive individually",
+        "Run it on the RAID as a whole",
+        "Never run it on RAID drives",
+        "Rebuild the array first"
+      ],
+      "answer": 0,
+      "explain": "The RAID would otherwise hide the bad sectors."
+    },
+    {
+      "q": "Why is five heads in a row less surprising than people think?",
+      "options": [
+        "Its chance is one in 32, about 3 percent",
+        "Coins are always biased",
+        "Tails is due next",
+        "It's impossible"
+      ],
+      "answer": 0,
+      "explain": "Each flip is independent."
+    }
+  ]
+}

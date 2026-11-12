@@ -1,0 +1,562 @@
+{
+  "number": 119,
+  "title": "PayPal and DoubleClick",
+  "subtitle": "Why PayPal's links detour through an ad tracker",
+  "date": "2007-11-22",
+  "description": "After a SpinRite rescue that convinced a deep skeptic, Steve finally covers the most-requested topic: why many of PayPal's links route users through DoubleClick. He explains how web headers, cookies and the referrer field work, how third-party ad cookies track people across sites, how form data once leaked to advertisers, and how PayPal's DoubleClick redirects, carrying what look like account identifiers, create a first-party relationship that defeats anyone who blocks third-party cookies, even on PayPal's policy page.",
+  "transcript": "https://www.grc.com/sn/sn-119.txt",
+  "audio": "http://media.GRC.com/sn/SN-119.mp3",
+  "chapters": [
+    {
+      "title": "The Most-Requested Topic",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is this the day for DoubleClick and PayPal?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It's probably our most-requested topic ever. Scanning email for last week's Q&A, many people asked whatever happened. Perfect Paper Passwords exploded into something much bigger than I expected, which pushed this to today."
+        },
+        {
+          "s": "leo",
+          "t": "You stirred up a hornet's nest when you mentioned it."
+        }
+      ]
+    },
+    {
+      "title": "A Skeptic's SpinRite Rescue",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, a SpinRite story from someone with a good grip on PCs. Frank Barker wrote on November 19th that an XP PC with over 50 gigabytes of pictures, videos and other very important data, not backed up, wouldn't boot."
+        },
+        {
+          "s": "steve",
+          "t": "His usual trick, putting the drive in another PC as a second drive, failed. Windows didn't see a valid partition, and kept asking whether he'd like to format it. Obviously unwelcome."
+        },
+        {
+          "s": "steve",
+          "t": "After nine-plus hours of wracking his brain with various methods and utilities, he'd recovered only a few megabytes. Mentally exhausted and borderline desperate, he decided to spend the money on SpinRite, though skeptical."
+        },
+        {
+          "s": "leo",
+          "t": "I hope he hadn't damaged the drive with all those attempts."
+        },
+        {
+          "s": "steve",
+          "t": "It sounds like he was just trying to read it, but you're right, other utilities can be risky."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite ran about two hours at Level 2 and found a few defects, some recoverable, some not. Nothing it showed suggested he'd gained much. But back in the other PC, he was shocked to see the folders and files. Step by step, he navigated in and copied everything."
+        },
+        {
+          "s": "steve",
+          "t": "He couldn't describe his relief, and thanked us for a product that delivers on its claims. He was about as hard to convince as anyone could be."
+        },
+        {
+          "s": "leo",
+          "t": "Probably a flaky sector in the partition table or file allocation table."
+        },
+        {
+          "s": "steve",
+          "t": "It must have been serious, since Windows saw no valid file system at all. NTFS is supposed to have redundancy. And people always wait until it's almost too late, then SpinRite brings them back from the precipice."
+        },
+        {
+          "s": "leo",
+          "t": "Same with backups. I have SpinRite, but I don't run it all the time. How often should I?"
+        },
+        {
+          "s": "steve",
+          "t": "That's human nature. The good news is drives have enough plasticity that SpinRite can normally bring them back. That's what we all rely on now."
+        },
+        {
+          "s": "leo",
+          "t": "I back up like crazy. Our backups go to RAID 5 drives, and our two dedicated web servers run RAID 5 with Raptor drives for speed and redundancy."
+        },
+        {
+          "s": "steve",
+          "t": "I'm Mr. RAID. Nothing critical of mine lacks RAID redundancy."
+        }
+      ]
+    },
+    {
+      "title": "How the Problem Surfaced",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How did you find out about this?"
+        },
+        {
+          "s": "steve",
+          "t": "A listener a month or two ago couldn't use PayPal's virtual debit card link. Clicking did nothing. He found his hosts file, set up to block sites he never wants his machine to visit, had an entry for DoubleClick.net, and that broke PayPal's site."
+        },
+        {
+          "s": "steve",
+          "t": "It raised a red flag. I hadn't noticed before, hovering over PayPal's links, where they pointed. There's clearly a relationship between PayPal and DoubleClick beyond the typical advertising model."
+        },
+        {
+          "s": "steve",
+          "t": "So let's review how normal advertising works, and how URLs, headers and cookies relate to tracking. Then we'll look at what it means that many of PayPal's links go to DoubleClick. We can't say definitively what data is shared, but a lot can be inferred, and there's only really one good reason for it."
+        }
+      ]
+    },
+    {
+      "title": "Headers and Cookies",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You give your browser a URL. It looks up the domain's IP address and connects to that server. A big site like PayPal may have a pool of IPs that DNS rotates among to spread the load, or one IP feeding a load balancer and a farm of machines."
+        },
+        {
+          "s": "steve",
+          "t": "Responses carry headers you don't see, metadata about the page. One says how long the page stays valid before it's expired. So when you hit Back, your browser can show a recent page from its local cache instead of fetching everything again. Another indicates the flavor and version of HTML. Every page, image or media file has these headers."
+        },
+        {
+          "s": "steve",
+          "t": "Each query stands alone, so it's hard for a server to know that the person asking for this page asked for that one. So Netscape invented the cookie: an opaque token, meaningful only to the server that issues it, sent in that hidden metadata. The browser saves it, tagged with the domain, say www.paypal.com."
+        },
+        {
+          "s": "steve",
+          "t": "Queries also carry hidden metadata. Browsers used to report their screen size, say 1024 by 768, so servers could fit pages. And by default, whenever the browser asks that domain for anything, even a different IP or machine, it sends the cookie back."
+        },
+        {
+          "s": "steve",
+          "t": "That's a core enabler of the richer web. You log in to PayPal, Yahoo!, MSN or Gmail, receive a credential cookie, and stay logged in as you move from page to page. After, say, 30 idle minutes, the server can expire your login."
+        }
+      ]
+    },
+    {
+      "title": "Third-Party Cookies",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Then, only a decade ago, someone figured out a use Netscape never intended but didn't prevent. Sites began hosting ads from third-party services. GRC is a bad example, since I have none."
+        },
+        {
+          "s": "leo",
+          "t": "We have a banner ad on TWiT that comes from Podtrac's advertising server."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. The TWiT.tv page's HTML tells the browser to get the ad image from Podtrac's server."
+        },
+        {
+          "s": "leo",
+          "t": "In our case it's a little JavaScript, because impressions are counted, and that's how we get paid."
+        },
+        {
+          "s": "steve",
+          "t": "That's the cleverness, and DoubleClick was an early player. The more popular a site, the more page views, the more ads fetched from the third party."
+        },
+        {
+          "s": "steve",
+          "t": "The site you visit is a first-party relationship. The ad server it references is a third party. Your browser fetches the ad, and that fetch is cookie-enabled by default."
+        },
+        {
+          "s": "steve",
+          "t": "So DoubleClick, with whom you have no relationship, gives your browser a cookie, and every browser in its default setup carries it. Since DoubleClick has contracts with a huge number of sites worldwide, its third-party cookie lets it track you across the entire Internet."
+        },
+        {
+          "s": "leo",
+          "t": "That's normal. Podtrac goes through AdvertPRO, which does what DoubleClick does."
+        }
+      ]
+    },
+    {
+      "title": "The Referrer Field",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's more. When a page loads, it points to other assets: images, media, text. The browser requests each one, and each request includes a \"referrer\" field: the URL of the page containing the pointer."
+        },
+        {
+          "s": "steve",
+          "t": "So DoubleClick receives ad requests from all over the 'Net, with its cookie and the referrer. It knows where users are going."
+        },
+        {
+          "s": "steve",
+          "t": "So far it's anonymous. DoubleClick knows an anonymous browser got its first cookie on a certain date, and everywhere it's gone since on sites with DoubleClick ads. Disks are cheap, so no doubt they have mega databases. They brag about profiling users anonymously, ostensibly for more relevant ads."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not sure I like being tracked, but relevant ads would be less annoying. TiVo records shows like ones I gave a thumbs up. Amazon says people who bought this book bought these."
+        },
+        {
+          "s": "leo",
+          "t": "But you have a relationship with Amazon and TiVo, and they're the ones doing it."
+        },
+        {
+          "type": "fact",
+          "title": "Spelled wrong",
+          "t": "The HTTP header is officially spelled \"Referer,\" a misspelling that made it into the 1996 standard and has been kept ever since."
+        }
+      ]
+    },
+    {
+      "title": "How Form Data Leaked to Advertisers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Information could also leak. Back in the good old days, people filled out forms with name, address, phone number and email, and pressed Submit."
+        },
+        {
+          "s": "steve",
+          "t": "Veterans remember that information appeared in the URL after a question mark. Everything after it is parameters, data for the server."
+        },
+        {
+          "s": "steve",
+          "t": "The web was designed as read-only: we'd click links and receive static pages. To send data back, the HTTP folks tacked it onto the URL of the next page requested. A clever solution."
+        },
+        {
+          "s": "steve",
+          "t": "The huge problem: that URL becomes the referrer. If the next page has a DoubleClick ad, your browser fetches it, sends DoubleClick's cookie, and fills the referrer with the URL containing your name, address, phone and email. Third-party aggregators were known to be anxious to learn as much as they could."
+        },
+        {
+          "s": "steve",
+          "t": "There are confirmed cases of people passively browsing, filling in nothing, then getting a call from a telemarketer who knew who they were and what page they'd viewed."
+        },
+        {
+          "s": "leo",
+          "t": "It happened to someone you know."
+        },
+        {
+          "s": "steve",
+          "t": "A Canadian reporter planning a trip from Toronto to New York browsed the New York Philharmonic's concert schedule, turned off his computer and went gardening. The phone rang: the Philharmonic's marketing company, with a special offer. He'd pushed no buttons and filled in no forms."
+        },
+        {
+          "s": "steve",
+          "t": "That was such a problem that a different method, a \"post\" instead of a \"get,\" sends data without polluting the URL, blinding third parties to it."
+        }
+      ]
+    },
+    {
+      "title": "Blocking Third-Party Cookies",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And privacy-savvy people disable third-party cookies. Safari, IE and Opera let you. In the latest Firefox you have to jump through hoops. Firefox 1.5 had it in the interface."
+        },
+        {
+          "s": "leo",
+          "t": "The Firefox folks said it never worked, so they didn't expose it. I think they believe it's impossible to block third-party cookies in the browser."
+        },
+        {
+          "s": "steve",
+          "t": "That's not true. They were saying it's imperfect. I don't understand it. It's the dumbest thing I can imagine: since we can't prevent all leakage, we won't prevent any. That's contrary to everything we know about security. It isn't black and white. You use multiple imperfect layers and raise your defenses as high as you can."
+        },
+        {
+          "s": "leo",
+          "t": "Use the about:config setting in Firefox."
+        },
+        {
+          "s": "steve",
+          "t": "Right. That tells your browser you don't approve of cookie transactions with a site you're not visiting."
+        },
+        {
+          "s": "leo",
+          "t": "If it's imperfect, they should still offer it."
+        },
+        {
+          "s": "steve",
+          "t": "There are probably other ways around it, like scripting. If somebody wants to do this, they'll find a way. Which brings us to PayPal: it has found a way to force a cookie relationship between us and DoubleClick that's incredibly difficult to block, short of breaking PayPal or diligent cookie management."
+        },
+        {
+          "s": "leo",
+          "t": "But I don't want a relationship with DoubleClick."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Safari began blocking third-party cookies by default in 2017, Firefox in 2019, and Chrome let users choose. Trackers responded with exactly what Steve found here: redirecting users through tracking domains, a technique browsers now try to detect and strip."
+        }
+      ]
+    },
+    {
+      "title": "What PayPal's Links Actually Do",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This morning I started with a clean browser and went to www.paypal.com, without even identifying myself. A big happy screen said \"Ready, set, shop. PayPal Plus,\" offering the PayPal Plus credit card."
+        },
+        {
+          "s": "leo",
+          "t": "Which I always say no to."
+        },
+        {
+          "s": "steve",
+          "t": "I hovered over the big orange \"Apply Now\" button and looked at Firefox's status line. It was https://ad.doubleclick.net/clk, then a semicolon and a number, 118531265, another semicolon and 11466062, more mumbo jumbo, then a question mark followed by PayPal's real URL."
+        },
+        {
+          "s": "steve",
+          "t": "The button is a DoubleClick URL. The PayPal page you actually want is tacked on the end as data. That creates a first-party relationship between your browser and DoubleClick."
+        },
+        {
+          "s": "leo",
+          "t": "You've gone to the DoubleClick site, without knowing it. That's the problem."
+        },
+        {
+          "s": "steve",
+          "t": "You'd have to be sophisticated: hover, read the status line, understand the gobbledygook. So if you've told your browser you don't want third-party relationships, this specifically circumvents it."
+        },
+        {
+          "s": "steve",
+          "t": "And those numbers worry me. Watching them, it's very clear they identify me. PayPal built that custom page on the fly, with information about me in the URL going to DoubleClick."
+        },
+        {
+          "s": "leo",
+          "t": "PayPal knows a lot about you."
+        },
+        {
+          "s": "steve",
+          "t": "My bank account number, my credit card number, my VIP tokens. An extensive relationship, apparently shared with DoubleClick."
+        },
+        {
+          "s": "steve",
+          "t": "You could forgive a site hosting DoubleClick ads and their third-party tracking, since browsers can turn that off. This defeats that. DoubleClick captures your identity and its cookie, which no third-party setting can block, then sends you to the PayPal page."
+        },
+        {
+          "s": "leo",
+          "t": "Hi, I know you. Now let's go back to PayPal."
+        },
+        {
+          "s": "steve",
+          "t": "Back to your regularly scheduled page. It looks like a static PayPal account ID identifying me. It doesn't include my name. But we don't know how deep the relationship goes. DoubleClick could have back-end access to PayPal's database, or vice versa."
+        }
+      ]
+    },
+    {
+      "title": "Even the Policy Page",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "When do you get this? For an ad for the PayPal MasterCard, maybe it makes sense."
+        },
+        {
+          "s": "steve",
+          "t": "I'm glad you asked. After logging in, most links in the left column were similarly embellished. \"Enhance Your Account\" offered the PayPal Plus card. An ad for, unfortunately, the PayPal Security Key runs through DoubleClick."
+        },
+        {
+          "s": "steve",
+          "t": "Worse, the last link, PayPal's policy updates dated August 30, 2007, also goes through DoubleClick, with what looks like account ID information. Absolutely nothing to do with advertising."
+        },
+        {
+          "s": "steve",
+          "t": "There's only one reason to do this. Nothing requires these links to take me out of PayPal to a known ad-aggregating service, with opaque data, and make it all transparent so I just land on the PayPal page I clicked."
+        },
+        {
+          "s": "leo",
+          "t": "You could copy the URL and use just the end. Someone will write a Greasemonkey script to strip the DoubleClick part. I understand it for an ad. But not to read the policy updates."
+        },
+        {
+          "s": "steve",
+          "t": "I don't want to be tracked reading PayPal's policy updates. Unless it says they reserve the right to share account information with anyone they choose."
+        },
+        {
+          "s": "leo",
+          "t": "It probably does in the fine print."
+        },
+        {
+          "s": "leo",
+          "t": "Most of the other links go directly to PayPal pages."
+        },
+        {
+          "s": "steve",
+          "t": "Right. They keep you on the site."
+        },
+        {
+          "s": "leo",
+          "t": "It's the ad links, plus that policy page."
+        },
+        {
+          "s": "steve",
+          "t": "How about this one: \"Free alerts help protect you from ID theft.\""
+        },
+        {
+          "s": "leo",
+          "t": "That shouldn't be an ad, but it is."
+        },
+        {
+          "s": "steve",
+          "t": "Protect yourself from ID theft by going to DoubleClick."
+        }
+      ]
+    },
+    {
+      "title": "Stuck With PayPal",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "After ranting for three quarters of an hour, I'll say I use PayPal. I don't know any company more ripe for competition. I love aggregating my web purchases through them."
+        },
+        {
+          "s": "leo",
+          "t": "The irony: Google has its own checkout service, and Google owns DoubleClick. So it doesn't need to route through DoubleClick. Who knows what Google shares with its subsidiary."
+        },
+        {
+          "type": "fact",
+          "title": "Not yet",
+          "t": "Google had agreed to buy DoubleClick in April 2007, but the $3.1 billion deal closed in March 2008, after U.S. and European regulators approved it."
+        },
+        {
+          "s": "steve",
+          "t": "At least on PayPal it's visible, and a page-scraping tool could replace the DoubleClick references with the real URLs."
+        },
+        {
+          "s": "leo",
+          "t": "Strip everything up to the question mark. We actively encourage PayPal for donations. This drives me crazy."
+        },
+        {
+          "s": "steve",
+          "t": "We need more competition. I love the VeriSign tokens, now including my credit-card one, so I can buy at Starbucks. Hard as it is, I'd rather PayPal kept my card information than random one-off sites where I don't want an account. So I swallow and use PayPal."
+        },
+        {
+          "s": "steve",
+          "t": "This feels like the early days of eCommerce, and PayPal is what sites offer. But why do these links go through DoubleClick?"
+        },
+        {
+          "s": "leo",
+          "t": "Except to know what we buy. Can DoubleClick track us within PayPal?"
+        },
+        {
+          "s": "steve",
+          "t": "We don't know their behind-the-scenes database connections, or what they're paying each other for what information. PayPal is a third-party aggregator with a complete chronology of everything I've bought, for how much and from where."
+        },
+        {
+          "s": "leo",
+          "t": "Their privacy statement says they collect everything, including credit card information and home addresses. They may share it with their corporate family, eBay, Shopping.com and Skype; with contracted service providers, who may only use it for PayPal's services, not their own benefit; with GE Money Bank for the PayPal Plus card; with credit bureaus; with companies they plan to merge with or be acquired by; and with law enforcement."
+        },
+        {
+          "s": "steve",
+          "t": "Look at all the data you'll get when you buy us."
+        },
+        {
+          "s": "leo",
+          "t": "And TRUSTe validates their privacy statement, which shakes the foundations of our trust system."
+        },
+        {
+          "s": "steve",
+          "t": "What you read does give them permission to share whatever they want with DoubleClick, in line with the relationship. We don't know what those services are."
+        },
+        {
+          "s": "steve",
+          "t": "I want to extend an invitation to anyone at PayPal to explain why PayPal links take me through DoubleClick's server with account-number-looking information. What purpose does this have other than violating our privacy?"
+        }
+      ]
+    },
+    {
+      "title": "An Automated Façade",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And the download link for PayPal's virtual debit card applet is a DoubleClick link too."
+        },
+        {
+          "s": "leo",
+          "t": "What possible rationale could there be?"
+        },
+        {
+          "s": "steve",
+          "t": "That system issues temporary one-use card numbers for sites without PayPal, supposedly in 20 seconds. Something squirrelly in my credit reports at the three main clearinghouses prevents automated approval. I've tried three times and been on hold for hours, and never reached a human. PayPal is an automated façade, with little interest in talking to us."
+        },
+        {
+          "s": "leo",
+          "t": "Our server company, many providers and our web designers take payment through PayPal. I couldn't get out if I wanted to."
+        },
+        {
+          "s": "steve",
+          "t": "They're in a position of so much power, and what we're seeing is them really not caring."
+        },
+        {
+          "s": "leo",
+          "t": "Someone rewrote PPP in Perl, by the way."
+        },
+        {
+          "s": "steve",
+          "t": "Got it yesterday, thanks."
+        },
+        {
+          "s": "leo",
+          "t": "Happy Thanksgiving to our U.S. listeners. Elaine's working on Thanksgiving Day. What do you do?"
+        },
+        {
+          "s": "steve",
+          "t": "I used to visit family in Northern California, but after 9/11, travel on the busiest day became too tough. I spend it with friends who are also sans family, our own little virtual family."
+        },
+        {
+          "s": "leo",
+          "t": "After the big meal, some people watch football. The real nerds listen to Security Now!."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does a third-party cookie let an ad company like DoubleClick do?",
+      "options": [
+        "Recognize the same browser across every site that shows its ads",
+        "Read your files",
+        "Install software",
+        "Change your passwords"
+      ],
+      "answer": 0,
+      "explain": "Browsers send it by default when fetching ads."
+    },
+    {
+      "q": "How did old-style form submissions leak personal data to advertisers?",
+      "options": [
+        "The data rode in the page URL, which browsers sent as the referrer to ad servers",
+        "Forms were emailed to them",
+        "Ads read the screen",
+        "Cookies stored the form"
+      ],
+      "answer": 0,
+      "explain": "\"Post\" requests later kept data out of the URL."
+    },
+    {
+      "q": "What did Steve find when hovering over PayPal's \"Apply Now\" button?",
+      "options": [
+        "A DoubleClick URL with numbers and PayPal's real address tacked on the end",
+        "A plain PayPal link",
+        "A virus",
+        "A Google link"
+      ],
+      "answer": 0,
+      "explain": "The real page was passed along as data."
+    },
+    {
+      "q": "Why does routing a click through DoubleClick defeat third-party cookie blocking?",
+      "options": [
+        "Your browser visits DoubleClick directly, making it a first-party site",
+        "DoubleClick hacks your browser",
+        "PayPal deletes your settings",
+        "Cookies can't be blocked"
+      ],
+      "answer": 0,
+      "explain": "The redirect then returns you to PayPal."
+    },
+    {
+      "q": "Which PayPal link most troubled Steve because it had nothing to do with ads?",
+      "options": [
+        "The policy updates page",
+        "The logout button",
+        "The help page",
+        "The home page"
+      ],
+      "answer": 0,
+      "explain": "It too went through DoubleClick with account-like data."
+    },
+    {
+      "q": "What did Steve say about Firefox removing the third-party cookie option from its preferences?",
+      "options": [
+        "Refusing an imperfect defense contradicts layered security",
+        "It was the right call",
+        "Firefox never had it",
+        "It slowed the browser"
+      ],
+      "answer": 0,
+      "explain": "It can still be set in about:config."
+    }
+  ]
+}

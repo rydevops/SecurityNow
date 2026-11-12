@@ -1,0 +1,286 @@
+{
+  "number": 187,
+  "title": "Windows Autorun-around",
+  "subtitle": "Why disabling Windows Autorun never really worked, and how to actually turn it off",
+  "date": "2009-03-12",
+  "description": "For years, disabling Windows Autorun didn't fully work, and the Conficker worm's USB spread finally forced Microsoft to fix it in February 2009. Steve dissects the bit-encoded NoDriveTypeAutorun registry value, shows that setting it to FF disables every drive type, and reveals the key omission in Microsoft's own documentation: a value under CURRENT_USER silently overrides the one under LOCAL_MACHINE. Plus a still-unpatched Excel zero-day, a WMF metafile fix, the Adobe Reader patch, data-file exploits, .gov going DNSSEC, the Tigger trojan, and Conficker's jump to 50,000 domains.",
+  "transcript": "https://www.grc.com/sn/sn-187.txt",
+  "audio": "http://media.GRC.com/sn/SN-187.mp3",
+  "chapters": [
+    {
+      "title": "Vote for Your Favorite Security Podcast",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A favor to ask listeners: there's an awards announcement at this year's RSA conference, and voting is at SocialSecurityAwards.com, named for social media, not the government program. Annoyingly for us, you must enable JavaScript, and a second \"vote monkey\" script, to vote."
+        },
+        {
+          "s": "leo",
+          "t": "Not very security-aware of them. They probably use cookies, and maybe Flash cookies, to stop repeat voting."
+        },
+        {
+          "s": "steve",
+          "t": "Cookies are part of HTTP itself, older than JavaScript. I voted once; it logged me and wouldn't even let me back to read the other entries. I won't tell people how to vote, just vote for your favorite security podcast."
+        },
+        {
+          "s": "leo",
+          "t": "And I'll happily accept when we win. Brian Krebs's \"Security Fix\" blog gets my vote too."
+        }
+      ]
+    },
+    {
+      "title": "Patch Tuesday: Still No Excel Fix",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "March's Patch Tuesday came and went, and the bad Excel zero-day we covered is still unpatched while being actively exploited. The security community wants Microsoft to ship an out-of-cycle fix rather than wait until April, because proof-of-concept code is circulating and opening a malicious spreadsheet runs code."
+        },
+        {
+          "s": "steve",
+          "t": "What we did get includes a critical fix for a parsing bug in the Windows Metafile formats, WMF and EMF, during the user-mode-to-kernel handoff in GDI, so a malicious metafile can run code. It requires a reboot, so do it."
+        },
+        {
+          "type": "fact",
+          "title": "The Windows Metafile returns",
+          "t": "WMF/EMF are old vector image formats whose parser has produced several serious Windows flaws over the years, because image files are processed deep in the graphics stack. Like the data-file exploits elsewhere in this episode, it shows that \"just an image\" is not automatically safe."
+        }
+      ]
+    },
+    {
+      "title": "Adobe Reader Patched, and Foxit's JBIG2",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Adobe Acrobat flaw's patch shipped on the 11th, for version 9 only; versions 7 and 8 follow about a week later. It's a zero-day already exploited in the wild. Note that disabling Reader's JavaScript no longer protects you, non-JavaScript exploits for the bug now exist."
+        },
+        {
+          "s": "leo",
+          "t": "Foxit was asked if it shares the flaw. It said the bug was a buffer overflow in Adobe's JBIG2 decoder; Foxit uses its own decoder and isn't vulnerable the same way, you'd get an empty image instead of a crash. But Foxit still shipped an update after taking a closer look."
+        }
+      ]
+    },
+    {
+      "title": "Data Files That Carry Exploits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's Mozilla update time too: Firefox 3.0.7, past-vulnerable Thunderbird and SeaMonkey, plus Opera after 9.63. And Winamp: its open-source Libsndfile sample parser has an integer-overflow bug, so update past Winamp 5.55."
+        },
+        {
+          "s": "leo",
+          "t": "It's scary when the exploit is in a data file. Everyone knows to avoid executables and to back up data, so a JPG, PDF or MP3 feels harmless."
+        },
+        {
+          "s": "steve",
+          "t": "Someone wrote that MP3-sample parser to make sound come out, not with security in mind. A specially crafted file overflows an integer, jumps execution into the rest of the buffer, and that buffer is the attacker's program. The grim reality is this is now big business: machines are taken over for profit, not curiosity."
+        },
+        {
+          "type": "fact",
+          "title": "Why \"just a data file\" isn't safe",
+          "t": "Any program that parses a complex file, images, PDFs, audio, spreadsheets, can be tricked by a malformed one into overrunning a buffer and executing attacker-supplied bytes. Backing up only your data protects your files, but a booby-trapped data file can still compromise the machine that opens it."
+        }
+      ]
+    },
+    {
+      "title": ".gov Goes DNSSEC, and a Lingering Kaminsky Flaw",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "As of the end of February, all the government's top-level .gov DNS servers run DNSSEC, which they never had before. It's complex to set up, so almost nobody bothers, but now anyone wanting verifiable, non-spoofable signed records from .gov can get them. It doesn't help .com or .net, but it's a step."
+        },
+        {
+          "s": "leo",
+          "t": "One of this month's Microsoft patches also fixed a lingering Kaminsky-style cache-poisoning flaw in Microsoft's DNS server."
+        },
+        {
+          "type": "fact",
+          "title": "DNSSEC adoption",
+          "t": "DNSSEC cryptographically signs DNS records so resolvers can detect forged answers, the cache-poisoning class Dan Kaminsky publicized in 2008. Adoption was slow for years; the DNS root itself was not signed until mid-2010, well after .gov here."
+        }
+      ]
+    },
+    {
+      "title": "The Tigger Trojan Targets Stock Traders",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Brian Krebs wrote up the \"Tigger\" trojan, notable for being tightly targeted: over a quarter-million Windows machines infected, and it specifically goes after employees and clients of E*TRADE, ING Direct, Vanguard, optionsXpress, TD Ameritrade and Scottrade."
+        },
+        {
+          "s": "steve",
+          "t": "It uses a privilege-escalation exploit Microsoft patched back in October 2008, yet it still spreads five months later. Because it elevates privilege, even running under a limited user account doesn't protect an unpatched machine."
+        }
+      ]
+    },
+    {
+      "title": "Conficker Escalates to 50,000 Domains",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Downadup/Conficker/Kido worm, found in a Symantec honeypot in November 2008, has infected at least 11.4 million PCs by a neutral SRI International census, and about three million are actively phoning home each day. It builds a botnet that updates itself by contacting generated domain names."
+        },
+        {
+          "s": "steve",
+          "t": "Defenders fight it by pre-registering or blocking those domains. The original version generated 250 candidate domains a day, which was blockable. The new C variant jumps that to 50,000, so defenders must cover 50,000 names a day; miss one and the worm updates."
+        },
+        {
+          "s": "steve",
+          "t": "The B variant is what forced Microsoft's hand: it spreads over network shares, by guessing 240 common passwords, and by writing an autorun.inf to USB sticks. Insert an infected stick into a machine whose Autorun wasn't truly disabled, and it runs, which is exactly the bug we're covering today."
+        },
+        {
+          "s": "leo",
+          "t": "So that's convenient, we're talking about Autorun today."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite Paranoia Kit",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A listener shared his \"hard drive paranoia\" setup: SpinRite run quarterly on his internal and backup drives, a full offsite backup every weekend, Carbonite on the system drive, and every Drobo disk SpinRite-tested before install. Every time, he wakes to \"No problems detected.\""
+        },
+        {
+          "s": "steve",
+          "t": "Notice his friends have the failures, because they do no preventative maintenance; he runs SpinRite preemptively. Letting it have a drive overnight each quarter lets it find and retire sectors that are becoming marginal before they turn unreadable."
+        },
+        {
+          "s": "leo",
+          "t": "That really was your original intent, a maintenance tool."
+        },
+        {
+          "s": "steve",
+          "t": "It is, though people won't buy it that way; they buy it when they need it, then run it quarterly forever after."
+        }
+      ]
+    },
+    {
+      "title": "Why Autorun Was Fixed, Grudgingly",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now the main event. Disabling Windows Autorun is one of the first things a security-aware person does, and for years it was simply broken: you could configure it correctly and code would still run from CDs, USB sticks, network shares and more. US-CERT confirmed that the Autorun and NoDriveTypeAutorun values did not fully disable it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft knew, but only offered a manual fix for Vista and Server 2008, which almost nobody installed. They feared that pushing a fix would \"break\" behaviors people had come to rely on, even though it was the behavior users had asked to disable."
+        },
+        {
+          "s": "steve",
+          "t": "Then Conficker started spreading through Autorun, infecting even people who had turned it off, so in February Microsoft finally pushed the fix to everyone, adding a HonorAutorunSetting key (default 1) so you can fall back to the old broken behavior if the fix breaks something."
+        }
+      ]
+    },
+    {
+      "title": "Decoding the NoDriveTypeAutorun Bits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The control is the registry value NoDriveTypeAutorun, and each drive type is a bit in a one-byte value. Bit 0x01 disables unknown-type drives (and oddly 0x80 does the same). Bit 0x04 disables removable drives, which covers USB and Firewire. Bit 0x08 disables fixed hard drives."
+        },
+        {
+          "s": "steve",
+          "t": "Bit 0x10 disables network-share drives, the one that was broken before. Bit 0x20 disables CD-ROM/DVD, and 0x40 disables RAM disks. The old 0x02 \"no root directory\" bit was deprecated and left unassigned."
+        },
+        {
+          "s": "steve",
+          "t": "Set every bit, hex FF (255), and Microsoft says all drive types are disabled. If you want to allow one type, say CD-ROMs, you leave its bit clear. Most people just want everything off, so FF is the answer."
+        }
+      ]
+    },
+    {
+      "title": "The CURRENT_USER Override Microsoft Forgot",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the critical omission. Microsoft documents only NoDriveTypeAutorun under HKEY_LOCAL_MACHINE\\...\\Policies\\Explorer. But the same value can exist under HKEY_CURRENT_USER, and when it does, it completely overrides the LOCAL_MACHINE value, the bits aren't OR'd or AND'd, the user key simply wins."
+        },
+        {
+          "s": "steve",
+          "t": "So you can set LOCAL_MACHINE to FF, think you're protected, and not be, because a permissive CURRENT_USER value (often left by Tweak UI or similar tools) takes precedence. Microsoft's page, KB 967715, never mentions this."
+        },
+        {
+          "s": "steve",
+          "t": "My advice: set NoDriveTypeAutorun to FF under CURRENT_USER, or under both. A tiny .reg file can create and set the key. Set only LOCAL_MACHINE and a stray permissive CURRENT_USER value will silently defeat you."
+        },
+        {
+          "s": "leo",
+          "t": "You'd think the machine-wide setting would win, but per-user settings override, so CURRENT_USER takes precedence, then LOCAL_MACHINE."
+        },
+        {
+          "type": "fact",
+          "title": "Default values differed",
+          "t": "Windows 2000 and Server 2003 defaulted NoDriveTypeAutorun to 0x95, which disabled removable (and network and unknown) drives. XP, Vista and Server 2008 defaulted to 0x91, deliberately re-enabling removable-drive Autorun, which is exactly the behavior Conficker exploited via USB sticks."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Microsoft finally push the Autorun fix to all Windows versions in February 2009?",
+      "options": [
+        "The Conficker worm was spreading via Autorun and infecting even people who had tried to disable it",
+        "A court ordered Microsoft to fix it",
+        "Windows 7 required the change",
+        "Antivirus vendors could no longer detect the worm"
+      ],
+      "answer": 0,
+      "explain": "Disabling Autorun had never fully worked; Conficker's USB and network-share spread exploited that, so Microsoft stopped leaving the fix as a manual, Vista-only download."
+    },
+    {
+      "q": "To disable Autorun on every drive type, what should NoDriveTypeAutorun be set to?",
+      "options": [
+        "Hex FF (all bits set)",
+        "Hex 00 (all bits clear)",
+        "Hex 01",
+        "Hex 91"
+      ],
+      "answer": 0,
+      "explain": "Each bit disables one drive type; setting all eight bits (FF, 255) disables Autorun for unknown, removable, fixed, network, CD-ROM and RAM-disk drives."
+    },
+    {
+      "q": "What critical detail did Microsoft's documentation omit about disabling Autorun?",
+      "options": [
+        "A NoDriveTypeAutorun value under HKEY_CURRENT_USER overrides the one under HKEY_LOCAL_MACHINE",
+        "You must reboot twice for it to take effect",
+        "The value must be decimal, not hex",
+        "Only administrators can read the key"
+      ],
+      "answer": 0,
+      "explain": "Microsoft documented only the LOCAL_MACHINE key, but a value under CURRENT_USER silently takes precedence, so a stray permissive user value defeats a correct machine-wide setting."
+    },
+    {
+      "q": "Why does disabling JavaScript no longer protect Adobe Reader against the current flaw?",
+      "options": [
+        "Non-JavaScript exploits for the same underlying bug now exist",
+        "Adobe removed the JavaScript setting",
+        "The flaw is in the JavaScript engine itself and can't be disabled",
+        "JavaScript was never the attack vector"
+      ],
+      "answer": 0,
+      "explain": "Disabling JavaScript blocked only the original exploitation path; the underlying JBIG2 decoder bug can now be triggered without JavaScript."
+    },
+    {
+      "q": "How did Conficker's C variant make it much harder for defenders to block?",
+      "options": [
+        "It raised the number of generated command-and-control domains from 250 to 50,000 per day",
+        "It encrypted the entire hard drive",
+        "It stopped using domains and used email instead",
+        "It disabled Windows Update permanently"
+      ],
+      "answer": 0,
+      "explain": "Defenders must pre-register or block the worm's daily domains; jumping from 250 to 50,000 names a day makes covering them all impractical, and missing one lets the botnet update."
+    },
+    {
+      "q": "Why can't backing up only your data files guarantee you're safe from today's threats?",
+      "options": [
+        "A malformed data file (image, PDF, audio) can exploit the parser that opens it and run code",
+        "Data files are too large to back up reliably",
+        "Backups always include hidden executables",
+        "Antivirus can't scan data files"
+      ],
+      "answer": 0,
+      "explain": "Parsers for complex formats can be tricked into buffer overflows, so opening a booby-trapped MP3, PDF or spreadsheet can compromise the machine even though it's \"just data.\""
+    }
+  ]
+}

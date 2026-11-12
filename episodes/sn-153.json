@@ -1,0 +1,491 @@
+{
+  "number": 153,
+  "title": "DePhormed Politics",
+  "subtitle": "Alexander Hanff on the U.K. fight against Phorm",
+  "date": "2008-07-17",
+  "description": "Dan Kaminsky's secretly coordinated DNS patch, two zero-day exploits in Word 2002 and Access's Snapshot Viewer, and a San Francisco network administrator who locked the city out of its own network open the show. Then Alexander Hanff, the technologist and sociologist leading the U.K. campaign against Phorm, explains the laws he believes Phorm and BT broke, from interception to fraud, why anonymization is no defense, and why the U.S. Congress has acted faster than Britain's government. Steve also tells how Amazon replaced his dropped Kindle.",
+  "transcript": "https://www.grc.com/sn/sn-153.txt",
+  "audio": "http://media.GRC.com/sn/SN-153.mp3",
+  "guests": {
+    "alexander": "Alexander Hanff"
+  },
+  "chapters": [
+    {
+      "title": "Privacy, and Kaminsky's DNS Bombshell",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We have one of our rare guests, Alexander Hanff in the U.K., who is pretty much leading the anti-Phorm charge in newsgroups and privacy circles. After two episodes on ISPs selling access to their customers' traffic, Alex will cover the human and political side, and the history in the U.K., where Phorm experimented secretly in '06 and '07."
+        },
+        {
+          "s": "leo",
+          "t": "Ironic, since the U.K. has more cameras per square foot than anywhere. Maybe that's why they're more sensitive."
+        },
+        {
+          "s": "steve",
+          "t": "The galactically huge security news: for months, quietly, security researcher Dan Kaminsky worked with every major vendor of DNS servers, Cisco, the open-source BIND folks, Microsoft and others, to fix a big problem he found in DNS at the beginning of the year. Then, in something never done before in the history of the Internet, they all patched at once in a big synchronized update. And nothing leaked."
+        },
+        {
+          "s": "leo",
+          "t": "It came out just after we recorded last week. And they said the patch couldn't be reverse engineered."
+        },
+        {
+          "s": "steve",
+          "t": "It's about DNS spoofing, and that's next week's topic. Dan won't reveal specifics until Black Hat in Las Vegas on August 6th. I've emailed him to see whether he could join us the week after."
+        },
+        {
+          "s": "steve",
+          "t": "Next week we'll cover something we've never discussed: DNS spoofing, well understood, which lays the foundation. There are simple ways to harden DNS servers that many didn't implement. Reading between the lines, Dan found that even the defenses against spoofing weren't good enough."
+        },
+        {
+          "s": "leo",
+          "t": "The patch went out on Patch Tuesday from Cisco, Microsoft and BIND, but many ISPs haven't applied it. Dan's site, DoxPara.com, tests your ISP's DNS. Of my three providers, DSL Extreme and OpenDNS had done it, but my local Comcast hadn't."
+        },
+        {
+          "s": "steve",
+          "t": "OpenDNS has always run strong servers using query port randomization. Some servers always send their queries from the same fixed port. The more random, the better."
+        },
+        {
+          "s": "leo",
+          "t": "So they were protected from day one."
+        },
+        {
+          "s": "steve",
+          "t": "If you're concerned, switch your DNS to OpenDNS to sidestep your ISP's servers. DNS has been known to be vulnerable for a long time. This is even forcing Yahoo! to finally give up BIND 8 for the stronger BIND 9. It's not end-of-the-world, but it's really good it's being fixed, because bad guys would have had a lot of fun."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Kaminsky's flaw let attackers poison a DNS server's cache within seconds. The emergency fix was source port randomization, and the scare gave a big push to DNSSEC, which digitally signs DNS answers."
+        }
+      ]
+    },
+    {
+      "title": "Two Zero-Day Exploits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two new zero-day exploits for Windows, timed to arrive after Patch Tuesday so Microsoft can't respond. Zero-day means exploits of unknown vulnerabilities found in the wild."
+        },
+        {
+          "s": "steve",
+          "t": "One affects only Word 2002 Service Pack 3. Open a maliciously designed document, and it can execute code remotely. Microsoft's only workaround is, uh, maybe upgrade to Word 2003 or something else. I'm sure August's Patch Tuesday will fix it."
+        },
+        {
+          "s": "steve",
+          "t": "Antivirus signatures are being updated to detect these documents. So if you like opening documents you receive in spam..."
+        },
+        {
+          "s": "steve",
+          "t": "Good luck to you. But a well-updated scanner will probably save you."
+        },
+        {
+          "s": "steve",
+          "t": "The second is once again an ActiveX control that IE can invoke from a malicious site. ActiveX controls are essentially DLLs on your system, never meant for IE, but IE is all powerful, and a parsing mistake lets a site execute code. This one is the Access Snapshot Viewer, in Access 2000, 2002, 2003 and the standalone viewer. Office 2007's Access doesn't include the control."
+        },
+        {
+          "s": "steve",
+          "t": "There's a workaround: the kill bits we've discussed, which prohibit a control from being \"instantiated,\" in object-oriented jargon, into IE. Our show notes link to Microsoft's advisory and a .reg file that sets the kill bits for all three variations. Run it and restart IE, and you're safe until the fix, almost certainly in August."
+        }
+      ]
+    },
+    {
+      "title": "San Francisco Locked Out of Its Network",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The San Francisco Chronicle reports a disgruntled city computer engineer has commandeered the city's multimillion-dollar FiberWAN network. He changed the passwords so nobody else can get in. They threw him in jail Sunday, and he won't give up the password."
+        },
+        {
+          "s": "leo",
+          "t": "They'd been trying to fire him. Starting June 20th, he modified the system so only he had access. Undoing it could cost millions, and they worry he told someone how to set off a logic bomb that would destroy data."
+        },
+        {
+          "s": "steve",
+          "t": "So he built a trapdoor letting only him in."
+        },
+        {
+          "s": "leo",
+          "t": "The guy who runs the computers wields a lot of power."
+        },
+        {
+          "s": "steve",
+          "t": "The jocks in high school are no longer laughing at us, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "No more super atomic wedgies."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "The administrator, Terry Childs, gave the passwords to Mayor Gavin Newsom during a jailhouse visit a week later. He was convicted in 2010 of denying computer access."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Pulls a Laptop From the Trash",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The subject: \"SpinRite got me a TC1100 Tablet PC.\" His wife's laptop died a slow, \"relatively painless\" death. He'd been using it as a TV display in his office. When it died, he tossed it in the trash, though he normally hates parting with legacy technology."
+        },
+        {
+          "s": "steve",
+          "t": "For three days it collected coffee grounds, mayonnaise, leaking ketchup and all manner of exotic sauces. Then he thought of SpinRite. He pulled the laptop, dock and cables out, cleaned them up, and booted SpinRite from its half-broken CD drive. It completely recovered the drive."
+        },
+        {
+          "s": "steve",
+          "t": "He sold the laptop to a friend, for whom it still runs great, and used the money to buy a legendary HP TC1100 Tablet PC on eBay."
+        },
+        {
+          "s": "leo",
+          "t": "I love the subject line."
+        },
+        {
+          "s": "steve",
+          "t": "I have two TC1100s. Remember Jenn Cutter from Call for Help in Toronto? She had one, and I lusted after it."
+        },
+        {
+          "s": "steve",
+          "t": "It's perfect for jotting notes, like at homeowners' association meetings, with Microsoft's OneNote. Tablet PCs never really caught on, and for real text entry a keyboard and pointing device are easier, but the handwriting recognition is very good. I have Vista on one and XP on the other. Funky machines, but I like them."
+        }
+      ]
+    },
+    {
+      "title": "Meet Alexander Hanff",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Alexander Hanff joins us from England."
+        },
+        {
+          "s": "steve",
+          "t": "Tell us the story from the beginning. How did Phorm come to people's attention, and how did you get involved?"
+        },
+        {
+          "s": "alexander",
+          "t": "On February 14th, Phorm put out a press release saying it had signed deals with Carphone Warehouse's TalkTalk, BT and Virgin Media for its deep packet inspection technology, for behavioral advertising. The Register, a technology news site that has covered this extensively, reported it quickly, and the outrage started."
+        },
+        {
+          "s": "alexander",
+          "t": "I've been in technology for 17 years, and I'm a sociologist whose studies over the past three years have focused on privacy and technology. So it interested me academically and professionally."
+        },
+        {
+          "s": "alexander",
+          "t": "I looked at which laws might have been violated. Over about six weeks, The Register kept reporting how the technology worked, and then we learned about the covert trials in 2006 and 2007."
+        },
+        {
+          "s": "alexander",
+          "t": "I was writing my dissertation on Microsoft in the public sector versus open-source solutions. I started a paper on Phorm out of interest, and with six weeks to the deadline, it became my dissertation: a legal analysis of the covert trials."
+        },
+        {
+          "s": "alexander",
+          "t": "In April, Simon Davies, CEO of 80/20 Thinking, which was doing Phorm's privacy impact assessment, invited me to speak at a public \"town hall\" meeting where Phorm's executives addressed the press and public. Dr. Richard Clayton of Cambridge University spoke, and so did Phorm's CEO, Kent Ertugrul, and I believe its technical director. I spoke for the general public: the privacy concerns, the Human Rights Act issues, and the fact that people find being profiled this way offensive, an anathema to society."
+        },
+        {
+          "s": "alexander",
+          "t": "A week later I debated Phorm's CEO head to head on the BBC technology show \"Click.\" My dissertation has been downloaded over 70,000 times since May 1st. With that attention, I became a natural leader for the campaign. Our protest is tomorrow."
+        }
+      ]
+    },
+    {
+      "title": "Why \"Anonymous\" Isn't a Defense",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In your debates, Phorm's CEO justifies it on the grounds that it's anonymous. They've gone to great lengths: they don't know anyone's identity, and they assign random tokens. Not to play devil's advocate, since I'm way in your court, but why isn't that a useful counterargument?"
+        },
+        {
+          "s": "alexander",
+          "t": "The U.K. and Europe have a number of laws protecting us from this kind of interception. Simply processing the data is covered by data protection law. To anonymize the data, they first have to process it."
+        },
+        {
+          "s": "alexander",
+          "t": "The Regulation of Investigatory Powers Act brings parts of the European Convention on Human Rights into British law. It makes it a criminal offense for any party to intercept another's communications without consent, except where police get a warrant for national security or preventing crime."
+        },
+        {
+          "s": "alexander",
+          "t": "In the covert trials, they altered the data stream, the \"clickstream,\" to insert JavaScript, forcing people's computers to run extra cycles without the owner's consent. That brings in the Computer Misuse Act."
+        },
+        {
+          "s": "alexander",
+          "t": "The Privacy and Electronic Communications Regulations, from a European directive, also prohibit intercepting communications data without the consent of those communicating. That's not all of them. With laws in place, it's hard to argue, well, it's illegal, but we anonymize it."
+        },
+        {
+          "s": "steve",
+          "t": "So the ISPs ignored the fact that what they allowed a third party to do for money could be persuasively argued to violate a bunch of laws."
+        },
+        {
+          "s": "alexander",
+          "t": "The ISPs say they've had legal advice and believe it's legal. But many technical and legal experts, peers in the House of Lords, people at the European Commission and members of our Parliament believe it's illegal now, and certainly was in the covert trials, without the expressed, informed consent of the people involved. It can't be buried in a license agreement or terms and conditions."
+        }
+      ]
+    },
+    {
+      "title": "Opt-In, and Copyright",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Leo and I have said that if it were opt-in, which would be easy, intercepting your first page request to ask permission, they'd have a position to argue. And of course they know a huge percentage would say, no thank you."
+        },
+        {
+          "s": "alexander",
+          "t": "Exactly. With opt-in, I'd have fewer arguments. There would still be the consent of content providers, whose web pages are essentially taken for commercial gain. They're copied, which infringes copyright. I may not be the biggest fan of modern copyright, but here it could bite them."
+        },
+        {
+          "s": "steve",
+          "t": "Meaning the keyword analysis of every page users retrieve?"
+        },
+        {
+          "s": "alexander",
+          "t": "They do more. They take a copy of the page and process it offline on separate equipment, to keep the routing equipment, the Layer 7 deep packet inspection kit, free for routing traffic."
+        },
+        {
+          "s": "steve",
+          "t": "Whereas NebuAd, as I understand it, still inserts JavaScript, and Phorm now does the redirection dance to plant first-party cookies across every domain."
+        },
+        {
+          "s": "alexander",
+          "t": "That \"307 cookie dance,\" as you put it, which I found amusing, runs into our Fraud Act. Their equipment claims to be a third party, the website, when it isn't. That's fraud, especially in a commercial transaction, say someone buying goods on Amazon."
+        },
+        {
+          "s": "steve",
+          "t": "So when a user requests a site, Phorm fraudulently intercepts their explicit request and pretends to be that site, redirecting the browser to Phorm's domain."
+        },
+        {
+          "s": "alexander",
+          "t": "Exactly. It's not new technology. It's essentially a proxy cache, used positively in the past to relieve network resources. But for advertising, it takes on a much more sinister light."
+        },
+        {
+          "s": "steve",
+          "t": "As we discussed recently, an ISP's caching proxy refetches pages according to their caching rules, so other customers get them faster while the ISP saves bandwidth."
+        },
+        {
+          "s": "alexander",
+          "t": "Yes, it's had very positive uses. NebuAd has been doing behavioral profiling in the U.S. for some time, but this use is new, very sinister and something we find very offensive."
+        }
+      ]
+    },
+    {
+      "title": "Function Creep and No Oversight",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Where does this go from here?"
+        },
+        {
+          "s": "alexander",
+          "t": "As a technologist, a father, a social scientist and, I like to think, someone with reasonably high morals, I'm not anti-advertising. We use advertising every day. But there are acceptable ways that don't intrude on people's rights and privacy."
+        },
+        {
+          "s": "alexander",
+          "t": "And there's mission creep, or function creep. Deep packet inspection can do pretty much anything to the network stream. We only have the word of an ex-spyware company that it won't add functionality. For an experienced admin, that's quick: regular expressions or text parsing."
+        },
+        {
+          "s": "alexander",
+          "t": "It could be changed quickly and almost undetectably, because there's no oversight. Nothing is open source. It's all proprietary. The earlier trials used Squid with other technology on top. With no monitoring of their updates or access, how can we trust the company responsible for what was widely regarded as the worst rootkit ever deployed on the Internet with all our communications?"
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. This already upsets people, and it's only this much. With a foothold in ISPs, it's not a stretch for them to say, look how much better we could profile people if we parsed their email, since mail between a user and the ISP's SMTP server typically isn't encrypted."
+        },
+        {
+          "s": "steve",
+          "t": "And has anyone shown this profiling actually produces better results?"
+        },
+        {
+          "s": "alexander",
+          "t": "We haven't found any evidence. NebuAd says it's still in trials and won't disclose results, and Phorm hasn't either. It's untested, entering an incredibly competitive market."
+        }
+      ]
+    },
+    {
+      "title": "The Protest and the Law",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And tomorrow there's a big demonstration."
+        },
+        {
+          "s": "alexander",
+          "t": "A protest in London outside BT's annual general meeting. We'll also deliver a case file to the police with a complaint about the 2006 and 2007 covert trials, hoping they'll investigate and prosecute."
+        },
+        {
+          "s": "steve",
+          "t": "So you have legal counsel on your side?"
+        },
+        {
+          "s": "alexander",
+          "t": "Very influential legal experts. Nicholas Bohm, general counsel for the Foundation for Information Policy Research, a technology policy think tank, is a retired solicitor and guest lecturer in technology law at Cambridge. He has said this technology is illegal, and his analysis paralleled mine."
+        },
+        {
+          "s": "steve",
+          "t": "Have you looked at where the U.S. stands legally?"
+        },
+        {
+          "s": "alexander",
+          "t": "I recently wrote an academic paper on the sunset clauses in the Patriot Act. As I understand it, your Fourth Amendment, which would normally cover privacy, gives no rights over information you've volunteered to a third party. And the Patriot Act goes further. So legally, you're worse protected than we are."
+        },
+        {
+          "s": "alexander",
+          "t": "But you've had far more success with your politicians. Your congressmen said NebuAd's technology would fall foul of the Cable Act, a relatively little-known law, and that stopped NebuAd and Front Porch dead in their tracks. We have seven or eight laws this falls under and haven't gotten a positive response from our government. It's unusual to see a country thought less protective of privacy getting much stronger support from its government. That's great to see."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe the Patriot Act and everything since September 11 have made us more aware of privacy and primed to address it."
+        },
+        {
+          "s": "alexander",
+          "t": "I met the Earl of Northesk, a peer in the House of Lords who has followed Phorm officially and lives in the U.S. half the year. He believes your Congress is much more knowledgeable about technology than our politicians. Maybe younger blood, or your massive tech industry. He sees a huge lack of understanding of these issues in the British government."
+        },
+        {
+          "s": "leo",
+          "t": "We've been saying that about the American government for years. I guess it could be worse."
+        },
+        {
+          "s": "alexander",
+          "t": "In this case, yes."
+        },
+        {
+          "s": "leo",
+          "t": "Thank you for bringing this to light. By leading the way, you've helped protect us, raising awareness so people here were ready to fight it."
+        },
+        {
+          "s": "alexander",
+          "t": "We owe you gratitude too. Phorm wants to expand into the U.S. and has used that to attract investors. With NebuAd and Front Porch frozen out by Congress, Phorm's share price has fallen stunningly over the past five months, partly because of what's happened in the U.S."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "BT dropped Phorm in July 2009. The European Commission took the U.K. to court over weak interception laws, prompting changes in 2011, though prosecutors declined to charge BT over the secret trials. Phorm shut down in 2016."
+        },
+        {
+          "s": "steve",
+          "t": "Alex has been exchanging email with me and participating in GRC's newsgroups, so he'll keep us posted."
+        }
+      ]
+    },
+    {
+      "title": "The Dropped Kindle",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "What happened to your Kindle, my friend?"
+        },
+        {
+          "s": "steve",
+          "t": "It has a happy ending, and I'm very impressed with Amazon. I was on a bench seat in my favorite restaurant, legs crossed, Kindle in my lap, and it slipped about two feet onto carpet. It had done the same thing a week before with no problem."
+        },
+        {
+          "s": "steve",
+          "t": "This time the top quarter inch of the screen and an inch down the left side were dead, like dead scan lines. Squeezing the top changed the pattern, so I figured it was the high-density edge connector to the screen."
+        },
+        {
+          "s": "steve",
+          "t": "No Kindle is more than a year old, since they've only sold since last November. Online forums showed others had good experiences. I found a phone number, called, and the Amazon person said, no problem, we'll send you a replacement. You have a month to return the old one, with a prepaid UPS label by email. In two days I had a brand-new Kindle."
+        },
+        {
+          "s": "leo",
+          "t": "And your content transferred?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. And the battery was already showing some fatigue at about eight months. I only turn on the cell radio briefly at 5:00 a.m. at Starbucks to update the Wall Street Journal, Slate and my periodicals. I used to go weeks before the gauge dropped a notch. A lithium-ion battery should last about two years, and they age even unused. But unlike some products from a company starting with \"A,\" the Kindle's battery is replaceable."
+        },
+        {
+          "s": "leo",
+          "t": "I ordered a spare battery with mine, for long trips, like Egypt. Never needed it."
+        },
+        {
+          "s": "steve",
+          "t": "Its battery life is spectacular. I'm so bound to it that I considered buying a second one in case they made me send mine in first. They solved it in a very satisfying way."
+        },
+        {
+          "s": "leo",
+          "t": "Credit to Amazon. That buys great word of mouth. To be honest, you broke it."
+        },
+        {
+          "s": "steve",
+          "t": "It was my fault. Though a gentle two-foot fall to carpet shouldn't break it. I'm still of two minds about the page-turn buttons: too easy to hit by mistake, but so nice when you want them."
+        },
+        {
+          "s": "leo",
+          "t": "Once you learn to hold it down on the keyboard, it's fine. And Time Warner has decided not to use NebuAd. We may have stemmed the tide, and a lot of credit goes to you."
+        },
+        {
+          "s": "steve",
+          "t": "This had to be nipped in the bud. Next week, wind up your propeller hats: exactly how DNS can be spoofed, sticking the wrong IP address for a site into a DNS server so everyone who asks is sent to a potentially malicious server, while everything looks fine in their browser."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was unprecedented about Dan Kaminsky's DNS fix?",
+      "options": [
+        "Every major DNS vendor patched simultaneously after months of secret coordination",
+        "It was the first DNS patch",
+        "It was free",
+        "It only affected Windows"
+      ],
+      "answer": 0,
+      "explain": "He revealed details at Black Hat on August 6th."
+    },
+    {
+      "q": "How can you protect IE from the Access Snapshot Viewer exploit until it's patched?",
+      "options": [
+        "Set the ActiveX control's kill bits so IE can't load it",
+        "Uninstall Office",
+        "Use Word 2003",
+        "Turn off your firewall"
+      ],
+      "answer": 0,
+      "explain": "Steve's show notes link to a .reg file that does it."
+    },
+    {
+      "q": "Why does Alexander Hanff say anonymization doesn't excuse Phorm?",
+      "options": [
+        "Intercepting and processing communications without explicit consent is itself illegal under U.K. law",
+        "Anonymization doesn't work",
+        "Phorm never anonymized anything",
+        "Only the U.S. allows it"
+      ],
+      "answer": 0,
+      "explain": "Burying consent in terms and conditions isn't enough."
+    },
+    {
+      "q": "What U.K. law did Hanff say Phorm's \"307 cookie dance\" might break?",
+      "options": [
+        "The Fraud Act, since its equipment impersonates the website you asked for",
+        "Copyright law only",
+        "Tax law",
+        "Trademark law"
+      ],
+      "answer": 0,
+      "explain": "The page copying might also infringe copyright."
+    },
+    {
+      "q": "What worries Hanff most about \"function creep\"?",
+      "options": [
+        "Deep packet inspection could be quietly changed to inspect anything, with no oversight",
+        "Prices will rise",
+        "Ads will get worse",
+        "Routers will slow down"
+      ],
+      "answer": 0,
+      "explain": "Phorm's founders previously made notorious rootkit spyware."
+    },
+    {
+      "q": "How did Amazon handle Steve's broken Kindle?",
+      "options": [
+        "It shipped a replacement in two days and let him return the old one afterward",
+        "It charged full price",
+        "It made him wait a month",
+        "It refused"
+      ],
+      "answer": 0,
+      "explain": "The damage was his fault."
+    }
+  ]
+}

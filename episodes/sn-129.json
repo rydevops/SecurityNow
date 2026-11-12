@@ -1,0 +1,492 @@
+{
+  "number": 129,
+  "title": "Windows SteadyState",
+  "subtitle": "Freezing Windows XP so users can't make lasting changes",
+  "date": "2008-01-31",
+  "description": "Steve and Leo examine Windows SteadyState, a free Microsoft add-on for Windows XP that \"freezes\" the system drive so nothing a user does survives a logoff. They cover how its disk protection caches every write, how to keep user documents on a separate drive, its long list of lockdown options, its quirks, and why it's ideal for libraries, schools, offices and family computers.",
+  "transcript": "https://www.grc.com/sn/sn-129.txt",
+  "audio": "http://media.GRC.com/sn/SN-129.mp3",
+  "chapters": [
+    {
+      "title": "Recorded a Week Early",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Leo's in Vancouver as people hear this, so we recorded Episode 129 right after 128. That means no security news this week. We'll catch up next week so nothing gets missed."
+        },
+        {
+          "s": "leo",
+          "t": "With any luck, nothing bad happened."
+        },
+        {
+          "s": "steve",
+          "t": "Today is Windows SteadyState, as promised. And by coincidence, a listener wrote to me about both SteadyState and SpinRite."
+        }
+      ]
+    },
+    {
+      "title": "A School's SpinRite Save",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jim Gaydusek's note was titled \"SpinRite Is King.\" A friend's neighbor had all their financial and personal data on a drive that name-brand stores had declared toast. As a last resort, they brought it to Jim."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite ran four days straight, inching forward each day. It reported some corrupted sectors and possibly some unrecovered data, but recovered others. The machine booted with no sign of trouble, and a year and a half later it's still working."
+        },
+        {
+          "s": "leo",
+          "t": "Radio callers ask whether a failing drive is safe to reformat or should be tossed. If you have SpinRite, you don't have to ask. You just run it."
+        },
+        {
+          "s": "steve",
+          "t": "Jim signed as a loyal customer from the Shelley School District."
+        },
+        {
+          "s": "leo",
+          "t": "Anyone maintaining multiple systems, it's a no-brainer."
+        }
+      ]
+    },
+    {
+      "title": "Why Steve Found SteadyState",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So how did SteadyState come up?"
+        },
+        {
+          "s": "steve",
+          "t": "About a month ago, I was setting up a small network for an entrepreneur friend. In the past, her employees immediately changed their machines, installing QuickBooks for their personal checkbook, or iTunes for their iPods. They treated work machines like home machines. Before long, spyware and malware moved in, and corporate apps stopped working. She asked how to prevent it."
+        }
+      ]
+    },
+    {
+      "title": "A Library's Experience",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jim in Shelley turns out to be the school district's senior tech and network admin, and he uses SteadyState in the libraries. He calls it a godsend."
+        },
+        {
+          "s": "steve",
+          "t": "With Windows 98, students constantly messed up the library machines. Every other day he was restoring or reghosting them, or removing every printer but the right one."
+        },
+        {
+          "s": "steve",
+          "t": "His middle school ran Xtenda, hardware that runs four sets of keyboard, mouse and monitor from one machine, with SteadyState's predecessor. When the high school moved to XP, he adopted the new SteadyState, without its hard drive locking. He needed a registry hack to stop wallpaper changes."
+        },
+        {
+          "s": "steve",
+          "t": "One problem: once, system updates locked the user profiles and nobody could log on. After several reboots, they were fine. Others online saw the same thing clear itself up."
+        },
+        {
+          "s": "steve",
+          "t": "His advice is to use a good machine. His are slow Celerons with 512MB of RAM. With drive locking on, he says it rebuilds an image of the drive and takes five to eight minutes to reach the login screen, too long for a school. So he leaves that off, and the other features still lock the system down."
+        },
+        {
+          "s": "leo",
+          "t": "So it can be used two ways: as a policy editor, and as a way to get back to the original state."
+        }
+      ]
+    },
+    {
+      "title": "Group Policy Made Usable",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Windows Group Policy has a phenomenal number of settings. Type gpedit.msc, an MSC file rather than an EXE, on the Run line to browse them."
+        },
+        {
+          "s": "steve",
+          "t": "But many settings interact and are poorly documented. It's more control, and responsibility, than you want. SteadyState surfaces the most useful ones for this job."
+        },
+        {
+          "s": "steve",
+          "t": "Google \"Windows SteadyState,\" all one word, to reach Microsoft's page. They file it under shared computing."
+        },
+        {
+          "s": "steve",
+          "t": "It's exactly what last week's 16-year-old, Leo, wanted: letting his parents and guests use his torrent box without messing it up. It was essentially designed for that."
+        }
+      ]
+    },
+    {
+      "title": "How the Disk Protection Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In my experience it's not as onerous as Jim's letter suggests. It doesn't copy your whole system drive. You set aside a block of disk space, and a file-system filter captures and caches every change to the system drive."
+        },
+        {
+          "s": "steve",
+          "t": "It's global. You can't turn it off without restarting Windows. It's meant to be bulletproof."
+        },
+        {
+          "s": "steve",
+          "t": "I found out the hard way it even protects the partition table and the drive's first track, where we said pre-boot rootkits can live. I was testing something that deliberately changes that track, rootkit-style, for whole-drive encryption, a future topic. SteadyState undid it, even in a mode meant to save changes."
+        },
+        {
+          "s": "leo",
+          "t": "That's good behavior."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. A pre-boot virus would be wiped out too."
+        },
+        {
+          "s": "steve",
+          "t": "At the sector level, every write to the system partition goes into the cache instead. Every read checks the cache first. So writes are quarantined."
+        },
+        {
+          "s": "steve",
+          "t": "Windows won't tolerate a write-locked drive, since it constantly updates the registry. So SteadyState sequesters the writes instead."
+        },
+        {
+          "s": "steve",
+          "t": "When the SteadyState administrator logs off, it asks whether to keep or discard the changes. Normal users get no choice."
+        },
+        {
+          "s": "steve",
+          "t": "That lets the admin run Windows Update or an antivirus scan and commit those changes permanently."
+        }
+      ]
+    },
+    {
+      "title": "Keeping Documents on Another Drive",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It protects only the Windows drive, usually C:, where the Windows directory lives, and all of it, with no exceptions. I'm impressed Microsoft said, if we protect C, we protect C, period."
+        },
+        {
+          "s": "steve",
+          "t": "That was a problem for my friend's office. Employees should keep their documents and desktop items, just not their QuickBooks or iTunes."
+        },
+        {
+          "s": "steve",
+          "t": "The answer is a second drive. I like D for \"data.\" Move the user's profile, My Documents and desktop to D, and those persist."
+        },
+        {
+          "s": "steve",
+          "t": "That may mean repartitioning. I split an 80GB drive into two 40GB partitions. Forty gigs is plenty for a typical office worker's documents."
+        },
+        {
+          "s": "leo",
+          "t": "Or add a second physical drive?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. Leave C as is, add a drive as D, and Windows makes moving a profile easy."
+        },
+        {
+          "s": "leo",
+          "t": "Is D protected too?"
+        },
+        {
+          "s": "steve",
+          "t": "No, and that's the point. That's where the user's documents live."
+        }
+      ]
+    },
+    {
+      "title": "The Lockdown Options",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "SteadyState also has many options for limiting what users can do. I've put screenshots of all its configuration screens on this episode's show notes page."
+        },
+        {
+          "s": "steve",
+          "t": "Per user, you can force a logoff after so many minutes of use or of idleness. A library could limit each person to 30 minutes."
+        },
+        {
+          "s": "steve",
+          "t": "Like IE's security levels, it offers preset levels of Windows restrictions. You can block right-clicking in the Start menu, which is how items get dragged or renamed. You can require the classic Start menu, or remove the My Documents icon."
+        },
+        {
+          "s": "steve",
+          "t": "Those suit a library. For an office, you'd keep a friendly computer that simply won't stay infected. You can tell employees, if you install QuickBooks, it'll be gone in the morning."
+        },
+        {
+          "s": "leo",
+          "t": "So it's policy plus restore. What gets saved?"
+        },
+        {
+          "s": "steve",
+          "t": "Nothing on the C drive. That's a hard rule. Exceptions would invite ways around it. With the profile on another drive, user changes can persist, unless a policy, such as one under Internet Explorer, forbids them."
+        },
+        {
+          "s": "leo",
+          "t": "For a hotel, keep everything on C, so nothing persists. For a school with individual student profiles and documents, add the second drive, and policies still apply."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. After a couple of weeks, it's a little unnerving. I right-click the desktop out of habit and get a warning that my administrator has prevented changes. But I'm glad, since one checkbox blocks changing screen resolution."
+        }
+      ]
+    },
+    {
+      "title": "It Even Locked Out Steve",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Another checkbox blocks writing to USB storage. It caught me too. My Drive Snapshot backups of C and D started failing, even logged in as administrator."
+        },
+        {
+          "s": "steve",
+          "t": "That's a whole-computer restriction, and changing it back required a reboot. These run deep in the system and aren't easily circumvented. Microsoft has done a great job."
+        }
+      ]
+    },
+    {
+      "title": "XP Only, and Free",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's free, and as far as I can tell, XP only."
+        },
+        {
+          "s": "steve",
+          "t": "Windows 2000 lacks the technology. Microsoft's pages say Vista incorporates enough of this that they didn't do it for Vista. I don't know Vista well enough to say which features it offers."
+        },
+        {
+          "s": "leo",
+          "t": "That's a good reason to stay with XP."
+        },
+        {
+          "s": "steve",
+          "t": "It's simple to install. In the default setup, with profiles on the system drive, as in Jim's libraries, the machine is plastic while you use it. Everything works. When you log off, everything you did disappears, and the system returns to a steady state."
+        },
+        {
+          "s": "leo",
+          "t": "It's new, out just a few months, so don't kick yourself for not knowing. Put this on your XP home network, and you'd be more secure than Vista."
+        }
+      ]
+    },
+    {
+      "title": "Antivirus, Updates and Vista",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft doesn't say this replaces antivirus software."
+        },
+        {
+          "s": "leo",
+          "t": "How could a virus infect you with this running?"
+        },
+        {
+          "s": "steve",
+          "t": "That's what I think. I think they're hedging and don't want to anger the AV vendors. It documents compatibility with a few antivirus products, recognizing them so their patterns can update. Check whether yours is automatic."
+        },
+        {
+          "s": "steve",
+          "t": "The FAQ addresses Jim's update issue too. SteadyState can run Windows Update at, say, 3:00 a.m. if the machine's on, and make those updates permanent."
+        },
+        {
+          "s": "leo",
+          "t": "Automatic Windows Update on a locked-down machine. Even better. And I just sent you a link: there's a SteadyState 2.5 beta that's Vista compatible. It took them five years for XP. This version came out in November, so it's probably stable."
+        },
+        {
+          "s": "steve",
+          "t": "Glad to know. And this is turnkey and easy to use."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "SteadyState 2.5 shipped in 2008 with Vista support. Microsoft discontinued SteadyState in 2010 and didn't bring it to Windows 7."
+        }
+      ]
+    },
+    {
+      "title": "The Quirks",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It gets in your way a little. Jim mentioned slow startup."
+        },
+        {
+          "s": "steve",
+          "t": "I see a pause after logon, with no drive activity. When I stopped the SteadyState service, it booted right to the desktop. But it was maybe 30 seconds, nowhere near eight minutes."
+        },
+        {
+          "s": "leo",
+          "t": "He has older, slower computers."
+        },
+        {
+          "s": "steve",
+          "t": "Slow Celerons with 512MB, as he said."
+        },
+        {
+          "s": "steve",
+          "t": "It's also greedy with its cache. Setup tells you to defragment, to leave a big contiguous block of free space, and by default it takes half your free space. On a 120GB drive with 12GB in use, that's ridiculous."
+        },
+        {
+          "s": "steve",
+          "t": "You can tune the cache down to maybe 3 or 4GB. The documentation says heavy changes might force a logoff to flush the cache. It's a bit underdocumented, but I don't see you running out unless you changed more data than the cache holds."
+        },
+        {
+          "s": "leo",
+          "t": "The size of your Windows partition should be plenty."
+        },
+        {
+          "s": "steve",
+          "t": "That's my assumption, and I've pounded on it without ever running out. I'm really impressed."
+        },
+        {
+          "s": "leo",
+          "t": "I'm blown away. Unruly users, whether teenagers, schoolchildren or Internet café customers? This is an absolute win."
+        }
+      ]
+    },
+    {
+      "title": "Can Malware Beat It?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft still says use AV. You and I don't, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "Belt and suspenders. They sell OneCare. And a virus might get around SteadyState. We don't know how secure it is."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. When software in your machine protects you from other software in your machine, it's always cat and mouse, Spy vs. Spy. But I'm very impressed. Listeners are thinking, that's exactly what I need for Aunt Sarah."
+        },
+        {
+          "s": "leo",
+          "t": "I'm tempted to use it myself. My Adobe Audition recording machine could return to a known good state every morning with a reboot."
+        },
+        {
+          "s": "steve",
+          "t": "And keep data on D, which SteadyState never touches, so nothing you thought was safe is lost."
+        },
+        {
+          "s": "leo",
+          "t": "I've always kept a separate data drive. There's a commercial program that does something similar, which IT pros have used, but I can't remember its name. This is free, from Microsoft, and much better than GPEdit."
+        },
+        {
+          "type": "fact",
+          "title": "The commercial alternative",
+          "t": "Leo doesn't name it, but the best-known commercial \"reboot to restore\" product is Faronics Deep Freeze, which works on the same principle."
+        }
+      ]
+    },
+    {
+      "title": "More Checkboxes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "For instance, under general restrictions: prevent autoplay on CD, DVD and USB drives. One click stops a smart aleck with a CD."
+        },
+        {
+          "s": "steve",
+          "t": "The FAQ admits that if you boot something ahead of Windows, it owns your machine. So for lockdown, also tighten the BIOS: remove everything but the hard drive from the boot order, and disable the CD if you can."
+        },
+        {
+          "s": "leo",
+          "t": "And you can stop that U3 thing. In a library, you want to."
+        },
+        {
+          "s": "steve",
+          "t": "You can block Task Manager. And a screen lists all your installed programs, so you can block them all, or move them one by one to a blocked list, and they won't run."
+        },
+        {
+          "s": "leo",
+          "t": "Steve's screenshots let you see all the settings before installing, at GRC.com/securitynow. We'll add the Vista beta link too. To me, it's one more reason to stick with XP."
+        }
+      ]
+    },
+    {
+      "title": "Wrapping Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And if you want to experiment, it uninstalls nicely and cleanly."
+        },
+        {
+          "s": "leo",
+          "t": "Good to know. You can always go back. Steve, this is a find."
+        },
+        {
+          "s": "steve",
+          "t": "I'm really glad we could turn listeners on to it. Next week, Episode 130, is a Q&A. Send questions or findings about SteadyState or anything else to GRC.com/feedback."
+        },
+        {
+          "s": "leo",
+          "t": "And tell me the name of that commercial program. It's driving me crazy."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does SteadyState protect the Windows system drive?",
+      "options": [
+        "It redirects every write to a cache, which is discarded unless an administrator keeps the changes",
+        "It write-locks the drive",
+        "It copies the whole drive each night",
+        "It encrypts the drive"
+      ],
+      "answer": 0,
+      "explain": "Windows can't tolerate a write-locked drive, so writes are sequestered."
+    },
+    {
+      "q": "How did Steve let office workers keep their documents under SteadyState?",
+      "options": [
+        "He moved their profiles, documents and desktops to a separate D: drive, which SteadyState doesn't protect",
+        "He made exceptions on C:",
+        "He turned protection off daily",
+        "He stored them on USB drives"
+      ],
+      "answer": 0,
+      "explain": "Nothing on C: is ever saved."
+    },
+    {
+      "q": "Which Windows versions did SteadyState support at the time of this episode?",
+      "options": [
+        "Windows XP only",
+        "Windows 2000 and XP",
+        "Vista only",
+        "All versions of Windows"
+      ],
+      "answer": 0,
+      "explain": "A Vista-compatible 2.5 beta had just appeared."
+    },
+    {
+      "q": "What did Steve find about SteadyState's default cache size?",
+      "options": [
+        "It takes half the drive's free space, which he considers excessive",
+        "It's fixed at 1GB",
+        "It uses RAM only",
+        "It can't be changed"
+      ],
+      "answer": 0,
+      "explain": "He tuned it down to a few gigabytes."
+    },
+    {
+      "q": "What caught Steve himself out?",
+      "options": [
+        "A checkbox blocking writes to USB storage stopped his Drive Snapshot backups, even as administrator",
+        "He lost his documents",
+        "He couldn't uninstall it",
+        "It deleted his antivirus"
+      ],
+      "answer": 0,
+      "explain": "Whole-computer restrictions need a reboot to change."
+    },
+    {
+      "q": "Why does the SteadyState FAQ say you should also tighten the BIOS?",
+      "options": [
+        "Anything booted ahead of Windows, like a CD or USB drive, gets full control of the machine",
+        "To speed startup",
+        "To enable the cache",
+        "To save power"
+      ],
+      "answer": 0,
+      "explain": "Remove everything but the hard drive from the boot order."
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "number": 172,
+  "title": "Sandboxie",
+  "subtitle": "A lightweight sandbox that isolates any program's changes from your system",
+  "date": "2008-11-27",
+  "description": "Steve interviews Ronen Tzur, creator of Sandboxie, and then explains in detail how it works: by intercepting a program's writes and redirecting them into a disposable sandbox folder, so a malicious page, email attachment or installer can't change your real system. He compares it to a heavyweight virtual machine, covers recovering downloads, TrueCrypt sandboxes and its limits. Plus how to make NoScript bearable, PayPal supporting two tokens, hackers using stolen eCommerce systems to verify cards, and Dutch police using a botnet to notify victims.",
+  "transcript": "https://www.grc.com/sn/sn-172.txt",
+  "audio": "http://media.GRC.com/sn/SN-172.mp3",
+  "guests": {
+    "ronen": "Ronen Tzur"
+  },
+  "chapters": [
+    {
+      "title": "Making NoScript Bearable",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, we need to get you back using NoScript, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "It's still running; I just turned off scripting."
+        },
+        {
+          "s": "steve",
+          "t": "I found the secret everyone else knew. In Options, Notifications tab, turn off the popup when scripts are blocked and the audio. Then on the first tab, uncheck \"globally allow scripts.\""
+        },
+        {
+          "s": "steve",
+          "t": "Two weeks in, it's heaven. Only when something doesn't work do you click the little S and enable what it blocked."
+        },
+        {
+          "s": "leo",
+          "t": "My concern is I won't know I'm missing part of a page, and reviewing sites is my job. And many legitimate sites, even Amazon one-click, trigger these warnings."
+        },
+        {
+          "s": "steve",
+          "t": "Scripting is a real problem, as incident after incident shows. I'll acknowledge all the listeners happily using it this way."
+        },
+        {
+          "s": "leo",
+          "t": "I'll give it another shot."
+        }
+      ]
+    },
+    {
+      "title": "Two PayPal Tokens",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "PayPal started acting differently: it became aware of my VeriSign VIP card, so it now asks which token I'm using."
+        },
+        {
+          "s": "leo",
+          "t": "It wants me to choose now too."
+        },
+        {
+          "s": "steve",
+          "t": "I chose the VeriSign card for the first time, but I'd pushed its button so many times it was out of sync. It asked for two codes in a row to resynchronize, and now both my football and my credit-card token work."
+        },
+        {
+          "s": "steve",
+          "t": "The football is time-based with a clock; the card is sequential, generating the next code each press, which is why it needed resyncing. For a long time you could register only one, so now PayPal is up to speed."
+        }
+      ]
+    },
+    {
+      "title": "Security News",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Safari 3.2 fixed critical remote code execution flaws; update whether you're on Windows or Mac."
+        },
+        {
+          "s": "steve",
+          "t": "Symantec reports that hackers who break into eCommerce-enabled companies now stay quiet and commandeer the company's merchant-services backend to verify stolen credit cards, charging $10 a card to other thieves. The API can confirm a card is valid without charging it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's Malicious Software Removal Tool pulled fake security software, like Antivirus 2009, from nearly a million PCs in nine days."
+        },
+        {
+          "s": "leo",
+          "t": "I get calls about Antivirus 2009 all the time. Wily as they are, they're still crappy coders, so it has telltale symptoms."
+        },
+        {
+          "s": "steve",
+          "t": "And Dutch authorities convicted a 19-year-old botnet operator, then used his command-and-control system to redirect infected users to a site explaining how to remove the rootkit bot. That's never been done before, and it's questionable whether it would be legal in the U.S."
+        },
+        {
+          "s": "leo",
+          "t": "Since they only notified people rather than modifying machines, it seems okay."
+        },
+        {
+          "s": "steve",
+          "t": "Austrian firewall researchers found a kernel memory overwrite in Vista: a ROUTE ADD with a netmask over 32 bits blue-screens it. But it's a local-only attack needing admin or Network Configuration Operator rights, so Microsoft will fix it in a service pack."
+        },
+        {
+          "s": "leo",
+          "t": "I thought most people run as admin even on Vista."
+        },
+        {
+          "s": "steve",
+          "t": "In Vista you're normally not admin; you elevate through UAC when needed."
+        }
+      ]
+    },
+    {
+      "title": "Interview: Ronen Tzur",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's say hello to Ronen Tzur, creator of Sandboxie, calling from Israel."
+        },
+        {
+          "s": "ronen",
+          "t": "It's great to be on the show."
+        },
+        {
+          "s": "leo",
+          "t": "How does it feel to have a program people are addicted to?"
+        },
+        {
+          "s": "ronen",
+          "t": "Very good. Once you feel that whatever you do in the sandbox can't harm your computer, you feel almost naked without it."
+        },
+        {
+          "s": "steve",
+          "t": "Just this morning a forwarded PowerPoint arrived. Sandboxie said powerpnt.exe had no permission to run in my Eudora sandbox. I added it, and knew that whatever it did couldn't hurt me."
+        },
+        {
+          "s": "leo",
+          "t": "Was Sandboxie written to scratch your own itch?"
+        },
+        {
+          "s": "ronen",
+          "t": "Yes. In 2004 I was hit by spyware I couldn't get rid of, and traditional antispyware didn't catch it. I thought, if I could run Internet Explorer in isolated, disposable space, worst case I just throw it away and start over."
+        },
+        {
+          "s": "steve",
+          "t": "Did you intend it as a commercial product?"
+        },
+        {
+          "s": "ronen",
+          "t": "I hoped so, but it started as proof of concept. People said IE was part of the OS and couldn't be taken out, so I had to prove it was even possible. Once I saw there were no real technical limits, I aimed for a commercial product."
+        },
+        {
+          "s": "ronen",
+          "t": "Over four years I took the idea of isolating the browser and generalized it to almost any program. Running an isolated browser is now just a special case."
+        },
+        {
+          "s": "steve",
+          "t": "You can even sandbox a program's installation, so everything the installer does is in the sandbox."
+        },
+        {
+          "s": "ronen",
+          "t": "Exactly. Unlike other tools, Sandboxie doesn't try to stop a malicious program, which causes false positives. It lets the program do whatever it wants, and you can discard it with one click."
+        },
+        {
+          "s": "leo",
+          "t": "Does built-in hardware virtualization help you?"
+        },
+        {
+          "s": "ronen",
+          "t": "No, the hypervisor is for virtual machines, which are a different implementation. Sandboxie isolates differently."
+        },
+        {
+          "s": "steve",
+          "t": "A virtual machine virtualizes the chip, so you install a second OS and second copies of your applications. Sandboxie virtualizes the API, inserting itself between the application and the OS, so it's much lighter: no extra RAM, no second OS, no virtual network adapters."
+        },
+        {
+          "s": "ronen",
+          "t": "Right. A virtual machine is a second computer you have to manage and keep updated. Sandboxie gives you one-way isolation without any of that."
+        },
+        {
+          "s": "steve",
+          "t": "So you generalized it: anything you run in the sandbox makes only transient changes that never affect the real system."
+        },
+        {
+          "s": "ronen",
+          "t": "Most of the work was getting Internet applications to run anyway, so making it generic was just one extra mile."
+        },
+        {
+          "s": "steve",
+          "t": "Where do you go from here?"
+        },
+        {
+          "s": "ronen",
+          "t": "Easier configurability. Sometimes you must let a sandboxed program talk to software outside, like PDF printing. Today you visit the website for instructions and add them to the configuration; I'd like to offer prepackaged configuration packages inside the program."
+        },
+        {
+          "s": "steve",
+          "t": "I hit exactly that generating PDFs from Firefox, and used the resource-monitor log to see what was blocked and add the strings myself. And for Macro Express with Eudora, I found two strings and step-by-step instructions on your site."
+        },
+        {
+          "s": "leo",
+          "t": "The harder security software is to get working, the more likely people turn it off."
+        },
+        {
+          "s": "steve",
+          "t": "I love your licensing: one lifetime license covers all future versions and all the machines you own."
+        },
+        {
+          "s": "ronen",
+          "t": "Yes, a lifetime registration license."
+        },
+        {
+          "s": "leo",
+          "t": "Is it your full-time job now?"
+        },
+        {
+          "s": "ronen",
+          "t": "Yes, and the positive feedback has been overwhelming."
+        },
+        {
+          "s": "leo",
+          "t": "It's Sandboxie.com, and pronounced \"Sandboxie,\" not \"Sandbox IE.\""
+        },
+        {
+          "s": "ronen",
+          "t": "Yes. Thank you, Steve and Leo, for having me."
+        }
+      ]
+    },
+    {
+      "title": "How Sandboxie Works",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Does using Sandboxie mean you don't need NoScript?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Sandboxie is a security enforcer, not a privacy enforcer. A sandboxed program can still read everything on your system, so malicious scripts could still steal information. I run NoScript inside the sandboxed Firefox."
+        },
+        {
+          "s": "steve",
+          "t": "Here's how it works. If a sandboxed program opens a file read-only, Sandboxie does nothing. If it opens a file for writing, Sandboxie transparently copies it into the sandbox, which is just a set of folders, and redirects all further access there. The program thinks it changed the file, but only the copy changed."
+        },
+        {
+          "s": "steve",
+          "t": "The same applies to the registry and everything else. It forks your system's state: the program sees its own private view, while nothing outside the sandbox is even aware of it."
+        },
+        {
+          "s": "steve",
+          "t": "Sandboxie adds \"Run Sandboxed\" to the right-click menu, so you can run any installer contained. It even merges the sandbox's Start menu entries so you can launch what you \"installed.\" I installed Chrome in a VM for containment before; today I'd just run its installer sandboxed."
+        },
+        {
+          "s": "leo",
+          "t": "Any limitations?"
+        },
+        {
+          "s": "steve",
+          "t": "Nothing I found that you can't overcome. It feels very mature, at version 3.32."
+        },
+        {
+          "s": "steve",
+          "t": "Downloads are a special case. You define directories where writes prompt a popup asking whether to \"recover\" the file out of the sandbox, so your MP3 lands on the desktop while untrusted things stay contained."
+        },
+        {
+          "s": "steve",
+          "t": "Because it's file-based, you can explore everything a sandbox did, like a forensic view of every change, through its tree-structured file system."
+        },
+        {
+          "s": "steve",
+          "t": "Sandboxes can be transient or persistent. My Firefox sandbox is transient, so closing Firefox flushes all accumulated debris. You can also point a sandbox at a TrueCrypt drive, so everything written is encrypted, giving a private area even for programs that know nothing about encryption."
+        },
+        {
+          "s": "leo",
+          "t": "Ironically he uses a lot of the techniques the bad guys use."
+        },
+        {
+          "s": "steve",
+          "t": "It's a kernel driver with a background service, so it needs a reboot to install, and it's how it catches an executable starting, like Firefox.exe, to insert it into the right sandbox. It's Vista compatible; I run it on XP. The whole configuration is a single sandbox.ini you can copy to another machine."
+        },
+        {
+          "s": "steve",
+          "t": "Last night's forwarded PowerPoint is the point: rather than relying on antivirus patterns that lag, an unknown exploit in powerpnt.exe would be contained in the Eudora sandbox and never get out."
+        },
+        {
+          "s": "leo",
+          "t": "It would be great to have this on Mac and Linux."
+        },
+        {
+          "s": "steve",
+          "t": "It's deep Windows work, so it'd be nontrivial to port. But it's free to try for 30 days, with a lifetime license after, and extra features like automatic sandboxing of anything run from a CD or DVD. It's the most significant security tool I've run across in a long time."
+        },
+        {
+          "type": "fact",
+          "title": "Sandboxie's later history",
+          "t": "Ronen Tzur sold Sandboxie in 2013. It later passed to Sophos, which made it free in 2019 and then released it as open source in 2020, after which the community-run Sandboxie-Plus took over development."
+        },
+        {
+          "s": "leo",
+          "t": "Turning off NoScript's notifications really does make it usable. I can't even tell it's running."
+        },
+        {
+          "s": "steve",
+          "t": "It ought to be off by default."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does Sandboxie do when a sandboxed program tries to modify a file?",
+      "options": [
+        "It copies the file into the sandbox and redirects all changes there",
+        "It blocks the program",
+        "It deletes the file",
+        "It warns you each time"
+      ],
+      "answer": 0,
+      "explain": "The real file is never touched."
+    },
+    {
+      "q": "How does Sandboxie differ from a virtual machine?",
+      "options": [
+        "It virtualizes the OS's API instead of the chip, so no second OS or reserved RAM is needed",
+        "It's slower",
+        "It needs more memory",
+        "It runs in the cloud"
+      ],
+      "answer": 0,
+      "explain": "A VM is effectively a second computer to manage."
+    },
+    {
+      "q": "Why does Steve still run NoScript inside a sandboxed browser?",
+      "options": [
+        "Sandboxie is a security tool, not a privacy tool, so scripts can still read and steal data",
+        "NoScript is required to install it",
+        "Sandboxie has no script control",
+        "To speed it up"
+      ],
+      "answer": 0,
+      "explain": "A sandboxed program can still read everything on your system."
+    },
+    {
+      "q": "How can you get a downloaded file out of a transient sandbox?",
+      "options": [
+        "Use the \"recover\" prompt that appears when something is written to a watched folder",
+        "Reboot",
+        "Email it to yourself",
+        "You can't"
+      ],
+      "answer": 0,
+      "explain": "Otherwise closing the browser flushes the sandbox."
+    },
+    {
+      "q": "Why must Sandboxie be installed with a reboot?",
+      "options": [
+        "It's a kernel driver that hooks the OS to catch programs starting",
+        "It edits the BIOS",
+        "It replaces Explorer",
+        "It needs a second OS"
+      ],
+      "answer": 0,
+      "explain": "That's how it inserts Firefox.exe into its sandbox."
+    },
+    {
+      "q": "What did Dutch police do after seizing a botnet's command system?",
+      "options": [
+        "They used it to redirect victims to removal instructions",
+        "They deleted the bot remotely",
+        "They sold the network",
+        "They shut down the Internet"
+      ],
+      "answer": 0,
+      "explain": "That had never been done before and might be illegal in the U.S."
+    }
+  ]
+}

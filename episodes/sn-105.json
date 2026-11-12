@@ -1,0 +1,524 @@
+{
+  "number": 105,
+  "title": "Firewall LeakTesting",
+  "subtitle": "How malware slips past outbound-blocking firewalls",
+  "date": "2007-08-16",
+  "description": "Security Now! wins the People's Choice Podcast Award for Science & Technology, Steve corrects Australia's capital and how CardSpace reaches XP, and August's Patch Tuesday brings nine updates plus a Symantec flaw. Then Steve tells the story of his original LeakTest and why it's still GRC's most downloaded tool, and tours more than a dozen newer leaktests that slip past personal firewalls through Internet Explorer, DLL and thread injection, low-level drivers, DNS queries and the AppInit registry key.",
+  "transcript": "https://www.grc.com/sn/sn-105.txt",
+  "audio": "http://media.GRC.com/sn/SN-105.mp3",
+  "chapters": [
+    {
+      "title": "Year Three, and a Podcast Award",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's Security Now!, now entering our third year."
+        },
+        {
+          "s": "steve",
+          "t": "Episode 105 is the first of year three. And I want to thank our listeners. It's 100 percent their work that won us the People's Choice award for Best Science & Technology Podcast this year."
+        },
+        {
+          "s": "steve",
+          "t": "Two weeks ago we did a quick special asking for votes. The awards ran 15 days. Organizers report 1.3 million unique voters, 22,109 in the busiest single hour, and an average of three votes each. Repeat voting every 24 hours was allowed, so I said vote often. We hadn't won the last two years."
+        },
+        {
+          "s": "leo",
+          "t": "And we only had to ask once."
+        },
+        {
+          "s": "steve",
+          "t": "I'll pick it up at the Podcast & New Media Expo, my annual chance to hang out with Elaine, our transcriber, if she can make the trek from her wilderness hideout with its troublesome satellite link."
+        },
+        {
+          "s": "leo",
+          "t": "I can't make it this year. It's over a weekend, and I have the radio show. For you it's a drive. Congratulations."
+        }
+      ]
+    },
+    {
+      "title": "Corrections: Canberra and CardSpace",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Several people noted that Australia's capital isn't Sydney. It's the only city there I was really aware of."
+        },
+        {
+          "s": "leo",
+          "t": "It came up with knowledge-based CAPTCHAs."
+        },
+        {
+          "s": "steve",
+          "t": "It's Canberra, C-a-n-b-e-r-r-a. A finer point on why knowledge-based CAPTCHAs are a bad idea, at least if you want me on your site."
+        },
+        {
+          "s": "steve",
+          "t": "And I said CardSpace appears in XP's Control Panel if your patches are current. It's more involved. It's a component of .NET, Microsoft's new API initiative for Windows."
+        },
+        {
+          "s": "steve",
+          "t": "The .NET components are optional downloads in Windows Update, though many programs require them, so you may already have them. If your patches are current and you don't see CardSpace, install .NET, and after enough further updates it will appear."
+        },
+        {
+          "s": "leo",
+          "t": "It's part of .NET 3. I have it, ran it, filled out a card, and that was about it. Don't download it just for that."
+        },
+        {
+          "s": "steve",
+          "t": "We're in the chicken-and-egg phase. Nobody uses it until it exists, and it won't exist until enough people have it. But it's a nice UI for things like OpenID."
+        }
+      ]
+    },
+    {
+      "title": "August's Patch Tuesday",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two days ago, the second Tuesday, the 14th, Microsoft dropped nine security updates, including serious problems in its XML core services."
+        },
+        {
+          "s": "steve",
+          "t": "Symantec also had a remote execution vulnerability in a common control all its security suites use. Symantec users should update. And if you don't have automatic updates, grab Microsoft's fixes soon."
+        },
+        {
+          "s": "leo",
+          "t": "Weren't there serious Vista flaws for the first time?"
+        },
+        {
+          "s": "steve",
+          "t": "Vista is built mostly from existing XP code, so anything found in shared code is a Vista problem too. Sometimes Vista's tighter security has prevented exploitation of vulnerable code. But these flaws did map into Vista."
+        },
+        {
+          "s": "leo",
+          "t": "Still, seven months in, Vista has been pretty reliable."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think we'll see many more critical flaws like the old ones. Service Pack 2 turning on XP's firewall by default forever changed the landscape."
+        },
+        {
+          "s": "steve",
+          "t": "Before SP2, Microsoft said users would run across the firewall wizard when setting up networking. Then why were all those XP systems exposing their ports? Once the firewall was on, open ports and services no longer mattered. Now the problems come from surfing to unsafe websites."
+        },
+        {
+          "s": "leo",
+          "t": "It keeps changing. I'm grudgingly impressed by the bad guys' ingenuity."
+        },
+        {
+          "s": "steve",
+          "t": "A perfect segue. That's exactly what our listeners will feel after today's topic: personal firewall leaktests."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Reaches Ecuador",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, a SpinRite story from Ken, first name only, for security. He's listened since Episode 1. His father bought him SpinRite, and he's only used it for maintenance scans, which will likely keep him from ever needing recovery."
+        },
+        {
+          "s": "steve",
+          "t": "His company's employees travel in Canada and Ecuador, relying on laptops. On Friday, a laptop in Ecuador crashed with the lovely \"unmountable boot volume\" error. Diagnostics confirmed his suspicion of bad sectors, and repair was weeks away."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite was their only option, and there was no time to buy a site license. After this, he had no trouble getting approval. He emailed them his personal copy with instructions. About two hours after they ran it, he got an email from the employee's now-booting computer."
+        },
+        {
+          "s": "leo",
+          "t": "A lot of people love Security Now!, and even more love SpinRite."
+        }
+      ]
+    },
+    {
+      "title": "The First LeakTest",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some history. I believe I coined the term \"leaktest,\" because I wrote the first one."
+        },
+        {
+          "s": "leo",
+          "t": "It's still your most downloaded program."
+        },
+        {
+          "s": "steve",
+          "t": "Always has been, which strikes me as bizarre, since it's dumb. If a firewall can't pass it, it has no business on your computer. LeakTest, at version 2, has been downloaded 6,715,096 times."
+        },
+        {
+          "s": "steve",
+          "t": "MouseTrap, my tool for the Windows Metafile flaw a year and a half ago, briefly topped our downloads. Right now Wizmo leads, with 1,286 downloads a day versus 724 for LeakTest. Someone must have written about it."
+        },
+        {
+          "s": "leo",
+          "t": "I think we mentioned it on the TV show."
+        },
+        {
+          "s": "steve",
+          "t": "That would do it. It'll calm down."
+        },
+        {
+          "s": "steve",
+          "t": "Here's the story. Any firewall, NAT router or XP's firewall blocks inbound packets that aren't part of a connection initiated from inside. A NAT router makes your network much quieter, shutting out what I call Internet Background Radiation: junk packets and old exploits still scanning for vulnerable machines."
+        },
+        {
+          "s": "steve",
+          "t": "People add personal firewalls for outbound protection: control over which applications use the connection. That's how I found that the Windows version of PKZIP had installed spyware. While I beta-tested the first ZoneAlarm, it said tsadbot.exe wanted to use my connection."
+        },
+        {
+          "s": "steve",
+          "t": "Symantec's, Sygate's, McAfee's, about 15 firewalls boasted outbound protection. But only ZoneAlarm checked that the permitted program was actually the one sending."
+        },
+        {
+          "s": "steve",
+          "t": "Internet Explorer's file is IExplore.exe. To fool every other firewall, a trojan just renamed itself IExplore.exe."
+        },
+        {
+          "s": "leo",
+          "t": "So they only checked the process name."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. And IE almost always has permission, even for Firefox users, since you need it for Windows Update and so on. No dialog would ever pop up."
+        },
+        {
+          "s": "steve",
+          "t": "ZoneAlarm took a cryptographic hash, I think MD5, of each program when you permitted it. Later it would check the file's length, which is fast, then the hash, to be sure it was the same file."
+        },
+        {
+          "s": "steve",
+          "t": "Not one other firewall did that. So in a few hours I wrote LeakTest, a simple, benign outbound tool. Rename it to a permitted program and see if your firewall notices."
+        },
+        {
+          "s": "steve",
+          "t": "Symantec called, really annoyed, saying it was irresponsible."
+        },
+        {
+          "s": "steve",
+          "t": "I said this isn't a buffer overflow. It's a feature implemented with no thought to preventing its exploit. Let's see how quickly you can fix it."
+        },
+        {
+          "s": "steve",
+          "t": "GRC was on the map from ShieldsUP!, and LeakTest spread like wildfire. Many people switched to ZoneAlarm. Within a couple of weeks, every other firewall added the simple length and hash check. And trojans in the wild were already using the renaming trick."
+        },
+        {
+          "s": "leo",
+          "t": "So that's why you say nobody needs LeakTest. Everybody fixed it."
+        },
+        {
+          "s": "steve",
+          "t": "Yet five years later, it's still number one."
+        },
+        {
+          "s": "leo",
+          "t": "People don't understand what it tests."
+        }
+      ]
+    },
+    {
+      "title": "A Dozen Newer Leaktests",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "That was just the beginning. There are now about 15 leaktests, far more powerful and clever. What annoys me is that none got enough attention to make firewalls address them."
+        },
+        {
+          "s": "steve",
+          "t": "Firewallleaktester.com lists them and charts many contemporary personal firewalls by version against each test. The charts show these well-known leaks cutting right through firewalls that claim to block them. Links are in the show notes."
+        },
+        {
+          "s": "steve",
+          "t": "My conscience pings me sometimes. GRC has enough security profile that publicizing this might pressure Symantec, McAfee, Sygate and all the others to fix them."
+        },
+        {
+          "s": "steve",
+          "t": "But the real point, always worth repeating: once something is in your machine, it's almost too late."
+        },
+        {
+          "s": "steve",
+          "t": "If malware trips your firewall's alarm, it's better to know. But what will you do? Malware now hooks so deeply it's nearly impossible to remove except by rolling back to an image. Malware even infects Windows' own restore points."
+        }
+      ]
+    },
+    {
+      "title": "Borrowing Internet Explorer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The first, TooLeaky, does something obvious that wasn't initially caught. It launches a fresh, real copy of IE and sends your data as query parameters."
+        },
+        {
+          "s": "steve",
+          "t": "Anything after the question mark in a URL is sent along as part of the query. So imagine a link to a random page on an evil server in Russia, followed by a question mark and your credit card number."
+        },
+        {
+          "s": "steve",
+          "t": "Your firewall may allow only IE online. But this is the real IE, not a renamed one. The moment that query goes out, your information has escaped."
+        }
+      ]
+    },
+    {
+      "title": "Injecting Code Into Trusted Programs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next, FireHole, by Robin Keir, a super-sharp security guy who hangs out in our newsgroups. It was an early demonstration of cross-process DLL injection."
+        },
+        {
+          "s": "steve",
+          "t": "Back when there were no security problems, Microsoft built debugging features into the Windows API. A debugger can reach into another process, attach to it, stop its threads and single-step it."
+        },
+        {
+          "s": "steve",
+          "t": "Related features let one process inject a DLL of its choice into another process and run it. FireHole finds servicehost.exe, where DNS queries come from, which people constantly see asking for firewall permission."
+        },
+        {
+          "s": "steve",
+          "t": "It injects a small DLL into servicehost.exe. Robin's is benign, but malware's wouldn't be. Now its code runs as a permitted process, so the firewall allows the traffic. The malware has broken out of its own process."
+        },
+        {
+          "s": "steve",
+          "t": "YALTA, Yet Another Leak Test Application, and PCAudit also use DLL injection. When some firewalls blocked PCAudit, its author got around them with PCAudit2."
+        },
+        {
+          "s": "steve",
+          "t": "AWFT injects a thread into a running browser like IE, or into Windows Explorer. The API lets you map memory into an unused area of another process and start a new thread there. Thermite is another thread injector."
+        },
+        {
+          "s": "steve",
+          "t": "When some firewalls started watching for threads created by other processes, CopyCat borrowed an existing thread instead. Like a debugger, it stops a thread, saves its registers and context, runs it on its own code, then puts it back to go about its business."
+        },
+        {
+          "type": "fact",
+          "title": "The real name",
+          "t": "Steve's \"servicehost.exe\" is svchost.exe, the generic Windows host process that runs many services, including the DNS Client."
+        }
+      ]
+    },
+    {
+      "title": "Under, Around and Through the Firewall",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "MBtest uses the WinPcap drivers I mentioned a few weeks ago, installing them in the network stack below the firewall. The firewall watches traffic in the IP stack, but it isn't installed low enough to see it."
+        },
+        {
+          "s": "steve",
+          "t": "It's mostly a proof of concept. You must bring the drivers along, and a non-admin can't install them, so malware would need a privilege escalation exploit first. But it just does something the firewall wasn't expecting."
+        },
+        {
+          "s": "steve",
+          "t": "Some firewalls learned to check who launches a permitted program, to stop malware launching IE. So WBreaker has Windows Explorer launch Internet Explorer, which is normally what launches IE. That bypassed another set of firewalls."
+        },
+        {
+          "s": "steve",
+          "t": "DNStest is very clever. Your computer must make DNS queries constantly, through the DNS client service in servicehost.exe. Malware can look up a bogus name made of your credit card number, as a machine in a domain like malwarerus.ru."
+        },
+        {
+          "s": "steve",
+          "t": "If that domain runs its own DNS server, it receives the query, your card number. Add the expiration date, billing address, anything, as more labels. Windows thinks it's a valid name, and it slides right out."
+        },
+        {
+          "s": "leo",
+          "t": "Unbelievable. There's no way to block that."
+        },
+        {
+          "s": "steve",
+          "t": "You'd have to filter DNS and make heuristic guesses about whether a query looks reasonable."
+        },
+        {
+          "s": "steve",
+          "t": "The list goes on: Surfer, Breakout versions 1 and 2, and Jumper. Jumper uses the AppInit registry entry."
+        },
+        {
+          "s": "steve",
+          "t": "Core DLLs like kernel32, user32 and gdi32 load into programs. Microsoft thought future DLLs might be wanted everywhere too, so anyone can list DLLs under AppInit, and Windows loads them into every application that starts. Malware says, what a cool thing. Register ourselves, and we're loaded into the next program."
+        },
+        {
+          "type": "fact",
+          "title": "AppInit_DLLs",
+          "t": "Microsoft later restricted this registry feature. Since Windows 8, it's disabled when Secure Boot is on, and it can require signed DLLs."
+        }
+      ]
+    },
+    {
+      "title": "Is Windows Securable?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So there are this many known ways for malware to get past every personal firewall today. Look up yours in the chart. Many exploits have never been handled, though every firewall maker knows them."
+        },
+        {
+          "s": "steve",
+          "t": "Their argument is that some are outside a firewall's purview, belonging to HIPS, Host-based Intrusion Prevention Systems, for malware abusing operating system features. Non-firewall HIPS tools hook and filter the API to check whether programs may do these things."
+        },
+        {
+          "s": "steve",
+          "t": "Vista has moved forward here. Its protected processes finally put barriers around sensitive applications. We discussed it with Vista's DRM: the protected video and audio path must keep debuggers from rifling through memory for HD DVD decryption keys."
+        },
+        {
+          "s": "steve",
+          "t": "I don't mean to alarm anyone. But when I looked a few weeks ago, no single firewall was invulnerable to all these known exploits."
+        },
+        {
+          "s": "leo",
+          "t": "So the leaktest is kind of pointless."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is that Windows is fundamentally insecure. You could forgive Microsoft: once, Windows machines weren't on the Internet. Developers thought, wouldn't it be handy to run our DLLs whenever a process starts? Or to let any program debug any other?"
+        },
+        {
+          "s": "steve",
+          "t": "Very handy for developers, and your worst nightmare when containing malware. Windows is insecure, and arguably insecurable now, because locking it down tight would break things, and Microsoft never wants to break anything."
+        },
+        {
+          "s": "leo",
+          "t": "So there's no point in leaktesting?"
+        },
+        {
+          "s": "steve",
+          "t": "It's why I haven't updated mine. I could write LeakTest 3 or LeakTestPro with every trick I can think of, but there'd still be other ways around. It's Spy vs. Spy. Windows doesn't have enough protection to keep malware from doing what it wants."
+        },
+        {
+          "s": "leo",
+          "t": "Then a software firewall is essentially worthless?"
+        },
+        {
+          "s": "steve",
+          "t": "We don't want to say that. A really good firewall that blocks many known exploits will stop malware using them, and hopefully alert you: something is injecting a thread into Internet Explorer, here's the process name. That's what ZoneAlarm did for me with tsadbot.exe."
+        },
+        {
+          "s": "leo",
+          "t": "But bad guys who want to can get around it."
+        },
+        {
+          "s": "steve",
+          "t": "Just by sending data out as a DNS query."
+        },
+        {
+          "s": "leo",
+          "t": "You could parse the queries, but you don't know what a name will look like."
+        },
+        {
+          "s": "steve",
+          "t": "And they can simply encrypt the data. Some firewalls ask for your personal information to watch for it going out. Just add 1 to every character, and it turns into gibberish that passes right through."
+        },
+        {
+          "s": "leo",
+          "t": "You can make that argument about any security software. Once it's out, bad guys write around it."
+        }
+      ]
+    },
+    {
+      "title": "Keep It Out in the First Place",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "What you want is to keep stuff out of your machine. With firewalls and routers in place, the random buffer overflows that probably still exist in all versions of Windows aren't remotely exploitable, because unsolicited packets are dropped."
+        },
+        {
+          "s": "steve",
+          "t": "Now the problems are things like scripting exploits and ActiveX controls that IE can run unsafely when you visit a malicious site. The attack surface is much reduced. We no longer see Code Red worms exploding across the Internet in hours."
+        },
+        {
+          "s": "steve",
+          "t": "But hackers use everything to get themselves invited in. Once there, they can get out through every firewall. That's not to say a firewall doing its best isn't better than none. It certainly is. But I don't run one."
+        },
+        {
+          "s": "leo",
+          "t": "I run the Astaro gateway and cross my fingers. It's been years since I had even a spyware infestation. A lot of it is user behavior."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely: appreciating the dangers and acting safe. When I've had to go somewhere unsafe, I've used an expendable machine. Sure enough, it downloaded junk and I saw services start up. I used that Typhoid Mary disposable image, then re-imaged it afterward."
+        },
+        {
+          "s": "leo",
+          "t": "Anyone who listens should keep a known-clean system image that can be quickly reinstalled, and keep it up to date."
+        },
+        {
+          "s": "steve",
+          "t": "Or a true virtual machine, a safe place to play."
+        },
+        {
+          "s": "leo",
+          "t": "Unfortunately, the people bitten most are the least sophisticated, buying PCs without Windows install disks and not knowing about images."
+        },
+        {
+          "s": "leo",
+          "t": "ShieldsUP! has tested over 40 million PCs. And thanks to all the voters and PodcastAwards.com. Next week is our mailbag."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What weakness did Steve's original LeakTest expose?",
+      "options": [
+        "Most firewalls trusted a program by its file name alone",
+        "Firewalls blocked all traffic",
+        "Firewalls couldn't see DNS",
+        "Firewalls used weak passwords"
+      ],
+      "answer": 0,
+      "explain": "Only ZoneAlarm checked each program's cryptographic hash."
+    },
+    {
+      "q": "How does cross-process DLL injection get past a firewall?",
+      "options": [
+        "Malware runs its code inside a program the firewall already trusts",
+        "It turns the firewall off",
+        "It deletes the firewall's rules",
+        "It uses a new network card"
+      ],
+      "answer": 0,
+      "explain": "FireHole demonstrated it using servicehost.exe."
+    },
+    {
+      "q": "How can malware sneak data out through DNS?",
+      "options": [
+        "By looking up a bogus name made from the data, in a domain whose DNS server it controls",
+        "By changing your DNS server's password",
+        "By sending email",
+        "By slowing DNS down"
+      ],
+      "answer": 0,
+      "explain": "Windows treats it as a normal lookup."
+    },
+    {
+      "q": "What does the AppInit registry entry do that malware likes?",
+      "options": [
+        "Loads listed DLLs into every application that starts",
+        "Starts Windows faster",
+        "Disables the firewall",
+        "Hides files"
+      ],
+      "answer": 0,
+      "explain": "Jumper abuses it."
+    },
+    {
+      "q": "Why does Steve call Windows arguably \"insecurable\"?",
+      "options": [
+        "Its handy developer features can't be locked down without breaking things",
+        "It has no firewall",
+        "It's closed source",
+        "It's too old"
+      ],
+      "answer": 0,
+      "explain": "Microsoft never wants to break anything."
+    },
+    {
+      "q": "What does Steve say matters most against malware?",
+      "options": [
+        "Keeping it out of your machine in the first place",
+        "Running more leaktests",
+        "Buying the most expensive firewall",
+        "Disabling DNS"
+      ],
+      "answer": 0,
+      "explain": "Once something is inside, it's almost too late."
+    }
+  ]
+}

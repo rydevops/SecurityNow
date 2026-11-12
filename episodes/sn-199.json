@@ -1,0 +1,250 @@
+{
+  "number": 199,
+  "title": "The Geek Atlas, IPv6 and Non-VPN",
+  "subtitle": "A geeky travel book, why IPv6 still isn't here, and a VPN-free way to reach your home PC",
+  "date": "2009-06-04",
+  "description": "A three-topic potpourri: John Graham-Cumming's delightful book \"The Geek Atlas,\" 128 places where something technically important happened; why IPv6, ten years old, still hasn't arrived (NAT solved the address shortage) and the privacy problem baked into its MAC-based addresses; and Steve's idea for reaching a home PC securely without a VPN, by port-shifting and encrypting the traffic in a driver. Plus a QuickTime flaw, a Microsoft DirectShow zero-day with a \"Fix it\" workaround, and Microsoft quietly installing a Firefox add-on that lets sites install software.",
+  "transcript": "https://www.grc.com/sn/sn-199.txt",
+  "audio": "http://media.GRC.com/sn/SN-199.mp3",
+  "chapters": [
+    {
+      "title": "QuickTime, BlackBerry and a DirectShow Zero-Day",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Apple fixed a QuickTime flaw: a mishandled 16-bit length in .PICT handling let a malicious QuickTime file take over your machine, so update. BlackBerry had yet another PDF flaw, its third or fourth in a year, where a malformed emailed PDF can take over the device; they were forthcoming about it and have fixed it, but corporations need to update the BlackBerry server that parses PDFs."
+        },
+        {
+          "s": "steve",
+          "t": "And there's a zero-day in Microsoft's DirectShow (part of DirectX), specifically its QuickTime parser, being actively exploited, with no fix yet. It hits Windows 2000, XP and Server 2003 (not Vista, Server 2008 or 7). Just visiting a site whose script auto-plays a QuickTime file runs attacker code with no user interaction."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's interim workaround uses their new \"Fix it\" buttons: go to support.microsoft.com/kb/971778 and click to disable the DirectShow QuickTime parser (and a button to re-enable it later). It's a Microsoft bug, not Apple's; Apple's QuickTime doesn't have this one."
+        },
+        {
+          "type": "fact",
+          "title": "The \"Fix it\" one-click workaround",
+          "t": "Microsoft's \"Fix it\" buttons apply a prepared change (often a registry tweak), here disabling the vulnerable DirectShow QuickTime parser, so non-expert users can protect themselves before an official patch ships. You can also download the fix to run on offline machines."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Quietly Installs a Firefox Add-On",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A big flap, flagged by Brian Krebs: back in February, Microsoft's monthly update (the .NET Framework 3.5 SP1) silently installed a Firefox add-on, the .NET Framework Assistant, enabling ClickOnce, \"the ability for websites to easily and quietly install software on your PC.\" That's exactly what people switched away from IE to avoid."
+        },
+        {
+          "s": "steve",
+          "t": "Worse, its uninstall button was greyed out. Microsoft's excuse: it was installed machine-wide, and standard users can't remove machine-level components. After the backlash they're making it per-user (and functional) in a follow-up update at support.microsoft.com/?kbid=963707, which re-enables the uninstall button so you can finally remove it."
+        },
+        {
+          "s": "leo",
+          "t": "This is unconscionable, and exactly the anti-competitive, trust-breaking behavior the DOJ and EU went after Microsoft for, reaching into another browser to make it less secure, without permission."
+        },
+        {
+          "s": "steve",
+          "t": "Either you trust Windows Update, which they dun you to keep on, or you leave for Linux or a Mac. All they had to do was ask. The EU is now considering a \"ballot screen\" requiring Windows to offer competing browsers at first startup."
+        }
+      ]
+    },
+    {
+      "title": "The Kindle DX Is Coming",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Amazon says my Kindle DX ships June 10th, arriving the 11th, faster than I expected. For the first time I'll have a real PDF reader, instead of printing PDFs on paper all the time."
+        },
+        {
+          "s": "leo",
+          "t": "I'm increasingly reading programming documents and books online, so the larger form factor plus native PDF support is appealing."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, the smaller Kindle is paperback-portable, but I like the larger real estate when reading, more text per page, fewer page turns, and room to scale up the font in dim light. And no SpinRite testimonial this week, but a slow, retrying drive, where a program takes forever to start, is a classic bad-sector symptom SpinRite makes quick work of."
+        }
+      ]
+    },
+    {
+      "title": "The Geek Atlas",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Topic one: John Graham-Cumming, a longtime contributor to GRC's newsgroups (and author of POPFile), wrote \"The Geek Atlas,\" 128 (2^7, naturally) places worldwide where something technically or historically geeky happened, published by O'Reilly, under $20."
+        },
+        {
+          "s": "steve",
+          "t": "What I love is that each entry, no more than four pages, isn't just a travel note; it explains the underlying principle with his own diagrams, galvanic corrosion at the Statue of Liberty, Bayes' theorem, how an escapement works, ILS landing systems, the speed of light, Foucault's pendulum. It's a precise technical history written by a real techie who clearly knows his facts."
+        },
+        {
+          "s": "leo",
+          "t": "It reads like a guidebook, lay-flat binding, GPS coordinates, but you learn the science. The Escher Museum, the first breeder reactor, Arecibo, Bletchley Park, Chernobyl and potassium iodide. You don't even have to travel to enjoy it."
+        },
+        {
+          "s": "steve",
+          "t": "I posted about it in the newsgroups and wrote an Amazon review; John replied he was \"speechless with gratitude.\" Given the work in it, richly deserved."
+        }
+      ]
+    },
+    {
+      "title": "IPv6: Why It Still Isn't Here",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Topic two: IPv6. Every packet's first four bits give the IP version; today's hardware mostly handles only IPv4 and would choke on a v6 packet (version 5 was a streaming protocol, so the next one became 6). People keep asking whether my DNS benchmark will support IPv6, and I sigh, because for end-users it still just doesn't matter."
+        },
+        {
+          "s": "steve",
+          "t": "IPv6 was created out of fear of exhausting IPv4's ~4.3 billion addresses. But about 40% of those aren't even in use, whole Class A blocks squatted on by early adopters (universities with 16 million IPs who now NAT their students). The real fix turned out to be NAT, which is fully IPv4-compatible and solved the shortage completely."
+        },
+        {
+          "s": "steve",
+          "t": "So IPv6, ratified in 1998, is ten years old with almost no real deployment, Russia leads at 0.76%, the US at 0.45%, China under 0.25%. Switches and routers are IPv4 hardware that drop or mishandle v6 packets. I'll design CryptoLink for 128-bit addresses to be ready, but for anything today, IPv6 just isn't here."
+        },
+        {
+          "type": "fact",
+          "title": "NAT versus IPv6",
+          "t": "Network Address Translation lets many devices share one public IPv4 address behind a router, which absorbed the explosive growth that was supposed to exhaust the address space. Because NAT needs no changes to existing hardware or protocols, it removed the urgency that IPv6 was built to address, which is why adoption stalled for years."
+        }
+      ]
+    },
+    {
+      "title": "Addressing, From Classes to CIDR",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A recap of IPv4 addressing: originally Class A (first byte network, 16.7 million hosts), Class B (two bytes each, 65,536 hosts), Class C (three bytes network, 254 hosts, your 192.168.0.x home network). Fixed byte boundaries wasted addresses."
+        },
+        {
+          "s": "steve",
+          "t": "CIDR, Classless Inter-Domain Routing, lets the network/host boundary fall on any bit, so I can have a 16-IP block at my datacenter and someone else a separate 16-IP block right next to it, instead of everyone needing a full 256. IPv6 throws all of that out: 128 bits split simply into a 64-bit network and a 64-bit host, so the host space alone is four-billion squared."
+        },
+        {
+          "s": "leo",
+          "t": "Vint Cerf said that's enough for an address for every molecule, or Steve's figure, 2^54 IPs per star in the sky."
+        }
+      ]
+    },
+    {
+      "title": "IPv6's Built-In Privacy Problem",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the security catch. IPv6 \"stateless autoconfiguration\" forms the 64-bit host identifier from the network adapter's MAC address, which never changes. So unlike IPv4, where your whole address changes as you move, your IPv6 host ID stays constant everywhere you connect, a permanent identifier embedded in every address."
+        },
+        {
+          "s": "steve",
+          "t": "RFC 3041 spells out the danger: a server logging source addresses is also logging that fixed interface identifier, so any data-mining that correlates by address can track an individual device, and increasingly one device per person, as it moves across the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "RFC 3041 defines a way to randomize that lower 64 bits. The good news: Windows enables it by default (the \"netsh int ipv6 set privacy\" command can disable it, and you wouldn't know). Other IPv6-enabled OSes reportedly don't enable it by default. And where DHCP assigns addresses, as in a NAT network, none of this arises, and IPv6 is unnecessary anyway."
+        },
+        {
+          "type": "fact",
+          "title": "The MAC-derived address",
+          "t": "Deriving the host portion of an IPv6 address from the permanent MAC meant your device carried the same identifier everywhere it connected, a privacy regression from IPv4's changing addresses. RFC 3041 (later 4941) \"privacy extensions\" randomize it; this debate drove how modern systems generate IPv6 addresses."
+        }
+      ]
+    },
+    {
+      "title": "A Non-VPN Way to Reach Home",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Topic three. At Starbucks, bringing up OpenVPN disrupts my existing connections, because a VPN fully encloses your machine as a peer on the remote network and reroutes all your traffic up and back, adding delay. I want \"partial enclosure\", route only chosen destinations through the tunnel, which CryptoLink will make easy. But I've thought of something even lighter."
+        },
+        {
+          "s": "steve",
+          "t": "Windows file-and-printer sharing (port 445) is just a TCP connection. You can't safely expose port 445 to the Internet, and ISPs block it anyway. But imagine a network driver at each end: at home it listens on other ports, strongly encrypting and authenticating every packet with a secret symmetric key; at Starbucks the driver takes Windows' port-445 packets, shifts them to those other ports, and encrypts them."
+        },
+        {
+          "s": "steve",
+          "t": "The encrypted, port-shifted packets sail past ISP filters; only my Starbucks machine can produce packets that decrypt and authenticate; at home they're decrypted and shifted back to 445, so Windows is happy. I map my home C: drive with no tunnel, no rerouting, no overhead, yet it's as secure as any VPN, which is really just symmetric encryption and authentication with a key no attacker knows."
+        },
+        {
+          "s": "steve",
+          "t": "A listener, Steve Hiner, asked for exactly this for program-to-program communication, avoiding exposing a web server. And because my technology generates self-authenticating TCP SYN packets, there's no open port to scan, you're stealth, and only you can connect. It only works for TCP (file sharing, remote desktop), but that's the point: a minimal, no-baggage solution I'll try first when I start coding CryptoLink."
+        },
+        {
+          "s": "leo",
+          "t": "This is how you test it, ask a lot of people, ask security experts, try it out."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, and the smart developers and testers in the newsgroups, like John Graham-Cumming, will check me on it."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Steve argue IPv6 still isn't needed for end-users?",
+      "options": [
+        "NAT, fully IPv4-compatible, absorbed the address growth, and large chunks of IPv4 space remain unused",
+        "IPv6 is technically impossible to deploy",
+        "IPv4 has unlimited addresses",
+        "Browsers don't support IPv6"
+      ],
+      "answer": 0,
+      "explain": "The address-exhaustion fear that motivated IPv6 was solved by NAT (and ~40% of IPv4 is still unused), so there's no pressing need, and little hardware handles v6 anyway."
+    },
+    {
+      "q": "What privacy problem does IPv6's stateless autoconfiguration create?",
+      "options": [
+        "The host part of the address is derived from the never-changing MAC, so a constant identifier follows the device everywhere it connects",
+        "It broadcasts your name with every packet",
+        "It disables encryption",
+        "It assigns the same address to every device"
+      ],
+      "answer": 0,
+      "explain": "Because the 64-bit interface ID comes from the fixed MAC, the address carries a permanent identifier that lets servers track a device (and its user) across the Internet; RFC 3041 randomizes it."
+    },
+    {
+      "q": "What did Microsoft silently install via a monthly update that angered users?",
+      "options": [
+        "A Firefox add-on (the .NET Framework Assistant) enabling websites to quietly install software, with the uninstall button greyed out",
+        "A new version of Internet Explorer",
+        "A keylogger",
+        "A replacement for Firefox"
+      ],
+      "answer": 0,
+      "explain": "The ClickOnce add-on let sites install software, exactly what IE users switched to Firefox to avoid, and it couldn't be uninstalled because it was installed machine-wide."
+    },
+    {
+      "q": "How would Steve's \"non-VPN\" approach let him safely reach his home PC's file sharing?",
+      "options": [
+        "Drivers at each end port-shift and encrypt the port-445 traffic with a secret symmetric key, passing ISP filters with no open port to scan",
+        "It exposes port 445 directly to the Internet",
+        "It emails the files over SSL",
+        "It runs a public web server at home"
+      ],
+      "answer": 0,
+      "explain": "The home driver listens on other ports and decrypts/authenticates; the remote driver shifts Windows' 445 packets to those ports and encrypts them, giving VPN-grade security with no tunnel and (via self-authenticating SYN packets) nothing to scan."
+    },
+    {
+      "q": "What is the interim workaround for the unpatched Microsoft DirectShow QuickTime zero-day?",
+      "options": [
+        "Use Microsoft's \"Fix it\" button to disable the DirectShow QuickTime parser until a patch ships",
+        "Uninstall QuickTime",
+        "Switch to a Mac",
+        "Block port 445"
+      ],
+      "answer": 0,
+      "explain": "The flaw is in Microsoft's DirectShow QuickTime parser (not Apple's QuickTime); Microsoft's KB 971778 \"Fix it\" disables that parser as a stopgap, with a button to re-enable it later."
+    },
+    {
+      "q": "In \"The Geek Atlas,\" what makes each of its 128 entries more than a travel note?",
+      "options": [
+        "Each explains the underlying scientific principle with diagrams, not just the location",
+        "Each includes a restaurant review",
+        "Each is written by a different author",
+        "Each is exactly one page of history"
+      ],
+      "answer": 0,
+      "explain": "Author John Graham-Cumming pairs each place with a precise technical explanation (galvanic corrosion, Bayes' theorem, how an escapement works), so you learn the science, not just where it happened."
+    }
+  ]
+}

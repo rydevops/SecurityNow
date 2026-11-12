@@ -1,0 +1,743 @@
+{
+  "number": 109,
+  "title": "GRC's eCommerce System",
+  "subtitle": "Behind the scenes of the store Steve wrote in assembly",
+  "date": "2007-09-13",
+  "description": "Steve closes the spammed feedback address and opens a bot-resistant feedback page, points to Microsoft's free PageDefrag, says VeriSign will offer listeners discounted tokens, and notes Bank of America is adding two-factor logins. Then he tours GRC's homemade store, \"Bam Bam\": why he wrote it, how it keeps no half-finished orders on the server by handing the browser an encrypted, signed \"envelope,\" how it beat double-click double charges, why download links work only once, and the lockout bug that turned paying customers away.",
+  "transcript": "https://www.grc.com/sn/sn-109.txt",
+  "audio": "http://media.GRC.com/sn/SN-109.mp3",
+  "chapters": [
+    {
+      "title": "An Award, and a Week of Coding",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Security Now!, the number one tech podcast. You'll pick up your award in a couple of weeks in Ontario, California, while I'm in Vancouver, Canada."
+        },
+        {
+          "s": "steve",
+          "t": "We owe it to our listeners. I didn't even know the competition was happening until our quick plea for votes."
+        },
+        {
+          "s": "leo",
+          "t": "Most podcasts constantly lobby for votes. We did it once and never mentioned it again."
+        },
+        {
+          "s": "steve",
+          "t": "I want a whole shelf full of trophies, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "I have my little shelf, and I'm satisfied. Now it's your turn."
+        },
+        {
+          "s": "leo",
+          "t": "Today's about something Steve did. You're a developer first and foremost."
+        },
+        {
+          "s": "steve",
+          "t": "When I can arrange my life to hide in a corner and code, I'm never happier."
+        },
+        {
+          "s": "leo",
+          "t": "I'm so rusty it takes me a week to figure out what I forgot. Do you code every day?"
+        },
+        {
+          "s": "steve",
+          "t": "I wish. Right now I'm updating our eCommerce system. Sue, my operations gal, wanted to search by email domain, not just email address. Say people at IBM want to know who else at IBM has bought SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Going back into the code, I saw things I'd forgotten I did and really liked. And someone once asked what I'm proudest of and what mistakes I made. So that's today, after some feedback."
+        }
+      ]
+    },
+    {
+      "title": "A New Feedback Page",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Around Episode 101, I told listeners they could email the address our Security Now! feedback form sends to. About 24 hours later, spam began."
+        },
+        {
+          "s": "leo",
+          "t": "Spammers listen to the show."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe. Elaine dutifully transcribed the address, which went on the web in HTML, text and PDF, so it may have been scraped. Or trojans harvesting address books picked it up from listeners' outboxes. Either way, it was a disaster."
+        },
+        {
+          "s": "steve",
+          "t": "So I shut it down. Anyone sending there gets a polite bounce saying the bots found it. And since the Security Now! page is very long, with 108 episodes' notes, I moved the form to its own page: GRC.com/feedback. I know you like short URLs."
+        },
+        {
+          "s": "steve",
+          "t": "It now has a subject line, which makes scanning feedback so much nicer."
+        },
+        {
+          "s": "steve",
+          "t": "I experimented with reCAPTCHA. Its API is easy if scripting is enabled but fights you otherwise, and I didn't want to require scripting. So I dropped it for now. Form spam doesn't seem to be a problem anyway."
+        },
+        {
+          "s": "leo",
+          "t": "CAPTCHAs don't stop spam. I use it to help digitize books."
+        },
+        {
+          "s": "steve",
+          "t": "Instead, the old form labeled fields with text. Now I label them with images, I've reorganized them and added some dummy fields. It's much harder to automate, without being at all user-hostile."
+        },
+        {
+          "s": "leo",
+          "t": "Did you find these ideas somewhere?"
+        },
+        {
+          "s": "steve",
+          "t": "Oh, Leo, it's assembly code. I just wrote it."
+        },
+        {
+          "s": "leo",
+          "t": "You should document the ideas to help others."
+        },
+        {
+          "s": "steve",
+          "t": "It's crackable if someone really wanted to. But it's a function of value. I'm not giving away Yahoo! email accounts. It's a \"send me your comments\" form."
+        }
+      ]
+    },
+    {
+      "title": "Free Defragging Help",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week a listener asked for the free defragger I'd mentioned. I said Vopt, now at 8.2 I think, isn't free, and I now use PerfectDisk."
+        },
+        {
+          "s": "steve",
+          "t": "Someone called BotSing posted in our newsgroups about PageDefrag, freeware from our friend Mark Russinovich at Sysinternals, now part of Microsoft. Search \"PageDefrag.\" It defragments the swap file, registry hives, event logs and hibernation file, which are in use and normally can't be moved."
+        },
+        {
+          "s": "steve",
+          "t": "Use it with another defragger, like Vopt, and you get the best of both, though PerfectDisk does that and more."
+        },
+        {
+          "s": "leo",
+          "t": "It's free, among Microsoft's many Sysinternals programs."
+        },
+        {
+          "s": "steve",
+          "t": "And longtime defrag fanatic Donn Edwards blogged \"Mr. Hard Drive Uses PerfectDisk.\" He's reviewed 20 commercial and 20 freeware defraggers, and PerfectDisk was his choice. Then he tried Vopt after I mentioned it. Vopt is faster, and PerfectDisk more thorough. So he runs Vopt often and PerfectDisk occasionally for deep cleaning."
+        },
+        {
+          "s": "leo",
+          "t": "Is this really necessary? I've said for years defragging is overrated, except maybe quarterly for people working with large video files. People do this daily."
+        },
+        {
+          "s": "steve",
+          "t": "With Microsoft's constant patching, system files that never used to move are changing all the time, and the OS keeps growing, so fragmentation is greater. Benchmarks go both ways, and some say defragging adds wear."
+        },
+        {
+          "s": "steve",
+          "t": "I just like it. I defrag before I image a drive, after deleting accumulated cookies and junk from temp directories. Imaging software handles fragmentation, but I'd rather image a nice, compact, cleaned-out drive."
+        }
+      ]
+    },
+    {
+      "title": "VeriSign Discounts and Bank of America Tokens",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Our podcast has more reach than I realized. PayPal felt a huge spike from my mention of the Security Key, and so did VeriSign. They're playing snippets of our mentions in upper-level management meetings."
+        },
+        {
+          "s": "steve",
+          "t": "They want to offer listeners VeriSign tokens at a reduced price in return for filling out a questionnaire."
+        },
+        {
+          "s": "leo",
+          "t": "Now they just need to buy some advertising."
+        },
+        {
+          "s": "steve",
+          "t": "I want to keep clear what's paid for and what isn't."
+        },
+        {
+          "s": "leo",
+          "t": "They purchase no advertising. They're getting this plug absolutely free. And your show's sold out anyway."
+        },
+        {
+          "s": "steve",
+          "t": "Some listeners are unhappy the tokens are sold only domestically. My VeriSign contact says it's temporary: their fulfillment system only handles dollar transactions. The VIP system itself runs globally."
+        },
+        {
+          "s": "steve",
+          "t": "She'd been in meetings in Brazil, where VIP quickly gained traction. We take U.S. consumer protection for granted: your liability for fraudulent card charges is capped at $50, usually waived. In Brazil you're liable, so consumers want all the protection they can get."
+        },
+        {
+          "s": "steve",
+          "t": "I asked whether a smaller site can use VIP. I'd like a GRC page where people can play with their tokens."
+        },
+        {
+          "s": "steve",
+          "t": "And your favorite company, Bank of America, just announced multifactor authentication beyond SiteKey."
+        },
+        {
+          "s": "leo",
+          "t": "SiteKey drives me up the wall."
+        },
+        {
+          "s": "steve",
+          "t": "They're using a credit-card-size token with a little LCD window and a button, to fit in your wallet."
+        },
+        {
+          "s": "leo",
+          "t": "And they'll send the number to your cell phone, which interests me most. I just got an email saying the card is delayed till next month."
+        },
+        {
+          "s": "steve",
+          "t": "VeriSign also plans a pure software version of the token's crypto for cell phones, built in at no cost. The need for secure authentication isn't going away."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite With a Linux Twist",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Matt in New Brunswick, Canada had uncorrectable errors on his Linux machine. He backs up nightly at 3 a.m. to an external drive and monthly to DVD-R, he's the paranoid type, so he cared more about replacement cost than data."
+        },
+        {
+          "s": "steve",
+          "t": "He knew SpinRite supports Linux partitions. The twist: he found the SpinRite executable works perfectly under the Wine Windows emulator."
+        },
+        {
+          "s": "steve",
+          "t": "I think I remember that from beta testing, but I'd never mentioned it. Run under Windows or a clone like Wine, SpinRite shows its graphical dialog, which can create an ISO image. Burn that with your Linux CD software, and you have a bootable CD."
+        },
+        {
+          "s": "leo",
+          "t": "So Wine runs the installer, not SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "Right. SpinRite runs under no OS. It brings a little copy of FreeDOS along. You don't need Windows anywhere. Or make a bootable floppy, which I still have. Not having a floppy drive makes me uncomfortable."
+        },
+        {
+          "s": "leo",
+          "t": "You're going to be out of luck soon."
+        }
+      ]
+    },
+    {
+      "title": "Why Write Your Own Store?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When I started, people said, you're writing an eCommerce system?"
+        },
+        {
+          "s": "leo",
+          "t": "There are a thousand prepackaged ones."
+        },
+        {
+          "s": "steve",
+          "t": "But they're not mine. I'd never written one."
+        },
+        {
+          "s": "leo",
+          "t": "And you enjoy learning the problems that need solving."
+        },
+        {
+          "s": "steve",
+          "t": "Being in security, I saw constant reports of flaws in shopping cart systems. How could I expect customers to trust software I didn't write?"
+        },
+        {
+          "s": "steve",
+          "t": "Then there are third parties like Digital River, which are just horrible. They pursued me for years to sell SpinRite, wanting about 30 percent of retail. And when I've bought other software through them, they started spamming me."
+        },
+        {
+          "s": "steve",
+          "t": "I don't want any third party capturing my customers' data or handling fulfillment. And I'd understand customers asking why I bounced them to some third-party site."
+        },
+        {
+          "s": "steve",
+          "t": "And I wanted it to work my way. I dislike \"create an account\" for buying some random widget from a site I'll never visit again."
+        },
+        {
+          "s": "leo",
+          "t": "Even if I am coming back, I don't want an account."
+        },
+        {
+          "s": "steve",
+          "t": "So you provide only what we need to process the purchase, nothing more."
+        },
+        {
+          "s": "steve",
+          "t": "People have wanted to buy my system, and it's not for sale. I can't charge enough to make packaging it worthwhile. I'm in the business of podcasts and software for end users. But I'll explain everything, and anyone's welcome to use the ideas."
+        }
+      ]
+    },
+    {
+      "title": "Keeping State Without Cookies or Scripts",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My system doesn't use or require cookies or scripting, and it has no messy URLs, just about eight characters identifying the page. So how does it save state?"
+        },
+        {
+          "s": "steve",
+          "t": "Even with Web 2.0's interactivity, the browser works by transactions. Submitting a form is sent as a query, and the browser waits for the response, the next page. That's the spinning globe or flag. The connection stays open while it waits."
+        },
+        {
+          "s": "steve",
+          "t": "\"State\" means a memory of what you've done before. The classic way is a cookie, which Netscape originated. Not chocolate chip: a chunk of text, usually a token meaningful only to the server. The browser accepts it and echoes it back with every later query."
+        },
+        {
+          "s": "steve",
+          "t": "So you submit a form, and many sites echo back your information to check. When you click yes, yes to what? The server needs your cookie to look up your half-finished purchase in a temporary database."
+        },
+        {
+          "s": "steve",
+          "t": "Some people turn cookies off. Then sites use scripting for cookie-like behavior. But scripting gets turned off too, and I keep recommending it be off."
+        },
+        {
+          "s": "steve",
+          "t": "Then there's URL munging, like the bizarro URL you see right after reaching Amazon. They save state in the URL, giving everyone custom links."
+        },
+        {
+          "s": "steve",
+          "t": "I disliked them all. First-party cookies are fine, and I see no valid purpose for third-party cookies but tracking. But I won't break my store for people who disable cookies. I can't tell everyone scripting is evil, except to buy SpinRite. And munged URLs end up cached, bookmarked or shared, leaking what's essentially your cookie."
+        },
+        {
+          "s": "steve",
+          "t": "The overarching problem is incomplete transactions. Most systems create a server record when you start. If you go a couple of stages and wander off, the server waits. Then it must expire your data, say after an hour, and tell you it's forgotten you if you come back. It's messy."
+        },
+        {
+          "s": "steve",
+          "t": "Most people think there's no other way. I solved it."
+        }
+      ]
+    },
+    {
+      "title": "The Encrypted Envelope",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My system stores nothing on the server. You fill out the first form and submit it. Since I require no scripting, the server checks it: the email looks like an email, and the card number passes the Mod 9 check, a simple formula that catches typos and transpositions."
+        },
+        {
+          "type": "fact",
+          "title": "Luhn, not Mod 9",
+          "t": "The card-number check is the Luhn algorithm, also called \"mod 10.\" It catches any single-digit typo and most swaps of adjacent digits."
+        },
+        {
+          "s": "steve",
+          "t": "Then I show everything they entered and ask for their email address again. It's surprising how often people don't type it the same twice. I put it on a separate page, because on the same page I'd just copy and paste my typo."
+        },
+        {
+          "s": "steve",
+          "t": "Here's the trick. I take a binary image of all their purchase data, encrypt it with a secret key on the server, and digitally sign it with a cryptographic hash. I turn it into ASCII and send it as a hidden field in that next form."
+        },
+        {
+          "s": "steve",
+          "t": "So I hand the user's browser everything that would normally sit on the server. I have no record that this user has done anything."
+        },
+        {
+          "s": "leo",
+          "t": "Is that typical?"
+        },
+        {
+          "s": "steve",
+          "t": "No. They keep it on their own sites. Turn off scripting and cookies, and they break, telling you cookies are required."
+        },
+        {
+          "s": "steve",
+          "t": "When the user confirms with their email address, I receive it plus the blob. I verify the signature, then decrypt it back into their purchase record. If they unplug their computer, change their mind or wander off, I don't care. If they continue, they bring me everything I need."
+        },
+        {
+          "s": "steve",
+          "t": "The \"envelope\" includes a timestamp. If it comes back, say, three hours later, I show a screen saying it's three hours old and may not be what they intend, and ask them to start again."
+        },
+        {
+          "s": "leo",
+          "t": "I like that. Many sites just throw it out, or keep it for days."
+        },
+        {
+          "s": "steve",
+          "t": "The browser saves the purchase state as we move forward, and it's worked really well."
+        }
+      ]
+    },
+    {
+      "title": "Beating the Double-Click",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You've seen the warnings on purchase buttons: click only once, or you may be charged twice."
+        },
+        {
+          "s": "leo",
+          "t": "It happened to me on Apple's store the other day. I bought two copies."
+        },
+        {
+          "s": "steve",
+          "t": "I didn't want to admonish my purchasers. From the start, if a card bought the same product within about 48 hours, I show an intercept page titled \"Your card has already been charged.\""
+        },
+        {
+          "s": "steve",
+          "t": "It says the card was used for the same products, say, two hours and four minutes ago. We don't want to discourage purchases, but we want to eliminate unintended charges. If a glitch kept you from seeing confirmation, check your email for your receipt and download instructions. If you're deliberately buying more, thank you, click \"Confirm Similar Order.\" Otherwise, click \"Do Not Repeat Order.\""
+        },
+        {
+          "s": "steve",
+          "t": "Even so, every so often Sue would tell me we'd double-charged somebody. For the first year it drove me nuts. I checked the database before accepting a second order. How?"
+        },
+        {
+          "s": "steve",
+          "t": "Some people double-click buttons that need only one click."
+        },
+        {
+          "s": "leo",
+          "t": "My mom double-clicks everything. It's not her fault. It's not clear which things need a double-click."
+        },
+        {
+          "s": "steve",
+          "t": "Here's what happened. The first click sends the final confirmation. My server opens a connection to our credit card processor. I use VeriSign now, through Payflow Pro, our merchant back end into the electronic funds transfer system. Then it waits for yes or no."
+        },
+        {
+          "s": "steve",
+          "t": "If the user clicks again before the response, the browser drops that connection and sends the query again. My server checks the database for a charge. But the first charge hasn't finished, since card processing is relatively slow. So it launches a second purchase."
+        },
+        {
+          "s": "steve",
+          "t": "The first clears, the second clears, and I tell the customer they've bought SpinRite. A double charge has snuck in. That's why every site warns you."
+        },
+        {
+          "s": "leo",
+          "t": "It's intractable."
+        },
+        {
+          "s": "steve",
+          "t": "I solved it with \"in-flight orders.\" I separated the browser side from the back end. When an order goes to the processor, I log it as in flight. A second click sees the pending order, and no second order goes out."
+        },
+        {
+          "s": "steve",
+          "t": "The tricky part: the second click dropped the connection that started the order. A different connection must receive the response. Click ten times, and there are ten connections, but only one order goes to VeriSign."
+        },
+        {
+          "s": "steve",
+          "t": "When the answer comes back, I don't know which connections are alive. The browser keeps only the latest. So I send the good or bad news to all of them, knowing all but one will fail. We haven't had a double charge in several years."
+        },
+        {
+          "s": "leo",
+          "t": "All in assembly?"
+        },
+        {
+          "s": "steve",
+          "t": "Because that's who I am. Any language with that kind of control would work."
+        },
+        {
+          "type": "fact",
+          "title": "Payflow Pro",
+          "t": "Payflow Pro was created by Signio, which VeriSign bought in 1999. VeriSign sold its payment business to PayPal in 2005, which still offers Payflow."
+        }
+      ]
+    },
+    {
+      "title": "Download Links That Work Only Once",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I also wanted no separate registration code. When you buy SpinRite, you get a unique download link, and the copy you download already contains your name, serial number and other data, prelicensed for you."
+        },
+        {
+          "s": "steve",
+          "t": "And I wanted a link in your email receipt that works forever, so if you're traveling and need SpinRite, you can get it, even five years later. We have a relationship with our customers we want to preserve."
+        },
+        {
+          "s": "steve",
+          "t": "Something messed me up at first. Some \"download accelerators,\" which open multiple connections, which I don't mind, also spy on users. They send the URL of everything you download back to the mothership, to show off the most popular downloads."
+        },
+        {
+          "s": "steve",
+          "t": "So links meant to be private were published behind users' backs, and a couple of very early copies of SpinRite escaped onto the Internet. We knew whose, because their names were inside, and anyone using the link got that person's copy."
+        },
+        {
+          "s": "steve",
+          "t": "We quickly contacted those people and invalidated their licenses, which I'd built in the ability to do."
+        },
+        {
+          "s": "leo",
+          "t": "You were smart to build that in ahead of time."
+        },
+        {
+          "s": "steve",
+          "t": "They weren't happy, but we said it wasn't their fault: their download accelerator was violating their privacy."
+        },
+        {
+          "s": "steve",
+          "t": "So I realized a download link can never work more than once. I quickly revised the system. Click a link once, and it's dead. Refresh the page for as many new ones as you want, but no download URL can ever be used twice."
+        },
+        {
+          "s": "steve",
+          "t": "The URLs also contain a timestamp and self-expire after maybe 15 or 30 seconds. A little overboard, but better safe than sorry. That was about three years ago, when we were still selling SpinRite 5, and it completely solved the problem."
+        }
+      ]
+    },
+    {
+      "title": "The Lockout Bug",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My last story I thought was humorous, though a couple of customers didn't. I built a generic hacker lockout. An eCommerce system should be intolerant of people guessing card numbers, or trying street addresses for a stolen card."
+        },
+        {
+          "s": "steve",
+          "t": "Valid users trip themselves too. They use a home address instead of the billing address. I only deliver electronically, so I only ask for the billing address, which card companies check through their Address Verification System, AVS."
+        },
+        {
+          "s": "steve",
+          "t": "Upgraders get an extra form for their old serial number to qualify for the discount. So I allow some fixed number of interactions. We've moved it around, and it's 12 now. After that, a stern page says your conduct is incompatible with the system's policies."
+        },
+        {
+          "s": "steve",
+          "t": "I figured you'd have to really try to hit 12. But get this, Leo: I forgot to reset the counter after a successful purchase."
+        },
+        {
+          "s": "leo",
+          "t": "So you were spanking people for buying."
+        },
+        {
+          "s": "steve",
+          "t": "Someone would try their home address, then their billing address, then find the card had no headroom and start over with another. Exhausted, they'd finally succeed: \"You've successfully purchased SpinRite! Here's your download link.\""
+        },
+        {
+          "s": "steve",
+          "t": "We'd charged their card, everyone's celebrating, and then we wouldn't let them have it. Clicking the link called them a hacker abusing the system. Now that we've got your $89, you can't have SpinRite."
+        },
+        {
+          "s": "leo",
+          "t": "You heard about it quickly."
+        },
+        {
+          "s": "steve",
+          "t": "Very quickly. It took two seconds to fix: after a successful purchase, I remove them from my hacker tracking queue."
+        },
+        {
+          "s": "leo",
+          "t": "It's hard to test a system like this in vitro, as opposed to in vivo."
+        },
+        {
+          "s": "steve",
+          "t": "You have to put it into service and let everybody pound on it. Since those first glitches, it's performed flawlessly. I'm not begging a third party for features or fixes, or sending customers elsewhere to dispute a charge. We take responsibility for making everyone happy."
+        }
+      ]
+    },
+    {
+      "title": "Meet Bam Bam",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "When did you last fix a bug in it?"
+        },
+        {
+          "s": "steve",
+          "t": "As far as I know, never since then, like SpinRite, which hasn't changed a byte since SpinRite 6 launched two and a half years ago. And I should tell people the system's name is Bam Bam. I've avoided saying it all podcast."
+        },
+        {
+          "s": "steve",
+          "t": "Our original management system, written about 20 years ago by a gifted programmer in FoxPro for DOS, was called Dino, as in the dinosaur. When I wrote its replacement about four years ago, I didn't want Fred or Wilma. Pebbles isn't that good. But Pebbles' boyfriend, Bam Bam, I just liked."
+        },
+        {
+          "s": "steve",
+          "t": "Believe me, four years ago we were still running FoxPro for DOS. It really was a dinosaur."
+        },
+        {
+          "s": "leo",
+          "t": "Someday, when you're old and gray, you might open source it, at least for people to look at."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe on some terms. The problem is everyone will want it to do something different."
+        },
+        {
+          "s": "leo",
+          "t": "Just say it's unsupported, for educational purposes only."
+        },
+        {
+          "s": "steve",
+          "t": "You're right. I could just give it away."
+        }
+      ]
+    },
+    {
+      "title": "Comments, Macros and Readable Assembly",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Do you comment?"
+        },
+        {
+          "s": "steve",
+          "t": "Like crazy. I used to write comments because I felt I should, then come back two years later and wonder what I was saying. Now I know I won't understand it in two years."
+        },
+        {
+          "s": "steve",
+          "t": "When I need to take something out of the house, I put it in front of the front door so I'll fall over it. It's about mindset. Years from now I'll have forgotten the mindset I had while writing. Adding Sue's features to Bam Bam, I've had to ask, what was I doing here?"
+        },
+        {
+          "s": "steve",
+          "t": "My assembly looks different from anyone else's. Most assembly is an opaque stream of op codes down the left edge. Mine looks more like a high-level language, with long variable and subroutine names. I'll put a screenshot on the episode notes page."
+        },
+        {
+          "s": "steve",
+          "t": "I edit in Brief, in a DOS box, using WordStar keystrokes."
+        },
+        {
+          "s": "leo",
+          "t": "You can program Brief to do anything. Which assembler?"
+        },
+        {
+          "s": "steve",
+          "t": "MASM, Microsoft's."
+        },
+        {
+          "s": "leo",
+          "t": "Lots of macros?"
+        },
+        {
+          "s": "steve",
+          "t": "Not really. That's how I differ from Mark Thompson, who describes himself as lazy, a word you'll never hear me use about myself. He has Emucore, an amazing proprietary library he's built, and mostly calls into it."
+        },
+        {
+          "s": "steve",
+          "t": "I love to code so much I don't mind writing the same thing again, since every instance is a little different."
+        },
+        {
+          "s": "steve",
+          "t": "But some macros help. Programmers zero a register by XORing it with itself, which takes fewer bytes than moving zero into it. XOR gives one if either input is one but not both, so a value XORed with itself is always zero."
+        },
+        {
+          "s": "steve",
+          "t": "My macro \"Zero\" expands to that. So my code says \"Zero EAX\" instead of \"XOR EAX, EAX.\" My mind instantly gets my intent, without checking that the same register appears twice."
+        },
+        {
+          "s": "leo",
+          "t": "A good macro assembler makes code read more like English."
+        },
+        {
+          "s": "steve",
+          "t": "MASM also has nice support for calling the Windows API and nice conditional instructions."
+        }
+      ]
+    },
+    {
+      "title": "32 Bits Is Plenty, for Now",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How big is SpinRite?"
+        },
+        {
+          "s": "steve",
+          "t": "Maybe 97K now, since it has the Windows side."
+        },
+        {
+          "s": "leo",
+          "t": "I have images bigger than that. But it's not portable."
+        },
+        {
+          "s": "steve",
+          "t": "Right. I regret that a bit, being x86-specific, as 64-bit spreads. But Intel and Microsoft keep older code working, so I'll stay in 32-bit mode for a long time."
+        },
+        {
+          "s": "leo",
+          "t": "Would the op codes change?"
+        },
+        {
+          "s": "steve",
+          "t": "They do. Registers went from AX, BX, CX and DX, to the extended EAX in 32-bit, to RAX in 64-bit. The same architecture, everything bigger. I'm not source compatible, and never have been. For what I do, I barely need 32 bits."
+        },
+        {
+          "s": "leo",
+          "t": "I wrote 8086 assembly, then 68000 assembly on the Mac, which was so much cleaner, with no extended registers or memory issues."
+        },
+        {
+          "s": "steve",
+          "t": "I'm sure I could learn another. And a correction: 97K was just the DOS portion. SpinRite is one EXE with Windows and DOS parts, and the whole thing is 173K."
+        },
+        {
+          "s": "leo",
+          "t": "Talk about bloat. My website's home page image is bigger than that. This is real software kung fu."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does GRC's store avoid storing half-finished orders on its server?",
+      "options": [
+        "It sends the order data back to the browser as an encrypted, signed hidden field",
+        "It uses cookies",
+        "It requires an account",
+        "It saves everything in the URL"
+      ],
+      "answer": 0,
+      "explain": "The server keeps no record until the purchase is confirmed."
+    },
+    {
+      "q": "Why did double-clicking the final button cause double charges?",
+      "options": [
+        "The second click arrived before the first charge finished processing",
+        "The database was broken",
+        "Users bought twice on purpose",
+        "The card processor charged twice by mistake"
+      ],
+      "answer": 0,
+      "explain": "Steve fixed it by tracking \"in-flight orders.\""
+    },
+    {
+      "q": "Why do GRC's download links now work only once?",
+      "options": [
+        "Download accelerators were secretly reporting users' private links",
+        "To save bandwidth",
+        "Because of a court order",
+        "To stop viruses"
+      ],
+      "answer": 0,
+      "explain": "Leaked links let others download licensed copies."
+    },
+    {
+      "q": "What was the lockout bug in GRC's store?",
+      "options": [
+        "The hacker counter wasn't reset after a successful purchase",
+        "It charged cards twice",
+        "It rejected all billing addresses",
+        "It deleted orders"
+      ],
+      "answer": 0,
+      "explain": "Customers who struggled to pay were then called hackers."
+    },
+    {
+      "q": "How did Matt run SpinRite on a Linux-only machine?",
+      "options": [
+        "He ran it under Wine to create a bootable CD image",
+        "He installed Windows",
+        "SpinRite has a Linux version",
+        "He used a Mac"
+      ],
+      "answer": 0,
+      "explain": "SpinRite itself boots on its own copy of FreeDOS."
+    },
+    {
+      "q": "Why does Steve use a \"Zero\" macro in his assembly code?",
+      "options": [
+        "It shows his intent more clearly than XORing a register with itself",
+        "It's faster",
+        "MASM requires it",
+        "It saves memory"
+      ],
+      "answer": 0,
+      "explain": "It expands to the efficient XOR instruction."
+    }
+  ]
+}

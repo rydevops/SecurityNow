@@ -1,0 +1,280 @@
+{
+  "number": 191,
+  "title": "GhostNet",
+  "subtitle": "How a covert cyber-spy network in 103 countries was found, and how its Ghost RAT worked",
+  "date": "2009-04-09",
+  "description": "Steve walks through the GhostNet report from Canadian researchers: a cyber-espionage network run from China that infected 1,295 machines in 103 countries, including embassies and the Dalai Lama's offices. He details the Ghost RAT trojan, its HTTP-and-JPEG command channel, the control-versus-command-server design, and the hard problem of attribution. Plus a disturbing US warrantless-wiretapping immunity decision, UK email data retention, a PowerPoint zero-day, and a SpinRite debate about in-place recovery.",
+  "transcript": "https://www.grc.com/sn/sn-191.txt",
+  "audio": "http://media.GRC.com/sn/SN-191.mp3",
+  "chapters": [
+    {
+      "title": "A Warrantless-Wiretapping Immunity Decision",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On a related note, the US Justice Department filed a disturbing position in the warrantless-wiretapping suits (people had sued AT&T for participating). Justice argued the government is immune and can be sued only if it deliberately, voluntarily discloses the information, not merely if the surveillance leaks or is discovered."
+        },
+        {
+          "s": "leo",
+          "t": "They're asserting the government is \"completely immune from litigation for illegal spying.\" That's just a brief, not the law; I hope the court invokes the Fourth Amendment."
+        },
+        {
+          "s": "steve",
+          "t": "A constitutional scholar's point stuck with me: you can't really have a right without the ability to defend it, and this removes any action for someone who's been wronged, even unlawfully. And apparently no administration ever walks back powers a prior one gained, so it only accretes."
+        }
+      ]
+    },
+    {
+      "title": "UK and EU Email Data Retention",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On Monday the UK adopted its version of the EU data-retention directive. On top of existing landline and cell records (including knowable cell locations), ISPs must now retain, for no less than 12 months, the sender, recipient, date and time of all email, and the parties to Internet phone calls, not the message bodies, just the metadata."
+        },
+        {
+          "s": "steve",
+          "t": "Sweden is flatly ignoring it; Germany is challenging it in court. ISPs complained about cost, so the UK said it would underwrite it \"for security.\" A civil-liberties director warned that not just police but hundreds of other public bodies can access the data, the repurposing problem."
+        },
+        {
+          "type": "fact",
+          "title": "Metadata is revealing",
+          "t": "\"Just\" the sender, recipient, time and location of communications, without any message content, can map who knows whom, when and where, often exposing associations and movements as clearly as the content would. That's why retention of communications metadata draws the same privacy objections as wiretapping."
+        }
+      ]
+    },
+    {
+      "title": "A PowerPoint Zero-Day",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Relevant to today's topic: a zero-day, unpatched PowerPoint vulnerability is being used in targeted \"spear phishing,\" malicious .ppt files emailed to specific individuals, not yet spammed widely. When attackers find an unknown hole, they keep it quiet and use it for targeted attacks to extract maximum value before patching begins."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has acknowledged it with no fix yet; we'll see if it makes next week's Patch Tuesday. It's one more in a weekly stream of new vulnerabilities in the software most of us run."
+        },
+        {
+          "s": "leo",
+          "t": "You'd think it would slow down. But it's like weeding, new ones keep sprouting."
+        }
+      ]
+    },
+    {
+      "title": "Tree Style Tab Revisited",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Lots of positive feedback on last week's Tree Style Tab recommendation for Firefox. One newsgroup tip I didn't know: if you've opened a hierarchy of tabs under a parent, dragging the parent tab to another window brings all its children along, instantly splitting off a whole subtree."
+        },
+        {
+          "s": "leo",
+          "t": "Sarah Lane saw the tabs on the side and loved it too. It's a Firefox extension, so it works on any platform, though it has fewer features on the Mac. The preferences are elaborate; I haven't even dug into them."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite and the In-Place Recovery Debate",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A SpinRite story from Anthony in Australia, titled \"SpinRite on par with Craig Venter's brilliance.\" A developer's old Dell laptop blue-screened on every boot with no recent backup; SpinRite ran about an hour, churned on a few spots, and the laptop booted right up."
+        },
+        {
+          "s": "steve",
+          "t": "He raised a point I've never addressed: a data-recovery expert's site disqualifies SpinRite because it doesn't first copy all readable data before attempting repair, so it could, in theory, snap a drive \"hanging by a thread.\""
+        },
+        {
+          "s": "steve",
+          "t": "I understand the logic, and in rare cases a drive about to die physically might die while SpinRite works, since if it's going to fail, that's when. But SpinRite's in-place recovery owes more to its history: in the late '80s a 10MB drive cost thousands, nobody had a spare to copy to. In 20+ years of real use, drives almost never die mid-SpinRite. Usually a few sectors are getting marginal, SpinRite brings them back, and had you run it a week earlier the problem would never have happened."
+        },
+        {
+          "s": "leo",
+          "t": "Saving the data first seems unnecessary. When I tell people to recover a drive I say work on a copy, but SpinRite wouldn't help on a copy, it needs the original."
+        },
+        {
+          "type": "fact",
+          "title": "Why drives seem \"fine\" until they're not",
+          "t": "Modern drives constantly use on-the-fly error correction to mask marginal sectors, so a drive can look perfectly healthy while quietly degrading. SpinRite isn't fooled by that masking, letting it find and fix trouble before the drive becomes unbootable."
+        }
+      ]
+    },
+    {
+      "title": "GhostNet: The Discovery",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now GhostNet. About nine months ago the Dalai Lama's exile organization, long targeted by malware, asked two Canadian groups, the SecDev Group and the Citizen Lab at the University of Toronto's Munk Center, to look at their network. On a couple of machines the researchers found unknown malware."
+        },
+        {
+          "s": "steve",
+          "t": "They ran Wireshark and captured the infected machine autonomously contacting an IP on the island of Hainan in China, a plain commercial ISP address. Then they browsed to that control server and found its web interface wide open, no password, so they began mapping the operation."
+        },
+        {
+          "s": "steve",
+          "t": "The infection vector was the familiar one: malicious documents attached to email, here exploiting an old 2006 Microsoft Word flaw still unpatched on that machine two years later. The malware was \"Ghost RAT\" (Remote Access Trojan); Steve had the v3.6 beta source code within four Google clicks."
+        },
+        {
+          "s": "leo",
+          "t": "These are professional programmers, then."
+        },
+        {
+          "s": "steve",
+          "t": "Actually it shows signs of not being that professional, Chinese comments, chunks of sample code from Microsoft tools glued together, far bigger than it needs to be, and I found it on a trojan-development forum where people were asking for help with build errors."
+        }
+      ]
+    },
+    {
+      "title": "Ghost RAT's Command Channel",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The command-and-control has evolved. Years ago, when I tracked attackers on GRC, botnets used IRC: the federation of relay servers let bot masters issue commands from an unrelated server, making them hard to trace. GhostNet instead uses plain HTTP."
+        },
+        {
+          "s": "steve",
+          "t": "And it's disguised. The infected client makes an ordinary port-80 request to a PHP page or CGI script on the control server, and commands come back encoded inside JPEG images. Even watching the traffic you'd just see a web request returning an image, which happens constantly, and unlike IRC, web traffic can't be blocked, and passes through proxies."
+        },
+        {
+          "s": "steve",
+          "t": "There are two tiers: the client contacts a control server, which hands back instructions to reach a command server (the source of updates, images and documents); the client obeys the command server and reports status back to the control server. It's a relaying design that keeps each side from knowing the whole picture unless you monitor the common point."
+        },
+        {
+          "type": "fact",
+          "title": "Why hiding in HTTP works",
+          "t": "Tunneling command-and-control over ordinary web requests, with payloads smuggled inside image files, blends malware traffic into the vast normal flow of the web and survives firewalls, proxies and IRC blocks. This shift from IRC to HTTP-based C2 became the standard for later botnets and espionage tools."
+        }
+      ]
+    },
+    {
+      "title": "The Scope of GhostNet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The control server's web interface listed every infected client: first-contact and last-contact dates, machine name, logged-in user, and click-to-send command links, a mature point-and-click console backed by a database. Each machine has a persistent ID, so it's tracked even across changing dynamic IPs."
+        },
+        {
+          "s": "steve",
+          "t": "The researchers found four control servers (all on that one island) and six command servers, with all domain registrations tracing to a single individual. Processing the logs, they identified 1,295 distinct infected machines in 103 countries; about 30% were high-value targets."
+        },
+        {
+          "s": "steve",
+          "t": "Confirmed infections included the foreign ministries of Iran, Bangladesh, Latvia, Indonesia, the Philippines, Brunei, Barbados and Bhutan; embassies of India, South Korea, Romania, Cyprus, Thailand, Taiwan, Germany, Pakistan and more; the ASEAN Secretariat, the Asian Development Bank, news organizations, an unclassified computer at NATO headquarters, and oddly one machine at Deloitte & Touche in New York."
+        },
+        {
+          "s": "steve",
+          "t": "Ghost RAT could inventory the machine, exfiltrate any documents, run arbitrary commands, and turn on the microphone or webcam to stream audio and video in real time, total ownership. They even saw the operator read an email thread and inject a spoofed, in-context message carrying a malicious document to a not-yet-infected recipient, perpetuating the net. One woman linked to the Dalai Lama was detained at the Chinese border and shown transcripts of her private online conversations."
+        }
+      ]
+    },
+    {
+      "title": "Who Is Behind It?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So despite good hackers usually covering their tracks, the Chinese comments, the Hainan servers and the single registrant point to China. But it doesn't look well done; you'd think a government wouldn't grab code off a forum."
+        },
+        {
+          "s": "steve",
+          "t": "Right, and this is the attribution problem: what's provable is a far higher bar than what's guessable. The four control servers are on the same island as a Chinese intelligence facility, but they're random ISP IPs, and the researchers had no physical access, so they can't see who logged in. China denies involvement, and we have no evidence otherwise."
+        },
+        {
+          "s": "steve",
+          "t": "My read: probably a non-professional with strong political motivation, using public-domain tools, feeding harvested documents to authorities, with at most the government's tacit approval, rather than a state operation. A real intelligence service wouldn't leave a password-less web console that outsiders could find by guessing the URL on four separate machines. Then again, amateurishness also gives plausible deniability."
+        },
+        {
+          "s": "leo",
+          "t": "Given China's resources and talent, a government effort is hard to believe, though it clearly serves their aims."
+        }
+      ]
+    },
+    {
+      "title": "The Grid, and Why This Matters",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Wall Street Journal reported \"Electricity Grid in US Penetrated by Spies\": tools left behind on grid control systems that could be used to take down the power grid, with electronic trails followed to China and Russia (both deny it). The utilities often don't find these, US intelligence agencies do."
+        },
+        {
+          "s": "steve",
+          "t": "If you take down enough of the grid, the Internet goes down too. And it's striking that these big government and infrastructure systems fall the same way ordinary people do, same unpatched systems, same dumb mistakes, because they're running Windows, sometimes Windows 98, behind the kiosk or the Vegas light board."
+        },
+        {
+          "s": "leo",
+          "t": "Can't you harden Windows enough? What should they run?"
+        },
+        {
+          "s": "steve",
+          "t": "For control systems I'd use a nonstandard real-time or embedded OS that no virus targets. The value of this GhostNet story is that it makes clear this is easy and real, not sci-fi: Google \"Ghost RAT,\" four clicks to the source (Windows binaries too), and the forum will even help you compile it."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did GhostNet's Ghost RAT disguise its command-and-control traffic?",
+      "options": [
+        "As ordinary HTTP web requests, with commands returned encoded inside JPEG images",
+        "As encrypted IRC chat on a hidden channel",
+        "As DNS lookups to a private name server",
+        "As email attachments sent peer-to-peer"
+      ],
+      "answer": 0,
+      "explain": "The client made normal port-80 requests to a PHP/CGI page and received commands hidden in image files, blending into normal web traffic and passing through firewalls and proxies."
+    },
+    {
+      "q": "Why was attribution of GhostNet to the Chinese government not provable?",
+      "options": [
+        "The control servers were random ISP IPs the researchers couldn't physically access, so they couldn't see who logged in",
+        "The servers were located in the United States",
+        "The code contained no identifying language",
+        "The Dalai Lama's office refused to cooperate"
+      ],
+      "answer": 0,
+      "explain": "Though the servers sat on the same island as a Chinese intelligence facility, they were commercial IPs with no physical access, so who actually operated the web console couldn't be shown; China denied involvement."
+    },
+    {
+      "q": "What capabilities did the Ghost RAT trojan give its operators over an infected machine?",
+      "options": [
+        "Full control: inventory and exfiltrate documents, run arbitrary commands, and turn on the microphone and webcam to stream audio and video",
+        "Only the ability to read saved passwords",
+        "Only to display pop-up messages",
+        "Only to encrypt files for ransom"
+      ],
+      "answer": 0,
+      "explain": "Ghost RAT provided complete remote access, including real-time microphone and webcam streaming and document theft, amounting to total ownership of the machine."
+    },
+    {
+      "q": "What was the two-tier server design the researchers found in GhostNet?",
+      "options": [
+        "Clients contact a control server for instructions on reaching a command server, then obey the command server and report status back",
+        "Clients connect directly to the operator's personal PC",
+        "Control and command servers are the same machine with two names",
+        "Clients relay commands only to each other, peer-to-peer"
+      ],
+      "answer": 0,
+      "explain": "The control server (with the console and database) directs clients to a separate command server that supplies updates and payloads; the client reports results back to the control server, separating the roles."
+    },
+    {
+      "q": "Why does Steve defend SpinRite's in-place recovery against the \"copy everything first\" criticism?",
+      "options": [
+        "In 20+ years drives almost never die mid-repair; the in-place design reflects its 1980s origins when spare drives were unaffordable",
+        "SpinRite always makes a hidden backup anyway",
+        "Copying data first is technically impossible",
+        "In-place recovery is faster so the drive heats up less"
+      ],
+      "answer": 0,
+      "explain": "Steve concedes the theoretical risk but notes it's extremely rare in practice; most failures are marginal sectors SpinRite can fix, and the in-place approach dates to when a 10MB drive cost thousands and nobody had a spare."
+    },
+    {
+      "q": "What new data must UK ISPs retain under the adopted EU directive?",
+      "options": [
+        "The sender, recipient, date and time of all email, and the parties to Internet phone calls, for at least 12 months",
+        "The full body text of every email",
+        "The browsing history of every user",
+        "Nothing; the UK rejected the directive"
+      ],
+      "answer": 0,
+      "explain": "The law adds email metadata (sender, recipient, date, time) and Internet-call parties to existing phone records, retained no less than 12 months, with the bodies excluded as too voluminous."
+    }
+  ]
+}

@@ -1,0 +1,735 @@
+{
+  "number": 161,
+  "title": "Google's Chrome",
+  "subtitle": "A promising architecture with almost no privacy or security controls",
+  "date": "2008-09-11",
+  "description": "Steve examines Google's new Chrome browser. He likes its process-per-tab design, memory handling and sandboxing, but is deeply unimpressed by passwords anyone can view, no script control, weak cookie handling, no per-site settings, and an Omnibox that sends every keystroke to Google. Plus a GDI+ Patch Tuesday, Wells Fargo usernames that ignore case too, Trend Micro deleting Windows files, Vopt 9, a SpinRite story about 200 hungry animals, the Large Hadron Collider, and science fiction picks.",
+  "transcript": "https://www.grc.com/sn/sn-161.txt",
+  "audio": "http://media.GRC.com/sn/SN-161.mp3",
+  "chapters": [
+    {
+      "title": "Seven Years After 9/11",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, where we encourage your Gibsonian response."
+        },
+        {
+          "s": "steve",
+          "t": "We're airing on the seventh anniversary of 9/11."
+        },
+        {
+          "s": "leo",
+          "t": "Like the Kennedy assassination, you'll always know where you were when you heard."
+        },
+        {
+          "s": "steve",
+          "t": "I got a call from the FBI that morning asking me to help with some things they needed. My FBI contact said, \"You know what happened.\" I said, oh yeah. People had already called telling me to turn on the TV."
+        },
+        {
+          "s": "leo",
+          "t": "It changed Americans' lives forever."
+        }
+      ]
+    },
+    {
+      "title": "The Large Hadron Collider",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's also the day after the Large Hadron Collider did not destroy the Earth."
+        },
+        {
+          "s": "steve",
+          "t": "We're recording Wednesday, as it's just been turned on, so assuming humans ever hear this..."
+        },
+        {
+          "s": "leo",
+          "t": "They're not colliding yet, just running beams around the track."
+        },
+        {
+          "s": "steve",
+          "t": "The sky-is-falling people say it'll make a black hole that swallows the Earth. But small black holes evaporate quickly. We might even have a few zipping around inside the planet already, and nobody would know."
+        },
+        {
+          "s": "leo",
+          "t": "Stephen Hawking says it's no problem. I thought black holes rapidly pull in everything around them."
+        },
+        {
+          "s": "steve",
+          "t": "They do, but there's also evaporation. I once understood the physics. But I believe Stephen."
+        },
+        {
+          "s": "leo",
+          "t": "It's arguably the largest scientific experiment humans have ever built."
+        },
+        {
+          "s": "steve",
+          "t": "Scientific American had a fantastic spread of the detectors where these high-energy photons end up. It looks like the engine room of the Enterprise. You zoom in and find a tiny person on a scaffold adjusting something. It gives me goose bumps. It's as close as science fact has come to science fiction."
+        },
+        {
+          "type": "fact",
+          "title": "Protons, not photons",
+          "t": "The LHC collides beams of protons (and sometimes lead nuclei), not photons. Its first beams circulated on September 10, 2008."
+        },
+        {
+          "s": "steve",
+          "t": "Higher-energy collisions will confirm existing theories and raise new questions. It's about understanding the fabric of reality. Strings, loops, quarks, who knows?"
+        },
+        {
+          "s": "leo",
+          "t": "Professor Peet, a University of Toronto physicist who follows our shows, joins the radio show Sunday to talk about it and the Higgs boson."
+        }
+      ]
+    },
+    {
+      "title": "Chrome's First Week",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today's topic is the newest browser, Google Chrome, from the security angle."
+        },
+        {
+          "s": "steve",
+          "t": "We discussed it last week, the day after Tuesday's release. We backed away because of the ridiculous license. So many people raised a fuss that Google fixed it with shocking speed."
+        },
+        {
+          "s": "leo",
+          "t": "They said, our bad, it was cut and paste. I'm not sure I believe it."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think I do either. This browser was two years in the making. I have a lot to say about it, and not much of it good. I'm very disappointed."
+        }
+      ]
+    },
+    {
+      "title": "A GDI+ Patch Tuesday",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "First, all my Windows machines want updates."
+        },
+        {
+          "s": "steve",
+          "t": "Yesterday was an important Patch Tuesday, with patches for Windows, Office, Media Player and Media Encoder."
+        },
+        {
+          "s": "steve",
+          "t": "Every Windows since version 1 has GDI, the Graphics Device Interface. With User and Kernel, it's one of the three pillars of Windows. All graphics calls go through it."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft added GDI+, another library of routines, and there were five vulnerabilities in it. They're image rendering flaws, and images are what web pages and HTML email display. Any browser or email viewer using that library to draw images is exposed. Make sure you have the patches."
+        }
+      ]
+    },
+    {
+      "title": "Wells Fargo Usernames, Too",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Wells Fargo saga continues. First, extra characters on a password were ignored. Then, passwords weren't case sensitive. Now a listener reports that usernames aren't case sensitive either."
+        },
+        {
+          "s": "leo",
+          "t": "It's getting worse and worse."
+        },
+        {
+          "s": "steve",
+          "t": "That had to be deliberate. Programmers would have to convert everything to one case before storing it, and again for every comparison. Case insensitivity isn't natural. It takes effort."
+        },
+        {
+          "s": "leo",
+          "t": "For convenience. They don't want support calls from users who don't realize case matters."
+        },
+        {
+          "s": "steve",
+          "t": "It's not like you're logging into Twitter. Maybe it was originally case sensitive, so many people called saying they couldn't log in, and management said make it easier."
+        }
+      ]
+    },
+    {
+      "title": "Trend Micro Deletes Windows",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I got a kick out of this, only because I don't use Trend Micro. Early last week a Trend Micro update misidentified a collection of XP and Vista core files, quarantined them and removed them."
+        },
+        {
+          "s": "leo",
+          "t": "Which broke the system."
+        },
+        {
+          "s": "steve",
+          "t": "It hosed people. Some still can't get back into XP, even in safe mode, because safe mode needs those files. It's not the first time for Trend, and it happened to Symantec a few years ago. It's the dark side of heuristic pattern matching. How did they miss it? Maybe a foreign-language version matched."
+        },
+        {
+          "s": "steve",
+          "t": "It's like an autoimmune disease: your antivirus decides you're evil."
+        }
+      ]
+    },
+    {
+      "title": "Vopt 9",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My friends at Golden Bow, publishers of Vopt, one of my two favorite defraggers, released version 9 after a long time at 8.1. It's redesigned, with Vista enhancements, and very nice."
+        },
+        {
+          "s": "steve",
+          "t": "Vopt is fast and graphical, so you see what's happening. My other favorite, PerfectDisk, can defragment files in use, like the page file, hibernation file and directories, by doing it at boot before Windows gets going. You don't need it often, but it's nice when setting up a new machine."
+        },
+        {
+          "s": "leo",
+          "t": "I first heard of Vopt from Jerry Pournelle's Chaos Manor column in Byte, probably 15 years ago."
+        }
+      ]
+    },
+    {
+      "title": "200 Hungry Animals",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I promised a story about SpinRite saving 200 kittens. That was only a slight misquote. The subject: \"SpinRite Saved 200 Hungry Cats.\""
+        },
+        {
+          "s": "steve",
+          "t": "Marius works at an animal shelter with a database that controls feeding and places food orders automatically. Their computer broke down over a weekend, and they couldn't tell whether food had been ordered. They're very low on money, so a double order was impossible."
+        },
+        {
+          "s": "steve",
+          "t": "His friend Paul told him about SpinRite. He bought it, recovered all the data, saw no order had been placed, completed everything, and bought a new drive as a precaution. 200 hungry cats and dogs thank us, he says. He's not technical, but he'll try listening to Security Now!."
+        },
+        {
+          "s": "leo",
+          "t": "The hungry animals say, \"Thank you, Steve.\""
+        }
+      ]
+    },
+    {
+      "title": "Why \"Chrome\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You know where the name comes from? \"Chrome\" is browser designers' jargon for all the UI outside the page."
+        },
+        {
+          "s": "leo",
+          "t": "And this browser has very little chrome. Ironic."
+        },
+        {
+          "s": "steve",
+          "t": "Minimal chrome, and I like that. My little OQO handheld has an 800x480 screen, so I don't have pixels to waste on UI."
+        }
+      ]
+    },
+    {
+      "title": "Chrome Shows Up in GRC's Stats",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "With the license as it was, I didn't do anything more with Chrome. Then I visited one of my not-yet-public cookie pages. I've paused that work for my very comprehensive DNS profiling facility, which I expect to announce in two weeks."
+        },
+        {
+          "s": "steve",
+          "t": "The page advocates third-party cookies being disabled by default. Safari is the only browser in the industry that does that, now including Chrome. The page shows that a huge percentage of GRC visitors, 80-some percent, have third-party cookies enabled, but Safari users, thanks to the default, normally sit just over 10 percent."
+        },
+        {
+          "s": "steve",
+          "t": "The stats are real time, summarized each Sunday night. Suddenly Safari showed 54 percent. Nothing changed in Safari. Then I remembered Chrome uses WebKit, the same open source rendering engine as Safari. My system was counting Chrome users as Safari users, and Chrome enables third-party cookies."
+        },
+        {
+          "s": "steve",
+          "t": "The size of that number shocked me. People are really using Chrome? My demographics page confirmed it. I'll share these pages once they're finished, so people don't hit placeholder 404s."
+        },
+        {
+          "s": "steve",
+          "t": "In its first 24 hours, Chrome reached 1 percent of Internet users, peaking about three days later at 1.57 percent in one statistic I saw."
+        }
+      ]
+    },
+    {
+      "title": "A Yabba-Dabba-Do",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You just sold a copy of SpinRite, I hear. Don't mute that."
+        },
+        {
+          "s": "steve",
+          "t": "That's someone's credit card clearing. As people move through the eCommerce pages I hear a cash register, and when the card actually clears, Fred Flintstone's yabba-dabba-do."
+        },
+        {
+          "s": "leo",
+          "t": "That's diagnostic too. Lots of kachings and no yabba-dabba-dos means a problem."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. I wrote a custom UDP client and server. Every two seconds my client asks a server at Level 3 for a stats package: bandwidth in and out, the eCommerce system's status and more."
+        }
+      ]
+    },
+    {
+      "title": "Browser Market Share",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Globally, IE has about 71 percent, Firefox 20, Safari 6.1 to 6.3 on Windows and Mac combined, and Opera, surprisingly, as low as 0.75."
+        },
+        {
+          "s": "leo",
+          "t": "On TWiT.tv it's reversed: Firefox 60 percent, IE 20, Safari 14, Chrome 2.41 and Opera 2.27 over the past month. Since Chrome came out, it's 8.8 percent for me. And it took share from Firefox, down 5 percent, while IE dropped only about a point and a half."
+        },
+        {
+          "s": "steve",
+          "t": "At GRC, Firefox is about half, slightly edging out IE. NoScript is super popular, which is what I keep preaching. JavaScript is like radio: bad. You need it sometimes, not all the time."
+        },
+        {
+          "s": "leo",
+          "t": "You probably get business users for SpinRite and ShieldsUP!, skewing toward IE."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. And 'Net-wide, Chrome peaked at 1.57 percent and fell to 0.9. Lots of people gave it a test drive."
+        }
+      ]
+    },
+    {
+      "title": "One Chance at a First Impression",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My main complaint: you only get one chance to make a first impression. Who is Chrome aimed at? Clearly people willing to leave IE, meaning Firefox users."
+        },
+        {
+          "s": "steve",
+          "t": "Chrome's headline feature is V8, its own very fast JavaScript engine, from a team in Denmark, I recall. On JavaScript benchmarks, Chrome wins. But overall page loading isn't faster than Firefox or Opera."
+        },
+        {
+          "s": "steve",
+          "t": "One reason: Chrome really does launch a separate Windows process for every page. That costs time and memory. Right now it's a bigger memory hog than IE8 Beta 2, which has been criticized for that. One reviewer opened a standard set of 10 tabs: IE8 used 324MB, and Chrome a little more."
+        },
+        {
+          "s": "leo",
+          "t": "Everybody has several gigs. And beta software often isn't tuned for memory or speed yet, maybe with symbol tables left in."
+        },
+        {
+          "s": "steve",
+          "t": "I think we must accept a new generation of browsers. Microsoft and Google are both aiming for the browser to become where you run applications, rented to you over an always-on connection."
+        },
+        {
+          "s": "leo",
+          "t": "An application platform, at least."
+        },
+        {
+          "s": "steve",
+          "t": "Chrome compiles JavaScript into real machine language, a just-in-time approach long used in virtual machines. It'll never be as fast as natively optimized code, but it's acceptably fast. And you're right about memory. But I completely crashed Chrome in a 256MB virtual machine. It didn't hang; it vanished and wouldn't restart."
+        },
+        {
+          "s": "leo",
+          "t": "Word or Excel take a lot of memory too. About 300 megs."
+        },
+        {
+          "s": "steve",
+          "t": "300 megs is a huge amount of memory."
+        },
+        {
+          "s": "leo",
+          "t": "You're biased. SpinRite runs in 20K."
+        },
+        {
+          "s": "steve",
+          "t": "It will have trouble on lean machines. People still use 500MB machines."
+        },
+        {
+          "s": "leo",
+          "t": "And the chatroom says people routinely keep 15 to 25 tabs open."
+        }
+      ]
+    },
+    {
+      "title": "Process per Tab",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Google did this for two reasons. If the browser becomes your word processor, you can't have another tab hang the whole browser when you're 15 pages into a document. When Chrome vanished on me, I wasn't impressed with its crash handling. But it's beta."
+        },
+        {
+          "s": "steve",
+          "t": "With separate processes, tabs are independent. If one dies, it's like an application dying in Windows. Your other tabs are unaffected."
+        },
+        {
+          "s": "steve",
+          "t": "Second, heap fragmentation. As you surf, images, Flash and so on allocate chunks of memory of different sizes in the process, then free them. Over time, memory gets chewed up exactly the way a hard drive fragments as files are added, resized and deleted."
+        },
+        {
+          "s": "steve",
+          "t": "Heavy Firefox users know it: Firefox gets really slow until you restart it. That's fragmentation."
+        },
+        {
+          "s": "leo",
+          "t": "Don't modern memory managers prevent that?"
+        },
+        {
+          "s": "steve",
+          "t": "The fragmentation is contained per process."
+        },
+        {
+          "type": "fact",
+          "title": "Firefox memory",
+          "t": "Mozilla worked heavily on Firefox's memory fragmentation and leaks in versions 3.x and later, and eventually moved Firefox to a multi-process design too."
+        },
+        {
+          "s": "steve",
+          "t": "IE8 also uses a process per page for many of the same reasons. Closing a tab releases all its memory, fragmented or not, because each process has its own heap. So fragmentation becomes per tab rather than per browser."
+        },
+        {
+          "s": "leo",
+          "t": "So the OS is at the mercy of the application. If it leaks memory, the OS can't help."
+        },
+        {
+          "s": "steve",
+          "t": "Correct. And Google says its JavaScript garbage collector can be more aggressive than others, because it tracks pointers to temporary objects more precisely."
+        }
+      ]
+    },
+    {
+      "title": "Sandboxing",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The last benefit is security. Separate processes get the OS's inter-process isolation, though under Windows that isn't as good as it should be."
+        },
+        {
+          "s": "steve",
+          "t": "Google deliberately sandboxes pages. Think of a NAT router wrapped around each page: the page can't make unsolicited requests outside itself. Only the privileged browser process outside can communicate in, and the page can only respond. To the degree that succeeds, it's a nice model."
+        },
+        {
+          "s": "steve",
+          "t": "Google also says add-ons can weaken that isolation, between tabs and between a tab and the OS."
+        }
+      ]
+    },
+    {
+      "title": "Passwords in Plain View",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My problem is that \"feature-lean\" is an understatement. Firefox users love features IE lacks, and IE was slow to adopt things like tabs. But also simple security features."
+        },
+        {
+          "s": "steve",
+          "t": "Get this. Like all browsers, Chrome offers to save your passwords, on by default. It will also show your passwords. But there's no master password protecting them. Anyone who sits at your browser, kids, coworkers, anyone, can click \"Show Passwords\" and write down all your usernames and passwords in the clear. Firefox and Opera let you set a master password."
+        },
+        {
+          "s": "leo",
+          "t": "My Gibson alarm went off when it saved my passwords without asking for one. So they're stored in the clear?"
+        },
+        {
+          "s": "steve",
+          "t": "You just click a button."
+        },
+        {
+          "type": "fact",
+          "title": "Saved passwords today",
+          "t": "Chrome later began asking for your operating system password before showing saved passwords, and now encrypts them using the operating system's protected storage."
+        }
+      ]
+    },
+    {
+      "title": "No Script or Per-Site Control",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And there's no script management at all. You can't turn JavaScript off. Even IE lets you."
+        },
+        {
+          "s": "leo",
+          "t": "This browser is designed for JavaScript. I don't use it for everyday browsing. I made Gmail a separate application running in Chrome on my desktop. Though that's not safe if it saves the Gmail password. I suspect that's the intent."
+        },
+        {
+          "s": "steve",
+          "t": "I recognize they wrote it to run JavaScript applications. But who's the customer? IE, Firefox and Opera all have per-site settings. Chrome has zero. You can't whitelist or blacklist any site."
+        },
+        {
+          "s": "steve",
+          "t": "Cookie handling could not be weaker for privacy. And Google bought DoubleClick, the king of third-party cookies. There are three settings: wide open; completely closed, which is impractical; and \"restrict how third-party cookies can be used,\" which nobody's sure about. You can't say \"closed except for these sites.\" Even IE, the least privacy-concerned browser, allows that."
+        },
+        {
+          "s": "steve",
+          "t": "And maybe due to its WebKit heritage, like Safari, it blocks third-party cookies coming in but not going out. That's cross-context leakage. PayPal bounces you through DoubleClick, which sets its cookie in a first-party context. Then everywhere that serves DoubleClick ads, your browser sends that cookie, even though you said block third-party cookies."
+        },
+        {
+          "s": "leo",
+          "t": "The chatroom says that's unfair, it's version 1.0."
+        },
+        {
+          "s": "steve",
+          "t": "You only get one chance to make a first impression."
+        },
+        {
+          "s": "leo",
+          "t": "And version 1.0 competes with Firefox 3 and IE8."
+        },
+        {
+          "s": "steve",
+          "t": "I see. And Google knows nothing about browsers. They've never seen Firefox, Opera, IE or Safari. Newbies who don't understand the web."
+        },
+        {
+          "s": "leo",
+          "t": "Obviously not. They should have known better."
+        },
+        {
+          "s": "steve",
+          "t": "It's nuts. About 1.6 percent tried it, and many of us said no thank you. I won't use something that stores my login passwords by default with no way to protect them from anyone with access to my browser later."
+        },
+        {
+          "s": "steve",
+          "t": "There's also no way to distinguish session cookies, which last only while the browser runs, from permanent ones. IE lets you allow session cookies only. People who leave IE do so for features, and Chrome has none of them. It boggles my mind."
+        },
+        {
+          "type": "fact",
+          "title": "Settings later added",
+          "t": "Chrome later added per-site settings for cookies, JavaScript and more, an option to clear cookies when you quit, and default third-party cookie blocking in Incognito windows."
+        }
+      ]
+    },
+    {
+      "title": "The \"Omnispy\" Box",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And they call that box at the top the \"Omnibox\"?"
+        },
+        {
+          "s": "leo",
+          "t": "As you type a URL or search term, it fetches suggestions from your chosen search engine. Firefox has done this a while. You consider that keystroke logging."
+        },
+        {
+          "s": "steve",
+          "t": "I was curious, so I fired up Wireshark. As I typed into the Omnispy box, it opened a connection to Google and sent every single keystroke."
+        },
+        {
+          "s": "leo",
+          "t": "That's how suggestions work. Firefox sends keystrokes to Google too. It's not like you're typing a password. And you can turn it off."
+        },
+        {
+          "s": "steve",
+          "t": "It's on by default. I just want people aware. I like a single box for saving space, though some people are unnerved by it. Google obviously knows what you search for on its page. This moves that boundary all the way up to your keyboard, even for URLs you type."
+        }
+      ]
+    },
+    {
+      "title": "Incognito, Tabs and the Little Worm",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's the Incognito window, a nice feature. Nothing done there stays: no permanent cookies, cache or history. Google's example is buying a secret present your spouse won't find in your history. People online call it the \"porn window.\" IE8 will have something similar."
+        },
+        {
+          "s": "leo",
+          "t": "Probably called private browsing."
+        },
+        {
+          "s": "steve",
+          "t": "I also like dragging tabs between windows. If I have an IE window full of tabs and want to keep a couple, I could drag them into another window and close the rest. I think Firefox 3's Beta 2 is adding that."
+        },
+        {
+          "type": "fact",
+          "title": "Tab dragging in Firefox",
+          "t": "Firefox 3 had already shipped in June 2008. Dragging tabs between windows arrived in the Firefox 3.1 betas, released as Firefox 3.5 in 2009."
+        },
+        {
+          "s": "steve",
+          "t": "My favorite feature is the loading indicator. Old IE had a clear spinning globe, while Vista's IE7 has a subtle glint. Chrome has a little worm, almost half a circle, that spins backward slowly while looking up the site's IP, then forward as the page loads. Other than that, I'm not very impressed."
+        }
+      ]
+    },
+    {
+      "title": "Science Fiction Corner",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "While we're on science fiction, I recommend Larry Niven's novel Protector. There's a \"Pak Protector\" entry in Wikipedia, but don't look if you might read the book. It's a total spoiler."
+        },
+        {
+          "s": "steve",
+          "t": "Like many of Niven's books, you have no idea what's really going on, even though you think you do. The revelation is the reason you read it. I own the paperback; it's not a big book."
+        },
+        {
+          "s": "leo",
+          "t": "Audible's summary: Phssthpok the Pak has traveled for most of 32,000 years on a mission to save and protect Pak breeders sent into space two and a half million years before. Brennan, a smuggler from the fiercely independent Belters of the outer asteroid belt, figures to meet the Pak ship first. He's never seen again, at least by those alive at the time."
+        },
+        {
+          "s": "leo",
+          "t": "It's a seven-hour listen. I loved Ringworld. I'm downloading it now for my walk home."
+        },
+        {
+          "s": "steve",
+          "t": "Also, a fun new series aired last night: Fringe, from J.J. Abrams, who's behind Lost and Alias and is making next summer's Star Trek movie. It's very X-Files-like, and I loved it. It re-airs Sunday on Fox. And The Sarah Connor Chronicles started its second season Tuesday."
+        }
+      ]
+    },
+    {
+      "title": "Chrome's Early Security Holes",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's talk about the flaws people have discovered."
+        },
+        {
+          "s": "steve",
+          "t": "I grinned at last week's listener who asked how long to wait before trusting Chrome. Problems were found immediately. A Java JAR file could be downloaded and executed without the user's intervention. Bad. And a buffer overflow from malformed URLs."
+        },
+        {
+          "s": "steve",
+          "t": "Somewhat annoyingly, they fixed other problems and refuse to document them. It's an open source project, and we'd expect them not to hide what they're doing. The good news is they fixed things quickly."
+        },
+        {
+          "s": "steve",
+          "t": "Chrome keeps part of itself running even when you're not using the browser, and every few hours it phones home."
+        },
+        {
+          "s": "leo",
+          "t": "Let's not imply it's importing malware."
+        },
+        {
+          "s": "steve",
+          "t": "Right. It's fetching lists of phishing and malware sites, so it can warn you before you visit a known bad site."
+        },
+        {
+          "s": "steve",
+          "t": "The takeaway: it's brand-new software and will have problems. I like the architecture and its security potential. And browsers are getting bigger. IE8 will be big, Chrome is big, and they're not going to shrink."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Verdict",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "In summary: Chrome is underfeatured, and its privacy controls leave much to be desired."
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't have any. They forgot somehow."
+        },
+        {
+          "s": "leo",
+          "t": "Their business is advertising, so maybe I'm not surprised. And there are potential security issues. But it's speedy, and I'm sticking with it for Google's applications."
+        },
+        {
+          "s": "steve",
+          "t": "That's one of their targets. You might say add-ons could provide the missing features, like Firefox's NoScript and ad blockers, and Google promises an add-on API. But Google also says add-ons can breach the tab containment."
+        },
+        {
+          "s": "steve",
+          "t": "Nothing Google has done so far shows me they care about security or privacy. If they do, put these features in the browser itself, so we don't need possibly insecure add-ons. It wouldn't clutter the UI: put them on an advanced menu that most people never visit, where people like us would find them. It's just missing completely."
+        },
+        {
+          "s": "leo",
+          "t": "A manifesto to Google."
+        },
+        {
+          "s": "steve",
+          "t": "They took share from Firefox, then gave much of it back, because Firefox users found they couldn't do anything with it."
+        },
+        {
+          "s": "leo",
+          "t": "All the geeks tried it last week. Few use it as their only browser, especially with better, more secure choices."
+        },
+        {
+          "s": "steve",
+          "t": "Firefox is mature, with a huge ecosystem of add-ons that let people make the browser work their way."
+        },
+        {
+          "s": "leo",
+          "t": "I'm sticking with Firefox on Mac and Windows. I'm happy with IE7 too, and I'll look at IE8."
+        }
+      ]
+    },
+    {
+      "title": "Coming Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "GRC.com/feedback takes you to a page, no scripting required, for next week's Q&A."
+        },
+        {
+          "s": "steve",
+          "t": "The week after, a deep propellerhead show on DNSSEC, the languishing but clearly important DNS security spec. By then my DNS work should be finished, and one thing it will show is whether your ISP's DNS servers support DNS security."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Chrome run each tab as a separate process?",
+      "options": [
+        "So a crashing tab doesn't take down the others, and memory is released when the tab closes",
+        "To use less memory",
+        "To make pages load faster",
+        "To allow add-ons"
+      ],
+      "answer": 0,
+      "explain": "IE8 adopted the same design."
+    },
+    {
+      "q": "What did Steve find most alarming about Chrome's saved passwords?",
+      "options": [
+        "Anyone at the computer could display them all, with no master password",
+        "They were sent to Google",
+        "They expired daily",
+        "They couldn't be saved at all"
+      ],
+      "answer": 0,
+      "explain": "Firefox and Opera offered master passwords."
+    },
+    {
+      "q": "What did Wireshark show about Chrome's Omnibox?",
+      "options": [
+        "Every keystroke typed was sent to Google for suggestions",
+        "Nothing left the computer",
+        "Only full URLs were sent",
+        "Searches were encrypted"
+      ],
+      "answer": 0,
+      "explain": "The feature could be turned off, but was on by default."
+    },
+    {
+      "q": "Why did GRC's statistics suddenly show 54% of \"Safari\" users accepting third-party cookies?",
+      "options": [
+        "Chrome, built on WebKit, was being counted as Safari",
+        "Apple changed Safari's default",
+        "A bug in Safari",
+        "Mac users changed settings"
+      ],
+      "answer": 0,
+      "explain": "Safari had been the only browser blocking them by default."
+    },
+    {
+      "q": "What did Chrome's \"Incognito\" window do?",
+      "options": [
+        "It kept no permanent history, cache or cookies from that session",
+        "It hid your IP address",
+        "It encrypted all traffic",
+        "It blocked all ads"
+      ],
+      "answer": 0,
+      "explain": "IE8 was adding a similar private mode."
+    },
+    {
+      "q": "What did Steve want Google to do instead of relying on add-ons?",
+      "options": [
+        "Build privacy and security controls into the browser, perhaps in an advanced menu",
+        "Remove JavaScript",
+        "Charge for the browser",
+        "Drop the process-per-tab design"
+      ],
+      "answer": 0,
+      "explain": "Add-ons could breach Chrome's tab containment."
+    }
+  ]
+}

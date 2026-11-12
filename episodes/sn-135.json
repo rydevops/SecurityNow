@@ -1,0 +1,858 @@
+{
+  "number": 135,
+  "title": "IronKey",
+  "subtitle": "Founder David Jevans on a hardware-encrypted USB drive",
+  "date": "2008-03-13",
+  "description": "After Java and Office patches, TrueCrypt 5.1's fixes, Chinese hackers and counterfeit Cisco routers, Steve and Leo spend 45 minutes with David Jevans, founder and CEO of IronKey and chairman of the Anti-Phishing Working Group. He explains why the IronKey uses non-exportable hardware keys, a ten-try self-destruct counter etched into silicon, signed firmware, driverless operation without admin rights, a private Tor-based browsing network, password services and fast, durable SLC flash in an epoxy-filled case.",
+  "transcript": "https://www.grc.com/sn/sn-135.txt",
+  "audio": "http://media.GRC.com/sn/SN-135.mp3",
+  "guests": {
+    "david": "David Jevans"
+  },
+  "chapters": [
+    {
+      "title": "Java Holes and Office Patches",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It was a relatively quiet week in Microsoft Land. But after last week's podcast, Sun released updates to its Java JDK and JRE for serious privilege elevation and buffer overflow vulnerabilities."
+        },
+        {
+          "s": "steve",
+          "t": "One example: JavaScript downloaded by a browser could use Java APIs to connect to network services on the user's own machine, reaching files or vulnerable services not normally accessible. Java was supposed to be sandboxed. Here, a website could essentially bypass your router and firewall to reach your internal network."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft patched Office 2004 for the Mac, which had a serious flaw letting an attacker overwrite memory with malicious code. It's not automatic. Run the Office updater. Office 2008 also had stability fixes."
+        },
+        {
+          "s": "steve",
+          "t": "And Office on Windows had updates too, though not the Windows OS."
+        },
+        {
+          "s": "leo",
+          "t": "Can you add Office to Windows Update?"
+        },
+        {
+          "s": "steve",
+          "t": "Switch from Windows Update to Microsoft Update. It's the omnibus that covers SQL, Office and Windows, which you want to keep everything current."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt Follow-Ups and Version 5.1",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Remember the listener whose TrueCrypt container kept its original date, so Jungle Disk didn't back it up? Jungle Disk's creator wrote that several listeners asked. TrueCrypt's \"/m ts\" mount option tells it not to preserve the timestamp, so Jungle Disk sees the change."
+        },
+        {
+          "s": "steve",
+          "t": "And on rainbow tables, someone in GRC's forums noted that TrueCrypt salts its hash, so rainbow tables are no problem."
+        },
+        {
+          "s": "leo",
+          "t": "I always put salt in my hash."
+        },
+        {
+          "s": "steve",
+          "t": "You seem like the kind of guy who would. WPA does it too. A chunk of random \"salt\" is mixed into what's hashed, so your results are unlike anyone else's. A generic MD5 rainbow table is destroyed by a little salt."
+        },
+        {
+          "s": "steve",
+          "t": "And the big news: TrueCrypt 5.1 is out, with hibernation file support. It didn't take them long."
+        },
+        {
+          "s": "leo",
+          "t": "See, open source ain't so bad."
+        },
+        {
+          "s": "steve",
+          "t": "The hibernation file, an unencrypted snapshot of RAM, was people's real concern. Now it's encrypted."
+        },
+        {
+          "s": "steve",
+          "t": "They also solved the Adobe and Macromedia problem. They shrank the boot loader enough to put two copies in the first track. If one gets damaged, the other is used automatically."
+        },
+        {
+          "s": "steve",
+          "t": "And they reimplemented AES in my favorite language, assembly, instead of C. It's now 30 to 90 percent faster."
+        },
+        {
+          "s": "leo",
+          "t": "People still benefit from hand-optimizing. With encryption there's a lot of processing."
+        },
+        {
+          "s": "steve",
+          "t": "It's all I write in."
+        }
+      ]
+    },
+    {
+      "title": "Chinese Hackers and Counterfeit Cisco",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "CNN met three Chinese hackers in their 20s who claim to have hacked many of the world's most sensitive sites, including downloading information from the Pentagon's network. They say the Chinese government paid them. The government calls that ridiculous."
+        },
+        {
+          "s": "steve",
+          "t": "Couple that with the FBI's news that it has taken part in over 400 seizures of counterfeit Cisco networking equipment from China, worth more than $76 million."
+        },
+        {
+          "s": "leo",
+          "t": "You can bet they have backdoors."
+        },
+        {
+          "s": "steve",
+          "t": "That's exactly the problem. In 2004, counterfeit Cisco switches ended up in one of the Navy's secure facilities. I use Cisco routers, and I know how sophisticated their OS, IOS, is. There'd be no way to know there wasn't a backdoor."
+        },
+        {
+          "s": "leo",
+          "t": "So make sure you get real Cisco gear. That's cyber warfare, and our government is surely doing the same to potentially hostile governments."
+        },
+        {
+          "s": "steve",
+          "t": "It's sad and freaky, but you're probably right."
+        },
+        {
+          "s": "leo",
+          "t": "At least people don't die from it. It's more like economic warfare, and it's certainly where conflict is headed."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Fixes a WiFi Problem",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of which, SpinRite fixed a WiFi problem."
+        },
+        {
+          "s": "leo",
+          "t": "I'll bite. How?"
+        },
+        {
+          "s": "steve",
+          "t": "Steve Diyorio has run Ubuntu Linux on an HP laptop happily for years. It had been booting and running slower lately, \"a feature of Windows I thought I'd left behind.\" Then his wireless refused to connect. He spent countless hours on it."
+        },
+        {
+          "s": "steve",
+          "t": "Because of the slowness, he ran SpinRite at level 4. It fixed some errors on his drive, and his wireless works again."
+        },
+        {
+          "s": "leo",
+          "t": "A flaw in some file?"
+        },
+        {
+          "s": "steve",
+          "t": "A bad sector in something related to his wireless networking. SpinRite fixed it and brought his wireless back."
+        },
+        {
+          "s": "leo",
+          "t": "Many callers say everything's slowed down. We blame spyware. But a flaky drive can make the OS spend a lot of time retrying reads."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. A very good friend from years ago, a listener, asked for SpinRite to study his servers' drives. He found the vibration of the chassis fans threw the drive heads off track. Everything worked, but the drives kept retrying reads. Track densities are so high that a little vibration couples into the drive. Suspending the drives off the chassis made the servers much faster."
+        },
+        {
+          "s": "leo",
+          "t": "How did SpinRite show that?"
+        },
+        {
+          "s": "steve",
+          "t": "Watching it run, he saw the pace change. Pressing the drive down to couple it more tightly to the chassis slowed it."
+        },
+        {
+          "s": "leo",
+          "t": "Clever. As systems get more complex, we need people who are good at that kind of deduction."
+        },
+        {
+          "s": "steve",
+          "t": "The same goes for network security. Those Chinese hackers said no site is safe once they know what software it runs. Systems get so complicated they're more analog than digital: not yes or no, but hop through some affiliated network a few times and get in."
+        },
+        {
+          "s": "leo",
+          "t": "I hate when a server error page announces its exact software and versions, like Apache with some Perl module. That's telling the hacker what you're running."
+        },
+        {
+          "s": "steve",
+          "t": "The less you say, the better."
+        },
+        {
+          "s": "leo",
+          "t": "I learned that from ShieldsUP's stealth mode."
+        }
+      ]
+    },
+    {
+      "title": "Meet David Jevans",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Our guest is David Jevans, founder and CEO of IronKey. We're doing this because listeners demanded it. IronKey competes with software encryption. So what has it got that no other solution has?"
+        },
+        {
+          "s": "david",
+          "t": "What we started out with is not what we ended up with, which is probably true of most businesses. I've been in security over 10 years, and I run a nonprofit called the Anti-Phishing Working Group."
+        },
+        {
+          "s": "leo",
+          "t": "You run that? I've referred people to it many times. Its archive of phishing emails convinces people who think they'd never be fooled."
+        },
+        {
+          "s": "david",
+          "t": "It's a group effort, now over 2,000 member companies, government agencies and law enforcement groups."
+        },
+        {
+          "s": "david",
+          "t": "In 2003 I was at Tumbleweed, which makes antispam and email encryption. I saw strange spam that looked like PayPal or Citibank and clearly wasn't. We published a report after a big spike just before Christmas 2003, and banks and others came together to start the group. Honestly, I thought phishing would be solved by mid-2004."
+        }
+      ]
+    },
+    {
+      "title": "Why Phishing Persists",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Why hasn't it been? Every phishing link goes to a bad website. You'd think they'd be shut down so fast it wouldn't work."
+        },
+        {
+          "s": "david",
+          "t": "In 2004 there were no takedown companies, nobody admitted the problem, and there were no email authentication protocols. We've built a lot of awareness and tracked the bad guys as they've become professional at stealing credentials."
+        },
+        {
+          "s": "david",
+          "t": "Now there are takedown companies. So the bad guys abuse content management systems and use \"fast flux,\" moving where a site is hosted every 10 seconds."
+        },
+        {
+          "s": "david",
+          "t": "Making hundreds of millions a year, they stay a step ahead with distributed systems and huge botnets to get around spam filters. It's an evolution against well-funded bad guys."
+        },
+        {
+          "s": "leo",
+          "t": "The group is at AntiPhishing.org, with \"ph.\""
+        },
+        {
+          "s": "david",
+          "t": "Through it I see what the bad guys do before most people. It became clear that to protect the infrastructure, privacy and the financial system, you need hardware: to resist keyloggers, to encrypt data, and to do strong authentication so a stolen password isn't enough."
+        },
+        {
+          "s": "david",
+          "t": "Over a hundred million flash drives sell every year. So, why not make a great one: hardware encryption, no software to install, cross-platform, plus authentication, as a platform against more threats?"
+        },
+        {
+          "s": "leo",
+          "t": "Why flash drives? Are they especially vulnerable?"
+        },
+        {
+          "s": "david",
+          "t": "Enterprises use them constantly, for backups, sales calls, moving between hospitals and clinics. People lose them, they get stolen, and regulations require them locked down. So: easy to use, impossible to mess up, and anything written to it is secure."
+        },
+        {
+          "s": "steve",
+          "t": "And more and more, rules require anything stealable to be encrypted."
+        }
+      ]
+    },
+    {
+      "title": "Keys That Never Leave the Chip",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You mention secure backup. Does it pull the encrypted data off without decrypting it?"
+        },
+        {
+          "s": "david",
+          "t": "Good idea, but no, because the IronKey's encryption keys aren't exportable. Malware can't copy them, a malicious user can't steal them, and they're not vulnerable to the cold boot attacks Princeton just showed against software encryption."
+        },
+        {
+          "s": "david",
+          "t": "So if your backup were encrypted with the device's key and you lost the IronKey, a new one couldn't decrypt it."
+        },
+        {
+          "s": "steve",
+          "t": "So the data goes back through the cipher chip and is re-encrypted with something outside it."
+        },
+        {
+          "s": "david",
+          "t": "Right. The hardware random number generator makes a strong random AES key, which encrypts the backup. That key is itself encrypted with several rounds of a hash of your password and stored with the data. That's how basic software encryption has to work."
+        },
+        {
+          "s": "steve",
+          "t": "So it's like the TPM. It generates its own keys and will encrypt and decrypt for you, but there's no way to ask for the key."
+        },
+        {
+          "s": "david",
+          "t": "Correct. And you can't have hardware that allows it and just not expose the API. If it exists, people will find the backdoor."
+        }
+      ]
+    },
+    {
+      "title": "Ten Tries, Then Self-Destruct",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You prevent brute-force attacks by counting failed password attempts, and the site talks about self-destructing."
+        },
+        {
+          "s": "david",
+          "t": "With software encryption, the key is derived from or protected by your password. Nobody attacks AES. Even with 100 million computers, it's maybe a couple hundred thousand years. You guess passwords."
+        },
+        {
+          "s": "david",
+          "t": "For about $10 million, you can build a machine that guesses 40,000 billion passwords a second. You can crack 10-character passwords in three hours, and with NVIDIA's GPU supercomputers it's probably cheaper."
+        },
+        {
+          "s": "leo",
+          "t": "That's 40 trillion a second."
+        },
+        {
+          "s": "david",
+          "t": "Do it in parallel. A chip with a hundred cores, a hundred chips per board, each chip five or 10 bucks, and 10,000 boards in a room."
+        },
+        {
+          "s": "steve",
+          "t": "And put it next to Niagara Falls for power and cooling."
+        },
+        {
+          "type": "fact",
+          "title": "The math",
+          "t": "At 40 trillion guesses a second, every 10-character password of lowercase letters and digits falls in under two minutes. Ten random characters from all 95 printable symbols would take about 17 days, so his \"three hours\" depends on the character set."
+        },
+        {
+          "s": "leo",
+          "t": "That's why you'd say only the NSA does this."
+        },
+        {
+          "s": "david",
+          "t": "Or someone sets up an online service. And most passwords crack far faster, since few people use strong random ones. Commercial and forensic cracking systems are for sale."
+        },
+        {
+          "s": "david",
+          "t": "So you need hardware brute-force prevention, with keys managed in hardware and not exportable. The IronKey's Cryptochip verifies the password itself and keeps a decrementing counter in protected on-chip memory, under layers of metal, with protection against differential power analysis. You can't replay it, wire around it or recopy the flash. You get 10 tries. That makes it uncrackable by guessing."
+        },
+        {
+          "s": "steve",
+          "t": "What happens after the 10th wrong guess?"
+        },
+        {
+          "s": "david",
+          "t": "On try nine, you're warned extensively. We mean it. You're about to get a shiny little doorstop. After 10, the Cryptochip is disabled, the keys are destroyed, and our \"Flash Trash\" erases all the encrypted data at a low hardware level in the NAND flash, including wear-leveling areas and any key ID data. It's faster and more thorough than any software could be."
+        },
+        {
+          "s": "david",
+          "t": "And all the keys on the device are also encrypted. If someone defeated the anti-tamper and metal layers with an electron microscope, they'd still have to break AES."
+        }
+      ]
+    },
+    {
+      "title": "Keyloggers and Short Passwords",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One thing you don't do, given your keylogger protection: it's the same password every time."
+        },
+        {
+          "s": "david",
+          "t": "Look at the threat model. For Homeland Security research we analyzed over 60,000 pieces of malware. Modern high-end keyloggers also take screenshots, often around the cursor, specifically to defeat virtual keyboards."
+        },
+        {
+          "s": "david",
+          "t": "You could make the password different every time, or have people hold a button for every third character, or ask for the third letter. But it's a usability nightmare. We're looking more at entering the password physically, outside the computer."
+        },
+        {
+          "s": "david",
+          "t": "And if a keylogger is on your computer, your flash drive is the least of your worries. It's getting your Internet logins, and a targeted one would just copy your data once you unlock the device."
+        },
+        {
+          "s": "leo",
+          "t": "So it's designed for losing it, not for someone controlling your system."
+        },
+        {
+          "s": "david",
+          "t": "If someone can install malware on your computer, you're dead."
+        },
+        {
+          "s": "steve",
+          "t": "I was surprised the password indicator turned green after just four or five characters. Is that because of 10 strikes and you're out?"
+        },
+        {
+          "s": "david",
+          "t": "Partly usability. Require eight characters with three uppercase and two lowercase, and people write it on the back of the drive or in their wallet."
+        },
+        {
+          "s": "david",
+          "t": "And with 10 tries, rather than millions per second, a shorter password is far safer than with software. I do recommend longer ones. My personal advice is an easy passphrase, like \"The quick brown fox jumped over my IronKey.\" No weird characters needed, since there are only 10 guesses."
+        },
+        {
+          "s": "leo",
+          "t": "Bill Gates said passwords fail because people either use memorable bad ones or write good ones on a sticky note. That was his argument for smart cards."
+        },
+        {
+          "s": "steve",
+          "t": "And the counter only works in hardware. A software counter could be reset by other software."
+        }
+      ]
+    },
+    {
+      "title": "Firmware Etched in Silicon",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Isn't firmware still software? Couldn't it be modified?"
+        },
+        {
+          "s": "david",
+          "t": "The firmware that does the counter isn't modifiable after the factory. It's a metal layer, part of the silicon."
+        },
+        {
+          "s": "steve",
+          "t": "So it's physically locked at 10."
+        },
+        {
+          "s": "david",
+          "t": "The logic is locked. In our enterprise version, coming in a couple of weeks, an administrator can change the try count by policy after logging in, say to three, and enforce something like nine characters with three uppercase, two lowercase and a number, for a uniform policy across devices."
+        },
+        {
+          "s": "david",
+          "t": "Other parts of the engine can be upgraded. To prevent malicious firmware, all updates are signed in a securely managed hardware signing module and verified by the device's hardware with a 2,048-bit RSA signature. Malicious firmware won't load."
+        },
+        {
+          "s": "steve",
+          "t": "And only you hold the private key."
+        },
+        {
+          "s": "david",
+          "t": "The public key is burned into the silicon. The private keys are in an HSM that requires two people with two different smart cards."
+        }
+      ]
+    },
+    {
+      "title": "A General-Purpose Authentication Token",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Can the key be a general-purpose token for other authentication?"
+        },
+        {
+          "s": "david",
+          "t": "That's why we chose USB. Beyond storage, portable apps and virtual machines, I believe strong authentication is imperative. Passwords aren't enough for most applications, and the next 10 years will prove it."
+        },
+        {
+          "s": "david",
+          "t": "Use it as the world's most secure flash drive if you like. But it's a full crypto engine in hardware: RSA, SHA-256 hashing and more, with private and public keys on the device, for seamless two-factor security."
+        },
+        {
+          "s": "steve",
+          "t": "Is the API published?"
+        },
+        {
+          "s": "david",
+          "t": "Every device has a PKCS#11 interface, an open standard. That's how its onboard Firefox talks to the crypto hardware. Thunderbird or anything else using PKCS#11 can use it. And a broader developer kit is in limited beta, letting you load your own software and build custom application containers."
+        },
+        {
+          "s": "david",
+          "t": "We'll announce partnerships soon for other two-factor methods. It's designed to hold multiple credentials at once, not just PKI."
+        },
+        {
+          "s": "steve",
+          "t": "So applications get protected storage?"
+        },
+        {
+          "s": "david",
+          "t": "Yes, private encrypted areas with their own AES keys and access control."
+        }
+      ]
+    },
+    {
+      "title": "Password Recovery and a Password Manager",
+      "beats": [
+        {
+          "s": "david",
+          "t": "Strong device authentication enables web services. One completely optional one is self-service password recovery. Register, and we store your device password. If you change it after a couple of beers and forget, or you're a busy doctor who uses it every couple of weeks, answer your secret questions, confirm by email, and we show you the password."
+        },
+        {
+          "s": "steve",
+          "t": "And it only works with that IronKey physically plugged in."
+        },
+        {
+          "s": "david",
+          "t": "Yes. We do a challenge-response with the device, you answer the questions and you must control the email account. We're considering stronger checks, like a code sent to your phone."
+        },
+        {
+          "s": "david",
+          "t": "There's also an optional password manager for your Internet passwords. Unlike downloaded ones, which might even be malware, it stores passwords in protected memory inside the device, not in a file that could be copied. And you can back up the database online, encrypted, and restore it to a new IronKey after proving your identity."
+        },
+        {
+          "s": "leo",
+          "t": "Could it replace the PayPal football?"
+        },
+        {
+          "s": "steve",
+          "t": "Like SecurID or VeriSign's six-digit tokens, where the server knows your device's key?"
+        },
+        {
+          "s": "david",
+          "t": "I have a keychain full of those. I hate to tease, but come to our booth at the RSA show in San Francisco the second week of April. No announcements today, but yes, it's a general-purpose authentication device."
+        },
+        {
+          "s": "leo",
+          "t": "Eliminate all those dongles."
+        }
+      ]
+    },
+    {
+      "title": "No Drivers, No Admin Rights",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Unlike TrueCrypt, the IronKey doesn't need admin privileges on a foreign machine."
+        },
+        {
+          "s": "david",
+          "t": "I can't tell you how hard that was. We're not just copying files. We're doing crypto and control operations. Doing that on XP, as a non-admin, without installing drivers took six or seven months of seven-day, 15-hour weeks by super smart people."
+        },
+        {
+          "s": "steve",
+          "t": "It's worthwhile. On a machine you don't control, you may not have admin rights, but you need your data."
+        },
+        {
+          "s": "leo",
+          "t": "Vista?"
+        },
+        {
+          "s": "david",
+          "t": "It works fine on Vista. Windows 2000 support is in beta, and we just launched a Linux beta."
+        },
+        {
+          "s": "leo",
+          "t": "You'll like that, Steve. You're the last man on Windows 2000."
+        },
+        {
+          "s": "david",
+          "t": "Mac support is basic: once initialized on Windows or Linux, you can unlock it as a flash drive on a Mac. We'll add more. If you're a hot Mac programmer, we're hiring."
+        },
+        {
+          "s": "david",
+          "t": "The password has to reach the device securely, and that doesn't go over the normal data connection. The control channel for passwords, crypto and APIs is fully encrypted, like TLS."
+        },
+        {
+          "s": "leo",
+          "t": "Do you use the standard mass storage driver for all of it?"
+        },
+        {
+          "s": "david",
+          "t": "In theory, that's not enough. In reality, it is. Magic hand-waving happens here."
+        },
+        {
+          "s": "steve",
+          "t": "And you must protect the client software, since it has to be trusted to set up that channel."
+        },
+        {
+          "s": "david",
+          "t": "It's on a digitally signed, read-only virtual CD-ROM. But you can never trust the host computer. You do your best, including tamper protection and PKI between the software and device."
+        },
+        {
+          "s": "leo",
+          "t": "If the host is completely owned, they see data before it's copied. But is the IronKey still safe after you unplug it?"
+        },
+        {
+          "s": "david",
+          "t": "Yes. Software and firmware updates must be signed and verified in hardware, so low-level malware can't get onto it. We control autorun, so malware copied onto it shouldn't run automatically. We're looking at antivirus and antispyware scans at unlock."
+        },
+        {
+          "s": "leo",
+          "t": "Are you using U3?"
+        },
+        {
+          "s": "david",
+          "t": "No. U3 was proprietary, has been sold off to Microsoft, and became a shareware distribution thing. I never figured out its killer app."
+        },
+        {
+          "type": "fact",
+          "title": "About U3",
+          "t": "SanDisk owned U3. In 2008 it announced a successor developed with Microsoft, and U3 was phased out in 2009."
+        },
+        {
+          "s": "steve",
+          "t": "So the IronKey first appears as a CD-ROM, protected from changes, which starts the client, which then mounts your encrypted drive."
+        },
+        {
+          "s": "david",
+          "t": "Right. We also negotiate a drive letter, since enterprises map network drives to letters like F:. The secure volume appears only after you log in. That stops cloning and offline attacks. With a software-encrypted flash drive, you could copy the contents and farm them out to 10,000 botnet computers. With an IronKey, there's nothing to copy until you've authenticated."
+        }
+      ]
+    },
+    {
+      "title": "Secure Sessions: A Private Tor Network",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And you have a Secure Sessions service."
+        },
+        {
+          "s": "david",
+          "t": "It's based on Tor technology. We're big fans of the Tor project, which creates encrypted tunnels so people can't spy on your traffic. But its experimental public network is slow, and you don't know who runs the exit nodes. Malicious ones inject malware, code and trackers, or redirect DNS."
+        },
+        {
+          "s": "david",
+          "t": "So we built a private network on that technology. Your connection is encrypted in three layers through hops at different datacenters, so even we can't track you. We also run your DNS queries, protecting you from pharming, say, on a WiFi network where someone's malicious DNS sends you to a fake PayPal."
+        },
+        {
+          "s": "leo",
+          "t": "I thought it was just a USB key with a cool brushed-metal finish."
+        },
+        {
+          "s": "david",
+          "t": "Access uses an anonymous subscription protocol, validated by several cryptographers. We know you're allowed on, but not who you are."
+        },
+        {
+          "s": "leo",
+          "t": "So it's not a gateway to public Tor."
+        },
+        {
+          "s": "steve",
+          "t": "No, it's their own network."
+        },
+        {
+          "s": "david",
+          "t": "We control the exit nodes and their DNS, so we can secure them."
+        },
+        {
+          "s": "leo",
+          "t": "I'm going to have to buy one. Did you test the self-destruct, Steve?"
+        },
+        {
+          "s": "steve",
+          "t": "No, it's too cool to lose."
+        }
+      ]
+    },
+    {
+      "title": "Epoxy, SLC Flash and Speed",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's also potted solid in epoxy, so it's extremely hard to get into, and uncrushable if you back over it."
+        },
+        {
+          "s": "david",
+          "t": "And fairly waterproof. If it goes through the wash, dry out the connector and it works. All the electronics are sealed. To reach the chips you'd have to grind through it, and you'd likely destroy them."
+        },
+        {
+          "s": "leo",
+          "t": "And all this for $79."
+        },
+        {
+          "s": "david",
+          "t": "Right. It's a good deal. They're not cheap to make, and there's a lot of technology and thought in them. We're shipping 4GB devices now, and hope to have 8GB by the end of the month."
+        },
+        {
+          "s": "leo",
+          "t": "How much is the 4GB?"
+        },
+        {
+          "s": "david",
+          "t": "$149."
+        },
+        {
+          "s": "steve",
+          "t": "Amazon has the 4GB for $138."
+        },
+        {
+          "s": "david",
+          "t": "Grrr. Part of the cost is SLC flash. Cheap drives use MLC, designed for something like an iPod, where you rarely rewrite. It's slow and less reliable. SLC is much faster and lasts up to 20 times longer, about 100,000 write cycles."
+        },
+        {
+          "s": "david",
+          "t": "It has hardware wear leveling to spread writes around, and full error correction in the NAND flash, rewriting blocks correctly when glitches appear."
+        },
+        {
+          "s": "david",
+          "t": "Implementing AES correctly for large blocks, in CBC mode, is hard. Every 512-byte block needs extra metadata, like initialization vectors, stored away from the data so the crypto can't be replayed if you rewrite a block. Mapping that is a real challenge."
+        },
+        {
+          "s": "steve",
+          "t": "We've covered cipher block chaining, but I hadn't thought about doing it in hardware. What's the wear-leveling page size?"
+        },
+        {
+          "s": "david",
+          "t": "There are different page sizes, maybe 1,024 bytes. I'm not a flash engineer, so that's beyond my expertise."
+        }
+      ]
+    },
+    {
+      "title": "Smaller? Faster? Upgrades?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My only complaint: can you make them smaller?"
+        },
+        {
+          "s": "leo",
+          "t": "No, it's cool. It looks like a retro cigarette lighter."
+        },
+        {
+          "s": "david",
+          "t": "Everything's a compromise. It's 9mm thick to fit a double-sided board. We get speed by writing two memory chips in parallel with a high-speed DMA engine. With one chip, it could be 12 or 14mm shorter, but half as fast."
+        },
+        {
+          "s": "leo",
+          "t": "Is that common?"
+        },
+        {
+          "s": "david",
+          "t": "In high-end ones. Most speed comes from SLC versus MLC. A single-chip MLC drive might write 3 or 4 megabytes a second. We write 18 to 20, and read around 30 or more."
+        },
+        {
+          "s": "leo",
+          "t": "That's faster than hard drives of a few years ago."
+        },
+        {
+          "s": "steve",
+          "t": "And it's got a nice blinky light."
+        },
+        {
+          "s": "david",
+          "t": "Its colors mean things, including firmware verification at startup. In newer firmware, when a device has destroyed itself, a light sequence confirms it's cleanly erased, for cases where you need to know it's safe to leave behind."
+        },
+        {
+          "s": "steve",
+          "t": "I may have to kill one after all, just to watch."
+        },
+        {
+          "s": "leo",
+          "t": "Will the RSA announcement need a new IronKey?"
+        },
+        {
+          "s": "david",
+          "t": "They're designed to be field upgradeable, with downloadable software and firmware. The challenge is testing. With different firmware versions and data stored in different ways across users, the test matrix is huge. We hope to release smaller updates more regularly this year."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft updates monthly because of continual security problems. An IronKey has to be really, really well designed from the start."
+        },
+        {
+          "s": "david",
+          "t": "We're in a cleaner position, since we control the hardware and signed everything from the start. Microsoft has had 25 years to refine its updates. We're updating firmware as well as software, which is more challenging than it looks."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks so much, Dave. I'm sold. IronKey.com, and his blog is at blog.IronKey.com."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Imation bought IronKey's hardware business in 2011, and Kingston acquired the IronKey brand in 2016, which still sells encrypted USB drives under it."
+        }
+      ]
+    },
+    {
+      "title": "It All Built Up to This",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You're cagey, Steve. I didn't realize it did all that."
+        },
+        {
+          "s": "steve",
+          "t": "What I learned, as a developer with Perfect Paper Passwords, is that it's a multifactor authentication dongle with an open API on the way."
+        },
+        {
+          "s": "leo",
+          "t": "Security programming is an intellectual challenge, because you have an adversary."
+        },
+        {
+          "s": "steve",
+          "t": "When I wrote our eCommerce system, and Perfect Paper Passwords for secure roaming for Greg, Sue and me, everything was Spy vs. Spy: what if, what if, what if."
+        },
+        {
+          "s": "steve",
+          "t": "And that's the huge vulnerability. Every SANS newsletter describes huge numbers of insecure web apps rushed onto the 'Net, with security the last thing considered instead of the first. It's the only thing these guys thought about."
+        },
+        {
+          "s": "steve",
+          "t": "And I loved that everything Dave talked about, we've covered: Tor, cipher block chaining, public and private keys, symmetric crypto."
+        },
+        {
+          "s": "leo",
+          "t": "If you'd listened to the earlier episodes, you'd understand it all. And running their own Tor servers, wow. They share your sensibilities."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is a Q&A, and then our RAM hacking episode: freezing RAM, FireWire backdoors and USB boot dongles that suck RAM contents out."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why can't the IronKey's encryption keys be stolen by malware or a cold boot attack?",
+      "options": [
+        "They're generated and kept inside the Cryptochip and can never be exported",
+        "They're stored in the cloud",
+        "They change every second",
+        "They're printed on the case"
+      ],
+      "answer": 0,
+      "explain": "Backups are re-encrypted with a separate key."
+    },
+    {
+      "q": "What happens after ten wrong password attempts on an IronKey?",
+      "options": [
+        "The chip destroys its keys and erases all the flash, including wear-leveling areas",
+        "It locks for an hour",
+        "It emails the owner",
+        "It asks security questions"
+      ],
+      "answer": 0,
+      "explain": "The counter logic is part of the silicon."
+    },
+    {
+      "q": "Why does David Jevans say shorter passwords are acceptable on an IronKey?",
+      "options": [
+        "With only 10 guesses allowed, brute force is impossible, unlike software encryption",
+        "The chip adds random characters",
+        "It uses fingerprints",
+        "Passwords aren't used"
+      ],
+      "answer": 0,
+      "explain": "He still recommends an easy passphrase."
+    },
+    {
+      "q": "How does IronKey stop malicious firmware from being installed?",
+      "options": [
+        "Updates must carry a 2,048-bit RSA signature checked by hardware against a key burned into the silicon",
+        "Firmware can't be changed at all",
+        "Updates come by mail",
+        "Antivirus scans them"
+      ],
+      "answer": 0,
+      "explain": "The private keys need two people with two smart cards."
+    },
+    {
+      "q": "What advantage does the IronKey have over a TrueCrypt traveler disk on someone else's PC?",
+      "options": [
+        "It needs no drivers or admin privileges",
+        "It's free",
+        "It holds more data",
+        "It works only on Macs"
+      ],
+      "answer": 0,
+      "explain": "Making it driverless took months of work."
+    },
+    {
+      "q": "What does IronKey's Secure Sessions service provide?",
+      "options": [
+        "Encrypted browsing through IronKey's own private Tor-based network, including its own DNS",
+        "A free VPN to any country",
+        "Public Tor access",
+        "Cloud backup"
+      ],
+      "answer": 0,
+      "explain": "It controls its exit nodes, unlike the public Tor network."
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "number": 197,
+  "title": "Windows 7 Security",
+  "subtitle": "What Microsoft improved since Vista: BitLocker, UAC, AppLocker, biometrics and more",
+  "date": "2009-05-21",
+  "description": "Steve walks through the security changes in the forthcoming Windows 7: a biometric framework that finally gives fingerprint readers an API, home-group authentication, a far more usable BitLocker (including BitLocker to Go for removable drives with read-only enforcement), Autoplay off by default, a reworked four-level User Account Control, the new AppLocker, a DNSSEC-aware client and automatic VPN reconnection, balanced against still-hidden file extensions. Plus a dangerous IIS WebDAV flaw already exploited at Ball State, a Mac Java drive-by, and the NoSquint and zero-friction-mouse finds.",
+  "transcript": "https://www.grc.com/sn/sn-197.txt",
+  "audio": "http://media.GRC.com/sn/SN-197.mp3",
+  "chapters": [
+    {
+      "title": "An IIS WebDAV Flaw, Already Exploited",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The one notable news item: a defect in IIS's WebDAV component, the HTTP-based protocol for viewing and editing remote directories (Jungle Disk uses it). There's a Unicode parsing flaw in WebDAV's password handling in IIS 5.0, 5.1 and 6.0, so any exposed WebDAV service can be exploited. Since it rides port 80 you can't just close the port; you must disable the WebDAV service."
+        },
+        {
+          "s": "leo",
+          "t": "Ball State University's servers were breached Monday, right after it was announced, and their web accounts are still down."
+        },
+        {
+          "s": "steve",
+          "t": "Right, attackers jumped on it immediately. A fix should come in June, but anyone running IIS with WebDAV should act now."
+        },
+        {
+          "type": "fact",
+          "title": "Why you can't just block the port",
+          "t": "WebDAV extends ordinary HTTP on port 80, so firewalling the port would also kill the web server. The only workaround until a patch is to turn off the vulnerable WebDAV component itself, a reminder that protocols layered on HTTP inherit the web port's openness."
+        }
+      ]
+    },
+    {
+      "title": "A Mac Java Drive-By",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "SecureMac issued a critical warning for an unpatched Java flaw in OS X, present even after last week's half-gigabyte mega-update. It allows a \"drive-by download\": visiting a web page runs malicious code with the current user's permissions. Landon Fuller released proof-of-concept code because Apple had known and not patched it."
+        },
+        {
+          "s": "leo",
+          "t": "The workaround is to disable Java applets in your browsers, and turn off Apple's \"open safe files after downloading\", I wish they'd put \"safe\" in big quotes."
+        },
+        {
+          "s": "steve",
+          "t": "Since we're doing Windows security today, I didn't want anyone thinking we were biased."
+        }
+      ]
+    },
+    {
+      "title": "NoSquint and a Zero-Friction Mouse Wheel",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two finds. On my high-resolution tablet, websites and MSDN help were tiny for my aging eyes. Firefox's Ctrl-plus/minus zooms per site and remembers it, but there's no default zoom. The NoSquint add-on fixes that: set a default (I use 130%), with independent control of text-only versus full-page zoom and per-site exceptions."
+        },
+        {
+          "s": "steve",
+          "t": "And for KatMouse fans, Logitech makes mice with a nearly frictionless scroll wheel, push it to toggle out of click-detent mode and it spins freely, so you flick it to fly through a page and stop it with a finger. I'm using their Nano VX, whose tiny receiver stores in the battery compartment, disconnecting the battery to turn the mouse off."
+        },
+        {
+          "s": "leo",
+          "t": "I love that mouse; the little receiver is so small you could eat it."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite That Found the Real Problem",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Mac Morris shares a testimonial: a work PC would boot to a Blue Screen, so he ran SpinRite, which gave the drive a clean bill of health, which pointed him to the real culprit, a corrupt Windows installation. After repairing that, all was well."
+        },
+        {
+          "s": "steve",
+          "t": "His boss then put SpinRite to further use, recovering two dead drives with two more to go. \"I think we need new hardware,\" he added."
+        }
+      ]
+    },
+    {
+      "title": "Vista's Security Foundations",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "To set the stage: Vista added real security. Kernel Patch Protection stopped things from hooking the kernel (controversial, since some products relied on that). It required drivers and services to be signed, did more with Data Execution Prevention (DEP), and added Address Space Layout Randomization (ASLR), loading Windows components at random addresses so malware can't reliably jump to a known location."
+        },
+        {
+          "s": "steve",
+          "t": "It also brought User Account Control, which arguably went too far on annoyance. Windows 7 is essentially Round 2: they took the feedback and re-engineered, mostly improving Vista's security functions rather than backing out of them."
+        },
+        {
+          "type": "fact",
+          "title": "Why ASLR matters",
+          "t": "Many exploits, after a buffer overflow, jump to a fixed address where useful code sits. Randomizing where Windows loads its pieces means the attacker can't predict that address, turning a reliable exploit into a guess that usually crashes instead of succeeding."
+        }
+      ]
+    },
+    {
+      "title": "A Biometric Framework at Last",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Windows 7 adds the Windows Biometric Framework (currently fingerprint readers). Today, each vendor ships its own closed drivers and glue; there's no API, so when I wanted my employees to authenticate with the fingerprint readers already in their ThinkPads, I couldn't, and ended up building Perfect Paper Passwords instead."
+        },
+        {
+          "s": "steve",
+          "t": "The framework opens that up, so shareware and my own CryptoLink can say \"swipe your finger now to prove it's you.\" Crucially, it's designed so an application never gets the fingerprint itself, only a token; you can't change your fingerprint, so you must keep control of it. UAC can even be tied to it, so a kid's permission prompt is cleared by Mom swiping her finger."
+        }
+      ]
+    },
+    {
+      "title": "Home-Group Authentication",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Windows 7 extends authentication with \"home group authentication.\" In an enterprise you authenticate against a domain controller; Microsoft juniorized that for homes, creating peer-level authentication so you can authenticate as, say, Mom or Dad on a kid's machine across the network."
+        },
+        {
+          "s": "steve",
+          "t": "I'm the only one in my home, so my machines share synchronized credentials and connecting is transparent. But in a mixed household with different logins everywhere, this makes file and media sharing much more flexible."
+        }
+      ]
+    },
+    {
+      "title": "BitLocker Becomes Usable",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "BitLocker was always a pain because, unlike TrueCrypt's in-place whole-drive approach, it needs a separate system partition, and Vista shipped the whole disk as one C partition, so adding BitLocker meant repartitioning. Windows 7 setup now creates that separate active system partition by default."
+        },
+        {
+          "s": "steve",
+          "t": "And if you're upgrading an existing single-partition drive, BitLocker itself will shrink C, create the system partition, and set up, no third-party repartitioning tools needed. The payoff of Microsoft's heavier approach is a full Windows environment, so BitLocker can use powerful authentication like the fingerprint reader, whereas TrueCrypt only takes a password."
+        }
+      ]
+    },
+    {
+      "title": "BitLocker to Go",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "BitLocker to Go is BitLocker for removable drives, USB sticks and removable hard drives. And there's a corporate group-policy setting that makes any removable drive read-only unless it's BitLocker-encrypted, a big long-term win against lost, unencrypted thumb drives full of records."
+        },
+        {
+          "s": "steve",
+          "t": "They kludged a virtualization overlay onto FAT (since removable drives are rarely NTFS, for Mac/Linux compatibility), and ship a reader so XP and Vista can read BitLocker-to-Go drives. They also allow a single master recovery key across all an organization's BitLocker drives, with a data-recovery agent borrowed from EFS."
+        },
+        {
+          "type": "fact",
+          "title": "Encryption you can enforce",
+          "t": "Making removable drives read-only unless encrypted turns \"please encrypt your USB sticks\" from a hope into a policy. It won't eliminate data-loss headlines overnight, but years out, a lost corporate thumb drive is far less likely to be a plaintext trove."
+        }
+      ]
+    },
+    {
+      "title": "Autoplay Off by Default",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Autoplay is now disabled by default on everything except optical drives (CDs/DVDs). Microsoft's own study found about 17.7% of malware propagated through Autorun, so they turned it off, with no pop-up prompting an action, since users tend to pick the wrong one."
+        },
+        {
+          "s": "leo",
+          "t": "This is largely in response to Conficker."
+        },
+        {
+          "s": "steve",
+          "t": "Essentially, yes. One side effect: U3 and similar devices that masquerade as a CD still get Autoplay, but security-conscious users can disable that themselves."
+        }
+      ]
+    },
+    {
+      "title": "User Account Control, Reworked",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "UAC, the bane of Vista, got two big changes. Prompts for standard admin tasks like changing screen resolution are gone. And related prompts are aggregated: installing an IE add-on used to prompt once when it started and again when it acted, now you approve once, and the prompt reaches into the ActiveX control to show its name and publisher so you can decide with more information."
+        },
+        {
+          "s": "steve",
+          "t": "There's now a four-level slider, defaulting to level three. Level four is Vista-like (notify and require a reply). Level three notifies but doesn't force a response. Level two skips the \"secure desktop\" (the screen-darkening that isolates the UAC dialog from other programs sending it keystrokes), less secure but less visually jarring, since some video drivers handle the switch badly. Level one disables UAC entirely and warns you."
+        },
+        {
+          "s": "steve",
+          "t": "And the famous fix: turning UAC's own setting down used to not require UAC approval, so a clever Send-keys trick could disable it silently. Now changing UAC asks for permission."
+        }
+      ]
+    },
+    {
+      "title": "Once It's In, the Jig Is Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the concept people struggle with: keeping bad things outside the castle walls is genuinely useful, you can keep secrets safely inside. Everything changes once something gets in. UAC is a knock on the castle door: \"something is trying to install itself, allow it?\" If your computer never told you, a drive-by site could install silently."
+        },
+        {
+          "s": "leo",
+          "t": "We've been trained for years that antivirus can remove this stuff."
+        },
+        {
+          "s": "steve",
+          "t": "And with rootkits, once malware is in, it's not just sitting in the Startup group to be removed; it's embedded deep. So UAC's value is notification before you let something in. Critics who say Windows 7 \"neutered\" UAC misunderstand it, it's quieter and more informative, so you can go weeks without a prompt and actually read the ones you get, instead of clicking yes from fatigue."
+        }
+      ]
+    },
+    {
+      "title": "AppLocker",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "AppLocker is a much-improved version of Software Restriction Policies. The old SRP keyed on a basic certificate check and a hash of the EXE, so any update changed the hash and broke the rule, far too brittle to deploy. AppLocker (stored as SRPv2) lets IT write rules based on the application's digital signature: trust all apps from this publisher, or this app from that publisher for all versions later than X."
+        },
+        {
+          "s": "steve",
+          "t": "Because it's based on robust code signing, it survives updates, so it'll actually get used. It's enforced in the kernel by a new appid.sys driver, checking at process creation and DLL load, and it has an audit-only mode to log what runs without blocking, which even a security-conscious home user might find handy."
+        }
+      ]
+    },
+    {
+      "title": "DNSSEC, Direct Connect and Hidden Extensions",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Windows 7 is the first client that understands DNSSEC records, validating the signatures on DNS answers, so once ISPs cache and serve signed data, the spoofability problem is solved at the client. Browsers will likely surface a \"verified\" indicator the way they show extended-validation certificates."
+        },
+        {
+          "s": "steve",
+          "t": "And \"Direct Connect\" automatically and silently reconnects a roaming laptop's VPN to corporate HQ, a feature I'd long planned for CryptoLink. Theirs is still IPsec/PPTP, with those VPNs' reachability problems, but automatic reconnection is the future for roaming users."
+        },
+        {
+          "s": "steve",
+          "t": "One disappointment Brian Krebs noted: file extensions are still hidden by default. So \"happy.txt.exe\" shows as \"happy.txt\" with a Notepad icon the EXE simply carries, perfect for tricking users. I always turn that off first, but Microsoft won't change it, fearing it confuses people."
+        }
+      ]
+    },
+    {
+      "title": "The Verdict",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Overall I'm bullish on Windows 7's security: a much saner UAC, a genuinely usable BitLocker with enforceable removable-drive encryption, AppLocker, biometrics, DNSSEC and Autoplay fixed. These take years to pay off, but you have to start somewhere."
+        },
+        {
+          "s": "leo",
+          "t": "Have they cleaned up the code itself?"
+        },
+        {
+          "s": "steve",
+          "t": "It's still essentially Vista, still written by humans, and security is still hard, which is exactly why I'll wait a year before moving, I'm in no hurry. None of this changes much for our listeners, who already turn off Autorun, show extensions and run TrueCrypt. Windows 7's security is for the novices Microsoft sells hardest to, the people running Conficker, and making them more secure makes everyone more secure."
+        },
+        {
+          "s": "leo",
+          "t": "It's faster, lighter and cleaner too; use RC1 (Build 7100), and plan on a clean install when the final ships."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why must you disable the WebDAV service rather than block a port to defend against the IIS flaw?",
+      "options": [
+        "WebDAV runs over port 80 alongside the web server, so closing the port would kill the website too",
+        "WebDAV uses a random port each time",
+        "The flaw is in the firewall, not WebDAV",
+        "Blocking ports requires a reboot"
+      ],
+      "answer": 0,
+      "explain": "WebDAV extends HTTP on port 80, so you can't firewall it without disabling the web server; the only workaround until a patch is to turn off the WebDAV component itself."
+    },
+    {
+      "q": "Why does the Windows 7 biometric framework never give an application the actual fingerprint?",
+      "options": [
+        "You can't change your fingerprint, so it must be protected; apps get only a token, not the biometric data",
+        "Fingerprints are too large to pass to applications",
+        "Applications would slow down",
+        "It would violate the TPM specification"
+      ],
+      "answer": 0,
+      "explain": "Because a fingerprint is permanent and unchangeable, the framework hands applications a representative token while keeping the biometric itself inaccessible, protecting something you can never reissue."
+    },
+    {
+      "q": "What makes BitLocker far more usable in Windows 7 than in Vista?",
+      "options": [
+        "Setup creates the required separate system partition by default, and BitLocker can retrofit it by shrinking C, no third-party repartitioning",
+        "It no longer encrypts anything",
+        "It dropped the TPM requirement",
+        "It uses the same password as your login"
+      ],
+      "answer": 0,
+      "explain": "Vista shipped one C partition, so adding BitLocker meant manual repartitioning; Windows 7 provisions the partition automatically or shrinks the existing drive itself."
+    },
+    {
+      "q": "What does the Windows 7 BitLocker to Go group policy let a corporation enforce?",
+      "options": [
+        "Removable drives are read-only unless they're BitLocker-encrypted",
+        "All USB ports are disabled",
+        "Removable drives are automatically wiped",
+        "Only company-issued drives will mount"
+      ],
+      "answer": 0,
+      "explain": "The policy makes any removable drive read-only until it's encrypted, so data can only be written to encrypted media, reducing the risk from lost thumb drives."
+    },
+    {
+      "q": "What was wrong with the old Software Restriction Policies that AppLocker fixes?",
+      "options": [
+        "They keyed on a hash of the EXE, so any update broke the rule; AppLocker uses the app's digital signature instead",
+        "They only worked on Windows Server",
+        "They couldn't block scripts",
+        "They required a password for every launch"
+      ],
+      "answer": 0,
+      "explain": "SRP's hash-based rules were too brittle, broken by every update; AppLocker's publisher/signature-based rules survive updates, so they're practical to deploy."
+    },
+    {
+      "q": "According to Steve, why is a quieter UAC in Windows 7 actually more secure, not \"neutered\"?",
+      "options": [
+        "Fewer, more informative prompts mean users read them instead of clicking yes from fatigue",
+        "It blocks all installations automatically",
+        "It runs every app in a virtual machine",
+        "It encrypts the desktop"
+      ],
+      "answer": 0,
+      "explain": "UAC's value is notifying you before something gets in; aggregating prompts and adding publisher info combats the alert fatigue that trained Vista users to approve everything reflexively."
+    }
+  ]
+}

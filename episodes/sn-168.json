@@ -1,0 +1,325 @@
+{
+  "number": 168,
+  "title": "ClickJacking",
+  "subtitle": "A transparent layer makes you click things you never see, on sites that trust you",
+  "date": "2008-10-30",
+  "description": "Steve explains clickjacking, also called UI redressing: a hidden, transparent layer or frame tricks you into clicking buttons on a site behind it, where your persistent login or auto-filled password makes the action yours. It needs no scripting bug, so it's cross-browser, and it can even silently turn on your webcam through Flash. Fixes: NoScript's ClearClick and an updated Flash Player. Plus an out-of-cycle RPC worm patch, an Opera flaw, and another stolen credit card for Steve.",
+  "transcript": "https://www.grc.com/sn/sn-168.txt",
+  "audio": "http://media.GRC.com/sn/SN-168.mp3",
+  "chapters": [
+    {
+      "title": "An Out-of-Cycle RPC Patch",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft put out an out-of-cycle patch. People in GRC's newsgroups joked that Microsoft times these for right after we record."
+        },
+        {
+          "s": "steve",
+          "t": "This is an old-style flaw: a packet arrives at your computer. It's in the RPC, remote procedure call, service in all versions of Windows, affecting 2000, XP and Server 2003. Vista's updated architecture mitigates it, so it's important rather than critical there, because the service is more sandboxed."
+        },
+        {
+          "s": "steve",
+          "t": "The service listens on the Windows file-sharing ports, 139 and 445. It was found as a zero-day: someone saw strange traffic to those ports in the wild."
+        },
+        {
+          "s": "leo",
+          "t": "A security firm reverse-engineered it within two hours of the patch."
+        },
+        {
+          "s": "steve",
+          "t": "There's now a proof of concept and active worms. This is as bad as Nimda, Code Red and Blaster were. But the world has changed: XP Service Pack 2 turned the firewall on, many people are behind routers, and Microsoft limited file and printer sharing to the local network by default."
+        },
+        {
+          "s": "steve",
+          "t": "The real concern is inside a network. If something gets onto an Intranet behind the firewall, this classic stack buffer overflow could spread between machines that trust each other."
+        },
+        {
+          "s": "leo",
+          "t": "It's a testament to Microsoft's improved security that what would have been a big deal was nothing. Yet they still patched it fast."
+        },
+        {
+          "s": "steve",
+          "t": "That motivated the out-of-cycle release, and it shows they can act quickly when they want to. My Cox cable modem already blocks those ports, as many ISPs do because of the old worms."
+        },
+        {
+          "type": "fact",
+          "title": "The worm",
+          "t": "The flaw was MS08-067. It was later exploited by the Conficker worm, which spread to millions of machines starting in late 2008, largely across internal networks and via USB drives."
+        },
+        {
+          "s": "steve",
+          "t": "Old abandoned Windows 2000 servers with no firewall will get found and exploited, then spray this traffic as \"Internet background radiation.\""
+        }
+      ]
+    },
+    {
+      "title": "An Opera Flaw, and Another Stolen Card",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Just after Opera's 9.61 update fixed three vulnerabilities, another was found. The fix, 9.62, is in final testing. It's a cross-site scripting flaw; a demo could pop up the Windows calculator from a link."
+        },
+        {
+          "s": "leo",
+          "t": "Nothing should be able to do that."
+        },
+        {
+          "s": "steve",
+          "t": "And I got a robocall this morning from my Visa card about charges made while I was preparing this podcast: a four-cent computer-consulting charge, a $1 eBay charge, then $400-plus. Not mine. Visa locked the card down and denied them."
+        },
+        {
+          "s": "leo",
+          "t": "Why the two small transactions?"
+        },
+        {
+          "s": "steve",
+          "t": "To test the card without hitting a limit. They probably bought it in a batch, likely from an exploit on some server months ago. It's amazing how often a heavily used card gets compromised, even for someone careful."
+        },
+        {
+          "s": "steve",
+          "t": "I'll check whether any of my cards offer a native one-time number. If not, I'll use PayPal's more, though it insists on pulling from my checking account, which confuses my bookkeeper. I may move a block of money to PayPal and let it draw from that."
+        },
+        {
+          "s": "leo",
+          "t": "Some Visa, MasterCard and American Express cards let you generate a one-time number. It's time to get serious about that."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Makes a Believer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An anonymous listener, a lab systems administrator, told his coworker about SpinRite, but the coworker thought it was snake oil. He bought a copy through work and ran it on healthy office systems, which didn't impress anyone."
+        },
+        {
+          "s": "steve",
+          "t": "Then a tablet PC hooked to a lab instrument got stuck in a boot loop, blue-screening and rebooting. He handed his skeptical coworker the CD. SpinRite went straight into DynaStat mode, repairing the first few sectors. Hours later it finished, and Windows booted right up."
+        },
+        {
+          "s": "steve",
+          "t": "The coworker never doubted SpinRite again, started using it on every suspect drive, and they bought three more copies for a site license."
+        }
+      ]
+    },
+    {
+      "title": "What Clickjacking Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's talk about something timely: clickjacking."
+        },
+        {
+          "s": "steve",
+          "t": "What's interesting is that it's serious yet it's not a bug. Much of what we discuss is a specific software defect. Clickjacking is more like cross-site request forgery: the power of the technology turned to a malicious purpose. And it's been around for a few years."
+        },
+        {
+          "s": "leo",
+          "t": "We just started hearing about it."
+        },
+        {
+          "s": "steve",
+          "t": "Like Sockstress, the potential was dimly known until someone looked closely. Security researchers Robert Hansen and Jeremiah Grossman were preparing an OWASP presentation, and as they explored it they realized much more could be done than they'd thought."
+        },
+        {
+          "s": "steve",
+          "t": "Modern browsers can layer content. Something can hide below the surface, so you click what you see, but you're actually clicking content on the page behind. It uses dynamic HTML and CSS, so no scripting is required. Disabling scripting doesn't protect you, and can even make it worse."
+        },
+        {
+          "s": "steve",
+          "t": "One method uses an iframe, an inline frame, to load another site's content, then obscures it. If you load Gmail in a frame, Gmail knows it's you, exactly as if you'd typed the URL. Clickjacking, more formally \"UI redressing,\" hides that frame behind an opaque layer, maybe a game where you click buttons in a pattern. You think you're clicking the game; you're really clicking buttons on the hidden site."
+        },
+        {
+          "type": "fact",
+          "title": "The researchers",
+          "t": "Robert \"RSnake\" Hansen and Jeremiah Grossman publicized clickjacking in 2008. The defense browsers later adopted is the X-Frame-Options header, and now Content-Security-Policy's frame-ancestors, which let a site refuse to be framed."
+        }
+      ]
+    },
+    {
+      "title": "Persistent Login Makes It Work",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Imagine you go to eBay, PayPal or MySpace, where the site knows you. Persistent login is a problem, but notice that if Firefox remembers your password, just visiting the page fills in your username and password. You now have one-click login, even if you logged out last time."
+        },
+        {
+          "s": "steve",
+          "t": "So if that page is hidden behind another screen where you innocently click, you log in with full credentials without knowing. Logging out doesn't protect you."
+        },
+        {
+          "s": "steve",
+          "t": "Every site has a fixed layout, so anything you could do with a series of clicks, an attacker can induce with a cover page. You think you're doing one thing; as you, known to your browser and the hidden site, you're doing another. It's completely cross-platform: IE, Firefox, Safari, Opera."
+        },
+        {
+          "s": "leo",
+          "t": "It uses web standards. This is how the web works."
+        }
+      ]
+    },
+    {
+      "title": "Flash and the Webcam",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It was serious enough that the researchers toned down their OWASP talk at Adobe's request, because several examples showed how easily Flash could be made to give remote access to your webcam and microphone."
+        },
+        {
+          "s": "steve",
+          "t": "Flash normally pops up a panel asking permission to use your camera. Clickjacking turns that into a pop-under, behind the page, so when you click \"OK\" on some other button, you're allowing it."
+        },
+        {
+          "s": "leo",
+          "t": "And they're watching or listening to you."
+        },
+        {
+          "s": "steve",
+          "t": "Just the fact that they'd said something caused other researchers to figure it out within about two days, with proofs of concept on the web. Then Hansen and Grossman gave the whole story."
+        }
+      ]
+    },
+    {
+      "title": "Fixes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two takeaways. First, Firefox users: update NoScript. Giorgio Maone, its author, was clued in early and added a feature called ClearClick. Even if you globally allow scripting, it inspects what you're actually clicking and warns you if games are being played. Blanket protection."
+        },
+        {
+          "s": "steve",
+          "t": "Second, update Flash Player to 10.0.12, Adobe's response. Earlier versions, including 9.0.124, are vulnerable. Get it from Adobe.com's home page."
+        },
+        {
+          "s": "steve",
+          "t": "There's also \"frame breaking,\" JavaScript that stops a page from being loaded in a frame, but it needs scripting. And IE's iframe security tag that disables scripting in a frame also disables that frame-breaking protection, so IE can work against the content's own defense."
+        },
+        {
+          "s": "steve",
+          "t": "Ultimately browsers will have to adapt. For now, Safari, Opera and IE users have nothing like NoScript's protection."
+        },
+        {
+          "s": "leo",
+          "t": "Firefox, NoScript."
+        },
+        {
+          "s": "steve",
+          "t": "I'm as late an adopter as there is, and I feared Firefox incompatibility. After months I've never had a problem, and its share is so high that sites must work in it. NoScript is a beautiful solution that gives complete protection from clickjacking."
+        }
+      ]
+    },
+    {
+      "title": "Still Log Out",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We talked last time about logging out of sites. Still worth it?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. This is like going to a site and pushing buttons you don't intend. If you're not logged into eBay, they can't trick you, unless your browser auto-fills your password."
+        },
+        {
+          "s": "leo",
+          "t": "So the hidden page asks you to log in."
+        },
+        {
+          "s": "steve",
+          "t": "You'd think you were clicking a monkey paw in a game."
+        },
+        {
+          "s": "leo",
+          "t": "So the click just hits the Submit button, and auto-fill supplies the login."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. We simplified our lives by having browsers log us in, and in doing so simplified the attack: all you do is click OK, not knowing you're logging in."
+        },
+        {
+          "s": "leo",
+          "t": "They'd need some attempts assuming you're logged in and some assuming auto-fill. Hackers are persistent."
+        },
+        {
+          "s": "steve",
+          "t": "The takeaways: Firefox with a recent NoScript, and update your Flash plug-in to Adobe's latest."
+        },
+        {
+          "s": "leo",
+          "t": "I just updated NoScript. I'm not going to say I told you so."
+        },
+        {
+          "s": "steve",
+          "t": "I've been Mr. NoScript for a long time."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What makes clickjacking work without any software bug?",
+      "options": [
+        "It layers a transparent page over a hidden site so your clicks land on the site behind",
+        "It overflows a buffer",
+        "It cracks encryption",
+        "It spoofs DNS"
+      ],
+      "answer": 0,
+      "explain": "It uses standard HTML, CSS and frames, so it's cross-browser."
+    },
+    {
+      "q": "Why doesn't simply disabling JavaScript stop clickjacking?",
+      "options": [
+        "It can be done with plain HTML and CSS, and disabling scripting can even make it worse",
+        "JavaScript isn't involved at all",
+        "It only affects Flash",
+        "Browsers block it already"
+      ],
+      "answer": 0,
+      "explain": "NoScript's ClearClick feature is what actually protects Firefox users."
+    },
+    {
+      "q": "How can clickjacking turn on your webcam?",
+      "options": [
+        "It hides Flash's permission prompt behind the page so your click approves it",
+        "It installs a driver",
+        "It cracks the camera firmware",
+        "It emails Adobe"
+      ],
+      "answer": 0,
+      "explain": "Updating Flash Player was Adobe's fix."
+    },
+    {
+      "q": "Why does logging out not fully protect you from clickjacking?",
+      "options": [
+        "If your browser auto-fills your password, a hidden click can log you in",
+        "Logging out deletes cookies",
+        "The attack ignores login state",
+        "It only works on bank sites"
+      ],
+      "answer": 0,
+      "explain": "You'd think you were clicking something in a game."
+    },
+    {
+      "q": "What was the MS08-067 out-of-cycle patch for?",
+      "options": [
+        "A remote code flaw in the Windows RPC service on the file-sharing ports",
+        "A browser bug",
+        "A Flash flaw",
+        "A DNS problem"
+      ],
+      "answer": 0,
+      "explain": "It was later exploited by the Conficker worm, mostly inside networks."
+    },
+    {
+      "q": "Which browser setup gave complete protection against clickjacking at the time?",
+      "options": [
+        "Firefox with an updated NoScript",
+        "Internet Explorer",
+        "Safari",
+        "Opera"
+      ],
+      "answer": 0,
+      "explain": "Its ClearClick feature works even when scripting is allowed."
+    }
+  ]
+}

@@ -1,0 +1,843 @@
+{
+  "number": 155,
+  "title": "BailiWicked Domain Attack",
+  "subtitle": "How DNS works, and how Dan Kaminsky's attack poisons it",
+  "date": "2008-07-31",
+  "description": "With the details of Dan Kaminsky's DNS discovery now leaked, Steve lays the groundwork: the old hosts.txt file, DNS's hierarchy, caching and Time To Live, UDP queries and transaction IDs, and query source port randomization. Then he explains the \"BailiWicked\" attack that forces a server to accept fake name servers for a whole domain, why SSL is the main defense, and how to test your ISP. Plus a Firefox reminder, SpinRite stories, Leo's dead TriCaster drive, and a live earthquake.",
+  "transcript": "https://www.grc.com/sn/sn-155.txt",
+  "audio": "http://media.GRC.com/sn/SN-155.mp3",
+  "chapters": [
+    {
+      "title": "Steve's InfoWorld Column",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 155. I think I first became aware of you through your InfoWorld column."
+        },
+        {
+          "s": "steve",
+          "t": "That started as a way to promote SpinRite. I asked InfoWorld if they'd trade an ad for a column. They said, who are you? I somehow talked them into it, and the column took off. I wrote it every week for eight years."
+        },
+        {
+          "s": "leo",
+          "t": "I was so sad when you quit."
+        },
+        {
+          "s": "steve",
+          "t": "After eight years I'd said all I had to say, I was busy, and the magazine was changing, not for the better."
+        },
+        {
+          "s": "leo",
+          "t": "It became a business magazine. It used to be the journal of record for Silicon Valley, with you, Dvorak and Cringely. You had to read it every week."
+        },
+        {
+          "s": "leo",
+          "t": "What was your column called?"
+        },
+        {
+          "s": "steve",
+          "t": "Originally Behind the Screens. But CompuServe claimed the trademark, so InfoWorld called and said I had to rename it. It ran as TechTalk for eight years."
+        }
+      ]
+    },
+    {
+      "title": "Today: How DNS Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Our plans have changed. We were going to embargo the details until Dan Kaminsky's talk at Black Hat in Las Vegas on August 6. But it has all made it onto the Internet, so there's no need to wait."
+        },
+        {
+          "s": "steve",
+          "t": "First I'll explain how DNS works, as a foundation. What Kaminsky realized early this year isn't a coding bug, which is why it affected Microsoft's DNS and BIND alike. DNS Internet-wide is simply more exploitable than anyone believed. Spoofing isn't new, but this is a far more potent attack."
+        },
+        {
+          "s": "steve",
+          "t": "In nearly three years we've never focused on DNS. We've mentioned name servers, spoofing and man-in-the-middle attacks, circumferentially or radially. People know they point their computer at DNS servers, but few know how it works, and it's in the details that this attack functions."
+        },
+        {
+          "s": "leo",
+          "t": "Our early episodes covered a lot of the Internet's fundamentals, and they're all at GRC.com and TWiT.tv. I'm surprised we skipped this one."
+        }
+      ]
+    },
+    {
+      "title": "How the Secret Got Out",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "What's the news? The Kaminsky story has dominated headlines for three weeks."
+        },
+        {
+          "s": "steve",
+          "t": "When you know there's a problem, you're much more likely to figure it out. When I wondered how I'd test GRC visitors' DNS randomness, I realized I'd need to make their name server issue lots of queries, and that turns out to be part of the attack."
+        },
+        {
+          "s": "steve",
+          "t": "Over the past couple weeks people in the industry speculated and posted guesses on blogs, and others said that won't work, but this would. Finally one researcher made a guess, and someone Dan had told directly confirmed it."
+        },
+        {
+          "s": "leo",
+          "t": "Dan was going to wait until Black Hat, next week."
+        },
+        {
+          "s": "steve",
+          "t": "Our plan was to have him on afterward. His talk has probably been preempted, though he'll still give it the full treatment."
+        },
+        {
+          "s": "steve",
+          "t": "Note that we don't know for sure the industry has figured out everything. What's known is that something new was found, it's being exploited, and exploit tools now exist."
+        }
+      ]
+    },
+    {
+      "title": "Firefox Reminder",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Blessedly, little else went wrong this week. But another memory corruption bug was found in Mozilla-derived browsers. It was already fixed in the latest releases, Firefox 3.0.1 and 2.0.0.16, and it's more serious than the problems those updates were made for. So if you use Firefox, make sure you're up to date."
+        }
+      ]
+    },
+    {
+      "title": "Three Drives in a Row",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Alain Donais bought SpinRite and talks about great timing. Right after, his parents' computer wouldn't boot, and the store's technician said the drive was done. They had no backup of their photos. Alain ran SpinRite, and after several hours it worked like new. The tech was extremely surprised."
+        },
+        {
+          "s": "steve",
+          "t": "The very next day his roommate's computer wouldn't boot after a power supply replacement. Several hours of SpinRite, fixed. Then his brother's old drive was unreadable in a new computer, and SpinRite rescued that too. He calls it one of his best investments ever."
+        }
+      ]
+    },
+    {
+      "title": "Leo's Dead TriCaster Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I have a SpinRite-didn't-work story. SpinRite fixes a particular category of problems. If your partition table got mucked up, it won't help. It's about bad sectors, right?"
+        },
+        {
+          "s": "steve",
+          "t": "Many testimonials involve endless reboot loops. That's a sector-level problem: a sector is read incorrectly or not at all, so the system can't boot. But in your case the drive just stopped being a drive. It became a doorstop."
+        },
+        {
+          "s": "leo",
+          "t": "We use a NewTek TriCaster for the TWiT Live video stream, basically a video control room in an XP box the size of a Shuttle PC. In the middle of recording: blue screen. On reboot, \"no operating system.\""
+        },
+        {
+          "s": "leo",
+          "t": "It has no optical drive, so I put the drive in another machine to boot SpinRite. The BIOS saw the drive and the right model ID, but said it was 0.0GB."
+        },
+        {
+          "s": "steve",
+          "t": "That means the drive isn't really online. It answers some commands, but not the basic \"tell me about yourself\" one. As you suspect, it's probably the drive's circuit board, not the magnetic media."
+        },
+        {
+          "s": "leo",
+          "t": "It spins up fine and makes no bad noises."
+        },
+        {
+          "s": "steve",
+          "t": "Can you hear the heads load, a fluttery sound at the start?"
+        },
+        {
+          "s": "leo",
+          "t": "That's a good question. I think it just spins, and the heads never move. I'll have to listen."
+        },
+        {
+          "s": "steve",
+          "t": "You've had it, what, a couple of months? That's classic infant mortality. One electronic component passed QA and manufacturing, then gave up. Nothing can fix that except someone like DriveSavers swapping in the board from an identical drive."
+        },
+        {
+          "s": "leo",
+          "t": "That's what they do. And if the machine can't see the drive, neither can SpinRite. It's not magic."
+        },
+        {
+          "s": "steve",
+          "t": "Solid-state parts are far more reliable than magnetic ones. In 20 years I've seen a drive's board die maybe once or twice. It's normally sector problems, which is what SpinRite fixes."
+        },
+        {
+          "s": "leo",
+          "t": "NewTek immediately sent a new drive. People said, Leo, you always say back up. I was backing up. We lost only the video we were making when it died."
+        },
+        {
+          "s": "leo",
+          "t": "I planned to make a copy. I don't want an image to restore. Next time, I want to pull the drive and put an identical one in."
+        },
+        {
+          "s": "steve",
+          "t": "So you want a clone: an exact bit-for-bit duplicate, partition table and all. A proprietary device's drive might have copy protection."
+        },
+        {
+          "s": "leo",
+          "t": "I don't know what's on it, so bit-for-bit it is. Drive makers offer free copying tools to help you migrate to a bigger drive. I'm using an Hitachi. Is Hitachi okay?"
+        },
+        {
+          "s": "steve",
+          "t": "My new monster quad-core machine has five 1TB Hitachi drives in a RAID. I think they're among the best."
+        },
+        {
+          "s": "leo",
+          "t": "Patrick Norton tweeted that Newegg had 750GB drives for $119 with a $20 rebate, a hundred bucks. I've used Seagates for years, but the Hitachi had a bigger cache and better sustained throughput."
+        },
+        {
+          "s": "steve",
+          "t": "The cache matters for heavy media work."
+        },
+        {
+          "s": "leo",
+          "t": "They're amazingly cheap. But because they're so big I'm nervous. I'll have a couple of clones."
+        }
+      ]
+    },
+    {
+      "title": "An Earthquake, Live",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So, back before DNS, the way the Internet... whoa, we're having an earthquake. A big one."
+        },
+        {
+          "s": "leo",
+          "t": "You're really shaking. I'm watching the books behind you. Steve's in Irvine, California."
+        },
+        {
+          "s": "steve",
+          "t": "It's more rolling than jerky. The closer you are, the sharper it feels, so this may be a bit distant. All sorts of stuff fell over. I'm fine. We're used to earthquakes in California."
+        },
+        {
+          "s": "leo",
+          "t": "That's a first. Up here in Northern California, about 500 miles away, we felt nothing. The chatroom says Pasadena, Hesperia, Apple Valley and San Diego felt it, and Fontana had a big shake."
+        },
+        {
+          "s": "steve",
+          "t": "It's the biggest earthquake we've had in maybe five years. Things have been quiet, so a little stress relief is good."
+        },
+        {
+          "s": "leo",
+          "t": "CNN is reporting it. The U.S. Geological Survey says 5.8, around Chino Hills in greater Los Angeles."
+        },
+        {
+          "type": "fact",
+          "title": "The Chino Hills earthquake",
+          "t": "The quake struck on July 29, 2008, the day this episode was recorded. The USGS's first estimate of 5.8 was later revised to magnitude 5.4, centered near Chino Hills. Damage was minor."
+        },
+        {
+          "s": "leo",
+          "t": "What's impressive is the Internet was rock solid. Skype held. You were shaking, but the video looked good."
+        }
+      ]
+    },
+    {
+      "title": "One Hosts File for the Whole Internet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Back to it. Once upon a time a single hosts.txt file held the names of every machine on the Internet. The NIC, the original Internet authority, maintained it on an FTP server."
+        },
+        {
+          "s": "leo",
+          "t": "You're kidding."
+        },
+        {
+          "s": "steve",
+          "t": "Periodically everyone would FTP the master file to their machines. That was the only way to convert names to IP addresses. There was no lookup software. The UNIX sockets layer had calls to look up a machine's address, and all they did was check the hosts file."
+        },
+        {
+          "s": "leo",
+          "t": "So that's where the hosts file came from."
+        },
+        {
+          "s": "steve",
+          "t": "It became unwieldy as the file grew and changes came more often. Engineers wanted something scalable and distributed, with a hierarchical name space."
+        },
+        {
+          "s": "steve",
+          "t": "The hierarchy avoids name collisions. You can't get an eBay account with just your name anymore. But within a subdomain you can. In www.ebay.com, the periods show three levels of hierarchy."
+        },
+        {
+          "s": "steve",
+          "t": "At the top are the root servers. They don't know about eBay, only about .com. Each level knows the level below it, forming a tree."
+        }
+      ]
+    },
+    {
+      "title": "Hosts File, Cache, and Time To Live",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When I look up a domain, my computer, Windows, Mac or Linux, first checks the hosts file, then its local cache of addresses looked up since power-on that haven't expired."
+        },
+        {
+          "s": "steve",
+          "t": "Entries in the hosts file preempt real DNS queries. That's how downloadable hosts files keep your machine from ever going to DoubleClick.net or known bad sites."
+        },
+        {
+          "s": "steve",
+          "t": "Everything in DNS has an expiration time, say six hours. DNS servers cache what they get and track its age, refreshing it when it expires. Otherwise every query would start at the root, the root servers would be overwhelmed, and the distributed hierarchy would gain nothing."
+        },
+        {
+          "s": "leo",
+          "t": "I'm surprised the hosts file comes before the cache."
+        },
+        {
+          "s": "steve",
+          "t": "Architecturally it may be moot; the cache might hold results from either. But a hosts file change takes effect immediately, and the hosts file has no notion of expiration, while the cache is all about expiration. So it has to be checked first."
+        },
+        {
+          "s": "leo",
+          "t": "There's a setting on UNIX systems for that order, but the default is the hosts file first."
+        },
+        {
+          "s": "steve",
+          "t": "Most users have an empty hosts file. You could put Microsoft's IP in it for instant lookups. But Microsoft hands out several IPs in rotation, called round robin, to spread the load, and the hosts file can't do that. Worse, if Microsoft changed its IP, nothing could tell your hosts file it's obsolete."
+        }
+      ]
+    },
+    {
+      "title": "Asking the ISP's DNS Server",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "If the answer isn't local, my computer asks the DNS server it's configured to use. If Windows obtains an IP automatically, it also receives two DNS servers approved by your ISP."
+        },
+        {
+          "s": "steve",
+          "t": "Two is an important number. The original gods of DNS decreed at least two servers for every domain, so one being down doesn't leave you stranded."
+        },
+        {
+          "s": "steve",
+          "t": "The query goes over UDP, not TCP. That's part of DNS's economy and part of its problem. A query, like \"what's the IP of www.GRC.com,\" takes about 100 bytes, and a packet holds about 1,500."
+        },
+        {
+          "s": "steve",
+          "t": "TCP would need the three-way handshake, SYN, SYN/ACK and ACK, then the query and answer, then FIN packets to close both directions. That's a lot of traffic for 100 bytes. UDP is connectionless: one packet out, one back."
+        },
+        {
+          "s": "steve",
+          "t": "An ISP's server serves a huge number of customers, so popular domains like Microsoft and Yahoo! are almost certainly cached. If its copy hasn't expired, it instantly replies with one UDP packet, and my machine connects to that IP."
+        }
+      ]
+    },
+    {
+      "title": "Up the Hierarchy",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "If the ISP's server doesn't have the answer, or it has expired, it goes upstream. It will surely have the .com servers cached, since it needs them constantly."
+        },
+        {
+          "s": "steve",
+          "t": "The .com servers are authoritative for all .com domains: GRC, Yahoo!, Microsoft, Leoville.com. Your TWiT.tv is in the .tv domain."
+        },
+        {
+          "s": "leo",
+          "t": "Which Tuvalu runs."
+        },
+        {
+          "s": "steve",
+          "t": "The .com servers only hold each domain's name servers. They might be NS1.GRC.com and NS2.GRC.com. Since those are inside GRC.com, there's a chicken-and-egg problem, solved by extra records called \"glue\" that give those name servers' IP addresses."
+        },
+        {
+          "s": "steve",
+          "t": "Then the ISP asks GRC's name servers for www.GRC.com and caches the answer for that record's lifetime, maybe 8 or 24 hours."
+        },
+        {
+          "s": "steve",
+          "t": "When you register a domain, all you give is its name servers. Whoever runs those servers holds the actual records. So the top-level domain only has the name servers' names and IPs."
+        }
+      ]
+    },
+    {
+      "title": "TTL and \"Propagation\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "If I knew I'd change IPs tomorrow, I could lower the Time To Live, the TTL, on GRC's records. As records expired around the Internet, servers would get new ones with short TTLs and come back sooner. That raises my DNS server's load, but changes spread much faster."
+        },
+        {
+          "s": "steve",
+          "t": "That's what \"DNS propagation\" really means. The authoritative server controls how long its records live. After the change, I'd go back to 24 hours."
+        },
+        {
+          "s": "leo",
+          "t": "It's a balance between updates and bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "I remember a mistake, I'm pretty sure by Microsoft, where very low TTLs, a few seconds, had the whole Internet slamming its DNS servers."
+        },
+        {
+          "s": "leo",
+          "t": "So the ISPs go directly to Microsoft, not the 13 root servers."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, and that's critical. From .com they get only Microsoft's name servers. Those name servers hold everything about Microsoft: www, secure.microsoft.com, and the IP for microsoft.com itself."
+        }
+      ]
+    },
+    {
+      "title": "Built Without Security",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In the early days nobody worried about security. The whole Internet fit in one hosts file. There were people in white lab coats, a few domains like .gov, .edu and .mil, and hundreds or thousands of machines."
+        },
+        {
+          "s": "steve",
+          "t": "The perfect example is SSL. It was added much later by the Netscape guys. There was no way to have an encrypted TCP connection or send email that wasn't in the clear unless you encrypted it yourself. They were amazed it worked at all."
+        },
+        {
+          "s": "leo",
+          "t": "The whole Internet was designed before security concerns."
+        },
+        {
+          "s": "steve",
+          "t": "DNS is defined in RFC 1034 and RFC 1035, written in November 1987, 21 years ago."
+        },
+        {
+          "s": "leo",
+          "t": "Nobody thought about it?"
+        },
+        {
+          "s": "steve",
+          "t": "There weren't any bad guys yet, and no commercial use. It was government, education and research. Sending packets that reached their destination was amazing."
+        }
+      ]
+    },
+    {
+      "title": "Transaction IDs and Early Spoofing",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Every UDP packet has a port at each end, 1 to 65,535, and a 32-bit IP address."
+        },
+        {
+          "s": "steve",
+          "t": "When a busy ISP server needs to ask a server above it, like a .com server, it tags the query with a 16-bit transaction ID, or query ID. Originally it was just an incrementing counter, used to match replies with requests."
+        },
+        {
+          "s": "steve",
+          "t": "Long ago people realized DNS was far too trusting. You could make the ISP's server query your own name server, see where its counter was, then trigger a query and send your own answer before the real one arrived. You beat it to the punch."
+        },
+        {
+          "s": "steve",
+          "t": "UDP makes it easy. TCP's handshake requires packets to make a round trip, so you can't spoof its address. A UDP packet has nothing to authenticate it. With full raw sockets you can build a packet with any source IP, such as the server you're impersonating."
+        },
+        {
+          "s": "steve",
+          "t": "The server sends other queries meanwhile, so the counter may move a bit. But you can guess the window and flood it with fake replies. That's a DNS cache poisoning attack."
+        }
+      ]
+    },
+    {
+      "title": "Random IDs Aren't Enough",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So DNS servers switched to a pseudorandom number generator for transaction IDs. That made spoofing much harder, since you had no information about the next ID."
+        },
+        {
+          "s": "steve",
+          "t": "But networks and computers got faster, and 16 bits is only 64K values. We'd never trust security to 16 bits."
+        },
+        {
+          "s": "steve",
+          "t": "Remember the birthday attack. You may not guess one person's birthday, but the chance that any two people in a room share one is much higher, because of all the possible pairs. So even a random 16-bit ID isn't random enough."
+        },
+        {
+          "type": "fact",
+          "title": "The birthday effect here",
+          "t": "With 65,536 possible IDs, an attacker who gets many guesses across many forced queries will hit a match far sooner than intuition suggests. With 23 people in a room, the chance two share a birthday is already over 50%."
+        }
+      ]
+    },
+    {
+      "title": "Source Port Randomization",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A reply must match two things: the transaction ID, and the port the query came from. DNS servers listen on port 53, as the web uses 80, SMTP 25 and POP 110. But the source port of an outgoing query can be anything."
+        },
+        {
+          "s": "steve",
+          "t": "Many servers sent all their queries from port 53, or from one port chosen at startup. Then a spoofer only had to guess the transaction ID."
+        },
+        {
+          "s": "steve",
+          "t": "Dan Bernstein, a well-respected security researcher, said long ago that a fixed query port is insecure. His DNS server, djbdns, does query port randomization: each query goes out from a new port, and the reply must come back to it."
+        },
+        {
+          "s": "steve",
+          "t": "That adds 16 more bits, 32 bits of entropy in all. It's 65,536 times more difficult, virtually impractical. OpenDNS and other high-security servers have done it all along."
+        },
+        {
+          "s": "steve",
+          "t": "But there were obstacles. Firewall policies may lock DNS to one port, since random ports mean letting replies in on all ports. And a NAT router can derandomize a good server's ports, remapping them in sequence so they're easy to guess again."
+        },
+        {
+          "s": "leo",
+          "t": "Randal Schwartz says this is part of what makes OpenBSD so secure. Does OpenDNS use its own servers?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't know whose software they use. But from the beginning they were secure because of this."
+        },
+        {
+          "s": "leo",
+          "t": "Yet Cisco, Microsoft and even BIND, the traditional Free Software Foundation DNS server used by almost everybody, weren't randomizing."
+        },
+        {
+          "type": "fact",
+          "title": "BIND's maintainer",
+          "t": "BIND is maintained by the Internet Systems Consortium (ISC), not the Free Software Foundation, though it is free, open-source software."
+        },
+        {
+          "s": "steve",
+          "t": "Some had the option, but it was often unused. Lately I've heard many people lament that Dan Bernstein was right."
+        }
+      ]
+    },
+    {
+      "title": "Why Old Attacks Were Theoretical",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's talk about the attack. Dan has now revealed how it works?"
+        },
+        {
+          "s": "steve",
+          "t": "Actually he hasn't. But I'll explain what everyone believes he found."
+        },
+        {
+          "s": "steve",
+          "t": "Everything so far is what everyone has always known. Transaction IDs were randomized, but most servers' source ports weren't. Still, the worst you could do was poison one record, and only when it expired. You couldn't force a server to take a new www.google.com. It was a tiny window and a futile race, so the attack was theoretical."
+        },
+        {
+          "s": "steve",
+          "t": "What now exists in exploit code is different. HD Moore, who maintains the well-regarded Metasploit Framework, implemented it late last week and called it the BailiWicked Domain Attack."
+        }
+      ]
+    },
+    {
+      "title": "Bailiwick",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A \"bailiwick\" is the neighborhood, the domain, a query is about. A DNS reply has four sections: the question, the answer, authority information, and additional information."
+        },
+        {
+          "s": "steve",
+          "t": "The additional section normally carries glue, like name server IPs, so the server needn't make another query. It's for efficiency."
+        },
+        {
+          "s": "steve",
+          "t": "Some early DNS servers accepted additional information about entirely different domains. Ask about Yahoo.com and you could slip in records for Google. That was fixed long ago, so don't worry. It shows how trusting DNS was."
+        },
+        {
+          "s": "steve",
+          "t": "Those were called \"out of bailiwick.\" Servers were taught to ignore any additional information not relevant to the query. What Dan realized is a way to force a fundamental change in the cache, rather than waiting for a record to expire."
+        }
+      ]
+    },
+    {
+      "title": "How the Attack Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Take Example.com. First you look up its two name servers, NS1 and NS2, just as the ISP's server would. Now you know which IPs it will query. Your target is a lame ISP that hasn't added source port randomization, and a huge number still haven't."
+        },
+        {
+          "s": "steve",
+          "t": "You ask the ISP's server for a fake machine, aaaaaaa.example.com. It can't be cached, so you force a cache miss, and the server sends a query to Example.com's name server. Without source port randomization, you know the port it came from."
+        },
+        {
+          "s": "steve",
+          "t": "You flood it with maybe 100 UDP replies, spoofed to come from Example.com's name server, guessing transaction IDs. If you miss, ask for aaaaaab.example.com and flood again. Then aaaaaac, and so on."
+        },
+        {
+          "s": "steve",
+          "t": "Your spoofed replies include new name servers for Example.com. Because they're for Example.com, they're in bailiwick, and they replace the ISP's name server records."
+        },
+        {
+          "s": "steve",
+          "t": "It takes about 30 seconds, maybe a couple of minutes, and it's being exploited right now. You aren't changing one record. You redirect name service for an entire domain: Google, Microsoft, eBay, Yahoo!, whatever the attacker wants."
+        },
+        {
+          "s": "steve",
+          "t": "The birthday effect guarantees a collision eventually. And you can give the fake record a huge Time To Live. TTL is 32 bits, so it essentially never expires."
+        },
+        {
+          "type": "fact",
+          "title": "TTL in practice",
+          "t": "The DNS standard (RFC 2181) caps TTLs at about 68 years, and most resolvers cap cached records far lower, often at a day or a week. Even so, a poisoned record could stay in place long enough to do serious harm."
+        },
+        {
+          "s": "steve",
+          "t": "Then every customer of that ISP who types www.google.com gets a fake IP. It looks just like Google, and the address bar says www.google.com, so no phishing seems to be going on. Wrong."
+        },
+        {
+          "s": "leo",
+          "t": "And the browsers' anti-phishing measures won't help, because you seem to be at the right place."
+        }
+      ]
+    },
+    {
+      "title": "SSL Is the Defense",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Certificates, SSL, are the defense. A malicious server in Russia spoofing PayPal can't have a certificate for PayPal.com. But not all users are security-conscious. People assume the login will be secure. Only the newest browsers color the address bar. Otherwise it's a little padlock nobody looks at."
+        },
+        {
+          "s": "leo",
+          "t": "It can't be a secure connection, because the certificate won't match."
+        },
+        {
+          "s": "steve",
+          "t": "My point is the spoofed site won't switch you to SSL. It doesn't need to. You typed www.paypal.com, which is plain http by default. It shows a login page, you think you're at PayPal, and every customer of that ISP goes there until the cached record is fixed."
+        },
+        {
+          "s": "leo",
+          "t": "So if I check for an SSL connection and don't have one, I know it's not the right page."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. You and our listeners probably won't be caught. If you type https://www.paypal.com, the real PayPal accepts it. A fake probably won't even run a server on port 443."
+        },
+        {
+          "s": "steve",
+          "t": "But they could be trickier. The fake www.paypal.com could redirect you, like Phorm's redirect dance, to https on a subtle misspelling like PayLal.com, with a real certificate for that name."
+        },
+        {
+          "s": "leo",
+          "t": "But my browser would say PayLal."
+        },
+        {
+          "s": "steve",
+          "t": "Right, or \"PoPal,\" which looks the same at a glance. Once you're on their unsecured page, they can do whatever they want with a browser that believes it's in the right place."
+        },
+        {
+          "s": "steve",
+          "t": "Unfortunately SSL is still rare, often used only briefly at login. Gmail, as we've discussed, stays secure only if you start with a secure connection."
+        }
+      ]
+    },
+    {
+      "title": "Testing Your ISP's DNS",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This is serious. HD Moore's Metasploit has it, attacks are underway, and they take a couple of minutes against servers that don't randomize."
+        },
+        {
+          "s": "steve",
+          "t": "Dan's DoxPara page has given me and others inconsistent results. Sometimes it says one port, sometimes random ports, sometimes that the server is doing something better. He's being cagey."
+        },
+        {
+          "s": "steve",
+          "t": "There's a better test at entropy.dns-oarc.net/test. I made a short link: snipurl.com/dnstest."
+        },
+        {
+          "s": "steve",
+          "t": "It makes up to 25 queries through the DNS server your browser uses, usually your ISP's, then charts and lists the source ports and transaction IDs, with their standard deviation. It shows whether your ISP has fixed this."
+        },
+        {
+          "s": "leo",
+          "t": "It's amazing next to the old DoxPara."
+        },
+        {
+          "type": "fact",
+          "title": "The test today",
+          "t": "DNS-OARC's port test still exists, and its results can also be checked by querying porttest.dns-oarc.net with the \"dig\" tool. SnipURL short links no longer work."
+        },
+        {
+          "s": "steve",
+          "t": "OpenDNS has always used source port randomization and won't be spoofed. You must configure it manually, but if you're concerned, you might take matters into your own hands until your ISP gets around to it."
+        },
+        {
+          "s": "leo",
+          "t": "OpenDNS is great for many reasons. Some worry about the ads when you mistype a URL. That doesn't bother me; they have to monetize. And it was secure from day one."
+        }
+      ]
+    },
+    {
+      "title": "Home Routers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "What about personal routers? Inexpensive Netgear and Linksys-style routers don't cache. They just pass queries on."
+        },
+        {
+          "s": "steve",
+          "t": "But Linux-based firmware like OpenWrt and DD-WRT is known to have the problem, because those routers may cache. Do some Googling."
+        },
+        {
+          "s": "steve",
+          "t": "An attack there would have to be highly targeted. Someone would have to see your router querying and have a reason to poison it, and they'd only poison your network. Bad guys get far more from major ISPs."
+        }
+      ]
+    },
+    {
+      "title": "What the Fixes May Do",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An attacker can insert new name servers for any domain and poison it for as long as they like. An ISP would probably learn of it only when customers complained that PayPal seemed wrong, and then flush the record. Who knows how many people would be hit meanwhile."
+        },
+        {
+          "s": "steve",
+          "t": "That's why all the DNS vendors updated. We don't know the full fix. Maybe they tightened in-bailiwick handling, checking whether a second reply came from the real server, or rate-limited incoming spoofs."
+        },
+        {
+          "s": "steve",
+          "t": "But another 16 bits of randomness from an unknown source port makes it virtually impossible. Well, \"impossible\" is a relative term. Never say impossible. It's so unlikely that both 16-bit values would match that it's not worth anyone's while."
+        },
+        {
+          "s": "steve",
+          "t": "So the best defense is an ISP whose DNS servers send queries from random ports."
+        },
+        {
+          "s": "leo",
+          "t": "I'd read others' explanations, but you need the fundamentals first. I didn't understand the port part until now. And we're seeing this exploit in the wild."
+        }
+      ]
+    },
+    {
+      "title": "Windows Can't Spoof",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "HD Moore said the exploit runs on Linux and is being ported to Mac OS X, but not to Windows, because Windows can't spoof UDP. Thankfully it doesn't have full raw sockets."
+        },
+        {
+          "s": "leo",
+          "t": "Steve won't toot his own horn, so I will. When XP came out with full raw sockets, Microsoft said UNIX has it, so Windows should too. Steve raised a ruckus, and many people called it a tempest in a teapot. He's been proven right again and again. Microsoft eventually took full raw sockets out of XP, and thank goodness, or these exploits would be far more widespread."
+        },
+        {
+          "type": "fact",
+          "title": "Raw sockets",
+          "t": "Microsoft restricted raw sockets in Windows XP Service Pack 2, in 2004, so ordinary programs can no longer send TCP data or UDP packets with a forged source address."
+        },
+        {
+          "s": "steve",
+          "t": "We'd have Windows bot fleets doing this, and that would really up the ante."
+        }
+      ]
+    },
+    {
+      "title": "In Defense of Dan Kaminsky",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Dan has taken a lot of heat. People accuse him of self-promotion and exaggeration. I think he's done the Internet community a great service."
+        },
+        {
+          "s": "steve",
+          "t": "He realized there was a problem, brought it to the proper DNS authorities, got them to see it wasn't theoretical, and everyone changed their software so fixes could be deployed. Then it went public that people had to upgrade, without the details."
+        },
+        {
+          "s": "steve",
+          "t": "But tens of thousands of old DNS servers are still on the 'Net, and tools now exist that can redirect any domain for everyone who relies on them, within minutes. That's not good."
+        },
+        {
+          "s": "leo",
+          "t": "He handled it so responsibly. There's no reason to criticize him. He couldn't have known ISPs would be so slow, and once patches go out, people know something's up."
+        },
+        {
+          "s": "steve",
+          "t": "Whatever ISPs' reasons, not wanting downtime, or the guy with the password quit, we'll now see isolated horror stories against unpatched servers. And it's very easy to tell whether a server is exploitable, so the holdouts are drawing fire to themselves."
+        },
+        {
+          "s": "leo",
+          "t": "You can check with one of these tools?"
+        },
+        {
+          "s": "steve",
+          "t": "Set up a domain, ask the server for fake machines in it, and watch the queries arrive at your servers. You instantly know whether it's exploitable."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Kaminsky presented the full details at Black Hat on August 6, 2008, confirming the attack described here. Source port randomization became standard, and the episode sped up deployment of DNSSEC, which cryptographically signs DNS records. The root zone was signed in 2010."
+        },
+        {
+          "s": "leo",
+          "t": "Next week, a Q&A. Thank you, Steve."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Before DNS, how did Internet machines convert names into IP addresses?",
+      "options": [
+        "Each machine downloaded a single master hosts.txt file by FTP",
+        "They asked the root servers",
+        "Each user memorized the addresses",
+        "Routers stored every name"
+      ],
+      "answer": 0,
+      "explain": "The NIC maintained the master file."
+    },
+    {
+      "q": "Why does DNS normally use UDP instead of TCP?",
+      "options": [
+        "A tiny query fits in one packet, and TCP's handshake and teardown would add many packets",
+        "UDP is encrypted",
+        "TCP can't reach port 53",
+        "UDP is harder to spoof"
+      ],
+      "answer": 0,
+      "explain": "UDP's lack of a handshake also makes spoofing easier."
+    },
+    {
+      "q": "What does query source port randomization add to DNS security?",
+      "options": [
+        "About 16 more bits that a spoofer must guess, on top of the 16-bit transaction ID",
+        "Encryption of replies",
+        "Digital signatures",
+        "A longer TTL"
+      ],
+      "answer": 0,
+      "explain": "Dan Bernstein's djbdns always did it."
+    },
+    {
+      "q": "What makes the \"BailiWicked\" attack so much worse than older DNS poisoning?",
+      "options": [
+        "It forces queries for made-up names and slips in fake name servers for an entire domain",
+        "It changes a single record when it expires",
+        "It cracks the root servers",
+        "It requires physical access"
+      ],
+      "answer": 0,
+      "explain": "The fake records are \"in bailiwick,\" so the server accepts them."
+    },
+    {
+      "q": "What is the best protection for a user whose ISP hasn't patched?",
+      "options": [
+        "Switch to a randomizing DNS service like OpenDNS and check for SSL on sensitive sites",
+        "Clear the browser cache",
+        "Use a longer password",
+        "Turn off the firewall"
+      ],
+      "answer": 0,
+      "explain": "Typing https:// also makes a fake site fail."
+    },
+    {
+      "q": "Why couldn't the exploit be easily ported to Windows?",
+      "options": [
+        "Windows no longer allowed full raw sockets for forging source addresses",
+        "Windows lacks UDP",
+        "Windows had no DNS client",
+        "Windows encrypts DNS"
+      ],
+      "answer": 0,
+      "explain": "Steve had campaigned against XP's raw sockets."
+    }
+  ]
+}

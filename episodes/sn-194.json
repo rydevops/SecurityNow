@@ -1,0 +1,334 @@
+{
+  "number": 194,
+  "title": "Listener Feedback #65",
+  "subtitle": "A Q&A on Conficker's domains, brute-forcing public keys, SSDs, microkernels and what Conficker does",
+  "date": "2009-04-30",
+  "description": "Twelve questions clarifying the Conficker episodes and more: why generated domains cost the author almost nothing, why you can't brute-force a public key, whether SpinRite helps an SSD (no), Windows creeping into ATMs and breweries, a Microsoft-bashing rebuttal, what a microkernel is, how to tell if you're infected with the MRT, what Conficker's E variant actually does, and a gracious apology or two. Plus Firefox and Blackberry fixes, and IronKey gaining VeriSign one-time passwords.",
+  "transcript": "https://www.grc.com/sn/sn-194.txt",
+  "audio": "http://media.GRC.com/sn/SN-194.mp3",
+  "chapters": [
+    {
+      "title": "News: Firefox, IE8 and a Blackberry PDF Flaw",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Firefox updates are coming fast: we're now at 3.0.10 after 3.0.9, fixing a critical text-rendering buffer overflow, so update. And Microsoft has added IE8 to Microsoft Update; I got the offer at Starbucks. I felt it wasn't ready for primetime, and I'm fully on Firefox now, using IE8 only to reach Microsoft's update site."
+        },
+        {
+          "s": "steve",
+          "t": "Also a critical Blackberry PDF vulnerability: viewing a malicious PDF on a Blackberry can let it be taken over until you update. PDFs have become enormously complex, with JavaScript support and a reader hundreds of megabytes in size, so flaws are unsurprising."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite and Solid-State Drives",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jose asked whether SpinRite helps a new laptop's SSD. No, there's no benefit: SpinRite is all about mechanics and magnetics, neither of which exists in an SSD, which is exactly why good SSDs are so reliable. I bought a Samsung 64GB SLC drive rated at a two-million-hour MTBF."
+        },
+        {
+          "s": "steve",
+          "t": "You can buy poor SSDs, cheap multi-level-cell thumb drives, but you get what you pay for. Hard drives aren't disappearing; they're mature and cheap, ideal for bulk data like photos and music, with SSDs for the boot and application drive where I/O speed matters."
+        },
+        {
+          "s": "leo",
+          "t": "The Corsair SSD I put in a MacBook Pro is amazing, load and transcode times roughly twice as fast, mostly from the near-zero access time."
+        },
+        {
+          "type": "fact",
+          "title": "SSD reliability vs SpinRite",
+          "t": "SpinRite diagnoses and refreshes magnetic sectors on spinning disks; flash storage has no heads or platters to degrade that way. SSDs have their own wear concerns (limited write cycles, managed by the drive's controller), but SpinRite's magnetic-media techniques simply don't apply to them."
+        }
+      ]
+    },
+    {
+      "title": "Why Generated Domains Cost Almost Nothing",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Elaine asks the first question: if Conficker generates 50,000 domain names, don't they all have to be registered, costing someone half a million dollars a day?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question I should have asked. The worm generates a huge pool of possible names from the date, and everyone, authors and defenders, knows the algorithm. Each day the worm tries only a random subset. To block updates, the good guys must register all 50,000 names (across 110 TLDs) every day; the author needs to register just one."
+        },
+        {
+          "s": "leo",
+          "t": "He knows ahead of time which the worm might pick."
+        },
+        {
+          "s": "steve",
+          "t": "Everyone does, but some worms will randomly hit that one registered domain, get the update, and then spread it to peers over the peer-to-peer network. That asymmetry, register-one versus block-all, is what makes it so clever, and it became the template for later botnets."
+        }
+      ]
+    },
+    {
+      "title": "You Can't Brute-Force a Public Key",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Doug asks why you couldn't brute-force Conficker's private key with distributed computing, feeding known data through the public key and trying private keys until one matches."
+        },
+        {
+          "s": "steve",
+          "t": "Not even close, for two reasons. We've discussed brute-forcing symmetric keys: even a 128-bit symmetric key has so many combinations that it's infeasible, and symmetric crypto is fast. Public-key crypto is agonizingly slow (heavy exponentiation), which is why it's only ever used to encrypt a small symmetric key."
+        },
+        {
+          "s": "steve",
+          "t": "And asymmetric keys must be far longer, 1024 or 2048 bits, to match a 128-bit symmetric key's strength. So you'd try a vastly larger key space, with each attempt enormously costly in time. Nobody brute-forces public keys; they look for flaws in the algorithm instead."
+        },
+        {
+          "type": "fact",
+          "title": "Why key lengths differ",
+          "t": "A 2048-bit RSA key isn't \"16 times\" a 128-bit symmetric key; the two resist completely different attacks (factoring vs exhaustive search). RSA needs those long keys because its underlying problem can be attacked with number-theory shortcuts, while brute force against either remains hopeless."
+        }
+      ]
+    },
+    {
+      "title": "Windows in Breweries and ATMs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Russell, 19 years in process automation, chased Conficker out of a brewery whose Windows HMIs (operator screens) were on the corporate network, though the PLCs that actually run the valves aren't Windows. Pipeline and pharmaceutical control systems he works on aren't Internet-connected."
+        },
+        {
+          "s": "steve",
+          "t": "Right, the danger there isn't Windows running the UI, it's connecting it; a rogue laptop brings in the infection."
+        },
+        {
+          "s": "leo",
+          "t": "And Paul found one of his bank's three ATMs sitting at a Windows XP Ctrl-Alt-Del login screen."
+        },
+        {
+          "s": "steve",
+          "t": "That's exactly what disheartens me: Windows creeping into inappropriate places. The brewery at least keeps Windows only on the UI; the valves run on non-Windows control systems. A consumer-facing ATM running Windows is truly wrong."
+        }
+      ]
+    },
+    {
+      "title": "A Microsoft-Bashing Rebuttal",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark pushes back on the Microsoft-bashing, arguing most infections come from lazy users who don't patch or turn off security, and that Windows is targeted simply because it has the market share."
+        },
+        {
+          "s": "steve",
+          "t": "Fair points, and I never blame Microsoft for having bugs, software is genuinely hard. I blame their policies: putting scripting in email, scripting in Windows metafiles, and moving GDI into the kernel so a bad JPEG becomes a kernel overflow instead of a contained user-space crash. Those were expedient choices with dramatic security consequences."
+        },
+        {
+          "s": "steve",
+          "t": "And separately, there are places you simply shouldn't run Windows, or any big consumer OS, at all. ATMs and reactor controls belong on industrial-strength operating systems with none of the consumer fluff. Even Windows CE/Embedded is just a stripped-down version of the same pile, not rewritten for the job."
+        },
+        {
+          "s": "leo",
+          "t": "I run a radio show for normal users, and I tell them they shouldn't have to be security experts; because Windows makes them one, I suggest alternatives."
+        }
+      ]
+    },
+    {
+      "title": "What a Microkernel Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill praises NeXT (now the heart of OS X) for porting seamlessly across 68030, Intel, PPC and ARM thanks to its microkernel, while Microsoft packed everything into kernel space for '90s performance. What's a microkernel?"
+        },
+        {
+          "s": "steve",
+          "t": "A microkernel is a very small, trusted core providing only the essentials, memory management, process and thread creation, the scheduler, which is easier to make provably secure because it's small. Everything else, even traditional OS services, runs outside as non-trusted modules using that core."
+        },
+        {
+          "s": "steve",
+          "t": "The payoff: all the bloat that accumulates over time lives in user space, outside the kernel, so bugs in it can't compromise the whole system. Windows instead moved things like GDI into the kernel for speed, so their inevitable bugs become kernel-level problems."
+        },
+        {
+          "s": "leo",
+          "t": "Windows 7 claims a more modular kernel now, and Microsoft's answer to legacy compatibility is virtualization, bundling XP Mode in a VM."
+        },
+        {
+          "s": "steve",
+          "t": "Windows 7 also finally drops 16-bit support, so XP-in-a-VM is how they keep that old code running without breaking anything."
+        }
+      ]
+    },
+    {
+      "title": "Can You Trace the Domain Registrants?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andy and Peter both ask: couldn't you track the Conficker authors by who registered the domains, following the money even through stolen cards?"
+        },
+        {
+          "s": "steve",
+          "t": "With 50,000 names a day and only a handful needing registration, and no identity-bearing SSL involved (Conficker uses plain unencrypted HTTP, with only the payload encrypted), it's easy to register a domain completely anonymously. The author could bounce through TOR, his own network, or his own Conficker fleet, and forge an identity with many registrars."
+        },
+        {
+          "s": "leo",
+          "t": "And a chatroom point: you don't always have to register a domain, you can infect a computer already serving it, though here the random names mean registration is required."
+        }
+      ]
+    },
+    {
+      "title": "IronKey Gains VeriSign One-Time Passwords",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill Everson reports the IronKey secure USB drive now supports VeriSign one-time passwords via a firmware update, so he can log into PayPal with either the football or the IronKey."
+        },
+        {
+          "s": "steve",
+          "t": "VeriSign opened up an SDK for this, and there's also a VeriSign iPhone app, VIP Access, plus support for many other phones, that generates the one-time passwords. You register its credential ID with any provider using VeriSign as its back end."
+        },
+        {
+          "s": "leo",
+          "t": "Point of order: putting it on your iPhone is a little less secure, since whoever gets the phone gets the token."
+        }
+      ]
+    },
+    {
+      "title": "How to Tell If You Have Conficker",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill Gearhiser says the Conficker episode left out the most important part: how do you know if you've got it?"
+        },
+        {
+          "s": "steve",
+          "t": "One sign: Conficker blocks DNS to security sites like Symantec.com and McAfee. But the direct test uses the Malicious Software Removal Tool every Windows machine has, updated monthly. Click Start, Run, type MRT.exe, hit Enter, and run a full (deep) scan, Conficker has been in its detection list for months."
+        },
+        {
+          "s": "steve",
+          "t": "When MRT opens, check the version in the title, it should say the current month (mine says April 2009). An old month means Windows Update isn't working."
+        }
+      ]
+    },
+    {
+      "title": "What Conficker Actually Does",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "D. Larson and Todd both ask what Conficker actually does once installed, is it logging keystrokes, stealing data?"
+        },
+        {
+          "s": "steve",
+          "t": "Until the E variant, Conficker mostly just existed, infecting, updating, staying alive, establishing a beachhead across millions of machines (the MRT alone has removed it from over 10 million). It was a delivery mechanism waiting for a purpose."
+        },
+        {
+          "s": "steve",
+          "t": "Now E is monetizing: it installs the Waledac spam botnet (by the Storm worm authors) and the \"Spyware Protect 2009\" scareware that nags you into paying $49.95 for nothing. E also restored the original MS08-067 exploit to spread aggressively again, apparently because the quieter later variants were shrinking its population."
+        },
+        {
+          "s": "leo",
+          "t": "Like Internet startups, build the user base first, then monetize."
+        }
+      ]
+    },
+    {
+      "title": "An Apology to Government Staff",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Barry, a state agency CISO, objects to the remark that Steve hasn't seen a smart government person."
+        },
+        {
+          "s": "steve",
+          "t": "I apologize, that's not what I meant, and many government people wrote in. I was thinking of legislators I see interviewed who are clueless about this, not the skilled people like Barry doing the actual security work under tight budgets and bureaucracy. As he notes, the Pentagon machines were probably Internet-connected to serve contractors, and security staff who warned about it were likely overruled."
+        }
+      ]
+    },
+    {
+      "title": "\"Monkeys Can Program,\" and How Steve Put VB on the Map",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sam, a 16-year-old programming student, takes gentle issue with the line that Visual Basic \"allows monkeys to program.\""
+        },
+        {
+          "s": "steve",
+          "t": "I said a monkey could program VB, not that VB programmers are monkeys. And a confession: I'm largely credited with putting Visual Basic on the map. When its product manager demoed it to me, I was blown away, dragging controls onto a form and wiring up events, and wrote three enthusiastic InfoWorld columns."
+        },
+        {
+          "s": "steve",
+          "t": "One of my developers said, \"This is really bad, anybody can write Windows programs now.\" On her European tour, doors opened for her because people wanted to see what Steve was so breathless about. So it was tongue-in-cheek; VB has a real place, and good VB code can be as rich as any."
+        },
+        {
+          "s": "leo",
+          "t": "Coding is coding. But I think kids should still learn Assembler, or Python; it's valuable to understand what's going on underneath."
+        },
+        {
+          "s": "steve",
+          "t": "Pascal was designed by Niklaus Wirth to teach programming, and I wish it had survived instead of C. Understanding the machine level, via something like a PDP-8 emulator used in courses, is worthwhile, if you can delay gratification."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does generating 50,000 domains a day cost Conficker's author almost nothing?",
+      "options": [
+        "The worm only tries a random few, and the author needs to register just one that some worms will hit, while defenders must register all of them",
+        "The author registers all 50,000 but gets a bulk discount",
+        "The domains are free because they're never actually registered",
+        "The worm shares one domain among all copies"
+      ],
+      "answer": 0,
+      "explain": "Both sides know the daily name pool; to block updates defenders must pre-register every name, but the author registers only one, which some worms randomly reach and then propagate the update peer-to-peer."
+    },
+    {
+      "q": "Why is brute-forcing a public (RSA) key infeasible even with distributed computing?",
+      "options": [
+        "The keys are far longer (1024-2048 bits) and each public-key operation is agonizingly slow, so the key space is astronomically large and costly to search",
+        "Public keys change every second",
+        "The private key is stored only offline",
+        "RSA keys can't be tested without the plaintext"
+      ],
+      "answer": 0,
+      "explain": "Asymmetric crypto is both very slow per operation and uses much longer keys than symmetric ciphers, so brute force would take effectively forever; attackers seek algorithm flaws instead."
+    },
+    {
+      "q": "Why won't SpinRite benefit a solid-state drive?",
+      "options": [
+        "SpinRite works on mechanical and magnetic storage, which an SSD doesn't have",
+        "SSDs are read-only",
+        "SpinRite can't see USB-connected drives",
+        "SSDs are already encrypted"
+      ],
+      "answer": 0,
+      "explain": "SpinRite's techniques address spinning platters and magnetic sectors; flash has no heads or magnetism, which is why good SSDs are so reliable and need no SpinRite."
+    },
+    {
+      "q": "What is the key advantage of a microkernel operating-system design?",
+      "options": [
+        "Only a small trusted core runs privileged; other services run outside it, so their bugs can't compromise the whole system",
+        "It runs faster than any other design",
+        "It needs no device drivers",
+        "It cannot be ported to new CPUs"
+      ],
+      "answer": 0,
+      "explain": "A microkernel keeps the trusted, provably-secure code small and pushes everything else (and its inevitable bloat and bugs) into non-trusted user space, limiting the damage a flaw can do."
+    },
+    {
+      "q": "How can a Windows user check whether they're infected with Conficker?",
+      "options": [
+        "Run MRT.exe (the Malicious Software Removal Tool) via Start, Run and do a deep scan",
+        "Reboot in safe mode and look for new files",
+        "Disconnect from the network for 24 hours",
+        "Reinstall Windows"
+      ],
+      "answer": 0,
+      "explain": "Every Windows machine has the monthly-updated MRT, which has detected Conficker for months; running a full scan (and checking the tool shows the current month) confirms status."
+    },
+    {
+      "q": "What did Conficker's E variant begin doing that earlier variants did not?",
+      "options": [
+        "Monetizing: installing the Waledac spam botnet and \"Spyware Protect 2009\" scareware, and resuming the original MS08-067 exploit to spread",
+        "Encrypting the victim's hard drive for ransom",
+        "Deleting itself from all machines",
+        "Logging keystrokes to steal banking passwords"
+      ],
+      "answer": 0,
+      "explain": "Earlier variants mainly existed to persist and spread; E installed a spam botnet and nagware to generate money and restored aggressive exploitation of the original unpatched vulnerability."
+    }
+  ]
+}

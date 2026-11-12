@@ -1,0 +1,726 @@
+{
+  "number": 104,
+  "title": "Listener Feedback Q&A #22",
+  "subtitle": "Two years in: certificate authorities, U3 drives and more",
+  "date": "2007-08-09",
+  "description": "At the two-year mark, Steve hints at GRC's first commercial security product since SpinRite and finds Microsoft's CardSpace quietly installed in XP. Listeners ask about free SSL certificates and the ballooning list of trusted authorities, text-message logins, whether full formats help drives, form spam, public proxies versus TOR, fake PayPal pages, drive encryption and bad bits, Audible's regional catalogs, memory \"cleaners,\" video exploits, removing U3 from thumb drives, and knowledge-question CAPTCHAs.",
+  "transcript": "https://www.grc.com/sn/sn-104.txt",
+  "audio": "http://media.GRC.com/sn/SN-104.mp3",
+  "chapters": [
+    {
+      "title": "Two Years of Security Now!",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Two years, 104 episodes, and since Steve never misses one, exactly two years."
+        },
+        {
+          "s": "steve",
+          "t": "People who know me ask how Leo gets Steve to do this. They know how busy I am. But I really enjoy it, and nothing has been so good for spreading the word about SpinRite as listeners telling their stories."
+        },
+        {
+          "s": "leo",
+          "t": "You've been committed to security ever since you discovered spyware on your system. This extends your pro bono work, like ShieldsUP! and SecurAble."
+        },
+        {
+          "s": "steve",
+          "t": "And I haven't told anyone yet, even you: I'm getting ready to start my first commercial security product. Not counting ChromaZone, a wacky screensaver, it's the first serious thing since SpinRite, and GRC will publish it."
+        },
+        {
+          "s": "leo",
+          "t": "You discovered spyware when ZoneAlarm caught something phoning home."
+        },
+        {
+          "s": "steve",
+          "t": "ZoneAlarm alerted me to a little piece of junk the Windows version of WinZip had installed. Weeks later came a report of something that sounded worse. It wasn't as bad as it sounded, but it was really bad, so I wrote the free OptOut."
+        },
+        {
+          "s": "steve",
+          "t": "As far as I know, the term \"spyware\" came from a phone call between me and ZoneAlarm cofounder Gregor Freund, when we said, \"This is spyware.\""
+        },
+        {
+          "s": "leo",
+          "t": "Then it grew bigger than you wanted, and you ceded the field to Lavasoft's Ad-Aware."
+        },
+        {
+          "s": "steve",
+          "t": "As long as they kept a free version. It's like the antivirus business: every day something new. That doesn't fit my approach."
+        },
+        {
+          "type": "fact",
+          "title": "PKZIP, not WinZip",
+          "t": "Steve corrects this next week: the junk was the \"tsadbot\" ad component bundled with the Windows version of PKZIP, not WinZip."
+        },
+        {
+          "type": "fact",
+          "title": "The word \"spyware\"",
+          "t": "The word appeared on Usenet as early as 1995, but it came into wide use around 2000, when Zone Labs used it in a press release, the same period as Steve's OptOut."
+        }
+      ]
+    },
+    {
+      "title": "CardSpace Slips Into XP",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two quick notes. I always choose Custom in Windows Update, to see what Microsoft is giving my machine. On an XP system I saw an update mention CardSpace. Wait, that's Vista."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft has slipped CardSpace into XP, and we all have it. There's now a CardSpace item in XP's Control Panel where you can create information cards."
+        },
+        {
+          "s": "leo",
+          "t": "Refresh my memory."
+        },
+        {
+          "s": "steve",
+          "t": "It's Microsoft's single sign-on, a very nice user interface for something like OpenID, which Microsoft promised to support as a back end. It was originally called InfoCard."
+        },
+        {
+          "s": "leo",
+          "t": "How does it relate to Passport? I still use that for Expedia."
+        },
+        {
+          "s": "steve",
+          "t": "Some Microsoft sites require Passport. Microsoft wanted it everywhere, but nobody else did. With something as open as OpenID behind CardSpace, it could be a very nice front end."
+        },
+        {
+          "s": "steve",
+          "t": "I'd care about Vista in a few years. But with it in XP, essentially everyone has it now. I think I saw an update to it, not the install. I don't know anyone using cards yet. But with OpenID behind it, it'd be completely open, documented and free."
+        },
+        {
+          "type": "fact",
+          "title": "How it arrived",
+          "t": "CardSpace reached XP as part of Microsoft's .NET Framework 3.0, which Windows Update offered to XP users."
+        }
+      ]
+    },
+    {
+      "title": "A One-Hour SpinRite Fix",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Second, after Mick's three-month run, Dan Morales wrote that SpinRite didn't take long for him."
+        },
+        {
+          "s": "leo",
+          "t": "When it sank in that you meant three months, I was like, what?"
+        },
+        {
+          "s": "steve",
+          "t": "He bought SpinRite 6.0 on July 28th, the day after his Dell Dimension 8400's Western Digital 160-gig drive crashed during a summer rainstorm. SpinRite blasted through it in an hour, and after a reboot his XP desktop came back."
+        },
+        {
+          "s": "steve",
+          "t": "It saved almost 100 gigs of music and the first three months of pictures of his nephew. He noticed my testimonial page at SpinRite.info hasn't been updated in a while. He's right. I've been sharing stories here instead."
+        },
+        {
+          "s": "leo",
+          "t": "You're starting the cult of SpinRite."
+        },
+        {
+          "s": "steve",
+          "t": "What troubles me is what a small percentage of PC users we reach. Think of all the people told, \"Reformat your drive,\" losing their whole life's photos."
+        },
+        {
+          "s": "leo",
+          "t": "I mention it on the radio show too. Apparently there's a drinking game: every time I recommend SpinRite, they have a root beer."
+        }
+      ]
+    },
+    {
+      "title": "Free Certificates and Too Many Authorities",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's a mod 4 Q&A, and I get to read. I'm a trained professional."
+        },
+        {
+          "s": "steve",
+          "t": "And you don't blow wind into the mic. I need a pop filter."
+        },
+        {
+          "s": "leo",
+          "t": "Question 1: David Lauery says CAcert.org offers free SSL certificates. Thawte used to do something similar before VeriSign bought it. What about free certificates versus VeriSign's expensive ones?"
+        },
+        {
+          "s": "steve",
+          "t": "A certificate from an authority your browser doesn't trust doesn't work. SSL gives you two things: encrypted traffic, and verification that the site is who it says it is."
+        },
+        {
+          "s": "steve",
+          "t": "When you go to https://grc.com, the browser checks my VeriSign certificate against the authorities it already trusts. They're vouching that whoever pays every couple of years claiming to be GRC.com really is."
+        },
+        {
+          "s": "steve",
+          "t": "CAcert's own page says it's hoping to get its authority installed in browsers. Until then its certificates wouldn't be trusted."
+        },
+        {
+          "s": "leo",
+          "t": "They're nowhere in the chain of trust."
+        },
+        {
+          "s": "steve",
+          "t": "Now look at the list. In IE, go to Tools, Internet Options, the Content tab, Certificates, then Trusted Root Certification Authorities. The scroll thumb used to be much bigger. Now you can hardly grab it."
+        },
+        {
+          "s": "steve",
+          "t": "I wrote some down: Dirección General de la Policía, a Japanese local government PKI, ChamberSign for chambers of commerce, a TW government root, maybe Taiwan, the Hong Kong Post Office, a public notary root, and a Turkish authority, TÜRKTRUST."
+        },
+        {
+          "s": "leo",
+          "t": "In Firefox it's Tools, Advanced, Encryption, View Certificates, then the Authorities tab. It's organized better, but it's similar. Chambers of Commerce, AOL Time Warner, even the Turkish one."
+        },
+        {
+          "s": "steve",
+          "t": "Here's what upsets me. Without any warning, we trust anybody signed by any of these. The more authorities you trust, the lower your security."
+        },
+        {
+          "s": "leo",
+          "t": "Presumably they validate somehow. But who is \"Autoridad de Certificación Firmaprofesional\"?"
+        },
+        {
+          "s": "steve",
+          "t": "A shady authority could be caught and removed. But I see root certificate updates arrive constantly, spreading more random, bizarre trust."
+        },
+        {
+          "s": "leo",
+          "t": "They also expire and need updating."
+        },
+        {
+          "s": "steve",
+          "t": "In 2029. It's still a problem."
+        },
+        {
+          "s": "leo",
+          "t": "It bothers me that CAcert, which won't charge, can't get in, while those who charge do."
+        },
+        {
+          "s": "steve",
+          "t": "This argues against my grumbling about VeriSign's price. I'm glad VeriSign jumps through hoops to verify me, because I want everyone verified. I want a signature to mean something. So who decides these authorities deserve my full trust?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft gives the certificates to Windows, so hopefully Microsoft decided. There's been an explosion of authorities in five years. It used to be VeriSign, Thawte and a few well-known companies. Now it's the Hong Kong Post Office."
+        },
+        {
+          "s": "leo",
+          "t": "You're sounding provincial, Steve. But nobody looks at these. We just trust Microsoft, or Firefox. CAcert offers a way to add its certificate to IE yourself, but most people won't, so your site wouldn't be trusted."
+        },
+        {
+          "s": "steve",
+          "t": "And Firefox shows the same list because these are OS-level, with an API letting the browser show them."
+        },
+        {
+          "s": "leo",
+          "t": "And presumably Apple does the same on the Mac."
+        },
+        {
+          "type": "fact",
+          "title": "Separate stores",
+          "t": "Firefox actually keeps its own list of trusted authorities, maintained by Mozilla, separate from Windows' store. That's why the lists looked similar but were organized differently. Browser makers have since removed authorities caught misbehaving, including TÜRKTRUST's mis-issued certificates in 2013."
+        }
+      ]
+    },
+    {
+      "title": "A Cell Phone as Second Factor",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Next, Wes Trexler on LogMeIn's two-factor authentication. Instead of another dongle, LogMeIn can text a code to your cell phone when you log in. Any issues?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Our multifactor episode mentioned people doing this, and it's clever. It's something you have, and something you already have. No extra dongle, given that you own a cell phone."
+        },
+        {
+          "s": "steve",
+          "t": "When you set up the account, you give your number. The server texts a code, which you type into the browser, like an email loop over a phone."
+        },
+        {
+          "s": "leo",
+          "t": "You can spoof outgoing caller ID, but I don't think you can spoof incoming. Services like ShoZu verify this way too."
+        },
+        {
+          "s": "steve",
+          "t": "A hacker would have to intercept a call going to you, beyond most script kiddies."
+        },
+        {
+          "s": "leo",
+          "t": "Tom Cruise could do it in \"Mission Impossible,\" but nobody else."
+        },
+        {
+          "type": "fact",
+          "title": "Later lesson",
+          "t": "Intercepting texts turned out to be easier than it seemed. Criminals now take over phone numbers through SIM-swap scams and weaknesses in the phone network's SS7 signaling, so text codes are considered the weakest form of second factor."
+        }
+      ]
+    },
+    {
+      "title": "Does a Full Format Help a Drive?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Alexander Wood reformats his main system every eight to nine months to eliminate \"bit rot.\" A full NTFS format takes over an hour on his 240-gig RAID 0 array of two 120-gig Seagates, now almost four years old."
+        },
+        {
+          "s": "leo",
+          "t": "Does the format check every sector and make his drives last longer, or does heavy writing hurt them? They seem fine, likely because they're well cooled, mounted on suspension from Silentpcreview.com, never moved and well ventilated. And he backs up to an external drive."
+        },
+        {
+          "s": "steve",
+          "t": "He's being very careful. RAID 0 spans the two drives into one virtual 240-gig array."
+        },
+        {
+          "s": "steve",
+          "t": "A quick format just builds the file structure, assuming every sector is good. Modern drives relocate sectors on the fly, so they look perfect from outside."
+        },
+        {
+          "s": "steve",
+          "t": "The slow full format hails from old RLL and MFM drives, which had flags in sector headers marking defective sectors. A high-level format, which builds the file system, as opposed to a low-level physical format, read every sector looking for those flags and checking for errors."
+        },
+        {
+          "s": "steve",
+          "t": "So for those hours the drive reads every sector, cylinder by cylinder. It almost certainly finds no flags. But as we discussed, reading lets the drive notice a sector needing growing correction and spare it out before it becomes uncorrectable."
+        },
+        {
+          "s": "steve",
+          "t": "So yes, a full format helps against what he calls bit rot, much like SpinRite. That's also why SpinRite takes hours. It just takes that long to read that much data."
+        },
+        {
+          "s": "leo",
+          "t": "And you can't do a true low-level format anymore."
+        },
+        {
+          "s": "steve",
+          "t": "The command's still there, but in most cases it just zeroes sectors. It doesn't rewrite headers."
+        },
+        {
+          "s": "steve",
+          "t": "Running SpinRite is even better. A format wipes the file system, so he must back up, verify the backup and restore. And if the format hits an unreadable sector, it can't fix it. SpinRite folds all that into one operation."
+        }
+      ]
+    },
+    {
+      "title": "Is Form Mail Dead?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Schreiber in San Francisco says spammers send spam through his website's email form. His host won't let him use a CAPTCHA. Can he outwit them?"
+        },
+        {
+          "s": "steve",
+          "t": "Unfortunately, it's a problem now. I haven't implemented reCAPTCHA myself, though I want a reason to."
+        },
+        {
+          "s": "leo",
+          "t": "In my experience, CAPTCHAs don't stop them. On TWiT.tv, spammers created real email accounts, waited for my validation emails, clicked the links, and spammed. They sat on sleeper accounts for months."
+        },
+        {
+          "s": "leo",
+          "t": "I think spammers hire very cheap labor in developing countries to fill out every form they find. They want comment spam: links on a web page. Mark's form goes to email, and our lab's form does too, but we still get it."
+        },
+        {
+          "s": "steve",
+          "t": "Because your site is highly ranked. Search engines assume you link to them because you think they're good."
+        },
+        {
+          "s": "leo",
+          "t": "We use no-follow links, so they get no Google juice, and they still do it. They don't care whether it works or check where the form goes. They just do it everywhere."
+        }
+      ]
+    },
+    {
+      "title": "Public Proxies Versus TOR",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chad in Charlotte, North Carolina, a great place for barbecue, wants more anonymity. He's seen lists of public proxy servers, labeled anonymous, high anonymity and transparent. Are they dangerous?"
+        },
+        {
+          "s": "steve",
+          "t": "I think TOR, The Onion Router, has solved this. We did an entire episode on it. It's open source and built for anonymity, and even malicious TOR servers can't take much advantage. The exit server at the edge does decrypt your traffic and could see what you're doing, but anonymity from third parties is the usual goal."
+        },
+        {
+          "s": "steve",
+          "t": "With public proxy lists, there's no way to know the operators' motives. Bad guys may get their proxies listed hoping people use them."
+        },
+        {
+          "s": "leo",
+          "t": "They may watch your traffic."
+        },
+        {
+          "s": "steve",
+          "t": "They could see your login passwords, grab your account and use it to spam. TOR is configurable and designed to keep any single bad server from abusing you."
+        },
+        {
+          "s": "leo",
+          "t": "There's another use: Canadians appear to be in the U.S. through a proxy, to download things only available there."
+        },
+        {
+          "s": "steve",
+          "t": "And from our mailbag two weeks ago, TOR lets you pick a specific exit server, giving you a fixed IP that isn't yours."
+        }
+      ]
+    },
+    {
+      "title": "Could a Fake PayPal Page Steal Your Login?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Patrick in Sartell, Minnesota asks about man-in-the-middle attacks. Sites bounce you to PayPal to enter your password, then back. Could a malicious site, say badguydiamonds.com, show a fake https PayPal page and relay your login in the background? Will https always show the true site?"
+        },
+        {
+          "s": "steve",
+          "t": "First, the PayPal Security Key's number is only valid for 30 seconds."
+        },
+        {
+          "s": "leo",
+          "t": "So even if they get it, they can't reuse it."
+        },
+        {
+          "s": "steve",
+          "t": "But he makes a very good point. When a site offers PayPal, I choose it, because I love not giving them my information. Then I'm redirected, and I'm freaked out. How do I know I really went to PayPal?"
+        },
+        {
+          "s": "leo",
+          "t": "Can you trust the address bar?"
+        },
+        {
+          "s": "steve",
+          "t": "No. If something bad got onto your machine, say through a script exploit, it could add PayPal.com to your hosts file, which your system checks before DNS. Your browser would show PayPal.com without being at PayPal."
+        },
+        {
+          "s": "leo",
+          "t": "That's a complicated hack. They'd have to get into your system."
+        },
+        {
+          "s": "steve",
+          "t": "But if they also installed a trusted root certificate, they could sign the bogus site's certificate, and nothing would notice. It requires a client-side attack. I always check the certificate is valid and from PayPal, signed by, you know, the Hong Kong Post Office."
+        },
+        {
+          "s": "steve",
+          "t": "I also use a different email address with PayPal than I give anyone else. When I'm redirected, PayPal recognizes me from its cookie and knows that address, which the third-party site doesn't. So it must be PayPal."
+        }
+      ]
+    },
+    {
+      "title": "Drive Encryption and a Bad Bit",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul Elliott in Yorkshire, U.K. asks about \"native hard drive encryption\" and the TPM from Episode 99. In an encrypted file, one corrupted bit loses the whole file. Could one bad bit cost a whole encrypted drive?"
+        },
+        {
+          "s": "steve",
+          "t": "A few things got mixed together. I mentioned noticing, I believe from Hitachi, the first native drive encryption announcement. You'd give a password at power-up, presumably through the BIOS. It would be the key for on-the-fly encryption and decryption as sectors go on and off the drive, so nothing unencrypted is ever stored. That needs BIOS support, and it's leading-edge."
+        },
+        {
+          "s": "steve",
+          "t": "Separately, on my ThinkPad, the TPM checks my fingerprint and supplies the password that unlocks the hard drive. Locking isn't encrypting. Many laptops can lock the drive, but the manufacturer can unlock it, with a court order for law enforcement, say."
+        },
+        {
+          "s": "leo",
+          "t": "So there's a back door."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. Data recovery companies can get past it too. It's much harder, but not as strong as encrypting the whole drive, which is why I love that idea."
+        },
+        {
+          "s": "leo",
+          "t": "But what about one bad bit?"
+        },
+        {
+          "s": "steve",
+          "t": "Drives know sectors, not files. Each 512-byte, 4,096-bit sector would be encrypted separately. An uncorrectable error would cost that sector, and some of SpinRite's benefit, recovering all but a bad run of bits, would be lost. Presumably you'd decrypt up to the bad spot."
+        },
+        {
+          "s": "steve",
+          "t": "So there's some fragility, but only 512 bytes, and only if the sector was uncorrectable."
+        },
+        {
+          "s": "leo",
+          "t": "So it's roughly the same as an unencrypted drive."
+        }
+      ]
+    },
+    {
+      "title": "Why Audible Doesn't Have That Book",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Leo Sallen in Australia, I like the name, owns SpinRite and has used it to save himself. He couldn't find \"On Intelligence\" on Audible Australia. I'll answer this one, and Audible doesn't sponsor this podcast."
+        },
+        {
+          "s": "leo",
+          "t": "Audible is a bookstore limited by what publishers allow. In Britain, Harry Potter is read by Stephen Fry. In the U.S., it's Jim Dale, because they're different publishers. \"On Intelligence\" may have a different Australian publisher that doesn't do audio. Book publishing isn't an international marketplace yet."
+        },
+        {
+          "s": "leo",
+          "t": "You can still buy it in print. Steve, where did you get your copy?"
+        },
+        {
+          "s": "steve",
+          "t": "I have it on both the Sony Reader and the Palm, from ereader.com."
+        },
+        {
+          "s": "leo",
+          "t": "Which works if you're in the U.S. It's tough being an international podcast."
+        }
+      ]
+    },
+    {
+      "title": "Is There a SpaceMonger for RAM?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Vijay in London reclaimed gigabytes with SpaceMonger, which I just recommended on the radio show. Is there something friendlier than Task Manager's process list for seeing what's using RAM?"
+        },
+        {
+          "s": "steve",
+          "t": "RAM is a different animal because it's dynamic. Apps use differing amounts, and you can't tell one to use less, unless it's sloppy. A photo editor might not release memory after you close a big photo. That's a memory leak."
+        },
+        {
+          "s": "steve",
+          "t": "For a decade, every Windows version has cleaned up an app's leaked resources when it terminates. So ending processes you don't need frees their memory. Nothing can really clean up memory. Some hokey \"RAM optimizers\" have a bad reputation. If you have the problem, just restart Windows."
+        },
+        {
+          "s": "leo",
+          "t": "Windows 95, 98 and ME had pathetic memory managers and fragmented RAM. XP's is fine, and there's no point compacting RAM. Nothing can fix a leak if the OS won't release the block."
+        }
+      ]
+    },
+    {
+      "title": "Can a Video Infect You?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bill Rakosnik of Bishop, Georgia: can I get a virus from a YouTube video? Is video an executable?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't know of a current case, but yes. Years ago RealMedia had problems with malicious videos."
+        },
+        {
+          "s": "leo",
+          "t": "The video's harmless. It exploits a flaw in the player, like WinAmp had."
+        },
+        {
+          "s": "steve",
+          "t": "Or in the codec, the decompressor. Bogus data in the video triggers a buffer overrun or stack overflow in the player, which lets code inside the file run. So you'd be infected by watching it. Once found, it gets patched."
+        },
+        {
+          "s": "leo",
+          "t": "YouTube uses Flash. I don't know of Flash exploits right now, but someone could find one. It's just like the JPEG flaw."
+        },
+        {
+          "s": "leo",
+          "t": "Keep your codecs and players up to date. That's harder, since only the OS updates automatically. Who knows how RealPlayer updates?"
+        },
+        {
+          "s": "steve",
+          "t": "Macs and Windows update themselves constantly, but non-primetime code can sit around years after its exploits are known. That's how people exploit systems now."
+        },
+        {
+          "s": "leo",
+          "t": "You've said that as Windows improves, attackers look for other vectors."
+        },
+        {
+          "s": "steve",
+          "t": "Other low-hanging fruit."
+        },
+        {
+          "type": "fact",
+          "title": "Flash",
+          "t": "Flash Player later became one of the most exploited programs on the web. Adobe ended support for it at the end of 2020, and browsers removed it."
+        }
+      ]
+    },
+    {
+      "title": "Getting U3 Off a Thumb Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marcus Kaczmarek, I think, of Kenai, Alaska shares my worry about U3, which auto-launches applications when you plug in a flash drive. How does he get it off?"
+        },
+        {
+          "s": "steve",
+          "t": "I was going to talk enthusiastically about U3 as a portable, virtual-machine-like technology. I bought some to experiment with. But for a security person, plugging it in and having it do a bunch of stuff to the machine without asking? It should come neutered, with features you enable manually. I'm not helping these people."
+        },
+        {
+          "s": "leo",
+          "t": "They could have used an autorun.inf file you could delete. Instead it mounts a virtual CD."
+        },
+        {
+          "s": "steve",
+          "t": "There's nothing evil about U3. But you just want two or four gigs of storage, say from SanDisk, and it runs the first time it touches your machine. That's backwards."
+        },
+        {
+          "s": "leo",
+          "t": "Can you just delete the Launchpad?"
+        },
+        {
+          "s": "steve",
+          "t": "No. It's pernicious. You must use it to remove itself, because it has to uninstall the virtual CD that protects part of it from accidental erasure. Look in its menu for the option to remove it completely."
+        },
+        {
+          "s": "leo",
+          "t": "At U3.com/uninstall, it says \"Wait, you're about to throw out the part that makes your drive smart,\" and asks you to think before you click and \"make the smart choice.\" You pick your drive brand, give a reason, I suggest \"U3 sucks,\" and jump through hoops. It lists every benefit and never says why you'd remove it."
+        },
+        {
+          "s": "steve",
+          "t": "Obviously you're there because you've decided. And I know people will write that they love having Skype and crypto tools go with them to any computer. That's my only commercial for them. It should be passive until you enable it on that device."
+        },
+        {
+          "s": "leo",
+          "t": "To be fair, you don't have to buy U3. But you get them by accident."
+        },
+        {
+          "s": "steve",
+          "t": "SanDisk promotes it as value-added. I don't want it."
+        },
+        {
+          "s": "leo",
+          "t": "PC Magazine's \"Keeping U3 Under Control\" says hold Shift while inserting the drive, as with autorun, and it won't launch. Then in Device Manager you can disable the U3 drive. That doesn't free the space, but you could then run the removal tool you downloaded by pulling teeth from U3.com. Reformatting doesn't remove it. Does it install anything on your system?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't think so. That's what they promote. But apps that aren't U3-aware may make changes, so you have to U3-ize them. It's an uphill battle."
+        },
+        {
+          "s": "leo",
+          "t": "If you listen to Security Now!, you know it's a bad idea to let anything install anything."
+        },
+        {
+          "type": "fact",
+          "title": "U3's end",
+          "t": "SanDisk phased out U3 in 2009. Security researchers had shown that its fake CD-ROM drive could be reprogrammed to run malware automatically when plugged in."
+        }
+      ]
+    },
+    {
+      "title": "Knowledge-Question CAPTCHAs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last, Sam Osborne of Bathurst, New South Wales: why not ask general knowledge in an image? \"What's the capital of Australia?\" Type \"enough\" backwards. Spell out the number 8. A color between red and yellow that's also a fruit."
+        },
+        {
+          "s": "steve",
+          "t": "I have a hard time understanding questions like that."
+        },
+        {
+          "s": "leo",
+          "t": "A color between red and yellow that's also a fruit, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "I hope Sydney is the capital of Australia."
+        },
+        {
+          "type": "fact",
+          "title": "Capital check",
+          "t": "It's Canberra. Sydney is Australia's largest city, but Canberra was purpose-built as the capital."
+        },
+        {
+          "s": "steve",
+          "t": "There are two kinds: knowledge and puzzles. With knowledge, people have to know the answer. Puzzles have language problems. Spell 8 in what language? He spelled \"colour\" with a u, and I spell it \"color.\" And what does \"between red and yellow\" mean?"
+        },
+        {
+          "s": "steve",
+          "t": "Mostly, you can't make a large enough collection. A spammer will fail the CAPTCHA, capture the puzzles, and build a solver that knows them all."
+        },
+        {
+          "s": "steve",
+          "t": "As we said, a true CAPTCHA must be fully automated: an algorithm generates random characters, renders and distorts them, rather than someone writing every question. Anything from a limited set can be brute-forced. Goodbye CAPTCHA."
+        },
+        {
+          "s": "leo",
+          "t": "Steve, it's always a pleasure. You make it all clear."
+        },
+        {
+          "s": "steve",
+          "t": "Here we are at the end of our second year. Thank you to our listeners for the email, the questions on GRC's Security Now! page, buying SpinRite to support the show, and donating to TWiT."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks for two great years, Steve, and to many more."
+        },
+        {
+          "s": "steve",
+          "t": "Next week we start our third year with Episode 105."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why wouldn't a free CAcert certificate work for most visitors?",
+      "options": [
+        "Browsers didn't include CAcert among their trusted authorities",
+        "It used weaker encryption",
+        "It expired daily",
+        "It was illegal"
+      ],
+      "answer": 0,
+      "explain": "CAcert hoped to be added to browsers later."
+    },
+    {
+      "q": "Why did Steve worry about the growing list of trusted root authorities?",
+      "options": [
+        "Browsers silently trust anything any of them signs",
+        "They slow the computer",
+        "They cost users money",
+        "They expire too soon"
+      ],
+      "answer": 0,
+      "explain": "The more authorities you trust, the lower your security."
+    },
+    {
+      "q": "How does a full (not quick) format help a drive?",
+      "options": [
+        "Reading every sector lets the drive spot weak ones and swap in spares",
+        "It rewrites the drive's firmware",
+        "It realigns the heads",
+        "It defragments the drive"
+      ],
+      "answer": 0,
+      "explain": "SpinRite does the same without erasing your files."
+    },
+    {
+      "q": "How could malware make a fake site appear to be PayPal.com in your browser?",
+      "options": [
+        "By adding PayPal.com to your hosts file and installing a rogue root certificate",
+        "By changing PayPal's servers",
+        "By guessing your password",
+        "By turning off https"
+      ],
+      "answer": 0,
+      "explain": "It requires getting onto your computer first."
+    },
+    {
+      "q": "How can a video file infect a computer?",
+      "options": [
+        "Bad data can exploit a flaw in the player or codec",
+        "Video files are programs",
+        "Through the speakers",
+        "Only if it's longer than an hour"
+      ],
+      "answer": 0,
+      "explain": "The video itself isn't executable."
+    },
+    {
+      "q": "What's the main problem with knowledge-question CAPTCHAs?",
+      "options": [
+        "A limited set of questions can be captured and answered by a program",
+        "Questions are too easy for humans",
+        "They need audio",
+        "They're too slow to load"
+      ],
+      "answer": 0,
+      "explain": "A true CAPTCHA is generated automatically."
+    }
+  ]
+}

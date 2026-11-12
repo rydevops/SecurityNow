@@ -1,0 +1,631 @@
+{
+  "number": 133,
+  "title": "TrueCrypt v5.0",
+  "subtitle": "Whole-drive encryption with TrueCrypt 5",
+  "date": "2008-02-28",
+  "description": "In the second half of their look at whole-drive encryption, Steve walks Leo through TrueCrypt 5.0's new system encryption: its mandatory recovery CD, test boot, encryption while Windows runs, its careful handling of a deliberately damaged sector, benchmarks showing it's faster than no encryption, its minimal footprint, the hibernation gap, sector sparing and wear leveling, and traveler mode for USB drives. A listener's story also explains why ChkDsk is no substitute for SpinRite.",
+  "transcript": "https://www.grc.com/sn/sn-133.txt",
+  "audio": "http://media.GRC.com/sn/SN-133.mp3",
+  "chapters": [
+    {
+      "title": "TrueCrypt 5 Arrives",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This is the much-anticipated TrueCrypt 5 episode. It came out February 5th."
+        },
+        {
+          "s": "leo",
+          "t": "I was bemoaning the lack of a Mac version, saw it was coming on their page, and two days later got about a hundred emails saying it's here."
+        },
+        {
+          "s": "steve",
+          "t": "I'm very, very impressed. We loved version 4 when we covered it in 2006. Whole-drive encryption has captured our audience's imagination, especially laptop users. But encrypting your whole system drive is dicier. If something goes wrong, it's game over."
+        },
+        {
+          "s": "steve",
+          "t": "I've even created bad sectors to see how it handles uncorrectable damage. Bottom line, they've nailed it. I'll use this without hesitation anywhere whole-drive encryption is useful."
+        },
+        {
+          "s": "steve",
+          "t": "And we'll cover traveler mode, which segues into our show in two weeks with IronKey's founder about his hardware-encrypted USB drive."
+        },
+        {
+          "s": "steve",
+          "t": "We're recording this the day after last week's episode, since Leo's in Vancouver. I'll join him there next month. So there's no new security news, and we'll catch up next time."
+        }
+      ]
+    },
+    {
+      "title": "A Data Drive That Froze Windows",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jeff Locke in Portsmouth, Virginia found his computer completely frozen, unresponsive until he cut the power. On reboot, Windows reported an error on his data drive, which holds his family photos, his software collection and the files for several websites he manages."
+        },
+        {
+          "s": "steve",
+          "t": "ChkDsk said it fixed the problem. But the system froze again an hour later. With the data drive unplugged, the computer ran fine for three days."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite spent four hours on the drive, recovered what appeared to be a bad sector, and he was back in action. He also says SpinRite's purchase was the easiest he's ever had, and he had no concern about my shopping cart's security."
+        },
+        {
+          "s": "leo",
+          "t": "Interesting that a data drive can freeze Windows. You'd think it's separate."
+        },
+        {
+          "s": "steve",
+          "t": "Disk drivers are down in the kernel, where the real plumbing is. In some places in the kernel there's no multitasking. So a deep kernel problem, like a driver stalled trying to read, or tangled up when the drive doesn't respond as expected, can lock up the whole system."
+        },
+        {
+          "s": "steve",
+          "t": "If Microsoft could reproduce it reliably, they could fix it. But they don't see it often enough. It's like the blue screen of death."
+        }
+      ]
+    },
+    {
+      "title": "ChkDsk Isn't SpinRite",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "And ChkDsk wasn't enough. Doesn't it do the same thing as SpinRite? A softball for you, Mr. Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Around DOS 5 or 6, when I wrote InfoWorld's TechTalk column, I had dinner with two Microsoft VPs, Brad Silverberg, a super guy whom I really liked, and Brad Chase, for whom I had less affection. They were about to introduce ScanDisk and were self-conscious, since SpinRite had existed for years."
+        },
+        {
+          "s": "steve",
+          "t": "They assured me it wouldn't affect SpinRite sales, since ScanDisk does nothing like SpinRite. And for the rest of my life I've been explaining to customers why they're different."
+        },
+        {
+          "s": "leo",
+          "t": "We assume, hey, it's a disk checker."
+        },
+        {
+          "s": "steve",
+          "t": "You could say ScanDisk and ChkDsk want the drive to have a problem, so they have something to do. When SpinRite's done, it doesn't want the drive to have a problem. SpinRite repairs. They find file system problems, like lost clusters they put in a file. When they hit a low-level problem, they don't fix it. They just say, ow, we can't finish."
+        },
+        {
+          "s": "steve",
+          "t": "When DOS 6 added drive compression, I had to kill SpinRite 3 just before release because it didn't support it."
+        },
+        {
+          "s": "leo",
+          "t": "DriveSpace."
+        },
+        {
+          "s": "steve",
+          "t": "DriveSpace wouldn't compress a drive with even one problem, and many drives had them. So we sold a lot of SpinRite to fix drives so DriveSpace could work. Same with the FAT32 converter, which everyone wanted for its better features. Any problem, and it failed, so people bought SpinRite."
+        },
+        {
+          "type": "fact",
+          "title": "History",
+          "t": "DOS 6.0's compression was called DoubleSpace. After a patent lawsuit by Stac Electronics, Microsoft replaced it with DriveSpace in DOS 6.22."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt's Modes, and What's New",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "DriveSpace turned your drive into one big file, and one error ruined everything. Does TrueCrypt's whole-drive encryption do that?"
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt runs in several modes. It can take a file anywhere, on a hard drive or USB thumb drive, and mount it as a drive letter, encrypting and decrypting on the fly. It can also encrypt a partition or an entire non-system drive. It's always been able to do those."
+        },
+        {
+          "s": "steve",
+          "t": "What's new in 5 is pre-boot authentication and encrypting the system drive itself. That's tricky, as we've discussed for two weeks. If your C: drive is encrypted, Windows' code and registry are encrypted. You need something outside to decrypt Windows until it gets going, and a driver inside Windows that seamlessly takes over."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt is still a small download, and all open source. Their documentation even lays out the format of the headers before an encrypted partition, so they don't rely on obscurity anywhere. They've gone security-happy."
+        }
+      ]
+    },
+    {
+      "title": "Generating the Keys",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's how committed they are to safety, way beyond FREE CompuSec, and part of why I switched. In TrueCrypt you choose to encrypt the system drive. First it asks whether you single-boot or multi-boot."
+        },
+        {
+          "s": "steve",
+          "t": "It supports the Windows multi-boot loader. For Linux, you can't have GRUB in the boot sector, but apparently you can move GRUB to a partition."
+        },
+        {
+          "s": "leo",
+          "t": "GRUB and LILO, and I think any Linux boot loader, can live in a partition instead of the master boot record."
+        },
+        {
+          "s": "steve",
+          "t": "Then, as in earlier versions, it shows a window of hex randomness and tells you to move your mouse around, the more erratically the better."
+        },
+        {
+          "s": "steve",
+          "t": "It's so overkill, and typical of these guys. They don't tell you they're also gathering random data from the clock, serial numbers, globally unique IDs and more. You could unplug your mouse and it would still be massively random."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't that because computers' pseudorandom number generators are predictable if you know where they start?"
+        },
+        {
+          "s": "steve",
+          "t": "That mattered for keys generated dynamically, like SSL connections, where Windows' poor entropy pool allowed guesses about the next key. Here it's just feel-good. Don't sit there for an hour scrubbing your mouse, bouncing it on the desk and spinning it by its tail. It's not possible for TrueCrypt to give you a bad key."
+        }
+      ]
+    },
+    {
+      "title": "The Mandatory Recovery CD and Test Boot",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Then, unlike FREE CompuSec, it builds an ISO file you must burn to a CD, your recovery disk. On my scrap test machine, I tried clicking Next. It said, wait, you didn't do it. You have to burn it and prove it. So I have a pile of coasters. Then I found a way to fake it out."
+        },
+        {
+          "s": "leo",
+          "t": "You did that on a test machine. Everyone else should make this disk."
+        },
+        {
+          "s": "steve",
+          "t": "You don't have a choice. You'd have to work hard to fake it, so don't."
+        },
+        {
+          "s": "steve",
+          "t": "The ISO is tiny. I use mini CDs. You put the disc back in, and TrueCrypt sniffs it, also verifying you got a good burn."
+        },
+        {
+          "s": "steve",
+          "t": "Next, it installs its boot loader, but encrypts nothing yet. It reboots to make sure the loader works. You must enter your password at TrueCrypt's boot screen."
+        },
+        {
+          "s": "steve",
+          "t": "I pushed it and pressed Escape, which bypasses the loader. Since nothing was encrypted, Windows came up. TrueCrypt said, good try. You cheated. Go back. It won't encrypt until you prove you can enter the password."
+        },
+        {
+          "s": "leo",
+          "t": "You're going to tell us your passphrase?"
+        },
+        {
+          "s": "steve",
+          "t": "No, I was counting on my fingers. It's 18 characters. TrueCrypt warns that passwords under 20 characters aren't considered safe, but lets you proceed. My 18 looks like the keyboard broke."
+        },
+        {
+          "s": "steve",
+          "t": "So now it's proven you have a recovery CD, that the boot loader on the first track works, and that you typed the passphrase you'll really need from now on. Only then does it encrypt."
+        }
+      ]
+    },
+    {
+      "title": "Encrypting While Windows Runs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It shows the percentage done to three decimal places and the time. You can still use Windows, but it's sluggish, with the drive light on solid. You could probably answer email, but don't render 3D or play a game."
+        },
+        {
+          "s": "steve",
+          "t": "An older machine with a 40GB Maxtor ATA drive took about two minutes per gig, so 80 minutes. A newer SATA machine did a gig a minute."
+        },
+        {
+          "s": "steve",
+          "t": "People are cavalier about drive sizes. They grumble that SpinRite took two days. But that's billions of bytes. TrueCrypt reads every sector, encrypts it, and writes it back."
+        },
+        {
+          "s": "steve",
+          "t": "Picture a veil of encryption pushed from the front of the drive through the whole partition. Part is encrypted, the rest isn't. TrueCrypt tracks where it is, decrypting on the fly any sector Windows asks for that it's already encrypted, and passing the rest through."
+        },
+        {
+          "s": "leo",
+          "t": "Is it file-aware, or sector by sector?"
+        },
+        {
+          "s": "steve",
+          "t": "Sector by sector, which you want. It covers slack space, the swap file and empty space, which is why it takes so long."
+        },
+        {
+          "s": "steve",
+          "t": "That's entirely different from TrueCrypt's container files. Every physical sector is covered. For laptops it makes so much sense. Without your passphrase, the whole drive looks like static. And you never need to wipe it to decommission it. It's a wipe in progress."
+        },
+        {
+          "s": "steve",
+          "t": "When it finishes, the computer works exactly as before."
+        },
+        {
+          "s": "steve",
+          "t": "Once I restored an unencrypted image over an encrypted drive without removing the loader. It asked for my password, which couldn't work. I pressed Escape, and Windows booted, since it was no longer encrypted. It holds your hand and verifies what it does. It's incredibly safe."
+        }
+      ]
+    },
+    {
+      "title": "Torture Test: A Deliberately Bad Sector",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So I really stressed it. About 18MB into the drive, I found a free cluster, sector 37299. Using my own proprietary tools for SpinRite development, I damaged it."
+        },
+        {
+          "s": "steve",
+          "t": "I can create a bad sector that ECC can't recover, that the drive refuses to read and refuses to relocate. It's just dead."
+        },
+        {
+          "s": "leo",
+          "t": "You'd better not let that tool get loose. That's a good tool."
+        },
+        {
+          "s": "steve",
+          "t": "I went through all the hoops again, burning the CD in case I'd really need it, and started encrypting. Almost immediately it stopped with a CRC, cyclic redundancy check, error. It said this is a hardware problem, not TrueCrypt's. Don't call us, don't complain in the forums, call your computer vendor about your drive, cabling or motherboard."
+        },
+        {
+          "s": "steve",
+          "t": "But it had already encrypted 18MB, where my defragger had put Windows' files. So I rebooted, entered my passphrase, and Windows came up."
+        },
+        {
+          "s": "steve",
+          "t": "A dialog said the encryption process had been interrupted. Would I like to continue? Yes. Bang, the same error at the same sector. So it knew where it failed, and I couldn't proceed."
+        },
+        {
+          "s": "leo",
+          "t": "Shouldn't it map that sector out?"
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite would fix that for you. It might be nice if it offered to skip past the problem, but these guys are beyond careful."
+        },
+        {
+          "s": "leo",
+          "t": "They don't want you going on if there'd be problems down the road."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. So I chose \"Permanently Decrypt Volume.\" It went zip, very fast. I rebooted, pressed Escape, and Windows booted normally."
+        },
+        {
+          "s": "steve",
+          "t": "Then I tried again, hit sector 37299 again, and this time rebooted into the boot loader's options, maybe F2. One option was to decrypt the partition. After my passphrase, of course, I watched it count down rapidly from 18MB, decrypting only what had been encrypted, all outside Windows. I'm completely impressed."
+        },
+        {
+          "s": "leo",
+          "t": "So they did everything right."
+        }
+      ]
+    },
+    {
+      "title": "Faster Than No Encryption",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now a killer one. FREE CompuSec had 9 percent overhead. So I wrote a batch file timing, with EndTimer, Windows defrag, then Vopt, then Windows defrag again."
+        },
+        {
+          "s": "steve",
+          "t": "My test image went from Service Pack 2 through those 95 patches and many reboots, so it was nicely fragmented."
+        },
+        {
+          "s": "steve",
+          "t": "Unencrypted, the first Windows defrag took 8 minutes 35.765 seconds. Vopt took 4 minutes 31 seconds, and the final defrag 1 minute 54 seconds. A rerun took 9 minutes 1 second for the first. Head seeking and disk rotation vary the timing."
+        },
+        {
+          "s": "steve",
+          "t": "Then I encrypted the image and ran it again. The first defrag took 6 minutes 13.531 seconds."
+        },
+        {
+          "s": "leo",
+          "t": "What?"
+        },
+        {
+          "s": "steve",
+          "t": "I couldn't believe a smaller number with encryption. So I restored, re-encrypted and ran it again: 6 minutes 21.765 seconds. Final sanity check without encryption: back up to 8 minutes 21 seconds."
+        },
+        {
+          "s": "leo",
+          "t": "Any theory?"
+        },
+        {
+          "s": "steve",
+          "t": "Their web page mentions 100 percent pipelining. Apparently it was once too slow, and boy did they fix it. They ought to send that to Microsoft."
+        },
+        {
+          "s": "leo",
+          "t": "Typical open source: take that, Microsoft."
+        },
+        {
+          "s": "steve",
+          "t": "It runs faster under TrueCrypt than without. Overhead won't cause anyone headaches."
+        },
+        {
+          "s": "leo",
+          "t": "People used to say DriveSpace made reads faster too, since there was less data."
+        },
+        {
+          "s": "steve",
+          "t": "That's not it here. Nothing changes size. It's an in-place symmetric cipher."
+        }
+      ]
+    },
+    {
+      "title": "Overkill Ciphers, and Retiring Old Ones",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It uses AES. And more overkill: you can chain multiple ciphers, like AES followed by Twofish. Come on, folks, no one needs that."
+        },
+        {
+          "s": "leo",
+          "t": "TrueCrypt users are very paranoid."
+        },
+        {
+          "s": "steve",
+          "t": "I don't want to promote it. 256-bit AES is absolutely fine. It's all anyone needs."
+        },
+        {
+          "s": "steve",
+          "t": "What I love is how they handle older 64-bit-block ciphers, from the days of Triple DES. They say those are no longer safe. TrueCrypt still opens volumes made with them for compatibility, but will never create a volume with a cipher whose block is less than 128 bits."
+        }
+      ]
+    },
+    {
+      "title": "A Minimal Footprint",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "As a tweaker who wants a minimal environment, I wondered whether TrueCrypt has to run at startup and sit in the tray, if all you want is whole-drive encryption. Say it's an office computer, where you just want a passphrase at boot so a thief gets nothing. That's what led me to FREE CompuSec."
+        },
+        {
+          "s": "steve",
+          "t": "The answer: you need nothing but the TrueCrypt.sys driver, which does the on-the-fly decryption. Remove the rest from startup. The tray program is only for mounting other volumes and so on."
+        },
+        {
+          "s": "steve",
+          "t": "And since the boot loader can decrypt the drive, you could even remove encryption without ever needing TrueCrypt again. It's just beautiful."
+        }
+      ]
+    },
+    {
+      "title": "What the Recovery CD Can Do",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "At the boot loader, you can bypass it, or enter your passphrase and boot, or permanently decrypt the drive right there. You can also decrypt from within Windows. The recovery CD can do more, which is why it's mandatory."
+        },
+        {
+          "s": "steve",
+          "t": "Remember last week's listener whose Dreamweaver activation overwrote part of the first track. Without the CD, he'd have lost his entire system. The CD restores the boot loader if it's damaged."
+        },
+        {
+          "s": "steve",
+          "t": "If your correct passphrase is suddenly rejected, something has mangled the master key and other critical data. The CD can restore that."
+        },
+        {
+          "s": "steve",
+          "t": "If malware infects the boot area, like the track-zero rootkits we've discussed, you'd be forced to run the rootkit to boot your drive. Instead, the CD provides the boot code itself, hooks Interrupt 13, and boots Windows without touching track zero at all."
+        },
+        {
+          "s": "steve",
+          "t": "If Windows itself won't start, the CD, like the boot loader, can permanently decrypt the drive."
+        },
+        {
+          "s": "steve",
+          "t": "And it holds a copy of whatever was originally on track zero, so you can restore it and remove TrueCrypt completely from the low area of the drive."
+        },
+        {
+          "s": "steve",
+          "t": "Encrypting your whole drive is scary. But they've made it so safe and bulletproof."
+        }
+      ]
+    },
+    {
+      "title": "The Hibernation Gap and No Password Recovery",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "As we said in the last two episodes, the hibernation file isn't encrypted. FREE CompuSec does it and is proud of it, so it must be tricky. It's a copy of your RAM and hardware state, written as Windows' last gasp, after most of Windows has shut down."
+        },
+        {
+          "s": "steve",
+          "t": "The TrueCrypt developers know. It's first on their list of what's next."
+        },
+        {
+          "s": "steve",
+          "t": "It's no problem for systems that don't hibernate, like the corporate desktops I care about, which just shut down. And in TrueCrypt's protect-you-from-yourself fashion, it completely disables hibernation when you encrypt the system."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "TrueCrypt 5.1, released in March 2008, added support for hibernation on encrypted systems, encrypting the hibernation file."
+        },
+        {
+          "s": "steve",
+          "t": "Also, there's no password recovery anywhere, not even on the CD. That's what you want. Password recovery would be a huge vulnerability. It's entirely up to you never to forget it."
+        }
+      ]
+    },
+    {
+      "title": "Sector Sparing and Wear Leveling",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The last two are edge cases: hard drive sector sparing and the wear leveling in better solid-state media."
+        },
+        {
+          "s": "steve",
+          "t": "When a hard drive sector becomes marginal, needing more error correction than the drive likes, the drive corrects it one last time and swaps in a spare. But the old sector still holds its data. You can't reach it through normal means, but manufacturers can. They're only 512 bytes, but they accumulate."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt encrypts every sector in use, but not sectors the drive has retired. They keep whatever they had."
+        },
+        {
+          "s": "steve",
+          "t": "Flash wears out in a given spot. Remember my buddy Mark Thompson of AnalogX burned out a solid-state drive in a couple of hours by putting the Windows swap file on it. So with wear leveling, rewriting the same spot may actually write a different physical location, leaving the old contents intact. These drives also have spare sectors."
+        },
+        {
+          "s": "steve",
+          "t": "So TrueCrypt might read a sector, encrypt it, and write it back somewhere else, leaving the original unencrypted data in place."
+        },
+        {
+          "s": "steve",
+          "t": "These are edge cases, and probably not a huge concern. To their credit, TrueCrypt's site addresses wear leveling. I didn't see sector sparing, but I understand it's a problem."
+        },
+        {
+          "s": "steve",
+          "t": "If you're concerned, start with a brand new drive or thumb drive and encrypt it first. Then unencrypted data is never written to it."
+        },
+        {
+          "s": "leo",
+          "t": "Does encryption help with wear leveling?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Wear leveling happens in the hardware, underneath, in large blocks. TrueCrypt isn't aware of it and can't do anything about it. When you read what you wrote, you get it back. But electronically the old data may still be there, accessible only to NSA-type people who really know this stuff."
+        }
+      ]
+    },
+    {
+      "title": "Traveler Mode for Thumb Drives",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Finally, traveler mode is spectacular. A nice wizard puts TrueCrypt's EXE and SYS driver, including 64-bit support, on the unencrypted portion of a USB drive, along with an autorun INF file."
+        },
+        {
+          "s": "steve",
+          "t": "Plug it into a computer, and it runs TrueCrypt from the thumb drive and prompts for your password. Then you get a second drive letter for the encrypted contents inside."
+        },
+        {
+          "s": "steve",
+          "t": "But you need admin privileges, since it loads the TrueCrypt.sys driver, and non-admins can't load drivers."
+        },
+        {
+          "s": "steve",
+          "t": "My 4GB thumb drive is mostly freeware and utilities I don't care about. But it also holds my master WiFi keys and other things I do. So I made an encrypted container file, which can be any size. Mine is called innersanctum.tc."
+        },
+        {
+          "s": "steve",
+          "t": "That way you only need admin rights for the inner sanctum, and can reach everything else on any computer. On a 4GB drive, maybe make the encrypted part half a gig and leave the rest open."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Since Windows 7, Windows no longer runs AutoRun programs from USB drives, so traveler disks have to be started by hand."
+        }
+      ]
+    },
+    {
+      "title": "Open Source Wins, with a Caveat",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "And it's free from TrueCrypt.org."
+        },
+        {
+          "s": "steve",
+          "t": "All free. And, Leo, open source. I know what that means to you."
+        },
+        {
+          "s": "leo",
+          "t": "People ask how open source could compete with commercial software. There's no question it can."
+        },
+        {
+          "s": "steve",
+          "t": "This is better than anything I've seen commercially. I recommend it without hesitation."
+        },
+        {
+          "s": "steve",
+          "t": "The one caveat: it's very new, from February 5th. It already went to 5.0a, shrinking the boot loader so it shares track zero more easily with other things. Depending on how cautious you are, maybe give it a few months. But it's being heavily downloaded, and I've never had a bad experience."
+        },
+        {
+          "s": "steve",
+          "t": "I love that it can be almost invisible, just a driver and a passphrase prompt, nothing in the tray. And it's faster than before you installed it."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "TrueCrypt's anonymous developers abruptly discontinued it in May 2014. A 2015 independent audit found no backdoors, and the open-source VeraCrypt continues the project."
+        },
+        {
+          "s": "leo",
+          "t": "Send questions for next week's Q&A to GRC.com/feedback."
+        },
+        {
+          "s": "steve",
+          "t": "People will have a week to try TrueCrypt and tell me what they think."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does TrueCrypt require before it will encrypt a system drive?",
+      "options": [
+        "A burned and verified recovery CD and a successful test boot with the password",
+        "An internet connection",
+        "A hardware key",
+        "A second drive"
+      ],
+      "answer": 0,
+      "explain": "Steve's attempt to skip the test boot with Escape was caught."
+    },
+    {
+      "q": "What did TrueCrypt do when it hit Steve's deliberately damaged sector?",
+      "options": [
+        "It stopped, reported a hardware error, and could cleanly decrypt the part it had already encrypted",
+        "It skipped the sector",
+        "It corrupted Windows",
+        "It repaired the sector"
+      ],
+      "answer": 0,
+      "explain": "The boot loader alone counted down and decrypted the first 18MB."
+    },
+    {
+      "q": "What did Steve's defrag benchmarks show about TrueCrypt's speed?",
+      "options": [
+        "The encrypted system was faster than the unencrypted one",
+        "About 9 percent slower",
+        "Twice as slow",
+        "No difference at all"
+      ],
+      "answer": 0,
+      "explain": "TrueCrypt credits its pipelining."
+    },
+    {
+      "q": "What's the minimum TrueCrypt needs running for whole-drive encryption?",
+      "options": [
+        "Just the TrueCrypt.sys driver",
+        "The full app in the system tray",
+        "The recovery CD in the drive",
+        "An Internet connection"
+      ],
+      "answer": 0,
+      "explain": "The boot loader can even decrypt the drive without the rest of TrueCrypt."
+    },
+    {
+      "q": "Why might wear leveling leave unencrypted data on a flash drive after encrypting it?",
+      "options": [
+        "The drive may write encrypted data to a different physical location, leaving the original intact",
+        "TrueCrypt skips flash drives",
+        "Flash can't be encrypted",
+        "Wear leveling decrypts data"
+      ],
+      "answer": 0,
+      "explain": "Encrypting a brand new drive first avoids this."
+    },
+    {
+      "q": "Why does Steve keep only part of his thumb drive in an encrypted container?",
+      "options": [
+        "Opening TrueCrypt volumes requires admin rights, so the unencrypted part stays usable on any computer",
+        "Encryption wears out flash",
+        "Containers are limited to 512MB",
+        "To save time"
+      ],
+      "answer": 0,
+      "explain": "His container is called innersanctum.tc."
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "number": 192,
+  "title": "Listener Feedback #64",
+  "subtitle": "A Q&A on why Windows is what it is, patch failures, sandbox protection and killing Conficker",
+  "date": "2009-04-16",
+  "description": "Twelve questions and a rare Steve rant: why embedded real-time operating systems, not Windows, belong in kiosks and control systems; why so many machines can't patch (pirated Windows, broken Windows Update); how Sandboxie actually contains a buffer-overflow exploit; why inserting a CD freezes Windows; whether you could register a Conficker domain to kill it (no, it checks signatures); VPN information leakage before the tunnel comes up; and a tidy cookie-management scheme. Plus a Conficker honeypot, a client-side SSL flaw, and the scareware economy.",
+  "transcript": "https://www.grc.com/sn/sn-192.txt",
+  "audio": "http://media.GRC.com/sn/SN-192.mp3",
+  "chapters": [
+    {
+      "title": "A Conficker Honeypot and Tarpits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I set up a little Conficker honeypot five days ago, so next week's whole episode is Conficker, with a complete technical timeline. It's beautifully engineered, which I say with full disapproval of what it does: its update payloads carry cryptographic digital signatures, so no outsider can hijack it by feeding it a fake payload."
+        },
+        {
+          "s": "steve",
+          "t": "My copy has been probing the LAN with ARP queries, scattering UDP packets across the Internet while avoiding certain Class A ranges, and stumbling into tarpits run by the National Center for Supercomputing Applications, which accept its connection but hold it open forever. The author is responsive enough that if tarpits became a problem, he'd update the payload to abort such connections."
+        },
+        {
+          "s": "leo",
+          "t": "Would you call Conficker well-designed?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, beautifully, and it's a bad thing causing real harm. I respect the authorship without condoning it."
+        }
+      ]
+    },
+    {
+      "title": "Patch Tuesday, VMware, Phorm and Scareware",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "April's Patch Tuesday brought eight fixes, including a new client-side HTTPS flaw: a Windows user lured to a malicious secure site could be compromised through the exchanged certificate, a buffer/integer-overflow at heart, but a new vector. And yes, the promised SSL-protocol episode is coming; I prioritize what's newsy, like Conficker."
+        },
+        {
+          "s": "steve",
+          "t": "VMware shipped its first big security update in a while across Workstation, Server, Player and ESX, patch it, since many run VMware precisely for isolation. And the European Commission is opening legal proceedings against BT over its undisclosed Phorm web-tracking trials, citing lack of consent."
+        },
+        {
+          "s": "steve",
+          "t": "Brian Krebs wrote about the scareware economy: bogus pop-ups warn of infection, people install fake antivirus, and affiliate referral fees run around 50%, netting operators tens or hundreds of thousands a month. Where there's strong economic motivation, abuse follows."
+        },
+        {
+          "s": "leo",
+          "t": "And EVDO \"unlimited\" plans cap around 5GB; streaming video eats that fast, and providers will cut you off for violating the terms."
+        },
+        {
+          "type": "fact",
+          "title": "The scareware payoff",
+          "t": "Rogue-antivirus affiliate programs paid high commissions for each victim who installed and \"registered\" the fake product, turning scareware into an organized, profit-driven industry. The money, not technical novelty, is what made it spread."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite Dual Rescue on a Mac",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A SpinRite anecdote from Rabbe Sandelin. His nieces' iBook wouldn't boot, with important documents on it. A Mac recovery tool saw something but recovered nothing. He pulled the drive, ran SpinRite on a PC (it warned the drive was about to die), and after two days it reported some unrecoverable and many repaired sectors."
+        },
+        {
+          "s": "steve",
+          "t": "The drive still wouldn't mount on the Mac, so he ran the Mac recovery tool again, and now it found all the files. SpinRite fixed the low-level sector problems, then the file-system tool could rebuild the file system."
+        },
+        {
+          "s": "leo",
+          "t": "That's the one-two punch: a low-level tool makes the sectors readable, then a file-system tool takes over. Same pattern on Windows."
+        }
+      ]
+    },
+    {
+      "title": "\"Running Windows Isn't Professional?\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Phil in Montreal pushes back on last week's remark that control systems shouldn't run Windows, calling it security-by-obscurity and doubting other OSes or programmers are any better."
+        },
+        {
+          "s": "steve",
+          "t": "Phil misunderstands me, I wasn't comparing Windows to Linux, Mac or BeOS. There's a whole other class, real-time operating systems (RTOSes) for embedded use, that are vastly more robust. A kiosk or a Vegas marquee showing a Windows error dialog is appalling; that job belongs on a low-volume embedded RTOS, not on this second-Tuesday-of-the-month patch treadmill."
+        },
+        {
+          "s": "steve",
+          "t": "I salute Microsoft for keeping the Windows \"Hindenburg\" aloft while dragging decades of backward compatibility forward, just as Intel still carries 8008-era instructions. We use both for that compatibility. But step back: look what we put up with, and the license even disclaims all responsibility. No other industry gets away with that."
+        },
+        {
+          "s": "leo",
+          "t": "So Windows is a can of spaghetti because it must support all that legacy?"
+        },
+        {
+          "s": "steve",
+          "t": "It's not unsolvable, modern processors are powerful enough to wrap everything in a protected emulation layer. This was a rare rant, but it's how I really feel."
+        },
+        {
+          "type": "fact",
+          "title": "Why embedded systems differ",
+          "t": "A real-time or embedded OS runs a small, fixed, audited set of software with no general-purpose attack surface, so it isn't a worm target and doesn't need constant patching. That's genuinely different from \"security through obscurity\" on a general-purpose consumer OS."
+        }
+      ]
+    },
+    {
+      "title": "A Page of Steve's Software Picks",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dan in Rochester asks Steve to make a page listing the software he recommends, Taskbar Shuffle, allSnap, Image for Windows, so listeners don't have to search transcripts."
+        },
+        {
+          "s": "steve",
+          "t": "It's on my to-do list. I don't want a \"Pick of the Week\" format, because then you feel obligated to produce something; I want to be driven by finding genuinely excellent tools. But a favorite-software page on GRC makes sense, and I'd use it myself setting up a new machine."
+        }
+      ]
+    },
+    {
+      "title": "Is Steve Too Trusting of Plug-ins?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "J.T. in Houston says Steve is too trusting, how does he know a brand-new Firefox plug-in from an unknown author isn't a threat?"
+        },
+        {
+          "s": "steve",
+          "t": "He's probably right, I judge the motivation and the source, which isn't scientific. But an inadvertent security bug is just as likely in a big company's plug-in as an individual's, and low-usage software is a poor target: nobody's going to attack my hierarchical tab add-on."
+        },
+        {
+          "s": "steve",
+          "t": "And if an add-on has a flaw, it would most likely just become unstable and crash, at which point you remove it as \"not ready for primetime,\" closing the window of opportunity before an exploit could use it."
+        }
+      ]
+    },
+    {
+      "title": "Why Pirated Windows Can't Patch",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Taylor shares a stat: only about 4% of Conficker infections are in the US, about half are in China, partly because of widespread pirated Windows that can't get security patches."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. When Microsoft tied updates to Windows Genuine Advantage (derisively \"Genuine Disadvantage\"), machines that fail validation stopped getting fixes, so they never got October's patch and stayed vulnerable until Conficker infected them and closed the door behind itself."
+        },
+        {
+          "s": "leo",
+          "t": "4% in the US is surprisingly low; we're getting the word out, though plenty of US machines also can't update because a failed update blocked future ones."
+        }
+      ]
+    },
+    {
+      "title": "A Campus Lab That Never Updated",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Casey in Hattiesburg found a college-lab PC with auto-updates off that hadn't even reached Service Pack 3, and fixed it, wondering how many others on campus were the same."
+        },
+        {
+          "s": "steve",
+          "t": "A classic case of neglect, machines nobody owns. Someone deliberately turned auto-updates off. You might assume the campus network protects it, but Conficker now sends ARP probes across the whole subnet, so one infected laptop brought onto campus can infect protected machines from inside."
+        },
+        {
+          "type": "fact",
+          "title": "The LAN is not a trust boundary",
+          "t": "Relying on a firewall or NAT to protect internal machines fails once any device inside is compromised. Conficker's local-subnet spreading showed that an unpatched internal host can be reached from a peer that was infected elsewhere and carried in."
+        }
+      ]
+    },
+    {
+      "title": "How Sandboxie Contains an Exploit",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Nick asks: if he runs risky apps in Sandboxie under a limited account and one suffers a buffer overflow, is the injected code contained, given that many running processes are system processes?"
+        },
+        {
+          "s": "steve",
+          "t": "Nick can see system and user processes from inside the sandbox, but Sandboxie works by intercepting modifications: when a sandboxed process writes a file or registry key, it's redirected to a private copy. The malicious code thinks it's succeeding, modifying the registry, injecting into processes, but it's all a charade. On reboot or sandbox shutdown, those changes are flushed; nothing escaped."
+        },
+        {
+          "s": "leo",
+          "t": "And without Sandboxie, are system processes safe from malware?"
+        },
+        {
+          "s": "steve",
+          "t": "No, there are privilege-escalation exploits that jump to kernel code, elevate your permissions, and return with full admin rights, defeating the limited account. That requires an OS hole; malware that just runs an app generally can't elevate from a limited account, so you're safer, but a social-engineering trick (\"authenticate so we can install our driver\") hands it everything."
+        }
+      ]
+    },
+    {
+      "title": "Why a CD Freezes the Whole System",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robert asks why inserting a CD or a bad disc brings a whole computer, Mac or Windows, to a crawl."
+        },
+        {
+          "s": "steve",
+          "t": "On Windows this always annoyed me: touch the CD drive and the whole UI locks up. It's the heritage, Windows never had removable-media support originally and never did it right. The system waits while the optical drive spins up, seeks and decides if the disc is good, and nothing else proceeds. Nothing technical forces this; it's pure legacy design dragged forward."
+        },
+        {
+          "s": "leo",
+          "t": "The Mac's \"beach ball of death\" can do the same. These are blocking operations a well-designed OS should handle asynchronously."
+        }
+      ]
+    },
+    {
+      "title": "Broken Windows Update, and a Reinstall",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jesse found his mom's Vista laptop had installed no updates since November despite being set to automatic; running Update manually failed, hundreds of forum posts described the same, and the only fix was reinstalling Windows."
+        },
+        {
+          "s": "steve",
+          "t": "I've hit this too, one patch that simply won't take, no matter how many retries. I salute Microsoft for how hard on-the-fly updating is: swapping in new code, arranging it to run next boot, keeping rollbacks. But Windows Update is complex, delicate and fragile, and it breaks, yet we depend on it more every day."
+        },
+        {
+          "s": "leo",
+          "t": "I'll start telling radio listeners to check that updates are actually completing. Microsoft has a long knowledge-base page of fixes, clearing the update cache folder, editing the registry by hand, with no single cure."
+        }
+      ]
+    },
+    {
+      "title": "Blocking All HTTPS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jonathan supported a school whose IT director blocked all HTTPS, breaking GoToMeeting (which redirects to HTTPS). Why would anyone do that?"
+        },
+        {
+          "s": "steve",
+          "t": "Because HTTPS is encrypted, so it can't easily be monitored or filtered. Rather than deploy expensive proxying with custom root certificates on every browser, the director just denied it, forcing everything to plain HTTP they can inspect. You can't even log into Gmail that way."
+        },
+        {
+          "s": "steve",
+          "t": "They could whitelist GoToMeeting's fixed server IPs as an exception to the blanket block, but the policy may simply be \"we don't want you doing anything that needs that security.\""
+        }
+      ]
+    },
+    {
+      "title": "Could You Register a Domain to Kill Conficker?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Zurahn asks, legality aside, whether you could register one of Conficker's daily domains and serve an update that tells it to self-destruct."
+        },
+        {
+          "s": "steve",
+          "t": "Clever, and no. Conficker requires any incoming package to carry a valid digital signature from its authors. Reverse-engineering only yields the public key; the private key stays with the authors, so by public-key cryptography you can't forge a signed update."
+        },
+        {
+          "s": "steve",
+          "t": "It's exactly how Windows Update protects itself, signed by Microsoft's key so spoofed packages are rejected. Conficker uses the same state-of-the-art cryptography to defend itself against both white hats and rival criminals."
+        }
+      ]
+    },
+    {
+      "title": "VPN Information Leakage Before the Tunnel",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Gerco in the Netherlands notes that on boot, email clients, Skype and notifiers connect before the VPN comes up, leaking who you are and what you run to the local network."
+        },
+        {
+          "s": "steve",
+          "t": "Great question, and it's now a CryptoLink feature. CryptoLink will install a shim down in the NDIS layer, between the NIC and the rest of Windows, that blocks all traffic not running through the VPN, even before CryptoLink itself starts. So nothing, not even Windows Update, can leak until the tunnel is up."
+        },
+        {
+          "s": "leo",
+          "t": "So it's \"don't start until I'm started.\""
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. This is why I'm glad to develop it interactively, listeners' wish-list items like this go straight in. I'll build all the features first on a throwaway UI, then design the real interface last, so good ideas don't force constant UI rework."
+        }
+      ]
+    },
+    {
+      "title": "A Tidy Cookie-Management Scheme",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brad in San Diego runs a middle-ground cookie scheme in Firefox: accept all cookies (even third-party) but delete them all when the browser closes, with a whitelist of most-used domains allowed to persist. No site breaks, but unknown sites can't track you across sessions."
+        },
+        {
+          "s": "steve",
+          "t": "It's a really nice idea, and the \"keep cookies until I close the browser\" option is right in Firefox's UI, holding them in memory, never on disk. He uses the Permit Cookies add-on: a little \"C\" in the toolbar that turns green on whitelisted sites, and you click it to grant a site persistent cookies."
+        },
+        {
+          "s": "steve",
+          "t": "So: allow all cookies, flush on exit so there's no cross-session tracking, and whitelist the sites where you want persistence. Another good solution, though Flash cookies are a separate topic."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does Conficker prevent anyone, white hats or rival criminals, from hijacking it via a registered domain?",
+      "options": [
+        "It requires incoming update packages to carry a digital signature it verifies with a built-in public key",
+        "It checks the domain's registration date",
+        "It only accepts updates over an encrypted IRC channel",
+        "It ignores any domain not hardcoded at compile time"
+      ],
+      "answer": 0,
+      "explain": "Conficker verifies a cryptographic signature made with the authors' private key; reverse-engineering yields only the public key, so no one can forge a valid signed update, the same model as Windows Update."
+    },
+    {
+      "q": "How does Sandboxie contain a buffer-overflow exploit even though it can see system processes?",
+      "options": [
+        "It redirects the process's file and registry modifications to private copies, so real system changes never happen",
+        "It kills any process that overflows a buffer",
+        "It blocks all network access from sandboxed programs",
+        "It runs each sandboxed app as a different user"
+      ],
+      "answer": 0,
+      "explain": "The exploit thinks it's modifying the system, but Sandboxie intercepts and redirects all changes to a holding area that's flushed on shutdown, so nothing permanent escapes."
+    },
+    {
+      "q": "According to Steve, what should run kiosks and control systems instead of Windows?",
+      "options": [
+        "A small, robust embedded real-time operating system (RTOS) that isn't a general-purpose attack target",
+        "A different consumer OS like Linux or macOS",
+        "An older, unpatched version of Windows",
+        "Nothing; they should stay offline"
+      ],
+      "answer": 0,
+      "explain": "Steve argues for purpose-built embedded RTOSes, which run a small fixed software set and aren't worm targets, not for swapping one general-purpose consumer OS for another."
+    },
+    {
+      "q": "Why do so many Chinese PCs remain unpatched against Conficker?",
+      "options": [
+        "Widespread pirated Windows fails Genuine Advantage validation and can't receive security updates",
+        "China blocks Microsoft's update servers",
+        "Chinese Windows lacks an update feature",
+        "Antivirus is illegal there"
+      ],
+      "answer": 0,
+      "explain": "Tying updates to Windows Genuine Advantage means machines that fail validation stop getting patches, so pirated copies never got the October fix and stayed vulnerable."
+    },
+    {
+      "q": "Why does inserting a CD often freeze a Windows system?",
+      "options": [
+        "Legacy design: Windows was never built for removable media and blocks while the optical drive spins up and is evaluated",
+        "The CPU must decrypt the disc before use",
+        "Antivirus scans every file synchronously",
+        "The BIOS reboots to recognize the drive"
+      ],
+      "answer": 0,
+      "explain": "It's a heritage problem; Windows handles removable media as a blocking operation, halting the UI while the drive seeks and decides if the disc is good, with nothing technical requiring it."
+    },
+    {
+      "q": "What VPN information-leak will CryptoLink prevent, and how?",
+      "options": [
+        "Apps connecting at boot before the tunnel is up; a low-level NDIS shim blocks all non-VPN traffic until the tunnel is established",
+        "Cookies leaking through the tunnel; it strips them",
+        "The VPN password appearing in logs; it hashes it",
+        "DNS queries being cached; it clears the cache"
+      ],
+      "answer": 0,
+      "explain": "Before a VPN connects, email clients and notifiers can leak identity to the local network; CryptoLink's driver sits below Windows' stack and blocks all traffic except the VPN, even before CryptoLink starts."
+    }
+  ]
+}

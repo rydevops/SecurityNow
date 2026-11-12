@@ -1,0 +1,517 @@
+{
+  "number": 145,
+  "title": "Secunia's PSI",
+  "subtitle": "A free scanner for known holes in your installed software",
+  "date": "2008-05-22",
+  "description": "Leo's forums fall to a SQL injection attack, PayPal's one-time cards get a browser plug-in, and IE8 keeps EV display without the phishing filter. A SpinRite story with an unhappy ending shows the limits of software against physical failure. Then Steve recommends Secunia's free Personal Software Inspector, which fingerprints every program on your PC and flags versions with known vulnerabilities, with links and wizards to fix them. It found problems on every one of his machines.",
+  "transcript": "https://www.grc.com/sn/sn-145.txt",
+  "audio": "http://media.GRC.com/sn/SN-145.mp3",
+  "chapters": [
+    {
+      "title": "Leo's Site Gets Hacked",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve, I wish there were a scanner like today's for web servers. Yesterday a disgruntled user on our private TWiT forums, who was horribly offensive, got banned. About an hour later, a SQL injection attack overwrote all the data with a hacker tag. Then he did the same to another site on the same SQL server, a WordPress site. So I don't think it's the forum software. There's some vulnerability in my SQL setup."
+        },
+        {
+          "s": "leo",
+          "t": "I'm embarrassed to admit it, and I don't want to give him publicity. But script kiddies don't listen to security podcasts. I could tell it was a kit attack, something downloaded from the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "There are now botnets specializing in SQL injection attacks. Web servers are the prime target in the first half of '08. The number of attempts to compromise servers has gone way up in recent months."
+        },
+        {
+          "s": "leo",
+          "t": "If anyone finds an automated scanner that lists a web server's holes, let me know."
+        }
+      ]
+    },
+    {
+      "title": "PayPal's One-Time Cards Get Better",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week we discovered PayPal's one-time credit card numbers."
+        },
+        {
+          "s": "leo",
+          "t": "Which I've now used eight times."
+        },
+        {
+          "s": "steve",
+          "t": "I love it, with reservations. There's a Firefox plug-in as well as IE's, and both behave very well. At a checkout page, it recognizes the shipping address, billing address and card fields and fills them all in, including the one-time card number."
+        },
+        {
+          "s": "leo",
+          "t": "I didn't know that. I've been cutting and pasting from PayPal's page."
+        },
+        {
+          "s": "steve",
+          "t": "It's not compatible with the Firefox 3 beta yet, but works on Firefox 2. You authenticate with your PayPal football, and it runs a fun little code-breaking animation as it invents a card number. And the expiration is always next month."
+        },
+        {
+          "s": "leo",
+          "t": "Unless you pick the multi-use one, which expires in 2010, I think."
+        },
+        {
+          "s": "steve",
+          "t": "I subscribed to something that bills automatically unless you remember to cancel. I thought, no you won't, baby. This card is good once."
+        },
+        {
+          "s": "leo",
+          "t": "On Amazon, purchases from third-party sellers got rejected every time, maybe because the third party charges it. Or maybe my PayPal limit is low."
+        },
+        {
+          "s": "steve",
+          "t": "I've never had a rejection."
+        },
+        {
+          "s": "steve",
+          "t": "And my standard PayPal annoyance applies. I want them to charge my registered credit card, not pull from my checking account. Normally you have to override that default every time. With these cards, there's no option at all. I'll have to warn Sue, who balances my checking account. Or I could keep a balance in PayPal to draw from."
+        },
+        {
+          "s": "leo",
+          "t": "Most card issuers offer one-time numbers, but they're hard to find, almost as if they don't want you to."
+        },
+        {
+          "s": "steve",
+          "t": "None of mine do."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "PayPal later discontinued these Secure Card numbers. Some banks and services now offer \"virtual\" card numbers for the same purpose."
+        }
+      ]
+    },
+    {
+      "title": "IE8 Fixes the EV Display, and Andromeda's Real Date",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week we complained that IE7 hides the green extended validation display when you disable the phishing filter. The IE8 beta doesn't. Disable its \"safety filter,\" as they now call it, and you still get the EV display."
+        },
+        {
+          "s": "steve",
+          "t": "And I screwed up last week. \"The Andromeda Strain\" miniseries is on Memorial Day itself, Monday, May 26, with the concluding two hours on Tuesday the 27th. I checked three times. My TiVos and A&E's website agree. It's from the Scott brothers, Ridley and Tony."
+        },
+        {
+          "s": "steve",
+          "t": "Someone who had never seen it was already trashing the upcoming DVD on Amazon for destroying the 1970 classic. That was a great movie, and I've seen it many times. But a remake doesn't destroy the original."
+        },
+        {
+          "s": "leo",
+          "t": "Was that Dustin Hoffman? Or was that \"Outbreak\"?"
+        },
+        {
+          "s": "steve",
+          "t": "That was \"Outbreak,\" which I also really like."
+        },
+        {
+          "type": "fact",
+          "title": "Dates",
+          "t": "The original film of \"The Andromeda Strain\" came out in 1971."
+        }
+      ]
+    },
+    {
+      "title": "A New Peter Hamilton Trilogy",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On sci-fi, sigh, Peter Hamilton has started another trilogy."
+        },
+        {
+          "s": "leo",
+          "t": "I'm still stuck in the middle of \"Night's Dawn.\" Thank goodness it's on my Kindle, or I'd carry 80 pounds of books. The little progress dots aren't moving much."
+        },
+        {
+          "s": "steve",
+          "t": "They won't. Before seeing \"Iron Man\" a second time, I browsed Barnes & Noble's sci-fi section and saw a paperback as big as a dictionary: Peter F. Hamilton's \"The Dreaming Void.\" $29.99 there, $9.99 on Kindle."
+        },
+        {
+          "s": "steve",
+          "t": "It's set in 3589, 1,500 years after \"Pandora's Star\" and \"Judas Unchained.\" It's a standalone trilogy, but some characters carry over, so you probably need those first. From the reviews, it's another monster, with deep character development and many parallel threads. I don't have the strength right now."
+        },
+        {
+          "s": "leo",
+          "t": "But it's nice to have it waiting."
+        },
+        {
+          "s": "steve",
+          "t": "I'm rereading the third of Michael McCollum's Antares trilogy, just a fun, light space opera."
+        },
+        {
+          "s": "leo",
+          "t": "I loved that."
+        }
+      ]
+    },
+    {
+      "title": "A Listener Couple's Anniversary",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Something we've never done: Sven Thomas asked me to wish him and his wife a happy wedding anniversary on May 22. They've listened since Episode 1, enjoying everything from worms to my run-in with DoS attacks. Happy anniversary to Sven and his wife."
+        },
+        {
+          "s": "leo",
+          "t": "A geek couple. Many happy returns."
+        }
+      ]
+    },
+    {
+      "title": "SP3 Insists on Installing",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Security-wise, nothing really happened this week. But all my XP machines insisted on installing Service Pack 3, even fully patched ones."
+        },
+        {
+          "s": "steve",
+          "t": "After you update the Windows Genuine Advantage tool, it asks again about your automatic update settings. I have mine set to download and notify me, so I control when to reboot. Then a special screen promotes SP3."
+        },
+        {
+          "s": "leo",
+          "t": "I hate rebooting."
+        },
+        {
+          "s": "steve",
+          "t": "They say it's a 66MB download, but SP3 is 324MB. I have it on thumb drives, so I install it myself. My theory is Microsoft now tests everything against fully patched machines, and people who aren't current run into trouble. I've given up installing selectively."
+        },
+        {
+          "s": "leo",
+          "t": "You're downloading the full network install for IT people, which makes no assumptions. Windows Update is smarter and sends only what you need."
+        },
+        {
+          "s": "steve",
+          "t": "Very good point. And SP3 requires SP1 or SP2 first, unlike past service packs that rolled up everything. Many XP machines ship with SP2 already merged in. With so many machines, the full install on thumb drives saves me downloading it repeatedly."
+        }
+      ]
+    },
+    {
+      "title": "\"My First SpinRite Failure\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "For a twist, a SpinRite story titled \"My First SpinRite Failure.\""
+        },
+        {
+          "s": "leo",
+          "t": "You're going to tell people SpinRite didn't work?"
+        },
+        {
+          "s": "steve",
+          "t": "Matt Clipper in Phoenix has been a customer since March '06 and a fan since seeing me on The Screen Savers. He's a mechanical engineer, but family think he's in IT. He's been into computers since his grandfather bought an 8088 IBM clone when he was about 10, and he was the only one who could do anything with it."
+        },
+        {
+          "s": "steve",
+          "t": "He's used SpinRite dozens of times. But his sister's 7,200 rpm Seagate Barracuda failed, holding years of photos of her son. At first the BIOS wouldn't detect it and it wouldn't spin up. He tried freezing it and tapping it with a rubber mallet to loosen any stiction."
+        },
+        {
+          "s": "leo",
+          "t": "That's an approved procedure?"
+        },
+        {
+          "s": "steve",
+          "t": "You don't want to freeze it. But cooling it in a refrigerator, just changing its temperature, can sometimes help in real end-of-life situations."
+        },
+        {
+          "s": "leo",
+          "t": "Stiction is when the head sticks to the platter."
+        },
+        {
+          "s": "steve",
+          "t": "The head and platter are so smooth that a level of molecular bonding develops, and the head has enough leverage to keep the motor from starting. A jolt can free it. But that's more historical, and I'm surprised to see it on a newer drive."
+        },
+        {
+          "s": "steve",
+          "t": "He got it to spin up and be recognized, but couldn't read anything. SpinRite got only a few squares into recovery before the drive stopped spinning again."
+        },
+        {
+          "s": "steve",
+          "t": "So he bought a replacement logic board on eBay, matching the model, firmware version, manufacturing location and approximate date. He installed it, and no improvement. Is there any hope?"
+        },
+        {
+          "s": "steve",
+          "t": "No, Matt. You've done everything humanly possible. Cut out this chunk of the MP3 and send it to your sister, so she knows you went above and beyond. Short of a professional recovery facility that charges many thousands of dollars to take it apart, I can't think of anything else."
+        },
+        {
+          "s": "leo",
+          "t": "On the radio I explain soft errors, which undelete tools or SpinRite can fix at the file or sector level, versus hard errors, physical damage. Software can't fix physical damage."
+        },
+        {
+          "s": "steve",
+          "t": "If the heads fail, or it won't spin up, or it spins down before you reach the data, it's in really bad shape."
+        },
+        {
+          "s": "leo",
+          "t": "I love SpinRite, but I want people to understand it fixes a category of problems, not all of them."
+        },
+        {
+          "s": "steve",
+          "t": "I'm frankly surprised SpinRite does as much as it does. But if the drive really is a doorstop, no software can help."
+        },
+        {
+          "s": "leo",
+          "t": "That's why there are DriveSavers and others, with cleanrooms, guys in bunny suits and every drive part, who can replace bearings, motors, heads or platters. That's why it costs thousands."
+        },
+        {
+          "s": "steve",
+          "t": "It's the next level. And SpinRite has a money-back guarantee. We've never been able to offer a demo, because demoing it would solve the problem."
+        },
+        {
+          "s": "leo",
+          "t": "Some undelete programs do a \"demo\" that shows all your files, then says give me $500. That drives me crazy."
+        },
+        {
+          "s": "steve",
+          "t": "We give people their money back, no questions asked. Even if SpinRite recovered their data and they still want a refund, fine. I don't regard that as a lost sale. Maybe they'll recommend it to someone."
+        },
+        {
+          "s": "leo",
+          "t": "And it's useful even when nothing's wrong. My wife's aunt, Auntie Dawn, in her 70s, called frantic about pop-ups she couldn't control. She's coming up, and I'll run SpinRite on her machine too."
+        },
+        {
+          "s": "steve",
+          "t": "After reinstalling XP on the California Pizza Kitchen manager's big old refurbished Dell laptop, I gave it a SpinRite pass, about two hours. I could tell him the drive was in beautiful condition. Not recovery, but confidence in the drive's future."
+        }
+      ]
+    },
+    {
+      "title": "Secunia's Personal Software Inspector",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's talk about Secunia."
+        },
+        {
+          "s": "steve",
+          "t": "These guys produced something I almost unequivocally recommend. The one caveat: it phones home to check your software's signatures against Secunia's database. Some people will be put off. I don't care. I use it and I'm really pleased."
+        },
+        {
+          "s": "steve",
+          "t": "It's a very lightweight scanner. The download is 485K, and it behaves very well. Secunia has only been around since 2002, but in Internet years, six years is 200. I see their name constantly on vulnerability reports. Their staff independently finds vulnerabilities, like eEye, McAfee and Symantec, and I'm often on their site reading details for our podcast."
+        },
+        {
+          "s": "steve",
+          "t": "Their database covers tens of thousands of program signatures. They've built a scanner on it."
+        },
+        {
+          "s": "steve",
+          "t": "I think of it as what our Windows machines need after Windows Update, or better, Microsoft Update. That keeps Windows current. This does the job for everything else. On every single machine I have, even well-maintained ones, it showed a couple of applications with known vulnerabilities."
+        }
+      ]
+    },
+    {
+      "title": "What It Found on Steve's New Machine",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On my two-week-old quad-core machine, it found seven problems. My Opera was 9.26, which has a known vulnerability, and 9.27 was available."
+        },
+        {
+          "s": "steve",
+          "t": "It found an old UPX, the compressor I use to squeeze the air out of my Windows EXEs, since Microsoft's portable executable format is incredibly inefficient, with huge unused blocks. I had version 1.2, working fine, but 3.02 was available. I'd never have known."
+        },
+        {
+          "s": "steve",
+          "t": "I'd just installed Wireshark, the renamed Ethereal, the free open-source packet capture tool. I had 0.99.8 and didn't know it had reached version 1."
+        },
+        {
+          "s": "steve",
+          "t": "And a week before, I'd downloaded Wget, a nice GNU command-line utility that grabs web resources, with restartable downloads. My version had a known security vulnerability, and PSI knew."
+        },
+        {
+          "s": "leo",
+          "t": "So it phones home with what you have and checks for vulnerabilities, which have to be kept current on Secunia's servers."
+        }
+      ]
+    },
+    {
+      "title": "How It Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's lightweight. I don't install Symantec or McAfee because they're huge and muck everything up. PSI puts itself in your startup group and is happy to run in the tray. I'm not someone with 85 processes running, so I gently removed it from startup and run it when I want. Even then, it used about 5 percent of one processor."
+        },
+        {
+          "s": "steve",
+          "t": "It fingerprints every executable, DLL and ActiveX control. On one machine it had 85 executable things."
+        },
+        {
+          "s": "leo",
+          "t": "And you complained about your friend."
+        },
+        {
+          "s": "steve",
+          "t": "No, installed on the hard drive, not running."
+        },
+        {
+          "s": "steve",
+          "t": "It downloads some updates first and shows its progress. Then it scans, makes SSL connections to their servers, and fetches what it needs about your programs."
+        },
+        {
+          "s": "steve",
+          "t": "What you get is so comprehensive. For each item there's a toolbox: download the solution, a solution wizard, rescan, online references, technical details, open the program's folder, ignore it in the future, or jump to Add/Remove Programs. It links to the maker's latest version. In one case the wizard walked me through removing, downloading and reinstalling an updated version."
+        },
+        {
+          "s": "leo",
+          "t": "Does it look for flaws anywhere else on your machine?"
+        },
+        {
+          "s": "steve",
+          "t": "No, just applications with known flaws. It also checks Windows components against Microsoft's Windows Update database. It's a sophisticated version management system. It won't tell you there's a newer WinZip unless your version has a vulnerability known to the world, which their team tracks through mailing lists, blogs and security reports."
+        },
+        {
+          "s": "steve",
+          "t": "It's free. The commercial version, NSI, the network edition, is about $30 or 20 euros per workstation per year. A central panel tracks every machine in an organization to make sure none runs software with known holes."
+        },
+        {
+          "s": "leo",
+          "t": "So you run it on demand?"
+        },
+        {
+          "s": "steve",
+          "t": "That's how I run it. It would like to run in the background and check periodically, with tons of settings."
+        },
+        {
+          "s": "steve",
+          "t": "It also shows end-of-life products. It flagged my UPX 1 as end-of-life. And it lists all your programs and versions, and which are patched. It found three instances of Flash: a general plug-in, an ActiveX control and an Opera plug-in. All older, with known problems, on a two-week-old machine."
+        },
+        {
+          "s": "steve",
+          "t": "Google \"Secunia PSI,\" or go to psi.secunia.com. It's free for personal use. Every machine I've run it on had something I didn't know about. Our listeners want to know. This will tell them."
+        },
+        {
+          "s": "leo",
+          "t": "SelfishMan in our chat says it has trouble with 64-bit Windows applications."
+        },
+        {
+          "s": "steve",
+          "t": "That's outside my experience. I'm not in 64-bit land, but I can believe it."
+        },
+        {
+          "s": "leo",
+          "t": "Sixty-four bits is the sticking point for a lot of software."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Flexera bought Secunia in 2015 and retired the free PSI in 2018. Today, Windows and many app stores update much of your software automatically, and package tools like winget can update the rest."
+        }
+      ]
+    },
+    {
+      "title": "Ten Years of Friendship",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is your original antispyware program still on GRC?"
+        },
+        {
+          "s": "steve",
+          "t": "OptOut was so heavily linked that when I stopped pursuing spyware, and the Ad-Aware people said they'd always have a free version, I replaced it with a stub saying OptOut is no longer maintained and pointing to Ad-Aware."
+        },
+        {
+          "s": "leo",
+          "t": "And the Click of Death program's still there. Somebody somewhere still has a Zip drive."
+        },
+        {
+          "s": "steve",
+          "t": "Then they definitely need salvation."
+        },
+        {
+          "s": "leo",
+          "t": "Last week was the 10th anniversary of ZDTV's launch, May 11, 1998."
+        },
+        {
+          "s": "steve",
+          "t": "I'll never forget it. I'd been on several times about hard drives and the Click of Death. Then Kate found ShieldsUP! and featured it in her picks, and you said, what? Our Steve Gibson? I thought he was a hard drive guy."
+        },
+        {
+          "s": "leo",
+          "t": "IceStrike in our chatroom, watching live at TWiTLive.tv, says you were first on The Screen Savers on June 17, 1998. So our friendship is almost 10 years old. Back then a Zip disk held 100MB. Now cereal boxes come with 128MB, and 4GB flash drives cost less than one Zip disk."
+        },
+        {
+          "s": "steve",
+          "t": "Point one gigabyte was the Zip drive."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is a Q&A. Send questions to GRC.com/feedback."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does Secunia's PSI look for?",
+      "options": [
+        "Installed programs whose versions have publicly known security vulnerabilities",
+        "Viruses and trojans",
+        "Open network ports",
+        "Weak passwords"
+      ],
+      "answer": 0,
+      "explain": "It also flags end-of-life software."
+    },
+    {
+      "q": "What is Steve's one caveat about PSI?",
+      "options": [
+        "It phones home to check your software against Secunia's database",
+        "It's expensive",
+        "It's slow",
+        "It only runs on Vista"
+      ],
+      "answer": 0,
+      "explain": "The connection uses SSL."
+    },
+    {
+      "q": "Which outdated items did PSI find on Steve's brand-new machine?",
+      "options": [
+        "Opera, UPX, Wireshark, Wget and three copies of Flash",
+        "Only Windows patches",
+        "Nothing",
+        "His antivirus"
+      ],
+      "answer": 0,
+      "explain": "The machine was only two weeks old."
+    },
+    {
+      "q": "Why couldn't SpinRite save Matt's sister's drive?",
+      "options": [
+        "It had physical problems, stopping before SpinRite could reach the data, even with a new logic board",
+        "Matt used the wrong version",
+        "The drive was encrypted",
+        "It was a solid-state drive"
+      ],
+      "answer": 0,
+      "explain": "Only a cleanroom recovery service could help."
+    },
+    {
+      "q": "What do PayPal's single-use card numbers protect against?",
+      "options": [
+        "A stolen or misused number, since it works only once or with one merchant",
+        "Phishing emails",
+        "Viruses",
+        "Lost passwords"
+      ],
+      "answer": 0,
+      "explain": "Steve used one to block an automatic renewal."
+    },
+    {
+      "q": "What changed in IE8's beta about EV certificates?",
+      "options": [
+        "The green EV display works even with the phishing filter turned off",
+        "EV support was removed",
+        "EV became free",
+        "Certificates turned red"
+      ],
+      "answer": 0,
+      "explain": "IE7 hid it without the filter."
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "number": 181,
+  "title": "Crypto Rehash",
+  "subtitle": "A step-back review of the cryptography behind SSL",
+  "date": "2009-01-29",
+  "description": "Before explaining the SSL protocol, Steve reviews the crypto concepts the show has built up: the Mayberry analogy for what the Internet lacks, defining a threat model, why all crypto rests on non-infinite computation and hard problems like factoring, and the three goals of confidentiality, integrity and endpoint authentication. He previews keyed digests as the missing piece. Plus a QuickTime update, a trojaned iWork pirate copy, a hospital that disabled updates after PCs rebooted mid-surgery, and the CryptoLink trademark.",
+  "transcript": "https://www.grc.com/sn/sn-181.txt",
+  "audio": "http://media.GRC.com/sn/SN-181.mp3",
+  "chapters": [
+    {
+      "title": "Learning Recursively",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I want to do a couple of seriously propeller-spinning episodes, one on a keyed message authentication code, the last piece we need to understand all of SSL. First, a step back: a crypto review of where we've been."
+        },
+        {
+          "s": "leo",
+          "t": "That's how I learn, recursively, going deeper each time. You write simple programs, find your gaps, add layers."
+        }
+      ]
+    },
+    {
+      "title": "QuickTime and a Trojaned iWork",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "QuickTime 7.6, about 76MB, fixes seven critical remote execution flaws, on both Mac and Windows. Just visiting a site can auto-play QuickTime, so update."
+        },
+        {
+          "s": "steve",
+          "t": "Also, pirated copies of Apple's iWork '09 on filesharing sites carry a trojan, iServices.A, that runs as root and downloads botnet software. About 20,000 people downloaded it."
+        },
+        {
+          "s": "leo",
+          "t": "Do not accept files from strangers, and BitTorrent is accepting a file from a stranger."
+        },
+        {
+          "s": "steve",
+          "t": "Last week the MSRT found seven viruses sitting in my email attachments folder, never run. That's how they arrive."
+        }
+      ]
+    },
+    {
+      "title": "Updates That Reboot Mid-Surgery",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On why people disable auto-update, despite Conficker: five hospitals in Sheffield had over 800 PCs infected because they'd administratively disabled Auto Update, after operating-theater PCs rebooted mid-surgery and shut down life-critical equipment."
+        },
+        {
+          "s": "leo",
+          "t": "The same reboot killed our TriCaster stream."
+        },
+        {
+          "s": "steve",
+          "t": "Set it to download-and-notify, not auto-reboot. In Vista the shutdown button offers \"install updates and shut down.\""
+        },
+        {
+          "s": "leo",
+          "t": "Why are operating-room PCs on the Internet at all?"
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Ask your hospital to disconnect them."
+        },
+        {
+          "type": "fact",
+          "title": "Conficker's reach",
+          "t": "The Conficker/Downadup worm infected millions of machines through the October 2008 flaw and persisted for years on unpatched systems, becoming a case study in why organizations must patch and must not leave critical machines on the open Internet."
+        }
+      ]
+    },
+    {
+      "title": "Errata and the CryptoLink Trademark",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A newsgroup poster, \"ferrix,\" confirms the YubiKey can generate a full 64-character, 256-bit static password, longer than last week's figure, though Yubico's tool makes shorter ones."
+        },
+        {
+          "s": "leo",
+          "t": "And everything we talk about, like the Audible offer, is effectively U.S.-only, because of how the book industry licenses nation by nation. The same book may have different publishers and even different audio narrators per country."
+        },
+        {
+          "s": "steve",
+          "t": "My CryptoLink trademark was granted, and I have the CryptoLink.com domain, though everything will live at GRC.com."
+        }
+      ]
+    },
+    {
+      "title": "A Marriage Enhancement Tool",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Christopher A.H. runs SpinRite at Level 3 on new drives. His wife's Windows 2000 machine locked up and hung at the SATA detection screen, weeks after her last backup. Level 4 listed more than 50 recovered sectors over about 24 hours, a rerun at Level 5 found none, and she booted and reached her files. \"A Merry Christmas night indeed.\""
+        },
+        {
+          "s": "leo",
+          "t": "Running Windows 2000, like us. I worry about unpatched holes, though."
+        }
+      ]
+    },
+    {
+      "title": "The Mayberry Model and Threat Models",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How many crypto shows have we done?"
+        },
+        {
+          "s": "steve",
+          "t": "Over three and a half years we've touched it often, and soon we'll walk through SSL packet by packet. First, foundation."
+        },
+        {
+          "s": "steve",
+          "t": "The Mayberry analogy: when Aunt Bee phones the pharmacist and sends Opie, there's implicit authentication, both recognize each other, and she initiated the call. Those things we take for granted are missing on the hostile Internet."
+        },
+        {
+          "s": "steve",
+          "t": "You must define the threat model: what you're protecting and what you're not. We assume we're protecting the link between two endpoints, but that the endpoints themselves aren't compromised."
+        },
+        {
+          "s": "steve",
+          "t": "If an endpoint is compromised, the game is up. A keylogger captures keystrokes before they're encrypted, and stolen data sits in a database after decryption, no matter how secure the link was."
+        }
+      ]
+    },
+    {
+      "title": "The Assumptions Underneath",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We assume non-infinite computational power. Every cipher we discuss is subject to brute force; 128 or 256 bits is a huge but finite number of combinations. It's not perfect security, just really, really good."
+        },
+        {
+          "s": "leo",
+          "t": "There's no such thing as perfect security."
+        },
+        {
+          "s": "steve",
+          "t": "There's the potential: a truly random one-time pad, matched at both ends, never reused, is uncrackable. But reuse ruins it; it's a one-time pad, not a not-often pad."
+        },
+        {
+          "s": "steve",
+          "t": "Public-key crypto rests on hard one-way problems: it's easy to multiply two big primes but, as far as we know, very hard to factor the result, and easy to exponentiate but hard to take the discrete logarithm with a modulus."
+        },
+        {
+          "s": "leo",
+          "t": "People say quantum computing could factor big numbers and change everything."
+        },
+        {
+          "s": "steve",
+          "t": "No one's built one."
+        },
+        {
+          "s": "steve",
+          "t": "Good systems avoid a single point of failure: if one conversation is cracked, others, even between the same endpoints, should stay secure. So you don't encrypt live traffic with a shared root key; you use short-lived derived keys."
+        },
+        {
+          "s": "steve",
+          "t": "And over the Internet, traffic can have bits dropped, added, changed or replayed. A secure protocol must also guard against a replay attack, like recording and resending a money transfer."
+        }
+      ]
+    },
+    {
+      "title": "The Three Goals",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Security here means three things: confidentiality, so no man in the middle can read our traffic; integrity, so we can tell if a message was modified; and endpoint authentication, so we know who we're talking to. All three are implicit in the Mayberry phone call."
+        },
+        {
+          "s": "steve",
+          "t": "For confidentiality, symmetric encryption shares one key at both ends. Asymmetric, or public-key, encryption is too slow for a whole message, so we pick a random symmetric key and use public-key encryption just to transport it, creating a transient shared secret. Key agreement is another approach, where both ends can publicly exchange messages yet arrive at a shared key an eavesdropper can't learn."
+        },
+        {
+          "s": "steve",
+          "t": "For integrity, we use hashes like MD5 and the stronger SHA family, a fingerprint of the message. But the MD5 break let researchers force a matching digest. And a plain hash doesn't authenticate who signed it: since the algorithm is public, an attacker could replace a message and re-hash it, even with SHA-256."
+        },
+        {
+          "s": "steve",
+          "t": "I've always thought download sites listing a file's MD5 and SHA-1 are a bit pointless: whoever can plant a bad file can plant a matching hash."
+        },
+        {
+          "s": "leo",
+          "t": "Unless the hash is on a website and the file on a separate FTP server, so you'd have to compromise both."
+        },
+        {
+          "s": "steve",
+          "t": "So in two weeks we'll cover a keyed digest, mixing a cryptographic key with the hash, which authenticates the signer. That's the last piece before SSL."
+        },
+        {
+          "s": "steve",
+          "t": "The third goal, endpoint authentication, is the certificate chain of trust we covered: every link and the root trusted, so the certificate verifies the endpoint."
+        },
+        {
+          "type": "fact",
+          "title": "Keyed digests",
+          "t": "A keyed hash, or HMAC (Hash-based Message Authentication Code), combines a secret key with a hash so that only someone who knows the key can produce or verify the code. It is a core building block of SSL/TLS and remains standard today."
+        }
+      ]
+    },
+    {
+      "title": "SSL's Rough Start",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In two weeks we'll cover SSL's history. Version 1 was not good: it used RC4 protected only by a CRC checksum, so it was easy to manipulate. It never got out; Version 2 replaced it quickly."
+        },
+        {
+          "s": "leo",
+          "t": "They also offered 40- and 56-bit encryption."
+        },
+        {
+          "s": "steve",
+          "t": "56-bit was DES. Those weak options existed because of U.S. export restrictions until 2000, when crypto was absurdly classified as \"munitions,\" even though it was all in magazines and on the 'Net."
+        },
+        {
+          "s": "leo",
+          "t": "Someone printed the code on a T-shirt. They couldn't protect a secret that was already out."
+        },
+        {
+          "type": "fact",
+          "title": "Export crypto",
+          "t": "U.S. export limits forced weak 40- and 56-bit ciphers into products through the 1990s. The rules were loosened in 2000, but the weak \"export-grade\" options lingered in code and enabled later attacks like FREAK and Logjam."
+        }
+      ]
+    },
+    {
+      "title": "Coming Up, and the PDP-8",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You hacked the My.BarackObama.com site? No, people posted trojan links in its groups. Don't accept files from strangers."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is Q&A, then keyed digests, then SSL in full."
+        },
+        {
+          "s": "steve",
+          "t": "I built three PDP-8 kits over the weekend, with magnifying headgear, soldering every leg. They came right up on the console. The front panel kits arrive in about a month. And I'm finishing DNSRU, my 2002 DNS Research Utility, as a comprehensive DNS benchmark, the last piece of the DNS work."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "In the crypto threat model Steve uses, what is assumed to be secure?",
+      "options": [
+        "The two endpoints, while the Internet link between them is not",
+        "Nothing",
+        "Only the server",
+        "The whole network"
+      ],
+      "answer": 0,
+      "explain": "A keylogger defeats it by capturing data before encryption."
+    },
+    {
+      "q": "Why is even 256-bit encryption not \"perfect\" security?",
+      "options": [
+        "The number of key combinations is huge but finite, so brute force is possible in principle",
+        "The key leaks",
+        "It's reused",
+        "256 bits is small"
+      ],
+      "answer": 0,
+      "explain": "A truly random one-time pad is the exception."
+    },
+    {
+      "q": "What hard problem underpins much public-key cryptography?",
+      "options": [
+        "Multiplying two big primes is easy, but factoring the result is very hard",
+        "Sorting numbers",
+        "Searching text",
+        "Adding large numbers"
+      ],
+      "answer": 0,
+      "explain": "Discrete logarithms are a second such one-way problem."
+    },
+    {
+      "q": "What are the three goals of a secure communication protocol?",
+      "options": [
+        "Confidentiality, message integrity, and endpoint authentication",
+        "Speed, size, and cost",
+        "Compression, caching, and routing",
+        "Anonymity only"
+      ],
+      "answer": 0,
+      "explain": "All three are implicit in a real-world phone call."
+    },
+    {
+      "q": "Why doesn't a plain hash like SHA-256 authenticate a message's sender?",
+      "options": [
+        "The algorithm is public, so an attacker can replace the message and re-hash it",
+        "Hashes are reversible",
+        "It's too short",
+        "It's encrypted"
+      ],
+      "answer": 0,
+      "explain": "A keyed digest is needed to prove who signed it."
+    },
+    {
+      "q": "Why did early SSL offer weak 40- and 56-bit encryption?",
+      "options": [
+        "U.S. export rules classified strong crypto as munitions until 2000",
+        "It was faster",
+        "Servers were slow",
+        "To save bandwidth"
+      ],
+      "answer": 0,
+      "explain": "The weak options lingered in code for years."
+    }
+  ]
+}

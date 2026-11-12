@@ -1,0 +1,391 @@
+{
+  "number": 171,
+  "title": "Listener Feedback Q&A #54",
+  "subtitle": "TKIP follow-ups, a keyboard you can sniff from across the room, and PayPal tips",
+  "date": "2008-11-20",
+  "description": "The 54th Q&A. Steve shares a DNS-server survey showing a quarter of open resolvers still unpatched, a new Visa card with a built-in keypad, and the NebuAd lawsuit. Then questions, mostly from the TKIP episode: whether it enables a denial of service, lowering the rekey interval or disabling QoS/WMM to defeat it, why IP addresses are encrypted but packets still route, hash salting, keyboards leaking keystrokes by radio, hard-drive passwords, Universal Plug and Play, a mystery open port, and two PayPal workarounds.",
+  "transcript": "https://www.grc.com/sn/sn-171.txt",
+  "audio": "http://media.GRC.com/sn/SN-171.mp3",
+  "chapters": [
+    {
+      "title": "DNS, a New Visa Card, and NebuAd Sued",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Proceed With Caution should be the name of the show."
+        },
+        {
+          "s": "steve",
+          "t": "I'm still up to my elbows in DNS. In about three weeks I'll unveil the spoofability test I've worked on for five months, which also turned into a router crash test, since we found we could crash a bunch of routers."
+        },
+        {
+          "s": "steve",
+          "t": "The Measurement Factory surveyed the Internet's DNS servers from the routing tables. Of about 1.9 billion routed IPs, they estimate 11.9 million name servers, 4.3 million open resolvers, and a quarter of those open resolvers still unpatched against the Kaminsky attack."
+        },
+        {
+          "s": "leo",
+          "t": "I'm surprised 75 percent are patched."
+        },
+        {
+          "s": "steve",
+          "t": "In their survey, 45 percent of administrators said they lack the resources, and 30 percent said they don't know enough about DNS. Ninety percent run BIND 9, Microsoft's DNS server share fell, and DNSSEC adoption was distressingly low."
+        },
+        {
+          "type": "fact",
+          "title": "Microsoft's DNS",
+          "t": "Steve runs BIND 9 on FreeBSD, using IIS only for web serving. Windows Server's built-in \"DNS Service\" was widely seen as less secure at the time."
+        },
+        {
+          "s": "steve",
+          "t": "Many listeners noted that Visa in Europe released a card with a built-in keypad and eInk display that produces a one-time code, for card-not-present purchases. A comforting sign we're moving forward."
+        },
+        {
+          "s": "steve",
+          "t": "And NebuAd, plus six ISPs that used and dropped it, has been sued by about a dozen subscribers for $5 million, alleging the tracking violated anti-wiretapping laws. Legal experts think NebuAd is in real trouble."
+        },
+        {
+          "s": "leo",
+          "t": "Sorry it's illegal, guys."
+        }
+      ]
+    },
+    {
+      "title": "Browser Updates",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Apple's Safari 3.2 fixed 11 flaws, but there are many reports of crashes afterward, predominantly on Windows. Firefox 3.0.4 fixed 12 flaws, six critical, several remote code execution. And Chrome fixed a file-stealing hole."
+        },
+        {
+          "s": "steve",
+          "t": "Researchers note a browser probably needs about a year of gestation before you jump on it; until then run it in a VM."
+        },
+        {
+          "s": "leo",
+          "t": "The browser is the most exposed, most critical application."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Got Him Fired",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A listener calling himself \"Scooby Drew\" did tech support. A crashed computer full of customer data, including credit card numbers, was left out front of the building. The IT guy said it was just scrap. Curious, he took it home and ran a pirated copy of SpinRite over the weekend, then booted the machine in front of the IT guys."
+        },
+        {
+          "s": "steve",
+          "t": "They told the CEO, who felt Scooby had \"stolen\" personal information, and fired him. But it freed him from a dead-end job to go back to school. Now the IT department and Scooby both own legal copies, and they want to hire him back."
+        },
+        {
+          "s": "leo",
+          "t": "I know many people who got in trouble for demonstrating bad security policies, like our friend Randal Schwartz."
+        },
+        {
+          "s": "leo",
+          "t": "Hacking their systems to prove a point is ill-advised. But they put the computer out on the front porch."
+        }
+      ]
+    },
+    {
+      "title": "Does the TKIP Hack Enable Denial of Service?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ben Jaques in Des Moines and Bruce Harrison in Durban both ask: since two MIC failures within 60 seconds shut the access point down and rekey everyone, couldn't you deliberately cause MIC failures to keep a network down?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a known, significant problem with TKIP, and it applies wherever TKIP is enabled, even as an option, since broadcasts still use it. You could trivially turn the Aircrack code into a persistent denial-of-service attack, holding the network down as long as you like."
+        },
+        {
+          "s": "leo",
+          "t": "But you'd have to be physically near the network, so it's not over the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "Right, and there are a million ways to DoS a WiFi network anyway, like just jamming the channel with radio noise. The attacker denies himself access too, and can be located, which is why nobody's made a big stink."
+        },
+        {
+          "s": "leo",
+          "t": "Though in a coffee shop someone might shut it down to clear off competition, then release the attack."
+        }
+      ]
+    },
+    {
+      "title": "Lowering the Rekey Interval",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Marc Carroll at a British base in the Falklands, Cam C in Melbourne, and Ted in Research Triangle Park all ask: since the chopchop needs 12 minutes and routers rekey hourly, would lowering the group-key renewal interval below 12 minutes defeat it?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. The attack cannot be done in fewer than 12 minutes, because each correct byte triggers a MIC failure and you must wait 60 seconds before the next. If your router lets you set the rekey interval, say to 11 minutes, 660 seconds, a rekey wipes out every byte you'd guessed, and the attack fails. An attacker would actually wait for a rekey to start his 15-minute window, unless you've shortened it."
+        }
+      ]
+    },
+    {
+      "title": "A Faster Hack?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dennis Wigmore in Port Hope suggests forcing deauthentication to get a new key faster."
+        },
+        {
+          "s": "steve",
+          "t": "That misses the point: we're not after the key, just one packet's key-stream sample, valid only for that packet number. A deauthentication causes a rekey, so everything learned is washed away. That's exactly what the attacker must avoid mid-attack."
+        }
+      ]
+    },
+    {
+      "title": "QoS Is Also Called WMM",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike in Salt Lake City couldn't find QoS on his router but found WMM, which he learned is the same thing, and disabled it."
+        },
+        {
+          "s": "steve",
+          "t": "WMM is WiFi Multimedia, a Wi-Fi Alliance certification and a subset of 802.11e, what many routers call Quality of Service. It assigns four priority categories: voice, video, best effort and background. Applications must tag their own traffic, which I was sorry to see, since they could have defaulted web traffic sensibly."
+        },
+        {
+          "s": "steve",
+          "t": "If you must use TKIP and your router says QoS or WMM, disable it, and the hack won't function, because the replay protection then stops the forged packet. It's so new it's probably not in use anyway."
+        },
+        {
+          "s": "leo",
+          "t": "VoIP uses QoS, but usually on its own wired router outside your firewall."
+        }
+      ]
+    },
+    {
+      "title": "Encrypted IPs That Still Route",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul Kamet in Kaneohe asks: if the IP addresses in a WiFi packet are encrypted, how does the packet cross the country?"
+        },
+        {
+          "s": "steve",
+          "t": "Within an Ethernet or WiFi network, addressing is by the 48-bit MAC address, not IP, so the MAC can't be encrypted. The receiver decrypts with the shared key, then checks whether the destination IP is one of its own."
+        },
+        {
+          "s": "steve",
+          "t": "At the gateway, the access point, which is usually the router, decrypts the packet, sees the external IP, and sends it out the WAN port in the clear. So WiFi encryption is only internal, never across the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "That enables a known attack: get a known packet, like an all-zeroes ping, into the network and capture it, and XOR gives you the key stream, since the access point encrypted known data for you. It's why XOR with pseudorandom streams was never very secure, and why AES is so much better."
+        }
+      ]
+    },
+    {
+      "title": "What Is Salt?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt in Howell, New Jersey heard a lecture mention a \"salt value\" mixed into a hash. What is salt?"
+        },
+        {
+          "s": "steve",
+          "t": "A hash like MD5 or SHA is a one-way function: the same input always gives the same signature, but you can't work backward, and any change scrambles the output. That's great for verifying a download's fingerprint."
+        },
+        {
+          "s": "steve",
+          "t": "The downside is passwords. If passwords are hashed plainly, an attacker can precompute a huge table of hashed dictionary words, called rainbow tables, and just look up the match. Salt defeats that: mix in some random data before hashing, making a keyed hash unique to your system. The precomputed table no longer matches, because it didn't include your salt."
+        },
+        {
+          "type": "fact",
+          "title": "Salting and hashing today",
+          "t": "Modern systems use a unique random salt per password and a deliberately slow password-hashing function like bcrypt, scrypt or Argon2, which makes precomputed and brute-force attacks far harder than a single MD5 or SHA."
+        }
+      ]
+    },
+    {
+      "title": "Keyboards You Can Sniff",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rodney Morton, on assignment in Germany, cites a BBC article: Swiss researchers reproduced what a target typed by analyzing the electromagnetic signals from key presses, at up to 20 meters."
+        },
+        {
+          "s": "steve",
+          "t": "Doctoral students at the EPFL in Lausanne developed four attacks that worked on all 11 wired keyboards they tested, USB and PS/2, including laptop keyboards, using a radio antenna. These are not wireless keyboards with weak XOR encryption; they're wired."
+        },
+        {
+          "s": "steve",
+          "t": "It's like the old TEMPEST work, where a directional antenna aimed at a CRT could decode what was on screen from its electromagnetic emissions. Keyboards are scanned electromagnetically, and a keypress changes that pattern enough to be read."
+        },
+        {
+          "s": "leo",
+          "t": "Similar to \"van Eck phreaking,\" reading a monitor's emissions through a wall."
+        }
+      ]
+    },
+    {
+      "title": "Hard-Drive Passwords",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark Piper asks how to turn on the hard-drive startup password; he can't find it in his BIOS."
+        },
+        {
+          "s": "steve",
+          "t": "This is the ATA drive lock every modern drive offers, but the BIOS must support it, since the password must be given to the drive before it can be read, maybe via a fingerprint reader and the Trusted Platform Module. If you can't find it, your BIOS doesn't support it. A laptop BIOS update might add it."
+        },
+        {
+          "s": "steve",
+          "t": "I once had an idea to boot from a floppy or USB device to unlock the drive and hand off, but never built it."
+        },
+        {
+          "s": "leo",
+          "t": "This differs from full-drive encryption."
+        },
+        {
+          "s": "steve",
+          "t": "Right, the data is still in the clear; the drive is just locked. A manufacturer could remove the lock under a court order, so it's not as secure as encryption."
+        }
+      ]
+    },
+    {
+      "title": "Universal Plug and Play",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John in Columbus asks whether he should still disable Universal Plug and Play on his router."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. His question mixes two things. My old UnPlug n' Pray freeware disabled the Windows UPnP service that had a buffer overrun before XP Service Pack 2's firewall."
+        },
+        {
+          "s": "steve",
+          "t": "On the router, there are trojans that are Plug and Play aware. Malware you invite in through the browser can broadcast to your router over UPnP and tell it to open ports or set up a DMZ, with no security and no warning, because UPnP assumes everything inside your network is trusted."
+        },
+        {
+          "s": "leo",
+          "t": "Xbox 360 pushes people to turn UPnP on, warning of \"limited connectivity.\""
+        },
+        {
+          "s": "steve",
+          "t": "You only need to forward a few ports to the Xbox. But they just tell people to turn it on, without explaining the risk."
+        }
+      ]
+    },
+    {
+      "title": "A Mystery Open Port",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Storey in the UK asks how to close port 1029 externally."
+        },
+        {
+          "s": "steve",
+          "t": "Something, probably ShieldsUP!, says 1029 is open, which means he has no router and his firewall is off. Low ports just above 1024 are opened by internal processes, probably svchost, to talk among themselves, never meant to be exposed. You can't stop the process; you enable the firewall. XP is so insistent about its firewall that it's surprising his is off."
+        }
+      ]
+    },
+    {
+      "title": "PayPal Workarounds",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike O'Hare in Georgetown, Massachusetts opened a separate savings account just for PayPal, since PayPal insists on pulling from a checking account and its one-time card gives no spending limit. He transfers in only what he needs."
+        },
+        {
+          "s": "steve",
+          "t": "I may adopt that. I like PayPal's service; I just don't want them pulling from my main checking account. Keep a low balance and replenish as needed."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love a PayPal alternative, maybe Google or Amazon Payments."
+        },
+        {
+          "s": "steve",
+          "t": "PayPal has a huge edge from being first."
+        },
+        {
+          "s": "leo",
+          "t": "Jason Deabill in Southampton notes PayPal security tokens, the little football, are now available outside the U.S., about three pounds."
+        },
+        {
+          "s": "steve",
+          "t": "That's one security device I've never tired of. Any listeners who couldn't get the token before should check again."
+        },
+        {
+          "s": "leo",
+          "t": "It's a token price, less than it costs to make, just to encourage you to use it."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Could the TKIP flaw be used for a denial-of-service attack?",
+      "options": [
+        "Yes, deliberately causing MIC failures can keep shutting the access point down",
+        "No, it's harmless",
+        "Only over the Internet",
+        "Only on WPA2"
+      ],
+      "answer": 0,
+      "explain": "But the attacker must be physically near the network."
+    },
+    {
+      "q": "How can you defeat the TKIP chopchop attack if you must keep TKIP?",
+      "options": [
+        "Lower the group-key rekey interval below the 12 minutes the attack needs",
+        "Lengthen the SSID",
+        "Use a longer password",
+        "Disable the firewall"
+      ],
+      "answer": 0,
+      "explain": "Disabling QoS/WMM also stops it."
+    },
+    {
+      "q": "Why can an encrypted WiFi packet still be routed across the Internet?",
+      "options": [
+        "Local delivery uses the unencrypted MAC address, and the router decrypts before sending it out",
+        "IPs aren't really encrypted",
+        "Routers share the WiFi key",
+        "It can't"
+      ],
+      "answer": 0,
+      "explain": "The MAC address can't be encrypted."
+    },
+    {
+      "q": "What does adding salt to a hashed password accomplish?",
+      "options": [
+        "It defeats precomputed rainbow-table lookups by making each hash unique",
+        "It encrypts the password",
+        "It shortens the hash",
+        "It speeds up login"
+      ],
+      "answer": 0,
+      "explain": "Modern systems use a unique salt plus a slow hash function."
+    },
+    {
+      "q": "What did the Swiss researchers show about ordinary wired keyboards?",
+      "options": [
+        "Keystrokes could be recovered by radio from up to 20 meters away",
+        "They store passwords",
+        "USB is unencrypted",
+        "They can be jammed"
+      ],
+      "answer": 0,
+      "explain": "It's akin to the old TEMPEST and van Eck emissions attacks."
+    },
+    {
+      "q": "Why should you disable Universal Plug and Play on your router?",
+      "options": [
+        "Malware inside your network can silently tell the router to open ports",
+        "It slows the router",
+        "It blocks gaming",
+        "It uses more power"
+      ],
+      "answer": 0,
+      "explain": "UPnP has no security and gives no warning."
+    }
+  ]
+}

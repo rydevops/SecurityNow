@@ -1,0 +1,528 @@
+{
+  "number": 147,
+  "title": "Microsoft Baseline Security Analyzer",
+  "subtitle": "Two free Microsoft security checkups",
+  "date": "2008-06-05",
+  "description": "Why an infected PC can never be trusted again, how Comcast.net was hijacked through its registrar account, an iCal and Flash update, and the MediaDefender SYN flood that knocked Revision3 offline. Then Steve tours two free Microsoft tools: the Baseline Security Analyzer, which reports missing Windows patches and risky settings, and the Microsoft Security Assessment Tool, a long questionnaire that Steve calls security therapy.",
+  "transcript": "https://www.grc.com/sn/sn-147.txt",
+  "audio": "http://media.GRC.com/sn/SN-147.mp3",
+  "chapters": [
+    {
+      "title": "Once Infected, Never Trusted",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A radio caller ran a scan and found four kinds of critters: adware, spyware, rogue software and trojans. I told him it's all malware now. They all act the same."
+        },
+        {
+          "s": "steve",
+          "t": "Something you really don't want on your machine."
+        },
+        {
+          "s": "leo",
+          "t": "People argue I always say format the drive. I asked one critic on Twitter how many infections he gets rid of without formatting that don't come back. He said 99 percent come back. So you have to format."
+        },
+        {
+          "s": "steve",
+          "t": "The formal rule, which we discussed, is that once a machine has been compromised, you can never trust it again. There's no way to know what was changed."
+        },
+        {
+          "s": "steve",
+          "t": "I know old-school sticklers who've known every file on their machine since DOS days and spent weeks trying to remove an infection. You really can't. Malware sinks itself so deep, renames files, hides where you don't think to look and hooks itself to start in many different ways. When people say it came back, it means they never got rid of it. Some little piece of evilness was left monitoring and reinfected the system."
+        },
+        {
+          "s": "steve",
+          "t": "How could you ever do ebanking on a machine that was taken over?"
+        },
+        {
+          "s": "leo",
+          "t": "Karoli in our chatroom asks about System Restore."
+        },
+        {
+          "s": "steve",
+          "t": "There's now System Restore-aware malware. It's evolving step by step. Spyware scanners once removed spyware cleanly. Now things break because the malware works so hard not to be removed. And System Restore sits on the same system, so you can't trust it."
+        },
+        {
+          "s": "leo",
+          "t": "People often restore viruses they'd gotten rid of."
+        },
+        {
+          "s": "steve",
+          "t": "The only trustworthy option would be reimaging from an offline image made before the problem. Better still is not having the problem."
+        }
+      ]
+    },
+    {
+      "title": "Comcast.net Hijacked",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The really big news happened right after we recorded last week. Comcast's domain was hijacked."
+        },
+        {
+          "s": "steve",
+          "t": "Comcast.net's registrar is Network Solutions. There's no sign Network Solutions itself was hacked, but the registrar record for Comcast.net definitely was. The administrative contact was full of script-kiddie lingo. Its primary and secondary name servers, normally Comcast's own, were repointed to ns21.worldnic.com and ns22.worldnic.com, Network Solutions' name servers, which pointed to a bogus server, I believe in Germany."
+        },
+        {
+          "s": "steve",
+          "t": "My best guess was someone malicious inside Comcast, maybe a disgruntled ex-employee. It took Comcast.net off the 'Net until they found the problem, fixed the record and the change propagated."
+        },
+        {
+          "s": "steve",
+          "t": "My office manager Sue emailed that a bunch of our eCommerce receipts to Comcast.net addresses had bounced. Some nontechnical press wrongly reported that only Comcast's portal was affected."
+        },
+        {
+          "s": "leo",
+          "t": "The portal did show hacker text."
+        },
+        {
+          "s": "steve",
+          "t": "That was the domain being redirected to a server with a hacker-esque message."
+        },
+        {
+          "s": "leo",
+          "t": "Kevin Poulsen, the former hacker who did jail time and is now an excellent reporter, had an hour-long call with them for Wired's Threat Level blog. They go by Defiant and EBK. Two high school dropouts who say they found a flaw at Comcast and figured, what the heck. Defiant's MySpace says he lives in \"Cashville,\" Tennessee."
+        },
+        {
+          "s": "steve",
+          "t": "Defiant and EBK's names were in the edited administrative contact at Network Solutions. It looks to me like someone got the login credentials for Comcast's Network Solutions account and changed the name servers. If it had happened to TonyNoodles.com, no one would have cared."
+        },
+        {
+          "s": "leo",
+          "t": "It happens to TonyNoodles.com all the time. It happened to me. Network Solutions says there was no breach and no social engineering. Of course they'd say that. Most registrars let you lock a domain against transfers, but with a fax and some phone calls, things can still be transferred."
+        },
+        {
+          "s": "steve",
+          "t": "Fifteen years ago, losing email for a day was uncomfortable. Since then we've built a mission-critical economy on this infrastructure. It's been strengthened a little, but it's still prone to social engineering and malicious conduct. Now it's a big deal."
+        },
+        {
+          "s": "steve",
+          "t": "Any DNS server whose cached Comcast.net record expired during that window went back to the root servers and picked up the malicious record. Even after Comcast fixed it, those servers had no reason to recheck."
+        },
+        {
+          "s": "leo",
+          "t": "How long until it expires?"
+        },
+        {
+          "s": "steve",
+          "t": "Typically a day, so as not to load the DNS servers. A site under heavy DoS attack may drop its expiration to an hour or ten minutes so it can change DNS quickly. But Comcast never expected to change it. So it was about a day-long problem."
+        },
+        {
+          "s": "leo",
+          "t": "They said they tried to tell Comcast, but Comcast wouldn't listen. I don't know why I don't believe that."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Two members of the group, Kryogeniks, were later charged over the attack and pleaded guilty."
+        }
+      ]
+    },
+    {
+      "title": "Mac and Flash Updates",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Mac listeners should get OS X 10.5.3. It didn't get much press, but it fixed a number of remote code execution vulnerabilities."
+        },
+        {
+          "s": "leo",
+          "t": "I looked when it came out Tuesday to see whether it fixed the iCal flaw. It doesn't say."
+        },
+        {
+          "s": "steve",
+          "t": "I've seen that two known iCal issues still aren't fixed."
+        },
+        {
+          "s": "steve",
+          "t": "And there's an exploit in the wild for a vulnerable version of Adobe Flash Player, now with Windows exploits. The current version is 9.0.124.0. If you downloaded Secunia's PSI after our episode, check with it. It's what told me I was behind. Apple's big 200MB update also fixed Flash on the Mac."
+        }
+      ]
+    },
+    {
+      "title": "MediaDefender Floods Revision3",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You didn't mention the DoS attack against our friends at Revision3."
+        },
+        {
+          "s": "steve",
+          "t": "Mark Thompson told me they were seriously under the weather."
+        },
+        {
+          "s": "leo",
+          "t": "Jim Louderback explained it well on his blog. It was a SYN flood, 8,000 SYNs a second, which took Revision3 down all Memorial Day weekend. Unusually, they didn't hide the source. It came from MediaDefender, a company working for the entertainment industry to bring down torrent sites."
+        },
+        {
+          "s": "leo",
+          "t": "MediaDefender seeds torrent trackers with fake torrents of movies and music, so people can't find the real files. Apparently their portfolio includes DoS attacks on BitTorrent trackers."
+        },
+        {
+          "s": "leo",
+          "t": "Revision3 had a BitTorrent tracker from its early days distributing Systm and other shows, and had forgotten about it. It had become open, so others could add torrents. MediaDefender says 296,000 others were on it, and MediaDefender itself was using it to seed fake torrents. When Revision3 closed it, the flood began. It was almost retaliation."
+        },
+        {
+          "s": "steve",
+          "t": "What MediaDefender apparently deliberately did to Revision3 is against all kinds of laws."
+        },
+        {
+          "s": "leo",
+          "t": "I asked Jim if they'd sue. He said they don't have time to focus on that. The FBI has been called in. It's an appalling misuse of resources, against a legitimate content company."
+        },
+        {
+          "s": "leo",
+          "t": "And they didn't bother spoofing addresses with raw sockets, as a real DDoS does. They wanted Revision3 to know. But they had enough servers around the country that Revision3 couldn't just block one IP."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves a Wedding, on a Floppy",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Dennis Thiel's subject was \"SpinRite works on floppy and saves wedding.\" A friend brought him a floppy with the guest list for her upcoming wedding, her only copy. She couldn't read it."
+        },
+        {
+          "s": "leo",
+          "t": "On a floppy? What is this, 1979?"
+        },
+        {
+          "s": "steve",
+          "t": "This came in May 9th. He bought SpinRite at version 5 and upgraded to 6. He booted SpinRite, put her floppy in, and in a few minutes it repaired bad sectors and recovered all her data."
+        },
+        {
+          "s": "leo",
+          "t": "SpinRite works on floppies?"
+        },
+        {
+          "s": "steve",
+          "t": "Really well, actually. He says many people with data on floppies don't know it."
+        },
+        {
+          "s": "leo",
+          "t": "I couldn't find a floppy to save my life."
+        },
+        {
+          "s": "steve",
+          "t": "I still have floppy drives on every one of my machines, and a little stack I boot for maintenance and setup."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't a CD be better? SpinRite makes boot CDs."
+        },
+        {
+          "s": "steve",
+          "t": "It will, and he may have booted a CD and run it on his floppy drive. SpinRite fits easily on a floppy, with plenty of room for other things."
+        }
+      ]
+    },
+    {
+      "title": "The Baseline Security Analyzer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "After our Secunia PSI episode, people asked about Microsoft's Baseline Security Analyzer. When Microsoft woke up to security and launched its initiative, \"trustworthy computing\" in Bill Gates' phrase from a Comdex keynote, some useful things came out of it that normal Windows users never hear about. You have to go get them."
+        },
+        {
+          "s": "steve",
+          "t": "Search Microsoft for MBSA or Baseline Security Analyzer. It's a couple of megs with no onerous installation requirements."
+        },
+        {
+          "s": "steve",
+          "t": "It's like Secunia's tool, but only for Microsoft Windows issues. Neither is a superset of the other, so they go hand in hand."
+        },
+        {
+          "s": "steve",
+          "t": "I ran it on a VMware XP machine where I'd disabled automatic updates a month ago, after bringing it current. It took a minute or two. Severity assessment: severe risk, with a big red unhappy shield. One or more critical checks failed."
+        },
+        {
+          "s": "steve",
+          "t": "Its security update scan found one missing update. It also checked for SQL Server updates. None missing, and none installed either."
+        },
+        {
+          "s": "steve",
+          "t": "Like Secunia, you can drill down. It showed MS08-028, a critical update, with a link to the Knowledge Base article. That was the Jet Database fix from mid-May, which makes sense."
+        },
+        {
+          "s": "steve",
+          "t": "It also said three rollups or service packs were missing. It's unhappy I'm still on IE6 and suggests IE7. It wants the infamous XP Service Pack 3, which I'm not getting anywhere near, though I wouldn't mind in a throwaway VM. And, as every month, the latest Malicious Software Removal Tool."
+        },
+        {
+          "s": "steve",
+          "t": "Then a long list of green checks: every Microsoft security patch ever installed, with its number, severity and Knowledge Base link. It's a missing piece of Windows Update: a nice interface to the patch database Microsoft and your machine maintain."
+        },
+        {
+          "s": "steve",
+          "t": "Normally you get the yellow shield in the tray and say, fine, fix me. XP's Add/Remove Programs has a \"Show updates\" checkbox, which triples the list's length. This presentation is nicer, showing each patch's severity and linking to what it does."
+        }
+      ]
+    },
+    {
+      "title": "Settings It Checks",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It also checks what it calls administrative vulnerabilities. Another red shield: automatic updates aren't set to start automatically. I know. I'll run it when I want. No incomplete update installations were found. And the Windows firewall is disabled and has exceptions configured. I must have turned it off for something."
+        },
+        {
+          "s": "leo",
+          "t": "Good, since it reminds you that you did that."
+        },
+        {
+          "s": "steve",
+          "t": "It checked user accounts and found no simple passwords, so it checks password complexity."
+        },
+        {
+          "s": "steve",
+          "t": "My one hard drive uses NTFS, which gets props, since NTFS has internal security for access controls, unlike FAT. The guest account is disabled. Anonymous access is properly restricted. No more than two administrators."
+        },
+        {
+          "s": "steve",
+          "t": "My standard practice, once a system is set up, is to delete the account it forced me to create and rename the Administrator account to something nobody will guess, so there's no account named Administrator at all."
+        },
+        {
+          "s": "steve",
+          "t": "It skips auto-logon and password expiration checks because the computer isn't joined to a domain."
+        },
+        {
+          "s": "leo",
+          "t": "Mine flags auto-logon, since I'm on a workgroup."
+        },
+        {
+          "s": "steve",
+          "t": "It says some potentially unnecessary services are installed. Of course, Microsoft installed them. It lists your shares, since over time you may forget folders you've shared. It reports on IIS, Microsoft's web server in XP Pro, which I have disabled, and SQL Server. And it checks IE's zones. Mine have secure settings for all users."
+        },
+        {
+          "s": "leo",
+          "t": "Mine says some users have no zone settings, which is a security issue."
+        },
+        {
+          "s": "steve",
+          "t": "It's free, small and easy, a quick audit for things you've forgotten: a disabled firewall, old shares, a guest account you meant to turn off."
+        },
+        {
+          "s": "leo",
+          "t": "I downloaded and ran it while you talked. It pinpointed several things, each with \"click here to find out how to fix it.\""
+        },
+        {
+          "s": "steve",
+          "t": "I especially like it as an interface into Windows Update, now that I'm more than reticent to put SP3 on my machines after it hurt two of them."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Microsoft stopped updating MBSA around 2018 and pointed users to Windows Update, Windows Defender and other built-in tools instead."
+        }
+      ]
+    },
+    {
+      "title": "Security Therapy: The Security Assessment Tool",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The second is very different: the Microsoft Security Assessment Tool. Refamiliarizing myself with it, I thought it's like therapy. Security therapy. It doesn't tell you what to do at first. It asks you questions."
+        },
+        {
+          "s": "leo",
+          "t": "How do you feel about this now?"
+        },
+        {
+          "s": "steve",
+          "t": "It asks your company name. I said Gibson Research Corporation. Desktops and laptops in use: fewer than 50. Servers: one to five. Then a business risk profile: Does your company maintain a full-time Internet connection? Yes, no or I don't know, with a question mark icon explaining, such as a T1, DSL, cable modem or other always-on connection."
+        },
+        {
+          "s": "steve",
+          "t": "Do customers and vendors access your network or internal systems via the Internet? We have a website. Does your company host application services such as a portal or website for external customers or partners? Hovering explains that hosting such services increases infrastructure risk, from data loss, theft or unavailability."
+        },
+        {
+          "s": "steve",
+          "t": "That's the tip of the iceberg. I spent an hour with it. Like a therapist's leading questions, it makes you think about yourself in ways you wouldn't alone: how your network is segmented, whether you use a VPN."
+        },
+        {
+          "s": "leo",
+          "t": "Does it make recommendations?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. The first pass characterizes you. Based on those answers, it drills down into real detail about your configuration. It's not just for IT people. Anyone with a home network would find the questions interesting, like whether you use a router with a DMZ."
+        },
+        {
+          "s": "steve",
+          "t": "At the end, it gives you a report card: what you need to worry about, and where your policies need review. It asks things like whether you enforce periodic password changes."
+        },
+        {
+          "s": "steve",
+          "t": "Of course, as with a therapist, you can lie. Oh, no, I never go to those naughty sites. But answering truthfully is illuminating. And I was pleased to find that in nearly three years, we've covered everything it asks."
+        },
+        {
+          "s": "steve",
+          "t": "Say your organization uses wireless, and it expands: which security protocols? WPA, WEP, or an open network. Don't even think about checking that one. It'll probably melt down."
+        }
+      ]
+    },
+    {
+      "title": ".NET and the Size of Things",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The downside: it requires .NET 2."
+        },
+        {
+          "s": "leo",
+          "t": "It could just be an online questionnaire, but you have to download it, with .NET installed."
+        },
+        {
+          "s": "steve",
+          "t": "Some people deliberately stay .NET free. Long term, I think they'll lose, since .NET is Windows' next-generation API and more things require it."
+        },
+        {
+          "s": "leo",
+          "t": "If you have Vista, you already have .NET."
+        },
+        {
+          "s": "steve",
+          "t": "Precisely. That's why I set it up in a VM. I'll resist .NET on my main system until I really need something that requires it. Maybe by then it'll be at Service Pack 9 and actually stable, since Microsoft has had security problems with .NET. I work not to put junk on my machine."
+        },
+        {
+          "s": "leo",
+          "t": "This cracks me up. It's 12.5MB. SpinRite, which is so useful, is about 100K."
+        },
+        {
+          "s": "steve",
+          "t": "I should get that right. It used to fit in a 64K COM file, then 96K. It's 169K."
+        },
+        {
+          "s": "leo",
+          "t": "So this is, what, a thousand times bigger."
+        },
+        {
+          "type": "fact",
+          "title": "The math",
+          "t": "12.5MB against 169K is about 75 times bigger. Still a lot for a questionnaire."
+        },
+        {
+          "s": "steve",
+          "t": "And .NET itself is maybe 68MB now, at version 3.5. The Baseline Security Analyzer is about 1.5MB. And for the Assessment Tool, don't be in a hurry. Think about the questions. Do external partners connect directly to your back-end systems? What do you subcontract out? It really builds a threat and risk model from your answers."
+        },
+        {
+          "s": "leo",
+          "t": "It looks like a marketing survey. I'm telling Microsoft a lot about what I do."
+        },
+        {
+          "s": "steve",
+          "t": "I was skeptical too. You can skip the company information at the start. And I watched for pro-Microsoft spin, and there were several places where the advice wasn't pro-Microsoft."
+        },
+        {
+          "s": "steve",
+          "t": "I love \"Does your company share office space with other organizations?\""
+        },
+        {
+          "s": "leo",
+          "t": "Legitimate, since other people would have physical access."
+        },
+        {
+          "s": "steve",
+          "t": "Brought down to a home level, it's do you have roommates? Does your roommate have access to your machine when you're not around? These are worth thinking about once. It'll make people realize, I know the right answer, and ooh, mine isn't it."
+        }
+      ]
+    },
+    {
+      "title": "No SpinRite on SSDs, or Zip Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The chatroom asks whether SpinRite works on solid-state drives."
+        },
+        {
+          "s": "steve",
+          "t": "You don't want to use it on solid-state drives. Its technology is all about magnetic media. Solid-state drives are sensitive to write cycles, and the physical recovery SpinRite performs doesn't map onto them. You don't want to write to one unless you need to."
+        },
+        {
+          "s": "leo",
+          "t": "Would it work on Zip drives?"
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite 5's support for Zip and Jaz drives, Iomega's technologies, is what started the whole Click of Death story. People said it cured their click death. I said, it cured your what?"
+        },
+        {
+          "s": "steve",
+          "t": "It turned out, similar to flash drives, you did not want to run SpinRite on a drive with the Click of Death. That's why I wrote the free tool Trouble in Paradise, TIP, which properly assessed the status of Iomega drives. We told people not to run SpinRite on them, since it would make a bad problem worse."
+        },
+        {
+          "s": "leo",
+          "t": "And that's how we first met, many moons ago."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Steve say a seriously infected PC can never be trusted again?",
+      "options": [
+        "Modern malware hides so deeply that you can't know what changed or be sure it's gone",
+        "It runs too slowly",
+        "Antivirus can't run on it",
+        "Windows forbids it"
+      ],
+      "answer": 0,
+      "explain": "Even System Restore can bring infections back."
+    },
+    {
+      "q": "How was Comcast.net taken offline?",
+      "options": [
+        "Its registrar account was changed to point its name servers at servers the attackers controlled",
+        "A DDoS attack on its routers",
+        "A SQL injection on its portal",
+        "Its DNS servers crashed"
+      ],
+      "answer": 0,
+      "explain": "Cached bad records lingered for about a day."
+    },
+    {
+      "q": "What triggered the SYN flood against Revision3, according to Leo?",
+      "options": [
+        "Revision3 closed an old, open BitTorrent tracker that MediaDefender had been using",
+        "Revision3 sued MediaDefender",
+        "A Revision3 show criticized the RIAA",
+        "A botnet mistake"
+      ],
+      "answer": 0,
+      "explain": "MediaDefender didn't even hide its addresses."
+    },
+    {
+      "q": "What does Microsoft's Baseline Security Analyzer check?",
+      "options": [
+        "Missing Windows patches and risky settings like a disabled firewall or guest account",
+        "Third-party software versions",
+        "Viruses",
+        "Open ports from the Internet"
+      ],
+      "answer": 0,
+      "explain": "It complements Secunia's PSI."
+    },
+    {
+      "q": "Why does Steve call the Microsoft Security Assessment Tool \"security therapy\"?",
+      "options": [
+        "It asks probing questions about your setup and then gives you a report card",
+        "It fixes problems automatically",
+        "It scans for spyware",
+        "It requires a counselor"
+      ],
+      "answer": 0,
+      "explain": "It needs .NET to run."
+    },
+    {
+      "q": "Why shouldn't you run SpinRite on a solid-state drive?",
+      "options": [
+        "Its recovery techniques are for magnetic media, and extra writes wear out flash",
+        "It's too slow",
+        "It erases them",
+        "It can't see them"
+      ],
+      "answer": 0,
+      "explain": "The same was true of drives with the Click of Death."
+    }
+  ]
+}

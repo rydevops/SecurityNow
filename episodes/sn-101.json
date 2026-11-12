@@ -1,0 +1,671 @@
+{
+  "number": 101,
+  "title": "Are You Human?",
+  "subtitle": "CAPTCHAs and the hard problem of telling people from programs",
+  "date": "2007-07-19",
+  "description": "Steve asks AVG users to report a false positive on SecurAble, discovers PayPal's $5 Security Key, recommends Jeff Hawkins' \"On Intelligence,\" and answers when to retire a drive SpinRite has rescued. Then the main topic: why the Internet needs to tell humans from bots, Alan Turing's test, how CAPTCHAs work and get cracked, the clever \"relay attack,\" accessibility objections, and Carnegie Mellon's reCAPTCHA, which puts the work of solving them toward digitizing books.",
+  "transcript": "https://www.grc.com/sn/sn-101.txt",
+  "audio": "http://media.GRC.com/sn/SN-101.mp3",
+  "chapters": [
+    {
+      "title": "An AVG False Positive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Time to talk about security, everybody's favorite subject, for about 150,000 listeners."
+        },
+        {
+          "s": "leo",
+          "t": "Somebody told me an antivirus program is flagging one of your programs."
+        },
+        {
+          "s": "steve",
+          "t": "It's AVG, and it's driving us out of our minds. AVG flags SecurAble. My support guy Greg has been flooded with hundreds of reports."
+        },
+        {
+          "s": "steve",
+          "t": "It happens with my security programs from time to time. The code that checks or toggles a security setting looks like what malware would use for its own purposes."
+        },
+        {
+          "s": "leo",
+          "t": "These are false positives. Antivirus companies try to avoid them, but there's inevitably some overlap."
+        },
+        {
+          "s": "steve",
+          "t": "If you use AVG and get this false positive, please pressure AVG to remove SecurAble from its patterns."
+        },
+        {
+          "s": "leo",
+          "t": "We probably have a lot of AVG users. They don't want to pay for antivirus, and they know how to keep clean anyway."
+        }
+      ]
+    },
+    {
+      "title": "A New Way to Write In",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Starting with 102, episodes at mod 4 plus 2 will be mailbag episodes."
+        },
+        {
+          "s": "steve",
+          "t": "The web form at the bottom of the Security Now! page has always just sent email to my Security Now! address. I used a form to stress that people could be completely anonymous. But if you don't care, you can now simply email that address directly."
+        },
+        {
+          "s": "leo",
+          "t": "That'll qualify you for the mailbag, but no guarantees."
+        },
+        {
+          "type": "fact",
+          "title": "The address",
+          "t": "The email address Steve gave was later removed from GRC's transcript after spambots found it. The feedback form on GRC's Security Now! page remains the way to write in."
+        }
+      ]
+    },
+    {
+      "title": "PayPal's $5 Security Key",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Something cool started with something not so cool. About two weeks ago I did something with PayPal at Starbucks on my laptop over T-Mobile that upset it. The next day from home, it said my account was flagged because someone might be trying to hack it."
+        },
+        {
+          "s": "steve",
+          "t": "I had to jump through about nine hoops to pacify it. I was freaked out, until I realized that I was the one \"hacking\" my own account the day before."
+        },
+        {
+          "s": "steve",
+          "t": "But I discovered PayPal has full multifactor authentication. I now have one of those six-digit SecurID-style hardware tokens, and get this, for $5."
+        },
+        {
+          "s": "leo",
+          "t": "We use PayPal for donations, and people say they've had bad experiences and don't trust it. But since eBay bought it, PayPal has really turned around. Give it a second chance."
+        },
+        {
+          "s": "steve",
+          "t": "I've heard horror stories too: everything's great until it goes bad, and then it goes really bad. But for $5, it's a very cool dongle with a button."
+        },
+        {
+          "s": "steve",
+          "t": "Press it and you get six digits. They stay locked for the current 30-second window. Turn it off and on after another boundary, and you get completely different digits."
+        },
+        {
+          "s": "steve",
+          "t": "It arrives by mail in a week to 10 days. You use it once to prove you received it. From then on, you append the current six digits to your password, so the password never repeats and requires the token in your possession."
+        },
+        {
+          "s": "steve",
+          "t": "Lose it, and you jump through even more hoops to prove who you are, so the account stays hardened."
+        },
+        {
+          "s": "leo",
+          "t": "I don't see \"Secure Key\" on my account page."
+        },
+        {
+          "s": "steve",
+          "t": "Log in and look in the left-hand column. Or go to paypal.com/securitykey, the first Google hit for \"PayPal security key.\" It protects eBay too."
+        },
+        {
+          "s": "leo",
+          "t": "There it is. Five bucks. I'm ordering it now. Our hosting draws directly from our PayPal account, and I keep TWiT's receipts there, so I'd hate to see it go to zero."
+        },
+        {
+          "s": "steve",
+          "t": "I wouldn't encourage creating a bogus PayPal account just to get the token. But you could."
+        },
+        {
+          "s": "leo",
+          "t": "Or make a donation to TWiT, set up an account with a credit card, and get your security key."
+        },
+        {
+          "type": "fact",
+          "title": "Whose token?",
+          "t": "Steve calls it a SecurID token, which is RSA's brand. PayPal's Security Key was actually made by VeriSign for its VIP authentication service. PayPal later replaced hardware keys with text-message codes and authenticator apps."
+        }
+      ]
+    },
+    {
+      "title": "Reading \"On Intelligence\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We have to talk about a book you turned me onto."
+        },
+        {
+          "s": "leo",
+          "t": "It was one of our early Audible picks."
+        },
+        {
+          "s": "steve",
+          "t": "I'm a third to halfway through \"On Intelligence\" by Jeff Hawkins. As a Palm follower, I knew the name. He invented Graffiti, designed the Palm family, then created Handspring, where the Treo was born. I can't wait for his new Foleo, which I think will be a nice add-on to my Treo."
+        },
+        {
+          "s": "steve",
+          "t": "Hawkins has always been fascinated by how the brain works. So have I. In high school I read everything I could about neurons, synapses and axons. He's founded a company, I think Numenta, to build intelligent machines."
+        },
+        {
+          "s": "steve",
+          "t": "It's riveting: a contemporary, easy-to-read look at what we know about intelligence, how the brain works at the cellular level, and why he thinks AI has failed. I won't spoil it."
+        },
+        {
+          "s": "steve",
+          "t": "I'll give a copy to my second GRC employee, Steve Ranck, a gifted engineer who did light-pen work with me. I kicked him out of the nest because I didn't have enough to keep him busy. He went into gaming, where he's won awards and started and sold companies. This book may seriously damage his life."
+        },
+        {
+          "s": "leo",
+          "t": "In the epilogue, Hawkins asks high school students reading it to make this their field."
+        },
+        {
+          "s": "steve",
+          "t": "It's in Audible, Sony Reader, Palm eReader and paper. I tried going back from the Sony to my Palm and couldn't. The Sony's E Ink page is so much nicer, even with its frustratingly low contrast. On the Palm I read white text on black."
+        },
+        {
+          "s": "leo",
+          "t": "The contrast bugs me too. My eyes need more as I get older."
+        },
+        {
+          "s": "steve",
+          "t": "And the Sony Reader's price has dropped to $299, which suggests it isn't selling well."
+        },
+        {
+          "s": "leo",
+          "t": "It's too expensive and not quite there yet. But we're early adopters."
+        },
+        {
+          "type": "fact",
+          "title": "Foleo",
+          "t": "Palm cancelled the Foleo in September 2007, before it shipped."
+        }
+      ]
+    },
+    {
+      "title": "Nintendo Picks Astaro",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two related notes. Justin Gerard, the 13-year-old who saw an outside service fix his computer with SpinRite and has a Gamer's Edge podcast, says Nintendo partnered with Astaro for optional content filtering via a proxy for the Nintendo DS web browser."
+        },
+        {
+          "s": "steve",
+          "t": "And Terry Sheltra of Charlottesville found an insert in the new DS browser package offering free Astaro content filtering, from one of our sponsors."
+        },
+        {
+          "s": "leo",
+          "t": "So Astaro isn't on the DS?"
+        },
+        {
+          "s": "steve",
+          "t": "Right. Nintendo offers a proxy server that DS browsers can route through, using Astaro's filtering and protection."
+        },
+        {
+          "s": "leo",
+          "t": "That's what I'd choose. Of course I'm a little biased."
+        }
+      ]
+    },
+    {
+      "title": "When Should You Retire a Drive?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One more. David Lee, a Microsoft Small Business Specialist in Ottawa, had used SpinRite for a year to improve performance. Then, after installing the Adobe Reader 8.1 update, his laptop gave him a Blue Screen of Death and an \"unbootable drive\" message. Safe mode and Last Known Good Configuration failed."
+        },
+        {
+          "s": "steve",
+          "t": "He ran SpinRite at Level 2. After 45 minutes on his one-year-old Fujitsu 80-gig 2.5-inch drive, it was stuck on a bad area showing a couple of red U's, confirming hardware. He let it run overnight and wrote from his working laptop."
+        },
+        {
+          "s": "steve",
+          "t": "He asks: should a drive with unrecovered errors be replaced as soon as possible? And, anticipating a couched answer, what would I do if it were mine?"
+        },
+        {
+          "s": "leo",
+          "t": "No couching, Steve. It always makes me queasy to keep using a drive that's had problems."
+        },
+        {
+          "s": "steve",
+          "t": "A red U means SpinRite could never fully recover that sector. There are a few causes."
+        },
+        {
+          "s": "steve",
+          "t": "One is a write interrupted by power loss. The drive never finished writing the sector and updating its error correction code, a very powerful checksum. Nothing can recover a half-written sector, but that doesn't mean the drive is failing."
+        },
+        {
+          "s": "steve",
+          "t": "Second, defects grow. Densities are so high now that drives use error correction constantly. When a sector's error bursts pass a threshold, the drive corrects it, swaps in a spare sector and rewrites the data there."
+        },
+        {
+          "s": "steve",
+          "t": "But the drive only notices when it reads the sector. Running SpinRite's quick Level 2 read pass lets the drive assess every sector and swap out weak ones before they become unreadable. That's why regular users say they never see problems."
+        },
+        {
+          "s": "steve",
+          "t": "Third, drives can run out of spares. Then an unreadable defect has nowhere to go. That's when you say bye-bye to the drive."
+        },
+        {
+          "s": "leo",
+          "t": "How can you tell?"
+        },
+        {
+          "s": "steve",
+          "t": "When SpinRite gives up on a sector, after trying 2,000 times and every trick, like approaching from different head positions, it rewrites the sector with whatever it recovered. That makes it readable, and the drive maintains it from there."
+        },
+        {
+          "s": "steve",
+          "t": "Run SpinRite a second time. If you still have a problem, the drive couldn't even handle a correctly rewritten sector. Take it out of use before it goes belly up."
+        },
+        {
+          "s": "leo",
+          "t": "So there's slack in every drive. At the end of that rope, replace it."
+        },
+        {
+          "s": "steve",
+          "t": "A lot of slack, and room for a lot of error. No drive today is perfect."
+        },
+        {
+          "s": "steve",
+          "t": "His second question: why hasn't anyone bought the company, like the old Chrysler ad? Peter Norton offered to buy SpinRite about a year and a half after I created it. Everyone was asking him to add its abilities to the Norton Utilities. The best thing I ever said to Peter was no thanks."
+        },
+        {
+          "s": "leo",
+          "t": "Everybody has a price. A billion dollars?"
+        },
+        {
+          "s": "steve",
+          "t": "I'd still do the podcast with you, from my own satellite network for low latency."
+        }
+      ]
+    },
+    {
+      "title": "Not Who You Are, but Whether You're a Who",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's get to the meat and potatoes."
+        },
+        {
+          "s": "steve",
+          "t": "We've covered multifactor authentication: which specific human you are. This is different. It's not who you are. It's whether you're a who."
+        },
+        {
+          "s": "leo",
+          "t": "Sounds like Dr. Seuss."
+        },
+        {
+          "s": "steve",
+          "t": "Internet robots changed things. Free web mail, pioneered perhaps by Yahoo!, let anyone use email from any browser. Spammers said, so can we."
+        },
+        {
+          "s": "steve",
+          "t": "When spam servers were being blacklisted, spammers created endless Yahoo! accounts with made-up or dictionary names. Yahoo! became their spam forwarder."
+        },
+        {
+          "s": "steve",
+          "t": "Now Web 2.0 makes the web far more two-way: Facebook, MySpace, blogs, and comment sections on articles. Spammers post links in comments on highly ranked sites like NBC, ABC and CNN, so search engines raise the ranking of their yucky sites."
+        },
+        {
+          "s": "steve",
+          "t": "It's the same story as virus and antivirus: useful services abused by people on the dark side pretending to be human."
+        },
+        {
+          "s": "steve",
+          "t": "At first, telling a computer from a human seems easy. But so much of what's feasible to test, computers can be programmed to get around."
+        }
+      ]
+    },
+    {
+      "title": "Alan Turing's Test",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The problem has a deep history in the Turing Test, proposed by Alan Turing, a father of modern computing, or at least of algorithms."
+        },
+        {
+          "s": "leo",
+          "t": "He also helped crack the German Enigma code in World War II."
+        },
+        {
+          "s": "steve",
+          "t": "At Bletchley Place, or..."
+        },
+        {
+          "s": "leo",
+          "t": "Park."
+        },
+        {
+          "s": "steve",
+          "t": "Right, Bletchley Park. He was recognized young as a genius. He tackled computability, what it means for a problem to have an algorithmic solution, and formalized it as the \"Turing Machine.\""
+        },
+        {
+          "s": "steve",
+          "t": "It's theoretical, though people have built them for fun. A tape, infinite in one direction, has cells holding a one or a zero. A head reads or writes the current cell and moves left or right, and the machine updates an internal state. Through careful proofs he showed it could solve any problem any computer could."
+        },
+        {
+          "s": "leo",
+          "t": "At the time a \"computer\" was a human, usually a woman doing calculations."
+        },
+        {
+          "s": "steve",
+          "t": "And his Universal Turing Machine could read a description of another machine on its tape, followed by a problem, and emulate it."
+        },
+        {
+          "s": "steve",
+          "t": "Toward the end of his short life, he died just short of 42, he asked how to tell if a machine is intelligent. His test: a human questions two hidden rooms, one with a person and one with a machine. If the questioner can't reliably tell which is which, the machine passes."
+        },
+        {
+          "s": "leo",
+          "t": "\"On Intelligence\" talks about the Turing Test and why it essentially will never be solved."
+        },
+        {
+          "s": "steve",
+          "t": "And John Searle's Chinese room thought experiment."
+        },
+        {
+          "s": "leo",
+          "t": "It's sad to note he committed suicide after being prosecuted for being gay. It's a great tragedy. Read Wikipedia's article on his life. He also appears in \"Cryptonomicon,\" another of our favorite books, where Bletchley Park is a big part."
+        },
+        {
+          "type": "fact",
+          "title": "Alan Turing",
+          "t": "Turing proposed his test in a 1950 paper. In 1952 he was convicted of \"gross indecency\" and forced into chemical treatment. He died in 1954, aged 41, and the inquest ruled suicide, though some historians question it. Britain apologized in 2009, and he received a royal pardon in 2013."
+        }
+      ]
+    },
+    {
+      "title": "What CAPTCHA Stands For",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Turing Test bears on this because the most popular approach is named after it. Around 2000, Carnegie Mellon researcher Luis von Ahn got serious about CAPTCHAs. CMU even holds a trademark on the word."
+        },
+        {
+          "s": "leo",
+          "t": "I thought it was just \"capture\" mispronounced."
+        },
+        {
+          "s": "steve",
+          "t": "It stands for Completely Automated Public Turing Test to tell Computers and Humans Apart."
+        },
+        {
+          "s": "leo",
+          "t": "So Turing is memorialized in the CAPTCHA."
+        },
+        {
+          "s": "steve",
+          "t": "CMU obviously isn't jealous about the trademark. Everyone uses the word."
+        },
+        {
+          "s": "steve",
+          "t": "Most familiar are those wacky images where you decipher warped, obscured letters and numbers, meant to be easy for humans and hard for computers. But computers have gotten so good that to be hard for them, it usually has to be hard for people too. I've failed some."
+        },
+        {
+          "s": "leo",
+          "t": "I fail Digg's all the time. It triggers one if you mistype your password once."
+        },
+        {
+          "type": "fact",
+          "title": "The inventors",
+          "t": "Luis von Ahn, Manuel Blum, Nicholas Hopper and John Langford coined \"CAPTCHA\" at Carnegie Mellon in 2000."
+        }
+      ]
+    },
+    {
+      "title": "How CAPTCHAs Get Cracked",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Wikipedia has an excellent CAPTCHA page. And there are CAPTCHA-cracking sites with pictures of many popular CAPTCHAs, showing what isn't hard enough. Some are solved 100 percent of the time, others 88 or 89 percent."
+        },
+        {
+          "s": "steve",
+          "t": "The crackers' complaints are telling. One font, or just a few, makes cracking easier. So do aligned characters, and characters always in the same position."
+        },
+        {
+          "s": "steve",
+          "t": "Some generators scatter characters \"cattywumpus,\" but always in the same cattywumpus positions. That's a perfect mistake. It's harder for the human, who sees it once, and no harder for code, once the cracker notices the pattern."
+        },
+        {
+          "s": "steve",
+          "t": "Also weak: constant horizontal position, constant rotation, no deformation, plain backgrounds, constant or weak colors, and no overall perturbation of the image."
+        },
+        {
+          "s": "steve",
+          "t": "What's hardest for computers is dividing the image into individual glyphs, the font term for a character. We do that well. Running lines through the characters bumps difficulty substantially. That's what you see in modern CAPTCHAs, without the other wacky stuff. I've wondered whether I'll be punished for guessing a Q versus a bent-over R."
+        },
+        {
+          "s": "leo",
+          "t": "So what's hard for a human isn't always hard for a machine."
+        },
+        {
+          "s": "steve",
+          "t": "Right. And it's a function of value. Yahoo!'s CAPTCHA has high cracking value, so someone will spend great effort to crack it. Putting an extreme CAPTCHA on an obscure blog that's never had malicious posts just punishes the human you hope will comment."
+        },
+        {
+          "s": "leo",
+          "t": "But spam is so frustrating that sometimes you don't care. I turned off registrations on TWiT.tv. Spammers would create an email account, sign up, wait for my emailed password, then spam. It's easy for me to block them, but I have to do it constantly. They're relentless."
+        }
+      ]
+    },
+    {
+      "title": "The Relay Attack",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One of my favorite clever hacks was a proof of concept by someone at CMU playing the opposition, which is exactly what you want."
+        },
+        {
+          "s": "steve",
+          "t": "Take a high-traffic adult website. A bot starts creating a Yahoo! account and receives a CAPTCHA. On the fly, it puts that CAPTCHA on the adult site's login page, where a human solves it. The bot feeds the answer back to Yahoo! and gets the account."
+        },
+        {
+          "s": "leo",
+          "t": "Unwitting human helpers."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. The site had enough traffic that no CAPTCHA went unsolved long, so answers arrived within the window Yahoo! allowed. The community calls it the \"relay attack.\""
+        },
+        {
+          "s": "leo",
+          "t": "That's depressing. As long as they're willing to enlist humans, how do you get around it?"
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Now what are we going to do?"
+        }
+      ]
+    },
+    {
+      "title": "Accessibility and Audio CAPTCHAs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "CAPTCHAs are also controversial. I link to the W3C's anti-CAPTCHA page. The World Wide Web Consortium says they unfairly discriminate against people with disabilities, and it wants a nondiscriminatory web."
+        },
+        {
+          "s": "steve",
+          "t": "The backup for blind users is an audio CAPTCHA."
+        },
+        {
+          "s": "leo",
+          "t": "Here's Digg's. It reads letters: J, P, N, then F, F, J, P, N. I wouldn't think a machine would have much trouble. It's easier than looking at it. Now here's Carnegie Mellon's: a tone, then 4, 1, 6. That'd be tough for a machine."
+        },
+        {
+          "s": "steve",
+          "t": "But we also have speech recognition, worked on as long as optical character recognition. So audio must be deliberately obscured too, and there isn't enough difference today between computer and human hearing for it to work really well."
+        },
+        {
+          "s": "steve",
+          "t": "The W3C also argues that audio CAPTCHAs are a privacy problem, because they force blind users to declare themselves to a site."
+        },
+        {
+          "s": "leo",
+          "t": "That seems a little scrupulous. I'd defend CAPTCHAs more, but it sounds like they don't work that well anyway."
+        }
+      ]
+    },
+    {
+      "title": "reCAPTCHA Digitizes Books",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One of the coolest things you sent me is reCAPTCHA, also from von Ahn at CMU. There's a huge effort to digitize books. A scanned page is a huge amount of data, while text can become an eBook or be read aloud by text-to-speech. Most books predate electronic publishing, so there's no original text file."
+        },
+        {
+          "s": "steve",
+          "t": "reCAPTCHA presents single words from scanned texts. Solving the puzzle helps digitize books."
+        },
+        {
+          "s": "leo",
+          "t": "It's so elegant. I use it on my contact link at Leoville.com and Techguylabs.com, so you have to solve it to get my email address. You get two words."
+        },
+        {
+          "s": "steve",
+          "t": "Both are English words from scanned books. Contemporary OCR software knows when it isn't sure: it gives a confidence score per word. These words were flagged as unrecognizable by the best OCR we have, so no one else's OCR will read them either."
+        },
+        {
+          "s": "steve",
+          "t": "Then each is warped, with a wavy line through it. As we learned, a line turns separate glyph islands into one blob. That really hurts machine recognition, but not humans."
+        },
+        {
+          "s": "steve",
+          "t": "You type both words. Many people get different combinations of them, so by comparing answers, the back end reaches high confidence, maybe after ten matching answers, about what each word is. You've proven you're human and helped digitize books."
+        },
+        {
+          "s": "leo",
+          "t": "Even if I didn't need it, I'd use it to do my part."
+        },
+        {
+          "s": "steve",
+          "t": "An estimated 60 million visual CAPTCHAs are solved by humans every day, at about ten seconds each. That's 600 million seconds a day, more than 166,000 hours, that reCAPTCHA can turn toward digitizing books."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love to see the results so far."
+        },
+        {
+          "s": "steve",
+          "t": "Captcha.net now recommends reCAPTCHA."
+        },
+        {
+          "s": "leo",
+          "t": "It's trivially easy to add to a website. And their site discusses the pornography relay attack."
+        },
+        {
+          "type": "fact",
+          "title": "What became of it",
+          "t": "Google bought reCAPTCHA in 2009 and used it to digitize books and newspaper archives, and later Street View house numbers. Its later versions mostly judge users by behavior, often with just a checkbox."
+        }
+      ]
+    },
+    {
+      "title": "Other Ideas, and Their Weaknesses",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Other approaches try to tell people from computers without images. JavaScript can ask simple English questions like \"What is one plus one?\" But the vocabulary of question patterns is limited enough that code could answer them."
+        },
+        {
+          "s": "steve",
+          "t": "KittenAuth, created a couple of years ago, shows a grid of photos and asks you to pick the kittens. But there's a limited set of pictures. A motivated cracker captures them all, labels them, and hacks right through."
+        },
+        {
+          "s": "steve",
+          "t": "CMU says that isn't even a CAPTCHA by its definition. It must be fully automated, synthesized from scratch, not drawn from a limited database."
+        },
+        {
+          "s": "steve",
+          "t": "Others suggest putting a live operator in the loop, like the original Turing Test. Or skipping the question with specific identity authentication: single sign-on such as OpenID or CardSpace, certificates, or biometrics. Computers don't have thumbprints, though they could fake one."
+        },
+        {
+          "s": "steve",
+          "t": "And simple questions, like \"Which of these five words doesn't have a sail?\", have the same limited-set problem."
+        },
+        {
+          "s": "steve",
+          "t": "So it's a hard problem. It seems easy to tell people from computers, but not over an Internet connection. And the relay attack has people solving the same problem for a different reason."
+        },
+        {
+          "s": "leo",
+          "t": "reCAPTCHA claims it resists that."
+        },
+        {
+          "s": "steve",
+          "t": "It uses multiple servers and crypto, with tags you use as part of it, specifically to eliminate or limit that vulnerability."
+        },
+        {
+          "s": "leo",
+          "t": "That's how to tell if you're a human. Next week is the mailbag."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does CAPTCHA stand for?",
+      "options": [
+        "Completely Automated Public Turing Test to tell Computers and Humans Apart",
+        "Computer Access Protection Through Character Hiding Algorithms",
+        "Certified Automated Password Test for Computer and Human Access",
+        "Character Analysis Puzzle To Check Human Activity"
+      ],
+      "answer": 0,
+      "explain": "It honors Alan Turing's test for machine intelligence."
+    },
+    {
+      "q": "How does the CAPTCHA \"relay attack\" work?",
+      "options": [
+        "A bot shows a site's CAPTCHA to unwitting visitors of another busy site, who solve it",
+        "A bot guesses every possible answer",
+        "Hackers steal the answer database",
+        "Spammers hire OCR experts"
+      ],
+      "answer": 0,
+      "explain": "It works because enough humans see the puzzle quickly."
+    },
+    {
+      "q": "According to crackers, which design mistake made CAPTCHAs easier to break?",
+      "options": [
+        "Placing characters in the same scattered positions every time",
+        "Running lines through characters",
+        "Using many fonts",
+        "Warping the whole image"
+      ],
+      "answer": 0,
+      "explain": "Lines through characters actually raise difficulty the most."
+    },
+    {
+      "q": "How does reCAPTCHA help digitize books?",
+      "options": [
+        "Users type scanned words that OCR software couldn't recognize",
+        "It scans books with users' webcams",
+        "It sells user data to publishers",
+        "Users proofread whole pages"
+      ],
+      "answer": 0,
+      "explain": "Matching answers from many users confirm each word."
+    },
+    {
+      "q": "What does PayPal's $5 Security Key add?",
+      "options": [
+        "A changing six-digit code you append to your password",
+        "A fingerprint reader",
+        "A new username",
+        "Free transaction fees"
+      ],
+      "answer": 0,
+      "explain": "It makes logins require something you have."
+    },
+    {
+      "q": "When does Steve say to take a drive out of service?",
+      "options": [
+        "When a second SpinRite pass still finds problems after sectors were rewritten",
+        "After any single red U",
+        "After one year",
+        "Never, if SpinRite fixed it"
+      ],
+      "answer": 0,
+      "explain": "A single unrecoverable sector can come from a power loss mid-write."
+    }
+  ]
+}

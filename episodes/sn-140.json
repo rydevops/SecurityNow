@@ -1,0 +1,803 @@
+{
+  "number": 140,
+  "title": "Listener Feedback Q&A #39",
+  "subtitle": "Metafiles again, keyboard-pattern passwords, HTTPS as authentication and more",
+  "date": "2008-04-17",
+  "description": "April's Patch Tuesday brings yet another Windows Metafile flaw, Perfect Passwords nears four million, and Steve finds his quad-core workstation underused. A listener's TrueCrypt Mac rescue with SpinRite leads into questions on keyboard-pattern passwords, the risks of outdated operating systems, trimming Windows services, online bill paying and card fraud, downloading old episodes, why login pages should be HTTPS, TrueCrypt's need for admin rights, running your own DNS resolver, why TrueCrypt can't limit password guesses, tampered thumb drives and mechanics who copy everything in your car.",
+  "transcript": "https://www.grc.com/sn/sn-140.txt",
+  "audio": "http://media.GRC.com/sn/SN-140.mp3",
+  "chapters": [
+    {
+      "title": "Coffee and the RSA Conference",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Windows Weekly has become the coffee show. You still have your plumbed espresso machine?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm back in Starbucks mode. I get up at 4:40 a.m. and I'm the first one in when it opens at 5:00. I read the news on my Kindle for about 90 minutes over my first quad Americano, and prepay for two refills. I take the second to go around 6:30, and come back about three hours later for the third, my last of the day. It gets me out of the house to remember what the sun looks like."
+        },
+        {
+          "s": "leo",
+          "t": "I do the same at lunch. It's nice to remember there are people outside."
+        },
+        {
+          "s": "steve",
+          "t": "And next week I'll cover last week's RSA Conference 2008, the industry's preeminent security conference. They noticed I wasn't registered and offered full access with press credentials. So while you were photographing Australia, I was at Moscone in San Francisco. I'm not a city person."
+        },
+        {
+          "s": "steve",
+          "t": "I met the guy who misspelled the \"referer\" header, with one R, which we once discussed."
+        },
+        {
+          "type": "fact",
+          "title": "The misspelling",
+          "t": "HTTP's \"Referer\" header misspelling is generally credited to Phillip Hallam-Baker, who proposed the header in the mid-1990s. It's now frozen into the standard."
+        },
+        {
+          "s": "steve",
+          "t": "And my favorite slogan: you've heard \"Information wants to be free.\" At RSA they added, \"and code wants to be wrong.\" That's every bit as true. This whole show is about code succeeding at being wrong."
+        },
+        {
+          "s": "leo",
+          "t": "We should rename it \"When Code Attacks.\""
+        }
+      ]
+    },
+    {
+      "title": "The Metafile Strikes Again",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "April's Patch Tuesday had eight security updates, all critical, with proof-of-concept code released and exploits in the wild. The most significant is our old friend the Windows Metafile."
+        },
+        {
+          "s": "steve",
+          "t": "I made the original WMF flaw controversial in early '06, since it looked to me like something put in on purpose and left behind. Around this time in '07 there was another major metafile problem. And now another."
+        },
+        {
+          "s": "steve",
+          "t": "It affects 32-bit and 64-bit Windows 2000 SP4, all supported XP, Server 2003, every version of Vista and Server 2008. Every OS Microsoft has. Microsoft says the Graphics Device Interface mishandles integer calculations, so a specially crafted EMF or WMF image could let an attacker take complete control: install programs, change or delete data, or create accounts."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft notes that compromised sites and sites hosting user content \"or advertisements\" could carry the images. They add that attackers can't force you to visit, they'd have to persuade you to click a link. Okay, big deal."
+        },
+        {
+          "s": "steve",
+          "t": "There's a heap overflow in EMF and WMF files, and a separate stack overflow in Enhanced Metafiles. Anything that makes Windows display a picture, even email preview, can trigger it. And the new mention of advertisements reflects cases where ad servers hosted infected ad images, unknowingly, on huge numbers of sites."
+        },
+        {
+          "s": "leo",
+          "t": "It happened on MySpace. It was terrible."
+        },
+        {
+          "s": "steve",
+          "t": "If you can't patch, a registry tweak disables metafile processing. That's probably no big deal. Web pages use JPG, GIF and PNG. Corporate admins may push that change by script."
+        },
+        {
+          "s": "leo",
+          "t": "Because they don't like updating all the time."
+        },
+        {
+          "s": "steve",
+          "t": "Updates sometimes cause more problems than they cure. An update causes a definite problem, while a vulnerability is a potential one. But don't miss this one."
+        },
+        {
+          "s": "leo",
+          "t": "I'm surprised it's still the Metafile."
+        },
+        {
+          "s": "steve",
+          "t": "Across all the OSes, which says they share code, maybe 32-bit code running under 64-bit, or a flaw in the source that survived compilation to 64 bits. This stuff is really complex. Code wants to be wrong."
+        }
+      ]
+    },
+    {
+      "title": "Four Million Perfect Passwords",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're about to cross four million deliveries from GRC's Perfect Passwords page, about 3,600 a day, and each delivery is a set of passwords."
+        },
+        {
+          "s": "leo",
+          "t": "I thought that page was a demo."
+        },
+        {
+          "s": "steve",
+          "t": "You're thinking of Perfect Paper Passwords, which is a demo. People use the Perfect Passwords page at GRC.com/passwords as a source of entropy, like for WiFi keys. I use them myself when I need something guaranteed unique."
+        },
+        {
+          "s": "leo",
+          "t": "Did you see a state lottery with a random number problem? It drew 7077, 7707, 7007. I won't name the state until I'm sure which one."
+        }
+      ]
+    },
+    {
+      "title": "The Quad Core Disappointment",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An early report on my quad-core workstation: as a personal workstation, the quad core seems a total waste, unless you're compressing media. For that, oh my god, it's fast."
+        },
+        {
+          "s": "leo",
+          "t": "Because your compression tool is multithreaded and multicore aware. Many programs aren't."
+        },
+        {
+          "s": "steve",
+          "t": "If I knew then what I know now, I'd have bought a top-of-the-line single core, or maybe dual, at 3-something gigahertz instead of trading speed for four cores. I rarely see more than one in use."
+        },
+        {
+          "s": "leo",
+          "t": "It depends how you use it. I run dual quad-core Xeons with a CPU monitor. With many programs at once, a smart OS divides the tasks. Multithreaded programs benefit. One or two single-threaded programs won't."
+        },
+        {
+          "s": "steve",
+          "t": "Most programs sit in their idle loop waiting for input. I'm reading email, writing code, browsing. Nothing is busy behind the scenes."
+        },
+        {
+          "s": "leo",
+          "t": "Occasionally I peg all four. Right now, with Skype, a browser and email, they're all at 2 percent. For me it's about headroom. Skype in its own process won't run out of juice."
+        },
+        {
+          "s": "steve",
+          "t": "I'd tell listeners: unless you crunch numbers or compress media, go for a fast dual core with more speed."
+        },
+        {
+          "s": "leo",
+          "t": "You're not getting much choice. Intel has made everything at least dual core."
+        }
+      ]
+    },
+    {
+      "title": "IE7 Shows Form Destinations, and Carlsbad Caverns",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Matt Ludlum in Weybridge, near London, noted that IE7 already does what that FormFox add-on does: hover over a Submit button and the status bar shows its URL. I checked IE6 too. I now run VMware on this workstation, with multiple Windows versions, each with its own IE."
+        },
+        {
+          "s": "leo",
+          "t": "That's a good multicore use."
+        },
+        {
+          "s": "steve",
+          "t": "It is. VMware borrowed more resources nicely. What I really wish is more than 4GB in a 32-bit machine. RAM is so cheap, and VMs burn memory."
+        },
+        {
+          "s": "steve",
+          "t": "And Elaine, our transcriber, reports that the Carlsbad Caverns are in New Mexico. Carlsbad, California is home to expensive spas, not creepy bats. She expected the less geographically challenged would write. I told her I don't get out much."
+        },
+        {
+          "s": "leo",
+          "t": "We toured the Marakoopa Caves in Tasmania. Quite awesome."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves a Vista Mac",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This is Episode 140, past TWiT, with 10 to go to 150."
+        },
+        {
+          "s": "steve",
+          "t": "Jonathan Schmidt in Ohio has listened from the beginning, sends TWiT $5 a month, and bought SpinRite. After our whole-drive encryption episodes, he tried TrueCrypt 5.1a, whose boot loader now supports Intel Macs, on his MacBook Pro running Vista through Boot Camp."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt said there wasn't enough room on the drive to install, apparently disliking the partition table OS X and Boot Camp created. So he found you can install Vista on a Mac without OS X: boot the Vista disc, remove all partitions and install as on any Intel machine."
+        },
+        {
+          "s": "leo",
+          "t": "The only problem is you won't have the Mac hardware drivers."
+        },
+        {
+          "s": "steve",
+          "t": "After a clean install, he started whole-drive encryption with a three-pass wipe. At about 78 percent, TrueCrypt reported a CRC error. Every retry failed. Then he thought of SpinRite, which doesn't run on Macs, hint, hint."
+        },
+        {
+          "s": "steve",
+          "t": "He put the drive in his Intel desktop and ran SpinRite overnight at level 4. It found and fixed an unrecoverable error. Back in the MacBook Pro, TrueCrypt offered to pick up where it left off, and continued without error."
+        },
+        {
+          "s": "steve",
+          "t": "About the partition complaint, I'll bet that when the Mac set up the Vista partition, it didn't zero the rest of that first track. TrueCrypt, being careful, saw debris there, assumed it might be something like Macromedia's copy protection, and refused to overwrite it."
+        },
+        {
+          "s": "leo",
+          "t": "Very careful, as it should be. But I wouldn't recommend skipping Boot Camp. It makes a CD of Windows drivers for the Mac hardware. Make that CD first, then you can wipe the drive. Though I don't know why you'd buy a Mac to run only Vista."
+        }
+      ]
+    },
+    {
+      "title": "Passwords by Finger Pattern",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Clark in Perth, Western Australia, makes passwords by muscle memory: a geometric pattern across the keyboard that looks like gibberish. A basic example: start at the bottom-left key and type four keys, zxcv, then move up a row, asdf, then qwer, then 1234. It's long, and only his fingers know it. His real pattern is a lot crazier. Would it stand up to a sophisticated brute-force attack?"
+        },
+        {
+          "s": "steve",
+          "t": "My concern is that it sounds like one password used a lot, and reusing one password everywhere is a bad idea. It's better to have a system generating different passwords for different uses."
+        },
+        {
+          "s": "steve",
+          "t": "But there's something here. Imagine an algorithm: the website's first letter is your starting key, then go up if you can, otherwise down, right if you can, otherwise left. Add diagonals. From any starting place, you'd get a consistent, interesting password."
+        },
+        {
+          "s": "steve",
+          "t": "A brute-force attacker would first exhaust dictionaries and word combinations. It's unlikely they'd attack physical key locations, and there are so many possible algorithms."
+        },
+        {
+          "s": "leo",
+          "t": "But be careful with the obvious ones. I'd bet crackers already include patterns like asdf."
+        },
+        {
+          "s": "steve",
+          "t": "And QWERTY is probably in the dictionary."
+        },
+        {
+          "s": "leo",
+          "t": "It wouldn't be hard to write a cracker that includes obvious keyboard patterns."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Password crackers now routinely include \"keyboard walk\" patterns, so simple finger patterns are among the first things guessed."
+        }
+      ]
+    },
+    {
+      "title": "Old Operating Systems Aren't Safe",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener in Tennessee strongly disagrees with our advice about old operating systems. Many vulnerabilities in new versions exist in old ones too, like the animated cursor flaw, and some networking holes go way back."
+        },
+        {
+          "s": "leo",
+          "t": "He knows of a local employer whose systems were compromised. Employees got malware by email, which then worked through known exploits against unpatched, past-end-of-life systems on the network. He says an end-of-life OS is safe only if it's air gapped, never connected to an Internet-connected computer, or behind a well-configured firewall allowing only necessary, monitored traffic. I agree."
+        },
+        {
+          "s": "steve",
+          "t": "I still like 9x-era machines, like 98 Second Edition, for their relative invulnerability. None of this month's vulnerabilities affect them, for example."
+        },
+        {
+          "s": "leo",
+          "t": "You wouldn't expect patches. They don't patch them."
+        },
+        {
+          "s": "steve",
+          "t": "No, I mean those flaws don't exist there, just like the Metafile."
+        },
+        {
+          "s": "leo",
+          "t": "But just because they aren't patched doesn't mean they aren't vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "Very true. It's past end of life. His opinion deserved airing."
+        },
+        {
+          "s": "leo",
+          "t": "I'm on his side. Connected to any networked machine, it's vulnerable. I'd bet Sasser survives because dusty old Windows machines in enterprise closets still work, so nobody patches or watches them, and they chug out viruses."
+        }
+      ]
+    },
+    {
+      "title": "Trimming Windows Services",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric in Sanford, North Carolina never misses an episode and enjoys looking smart helping friends and family. He keeps Windows patched, uses the Comodo firewall, scans weekly, has a NAT router, and visits only a few favorite sites to avoid a CTD, a Computer Transmitted Disease, though he takes a Sunday drive on the 'Net and worries about third-party ad banners. Could you do an episode on slimming down Windows and closing vulnerability doors?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a great topic, and it's on my list: researching which services can clearly and safely be turned off."
+        },
+        {
+          "s": "steve",
+          "t": "Setting up XP in VMware, I noticed the Wireless Zero Configuration service running on a workstation with no WiFi. Windows could know I have nothing wireless."
+        },
+        {
+          "s": "leo",
+          "t": "It runs without a wireless adapter?"
+        },
+        {
+          "s": "steve",
+          "t": "Zero config is right, because there's nothing to configure. And I use static IPs, but the DHCP client sits there running. When I'm done trimming, I have a short list. The XP I set up yesterday runs in 66MB and boots instantly. In VMs, a smaller footprint leaves more RAM for everything else."
+        },
+        {
+          "s": "steve",
+          "t": "I've also turned off services for security. Unplug n' Pray turns off the SSDP discovery service. Shoot The Messenger turns off Messenger. DCOMbobulator shuts down DCOM. Those made sense before XP Service Pack 2, when machines weren't behind a firewall. The world really changed with SP2, so services behind a firewall are far less dangerous."
+        },
+        {
+          "s": "steve",
+          "t": "But the more that's running, the more opportunity for local exploits. You may think running as a non-admin protects you, but privilege elevation attacks typically exploit running services that a non-admin couldn't start. So even behind a firewall and NAT router, fewer services makes sense. We'll do that episode."
+        },
+        {
+          "s": "leo",
+          "t": "Black Viper has done a really good job, trying services one by one. I don't know if you can improve on it."
+        }
+      ]
+    },
+    {
+      "title": "Is Online Bill Paying Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Curtis Wyatt in Las Cruces, New Mexico is considering online bill paying. Is it safe to give his electric, gas and cell phone companies his bank information? I've done it for years."
+        },
+        {
+          "s": "steve",
+          "t": "It's the typical tradeoff between security and convenience. When you mail a check, the payee already has your bank account number."
+        },
+        {
+          "s": "leo",
+          "t": "But only that payee. A third-party bill payer is one more party with the information."
+        },
+        {
+          "s": "steve",
+          "t": "Any database aggregating many people's data is a single point of vulnerability that has bad guys salivating. At RSA I heard a lot about targeted attacks: email about the recipient's company or job, aimed at specific executives or employees, gets far more penetration than random spam about someone in Jakarta needing to move money. That's giving financial institutions headaches. So you probably trade a little security for great convenience, and lots of people do it."
+        },
+        {
+          "s": "leo",
+          "t": "Here's the dirty secret. Many payees don't accept electronic transfers, so the bill-pay service prints a check and mails it anyway."
+        },
+        {
+          "s": "steve",
+          "t": "I assumed he meant setting up an account with each company."
+        },
+        {
+          "s": "leo",
+          "t": "That would be safe. I use Intuit's Paytrust. It started as PayMyBills, Paytrust bought it, then Intuit bought Paytrust, so at least three companies have owned my information. I've also heard, possibly apocryphally, that some data entry is done by prisoners. Some human reviews each bill, and you trust that human."
+        },
+        {
+          "s": "steve",
+          "t": "And my concern is that if money is sucked out of my account by electronic transfer, it's gone, with no indemnification against fraudulent transfers."
+        },
+        {
+          "s": "steve",
+          "t": "Years ago, when I was setting up my eCommerce system, my local FBI friends told stories of merchants with accounts set up without transfer limits who lost their entire balance with no recourse."
+        },
+        {
+          "s": "leo",
+          "t": "That's old information. The law was changed a few years ago, so there's a limit and indemnification. Debit cards used to lack credit-card protections, and that changed. Check your bank's policy."
+        },
+        {
+          "type": "fact",
+          "title": "The rules",
+          "t": "In the U.S., the Electronic Fund Transfer Act of 1978 and its Regulation E limit your liability for unauthorized transfers to $50 if reported within two business days, and $500 within 60 days, though later reports can leave you exposed."
+        },
+        {
+          "s": "leo",
+          "t": "Using one third party means only they know my bank information. Intuit's privacy policy says they never sell or share your personal information."
+        },
+        {
+          "s": "steve",
+          "t": "They'll just sell the whole company."
+        },
+        {
+          "s": "leo",
+          "t": "Right, it's the third owner of my information. But I've done it for over a decade without a problem. We cover what could go wrong."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Card Escapes Onto the Internet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "While you were in Australia, I lost control of my credit card number. Third time it's happened. I use it all over the 'Net."
+        },
+        {
+          "s": "steve",
+          "t": "A robot called: \"Please hold for a security consultant.\" She asked whether I'd been buying anything in France the night before, when I was probably asleep. First a $1 charge, then over $1,500 at a sports boutique in France, then a third try. Their automated security caught and blocked all three, since I'd never had transactions like that. We canceled the number."
+        },
+        {
+          "s": "leo",
+          "t": "It happened to me after buying from an Argentine company: a $7,000 charge."
+        },
+        {
+          "s": "steve",
+          "t": "They take fraudulent charges off your bill, and when I checked, nothing got past them. The $1 charge was the crooks' test to see whether the number they'd received was valid."
+        },
+        {
+          "s": "leo",
+          "t": "Check your statements. Banks use business intelligence software to spot transactions outside your normal pattern among billions a day. It's very effective."
+        },
+        {
+          "s": "steve",
+          "t": "Sometimes too effective. That card shuts down every time I buy gas. Then a restaurant says, sorry, Steve, this card is declined. They told me crooks test stolen cards at gas pumps because there's no attendant and they can make a fast getaway if it's declined. So I carry another card for gas. I'll make that tradeoff to have fraud caught."
+        },
+        {
+          "s": "leo",
+          "t": "My ATM card was refused once in Canada. I called and said I'm in Canada, and never had trouble again."
+        },
+        {
+          "s": "steve",
+          "t": "You had your Canada bit set."
+        }
+      ]
+    },
+    {
+      "title": "Downloading Every Old Episode",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John wants to download every episode, but iTunes only offers some, and our site says you can \"subscribe.\" Does subscribing mean he can't download the rest? Doesn't he want to violate our policy?"
+        },
+        {
+          "s": "leo",
+          "t": "I hate the word \"subscribe\" in iTunes. It sounds like you'll be charged. All our shows are free. Donations are optional, at TWiT.tv. And many people found us through iTunes and don't know TWiT.tv exists, so they're surprised we accept donations or have every file."
+        },
+        {
+          "s": "leo",
+          "t": "Go to TWiT.tv/sn for every episode. Shortcut: TWiT.tv/sn1 is the first episode, sn2 the second, and so on. All 140 are there."
+        },
+        {
+          "s": "leo",
+          "t": "Our feeds hold only the latest 20 episodes, about 50K. With 140 it'd be a megabyte, and every subscriber's software downloads the feed about every hour. We pay for feed bandwidth, so do the math. AOL pays for the show downloads, not the feeds. Maybe someone will write a script to grab them all."
+        },
+        {
+          "s": "steve",
+          "t": "All the episodes are on GRC.com too."
+        },
+        {
+          "s": "leo",
+          "t": "Audible pays per download, but only counts the first month, which is annoying since many people like John listen to old episodes. Astaro pays a flat fee."
+        }
+      ]
+    },
+    {
+      "title": "HTTPS Proves Who You're Talking To",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Håkan Lindqvist in Sweden, and we have many listeners in Scandinavia and Australia, says banks that put the login form on a plain HTTP page with a note saying it \"will be submitted securely,\" or that even redirect you back to HTTP if you try HTTPS, invite catastrophe."
+        },
+        {
+          "s": "leo",
+          "t": "Any phisher can copy that form and that sentence. The note should instead say, never enter your login unless your browser shows the padlock, and ideally check the certificate chain."
+        },
+        {
+          "s": "leo",
+          "t": "Encryption is only half the point of HTTPS. It also shows who you're communicating with, as far as the trusted root authority knows. Only a form on an HTTPS page lets you verify that, since the browser can only show it after the connection is made. If your bank misuses security that badly, he says, switch banks."
+        },
+        {
+          "s": "steve",
+          "t": "It's authentication. At RSA I attended a really interesting session on EV, extended validation, certificates, and now understand better why they make sense. Only about 5,000 merchants use them. GRC may become 5,001, though they're expensive."
+        },
+        {
+          "s": "steve",
+          "t": "HTTPS authenticates the far end. We've talked about right-clicking a page, viewing its certificate and following the chain of trust."
+        },
+        {
+          "s": "leo",
+          "t": "So why isn't every page HTTPS? Amazon's login page is, but shopping pages aren't."
+        },
+        {
+          "s": "steve",
+          "t": "I think it ought to be. Fifteen years ago, with 8MHz PCs, the SSL handshake's cryptographic setup was expensive. Now servers and PCs are powerful, and HTTP 1.1 keeps one persistent connection open between browser and server as you move from page to page, so you're not creating secure connections over and over."
+        },
+        {
+          "s": "steve",
+          "t": "I've been seriously considering switching all of GRC to secure connections. I think Google once didn't index secure pages, but that's long changed. Then you have persistent authentication, and the whole dialogue is snoop-proof. I already enforce SSL on sensitive pages, like the Security Now! entry page and the password pages."
+        },
+        {
+          "s": "steve",
+          "t": "Next week I'll discuss how EV certificates put the site's verified name right in the browser's interface, doing the right-click, properties, check-the-owner work for you."
+        },
+        {
+          "s": "leo",
+          "t": "Bank of America is HTTPS from the moment you arrive. They got a clue. And they've added an option to text a code to your cell phone at each login, like having a football. I don't mind the inconvenience."
+        },
+        {
+          "s": "steve",
+          "t": "And Google Mail: go to http://mail.google.com, and it secures you to log in, then drops you back out. Use https://mail.google.com and you stay secure. Since logging in proves your browser can do SSL, why not stay in that mode?"
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Gmail made HTTPS the default in January 2010, and GRC later moved entirely to HTTPS. Today nearly all web traffic is encrypted, helped by free certificates from Let's Encrypt."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt Needs Admin Rights, IronKey Doesn't",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim Busser in Vancouver reminds us: IronKey needs no administrative rights. In many government and corporate settings, users lack admin rights on the PCs they use. And IronKey's secure surfing service matters on untrusted access points. So TrueCrypt needs admin rights even to unlock?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, unless an admin has preinstalled the TrueCrypt driver. Creating a virtual drive requires kernel-level access."
+        },
+        {
+          "s": "steve",
+          "t": "Two weeks ago I spoke at our local North Orange County Computer Club's 32nd anniversary. Thirty-two is 100000 in binary, a big round number, so they wanted cake and Gibson. I talked about TrueCrypt and whole-drive encryption. A former manager of the club, in a school administration job, said she often uses her USB drive on locked-down machines without admin rights. I had to tell her she can't use TrueCrypt there. IronKey doesn't have that limitation."
+        }
+      ]
+    },
+    {
+      "title": "Running Your Own DNS Resolver",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dan Menear in Northglenn, Colorado: you said you run your own OpenDNS server. If the goal is avoiding DNS poisoning, how do you get propagated DNS information?"
+        },
+        {
+          "s": "steve",
+          "t": "If I said OpenDNS, I misspoke. I run what's called a resolver, the same thing an ISP's DNS server is. Clients ask it to resolve names, and it does a recursive lookup down DNS's hierarchy: the root, then top-level domains like .com, .org and .net, then the second level and so on."
+        },
+        {
+          "s": "steve",
+          "t": "Mine is a little FreeBSD box running BIND 9, the industry-standard DNS server, with lots of memory for caching. It knows all the root name servers. Every machine on my network asks it. To find www.amazon.com, it goes to the root, finds the .com servers, asks for Amazon.com, and gets the IP itself."
+        },
+        {
+          "s": "leo",
+          "t": "So the root servers would have to be poisoned."
+        },
+        {
+          "s": "steve",
+          "t": "It avoids trusting the ISP. ISPs are big targets. If someone poisoned an ISP's server with a bad IP for Amazon, Microsoft or eBay, every customer's browser would say www.amazon.com, and unless you noticed the page wasn't secure, you'd submit your login. But that's not why I do it. I buy bulk T1 service with no ISP, so I have to run my own DNS."
+        },
+        {
+          "s": "leo",
+          "t": "Then you must keep BIND and BSD patched. BIND has had problems."
+        },
+        {
+          "s": "steve",
+          "t": "A ton of problems."
+        },
+        {
+          "s": "steve",
+          "t": "The minor downside: an ISP's resolver almost certainly has Amazon.com cached from another customer, so it answers instantly. Mine has to do the work, since there's nobody here but me."
+        },
+        {
+          "s": "leo",
+          "t": "Do the root server operators mind?"
+        },
+        {
+          "s": "steve",
+          "t": "It adds some load, but their records have long Time To Live values, a day or two, so you rarely go back to the root, just to refresh the list of top-level domain servers."
+        },
+        {
+          "s": "leo",
+          "t": "It's like a big RSS feed. Anybody can set up a resolver, but I imagine they'd prefer people use established ones."
+        }
+      ]
+    },
+    {
+      "title": "Why TrueCrypt Can't Limit Guesses",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric Larsen in Denmark uses TrueCrypt's pre-boot authentication. TrueCrypt recommends 20 or more characters, which is hard to remember. IronKey's 10 tries make even four characters secure. Why not limit TrueCrypt to 50 tries? A brute-force cracker would use them up in a millisecond."
+        },
+        {
+          "s": "steve",
+          "t": "Because they can't. David made this point, and it's worth revisiting. IronKey can enforce 10 tries because you have no access to its hardware counter."
+        },
+        {
+          "s": "steve",
+          "t": "With TrueCrypt, you have the whole PC. Take a snapshot of the drive and try 49 passwords. Any counter would be on the hard drive, in RAM, in the registry, somewhere you fundamentally have access to. Reset it to zero and try another 49. The TPM isn't really set up as a secure counter."
+        },
+        {
+          "s": "steve",
+          "t": "Retry limits work in client-server systems because the client can't reach into the server to reset its counter. Here you're sitting at the TrueCrypt \"server.\" And it's open source, so everyone knows what it does."
+        },
+        {
+          "s": "steve",
+          "t": "You can't even obfuscate the counter. It's there in the clear."
+        },
+        {
+          "s": "leo",
+          "t": "There's an advantage to having hardware and closed source."
+        },
+        {
+          "s": "steve",
+          "t": "I don't think I heard that correctly. Did you say that, Leo?"
+        },
+        {
+          "s": "leo",
+          "t": "I did say it."
+        }
+      ]
+    },
+    {
+      "title": "The Show Notes and Sitewide Search",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Scott Edwards in Newcastle, Australia was explaining to a coworker how impractical it is to crack strong encryption. He found the \"billion billion billion billion\" example in our show notes, a number with 1,296 billion billion billion billion digits. The notes made it easy."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks to Elaine's transcripts and sitewide search, go to GRC.com/securitynow and use the search box in the upper right. I imagine Scott typed \"billion billion billion\" and was taken right to the episode, then used his browser's Find. That works for all 139 previous episodes, and soon this one."
+        },
+        {
+          "s": "leo",
+          "t": "Steve pays for that out of his own pocket. And my Tasmania trip was as a guest of Mikkel Aaland, for his \"Adobe Lightroom Adventure\" book, with 20 photographers and me, the amateur. My blog at Leoville.com has posts, and SmugMug and Flickr have my best pictures. I took 3,600. Australia is a great country, and the people are so friendly."
+        }
+      ]
+    },
+    {
+      "title": "A Tampered Thumb Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "James Manger in Melbourne makes a good point about leaving your thumb drive with a mechanic. TrueCrypt protects your files, but they could put malware on the drive, infecting the next computer you plug it into, maybe even with autorun disabled, and U3 might need more."
+        },
+        {
+          "s": "leo",
+          "t": "Worse, they could replace TrueCrypt.exe on the drive with malware of the same name, which might even act like TrueCrypt and prompt for your password, then read your data and send it off. You protected your data's confidentiality, but not the integrity of the disk."
+        },
+        {
+          "s": "steve",
+          "t": "He's right. The more we compare TrueCrypt and IronKey, the more I wish IronKey were small and cute enough for my keychain like this gorgeous little Kingston. With IronKey, nothing is exposed and there's no drive until you log in. My TrueCrypt.exe has to be accessible, since it mounts the driver and prompts for the password. That vulnerability is real. I'll have to come up with a solution."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe password-protect TrueCrypt.exe."
+        },
+        {
+          "s": "leo",
+          "t": "Or do an MD5 hash."
+        },
+        {
+          "s": "steve",
+          "t": "But you'd have to check it every time. If it were a password-encrypted self-extracting EXE, I'd detect a replacement instantly. But by the time you run something to find out it's not what you expect, the damage is done. There's no good solution."
+        },
+        {
+          "s": "leo",
+          "t": "Giving someone your hardware is always risky. That's why IronKey goes to such lengths, with the epoxy and all."
+        },
+        {
+          "s": "steve",
+          "t": "I thought it was overkill. The more I think about it, that's what you have to do for a thumb drive you can hand someone and say, do what you want, you can't get me."
+        }
+      ]
+    },
+    {
+      "title": "Shocking but True: What Mechanics Do",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our Shocking but True Jolt of the Week comes anonymously from nearby Irvine."
+        },
+        {
+          "s": "steve",
+          "t": "He gave his name, but I'm not using it for this one."
+        },
+        {
+          "s": "leo",
+          "t": "He provides IT support for a local dealership group, VW and Honda. Nearly all auto technicians have PCs and laptops in their service bays. When a car comes in, the first thing they do is look for CDs and iPods to rip music. Then any USB drive, portable hard drive or laptop is tapped for useful files. Then everything goes back in the car, and the owner never knows."
+        },
+        {
+          "s": "leo",
+          "t": "The technicians have amassed a huge, ever-growing library of music and applications, on their own network-attached storage so they don't use company IT. His warning: anything left in your car can and will be accessed by tinkering fingers. Holy cow, Steve."
+        },
+        {
+          "s": "leo",
+          "t": "I was always told to leave only a valet key, put things in the trunk, since they could copy your keys, and they have your registration and address. But who knew this?"
+        },
+        {
+          "s": "steve",
+          "t": "It's almost organized. If you ever wondered how disc number four became number six in your changer, now we know. They weren't put back in the same place."
+        },
+        {
+          "s": "leo",
+          "t": "I won't leave my IronKey in there either."
+        },
+        {
+          "s": "steve",
+          "t": "IronKey is safe, Leo. Just make sure you get it back. Actually, if they guessed wrong 10 times, it would shut down."
+        },
+        {
+          "s": "leo",
+          "t": "They could break it. They'd absolutely try passwords."
+        },
+        {
+          "s": "steve",
+          "t": "They absolutely would."
+        },
+        {
+          "s": "leo",
+          "t": "At our meet-ups in Australia, a listener, Ivars I think, showed me his IronKey and a PayPal football on his keychain."
+        },
+        {
+          "s": "steve",
+          "t": "I saw the IronKey guys at RSA. They said, boy, this podcast has legs."
+        }
+      ]
+    },
+    {
+      "title": "Coming Up: RSA 2008",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Next week, the RSA Conference, the big security conference of the year. And send your questions to GRC.com/feedback."
+        },
+        {
+          "s": "steve",
+          "t": "It's a web form, so I get no spam."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did April 2008's Patch Tuesday fix that affected every Windows version Microsoft supported?",
+      "options": [
+        "Another Windows Metafile flaw that let a crafted image take over a system",
+        "A TrueCrypt bug",
+        "An Excel macro",
+        "A DNS bug"
+      ],
+      "answer": 0,
+      "explain": "It could be triggered by images in ads or email previews."
+    },
+    {
+      "q": "Why did Steve say his quad-core workstation was underused?",
+      "options": [
+        "Most of his programs sit idle waiting for input, so only media compression used all four cores",
+        "It overheated",
+        "Windows can't use four cores",
+        "VMware disabled them"
+      ],
+      "answer": 0,
+      "explain": "Leo said the cores give him headroom."
+    },
+    {
+      "q": "Why does Håkan say a bank's login form should be on an HTTPS page?",
+      "options": [
+        "HTTPS also proves who you're talking to, and only a secure page lets you verify the bank's identity first",
+        "It's faster",
+        "Forms can't submit otherwise",
+        "It hides the password field"
+      ],
+      "answer": 0,
+      "explain": "Phishers can copy a \"submitted securely\" notice."
+    },
+    {
+      "q": "Why can't TrueCrypt limit the number of password guesses?",
+      "options": [
+        "Any counter would be on the PC, where an attacker could simply reset it",
+        "It's too slow",
+        "The developers forgot",
+        "It would break hibernation"
+      ],
+      "answer": 0,
+      "explain": "IronKey's counter is protected in hardware."
+    },
+    {
+      "q": "What danger did James point out about a TrueCrypt thumb drive left with a mechanic?",
+      "options": [
+        "Someone could replace TrueCrypt.exe on it with malware that steals your password",
+        "They could read the files directly",
+        "The drive would wear out",
+        "TrueCrypt would delete itself"
+      ],
+      "answer": 0,
+      "explain": "Steve found no good solution."
+    },
+    {
+      "q": "Why does Steve run his own DNS resolver?",
+      "options": [
+        "He buys bulk T1 bandwidth with no ISP, so he has to",
+        "Root servers require it",
+        "It's faster than any ISP's",
+        "OpenDNS asked him to"
+      ],
+      "answer": 0,
+      "explain": "It also avoids trusting an ISP's server, if he keeps BIND patched."
+    }
+  ]
+}

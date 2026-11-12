@@ -1,0 +1,365 @@
+{
+  "number": 188,
+  "title": "Listener Feedback #62",
+  "subtitle": "A Q&A on SSH tunneling, open-hotspot SSL, the YubiKing winners and an MIT battery breakthrough",
+  "date": "2009-03-19",
+  "description": "Ten listener questions and a packed news segment: the BBC buying a 22,000-PC botnet, the YubiKing award winners (including the slick KeyGenius), an MIT lithium-ion breakthrough that charges in seconds, a \"poor man's VPN\" over SSH, why SSL can't be man-in-the-middled on open WiFi without a planted certificate, running old 16-bit software, whether AES and PGP are really secure (the Crypto AG story), drive imaging, and two PayPal fixes, after a jaw-dropping \"just guess the digits\" support call.",
+  "transcript": "https://www.grc.com/sn/sn-188.txt",
+  "audio": "http://media.GRC.com/sn/SN-188.mp3",
+  "chapters": [
+    {
+      "title": "Foxit Reader Needs Patching Too",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We've suggested Foxit as an alternative to Adobe Reader, so note that Foxit Reader has its own just-fixed flaws: remote-code-execution bugs via specially crafted PDFs, stack-based buffer overflows. With around 20 million copies in use, it's a big enough target that exploitation is likely, and proof-of-concept code is already out."
+        },
+        {
+          "s": "steve",
+          "t": "Update to the current Foxit (3, build 1506 or later). These are different bugs from Adobe's; Foxit uses its own libraries, including its own JBIG2 decoder, so it had a different JBIG2 issue than Adobe's."
+        },
+        {
+          "s": "steve",
+          "t": "It's just hard to make code bulletproof. Developers focus on making it work; attackers have the opposite stake, finding where it doesn't, which is why we hit one of these almost every week."
+        }
+      ]
+    },
+    {
+      "title": "The BBC Bought a Botnet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The BBC did something controversial: a reporter bought a 22,000-PC botnet in a chatroom and used it, sending spam to their own Hotmail and Gmail accounts, and aiming a denial-of-service attack at a cooperating security firm, which confirmed 22,000 machines hitting it. Then they changed all 22,000 screensavers to a warning and shut the botnet down."
+        },
+        {
+          "s": "steve",
+          "t": "The trouble is it's illegal. They modified 22,000 people's machines without permission. Good intentions don't matter; two wrongs don't make a right, and if they'd accidentally harmed a machine they'd face real liability."
+        },
+        {
+          "s": "leo",
+          "t": "And it's a bit sensationalistic. Everyone knows botnets exist and are cheap to buy."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe that's the one thing they demonstrated, how easily anyone in a chatroom can buy one."
+        }
+      ]
+    },
+    {
+      "title": "The YubiKing Award Winners",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The YubiKing awards wrapped up (the voting was skewed because two companies bought piles of YubiKeys and voted for themselves, so we discounted that). Three winners. Maventa is a cloud e-invoicing system: you batch electronic invoices, review them, then use the YubiKey to sign and authorize the whole batch before they're forwarded."
+        },
+        {
+          "s": "steve",
+          "t": "Second, Collective Software's AuthLite integrates YubiKey two-factor into enterprise Windows and Active Directory, covering logon and VPN, a soup-to-nuts solution."
+        },
+        {
+          "s": "steve",
+          "t": "The one I love is KeyGenius, free, from a developer in Switzerland. A browser add-on watches your logins; you register a site's password on his server (no username, no identity, just the password) and authenticate with the YubiKey in one-time-password mode. Later you touch the YubiKey into the password field; the add-on sees the YubiKey code, authenticates you to his server, retrieves the real password, swaps it in, and submits, all behind the scenes."
+        },
+        {
+          "s": "steve",
+          "t": "So it's café-safe: a keylogger only ever captures the one-time YubiKey code, never the real password, which is never typed. The caveat is it's one guy's server, so don't count on it staying up, but it's a clever, inherently mobile use of the key."
+        },
+        {
+          "type": "fact",
+          "title": "Dual-personality YubiKey",
+          "t": "Steve notes Yubico will soon ship a key with two independent configurations: touch one second for the first personality, hold three seconds for the second. Each can be any mode, so one key can carry both a one-time-password identity and a static password, long a top listener request."
+        }
+      ]
+    },
+    {
+      "title": "An MIT Battery Breakthrough",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Big news in Nature: MIT researchers re-engineered the surface crystal structure of a lithium iron phosphate electrode so it's far more permeable to lithium ions, the thing that limited charge/discharge rate. The result: existing lithium-ion chemistry that can fully charge or discharge in seconds."
+        },
+        {
+          "s": "steve",
+          "t": "It behaves like an ultracapacitor but without the exotic high voltages; it runs at normal battery voltages, and the limit becomes available current. A laptop could charge in seconds on ordinary household current; a car would need an \"electron station\" delivering huge amperage, but it's doable."
+        },
+        {
+          "s": "leo",
+          "t": "So existing chemistry, just a better electrode. Amazing."
+        },
+        {
+          "s": "steve",
+          "t": "Their test cells hit 170 kilowatts per kilogram versus a typical 0.5 to 2, orders of magnitude, and it looks to solve lithium-ion's cycle-life limit too. Two companies have licensed it; it's maybe three or four years from market."
+        },
+        {
+          "s": "steve",
+          "t": "It also revives an old idea: Ben Rosen's 1990s hybrid used a microturbine, far more efficient than a piston engine driving a generator, but stored energy in a magnetically levitated flywheel at 55,000 rpm (scary in a crash). With a battery that accepts a turbine's burst of charge, a microturbine hybrid finally makes sense: spin up, recharge fast, shut down."
+        },
+        {
+          "s": "leo",
+          "t": "And that 30-second-charge screwdriver you mentioned, I finally got it. It really does charge in 30 seconds, plenty of torque, though the barrel's a bit bulky."
+        },
+        {
+          "type": "fact",
+          "title": "The MIT battery in hindsight",
+          "t": "The lithium iron phosphate \"fast-charge\" work drew huge attention in 2009, but real-world adoption was gradual; the current limit for charging large packs, and manufacturing and cell-balancing realities, meant the \"charge your phone in seconds\" future arrived far more slowly than the lab result suggested."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Over a Network Boot",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A SpinRite note from Dave Jones, an IT manager who bought a four-license site license. He got SpinRite to run over PXE network boot by merging spinrite.exe into FreeDOS's boot floppy image and adding it to his PXE menu. Now he can run SpinRite on any of nearly 100 machines straight from the network, no disks to carry."
+        },
+        {
+          "s": "steve",
+          "t": "It's elegant: a machine won't boot, you pick \"Run SpinRite\" from the PXE boot menu, it boots FreeDOS-plus-SpinRite and fixes the disk. Perfect for preventative maintenance too, reboot into SpinRite overnight and resume work the next morning."
+        }
+      ]
+    },
+    {
+      "title": "PayPal: \"Just Guess the Digits\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The horrifying PayPal revelation of the week, from Francis in London. He needed to reset a client's PayPal password, got the expired-link runaround, and called support. They asked for the last four digits of the bank account, which he didn't know. The rep said, \"Why don't you guess?\""
+        },
+        {
+          "s": "leo",
+          "t": "He guessed a first digit, the rep said \"higher,\" then \"lower,\" and literally walked him to all four digits, then emailed a link that let Francis change the password and all the security questions."
+        },
+        {
+          "s": "steve",
+          "t": "Unbelievable. It also shows the rep can see the number, so there's no privacy even internally; the system should just take his guess and answer yes or no, not play warmer-colder."
+        },
+        {
+          "s": "leo",
+          "t": "It sounds like a renegade rep. I'd love an audio file of that call."
+        }
+      ]
+    },
+    {
+      "title": "PayPal Starts Fixing Things",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Two listeners report PayPal improving. Ian in Newbury quotes a notice: after March 31, 2009 (UK PayPal), support will only discuss your account if you provide a six-digit \"Secure Web PIN,\" which you get by logging in and clicking Call Us; the last four digits of your card or bank account can no longer identify you."
+        },
+        {
+          "s": "steve",
+          "t": "Right, that's a one-hour, one-time PIN that solves the social-engineering problem, as long as you can log in first; it wouldn't have helped Francis, who couldn't log in."
+        },
+        {
+          "s": "leo",
+          "t": "And Tazz in Nova Scotia found that under My Account, Edit Profile, Identification Preferences, you can set your own six-digit customer-service PIN instead of the default bank-account digits. I went and checked, it's there, mine defaulted to the bank number, and I set my own PIN."
+        },
+        {
+          "s": "steve",
+          "t": "Everyone who uses PayPal should go set that. It's a real security improvement, and after today's stories we need all the PayPal security we can get."
+        }
+      ]
+    },
+    {
+      "title": "A Poor Man's VPN Over SSH",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark in Concord runs a \"poor man's VPN\": a Linux SSH server at home on a non-standard port, keypair authentication, and an SSH dynamic tunnel forwarding port 1080, with his browser pointed at a SOCKS proxy on localhost:1080. As secure as IPsec or SSL VPN?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, every bit as secure as an SSL VPN. The roaming client authenticates with a pre-arranged keypair, and I love that he moved SSH off port 22, the typical attack scans every IP for something on port 22, not every port of one IP."
+        },
+        {
+          "s": "steve",
+          "t": "His browser connects to localhost:1080, where the SSH client listens; that rides the authenticated, TLS-encrypted SSH connection to his home server, where traffic exits to the Internet. It's a little clunky and only tunnels what you can proxy, browsing is ideal, but it's absolutely secure."
+        },
+        {
+          "type": "fact",
+          "title": "SSH tunneling",
+          "t": "Forwarding a port through an SSH session (here a SOCKS proxy via dynamic forwarding) is a long-established way to secure arbitrary traffic over an untrusted network. It gives VPN-grade confidentiality for anything you can route through the proxy, using only an SSH server you already trust."
+        }
+      ]
+    },
+    {
+      "title": "Running Old 16-bit Software",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeff's old 16-bit children's games stopped installing after XP Service Pack 3, hanging with WOW.exe pegging the CPU. What is WOW.exe?"
+        },
+        {
+          "s": "steve",
+          "t": "WOW is \"Windows On Windows,\" the layer that hosts the 16-bit Windows API on a 32-bit system. I couldn't find any report that SP3 broke 16-bit software, and I verified my own 16-bit tools still run under SP3, so Jeff's install may simply be corrupted."
+        },
+        {
+          "s": "steve",
+          "t": "But the bigger trend is Microsoft dropping very old support; 64-bit Windows already can't run 16-bit apps at all. This is where virtual machines shine: I run VMware Fusion on my Mac just to use my 16-bit DOS editor. Install a VM with whatever old Windows the kids' games need."
+        }
+      ]
+    },
+    {
+      "title": "Open Hotspots and Man-in-the-Middle on SSL",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Larry is confused: you said an employer can man-in-the-middle employees' HTTPS. Couldn't a coffee shop or a malicious café worker do the same?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Without explicit configuration of your laptop, there's no way to man-in-the-middle SSL on an open hotspot, that's the whole point of SSL. The confusion comes from the corporate case, where the company installs its own certificate on every machine."
+        },
+        {
+          "s": "steve",
+          "t": "With that corporate certificate in place, your SSL connection goes only to the corporate gateway, which decrypts it, filters the content, and makes its own SSL connection onward. That's a man-in-the-middle by policy, and it works only because your machine was given the gateway's certificate. On an open hotspot you connect directly to the real server, so SSL protects you."
+        },
+        {
+          "type": "fact",
+          "title": "Why SSL resists interception",
+          "t": "SSL/TLS authenticates the server with a certificate chaining to a trusted authority. An attacker in the middle can't present a valid certificate for the real site, so your browser warns you, unless a certificate they control has been deliberately installed in your trust store, as corporate filtering gateways do."
+        }
+      ]
+    },
+    {
+      "title": "Hysteresis, One More Time",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "More hysteresis examples. Paul offers a thermostat: the heater shuts off above the set point but doesn't switch back on the instant it drops below, it waits for a lower threshold, so it isn't constantly cycling."
+        },
+        {
+          "s": "steve",
+          "t": "A great one. Many thermostats implement that with a bimetallic coil and a mercury switch: as temperature changes the coil winds tighter and tips a glass capsule of mercury over-center, and it stays switched until the temperature moves well back the other way. Simple, physical hysteresis."
+        },
+        {
+          "s": "leo",
+          "t": "And Allyn Malventano gives the radio sense: hysteresis is a ferrous core's tendency to retain magnetism, lagging the field, and the constant realignment wastes power as heat, hysteresis loss. That's why a transformer, like an idle wall wart, stays warm even when nothing's charging."
+        }
+      ]
+    },
+    {
+      "title": "Are AES and PGP Really Secure?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Glenn asks, after reading about compromised crypto, whether any public algorithm is trustworthy, citing the Crypto AG story."
+        },
+        {
+          "s": "steve",
+          "t": "That story alleged the NSA worked with the Swiss firm Crypto AG to plant backdoors in its cipher machines. True or not, it's the perfect illustration of the difference between an algorithm and its implementation. AES and PGP's math wasn't the weakness; the weakness was a deliberately sabotaged system around the algorithm."
+        },
+        {
+          "s": "steve",
+          "t": "Algorithmic strength and application strength are two different things, and this is a point for open source, Leo: open code lets people inspect the implementation and confirm it's done right, so you get both a strong algorithm and a strong implementation."
+        }
+      ]
+    },
+    {
+      "title": "Making a Drive Image",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Renee Ann asks how to make a drive image and what software to use."
+        },
+        {
+          "s": "steve",
+          "t": "First, a clarification: a drive image isn't an ISO (that's a CD/DVD image). My favorite imaging tool is now Image for Windows from TeraByte (Paul Terrell), about $38.94. Unlike the DOS-based Drive Snapshot, it boots itself (its own boot CD/floppy), images to NTFS, and natively understands USB and Firewire. Drive Snapshot is still easier for less technical users."
+        },
+        {
+          "s": "steve",
+          "t": "My routine before imaging: run Disk Cleanup, empty the browser caches and the trash, delete junk, do a little desktop housekeeping, then defrag, then take the image. Get things shipshape before the snapshot."
+        }
+      ]
+    },
+    {
+      "title": "Why Steve Isn't on Twitter",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last question: Rafael asks why Steve isn't on Twitter."
+        },
+        {
+          "s": "steve",
+          "t": "I'm Assembly code, fundamentally incompatible with Twitter. I don't know what Twitter is, I don't want to know, and I don't care. No Twitter, no Facebook, no MySpace. I'm happy to do Security Now!, and that's my entire exposure."
+        },
+        {
+          "s": "leo",
+          "t": "It wasn't easy getting you to do even that."
+        },
+        {
+          "s": "steve",
+          "t": "No, I groaned when you first suggested it, and it turned out to be the best thing that ever happened. So I'm glad."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "In KeyGenius, why is it safe to use even on a café computer with a keylogger?",
+      "options": [
+        "A keylogger only captures the one-time YubiKey code; the real password is swapped in by the add-on and never typed",
+        "The password is encrypted before you type it",
+        "The café computer can't reach the KeyGenius server",
+        "It requires a second password only you know"
+      ],
+      "answer": 0,
+      "explain": "You type the YubiKey's one-time code, which is useless once used; the browser add-on authenticates and substitutes the real password behind the scenes, so the keylogger never sees it."
+    },
+    {
+      "q": "Why was the BBC's botnet demonstration legally problematic?",
+      "options": [
+        "It modified 22,000 people's computers without their permission",
+        "It created a new botnet from scratch",
+        "It stole money from the machines' owners",
+        "It was filmed without the security firm's consent"
+      ],
+      "answer": 0,
+      "explain": "However good the intent, changing settings and screensavers on 22,000 machines without authorization is illegal; good intentions don't excuse unauthorized access."
+    },
+    {
+      "q": "What did the MIT researchers change to make lithium-ion charge in seconds?",
+      "options": [
+        "The surface crystal structure of the electrode, making it far more permeable to lithium ions",
+        "The battery's operating voltage, raising it like an ultracapacitor",
+        "The chemistry, replacing lithium with a new element",
+        "The number of cells wired in parallel"
+      ],
+      "answer": 0,
+      "explain": "They re-engineered a lithium iron phosphate electrode's nanoscale surface so ions move through it far faster, removing the rate limit while keeping standard chemistry and voltages."
+    },
+    {
+      "q": "Why can't a malicious café or coffee-shop worker man-in-the-middle your SSL on open WiFi?",
+      "options": [
+        "Without a certificate they control installed on your machine, your browser won't accept a forged certificate for the real site",
+        "SSL doesn't work over WiFi at all",
+        "Open hotspots encrypt all traffic by default",
+        "The coffee shop's router blocks HTTPS"
+      ],
+      "answer": 0,
+      "explain": "SSL authenticates the server via a trusted certificate; an interceptor can't present a valid one, so the only way to man-in-the-middle it (as corporations do) is to pre-install their own certificate on your device."
+    },
+    {
+      "q": "According to Steve, what does the Crypto AG story actually illustrate about encryption?",
+      "options": [
+        "The difference between a strong algorithm and a compromised implementation around it",
+        "That AES itself contains a backdoor",
+        "That all public crypto is broken by the NSA",
+        "That PGP is weaker than AES"
+      ],
+      "answer": 0,
+      "explain": "The alleged backdoor was in the system, not the math; algorithmic strength and implementation strength are distinct, which is a point in favor of inspectable open-source code."
+    },
+    {
+      "q": "What is the correct distinction between a \"drive image\" and an \"ISO\"?",
+      "options": [
+        "A drive image is a file (or files) copying a disk's contents; an ISO is specifically a CD/DVD image",
+        "They are the same thing with different extensions",
+        "An ISO can only hold data, a drive image only programs",
+        "A drive image works only on NTFS, an ISO only on FAT"
+      ],
+      "answer": 0,
+      "explain": "When the show talks about imaging a computer, it means a drive image (one or more files of the disk's contents), not the ISO format used for optical-disc images."
+    }
+  ]
+}

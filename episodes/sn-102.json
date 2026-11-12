@@ -1,0 +1,699 @@
+{
+  "number": 102,
+  "title": "Security Now! Mailbag #1",
+  "subtitle": "The first mailbag: dongles, CAPTCHAs, accessibility and more",
+  "date": "2007-07-26",
+  "description": "In the first mailbag episode, Steve and Leo sort out geeks from nerds and share twenty listener notes: a three-month SpinRite run, PayPal's Security Key product manager writing in, a reputable site serving malware, a \"pocketful of dongles,\" a blind advocate's call for accessible CAPTCHAs, AVG's quick fix, image spam, how digital signatures work, a password-reset idea, and AT&T's statement on NSA wiretapping.",
+  "transcript": "https://www.grc.com/sn/sn-102.txt",
+  "audio": "http://media.GRC.com/sn/SN-102.mp3",
+  "chapters": [
+    {
+      "title": "Mod 4 Plus 2, and Geeks Versus Nerds",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today is our first Mailbag edition."
+        },
+        {
+          "s": "steve",
+          "t": "I loved an email whose sender I can't credit. The subject: \"So sorry you won't ever do any mailbag episodes.\""
+        },
+        {
+          "s": "steve",
+          "t": "He pointed out that \"mod 4\" episodes are those where the episode number mod 4 equals 0. But \"episode mod 4, plus 2\" can never equal 0. Properly, it's episode number plus 2, mod 4, equals 0. He got me."
+        },
+        {
+          "s": "steve",
+          "t": "Another listener said, \"Steve, you are such a geek. When I grow up I want to be as geeky as you.\" You were lumped in too, Leo. Is there a difference between geek and nerd?"
+        },
+        {
+          "s": "leo",
+          "t": "In my mind, nerds are fans, like Star Wars or Harry Potter fans who line up. Geeks are more technical. Many nerds are geeks, but not all geeks are nerds."
+        },
+        {
+          "s": "steve",
+          "t": "A subset-superset situation."
+        },
+        {
+          "s": "leo",
+          "t": "Originally, a geek was a carnival performer who bit the heads off chickens. Merriam-Webster's first definition is that carnival wildman. The second is an intellectual person who is disliked. Only the third is an enthusiast or expert, especially in technology."
+        },
+        {
+          "s": "steve",
+          "t": "It took till the third one to get to us."
+        },
+        {
+          "s": "leo",
+          "t": "We took the word back. And Dr. Seuss invented \"nerd.\" In \"If I Ran the Zoo,\" Gerald McGrew would collect \"a nerkle, a nerd, and a seersucker, too.\""
+        },
+        {
+          "s": "steve",
+          "t": "I was enamored of Dr. Seuss and those bizarre machines."
+        },
+        {
+          "s": "leo",
+          "t": "Which makes us nerds."
+        }
+      ]
+    },
+    {
+      "title": "Finding PayPal's Security Key",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Much of the mail is about Episode 101, on CAPTCHAs and on the PayPal Security Key. Many noticed that we couldn't find it during recording."
+        },
+        {
+          "s": "leo",
+          "t": "It was on your account page, but not mine."
+        },
+        {
+          "s": "steve",
+          "t": "It's at paypal.com/securitykey, and I've linked it in the show notes."
+        },
+        {
+          "s": "steve",
+          "t": "Some, I think only Canadians, were told the key was \"not currently available.\" They wondered whether we'd slashdotted PayPal, drawing so much attention that it ran out of keys."
+        },
+        {
+          "s": "steve",
+          "t": "Phil Aylesworth of Windsor, Ontario found it's only offered in the U.S., Germany and Australia for now. He wishes PayPal had said why, and so do the hundreds who wrote to us."
+        },
+        {
+          "s": "leo",
+          "t": "It's encryption, so perhaps an export restriction."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe, but Germany and Australia make that seem strange."
+        },
+        {
+          "s": "steve",
+          "t": "And Bob in San Jose, whose last name I'll leave out, is PayPal's product manager for the program. He thanked us for the plug, said the response has been very positive, and said it came out of beta in June. They're planning marketing to tell more users about it."
+        },
+        {
+          "s": "steve",
+          "t": "That's good, since it takes digging to find. Thanks to everyone who sent navigation directions. I've invited Bob to join us and answer questions."
+        },
+        {
+          "s": "leo",
+          "t": "You get a dongle that generates a new code every 30 seconds and add it to your password. No one can hack your password then."
+        },
+        {
+          "s": "steve",
+          "t": "Even if your password were \"password.\" I once forgot to add the six digits, and PayPal showed an intercept screen asking for them. A bad guy seeing that would go elsewhere."
+        },
+        {
+          "s": "leo",
+          "t": "I worry what happens if I lose it or don't have it with me."
+        },
+        {
+          "s": "steve",
+          "t": "I felt the same when I committed to it. Then I realized I can't just use PayPal randomly anywhere. Yes, Steve, that's the point."
+        },
+        {
+          "s": "leo",
+          "t": "And my keychain already has 83 things on it."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite: Three Months, Six Days",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two SpinRite stories, one so extreme I need a second to compensate."
+        },
+        {
+          "s": "steve",
+          "t": "Michael Cann in Melbourne, Australia runs The Computer Surgeons. A home-based accountant kept all his clients' books on a seven-year-old PC whose drive died, with no backup from the last six months."
+        },
+        {
+          "s": "steve",
+          "t": "Mick hooked the drive to another PC and ran SpinRite. Three months and six days later, he recovered all the client files, plus some the customer didn't know were there. Now the man recommends him to everyone."
+        },
+        {
+          "s": "leo",
+          "t": "Three months? I heard three days. Wouldn't you give up after a few weeks?"
+        },
+        {
+          "s": "steve",
+          "t": "He has PCs around, and was probably curious. SpinRite runs until it's done. That drive must have been in serious shape."
+        },
+        {
+          "s": "steve",
+          "t": "On balance, Jeff Harrison in Kentucky bought SpinRite from hearing about it here. A laptop user's drive completely failed with no backup, despite the instructions and USB drives they'd been given. SpinRite ran about 1.5 hours and recovered all but one file, and the application's backup covered that, so they lost only about three days of one file."
+        },
+        {
+          "s": "leo",
+          "t": "What's SpinRite doing for so long?"
+        },
+        {
+          "s": "steve",
+          "t": "On a troubled sector, it switches into DynaStat, Dynamic Statistics, mode and tries up to 2,000 times. The specification says that after a failed read you must reset the whole drive subsystem."
+        },
+        {
+          "s": "steve",
+          "t": "I've been tempted to skip the reset, but I wouldn't know the drive had fully recovered, so I follow the spec. It's not boom-boom-boom 2,000 times. Each try follows a complete reset."
+        },
+        {
+          "s": "steve",
+          "t": "To speed past a badly damaged area, interrupt it, note the percentage completed, accurate to four digits, and restart past that spot. Or, booting from writable media like a floppy or USB drive, use the command-line option \"SpinRite DynaStat\" with a percentage. The default is 100. At 10 it tries 200 reads, and at 1 it tries 20."
+        },
+        {
+          "s": "leo",
+          "t": "It's normally somewhere between those times. I've run it overnight many times."
+        }
+      ]
+    },
+    {
+      "title": "Following Up on \"On Intelligence\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jim Kramer read Jeff Hawkins' \"On Intelligence\" when it came out and bought the audio version too. He says nothing on how the brain works beats Hawkins."
+        },
+        {
+          "s": "steve",
+          "t": "He sent three hour-long video presentations, very different from each other. One is on the Numenta site, the others on Google Video. They're linked in my notes for this episode."
+        },
+        {
+          "s": "steve",
+          "t": "They'll make more sense after the book, but they're a quick way to dip into his Hierarchical Temporal Memory architecture, HTM."
+        },
+        {
+          "s": "leo",
+          "t": "Donna Dubinsky, his Numenta partner and my Yale classmate, says there's a good white paper on Numenta's site. She told me to read it before interviewing Jeff."
+        },
+        {
+          "s": "steve",
+          "t": "I'll link to it."
+        }
+      ]
+    },
+    {
+      "title": "Malware From a Reputable Site",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Peter Lilley in Sydney, Australia asks whether it's safe to skip antivirus if you \"know what you're doing,\" as I've suggested."
+        },
+        {
+          "s": "steve",
+          "t": "He's worked in enterprise software for 15 years, checks certificates and never opens unexpected attachments. On his wife's laptop, he went from a large, reputable manufacturer's site to a product's page. avast! immediately flagged a virus. He hadn't downloaded or clicked anything."
+        },
+        {
+          "s": "steve",
+          "t": "He rolled the laptop back to a known-good disk image, then visited the same site on his work laptop. Symantec Corporate Edition reported the same virus, an unpleasant file infector, in his Internet cache. The file on the web server was infected."
+        },
+        {
+          "s": "steve",
+          "t": "He runs no antivirus on his main machine, and a network scan showed it was infected too. He doesn't know how long. He now runs antivirus everywhere, including NOD32, which is mostly written in assembly and feels light, and one of our favorites."
+        },
+        {
+          "s": "steve",
+          "t": "His lesson: sticking to reputable sites and being mindful isn't quite enough."
+        },
+        {
+          "s": "leo",
+          "t": "For that to happen, there must be a hole in your operating system. Like an infected image."
+        },
+        {
+          "s": "steve",
+          "t": "There have been image exploits before, like the JPEG parsing flaw in Windows."
+        },
+        {
+          "s": "leo",
+          "t": "And it wasn't just Windows. The library shipped with other software, so it extended to many apps."
+        },
+        {
+          "s": "steve",
+          "t": "GDI Plus, I think. Most people surf with images enabled, even with Flash and scripting off. It's only a problem with an unknown vulnerability or an unpatched machine."
+        },
+        {
+          "s": "leo",
+          "t": "But a bad image in the cache isn't an infection. It has to inject software. If antivirus found only the image, either he wasn't infected, or he was and it missed the trojan."
+        },
+        {
+          "s": "steve",
+          "t": "I see. It didn't also find a trojan the image let in."
+        },
+        {
+          "s": "leo",
+          "t": "That's why I emphasize behavior over antivirus. The antivirus may have missed the trojan."
+        },
+        {
+          "s": "steve",
+          "t": "Behavior always protects you, as long as you don't misbehave."
+        },
+        {
+          "s": "leo",
+          "t": "This happened on Tom's Hardware and MySpace, because they accept unverified ads from ad services. On MySpace an estimated million people were infected. On Tom's Hardware, which was more recent, hundreds of thousands, since it was up a day or so."
+        },
+        {
+          "s": "steve",
+          "t": "The site's server never sees that image. The page just references the ad supplier, and the user's browser fetches it. So the host can't scan it, even if it wanted to."
+        },
+        {
+          "s": "leo",
+          "t": "Behavior may not protect you, and antivirus may not either. Don't make antivirus your first line of defense, but scan periodically."
+        },
+        {
+          "type": "fact",
+          "title": "The JPEG flaw",
+          "t": "In 2004, Microsoft's MS04-028 fixed a JPEG parsing buffer overflow in GDI+. Because many programs bundled their own copy of the library, Microsoft also released a tool to find vulnerable copies."
+        }
+      ]
+    },
+    {
+      "title": "A Pocketful of Dongles",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Nils Andersen has a SecurID from E*TRADE. He ordered PayPal's key too, but fears a future with a pocketful of dongles, hunting for the right one."
+        },
+        {
+          "s": "leo",
+          "t": "[Singing] \"I've got a pocketful of dongles.\""
+        },
+        {
+          "s": "steve",
+          "t": "That's a geek. He asks about sharing one dongle between sites. Several people asked."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't that compromise security, sharing a code among vendors?"
+        },
+        {
+          "s": "steve",
+          "t": "This goes back to OpenID. You'd want everyone using a common identity provider, with your single dongle authenticating you to it."
+        },
+        {
+          "s": "steve",
+          "t": "Poojan Wagh of Chicago notes E*TRADE has offered RSA SecurID to its banking customers for a couple of years. He'd love one dongle registered with RSA, PayPal and E*TRADE accounts."
+        },
+        {
+          "s": "leo",
+          "t": "Much better than SiteKey. But a shared number across sites compromises security."
+        },
+        {
+          "s": "steve",
+          "t": "Some RSA SecurID tokens, credit-card size with an LCD, have a keypad. They allow challenge-response: the site gives you something to type in, which is mixed cryptographically with the card's secret to produce your answer. That would help."
+        }
+      ]
+    },
+    {
+      "title": "CAPTCHA Isn't Quite a Turing Test",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Bill Holton wrote again: \"I'm still human.\" He notes a Turing Test has a human judge trying to tell a computer from a person. CAPTCHA turns it on its head, with a computer as judge."
+        },
+        {
+          "s": "steve",
+          "t": "If we could put humans back in those rooms, authentication wouldn't be a problem. But as long as my computer is smarter than your computer, mine can trick yours into believing it's human."
+        },
+        {
+          "s": "leo",
+          "t": "So it isn't technically a Turing Test. He's right."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. The CAPTCHA server is the judge, and a smarter computer is what all the CAPTCHA cracking is about."
+        }
+      ]
+    },
+    {
+      "title": "A Call for Accessible CAPTCHAs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next, a long but important posting from Darrell Shandrow, an \"accessibility evangelist\" you've spoken with, Leo."
+        },
+        {
+          "s": "steve",
+          "t": "He thanks us for discussing the blind. Visual-only CAPTCHAs and multifactor authentication are a clear and present danger to the blind, deaf-blind and visually impaired. At minimum they can't sign up for a site. Sometimes they can't make a purchase or reach their own checking account."
+        },
+        {
+          "s": "steve",
+          "t": "He compares it to segregation. For over 40 years it's been illegal to deny African Americans service in restaurants, schools and public accommodations, and the ADA protects people with disabilities. Many blind people feel visual-only schemes with no reasonable alternative are tantamount to that segregation."
+        },
+        {
+          "s": "steve",
+          "t": "I hadn't considered that the PayPal and SecurID tokens are visual-only too. They don't speak their codes."
+        },
+        {
+          "s": "leo",
+          "t": "I think the ADA requires some form of access, not necessarily the same one. PayPal doesn't force the dongle, so it isn't discriminating. But some sites might require one. And the deaf-blind baffle me."
+        },
+        {
+          "s": "steve",
+          "t": "As long as there's an accessible fallback, like an email loop. GRC's ecommerce system doesn't need CAPTCHAs, but if it did, I wouldn't want to lose sales to people stopped by one."
+        },
+        {
+          "s": "steve",
+          "t": "He says audio CAPTCHAs are the state of the art, and there's been an explosion of them. AOL, Google and Microsoft offer them. It's inexcusable now for a CAPTCHA to lack at least an audio equivalent."
+        },
+        {
+          "s": "steve",
+          "t": "He rejects the W3C's privacy argument, since sighted people can use audio CAPTCHAs too, the point I made last week. The real problem is that neither serves the deaf-blind. He wants precise accessibility laws and research into non-sensory ways to tell computers and humans apart."
+        },
+        {
+          "s": "steve",
+          "t": "He recalls Leo interviewing him live on TWiT at the Portable Media and Podcasting Expo in November 2005, and Leo's link to his Blind Access Journal."
+        },
+        {
+          "s": "steve",
+          "t": "In January 2006 he petitioned Google for an audio alternative to its word verification. It was rolled out across Google by May 2006."
+        },
+        {
+          "s": "steve",
+          "t": "This month a blind man from Brazil started a petition asking Yahoo! for an audio CAPTCHA. Yahoo! offers a call-back form, but he says it's almost never fulfilled. Darrell asks us to mention it, sign it and link to blindwebaccess.com and blindaccessjournal.com."
+        },
+        {
+          "s": "leo",
+          "t": "Yahoo!'s sign-up does have a CAPTCHA, and I don't see an audio version. That's surprising. I wish more sites used CMU's reCAPTCHA, which has audio and helps digitize books."
+        },
+        {
+          "s": "steve",
+          "t": "And with everyone on one central service, reCAPTCHA's servers watch access patterns to detect cracking. They can respond immediately, and everyone gets upgrades. If I ever need that protection, I'll use reCAPTCHA plus some second-level fallback."
+        },
+        {
+          "s": "leo",
+          "t": "We all need to be aware of accessibility. I fall down on it often. Our website isn't nearly as accessible as I'd like."
+        }
+      ]
+    },
+    {
+      "title": "A First PayPal Account",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Matthew Middleton, a 22-year-old software developer and TWiT listener, had never bought online except where he could mail a check. His fear was based on knowledge, not ignorance."
+        },
+        {
+          "s": "steve",
+          "t": "After Security Now! 101, he set up a PayPal account, ordered the key, and is waiting for it to make his first online purchase. He thanks us for explaining why it matters."
+        },
+        {
+          "s": "leo",
+          "t": "That's neat. People tell me they won't donate to TWiT without PayPal. That's fine. Only 2 or 3 percent of listeners donate. I've looked at other systems and can't find one as easy."
+        }
+      ]
+    },
+    {
+      "title": "Picture CAPTCHAs and the Hash Problem",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Robert Gauld of Aberdeen, U.K. leaves sites that show him visual CAPTCHAs. Why not show pictures, a cat, dog, house or bird, with dropdowns to choose what each shows?"
+        },
+        {
+          "s": "leo",
+          "t": "A computer would have a terrible time with that."
+        },
+        {
+          "s": "steve",
+          "t": "Except with limited choices, it's trivial. The bot doesn't even need image recognition. It computes a CRC or hash of each repeated GIF or JPEG. A human labels each once, and wham, it's cracked."
+        },
+        {
+          "s": "leo",
+          "t": "I recently saw one with four changing images and a key, like castle equals one, star equals two. You entered the number. It was more legible."
+        },
+        {
+          "s": "steve",
+          "t": "Was the key text? Then a bot could read the associations. As we concluded, it's surprisingly hard to tell a computer from a person."
+        }
+      ]
+    },
+    {
+      "title": "AVG Fixed It Fast",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Chris Ackerman, an IT manager in Plymouth, Minnesota, runs AVG 7.5 Network Edition for over 300 users. Symantec and McAfee became resource pigs, and too costly."
+        },
+        {
+          "s": "steve",
+          "t": "He says I sounded upset with AVG over the SecurAble false positive, which it showed as a trojan. AVG immediately removed it from its definitions. He doubts Symantec or McAfee would've been so quick. Go easy on AVG, he says. They're the best going."
+        },
+        {
+          "s": "steve",
+          "t": "If I sounded upset, I apologize. False positives happen with everybody. Greg in tech support will appreciate the news. Update your antivirus."
+        }
+      ]
+    },
+    {
+      "title": "Clones, Twins and Stolen Iris Hashes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Simon in Exeter, U.K. caught a \"funny error\": I joked a clone could get your fingerprint. But clones and identical twins have different fingerprints."
+        },
+        {
+          "s": "leo",
+          "t": "I didn't know that."
+        },
+        {
+          "s": "steve",
+          "t": "Filed under \"good to know,\" for when we're cloning people."
+        },
+        {
+          "s": "leo",
+          "t": "Identical twins are genetically identical but have different fingerprints, so the same would follow."
+        },
+        {
+          "type": "fact",
+          "title": "Fingerprints",
+          "t": "Simon is right. Fingerprint ridges form in the womb under random local conditions, so even identical twins, who share DNA, have different prints."
+        },
+        {
+          "s": "steve",
+          "t": "Staying with biometrics, Steve Hiner in Phoenix thinks I missed the point in Episode 100. The worry isn't reconstructing your iris from a hash. It's a bad guy swapping his hash into your records."
+        },
+        {
+          "s": "steve",
+          "t": "Then the criminal database thinks you're him, and the bank gives him your accounts, believing biometrics can't be duplicated. It's hard enough to dispute a purchase. Who'd believe you faked your iris?"
+        },
+        {
+          "s": "steve",
+          "t": "If it came to that, you'd rescan your iris, which would rehash, and prove the hash on file isn't yours. It actually gives you proof of identity theft. You always keep your own iris, so you can always reassert ownership."
+        },
+        {
+          "s": "leo",
+          "t": "Doesn't your iris change?"
+        },
+        {
+          "s": "steve",
+          "t": "I hope not, or it would be a bad biometric."
+        },
+        {
+          "s": "leo",
+          "t": "Fingerprints change a little sometimes."
+        }
+      ]
+    },
+    {
+      "title": "TOR's Exit Address",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Dan in Oregon is an avid user of TOR, The Onion Router, which bounces your traffic through publicly available onion routers so no one can feasibly backtrack it."
+        },
+        {
+          "s": "steve",
+          "t": "Following our IP spoofing talk, he notes his IP shows up as his exit point from the TOR network. With the right configuration he can always use the same exit, for a consistent IP that's not his or even near him. Choices are limited to TOR systems whose policy allows them as exits."
+        },
+        {
+          "s": "steve",
+          "t": "He verified on GRC.com that his true IP can't be detected when he's TORified. Very cool."
+        }
+      ]
+    },
+    {
+      "title": "Confetti in Image Spam",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Hogg of Kitchener, Ontario is a good friend. He made a puppet of me for his dotBoom video podcast, along with Kevin Rose, Alex Albrecht and Amber MacArthur puppets."
+        },
+        {
+          "s": "steve",
+          "t": "I hope I stay off his radar."
+        },
+        {
+          "s": "leo",
+          "t": "We want a Gibson puppet."
+        },
+        {
+          "s": "steve",
+          "t": "Brian says, after our CAPTCHA show, he noticed a Cialis spam in his spam folder. We won't ask why he opened that one. Its product photos had visual distortion, as if sprinkled with confetti. Are spammers subverting detection?"
+        },
+        {
+          "s": "steve",
+          "t": "I think his guess is exactly right. Antispam filters could checksum an undegraded photo and flag any email containing it. Confetti noise prevents that, the same way CAPTCHAs fight recognition."
+        },
+        {
+          "s": "leo",
+          "t": "If you want the cutting edge, look at spam. They have a lot of incentive to stay ahead of the filters."
+        }
+      ]
+    },
+    {
+      "title": "How Digital Signatures Work",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Justin in San Antonio, Texas wants a segment on digital and electronic signatures, for paperless approval of security requests. We did justice to that in our early security series on hashing and crypto."
+        },
+        {
+          "s": "leo",
+          "t": "We might update it. Adobe Acrobat 8 has a signature module for legal documents. You can get a certificate from a third party or create your own, certify the original document, then sign and certify changes."
+        },
+        {
+          "s": "steve",
+          "t": "Quickly, here's how it works. Make a cryptographic hash of the document, like SHA-1. Encrypt the hash with your private key. That's the signature."
+        },
+        {
+          "s": "steve",
+          "t": "To verify, someone gets your public key, since only it can decrypt what your private key encrypted. They decrypt the signature to get the hash, then hash the document themselves."
+        },
+        {
+          "s": "steve",
+          "t": "Only if the two match do you know it hasn't changed since signing. And you know who signed it, because only their public key decrypts the hash."
+        },
+        {
+          "s": "steve",
+          "t": "You can create a \"self-signed\" certificate. A certificate authority adds that it verified, through some offline process, that you are who you claim to be. But lots of code can create an asymmetric key pair: one key private for signing, one published for verification."
+        }
+      ]
+    },
+    {
+      "title": "A Better Password-Reset Idea",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Will Morenz of Wheatfield, Indiana responds to Episode 100's university that wanted to let users enter any email address for reset credentials."
+        },
+        {
+          "s": "steve",
+          "t": "His idea: let users verify several email accounts in advance, then send resets to those, with a way to remove addresses they stop using. Of course users must keep the list current, and these users might not."
+        },
+        {
+          "s": "steve",
+          "t": "I don't see that it significantly weakens security. It could be one-time: once any address is used, the others are deauthorized."
+        }
+      ]
+    },
+    {
+      "title": "AT&T Can Neither Confirm Nor Deny",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'll end on a Catch-22. Eric Sarratt of Asheville, North Carolina shared AT&T's formal statement on the NSA's warrantless wiretapping, issued June 27 in San Antonio."
+        },
+        {
+          "s": "steve",
+          "t": "AT&T says it vigorously protects customers' privacy and shares information only as the law specifically authorizes. Media reports allege it takes part in an unlawful NSA surveillance program. But the Department of Justice says AT&T may neither confirm nor deny its participation, because doing so would cause \"exceptionally grave harm to national security\" and violate civil and criminal statutes."
+        },
+        {
+          "s": "leo",
+          "t": "Glad we cleared that up."
+        },
+        {
+          "s": "steve",
+          "t": "We might be spying on you, but we can't tell you whether we are."
+        },
+        {
+          "s": "leo",
+          "t": "I'd assume they are. That's not a surprise either."
+        },
+        {
+          "s": "steve",
+          "t": "I love our listeners. They're smart, engaged and have interesting things to say."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is Episode 103, a surprise even to Steve. And SpinRite can do it, even if it takes three months, six days."
+        },
+        {
+          "s": "steve",
+          "t": "The good news is, it's normally a few hours."
+        },
+        {
+          "type": "fact",
+          "title": "What came out",
+          "t": "In 2006, former AT&T technician Mark Klein revealed a secret room in AT&T's San Francisco facility copying Internet traffic for the NSA. In 2008, Congress granted telecom companies retroactive immunity from lawsuits over the program."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did SpinRite's three-month, six-day run show?",
+      "options": [
+        "SpinRite keeps working until it's done, even on a badly damaged drive",
+        "SpinRite crashed",
+        "The drive was fine all along",
+        "It was a typo for three days"
+      ],
+      "answer": 0,
+      "explain": "The accountant got back all his clients' files."
+    },
+    {
+      "q": "Why can't a host site scan malicious ads for its visitors?",
+      "options": [
+        "The visitor's browser fetches the ad straight from the ad server",
+        "Scanning is illegal",
+        "Ads are encrypted",
+        "The host never displays ads"
+      ],
+      "answer": 0,
+      "explain": "That's how MySpace and Tom's Hardware visitors got infected."
+    },
+    {
+      "q": "Why doesn't a picture CAPTCHA with a few fixed images work?",
+      "options": [
+        "A bot can hash each repeated image and look up its label",
+        "Computers can't read pictures",
+        "The images are too small",
+        "Users can't see them"
+      ],
+      "answer": 0,
+      "explain": "A human only has to label each image once."
+    },
+    {
+      "q": "How is a digital signature made?",
+      "options": [
+        "Hash the document and encrypt the hash with your private key",
+        "Encrypt the document with your public key",
+        "Scan your handwritten signature",
+        "Email your password"
+      ],
+      "answer": 0,
+      "explain": "Anyone with your public key can verify it."
+    },
+    {
+      "q": "Why does Bill Holton say CAPTCHA isn't really a Turing Test?",
+      "options": [
+        "A computer, not a human, is the judge",
+        "It uses audio",
+        "It has no rooms",
+        "Turing never used letters"
+      ],
+      "answer": 0,
+      "explain": "A smarter computer can fool a less smart one."
+    },
+    {
+      "q": "What did AT&T's statement on NSA wiretapping say?",
+      "options": [
+        "It could neither confirm nor deny taking part, citing the Justice Department",
+        "It admitted everything",
+        "It denied any program existed",
+        "It promised to stop"
+      ],
+      "answer": 0,
+      "explain": "Leo said to assume they are spying."
+    }
+  ]
+}

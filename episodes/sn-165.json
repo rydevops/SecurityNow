@@ -1,0 +1,586 @@
+{
+  "number": 165,
+  "title": "Listener Feedback Q&A #51",
+  "subtitle": "Sockstress follow-up, Skype logging in China, and a spy camera on eBay",
+  "date": "2008-10-09",
+  "description": "Steve calls the Sockstress researchers, who are chagrined it got away from them; Google Update will now uninstall immediately; RealDVD is pulled from the market; Skype admits its Chinese partner logged messages; and MI6 secrets turn up on a $31 eBay camera. Then the delayed Q&A, largely about TCP: why Vista's new stack isn't the problem, counterattacking worms, ignoring stalled clients, blacklisting bad IPs, whether botnets make Sockstress pointless, what BGP really is, whether a web request can infect a server, proxied ShieldsUP! tests, Disney fingerprints, banks that put links in email, and an Outlook read-receipt leak.",
+  "transcript": "https://www.grc.com/sn/sn-165.txt",
+  "audio": "http://media.GRC.com/sn/SN-165.mp3",
+  "chapters": [
+    {
+      "title": "Talking With the Sockstress Researchers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Glad the world's still in one piece. The market dipped to about minus 243 this morning after yesterday's 508-point slide."
+        },
+        {
+          "s": "leo",
+          "t": "In the gym, CNBC has replaced the golf channel. Everybody wants to see the market."
+        },
+        {
+          "s": "steve",
+          "t": "We'll finish last week's interrupted Q&A, and the first half responds to the Sockstress episode. First, a follow-up."
+        },
+        {
+          "s": "steve",
+          "t": "After we assembled the audio, I felt I'd been really tough on Robert Lee and Jack Louis. I don't think unfairly, but tough. So I wrote Robert a long note and a link to the audio, so he'd hear it from me first."
+        },
+        {
+          "s": "leo",
+          "t": "You gave them more warning than they gave Microsoft."
+        },
+        {
+          "s": "steve",
+          "t": "They emailed back immediately: let's talk. We went off the record, so I won't share the technical details. But they never intended this to happen. They wanted to do their conference presentation this month."
+        },
+        {
+          "s": "steve",
+          "t": "They re-listened to their own interview and thought, we didn't say that much. They're not seeking press or self-aggrandizement. It got picked up by RSnake's site, then Slashdot, and went crazy."
+        },
+        {
+          "s": "leo",
+          "t": "They probably figured it's just a podcast, nobody will hear it."
+        },
+        {
+          "s": "steve",
+          "t": "I think the interviewer, who actually knows a lot, kept drawing more out. The good news: everyone who should be talking to them now is. They weren't getting the vendors' attention until this happened."
+        },
+        {
+          "s": "leo",
+          "t": "Did they say enough for someone to implement it?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Others on the 'Net clearly understand what they found. And, bizarrely, there are postings on programmer-for-hire sites trying to hire someone to write a denial-of-service tool."
+        },
+        {
+          "s": "steve",
+          "t": "I came away with a good feeling. They definitely found something."
+        }
+      ]
+    },
+    {
+      "title": "Google Update Backs Down",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "From Google's Chrome blog: Google Update is automatically uninstalled on the next update check, typically every few hours, after the last Google product using it is removed. They're working on making it uninstall immediately."
+        },
+        {
+          "s": "steve",
+          "t": "They felt the pressure over the delayed self-removal. We probably participated, though the 'Net is a big place. I'm just glad they're responding."
+        },
+        {
+          "s": "steve",
+          "t": "And you don't even need a successful update check. Even on a machine cut off from the Internet, once Google Update tries and fails, it says, nobody else is here, I guess I'll leave too."
+        }
+      ]
+    },
+    {
+      "title": "RealDVD Pulled",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "RealDVD has been removed from the market. It copied DVDs to a hard drive while leaving CSS encryption intact. Real preemptively sued, and the MPAA countersued."
+        },
+        {
+          "s": "steve",
+          "t": "As a player, RealDVD has a license to decrypt CSS. The MPAA's nit is that it doesn't require the disk to be in the drive during playback, so you could rent, rip and return movies. That circumvents the purpose of the encryption, they argue, even though it doesn't crack CSS itself."
+        },
+        {
+          "s": "leo",
+          "t": "That's poor design in CSS. It should check for a disk."
+        },
+        {
+          "s": "steve",
+          "t": "The MPAA's general counsel says RealDVD should be called \"StealDVD.\""
+        },
+        {
+          "s": "leo",
+          "t": "That rhetoric does not play."
+        },
+        {
+          "s": "steve",
+          "t": "A temporary restraining order was issued. Real did manage to move the case from Los Angeles, Hollywood's backyard, to the Northern District of California."
+        },
+        {
+          "s": "leo",
+          "t": "To play devil's advocate, since I hate DRM, they have a point. You could use it to circumvent."
+        },
+        {
+          "s": "steve",
+          "t": "Meanwhile DVD Decrypter is freely downloadable. They came down on its author, who abandoned it, but it still works. I've used it for legal purposes on content I own."
+        },
+        {
+          "type": "fact",
+          "title": "How it ended",
+          "t": "In 2009 a federal judge granted the studios a preliminary injunction, and RealDVD never returned to the market."
+        }
+      ]
+    },
+    {
+      "title": "Border Searches and Skype in China",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some happy news: the Travelers' Privacy Protection Act in Congress would require Homeland Security to have reasonable suspicion before searching U.S. residents' devices, and probable cause with a court order to hold a device more than 24 hours. That's above random strip searches of anyone with a laptop, and would end forcing TrueCrypt passwords without suspicion."
+        },
+        {
+          "s": "leo",
+          "t": "The bill is Senate Bill 3612, for those who want to write their member of Congress."
+        },
+        {
+          "s": "steve",
+          "t": "Also, Skype has admitted the reports that its Chinese version, through its partner TOM, logged the messages, names, IPs and transactions of users whose chats contained certain keywords. Skype says it didn't realize logging was happening."
+        },
+        {
+          "s": "steve",
+          "t": "This is why I preach TNO, Trust No One. Running through a central server means trusting Skype not to eavesdrop. Keyword searching requires decryption, and if you can decrypt, you can log."
+        },
+        {
+          "s": "leo",
+          "t": "So Skype calls aren't safe? Garry Kasparov says he uses Skype because it's encrypted and the KGB would be listening otherwise."
+        },
+        {
+          "s": "steve",
+          "t": "I'd make no such assumption. The only thing you can trust is point-to-point encryption you fully understand, with no traffic to a third party. Skype's protocol is proprietary. You and I have a direct connection, so we can see our audio isn't copied to Skype. But instant messages, being low bandwidth and sometimes held for later delivery, may all go through Skype central."
+        },
+        {
+          "type": "fact",
+          "title": "Skype's architecture later",
+          "t": "Microsoft bought Skype in 2011 and moved it to centralized servers it runs, dropping the old peer-to-peer design. Skype calls are not end-to-end encrypted by default."
+        }
+      ]
+    },
+    {
+      "title": "An MI6 Camera on eBay",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Too bizarre to be true, but is. A 28-year-old UK deliveryman bought a Nikon Coolpix for about $31 on eBay. It arrived with top-secret MI6 material: named al-Qaeda cells, images of suspected terrorists, fingerprint information, and login details for a Secret Service computer network, marked \"Top Secret.\""
+        },
+        {
+          "s": "steve",
+          "t": "He went to the police, who first treated it as a joke. Within a week anti-terror officers were investigating. MI6 is trying to track down the agent who sold it."
+        },
+        {
+          "s": "leo",
+          "t": "MI6 is the external secret intelligence service. Holy cow."
+        },
+        {
+          "s": "steve",
+          "t": "Last week a VPN router connected into a company's network. Now serious images on a camera for $31."
+        },
+        {
+          "s": "leo",
+          "t": "Even the most secretive agencies have to pay attention now."
+        }
+      ]
+    },
+    {
+      "title": "Randomness: I Am Legend, and Kindle 2",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Scott in Pawtucket notes that the first film of Richard Matheson's \"I Am Legend\" was 1964's \"The Last Man on Earth,\" with Vincent Price, before the 1971 and 2007 versions."
+        },
+        {
+          "s": "leo",
+          "t": "When the Will Smith film came out, articles about the adaptations led me to the original book, which is very different."
+        },
+        {
+          "s": "steve",
+          "t": "And photos of a Kindle 2 leaked, with a smooth polished back and a single keyboard."
+        },
+        {
+          "s": "leo",
+          "t": "Those of us who cover Apple are used to fakes. Amazon hasn't confirmed them. It has acknowledged a Kindle 2 is coming next year, but won't want to cannibalize current sales."
+        },
+        {
+          "s": "steve",
+          "t": "I'd keep what I have. I've fallen in love with my wacky little wedge. With four newspaper subscriptions and a couple of blogs, there's so much content, and blogs are a buck or two a month."
+        },
+        {
+          "s": "leo",
+          "t": "Did you see the new Sony? Touch screen, built-in light, but more expensive and no wireless."
+        }
+      ]
+    },
+    {
+      "title": "A London Fire Brigade Paging System",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "David Lisney in Hertfordshire ran SpinRite on a PC running the London Fire Brigade's paging system, which had run 24/7 for 10 years until its CPU fan failed and it crashed. After replacing the fan, it still wouldn't boot. SpinRite raced through in under an hour, and it booted. His colleagues couldn't believe it. The machine was due for replacement the next week anyway."
+        }
+      ]
+    },
+    {
+      "title": "Vista's New Stack Isn't the Flaw",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Schember in Florida asks why, if Vista has a new network stack, Microsoft made one vulnerable to Sockstress."
+        },
+        {
+          "s": "steve",
+          "t": "This isn't a bug in anyone's implementation. TCP is phenomenally flexible: it handles slow and fast links, short and long delays, even satellite down and modem up, each direction at its own speed. To do that, it must be sophisticated and adaptive."
+        },
+        {
+          "s": "steve",
+          "t": "The researchers stretched correct TCP behavior to an edge case, then did it a lot. It's not that Vista's stack is weak. The very sophistication of modern stacks is part of what's abused. This isn't a design or implementation flaw, which is what makes it hard to fix."
+        },
+        {
+          "s": "steve",
+          "t": "One example, now out on the 'Net: the bandwidth-delay product is the pipe size times the delay, the data in flight. An application hands data to TCP, which promises to deliver it reliably and must hold it until the far end acknowledges. You can trick TCP into thinking the bandwidth-delay product is huge, so it expands buffers to hold a copy of everything in flight. Nothing is broken; it's working as designed."
+        },
+        {
+          "s": "leo",
+          "t": "So how do you fix it?"
+        },
+        {
+          "s": "steve",
+          "t": "Firewall vendors are surely revving their products to detect these abuses. And Microsoft's IIS already has timeouts for idle connections, 900 seconds by default, which you can lower, and in IIS 6 you can set a minimum data rate and shut down connections that seem too slow, without hanging up on real users."
+        }
+      ]
+    },
+    {
+      "title": "Counterattacking Worms",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul Cousins in Regina asks, black-hat and probably illegal, whether Sockstress could take worm-infested computers offline: leave your computer open, and when a worm connects, hit it with Sockstress."
+        },
+        {
+          "s": "steve",
+          "t": "This idea comes up. Last week I described a tarpit that lures worms to listening ports. But to attack a machine, it has to be the server and you the client. A worm scanning you is looking for your open ports."
+        },
+        {
+          "s": "steve",
+          "t": "You can't flip it on the fly. You'd have to assume it's a worm, not your ISP, port-scan the real IP, and launch Sockstress at open ports. Bad idea: it's illegal, and you don't know whom you're attacking."
+        },
+        {
+          "s": "leo",
+          "t": "A virus author once said his plan was to get the bad guys. You still go to jail, and it's not a good idea."
+        },
+        {
+          "type": "fact",
+          "title": "The first episode",
+          "t": "The tarpit and counterattack idea traces back to Security Now! Episode 2, which covered Microsoft's Strider HoneyMonkey honeypots."
+        }
+      ]
+    },
+    {
+      "title": "Just Ignore Stalled Clients?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jamie Scanlon in Venice, California asks: what if the stack just didn't care that a client's buffer was full? If you can't handle the connection, don't make it."
+        },
+        {
+          "s": "steve",
+          "t": "Many servers already have that. The \"Server too busy\" page means an administrative connection limit. It's better to deny newcomers than drag everyone down. It wouldn't break the Internet, just annoy people. I have a high limit at GRC and have never needed one."
+        },
+        {
+          "s": "leo",
+          "t": "Seems like there'd be a graceful way to degrade."
+        },
+        {
+          "s": "steve",
+          "t": "You could serve first come, first served, and say, stay if you want. How badly do you want what we have?"
+        }
+      ]
+    },
+    {
+      "title": "Blacklisting Bad IPs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Donald Stone in the UK suggests ignoring a client IP after a threshold of failed connections and blacklisting it for a few minutes."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly right, the kind of thing security-device vendors are adding. My old WatchGuard Firebox had a blacklist by client IP. I even had a hack: using raw sockets, I'd spoof a misbehaving client's IP to tell the Firebox they were attacking me, adding them to the blacklist by my own logic. It worked great."
+        }
+      ]
+    },
+    {
+      "title": "Do Botnets Make Sockstress Pointless?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mat Ludlam in Weybridge notes that a 10,000-machine botnet, each opening 100 connections, is a million connections, probably enough to fail a server tuned for short HTTP requests. If you have a botnet, why bother with user-mode stacks?"
+        },
+        {
+          "s": "steve",
+          "t": "There's been a ton of this online. A million plain connections is rough for a typical site. When we mention something live, TWiT listeners bring sites down."
+        },
+        {
+          "s": "leo",
+          "t": "So who cares about Sockstress when there's DDoS?"
+        },
+        {
+          "s": "steve",
+          "t": "The counter: high-value targets like gambling sites, extorted by organized crime, have moved behind expensive anti-DDoS providers. If those only block bandwidth floods, a low-bandwidth attack like this could get around them. Sockstress doesn't let you spoof, so it exposes your zombies' IPs, but it might succeed where flooding no longer does."
+        },
+        {
+          "s": "leo",
+          "t": "It's just one more tool in the hacker's toolbox."
+        }
+      ]
+    },
+    {
+      "title": "What BGP Really Is",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian in Wichita heard you say routers have open TCP ports accepting Border Gateway Protocol. Does his home two-wire gateway have open ports?"
+        },
+        {
+          "s": "steve",
+          "t": "I owe Brian an apology. I meant formal Internet routers, not home boxes."
+        },
+        {
+          "s": "leo",
+          "t": "Not our cheesy little Linksys. I should have spoken up."
+        },
+        {
+          "s": "steve",
+          "t": "BGP is port 179. It's how routers share with their peers which networks they can reach, so each can decide which interface to send a packet out. It's elegant, but it creates a potential vulnerability on port 179 for Internet routers."
+        },
+        {
+          "s": "steve",
+          "t": "There have been TCP spoofing attacks splicing into existing BGP connections to redirect traffic, since hardened. ShieldsUP! would tell you if your home router's port 179 were open, which it won't be."
+        },
+        {
+          "s": "leo",
+          "t": "And if it were, your little router wouldn't know what to do with a BGP command anyway."
+        }
+      ]
+    },
+    {
+      "title": "Can a Web Request Infect a Server?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kyle in Des Moines, a programmer, disagrees with his LAN administrator, who thinks their public web server could be infected by spyware on visitors' machines just from an HTTP request."
+        },
+        {
+          "s": "steve",
+          "t": "I agree with Kyle. Barring a bug in the server or OS, an HTTP request is just a request for a page. Early IIS had awful flaws where a malformed URL took over the machine, but that's a vulnerability, not the request itself."
+        },
+        {
+          "s": "steve",
+          "t": "The \"get\" and \"post\" verbs let you send data back, enabling Web 2.0, but you never let anonymous outsiders run anything. Never say never, but there's no clear way for random spyware on a visitor's PC to infect a hardened server, and I've never heard of spyware that even tries."
+        },
+        {
+          "s": "leo",
+          "t": "Especially when your servers run Linux and the visitors run Windows. The web server doesn't look at your disk, and you don't have write access to each other's disks."
+        }
+      ]
+    },
+    {
+      "title": "Testing Through a Proxy",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric in Los Angeles wants to test a new SSL proxy with ShieldsUP!, but it detects the proxy and refuses."
+        },
+        {
+          "s": "steve",
+          "t": "Many ISPs use transparent proxies that cache pages for performance and to cut their bandwidth bills. When ShieldsUP! sees a proxy, it can't reliably learn your actual IP, so it stops. I even detect SSL proxying and still refuse."
+        },
+        {
+          "s": "steve",
+          "t": "I can't let people type in an IP, because then anyone could have me probe random machines. Go check the NSA? No thank you. There's nothing safe I can do, so I simply stop."
+        },
+        {
+          "s": "leo",
+          "t": "Completely reasonable."
+        }
+      ]
+    },
+    {
+      "title": "Disney Fingerprints and Lying to Security Questions",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ben Isenhour in Lexington refused to give Disney World's ticket machine his fingerprint, meant to stop ticket sharing. He pressed his knuckle crease instead, and it worked. He doesn't want a biometric identifier escaping to the highest bidder."
+        },
+        {
+          "s": "steve",
+          "t": "Here, take this, Pluto."
+        },
+        {
+          "s": "leo",
+          "t": "Disney taking fingerprints? And he lies to security questions, up to eight of them, as another way his information escapes his control. The son of a Tennessee legislator was indicted for cracking Sarah Palin's Yahoo! email through security questions."
+        },
+        {
+          "s": "leo",
+          "t": "Ben also notes Wells Fargo initially set his username to his Social Security number. He changed it online, then months later accidentally typed his SSN and password, and it still worked. Are old usernames kept active?"
+        },
+        {
+          "s": "steve",
+          "t": "Fingerprints are valuable identity information, and there's no way Mickey Mouse should have one of our listeners' prints. Use your knuckle where you don't actually want to authenticate."
+        },
+        {
+          "type": "fact",
+          "title": "The Palin case",
+          "t": "David Kernell was convicted in 2010 of obstruction of justice and unauthorized access for the 2008 break-in, after guessing Yahoo!'s password-reset answers from public facts."
+        }
+      ]
+    },
+    {
+      "title": "Steve's OQO",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Hoort at Michigan State asks about your OQO. And he asks why operating systems corrupt their file systems. Is it buggy OS code, or drive firmware?"
+        },
+        {
+          "s": "steve",
+          "t": "It's like mathematical chaos: temperature, power, vibration, OS activity, so many variables, and not enough margin. When everything is near the edge, it doesn't take much for the stars to align and cause a problem."
+        },
+        {
+          "s": "steve",
+          "t": "My OQO Model 2 is a real Windows machine, 800x480, with a Verizon wireless WAN built in, so I'm on the 'Net at good speed anywhere without WiFi. Battery life is about three hours. The Model 1 with its Transmeta chip and flat keyboard was horrible; the Model 2 has a real Treo-style keyboard."
+        },
+        {
+          "s": "steve",
+          "t": "I'm falling in love with Firefox. Its minimum font size setting fixes the small screen. I left Cingular for Verizon because EDGE doesn't do it; you need EVDO."
+        },
+        {
+          "s": "leo",
+          "t": "Do you carry it in your pocket?"
+        },
+        {
+          "s": "steve",
+          "t": "I hacksawed the rings out of a Franklin Day Planner to make a little kit: Bose headphones, an iPod, the OQO, and the Kindle in a side pocket."
+        },
+        {
+          "s": "leo",
+          "t": "But you don't go anywhere."
+        },
+        {
+          "s": "steve",
+          "t": "I go to Starbucks and eat out, reading my Kindle, and if something comes up I can check the 'Net."
+        }
+      ]
+    },
+    {
+      "title": "Banks That Put Links in Email",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jimmy Retzlaff in San Jose got a genuine-looking JPMorgan Chase email. All links go to Chase domains, with his name and last four digits. At the bottom: \"If you are concerned about the authenticity of this message, please click here.\""
+        },
+        {
+          "s": "steve",
+          "t": "It's nuts. The only acceptable advice is to call the number on the back of your card. You cannot click a link in a message whose authenticity you question."
+        },
+        {
+          "s": "leo",
+          "t": "Typing the bank's address into your browser would be fine. But click a link, give me a break."
+        }
+      ]
+    },
+    {
+      "title": "An Outlook Read-Receipt Leak",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Troubling News of the Week, from James Hudson in the UK. He found undeliverable emails in his box and spam-subject items in Sent Mail, sent from his PC. They began with \"Not Read\": Outlook read receipts."
+        },
+        {
+          "s": "leo",
+          "t": "Outlook has a bug: if an email requesting a read receipt is deleted without being read, it sends \"Not Read\" receipts automatically, regardless of your setting. Microsoft admitted it on MSDN for Outlook 2007 with IMAP, with reports for 2003 and POP3 too."
+        },
+        {
+          "s": "steve",
+          "t": "It verifies your existence. We tell people the safest thing is to delete spam without opening it. Now we learn Outlook sends a receipt anyway, if the email had a valid From address. His were bogus, so they bounced into his box and revealed the bug. A spammer could use a catching server to confirm live addresses. A real privacy concern."
+        },
+        {
+          "s": "leo",
+          "t": "Spammers usually don't use real return addresses, so maybe it isn't the end of the world."
+        },
+        {
+          "s": "steve",
+          "t": "Agreed, but any mail requesting a read receipt that you delete unread will trigger a \"Not Read\" response, even when you've configured Outlook not to."
+        },
+        {
+          "s": "leo",
+          "t": "I hate read receipts anyway. With IMAP on several machines, I might delete a copy I already read, and the sender thinks I ignored them."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why isn't Sockstress considered a bug in any particular TCP stack?",
+      "options": [
+        "It abuses the normal, flexible behavior that makes TCP adaptive",
+        "It only affects Vista's new stack",
+        "It's a coding error in Linux",
+        "It exploits a buffer overflow"
+      ],
+      "answer": 0,
+      "explain": "That's why it's hard to fix."
+    },
+    {
+      "q": "What change did Google announce for Google Update after the Chrome uninstall uproar?",
+      "options": [
+        "It would uninstall immediately when the last Google product is removed",
+        "It would stop phoning home",
+        "It would never install",
+        "It would run only hourly"
+      ],
+      "answer": 0,
+      "explain": "Until then it waited until its next update check."
+    },
+    {
+      "q": "Why did the MPAA object to RealDVD even though it kept CSS encryption?",
+      "options": [
+        "It didn't require the disc in the drive, so people could rent, rip and return",
+        "It cracked CSS",
+        "It removed all protection",
+        "It copied Blu-ray"
+      ],
+      "answer": 0,
+      "explain": "Real had a license to decrypt CSS for playback."
+    },
+    {
+      "q": "What did Skype admit about its Chinese version?",
+      "options": [
+        "Its partner logged messages containing certain keywords, with names and IPs",
+        "It had no encryption",
+        "It recorded all calls",
+        "It sold user data"
+      ],
+      "answer": 0,
+      "explain": "Keyword searching requires decryption, which allows logging."
+    },
+    {
+      "q": "What is Border Gateway Protocol, on port 179?",
+      "options": [
+        "How Internet routers share which networks they can reach",
+        "A home-router feature",
+        "A file transfer protocol",
+        "A type of firewall"
+      ],
+      "answer": 0,
+      "explain": "Home routers have no use for it."
+    },
+    {
+      "q": "Why is the correct response to a suspicious bank email never to click its link?",
+      "options": [
+        "A phishing message can also contain genuine-looking links",
+        "Links are always broken",
+        "Banks never send email",
+        "The link reveals your password"
+      ],
+      "answer": 0,
+      "explain": "Call the number on the back of your card instead."
+    }
+  ]
+}

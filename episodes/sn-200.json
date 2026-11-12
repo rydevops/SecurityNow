@@ -1,0 +1,384 @@
+{
+  "number": 200,
+  "title": "Listener Feedback #68",
+  "subtitle": "A milestone Q&A on ATM trojans, non-VPN connections, ClickOnce, TPM and expired certificates",
+  "date": "2009-06-11",
+  "description": "The 200th episode: a Q&A spanning Windows ATM trojans, the difference between Steve's \"non-VPN\" idea and SSH port forwarding, NAT traversal and tunnel-on-demand, the real story of Microsoft's ClickOnce Firefox add-on, why Steve keeps his code closed, how to find and enable your TPM, whether an expired SSL certificate is dangerous, Skype quietly using UPnP, and BRIEF syntax highlighting. Plus Microsoft's biggest-ever 31-vulnerability Patch Tuesday, the Pirate Bay appeal, Comcast sending a Social Security number in the clear, and .org getting a DNSSEC signature.",
+  "transcript": "https://www.grc.com/sn/sn-200.txt",
+  "audio": "http://media.GRC.com/sn/SN-200.mp3",
+  "chapters": [
+    {
+      "title": "Windows ATM Trojans",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The big news vindicates my warnings: trojan software has been found in ATMs in Eastern Europe, and they all have one thing in common, they run Windows. The trojan was a fake LSASS.exe (the main security service) placed in the Windows directory, written in Borland Delphi, commercial-grade code."
+        },
+        {
+          "s": "steve",
+          "t": "It's not remotely installed; someone needed physical access. Then a special credit card swiped in an infected machine triggers the trojan, which can dump all the cash and, meanwhile, logs every user's card data and PIN, printing it out DES-encrypted from the ATM's own receipt printer."
+        },
+        {
+          "s": "steve",
+          "t": "This is exactly my point: people defend Windows in these roles because it's easier to write software for, yes, and easier to write trojans for, with nice GUI tools like Delphi. On an obscure industrial real-time OS, they couldn't have written this on the machine they got for Christmas."
+        },
+        {
+          "type": "fact",
+          "title": "Why the OS choice mattered",
+          "t": "The attackers leveraged Windows' familiarity and rich development tools (Delphi) and its predictable file layout (dropping a fake LSASS.exe). A purpose-built embedded OS offers no such ecosystem, raising the bar enormously, which is the recurring argument against using consumer Windows in machines like ATMs."
+        }
+      ]
+    },
+    {
+      "title": "Pirate Bay Appeal, and the Pirate Party",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Pirate Bay appeal was denied: it was based on two judges belonging to a pro-copyright organization, but the court ruled that just kept them informed and didn't bias them, so the guilty verdict and sentence stand."
+        },
+        {
+          "s": "steve",
+          "t": "Meanwhile, in a Swedish election, the Pirate Party, founded three years ago after file-sharing was criminalized, won one of 18 seats with about 9% of the vote. Its aims: reform copyright, abolish the European patent system, and eliminate DRM."
+        },
+        {
+          "s": "leo",
+          "t": "People haven't thought through a world with no copyright or patents, nobody would invent anything. But this is the pendulum swinging back; people are fed up with DRM and overreach getting in the way of legitimate fair use. This is what happens when companies treat you like a pirate."
+        }
+      ]
+    },
+    {
+      "title": "Comcast Sends an SSN in the Clear",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Google engineer Greg Miller blogged about setting up Comcast service: the final step required an online chat, over HTTPS, but he was skeptical the chat text itself was encrypted, especially since it asked for his Social Security number alongside his name and address."
+        },
+        {
+          "s": "steve",
+          "t": "The rep assured him \"you can trust Comcast, it's secure.\" Being a techie, he ran a packet capture and watched everything go out unencrypted, every field clearly labeled, \"Social Security number =\", name, address, zip. The Java applet loaded over HTTPS, but the data didn't. He posted it as a warning and switched to doing it by phone."
+        },
+        {
+          "s": "leo",
+          "t": "Unbelievable."
+        }
+      ]
+    },
+    {
+      "title": "Patch Tuesday, DirectShow and Adobe",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft's biggest-ever Patch Tuesday: 31 vulnerabilities, including critical remote-code-execution bugs in Active Directory (two), the print spooler (three), IE (eight), Word, Excel, Works, four kernel privilege-elevation bugs, plus IIS and Search. Definitely reboot. But astonishingly, last week's actively-exploited DirectShow QuickTime zero-day is still not fixed; keep using the \"Fix it\" workaround."
+        },
+        {
+          "s": "steve",
+          "t": "And this being a calendar quarter, it's also Adobe's first synchronized Patch Tuesday. Note you must update repeatedly, it installs sequentially, so keep updating until it says there are no more. Targets: Reader/Acrobat 9.1.2, 8.1.6, or 7.1.3."
+        },
+        {
+          "s": "steve",
+          "t": "Also good news in DNS: on June 2 the .org root became the first major DNS root to receive a DNSSEC signature, and NIST has tasked ICANN and VeriSign with signing all root servers by the end of 2009. It's a prerequisite, you still need DNSSEC-aware servers at both ends to verify the chain, but it has to start somewhere."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite for Episode 200",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Nate Friedman asked to have his story read on Episode 200, so here it is. He inherited a mission-critical server with a failing drive that the previous admin had failed to clone three times. He talked the money people into SpinRite, which found a few bad sectors at Level 3, ran Level 4 over that section, then cloned the drive cleanly. The server's been humming ever since."
+        },
+        {
+          "s": "steve",
+          "t": "And I'm now using my own Perfect Paper Passwords system, since I'm a roamer at Starbucks: the page asks for, say, C7, I read that one-time code from the card in my wallet, add my password, and I'm in, something I have and something I know. I went over the top on security, but is there such a thing?"
+        }
+      ]
+    },
+    {
+      "title": "A Brain-Fart Correction: Switches",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim in Kansas City (and a torrent of others) caught Steve's claim that consumer switches would \"break\" under IPv6. A switch operates at Layer 2 on MAC addresses, not IP addresses, so IPv6 won't bother it."
+        },
+        {
+          "s": "steve",
+          "t": "Jim's right, and I don't know what I was thinking, a brain-fart. A switch is passive, switching Ethernet frames by MAC address, unaware of the IP payload. When a machine wants to reach an IP on the LAN it broadcasts an ARP request; the switch just learns which MAC lives on which port. That's why one switch handles IP and old IPX/SPX alike. Thanks to everyone who corrected me."
+        },
+        {
+          "type": "fact",
+          "title": "Layer 2 versus Layer 3",
+          "t": "Switches forward frames by MAC address (Layer 2) and are oblivious to the IP layer (Layer 3), so a change in IP version doesn't affect them; routers, which operate at Layer 3, are what would need IPv6 awareness. ARP is the protocol that maps an IP to the MAC the switch actually forwards to."
+        }
+      ]
+    },
+    {
+      "title": "Non-VPN Versus SSH Port Forwarding",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Meuser asks whether Steve's non-VPN idea is just SSH port forwarding with port knocking."
+        },
+        {
+          "s": "steve",
+          "t": "Similar in spirit, but different. SSH port forwarding runs a user-space daemon that listens on your localhost; you point your mail client at your own machine, and the daemon securely relays to the remote end. My CryptoLink approach uses a kernel driver between the NIC and the protocol stack, with raw access to packets."
+        },
+        {
+          "s": "steve",
+          "t": "That makes it transparent: you don't reconfigure your email to aim at your own machine; you aim it at the real target, and the driver intercepts and encrypts the packets on the fly. And on port knocking, my patent-pending twist is a self-authenticating SYN packet, the connection-opening packet itself proves it came from a legitimate CryptoLink client sharing the key, so your system is completely stealth with no scannable open ports, yet packets to any port can reach it."
+        }
+      ]
+    },
+    {
+      "title": "NAT Traversal and Tunnel-on-Demand",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brad notes a non-VPN server would need port forwarding or a DMZ, and asks about relying on a software firewall."
+        },
+        {
+          "s": "steve",
+          "t": "CryptoLink will support Hamachi-like NAT traversal, so no router configuration is needed in the easy case. But if both endpoints are behind NAT, you must use a third-party rendezvous server: both connect out to it, it observes how each NAT maps addresses, and tells each side how to send packets to the other."
+        },
+        {
+          "s": "steve",
+          "t": "That breaks my Trust-No-One model and fails if the third party is down (Hamachi's weakness). So sophisticated users can instead configure their router to allow CryptoLink in, getting a no-third-party, more reliable, Trust-No-One setup. And after all the feedback I've refined the idea: rather than a bare secure connection, I want \"tunnel on demand\", a full VPN with all its features, but established almost instantly so there's none of OpenVPN's slow startup overhead."
+        }
+      ]
+    },
+    {
+      "title": "The ClickOnce Firefox Add-On, Clarified",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Clayton, a .NET developer, corrects last week: Microsoft's ClickOnce is a way to package and deploy thick-client desktop applications, not browser code. The user is always prompted to install, so it isn't silent, and it supports Authenticode signatures. The Firefox add-on just handles the .application files that start the install; without it you'd get raw XML. He adds that Skype, Office, Acrobat, iTunes and QuickTime all install Firefox hooks the same way."
+        },
+        {
+          "s": "steve",
+          "t": "Fair clarification. We now understand Microsoft is promoting a new deployment standard for .NET apps, click a button and it installs locally instead of hunting for a downloaded setup file. The objection was really how they installed it (silently, un-removable), not what it fundamentally does."
+        },
+        {
+          "s": "leo",
+          "t": "His point: when Apple or Google adds a browser hook, people thank them; when Microsoft does it, all hell breaks loose."
+        }
+      ]
+    },
+    {
+      "title": "ClickOnce Versus ClickTwice",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rob near Ottawa still calls ClickOnce dangerous, since clicking a web page can download, install and run an app, and notes a third-party FFClickOnce extension already existed, so Microsoft's wasn't even necessary. His tip: if you keep it, use the Options button to require confirmation before running a ClickOnce app, turning ClickOnce into \"ClickTwice.\""
+        },
+        {
+          "s": "steve",
+          "t": "I like that a lot, far better than being fooled into a single click that runs something. He also notes ClickOnce is like Java Web Start, but Java Web Start apps run sandboxed in restricted mode by default (no local file access) unless the developer signs them to lift that, which is the real advantage of Java over ActiveX-style full-privilege installs."
+        },
+        {
+          "s": "steve",
+          "t": "As a minimalist I'd rather not have extra junk in my browser at all; a fresh Firefox launches much faster than one encrusted with add-ons. I'd opt to be asked, but many non-technical users have no basis to answer \"do I need this?\", which is exactly why vendors make it automatic."
+        },
+        {
+          "type": "fact",
+          "title": "Sandboxed versus full-privilege install",
+          "t": "Java Web Start runs downloaded apps in a restricted sandbox by default, limiting their access to the system, while a ClickOnce app installs and runs with full application privileges. The \"ask before running\" option is the practical mitigation for the latter's higher risk."
+        }
+      ]
+    },
+    {
+      "title": "Why Steve Keeps His Code Closed",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michael wishes Steve covered Linux security and open-sourced his code, calling the \"hackers could use it\" reason arrogant and a form of security-by-obscurity."
+        },
+        {
+          "s": "steve",
+          "t": "This is a Windows-security show because that's where most users (and threats) are, but we spend huge time on fundamentals, crypto, networking, that apply equally to Linux and Mac, which is why we have Linux listeners."
+        },
+        {
+          "s": "steve",
+          "t": "On open source: it wasn't arrogance. My concern is that with the full source, someone could trivially drop malicious code into a build that looks exactly like GRC's and claim \"it's from Steve.\" Writing a convincing fake from scratch is far more work. And it's all Assembler, so its value as open source is limited. Mostly, I'm still earning my living from this code; \"free\" (like the DNS benchmark) is separate from \"open.\" I may open-source things someday when I'm no longer a commercial developer."
+        },
+        {
+          "s": "steve",
+          "t": "What I do have is a very open development process, thousands of newsgroup posts where listeners shape the DNS benchmark and CryptoLink. I'm the final arbiter and keep the code, but the input is transparent and wonderfully productive."
+        }
+      ]
+    },
+    {
+      "title": "Teaching Programming With Basic-256",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike Potts recommends Basic-256 (kidbasic.sourceforge.net), open source, inspired by the \"Why Johnny Can't Code\" article, for teaching young people. It gives a small graphics window with primitives, so kids can write games, and it held his 14-year-old's interest for months."
+        },
+        {
+          "s": "steve",
+          "t": "I looked, and it's neat, like Logo's Turtle Graphics, it offers immediacy. Code on the left, all your variables shown live in real time on the upper right, and a graphics window below, so a line of code draws a circle instantly, and a loop fills the screen with them."
+        },
+        {
+          "s": "steve",
+          "t": "Mike's son learned the fundamental lesson: the computer does exactly what you tell it, not what you want. Back then a teletype spitting X's was sensory overload; you can't overload a modern teenager, so it takes more to excite them, but excitement is what makes it stick."
+        }
+      ]
+    },
+    {
+      "title": "Are Expired SSL Certificates Dangerous?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Greg M. asks whether data is still encrypted when a site's SSL certificate has expired."
+        },
+        {
+          "s": "steve",
+          "t": "Good question we've never covered. There's nothing insecure about an expired certificate other than that it has expired; the encryption works exactly the same. When I've hit an expired-cert warning it's usually only a day old, the owner scrambling to re-certify."
+        },
+        {
+          "s": "steve",
+          "t": "Expiration exists partly to guarantee revenue to issuers like VeriSign, but it also time-limits the issuer's representation about you, if you went to the dark side, the certificate lapses in a couple years, and stale credentials have a greater chance of being compromised. Good policy, like a password that expires. And renewing early does credit you from the old expiration date, not the renewal date, so renew as soon as you're notified."
+        }
+      ]
+    },
+    {
+      "title": "NAT Versus the Internet's Original Vision",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jonathan dislikes NAT: he and his brothers can't all host Battlefield 2 because some are behind ISP-level NAT, so he argues NAT segments the Internet and IPv6 (per-machine addresses) is the real answer."
+        },
+        {
+          "s": "steve",
+          "t": "This touches the original UNIX-purist ideal: every machine reachable by a unique IP, everyone a good actor, which is also why purists hate \"stealth\" and ISPs blocking ICMP. But that's not the world we got; the net is full of people who wish us ill."
+        },
+        {
+          "s": "steve",
+          "t": "You could have per-machine IPv6 addressing, but you'd still absolutely need a firewall, which means configuring it to allow a game server in, just as you configure a NAT router today. Not having a firewall means trusting every piece of (increasingly complex) code on your machine against the whole Internet, which isn't safe. Reality impinged on the Internet's immaculate conception."
+        }
+      ]
+    },
+    {
+      "title": "Finding and Enabling Your TPM",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeff asks how to tell if his computer has a Trusted Platform Module, since BitLocker complained it had none on a year-old laptop."
+        },
+        {
+          "s": "steve",
+          "t": "Every machine I've ever seen ships with its TPM disabled in the BIOS, so Windows doesn't even see it and never loads the TPM driver. Get into your BIOS (F2/Delete/F1) and look under Security; if you have a TPM, that's where you'll find it, almost certainly turned off."
+        },
+        {
+          "s": "steve",
+          "t": "Enable it there (often requiring a reboot), initialize it to a known state, and back in Windows you'll get \"new hardware found, Trusted Platform Module.\" Install the companion driver for your model, and you're set. There's no good software detector, because while it's disabled it's completely hidden."
+        }
+      ]
+    },
+    {
+      "title": "Skype Quietly Using UPnP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Don Daniels found Skype 4 has \"Enable uPnP\" checked by default, yet Steve's UnPlug n' Pray still reports \"UPnP is safely disabled.\" What's going on?"
+        },
+        {
+          "s": "steve",
+          "t": "Two different things with the same name. UnPlug n' Pray disables Windows' own vulnerable Universal Plug and Play service, the one that caused a nasty pre-SP2 XP remote exploit. Skype's setting is different: it uses UPnP to talk to your router, asking it to open and map a port so Skype gets clear, non-relayed connections."
+        },
+        {
+          "s": "steve",
+          "t": "So by default, Skype and your router together quietly map a port, better call quality, without you doing anything. It's not a huge concern, assuming Skype closes the port on exit and isn't listening when you're not in a call. Leo and I instead manually forward a fixed high port (I use a dedicated one), which avoids relaying through Skype supernodes and gives better results."
+        },
+        {
+          "type": "fact",
+          "title": "UPnP: convenience versus exposure",
+          "t": "Universal Plug and Play lets an application silently tell the router to open an inbound port. That's handy for peer-to-peer apps like Skype, but it means any flaw in the listening app becomes reachable from the Internet, which is why Steve prefers explicit manual port forwarding and disabling UPnP where it isn't needed."
+        }
+      ]
+    },
+    {
+      "title": "BRIEF and the Colors Utility",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "From Riley Township: Steve, does your ancient BRIEF editor have syntax highlighting?"
+        },
+        {
+          "s": "steve",
+          "t": "BRIEF (Basic Reconfigurable Interactive Editing Facility) is a DOS editor that won't run on Windows 7, but I'm not on 7 yet. It had no syntax highlighting, but a freeware TSR called Colors did: it hooks the BIOS keyboard, video and timer interrupts, watches when text changes on screen, and colors it per a config file, instant coloring in a DOS box, for nearly 20 years."
+        },
+        {
+          "s": "steve",
+          "t": "I loved it so much I paid a couple thousand dollars for the source (which I never even needed to compile). Since it's free, I've posted the EXE, my config and some documentation at GRC.com/miscfiles/colors.zip for anyone who wants their Assembly code to look like mine. No modern editor supports Assembler anyway, imagine that."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did all the trojan-infected Eastern European ATMs have in common?",
+      "options": [
+        "They ran Windows, letting attackers use Delphi and a fake LSASS.exe to steal card data and dump cash",
+        "They were all made by the same manufacturer",
+        "They were connected to the public Internet",
+        "They used the same default password"
+      ],
+      "answer": 0,
+      "explain": "The trojans exploited Windows' familiar tools (Delphi) and file layout (a fake LSASS.exe), logging PINs and card data and printing them DES-encrypted; a purpose-built OS would have made this far harder."
+    },
+    {
+      "q": "How does Steve's CryptoLink \"non-VPN\" approach differ from SSH port forwarding?",
+      "options": [
+        "It uses a kernel driver that intercepts and encrypts packets transparently, so you don't reconfigure apps to aim at localhost",
+        "It requires no encryption at all",
+        "It only works inside a web browser",
+        "It relies on a third-party relay for every connection"
+      ],
+      "answer": 0,
+      "explain": "SSH port forwarding runs a user-space daemon you point apps at (localhost); CryptoLink's kernel driver sits below the stack, so apps target the real destination and the driver encrypts on the fly, with self-authenticating SYN packets keeping ports stealth."
+    },
+    {
+      "q": "Is a website's data still encrypted when its SSL certificate has expired?",
+      "options": [
+        "Yes; the encryption works the same, expiration only ends the issuer's time-limited vouching for the owner",
+        "No; an expired certificate disables encryption",
+        "Only if the user re-approves it",
+        "Only for the first day after expiry"
+      ],
+      "answer": 0,
+      "explain": "An expired certificate still encrypts normally; expiration mainly time-limits the issuer's representation about the owner and nudges renewal, and stale credentials carry slightly more risk over time."
+    },
+    {
+      "q": "Why does Jeff's year-old laptop report having no TPM for BitLocker?",
+      "options": [
+        "TPMs ship disabled in the BIOS, so Windows can't see one until you enable it under the BIOS Security settings",
+        "The laptop is too old to have a TPM",
+        "BitLocker requires a separate TPM chip you must buy",
+        "The TPM driver was uninstalled"
+      ],
+      "answer": 0,
+      "explain": "Virtually all TPMs are shipped disabled; until you enable it in the BIOS (then initialize it), Windows never detects it or loads its driver, so BitLocker sees none."
+    },
+    {
+      "q": "What does Skype's default \"Enable uPnP\" setting actually do?",
+      "options": [
+        "It asks the router to open and map a port so Skype gets clear, non-relayed connections",
+        "It disables Windows' Universal Plug and Play service",
+        "It encrypts all Skype calls",
+        "It makes your PC a Skype supernode"
+      ],
+      "answer": 0,
+      "explain": "Skype uses UPnP to have the router map an inbound port automatically, improving call quality by avoiding relay supernodes; this is unrelated to Windows' own UPnP service that UnPlug n' Pray disables."
+    },
+    {
+      "q": "Why won't an IPv4 Ethernet switch \"break\" when IPv6 packets cross it?",
+      "options": [
+        "A switch forwards frames by MAC address at Layer 2 and is oblivious to the IP (Layer 3) payload",
+        "Switches automatically translate IPv6 to IPv4",
+        "Switches only carry IPv4 by design",
+        "The switch upgrades its firmware on the fly"
+      ],
+      "answer": 0,
+      "explain": "Switches operate at Layer 2 on MAC addresses, learning which MAC is on which port via ARP, and never inspect the IP layer, so the IP version is irrelevant to them (routers, at Layer 3, are what need IPv6 awareness)."
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "number": 189,
+  "title": "Internet Explorer 8",
+  "subtitle": "A security-focused tour of IE8: InPrivate filtering, SmartScreen, DEP and what's still broken",
+  "date": "2009-03-26",
+  "description": "Steve reviews Microsoft's new Internet Explorer 8 purely from a security and privacy angle: the excellent InPrivate filtering that adaptively blocks cross-site trackers, InPrivate browsing, the SmartScreen reputation filter, per-site ActiveX, domain-name highlighting, and DEP on by default under Vista, balanced against its still-broken third-party cookie blocking, a first vulnerability already found, and repeatable crashes. Plus a botnet living inside routers, an exploit \"spray\" on a friend's laptop, and why SSH isn't SSL.",
+  "transcript": "https://www.grc.com/sn/sn-189.txt",
+  "audio": "http://media.GRC.com/sn/SN-189.mp3",
+  "chapters": [
+    {
+      "title": "A Botnet Living Inside Routers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Something new: a botnet running autonomously inside routers, about 100,000 of them, on a Linux-based NetComm NB5 DSL router. For a time it shipped with firmware that left the web interface and the SSH/telnet port open to the Internet, one version needing no password at all."
+        },
+        {
+          "s": "steve",
+          "t": "So a worm scanning the net finds the router, uses the exposed web interface and telnet to copy itself in, lives in RAM (it can't write permanently), and organizes over IRC. NetComm fixed the firmware, but firmware is rarely updated, so 100,000 remain."
+        },
+        {
+          "s": "steve",
+          "t": "If you have an NB5, power-cycle it to flush any worm, disable WAN-side administration, and check your public IP with a port scanner like ShieldsUP! for open ports 80 and 22."
+        },
+        {
+          "type": "fact",
+          "title": "Routers as targets",
+          "t": "Embedded Linux routers run full operating systems but are seldom patched, making them durable, low-visibility hosts for malware. This early router botnet foreshadowed later large-scale ones; the defenses are the same, change defaults, close WAN-side management, and update firmware."
+        }
+      ]
+    },
+    {
+      "title": "Adobe Patches and an Exploit \"Spray\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Adobe Reader/Acrobat updates for versions 7 and 8 are finally out, so anyone still on those can patch rather than being forced to version 9."
+        },
+        {
+          "s": "steve",
+          "t": "I took on a friend's infected laptop, infected at a precise timestamp, and found it fascinating: the same malicious agent was delivered as a Windows metafile, a PDF with the latest PDF hack, and an EXE disguised with an .htm extension, a whole spray of recent Windows exploits looking for any unpatched opening. One got in."
+        },
+        {
+          "s": "leo",
+          "t": "Those Russian exploit kits bundle many exploits in one page, so whatever you failed to patch, one of them gets through."
+        },
+        {
+          "type": "fact",
+          "title": "Exploit kits",
+          "t": "Commercial \"exploit packs\" assembled dozens of browser and plugin exploits into a single malicious page that silently tries each one against a visitor. Keeping every component patched is the defense, since the kit only needs one unpatched hole to succeed."
+        }
+      ]
+    },
+    {
+      "title": "SSH Isn't SSL, Plus Two Tools",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An errata: last week I said SSH uses SSL. It doesn't. SSH has its own Transport Layer Protocol, which confused me with TLS (Transport Layer Security). It's functionally similar, with its own cipher negotiation, Triple DES is mandatory, with AES options, endpoints agreeing on the strongest both support."
+        },
+        {
+          "s": "steve",
+          "t": "A freeware find: Prio, a tiny DLL that extends Task Manager. It color-codes processes and services green if digitally signed, red if not (unsigned isn't necessarily evil, just unsigned), and adds a live TCP/IP connection monitor showing which process owns each connection."
+        },
+        {
+          "s": "leo",
+          "t": "Signed doesn't mean safe, just that you know who it came from."
+        },
+        {
+          "s": "steve",
+          "t": "Also, cleaning that infected laptop, I ran both AVG and avast, and avast found about 50% more, catching obfuscated agents in PDFs, JavaScript and metafiles that AVG missed. Anecdotal, but notable."
+        }
+      ]
+    },
+    {
+      "title": "Conficker's April 1 Date",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "April 1st is a special date built into Conficker, and we don't know what it'll do; it happens before listeners hear our next episode."
+        },
+        {
+          "s": "steve",
+          "t": "We record on April 1st, so we'll discuss it after the fact. Conficker apparently knows about April Fools' Day. A good time to scan your computer."
+        }
+      ]
+    },
+    {
+      "title": "A New Year's Eve SpinRite Rescue",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A SpinRite story from a listener in Toronto (name withheld to spare his friend). His newly retired friend needed to move her 1.4GB Outlook .pst, all her email, to a new laptop, but it wouldn't copy, returning a CRC error, with no backup. On New Year's Eve at a snowbound cottage, he bought and downloaded SpinRite, ran it, DynaStat recovered most of the data, and as the champagne popped the .pst copied fine."
+        },
+        {
+          "s": "steve",
+          "t": "He'd SpinRited his own drives for years without ever seeing a problem, which is exactly the point, preventative maintenance, and this was the first time he watched it actually recover a failing sector."
+        }
+      ]
+    },
+    {
+      "title": "IE8: The Security Lens",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "IE8 is the first major update since IE7 in October 2006, after about a year in beta. I don't care about web slices and accelerators; my question is what it means for security, since IE is the number-one infection vector. It's still the slowest of the top five browsers on JavaScript (Chrome fastest, then Firefox, Safari, Opera), but local render time matters less than round-trip packet time, and it felt snappy."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft made IE8 much more standards-compliant (they claim it passes Acid2), which broke many sites that had adapted to IE's old quirks, including my own script-free menu, which the betas broke and the release fixed naturally."
+        },
+        {
+          "s": "steve",
+          "t": "So IE8 has a \"compatibility view\": a cracked-page button, plus a built-in list of known-incompatible domains, that drops the page back to the IE7 rendering engine and remembers that choice per site."
+        }
+      ]
+    },
+    {
+      "title": "Still-Broken Cookie Blocking",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One thing IE8 did not fix: like IE7, you cannot actually block all third-party cookies even when you tell it to. I found a rendering anomaly too, fixable with compatibility mode."
+        },
+        {
+          "s": "leo",
+          "t": "You'd think they'd have fixed cookie blocking by now."
+        },
+        {
+          "s": "steve",
+          "t": "My cookie-forensics pages, coming soon, will shine a light on this; no version of IE truly blocks third-party cookies, and IE is among the most broken browsers in cookie handling. Firefox once removed the switch too, until my pages pushed them to restore it."
+        }
+      ]
+    },
+    {
+      "title": "InPrivate Browsing and Filtering",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "IE8's popular feature is InPrivate browsing, nicknamed \"porn mode\": a clearly labeled window that writes nothing permanent to disk. In testing I couldn't find any trace left behind, even watching for the cookie leakage IE normally has."
+        },
+        {
+          "s": "steve",
+          "t": "But the feature I'm genuinely excited about is InPrivate filtering, which is separate and works in normal browsing too. It watches third-party content as you browse, and when the same third party appears across multiple sites, it automatically blocks it. You pick the threshold, 3 to 30, default 10; a privacy-conscious person sets it to 3."
+        },
+        {
+          "s": "steve",
+          "t": "I set it to 3 and hit MSNBC, CNN, the Wall Street Journal, Disney, and quickly saw IE block cross-site trackers on its own: DoubleClick's 2mdn.net, flashwrite_1_2.js (Flash-cookie persistence), Google syndication ad scripts, DoubleClick's probing test_domain.js, Google Analytics' ga.js, Quantserve's quant.js."
+        },
+        {
+          "s": "steve",
+          "t": "The logic is clever: a legitimate mashup add-in usually comes from one other site, so it survives even a threshold of 3, while true trackers spread across the web get adaptively blocked. You can also whitelist specific scripts. I'd add this to Firefox in a heartbeat."
+        },
+        {
+          "type": "fact",
+          "title": "InPrivate filtering's fate",
+          "t": "This adaptive anti-tracking idea was ahead of its time and off by default. Reportedly under advertiser pressure, Microsoft reworked it in IE9 into \"Tracking Protection\" driven by subscription lists rather than automatic detection, a weaker, opt-in model, foreshadowing years of tension between browsers and the ad industry over tracking."
+        }
+      ]
+    },
+    {
+      "title": "SmartScreen, ActiveX and Domain Highlighting",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "IE8's SmartScreen Filter gives reputation-based warnings: a local cache of known-good sites, with unknown ones checked against Microsoft's database. Hit a known-bad site and the whole screen turns red with an unmissable warning; otherwise it stays quiet, so it doesn't false-positive."
+        },
+        {
+          "s": "steve",
+          "t": "ActiveX, still the worst idea ever, finally gets granularity: you can allow a control (like Flash) only on a specific site, and per-user rather than for everyone on the machine. There's also a far better add-on manager showing where each add-on lives and when it last activated."
+        },
+        {
+          "s": "steve",
+          "t": "IE8 highlights the real domain, rendering everything else in the URL grey, so a deceptive address like paypal.com.something.evildomain.ru shows evildomain.ru in black, where your eye goes. And every toolbar now gets a red X close button that no toolbar can suppress."
+        },
+        {
+          "type": "fact",
+          "title": "Why domain highlighting helps",
+          "t": "Phishers hide the true registered domain deep in a long, legitimate-looking URL. Darkening only the real domain (the part that actually determines where you are) and greying the rest helps users spot that paypal.com is just a subdomain label, not the site they're on."
+        }
+      ]
+    },
+    {
+      "title": "DEP On, Crashes and the Verdict",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A big one: under Vista (and Windows 7), IE8 enables DEP, Data Execution Prevention, by default, where IE7 did not. Using the CPU's No-Execute bit, DEP stops data, like a booby-trapped image or PDF, from being executed, a major long-term security win. You don't get it under XP."
+        },
+        {
+          "s": "steve",
+          "t": "But don't rush to IE8. It's a brand-new browser release, a first vulnerability is already found and acknowledged, and it crashed repeatedly for me, I couldn't even display WSJ.com. Tabs are supposed to crash independently and recover (\"This tab has been recovered\"), but mine got stuck in a crash loop at 100% CPU and destroyed the whole UI."
+        },
+        {
+          "s": "steve",
+          "t": "So it's a welcome step with real improvements, InPrivate filtering above all, better history control, SmartScreen, ActiveX granularity, DEP, but it's not mature. Microsoft isn't pushing it through Windows Update yet, and I'm staying in Firefox with NoScript. IE still has 65%+ market share, so as Microsoft's defaults improve, Internet security broadly improves."
+        },
+        {
+          "s": "leo",
+          "t": "As Microsoft goes, so goes Internet security, so I'm glad they're paying attention."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does IE8's InPrivate filtering decide what to block?",
+      "options": [
+        "It blocks third-party content that appears across multiple sites (a configurable threshold of 3 to 30)",
+        "It blocks every third-party script by default",
+        "It only blocks sites on Microsoft's reputation blacklist",
+        "It blocks anything that sets a cookie"
+      ],
+      "answer": 0,
+      "explain": "InPrivate filtering watches for the same third party appearing across many sites and adaptively blocks it, so cross-site trackers get caught while a single-site mashup add-in survives."
+    },
+    {
+      "q": "What does IE8's DEP (Data Execution Prevention), on by default under Vista, protect against?",
+      "options": [
+        "Executing code planted in data, such as a booby-trapped image or PDF, via the CPU's No-Execute bit",
+        "Third-party cookies being stored",
+        "Phishing sites with deceptive domains",
+        "ActiveX controls running without permission"
+      ],
+      "answer": 0,
+      "explain": "DEP marks data memory non-executable using the NX bit, blocking buffer-overflow exploits that try to run code hidden in data like images or PDFs; IE7 left it off by default."
+    },
+    {
+      "q": "Why could the router botnet infect about 100,000 NetComm NB5 routers?",
+      "options": [
+        "The firmware shipped with the web interface and telnet port open to the Internet, sometimes with no password",
+        "Users all chose the same weak Wi-Fi password",
+        "It exploited a flaw in the Linux kernel itself",
+        "It spread through infected PDF files"
+      ],
+      "answer": 0,
+      "explain": "The routers exposed management interfaces to the WAN with default or no credentials, so a worm could copy itself in; power-cycling flushes it since it lives only in RAM."
+    },
+    {
+      "q": "What still-broken behavior did IE8 carry over from IE7?",
+      "options": [
+        "You cannot actually block all third-party cookies even when you set it to",
+        "It cannot display HTTPS pages",
+        "It runs every tab in one process",
+        "It has no history-clearing option"
+      ],
+      "answer": 0,
+      "explain": "Steve notes IE8, like IE7, fails to truly block third-party cookies, and IE remains among the most broken browsers in cookie handling."
+    },
+    {
+      "q": "How does IE8 help users avoid being fooled by a deceptive URL like paypal.com.evildomain.ru?",
+      "options": [
+        "It highlights the real registered domain in black and greys out the rest of the URL",
+        "It blocks any URL containing \"paypal\"",
+        "It refuses to load subdomains",
+        "It shows a red screen for all unknown domains"
+      ],
+      "answer": 0,
+      "explain": "Domain highlighting darkens the actual domain (evildomain.ru) and greys the misleading subdomain labels, drawing the eye to where you really are."
+    },
+    {
+      "q": "Why does Steve say SSH does not use SSL?",
+      "options": [
+        "SSH has its own Transport Layer Protocol, separate from TLS, though functionally similar",
+        "SSH uses no encryption at all",
+        "SSH only works over SSL on port 443",
+        "SSL and SSH are identical and interchangeable"
+      ],
+      "answer": 0,
+      "explain": "SSH defines its own transport (which Steve confused with TLS, Transport Layer Security); it negotiates its own ciphers like Triple DES and AES rather than using SSL/TLS."
+    }
+  ]
+}

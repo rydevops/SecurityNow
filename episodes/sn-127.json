@@ -1,0 +1,526 @@
+{
+  "number": 127,
+  "title": "Corporate Security",
+  "subtitle": "The week's threats, and why securing a workplace is so hard",
+  "date": "2008-01-17",
+  "description": "The news: master boot record rootkits arrive in the wild, the website-infecting JavaScript turns polymorphic, hackers use Flash to reprogram UPnP routers, a trojan holds PCs for a $35 phone call, HP's preinstalled software has another hole, and new digital picture frames infect PCs. Then a help-desk worker in Nova Scotia describes an agency that won't enforce its own security policy, and Steve and Leo discuss the tension between IT and employees, from home-style PCs at work to warning labels, a separate network for personal use and Windows SteadyState.",
+  "transcript": "https://www.grc.com/sn/sn-127.txt",
+  "audio": "http://media.GRC.com/sn/SN-127.mp3",
+  "chapters": [
+    {
+      "title": "A Cold, and Today's Topic",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I'm Leo Laporte, feeling a little better. Steve is the peak of health, since he never leaves his Irvine security lab."
+        },
+        {
+          "s": "steve",
+          "t": "My antivirus, disinfected tower of health."
+        },
+        {
+          "s": "leo",
+          "t": "I'm going to start wearing surgical masks on planes. So many people have had this terrible cold."
+        },
+        {
+          "s": "steve",
+          "t": "A listener wrote a long explanation of his organization's problems enforcing security policy. It raised something we've never discussed: the challenges of corporate IT security, and the inherent tension between IT staff and employees, in an environment more heterogeneous and complex every day."
+        },
+        {
+          "s": "leo",
+          "t": "I don't envy our IT pro friends. Locking down your own system is hard enough. Imagine hundreds or thousands of users, each with their own ideas about their computer."
+        }
+      ]
+    },
+    {
+      "title": "MBR Rootkits in the Wild",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, this week's news. Last week, master boot record rootkits were theory. This week they're in the wild."
+        },
+        {
+          "s": "steve",
+          "t": "Four known, patched vulnerabilities are being used to install them: a byte-verify flaw in Microsoft's Java Virtual Machine, one in MDAP, one of their database APIs, Internet Explorer's Vector Markup Language, VML, and XML Core Services. Visit a hostile page, which is typically how bad stuff gets in now, and one of those flaws, hopefully patched, tries to do something bad."
+        },
+        {
+          "type": "fact",
+          "title": "MDAC",
+          "t": "Steve means MDAC, Microsoft Data Access Components."
+        },
+        {
+          "s": "steve",
+          "t": "And it's not just Microsoft. There's now proof-of-concept code for a QuickTime remote code execution flaw affecting both Mac and Windows. The exploit code would differ by platform, but both are vulnerable. It came out as a zero-day, before Apple knew."
+        },
+        {
+          "s": "steve",
+          "t": "The really scary thing: being a rootkit, this gets control and patches the OS before it loads. It's Windows-only, and it makes itself undetectable by antivirus software."
+        },
+        {
+          "s": "leo",
+          "t": "Would anti-rootkit tools like Mark Russinovich's RootkitRevealer or F-Secure's BlackLight catch it?"
+        },
+        {
+          "s": "steve",
+          "t": "It's so new I don't know. And this is what we faced 15 years ago with the first viruses, via \"sneakernet\": infected floppies that installed themselves on a machine's hard drive. Boot record viruses went out of fashion. As security tightened everywhere else, this one hole was never patched, and it's been rediscovered. Modern code analysis makes it easier to patch the kernel on the fly."
+        },
+        {
+          "s": "leo",
+          "t": "A traditional rootkit runs later in boot."
+        },
+        {
+          "s": "steve",
+          "t": "Usually it installs as a boot-time device driver, which the OS unwittingly loads into the kernel, then patches the kernel to hide itself."
+        },
+        {
+          "s": "leo",
+          "t": "So what's the advantage of the boot record?"
+        },
+        {
+          "s": "steve",
+          "t": "Literally nothing is running. The BIOS has run, but the system isn't even in protected mode. It's in real mode, without the chipset's protection. That one 512-byte sector is copied to low memory and executed. Normally it loads the bootable partition. This one loads more of itself from the first track, patches the OS on the fly, and the OS boots already infected."
+        },
+        {
+          "s": "steve",
+          "t": "The AV people and Microsoft will get on it. You're running Windows when one of these flaws lets code write to the boot record. That's the hole to plug."
+        },
+        {
+          "s": "leo",
+          "t": "That's when security software is running and can watch for it."
+        }
+      ]
+    },
+    {
+      "title": "The Infected-Site JavaScript Goes Polymorphic",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week: 70,000-plus sites infected by JavaScript planted through SQL vulnerabilities in their database-driven pages. People knew it was 70,000 because they simply Googled the malicious script, which Google had dutifully catalogued."
+        },
+        {
+          "s": "steve",
+          "t": "The new twist: polymorphic JavaScript that renames and reorganizes itself, so it can't be searched for. In the cat-and-mouse game, the bad guys said, we don't want you to know how many sites, or find us at all, so you can't quickly notify sites and remove it. A serious escalation."
+        }
+      ]
+    },
+    {
+      "title": "Flash Can Reprogram UPnP Routers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You'll get a kick out of this, Leo. Gray-hat hackers are zeroing in on UPnP-enabled routers."
+        },
+        {
+          "s": "leo",
+          "t": "You've warned against UPnP for some time."
+        },
+        {
+          "s": "steve",
+          "t": "From the first moment this bad idea appeared. Hacker sites have succeeded using cross-site scripting and, more recently, Flash version 8 or later. Flash has become so powerful, with a navigate-to-URL function and a URL request object, that it can generate local LAN traffic. That's all you need to talk to a UPnP router and rewrite its DNS server or open holes to the outside. All of that's been done. We don't yet know of malicious code doing it."
+        },
+        {
+          "s": "steve",
+          "t": "But I've predicted this from the beginning. The first version of UPnP, which essentially all consumer routers have, most enabled by default, has no security model."
+        },
+        {
+          "s": "steve",
+          "t": "That's different from the Windows flaw I wrote Unplug n' Pray for: a remote code execution hole in XP's original UPnP service, running by default when XP had no firewall on until Service Pack 2. Unplug n' Pray stops and disables that service, SSDP, the Simple Service Discovery Protocol."
+        },
+        {
+          "s": "steve",
+          "t": "Routers use UPnP to solve NAT traversal, opening ports for hopefully expected traffic. But any packets on the LAN can discover UPnP services and make them do things."
+        },
+        {
+          "s": "steve",
+          "t": "So take this seriously. Someday malware on your machine will reconfigure your router behind your back. Changing your DNS to a fraudulent server would send all your machines to bogus addresses for common sites. That's the holy grail for phishing."
+        },
+        {
+          "s": "leo",
+          "t": "So go into your router and disable UPnP."
+        },
+        {
+          "s": "steve",
+          "t": "There will be side effects."
+        },
+        {
+          "s": "leo",
+          "t": "What I hear about is Xbox Live. It has a feature that checks your accessibility to other players, which encourages you to turn on UPnP."
+        },
+        {
+          "s": "steve",
+          "t": "I think there are three grades. But you can disable UPnP, reboot the router to flush existing mappings, and statically forward just a couple of ports to your Xbox's IP. Then it's fully game-enabled without UPnP."
+        },
+        {
+          "s": "leo",
+          "t": "Most Xbox players aren't that sophisticated. It's UDP 88, and 3074 on UDP and TCP. I'll link Microsoft's tech note in the show notes. Kids are disabling their routers' security to play with friends."
+        }
+      ]
+    },
+    {
+      "title": "A $35 Extortion Trojan",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Alex Eckelberry of Sunbelt Software blogged screenshots of a new trojan, Delf.ctk. It shows a screen that convincingly resembles Microsoft's Security Center: \"Error. Browser's security and anti-adware software component license exprited.\" A typo for \"expired.\""
+        },
+        {
+          "s": "leo",
+          "t": "That's what you look for: spelling and grammatical errors."
+        },
+        {
+          "s": "steve",
+          "t": "It continues that surfing porn, adult and other sites without this software is dangerous and threatens infection by viruses, adware and spyware. It locks up your machine. You must call a 900 number costing $35. One number goes to a call center in the West African nation of Cameroon. You enter PINs from the screen to get your computer back."
+        },
+        {
+          "s": "leo",
+          "t": "That's appalling. You'd get it from an email attachment or a compromised site."
+        },
+        {
+          "s": "leo",
+          "t": "Would antivirus stop it?"
+        },
+        {
+          "s": "steve",
+          "t": "It's new, so I don't know. Keep your AV patterns up to date."
+        },
+        {
+          "s": "leo",
+          "t": "And don't open attachments."
+        },
+        {
+          "type": "fact",
+          "title": "Ransomware",
+          "t": "Delf.ctk was an early form of what's now called ransomware. Later versions encrypt victims' files and demand payment in cryptocurrency."
+        }
+      ]
+    },
+    {
+      "title": "Crapware With Security Holes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I just set up a couple of small HP Pavilions, cute for single purposes, and was shocked by the amount of what the industry calls \"crapware\" preinstalled. And there's now a third zero-day remote code execution flaw in HP's preinstalled software. It's not just annoying demoware. It's much less maintained than Microsoft's code."
+        },
+        {
+          "s": "steve",
+          "t": "I recently set up a Dell laptop and desktop, holding my breath. There was none."
+        },
+        {
+          "s": "leo",
+          "t": "Dell lets you order without the crapware."
+        },
+        {
+          "s": "steve",
+          "t": "They even boast there's no demoware. They're listening to customers. HP has patched these before, three times now."
+        }
+      ]
+    },
+    {
+      "title": "Picture Frames That Infect PCs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This is too bizarre. Digital picture frames are infecting PCs with malware."
+        },
+        {
+          "s": "leo",
+          "t": "You're full of good news today."
+        },
+        {
+          "s": "steve",
+          "t": "There are multiple reports of people transferring photos to frames with USB keys. The frame's firmware puts PC malware on the USB drive, which then takes over the PC when plugged back in. Some frames were resold, but it's been confirmed in brand-new frames from the factory."
+        },
+        {
+          "s": "leo",
+          "t": "Security Focus has the story. I'll link it."
+        },
+        {
+          "s": "steve",
+          "t": "Computerworld too. The rule of security: if it can be done, it will be done. That's why I knew UPnP was a bad idea, and the MBR rootkit proves it again."
+        },
+        {
+          "s": "leo",
+          "t": "We're surrounding ourselves with little computers executing code, and they talk to everything."
+        }
+      ]
+    },
+    {
+      "title": "Run SpinRite Before It's Life or Death",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Charles Hayes bought SpinRite around mid-2006, remembering it from The Screen Savers. His computer rebooted whenever he clicked one particular email or compacted his mail folders, and Windows Defrag wouldn't run. SpinRite fixed it completely."
+        },
+        {
+          "s": "steve",
+          "t": "A few days ago, his computer started rebooting on its own within 30 minutes to an hour. New memory didn't help, and he thought he'd need a motherboard. SpinRite found one area of unrecoverable data and repaired it, and it's been perfect since. He'll start running it more often."
+        },
+        {
+          "s": "steve",
+          "t": "That's the lesson. Another problem developed on the same drive. Running SpinRite every six months would likely have prevented it and recovered that sector. It takes a long time on today's massive drives, so not weekly. But don't let too much time pass."
+        }
+      ]
+    },
+    {
+      "title": "A Help Desk's Frustration",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's hear from your IT professional."
+        },
+        {
+          "s": "steve",
+          "t": "Dennis in Halifax, Nova Scotia works on a government department's help desk supporting about a thousand users. Nobody takes electronic records, security or data integrity seriously, though they handle extremely sensitive personal data, including medical records."
+        },
+        {
+          "s": "steve",
+          "t": "Physical security is a joke. There's a guard on a main floor and key-card doors. But during business hours, walk around the back of the building to the floor below, take the elevator, and reach any floor. Each floor's door keypad code has changed once in a few years, and it's the same on every floor."
+        },
+        {
+          "s": "leo",
+          "t": "So everyone who ever worked there knows it."
+        },
+        {
+          "s": "steve",
+          "t": "And almost every employee lets anyone standing by the door in, recognized or not."
+        },
+        {
+          "s": "leo",
+          "t": "Tailgating."
+        },
+        {
+          "s": "steve",
+          "t": "At Level 3, I scan my card and put my hand in the biometric scanner. They told me: don't let someone else in. Apologize, say you're sure they understand, close the door and make them go through the process. But that social policy is hard to enforce."
+        },
+        {
+          "s": "leo",
+          "t": "And Canadians are friendly. That's your problem right there."
+        },
+        {
+          "s": "steve",
+          "t": "A new policy from his CIO says laptops must be encrypted, BlackBerries password protected, and no means, electronic or otherwise, may be used to remember passwords."
+        },
+        {
+          "s": "leo",
+          "t": "Not even RoboForm?"
+        },
+        {
+          "s": "steve",
+          "t": "Just memorize them. We know that leads to easily guessed passwords. A draft Acceptable Use Policy bans peer-to-peer software like LimeWire and BitTorrent..."
+        },
+        {
+          "s": "leo",
+          "t": "Or Skype, as we discussed."
+        },
+        {
+          "s": "steve",
+          "t": "...and instant messaging like MSN, ICQ and AIM, as supposedly insecure."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is no one will enforce it. At a staff meeting, his manager shot him down and said they can't do what it says. He assumed a policy signed by the highest-ranking person is above everyone."
+        },
+        {
+          "s": "steve",
+          "t": "He suggested whole-disk encryption, since more users travel the world with notebooks, and was told the policy lacks enough information. True, it names no encryption method. But it wouldn't be hard to ask the right questions. The non-technical authors probably left it to IT."
+        },
+        {
+          "s": "steve",
+          "t": "And they have no data classification scheme, no way to tell how confidential documents and records are. He thinks that's the first step everything else rests on. As a low-level help desk staffer, nobody listens. How can he convince his organization that security matters?"
+        },
+        {
+          "s": "leo",
+          "t": "He raised so many interesting questions."
+        }
+      ]
+    },
+    {
+      "title": "Home PCs at Work",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many people must feel the same frustration. We've talked around this, but never about the challenge of enforcing corporate security policy."
+        },
+        {
+          "s": "leo",
+          "t": "It's especially hard in government and healthcare, which have a higher responsibility than a normal enterprise."
+        },
+        {
+          "s": "steve",
+          "t": "A good buddy of mine works with small companies on security and their employees. A fundamental root cause: work computers are almost universally exactly like the ones people use at home."
+        },
+        {
+          "s": "leo",
+          "t": "Why can't I do the same things I do at home?"
+        },
+        {
+          "s": "steve",
+          "t": "My eight-year-old uses one without problems. Why can't I do the same on my work machine?"
+        },
+        {
+          "s": "leo",
+          "t": "It's also communication. If you insist on a seemingly onerous policy, spend time explaining why and what the risks are. People underestimate the need."
+        },
+        {
+          "s": "steve",
+          "t": "People click a link in email and get malware. So companies ban attachments. Then people ask about good attachments, and IT says there's no way to be sure, so no attachments."
+        },
+        {
+          "s": "leo",
+          "t": "Imagine being IT at Tech TV, with tech-savvy people who'll try to get around anything you do."
+        },
+        {
+          "s": "steve",
+          "t": "That was on my outline. Computers are so ubiquitous that even ordinary users feel like experts. Who are you to tell me what I can do?"
+        },
+        {
+          "s": "steve",
+          "t": "In the mainframe days, the computer sat on a raised floor in air conditioning, with technicians in white lab coats, and it seemed impressive. Nothing about a work machine seems impressive now. It looks like the one at home."
+        },
+        {
+          "s": "leo",
+          "t": "So explicit policies, and IT pros who take time to explain them, help. Employees want to be good employees. They just don't understand the issues."
+        }
+      ]
+    },
+    {
+      "title": "Labels, a Break Room and the Law",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I've suggested, Draconian as it seems, a couple of lines on every company monitor's bezel: \"This computer, property of XYZ Corporation, is subject to continuous monitoring and filtering of all activity.\" I'd leave off \"this is not your property,\" but make it very clear."
+        },
+        {
+          "s": "steve",
+          "t": "And as a safety valve, a break room or in-house Internet café where employees can plug in their own laptops on an unfiltered network, through a router with no connection to the corporate network or its resources. Check your personal email safely."
+        },
+        {
+          "s": "leo",
+          "t": "That kind of creative thinking is what it takes. Being authoritarian doesn't work, because employees find a way around. Enlist their support."
+        },
+        {
+          "s": "steve",
+          "t": "We've discussed how Hamachi's peer-to-peer VPN could be used to circumvent protections."
+        },
+        {
+          "s": "leo",
+          "t": "Radio callers constantly ask me how to get around workplace restrictions. I'm on the side of users. But the law is clearly in the employer's favor. Courts have always held that employers own the hardware and software and can totally control what you do at work. You could risk your job. As a user in the old days, I chafed at those restrictions too."
+        },
+        {
+          "s": "steve",
+          "t": "A reasonable, company-sponsored alternative helps: during the day, this is what you do on the corporate machine. For a break, bring your own laptop to an isolated network."
+        }
+      ]
+    },
+    {
+      "title": "Laptops and Windows SteadyState",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "What about company laptops that go out into the unsecured world and bring back nasties?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't see a good solution. But Microsoft has an interesting technology. The Microsoft Shared Computer Toolkit for Windows XP has been renamed Windows SteadyState. Its default setup targets shared computers, like libraries or Internet cafés: lock down a PC for anonymous, untrusted users, restrict what they can do, and flush everything they did."
+        },
+        {
+          "s": "leo",
+          "t": "Like hotel computers. The guest messes around, and on reboot it goes back to the default configuration."
+        },
+        {
+          "s": "steve",
+          "t": "That's a problem for a typical workplace, where people need to keep their work."
+        },
+        {
+          "s": "steve",
+          "t": "SteadyState can only restore an entire drive. But if you repartition, create another drive, and put the user's profile, desktop and documents there, you get an interesting free solution. The system is protected from anything they do and won't execute code from the other drive, yet it's still their own workstation. I'll explore it in a future podcast."
+        },
+        {
+          "type": "fact",
+          "title": "SteadyState's end",
+          "t": "Microsoft discontinued Windows SteadyState in 2010 and did not release it for Windows 7. Similar \"reset on reboot\" features later came from other vendors."
+        },
+        {
+          "s": "leo",
+          "t": "We're on the user's side, but sympathetic to the IT guy."
+        },
+        {
+          "s": "steve",
+          "t": "Even at home, with family or children, you're saying don't do that, it'll infect our network. Anyone with a router and multiple machines has a little community that depends on each member's security."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is a Q&A. IT pros, send your thoughts and clever solutions to GRC.com/feedback. And I'll underscore \"maintenance\" in SpinRite's description today."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why is a master boot record rootkit so hard to stop?",
+      "options": [
+        "It runs before Windows loads, patching the OS in real mode with no protections active",
+        "It's encrypted",
+        "It lives in the BIOS chip",
+        "It uses the network"
+      ],
+      "answer": 0,
+      "explain": "It can hide from antivirus software."
+    },
+    {
+      "q": "How did hackers show Flash could attack UPnP routers?",
+      "options": [
+        "Flash could generate local network requests telling the router to change DNS or open ports",
+        "It overheated routers",
+        "It guessed admin passwords",
+        "It installed new firmware"
+      ],
+      "answer": 0,
+      "explain": "UPnP's first version has no security model."
+    },
+    {
+      "q": "What did the Delf.ctk trojan demand?",
+      "options": [
+        "A $35 call to a 900 number to unlock the PC",
+        "Credit card numbers",
+        "A Bitcoin payment",
+        "Email passwords"
+      ],
+      "answer": 0,
+      "explain": "It mimicked Microsoft's Security Center."
+    },
+    {
+      "q": "How did some digital picture frames spread malware?",
+      "options": [
+        "Their firmware put PC malware on USB drives used to load photos",
+        "Through WiFi",
+        "By email",
+        "Through their power cords"
+      ],
+      "answer": 0,
+      "explain": "Some were infected brand new from the factory."
+    },
+    {
+      "q": "What root cause of workplace security conflict did Steve's friend identify?",
+      "options": [
+        "Work computers look exactly like home computers, so employees expect the same freedom",
+        "Bad passwords",
+        "Old hardware",
+        "Slow networks"
+      ],
+      "answer": 0,
+      "explain": "Users feel like experts."
+    },
+    {
+      "q": "What safety valve did Steve suggest for employees?",
+      "options": [
+        "A separate, isolated network where they can use their own laptops for personal browsing",
+        "Unlimited Internet at their desks",
+        "Removing all firewalls",
+        "Banning laptops"
+      ],
+      "answer": 0,
+      "explain": "It has no connection to the corporate network."
+    }
+  ]
+}

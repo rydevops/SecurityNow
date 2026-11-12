@@ -1,0 +1,746 @@
+{
+  "number": 144,
+  "title": "Listener Feedback Q&A #41",
+  "subtitle": "Patch Tuesday, Exploit Thursday, and YubiKey for local logins",
+  "date": "2008-05-15",
+  "description": "XP Service Pack 3 arrives, Microsoft's COFEE forensic toolkit is less than the headlines claim, and patches are now followed by exploits within two days. Steve's CryptoLink patent hides open ports. Questions cover Gmail spotting executables in encrypted zips, quantum computers and crypto, Adobe's track-zero copy protection, multicore media encoding, using a YubiKey for Windows and TrueCrypt logins, routers as DNS servers, deep packet inspection, \"multifactor\" security questions, IE7 hiding EV certificates without its phishing filter, and PayPal's one-time card numbers.",
+  "transcript": "https://www.grc.com/sn/sn-144.txt",
+  "audio": "http://media.GRC.com/sn/SN-144.mp3",
+  "chapters": [
+    {
+      "title": "Twelve Shots of Espresso",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve Gibson, our avuncular security guru. You have your latte?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a quad, and my third quad, so shots 9 through 12."
+        },
+        {
+          "s": "leo",
+          "t": "I need one badly."
+        },
+        {
+          "s": "steve",
+          "t": "With Howard Schultz back trying to pull Starbucks upmarket, they lengthened the shots. It made them bad. I had a week of hell. Now I order quad half shots, just the good first half of each pull. They're not used to that."
+        },
+        {
+          "s": "leo",
+          "t": "For people worried he's had 12 cups of coffee, I'm told espresso shots aren't as caffeinated as drip coffee."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely true. The longer espresso roast burns off caffeine. It's a stronger taste but less caffeine. Commercial coffees like Yuban and Maxwell House amp up the caffeine to increase the addiction factor. Office coffee gives you the jitters."
+        },
+        {
+          "type": "fact",
+          "title": "Mostly right",
+          "t": "A shot of espresso has less caffeine than a typical cup of drip coffee. Darker roasting changes caffeine only slightly. Cheaper blends often include robusta beans, which naturally have about twice the caffeine of arabica."
+        }
+      ]
+    },
+    {
+      "title": "Listeners Found the YubiKey First",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Filing my Yubico correspondence, I searched my email and found two earlier mentions from listeners. Eric Roller wrote on October 6, 2007, about a company spun out of Cypak with a thin USB token that acts like a keyboard and sends a 128-bit authorization key, with no battery. And Torkel Hasle wrote in February about a \"smart security dongle.\""
+        },
+        {
+          "s": "steve",
+          "t": "I get so many submissions at GRC.com/feedback that I never saw them. They must have thought, hey, we told you about that months ago. Thank you, guys. You were ahead of the game."
+        },
+        {
+          "s": "leo",
+          "t": "We get a lot of mail. Things slip through."
+        }
+      ]
+    },
+    {
+      "title": "XP SP3, and a Pizza Manager's PC",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Windows XP Service Pack 3 was released last Thursday. As it happens, I reinstalled XP for the manager of my local California Pizza Kitchen. He's a good guy and had been bugging me for a year. It's good to see how the rest of the world uses computers."
+        },
+        {
+          "s": "steve",
+          "t": "The other 99.9 percent. His system ran 85 processes and never finished booting, because it ran out of memory first. It used 574MB, since I don't think he's ever said no to a software offer. IE had so many toolbars there was a one-inch strip at the bottom for the page."
+        },
+        {
+          "s": "leo",
+          "t": "That's normal."
+        },
+        {
+          "s": "steve",
+          "t": "Everything wants a tray icon and to check for updates. He had something called Ding. What's Ding? Southwest Airlines' flight notifier. Do you need it? Well, no. And get this: he didn't know how to remove software. So it all piled up. Now his machine is beautiful."
+        },
+        {
+          "s": "steve",
+          "t": "You need Service Pack 1 or 2 to install SP3. My Microsoft XP disc includes SP2, so SP3 went on top and worked great."
+        },
+        {
+          "s": "steve",
+          "t": "But some people with AMD processors get into a blue-screen reboot loop after installing SP3, which Microsoft will offer you. Decline it unless you're sure. If you're stuck, boot into Safe Mode, which won't blue-screen, and remove SP3 in Add/Remove Programs."
+        },
+        {
+          "s": "leo",
+          "t": "Good news that there's an uninstall."
+        },
+        {
+          "type": "fact",
+          "title": "The cause",
+          "t": "The loop mostly hit HP AMD-based PCs whose factory Windows image included an Intel processor driver. Microsoft and HP issued fixes."
+        }
+      ]
+    },
+    {
+      "title": "Microsoft's COFEE Is Just a Toolkit",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many listeners worried about COFEE, with one F: the Computer Online Forensic Evidence Extractor. Online reports exaggerated it. Even Ars Technica, which I usually rate highly, said it bypasses PC security. I've seen \"backdoor\" and \"decrypts BitLocker drives.\" None of that is the case."
+        },
+        {
+          "s": "steve",
+          "t": "It's a USB thumb drive, prepared by a Microsoft security staffer, that Microsoft gives to law enforcement. It bundles about 150 commands from freely available tools for extracting evidence from Windows. No secret backdoor. Just a really neat toolkit. The bad news is, when you give it to the good guys, the bad guys eventually get it too."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "COFEE leaked online in November 2009. As Steve predicted, it contained only standard tools, and a group soon released a counter-tool to detect it."
+        }
+      ]
+    },
+    {
+      "title": "Adobe Comes Clean, and Exploit Thursday",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Remember Adobe's mysterious February patch, with fixes they wouldn't describe? They now say it fixed eight flaws, six allowing remote code execution, mostly in the JavaScript interpreter in Adobe's products, and some are being actively exploited. If you're still on Acrobat Reader 6 or 7, malicious PDFs can take over your computer. Use the latest, 8.1-something."
+        },
+        {
+          "s": "steve",
+          "t": "We're recording on Patch Tuesday. There are three critical remote code execution fixes, two in Office and one in Windows, plus a moderate one in Microsoft's own antimalware products."
+        },
+        {
+          "s": "leo",
+          "t": "Special irony when security software has exploits."
+        },
+        {
+          "s": "steve",
+          "t": "We're seeing it more. Antimalware is complex and sits between your machine and the Internet, so anything coming in hits it first. A buffer overrun there is ripe for exploitation."
+        },
+        {
+          "s": "steve",
+          "t": "SANS editor Dr. Eric Cole wrote that we're now seeing \"Patch Tuesday\" followed by \"Exploit Thursday.\" Exploits are built from patches, as we discussed last week, so you may have only a couple of days."
+        },
+        {
+          "s": "leo",
+          "t": "Corporations want to test patches first. What can they do?"
+        },
+        {
+          "s": "steve",
+          "t": "That's really a problem. Patches have disabled critical internal systems, since Microsoft tests against generic Windows, not proprietary software."
+        },
+        {
+          "s": "leo",
+          "t": "End users too. After the Service Pack 2 fiasco, many tell me they wait a week. You can't do that anymore."
+        },
+        {
+          "s": "steve",
+          "t": "That window has really closed."
+        }
+      ]
+    },
+    {
+      "title": "Iron Man and The Andromeda Strain",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "On the sci-fi side, Ridley Scott's \"Andromeda Strain\" miniseries airs on A&E soon. I saw an extended trailer when I went to see \"Iron Man,\" which I loved, Leo. The DVD comes out in June."
+        }
+      ]
+    },
+    {
+      "title": "CryptoLink's First Patent",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My first patent for CryptoLink, my forthcoming VPN-ish product, has been filed and is pending."
+        },
+        {
+          "s": "leo",
+          "t": "Don't patents mean exposing your source code?"
+        },
+        {
+          "s": "steve",
+          "t": "No. The government wants inventors to publish rather than keep trade secrets, so others can build on inventions. Once issued, a patent is public, and in return the inventor gets exclusive use for years, 17 I believe. I'm claiming the intellectual rights to something very cool."
+        },
+        {
+          "type": "fact",
+          "title": "The term",
+          "t": "U.S. utility patents filed since mid-1995 last 20 years from filing. The older rule was 17 years from the grant."
+        },
+        {
+          "s": "steve",
+          "t": "Researching the news, I saw that SSH password guessing is dramatically on the rise. SSH, the Secure Shell login service on port 22, is being hit by malicious people and botnets. Accept a connection on 22, and they brute-force passwords. If they succeed, they essentially have root."
+        },
+        {
+          "s": "steve",
+          "t": "This patent covers a way to stealth an open TCP port, so nobody except an authenticated CryptoLink client can even see it to connect. That would prevent this kind of problem."
+        },
+        {
+          "s": "leo",
+          "t": "When will we see CryptoLink?"
+        },
+        {
+          "s": "steve",
+          "t": "Well, I have to start working on it first."
+        },
+        {
+          "s": "leo",
+          "t": "So no code yet?"
+        },
+        {
+          "s": "steve",
+          "t": "A patent has no code. You must disclose enough that someone skilled in the field could reproduce it. I've got three or four brand-new inventions for CryptoLink. I'm still getting ready to start the R&D."
+        },
+        {
+          "s": "leo",
+          "t": "You're wise not to promise dates."
+        },
+        {
+          "s": "steve",
+          "t": "You wouldn't believe the rat hole I'm in. I'm still on third-party cookies, but it's become phenomenally comprehensive, and we've found bugs in every Windows browser. Browsers are leaking privacy and no one knows it. We'll go public shortly."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Saves an Artwork",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Gregory Mills is a sculptor and IT manager at a museum. A digital artwork in one gallery runs on a laptop hidden in a pedestal. One day it stopped, and the laptop wouldn't boot."
+        },
+        {
+          "s": "steve",
+          "t": "He quickly bought SpinRite and burned it to a disc within minutes. About an hour later, the laptop booted. He had the exhibit running with about 30 seconds to spare before 50 fifth-graders arrived for their tour."
+        },
+        {
+          "s": "steve",
+          "t": "He also mentioned a false positive on DCOMbobulator, which isn't uncommon, since my freeware sometimes contains the same code malware uses to do what it does."
+        }
+      ]
+    },
+    {
+      "title": "Wanting a Better Microphone",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Leo, I'm watching you flail around with your hands. I'm the same way. With a microphone like yours, I'd feel different about being on camera. I'm hunched over my Heil like an old-time newscaster."
+        },
+        {
+          "s": "leo",
+          "t": "We'll get everyone headset mics. And you'll send video eventually. I'm on camera all the time now, which is why I look off camera at the chat."
+        },
+        {
+          "s": "steve",
+          "t": "At least we're both gray now."
+        },
+        {
+          "s": "leo",
+          "t": "You weren't gray last time I saw you."
+        },
+        {
+          "s": "steve",
+          "t": "There's more salt now than pepper."
+        }
+      ]
+    },
+    {
+      "title": "Gmail Sees Inside an Encrypted Zip?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mitchell in London rebuilt his Firefox profile, cutting it from 12MB to 2MB, zipped it with WinZip's built-in 256-bit AES encryption and a 26-character password, and emailed it to himself through Gmail. After a long think, Gmail refused, saying it contained an executable. How could it see inside his encrypted file?"
+        },
+        {
+          "s": "steve",
+          "t": "Gmail checks attachments for viruses. I've seen it scanning a JPEG I sent. It looks at file headers to recognize the format and know how to check it, say, a JPEG for an image-processing exploit. It either recognized a zip, or didn't recognize the format."
+        },
+        {
+          "s": "leo",
+          "t": "People in our chatroom say WinZip still stores a directory of the files, with their names, unless you specifically obscure it. So Gmail might see executables listed."
+        },
+        {
+          "s": "steve",
+          "t": "Even the names? If so, a lot leaks out of WinZip's encryption. I'd recommend AxCrypt, a well-behaved standalone encryption program that would turn the whole profile into noise. It'd be interesting to see whether Gmail let that through."
+        },
+        {
+          "s": "leo",
+          "t": "Or it rejects any blob of random binary. Or he saved it as a self-extracting EXE."
+        },
+        {
+          "type": "fact",
+          "title": "Indeed",
+          "t": "The Zip format's AES encryption protects file contents but leaves file names visible in the archive's directory, which is how Gmail can spot executables inside."
+        }
+      ]
+    },
+    {
+      "title": "Quantum Computers and Crypto",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robb in Orlando asks whether today's encryption will stand up to quantum computing, said to make PCs millions of times more powerful. Will governments get them first and break encryption easily? Its promoters often say it'll crack strong crypto in minutes instead of millennia."
+        },
+        {
+          "s": "steve",
+          "t": "I asked the guys who invented this at RSA. During the cryptographers panel Q&A, I asked Diffie and Martin Hellman, whom I knew at Stanford's AI lab in '73: is this all over now?"
+        },
+        {
+          "s": "steve",
+          "t": "They said it's not at all clear that what quantum computers are good at would make them good at cracking crypto. Normal bits are zero or one. A quantum bit can be both."
+        },
+        {
+          "s": "steve",
+          "t": "The problems quantum computing suits may be completely different from the step-by-step algorithms of cracking crypto today. Any quantum attack would be completely different from brute force. They weren't convinced it creates weakness in contemporary cryptography. I'll research it and do a full show."
+        },
+        {
+          "s": "leo",
+          "t": "Great subject. In Vancouver we interviewed people who claim the first working prototype, which doesn't do much. They always say they'll factor so fast they'll break public-key crypto."
+        },
+        {
+          "s": "steve",
+          "t": "The RSA people have a stake in that not being the case. I'll try to understand it well enough to convince even me."
+        },
+        {
+          "type": "fact",
+          "title": "The consensus",
+          "t": "Shor's algorithm, published in 1994, would let a large enough quantum computer break RSA and Diffie-Hellman, which is why new \"post-quantum\" standards were adopted in 2024. Symmetric ciphers like AES are only weakened, and 256-bit keys remain safe."
+        },
+        {
+          "s": "leo",
+          "t": "There's also quantum cryptography, using lasers and uncertain states. They had trouble with authentication, but I think they've fixed that."
+        },
+        {
+          "s": "steve",
+          "t": "Quantum communication uses the idea behind Schrödinger's cat. Observing something forces it into one state. Put a cat in a box: is it alive? It doesn't have to decide until you look."
+        },
+        {
+          "s": "steve",
+          "t": "Physicists have built links where observing them breaks them, so they're provably unsnoopable. Anyone setting up super-secure optical links between two points can be guaranteed nobody can intercept them without it breaking."
+        },
+        {
+          "s": "leo",
+          "t": "Then how do you decrypt it? I guess decryption isn't considered observation."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly."
+        }
+      ]
+    },
+    {
+      "title": "Adobe Is Moving Off Track Zero",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Greg Christopher in the San Jose area is on Adobe's quality engineering staff and listens regularly. He heard the turf fight between Adobe products and TrueCrypt and thought, little do they know someone at Adobe can do something about it."
+        },
+        {
+          "s": "leo",
+          "t": "You guessed right about the root cause, he says, and that Adobe licenses the technology, from Acresso. That's Macrovision's old software unit, which I loathe. That's me, not Greg. And it's not just InDesign: all Creative Suite 3 products, Acrobat 8 and many others are affected."
+        },
+        {
+          "s": "leo",
+          "t": "The good news: Adobe is changing its licensing code, and the next set of products won't use track zero for license compliance."
+        },
+        {
+          "s": "leo",
+          "t": "He's sorry listeners wise enough to use whole-disk encryption hit this. He can't speak for the company on anti-piracy, but notes that only a fraction of Adobe software in use is paid for, which means fewer people to create and test products. He thanks those who take licensing seriously. I've had that hot debate with Adobe people, so I won't have it here."
+        },
+        {
+          "s": "steve",
+          "t": "The good news is they're moving away from track zero. And TrueCrypt 5.1 already made its track-zero data redundant, so it tolerates sharing with Adobe."
+        },
+        {
+          "s": "leo",
+          "t": "DRM always breaks something, and it's always the honest guy who suffers. Pirates just take it out."
+        }
+      ]
+    },
+    {
+      "title": "Which Encoder Uses Every Core?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Craig Cuttner in Connecticut asks which media encoder made use of your quad core. Many professional encoders just call a stock Microsoft DLL and do a mediocre job."
+        },
+        {
+          "s": "steve",
+          "t": "I'm a media guy. I encode movies to watch on my Palm Pilot. I recommend without reservation a company I've used for years. Their first MPEG-2 encoder had a horrible name, TMPGEnc, the Tsunami MPEG Encoder. It went from shareware to commercial. They're at Pegasys-Inc.com, with a hyphen, with English and Japanese sites."
+        },
+        {
+          "s": "steve",
+          "t": "Their encoder does MPEG-1, 2 and 4, including H.264. It also does AC3, Dolby Digital, which is rare in an encoder. Domestic DVD players need uncompressed audio or AC3. European DVD understands MP3, but American players won't decode it."
+        },
+        {
+          "s": "steve",
+          "t": "And they have a simple DVD authoring tool, since an MPEG-2 file alone won't play in a DVD player. It does no-menu DVDs that just play, or full menus for multi-episode discs. It's very mature, and it's the only thing that soaks my quad core. Unbelievably fast."
+        },
+        {
+          "s": "leo",
+          "t": "Multicore matters for transcoding and encoding, not word processing. On the Mac, OS X's libraries make multicore easy, so more programs use it. Developers rely on libraries."
+        },
+        {
+          "s": "steve",
+          "t": "I'm unimpressed so far with Mac compression. I own DVD Studio and Compressor. I want more control, and it's all generic."
+        },
+        {
+          "s": "leo",
+          "t": "QuickTime Pro gives a lot of control if you dig. I'll ask Alex on MacBreak Weekly."
+        }
+      ]
+    },
+    {
+      "title": "A YubiKey for Windows and TrueCrypt Logins",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ken Juenke in Sparks, Nevada wants to give all his users YubiKeys to log onto Windows. Yubico told him it's coming. And Daniel Ernst in West Bloomfield, Michigan ordered one when prices were still in euros. He loves touching it and watching it spit out crypto, but has no use for it yet. Could it authenticate locally, for TrueCrypt or Password Safe, Bruce Schneier's password program? Both are open source."
+        },
+        {
+          "s": "steve",
+          "t": "Many listeners asked about TrueCrypt and Windows logons. Normally, as with VeriSign's VIP system, a central server knows all its YubiKeys. A \"relying party,\" in the jargon, takes the token and asks the server, is this valid?"
+        },
+        {
+          "s": "steve",
+          "t": "That way the relying party never needs the key's secret AES key. And the server knows each key's most recent count, which prevents replay attacks. With multiple independent authenticators, someone could catch a token sent to one and replay it to another that hadn't seen it. So centralization matters."
+        },
+        {
+          "s": "steve",
+          "t": "Local authentication means the system you log into would need your YubiKey's 128-bit AES key. That's dangerous, since it could get away. A trusted third party has big guard dogs barking at anyone who gets too close to the building."
+        },
+        {
+          "s": "leo",
+          "t": "That's exactly why no DVD is uncrackable. The key has to be in the player."
+        },
+        {
+          "s": "steve",
+          "t": "Good analogy. Any technology you have total access to, you have total access to."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt is open source, so someone could make its boot screen YubiKey-compatible. And Windows' logon is modular. GINA, the DLL that handles logon, is replaceable."
+        },
+        {
+          "s": "leo",
+          "t": "That's how fingerprint readers work."
+        }
+      ]
+    },
+    {
+      "title": "How Local YubiKey Authentication Could Work",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Much of a YubiKey's output changes constantly. But the first 12 characters, in the clear, are its public ID. That's 48 bits: 281,474,976,710,656 possibilities. So one option is just using those 12 characters, which never change and which you'd never have to type. Not 128 bits, but a lot."
+        },
+        {
+          "s": "steve",
+          "t": "If the system knew your secret AES key, it could decrypt the rest and get another unchanging 48 bits, the private ID. That's 96 bits. Now we're talking serious strength: 281 trillion times 281 trillion."
+        },
+        {
+          "s": "steve",
+          "t": "You might dedicate one YubiKey just to your laptops, so if its key leaks, nobody can use it elsewhere."
+        },
+        {
+          "s": "steve",
+          "t": "And the TPM, the Trusted Platform Module now in most laptops, was designed for exactly this. It does AES and stores keys. Put the YubiKey's AES key in it, where it can never come out. Hand the TPM the YubiKey's string to decrypt, get the private ID, combine it with the public ID, and use those 96 bits as TrueCrypt's passphrase. Extremely robust."
+        },
+        {
+          "s": "leo",
+          "t": "But you're relying on secure storage on the laptop. Look what happened with DVDs."
+        },
+        {
+          "s": "steve",
+          "t": "Someone who takes your laptop presumably doesn't have your YubiKey. Even with the AES key, they'd need a string from the YubiKey to get both halves of the 96 bits. That's the point of multifactor authentication."
+        },
+        {
+          "s": "leo",
+          "t": "And if they had the YubiKey, they'd just press the button."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Yubico later added a static-password mode and challenge-response features, and YubiKeys can now unlock Windows logins, password managers and encrypted drives directly."
+        }
+      ]
+    },
+    {
+      "title": "Is Your Router a DNS Server?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave Rodgers in Green Bay asks: XP lets you set the Netgear router's address, 192.168.0.1, as your DNS server. Is that more or less secure than your ISP's DNS servers? Unless the Netgear has a DNS server built in..."
+        },
+        {
+          "s": "steve",
+          "t": "Precisely. Consumer routers have no DNS server. They just NAT your query and forward it to the ISP's DNS server, which they learned from the ISP by DHCP."
+        },
+        {
+          "s": "steve",
+          "t": "A higher-end gateway, a Linux or UNIX machine, could run a full copy of BIND, as my FreeBSD box does. Then you use no ISP DNS at all."
+        },
+        {
+          "s": "leo",
+          "t": "Whatever you do, you're using someone's DNS: your ISP's, OpenDNS, even Verizon's if you're not a customer. To be truly independent, run your own, maybe with SmoothWall or Astaro."
+        }
+      ]
+    },
+    {
+      "title": "Does Deep Packet Inspection Break Encryption?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tom Fenton and his Network Security classmates at Colorado Technical University read that deep packet inspection breaks encryption, since it works down to layer two. Are they wrong?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a fancy term for looking beyond the headers. Simple packet filters care only about headers: IP address, port, protocol, packet type, like whether the SYN bit is set. Early filters blocked incoming connections by dropping every packet with SYN set."
+        },
+        {
+          "s": "leo",
+          "t": "That's stateless. They don't care about the conversation."
+        },
+        {
+          "s": "steve",
+          "t": "So they'd let ACK packets through, since those don't have SYN set. A stateful firewall says, what's this ACK? I have no conversation going. It sees a SYN go out, expects a SYN/ACK back, and tracks the state."
+        },
+        {
+          "s": "steve",
+          "t": "NAT routers do a little deep inspection already. Active FTP uses two connections, and the client embeds its IP and port in the packets. FTP-aware NAT routers reach in and rewrite them on the way out so the connection works."
+        },
+        {
+          "s": "steve",
+          "t": "True deep packet inspection means looking at the contents. Does it break encryption? No. Encrypted traffic can't be deep-inspected. In fact, encryption is how people avoid inspection by increasingly snoopy ISPs. Your ISP can do nothing."
+        },
+        {
+          "s": "leo",
+          "t": "They may be thinking of a business that terminates SSL itself."
+        },
+        {
+          "s": "steve",
+          "t": "Right. A business running an SSL proxy can decrypt, inspect everything and re-encrypt."
+        }
+      ]
+    },
+    {
+      "title": "Security Questions Aren't Multifactor",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robert Berry in North Carolina says his credit union rolled out \"multifactor security\" with fanfare, but just added occasional security questions, like your mother's maiden name or first pet. They cite the Federal Financial Institutions Examination Council. Is that really multifactor? How can he get them to do better cheaply?"
+        },
+        {
+          "s": "leo",
+          "t": "It does satisfy the FFIEC requirements, because they're so pathetic."
+        },
+        {
+          "s": "steve",
+          "t": "It's not real multifactor. Multifactor doesn't mean more of the same factor."
+        },
+        {
+          "s": "leo",
+          "t": "More of something you know."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. More things you know are just as prone to replay, keystroke logging and man-in-the-middle interception. Something you have is a different factor, and something you are, like a fingerprint, is another."
+        },
+        {
+          "s": "leo",
+          "t": "Bank of America does the same: log in from a new computer, answer these questions."
+        },
+        {
+          "s": "steve",
+          "t": "It tricks users into thinking it's more secure. Not multifactor. Mobi factor."
+        },
+        {
+          "s": "steve",
+          "t": "The answer is common available technology: banks issuing YubiKeys, which are cheap in volume, or footballs or VIP cards. We're at the beginning, but authentication is the big problem to solve."
+        },
+        {
+          "s": "leo",
+          "t": "Oddly, BofA uses those questions on my business account, but on my personal account, when I'm on a new computer, it texts a code to my previously verified cell phone. That's something I have. Real authentication."
+        },
+        {
+          "s": "steve",
+          "t": "And potentially zero cost. Make it optional, since some users lack cell phones, and explain that it's enhanced logon security."
+        },
+        {
+          "s": "leo",
+          "t": "That's exactly what they do. I just can't turn it on for my business account."
+        }
+      ]
+    },
+    {
+      "title": "Quip and Astute Observation of the Week",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Quip of the Week, from Anonymous John in Oregon: Security Now! is costing me a fortune. Listening to the YubiKey episode, he decided he needed one. So he fired up portable Firefox from his IronKey, a Security Now!-influenced purchase, started a secure session, ordered the YubiKey and paid with PayPal, authenticating with his football, another Security Now!-influenced purchase. He's really glad we don't talk about cars or private jets."
+        },
+        {
+          "s": "leo",
+          "t": "For that, listen to the Daily Giz Wiz."
+        },
+        {
+          "s": "leo",
+          "t": "The Astute Observation of the Week, from Tom Willwerth in Seabrook, New Hampshire: he tried VeriSign and PayPal to see the green EV bar in IE7 and never could. By trial and error, he found that IE7 shows the green bar and company name only with the phishing filter turned on. As a pro user, he'd turned it off, figuring it would slow his machine. Many users would assume the green bar is part of the browser's core certificate support."
+        },
+        {
+          "s": "leo",
+          "t": "I turned off the phishing filter too."
+        },
+        {
+          "s": "steve",
+          "t": "He's absolutely right, and that's really annoying. If the filter checks a database before letting you reach a site, you can see why people turn it off. But disabling the EV display along with it is nuts. Some bozo at Microsoft decided if you turn off the phishing filter, you don't get to know you're on an extra-secure site."
+        },
+        {
+          "s": "leo",
+          "t": "Firefox shows the green bar regardless."
+        }
+      ]
+    },
+    {
+      "title": "Kick-Ass Revelation: PayPal Secure Cards",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The long-awaited Winning Kick-Ass Revelation of the Week, from Tim Madison in Westchester County, New York. Since Steve's card was stolen, probably at a site without PayPal or Google Checkout, here's his method. For sites without those options, he uses PayPal's one-time credit card numbers. He even bought SpinRite with one."
+        },
+        {
+          "s": "leo",
+          "t": "Log into PayPal and click PayPal Plug-in under Tools. You don't need to install the plug-in. Click Secure Cards. Generate a one-time card funded by your PayPal account, or a multi-use card that works only with one merchant. Use it for a monthly subscription, and charges from any other merchant are rejected. This is fantastic."
+        },
+        {
+          "s": "steve",
+          "t": "It is. Months ago I tried to get PayPal's freebie app for this, but it required a PayPal credit card. My application failed. When I pulled my credit reports, someone had once changed my address and was sending things to another state, a credit card scam. That's probably forever thrown off my ability to get one-click approval."
+        },
+        {
+          "s": "steve",
+          "t": "So I was completely blocked. Now PayPal issues one-use card numbers with nothing but a PayPal account. We know we have lots of PayPal users, given how many $5 footballs we've sold."
+        },
+        {
+          "s": "leo",
+          "t": "A radio caller heard us discuss PayPal links that loop through DoubleClick and said it made him want to stop using PayPal. It hasn't discouraged you?"
+        },
+        {
+          "s": "steve",
+          "t": "We've been critical of PayPal and will continue to be. Those links go through DoubleClick for absolutely no reason. I'd love a serious competitor. Google Checkout, but Google bought DoubleClick. We need someone who does this job well and is serious about privacy. Anyone bouncing URLs through DoubleClick isn't. I use PayPal because it's what's there."
+        },
+        {
+          "s": "leo",
+          "t": "My card company called when I bought shoes in Australia. Dvorak says if you want a card canceled, fill up two cars with gas back to back, then buy running shoes. That's what thieves do."
+        },
+        {
+          "s": "steve",
+          "t": "I just logged in. The redesigned site has a big green bar: \"Identified by VeriSign.\" PayPal Plug-in is under Tools in the left column. Click it, and Secure Card is the first thing below."
+        },
+        {
+          "s": "leo",
+          "t": "I thought, I don't have Windows, I don't want a plug-in. You don't need it."
+        },
+        {
+          "s": "steve",
+          "t": "Thank you, Tim."
+        },
+        {
+          "s": "leo",
+          "t": "And if I go \"doo-to-doo,\" Elaine writes, \"Steve makes trumpet-playing sound.\""
+        },
+        {
+          "s": "steve",
+          "t": "I saw that in a transcript. There she does it again."
+        },
+        {
+          "s": "leo",
+          "t": "We should have some fun with Elaine. Meow. Ruff, ruff."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did SANS editor Eric Cole mean by \"Exploit Thursday\"?",
+      "options": [
+        "Exploits now appear within about two days of Microsoft's Patch Tuesday fixes",
+        "Microsoft patches on Thursdays",
+        "Hackers rest on Thursdays",
+        "It's when antivirus updates"
+      ],
+      "answer": 0,
+      "explain": "Waiting a week to patch is no longer safe."
+    },
+    {
+      "q": "What is Microsoft's COFEE, according to Steve?",
+      "options": [
+        "A USB drive of freely available forensic tools for law enforcement, not a backdoor",
+        "A secret BitLocker key",
+        "A coffee-themed game",
+        "A Windows exploit"
+      ],
+      "answer": 0,
+      "explain": "The bad guys will eventually get it too."
+    },
+    {
+      "q": "What does Steve's first CryptoLink patent do?",
+      "options": [
+        "Hides an open TCP port so only authenticated CryptoLink clients can see it",
+        "Encrypts email",
+        "Speeds up VPNs",
+        "Replaces passwords"
+      ],
+      "answer": 0,
+      "explain": "It would stop SSH-style password guessing."
+    },
+    {
+      "q": "Why is a central server normally used to verify YubiKey tokens?",
+      "options": [
+        "It holds the secret keys safely and tracks each key's counter to block replayed tokens",
+        "Tokens can't be decrypted locally",
+        "It's required by law",
+        "It's faster"
+      ],
+      "answer": 0,
+      "explain": "Local verification would expose the key's AES secret."
+    },
+    {
+      "q": "Can deep packet inspection read encrypted traffic?",
+      "options": [
+        "No, unless the organization itself terminates the SSL connection with a proxy",
+        "Yes, at layer two",
+        "Yes, with enough time",
+        "Only on WiFi"
+      ],
+      "answer": 0,
+      "explain": "Encryption is a way to avoid ISP snooping."
+    },
+    {
+      "q": "Why aren't extra security questions true multifactor authentication?",
+      "options": [
+        "They're more \"something you know,\" not something you have or something you are",
+        "They're too hard",
+        "They're asked too often",
+        "They're not encrypted"
+      ],
+      "answer": 0,
+      "explain": "A text-message code to your phone adds a real second factor."
+    }
+  ]
+}

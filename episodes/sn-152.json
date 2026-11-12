@@ -1,0 +1,697 @@
+{
+  "number": 152,
+  "title": "Listener Feedback Q&A #45",
+  "subtitle": "Passwords after death, blocking Phorm, and routers that ignore their settings",
+  "date": "2008-07-10",
+  "description": "Fixes for Microsoft Dynamics GP, Mac OS X, the Mozilla family and Opera, TrueCrypt 6.0's arrival, 637,000 laptops lost at airports each year, Blizzard's World of Warcraft authenticator, and a robust stream recorder open the show. Then questions: leaving your encryption keys to your heirs, blocking Phorm with a hosts file, mystery cookies in a webmaster's domain, session-only cookies, detecting Phorm through ShieldsUP!, what Microsoft's removal tool reports home, Phorm's bandwidth overhead, a bank linking through DoubleClick, Free Pascal, spotting ISP tracking cookies, an airport access point that reset itself wide open, and a router that exposed its admin page despite its settings.",
+  "transcript": "https://www.grc.com/sn/sn-152.txt",
+  "audio": "http://media.GRC.com/sn/SN-152.mp3",
+  "chapters": [
+    {
+      "title": "Nearly Three Years",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 152, from deep within Saddleback Mountain."
+        },
+        {
+          "s": "steve",
+          "t": "Four weeks to go to three years. Listeners say they want another 150 weeks and don't know what they'd do if it stopped. We have no plans to stop. We're just getting going."
+        },
+        {
+          "s": "leo",
+          "t": "I'm starting to make video versions of shows, though I don't know if Security Now! lends itself to video. You can watch live Tuesdays at 11:00 a.m. Pacific, 2:00 p.m. Eastern, 18:00 UTC, if that's not a spoiler."
+        }
+      ]
+    },
+    {
+      "title": "Accounting, Mac and Browser Fixes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Every week there's security news, the original concept for this podcast."
+        },
+        {
+          "s": "steve",
+          "t": "If you use what used to be Microsoft Great Plains Accounting, now Microsoft Dynamics GP, Microsoft made it network capable and in the process opened it to remote exploits. Multiple remote code execution exploits are now public. Update, because the last thing you want is hackers rummaging around your business's accounting system."
+        },
+        {
+          "s": "steve",
+          "t": "Mac users need 10.5.4. Exploits are starting to appear, not widespread yet, for HTML rendering mistakes in Apple's WebKit, which Safari and Apple Mail use. It also fixed bugs in third-party apps Apple bundles."
+        },
+        {
+          "s": "steve",
+          "t": "The Mozilla family, Firefox, Thunderbird and SeaMonkey, shares a common code base with a problem, and updates are available. Firefox 3.0 has the fixes. Moving from Firefox 2 to 3 is good when you're comfortable. I'm reluctant to push people into new versions after my lesson with XP Service Pack 3. Oh boy, was that a mistake."
+        },
+        {
+          "s": "steve",
+          "t": "It's browser day. I just updated Opera from 9.3 to 9.5, a strong minor update that cleaned up the interface. I like what Opera's doing. And there's already an incremental security patch, 9.51. Check for updates."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt 6.0",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I can't tell you how many notes I got in case I didn't know about TrueCrypt 6.0, released on the Fourth of July. Thanks, everybody. People on 5 will probably want to move up."
+        },
+        {
+          "s": "steve",
+          "t": "The volume format adds redundancy to critical header information. Good encryption turns readable data into noise indistinguishable from random. That makes data recovery hard: tools can't find lost clusters or fix directory mistakes without decrypting. So an encrypted file system depends more on its header. TrueCrypt 6 puts a redundant copy of the headers at the end of the volume, reliably locatable, so if the front can't be read, the back works just the same."
+        },
+        {
+          "s": "steve",
+          "t": "And TrueCrypt 6 adds multi-core support for compression. The gain is proportional to your cores: twice as fast on dual-core, four times on quad-core."
+        },
+        {
+          "type": "fact",
+          "title": "More precisely",
+          "t": "TrueCrypt 6.0 parallelized encryption and decryption, not compression, so throughput scales with the number of cores."
+        },
+        {
+          "s": "steve",
+          "t": "Leo, I heard you on your weekend show with a caller buying a dual quad-core system for less than a thousand dollars."
+        },
+        {
+          "s": "leo",
+          "t": "Should he avoid it because of problems with multiple cores?"
+        },
+        {
+          "s": "steve",
+          "t": "There are no compatibility problems. I just figured something had been cheated, like graphics, front-side bus speed or memory, at that price."
+        },
+        {
+          "s": "leo",
+          "t": "Quad-core chips are now two or three hundred dollars, and he had a decent NVIDIA 9800. Prices have just fallen."
+        },
+        {
+          "s": "steve",
+          "t": "And these chips need power and cooling. I had to redesign my fan mount for Intel's new mushroom of a heat sink. They say they increased its efficiency and size. Yeah, and it won't fit in the case anymore."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt 6 also supports a hidden operating system. Remember the hidden partition you could pass off as noise in the slack space?"
+        },
+        {
+          "s": "leo",
+          "t": "\"Plausible deniability.\""
+        },
+        {
+          "s": "steve",
+          "t": "Now you can put a bootable OS there. I'm not sure how useful that is, but a lot of people are excited."
+        },
+        {
+          "s": "leo",
+          "t": "How would it boot, since you'd have to decrypt first?"
+        },
+        {
+          "s": "steve",
+          "t": "I haven't looked yet. You'd have to boot into it optionally in a way that preserves plausible deniability. We'll give it more attention."
+        }
+      ]
+    },
+    {
+      "title": "637,000 Laptops Lost at Airports",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A Dell-commissioned study found more than 637,000 laptops are lost every year in U.S. airports, about 12,000 a week, and two thirds are never recovered."
+        },
+        {
+          "s": "steve",
+          "t": "Of surveyed owners, 53 percent said their laptops held confidential data. Whose doesn't? 42 percent said their data wasn't backed up. 16 percent said they could do nothing if they lost their laptop on a business trip. And 77 percent put the chance of recovering a lost laptop at less than 10 percent."
+        },
+        {
+          "s": "steve",
+          "t": "So again, TrueCrypt 5, and now 6, is robust, highly recommended technology for encrypting laptops, which matter more than a desktop that never moves."
+        },
+        {
+          "s": "leo",
+          "t": "\"Lost,\" not stolen?"
+        },
+        {
+          "s": "steve",
+          "t": "The two top locations were the security line. Leo, I feel tremendous pressure there. You take everything apart, get it through the scanner tunnel and put it all back together. It's easy to forget one piece of your little world."
+        },
+        {
+          "s": "leo",
+          "t": "You'd think someone would say, hey, there's a laptop here."
+        },
+        {
+          "s": "steve",
+          "t": "You and I travel a lot. You've seen the level of concern."
+        },
+        {
+          "type": "fact",
+          "title": "The source",
+          "t": "The study was conducted by the Ponemon Institute and covered 106 major U.S. airports."
+        }
+      ]
+    },
+    {
+      "title": "World of Warcraft Gets a Football",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Blizzard has adopted a bizarrely painted version of the PayPal football to authenticate World of Warcraft players. Like PayPal, they're pricing it low to encourage use: $6.50. Oops, sold out."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know whether you can register an existing PayPal football, or whether Blizzard uses a VeriSign back end or its own. But World of Warcraft players now have a way to strengthen their authentication."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Blizzard's Battle.net Authenticator, made by Vasco, worked only with Blizzard accounts. Blizzard soon added a free phone app version as well."
+        }
+      ]
+    },
+    {
+      "title": "A Stream Recorder That Catches Everything",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And a non-security item, about a question I heard you answer on your Tech Guy radio show."
+        },
+        {
+          "s": "leo",
+          "t": "You've got to stop listening to the radio show. I could give you a warm line to call in and correct me."
+        },
+        {
+          "s": "steve",
+          "t": "A caller wanted to record Flash video, like YouTube. I've searched for years and found nothing robust until now: www.wmrecorder.com. Despite the name, it grabs Windows Media, Flash and many other formats."
+        },
+        {
+          "s": "steve",
+          "t": "What's cool, Leo, is it installs WinPcap, the most popular Windows packet capture library. It literally taps the network interface, watches all the traffic, and when your system starts receiving media, pops up a capture window and sucks it in. I've never found anything it can't get."
+        },
+        {
+          "s": "leo",
+          "t": "Does it save the native FLV?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a stream capture, so you get absolutely identical files."
+        },
+        {
+          "s": "leo",
+          "t": "So you could capture our Stickam stream."
+        },
+        {
+          "s": "steve",
+          "t": "When I saw WinPcap, I thought, this is serious rocket science, and it pays off. It's not free. I bought it."
+        },
+        {
+          "s": "leo",
+          "t": "The full package is $80, and the simpler WinCapture is $40. Someone says the free RealPlayer 11 also lets you right-click and save video, and if you're careful about the checkboxes, it no longer drags along a bunch of extra stuff."
+        },
+        {
+          "s": "steve",
+          "t": "C-SPAN used to offer video only in Real format. There's also Real Alternative, just the core Real codecs, so Windows Media Player can play Real content."
+        },
+        {
+          "s": "leo",
+          "t": "And with RealPlayer, decline the explorer bars, add-on bars and Google Desktop."
+        },
+        {
+          "s": "steve",
+          "t": "So many questioners mention SpinRite this week that I felt guilty adding another SpinRite story."
+        }
+      ]
+    },
+    {
+      "title": "What Happens to Your Keys When You Die?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Simpson of Simpsonville, South Carolina lost his grandfather to an unexpected heart attack in May, and the family spent hours hunting for financial, insurance and medical information. As a network engineer, he encrypts virtually everything, all his disks with TrueCrypt. What happens if something happens to him? He hates writing passwords down. You've mentioned giving your attorney one CD and your mom another. He doesn't trust a lawyer with the keys to his whole life, and his mom, though she wouldn't snoop, isn't security minded and might leave it lying around."
+        },
+        {
+          "s": "steve",
+          "t": "I held this question over because it's such a good point. We've got everything encrypted. If we die, or are incapacitated, how do others get to what we'd want them to have? Having a plan for encrypted content is right up there with having a will."
+        },
+        {
+          "s": "leo",
+          "t": "I think about it all the time. How would my wife find my accounts, all password protected?"
+        },
+        {
+          "s": "steve",
+          "t": "You paused where I did, at not trusting his attorney. I have a great friendship with mine. He's my lawyer because I trust him."
+        },
+        {
+          "s": "leo",
+          "t": "If you don't trust your attorney, get a different attorney."
+        },
+        {
+          "s": "steve",
+          "t": "But there are clever hacks so no single person must be trusted. Take a long master key to a file, which could be on a CD, or better a thumb drive, which is more reliable. Chop the key in half. Give your attorney half and your mom or sister the other half. Neither can do anything alone. They can know about each other and be instructed not to release their half unless certain conditions are met."
+        },
+        {
+          "s": "steve",
+          "t": "You could chop it into more pieces for more people. But then if any one person can't provide their piece, you're locked out. So add redundancy: one person holds pieces one, three and five, your more reliable attorney holds piece two, and so on, so a subset of the group can reassemble the key. Keep the file itself in a safety deposit box, and when they unlock it, they get all your other keys."
+        },
+        {
+          "s": "steve",
+          "t": "Simple, clever arrangements keep the chance of a privacy breach very low while ensuring someone can get in when you want them to."
+        },
+        {
+          "type": "fact",
+          "title": "The formal version",
+          "t": "Cryptographers solved this precisely with Adi Shamir's 1979 secret-sharing scheme, which lets any chosen number of the holders rebuild a key while fewer learn nothing about it. Simply splitting a key in half gives each holder half the key, which makes guessing the rest easier."
+        },
+        {
+          "s": "leo",
+          "t": "Jmath in our chatroom suggests DeathSwitch.com. It prompts you for your password on a regular schedule to make sure you're alive. If you don't answer after several prompts, it concludes you're dead or critically disabled and emails your prescripted messages, whether passwords or a secret you longed to reveal."
+        },
+        {
+          "s": "steve",
+          "t": "What a bizarre thing. But I can imagine people saying, that's exactly what I need."
+        },
+        {
+          "s": "leo",
+          "t": "If you encrypted the message with your friend's PGP key, only your friend could read it."
+        },
+        {
+          "s": "steve",
+          "t": "And you'd want to be very sure you don't have a false-positive DeathSwitch event."
+        },
+        {
+          "s": "leo",
+          "t": "Keep entering that password."
+        }
+      ]
+    },
+    {
+      "title": "Can a Hosts File Block Phorm?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Peggy Willingham in San Marcos, Texas, a SpinRite fan since version 2 whose happiest day was when SpinRite 6 supported NTFS, asks: could a hosts file block Phorm?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Last week ran long, so I skipped blocking. Your browser is sent to Phorm's Webwise domain to give up its Webwise cookie. Block Webwise in your hosts file, and it can't. The redirect fails and goes nowhere."
+        },
+        {
+          "s": "steve",
+          "t": "Or if your browser lets you blacklist cookies by domain, blacklist Webwise, and it won't accept their cookie. So their system is vulnerable to blocking, and not difficult to block. JavaScript injection, which they tried in '06 and '07, would have been harder."
+        },
+        {
+          "s": "steve",
+          "t": "How does that mess things up? Their technology notices something's wrong: you keep trying to reach the same page, you never come back from a redirect, you never return their cookie. So they put you on an \"okay, I give up\" list for 30 minutes, with normal, Phorm-free access. After 30 minutes they try again, hoping whatever broke is fixed. If not, they back off for another 30 minutes."
+        },
+        {
+          "s": "steve",
+          "t": "My problem is that savvy people will know this, but most ISP users won't, and it's opt-out, not opt-in."
+        },
+        {
+          "s": "leo",
+          "t": "Better to just opt out with your ISP?"
+        },
+        {
+          "s": "steve",
+          "t": "That's annoying too. Opting out gives you a special Webwise cookie, planted in every website you visit through the same dance, so they can tell you don't want to be tracked. You've already been tracked to tell them you don't want to be tracked."
+        },
+        {
+          "s": "leo",
+          "t": "But they're not saving the information."
+        },
+        {
+          "s": "leo",
+          "t": "And if you see Webwise cookies, you're being Phormed?"
+        },
+        {
+          "s": "steve",
+          "t": "We have questions about that."
+        }
+      ]
+    },
+    {
+      "title": "Mystery Cookies in a Webmaster's Domain",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeffrey T. Darlington in Beckley, West Virginia has run a moderately popular website for a decade, an eternity on the web. It's largely ad supported, so pause for the boos and hisses. Hey, we're ad supported too. He never enjoyed pushing ads, but as a one-man operation he needs them to pay his bandwidth bills. He'd dispute our claim that bandwidth is cheap. Without ads, he'd have folded years ago. Online ads, like politics, are the lesser of evils."
+        },
+        {
+          "s": "leo",
+          "t": "He recently gained full control over which advertisers appear and picked reputable ones, with fingers, limbs and eyes crossed. But our Phorm episode reminded him of something odd: his browser holds several cookies in his own domain that none of his code or installed applications set. Googling their names, they appear all over the web, set in the first-party domain but not by that domain."
+        },
+        {
+          "s": "leo",
+          "t": "How would a third party even read them, since the cookie spec should prevent that? His ISP doesn't use Phorm, and these predate the Phorm storm. As a developer it burns his biscuits, and as a surfer it annoys him more."
+        },
+        {
+          "s": "leo",
+          "t": "He's thinking of poisoning them: since they're in his domain, he can overwrite them, say with all zeroes, so every visitor looks like the same person. The worst case might be the third party and he constantly overwriting each other, annoying visitors who get notified of every cookie, or breaking some usage agreement, a risk he'd take to protect his visitors. He included the cookies at the bottom of his message."
+        },
+        {
+          "s": "steve",
+          "t": "A well-written post, from a webmaster's perspective. I have a sneaking suspicion it's something he put on his site without realizing the consequences. I saw exactly this when I had Google Analytics on GRC."
+        },
+        {
+          "s": "steve",
+          "t": "There are client-side cookies, which browsers treat as distinct from server cookies. A server can't change client cookies without injecting code into the page."
+        },
+        {
+          "s": "steve",
+          "t": "Google bought Urchin, and if you look at your browser's cookies for many sites, you'll see names starting with __utm. That's the tracking technology of anyone using Google Analytics, which is extremely popular, and maybe Google ads too. You link to JavaScript on Google's servers, which runs in the context of your page, and therefore your server's domain, and sets cookies there."
+        },
+        {
+          "s": "steve",
+          "t": "I experimented, and a remote server can't change those, since they're in a separate namespace from server cookies. Increasingly, advertisers require script on your page instead of a simple image link. Even VeriSign's \"Secured by VeriSign\" seal wants to run script, so I don't use it that way."
+        },
+        {
+          "s": "steve",
+          "t": "That's why I removed Google Analytics. I felt uncomfortable inviting Google to run whatever code they wanted on my pages. It isn't static code. My page links to their server, which supplies the code fresh every load. So that's very likely how these first-party cookies get into his domain."
+        },
+        {
+          "s": "leo",
+          "t": "Did you look at his cookies?"
+        },
+        {
+          "s": "steve",
+          "t": "Unfortunately, the feedback form can't take attachments."
+        },
+        {
+          "s": "leo",
+          "t": "So a tracker running as script on your page sets cookies client-side."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Your browser runs the code and sets the cookie locally, rather than the remote server setting it across the Internet."
+        },
+        {
+          "s": "leo",
+          "t": "But for privacy, it makes no difference."
+        }
+      ]
+    },
+    {
+      "title": "Session-Only Cookies",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Gilbert Langevin in Le Gardeur, Quebec suggests Firefox's option to allow cookies for the session only. It would accept a site's cookies, but delete them when you close Firefox. Wouldn't that reduce Phorm's effectiveness?"
+        },
+        {
+          "s": "steve",
+          "t": "Cookies may carry an expiration date. \"Persistent cookies\" set dates far in the future to stay around as long as possible. A cookie with no expiration date is a \"session cookie.\""
+        },
+        {
+          "s": "steve",
+          "t": "It lasts only until you close your browser. By nearly universal agreement, session cookies are never written to disk, only kept in RAM. Firefox, and some other browsers or add-ons, can strip the expiration date from cookies, forcing them to be session cookies."
+        },
+        {
+          "s": "steve",
+          "t": "Gilbert is right. If Webwise cookies were always session cookies, Phorm would think you're a new person every time you launch your browser, give you a new random 16-byte ID, and profile you only for that session. Everything still works, but there's no longer-term tracking."
+        },
+        {
+          "s": "leo",
+          "t": "Which browsers let you do that?"
+        },
+        {
+          "s": "steve",
+          "t": "There are allow-for-session features. We'll discuss cookies in painful detail soon, browser by browser."
+        }
+      ]
+    },
+    {
+      "title": "Detecting Phorm From GRC",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rick Nyman in Virginia, who listens on his Treo using Resco News, suggests an HTTPS link in ShieldsUP! that flags unknown cookies as possible Phorm. Though Phorm might stop setting cookies for GRC to avoid detection."
+        },
+        {
+          "s": "steve",
+          "t": "Great minds think alike. I posted the same idea in our newsgroups last week. Phorm can't penetrate SSL, and ShieldsUP! already takes visitors through HTTPS to avoid ISP proxies."
+        },
+        {
+          "s": "steve",
+          "t": "The secure request I receive will include all GRC cookies, including any Phorm planted during non-SSL pages at GRC. I could notify visitors that they have GRC-domain cookies GRC never set, from something potentially nefarious. That feature is coming."
+        },
+        {
+          "s": "steve",
+          "t": "And ShieldsUP! crossed 80 million uses a couple of days ago, running about 95,000 users a day. Several Linux distributions mention ShieldsUP! for testing your firewall. Word spreads, but it takes time."
+        }
+      ]
+    },
+    {
+      "title": "What Microsoft's Removal Tool Reports",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve Bradshaw in Bobbington, U.K., who works with IBM Power Systems and BladeCenters, asks: if Microsoft's Malicious Software Removal Tool removed two million game-password stealers, how does Microsoft know? Does it phone home? Did he agree to that one night after a glass too many of brain tonic?"
+        },
+        {
+          "s": "steve",
+          "t": "I researched it, and sure enough, the fine print you click through says it sends statistics. The Knowledge Base article, under \"Reporting infection information to Microsoft,\" says the tool sends basic information to Microsoft if it detects malicious software or finds an error, to track virus prevalence, and that no identifiable personal information about you or the computer is sent."
+        },
+        {
+          "s": "steve",
+          "t": "So they're getting feedback on what the tool is doing."
+        }
+      ]
+    },
+    {
+      "title": "Does Phorm Slow Your Browsing?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "James in Vancouver wonders how much Phorm-induced surfing overhead there is, and whether it affects the ISP's bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "If it created substantial overhead, ISPs would push back, since it would cost them more than Phorm pays. So Phorm minimizes it."
+        },
+        {
+          "s": "steve",
+          "t": "The first time you visit a site, you won't have a Phorm cookie for it, so you go through the triple-redirect dance, which is very quick. Most users wouldn't notice. Then you have their cookie for that site, and from then on there's virtually no delay. The ISP sees the cookie, strips it out and passes your request on."
+        },
+        {
+          "s": "steve",
+          "t": "So the impact on performance and ISP bandwidth is negligible. That doesn't make it any better, in my opinion, but at least it's not a constant problem."
+        }
+      ]
+    },
+    {
+      "title": "A Bank That Links Through DoubleClick",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andrew Steer near London says PayPal isn't the only one awkward for people blocking DoubleClick in their hosts file. In the U.K., the bank Abbey now uses DoubleClick link-throughs on its home page."
+        },
+        {
+          "s": "steve",
+          "t": "I went to www.Abbey.com. Down in the lower right is an ad offering some interest rate, 6.5 percent I think. Float your mouse over it, and the link is ad.doubleclick.net plus mumbo-jumbo. It redirects you through DoubleClick and right back to Abbey's own site. That's truly disturbing."
+        },
+        {
+          "s": "leo",
+          "t": "When a bank does it, that's bad."
+        }
+      ]
+    },
+    {
+      "title": "Free Pascal",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Santiago Rivero in Miami heard your love for Pascal and points to Free Pascal, an open-source, still-supported compiler at FreePascal.org."
+        },
+        {
+          "s": "steve",
+          "t": "I checked it out and I'm very impressed. It runs on a huge array of platforms: Windows, Linux, Mac."
+        },
+        {
+          "s": "leo",
+          "t": "Not surprised the open-source community did this."
+        },
+        {
+          "s": "steve",
+          "t": "It's syntax-compatible with what I assume is Turbo Pascal 7, has an object Pascal version, is very compatible with Borland's commercial Delphi, and was updated just last month. Many listeners wrote that they loved Pascal and wanted to poke around in it again."
+        },
+        {
+          "s": "leo",
+          "t": "Most original Macintosh software was Pascal."
+        },
+        {
+          "s": "steve",
+          "t": "All of the Lisa software was Pascal."
+        },
+        {
+          "s": "leo",
+          "t": "Though their ideas came from Smalltalk."
+        }
+      ]
+    },
+    {
+      "title": "How to Tell If Your ISP Is Tracking You",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Noble in Wellington, New Zealand asks the Important and Obvious Question of the Week: how can you tell if your ISP is doing something dodgy, by inspecting cookies or headers?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. All browsers but maybe IE have a cookie viewer. For IE there's IECookiesView, by the guy at NirSoft, very good and lightweight. I use it in my cookie development work. Opera, Firefox and the Mozilla family, and even Safari let you see cookies."
+        },
+        {
+          "s": "steve",
+          "t": "Look at your cookies for many domains: CNN, CNET, MSNBC, Microsoft. Most sites make up their own cookie names and formats. GRC uses cookies only for my upcoming third-party cookie notification, in my own format. If you see something common across cookies from many unrelated sites, that's a tip-off that something is linking them together, and it would have to be something like Phorm."
+        }
+      ]
+    },
+    {
+      "title": "Interesting Story: The Airport Access Point",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "\"Calvin,\" named for the hero of mischief, is in IT at a medium-sized international airport. Their DHCP pool, normally 20 percent free, was completely used up, by devices he didn't recognize, many iPhones and laptops named things like \"Johns Laptop.\" Every time he pinged one, it was gone."
+        },
+        {
+          "s": "leo",
+          "t": "One office wireless access point had mysteriously become wide open. It had been set up with WPA, using a key from GRC's ultra-high-security password generator, but now the key was blank. It was in a conference room sharing a wall with the passenger screening area."
+        },
+        {
+          "s": "steve",
+          "t": "Free WiFi while you go through airport screening."
+        },
+        {
+          "s": "leo",
+          "t": "I think an iPhone joins an open network automatically. People connected without knowing it and moved on, which is why they were never there when he pinged."
+        },
+        {
+          "s": "leo",
+          "t": "It had reset itself to factory defaults. He reconfigured it, and on restart it reset again. It had stopped holding any configuration. Not high end, but a business-class access point. He had to climb into the ceiling to replace it. It disturbs him that a business-class device fails back to wide-open defaults."
+        },
+        {
+          "s": "leo",
+          "t": "I guess if its memory can't hold settings, it has to use the defaults."
+        },
+        {
+          "s": "steve",
+          "t": "Routers ship with no security by default. But this thing could ship with wireless off by default. Then a reset would shut it down rather than open it up."
+        },
+        {
+          "s": "leo",
+          "t": "Any device can fail to hold settings. What matters is the failover. It couldn't default to WPA with a password you'd know."
+        },
+        {
+          "s": "leo",
+          "t": "Unless it had a standard one."
+        },
+        {
+          "s": "steve",
+          "t": "You wouldn't want that either. Anyone could know it and brute-force it."
+        }
+      ]
+    },
+    {
+      "title": "Horror Story: A Router That Ignored Its Setting",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our Horror Story and Fix of the Week, from Ruan Viljoen in rainy Cape Town, South Africa. He'd changed his router's default username and password, luckily, but found its admin interface exposed to the Internet on his public IP. A friend logged in from home successfully. And the router's option to hide the admin interface from the Internet, \"disable WAN administration,\" was enabled."
+        },
+        {
+          "s": "leo",
+          "t": "His workaround: a NAT rule forwarding all port 80 traffic to a nonexistent IP on his LAN. Now only he can reach it. Have you heard of this?"
+        },
+        {
+          "s": "steve",
+          "t": "I was horrified to hear any router ignores its \"disable WAN access\" setting."
+        },
+        {
+          "s": "steve",
+          "t": "Asking a friend means knowing your public IP and maybe exposing the problem. Instead, use ShieldsUP! at GRC.com to scan your service ports. The admin page would be on port 80. Unless you're deliberately running a web server on port 80, it should be closed, or probably stealth. If port 80 is open and you're not running a web server, it's your router accepting connections on its web port from the Internet, serving its login page for anyone to guess at, doubly bad with default credentials."
+        },
+        {
+          "s": "leo",
+          "t": "So just run ShieldsUP!."
+        },
+        {
+          "s": "steve",
+          "t": "You don't have to try to log in. Port 80 shouldn't be open. If any listeners find this problem, please tell me at GRC.com/feedback with something in the subject line I'll notice. He didn't tell us the brand."
+        },
+        {
+          "s": "leo",
+          "t": "I'm running ShieldsUP!'s common ports test on my Linksys. Whew, stealth."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, our last show on ISP spying, with our guest from the U.K.'s front lines in the fight over Phorm. And I'll talk a little about NebuAd, which turns out to be bad too."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Steve suggest leaving encryption keys to heirs without trusting one person?",
+      "options": [
+        "Split the key into pieces held by several people, with some redundancy",
+        "Write it in a will",
+        "Email it to family",
+        "Use a password manager"
+      ],
+      "answer": 0,
+      "explain": "Shamir's secret sharing formalizes the idea."
+    },
+    {
+      "q": "What new safeguard did TrueCrypt 6.0 add to its volume format?",
+      "options": [
+        "A redundant copy of the header at the end of the volume",
+        "A recovery password",
+        "Cloud backup",
+        "Weaker encryption"
+      ],
+      "answer": 0,
+      "explain": "Encrypted volumes depend heavily on their headers."
+    },
+    {
+      "q": "What happens when you block Phorm's Webwise domain?",
+      "options": [
+        "Its redirects fail, and after detecting the problem it leaves you alone for 30 minutes at a time",
+        "Your Internet stops",
+        "Phorm sends a warning",
+        "Nothing at all"
+      ],
+      "answer": 0,
+      "explain": "It's opt-out, so most users won't know to do this."
+    },
+    {
+      "q": "Where do mysterious first-party cookies on a website often come from?",
+      "options": [
+        "Third-party scripts like Google Analytics running in the site's own pages",
+        "The ISP",
+        "Viruses",
+        "The browser itself"
+      ],
+      "answer": 0,
+      "explain": "Steve removed Google Analytics partly for this reason."
+    },
+    {
+      "q": "How can you spot an ISP tracking system like Phorm in your browser?",
+      "options": [
+        "Look for a common cookie appearing across many unrelated sites' domains",
+        "Check your IP address",
+        "Run antivirus",
+        "Clear your history"
+      ],
+      "answer": 0,
+      "explain": "Most sites use their own unique cookie formats."
+    },
+    {
+      "q": "How can you check whether your router exposes its admin page to the Internet?",
+      "options": [
+        "Scan port 80 with ShieldsUP!, which should show it closed or stealthed",
+        "Reboot the router",
+        "Look at the router's lights",
+        "Ping your own IP"
+      ],
+      "answer": 0,
+      "explain": "Ruan's router ignored its \"disable WAN administration\" setting."
+    }
+  ]
+}

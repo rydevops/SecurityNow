@@ -1,0 +1,573 @@
+{
+  "number": 124,
+  "title": "Listener Feedback #31",
+  "subtitle": "Cookie whitelists, data wiping, WD's blocked files and offline patching",
+  "date": "2007-12-27",
+  "description": "Recorded before Christmas while Leo heads to Egypt, Steve promises more weekly news in 2008, corrects the IBM PC's processor, and shares a SpinRite rescue at an audiologist's office. Listeners ask about blocking all cookies except chosen sites, VPNs for home WiFi, hard-coding a bank in the hosts file, button-pushing VeriSign cards, RSA tokens, isolating WEP devices with three routers, SeatBelt's cookie, why wipers overwrite many times, and portable encryption. Western Digital's networked drive refuses to share MP3s, a German magazine's tool builds an offline Windows patch CD, and a listener catches a flaw Steve missed.",
+  "transcript": "https://www.grc.com/sn/sn-124.txt",
+  "audio": "http://media.GRC.com/sn/SN-124.mp3",
+  "chapters": [
+    {
+      "title": "A Resolution, and a Processor Correction",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The post-Christmas, pre-New Year's edition, recorded before Christmas, since I'm in Egypt."
+        },
+        {
+          "s": "steve",
+          "t": "We wouldn't leave our listeners hanging. And after this one, Leo, I think I'll have passed TWiT in number of shows."
+        },
+        {
+          "s": "leo",
+          "t": "Damn you, Steve. Today we have the Duh! of the Week Award and the Fantastic Tip of the Week Award."
+        },
+        {
+          "s": "steve",
+          "t": "People writing through GRC.com/feedback, my informal steering committee, say the show is called Security Now!, so let's have more \"now.\" They're right. We did more weekly news in our first year or two. My New Year's resolution: from '08 on, a section at the top of each show on important security news."
+        },
+        {
+          "s": "leo",
+          "t": "Not this week, since we're taping ahead. What could go wrong the week after Christmas?"
+        },
+        {
+          "s": "steve",
+          "t": "And a couple of people noted that in our nostalgic phase, I said the original PC had an 8008."
+        },
+        {
+          "s": "leo",
+          "t": "It was the 8088."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. It had some 16-bit features. As an assembly programmer, I learned all about segmented address spaces, and I was really glad to get a 32-bit flat address model."
+        },
+        {
+          "s": "leo",
+          "t": "I was writing assembly for the 68000, which had a flat space and a really elegant instruction set. My friend Tim Pozar was writing for the 8088, and I saw the hoops for memory addressing. Was it a 20-bit address space?"
+        },
+        {
+          "s": "steve",
+          "t": "20-bit. 16 bits reaches 64K, and that's where the 640K came from: they added 4 bits."
+        },
+        {
+          "type": "fact",
+          "title": "640K",
+          "t": "Twenty address bits reach one megabyte. The IBM PC reserved the top 384K for video memory and ROM, leaving 640K for programs."
+        },
+        {
+          "s": "leo",
+          "t": "Sorry, your audio's choppy. Adobe decided to download a 386-megabyte Photoshop update without asking. Bad Adobe."
+        },
+        {
+          "s": "steve",
+          "t": "And the PC AT had the 80286."
+        },
+        {
+          "s": "leo",
+          "t": "That was a long time ago. For our old-geezers show, I'll have Wikipedia open to keep us honest."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Aids Hearing",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Get this one, Leo. SpinRite aids hearing."
+        },
+        {
+          "s": "leo",
+          "t": "Now you've gone over the top."
+        },
+        {
+          "s": "steve",
+          "t": "Steve Nicholas, a freelance IT consultant, has an audiologist client whose PC runs hearing-test and hearing-aid programming equipment. Windows reported a missing DLL, then offered no desktop. Luckily it was a quiet day for them, so to speak. But they had lots of hearing assessments booked the next day."
+        },
+        {
+          "s": "steve",
+          "t": "Safe Mode failed. Booting from the XP CD, Check Disk reported bad sectors and unrecoverable errors. He said they'd need a new drive and possibly a reinstall. The client had no CDs for the audiology software, installed by the manufacturer and a nightmare to calibrate."
+        },
+        {
+          "s": "steve",
+          "t": "Back at his workshop, cloning failed with a fatal read error. He ran SpinRite overnight, and in the morning the drive was fixed and the PC booted. The BIOS SMART monitor warned of imminent failure, so he cloned it to a new disk. The equipment was running by 9:00 a.m., and no appointments were canceled."
+        },
+        {
+          "s": "leo",
+          "t": "We hear you, SpinRite."
+        }
+      ]
+    },
+    {
+      "title": "Block Every Cookie, Then Allow a Few",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Stephan Buys in South Africa, after our privacy episode 121, offers advice that doesn't impact his daily surfing. Besides NoScript, he disabled all cookies in Firefox, unticking \"accept cookies from sites\" on the Privacy tab, then uses the Exceptions button to allow cookies site by site, like Audible, where he stays logged in. Opt out unless you explicitly opt in."
+        },
+        {
+          "s": "steve",
+          "t": "Many listeners want more control than blocking third-party cookies, which is my normal practice. But as with PayPal and DoubleClick, a link bouncing you through DoubleClick creates a first-party cookie. Stephan's approach blocks even that."
+        },
+        {
+          "s": "steve",
+          "t": "IE offers the same: disable all cookies, then allow specific sites like MSN, Amazon and PayPal, where you want to stay logged in. When a site you care about breaks, enable cookies for that domain."
+        },
+        {
+          "s": "leo",
+          "t": "The problem is knowing who to trust. You'd think PayPal. But these sites have deals with ad companies."
+        },
+        {
+          "s": "steve",
+          "t": "A blurb a couple of weeks ago raised my hair. A major mail-order company talked about partnering with companies like PayPal, or perhaps Google, that know your real name and address and have given you cookies, to match your offline existence with your online presence."
+        },
+        {
+          "s": "steve",
+          "t": "DoubleClick apparently bought a company years ago that planned exactly this, and the outcry pushed it away, because people hated their anonymous tracking becoming non-anonymous."
+        },
+        {
+          "s": "leo",
+          "t": "Awareness is key. When consumers kick up, companies back off."
+        },
+        {
+          "type": "fact",
+          "title": "Abacus Direct",
+          "t": "DoubleClick bought catalog-data company Abacus Direct in 1999, planning to link names and addresses to web browsing. After an FTC inquiry and public outcry, it shelved the plan in 2000."
+        }
+      ]
+    },
+    {
+      "title": "A VPN for Your Own WiFi",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ryan in Indiana: we've recommended SSL, VPNs or SSH on hotel networks. Why not use a VPN at home to secure your wireless, instead of or with WPA, especially for devices like media extenders without WPA? Though if they lack WPA, will they support a VPN?"
+        },
+        {
+          "s": "steve",
+          "t": "Astaro, a sponsor, offers SSL VPN, which tends to be the most compatible. We discussed the inflexibility of IPSec and PPTP in our early VPN episodes. It's absolutely workable. A VPN from your laptop to a router is rigorously secure against man-in-the-middle and ARP poisoning attacks."
+        },
+        {
+          "s": "steve",
+          "t": "Someone who cracked your WEP key, or found your wireless open, would only see random noise. They could still use your connection, which might or might not matter."
+        },
+        {
+          "s": "leo",
+          "t": "So you could even leave a connection open."
+        }
+      ]
+    },
+    {
+      "title": "Hard-Coding Your Bank's Address",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeffrey in Columbia, Maryland: would putting your bank's domain and IP address in your hosts file protect you from phishing and man-in-the-middle attacks?"
+        },
+        {
+          "s": "steve",
+          "t": "Your computer normally asks a DNS server, usually your ISP's, for www.mybank.com's IP. The hosts file is checked first, so a listed entry skips the lookup, which is faster."
+        },
+        {
+          "s": "steve",
+          "t": "But most phishing doesn't change a domain's IP. It misspells the name, like mybank2.com, hoping you won't notice the 2. This wouldn't prevent that."
+        },
+        {
+          "s": "steve",
+          "t": "There are DNS man-in-the-middle attacks, where poisoned DNS returns a hostile IP. Hard-coding your bank's IP would prevent those."
+        },
+        {
+          "s": "steve",
+          "t": "But major sites, like AOL, use DNS for load balancing. They have a block of IPs, maybe a hundred, return perhaps five per query and rotate them. Hard-code one, and you lose that. And if the bank's IP changes, you'd think it had gone offline."
+        },
+        {
+          "s": "steve",
+          "t": "On balance, the hosts file is better for blocking known bad things. Point DoubleClick.net at 127.0.0.1, the localhost address, and your computer will never contact DoubleClick under any circumstances."
+        }
+      ]
+    },
+    {
+      "title": "The Card That Hates Button Pushers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Anthony DiSante of New Tripoli, Pennsylvania loves his PayPal football, though he wishes PayPal didn't fall back to a simple account number check. He also bought the VeriSign card, and he's been pushing its button to show friends the display. Now its numbers fall out of sync and PayPal rejects them. Unlike the time-based football, you can't throw numbers away?"
+        },
+        {
+          "s": "leo",
+          "t": "I haven't had that problem."
+        },
+        {
+          "s": "steve",
+          "t": "Sort of yes and no. VeriSign has given me documentation and a formal evaluation account, which I hope to explore over the holidays. Their back end knows people push buttons. I think Anthony really likes to push the button."
+        },
+        {
+          "s": "steve",
+          "t": "For the time-based football, the API has a window into the past and future, for clock drift. For the counter-based card, there's no backward, only forward. Each site chooses how far ahead to accept. PayPal may only allow, say, 10 or 15 numbers ahead."
+        },
+        {
+          "s": "leo",
+          "t": "How do you resync?"
+        },
+        {
+          "s": "steve",
+          "t": "I believe it's two in a row. Give one too far ahead, and they ask for the next. Knowing two consecutive codes proves you have the card and relocks them."
+        },
+        {
+          "s": "leo",
+          "t": "That explains why it sometimes asks twice."
+        }
+      ]
+    },
+    {
+      "title": "RSA's SecurID Versus the Football",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris in Los Gatos uses RSA's SecurID for his corporate VPN at a very large aerospace company with the initials LM."
+        },
+        {
+          "s": "steve",
+          "t": "I think that might be Lockheed Martin."
+        },
+        {
+          "s": "leo",
+          "t": "Or Leo's Machinery. His token has no sequential digit and no predictable pattern. Is it more secure than our PayPal key, with six random digits versus five?"
+        },
+        {
+          "s": "steve",
+          "t": "There's no trivially predictable pattern. It's absolutely predictable with the crypto algorithm and secret. But yes, the football's first digit increments, letting the server guess within a couple of minutes which code you're on, which cuts the odds from one in a million to one in 100,000."
+        },
+        {
+          "s": "steve",
+          "t": "But the target changes every 30 seconds, and the back-end server can lock out someone after five misses, or slow its responses, or deliberately wait for another window. So technically the football is one-tenth as secure, but it's already far more secure than it needs to be."
+        },
+        {
+          "s": "leo",
+          "t": "And the sequential digit makes syncing easier."
+        },
+        {
+          "s": "steve",
+          "t": "Less work checking codes in a heavy-use environment."
+        },
+        {
+          "s": "leo",
+          "t": "So Lockheed Martin, with fewer users, can afford the server time."
+        }
+      ]
+    },
+    {
+      "title": "Isolating WEP Devices: Three Routers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bob Thibodeau of Coral Springs, Florida worries about running WEP and WPA at once. WPA protects his computers' traffic, but couldn't someone on the WEP side see his shares and use his connection? If they did something illicit, wouldn't he be liable?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. ARP poisoning lets someone inside your network insert himself as a man in the middle, filtering everything to and from your gateway."
+        },
+        {
+          "s": "steve",
+          "t": "The only safe way I can see is three routers. Your main router connects to the Internet. A WEP router and a WPA router each plug into it, like a Y."
+        },
+        {
+          "s": "steve",
+          "t": "ARP doesn't cross a router. It only works within one Ethernet. So you get three: one inside the WPA router, one inside the WEP router, and a tiny one linking the three. Nobody who breaks your WEP security can touch that little network, or any of your WPA traffic."
+        },
+        {
+          "s": "leo",
+          "t": "So at least they can't sniff you."
+        },
+        {
+          "s": "steve",
+          "t": "And the two networks are completely isolated, so file sharing won't work between them."
+        }
+      ]
+    },
+    {
+      "title": "SeatBelt's Cookie",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ken Keating in North Carolina noticed that VeriSign's SeatBelt for Firefox creates a cookie even when he hasn't logged into OpenID. He's disabled it until he knows why."
+        },
+        {
+          "s": "steve",
+          "t": "SeatBelt runs as a browser add-on, so it can autonomously keep a relationship with VeriSign's OpenID back end, just to be present. I've had several conversations with VeriSign's techies and marketing people. They're pro-user and pro-security, and there's no way they're doing anything wrong. The cookie is a benign side effect of VeriSign's server sending cookies with its responses, and the browser storing them."
+        },
+        {
+          "s": "leo",
+          "t": "We may not like cookies, but they're how you save state."
+        },
+        {
+          "s": "steve",
+          "t": "They can be abused. But boy, are they handy."
+        },
+        {
+          "s": "leo",
+          "t": "If cookies didn't exist, we'd have had to invent them."
+        }
+      ]
+    },
+    {
+      "title": "Why Wipers Overwrite Many Times",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mark in Fort Collins, Colorado used Darik's Boot And Nuke, DBAN, which I recommend all the time, at dban.sourceforge.net. Why do three to five overwrite passes beat one? If a drive is zero-filled once, how can anything be recovered?"
+        },
+        {
+          "s": "steve",
+          "t": "The head's magnetic impression is additive. Writing zeroes lays down a pattern of flux reversals strong enough to read back, but over the previous pattern. A forensic expert could subtract the latest footprint and figure out what was there before. There's vestigial magnetism underneath."
+        },
+        {
+          "s": "leo",
+          "t": "How hard is that?"
+        },
+        {
+          "s": "steve",
+          "t": "Tough. You'd need NSA-level, national security data recovery. But it's been shown possible."
+        },
+        {
+          "s": "steve",
+          "t": "DBAN goes a little overboard. Modern drives go through about four levels of conversion between your data and the final flux reversal timing to reach today's densities, which makes the pattern unpredictable. In the old 20- and 30-megabyte MFM and RLL days, recovery was more practical. Writing zeroes is probably fine. If you have time and really want it gone, write more than once."
+        },
+        {
+          "s": "leo",
+          "t": "Simson Garfinkel, as an MIT grad student, bought used drives on eBay and from recyclers. Something like 80 percent still had data, including credit card numbers. He told me one overwrite is fine. The many-pass method is a Department of Defense spec."
+        },
+        {
+          "s": "steve",
+          "t": "An interesting tidbit: zero a drive, then run SpinRite, which reads, inverts and rewrites the data, then inverts it back. That pushes the history further into the past, a simple multi-pass wipe."
+        },
+        {
+          "type": "fact",
+          "title": "One pass",
+          "t": "Today's guidance, such as NIST's media sanitization standard, says a single overwrite is enough for modern hard drives. SSDs are different: use the drive's built-in secure erase, since wear leveling leaves old copies elsewhere."
+        }
+      ]
+    },
+    {
+      "title": "Portable Encryption: Omziff",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matt in Ohio needs to encrypt files on a shared network drive at work. He can't install anything on the shared machines or server, only use a thumb drive, which is too small, and the server is backed up daily. Is there encryption that runs from the thumb drive?"
+        },
+        {
+          "s": "steve",
+          "t": "Most encryption tools integrate with Windows Explorer's menus, so they must be installed and change the registry. But there's a really nice lightweight standalone tool called Omziff."
+        },
+        {
+          "s": "leo",
+          "t": "At least you can Google it."
+        },
+        {
+          "s": "steve",
+          "t": "It's about 400K, runs perfectly from a thumb drive, and offers many state-of-the-art algorithms, including my favorite, Rijndael. Give it a password, and it encrypts a file, then decrypts it in reverse."
+        },
+        {
+          "s": "leo",
+          "t": "TrueCrypt would need to modify the system."
+        },
+        {
+          "s": "steve",
+          "t": "You could install it on the thumb drive, but that's not what Matt wants. He wants to store encrypted files on the server, where the company backs up opaque blobs nobody there can read."
+        }
+      ]
+    },
+    {
+      "title": "Western Digital Won't Share Your MP3s",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tom in Buffalo brings this week's Protecting Users From Themselves note: Western Digital's Anywhere Access, on its terabyte networked MyBook drive."
+        },
+        {
+          "s": "steve",
+          "t": "Cory Doctorow posted about it on Boing Boing. Get this, Leo. By file extension, it refuses to share files ending in AAC, AIF, AVI, CDA, DVI or MP3, among others."
+        },
+        {
+          "s": "leo",
+          "t": "You can store them, but not share them."
+        },
+        {
+          "s": "steve",
+          "t": "WD's own FAQ says that \"due to the unverifiable media license authentication,\" those types can't be shared between users."
+        },
+        {
+          "s": "leo",
+          "t": "We can't be sure you're not stealing, so you can't do it. People only discover it after they get it home."
+        },
+        {
+          "s": "steve",
+          "t": "And it's dumb, since you could just rename the extension. Not to MPE, though, since that's MPEG video. Or MPG."
+        },
+        {
+          "s": "leo",
+          "t": "Or TMP? No, that's blocked too. Don't buy this stupid drive. It's not too late to win Dumb Move of the Year. I've recommended MyBooks, but I don't think I'll buy more Western Digital products."
+        }
+      ]
+    },
+    {
+      "title": "Fantastic Tip: An Offline Patch CD",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Fantastic Tip of the Week, from Josef Ender in Neuheim, Switzerland. For Brian Dewey's question in Episode 120 about getting all of XP's patches, the German magazine c't created an offline update script, at Heise Security."
+        },
+        {
+          "s": "steve",
+          "t": "Google \"offline-update.\" I grabbed it: a ZIP that expands to a little directory with an EXE and a beautiful UI. It uses Microsoft's own tools to download every security patch from Windows Update, including Service Pack 2 and everything since, and built a single 680-megabyte ISO to burn to a CD. It covers XP, 2000, Server 2003, and Office 2000, XP and 2003, in every language."
+        },
+        {
+          "s": "steve",
+          "t": "Others suggested RyanVM, but it hadn't been updated since June. This uses Microsoft's live Windows Update data."
+        },
+        {
+          "s": "leo",
+          "t": "Simpler than collecting the files through Windows Update's administrator mode."
+        },
+        {
+          "s": "steve",
+          "t": "Brian didn't want to be online. With Service Pack 2, the firewall is on by default, so he'd probably be safe anyway. But this is truly offline. Install XP, apply the CD, and you're current without ever touching the Internet. Their site shows Microsoft Baseline Security Analyzer before and after, completely satisfied."
+        },
+        {
+          "s": "leo",
+          "t": "You still need a connected machine to build it."
+        },
+        {
+          "s": "steve",
+          "t": "Right. This is what I'm doing from now on. Until XP Service Pack 3 arrives, this brings you up to now, and then you'd only need the monthly patches since."
+        },
+        {
+          "s": "leo",
+          "t": "It's by Karsten Violka and Torsten Wittrock."
+        },
+        {
+          "s": "steve",
+          "t": "It's an EXE plus command scripts you can browse. They did such a nice job."
+        },
+        {
+          "type": "fact",
+          "title": "Still around",
+          "t": "The project continued for years as \"WSUS Offline Update,\" supporting later versions of Windows."
+        }
+      ]
+    },
+    {
+      "title": "Duh! of the Week",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Duh! Award of the Week goes to Tim Hoolihan of Akron, Ohio, about the listener who hashed his password in JavaScript three ways instead of using SSL. You said it was fine except that the session cookie could be sniffed."
+        },
+        {
+          "s": "leo",
+          "t": "But the logon itself is still vulnerable. The server stores the hashed version and checks that. If user \"bob\" logs in with \"spot,\" hashed to X12345, I sniff the form post, build a simple HTML form that posts the same values to the same URL, and I'm authenticated."
+        },
+        {
+          "s": "steve",
+          "t": "He hashed it to pieces, and our eyes crossed. But without encryption, the result goes in the clear. You don't know the password, and you don't need it."
+        },
+        {
+          "s": "leo",
+          "t": "You just replay what was sent."
+        },
+        {
+          "s": "steve",
+          "t": "Tim, you're absolutely right. I should have mentioned it. Sniffing cookies is unnecessary when you can capture the original submission and log in that way anytime."
+        },
+        {
+          "s": "leo",
+          "t": "That's why you need many eyes on security."
+        },
+        {
+          "s": "steve",
+          "t": "Keep the feedback coming at GRC.com/feedback. I get far more than I can read, but I read it."
+        },
+        {
+          "s": "leo",
+          "t": "ScotteVest extended our 20 percent coupon, code LEO, through the end of the year."
+        },
+        {
+          "s": "steve",
+          "t": "Thank you to our listeners for all your support this year. We're plowing into 2008. Next week's episode was recorded far in advance, so the news section starts with the second show of 2008."
+        },
+        {
+          "s": "leo",
+          "t": "We're about three and a half years into Security Now!. Happy New Year."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Stephan Buys block even first-party tracking cookies?",
+      "options": [
+        "He disabled all cookies and allowed them only for chosen sites",
+        "He deleted cookies hourly",
+        "He used a hosts file",
+        "He used Safari"
+      ],
+      "answer": 0,
+      "explain": "IE can do the same."
+    },
+    {
+      "q": "Why doesn't hard-coding your bank's IP in the hosts file stop most phishing?",
+      "options": [
+        "Most phishing uses lookalike domain names, not altered DNS",
+        "Hosts files don't work",
+        "Banks change IPs daily",
+        "It blocks the bank"
+      ],
+      "answer": 0,
+      "explain": "It does stop DNS poisoning attacks."
+    },
+    {
+      "q": "How do three routers keep a WEP network from exposing WPA traffic?",
+      "options": [
+        "ARP attacks can't cross a router, so each network is isolated",
+        "The routers encrypt twice",
+        "WEP gets upgraded",
+        "They share one password"
+      ],
+      "answer": 0,
+      "explain": "File sharing between them won't work either."
+    },
+    {
+      "q": "Why might data survive a single overwrite on old drives?",
+      "options": [
+        "Magnetic recording is additive, leaving faint traces of earlier data",
+        "Drives refuse to overwrite",
+        "Zeroes aren't written",
+        "The data is backed up"
+      ],
+      "answer": 0,
+      "explain": "Modern drives make this impractical."
+    },
+    {
+      "q": "What did Western Digital's Anywhere Access refuse to do?",
+      "options": [
+        "Share files with media extensions like MP3, AVI and AAC",
+        "Store large files",
+        "Work with Macs",
+        "Encrypt files"
+      ],
+      "answer": 0,
+      "explain": "It blocked them by file extension alone."
+    },
+    {
+      "q": "What was the \"Duh!\" flaw in the JavaScript-hashed login?",
+      "options": [
+        "An eavesdropper could replay the captured hash to log in without knowing the password",
+        "MD5 is broken",
+        "Cookies expire",
+        "JavaScript can't hash"
+      ],
+      "answer": 0,
+      "explain": "SSL would have prevented it."
+    }
+  ]
+}

@@ -1,0 +1,790 @@
+{
+  "number": 163,
+  "title": "GoogleUpdate & DNS Security",
+  "subtitle": "Chrome's updater cleans up after all, Steve switches to Firefox, and why securing DNS is so hard",
+  "date": "2008-09-25",
+  "description": "Steve corrects last week's alarm: GoogleUpdate does remove itself hours after Chrome is uninstalled, and he compares Apple's updater. He announces he's switched to Firefox with NoScript. Then the news: the LHC breaks down, the Financial Times on the Kindle, how Sarah Palin's Yahoo! account was taken over through its password-reset questions, and three insider data thefts. Finally, DNSSEC: how signed DNS would work, what it would enable, and the technical and political obstacles, from oversized packets to who holds the root key.",
+  "transcript": "https://www.grc.com/sn/sn-163.txt",
+  "audio": "http://media.GRC.com/sn/SN-163.mp3",
+  "chapters": [
+    {
+      "title": "Precise Words",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's a chance to talk about security as it applies to technology."
+        },
+        {
+          "s": "steve",
+          "t": "It's really our chance to talk about it and their chance to listen."
+        },
+        {
+          "s": "leo",
+          "t": "Always precise. You can tell he's an engineer."
+        },
+        {
+          "s": "steve",
+          "t": "When you program in assembly language, you have no choice."
+        },
+        {
+          "s": "steve",
+          "t": "I promised weeks ago to cover DNS security. Catching up, I found more is happening on the political side than the technical side. Secure DNS would enable all kinds of good things. But only one entity can own its root, and we have a big, complex globe. No one is really happy with the U.S. being that entity."
+        }
+      ]
+    },
+    {
+      "title": "Patch Schedules",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I just got a Windows update, and it's not the second Tuesday."
+        },
+        {
+          "s": "steve",
+          "t": "Interesting. And people are complaining that Apple releases updates whenever it feels like it."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft did too, until there were too many."
+        },
+        {
+          "s": "steve",
+          "t": "It was corporate IT that said they couldn't handle updates showing up at the door ad hoc, needing to stop everything and evaluate them."
+        },
+        {
+          "s": "leo",
+          "t": "But hackers don't wait 30 days."
+        },
+        {
+          "s": "steve",
+          "t": "True. Pushing updates the moment they're ready shrinks the window for exploits. But as Apple moves into corporations and gains share, IT people are pushing back, asking for Microsoft's approach. And Microsoft has been drifting off its schedule with patches for its own mistaken patches."
+        },
+        {
+          "s": "steve",
+          "t": "Also, many people have been emailing GRC with things for the show. Please use GRC.com/feedback. It's a web form, as anonymous as you want. I like names and locations so we know these are real people, not disembodied text streams."
+        }
+      ]
+    },
+    {
+      "title": "GoogleUpdate Removes Itself",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week a listener's question made me raise alarms about Chrome's uninstall. In a clean virtual machine that had never seen Google code, I installed and removed Chrome. All the GoogleUpdate infrastructure, which keeps Google's desktop search, toolbar and Chrome current, was left behind. GoogleUpdate.exe was still in the registry's Run key, so it would always be running, for hours afterward."
+        },
+        {
+          "s": "steve",
+          "t": "Not long after the show, I glanced at that VMware window, and it was all gone, perfectly and beautifully removed. Did I do something? I recreated the experiment. Removing Chrome left everything behind. I restarted the VM several times and watched a packet capture of it phoning home with an XML exchange of gobbledygook."
+        },
+        {
+          "s": "leo",
+          "t": "You can't tell what it's saying."
+        },
+        {
+          "s": "steve",
+          "t": "Not in any English we know. So I emailed you guys to head off last week's alarm bells."
+        },
+        {
+          "s": "leo",
+          "t": "It isn't after a certain number of reboots?"
+        },
+        {
+          "s": "steve",
+          "t": "No. My most telling experiment: install Chrome, cut the VM off from the Internet, then remove Chrome. Instead of the \"please tell us why you're leaving\" page, I got \"could not display this web page.\" GoogleUpdate couldn't phone home either."
+        },
+        {
+          "s": "steve",
+          "t": "If you kept it from running, it wouldn't remove itself, though it has many ways to run, with plug-ins in every browser it finds. But normally, you uninstall Chrome and wait. Even with no Internet, after a few hours it cleans itself up: I guess nobody here needs me anymore."
+        },
+        {
+          "s": "steve",
+          "t": "I have no problem with that. It'd be nicer if it noticed it was the last Google code on the system. Maybe they want to give you a chance to change your mind, or do some final reporting."
+        },
+        {
+          "s": "steve",
+          "t": "It seems to be based on time, not reboots. So the answer to last week's question: Google doesn't leave stuff in your system forever."
+        }
+      ]
+    },
+    {
+      "title": "Setting the Record Straight",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let me explain what happened. Viewers of the live video saw us go on about this. Before we published, Steve emailed that it seemed to uninstall itself, so I cut most of that discussion rather than scare people without the facts."
+        },
+        {
+          "s": "leo",
+          "t": "And the \"Chrome\" folder our correspondent deleted wasn't Google's. It's Firefox's own interface files, so deleting it breaks Firefox."
+        },
+        {
+          "s": "leo",
+          "t": "What stands: Chrome installs a browser helper object in IE and a plug-in in Firefox, installs GoogleUpdate, and phones home with content we can't read. What we correct: the updater does uninstall itself after some time."
+        },
+        {
+          "s": "leo",
+          "t": "I want complete transparency. It's like a newspaper pulling an unverified detail before publishing, except we broadcast live, so people saw the sausage being made."
+        },
+        {
+          "s": "steve",
+          "t": "And the podcast audience is substantially larger than the live viewers."
+        }
+      ]
+    },
+    {
+      "title": "Apple's Updater, Compared",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Chatroom folks said Apple does the same thing. I don't care what Apple does."
+        },
+        {
+          "s": "leo",
+          "t": "We'll call them on it too. That doesn't make it okay."
+        },
+        {
+          "s": "steve",
+          "t": "I tested a Safari install and removal. I actually like Apple's approach more. Apple Software Update registers a scheduled task that runs, in my case, late Saturday night once a week. Nothing runs all the time."
+        },
+        {
+          "s": "leo",
+          "t": "Too many programs sit in the background, slowing your system."
+        },
+        {
+          "s": "steve",
+          "t": "Everyone seems to think they own your system and can stomp around in it. It's annoying for security-conscious users who want to know what's running. It slows your boot and burns RAM."
+        },
+        {
+          "s": "leo",
+          "t": "It hurts reliability and makes spyware harder to spot among all those processes."
+        },
+        {
+          "s": "steve",
+          "t": "To GoogleUpdate's credit, it's tiny, about 183K."
+        },
+        {
+          "s": "leo",
+          "t": "On OS X, and I think Linux, apps usually check for updates when they run, not in the background."
+        },
+        {
+          "s": "steve",
+          "t": "I've heard GoogleUpdate checks hourly."
+        },
+        {
+          "s": "leo",
+          "t": "Google says it's updating phishing protection. IE7 updates its list of bad sites too. But if you run Chrome once a month for Gmail, why run something every hour?"
+        },
+        {
+          "s": "steve",
+          "t": "It's beta, and Lord knows how long it'll stay beta, given Google's penchant. Apple Software Update stays when you remove Safari, but it has its own entry in Add/Remove Programs, so you can remove it. I didn't check whether it would remove itself on its next Saturday run."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe Chrome avoids checking at startup to launch fast. The price is a background check every hour."
+        }
+      ]
+    },
+    {
+      "title": "Still Too Feature-Lean",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Knowing what you know now, are you still concerned about Chrome?"
+        },
+        {
+          "s": "steve",
+          "t": "Oh, yeah. The GoogleUpdate behavior is entirely acceptable, especially for a beta. Leaving it forever wouldn't be. But it's still unacceptable that Chrome offers to save passwords by default and provides no way to protect them from prying eyes."
+        },
+        {
+          "s": "steve",
+          "t": "Google wants it to be a platform for JavaScript applications. But nearly all the vulnerabilities we see are script driven. I shouldn't say all, since we just had the GDI+ image flaws. But 99.9 percent of what we've discussed this past year. There's no way to disable JavaScript at all, let alone per site, which IE offers natively and NoScript adds to Firefox. It can't compete. People say it's an application platform, not a browser. Of course it's a browser."
+        },
+        {
+          "s": "leo",
+          "t": "If you only use Google apps, it matters less. But your Gmail password would be visible."
+        },
+        {
+          "s": "steve",
+          "t": "Keeping it to run Gmail makes absolute sense. It's just not ready to be anyone's only browser."
+        }
+      ]
+    },
+    {
+      "title": "Steve Switches to Firefox",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And my big news: I've switched to Firefox, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "What? I've had this battle with you for nigh on four years."
+        },
+        {
+          "s": "steve",
+          "t": "As long as we've known each other."
+        },
+        {
+          "s": "leo",
+          "t": "You've always been an IE user, and I've used you as an example of using IE safely. Why switch?"
+        },
+        {
+          "s": "steve",
+          "t": "Firefox has become mature, with a fabulous ecosystem of plug-ins. I like the look of Firefox 3 and its security improvements over 2. It's at the top of the pile in privacy enforcement."
+        },
+        {
+          "s": "leo",
+          "t": "Is its third-party cookie handling acceptable now?"
+        },
+        {
+          "s": "steve",
+          "t": "I wish third-party cookies were disabled by default. But Firefox blocks outgoing third-party cookies, which is what you want. Safari, Chrome and IE block incoming but not outgoing ones, which is the wrong approach."
+        },
+        {
+          "s": "steve",
+          "t": "People have been jumping up and down about NoScript. I thought, time to give up on IE, Gibson. After a couple days I noticed links were still opening IE, so I made Firefox my default. Windows Update still runs in IE, which is fine. I surf in Firefox 3 with NoScript, scripting off by default, enabling it only for sites that need it. That's the way to surf."
+        },
+        {
+          "s": "leo",
+          "t": "Steve is the opposite of an early adopter, which is right for anyone concerned about security. You only recently moved from Windows 2000 to XP."
+        },
+        {
+          "s": "leo",
+          "t": "And Vista is maybe never."
+        }
+      ]
+    },
+    {
+      "title": "The LHC Springs a Leak",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Since we talked about the Large Hadron Collider, it's shut down. It literally had a coolant leak. I thought, this is the Enterprise. Starships were always having coolant leaks."
+        },
+        {
+          "s": "steve",
+          "t": "It's just as bad on a superconducting magnet. Things melt, and I think helium leaked into internal chambers. They have to make repairs, and since electricity costs more in winter, they're shut down until spring."
+        },
+        {
+          "type": "fact",
+          "title": "What happened",
+          "t": "On September 19, 2008, a faulty electrical connection between two magnets caused an arc that ruptured the helium enclosure. The LHC restarted in November 2009 after repairs and new safety systems."
+        }
+      ]
+    },
+    {
+      "title": "The Financial Times on the Kindle",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In my errata section: the Kindle store now has the Financial Times. I've been reading The Wall Street Journal, plus The New York Times and the L.A. Times. Even my county's Orange County Register is there now."
+        },
+        {
+          "s": "leo",
+          "t": "It's British, isn't it?"
+        },
+        {
+          "s": "steve",
+          "t": "I wouldn't be surprised. I sense it in their pronouns. What I like is that the writers really understand what they're writing about, while even The Wall Street Journal sometimes feels like rehashed AP wire copy. I understand things better from the FT. And its stories are shorter; the Kindle shows word counts."
+        },
+        {
+          "s": "leo",
+          "t": "I'll defend the Journal. I have friends there, and it has some of the best reporters in the country. I don't read the opinion page, since my politics differ. Maybe it's less objective, being close to Wall Street."
+        },
+        {
+          "s": "steve",
+          "t": "This morning at Starbucks I read all I needed in the FT, then scanned the others' front pages. The Governator finally signed California's budget yesterday."
+        },
+        {
+          "s": "leo",
+          "t": "I lent my Kindle to Megan for a review and after two weeks begged for it back. I bought a paperback, then bought the Kindle edition instead."
+        },
+        {
+          "s": "steve",
+          "t": "Newspapers are just there in the morning, by 4:40 a.m. when I'm up. A guy at Starbucks complained his paper FT arrives at noon."
+        }
+      ]
+    },
+    {
+      "title": "How Sarah Palin's Email Was Taken",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In security news, Sarah Palin's Yahoo! accounts, gov.palin and gov.sarah, were broken into last week. The FBI tracked down someone who appears to be a state representative's son."
+        },
+        {
+          "s": "leo",
+          "t": "He used a one-step proxy, not TOR."
+        },
+        {
+          "s": "steve",
+          "t": "And the proxy's IP was handled by the ISP serving the school he attends."
+        },
+        {
+          "s": "leo",
+          "t": "It was basically social engineering."
+        },
+        {
+          "s": "steve",
+          "t": "It's a great topic for us. He went to Yahoo! with the account name and said he'd forgotten the password. Yahoo! asked its recovery questions, and the answers were easy for anyone. You could Google or Wikipedia her."
+        },
+        {
+          "s": "steve",
+          "t": "One was where she met her husband. He guessed high school, and he knew her hometown. Others were her zip code and date of birth, public because she's now a celebrity. Yahoo! asked what he'd like his new password to be, and he chose \"popcorn.\""
+        },
+        {
+          "s": "leo",
+          "t": "The same happened to Paris Hilton's T-Mobile Sidekick. The question was her dog's name, which she talks about constantly. If you're a public figure, you can't use the real answers."
+        },
+        {
+          "s": "leo",
+          "t": "Is it Yahoo!'s fault?"
+        },
+        {
+          "s": "steve",
+          "t": "It's everybody's fault. Some partisans criticized her for doing official business on Yahoo!, suggesting she was avoiding public records rules. I have no opinion on that. What interests our listeners is how insecure recovery questions can be. Systems that let you write your own question are probably better, since you can ask something only you know."
+        },
+        {
+          "s": "leo",
+          "t": "You don't have to give the right answer either. I've never told anyone my first pet's name, but just in case, I use a different name. Then you have to remember it."
+        },
+        {
+          "s": "steve",
+          "t": "Security always comes at a price."
+        },
+        {
+          "type": "fact",
+          "title": "Recovery questions today",
+          "t": "The attacker, David Kernell, was convicted in 2010. Security guidance now treats \"secret questions\" as weak, since answers are often public or guessable. If a site requires them, use random answers stored in a password manager."
+        }
+      ]
+    },
+    {
+      "title": "The Enemy Within",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last, from the SANS newsletter, three recent cases of employees breaching their own companies' security, something we've never discussed."
+        },
+        {
+          "s": "steve",
+          "t": "First, former Intel employee Biswamohan Pani was charged with stealing trade secrets. He resigned in May and took accrued vacation through June 11. Between June 8 and 10 he allegedly accessed an encrypted Intel system and downloaded 13 top-secret documents, including on chip development. He'd already started at AMD. It was found when someone reviewed his access history."
+        },
+        {
+          "s": "steve",
+          "t": "Second, Countrywide says personal information of up to two million customers may have been sold. A former employee allegedly downloaded about 20,000 records every week for two years and sold each batch for $500, about 2.5 cents a record. Countrywide is offering two years of credit monitoring. The data apparently went to other mortgage brokers."
+        },
+        {
+          "s": "leo",
+          "t": "I'm a former Countrywide customer. I get a lot of unsolicited offers. I thought that was because loans are public record."
+        },
+        {
+          "s": "steve",
+          "t": "It didn't go to Russia, just to Countrywide's competitors."
+        },
+        {
+          "s": "steve",
+          "t": "Third, attorneys general in 45 states were told that a State Farm employee in Surprise, Arizona, used customers' addresses, Social Security numbers, driver's license numbers and some bank account numbers to obtain credit cards. Affected customers get a year of credit monitoring."
+        },
+        {
+          "s": "steve",
+          "t": "All our security talk has been about keeping outsiders out, assuming everyone inside does the right thing. These cases show what some argue is the bigger problem: protecting your secrets from your own employees who have access."
+        },
+        {
+          "s": "leo",
+          "t": "Most jobs are inside jobs. Letting him go on vacation without canceling his access to secret servers is bone-headed."
+        },
+        {
+          "s": "steve",
+          "t": "Technically he was still an employee. We can't know what pressure he was under, or his ethics."
+        },
+        {
+          "s": "leo",
+          "t": "He's almost certainly broken the law and his employment contract. I think that's a felony."
+        }
+      ]
+    },
+    {
+      "title": "A Hot Drive",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One happy SpinRite story. Marty Sasaki in Arlington, Massachusetts has known about SpinRite since TechTV, but couldn't justify it until his old system died. He got a new motherboard, CPU, RAM and a SATA drive."
+        },
+        {
+          "s": "steve",
+          "t": "Copying his old parallel ATA drives kept failing partway, with both PartitionMagic and GParted. SpinRite found a few errors, but also that one drive was running really hot. It kept stopping with a temperature warning. He let it cool and resumed, then finally pulled the drive out and blew a fan across it to get his data off. He says SpinRite saved him hours, maybe days."
+        },
+        {
+          "s": "leo",
+          "t": "What temperature triggers the warning?"
+        },
+        {
+          "s": "steve",
+          "t": "I surveyed all the manufacturers' specs and used the top of their operating ranges, so I'm not overreacting."
+        },
+        {
+          "s": "steve",
+          "t": "It happens often: a case that worked fine, then faster, more power-hungry drives go in, and ventilation is no longer adequate. Little else in the system watches drive temperature. And drives get hotter in use, especially seeking, which SpinRite does constantly. Cold at power-up when the BIOS checks, but for how long? So SpinRite continuously monitors temperature and the other SMART data, Self-Monitoring, Analysis and Reporting Technology."
+        },
+        {
+          "s": "leo",
+          "t": "I could have written that letter. A machine in a Shuttle case was flaky for two years. Colleen SpinRited it and found it overheating. She ran a table fan at it to finish."
+        },
+        {
+          "s": "steve",
+          "t": "Shuttles have trouble ventilating the drive. It's under the floppy, with no forced air across it."
+        },
+        {
+          "s": "leo",
+          "t": "We retired it. Now we know why it was flaky."
+        }
+      ]
+    },
+    {
+      "title": "Is DNS Fixed?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Back to DNS. After Kaminsky's bug, people learned their ISPs' DNS wasn't secure. Is it fixed now?"
+        },
+        {
+          "s": "steve",
+          "t": "We've hugely mitigated spoofing. But it isn't fixed the way SSL secures connections. SSL certificates are signed by authorities like VeriSign or Entrust, who hopefully verify that PayPal is really PayPal. Our browsers check that the certificate matches the domain, giving us authentication, and SSL gives us encryption."
+        },
+        {
+          "s": "steve",
+          "t": "DNS is a really flexible distributed database. It could hold much more than IP addresses, if only it were secure. Phishing isn't a failure of DNS, but spoofable DNS makes such problems worse."
+        }
+      ]
+    },
+    {
+      "title": "What DNSSEC Does",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "DNSSEC, DNS Security, offers for the first time cryptographically signed DNS records. Using public key infrastructure, PKI, a resolver could prove that the data it receives is what the authoritative name server is offering."
+        },
+        {
+          "s": "steve",
+          "t": "Kaminsky's problem was cache poisoning. DNS scales because answers are cached, so you don't always ask the authoritative server. You want to verify that cached data matches the source."
+        },
+        {
+          "s": "steve",
+          "t": "And DNS uses UDP, one packet out and one back, infinitely spoofable. Even asking the authoritative server directly, you can't know the reply really came from it. So you want the data digitally signed."
+        },
+        {
+          "s": "steve",
+          "t": "The signing follows DNS's hierarchy. PayPal's name servers know PayPal's domains, the .com servers know all .com domains, and the root servers above them know the top-level domains: .com, .org, .edu, .gov, .mil and the rest."
+        }
+      ]
+    },
+    {
+      "title": "How the Design Evolved",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The system has evolved over about 15 years. Early RFCs were defective because they didn't scale. Originally, whenever a zone's records changed, the parent would re-sign them. If GRC changed records, I'd send them up to the .com servers to sign, and anyone could check them with .com's public key."
+        },
+        {
+          "s": "steve",
+          "t": "But that required the parent's private key to be online all the time, so it was more likely to leak, which would be catastrophic. And it put a huge burden on parents with many children."
+        },
+        {
+          "s": "steve",
+          "t": "So now, using hashing, a domain creates a signature of its own key and sends just that up for the parent to sign."
+        }
+      ]
+    },
+    {
+      "title": "What Secure DNS Would Enable",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "If DNSSEC were broadly deployed, we'd have for the first time a really secure, distributed database for the Internet. DNS has been okay, but never trustable."
+        },
+        {
+          "s": "steve",
+          "t": "With trust, DNS could distribute public keys. There's never been a good way to do that, and it's part of why email security hasn't worked. For secure email, anyone who wants to decrypt or authenticate my messages needs my public key, and must know it can't be spoofed."
+        },
+        {
+          "type": "fact",
+          "title": "Keys in DNS today",
+          "t": "Signed DNS is now used to publish keys and policies, such as DKIM keys for email signing and DANE records that pin TLS certificates, though DANE's use by web browsers never took off."
+        }
+      ]
+    },
+    {
+      "title": "Who Holds the Root Key?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The technology is largely resolved. The problem is politics. For GRC to be authenticated, there must be an unbroken chain of trust up to a \"trust anchor,\" an ultimate authority. The root would sign all the top-level domains, including the country codes like .it, .se and .ru."
+        },
+        {
+          "s": "steve",
+          "t": "Who controls that root key? The U.S. Defense Department and Department of Homeland Security have said they want to be in charge."
+        },
+        {
+          "s": "leo",
+          "t": "I don't think Russia will like that."
+        },
+        {
+          "s": "steve",
+          "t": "The rest of the world won't swallow unilateral U.S. ownership."
+        },
+        {
+          "s": "leo",
+          "t": "There's been a U.N. move to take domain responsibility out of the U.S. Commerce Department's hands. DHS would be even worse. Other countries ask why the U.S. should be responsible. We invented it, but it's a global system now."
+        },
+        {
+          "s": "steve",
+          "t": "Until it became valuable, no one cared."
+        },
+        {
+          "s": "steve",
+          "t": "Even today's process is complex. One file, the root zone file, lists the name servers for every top-level domain. Registries send change requests to ICANN's IANA. If they meet its technical requirements and ICANN's board approves, they go to the U.S. Department of Commerce. Then the root zone maintainer, currently VeriSign, edits the file, and VeriSign as distributor loads it onto the master server, where the other root operators around the world retrieve it."
+        }
+      ]
+    },
+    {
+      "title": "The Technical Burden",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "DNSSEC changes everything. There are key-signing keys, zone-signing keys and delegation signer records. And it bloats. In one example, a normal 75-line, 2.3K zone file became 665 lines and 27K."
+        },
+        {
+          "s": "leo",
+          "t": "That's still small."
+        },
+        {
+          "s": "steve",
+          "t": "Except it no longer fits in a UDP packet. The original spec limits UDP DNS messages to 512 bytes of payload. DNS's clever pointer-based compression keeps queries and replies to a couple hundred bytes, so single packets work. DNSSEC breaks that."
+        },
+        {
+          "s": "leo",
+          "t": "What's wrong with multiple packets?"
+        },
+        {
+          "s": "steve",
+          "t": "UDP has no provision for them. It takes TCP to make a byte stream across packets. Extensions now let DNS use much larger UDP packets. But as we discussed, DNS is already over half saturated, and DNSSEC needs hugely more. It's a massive burden on the infrastructure."
+        },
+        {
+          "type": "fact",
+          "title": "Bigger packets",
+          "t": "The extension is EDNS0, which lets DNS over UDP carry larger messages. Very large responses still fall back to TCP, and DNS over TCP is now a required part of the standard."
+        },
+        {
+          "s": "leo",
+          "t": "So it won't happen?"
+        },
+        {
+          "s": "steve",
+          "t": "It's been trying for years. Public key operations are computationally expensive, too, so DNSSEC servers become easier targets for denial of service. Instead of flooding them with data, you lead them on a merry chase of resolving records until they collapse under the cryptography."
+        },
+        {
+          "s": "leo",
+          "t": "So geopolitics, technology, performance and bandwidth push against it, while the whole world needs secure DNS."
+        },
+        {
+          "s": "steve",
+          "t": "Imagine a truly robust, secure, hierarchical database that could securely distribute public key certificates by name. It would be tremendous."
+        },
+        {
+          "s": "leo",
+          "t": "Who decides? My ISP? The backbone? The government?"
+        },
+        {
+          "s": "steve",
+          "t": "Everyone. There must be an essentially unbroken chain of signed zones from yours up to the root. And it's chicken and egg: there'd be demand if it existed, but it doesn't, so there isn't."
+        },
+        {
+          "s": "leo",
+          "t": "Like how everyone jumped on IPv6."
+        }
+      ]
+    },
+    {
+      "title": "The Lookaside Alternative",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's a funky alternative called DLV, DNSSEC Lookaside Validation. Since no one can agree on a single root authority, an organization like ISC, the Internet Systems Consortium, would run its own servers. GRC would give ISC its public key securely, and it would be published under a name like grc.dlv.isc.org. Knowing only ISC's public key, you could verify GRC's key."
+        },
+        {
+          "s": "steve",
+          "t": "It's a non-hierarchical alternative. Not as good, but it still gives you provability."
+        },
+        {
+          "s": "leo",
+          "t": "More robust, since knocking out the top of a hierarchy collapses everything?"
+        },
+        {
+          "s": "steve",
+          "t": "The hierarchy's benefit is that it scales. ISC's servers would carry a tremendous burden fielding queries for every domain."
+        },
+        {
+          "s": "leo",
+          "t": "So it's another choke point."
+        },
+        {
+          "s": "leo",
+          "t": "Do keys stay good, or are there time limits?"
+        },
+        {
+          "s": "steve",
+          "t": "There are TTLs, and keys have short lifetimes too, some as short as 30 days for security. So keys are rolled over, with replacements overlapping. The details are mind-numbing, but they're cleanly described in RFCs."
+        },
+        {
+          "type": "fact",
+          "title": "DLV's end",
+          "t": "ISC shut down its DLV registry in 2017, after the root and most top-level domains had been signed and the lookaside approach was no longer needed."
+        }
+      ]
+    },
+    {
+      "title": "Many Signers for the Root",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One proposal avoids a single root signer. Multiple independent, non-governmental root key operators would each generate keys and send their public parts to the root zone maintainer, which builds a root key set. Each operator signs it and the root zone file with its own keys, over secure out-of-band channels. The result is a master root zone file signed by as many participants as want to."
+        },
+        {
+          "s": "leo",
+          "t": "Russia could sign as well as the U.S. No single point of failure."
+        },
+        {
+          "s": "steve",
+          "t": "You could use any participant's public key to verify it, without trusting any single entity."
+        },
+        {
+          "s": "leo",
+          "t": "Even the Hong Kong Post Office. This works well for PGP, where people hold key-signing parties to vouch for your key. End users won't know whom to trust, so Microsoft, Apple or Firefox would ship a set of trusted signers, as they do now."
+        },
+        {
+          "s": "steve",
+          "t": "That's the direction we're heading, because a sole root arbiter has been a nonstarter."
+        },
+        {
+          "s": "leo",
+          "t": "It can't be the U.S."
+        },
+        {
+          "s": "steve",
+          "t": "And we don't want it to be anybody else. Some countries, like Sweden with .se, already run DNSSEC at their top level. But to trust domains under .se, an outside name server must securely know .se's public key, and spoofing that is the danger. It makes more sense if everything descends from the root, with one globally known key, updated periodically."
+        },
+        {
+          "type": "fact",
+          "title": "How the root was signed",
+          "t": "The DNS root was signed in July 2010. ICANN manages the root key-signing key and VeriSign the zone-signing key, with key ceremonies witnessed by Trusted Community Representatives from around the world rather than a single government holding the key."
+        }
+      ]
+    },
+    {
+      "title": "Remarkably Simple, Remarkably Hard",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "And this sits on top of solving the UDP, bandwidth and computation problems."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It's phenomenal how simple today's system is, by comparison."
+        },
+        {
+          "s": "leo",
+          "t": "You and I don't talk loudly about it, but if the 13 root servers were DDoSed for a day, the whole 'Net would go down."
+        },
+        {
+          "s": "steve",
+          "t": "They've been attacked briefly, and it's a problem. But they're 13 IP addresses with much more hardware behind them, hugely strengthened over the years. My own resolver knows those 13 IPs and checks in occasionally for the top-level domain records."
+        },
+        {
+          "s": "steve",
+          "t": "It's so simple to have DNS work in this trust-everyone model. Making it truly cryptographically secure is incredibly burdensome. But once we do, we get a globally distributed, secure database, and ultimately that's where the Internet has to go."
+        },
+        {
+          "s": "leo",
+          "t": "The chatroom says the White House has committed to DNSSEC."
+        },
+        {
+          "s": "steve",
+          "t": "For .gov and, I think, .mil, which the U.S. can do unilaterally. But not the root. Servers configured with the .gov key could authenticate records within that structure, but not outside it."
+        },
+        {
+          "s": "leo",
+          "t": "Next week, your questions, at GRC.com/feedback. Every hard drive deployed at TWiT now gets SpinRited first, especially since we record video to a new drive every week."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Steve find when he cut off a virtual machine's Internet access and uninstalled Chrome?",
+      "options": [
+        "GoogleUpdate still removed itself after a few hours",
+        "GoogleUpdate stayed forever",
+        "Chrome couldn't be uninstalled",
+        "Firefox broke"
+      ],
+      "answer": 0,
+      "explain": "Earlier he had raised the alarm that it stayed behind."
+    },
+    {
+      "q": "How does Apple Software Update differ from GoogleUpdate?",
+      "options": [
+        "It runs as a weekly scheduled task instead of a process that's always running",
+        "It runs hourly",
+        "It can't be removed",
+        "It updates only iTunes"
+      ],
+      "answer": 0,
+      "explain": "It has its own entry in Add/Remove Programs."
+    },
+    {
+      "q": "How was Sarah Palin's Yahoo! account taken over?",
+      "options": [
+        "By answering password-reset questions with publicly known facts",
+        "By a keystroke logger",
+        "By guessing \"popcorn\"",
+        "By hacking Yahoo!'s servers"
+      ],
+      "answer": 0,
+      "explain": "The attacker then set the password to \"popcorn.\""
+    },
+    {
+      "q": "What does DNSSEC add to DNS?",
+      "options": [
+        "Digital signatures that let resolvers verify records came from the authoritative source",
+        "Encryption of all queries",
+        "Faster lookups",
+        "More root servers"
+      ],
+      "answer": 0,
+      "explain": "The records remain readable, but are authenticated."
+    },
+    {
+      "q": "Why does DNSSEC strain the existing DNS system?",
+      "options": [
+        "Signed records are much larger than a 512-byte UDP packet, and signature checks are computationally heavy",
+        "It requires new IP addresses",
+        "It blocks caching",
+        "It only works on TCP port 80"
+      ],
+      "answer": 0,
+      "explain": "One example zone grew from 2.3K to 27K."
+    },
+    {
+      "q": "What political problem has held back signing the DNS root?",
+      "options": [
+        "No one agrees which entity should control the root key, and the world rejects sole U.S. control",
+        "The root servers refused",
+        "It was patented",
+        "Sweden objected"
+      ],
+      "answer": 0,
+      "explain": "One proposal had multiple independent operators sign the root."
+    }
+  ]
+}

@@ -1,0 +1,629 @@
+{
+  "number": 112,
+  "title": "Listener Feedback #25",
+  "subtitle": "SSL proxies, Xbox ports, OpenDNS and a DoubleClick detour",
+  "date": "2007-10-04",
+  "description": "Steve urges running SpinRite as preventive maintenance. Listeners ask how GRC processes cards, whether SSL-inspecting proxies are fair, how to send anonymous web mail over TOR, whether TOR makes ordinary browsing riskier, about alt text and bots, enabling UPnP for Xbox Live, infinite monkeys, Safari's private browsing, hiding honeypot fields with CSS, SpinRite on thin and thick RAID, OpenDNS and third parties, and why PayPal's virtual card download goes through DoubleClick.",
+  "transcript": "https://www.grc.com/sn/sn-112.txt",
+  "audio": "http://media.GRC.com/sn/SN-112.mp3",
+  "chapters": [
+    {
+      "title": "The Award, and Preventive Maintenance",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's Security Now!, officially the best technology and science podcast of 2007, voted by you, the listeners. And we only asked once."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know what I'll get, but Elaine will be there with a camera, so I may post photos in the show notes."
+        },
+        {
+          "s": "leo",
+          "t": "Elaine transcribes every Security Now!."
+        },
+        {
+          "s": "steve",
+          "t": "She told me she laughed so hard at the end of Feedback 24, the UV tattoo guy, that her husband came into her office asking what was so funny."
+        },
+        {
+          "s": "leo",
+          "t": "Her bread and butter is court reporting, so I don't think she gets many laughs."
+        },
+        {
+          "s": "leo",
+          "t": "A quick SpinRite mention: a radio caller was ready to spend a couple thousand dollars on a company that takes drives apart and replaces platters. His drive booted but said \"No NT loader found.\" I told him to try SpinRite first."
+        },
+        {
+          "s": "steve",
+          "t": "Something's been on my mind. Every week's testimonials are about drives brought back from the brink. Had SpinRite run before they went off the cliff, they'd never have had the problem."
+        },
+        {
+          "s": "steve",
+          "t": "Greg, my tech support guy, says I never tell listeners it's preventive maintenance, not just data recovery. I tell him people won't spend $89 because they have extra money."
+        },
+        {
+          "s": "leo",
+          "t": "They do in a crisis. That's why I say \"maintenance and recovery utility.\""
+        },
+        {
+          "s": "steve",
+          "t": "It brings back drives that have already failed way more often than not. But run it every couple of months, and they'll never get into that trouble."
+        }
+      ]
+    },
+    {
+      "title": "How GRC Charges Cards",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Question 1: Keith in New Jersey wants to know what service actually processes your credit card transactions. Does VeriSign charge cards?"
+        },
+        {
+          "s": "steve",
+          "t": "When I researched this, I settled on CyberCash, which had a very nice API. I downloaded their kit and added their DLL to the server. My software talks to that DLL, which has the SSL technology and certificates to connect to their back-end processing."
+        },
+        {
+          "s": "steve",
+          "t": "A couple of years ago VeriSign bought CyberCash, and it's called Payflow Pro. I've never used anything else, because from day one we've never had a single problem."
+        },
+        {
+          "s": "steve",
+          "t": "I worried VeriSign would change the protocols and break something working perfectly. They've done nothing bad to it. I can vouch for it absolutely. But be very careful about every other aspect of an eCommerce site. Protect your users' information. The back-end charging is pretty much nailed down."
+        },
+        {
+          "s": "leo",
+          "t": "Payflow Pro is for people rolling their own. Non-programmers use Yahoo! Stores, PayPal or eBay to handle the merchant banking."
+        },
+        {
+          "s": "steve",
+          "t": "Since I can talk to the processor myself, I didn't want to give anyone else a piece of my action. Payflow Pro isn't free either. I pay a transaction fee and a small percentage, but it isn't marked up again by someone putting a wrapper around it."
+        },
+        {
+          "s": "leo",
+          "t": "PayPal's fairly expensive. When someone donates $2 to us, 37 cents goes to fees."
+        },
+        {
+          "s": "steve",
+          "t": "As opposed to 2 cents, which would be 1 percent."
+        },
+        {
+          "type": "fact",
+          "title": "CyberCash's fate",
+          "t": "CyberCash went bankrupt in 2001, and VeriSign bought its payment business, folding its merchants into Payflow Pro, a service VeriSign had acquired with Signio in 1999."
+        }
+      ]
+    },
+    {
+      "title": "SSL Proxies: Fair or Too Far?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Russell Johnson in Minnesota helped install an SSL proxy, like Finjan's, on a public school network. What are the privacy and legal issues? What should users be told? A CEO might not know IT staff or contractors can see his encrypted credit card numbers and passwords. And could ISPs do this? That would scare me."
+        },
+        {
+          "s": "steve",
+          "t": "An SSL proxy intercepts your connection to, say, BankofAmerica.com and makes the secure connection itself. The school wanted to prevent what SSL is for: end-to-end encryption."
+        },
+        {
+          "s": "steve",
+          "t": "There are two SSL connections, student to proxy and proxy to website. In between, the traffic is decrypted and can be inspected by filtering software, for HTTPS as well as ordinary HTTP."
+        },
+        {
+          "s": "steve",
+          "t": "It's really a man-in-the-middle attack. Normally certificates are signed by trusted authorities like Equifax or VeriSign, and nobody else can sign with their authority, because nobody else has their private key. The public key only verifies."
+        },
+        {
+          "s": "steve",
+          "t": "So the proxy creates certificates on the fly that appear to belong to the remote server, and signs them itself. Every school browser has to accept the proxy's certificate, which essentially means trusting it to do anything it wants, including decrypting your traffic."
+        },
+        {
+          "s": "steve",
+          "t": "The privacy issue is clear: the assumed privacy of HTTPS is gone. Traffic is decrypted, inspected, filtered and logged at the border."
+        },
+        {
+          "s": "leo",
+          "t": "But it's okay if you trust the intermediary."
+        },
+        {
+          "s": "steve",
+          "t": "The CEO presumably knows, especially the CTO. A policy manual should say these are company computers, subject to monitoring, logging, surveillance and filtering. Behave yourself."
+        },
+        {
+          "s": "leo",
+          "t": "That's good policy, but the law doesn't require it. It's the company's computer. They don't have to tell you nothing, but it's good citizenship."
+        },
+        {
+          "s": "steve",
+          "t": "Especially if data escaped because of the proxying."
+        },
+        {
+          "s": "leo",
+          "t": "Why can't an ISP do it to me?"
+        },
+        {
+          "s": "steve",
+          "t": "It could, if you accepted its certificate. I'm already nervous about the Hong Kong Post Office."
+        },
+        {
+          "s": "leo",
+          "t": "Many ISPs give you a setup CD, usually a PPPoE dialer for DSL, and they already modify IE to say \"Provided by Verizon.\""
+        },
+        {
+          "s": "steve",
+          "t": "Technically, nothing prevents it. That's why I always talk about looking up the chain of trust. On https://www.ebay.com, check the certificate, and you'd see eBay's certificate signed by, say, Cox.net."
+        },
+        {
+          "s": "leo",
+          "t": "So it's clear it isn't eBay's. There's no way they can hide that."
+        },
+        {
+          "s": "steve",
+          "t": "For users aware enough to check. I think we'll see motion toward preventing phishing, like the green bar for Extended Validation certificates, which costs more, which bugs me."
+        },
+        {
+          "s": "steve",
+          "t": "I imagine browsers preferring SSL when available. You type http://eBay.com, and the browser also tries a secure connection and prefers it. SSL used to be computationally expensive because of the public-key crypto at connection setup, but machines are now so powerful it isn't significant."
+        },
+        {
+          "s": "steve",
+          "t": "And an ISP inserting itself into secure connections would face liability unless it was obvious, like stamping every secure page \"filtered by your ISP.\" And who'd use them?"
+        },
+        {
+          "s": "leo",
+          "t": "\"Filtered for your protection.\""
+        },
+        {
+          "s": "steve",
+          "t": "It's the old spyware argument: \"We told users we were installing this search toolbar.\" No, you didn't. And if you had, they'd hate you."
+        },
+        {
+          "type": "fact",
+          "title": "HTTPS everywhere",
+          "t": "Steve's prediction came true. Browsers now default to HTTPS, most web traffic is encrypted, and many corporate and school networks still use inspecting proxies with their own installed certificates."
+        }
+      ]
+    },
+    {
+      "title": "Anonymous Web Mail Over TOR",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric, anonymously somewhere near the Hong Kong Post Office..."
+        },
+        {
+          "s": "steve",
+          "t": "That's really what he wrote."
+        },
+        {
+          "s": "leo",
+          "t": "...asks how to send web-based email anonymously. Using TOR, every web mail service wanted cookies or Java, which can defeat TOR and reveal his public IP. Is that why they require them?"
+        },
+        {
+          "s": "steve",
+          "t": "Your computer can only give away what it has. Behind a NAT router, it has a private IP like 192.168, 10 or 172-something, not your public IP."
+        },
+        {
+          "s": "steve",
+          "t": "With a TOR client encrypting your traffic through three nodes, you're really anonymous. Hotmail and Yahoo! Mail, last I looked, put the sender's IP in email headers. Gmail doesn't, probably using something only Google can decode. But they'd see the last TOR node's IP anyway."
+        },
+        {
+          "s": "steve",
+          "t": "So if you're careful, behind a NAT router whose private address doesn't identify you, you can be anonymous using web mail through TOR."
+        },
+        {
+          "type": "fact",
+          "title": "The plug-in risk",
+          "t": "The bigger danger with Java and similar plug-ins is that they can open their own connections that bypass TOR. The mail server then sees your real public IP directly, even though your PC never knew it. TOR's own browser blocks plug-ins for that reason."
+        },
+        {
+          "s": "leo",
+          "t": "There are also privacy-focused services. HushMail, which PGP creator Phil Zimmermann worked with, uses PGP encryption and offers secure free email. They do certificates now too."
+        },
+        {
+          "s": "steve",
+          "t": "It's very good and well respected."
+        }
+      ]
+    },
+    {
+      "title": "Is TOR Riskier for Ordinary Browsing?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Farrell in London says TOR, for anonymity, not security, may make ordinary browsing less secure. Without TOR, his data goes through his ISP, whether Be Broadband, BT or NTL, which he trusts not to sniff his passwords, then straight to the site."
+        },
+        {
+          "s": "leo",
+          "t": "With TOR, he trusts whoever runs his exit node, and we've seen nodes run by government agencies and sniffers. Without SSL or a VPN, he thinks the sniffing risk vastly outweighs the anonymity benefit."
+        },
+        {
+          "s": "steve",
+          "t": "He raises a really good point. TOR's exit traffic attracts interest because people do things through it that require anonymity. Spies, researchers or governments may watch it as a high-value source of questionable traffic."
+        },
+        {
+          "s": "steve",
+          "t": "Without TOR, his data leaves his ISP and scatters to the winds. There's no concentration point, and no reason to suspect it's interesting. TOR exit traffic is probably a little more risqué."
+        },
+        {
+          "s": "leo",
+          "t": "Again, it's for anonymity, not security."
+        },
+        {
+          "s": "steve",
+          "t": "And anonymity is a right worth having. Wanting it doesn't mean you're doing bad things. But traffic analysis shows TOR attracts that too."
+        }
+      ]
+    },
+    {
+      "title": "Alt Text Helps Bots Too",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe Graf of Sacramento suggests adding alt text to the feedback form's label images, for screen readers and XHTML compliance."
+        },
+        {
+          "s": "leo",
+          "t": "But anything a screen reader can read, a bot can read."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Alt text is in the HTML, which is exactly what bots sniff for. I have no intent to make things hard for visually impaired users, which is why we read out the tab order of the fields."
+        },
+        {
+          "s": "leo",
+          "t": "That's your cheat sheet. As far as we know, no robots listen to Security Now!."
+        }
+      ]
+    },
+    {
+      "title": "UPnP and Xbox Live",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Laura Cooksey in Burke, Virginia used Unplug n' Pray on her computers and disabled UPnP on her Linksys WRT54G router. I like you, Laura. But Microsoft strongly recommends UPnP on routers for Xbox Live multiplayer games. With it off on her PCs, can she enable it on the router full time, or only when gaming? And what about UPnP 2, which Microsoft says fixes the security issues?"
+        },
+        {
+          "s": "steve",
+          "t": "I haven't looked at UPnP 2 yet, but I will."
+        },
+        {
+          "s": "leo",
+          "t": "Windows Home Server uses it, and many people may use it as their bridge to the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "Laura's answer is no. If you disable UPnP anywhere, it's the router. You could leave it on the machines behind it."
+        },
+        {
+          "s": "steve",
+          "t": "I wrote Unplug n' Pray because Windows' UPnP service had an open port, exposed on machines not behind a router, with a buffer overflow allowing remote takeover. And almost no one needed it then."
+        },
+        {
+          "s": "steve",
+          "t": "Xbox wants UPnP on the router so it can open incoming ports back to your LAN. The danger with version 1 is that, even with Windows' service disabled, any trojan can use simple UDP and TCP traffic to find UPnP devices on your LAN, identify the router and tell it to allow unsolicited incoming traffic, defeating one of the router's big security benefits."
+        },
+        {
+          "s": "steve",
+          "t": "The good news: Xbox Live needs only two ports, documented in Microsoft Knowledge Base article 908874. UDP port 88, and both UDP and TCP port 3074."
+        },
+        {
+          "s": "steve",
+          "t": "Give your Xbox a fixed IP on your LAN. Routers let you assign one by the MAC address of its network adapter. Find the Xbox in the router's client list, then have DHCP always give that MAC address the same IP, above your normal range, like 192.168.0.40. Not too high, since some routers won't go up to 255."
+        },
+        {
+          "s": "steve",
+          "t": "Then configure static port forwarding of those ports to that IP. You've done manually what UPnP would do automatically, and the automatic part is what's so worrisome. You'll get Microsoft's most open level of connectivity, so others can connect to you even behind strict NAT routers."
+        },
+        {
+          "s": "leo",
+          "t": "So UPnP makes port forwarding easy for people who don't understand it, and for bad guys too. Learn to do it by hand."
+        },
+        {
+          "s": "steve",
+          "t": "And tell your Xbox friends. Those ports only reach the Xbox, so we hope it has no unknown vulnerabilities."
+        },
+        {
+          "s": "leo",
+          "t": "You're relying on Xbox Live and the Xbox being secure. You've got to trust somebody."
+        },
+        {
+          "type": "fact",
+          "title": "UPnP today",
+          "t": "UPnP flaws kept coming, including 2020's \"CallStranger,\" and security agencies still advise disabling it on routers unless you need it."
+        }
+      ]
+    },
+    {
+      "title": "Infinite Monkeys, Revisited",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kalman Dee in Australia's capital, Canberra..."
+        },
+        {
+          "s": "steve",
+          "t": "Which we now know."
+        },
+        {
+          "s": "leo",
+          "t": "...says that with an infinite number of monkeys, you wouldn't need infinite time. One of them would type Shakespeare in a few hours, depending on typing speed. Only one monkey would need endless time, and even it would finish at some finite point. So: one or more monkeys typing for an unknowably long but finite time."
+        },
+        {
+          "s": "leo",
+          "t": "I misstated it. The saying is that an infinite number of monkeys typing for infinite time would produce all written works, plus a lot of gibberish."
+        },
+        {
+          "s": "steve",
+          "t": "I liked it because security deals in really big numbers: unbreakable, or a few minutes to break, or so many bits of protection. Scales less than infinity, like his monkeys."
+        },
+        {
+          "s": "leo",
+          "t": "Infinity isn't just a really big number. Is infinity times infinity bigger than infinity?"
+        },
+        {
+          "s": "steve",
+          "t": "There are classes of infinity, I think. Mathematicians spend their days thinking about it."
+        }
+      ]
+    },
+    {
+      "title": "Safari's Private Browsing",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Adam in Ottumwa, Iowa, a listener since the beginning, 112 episodes ago, asks how your eCommerce state-saving works with Safari's private browsing, which saves no history, cookies or session data."
+        },
+        {
+          "s": "steve",
+          "t": "I didn't know what that was until this posting. It's right on Safari's main menu, and it warns you about everything it won't save."
+        },
+        {
+          "s": "leo",
+          "t": "Pages aren't added to history, downloads are removed from the window, nothing is saved for autofill, searches aren't added to the menu, and no cookies are saved. Back and forward work until you close the window."
+        },
+        {
+          "s": "steve",
+          "t": "Some blogs call it \"porn mode.\""
+        },
+        {
+          "s": "leo",
+          "t": "What else are you trying to hide?"
+        },
+        {
+          "s": "steve",
+          "t": "So much effort has gone into erasing where people surf with third-party tools. All browsers should have this."
+        },
+        {
+          "s": "leo",
+          "t": "I think IE7 can clear history when you close it."
+        },
+        {
+          "s": "steve",
+          "t": "My system works perfectly with private browsing, since the page itself carries the state. No cookies, URLs or history."
+        },
+        {
+          "s": "leo",
+          "t": "And to repeat, you didn't claim to invent it. You came up with it independently."
+        }
+      ]
+    },
+    {
+      "title": "Hiding the Honeypot With CSS",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Noble of Wellington, New Zealand gets the Gold Star. Instead of type=hidden on honeypot fields, which bots can see and know to skip, use a CSS class, like class=\"abc\", and in the stylesheet, .abc {visibility:hidden; display:none;}."
+        },
+        {
+          "s": "leo",
+          "t": "Not bulletproof, since a bot could load the CSS. But most spiders and bots ignore style information."
+        },
+        {
+          "s": "steve",
+          "t": "It fits my model: something simple adding resistance. A hidden tag couldn't make it more obvious to a bot that a user wouldn't fill in that field. The bot writer would have to parse the CSS file and match up classes, which is substantially more complicated. So, a gold star."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite and RAID, Thin and Thick",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andy in Iowa loves SpinRite and RAID. Can he combine them?"
+        },
+        {
+          "s": "steve",
+          "t": "We get this a lot. There are \"thin\" and \"thick\" RAID controllers. A thick one has a coprocessor and cache memory and decouples the drives from the machine. It caches data and writes it to the array later, called lazy writing."
+        },
+        {
+          "s": "steve",
+          "t": "Many motherboards have a little RAID chip, often from Promise Technology, with BIOS support to boot from a couple of drives. Then a driver in your OS implements the RAID in software."
+        },
+        {
+          "s": "leo",
+          "t": "People think motherboard RAIDs are hardware RAIDs. They're software RAIDs."
+        },
+        {
+          "s": "steve",
+          "t": "Right. Never run SpinRite through a thick controller. Temporarily move the drive to a regular motherboard connection, and SpinRite will run on it fine."
+        },
+        {
+          "s": "leo",
+          "t": "Because it works below the file system."
+        },
+        {
+          "s": "steve",
+          "t": "At the raw sector level. SpinRite will never break the RAID, whether RAID 5, 6 or 27."
+        },
+        {
+          "s": "steve",
+          "t": "With a thin controller, there's no OS driver while SpinRite runs, so it normally sees the drives separately. But a mirror typically reads from only one drive, so still move mirrored drives to a regular connector."
+        },
+        {
+          "s": "steve",
+          "t": "With RAID 0 striping, say two 100-gig drives as one virtual 200-gig drive, you can run SpinRite in place. There's no redundancy or caching to decouple SpinRite from the drives. SpinRite needs the drive's full, undivided attention."
+        },
+        {
+          "s": "leo",
+          "t": "I've said for years motherboard RAID is software RAID, and nobody believes me. You they believe."
+        }
+      ]
+    },
+    {
+      "title": "OpenDNS and Third Parties",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eliezer Martinez in Puerto Rico started using OpenDNS because it seems to speed up pages and blocks known phishing sites. After our TOR discussion, he stopped, fearing OpenDNS could monitor his banking. Is he mixing up two things?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. OpenDNS is an independent domain name service, popular with security-conscious users."
+        },
+        {
+          "s": "leo",
+          "t": "It's on my router, so every computer here uses it."
+        },
+        {
+          "s": "steve",
+          "t": "It's often faster than your ISP's DNS servers, which tend to be unwanted stepchildren: not sexy, sometimes slow or overloaded."
+        },
+        {
+          "s": "steve",
+          "t": "When you first go to eBay.com, and periodically after, your system must convert the name to an IP address. Slow DNS slows everything. DNS speed is a rarely discussed but very important part of how fast the Internet feels."
+        },
+        {
+          "s": "steve",
+          "t": "Security-wise, there's DNS poisoning. Browsers trust DNS answers, so a server lying about Microsoft's IP would send you to the wrong place. SSL connections can't be spoofed, but many people go to plain http://microsoft.com."
+        },
+        {
+          "s": "steve",
+          "t": "Phishing sites often obscure URLs with hex or decimal notation, assuming people don't glance at the address bar. DNS poisoning is more potent, because your browser would truly show Microsoft.com."
+        },
+        {
+          "s": "steve",
+          "t": "The other issue is privacy, which we'll cover in our third-parties episode. Your DNS server knows every site you visit, because you ask it for every address. But it only has your IP, while an OpenID provider has an account relationship with you."
+        },
+        {
+          "s": "steve",
+          "t": "The presumption is these are good guys who don't track people. They deliberately don't resolve bad sites' names, so your browser can't reach them. It's like blocking sites in your hosts file with 127.0.0.1, but with centralized monitoring and management."
+        },
+        {
+          "type": "fact",
+          "title": "OpenDNS today",
+          "t": "Cisco bought OpenDNS in 2015. Encrypted DNS, such as DNS over HTTPS, now keeps eavesdroppers from seeing lookups, though the resolver you choose still sees them."
+        }
+      ]
+    },
+    {
+      "title": "PayPal's Download Detours Through DoubleClick",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sidney in Jacksonville, Florida tried to download PayPal's virtual debit card software. His hosts file manager, HostMon, blocked the download link and redirected him, because it points to DoubleClick.net. Why? Should he unblock DoubleClick?"
+        },
+        {
+          "s": "steve",
+          "t": "It's very disturbing. It would mean PayPal has a relationship with DoubleClick, linking to DoubleClick with PayPal's real download URL in the tail. That lets DoubleClick play cookie games with your browser."
+        },
+        {
+          "s": "leo",
+          "t": "That makes me mad. Have you verified it?"
+        },
+        {
+          "s": "steve",
+          "t": "Not yet. I will, and it'll be number one in next week's errata."
+        },
+        {
+          "s": "steve",
+          "t": "Visiting DoubleClick directly creates a first-party relationship, so it can set cookies knowing you're a PayPal user downloading their virtual card. Then it bounces you to PayPal's download."
+        },
+        {
+          "s": "steve",
+          "t": "His hosts file manager did exactly the right thing by blocking that nonsense. Keep it working. If this is true, PayPal is compromising his privacy."
+        },
+        {
+          "s": "leo",
+          "t": "Let's not hang PayPal yet."
+        },
+        {
+          "s": "leo",
+          "t": "ShieldsUP! is at over 50 million uses?"
+        },
+        {
+          "s": "steve",
+          "t": "54 or 55. And next week we'll discuss a new, fun, free thing GRC is unveiling."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Steve recommend running SpinRite every couple of months?",
+      "options": [
+        "As preventive maintenance, so drives never reach the point of failure",
+        "To speed up the drive",
+        "To defragment files",
+        "Because licenses expire"
+      ],
+      "answer": 0,
+      "explain": "Greg said listeners never hear it's preventive."
+    },
+    {
+      "q": "How does an SSL-inspecting proxy read encrypted traffic?",
+      "options": [
+        "Browsers trust the proxy's certificate, so it can decrypt and re-encrypt traffic in the middle",
+        "It breaks the encryption",
+        "It guesses passwords",
+        "It reads the screen"
+      ],
+      "answer": 0,
+      "explain": "Checking who signed a site's certificate would reveal it."
+    },
+    {
+      "q": "How should Laura give Xbox Live connectivity without UPnP?",
+      "options": [
+        "Give the Xbox a fixed IP and manually forward UDP 88 and UDP/TCP 3074 to it",
+        "Turn off the firewall",
+        "Enable UPnP only on the PCs",
+        "Plug the Xbox straight into the modem"
+      ],
+      "answer": 0,
+      "explain": "The ports then reach only the Xbox."
+    },
+    {
+      "q": "Why doesn't alt text solve the screen-reader problem with GRC's form?",
+      "options": [
+        "Bots can read alt text just as screen readers can",
+        "Screen readers ignore alt text",
+        "Alt text isn't allowed",
+        "It slows the page"
+      ],
+      "answer": 0,
+      "explain": "The same text that helps readers helps bots."
+    },
+    {
+      "q": "When can SpinRite safely run on RAID drives in place?",
+      "options": [
+        "With RAID 0 striping on a thin, motherboard controller",
+        "Always",
+        "With thick caching controllers",
+        "With RAID mirrors"
+      ],
+      "answer": 0,
+      "explain": "Otherwise, move the drive to a regular motherboard connection."
+    },
+    {
+      "q": "What privacy issue does OpenDNS share with OpenID providers?",
+      "options": [
+        "As a third party, it sees every site you look up",
+        "It records your passwords",
+        "It shows ads",
+        "It slows browsing"
+      ],
+      "answer": 0,
+      "explain": "But it only has your IP, not an account."
+    }
+  ]
+}

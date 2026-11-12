@@ -1,0 +1,317 @@
+{
+  "number": 177,
+  "title": "Breaking SSL, PDP-8's and UltraCapacitors",
+  "subtitle": "A forged certificate authority, a first computer rediscovered, and a battery breakthrough",
+  "date": "2009-01-01",
+  "description": "A New Year's episode with two non-security passions. Researchers forged a trusted certificate authority by exploiting MD5, so Steve explains which root certificates are safe. Then he tells the story of the PDP-8, his first computer, and a kit that can briefly be built again. Finally, EEStor's just-patented ultracapacitor, which could replace batteries in cars and laptops. Plus a DNSChanger note, an IE zero-day, a Samsung photo-frame worm, the RIAA dropping mass lawsuits, and Australia's rejected net filter.",
+  "transcript": "https://www.grc.com/sn/sn-177.txt",
+  "audio": "http://media.GRC.com/sn/SN-177.mp3",
+  "chapters": [
+    {
+      "title": "A Full Plate",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A huge amount of news hit from a disclosure a couple of days ago: an exploit of a known weakness in how SSL certificates are authenticated."
+        },
+        {
+          "s": "steve",
+          "t": "I also want to talk about two things that aren't security related, that I'm passionate about, and there's a chance to build a certain kit for the last time ever. And a patent was just granted on a breakthrough energy-storage technology."
+        },
+        {
+          "s": "leo",
+          "t": "All our portable devices are hobbled by batteries, so that could be huge."
+        }
+      ]
+    },
+    {
+      "title": "Patches and News",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Over three weeks: Mac OS X 10.5.6 with many critical fixes, Opera 9.6.3, and Firefox's last version 2, 2.0.0.20, losing anti-phishing. Move to Firefox 3. Google's Chrome officially left beta."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft also did an out-of-cycle patch for an IE zero-day affecting all versions, with up to 6,000 infected sites running code as the logged-on user. Sandboxie's new rights-dropping feature, or DropMyRights, would have blunted it, real preemptive protection."
+        },
+        {
+          "s": "steve",
+          "t": "Samsung's SPF-85H photo frame shipped a companion software disc carrying the W32.Sality.AE worm, which installs a keylogger."
+        },
+        {
+          "s": "leo",
+          "t": "You wonder how that leaks into production. Almost an inside job."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's December Malicious Software Removal Tool cleaned Antivirus 2009 from over 400,000 PCs, on top of the month before. Free machine cleaning through Windows Update."
+        },
+        {
+          "type": "fact",
+          "title": "Scareware",
+          "t": "\"Antivirus 2009\" was scareware: a fake security program that claims to find infections, then demands payment, often installing a trojan. Such rogue antivirus was a major malware category in that era."
+        }
+      ]
+    },
+    {
+      "title": "The RIAA and Australia's Filter",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The RIAA announced a big policy shift: instead of suing random end users, they'll work with ISPs to notify users, who may throttle offenders' bandwidth. They won't rule out suing gross offenders."
+        },
+        {
+          "s": "leo",
+          "t": "Where's the stick? The ISP could ignore them."
+        },
+        {
+          "s": "steve",
+          "t": "And Australia's plan to filter 10,000 sites continent-wide met near-total backlash. Telstra and Internode flatly refused, one ISP said it would join only to prove the plan won't work, and there were protests in Melbourne, Brisbane and Sydney."
+        },
+        {
+          "s": "steve",
+          "t": "Cisco's annual report: disclosed flaws up 11.5 percent, email-attachment attacks down 50 percent, more blended attacks, and 90 percent of worldwide email is now spam."
+        }
+      ]
+    },
+    {
+      "title": "Forging a Certificate Authority",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A couple of days ago, researchers Alexander Sotirov and Jacob Appelbaum demonstrated a forged certificate authority carrying a valid signature from a real root."
+        },
+        {
+          "s": "steve",
+          "t": "Recall the chain of trust: GRC's certificate is signed by an intermediate, signed by a root authority built into your browser. I have 277 root certificates, including the Hong Kong Post Office."
+        },
+        {
+          "s": "steve",
+          "t": "A digital signature hashes the certificate, then signs the hash with the authority's private key. The old MD5 hash has been weakening for years, with collision attacks, so responsible providers moved off it. These researchers used a chosen-prefix MD5 attack and a cluster of 200 PlayStation 3s for two weeks to forge a CA that looks signed by Equifax. With it they could mint valid-looking certificates for any site: Amazon, PayPal, anything."
+        },
+        {
+          "s": "steve",
+          "t": "Browsing my root store: Microsoft's root, Thawte, Equifax and Entrust had MD5 variants, which are at risk. The Equifax MD5 root is the one they used. AOL, Comodo, GoDaddy, GeoTrust, Wells Fargo, Visa, VeriSign, Network Solutions and the Hong Kong Post Office use only SHA-1, so they're safe."
+        },
+        {
+          "s": "leo",
+          "t": "So MD5 is a known flawed hash."
+        },
+        {
+          "s": "steve",
+          "t": "It should have made people uncomfortable. This is the death knell for MD5. SHA-1 is right there, so why not use it?"
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft keeps updating the root certificate store through optional updates; expect them to drop MD5 roots quickly. Concerned users can delete MD5-signed roots themselves, with instructions on the Episode 177 show notes."
+        },
+        {
+          "type": "fact",
+          "title": "After this",
+          "t": "Certificate authorities stopped issuing MD5-signed certificates after this demonstration. SHA-1 was itself later broken (the SHApocalypse/SHAttered collision in 2017), and the web moved on to SHA-256."
+        },
+        {
+          "s": "steve",
+          "t": "But this is only half of a blended attack. You also need to divert someone to the fraudulent server, which the Kaminsky DNS spoofing can do, and a quarter of DNS servers are still unpatched. Both pieces are needed, but both are possible."
+        }
+      ]
+    },
+    {
+      "title": "The PDP-8, Steve's First Computer",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's talk about the PDP-8."
+        },
+        {
+          "s": "steve",
+          "t": "The first computer I saw, around age 10, was a mainframe behind glass at my dad's company, men in white lab coats, twitching tape reels. Love at first sight. In high school I found a company in San Carlos and touched my first computer, a DEC PDP-8e, a rack-mounted box with switches and lights."
+        },
+        {
+          "s": "steve",
+          "t": "Touching a computer changes everything, versus it being behind glass with a priesthood."
+        },
+        {
+          "s": "steve",
+          "t": "A \"minicomputer\" meant minimal, the least computer that's still a computer. The PDP-8 is 12 bits, 4K of core memory, and the first three bits are the opcode, so eight instructions. There's no load; you clear the accumulator and add. No XOR, no OR, no multiply, no stack. A perfect machine to learn on. I learned assembly on it and never stopped."
+        },
+        {
+          "type": "fact",
+          "title": "The PDP-8",
+          "t": "Digital Equipment Corporation's PDP-8, introduced in 1965, was the first commercially successful minicomputer and is still widely used to teach computer architecture through emulators."
+        },
+        {
+          "s": "steve",
+          "t": "Watching TWiT Live, I saw someone hold up a core memory plane and thought, I want one. On eBay I found a seller in West Virginia who also had two crated PDP-8s, spares from a Canadian LORAN-C navigation monitoring network, never used. I own them now."
+        },
+        {
+          "s": "steve",
+          "t": "I also found SpareTimeGizmos.com, where Bob Armstrong made the SBC6120, a complete PDP-8 kit around the Harris HD-6120 single-chip PDP-8, with a serial and IDE interface, plus a beautiful switches-and-lights front panel. The kits were discontinued in 2004, but he found more chips, so for a limited time they're coming back. The board kit is about $350, the front panel maybe $450 if 100 people want one."
+        },
+        {
+          "s": "steve",
+          "t": "All the DEC software, OS/8, FOCAL, and the manuals have been preserved and released from copyright, at BitSavers.org. My eventual plan, when the world turns me out to pasture, is to write a whole environment, editor, assembler, operating system, from scratch for the PDP-8. The first machine I saw and the last I program."
+        }
+      ]
+    },
+    {
+      "title": "Reforming the Capacitors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Will you power up your real PDP-8s?"
+        },
+        {
+          "s": "steve",
+          "t": "Not right away. Old linear power supplies use electrolytic capacitors whose aluminum-oxide insulator degrades when unused, so they'd explode under load. You \"reform\" them: run a couple of milliamps through each at a controlled voltage so the oxide replates and the capacitor stops leaking. I'll step through every filter capacitor to bring them back."
+        }
+      ]
+    },
+    {
+      "title": "The Z2K Zune Bug",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Breaking now: 30GB Zunes froze at midnight on December 30, 2008, a firmware bug they're calling Z2K. Popping the battery and letting it reset fixes it."
+        },
+        {
+          "type": "fact",
+          "title": "Z2K",
+          "t": "A leap-year bug in the 30GB Zune's clock code made it hang on the 366th day of 2008. The devices worked again the next day once the clock rolled over."
+        }
+      ]
+    },
+    {
+      "title": "EEStor's Ultracapacitor",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I've watched energy technology for a while. We've pulled about half of Earth's two trillion barrels of oil, the easy half, so long-term, production can't keep growing with demand. That pressures alternatives, and the weak link in cars is the battery: heavy, toxic, slow to charge, and short-lived."
+        },
+        {
+          "s": "leo",
+          "t": "The Tesla has a thousand pounds of battery, costing about half the car."
+        },
+        {
+          "s": "steve",
+          "t": "A company in Cedar Park, Texas, EEStor, funded by Kleiner Perkins, had a secret energy-storage technology. On December 16 their U.S. patent was granted, putting the details public."
+        },
+        {
+          "s": "steve",
+          "t": "A capacitor stores energy in the electrostatic field between two plates separated by an insulator, the dielectric. Capacitance is measured in farads, which is huge, so normal capacitors are microfarads. Energy stored rises with capacitance times the square of the voltage, so a high breakdown voltage matters."
+        },
+        {
+          "s": "steve",
+          "t": "EEStor uses integrated-circuit and nanotechnology methods with a barium titanate dielectric that has a very high breakdown voltage. Their prototype is a 31-farad capacitor, 31 million microfarads, at about 5,000 volts breakdown, run at 3,500. In 300 pounds and about 2.6 cubic feet it stores the same 52 kilowatt-hours as the Tesla's lithium-ion pack, with no toxic materials."
+        },
+        {
+          "s": "leo",
+          "t": "But you can't charge it from a wall socket in five seconds."
+        },
+        {
+          "s": "steve",
+          "t": "Right, that needs 360 amps; a 15- or 20-amp house circuit would take about 30 hours. So you'd trickle-charge one at night at cheap rates. In the lab they cycled a subunit a million times with no change, and self-discharge is 0.1 percent a month versus 10 percent for chemical batteries, so a year later it's still charged."
+        },
+        {
+          "s": "steve",
+          "t": "Scale it down and it changes laptops and phones: no chemical battery, plug in, count to five, unplug. Lockheed-Martin has an exclusive aerospace contract with them."
+        },
+        {
+          "s": "leo",
+          "t": "But it's just a patent; the Patent Office doesn't verify claims, and they haven't shown production."
+        },
+        {
+          "s": "steve",
+          "t": "True, they can claim anything. But the founders came from IBM and Xerox PARC, and Kleiner Perkins doesn't waste money. It also matters for solar and wind, which are intermittent and need cheap storage, where lithium-ion's downsides hurt and an ultracapacitor's don't."
+        },
+        {
+          "type": "fact",
+          "title": "What happened to EEStor",
+          "t": "EEStor never delivered a working product matching its claims. The partnership with Zenn Motor ended, and after years of skepticism and missed milestones the company's technology was never commercially proven."
+        }
+      ]
+    },
+    {
+      "title": "Wrap-Up: SpinRite Beats the Police",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Officer Greg, a police investigator in Southern California, titled it \"SpinRite Beats the Police.\" His partner Detective Rick lost thousands of photos when his drive crashed, having only pretended to back up. Their forensic unit recovered only a few files and declared the drive dead. Greg ran SpinRite for two weeks, recovered all the images, and now the forensic unit plans to buy a copy."
+        },
+        {
+          "s": "leo",
+          "t": "Next week we go back to our regular Q&A."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did researchers forge a trusted certificate authority?",
+      "options": [
+        "They used an MD5 collision attack and 200 PlayStation 3s to forge a CA signed by a real root",
+        "They stole VeriSign's key",
+        "They cracked SHA-1",
+        "They bribed a CA"
+      ],
+      "answer": 0,
+      "explain": "Only roots with MD5 signatures were vulnerable."
+    },
+    {
+      "q": "Which root certificates were safe from this attack?",
+      "options": [
+        "Those signed only with SHA-1, like VeriSign, GoDaddy and the Hong Kong Post Office",
+        "All of them",
+        "None of them",
+        "Only Microsoft's"
+      ],
+      "answer": 0,
+      "explain": "MD5-signed roots like the Equifax one were at risk."
+    },
+    {
+      "q": "Why is a forged certificate only half of an attack?",
+      "options": [
+        "You also need to divert the victim to the fraudulent server, for example via DNS spoofing",
+        "Certificates can't be forged",
+        "Browsers ignore certificates",
+        "It only works on email"
+      ],
+      "answer": 0,
+      "explain": "Both pieces are needed, and both are possible."
+    },
+    {
+      "q": "What makes the PDP-8 a good machine to learn programming on?",
+      "options": [
+        "It's minimal: 12 bits, eight opcodes, no multiply, no stack",
+        "It has a huge instruction set",
+        "It runs Windows",
+        "It's very fast"
+      ],
+      "answer": 0,
+      "explain": "Universities still teach assembly with PDP-8 emulators."
+    },
+    {
+      "q": "Why can't EEStor's ultracapacitor be charged from a wall outlet in seconds?",
+      "options": [
+        "It would need hundreds of amps; a house circuit would take many hours",
+        "The capacitor is too small",
+        "It only charges from solar",
+        "It can't be charged at all"
+      ],
+      "answer": 0,
+      "explain": "You'd trickle-charge one overnight instead."
+    },
+    {
+      "q": "What advantage does an ultracapacitor have over a chemical battery?",
+      "options": [
+        "No toxic materials, near-instant charging, and it barely self-discharges or wears out",
+        "It stores less energy",
+        "It's cheaper to mine",
+        "It needs no voltage"
+      ],
+      "answer": 0,
+      "explain": "EEStor cycled a subunit a million times with no change."
+    }
+  ]
+}

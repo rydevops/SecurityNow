@@ -1,0 +1,504 @@
+{
+  "number": 107,
+  "title": "PIP & More Perfect Passwords",
+  "subtitle": "VeriSign's OpenID service and cipher block chaining",
+  "date": "2007-08-30",
+  "description": "Steve reports that August's patches fixed a critical flaw in Vista's RSS gadget, a sign that new features bring new bugs. Then he walks through VeriSign Labs' PIP, a free OpenID provider that accepts the PayPal Security Key and extra tokens, text messages, information cards and a personal login image. And after a researcher tested the randomness of GRC's Perfect Passwords page, Steve explains his new generator: a never-repeating counter encrypted with AES using cipher block chaining and a random initialization vector.",
+  "transcript": "https://www.grc.com/sn/sn-107.txt",
+  "audio": "http://media.GRC.com/sn/SN-107.mp3",
+  "chapters": [
+    {
+      "title": "Collecting the Podcast Award",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's Security Now!, thanks to your votes the year's top science and technology podcast. Steve collects his award at the Podcast Expo at the end of the month."
+        },
+        {
+          "s": "steve",
+          "t": "It's my one annual chance to see Elaine, our transcriber. After a year and a half working together electronically, we both met her for the first time at the last Expo."
+        },
+        {
+          "s": "leo",
+          "t": "I won't be there. My goal is to win every year with one podcast or another. MacBreak Weekly was nominated too, but you predate it."
+        },
+        {
+          "s": "steve",
+          "t": "Annoyingly, TWiT, MacBreak Weekly and Security Now! are all in the same category."
+        },
+        {
+          "s": "leo",
+          "t": "And having won the People's Choice, we can't win it again. We're running out of ways to win."
+        },
+        {
+          "s": "steve",
+          "t": "Today: VeriSign's VIP system, which our PayPal guest said is behind the PayPal Security Key, and something we've never discussed, Cipher Block Chaining, which I just implemented for GRC's Perfect Passwords page."
+        },
+        {
+          "s": "steve",
+          "t": "More than 3,000 sets of passwords are generated a day, and more than three million in total. The Popular Perfect Passwords Page is very Popular with People. Now they're even more perfect."
+        }
+      ]
+    },
+    {
+      "title": "Vista's Gadget Gets a Critical Patch",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two weeks ago I reminded people about August's nine Microsoft updates. One, which created a lot of buzz, fixed three problems in Vista's new Gadgets."
+        },
+        {
+          "s": "steve",
+          "t": "Leo, you keep asking whether Vista would have been safe. Gadgets are Vista-only, so XP and 2000 never had this problem. One was a critical buffer overflow in the RSS feed reader gadget."
+        },
+        {
+          "s": "steve",
+          "t": "A bad guy who pushed malformed content into a popular feed could have commandeered subscribers' Vista machines, even through a good feed that mistakenly carried it."
+        },
+        {
+          "s": "steve",
+          "t": "We said this before Vista's release: new features have problems. People said Microsoft scrutinizes its code now. Yes, I know. New features will have problems anyway. Someone reported it, and Microsoft fixed it. You can't get away from that principle."
+        },
+        {
+          "s": "leo",
+          "t": "I thought gadgets were written in JavaScript."
+        },
+        {
+          "s": "steve",
+          "t": "They always depend on lower-level code. The flaw might have been in the JavaScript, or in a library parsing the data."
+        },
+        {
+          "type": "fact",
+          "title": "Gadgets' end",
+          "t": "Microsoft later dropped Gadgets entirely. In 2012 it issued an advisory telling users to disable them because of security risks, and Windows 8 removed them."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite, Bought for the Wrong Reason",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Rob McCall of Oakridge, New Jersey debated buying SpinRite for a long time. When his HP desktop rarely reached the logon screen, and froze when it did, he bought it, thinking it was a drive problem. It wasn't. Another part had failed."
+        },
+        {
+          "s": "steve",
+          "t": "But since then, he's run SpinRite on his collection of old drives. To his amazement, it recovered data every other program and company had called unrecoverable. He calls it a cheap solution, I'd say inexpensive, to services costing hundreds or thousands of dollars."
+        }
+      ]
+    },
+    {
+      "title": "VeriSign Labs' PIP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So it's PIP and PPP today."
+        },
+        {
+          "s": "steve",
+          "t": "After our PayPal guest mentioned VIP, VeriSign Identity Protection, I dug around and found a beta called PIP, Personal Identity Provider, at VeriSign Labs. It's pip.verisignlabs.com, linked in the show notes."
+        },
+        {
+          "s": "steve",
+          "t": "It's in beta but up and working, and it's an OpenID provider. Remember OpenID: single sign-on, where OpenID-friendly sites ask a third party, here VeriSign Labs, to authenticate you, instead of you creating credentials for each."
+        },
+        {
+          "s": "steve",
+          "t": "You can create as many OpenID accounts as you want. I have stevegibson.pip.verisignlabs.com, plus Gibson, GRC, SteveG and more. Grab the names you want before someone with the same name does."
+        },
+        {
+          "s": "steve",
+          "t": "Then you associate them with second factors, starting with the PayPal Security Key's serial number. They'll sell you more tokens, up to three on the order form. They're $30 each, since VeriSign isn't subsidizing them the way PayPal does."
+        },
+        {
+          "s": "leo",
+          "t": "But I can use my $5 PayPal fob."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. And while PayPal and eBay still allow only one fob, VeriSign lets you register as many as you want. I've got four, just because I could. That solves the one-at-home, one-at-the-office problem."
+        },
+        {
+          "s": "leo",
+          "t": "But the extra VeriSign fobs won't work with PayPal. It's a one-way street."
+        },
+        {
+          "s": "steve",
+          "t": "At least not at the same time. You could probably swap your PayPal registration to a VeriSign fob, since they're all from VeriSign and identical, except VeriSign's are purple and PayPal's are gray."
+        },
+        {
+          "s": "leo",
+          "t": "I signed up, created an account, and added my key as a \"credential.\" Now one key works with OpenID too."
+        },
+        {
+          "s": "steve",
+          "t": "So you have strong two-factor authentication at any OpenID site. VeriSign Labs lists sites that support OpenID, not VeriSign specifically. And when Microsoft supports OpenID through CardSpace, you'll use that."
+        }
+      ]
+    },
+    {
+      "title": "SeatBelt and Signing In Anywhere",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's a nice Firefox extension called SeatBelt, linked from PIP's site, that authenticates you with OpenID sites automatically. It's all interoperable."
+        },
+        {
+          "s": "leo",
+          "t": "I installed it. Once logged in, a PIP button on my toolbar shows my ID name. At an OpenID site, one click, and I'm verified. I just wish more sites supported this."
+        },
+        {
+          "s": "steve",
+          "t": "It's chicken and egg again. But I foresee that in a couple of years OpenID will be the technology that won, because it's completely open, well designed, and nobody's trying to make money from it."
+        },
+        {
+          "s": "leo",
+          "t": "I promise: I'm upgrading Drupal, which supports OpenID, so TWiT.tv will. I'll look for a plug-in for my forums, and turn on WordPress's OpenID plug-in for Munchcast."
+        },
+        {
+          "s": "steve",
+          "t": "PIP's features are evolving week by week. You just registered your cell phone as a second factor, so they text you a code. That wasn't there three or four weeks ago."
+        },
+        {
+          "s": "steve",
+          "t": "At an OpenID site, I identify myself as stevegibson.pip.verisignlabs.com."
+        },
+        {
+          "s": "leo",
+          "t": "And it's okay to give that out?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Nobody else can authenticate as me, because VeriSign will ask for the six digits showing on one of my registered fobs."
+        },
+        {
+          "s": "leo",
+          "t": "That makes OpenID really secure. With Firefox, I'm signed on only while I'm here. Close it, and it's gone. Without my fob, no one can do it."
+        },
+        {
+          "s": "steve",
+          "t": "I hope that when it leaves beta, our accounts also work at a much shorter address, like stevegibson.vip.com."
+        }
+      ]
+    },
+    {
+      "title": "U3, Information Cards and a Personal Image",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Harsh as we've been about U3, VeriSign also supports SanDisk's flash drives in U3 mode, with VIP credential software tied to the drive's hardware, as an alternative to the fob."
+        },
+        {
+          "s": "leo",
+          "t": "Which makes it a dongle, by the way."
+        },
+        {
+          "s": "steve",
+          "t": "You're right, not a fob. The problem is you'd need to plug it into whatever computer you're using, which is more invasive than a fob on your keychain."
+        },
+        {
+          "s": "leo",
+          "t": "You can also add fields to an information card. I always use \"Chief TWiT\" as my nickname, and it can fill that in automatically."
+        },
+        {
+          "s": "steve",
+          "t": "It's like CardSpace's information cards in Vista. But the information isn't on your machine. It's on VeriSign's servers. You authenticate to VeriSign, and VeriSign hands your chosen information directly to the third-party site."
+        },
+        {
+          "s": "steve",
+          "t": "That makes it much safer to use computers you don't control. At a library, none of your information goes into that machine. It passes between VeriSign's server and the site."
+        },
+        {
+          "s": "leo",
+          "t": "They're doing OpenID right. You get a list of your trusted sites and your activity. When I tried a wrong password, there's a record of it. And you can upload a SiteKey-style image only you would recognize."
+        },
+        {
+          "s": "steve",
+          "t": "Mine is that smug cartoon of me you had made for Security Now!, cropped to size. When I log in and see it, I know I'm really at VeriSign Labs. And if you try plain HTTP, it immediately moves you to SSL."
+        },
+        {
+          "s": "leo",
+          "t": "I've been critical of VeriSign as a registrar, but they've done a nice job here."
+        },
+        {
+          "s": "steve",
+          "t": "It's a working, strong, third-party verification system whose whole point is OpenID, using our existing PayPal keys and more."
+        },
+        {
+          "type": "fact",
+          "title": "What happened",
+          "t": "VeriSign's PIP passed to Symantec in 2010 as Symantec's Personal Identity Portal, and was later shut down. Consumer OpenID 2.0 faded too, replaced by \"Sign in with Google,\" Apple or Facebook, many built on OpenID Connect."
+        }
+      ]
+    },
+    {
+      "title": "A Researcher Tests Perfect Passwords",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You started the Perfect Passwords page a while ago."
+        },
+        {
+          "s": "steve",
+          "t": "About 3,000 sets are pulled every day. I went to extremes to make it safe. Like VeriSign, it won't display over a non-SSL connection, and headers and code on the page prevent any caching, even by a server that could somehow intercept it."
+        },
+        {
+          "s": "steve",
+          "t": "I thought RSA's pseudorandom number generator was all I'd ever need. Then I wrote code to take it to the next level. I thought I'd put it in place. It turns out I'd written and assembled it but never took it online."
+        },
+        {
+          "s": "steve",
+          "t": "By bizarre coincidence, someone in the security field wondered how random my passwords are. He wrote a bot to pound on the page. I saw an initial burst, then a couple of days later it ran for 24 hours."
+        },
+        {
+          "s": "steve",
+          "t": "He ran a ton of passwords through a statistical randomness tester and concluded there wasn't as much entropy as possible, and blogged about it."
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't matter whether 100,000 of them measure 100 percent or 99.997 percent entropy."
+        },
+        {
+          "s": "leo",
+          "t": "Or even 75 percent."
+        },
+        {
+          "s": "steve",
+          "t": "Because what you want is a password nobody can guess, and these are insane passwords. He's a nice guy, and we've corresponded. His first analysis had his own bugs, which made it look really bad. After fixing them, he said it's not so bad, but not perfect."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe not Perfect with a capital P. But you need about 100,000 of them to detect any variation from true randomness. They're essentially perfect for their purpose. Still, I decided to fix it."
+        }
+      ]
+    },
+    {
+      "title": "A Counter, Encrypted",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I promised we'd never issue the same password twice. With a 256-bit result, it's very certain we haven't."
+        },
+        {
+          "s": "leo",
+          "t": "You haven't wrapped around."
+        },
+        {
+          "s": "steve",
+          "t": "256 bits is a ridiculously big number. But now I use a monotonic counter: it only goes up. Each time I increment it, I store the value in a registry key on the GRC server."
+        },
+        {
+          "s": "steve",
+          "t": "Many processes on my server use it. My ecommerce system uses it to make what I call a \"cryptoken,\" a non-repeating token that's good only once."
+        },
+        {
+          "s": "steve",
+          "t": "Then I encrypt it with AES, the Rijndael cipher, a 128-bit block cipher. With a secret key, it turns 128 bits into a different 128 bits, reversibly: give the same key to the decrypter, and it reverses the process."
+        },
+        {
+          "s": "steve",
+          "t": "The counter is 256 bits, just because, but I use its least significant 128 bits, since Rijndael takes 128-bit blocks."
+        },
+        {
+          "s": "steve",
+          "t": "Encrypt a count of one, and good crypto turns it into 128 random-looking, incompressible bits. Increment to two, and you get a completely different 128 bits."
+        },
+        {
+          "s": "steve",
+          "t": "Here's the problem. If an attacker knew the input was a simple counter, and were crazy enough to brute-force the 256-bit key, he'd know he'd found the right key when two successive outputs decrypted to numbers one apart."
+        },
+        {
+          "s": "steve",
+          "t": "In other uses, the same problem arises with repetitious or predictable input, like the unchanging or known fields in the headers of encrypted IP packets, as we discussed in our crypto episodes."
+        }
+      ]
+    },
+    {
+      "title": "Cipher Block Chaining and the Initialization Vector",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The solution is CBC, Cipher Block Chaining, something super clever the crypto guys came up with, and actually very simple."
+        },
+        {
+          "s": "steve",
+          "t": "Encrypt the first counter value to get the first 128-bit output. Then XOR that output with the next counter value. Remember, XOR is conditional bit inversion. Encrypt that result."
+        },
+        {
+          "s": "steve",
+          "t": "Now what's being encrypted is no longer predictable, so no matter how many keys you try, you can't recognize the input. Keep going: XOR each output with the next input before encrypting."
+        },
+        {
+          "s": "steve",
+          "t": "It's reversible if you start at the beginning, but only with the proper starting point can you move forward."
+        },
+        {
+          "s": "steve",
+          "t": "I'll have a diagram of the algorithm on the new Perfect Passwords page. Our intrepid researcher asked for 16 megabytes of output to analyze, rather than sucking hundreds of thousands of passwords from the page, and I'm sending it, so he can revise his posting."
+        },
+        {
+          "s": "steve",
+          "t": "And he kept using the passwords after his blog post. He says UNIX tools could do the same, but GRC.com is easier."
+        },
+        {
+          "s": "leo",
+          "t": "So now he trusts you."
+        },
+        {
+          "s": "steve",
+          "t": "He always did. It was his early coding mistake that made him think they were horribly nonrandom."
+        },
+        {
+          "s": "leo",
+          "t": "His mistake, not yours."
+        },
+        {
+          "s": "steve",
+          "t": "People wrote asking whether my passwords are safe because of that post. Yes. He's still using them. But fine, maybe RSA's generator isn't as good as possible. Now mine will be."
+        },
+        {
+          "s": "steve",
+          "t": "Oh, and I forgot the initialization vector. Horrors."
+        },
+        {
+          "s": "leo",
+          "t": "How could you not mention it?"
+        },
+        {
+          "s": "steve",
+          "t": "The starting point mustn't be known either. If someone knew the counter started at one, he could try keys until the first output decrypted to one."
+        },
+        {
+          "s": "steve",
+          "t": "Nobody knows my counter's value. I've tested a lot, so it's up somewhere. But you might guess its high bits are still mostly zeroes, and use that to test whether a key is right."
+        },
+        {
+          "s": "steve",
+          "t": "The initialization vector prevents that. It's an absolutely random 128 bits, XORed with the first counter value before it's encrypted."
+        },
+        {
+          "s": "leo",
+          "t": "So you don't start with one. You start with a random number."
+        },
+        {
+          "s": "steve",
+          "t": "So I have a 128-bit initialization vector, an unknown 128-bit counter value, and a secret 256-bit key for Rijndael. I think we're safe."
+        },
+        {
+          "s": "steve",
+          "t": "And people use these to protect their routers from neighbors who hack into them by mistake."
+        },
+        {
+          "s": "leo",
+          "t": "Given its application, it's probably overkill."
+        },
+        {
+          "s": "steve",
+          "t": "Why not? The details are at GRC.com/passwords, under a new section called \"The Techie Details.\""
+        },
+        {
+          "type": "fact",
+          "title": "Why CBC works",
+          "t": "In cipher block chaining, each block is mixed with the previous encrypted block before being encrypted, so identical or predictable inputs produce unrelated outputs. A random initialization vector does the same for the very first block."
+        }
+      ]
+    },
+    {
+      "title": "Why LeakTest Is Still Offered",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Download LeakTest for old times' sake, though now we know it's useless."
+        },
+        {
+          "s": "steve",
+          "t": "A listener asked why I still offer LeakTest if it's so useless. It's well known, linked all over the Internet, and 700 or 800 people a day download it to check their firewall."
+        },
+        {
+          "s": "leo",
+          "t": "It's harmless."
+        },
+        {
+          "s": "steve",
+          "t": "And it still verifies that just renaming a program won't fool your firewall. So it's still useful."
+        },
+        {
+          "s": "leo",
+          "t": "Good luck with the fumigation. We hope the tent comes off and the house doesn't fall down."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is another Q&A episode. I get a lot of email from people who love them."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the critical Vista Gadget flaw show?",
+      "options": [
+        "New features bring new security bugs",
+        "Vista was immune to attacks",
+        "XP had the same gadget flaw",
+        "RSS feeds are always safe"
+      ],
+      "answer": 0,
+      "explain": "A malformed feed could take over a Vista machine."
+    },
+    {
+      "q": "What does VeriSign Labs' PIP let you do?",
+      "options": [
+        "Use one OpenID with two-factor tokens, including your PayPal key",
+        "Pay bills",
+        "Encrypt your hard drive",
+        "Host a website"
+      ],
+      "answer": 0,
+      "explain": "You can register several tokens at once."
+    },
+    {
+      "q": "Why is giving out your PIP OpenID name safe?",
+      "options": [
+        "Logging in also requires the code from one of your registered tokens",
+        "The name is encrypted",
+        "Nobody can see it",
+        "It changes daily"
+      ],
+      "answer": 0,
+      "explain": "VeriSign asks for the six digits on your fob."
+    },
+    {
+      "q": "What weakness does cipher block chaining fix?",
+      "options": [
+        "Predictable or repeating input, like a counter, that could reveal a correct key",
+        "Short passwords",
+        "Slow encryption",
+        "Lost keys"
+      ],
+      "answer": 0,
+      "explain": "Each output is XORed into the next input."
+    },
+    {
+      "q": "What's the job of the initialization vector?",
+      "options": [
+        "A random value that hides the predictable starting point",
+        "It speeds up encryption",
+        "It's the password",
+        "It counts the passwords"
+      ],
+      "answer": 0,
+      "explain": "It's XORed with the first counter value."
+    },
+    {
+      "q": "Why does Steve still offer the old LeakTest?",
+      "options": [
+        "It's widely linked and still checks that renaming a program won't fool a firewall",
+        "It catches every leak",
+        "It's required by law",
+        "It finds viruses"
+      ],
+      "answer": 0,
+      "explain": "About 700 to 800 people download it daily."
+    }
+  ]
+}

@@ -1,0 +1,687 @@
+{
+  "number": 126,
+  "title": "Listener Feedback #32",
+  "subtitle": "A critical Windows stack flaw, nonces, CBC and Opera Mini's proxy",
+  "date": "2008-01-10",
+  "description": "Leo returns from Egypt with a cold, and Steve starts the promised news segment with a whopper: a remote-code flaw in the Windows TCP/IP stack's IGMP handling that built-in firewalls don't block. Also: 70,000 unpatched sites hit by SQL injection, a master boot record rootkit, and the first iPhone trojan. Listeners ask about copying codes from a VeriSign card, nonces against replay, an ALT-key password trick, running your own DNS server, initialization vectors, Skype at work, monitoring CPU cores, IronKey, Opera Mini's SSL-decrypting proxy and Steve's outlines.",
+  "transcript": "https://www.grc.com/sn/sn-126.txt",
+  "audio": "http://media.GRC.com/sn/SN-126.mp3",
+  "chapters": [
+    {
+      "title": "Back From Egypt",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We're late, and it's my fault. I got back from Egypt with a raging cold, caught on the plane, of course."
+        },
+        {
+          "s": "steve",
+          "t": "You sound a little more throaty."
+        },
+        {
+          "s": "leo",
+          "t": "A little Barry White. And you had a business commitment yesterday. Happy New Year, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "Officially, the first time we've spoken in '08. Was Egypt good?"
+        },
+        {
+          "s": "leo",
+          "t": "Fascinating. I took over 2,000 pictures and posted about 80 on my blog. Cairo is the world's largest Islamic city, 16 million people, growing 100,000 a month."
+        },
+        {
+          "s": "steve",
+          "t": "Through immigration or birth?"
+        },
+        {
+          "s": "leo",
+          "t": "Birth, mostly in rural areas, and then people move to the city. One block from our hotel there are dirt roads. We saw every important monument. Ancient Egyptians 4,000 years ago did art that's modern and beautiful. We saw the world's oldest sculpture, a perfect 4,000- or 5,000-year-old wooden figure. I think Egyptians ask themselves what happened: they were the dominant culture for so long, and now they're essentially a Third World nation. I'll write an essay. But I missed you guys."
+        }
+      ]
+    },
+    {
+      "title": "Thanks for the Kindle Votes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Thanks to listeners for finding the vote buttons on my Kindle review despite my buttonless link. It's now the featured, number one review, by about two to one. When I last looked, 6,755 people had voted, and 98.4 percent found it helpful. Now it has a life of its own, and many non-listeners honestly find it helpful."
+        },
+        {
+          "s": "leo",
+          "t": "I read on my Kindle in Egypt, without wireless. Everyone I showed it to said they'd get one. It has warts, but it's useful."
+        },
+        {
+          "s": "steve",
+          "t": "And Kindle hacking is underway. People have taken it apart and found hidden features in the software, like a built-in Google Maps and justification options. I want ragged right instead of flush left. The programmer in me hates a long word preventing a nice wrap."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love to turn that off."
+        },
+        {
+          "s": "steve",
+          "t": "And Jungle Disk's author says business picked up over the holidays, with listeners blogging that they learned about it here. I asked whether it works for keeping a roaming laptop backed up as you move between hotspots. Not the whole laptop, but My Documents and your desktop. He said absolutely, it's designed for that."
+        },
+        {
+          "s": "steve",
+          "t": "I've been using it that way for a couple of weeks, and set up a couple of non-techie friends with their own Amazon accounts. It just runs in the background, protecting their laptops if a drive dies or the laptop is stolen. It works really well."
+        },
+        {
+          "s": "leo",
+          "t": "Online backup is the way to go."
+        }
+      ]
+    },
+    {
+      "title": "Two Failed Drives in a Week",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "David Bins, an IT consultant listening since around Episode 40, felt guilty the podcasts were free and meant to buy SpinRite. But a colleague who runs it regularly said it had never found problems. Either his hardware was perfect, or SpinRite wasn't all it's cracked up to be. So David held off."
+        },
+        {
+          "s": "steve",
+          "t": "Running SpinRite maintains drives even when they're fine. A drive only knows a sector is weak when it reads it. SpinRite gives it that chance, and the relocation is hidden, so I can't show how many sectors were spared. You take it on faith. But his drives aren't failing."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't you rather it be that way?"
+        },
+        {
+          "s": "steve",
+          "t": "David backs up between computers and to a USB drive. On New Year's Eve, his Hitachi USB drive failed. It just plays a tune when plugged in. His first failed drive outside work in 18 years. Then on January 7th at 11 p.m., his laptop wouldn't boot, giving an unreadable drive error after the BIOS screen."
+        },
+        {
+          "s": "steve",
+          "t": "He thought he'd lost his company's accounts and invoices and spent a sleepless night. The next evening at 9:45 he bought SpinRite. By 10:00 it was running. At 11:46 he wrote from the laptop he'd been about to throw away, completely up and running. He offered help with database administration in return. Buying SpinRite already helped us."
+        }
+      ]
+    },
+    {
+      "title": "A Hole in the Windows TCP/IP Stack",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Coincidentally, just as we promised more current events, there's a whopper in Windows. I've seen it called the worst Internet security flaw in history."
+        },
+        {
+          "s": "leo",
+          "t": "I haven't seen a word, with all the CES coverage, and there was nothing worth covering at CES."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely everyone needs to run Windows Update. This Patch Tuesday, January 8th, fixed a very low-level buffer overflow that permits remote code execution in the Windows TCP/IP stack itself, reported privately to Microsoft."
+        },
+        {
+          "s": "leo",
+          "t": "Vista's new stack or the old one?"
+        },
+        {
+          "s": "steve",
+          "t": "XP's, and it's believed Windows 2000 has a problem too. It's in IGMP, the Internet Group Management Protocol, a multicast protocol. Not a service with an open port. The core of the stack."
+        },
+        {
+          "s": "leo",
+          "t": "So if you have Windows running, you're vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "And, Leo, none of the built-in firewalls block it. One packet hits an unprotected machine, and it's taken over."
+        },
+        {
+          "s": "leo",
+          "t": "What port?"
+        },
+        {
+          "s": "steve",
+          "t": "There are no ports for IGMP. Ports relate to applications, like 80 for web services and 22 for FTP. IGMP is like ICMP, the plumbing every IP stack has, which ping and traceroute use. Packets just carry an IP address, no port."
+        },
+        {
+          "type": "fact",
+          "title": "Port check",
+          "t": "Port 22 is SSH. FTP uses ports 20 and 21."
+        },
+        {
+          "s": "steve",
+          "t": "The good news: NAT routers block it. Another reason to be behind one. They probably don't even support IGMP, and they'd have no idea where to send such a packet."
+        },
+        {
+          "s": "leo",
+          "t": "So a hardware router stops it, but Windows' firewall doesn't."
+        },
+        {
+          "s": "steve",
+          "t": "A third-party software firewall might, but Microsoft's don't. There's a virtual certainty we'll see a worm propagating across the Internet to unpatched XP and Vista machines."
+        },
+        {
+          "s": "leo",
+          "t": "But Vista has a new stack. Remember Vista's virgin stack?"
+        },
+        {
+          "s": "steve",
+          "t": "No doubt someone took a blob of source code."
+        },
+        {
+          "s": "leo",
+          "t": "So it affects XP, Vista and Windows 2000."
+        },
+        {
+          "s": "steve",
+          "t": "At a Starbucks T-Mobile hotspot or FedEx Kinko's, you're behind that location's NAT router, probably in 10-dot space. Most people have a NAT router at home. The danger is any unpatched Windows 2000 SP4, XP or Vista machine with a public IP."
+        },
+        {
+          "s": "steve",
+          "t": "Bad guys reverse-engineer patches to see what changed. Or, knowing a flaw exists, they'll find it as the good guys did."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft's report says it was reported in June 2006, and that on 2000 it's only a denial of service. IBM's X-Force discovered it."
+        },
+        {
+          "s": "steve",
+          "t": "On 2000 it crashes the stack. On XP and Vista, a single malformed packet can carry code that runs, classic buffer overrun, through the firewall. Infected machines would spray packets at random IPs looking for more. If you roam with a laptop and might get a public IP, patch now."
+        },
+        {
+          "s": "steve",
+          "t": "A related flaw in MLD, Multicast Listener Discovery, part of IPv6, can cause a denial of service and was also patched. But the big one runs with the full power of the kernel, not a sandboxed service. It's too tasty for bad guys not to try."
+        },
+        {
+          "s": "leo",
+          "t": "That's why you listen to this show. The tech press was busy covering CES and tired of \"another Windows flaw.\""
+        },
+        {
+          "s": "steve",
+          "t": "It'll get news when it becomes a worm."
+        },
+        {
+          "type": "fact",
+          "title": "What followed",
+          "t": "Microsoft rated the bug, MS08-001, critical but said reliable exploitation would be difficult. No widespread worm followed."
+        }
+      ]
+    },
+    {
+      "title": "70,000 Sites, Two Years Unpatched",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Won't all machines be patched? Another story: an SQL injection attack infected more than 70,000 Microsoft-based websites, many .gov, .edu and .mil, to send visitors to a malicious site that tries to install keystroke loggers through various browser vulnerabilities. The fix dates to April 2006. Patching once in almost two years would have prevented it."
+        },
+        {
+          "s": "steve",
+          "t": "The attackers scanned the sites' SQL tables and added their own JavaScript, which the sites then served in pages. Your browser runs the injected JavaScript from an innocent server. You know how I feel about JavaScript, though contemporary sites need it."
+        },
+        {
+          "s": "leo",
+          "t": "I understand servers more. Admins aren't paying attention, or they're nervous what a patch will do. I hope desktops run automatic updates."
+        }
+      ]
+    },
+    {
+      "title": "A Master Boot Record Rootkit",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Slashdot picked up the \"stealth MBR rootkit.\" The master boot record is the first sector of your hard drive. People think of it as the partition table, but it's executable code. At boot, the PC copies it into memory and starts executing from its first instruction."
+        },
+        {
+          "s": "steve",
+          "t": "Multiboot managers use this, putting code in the first track's other sectors. A track has 63 sectors. The first is the partition sector and boot record, the other 62 are normally unused, and the first partition starts at the next track."
+        },
+        {
+          "s": "leo",
+          "t": "Boot sector viruses like Michelangelo used this years ago."
+        },
+        {
+          "s": "steve",
+          "t": "Now there's an MBR rootkit that patches the Windows kernel on the fly as it boots. It's who's on first: anything that runs before the OS can protect itself has compromised it. It's been found in the wild."
+        },
+        {
+          "s": "leo",
+          "t": "You'd need a boot CD to get it?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Windows protects everything except that first track, so normal spyware-style installation works. It was foreseen years ago as theoretically possible, and now it's real."
+        },
+        {
+          "type": "fact",
+          "title": "Mebroot",
+          "t": "The MBR rootkit, later called Mebroot, spread through drive-by downloads in early 2008. Windows' later Secure Boot was designed to stop exactly this kind of boot-time takeover."
+        },
+        {
+          "s": "steve",
+          "t": "And the iPhone has its first trojan. It causes great grief when removed, because removing it cleanly is difficult, and people mess up their iPhones."
+        },
+        {
+          "type": "fact",
+          "title": "The iPhone trojan",
+          "t": "That early trojan targeted jailbroken iPhones. It posed as a firmware update in an unofficial app installer and could delete apps when removed."
+        }
+      ]
+    },
+    {
+      "title": "Copying Codes From a VeriSign Card",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "J.P. in Sydney, Australia: if someone briefly got your VeriSign card token, couldn't they push the button a few times, write the codes down, and use them later with your username and password? The time-based football wouldn't allow that."
+        },
+        {
+          "s": "steve",
+          "t": "Great point. The card's counter is encrypted and hashed by a well-known algorithm with a secret key the card contains, so its codes are unpredictable to anyone who doesn't know that key."
+        },
+        {
+          "s": "leo",
+          "t": "Which is everybody except the site."
+        },
+        {
+          "s": "steve",
+          "t": "Except VeriSign. The site checks with VeriSign, within a window, as with the listener who pushed the button so often he had to resync."
+        },
+        {
+          "s": "leo",
+          "t": "But if I use the card again, those older codes are invalidated, right?"
+        },
+        {
+          "s": "steve",
+          "t": "Right. Each code works once, and using a later one obsoletes earlier ones."
+        },
+        {
+          "s": "steve",
+          "t": "But his real point: if I have all your factors, I can log in. Absolutely. The football's codes go stale within about three minutes, so you'd have to use them quickly. I wish our cards were time based. But you'd need a crystal time base in something no thicker than a credit card, plastic on both sides and goo in the middle, and a clock would consume much more power. E Ink needs zero power to keep its display. The card uses a moment of power when you press the button."
+        },
+        {
+          "s": "steve",
+          "t": "The reason we love the card is it's in our wallets. Put the football in your wallet, and you'll need a chiropractor."
+        }
+      ]
+    },
+    {
+      "title": "A Nonce Against Replay",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robin in Langley, British Columbia has a fix for Matthew's mega-hash login from Episode 120. Have the server send a unique ID, a serial number, with each login form. The client script hashes it together with the password. A captured blob would then be useless, since it's different every login."
+        },
+        {
+          "s": "steve",
+          "t": "Several astute listeners suggested this. In cryptography it's called a \"nonce,\" something used once and never again. Including it makes each blob unique, preventing a replay attack."
+        },
+        {
+          "s": "steve",
+          "t": "But an active man in the middle, able to filter traffic both ways, could capture the nonce, let the client solve the puzzle, intercept its answer and log himself in. Without a cryptographically strong connection, all kinds of games are possible."
+        }
+      ]
+    },
+    {
+      "title": "A Space That Isn't a Space",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tyler Menezes of Redmond, Washington, while setting type for a brochure, wondered: type a nonbreaking space, ALT+0160 on Windows' number pad, in your password. A keylogger would record a normal space, which isn't the same bit for bit."
+        },
+        {
+          "s": "steve",
+          "t": "I use ALT codes myself. ALT+249, or 0249, is a bullet I use in my source code. You hold ALT and dial a code on the number pad. But it's application specific. Some programs understand it, others don't. If Firefox accepts it, it could hide that a space isn't really a space."
+        },
+        {
+          "s": "leo",
+          "t": "But a keystroke logger logs the actual keys you press."
+        },
+        {
+          "s": "steve",
+          "t": "Keyboard handling has layers: scan codes from the keys, then ASCII or 16-bit Unicode. A logger capturing scan codes could interpret them."
+        },
+        {
+          "s": "leo",
+          "t": "And a nonbreaking space is a different character anyway. It only helps if someone is just looking at your saved Firefox passwords."
+        },
+        {
+          "s": "steve",
+          "t": "Try it, but don't count on it."
+        }
+      ]
+    },
+    {
+      "title": "Running Your Own DNS Server",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John Campbell in chilly Bozeman, Montana bypasses his ISP's DNS with TreeWalkDNS.com, a DNS server on his own machine that does lookups directly. It can also block ads and hostile sites, though that's harder to set up. He wishes they had a Donate button."
+        },
+        {
+          "s": "steve",
+          "t": "Its two authors are longtime GRC newsgroup participants, and many newsgroup users love it. The show notes for this episode list all of today's links."
+        },
+        {
+          "s": "steve",
+          "t": "ISPs treat DNS as an unwanted stepchild, with old, small, overloaded servers. Unless your machine has an address cached, or it's in your hosts file, everything stops until DNS answers."
+        },
+        {
+          "s": "steve",
+          "t": "Your own server is never overloaded. But your ISP's server probably already has AOL, Microsoft, MSN and Amazon cached, thanks to all its other customers. Then again, while browsing you'll often visit sites it doesn't have."
+        },
+        {
+          "s": "steve",
+          "t": "On privacy, your ISP could track every lookup. With your own server, you skip your ISP but ask other DNS servers directly, so requests come from your IP rather than your ISP's. It's a trade-off. Performance-wise, I hear it's a win. I run DNS servers at Level 3 and on a UNIX box at home, and these same guys helped me set mine up."
+        },
+        {
+          "s": "leo",
+          "t": "It could be slower, going to more distant servers. People use Verizon's fast DNS servers. I use OpenDNS, free, with optional filtering. Set it on your router, and unless your kids change their computers' DNS settings, you're set. It fixes typos in .com, and shows search results instead of errors, which is how it makes money."
+        },
+        {
+          "s": "steve",
+          "t": "TreeWalk is a Windows build of BIND, the Internet standard."
+        },
+        {
+          "s": "leo",
+          "t": "BIND is notorious for security flaws. Remember, you're running a server. Most people are better off with OpenDNS."
+        }
+      ]
+    },
+    {
+      "title": "Double Romper Room, and a Rijndael Animation",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Athol Wilson in Auckland, New Zealand says the symmetric cipher episode made the penny drop. Even a 5-gigahertz processor knocks only ten zeroes off 2 to the 128th. He expected a Double Romper Room cipher example, where brute force must try each of 256 keys 256 times."
+        },
+        {
+          "s": "steve",
+          "t": "A great point I never made. He also reminded me of a Shockwave Flash animation of Rijndael from Austria's Graz University of Technology. It's so good I keep a copy, with its authors credited, at GRC.com/miscfiles/RijndaelAnimation.zip. It's a little techie, but with last week's episode, it's the diagrams I never drew: things XORing and data looping through the rounds."
+        },
+        {
+          "s": "leo",
+          "t": "Rijndael is R-I-J-N-D-A-E-L."
+        },
+        {
+          "s": "steve",
+          "t": "It's a contraction of the two designers' last names."
+        },
+        {
+          "s": "leo",
+          "t": "It's Dutch."
+        },
+        {
+          "type": "fact",
+          "title": "The designers",
+          "t": "Rijndael was designed by Belgian cryptographers Vincent Rijmen and Joan Daemen."
+        }
+      ]
+    },
+    {
+      "title": "Hard-Coded Keys and Initialization Vectors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Andrew Ayre in Perth, Australia says his whole office listens. They're building a .NET web service that encrypts data with 256-bit Rijndael. They planned to hard-code a key and initialization vector on client and server, but worry that reusing them is like reusing a one-time pad, open to statistical attack. Should they salt with the current date and time? Settle a bet."
+        },
+        {
+          "s": "steve",
+          "t": "The simplest mode is the Electronic Code Book, ECB. Encrypt the first 128 bits of the message, then the next 128, and so on. Rijndael is a 128-bit cipher regardless of key length."
+        },
+        {
+          "s": "steve",
+          "t": "That makes cryptologists uncomfortable. With the same key, the same 128 bits always encrypt to the same result. Enough analysis might infer meaning from repetition, an inferential leakage."
+        },
+        {
+          "s": "steve",
+          "t": "So they invented Cipher Block Chaining, CBC. Start with a 128-bit initialization vector and XOR it with the first plaintext block, conditionally inverting bits, which is reversible. Encrypt that. Then XOR that ciphertext with the second plaintext block before encrypting, and so on."
+        },
+        {
+          "s": "steve",
+          "t": "The IV adds 128 bits of uncertainty, though 256 bits was already impossible. More importantly, it propagates through the whole message. Every earlier block influences what follows, so repetition in the plaintext is masked. Knowing the key and IV, you can still decrypt."
+        },
+        {
+          "s": "steve",
+          "t": "So all they need is a random initialization vector sent with each message, a nonce never reused. It can travel in the clear. It could even be XORed with a secret IV, so the true IV is never known."
+        },
+        {
+          "s": "steve",
+          "t": "Keep the 256-bit key secret on both ends. To send, transmit the 128-bit IV first, then the encrypted data. An attacker seeing the IV gains nothing. No need to synchronize on the time of day."
+        },
+        {
+          "s": "leo",
+          "t": "Talk about free consultation."
+        }
+      ]
+    },
+    {
+      "title": "Spelling Out 2 to the 128th",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Eckard in Durham has heard all 125 episodes. He spells out 2 to the 128th: 340 undecillion, 282 decillion, 366 nonillion, 920 octillion, 938 septillion, 463 sextillion, 463 quintillion, 374 quadrillion, 607 trillion, 431 billion, 768 million, 211 thousand, 456. And the number of digits in its factorial is 1 duodecillion, 296 undecillion. This is why scientists use scientific notation."
+        },
+        {
+          "s": "steve",
+          "t": "There's a well-known discipline for naming numbers as far as you want."
+        },
+        {
+          "type": "fact",
+          "title": "Digit count",
+          "t": "As noted in Episode 125, the factorial's digit count works out closer to 1.3 × 10 to the 40th, ten times this figure."
+        }
+      ]
+    },
+    {
+      "title": "Is Skype a Security Risk?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Keith Stein of College Station, Texas: his 50-person company uses Skype heavily, mostly for texting. IT now calls it a security risk and is removing it. Is it?"
+        },
+        {
+          "s": "steve",
+          "t": "We can only discuss theoretical risk."
+        },
+        {
+          "s": "leo",
+          "t": "It's open source, so there could be holes."
+        },
+        {
+          "type": "fact",
+          "title": "Not open source",
+          "t": "Skype was proprietary, closed-source software, which made outside security review harder."
+        },
+        {
+          "s": "steve",
+          "t": "Most Skype users are behind NAT routers, which protect them. I'd use one with a single computer at $49."
+        },
+        {
+          "s": "steve",
+          "t": "The issue is supernodes: Skype clients with public IPs that accept incoming packets. A supernode is a server. If Skype had an unpatched buffer overrun, attackers could look for supernodes."
+        },
+        {
+          "s": "steve",
+          "t": "Skype always tries to be a supernode, relaying traffic for users behind unfriendly NAT routers, without owners' explicit permission or knowledge. Google Talk relays through its own servers. And it is peer-to-peer, which has such a bad reputation that it may be what spooked his IT department."
+        },
+        {
+          "s": "steve",
+          "t": "But 70,000 web servers, many .gov, .edu and .mil, were just taken over for lack of two years of patches. Client-server isn't necessarily safer."
+        },
+        {
+          "s": "leo",
+          "t": "And if your company says no, you can't. For texting someone two offices down, there are plenty of solutions, including encrypted chat."
+        }
+      ]
+    },
+    {
+      "title": "Watching Your CPU Cores",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Rob in Pennsylvania built his first quad-core monster and wants to watch each core. I use MenuMeters on the Mac, showing CPU, disk, memory and network in the menu bar. Apple just announced an eight-core Mac."
+        },
+        {
+          "s": "steve",
+          "t": "I use Windows' Task Manager. The Performance tab shows a graph for each thread of execution: two even on a single-core hyperthreaded chip, four on my quad core. My MPEG compressor now saturates all four and cruises. Most of the time they sit there looking at me."
+        },
+        {
+          "s": "leo",
+          "t": "The Vista Sidebar has a CPU gadget, and the Mac has Activity Monitor."
+        },
+        {
+          "s": "steve",
+          "t": "I've always had Task Manager start minimized to the tray, a cute little graph. But on a laptop, every update pings the hard drive and keeps it from spinning down to save battery and stay cool. A habit I need to break."
+        },
+        {
+          "s": "leo",
+          "t": "It might keep SpeedStep from kicking in too. It's busy looking at how busy it is."
+        }
+      ]
+    },
+    {
+      "title": "IronKey and Opera Mini",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ryan Couture of Enfield, Connecticut asks about the IronKey thumb drive, which claims hardware encryption and a crypto chip that self-destructs its keys under physical attack. Worth the premium?"
+        },
+        {
+          "s": "steve",
+          "t": "I bought two, the 4-gig from Amazon at $138 each, because many listeners asked. The first came yesterday. It's gorgeous. I'll open one up to see if there's weird smoke and Mission Impossible music. The box says \"military grade encryption,\" which annoys me. What encryption? I'll report back."
+        },
+        {
+          "s": "leo",
+          "t": "We've shown them on TV. They're nicely made."
+        },
+        {
+          "s": "leo",
+          "t": "Anand K. in Detroit uses Opera Mini on his BlackBerry Curve, as do I. Debugging a connection problem, he found all its requests go through Opera's \"transcoder server,\" a proxy. Opera's help site documents that this makes end-to-end SSL impossible. So his cookies, user IDs and passwords were decrypted there. They should have left SSL alone, and the software gives no indication."
+        },
+        {
+          "s": "steve",
+          "t": "It's a proxy terminating SSL connections. It does good work: rewriting web pages and JavaScript on the fly so they work on a tiny, low-power browser. Without decrypting, it couldn't, and the handset would have to do SSL itself, though I'd argue it could."
+        },
+        {
+          "s": "steve",
+          "t": "Their FAQ asks whether there's end-to-end security with PayPal or your bank. First word: no. Use full Opera Mobile instead. The transcoder shrinks pages and images, which needs the unencrypted page. They encrypt between your handset and their server, but then everything is open to Opera. Their advice: if you don't trust Opera Software, don't enter sensitive information."
+        },
+        {
+          "s": "leo",
+          "t": "I just deleted it. I'm stunned. It's not on their front page."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Outlines",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ron Bailey in Dallas, an avid outliner, asks how you manage your outlines."
+        },
+        {
+          "s": "steve",
+          "t": "The first was ThinkTank, I think, on the Apple II."
+        },
+        {
+          "s": "leo",
+          "t": "Dave Winer's original company."
+        },
+        {
+          "s": "steve",
+          "t": "Then John Friend's GrandView, which Symantec bought, text-based, from the DOS era. I still have it. Then something wacky called Ecco. I don't think anybody but the authors knew how it worked. It was so powerful I felt stupid, with groupware features before the term existed."
+        },
+        {
+          "s": "steve",
+          "t": "Today I use ThoughtManager Desktop. ThoughtManager began on the Palm, where I use it mostly for reference, and the desktop version is so good I use it standalone. Every year or so I survey outliners, with two panes or three, and I'm reminded how glad I am with it."
+        },
+        {
+          "s": "steve",
+          "t": "I'm looking at my outline for Episode 126, and I have them back to number one. I have 43 outlines: antispam email, article ideas, Bam Bam work. This is how I run my life."
+        },
+        {
+          "s": "leo",
+          "t": "Like a list manager."
+        },
+        {
+          "s": "steve",
+          "t": "With indentation: Errata, Weekly Security Update, Q&A, with sub-subjects and little things not to forget. Everything about CryptoLink, my next product, a cryptographic communications product, is in an outline. When I think of something, I capture it."
+        },
+        {
+          "s": "steve",
+          "t": "You can grab whole chunks with their children using ALT and the arrow keys, and as you see relationships, group them under headings. And you expand and collapse levels, like a Windows folder tree. Outlining is near the top of my list of things I'm glad someone figured out a computer could do."
+        },
+        {
+          "s": "steve",
+          "t": "My outline folder is on Amazon through Jungle Disk, so I have it on any machine."
+        },
+        {
+          "s": "leo",
+          "t": "Macworld Expo is coming, so we'll fit around that. Next week starts with security news."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why was January 2008's Windows IGMP flaw so dangerous?",
+      "options": [
+        "A single packet could run code in the kernel, and Windows' built-in firewalls didn't block it",
+        "It only affected servers",
+        "It needed a password",
+        "It required a USB drive"
+      ],
+      "answer": 0,
+      "explain": "A NAT router did block it."
+    },
+    {
+      "q": "What made 70,000 websites vulnerable to the January 2008 SQL injection attack?",
+      "options": [
+        "They hadn't applied fixes available for almost two years",
+        "They used Linux",
+        "They had no passwords",
+        "They used SSL"
+      ],
+      "answer": 0,
+      "explain": "Attackers inserted JavaScript into their databases."
+    },
+    {
+      "q": "What is a \"nonce\" in cryptography?",
+      "options": [
+        "A value used once, so a captured response can't be replayed",
+        "A secret key",
+        "A type of cipher",
+        "A password hint"
+      ],
+      "answer": 0,
+      "explain": "Robin suggested it for Matthew's login."
+    },
+    {
+      "q": "Why should each encrypted message use a fresh initialization vector?",
+      "options": [
+        "It hides repeated patterns, and it can safely be sent in the clear",
+        "It must be kept secret",
+        "It replaces the key",
+        "It makes messages shorter"
+      ],
+      "answer": 0,
+      "explain": "Cipher block chaining spreads it through the message."
+    },
+    {
+      "q": "What did Anand discover about Opera Mini?",
+      "options": [
+        "Its proxy server decrypted users' SSL traffic to reformat pages",
+        "It had a virus",
+        "It leaked his GPS location",
+        "It didn't support SSL at all"
+      ],
+      "answer": 0,
+      "explain": "Opera's FAQ said there was no end-to-end security."
+    },
+    {
+      "q": "Why did running Task Manager constantly bother Steve on his laptop?",
+      "options": [
+        "Its updates kept pinging the hard drive so it never spun down",
+        "It used too much RAM",
+        "It crashed",
+        "It sent data online"
+      ],
+      "answer": 0,
+      "explain": "It hurt battery life."
+    }
+  ]
+}

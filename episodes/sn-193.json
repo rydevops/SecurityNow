@@ -1,0 +1,328 @@
+{
+  "number": 193,
+  "title": "Conficker",
+  "subtitle": "A deep technical tour of the most sophisticated worm the Internet had yet seen",
+  "date": "2009-04-23",
+  "description": "Steve dissects Conficker in detail: how it exploited MS08-067 on port 445, injected itself into svchost and hid, generated pseudorandom domains to phone home (250 a day rising to 50,000 across 110 TLDs), and protected its updates with digitally signed, encrypted payloads no one else can forge. Plus how its variants A, B and C evolved, and why disabling Universal Plug and Play and Autorun defends against it. Plus the Pirate Bay verdict, Amazon blocking Phorm, a record year of data breaches, and spies in the Joint Strike Fighter project.",
+  "transcript": "https://www.grc.com/sn/sn-193.txt",
+  "audio": "http://media.GRC.com/sn/SN-193.mp3",
+  "chapters": [
+    {
+      "title": "The Pirate Bay Verdict",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A verdict came down in the Pirate Bay case: the four defendants, three site maintainers and a financier, were found guilty of breaking Swedish copyright law, sentenced to one year each in prison and about $3.5 million in damages. They plan to appeal and remain as defiant as ever."
+        },
+        {
+          "s": "steve",
+          "t": "Their defense was that they don't host copyrighted content, but the court accepted that they facilitated clear infringement, and that was enough."
+        },
+        {
+          "s": "leo",
+          "t": "They're probably judgment-proof and say they won't pay; the verdict hasn't shut the site. They argue they're just a search engine, like Google. It's a gray point, but the court ruled, and the media industries are delighted."
+        }
+      ]
+    },
+    {
+      "title": "Amazon UK Blocks Phorm",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Amazon's UK site is the first high-profile company to block Phorm from scanning its pages. Phorm is the invasive ISP technology that intercepts your connections, stuffs your browser with its cookies on every site, and keyword-scans the pages you visit to inject targeted ads."
+        },
+        {
+          "s": "steve",
+          "t": "So Amazon UK will actively resist Phorm's keyword scans, and an open-rights group has urged other big sites to opt out too. The core objection, and the basis of the European Commission's suit over BT's secret trials, is the lack of informed consent."
+        }
+      ]
+    },
+    {
+      "title": "A Record Year of Breaches, and Spies in the Fighter Jet",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Verizon Business reported responding in 2008 to at least 90 confirmed data breaches involving about 285 million consumer records, more than all breaches of 2004 through 2007 combined. Banks and financial institutions accounted for 93% of the records compromised. So much stolen data is now on the black market that prices have actually fallen."
+        },
+        {
+          "s": "steve",
+          "t": "And the Pentagon found spies in the network for the $300 billion Joint Strike Fighter program. Over about 18 months, several terabytes of design and avionics data were siphoned off, encrypted by the attackers before leaving, so no one knows exactly what was taken. It's believed to be China."
+        },
+        {
+          "s": "leo",
+          "t": "Why is the nation's most critical military data even on Internet-connected machines, and so poorly protected?"
+        },
+        {
+          "s": "steve",
+          "t": "The most sensitive material is on a separate, non-Internet network, but this clearly shouldn't have been reachable. These networks start out locked down, then over time someone opens a port \"just briefly,\" or an infected USB stick or a social-engineered document gets in. Complexity is the enemy of security."
+        }
+      ]
+    },
+    {
+      "title": "Unbind File and Printer Sharing From WiFi",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A useful bit of errata. Windows XP wisely limits file-and-printer-sharing traffic to your local network, so even on a public IP those scary ports (137, 139, 445) won't accept traffic from a global address. But it occurred to me at Starbucks, now on open, unencrypted AT&T WiFi, that every laptop there is on the same LAN."
+        },
+        {
+          "s": "steve",
+          "t": "Which means everyone's file-and-printer-sharing ports are open to each other by default, exactly what Conficker wants, scanning the local net for port 445. If you don't need file and printer sharing over WiFi, unbind it from the wireless adapter (and turn off NetBIOS), leaving it only on your wired connection."
+        },
+        {
+          "s": "leo",
+          "t": "Simple fix: just disable it on the WiFi."
+        },
+        {
+          "type": "fact",
+          "title": "Your LAN neighbors aren't trusted",
+          "t": "On an open WiFi network every connected device shares one local network, so services you think are safe \"behind the firewall\" are exposed to strangers sitting nearby. Unbinding file/printer sharing and NetBIOS from the wireless adapter removes that exposure without affecting your trusted wired network."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite \"Weakly Stored\" Rescue",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A thank-you from Jerry: he couldn't image his laptop drive, getting write/disk-full errors though the disk wasn't full. chkdsk found nothing, and SpinRite in read-only mode 2 found no errors either. But switching SpinRite to a mode that reads and rewrites the data fixed it."
+        },
+        {
+          "s": "steve",
+          "t": "The data was \"weakly stored\", strong enough to be read by chkdsk and SpinRite's mode 2, but not strong enough to pass a verification compare against its image. Rewriting it refreshed the magnetic storage, and the image then succeeded."
+        }
+      ]
+    },
+    {
+      "title": "What a Thread Is",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Before the Conficker dive, one ground rule: when I say I'm impressed, I'm not endorsing it. And one concept: a thread. A computer does one instruction at a time, very fast. A thread is one chain of that execution; a program can spawn several, and the OS rapidly switches between them, so it looks like many things happen at once."
+        },
+        {
+          "s": "steve",
+          "t": "On a single core it's time-sharing within one program; on multiple cores, several threads truly run at once, so adding cores scales nicely. Conficker is heavily multithreaded, one thread killing security programs, others camped on sockets waiting for connections."
+        },
+        {
+          "type": "fact",
+          "title": "Why malware loves threads",
+          "t": "Separate threads let a worm do many jobs at once, suppress antivirus, listen on ports, scan the network, phone home, without blocking on any one. Conficker's threaded design is part of what makes it both resilient and hard to interrupt."
+        }
+      ]
+    },
+    {
+      "title": "The MS08-067 Exploit",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Microsoft patched a remote-execution flaw out of cycle on October 23, 2008 (MS08-067). A TCP connection to port 445 reached the Remote Procedure Call service, and a defect let an attacker's payload execute. Conficker's first packet wasn't the whole worm; it just made the victim open a reverse connection back and download all of Conficker from the attacker."
+        },
+        {
+          "s": "steve",
+          "t": "Many machines were protected: port 445 is so notorious that many ISPs block it at their borders, and any properly configured NAT router blocks incoming connections."
+        },
+        {
+          "s": "leo",
+          "t": "So a router is a firewall and will protect you."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, except Conficker is a Universal Plug and Play client: if you haven't disabled UPnP, it reaches out and opens incoming ports through your own router, silently, no prompt, no password. It's the perfect example of why UPnP was a terrible security idea."
+        }
+      ]
+    },
+    {
+      "title": "Worm Versus Virus, and Patient Spreading",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Conficker is a worm: with no user interaction it finds vulnerable hosts, infects them, and they infect others. Unlike MSBlast or Code Red, which flooded the Internet and acted like local denial-of-service attacks, Conficker is patient, my copy sends only three or four packets a second."
+        },
+        {
+          "s": "leo",
+          "t": "So you won't notice the bandwidth?"
+        },
+        {
+          "s": "steve",
+          "t": "Right, staying under the radar, and slow scanning also keeps infected IPs from being spotted by honeypots watching for floods of scan traffic. It has all the time in the world."
+        },
+        {
+          "s": "steve",
+          "t": "Conficker A would abort if the keyboard layout was Ukrainian, and all variants use a GeoIP database to avoid attacking Ukrainian IPs, suggesting the author is in Ukraine and doesn't want to rouse the local authorities, who are easier to prosecute than someone across borders."
+        }
+      ]
+    },
+    {
+      "title": "The Payload and How It Hides",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Conficker's payload is a DLL, compressed with UPX and further obfuscated so it only reveals itself once decrypted in RAM. It injects itself into an existing svchost.exe process by starting a thread that loads the library, then deliberately never returns from the DLL's initialization stub, so Windows never lists it as loaded."
+        },
+        {
+          "s": "steve",
+          "t": "It registers with a null (empty) name and flags itself invisible, gives itself a random name in system32, and sets its file date to match kernel32.dll, so sorting a directory by date won't reveal a suspiciously recent file."
+        },
+        {
+          "s": "leo",
+          "t": "But it's not a rootkit?"
+        },
+        {
+          "s": "steve",
+          "t": "I wouldn't call it a rootkit, but it does many things to hide. One thread constantly disables security services and kills tools like Wireshark, regmon, filemon and antivirus if you try to run them, and it blocks DNS lookups to Microsoft, Symantec and Windows Update."
+        }
+      ]
+    },
+    {
+      "title": "Phoning Home via Generated Domains",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Conficker's novel trick is a pseudorandom domain generator seeded by the current UTC date (fetched from the Date header of well-known sites, so all copies worldwide agree on the day). Variant A generated 250 domains a day across five TLDs (.com, .net, .org, .info, .biz), did DNS lookups, and tried to download a signed binary over port 80."
+        },
+        {
+          "s": "steve",
+          "t": "Defenders (the \"Conficker Cabal\") could compute tomorrow's 250 domains and pre-register them to cut off updates. So B added three TLDs (.ws, .cn, .cc), and on April 1st the C variant escalated to generating 50,000 domains a day, picking 500, across 110 TLDs, making pre-registration across all those registrars nearly impossible."
+        },
+        {
+          "type": "fact",
+          "title": "The domain-generation algorithm",
+          "t": "A DGA lets scattered malware find its controller without any fixed address in the code to reverse-engineer and block. Defenders must predict and pre-register the daily domains; Conficker C's jump to 50,000 names across 110 top-level domains turned that into an unwinnable race, a technique later malware widely copied."
+        }
+      ]
+    },
+    {
+      "title": "Signed, Encrypted Self-Protection",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Conficker protects its updates with real cryptography so no one, white hat or rival, can commandeer it. The update code is hashed into a 512-bit digest (A used SHA-1; B used MD6, which Ron Rivest had released just two weeks earlier, the author even copied an early MD6 bug). That hash keys an RC4 stream cipher to encrypt the binary."
+        },
+        {
+          "s": "steve",
+          "t": "Then the hash is signed with the author's private RSA key (A used a 1024-bit modulus, B a 4096-bit one). A receiving Conficker uses its built-in public key to recover the hash from the signature, decrypts with RC4, re-hashes, and installs the update only if they match, proving it came from the author."
+        },
+        {
+          "s": "steve",
+          "t": "Because only the author holds the private key, and public-key crypto means you can't derive it from the public key, nobody else can ever forge a valid payload."
+        }
+      ]
+    },
+    {
+      "title": "How the Variants Propagated",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A spread only one way: the port-445 MS08-067 exploit, generating random IPs (avoiding Ukraine) to attack. B added two more routes: NetBIOS shares, trying a list of 240 common passwords (which in corporate networks tripped account-lockout policies and locked real users out), and USB drives, writing an autorun.inf so it ran when the stick was plugged in elsewhere."
+        },
+        {
+          "s": "steve",
+          "t": "Oddly, C removed both of those extra routes, making it less infectious, but added a named-pipe SMB method. So Conficker's behavior didn't only escalate; it changed direction between variants."
+        }
+      ]
+    },
+    {
+      "title": "Getting Smarter Over Time",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Conficker kept outmaneuvering defenders. It needs its public IP to receive reverse connections, so it queries sites like getmyip.org and checkip.dyndns.org and parses the result. It learned to distrust DNS answers that returned multiple IPs or a localhost stub like 127.0.0.1, both tricks defenders used, and it blacklisted any IP it saw from more than one lookup."
+        },
+        {
+          "s": "steve",
+          "t": "It also carried a list of invalid /8 networks (0, 1, 2, 5, 10, 14, ...) to skip, 5 being the unallocated space Hamachi used. SRI International concluded Conficker C is \"a robust and secure distribution utility\" with \"a potent arsenal\" to defend itself, and warned that as a coordinated weapon the multimillion-node botnet is \"a serious and dire threat to the Internet.\""
+        }
+      ]
+    },
+    {
+      "title": "The E Variant and the Lessons",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Just after April 1st, C began pulling an encrypted package, updating toward an E variant, which is what finally made me stand up my own Conficker honeypot. E started downloading scareware, suggesting the authors decided to commercialize their established millions-strong network."
+        },
+        {
+          "s": "steve",
+          "t": "The whole thing survives by two channels: an interlinked peer-to-peer network among infected machines, and the daily pseudorandom domains for signed payload updates. Since it uses public-key signatures, even the good guys can't take it over."
+        },
+        {
+          "s": "leo",
+          "t": "The upside is it teaches us how to protect ourselves."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, everything we've preached for nearly four years applies: disable Universal Plug and Play, disable Autorun on removable drives, patch promptly. Each one is one less way Conficker can bite you."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Conficker initially infect a machine through MS08-067?",
+      "options": [
+        "A packet to port 445 exploited the RPC service, making the victim open a reverse connection to download the full worm",
+        "It arrived as an email attachment the user opened",
+        "It exploited a flaw in Internet Explorer",
+        "It guessed the administrator password over RDP"
+      ],
+      "answer": 0,
+      "explain": "The exploit packet on TCP port 445 ran a small payload that caused the victim to connect back to the attacker and download Conficker; the first packet wasn't the whole worm."
+    },
+    {
+      "q": "Even behind a NAT router, how could Conficker open incoming ports to a machine?",
+      "options": [
+        "Via Universal Plug and Play, if UPnP wasn't disabled, it told the router to open ports silently",
+        "By brute-forcing the router's admin password",
+        "By exploiting the router's firmware",
+        "It couldn't; NAT always blocked it"
+      ],
+      "answer": 0,
+      "explain": "Conficker acts as a UPnP client, so on routers with UPnP enabled it reaches out and opens incoming ports with no prompt or password, which is why Steve urges disabling UPnP."
+    },
+    {
+      "q": "Why can't anyone, even security researchers, hijack Conficker by serving it a fake update?",
+      "options": [
+        "Update payloads must carry a digital signature made with the authors' private RSA key, which can't be derived from the public key",
+        "The updates are hosted only on Chinese servers",
+        "Conficker ignores all downloaded code",
+        "The payloads are too large to replace"
+      ],
+      "answer": 0,
+      "explain": "Conficker verifies each payload's signature with a built-in public key; only the author holds the matching private key, so no one else can forge a valid signed update."
+    },
+    {
+      "q": "How did Conficker C make blocking its phone-home domains nearly impossible?",
+      "options": [
+        "It generated 50,000 domains a day across 110 top-level domains, far too many for defenders to pre-register",
+        "It stopped using domains entirely",
+        "It encrypted the DNS lookups",
+        "It used only one hardcoded domain"
+      ],
+      "answer": 0,
+      "explain": "Variant C escalated from 250 names across a few TLDs to 50,000 across 110 TLDs, so pre-registering them all with every registrar each day became infeasible."
+    },
+    {
+      "q": "How does Conficker hide the DLL it injects into svchost.exe?",
+      "options": [
+        "It never returns from the DLL init stub (so Windows doesn't list it), registers with a null name, and flags itself invisible",
+        "It deletes svchost.exe afterward",
+        "It encrypts the entire hard drive",
+        "It runs only in a hidden partition"
+      ],
+      "answer": 0,
+      "explain": "By not returning from initialization, using an empty process name, the invisible flag, a random system32 filename and a kernel32-matching date stamp, it stays off normal detection methods."
+    },
+    {
+      "q": "What suggests Conficker's author is located in Ukraine?",
+      "options": [
+        "Variant A aborted on Ukrainian keyboard layouts, and all variants use GeoIP data to avoid attacking Ukrainian IPs",
+        "The code was written in Ukrainian",
+        "The control servers were in Kyiv",
+        "It only spread during Ukrainian business hours"
+      ],
+      "answer": 0,
+      "explain": "Avoiding Ukrainian keyboards and IPs implies the author doesn't want to infect locally and rouse the nearby authorities, who are far easier to involve than cross-border ones."
+    }
+  ]
+}

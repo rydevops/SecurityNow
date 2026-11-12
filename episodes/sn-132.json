@@ -1,0 +1,836 @@
+{
+  "number": 132,
+  "title": "Listener Feedback Q&A #35",
+  "subtitle": "Brittle patching, unknown ciphers, and whole-drive encryption questions",
+  "date": "2008-02-21",
+  "description": "Net neutrality legislation, a computerized unshredder and a second look at closed-source security open the show. Then questions: failing Windows patches, the Kindle for reference books, whether an unknown cipher adds security, Perfect Paper Passwords v3, moving a FREE CompuSec drive, Amazon S3's outage, imaging an encrypted drive, Recovery Console and SpinRite with whole-drive encryption, a copy-protection scheme that breaks TrueCrypt's boot loader, and TrueCrypt in a virtual machine.",
+  "transcript": "https://www.grc.com/sn/sn-132.txt",
+  "audio": "http://media.GRC.com/sn/SN-132.mp3",
+  "chapters": [
+    {
+      "title": "600 Emails and Counting",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I think this is everyone's favorite podcast. Every time I check, there are 600 emails in the Security Now! folder. I can't read and reply to them all, but I want everyone who writes to know how much I appreciate it. Keep sending feedback to GRC.com/feedback."
+        },
+        {
+          "s": "leo",
+          "t": "We have 12 questions, with an Observation of the Week and a Cool Hack of the Week at the end."
+        }
+      ]
+    },
+    {
+      "title": "Encryption Mandates and Net Neutrality",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's been relatively quiet in security disasters. But there's growing talk about requiring encryption for corporate databases of personal information, and I saw that some country abroad was considering requiring all government laptops to be encrypted."
+        },
+        {
+          "s": "leo",
+          "t": "They get lost and stolen so often, they really ought to be encrypted."
+        },
+        {
+          "s": "steve",
+          "t": "Last week's FREE CompuSec show brought lots of questions, and next week is TrueCrypt 5, which adds whole-drive encryption. We haven't covered TrueCrypt since '06."
+        },
+        {
+          "s": "steve",
+          "t": "More good news: after the stories of ISPs interfering with customers, like a big carrier disrupting torrent downloads, two U.S. Representatives introduced the Internet Freedom Preservation Act. It's a formal net neutrality law, meaning ISPs would have to treat all data the same."
+        },
+        {
+          "type": "fact",
+          "title": "The bill",
+          "t": "Representatives Ed Markey and Chip Pickering introduced it in February 2008. It didn't pass, and net neutrality has gone back and forth between regulators and courts ever since."
+        }
+      ]
+    },
+    {
+      "title": "A Computerized Unshredder",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's classic security by obscurity. A German firm has built a computerized unshredder. A conveyor belt scans up to 10,000 tiny bits of paper at once and reassembles shredded documents."
+        },
+        {
+          "s": "leo",
+          "t": "Even crosscut ones?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, itty-bitty bits. I'm diligent about identity theft and run everything through my crosscut shredder into confetti. But that just obscures the document. Dump the bin onto a belt, and a computer can put it back together."
+        },
+        {
+          "s": "leo",
+          "t": "That's expensive. I doubt it'll be widespread unless there's enough money in identity theft."
+        },
+        {
+          "s": "steve",
+          "t": "These things start expensive and get cheaper. Maybe split your confetti into 10 bins and drop them in different places."
+        },
+        {
+          "type": "fact",
+          "title": "Background",
+          "t": "Germany's Fraunhofer Institute built a computer system to reassemble millions of pages that the East German Stasi had torn up and bagged as the Berlin Wall fell."
+        }
+      ]
+    },
+    {
+      "title": "Second Thoughts on Closed Source",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I've been thinking about your comment last week, Leo, about closed-source FREE CompuSec versus open-source TrueCrypt. I like that TrueCrypt is open source. But maybe we came off too negative about closed solutions."
+        },
+        {
+          "s": "steve",
+          "t": "It would be a shame to skip something valuable just because it's closed. Windows is closed source. Personal firewalls are closed source. We rely on them."
+        },
+        {
+          "s": "steve",
+          "t": "With closed source, you rely on the author's reputation. With open source, in theory, anyone can examine it. But usually everyone assumes someone else did. Analyses have shown open-source code isn't necessarily freer of accidental vulnerabilities than closed code."
+        },
+        {
+          "s": "leo",
+          "t": "But a firewall protects you from hackers, not government intrusion. If the NSA secretly designed an encryption product sold through CompuSec, that's very different."
+        },
+        {
+          "s": "steve",
+          "t": "CompuSec uses standard AES Rijndael."
+        },
+        {
+          "s": "leo",
+          "t": "So they say. How do you know? I'll use a closed-source antivirus or firewall, but I never use closed-source encryption. There's enough good open-source encryption."
+        },
+        {
+          "s": "steve",
+          "t": "And I'm so impressed with TrueCrypt's whole-drive encryption. Many listeners jumped on FREE CompuSec and like it, and others who heard the end of the show tried TrueCrypt. We'll read their notes today."
+        }
+      ]
+    },
+    {
+      "title": "Latent Sector Errors",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Robin Harris, who writes ZDNet's storage blog, \"Persistence of Memory,\" discusses \"latent sector errors,\" and says bigger drives are getting serious data corruption from them. Have you heard of this?"
+        },
+        {
+          "s": "steve",
+          "t": "No, I can't imagine what it is."
+        },
+        {
+          "s": "leo",
+          "t": "It comes from Network Appliance, a network storage vendor, in a paper called \"An Analysis of Latent Sector Errors in Disk Drives.\" They say 8.5 percent of \"nearline\" drives, the cheaper ones, versus enterprise drives, developed these errors, varying with size, age and vendor. They say that's why cheap RAID with cheap disks is a bad idea. I'll send you the link."
+        },
+        {
+          "s": "steve",
+          "t": "I'll read it. Since I've never heard the term, they must have coined it."
+        },
+        {
+          "s": "leo",
+          "t": "The paper says it's when a sector can't be read or written, or has an uncorrectable ECC error, and its data is lost. That's what SpinRite finds and fixes. But if it can't read it, the data's gone, right?"
+        },
+        {
+          "s": "steve",
+          "t": "No. One of SpinRite's best tricks, DynaStat, does partial sector recovery. After trying everything to get a perfect read, it accepts as much of the sector as it can get. You might lose a few bytes. In the middle of a directory, you could still recover all the other branches."
+        },
+        {
+          "type": "fact",
+          "title": "The term",
+          "t": "\"Latent\" means an error that sits undetected until someone tries to read that sector. The NetApp study tracked about 1.5 million drives over 32 months."
+        }
+      ]
+    },
+    {
+      "title": "\"Damn You, SpinRite!\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This subject line caught my eye: \"Damn you, SpinRite!\" Eric Gerlach bought SpinRite when he started listening. A point-of-sale terminal at work got the dreaded \"unmountable boot volume\" error, right when it was needed that night."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite had it running like new in a few hours. Still suspicious, he called Dell for a warranty replacement the next day. SpinRite had worked too well. He couldn't convince Dell the drive had failed."
+        },
+        {
+          "s": "steve",
+          "t": "Months later, it failed again before another busy night. This time he called Dell first, got the new drive, then ran SpinRite. \"Curse you, Steve, for making a product that works too well.\" He admits using his personal copy at work was bad form and has a site license in next year's budget."
+        },
+        {
+          "s": "steve",
+          "t": "I'll trade that for a great story any day."
+        },
+        {
+          "s": "leo",
+          "t": "More computers are shipping with solid-state drives, like Apple's very expensive one in the MacBook Air. You don't recommend SpinRite for those."
+        },
+        {
+          "s": "steve",
+          "t": "Correct. It's intimately made for magnetic media, not CDs, DVDs or solid-state memory."
+        }
+      ]
+    },
+    {
+      "title": "Patches That Fail",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Glenn Edward in Nottingham, Maryland had at least three of this month's five Microsoft patches fail. The logs said a CurrentControlSet subkey was missing, or \"iis_www\" had the wrong value. Is it because he turned off some XP services for security, or because he's installed only security patches since SP2? Don't these patches expect a certain state? Are they even in effect?"
+        },
+        {
+          "s": "steve",
+          "t": "This question reflects my having given up."
+        },
+        {
+          "s": "steve",
+          "t": "Gurus who knew every file on their hard drive were annoyed when Microsoft introduced automatic patching. Just bend over and let Microsoft do what it wants? I remember making a partial compromise. Even now I use Custom, not Express, to review the list first. For a while I resisted Silverlight, Microsoft's own Flash, but it kept insisting."
+        },
+        {
+          "s": "steve",
+          "t": "My friend Bob, an old-world computer guy you've met, was grumbling about Microsoft's patching recently. I said, \"Really, Bob, you haven't given up yet?\" I just let Microsoft do what it wants. It's easier."
+        },
+        {
+          "s": "steve",
+          "t": "And I do think the system is getting more brittle. One of my laptops always insisted it needed a certain patch and wouldn't take it. I found a tool to remove things stuck in Windows Update."
+        },
+        {
+          "s": "leo",
+          "t": "What's that tool? I'd like it."
+        },
+        {
+          "s": "steve",
+          "t": "I'll track it down. It's still on that machine."
+        },
+        {
+          "s": "leo",
+          "t": "I get this call a lot on the radio show, and it's always a different patch. It's not these patches. It's a general problem. It's brittle."
+        },
+        {
+          "s": "steve",
+          "t": "Frankly, I'm amazed it works as well as it does, with all that overlapping code replacement. Microsoft clearly assumes the machine is already patched to a certain level. That's the code base they test against. So I still survey the list in Custom mode, but I'm better off saying, fine, go, and hoping for the best. And I can't wait for XP SP3 to roll up the torrent of fixes a new machine needs."
+        },
+        {
+          "s": "leo",
+          "t": "It used to be you could get a tool and clean things up, whether patches, spyware or viruses. Now systems are so complex and brittle that most users' only option is to start over. Every system's hardware and software are unique. The only way to make it not unique is to format, reinstall, patch, patch, patch, and re-add your software. More and more people are doing that."
+        },
+        {
+          "s": "steve",
+          "t": "Otherwise you're Don Quixote tilting at windmills, insisting you understand everything that happens."
+        },
+        {
+          "s": "leo",
+          "t": "Geeks tend that way. But if you're going to use Windows..."
+        },
+        {
+          "s": "steve",
+          "t": "You've got to bend over."
+        }
+      ]
+    },
+    {
+      "title": "The Kindle for Reference Books",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Don in Ventura asks whether the Kindle suits reference and technical books, like the latest O'Reilly book. Is searching effective? Could it replace MSDN?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm loving my Kindle. It's my constant companion at Starbucks in the morning, reading my subscriptions. It's fantastic for news."
+        },
+        {
+          "s": "steve",
+          "t": "I watch MSNBC on my Stairclimber, and David Shuster came on to apologize for a comment about Chelsea Clinton and how the campaign was using her. I felt I'd missed the original story. So I typed \"Shuster\" into the Kindle's search, and bang, every reference with snippets."
+        },
+        {
+          "s": "leo",
+          "t": "Not a web search?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Everything on the Kindle is indexed. I subscribe to Salon, Slate and the Wall Street Journal, so it builds an indexed news database. It's like my own off-the-web news search."
+        },
+        {
+          "s": "leo",
+          "t": "But for Don, many reference and technical works aren't sold for the Kindle. You can convert your own PDFs. Have you tried?"
+        },
+        {
+          "s": "steve",
+          "t": "I tried. The free Mobipocket 4.2 converter turns TXT, DOC, PDF and other files into the Kindle's native PRC format. That gives you a lot of control."
+        },
+        {
+          "s": "leo",
+          "t": "Some didn't convert properly. One letter in a PDF was really an image, so the fonts couldn't scale."
+        },
+        {
+          "s": "steve",
+          "t": "PDF is a page-layout format, not flowing text. And scanned PDFs are hopeless."
+        },
+        {
+          "s": "leo",
+          "t": "So it's less than ideal for reference. Look at safari.oreilly.com. For a fee, it has searchable, bookmarkable books from O'Reilly, Addison-Wesley, Sams, Prentice Hall, Que, Peachpit, New Riders, IBM Press, Macromedia and Adobe Press. The Kindle's browser probably isn't good enough for it, though. Imagine having all your car repair manuals on a Kindle."
+        }
+      ]
+    },
+    {
+      "title": "GRC's New Menus and \"The Code Book\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Derek Rainwater, somewhere in the middle of Texas, likes GRC.com's recent changes. He's reading Simon Singh's \"The Code Book,\" which covers much of what we've discussed, in more detail than the podcast can. He suggests recommending it, and enjoys hearing about our books and the Kindle."
+        },
+        {
+          "s": "steve",
+          "t": "Many people noticed what I just did: I finally put up the script-free, pure CSS menus. Next, I'm locking the menu to the top of the page so you don't have to scroll back up. People are discovering things they never knew were there."
+        },
+        {
+          "s": "leo",
+          "t": "Under freeware alone there are security, utilities, even obsolete programs. I didn't notice either."
+        },
+        {
+          "s": "steve",
+          "t": "There's also a site-wide search bar. I wasn't sure whether I'd read a SpinRite story before, so I searched one of its phrases in quotes. It found it in two places, but not in Elaine's transcripts, so I knew I hadn't."
+        },
+        {
+          "s": "leo",
+          "t": "\"The Code Book\" is really good, more accessible and less technical. There's also a classic, \"The Codebreakers,\" a really thick, heavy history of encryption. If you're really into crypto, it's amazing."
+        },
+        {
+          "s": "leo",
+          "t": "\"The Codebreakers\" is by David Kahn, updated in '96. And Bruce Schneier's \"Applied Cryptography\" is the real bible, if you want the technical side."
+        }
+      ]
+    },
+    {
+      "title": "Does an Unknown Cipher Add Security?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Bryan Key in Huntsville, Alabama asks about obscurity. You say breaking RSA or a 128-bit or 256-bit key takes so many attempts. But if the NSA grabbed some encrypted data, wouldn't they have to try every algorithm and key size: RSA, Blowfish and on and on? Doesn't not knowing the method add astronomically more difficulty? So wouldn't using the same standard as everyone be less secure? Can you look at a file and tell how it was encrypted?"
+        },
+        {
+          "s": "steve",
+          "t": "No, you can't, and Bryan's right that I've never touched on this. The output of a cryptographically strong cipher is pseudorandom data. It looks like static, with nothing in it to identify it."
+        },
+        {
+          "s": "steve",
+          "t": "But standard crypto dogma assumes the attacker knows everything about where the data came from. AES is open and published, and that's a strength. It's let it be really well understood and vetted."
+        },
+        {
+          "s": "steve",
+          "t": "The NSA has historically kept its ciphers secret, like the Clipper Chip's algorithm. But some things can't stay secret. Everyone has a cell phone. A DVD player has to decrypt the movie for you to watch it. Someone will pry the lid off the chip."
+        },
+        {
+          "s": "steve",
+          "t": "All security relies on keeping some secret. You want to understand which secret you rely on. It should be only the key."
+        },
+        {
+          "s": "steve",
+          "t": "Bryan's example: captured traffic to port 443 is almost certainly SSL, and watching the session set up reveals a lot. The beauty of SSL is that it stays secure even against an attacker with perfect knowledge of the protocol and ciphers, and we understand why."
+        },
+        {
+          "s": "steve",
+          "t": "So yes, a blob of unknown ciphertext on a CD would be harder. But any cipher worth its salt gives you a hard time anyway."
+        },
+        {
+          "s": "leo",
+          "t": "Harder than impossible isn't much harder."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Once it's many times the life of the universe, does it matter whether it's nine or 10?"
+        },
+        {
+          "s": "leo",
+          "t": "PGP email even says \"begin PGP block.\" You know it's PGP, and it doesn't help."
+        }
+      ]
+    },
+    {
+      "title": "Perfect Paper Passwords v3",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener in Calgary thanks you for the Perfect Paper Passwords v3 pages."
+        },
+        {
+          "s": "steve",
+          "t": "I forgot to mention I finished them. Visit GRC.com/ppp. A form lets you supply your own alphabet and key, and choose the passcode length."
+        },
+        {
+          "s": "steve",
+          "t": "I suggested trying an alphabet of just greater-than, hyphen and less-than. Someone in our newsgroup called it the first-ever cryptographically strong ASCII art generator."
+        },
+        {
+          "s": "steve",
+          "t": "And the third-party open-source implementations have been upgraded or are being upgraded."
+        },
+        {
+          "s": "leo",
+          "t": "He also likes the script-free CSS menus. He's wondered for years what was hiding behind obscure links."
+        },
+        {
+          "s": "leo",
+          "t": "I have to confess my site's CSS menus use a little JavaScript, to detect Internet Explorer, where one CSS feature doesn't work. I'm impressed you avoided it."
+        },
+        {
+          "s": "steve",
+          "t": "I used CSS hacks. Different browsers' CSS parsers interpret some things differently, so I'll put a backslash in a word deliberately because one browser ignores it and another doesn't. Early IE was mostly to blame. The latest is way better."
+        },
+        {
+          "s": "leo",
+          "t": "But the CEO of Opera, which has long pushed web standards against Microsoft's indifference, says IE8 is no better. Microsoft is so dominant that it sets its own standards. And every new IE version means updating your detection code. It's a lot of work."
+        },
+        {
+          "s": "leo",
+          "t": "He closes by thanking you for teaching him enough that he could now actually implement a system like PPP. That's really nice, and true."
+        }
+      ]
+    },
+    {
+      "title": "Moving a FREE CompuSec Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike Cerminara of Moorestown, New Jersey, has drive encryption puzzlers. He was put off by CompuSec's closed source, and waited for TrueCrypt, but it's a nonstarter on his laptop because it doesn't support hibernation."
+        },
+        {
+          "s": "steve",
+          "t": "The good news is that's coming. The TrueCrypt developers know that limitation will put some people off."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "TrueCrypt 5.1, released in March 2008, added hibernation support for encrypted system drives."
+        },
+        {
+          "s": "leo",
+          "t": "So he tried CompuSec. But can he mount the encrypted drive on another system, to migrate to a larger drive or rescue data if Windows is hosed?"
+        },
+        {
+          "s": "steve",
+          "t": "Moving it to a different motherboard is fine, since, as with TrueCrypt, everything needed to decrypt it is on the drive itself. But you can't mount a CompuSec drive elsewhere. It has to be booted for its boot-time code to run."
+        },
+        {
+          "s": "steve",
+          "t": "What you can do is boot it one last time, press F2 for boot options, and choose to decrypt the drive now. Then it's an ordinary drive you can attach as a slave."
+        },
+        {
+          "s": "leo",
+          "t": "And SpinRite would work on it, since it doesn't care about the data?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, and there's a question about that coming."
+        },
+        {
+          "s": "leo",
+          "t": "He also asks whether TrueCrypt can mount an encrypted system partition like any other volume."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know for sure. I sort of think not. I'll have the answer next week."
+        }
+      ]
+    },
+    {
+      "title": "Amazon S3 Goes Dark",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sky Moreno of Yorba Linda, in Orange County, bought SpinRite and sends TWiT $10 a month. Thank you, Sky."
+        },
+        {
+          "s": "leo",
+          "t": "I should explain how that works, since someone emailed that he'd stop donating because he sees me taking expensive vacations. I have real jobs in radio and TV that pay well, and they support me and, frankly, TWiT. I donate my time and don't draw a salary. Donations pay for infrastructure: rent, Dane, servers and equipment. Monthly donations give me a predictable budget. Ad revenue, after a small operating fee, is split with the hosts, which pays people like Steve, who otherwise do this for free."
+        },
+        {
+          "s": "steve",
+          "t": "And we have toys to buy. I don't ask for promo copies, like an IronKey. I buy things so I don't feel I owe anyone a positive review or have to send anything back."
+        },
+        {
+          "s": "leo",
+          "t": "Same here. I rarely take loaners. I do have a MacBook Air loaner, mostly because I didn't want to buy one."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not that impressed by it. It's thinner than a MacBook. Okay."
+        },
+        {
+          "s": "leo",
+          "t": "I want to be able to say a product is crap. When people are nice to you, it's hard to say bad things. That's why I don't even get to know them."
+        },
+        {
+          "s": "leo",
+          "t": "Sky runs a small network integration company and, after our Jungle Disk show, sent 5,500 family photos to Amazon. Then S3 went offline. Should Jungle Disk users like us worry?"
+        },
+        {
+          "s": "steve",
+          "t": "It caused a great deal of controversy. Amazon had its much-ballyhooed Service Level Agreement, with all its talk of being spread around the country with fault tolerance and self-healing mumbo-jumbo. Starting around 5:00 a.m. Pacific on Friday, their facility was down for as much as four hours, then came limping back slowly."
+        },
+        {
+          "s": "steve",
+          "t": "Businesses depending on S3 were out of business while it was down: photo-sharing sites, greeting card companies. Some said it cost them $5,000, enough to buy their own servers. It was a lesson about relying on S3, and very expensive for Amazon's reputation, which tells me they'll make sure it doesn't happen often."
+        },
+        {
+          "s": "steve",
+          "t": "And BlackBerry had an outage not long ago, which freaked out people who couldn't jack their email straight into their neural systems."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not worried. You and I use it for backup, trickling out of our machines. Jungle Disk is very robust as my link, Amazon and my laptop come and go. When everything's working, it sends what it can. I don't rely on S3 for mission-critical access. But when you rely on a service like this, think about what happens when it's down."
+        },
+        {
+          "s": "leo",
+          "t": "Amazon says it wasn't their storage servers. Their authentication service was overloaded by too many requests."
+        },
+        {
+          "s": "steve",
+          "t": "Got to beef that up, then."
+        },
+        {
+          "type": "fact",
+          "title": "The SLA",
+          "t": "S3's service level agreement at the time promised 99.9 percent monthly uptime, with service credits when Amazon fell short, not a guarantee of no outages."
+        }
+      ]
+    },
+    {
+      "title": "Imaging an Encrypted Drive",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeffrey in Columbia, Maryland encrypted his entire drive with TrueCrypt. Acronis True Image found the partition but didn't recognize its format, since it's random data, though it offered to image it anyway. Must he decrypt his drive before imaging it? Is this a downfall of full-disk encryption?"
+        },
+        {
+          "s": "steve",
+          "t": "I put these questions between the FREE CompuSec and TrueCrypt episodes because they're so topical. The real issue is whether you image from inside the OS or outside."
+        },
+        {
+          "s": "steve",
+          "t": "An external imager, like Ghost or PowerQuest's Drive Image, which I used for years before Symantec sucked them up and killed them, boots on its own. It sees the entire drive as an opaque blob of pseudorandom data."
+        },
+        {
+          "s": "steve",
+          "t": "So you lose compression, and you lose the benefit of the imager understanding the file system and skipping empty sectors. On a 500GB drive, that's a lot. Drive Image is finicky and probably wouldn't have worked at all."
+        },
+        {
+          "s": "leo",
+          "t": "Couldn't it do a sector-by-sector copy?"
+        },
+        {
+          "s": "steve",
+          "t": "An imager could, and maybe that's what Acronis offered."
+        },
+        {
+          "s": "steve",
+          "t": "I've already tested my favorite in-Windows imager, Drive Snapshot. Running inside Windows, it reads through the encryption driver, which decrypts on the way. So you still get compression and skip unused space. But your backup is decrypted."
+        },
+        {
+          "s": "steve",
+          "t": "That's an important thing to recognize. You'd want to encrypt the image, perhaps by saving it into a TrueCrypt file container. So there are ways around it, but imaging does change with whole-drive encryption."
+        },
+        {
+          "s": "leo",
+          "t": "So should he decrypt, image and re-encrypt?"
+        },
+        {
+          "s": "steve",
+          "t": "It depends on the tool. With an old DOS-booting imager, you'd have no choice but to decrypt the whole drive, image it, which leaves an unencrypted image, and re-encrypt. That seems wrong."
+        },
+        {
+          "s": "steve",
+          "t": "I'd use something like Drive Snapshot, which works beautifully on TrueCrypt and FREE CompuSec volumes, then encrypt the smaller image. I don't know how True Image works. Much smaller images beat a sector-by-sector copy of the entire physical drive."
+        }
+      ]
+    },
+    {
+      "title": "Steve Switches to TrueCrypt",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Isaac in New Orleans, a SpinRite owner, asks: if Windows breaks and you need the Recovery Console, does CompuSec's boot driver support Windows repair and the F6 third-party SCSI/SATA driver install? Or does the console see no Windows, since the drive is random noise?"
+        },
+        {
+          "s": "steve",
+          "t": "Great question. And I have to say, I'm very, very impressed with TrueCrypt. I researched FREE CompuSec before TrueCrypt 5's release, not knowing when it would come."
+        },
+        {
+          "s": "steve",
+          "t": "FREE CompuSec does far more, encrypting basically every channel in and out of your machine. TrueCrypt only does on-the-fly storage encryption. But if that's all you need, I think TrueCrypt is superior, and I'll explain why next week. I've removed FREE CompuSec from that system. It now runs TrueCrypt whole-drive encryption."
+        },
+        {
+          "s": "leo",
+          "t": "Lots of listeners who started using CompuSec after last week are going, what? Hold on there."
+        },
+        {
+          "s": "steve",
+          "t": "To answer Isaac: press F2 as FREE CompuSec boots for an emergency decryption menu. It decrypts the drive back to its original state, and then you can run the Recovery Console or anything else."
+        },
+        {
+          "s": "leo",
+          "t": "So in general, Isaac's right. Since it's random data, recovery tools won't work unless you decrypt first."
+        },
+        {
+          "s": "steve",
+          "t": "It'd be interesting to test. Both systems use a handoff. Boot-time decryption code, probably intercepting the BIOS's Interrupt 13, runs until the OS's own protected-mode driver takes over."
+        },
+        {
+          "s": "leo",
+          "t": "Where does that boot code live?"
+        },
+        {
+          "s": "steve",
+          "t": "I looked at the drive's first track, and FREE CompuSec's code isn't there. Its boot sector references physical sectors inside the Windows partition. During my benchmark, I noticed regions of the drive that were locked and couldn't be defragmented, because the boot sector knows their positions. TrueCrypt puts itself in that first track, which can cause problems, as we'll hear."
+        },
+        {
+          "s": "leo",
+          "t": "So a recovery CD wouldn't know to load it."
+        },
+        {
+          "s": "steve",
+          "t": "And Recovery Console or safe mode might not load the special driver."
+        },
+        {
+          "s": "leo",
+          "t": "So is it a Windows driver or pre-Windows?"
+        },
+        {
+          "s": "steve",
+          "t": "Both. That's why it's hard, and why so little of this is done. You need decryption outside Windows until Windows gets going, then a preinstalled Windows driver that continues from there."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Meets Whole-Drive Encryption",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Matthew Simmons in Raleigh, North Carolina asks: can SpinRite still recover data from a drive full of what looks like random noise? And how resistant are TrueCrypt and FREE CompuSec to bad blocks?"
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite runs fine even on a blank drive straight out of its bag. It doesn't care what's on it. If there are partitions, it shows them, and you choose which to run on."
+        },
+        {
+          "s": "steve",
+          "t": "But remember DynaStat's partial sector recovery. Whole-drive encryption encrypts each sector individually, but with something like Cipher Block Chaining, where each part depends on what came before. So if data early in a sector is unreadable, the rest of that sector can't be decrypted. SpinRite would recover what it could, but you'd lose the sector from that point on."
+        },
+        {
+          "s": "leo",
+          "t": "That's the problem with encryption in general. A failure can be more catastrophic."
+        },
+        {
+          "s": "steve",
+          "t": "But don't be scared off. It's limited to one sector. Only SpinRite, of any utility in the world, recovers parts of sectors. Normally an unreadable sector is lost anyway, which is why the encryption makers say there's no difference. The loss is slight, and I don't think it's significant."
+        },
+        {
+          "type": "fact",
+          "title": "Actually",
+          "t": "TrueCrypt 5 used XTS mode, not CBC. XTS encrypts each 16-byte block of a sector independently, so a damaged byte spoils only its own block, not the rest of the sector."
+        },
+        {
+          "s": "leo",
+          "t": "Are there special sectors whose loss is more catastrophic?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, but that's always been true of file systems, except very resilient ones with redundant indexes. In the old FAT days, losing the root directory's first sector meant you were hosed. And DOS wrote two copies of the File Allocation Table but never read the second."
+        },
+        {
+          "s": "leo",
+          "t": "I think Norton would recover from the second FAT."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, and SpinRite knew about the second copy and would fall back to it. DOS never did."
+        },
+        {
+          "s": "steve",
+          "t": "After the FREE CompuSec show, someone in our newsgroup said his boss wanted their laptops encrypted, but feared one bad area would spread or lose the whole file system. That's absolutely not the case. Encryption is confined to individual sectors, so an encrypted drive is really no more brittle."
+        },
+        {
+          "s": "leo",
+          "t": "Except in that weird case where SpinRite could have recovered part of a sector."
+        }
+      ]
+    },
+    {
+      "title": "Observation of the Week: Dreamweaver Versus TrueCrypt",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Now the Tremendous Observation of the Week, from Steve Nicholas in the U.K. He saw forum posts saying FREE CompuSec doesn't create a recovery CD, so he tried TrueCrypt 5.0a and encrypted his whole system disk with no problems."
+        },
+        {
+          "s": "leo",
+          "t": "Days later, he opened Macromedia Dreamweaver for the first time since encrypting. It needed reactivation, which worked. But on the next reboot, TrueCrypt's boot loader froze after he entered his password."
+        },
+        {
+          "s": "leo",
+          "t": "He repaired it with the TrueCrypt recovery CD. Then Dreamweaver wanted to activate again, and afterward he couldn't boot again."
+        },
+        {
+          "s": "leo",
+          "t": "So Dreamweaver, Adobe's now, seems to have copy protection that modifies the MBR area and breaks TrueCrypt's boot loader. Restoring the boot loader overwrites the protection, so Dreamweaver reactivates, and the loop continues. He's decrypted his disk, since he needs Dreamweaver for work. He's wary of CompuSec, since without a recovery CD he'd lose everything. And the protection is probably licensed from another company, so it's likely not just Dreamweaver."
+        },
+        {
+          "s": "steve",
+          "t": "Two systems are fighting over territory. TrueCrypt's code lives in the 62 normally empty sectors after the partition sector on the first track, as I explained last week. FREE CompuSec doesn't live there, so Steve could probably use it."
+        },
+        {
+          "s": "steve",
+          "t": "But FREE CompuSec isn't nearly as robust at disaster recovery, one reason I like TrueCrypt so much. TrueCrypt won't let you encrypt until you prove you've made a recovery CD. During my testing, burning so many CDs bugged me so much that I found an ISO loader to fake it out. I'll give people a pointer to it."
+        },
+        {
+          "s": "steve",
+          "t": "This is like the boot-sector rootkits we discussed. Windows doesn't protect the drive's first track, so Dreamweaver can reach outside the partition and tweak a few bytes for its activation scheme. Now TrueCrypt lives in those bytes. It's very good TrueCrypt is so picky about recovery CDs."
+        },
+        {
+          "s": "leo",
+          "t": "That's bad behavior on Dreamweaver's part."
+        },
+        {
+          "s": "steve",
+          "t": "I agree. Mucking with the hard drive causes unintended side effects. At minimum, they should check whether that area is all zeroes, and if someone seems to live there, do something else. Everyone else manages activation without touching the first track. I hope they get their hand slapped and find an alternative."
+        },
+        {
+          "s": "leo",
+          "t": "They want something hidden outside the file system. But now everyone knows it's in the boot area, so it's dubious protection anyway."
+        }
+      ]
+    },
+    {
+      "title": "Cool Hack of the Week: TrueCrypt in VMware",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Peter Burtis, a technology consultant in North Conway, New Hampshire, wins the Cool Hack of the Week. A client wanted TrueCrypt boot drive encryption, but Peter runs Macs. Rather than experiment on the client's systems, he tried it in VMware, half expecting to brick his virtual PC."
+        },
+        {
+          "s": "leo",
+          "t": "It worked flawlessly. The boot loader comes up at virtual \"power on\" and asks for the password, and after that it's a stock Vista VM."
+        },
+        {
+          "s": "leo",
+          "t": "I guess there's still a master boot record in the drive image?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. It looks just like a hard drive with a boot sector. Multi-boot loaders, anything. It's identical."
+        },
+        {
+          "s": "leo",
+          "t": "He calls it a testament to VMware's and TrueCrypt's programmers. And examining the VM's drive file in a hex editor, compared with an unencrypted Vista VM, it's truly encrypted: random bits."
+        },
+        {
+          "s": "leo",
+          "t": "P.S.: SpinRite saved his bacon two weeks ago. We can do this in shorthand now: mother's laptop, never backed up, power failure at the worst possible nanosecond, blue screen on boot, SpinRite saves it."
+        },
+        {
+          "s": "steve",
+          "t": "Never backed up, desperately needed data, blah blah blah."
+        },
+        {
+          "s": "steve",
+          "t": "If you want to play with TrueCrypt without risking your machine, or without a PC, run it in a virtual machine. It works just fine."
+        },
+        {
+          "s": "leo",
+          "t": "And FREE CompuSec would work in VMware too?"
+        },
+        {
+          "s": "steve",
+          "t": "It should work with both."
+        }
+      ]
+    },
+    {
+      "title": "Coming Up: TrueCrypt 5 and IronKey",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next week is TrueCrypt 5.0. We'll also cover its traveler mode for encrypting USB thumb drives, which leads into our IronKey episode with its founder two weeks later, after a Q&A."
+        },
+        {
+          "s": "steve",
+          "t": "IronKey's claim to fame is true hardware encryption in the key itself, and it's potted in solid epoxy, so it's uncrushable if you run it over, and harder for bad guys to get into. My 4GB thumb drive on my keychain is now TrueCrypted, and it works nicely."
+        },
+        {
+          "s": "leo",
+          "t": "You can get 16KB and full-quality versions of all 132 episodes at GRC.com. And for the security-minded: those downloads redirect through Podtrac, our ad agency, which just counts downloads. It checks IP addresses against a database to count each real listener once, not to track you. That's why advertisers trust our numbers."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Eric curse SpinRite?",
+      "options": [
+        "It fixed his failing drive so well that Dell wouldn't believe it had failed and refused a replacement",
+        "It erased his data",
+        "It took weeks to run",
+        "It wouldn't run on Dell computers"
+      ],
+      "answer": 0,
+      "explain": "The next time, he called Dell before running SpinRite."
+    },
+    {
+      "q": "Why doesn't hiding which cipher you used add meaningful security?",
+      "options": [
+        "Good crypto is designed to stay secure even when the attacker knows everything except the key",
+        "Ciphers can be identified from their output",
+        "Attackers always guess right",
+        "Secret ciphers are illegal"
+      ],
+      "answer": 0,
+      "explain": "\"Harder than impossible isn't much harder.\""
+    },
+    {
+      "q": "What happens when Drive Snapshot images a whole-drive-encrypted system from inside Windows?",
+      "options": [
+        "The image is compressed but decrypted, so it should be encrypted separately",
+        "It fails",
+        "The image stays encrypted",
+        "It copies every sector"
+      ],
+      "answer": 0,
+      "explain": "Steve suggested saving it into a TrueCrypt container."
+    },
+    {
+      "q": "Why did Dreamweaver's activation break TrueCrypt's boot loader?",
+      "options": [
+        "Its copy protection writes to the drive's first track, where TrueCrypt's boot code lives",
+        "It deleted TrueCrypt",
+        "It changed the password",
+        "It encrypted the drive itself"
+      ],
+      "answer": 0,
+      "explain": "TrueCrypt's required recovery CD fixed it each time."
+    },
+    {
+      "q": "How do you move a FREE CompuSec-encrypted drive to another system as a data drive?",
+      "options": [
+        "Boot it one last time and choose decryption from the F2 menu",
+        "Mount it with the CompuSec app",
+        "Copy the BIOS",
+        "You can't ever"
+      ],
+      "answer": 0,
+      "explain": "All the data needed to decrypt it is on the drive itself."
+    },
+    {
+      "q": "Does whole-drive encryption make a drive much more fragile?",
+      "options": [
+        "No, damage stays within individual sectors",
+        "Yes, one bad sector ruins the whole drive",
+        "Yes, it spreads to the file system",
+        "Only on laptops"
+      ],
+      "answer": 0,
+      "explain": "Only SpinRite's partial sector recovery loses a little."
+    }
+  ]
+}

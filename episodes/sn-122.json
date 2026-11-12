@@ -1,0 +1,656 @@
+{
+  "number": 122,
+  "title": "Listener Feedback #30",
+  "subtitle": "Double encryption revisited, SSD wear and leaky wireless keyboards",
+  "date": "2007-12-13",
+  "description": "A lifelong Mac technician praises SpinRite, and Steve explains why it can't boot on Intel Macs yet. Listeners warn about sitting on RSA token cards, suggest sneakier tracking, challenge double encryption, ask about drive imaging and backups, IPv6 and routers, credit-union login options, how SSL uses certificates, whether HTTPS can be stripped, and solid-state drives. Plus users who write their passwords on PPP cards, a shortcut to Flash's settings, and the horrifying news that Microsoft's wireless keyboards \"encrypt\" with a single byte.",
+  "transcript": "https://www.grc.com/sn/sn-122.txt",
+  "audio": "http://media.GRC.com/sn/SN-122.mp3",
+  "chapters": [
+    {
+      "title": "SpinRite and the Mac",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's a Q&A, and you've got special awards this time."
+        },
+        {
+          "s": "steve",
+          "t": "The last three are the Perfect PPP Quandary of the Week, the Great Tip of the Week and, last, the Horrifying Show-Stopper Question of the Week."
+        },
+        {
+          "s": "leo",
+          "t": "No addenda from our privacy discussion, except we probably sent a chill down some spines. It's good to be aware and make choices where you can."
+        },
+        {
+          "s": "steve",
+          "t": "A short anecdote from a lifelong Mac user. SpinRite has always been PC only, because it uses the BIOS from the original IBM PC specification. Intel Macs use EFI, the Extensible Firmware Interface, which serves the same purpose but isn't compatible."
+        },
+        {
+          "s": "leo",
+          "t": "There's no INT 13 call in EFI."
+        },
+        {
+          "s": "steve",
+          "t": "Precisely, and SpinRite uses that like crazy."
+        },
+        {
+          "s": "leo",
+          "t": "There must be something comparable. And EFI isn't Apple's invention. It's an Intel spec, so PCs will eventually use it too. Though the installed base of BIOS code keeps PCs from evolving."
+        },
+        {
+          "s": "steve",
+          "t": "Phillip Shiver, a lifelong Mac user and PC technician, says when nothing in the Mac world can recover lost data, he uses any available PC and SpinRite to fix Mac drives."
+        },
+        {
+          "s": "leo",
+          "t": "There's no disk-level tool like SpinRite on the Mac. There are file system repair and unerase tools."
+        },
+        {
+          "s": "steve",
+          "t": "He started using it at work in 1992 on full-height 5-megabyte drives and floppies, and it's made him look like a hero ever since. No IT department or serious Mac technician should be without it. If only there were a Mac-bootable version for regular maintenance, his world would approach nirvana."
+        },
+        {
+          "s": "leo",
+          "t": "VMware and Parallels map INT 13 and other BIOS calls to EFI."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite 6 removed a lot of its BIOS dependence, but not all. Probably in 6-something or 7 I'll make the jump. It'd be fun to have an ISO that just boots on a Mac."
+        },
+        {
+          "s": "leo",
+          "t": "Anybody with an easy way to map INT 13 to EFI, email me, and I'll make sure Steve sees it. Is it just INT 13?"
+        },
+        {
+          "s": "steve",
+          "t": "INT 13, the screen and the keyboard."
+        },
+        {
+          "s": "leo",
+          "t": "You'd make a lot of Mac users happy. It may be your grandson who does it."
+        },
+        {
+          "type": "fact",
+          "title": "UEFI",
+          "t": "The Unified Extensible Firmware Interface replaced the BIOS on most PCs in the following decade. GRC's later SpinRite 7 work aims to run without relying on the old BIOS."
+        }
+      ]
+    },
+    {
+      "title": "Still Seeking Kindle Votes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "If you meant to check my Kindle review on Amazon but forgot, it's snipurl.com/skr, for Steve's Kindle Review. Reviews posted first get seen, so an unseen review can't get voted up unless something like this happens."
+        },
+        {
+          "s": "steve",
+          "t": "I wrote it because more people gave it one star than five, and none of them own it. They hate it because it doesn't play HD DVD. It's an eBook reader."
+        },
+        {
+          "s": "leo",
+          "t": "How did you get \"skr\"?"
+        },
+        {
+          "s": "steve",
+          "t": "Snipurl lets you choose your own token if nobody's used it."
+        },
+        {
+          "s": "leo",
+          "t": "I still can't find the voting button."
+        },
+        {
+          "s": "steve",
+          "t": "If you clicked once, it won't let you again."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe I did, unconsciously."
+        },
+        {
+          "s": "steve",
+          "t": "You said your motivation was connectivity. It's really comforting to be connected to the world. I've subscribed to a newspaper and two magazines, and they're just there in the morning."
+        },
+        {
+          "s": "leo",
+          "t": "I'll cancel my Chronicle and Wall Street Journal. I wish The New Yorker were on it."
+        },
+        {
+          "s": "steve",
+          "t": "And The Economist, which I read every week. If it's on there, bang."
+        }
+      ]
+    },
+    {
+      "title": "Don't Sit on an RSA Card Token",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Perry Harris of Bluffton, Indiana says their RSA SecurID fobs stop working if banged around with keys, and the card tokens shouldn't go in your wallet. Sitting on a back-pocket wallet curves the card and cracks its display. He doesn't know about VeriSign's card."
+        },
+        {
+          "s": "steve",
+          "t": "RSA's cards have a glass LCD screen. VeriSign's are different. Mine's in my wallet, and I plop down on hard chairs without a second thought. It's amazingly flexible, no stiffer than a regular credit card, and really robust. And it has a three-year warranty."
+        },
+        {
+          "s": "leo",
+          "t": "Sitting on your wallet can give you sciatica. Keep it in your hip pocket."
+        },
+        {
+          "s": "steve",
+          "t": "We call the original token the \"football,\" by the way. That's now the official name. Listeners are using it."
+        }
+      ]
+    },
+    {
+      "title": "Even Sneakier Tracking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jeff Parsons of Issaquah, Washington: couldn't PayPal link straight to its own page, but put a DoubleClick-hosted image on it, with a user-specific ID in the image's URL? DoubleClick would record it and return the image. Browsers send cookies for image requests too."
+        },
+        {
+          "s": "steve",
+          "t": "That's the common practice: DoubleClick images on a page, fetched with third-party cookies unless explicitly disabled. And most people allow it. A test on GRC's site, running for at least a year, shows something like 89 percent of GRC visitors have third-party cookies enabled, and you'd expect them to be more privacy conscious than average."
+        },
+        {
+          "s": "steve",
+          "t": "So the only reason I can see for PayPal linking explicitly to DoubleClick is to reach users who disable third-party cookies, by making it a first-party request."
+        },
+        {
+          "s": "steve",
+          "t": "And Jeff's right that user-specific data could go in the image URL. There's a worrisome next-generation feature in the HTML 5 spec: a \"ping\" attribute on ordinary links. It's specifically for notifying third parties when you click a link, sending a fetch to another site. So much for privacy."
+        },
+        {
+          "s": "leo",
+          "t": "They've done everything to make it easier to invade our privacy."
+        }
+      ]
+    },
+    {
+      "title": "Is Double Encryption Just One Key?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Corby in Reno, Nevada isn't sure twice beats once. Encrypt with Key A, then Key B, and a brute-force attack might find a third key that decrypts it in one step. Mat Ludlam of Weybridge, England notes that works for simple XOR. And Carlos Gonzalez in San José, Costa Rica says Key C would equal A XOR B."
+        },
+        {
+          "s": "steve",
+          "t": "No. But I was delighted people were thinking. I chose three of a great many."
+        },
+        {
+          "s": "steve",
+          "t": "XOR applies to stream ciphers, like the RC4 used in WEP and, correctly, in WPA. RC4 generates pseudorandom bytes, so random that it takes about a gigabyte of output, as I remember, even to tell it's not completely random. XOR mixes that with your data, and XORing again recovers it. For that, they'd be right that the keystreams combine."
+        },
+        {
+          "s": "steve",
+          "t": "Block ciphers like Rijndael work differently. Put in 128 bits, get out a different 128 bits. For every possible input there's a unique output, a one-to-one mapping, and the key selects which mapping."
+        },
+        {
+          "s": "steve",
+          "t": "How many possible mappings are there? The first input could map to any of 2 to the 128th outputs, the next to any except that one, and so on. That's 2 to the 128th, factorial. An astronomically large number."
+        },
+        {
+          "s": "steve",
+          "t": "Rijndael's longest key is 256 bits, so it can select only 2 to the 256th of those mappings, a tiny, tiny fraction. So there's a vanishingly small chance that two encryptions with different keys equal one encryption with some third key. Double encrypting works."
+        },
+        {
+          "s": "leo",
+          "t": "I'll take your word for it."
+        },
+        {
+          "type": "fact",
+          "title": "Not a group",
+          "t": "Cryptographers say a cipher is \"not a group\" when two encryptions can't be replaced by one with some third key. DES was proven not to be a group in 1992, which is why Triple DES adds strength, and AES is believed to behave the same way."
+        }
+      ]
+    },
+    {
+      "title": "Imaging and Backing Up",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joel Bialek of Syracuse, New York wants the imaging software you mentioned long ago. He dislikes backup tools like Maxtor's OneTouch that keep software running in the background. Ideally something splittable onto DVDs, or an external USB drive. Your top three? Would Windows Home Server work?"
+        },
+        {
+          "s": "steve",
+          "t": "My absolute favorite is still Drive Snapshot, for Windows. You run it only when you want a snapshot. It compresses well and can limit file sizes, say to 4.7 gigabytes, splitting images for DVDs."
+        },
+        {
+          "s": "steve",
+          "t": "You can double-click a snapshot to mount it and browse it like folders in Windows Explorer, to recover a deleted file. And if your system dies, it runs from a DOS prompt to reconstitute an entire partition. I use it constantly when configuring laptops, to step back from a misstep."
+        },
+        {
+          "s": "leo",
+          "t": "It's at DriveSnapshot.de, and I use it too. But imaging everything isn't the best backup for end users. Businesses image because every minute down is lost revenue. For individuals, the less time backup takes, the more likely you'll do it."
+        },
+        {
+          "s": "leo",
+          "t": "I image my first install, so I never go through Windows setup again."
+        },
+        {
+          "s": "leo",
+          "t": "Including activation. But that image goes out of date almost immediately, with another security patch next week. Maybe every six months, rebuild, update and re-image. Then back up your data automatically. I use Second Copy on Windows and ChronoSync on the Mac, small background copiers that sync changes every hour or so."
+        },
+        {
+          "s": "steve",
+          "t": "And another I love: FileBack PC. Just Google it. I've used it for years. It monitors my assembly language directory. You choose how many copies to keep, which file extensions, and limits over time: up to 20 copies of each assembly file, no closer than an hour apart, no more than 10 a day."
+        },
+        {
+          "s": "leo",
+          "t": "It's from MaxOutput.com, $55. Second Copy is about $30 or $40 but less flexible."
+        },
+        {
+          "s": "steve",
+          "t": "It's a serious tool, and it can log onto remote Windows shares."
+        },
+        {
+          "s": "leo",
+          "t": "I back up to network-attached storage mapped to my Windows machine. And keep an offsite backup. Thieves took Francis Ford Coppola's computer and his backup drive. I use Carbonite online, a radio show sponsor. Now I have 18 ways to restore."
+        }
+      ]
+    },
+    {
+      "title": "Will IPv6 Kill the Router?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "James Wilcox of Rapid City, South Dakota loves showing off his football while explaining multifactor authentication and watching eyes glaze over. He read that IPv4 didn't anticipate the demand for addresses, which NAT routers solve. With IPv6's 3.4 times 10 to the 38th addresses, won't routers be obsolete, and their firewall protection gone?"
+        },
+        {
+          "s": "steve",
+          "t": "I've said IPv6 will never happen, and gotten hate mail saying it's already happening. Its big incentive was address depletion, which NAT routers prevented."
+        },
+        {
+          "s": "steve",
+          "t": "Had we started with IPv6's 128-bit addresses, routers might never have happened. But they're inexpensive, a nice place to plug everything in, and so good for security that I'd be surprised if they go away. Without them, you'd have a hub or switch, which aren't as smart and don't cost much less."
+        },
+        {
+          "s": "leo",
+          "t": "Many routers handle IPv6. This router may be obsolete, but you'll still have one."
+        },
+        {
+          "s": "steve",
+          "t": "It was a big deal in Vista, and XP has an IPv6 stack. But ISPs must swap out lots of hardware, and there's not much pressure."
+        },
+        {
+          "s": "leo",
+          "t": "I think it's happening gradually. When will IPv4 be phased out?"
+        },
+        {
+          "s": "steve",
+          "t": "Never. IPv4 is accommodated in a little corner of IPv6, so you can keep using it."
+        },
+        {
+          "type": "fact",
+          "title": "IPv6 today",
+          "t": "IPv6 has spread slowly but steadily. By the mid-2020s, close to half of Google's users reached it over IPv6, while home routers still use a firewall to block unsolicited incoming traffic."
+        }
+      ]
+    },
+    {
+      "title": "Never Trusting Any Provider",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jim Bassett of Pleasant Hill, California also banks at Patelco. He points out you can choose to trust no provider, so a new password arrives by email or text for every login. He'd never trust his work's provider, and may skip Comcast at home too. Is that more acceptable?"
+        },
+        {
+          "s": "steve",
+          "t": "They're responding to government regulations requiring multifactor authentication with reverse DNS, which isn't a strong factor. Telling Patelco to never trust any provider forces a fresh password every time, which is much more secure. Unless you log in constantly, it's worth the hassle."
+        },
+        {
+          "s": "leo",
+          "t": "By text it's instant. Bank of America does it as a secondary check. I'd like to do it that way."
+        }
+      ]
+    },
+    {
+      "title": "How SSL Uses the Certificate",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Aaron Mashburn in the Republic of Panama went back to Episodes 31 through 37 to refresh his crypto. Good idea, by the way. He asks: a certificate verifies the server's identity, but is it used in the encryption?"
+        },
+        {
+          "s": "steve",
+          "t": "We've had several questions like this, so I've noted an episode on the SSL protocol itself. It's extremely understandable."
+        },
+        {
+          "s": "steve",
+          "t": "Briefly, yes. The server provides its certificate, signed by a certificate authority so the client can verify it, which contains the server's public key. The client chooses a random symmetric key for bulk encryption, since public keys are much too slow for that, encrypts it with the server's public key, and sends it back."
+        },
+        {
+          "s": "steve",
+          "t": "Someone sniffing the wire could see that encrypted symmetric key go by and be absolutely unable to decrypt it. Only the server, with the matching private key, can. Then both use the symmetric key."
+        },
+        {
+          "type": "fact",
+          "title": "Modern TLS",
+          "t": "Today's TLS usually doesn't encrypt the session key with the server's key. Both sides use a Diffie-Hellman exchange to create a fresh key, and the certificate proves the server's identity. That gives \"forward secrecy,\" so a stolen server key can't unlock past sessions."
+        }
+      ]
+    },
+    {
+      "title": "Can Anyone Strip HTTPS?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jack in Australia asks if his ISP or government agencies could strip HTTPS and read his traffic."
+        },
+        {
+          "s": "steve",
+          "t": "A resounding no. Just be careful your ISP hasn't installed a certificate authority in your browser so it can proxy your HTTPS connections."
+        },
+        {
+          "s": "leo",
+          "t": "You'd know, because the site's certificate would be signed by your ISP."
+        },
+        {
+          "s": "steve",
+          "t": "It would be signed by the ISP on the fly, rather than by, say, VeriSign. If the chain of signing goes back to a common root, nobody sniffing the wire can strip off the security. That's the whole point of SSL, a well-known standard with no ways around it."
+        },
+        {
+          "s": "leo",
+          "t": "At work, on Amazon, would the certificate still say Amazon.com?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, but signed by your company. Look at who signed it."
+        },
+        {
+          "s": "leo",
+          "t": "You're screwed if you work for VeriSign."
+        },
+        {
+          "s": "steve",
+          "t": "That's a very good point. I never thought about that. As the signing authority, they could sign certificates on the fly, and everyone's browser would accept them. A very interesting hack, Leo."
+        },
+        {
+          "s": "steve",
+          "t": "In most browsers, look at the page properties, View Certificate, then details. You'll see the chain of signatures back to a root. If it's VeriSign, Thawte or another mainstream authority, you know who signed the site's certificate."
+        }
+      ]
+    },
+    {
+      "title": "Solid-State Drives",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Zacc Cooley of Gilbert, Arizona asks about solid-state drives. We just got a 64-gig one at the Lab for $2,500. Can their bits get corrupted? Will he need SpinRite, defragging, backups? Is there a battery that could die?"
+        },
+        {
+          "s": "steve",
+          "t": "They have essentially no relationship to hard drives. There's no seeking, so no need to defrag. There's no battery."
+        },
+        {
+          "s": "leo",
+          "t": "So reading any address takes the same time."
+        },
+        {
+          "s": "steve",
+          "t": "They strand electrons on a tiny insulated bit of metal. Their electrostatic influence, sensed through the insulator, determines a one or a zero. You force electrons through the insulator, called tunneling, or pull them out."
+        },
+        {
+          "s": "steve",
+          "t": "Tunneling causes a little physical damage. Reading just checks whether a little transistor is on. Writing needs a higher voltage from a \"charge pump,\" which is why it's slower. And after many writes, on the order of 10 to the 5th, about 100,000 cycles, they die. Hard drives don't wear from changing data."
+        },
+        {
+          "s": "steve",
+          "t": "To spread the damage, they distribute writes across the chips, even if you write the same address over and over. So don't defrag, which needlessly writes. And don't run SpinRite, which writes like crazy. Great for hard drives, bad for solid-state ones."
+        },
+        {
+          "s": "leo",
+          "t": "Would it work? It's an IDE interface."
+        },
+        {
+          "s": "steve",
+          "t": "It does. Mark Thompson, years ago, used a PCMCIA EEPROM card as a Windows swap drive to see whether writing really hurt it."
+        },
+        {
+          "s": "leo",
+          "t": "He's got money to burn, that kid. Vista's ReadyBoost uses flash as a cache, written once and read a lot."
+        },
+        {
+          "s": "steve",
+          "t": "Mature technologies keep data in RAM and only rarely flush to non-volatile memory."
+        },
+        {
+          "s": "leo",
+          "t": "And they're still very expensive."
+        },
+        {
+          "type": "fact",
+          "title": "SSDs today",
+          "t": "Modern SSDs use wear leveling, spare capacity and the TRIM command to last for years of normal use, even though individual flash cells now endure fewer writes than early chips did. Backups still matter."
+        }
+      ]
+    },
+    {
+      "title": "Perfect PPP Quandary: Writing It on the Back",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Perfect PPP Quandary of the Week, from Sean Reiser of Astoria, New York. It's no flaw in PPP, just proof there's no patch for human stupidity. PEBKAC, baby."
+        },
+        {
+          "s": "leo",
+          "t": "He's piloting PPP on a corporate site to replace RSA fobs. Beyond the techs, users wrote the site URL, their username and their password on the blank back of their cards. No matter how much education, some did it anyway. Barring lobotomies or summary execution, any ideas?"
+        },
+        {
+          "s": "steve",
+          "t": "That scraps all the security if they lose the card."
+        },
+        {
+          "s": "leo",
+          "t": "Especially if they cross off used codes. You'd even know the next one."
+        },
+        {
+          "s": "steve",
+          "t": "Something you know and something you have becomes both, if a bad guy gets it. My first thought was printing a crosshatch on the back, but people would write over it. Then: print double-sided cards, with cards 4, 5 and 6 on the back of 1, 2 and 3."
+        },
+        {
+          "s": "leo",
+          "t": "They'd still squeeze it in. Laminate them so they won't take ink. Or take their pens away."
+        },
+        {
+          "s": "steve",
+          "t": "The real world is a real problem."
+        },
+        {
+          "s": "leo",
+          "t": "I have great sympathy for IT pros. They start out with all the goodwill in the world, and users slowly grind them down. Every one has horror stories."
+        }
+      ]
+    },
+    {
+      "title": "Great Tip: A Shortcut to Flash's Settings",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Great Tip of the Week, from Patrick in Montreal. Right-click any Flash object on a web page, choose Settings, and click the Advanced button on the first tab. It takes you straight to Adobe's Flash Player Settings Manager. And adjust settings in both Firefox and IE, since they're browser specific."
+        },
+        {
+          "s": "steve",
+          "t": "Nobody else told us, Patrick. Firefox and IE use different Flash plug-ins from Adobe, so I assume they don't share settings."
+        },
+        {
+          "s": "steve",
+          "t": "Many people wrote that their banks use Flash cookies they'd never heard of. They may have been disabling third-party cookies without knowing about these. I tried it on MSNBC.com and CNN.com, right-clicked an animation, chose Settings and Advanced, and landed on Adobe's page, just as Patrick said."
+        }
+      ]
+    },
+    {
+      "title": "Horrifying Show-Stopper: Wireless Keyboards",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Horrifying Show-Stopper Question of the Week, from Brian W., also in Montreal. He loves wireless keyboards but never considered the risk. He saw a Black Hat presentation saying Microsoft's wireless keyboard \"encryption\" is a 1-bit shift register. Is that industry wide?"
+        },
+        {
+          "s": "leo",
+          "t": "A radio caller asked me this, and I didn't know."
+        },
+        {
+          "s": "steve",
+          "t": "I did some research. Get a load of this. It's not a 1-bit shift register. It's a single static byte XORed with the keyboard data."
+        },
+        {
+          "s": "leo",
+          "t": "Pretty easy to reverse engineer?"
+        },
+        {
+          "s": "steve",
+          "t": "Leo, it'd be hard not to. It's horrifying."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft's 1000 and 2000 series keyboards have been examined. The 3000 and 4000 haven't, but appear the same. Logitech recognized this would be exposed and boasts about a secure connection."
+        },
+        {
+          "s": "steve",
+          "t": "During the \"association phase,\" Microsoft's keyboard picks one random byte and gives it to the receiver. Every keystroke is XORed with it. There are only 256 possible bytes. Capture 20 or 30 characters, try all 256 in a heartbeat, and one turns it into readable text. The keyboard is deciphered."
+        },
+        {
+          "s": "steve",
+          "t": "They use 27 megahertz, extremely easy to receive. In an apartment building, neighbors could trivially decrypt everything you type."
+        },
+        {
+          "s": "leo",
+          "t": "Do you know how Logitech does it?"
+        },
+        {
+          "s": "steve",
+          "t": "I don't, and it's worth research. Securing a conversation that anyone can monitor, as with any radio, takes serious work on each end. I wonder if Logitech's is truly secure or just less easy to crack. But nothing could be easier than one XORed byte. Why even bother?"
+        },
+        {
+          "s": "leo",
+          "t": "In fairness, they don't claim it's secure. Maybe it's to prevent crosstalk from other keyboards."
+        },
+        {
+          "s": "steve",
+          "t": "It doesn't do that either. And there's now technology that simultaneously records and decrypts every keyboard in range, using each keyboard's unique identifier to tell them apart."
+        },
+        {
+          "s": "leo",
+          "t": "They could log a whole office without touching anyone's computer."
+        },
+        {
+          "s": "steve",
+          "t": "Put on your tinfoil cap, connect a wire and send it to your keyboard receiver."
+        },
+        {
+          "type": "fact",
+          "title": "KeyKeriki",
+          "t": "The research was by Max Moser and Philipp Schrödel of Dreamlab Technologies in 2007, whose \"KeyKeriki\" device sniffed and decoded 27-megahertz Microsoft keyboards. Later research found weaknesses in many 2.4-gigahertz wireless keyboards too."
+        }
+      ]
+    },
+    {
+      "title": "Every Transcript, and a Holiday Schedule",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "GRC.com has 16KB versions of all 122 episodes. Transcripts for every one?"
+        },
+        {
+          "s": "steve",
+          "t": "Every single one. I had Elaine go back to number one and come forward."
+        },
+        {
+          "s": "leo",
+          "t": "Are you taking Christmas off?"
+        },
+        {
+          "s": "steve",
+          "t": "We're not going to miss a single week."
+        },
+        {
+          "s": "leo",
+          "t": "You just want to catch up with TWiT."
+        },
+        {
+          "s": "steve",
+          "t": "I'm going to pass them this time, finally, while you're in Egypt."
+        },
+        {
+          "s": "leo",
+          "t": "Christmas Eve I go to Providence to spend Christmas with my mom and sister, then the four of us fly to Cairo on the 27th. If you're a listener in Cairo, I'll be the one on the donkey, or the camel. Back January 6th. Then Macworld, January 15th through 18th, with live podcasts in the West Conference Hall. Come up and we'll do a Security Now! there."
+        },
+        {
+          "s": "leo",
+          "t": "The ScotteVest coupon code LEO still gets 20 percent off. And thank you to those who donate. We're sold out of ads and never run more than two. But ad money goes to the hosts. The server, rent and Dane's salary come from your donations, because they're consistent. Even $2 a month shows you care."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why can't SpinRite boot on Intel Macs yet?",
+      "options": [
+        "Macs use EFI, which lacks the BIOS INT 13 calls SpinRite depends on",
+        "Apple blocks it",
+        "Macs have no hard drives",
+        "SpinRite is too big"
+      ],
+      "answer": 0,
+      "explain": "Steve hopes a later version will make the jump."
+    },
+    {
+      "q": "Why doesn't double encryption with two keys equal a single encryption with some third key?",
+      "options": [
+        "A block cipher's keys select only a tiny fraction of all possible mappings",
+        "Because of XOR",
+        "Keys must be identical",
+        "It always does"
+      ],
+      "answer": 0,
+      "explain": "That shortcut works only for XOR stream ciphers."
+    },
+    {
+      "q": "Why does Steve say not to run SpinRite on solid-state drives?",
+      "options": [
+        "Flash memory wears out with writing, and SpinRite writes heavily",
+        "It can't read them",
+        "They have no sectors",
+        "It erases them"
+      ],
+      "answer": 0,
+      "explain": "Defragging them is pointless too."
+    },
+    {
+      "q": "In 2007's SSL, how was the bulk-encryption key protected?",
+      "options": [
+        "The client encrypted a random symmetric key with the server's public key",
+        "It was sent in the clear",
+        "It was printed on the certificate",
+        "The user typed it"
+      ],
+      "answer": 0,
+      "explain": "Only the server's private key could decrypt it."
+    },
+    {
+      "q": "What was the problem in Sean Reiser's PPP pilot?",
+      "options": [
+        "Users wrote their usernames and passwords on the backs of their cards",
+        "Cards wore out",
+        "The codes repeated",
+        "The server failed"
+      ],
+      "answer": 0,
+      "explain": "It defeats multifactor authentication if a card is lost."
+    },
+    {
+      "q": "How did Microsoft's 27 MHz wireless keyboards \"encrypt\" keystrokes?",
+      "options": [
+        "By XORing them with a single random byte, trivial to crack",
+        "With AES",
+        "With a 1-bit shift register",
+        "They didn't transmit keystrokes"
+      ],
+      "answer": 0,
+      "explain": "Only 256 possibilities had to be tried."
+    }
+  ]
+}

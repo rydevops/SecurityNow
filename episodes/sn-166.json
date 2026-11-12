@@ -1,0 +1,426 @@
+{
+  "number": 166,
+  "title": "Cross-Site Request Forgery",
+  "subtitle": "How a mere image tag can act on sites where you're logged in",
+  "date": "2008-10-16",
+  "description": "Steve corrects an earlier mistake and gives CSRF its own episode: how browsers send data with GET and POST, how your persistent login lets any page or email make requests to sites that trust you, and the ING Direct, MetaFilter and Amazon examples. He explains the fixes (one-time form tokens, logging out, a Firefox plug-in). Plus Microsoft's new Exploitability Index, an Opera update, a credit-card-skimming ring run from Pakistan, and SpinRite redownloaded after four years.",
+  "transcript": "https://www.grc.com/sn/sn-166.txt",
+  "audio": "http://media.GRC.com/sn/SN-166.mp3",
+  "chapters": [
+    {
+      "title": "Updates and an Exploitability Index",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A big Windows Update came out, and all my systems rebooted at 3 a.m., including the one doing overnight reruns."
+        },
+        {
+          "s": "steve",
+          "t": "Mine are set to advise but not download or install. I'm still not willing to give up that much control."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft is adding a new rating alongside critical and important: an Exploitability Index. A three-step scale for each flaw: consistent exploit code likely, inconsistent exploit code likely, or functioning exploit code unlikely."
+        },
+        {
+          "s": "leo",
+          "t": "I don't know what \"inconsistent\" means here."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe it means reliable versus unreliable. A reliable exploit, an unreliable one, or one unlikely to work. It's meant to help administrators prioritize."
+        },
+        {
+          "s": "leo",
+          "t": "I'd rather they said widespread in the wild, occasionally in the wild, or not at all."
+        },
+        {
+          "s": "steve",
+          "t": "But that changes over time, so they couldn't declare it."
+        },
+        {
+          "type": "fact",
+          "title": "The Exploitability Index",
+          "t": "Microsoft introduced the Exploitability Index in October 2008 to accompany each security bulletin's severity rating."
+        }
+      ]
+    },
+    {
+      "title": "A Mega Patch Tuesday, and Fake Update Spam",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This Patch Tuesday was a big one: 11 bulletins across Windows, Active Directory, Internet Explorer, Office and more, four critical. Don't discriminate; install them."
+        },
+        {
+          "s": "steve",
+          "t": "Also, Opera jumped from 9.51 to 9.6 for serious remote code exploits whose details are loose and being used. Opera users, update."
+        },
+        {
+          "s": "leo",
+          "t": "Let's not be snarky. Opera's a good browser."
+        },
+        {
+          "s": "steve",
+          "t": "I'm a born-again Firefox guy now."
+        },
+        {
+          "s": "steve",
+          "t": "And there's malware-laden spam pretending to be an important Windows security update."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft does not send updates by email."
+        }
+      ]
+    },
+    {
+      "title": "A Clarification About Audible",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jeff Stuckey in Fort Payne, Alabama set up a free Audible account and was surprised the book Leo recommends wasn't free, because a free account gives one credit and Neal Stephenson's \"Anathem\" costs two."
+        },
+        {
+          "s": "leo",
+          "t": "Long books are two credits. You get a credit toward a free book, to be precise."
+        }
+      ]
+    },
+    {
+      "title": "A Skimming Ring Run From Pakistan",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The neat story of the week, from The Wall Street Journal. European police uncovered a sophisticated credit card fraud ring funneling data to Pakistan from hundreds of grocery store card readers across Europe, affecting retailers including a British unit of Wal-Mart and Tesco. Estimated losses: $50 to $100 million."
+        },
+        {
+          "s": "steve",
+          "t": "The readers, made in China, had untraceable devices inserted that sent account data over a wireless cell connection to servers in Lahore and constantly changed the theft pattern to avoid detection. U.S. intelligence, including the NSA, was watching, partly because of the Pakistan tie."
+        },
+        {
+          "s": "steve",
+          "t": "A small card with wireless tech was tucked behind the motherboard. It read the card number and PIN, stored them, and once a day called Lahore to upload data and get instructions on what to steal next."
+        },
+        {
+          "s": "steve",
+          "t": "The only easy way to spot it from outside is that a bugged reader weighs a few ounces more."
+        },
+        {
+          "s": "leo",
+          "t": "So these were inserted after manufacture?"
+        },
+        {
+          "s": "steve",
+          "t": "Presumably in shipment, since not all machines had it. It needed full design knowledge of the reader, a custom piggyback board for power and passive data capture, local storage, and a two-way cellular connection. In one account, a guard noticed cell phone interference at certain times of day, and they pieced it together."
+        },
+        {
+          "s": "leo",
+          "t": "Almost science fiction. This is where organized crime is headed."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite, Redownloaded After Four Years",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Ron Webb bought SpinRite 6 four years ago after hearing Leo, used it a couple of times, then forgot he owned it. His father's XP desktop wouldn't restart after a power outage, looping at the splash screen, failing even safe mode. Over the phone, a repair install reported an unknown partition type."
+        },
+        {
+          "s": "steve",
+          "t": "He had his dad drive the machine to him in Roseville, California, near a Fry's and his 20-megabit fiber Internet, in case he needed parts or downloads."
+        },
+        {
+          "s": "steve",
+          "t": "Then at Fry's he overheard someone asking about hard drives, interrupted to help, and the man asked if he'd ever used SpinRite. He'd forgotten he owned it. Using Gmail, he found his 2004 purchase code, redownloaded SpinRite, and burned a CD. It ran about an hour and a quarter, found several errors, marked one spot with a red U, and XP then booted fine."
+        },
+        {
+          "s": "steve",
+          "t": "That's a feature of my eCommerce system: a unique cryptographic string per purchase lets people redownload SpinRite anytime, anywhere."
+        }
+      ]
+    },
+    {
+      "title": "Correcting the CSRF Mistake",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today's topic has a genesis. A couple of Q&As ago, someone asked what cross-site request forgery is. While preparing, something I read confused me, and when you asked, I said it's pretty much the same as cross-site scripting. That was wrong, and I knew better."
+        },
+        {
+          "s": "leo",
+          "t": "You're a man of honor."
+        },
+        {
+          "s": "steve",
+          "t": "The only thing they share is the words \"cross\" and \"site.\" It deserves its own episode, and it's been bugging me for weeks."
+        }
+      ]
+    },
+    {
+      "title": "GET and POST",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I've long been annoyed at how users send data back to servers. The web began as browsing pages others built. With Web 2.0 it became participatory: blog comments, forums, webmail, applications run over the 'Net."
+        },
+        {
+          "s": "steve",
+          "t": "Sending data back is an awkward extension of making a request. A browser issues a GET request, exactly like a URL. GET is the verb, in capitals."
+        },
+        {
+          "s": "leo",
+          "t": "It actually sends the word GET?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. And the whole exchange is human-readable English: cookies, headers and all. You can do it by hand over telnet."
+        },
+        {
+          "s": "steve",
+          "t": "GET was extended so a question mark terminates the page path, and anything after it is parameter data. A web form's action can say GET, which tacks the field data onto the end of the URL."
+        },
+        {
+          "s": "steve",
+          "t": "POST is different. The data isn't in the URL but in the body, after the headers and a blank line. It's more common now because you can send much more, since a URL has a length limit."
+        }
+      ]
+    },
+    {
+      "title": "Persistent Login Is the Weakness",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Everything you do is sent the same way. At Amazon, when I click one-click to buy, that's a GET or POST request, validated by the cookie that keeps me logged in. My browser always returns the cookie for the site I'm at. Amazon sees the cookie and accepts the purchase."
+        },
+        {
+          "s": "steve",
+          "t": "Now imagine something you didn't intend. You visit a third-party site, or view email in Outlook's IE-based viewer, that contains an image reference. Receiving an image tag, your browser issues a GET request, just like fetching a page."
+        },
+        {
+          "s": "steve",
+          "t": "But the \"image\" may not be an image. If its URL is a GET request to buy a product from Amazon with one click, your browser sends your Amazon cookie along, and Amazon accepts it as if you'd clicked the button. The problem is persistent login: anywhere you go can ask your browser to GET, or with JavaScript POST, to any other site."
+        }
+      ]
+    },
+    {
+      "title": "The MetaFilter and ING Examples",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Take MetaFilter.com, a popular link-blog site. When logged in, you can change your email address, and separately ask the site to email your password. A site you visit could take over your MetaFilter account with two images: the first changes your email to the attacker's, the second requests your password, which is emailed to the new address. Then the attacker has everything."
+        },
+        {
+          "s": "steve",
+          "t": "POST makes it harder, but many application frameworks abstract GET and POST so the app doesn't see the difference, and sites that use POST on their pages still accept GET. Any image tag can then exploit the trust a site has in you."
+        },
+        {
+          "s": "steve",
+          "t": "There were Digg stories that dug themselves through an invisible image. And ING Direct, a big savings bank, had this fixed, so I can discuss it. You could open a new account, give it a balance, add any ING account as a payee, and transfer money, all by blind queries with no interaction."
+        },
+        {
+          "s": "steve",
+          "t": "Until fixed, a malicious or cross-site-scripted site affiliated with ING could serve JavaScript that any ING customer's browser would run: clone an account off yours, transfer a dollar, add the hacker's account as payee, empty your account into the new one, and confirm the transfer."
+        },
+        {
+          "s": "leo",
+          "t": "How much was lost?"
+        },
+        {
+          "s": "steve",
+          "t": "Unknown. This is regarded as the sleeping giant of Web 2.0, because it exploits the persistence of your relationship with sites."
+        },
+        {
+          "s": "leo",
+          "t": "Tabs are part of it. I can't close the window to my bank and reopen it; I stay in the session."
+        },
+        {
+          "s": "steve",
+          "t": "Right, until you shut down the browser, which clears cookies it never wrote to permanent storage."
+        }
+      ]
+    },
+    {
+      "title": "Fixing It",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It's not terribly hard to solve. Sites should not accept requests that lack information an attacker can't know. When a real page shows a form, it should include a hidden, cryptographically strong random token, sent back with the submission. No third party could generate a blind request with the right token."
+        },
+        {
+          "s": "leo",
+          "t": "I remember putting long authorization keys into WordPress."
+        },
+        {
+          "s": "steve",
+          "t": "Sounds like they're doing exactly that. A page-source view would show a wacky token in the form."
+        },
+        {
+          "s": "steve",
+          "t": "Frameworks like Ruby on Rails and ColdFusion could add and verify this transparently. But it hasn't been done widely, and more sites are vulnerable than not."
+        },
+        {
+          "type": "fact",
+          "title": "CSRF tokens today",
+          "t": "Unpredictable per-form tokens are now standard, built into frameworks like Rails, Django and ASP.NET. Modern browsers also default cookies to SameSite, so they aren't sent on most cross-site requests."
+        }
+      ]
+    },
+    {
+      "title": "Takeaways and a Firefox Plug-In",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Two takeaways. First, explicitly log out of important sites when you're done, to break the persistent authentication. When eBay says \"welcome back, Steve,\" that's a problem: any request my browser makes carries my eBay cookie, and anything a page or email displays or runs is as authentic as something I do."
+        },
+        {
+          "s": "leo",
+          "t": "I just close the window at my bank and broker. Not good."
+        },
+        {
+          "s": "steve",
+          "t": "Second, there's a Firefox 3 plug-in. Google \"CSRF Protector\"; the built-in finder won't list it. It checks whether a request comes from a third party, like third-party cookies, but only for POST, since blocking third-party GETs would break legitimate images. An ad blocker that blocks third-party images covers the GET style."
+        },
+        {
+          "s": "steve",
+          "t": "It was written by Princeton security researchers Bill Zeller and Ed Felten."
+        },
+        {
+          "s": "leo",
+          "t": "Anything for Internet Explorer?"
+        },
+        {
+          "s": "steve",
+          "t": "I haven't found one. For other browsers, log off important sites and assume mischief is possible wherever you have a persistent relationship."
+        },
+        {
+          "s": "leo",
+          "t": "What if I only visit big-name sites?"
+        },
+        {
+          "s": "steve",
+          "t": "Email. Anyone viewing email can do this. A spammer could send an image tag carrying the request."
+        },
+        {
+          "s": "leo",
+          "t": "Another reason to turn off HTML email and preview panes. Just displaying it fires the request, without clicking or even reading."
+        }
+      ]
+    },
+    {
+      "title": "Amazon's Anniversary, and GET's Rule",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Amazon was told about the one-click exploit by a leading researcher, including that email could trigger an unwanted purchase. A year later it wasn't fixed, so he went public and called it the \"Amazon Anniversary.\""
+        },
+        {
+          "s": "leo",
+          "t": "Could it buy something and ship it elsewhere?"
+        },
+        {
+          "s": "steve",
+          "t": "Shipping to a new address requires re-entering a credit card and credentials, so Amazon is aware enough to block that. You'd get a confirmation email, and you'd say, wait, I don't want elephant teeth."
+        },
+        {
+          "s": "steve",
+          "t": "It's also been used on voting sites. Some log your vote without requiring login, so spraying spam casts votes for whatever the attacker wants, with no persistent connection needed."
+        },
+        {
+          "s": "steve",
+          "t": "I should add: the updated HTTP RFCs say GET should never modify content on the server, only retrieve. Hopefully that migrates into practice, since an image tag alone triggers a GET, while POST needs scripting."
+        },
+        {
+          "s": "leo",
+          "t": "You feel like Paul Revere. And it's sad these smart people don't turn their brains to useful things."
+        },
+        {
+          "s": "steve",
+          "t": "The 'Net and Web 2.0 apps keep getting more powerful. Banks push online banking because branches are expensive. This will only grow, so we have to educate users and services."
+        }
+      ]
+    },
+    {
+      "title": "Checking Referrers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Websites, stop using GET. Use POST and check referrers."
+        },
+        {
+          "s": "steve",
+          "t": "Checking referrers is another solution, but some users strip referrers with tools like Proxomitron. Sites that require a matching referrer allow a null one, and JavaScript can null or change the referrer, so it's not robust. A one-time token verified on return is the really good solution."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What underlying feature does cross-site request forgery exploit?",
+      "options": [
+        "Your persistent login, so your browser sends authenticating cookies with any request",
+        "A buffer overflow",
+        "Weak passwords",
+        "DNS spoofing"
+      ],
+      "answer": 0,
+      "explain": "Any page or email can make your browser act on a site that trusts you."
+    },
+    {
+      "q": "How can a plain image tag trigger an action on another site?",
+      "options": [
+        "The browser issues a GET request for the \"image,\" carrying your cookie for that site",
+        "It runs JavaScript",
+        "It installs a virus",
+        "It opens a new tab"
+      ],
+      "answer": 0,
+      "explain": "That's why GET should only retrieve, never modify."
+    },
+    {
+      "q": "What is the robust fix for CSRF on a website?",
+      "options": [
+        "Include an unpredictable one-time token in each form and verify it on submission",
+        "Use longer passwords",
+        "Block all cookies",
+        "Require HTTPS"
+      ],
+      "answer": 0,
+      "explain": "A blind third-party request can't contain the right token."
+    },
+    {
+      "q": "Why did the CSRF Protector plug-in only guard POST requests, not GET?",
+      "options": [
+        "Blocking third-party GETs would break legitimate images loaded from other sites",
+        "GET is encrypted",
+        "POST is rarely used",
+        "GET can't carry cookies"
+      ],
+      "answer": 0,
+      "explain": "An ad blocker covers the GET style instead."
+    },
+    {
+      "q": "Besides malicious websites, how else can a CSRF attack reach you?",
+      "options": [
+        "Through an image tag in HTML email shown in a preview pane",
+        "Through a phone call",
+        "Through a USB drive",
+        "Through DNS"
+      ],
+      "answer": 0,
+      "explain": "Just displaying the message fires the request."
+    },
+    {
+      "q": "How was the European card-skimming ring detected?",
+      "options": [
+        "A bugged reader weighed a few ounces more, and a guard noticed cell interference",
+        "Antivirus flagged it",
+        "Customers complained",
+        "The servers were seized"
+      ],
+      "answer": 0,
+      "explain": "The devices phoned data to Lahore, Pakistan."
+    }
+  ]
+}

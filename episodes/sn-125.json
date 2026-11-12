@@ -1,0 +1,538 @@
+{
+  "number": 125,
+  "title": "Symmetric Ciphers",
+  "subtitle": "Why double encryption works, and how AES really operates",
+  "date": "2008-01-03",
+  "description": "Kicking off 2008, Steve redoes his garbled explanation of double encryption properly, using a toy four-bit \"Romper Room\" cipher to show how few of a cipher's possible mappings any key can reach. Then he opens the black box of Rijndael, the AES standard: its key schedule, rounds of XOR, S-box lookups, row shifts and column mixing, why it needs 10 to 14 rounds, and its resistance to side-channel attacks. He also contrasts symmetric and public-key ciphers, and explains Triple DES.",
+  "transcript": "https://www.grc.com/sn/sn-125.txt",
+  "audio": "http://media.GRC.com/sn/SN-125.mp3",
+  "chapters": [
+    {
+      "title": "Passing TWiT",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Happy New Year, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "Happy New Year. I'm really excited about this. It comes from my bungled answer a few weeks ago about double encryption: encrypt with one key, then another. I absolutely know it's better and why. I've implemented Rijndael, the AES standard, in assembly language. But my next answer got into 2 to the power of 128 factorial, and everyone's eyes crossed."
+        },
+        {
+          "s": "leo",
+          "t": "We'll take your word for it, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "We were under time pressure. We did five shows in eight days."
+        },
+        {
+          "s": "leo",
+          "t": "I said the whole network would shut down for December, and you said, \"Over my dead body. I want to catch up with TWiT.\" And you have."
+        },
+        {
+          "s": "steve",
+          "t": "I'll never catch The Daily Giz Wiz, which is near Episode 500."
+        },
+        {
+          "s": "leo",
+          "t": "But among weekly shows, you're number one."
+        },
+        {
+          "s": "steve",
+          "t": "Number one's my favorite number."
+        }
+      ]
+    },
+    {
+      "title": "What Symmetric Ciphers Are For",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Distinguish symmetric ciphers for us."
+        },
+        {
+          "s": "steve",
+          "t": "They're the workhorse of encryption, doing all the heavy lifting. Asymmetric ciphers use one key to encrypt and a different key to decrypt. That's public-key encryption: publish one key, keep the other private, and only the matching key decrypts."
+        },
+        {
+          "s": "steve",
+          "t": "But asymmetric ciphers are excruciatingly number-crunchy. Nobody uses them for bulk encryption. Instead they encrypt a symmetric key, and the fast symmetric cipher encrypts the data. Jungle Disk uses Rijndael for everything it sends to Amazon's S3. It's the symmetric cipher's strength protecting that bulk data."
+        },
+        {
+          "s": "leo",
+          "t": "Before we started, Steve said I'll understand it by the end. You're giving me more credit than I deserve."
+        },
+        {
+          "s": "steve",
+          "t": "No errata this week. We've cranked out shows so fast there's been no chance for feedback."
+        }
+      ]
+    },
+    {
+      "title": "A Christmas SpinRite Story",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Scott Keoseyan wrote, \"SpinRite = Success.\" His 12-year-old son's laptop, Scott's old Dell Inspiron 8600, blue-screened on boot with an unmountable primary partition."
+        },
+        {
+          "s": "steve",
+          "t": "He'd bought SpinRite months earlier for another machine whose problem turned out to be the motherboard. This time he ran it overnight, rebooted in the morning, and all was well. Rebuilding would have taken four to six hours and ruined his weekend. His time is worth more than $89."
+        },
+        {
+          "s": "steve",
+          "t": "So many stories are about machines that keep going until they collapse."
+        },
+        {
+          "s": "leo",
+          "t": "People defer maintenance, like with a car, until it stops running."
+        },
+        {
+          "s": "steve",
+          "t": "If SpinRite were used before systems collapsed to blue screens, these problems would be prevented."
+        },
+        {
+          "s": "leo",
+          "t": "People think $89 buys a new drive. They forget it's not the drive, it's the data."
+        },
+        {
+          "s": "steve",
+          "t": "And setting up XP, updating every patch, tuning it, loading and registering apps: what's your time worth?"
+        }
+      ]
+    },
+    {
+      "title": "The Question Everyone Asked",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How do you implement a cipher? From a spec?"
+        },
+        {
+          "s": "steve",
+          "t": "Today we'll understand Rijndael well enough that people will say, is that all? It's not that hard. But first, the question so many asked. Adam in Ottawa, Ontario, a computer science graduate, felt compelled to write in for the first time."
+        },
+        {
+          "s": "steve",
+          "t": "He says if good encryption maps plaintext to something random using a key, then mapping random to random again with a second key must equal mapping once with some unknown third key, K3. That's what everyone has thought. I'm jazzed people took the time to think about it and tell me I'm wrong."
+        },
+        {
+          "s": "leo",
+          "t": "They assume there must be one magic key that goes all the way back."
+        },
+        {
+          "s": "steve",
+          "t": "It's a matter of scale. Instead of Rijndael's 128-bit block and 256-bit key, let's create a dumb, simple cipher."
+        }
+      ]
+    },
+    {
+      "title": "The Romper Room Cipher",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Romper Room cipher takes 4 bits and encrypts them into a different 4 bits, using a one-byte, 8-bit key. Like Rijndael as Perfect Paper Passwords uses it, the key is twice the block size."
+        },
+        {
+          "s": "steve",
+          "t": "Four bits have 16 combinations, from 0000 to 1111. Under the key's influence, each input becomes a different output."
+        },
+        {
+          "s": "steve",
+          "t": "Its first problem: too few bits. If you can get plaintext, say by encrypting your own data, you can just write down a 16-line table of every input and its output. You don't care about the key. Use the table backward to decrypt anything."
+        },
+        {
+          "s": "leo",
+          "t": "Like a transposition cipher, where A equals Z, B equals A."
+        },
+        {
+          "s": "steve",
+          "t": "That's adding a constant to each, wrapping around at the end."
+        },
+        {
+          "s": "leo",
+          "t": "So this is better: A equals Z, B equals Y, C equals F, randomly."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Now, how many possible tables are there?"
+        },
+        {
+          "s": "leo",
+          "t": "With a one-byte key, 256."
+        },
+        {
+          "s": "steve",
+          "t": "The key can reach 256. But how many possible mappings exist? Put in 0, and you could get any of 16 outputs. Put in 1, and since one output is used, any of 15. Then 14. So it's 16 factorial."
+        },
+        {
+          "s": "leo",
+          "t": "16 times 15 times 14 times 13, and on."
+        },
+        {
+          "s": "steve",
+          "t": "Down to the last input, with one output left. And counterintuitively, 16 factorial is 20,922,789,888,000. About 21 trillion."
+        },
+        {
+          "s": "leo",
+          "t": "You can stop. It's not the 12 Days of Christmas."
+        },
+        {
+          "s": "steve",
+          "t": "So there are 21 trillion possible mappings, and our key can reach 256 of them."
+        },
+        {
+          "s": "leo",
+          "t": "We need a bigger key."
+        },
+        {
+          "s": "steve",
+          "t": "My point: you can't just find a key that gives you the mapping you want. Most mappings simply aren't available."
+        }
+      ]
+    },
+    {
+      "title": "Scaling Up to Rijndael",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "For a real cipher like Rijndael, the block isn't 4 bits but 128. So the number of possible mappings is 2 to the 128th, factorial. It was hard to find, but a math genius on the Internet who's devoted her life to clever ways of computing factorials gave me its size."
+        },
+        {
+          "s": "steve",
+          "t": "It's a number with 1,296 billion billion billion billion digits."
+        },
+        {
+          "s": "leo",
+          "t": "I never heard of such a big number."
+        },
+        {
+          "s": "steve",
+          "t": "That's the number of possible mappings a 128-bit block cipher could have."
+        },
+        {
+          "type": "fact",
+          "title": "Even bigger",
+          "t": "By the usual factorial approximation, 2 to the 128th factorial has about 1.3 × 10 to the 40th digits: roughly 13,000 billion billion billion billion, ten times Steve's figure."
+        },
+        {
+          "s": "leo",
+          "t": "And the key picks only a subset."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Rijndael uses 128-, 192- or 256-bit keys. 2 to the 256th is a big number, but nowhere near as big."
+        },
+        {
+          "type": "fact",
+          "title": "Key sizes",
+          "t": "AES's three key sizes are 128, 192 and 256 bits."
+        },
+        {
+          "s": "leo",
+          "t": "How are keys selected from that superset?"
+        },
+        {
+          "s": "steve",
+          "t": "That's what's next. But 2 to the 256th needs to be big. Remember the Romper Room cipher's second problem."
+        },
+        {
+          "s": "steve",
+          "t": "First, its block was too short, so you could tabulate it. You can't do that with 128 bits, since there are 2 to the 128th inputs."
+        },
+        {
+          "s": "steve",
+          "t": "That's why DES, the prior standard, with its 64-bit block, became weak. The EFF built hardware that could crack any instance of DES in a day or two."
+        },
+        {
+          "s": "leo",
+          "t": "You could map a 2 to the 64th table."
+        },
+        {
+          "s": "steve",
+          "t": "It's big, but not too big. When you double the bit length, you don't double the table, you square it. A 2 to the 128th table, roughly 3 times 10 to the 38th entries, is impossible."
+        },
+        {
+          "s": "steve",
+          "t": "Second, the Romper Room's 8-bit key falls to brute force. Try key 0, key 1, key 2, and soon you've tried all 256. That's the same as the wireless keyboards' single XORed byte. DES's key was only 56 bits, which faster equipment overtook. Rijndael's 128-, 192- or 256-bit keys make trying them all absolutely impractical."
+        }
+      ]
+    },
+    {
+      "title": "Inside Rijndael: The Key Schedule",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Until now, ciphers have been black boxes. We have explained public-key crypto: exponentiation is easy but its exact reverse, a discrete logarithm, is incredibly hard, and multiplying two big primes is trivial while factoring their product isn't. Those one-way functions create its security."
+        },
+        {
+          "s": "steve",
+          "t": "A symmetric block cipher isn't that complex. All of them use rounds: they do something to the data repeatedly. Their strength depends on how good each step is and how many times you do it, frustrating cryptanalysts outside the black box."
+        },
+        {
+          "s": "steve",
+          "t": "Rijndael won the AES competition because it was clear and clean. Its designers could explain every decision. They designed it to be efficient on slow, low-power 8-bit processors, like those in smart cards, and fast on 32-bit machines."
+        },
+        {
+          "s": "steve",
+          "t": "It starts with the key. A \"key schedule\" expands the key into much more material used throughout encryption, mixing it with carefully chosen constant data in the specification. You hope there's no typo in those tables, since you must get them exactly right."
+        },
+        {
+          "s": "steve",
+          "t": "Rijndael can use any block size that's a multiple of 32 bits, but the standard chose 128, since that's plenty. With a 256-bit key and 128-bit block, it does 14 rounds. A 128-bit key needs only 10. It uses one more set of key material than rounds, so the 256-bit key expands into 15 sets of 128 bits."
+        }
+      ]
+    },
+    {
+      "title": "Inside Rijndael: The Rounds",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Data comes in and is XORed with the first 128 bits of expanded key material. Then come three mixing steps."
+        },
+        {
+          "s": "steve",
+          "t": "First, an S-box, a 256-entry lookup table that maps each byte to another byte. There's only one, and it never changes."
+        },
+        {
+          "s": "steve",
+          "t": "Picture the 128-bit block as a 4-by-4 grid of bytes. Second, each row of the grid is shifted over by a different number of bytes."
+        },
+        {
+          "s": "steve",
+          "t": "Third, each column of 4 bytes, 32 bits, is mixed within itself by a matrix multiplication whose factors are only 0, 1, 2 and 3, because those are easy. Multiplying by 1 does nothing. By 2 is a binary shift. By 3 is a shift plus the original."
+        },
+        {
+          "s": "steve",
+          "t": "That's all there is. XOR, look up, shift the rows, mix the columns, and do that 14 times."
+        },
+        {
+          "s": "steve",
+          "t": "Attacks have been found on \"reduced round\" versions. Run only five or six rounds, and things aren't mixed enough to hide some bits of the key from analysis. Six was the last point where any weakness could be found. So the designers added two rounds before and two after, for 10, which they showed is extremely conservative and absolutely safe."
+        },
+        {
+          "s": "steve",
+          "t": "Each round XORs the next chunk of the internal key, then maps, shifts and mixes. Every step is reversible, which is how you decrypt: run Rijndael in reverse. There's no magic other way."
+        },
+        {
+          "s": "leo",
+          "t": "That's where people got the idea that two encryptions could collapse into one."
+        },
+        {
+          "s": "steve",
+          "t": "It's reversible. But the reason no third key equals the first two is the key space. Those simple steps can produce that astronomical number of mappings, and only 2 to the 256th keys exist."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not enough of a cryptographer to state definitively that no equivalent third key exists. But two keys would have to select two mappings such that their combination happened to be one some Rijndael key could reach. That's phenomenally unlikely."
+        },
+        {
+          "s": "leo",
+          "t": "And you'd still have to find it."
+        },
+        {
+          "s": "steve",
+          "t": "And 2 to the 256th is completely infeasible to brute force. Each round mixes things well, and after 14 of them, nobody outside can figure out where the bits went."
+        },
+        {
+          "s": "steve",
+          "t": "So encrypting twice is absolutely better. An attacker brute-forcing the outer layer looks for plaintext, but what comes out is the first encryption, so there's never any plaintext."
+        },
+        {
+          "s": "leo",
+          "t": "It's a numbers game."
+        },
+        {
+          "s": "steve",
+          "t": "That's all crypto is. The Romper Room cipher is nice and explainable, but there aren't enough bits. Widen the block, and 2 to that many bits factorial mappings blows it out of the water."
+        },
+        {
+          "s": "leo",
+          "t": "Even my thick skull kind of gets it."
+        },
+        {
+          "s": "steve",
+          "t": "And that's the universal standard. The U.S. made it the federal cipher, Europe apparently adopted it, it was all done in an academic environment, and it's implemented in virtually every language, as on our PPP software page."
+        }
+      ]
+    },
+    {
+      "title": "Symmetric Versus Public Key",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How is public key different?"
+        },
+        {
+          "s": "steve",
+          "t": "Symmetric means the same key encrypts and decrypts. Nobody will come up with another key that undoes that nightmare of scrambling, shifting and mixing 14 times. You expand the same key and run Rijndael backward."
+        },
+        {
+          "s": "leo",
+          "t": "The downside is that both of you need the key, and you have to get it to them."
+        },
+        {
+          "s": "steve",
+          "t": "That's why it's called a secret-key approach. Anybody with the key can decrypt. With an asymmetric cipher, one key encrypts and can't decrypt. Its partner undoes it. They're made as a pair, and there's no difference between them except that one is one and one is the other."
+        },
+        {
+          "s": "leo",
+          "t": "So you publish your public key, anyone can send you encrypted messages, and only you can read them. Is it less strong?"
+        },
+        {
+          "s": "steve",
+          "t": "The algorithms work differently and face different attacks, so they need longer keys. Where 128 bits is all a symmetric cipher needs, public keys need 1,024 bits, and now 2,048, for equivalent strength. Roughly, a 128-bit symmetric key equals about a 1,000-bit asymmetric key. That's why it's so slow."
+        },
+        {
+          "type": "fact",
+          "title": "Equivalent strength",
+          "t": "Current guidance puts a 1,024-bit RSA key closer to an 80-bit symmetric key. Matching AES-128 takes about a 3,072-bit RSA key."
+        },
+        {
+          "s": "steve",
+          "t": "So you choose a very good random number as the symmetric key, encrypt the file with Rijndael, and encrypt that random number with the recipient's public key. They decrypt the random number with their private key, then decrypt the file."
+        },
+        {
+          "s": "leo",
+          "t": "So symmetric encryption is in every kind of encryption."
+        },
+        {
+          "s": "steve",
+          "t": "Always. Rijndael is what Jungle Disk uses, and it's in Omziff alongside Twofish and Blowfish."
+        }
+      ]
+    },
+    {
+      "title": "Triple DES and Side Channels",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Has Rijndael replaced Triple DES?"
+        },
+        {
+          "s": "steve",
+          "t": "Triple DES is another example of multiple encryption being good. That's all it is."
+        },
+        {
+          "s": "leo",
+          "t": "64-bit DES done three times."
+        },
+        {
+          "s": "steve",
+          "t": "Since 56 bits wasn't enough, you use three 56-bit keys: encrypt with the first, again with the second, and again with the third. That gives the equivalent of a much larger key, just by repeated encryption, which is what that listener in Episode 120 asked."
+        },
+        {
+          "type": "fact",
+          "title": "Triple DES",
+          "t": "Because of meet-in-the-middle attacks, Triple DES's three 56-bit keys give about 112 bits of effective strength, not 168. NIST retired it at the end of 2023."
+        },
+        {
+          "s": "leo",
+          "t": "Rijndael is newer than Blowfish and DES."
+        },
+        {
+          "s": "steve",
+          "t": "It uses state-of-the-art understanding of crypto and attacks. One is the side-channel attack. Some algorithms reveal what they're doing through power consumption or timing. Serious attackers, NSA sort of stuff, watch power variations during encryption to reveal key bits, because many ciphers do different things depending on the key."
+        },
+        {
+          "s": "steve",
+          "t": "Rijndael's designers made its operations independent of the key. The key is only used to produce the expanded material XORed in each round. The S-box, row shifts and column mixing never change. So its timing and power don't vary with the key."
+        },
+        {
+          "type": "fact",
+          "title": "Cache timing",
+          "t": "In practice, fast AES software that uses lookup tables can leak key bits through processor cache timing, as Daniel Bernstein showed in 2005. Most modern processors now have built-in AES instructions that avoid this."
+        },
+        {
+          "s": "leo",
+          "t": "And it's easy to implement."
+        },
+        {
+          "s": "steve",
+          "t": "Remember the cartoon of Einstein working through an equation, and in the middle it says, \"Then a miracle happens\"? Rijndael has no miracles. At every step its designers could explain why they chose that polynomial, that S-box, that row shift. The result is a really strong scrambling of bits."
+        },
+        {
+          "s": "leo",
+          "t": "I enjoy these shows where you really explain how things work. We covered the basics early on, so we got away from it. I hope we do more."
+        },
+        {
+          "s": "steve",
+          "t": "Please do not use the Romper Room cipher. It was presented for demonstration purposes only."
+        },
+        {
+          "s": "leo",
+          "t": "It'd probably work if your kid brother's not too swift. Thank you, Miss Nancy. Starting next week, we'll cover security news too."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How many different ways can a 4-bit cipher map its 16 inputs to outputs?",
+      "options": [
+        "16 factorial, about 21 trillion",
+        "256",
+        "16",
+        "4"
+      ],
+      "answer": 0,
+      "explain": "An 8-bit key can reach only 256 of them."
+    },
+    {
+      "q": "Why can't two encryptions with different keys be replaced by one with some third key?",
+      "options": [
+        "Keys can reach only a vanishingly small fraction of all possible mappings",
+        "Keys are always secret",
+        "Ciphers aren't reversible",
+        "The third key is too long"
+      ],
+      "answer": 0,
+      "explain": "For a 128-bit block, the possible mappings are astronomically many."
+    },
+    {
+      "q": "Why did DES become breakable?",
+      "options": [
+        "Its 56-bit key was small enough to brute-force with special hardware",
+        "It had no rounds",
+        "Its algorithm was secret",
+        "It used XOR"
+      ],
+      "answer": 0,
+      "explain": "The EFF built a machine that cracked it in days."
+    },
+    {
+      "q": "What happens in each round of Rijndael?",
+      "options": [
+        "XOR with key material, S-box lookup, row shifts and column mixing",
+        "Only an XOR",
+        "A random permutation chosen by the key",
+        "Prime factorization"
+      ],
+      "answer": 0,
+      "explain": "A 256-bit key uses 14 rounds."
+    },
+    {
+      "q": "Why do symmetric and public-key ciphers work together?",
+      "options": [
+        "Public-key crypto is too slow for bulk data, so it just encrypts a random symmetric key",
+        "Symmetric ciphers can't encrypt files",
+        "Public keys are stronger",
+        "It's required by law"
+      ],
+      "answer": 0,
+      "explain": "Rijndael then encrypts the file itself."
+    },
+    {
+      "q": "How did Rijndael's designers defend against side-channel attacks?",
+      "options": [
+        "Its operations don't change with the key, which is only XORed in each round",
+        "By hiding the algorithm",
+        "By using longer keys",
+        "By running slowly"
+      ],
+      "answer": 0,
+      "explain": "So timing and power use don't reveal the key."
+    }
+  ]
+}

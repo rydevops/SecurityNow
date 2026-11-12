@@ -1,0 +1,337 @@
+{
+  "number": 178,
+  "title": "Listener Feedback Q&A #57",
+  "subtitle": "Correcting the MD5 story, shouting at hard drives, and Twitter's \"happiness\" hack",
+  "date": "2009-01-08",
+  "description": "The 57th Q&A. Steve corrects last week: it's the certificates signed with MD5, not the root's own signature, that are at risk, and points to the SSL Blacklist Firefox add-on. News: Sandboxie's rights-dropping goes public, acoustic vibration really does slow drives, and the PDP-8 kit deadline nears. Then questions: skepticism about EEStor's ultracapacitor, solar-cell hopes, the YubiKey as a WPA key and a two-factor supplement, what the MSRT actually does, why Steve dislikes AT&T, XP Service Pack 3 failing, cleaning an infected PC, and the Twitter admin-password break. Plus a burned, Mountain-Dew-soaked drive SpinRite recovered.",
+  "transcript": "https://www.grc.com/sn/sn-178.txt",
+  "audio": "http://media.GRC.com/sn/SN-178.mp3",
+  "chapters": [
+    {
+      "title": "Correcting the MD5 Story",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I said something wrong last week that annoys me. I said it was the root certificate's own signature that was the problem. It's actually the hashing algorithm of the certificates the root signs: MD5 is the weak one. Roots that sign themselves with MD5 probably sign their issued certificates with MD5 too, but that's not the heart of it. And it's not only future certificates; cryptographic weaknesses grow over time."
+        },
+        {
+          "s": "steve",
+          "t": "There's already a reaction: the SSL Blacklist add-on from CodeFromThe70s.org, now 4.0, warns when a secure page uses MD5. About 14 percent of issued SSL certificates are MD5-signed. VeriSign, which owns the targeted RapidSSL, will replace MD5 certificates free."
+        },
+        {
+          "s": "leo",
+          "t": "So it's the certificates sites get from root authorities, using MD5, not the roots themselves."
+        },
+        {
+          "s": "steve",
+          "t": "Correct. Next week I'll do a full show on certificate chains."
+        },
+        {
+          "type": "fact",
+          "title": "SHA-1's later fall",
+          "t": "SHA-1, the replacement for MD5, was itself shown breakable by 2017's SHAttered collision, so the web moved to SHA-256. The lesson that weaknesses only grow held true."
+        }
+      ]
+    },
+    {
+      "title": "Sandboxie, Shouting Drives, and the PDP-8 Deadline",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Sandboxie's rights-dropping feature is now public in 3.34, stripping even more than DropMyRights, including admin group membership."
+        },
+        {
+          "s": "steve",
+          "t": "Many asked about the YouTube video of shouting at a drive raising its latency. It's real: low-frequency, high-energy sound vibrates the drive and knocks the head off track, so it misses a sector, loses a revolution and retries. A friend found server-fan vibration slowed their drives."
+        },
+        {
+          "s": "leo",
+          "t": "Low voice or high?"
+        },
+        {
+          "s": "steve",
+          "t": "Low has more acoustic energy. Don't do it at home."
+        },
+        {
+          "s": "steve",
+          "t": "And the PDP-8 kit orders informally close January 15, so by the time you hear this it's about too late. Details in the Episode 177 notes."
+        }
+      ]
+    },
+    {
+      "title": "A Burned, Soaked Drive",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Mike Roberts dropped a screwdriver into a running machine, which sparked and caught fire, and without thinking splashed Mountain Dew on an electrical fire, shorting the house. He pulled the hard drive, peeled off the melted plastic, wiped off the burn and stickiness, and none of his Windows, Mac or Linux machines saw it. SpinRite found it, ran at Level 2, and recovered every file."
+        },
+        {
+          "s": "leo",
+          "t": "And stop drinking so much Mountain Dew."
+        }
+      ]
+    },
+    {
+      "title": "Skepticism About EEStor",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous hybrid-drivetrain researcher says EEStor's principals visited eight or nine years ago with fantastic claims but no samples, the first red flag, and never delivered one. Most experts doubt the physics, and even if it works, a power controller small, cheap and safe enough to handle 3,000-plus volts in a car is a huge challenge. He's hopeful about ultracapacitors in general, from Maxwell, NessCap and others, which have nearly unlimited life but not enough energy for electric-only cars."
+        },
+        {
+          "s": "steve",
+          "t": "I don't disagree; I'm just hopeful. The patent looked authentic, the Lockheed-Martin contract lends credence, and Zenn is reportedly gearing up to use it. You do need to step 110 or 220 volts up to 3,500 to charge, and step it down to drive, including for regenerative braking."
+        },
+        {
+          "s": "leo",
+          "t": "Either way, we should think about energy storage now."
+        },
+        {
+          "s": "steve",
+          "t": "Economically, these alternatives only become viable as energy costs rise."
+        }
+      ]
+    },
+    {
+      "title": "Solar Cells",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Daniel Farrell, a solar researcher at Imperial College London, offered to discuss the field."
+        },
+        {
+          "s": "steve",
+          "t": "I'm very hopeful about solar cells. It feels like where digital cameras were early on: once we bear down, costs will drop and efficiency will rise dramatically, unlike a mature technology like film SLRs. I looked at fusion and the National Ignition Facility, which shows how far off that still is. I'm not hopeful about fusion soon."
+        },
+        {
+          "type": "fact",
+          "title": "Solar's trajectory",
+          "t": "Solar photovoltaic costs did fall dramatically over the following decade, much as Steve predicted, making solar one of the cheapest sources of new electricity in many places."
+        }
+      ]
+    },
+    {
+      "title": "The YubiKey as a WPA Key",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "James Ortega in Kokomo asks how to use the YubiKey with his router."
+        },
+        {
+          "s": "steve",
+          "t": "You're not securing the router, but its WiFi radio. Use Yubico's free personalization tool to set the key to a fixed random string. When the router asks for the WPA key, put the cursor in the field and touch the button, twice. Then enter it on your machines, with no typing. A guest can get on your WiFi by touching the key, without ever learning it."
+        }
+      ]
+    },
+    {
+      "title": "What the MSRT Actually Does",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike Gillmore thought the Malicious Software Removal Tool ran actively like antivirus and wondered if he should reboot his eight machines daily."
+        },
+        {
+          "s": "steve",
+          "t": "It's not even daily; it runs once a month, when you restart after Microsoft ships a new version that's learned about new malware. There's an on-demand version on Microsoft's site, but your constantly updating AV, like AVG, is probably doing the job. Microsoft likely keeps it once-a-month so as not to stomp on the AV industry."
+        }
+      ]
+    },
+    {
+      "title": "Why Steve Dislikes AT&T",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Elliott Kopp worried that Steve dislikes AT&T."
+        },
+        {
+          "s": "steve",
+          "t": "Only their mobile broadband. They used slower EDGE while Verizon and Sprint had much faster EVDO. I left Cingular, which AT&T acquired, for Verizon's speed. Nothing to do with filtering or logging."
+        },
+        {
+          "s": "leo",
+          "t": "If you use an iPhone, you have no choice; its broadband isn't as fast as Verizon or Sprint."
+        }
+      ]
+    },
+    {
+      "title": "XP Service Pack 3 Failing",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Burt in Redford, Michigan can't install Windows XP SP3 on two systems and feels vulnerable."
+        },
+        {
+          "s": "steve",
+          "t": "I can't find any sign Microsoft will fix it, and it's the last service pack. But you don't need it. Tell Windows you don't want SP3, and keep installing the individual updates going forward. SP3 was just an omnibus catch-up."
+        },
+        {
+          "s": "leo",
+          "t": "At least SP3 lets you roll back, unlike SP2's permanent blue screens."
+        }
+      ]
+    },
+    {
+      "title": "The Twitter \"Happiness\" Hack",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Twitter got hit twice: a phishing attack via direct messages, and a more serious one. An 18-year-old ran a dictionary brute-force tool against an admin account whose password was \"happiness,\" then handed out access on a hacker forum. People posted lewd messages as Britney Spears, and took Barack Obama's, Fox News's and others' accounts. My account was accessed but nothing was posted."
+        },
+        {
+          "s": "leo",
+          "t": "Two mistakes: a weak dictionary password on an admin account, and no limit on login attempts, so the brute-force tool hit it freely."
+        },
+        {
+          "s": "steve",
+          "t": "Twitter started small and became a big deal; security didn't keep up."
+        }
+      ]
+    },
+    {
+      "title": "Cleaning an Infected PC",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Guillermo Garcia in Santiago, an IT person, asks whether anything short of a format and reload can clean an infected system."
+        },
+        {
+          "s": "steve",
+          "t": "It's increasingly difficult. Malware uses so much technology to hide and resist removal that there's no blanket solution. Pull off your documents and files, then start fresh and restore them. You can never be sure you got everything, and these things often go quiet and reappear."
+        },
+        {
+          "s": "leo",
+          "t": "You also get a good backup and a healthier system. I image a fresh Windows install with Drive Snapshot, so I can restore in 10 minutes and just restore my data."
+        },
+        {
+          "type": "fact",
+          "title": "Why reinstalling wins",
+          "t": "Security professionals still recommend wiping and reinstalling after a serious or rootkit infection, because malware that hooks the kernel or replaces system files can hide from any cleanup tool running on the live system."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt Is Fine",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jason, driving to Dallas and typing on an iPhone, worries that the MD5/SSL break affects his TrueCrypt whole-drive encryption."
+        },
+        {
+          "s": "steve",
+          "t": "No. AES is completely separate from MD5, SHA-1 and SSL. TrueCrypt may hash internally for integrity, but AES is unscathed. No need to re-encrypt."
+        }
+      ]
+    },
+    {
+      "title": "Finding PayPal's One-Time Card",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jared Burford in Australia can't find PayPal's one-time credit card."
+        },
+        {
+          "s": "steve",
+          "t": "It's hidden under the main menu as \"Plug-in,\" though you don't need the plug-in itself. Dumb place for it, since it's such a useful feature. I assume it's available worldwide."
+        }
+      ]
+    },
+    {
+      "title": "Hamachi's Decline",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michael Kean in Australia reports Hamachi's mediation servers down more than up since LogMeIn bought it."
+        },
+        {
+          "s": "steve",
+          "t": "By putting Hamachi on the map we may have indirectly contributed to its demise. Alex sold it to LogMeIn, who changed the drivers and destabilized it, and the servers it depends on are unreliable. CryptoLink will be designed to need no third-party server, precisely so it can always get a connection. It's the next thing I'll do."
+        }
+      ]
+    },
+    {
+      "title": "Two-Factor With the YubiKey",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Franklin in Mesa offers the \"obvious in retrospect\" idea: a static YubiKey password alone is only single-factor, something you have, so type your own memorized password and then append the YubiKey's output, like the PayPal football."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Then your short, memorable phrase plus the YubiKey's long gibberish gives real two-factor authentication, so someone who steals your keys still can't get in."
+        },
+        {
+          "s": "leo",
+          "t": "And Sean Taffert in Montreal suggests using the YubiKey's static password as the answer to PayPal's \"I don't have my key\" security questions, so nobody can guess your mother's maiden name, and you can change it once you have your football back."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is actually at risk from the MD5 weakness?",
+      "options": [
+        "Site certificates that were signed using MD5, not the root's own signature",
+        "Only the root certificates",
+        "AES encryption",
+        "All SSL forever"
+      ],
+      "answer": 0,
+      "explain": "Weaknesses also affect certificates issued before the discovery."
+    },
+    {
+      "q": "Why can shouting at a hard drive slow it down?",
+      "options": [
+        "Low-frequency vibration knocks the head off track, forcing it to retry sectors",
+        "It overheats the drive",
+        "It demagnetizes the platters",
+        "It's a hoax"
+      ],
+      "answer": 0,
+      "explain": "A low voice carries more acoustic energy."
+    },
+    {
+      "q": "How did an attacker take over Twitter accounts?",
+      "options": [
+        "A dictionary brute-force tool guessed an admin's password, \"happiness,\" with no attempt limit",
+        "Phishing the CEO",
+        "A virus",
+        "An insider"
+      ],
+      "answer": 0,
+      "explain": "A login-attempt limit would have stopped it."
+    },
+    {
+      "q": "What's the only sure way to clean a seriously infected PC?",
+      "options": [
+        "Back up your files, wipe, and reinstall, then restore the data",
+        "Run one more scanner",
+        "Delete the infected file",
+        "Reboot repeatedly"
+      ],
+      "answer": 0,
+      "explain": "Modern malware can hide from any live cleanup tool."
+    },
+    {
+      "q": "Does the MD5/SSL break affect TrueCrypt's AES encryption?",
+      "options": [
+        "No, AES is completely separate from MD5, SHA-1 and SSL",
+        "Yes, re-encrypt immediately",
+        "Only on laptops",
+        "Only for whole-drive mode"
+      ],
+      "answer": 0,
+      "explain": "TrueCrypt may hash for integrity, but AES is unscathed."
+    },
+    {
+      "q": "How can a static YubiKey password give two-factor authentication?",
+      "options": [
+        "Type your own memorized password and append the YubiKey's output",
+        "Use it alone",
+        "Register two keys",
+        "Email the code"
+      ],
+      "answer": 0,
+      "explain": "Alone it's only \"something you have.\""
+    }
+  ]
+}

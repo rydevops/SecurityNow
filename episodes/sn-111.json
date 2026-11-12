@@ -1,0 +1,400 @@
+{
+  "number": 111,
+  "title": "OpenID Precautions",
+  "subtitle": "What to watch for with single sign-on",
+  "date": "2007-09-27",
+  "description": "Listeners report that UV tattoos aren't invisible after all. Then Steve answers a widely shared critique of OpenID by Credentica's Stefan Brands. He explains why browser-based sign-on invites phishing and how checking for SSL defeats it, why one-time passwords limit the damage, and the costs of trusting one identity provider: a single point of failure, outages, a provider that sees everywhere you log in, recycled OpenID names, and sites that still need CAPTCHAs to keep out bots.",
+  "transcript": "https://www.grc.com/sn/sn-111.txt",
+  "audio": "http://media.GRC.com/sn/SN-111.mp3",
+  "chapters": [
+    {
+      "title": "Episode 1-1-1",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Episode 1-1-1. That's either ominous or auspicious."
+        },
+        {
+          "s": "steve",
+          "t": "I do like alliteration, so 1-1-1 is alliterative."
+        },
+        {
+          "s": "leo",
+          "t": "And it's binary, what, 16?"
+        },
+        {
+          "s": "steve",
+          "t": "And 7."
+        },
+        {
+          "type": "fact",
+          "title": "Binary check",
+          "t": "111 in binary is 4 + 2 + 1 = 7."
+        },
+        {
+          "s": "steve",
+          "t": "Today is OpenID, with some caveats. I thought long about the title and settled on \"precautions.\""
+        },
+        {
+          "s": "steve",
+          "t": "The day after this airs, I receive, thanks to our listeners, the People's Choice Best Science & Technology Podcast Award."
+        },
+        {
+          "s": "leo",
+          "t": "I'm sorry I won't be there. I'll be thinking of you Friday."
+        },
+        {
+          "s": "leo",
+          "t": "We're recording two today, and then I'm off to Vancouver to reunite with Amber. As this airs, we'll do a mock debate, LCD versus plasma, webcast at FutureShop.ca. She's taking LCD, I'm taking plasma, and I bet she was a college debate champion."
+        },
+        {
+          "s": "steve",
+          "t": "So our listeners don't have to worry about another 90-minute podcast. We'll skip SpinRite stories this week and get right to it."
+        },
+        {
+          "s": "leo",
+          "t": "Buy SpinRite. That's all I need to say."
+        }
+      ]
+    },
+    {
+      "title": "UV Tattoos Aren't Invisible",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Speaking of alliteration, John J. Jost, JJJ, posted in GRC's newsgroup about last week's wacky number 13. He and his son were at a tattoo shop, and the owner said UV tattoos are dull but still visible in ordinary light, so avoid visible places for job application reasons. He wouldn't recommend a tattoo for security."
+        },
+        {
+          "s": "leo",
+          "t": "We need invisible ink tattoo technology."
+        },
+        {
+          "s": "steve",
+          "t": "And my friend and past collaborator Jon Lundell wrote, tongue in cheek, that with tattoos, password revocation could be a literal pain in the butt."
+        },
+        {
+          "s": "leo",
+          "t": "That's all you need to say."
+        }
+      ]
+    },
+    {
+      "title": "A Critic Takes On OpenID",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We've talked about OpenID, various providers and VeriSign's PIP, its beta OpenID identity provider. I've been jazzed that we're seeing good solutions to authentication, as people create usernames and passwords for ever more social networks, blogs and interactive sites."
+        },
+        {
+          "s": "leo",
+          "t": "It's called single sign-on, which may be easier to understand than \"OpenID.\""
+        },
+        {
+          "s": "steve",
+          "t": "A recent blog post came from what's arguably a competitor: Credentica, an industrial-strength, not-free commercial service, patented eight ways from Sunday. Someone there must have done a lot of Googling, because it's a long post, full of all the horrors of OpenID."
+        },
+        {
+          "s": "steve",
+          "t": "OpenID is popular enough that it got well dug on Digg, and I've been bombarded with \"did you see this?\" I've researched every issue carefully. Some points deserve discussion, which is why it's \"Precautions,\" not \"Death,\" \"End of Life\" or \"Nightmare.\""
+        },
+        {
+          "s": "leo",
+          "t": "Take a competitor with a grain of salt, but let's address the issues."
+        },
+        {
+          "s": "steve",
+          "t": "More than a grain. Stefan Brands writes that OpenID was designed as a lightweight solution for \"trivial\" identity cases: replacing self-made usernames and passwords with one login, using only your browser, for blog comments and social networks. He notes local password stores already do that."
+        },
+        {
+          "s": "steve",
+          "t": "Beyond this, he says, OpenID is pretty much useless: highly vulnerable to phishing, insurmountable privacy problems, not a trust system, usability problems, and unappealing for sites to adopt. He quotes many critics."
+        },
+        {
+          "s": "steve",
+          "t": "I don't argue with anything he said, except that it's taken out of context. The trouble is, not everyone is listening to this podcast, and it's easy to be lulled into believing you're getting more from OpenID than you are. That's really my only problem with it."
+        },
+        {
+          "type": "fact",
+          "title": "Credentica",
+          "t": "Stefan Brands' company had built privacy-preserving credential technology. Microsoft bought Credentica in 2008, and its ideas became Microsoft's U-Prove."
+        }
+      ]
+    },
+    {
+      "title": "Why Phishing Is the Big Worry",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "To recap: you give a site your OpenID, which looks like a URL. The site redirects your browser to wherever your credentials live, much as buying through PayPal bounces you to PayPal. You authenticate there, and you're bounced back."
+        },
+        {
+          "s": "steve",
+          "t": "Half our 111 episodes have been about browser security, scripting and cross-site scripting. \"Web browser security\" may be an oxymoron."
+        },
+        {
+          "s": "leo",
+          "t": "The web browser is becoming the number one vector for infection."
+        },
+        {
+          "s": "steve",
+          "t": "It's how people see the Internet, and much of what we want is hard to secure. Security isn't black and white. It's all kind of goo. OpenID's power is that it uses the browser everyone has. That's also the conundrum."
+        },
+        {
+          "s": "steve",
+          "t": "Everyone says OpenID is made for phishing because of the redirect. A phishing email says click here to update your Bank of America login, and takes you to a clone. If you're bounced to something that looks like your OpenID provider, how do you know it is?"
+        },
+        {
+          "s": "steve",
+          "t": "One simple thing: SSL. Make sure the connection is secure and the site's credentials match the certificate. There's no effective way to subvert that. Not one of these attacks on OpenID mentions it."
+        },
+        {
+          "s": "leo",
+          "t": "And if SSL is vulnerable, OpenID is the least of our problems."
+        },
+        {
+          "s": "steve",
+          "t": "It isn't. But the onus is on the user, and we know how many people fall for phishing. A malicious site like FreeFlowersRUs.com could ask for your OpenID."
+        },
+        {
+          "s": "leo",
+          "t": "How would that work? I just give the flowers site Leoville.com."
+        },
+        {
+          "s": "steve",
+          "t": "Right. They go to Leoville.com."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, so they have to spoof my OpenID provider. They'd send me a page, not SSL encrypted, that says \"I am VeriSign, give me your PIP key.\""
+        },
+        {
+          "s": "leo",
+          "t": "That's why the token is great. Even if I'm phished, it's only temporary."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, a point I was going to make. Imagine a super phishing server. It knows where you were really being sent, grabs that real provider's page on the fly and shows it to you. It can pretend to be any provider."
+        },
+        {
+          "s": "leo",
+          "t": "Without a token, you've given it your password. And users must notice they're not on an HTTPS page. That's the flaw. A lot of users won't notice."
+        },
+        {
+          "s": "steve",
+          "t": "It really is a problem, and a real precaution. As OpenID gains traction, it will protect more than blog posts. More than 5,000 web services now offer OpenID. That's why the fur is flying. It's taking off, and we need to understand its limitations to use it responsibly."
+        },
+        {
+          "type": "fact",
+          "title": "SSL's limit",
+          "t": "A padlock proves you're connected to the domain shown, not that it's the right one. Phishers can get valid certificates for lookalike domains, so check the address itself, too."
+        }
+      ]
+    },
+    {
+      "title": "One Basket for All Your Eggs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "There's an overall problem that's not OpenID's fault, but comes with centralizing identity. You concentrate trust in a single point of failure. If it fails, it's far more devastating than having separate credentials everywhere, a distributed model where one compromised password, used nowhere else, exposes only one site."
+        },
+        {
+          "s": "steve",
+          "t": "It's inherent in the benefit. We want centralized identity. So choose someone you can trust, with strong technology. One-time passwords are really the way to go. And I have a fun surprise in two weeks: a free one-time password system I've come up with."
+        },
+        {
+          "s": "steve",
+          "t": "A one-time password can't be reused. If a spoofed provider page captured it, it would get one login, never valid again. Some damage could be done, but not an epidemic loss of your identity. With an unprotected username and password, you could lose your identity entirely, and real-world identity theft victims take years to recover."
+        },
+        {
+          "s": "leo",
+          "t": "We're not using it for anything serious yet. It becomes serious with banking."
+        },
+        {
+          "s": "steve",
+          "t": "And maybe we never should. There's probably a pyramid: a vast number of low-value sites like social networks and blogs, and far fewer high-value ones. It's premature to trust OpenID there. I'd be very surprised to see Bank of America offer an OpenID login without backup verification."
+        }
+      ]
+    },
+    {
+      "title": "When Your Provider Goes Down",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Another centralization issue: your identity server becomes unavailable. If your provider suffers denial-of-service attacks, server problems or overload, you can't log into any site that uses it."
+        },
+        {
+          "s": "steve",
+          "t": "The good news: the system is open and free, so you can have three or four identity providers, with credentials at each, as backups. It's posed as a reason OpenID can't be relied on, but this one's easy to work around."
+        }
+      ]
+    },
+    {
+      "title": "Your Provider Sees Everywhere You Go",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Another problem is serious enough that I've set aside Episode 115 for it, titled \"Third Parties.\""
+        },
+        {
+          "s": "steve",
+          "t": "Your OpenID server knows everywhere you log in, because you're bounced to it from each site and sent back. If it cared to aggregate that information, it could."
+        },
+        {
+          "s": "steve",
+          "t": "Whether that concerns you varies with the sites and your feelings about privacy. But again, it's a matter of trusting your identity provider."
+        }
+      ]
+    },
+    {
+      "title": "Recycled OpenID Names",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One problem that never occurred to me: OpenID URL recycling. Apparently major providers make old URLs available again after they've gone unused for some time, so a name like John Jones isn't unavailable forever."
+        },
+        {
+          "s": "steve",
+          "t": "But johnjones.myopenid.org then identifies both the old John Jones and the new one. If the new one visits a site where the old one has a history, like uploaded photos, the site may confuse them, unless something besides the URL identifies the account, like an incrementing token. The old John Jones could find the new one in his Internet assets."
+        },
+        {
+          "s": "leo",
+          "t": "Because the provider closed a dormant account?"
+        },
+        {
+          "s": "steve",
+          "t": "Say John Jones creates an account at myopenid.org, then moves to another provider. After, say, a year without use, I'm making that up, the first provider cancels the account. A new John Jones signs up and gets the same URL."
+        },
+        {
+          "s": "leo",
+          "t": "Do providers retire those names forever?"
+        },
+        {
+          "s": "steve",
+          "t": "You'd want no one ever able to use the same account again."
+        },
+        {
+          "s": "leo",
+          "t": "They need to do that."
+        }
+      ]
+    },
+    {
+      "title": "OpenID Doesn't Stop Bots",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Finally, OpenID users want sites to require nothing else. They complain they still have to give an email address, click verification links and solve CAPTCHAs."
+        },
+        {
+          "s": "steve",
+          "t": "OpenID doesn't solve the bot problem. It asserts this is who I am, now and when I return. But bots can have OpenIDs too. So email loops and CAPTCHAs are still needed, at least when you first use your OpenID at a site."
+        },
+        {
+          "s": "steve",
+          "t": "People thought, incorrectly, that OpenID would eliminate all that. It eliminates separate usernames and passwords everywhere. It doesn't prove you're human."
+        },
+        {
+          "s": "leo",
+          "t": "These aren't flaws in the underlying technology. They're almost implementation issues."
+        },
+        {
+          "s": "steve",
+          "t": "That's why it's \"Precautions.\" The technology is still immature. It's been through several 1.x versions, with 2.0 on the way. There's clearly a place for it. But because it's web-centric, unaware users could be bitten, since there are too many ways to fool people in browsers."
+        },
+        {
+          "s": "steve",
+          "t": "My show notes link to the critique and much more, for further research."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is a Q&A. Submit questions at GRC.com/feedback."
+        },
+        {
+          "s": "leo",
+          "t": "I'll keep using OpenID, but I'll make sure SSL is on when I enter my password, as you should anywhere you enter a password."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. Make that a habit, and the major problem, phishing, falls away. The rest comes with concentrating your authentication in a single provider. Choose that provider well."
+        },
+        {
+          "s": "leo",
+          "t": "Convenience versus security. Ideally you'd use a 64-character random password for every site. Ain't gonna happen. Most people use one easy password everywhere, and nobody would deny that's a bad idea."
+        },
+        {
+          "type": "fact",
+          "title": "OpenID's path",
+          "t": "OpenID 2.0 was finalized in December 2007. The consumer OpenID 2.0 network later faded, replaced by OpenID Connect, the 2014 standard behind \"Sign in with Google\" and similar logins."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What simple check does Steve say defeats OpenID phishing?",
+      "options": [
+        "Making sure you're on a secure SSL page with a certificate matching your provider",
+        "Using a long OpenID URL",
+        "Turning off cookies",
+        "Only logging in at night"
+      ],
+      "answer": 0,
+      "explain": "The onus is on the user to check."
+    },
+    {
+      "q": "How does a one-time password limit the damage of being phished?",
+      "options": [
+        "A captured code can't be used again",
+        "It blocks the phishing site",
+        "It encrypts your email",
+        "It hides your OpenID"
+      ],
+      "answer": 0,
+      "explain": "At worst, the attacker gets one login."
+    },
+    {
+      "q": "What's the \"single point of failure\" problem with centralized identity?",
+      "options": [
+        "If your one provider is compromised, every site you use with it is exposed",
+        "Each site needs its own password",
+        "OpenID is too slow",
+        "Sites can't share logins"
+      ],
+      "answer": 0,
+      "explain": "Separate passwords spread the risk."
+    },
+    {
+      "q": "How can you avoid being locked out when your OpenID provider goes down?",
+      "options": [
+        "Keep accounts with several identity providers",
+        "Never log out",
+        "Use a longer password",
+        "Call the provider"
+      ],
+      "answer": 0,
+      "explain": "The system is open and free."
+    },
+    {
+      "q": "What's the danger of recycled OpenID URLs?",
+      "options": [
+        "A new user with the same URL might get into the old user's accounts on other sites",
+        "URLs get longer",
+        "Providers charge fees",
+        "Passwords expire"
+      ],
+      "answer": 0,
+      "explain": "Providers should never reuse a name."
+    },
+    {
+      "q": "Why do sites still ask OpenID users for CAPTCHAs or email checks?",
+      "options": [
+        "Bots can have OpenIDs too, so OpenID doesn't prove you're human",
+        "OpenID is broken",
+        "Sites don't trust VeriSign",
+        "CAPTCHAs are required by law"
+      ],
+      "answer": 0,
+      "explain": "It only proves you're the same user returning."
+    }
+  ]
+}

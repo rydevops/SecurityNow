@@ -1,0 +1,751 @@
+{
+  "number": 114,
+  "title": "Listener Feedback #26",
+  "subtitle": "Skype supernodes, S3 backups, snake-oil crypto and sidejacking",
+  "date": "2007-10-18",
+  "description": "Steve confirms PayPal's download really routes through DoubleClick, Apple promises an iPhone SDK, and SpinRite rescues a crashed RAID. Listeners ask about Windows Home Server and UPnP, Skype supernodes, backing up to Amazon S3 with Jungle Disk, jumping on-screen keyboards, Firefox's master password, Passlet and SuperGenPass, Meganet's \"Virtual Matrix Encryption,\" why a beginner's random numbers repeat, cookie theft and sidejacking, and a brilliant anti-phishing habit with the PayPal token.",
+  "transcript": "https://www.grc.com/sn/sn-114.txt",
+  "audio": "http://media.GRC.com/sn/SN-114.mp3",
+  "chapters": [
+    {
+      "title": "Confirmed: PayPal Routes Through DoubleClick",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our Podcast of the Year in Science and Technology, with Mr. Fanfare, Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Someone saw streaming video of me accepting the award, which was basically just thanking our listeners."
+        },
+        {
+          "s": "steve",
+          "t": "Many people reminded me, here and in our newsgroups, that I promised to check the Episode 112 report: PayPal's virtual debit card download breaks if you block DoubleClick in your hosts file."
+        },
+        {
+          "s": "leo",
+          "t": "Why was DoubleClick involved at all?"
+        },
+        {
+          "s": "steve",
+          "t": "I checked, and it's as bad as it could possibly be. The Episode 114 notes show my cursor over PayPal's download button, with Firefox's status line revealing a DoubleClick.net URL."
+        },
+        {
+          "s": "steve",
+          "t": "It deserves a whole show. Episode 117 will be \"PayPal and DoubleClick,\" explaining how information flows when a site redirects your browser through another, and frankly how unconscionable this is."
+        },
+        {
+          "s": "leo",
+          "t": "We should give PayPal a chance to respond. We can approach them as the press."
+        },
+        {
+          "s": "steve",
+          "t": "Their tech support has been virtually nonexistent for me, but we'll try."
+        },
+        {
+          "s": "steve",
+          "t": "I'm noticing it elsewhere. Clicking ordinary Google search results, not even ads, I sometimes get an almost blank page with a \"click here if you're seeing this\" link, because my browser security blocks a redirect through a tracking service, Mediaplex or something. It's a real privacy concern, especially from a company like PayPal that you have an account with."
+        }
+      ]
+    },
+    {
+      "title": "Apple Opens the iPhone, Carefully",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "News just broke: Apple will allow third-party applications on the iPhone and iPod touch, with an SDK in February."
+        },
+        {
+          "s": "leo",
+          "t": "Steve Jobs wrote on Apple.com/hotnews that they're trying to do two opposed things: provide an advanced, open platform while protecting users from viruses, malware and privacy attacks. Some claim mobile malware isn't a problem, he says, but there have been serious viruses on other phones, some spreading silently over the cell network. And the iPhone is a highly visible target."
+        },
+        {
+          "s": "steve",
+          "t": "There were already hacks."
+        },
+        {
+          "s": "leo",
+          "t": "And Apple's response was to delete third-party apps, and brick unlocked phones. Now there'll be a legitimate channel."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not an iPhone user. I'm on Verizon and Sprint's CDMA, because their EVDO broadband is about four or five times faster than AT&T's EDGE."
+        },
+        {
+          "s": "steve",
+          "t": "I do have an iPod touch, for its cool touch interface and my video clips. But there's no way to enter my WPA key. It's one of my own from GRC.com/passwords, it shows only stars, and it wants it twice."
+        },
+        {
+          "s": "steve",
+          "t": "I'm hoping for a third-party Notepad with copy and paste, so I can move my key over from iTunes."
+        },
+        {
+          "s": "leo",
+          "t": "That's why I use shorter passwords."
+        },
+        {
+          "s": "steve",
+          "t": "There's just no way to shoehorn a long string into the iPod touch. It's wrong."
+        },
+        {
+          "s": "leo",
+          "t": "But surely you approve of building security in upfront rather than as an afterthought."
+        },
+        {
+          "s": "steve",
+          "t": "Apple would need something like a completely sandboxed Java environment. Connectivity is how malware thrives, so it's extremely difficult. I hope installing apps involves enough hoops that worms can't slip in a back door."
+        },
+        {
+          "s": "leo",
+          "t": "He points out Nokia only installs apps digitally signed and traceable to a known developer."
+        },
+        {
+          "s": "steve",
+          "t": "So developers would register with Apple to sign code, with revocation if they misbehave. People would grumble about a barrier to entry, but something must keep this from getting out of control."
+        },
+        {
+          "s": "leo",
+          "t": "I suspect they'll sell apps only through the iTunes Store, after Apple certifies them."
+        },
+        {
+          "s": "steve",
+          "t": "I'll buy Notepad that way, anything to get my WPA key in."
+        },
+        {
+          "type": "fact",
+          "title": "What happened",
+          "t": "Apple released the iPhone SDK in March 2008 and opened the App Store that July, with every app signed and reviewed. Copy and paste arrived in 2009."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Rebuilds a RAID",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Stewart Leathwood, network support at a small government organization where every penny is precious, says SpinRite fixed PC drives famously. But his story is more unusual."
+        },
+        {
+          "s": "steve",
+          "t": "Someone unplugged their 1.4-terabyte Snap Server network storage device, used for on-site backups, and the RAID array became corrupt and the disks unreadable. He put the IDE drives in a PC and ran SpinRite. It took hours, and one took days."
+        },
+        {
+          "s": "steve",
+          "t": "It fixed each one, and he rebuilt the RAID perfectly. SpinRite more than paid for itself."
+        },
+        {
+          "s": "leo",
+          "t": "That proves you can do it."
+        },
+        {
+          "s": "leo",
+          "t": "These questions are Steve's picks. I'm not trying to stump him, and he's not softballing himself."
+        },
+        {
+          "s": "steve",
+          "t": "Many send me off to do research on things I'd never heard of."
+        }
+      ]
+    },
+    {
+      "title": "Windows Home Server Without UPnP",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike Vona of Carolina, Rhode Island, a listener since Episode 1, heard on Windows Weekly that Windows Home Server needs UPnP turned on in the router. I've seen articles asking if it's really secure."
+        },
+        {
+          "s": "leo",
+          "t": "He asks: couldn't you enable UPnP while the server configures itself, then turn it off? Are UPnP router settings permanent, surviving restarts?"
+        },
+        {
+          "s": "steve",
+          "t": "One of the most distressing things is that most router interfaces don't show configuration done through UPnP."
+        },
+        {
+          "s": "steve",
+          "t": "The router presents a server to the internal network. Any computer can broadcast, \"Who knows Universal Plug and Play?\" and every UPnP device answers. The network discovers itself. Someday Sears will sell a UPnP refrigerator. My concern is your neighbor hacking into it."
+        },
+        {
+          "s": "steve",
+          "t": "The first version, all we have so far, has no security. Malware can do anything to your router's configuration. And static port mappings it creates don't appear in the admin pages, so a responsible administrator could look and see nothing."
+        },
+        {
+          "s": "steve",
+          "t": "The good news: Home Server needs only three ports, maybe just two. It's a web server, so ports 80 and 443. And a Remote Desktop proxy. Remote Desktop normally uses port 3389, but Home Server's proxy relays requests internally and listens on 4125."
+        },
+        {
+          "s": "steve",
+          "t": "So forward ports 80, 443 and 4125 to your Home Server's IP manually, and you don't need UPnP at all. With a strong caveat: you're exposing Microsoft services to the Internet. I don't think there's ever been one without horrible vulnerabilities, at least initially, even IIS. Things quieted down only when XP Service Pack 2 put them behind a firewall."
+        },
+        {
+          "s": "leo",
+          "t": "But if you enable UPnP during setup and then disable it, do the ports stay open?"
+        },
+        {
+          "s": "steve",
+          "t": "Mark Thompson found huge variation among his 60 routers' UPnP implementations. A lot of routers rushed to support it. The spec doesn't say what happens to mappings when you disable it. It's undefined."
+        },
+        {
+          "s": "steve",
+          "t": "Typically the mappings remain until you reboot or power-cycle the router, since they aren't written into firmware like static settings."
+        },
+        {
+          "s": "leo",
+          "t": "My D-Link can save its configuration, but I don't know if that includes UPnP mappings."
+        },
+        {
+          "s": "steve",
+          "t": "UPnP is meant to be dynamic. One hopes Home Server closes its forwarding when it shuts down."
+        },
+        {
+          "s": "leo",
+          "t": "People are being asked to do what sysadmins did a few years ago. To make it friendly for any nitwit, they use UPnP, which isn't the safe way."
+        },
+        {
+          "s": "steve",
+          "t": "It'd be one thing if Microsoft had a perfect security record. Dot dot dot."
+        },
+        {
+          "s": "leo",
+          "t": "They're getting better. No major Vista issues in a year."
+        },
+        {
+          "s": "steve",
+          "t": "Because the firewall is always on. Nobody knows if Vista's services are vulnerable, since there's no point poking at them behind a firewall."
+        }
+      ]
+    },
+    {
+      "title": "Does Skype Make You a Supernode?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Justin Van Viersen of Perth, Western Australia asks: if you forward a port through your NAT router to Skype, does that make Skype a supernode?"
+        },
+        {
+          "s": "steve",
+          "t": "Supernodes are how Skype handles NAT routers that prevent a direct connection. My end has a bizarre, nonstandard NAT, so I set up static port forwarding so you and I get a direct, high-quality connection."
+        },
+        {
+          "s": "steve",
+          "t": "When two users behind NAT routers can't connect, Skype makes some other Skype user somewhere a relay, a supernode. Both connect out to it, and it relays their traffic. Many people find that objectionable, and I don't blame them."
+        },
+        {
+          "s": "leo",
+          "t": "Skype is peer-to-peer. That's how it works."
+        },
+        {
+          "s": "steve",
+          "t": "Since version 3.0, Windows Skype has a registry setting that prevents it from ever being a relay."
+        },
+        {
+          "s": "leo",
+          "t": "But I understood you have to be on an open, public IP to be a supernode, not behind a router."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not sure. Some NAT routers behave predictably and are easily traversed, so a Skype client behind one could accept connections for users behind two incompatible routers."
+        },
+        {
+          "s": "leo",
+          "t": "And it doesn't take much bandwidth. You're just handshaking."
+        },
+        {
+          "s": "steve",
+          "t": "No, you're relaying all the conversation data. Skype's servers handle the NAT-traversal handshaking themselves. That's why quality drops so badly through a supernode: jitter and latency go up, and it can be a lot of bandwidth."
+        },
+        {
+          "s": "leo",
+          "t": "But they spread calls among many supernodes."
+        },
+        {
+          "s": "steve",
+          "t": "Anecdotally, turning off Skype's start-at-boot setting also disqualifies you. A University of Waterloo computer science study found that if Skype doesn't run at startup, it doesn't become a supernode. My show notes have the registry tweak. Privacy-aware listeners may well want it."
+        },
+        {
+          "s": "leo",
+          "t": "There's a 2005 study by a couple of Google researchers and a Cornell researcher measuring Skype's behavior, since Skype doesn't document its secret sauce. The founders came from Kazaa and understand peer-to-peer."
+        },
+        {
+          "s": "steve",
+          "t": "Google Talk relays its users' traffic through Google's own servers. There's no third-party supernode."
+        },
+        {
+          "s": "leo",
+          "t": "So does forwarding a dedicated port invite supernode status?"
+        },
+        {
+          "s": "steve",
+          "t": "You've told Skype to listen on a port anyone can reach, and it can report that configuration to Skype central. So it would seem to qualify you, though I don't know for sure."
+        },
+        {
+          "s": "leo",
+          "t": "I don't run Skype at startup either."
+        },
+        {
+          "s": "leo",
+          "t": "In 2003, Skype's Niklas Zennström said every client is always connected to a supernode acting as a hub, supernodes are always on open IP addresses, and calls go peer to peer over UDP if possible, or outgoing TCP, and are relayed through another peer only if both sides can only make outgoing TCP calls."
+        },
+        {
+          "s": "steve",
+          "t": "That first statement is wrong. I've run a packet sniffer on our connection."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe it's for signaling, the ring."
+        },
+        {
+          "s": "steve",
+          "t": "Skype central manages presence. When Skype was down, so were we."
+        }
+      ]
+    },
+    {
+      "title": "Backing Up to Amazon S3",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Finn in Sweden chose Amazon's S3 with Jungle Disk for offsite backup. Authentication uses SSL, and files are encrypted on the fly with 256-bit AES. But can you trust a company with your precious documents long term?"
+        },
+        {
+          "s": "steve",
+          "t": "Tell us about S3, Leo."
+        },
+        {
+          "s": "leo",
+          "t": "Amazon's Simple Storage Service, at Amazon.com/s3, was meant for developers but anyone can use it with the right interface. It's 15 cents per gigabyte per month to store and 10 cents per gigabyte to transfer, less as you use more. Leah Culver's Pownce, a Twitter-style microblog, stores its data there. It's reliable and fast. Jungle Disk is a GUI for it."
+        },
+        {
+          "s": "steve",
+          "t": "I agree completely, and we've scheduled an episode on S3 and Jungle Disk before year's end."
+        },
+        {
+          "s": "steve",
+          "t": "I want to know if it qualifies as TNO, Trust No One. Amazon's tech support gives different answers about whether they can recover lost keys. If it's true TNO, I'll sign up. I'd love to move my source code and projects, the crown jewels, offsite, and reach them from my laptop anywhere."
+        },
+        {
+          "s": "steve",
+          "t": "But Amazon must under no circumstances have the keys to decrypt my data. It must be completely opaque to them, with no key recovery. If I lose my keys, I'm up the creek."
+        },
+        {
+          "s": "leo",
+          "t": "Is Amazon or Jungle Disk doing the encryption? Jungle Disk, a third-party client, seems to encrypt first. You can use your AWS secret key, which Amazon would know, or your own encryption key."
+        },
+        {
+          "s": "steve",
+          "t": "Their forums mention keeping previous keys, so if you change your key, it tries old ones on older data. Encouraging. It's $20, on Windows, Mac and Linux, and they provide open-source code to browse and download your files."
+        },
+        {
+          "s": "steve",
+          "t": "The coolest feature is that it looks like a local drive. So my favorite backup program, FileBack PC, could use it. I tell FileBack to keep 25 versions of my .ASM source files, no more than five an hour and ten a day. I could point it at the Q drive, alongside my RAID array and our Level 3 servers, and it'd all go offsite transparently."
+        },
+        {
+          "s": "leo",
+          "t": "It uses WebDAV, and there are many WebDAV interfaces to S3. You could roll your own with TrueCrypt. Jungle Disk itself isn't open source, so you can't be sure what it does with your key."
+        },
+        {
+          "s": "steve",
+          "t": "S3 is a UI-less back-end storage service, with some key management I need to understand."
+        },
+        {
+          "s": "leo",
+          "t": "Elastic8.com lists a couple of pages of free S3 tools. And Brad Fitzpatrick wrote a Perl script that encrypts and backs up to S3 as a cron job, which I use for our web server. Just delete old backups, or it fills up fast."
+        },
+        {
+          "type": "fact",
+          "title": "Jungle Disk's path",
+          "t": "Rackspace bought Jungle Disk in 2008. Client-side encryption, where the key never leaves your computer, has since become the standard way to get Steve's \"Trust No One\" cloud backup."
+        }
+      ]
+    },
+    {
+      "title": "A Jumping On-Screen Keyboard",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Chris Noble in Wellington, New Zealand asks about F5 Networks' FirePass remote access login. You click a graphical keyboard on screen instead of typing, and it jumps around after each click, so even a mouse logger can't reuse the click positions."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, it sounds so annoying."
+        },
+        {
+          "s": "steve",
+          "t": "It's better than a static on-screen keyboard. But our test is an attacker with full knowledge. They could see the screen, figure out what you clicked, and work out the password, since it's the same every time. That weakness can be avoided, and that's next week."
+        }
+      ]
+    },
+    {
+      "title": "Firefox Shows Your Passwords",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Iain Cheyne in London was shocked to learn the importance of Firefox's master password, from a page at Ghacks.net. I use it."
+        },
+        {
+          "s": "steve",
+          "t": "If Firefox remembers your passwords, anyone at your computer can click Tools, Options, Show Passwords, answer \"Are you sure?\" with yes, and see every site, username and password in the clear."
+        },
+        {
+          "s": "steve",
+          "t": "They might see you always use the same password, or reverse-engineer your personal password scheme, the one we advised way back around Episode 2."
+        },
+        {
+          "s": "leo",
+          "t": "With a master password, I had to enter it before seeing them. It's a bit of a pain every time Firefox launches, but that's a good thing."
+        },
+        {
+          "s": "steve",
+          "t": "If Firefox can log you into websites, you want it to make you prove it's you sitting there."
+        },
+        {
+          "s": "leo",
+          "t": "I let it log into everything, including my banking."
+        }
+      ]
+    },
+    {
+      "title": "Passlet and SuperGenPass",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Nathan in Huntsville, Alabama started building his own server-side password store, then found Passlet.com. Data seems encrypted on his end before it's sent and stored. His worry: someone hacks the server and changes the code."
+        },
+        {
+          "s": "steve",
+          "t": "They seem to have done a good job, and their FAQ shows they understand the risks. Encryption runs in JavaScript in your browser, so if someone hacked their server and changed that JavaScript, your client wouldn't be doing what they intended. That's definitely a vulnerability. Otherwise it's strong, with SSL insisted on."
+        },
+        {
+          "s": "steve",
+          "t": "But they don't protect against keystroke loggers. I get a surprising number of confessions from listeners who found loggers on their machines."
+        },
+        {
+          "s": "leo",
+          "t": "It's one of a few things malware often does."
+        },
+        {
+          "s": "steve",
+          "t": "I've written to the Passlet guys about my solution, which is public. Anytime we consolidate everything in one place, the entrance must be as secure as possible."
+        },
+        {
+          "s": "leo",
+          "t": "I use SuperGenPass from Zarate.org, a JavaScript bookmarklet. It hashes a master password, stored or typed each time, with the site's domain to create a long, unique, gobbledygook password per site. You never store or remember them."
+        },
+        {
+          "s": "steve",
+          "t": "That's a very good solution."
+        },
+        {
+          "s": "leo",
+          "t": "I use it for sites like The New York Times, not my banking."
+        }
+      ]
+    },
+    {
+      "title": "Snake-Oil Crypto",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Kerry Merritt asks about Meganet's VME, \"Victory Marvelous Encryption.\" I made that up. They claim a million-bit key, a matrix created from a secret file, and a million dollars to anyone who breaks it. That worries me."
+        },
+        {
+          "s": "steve",
+          "t": "Their site has seals, government certificates and FIPS qualifications. One link went to a patent filed almost exactly 10 years ago, October 24, 1997, and granted April 17, 2001. More fitting if granted April 1st. It's patent 6,219,421."
+        },
+        {
+          "s": "steve",
+          "t": "It calls it Virtual Matrix Encryption. The message content isn't sent. The encrypted data is pointers into a virtual matrix, a large, continuously changing array of values. It uses a key of a million bits or more, recreated from a file of any size on both computers, like a system file or an Internet download. A smaller 2,048-bit key per transaction avoids hazards from reusing the same file."
+        },
+        {
+          "s": "leo",
+          "t": "Like a code book, generated anew each time."
+        },
+        {
+          "s": "steve",
+          "t": "The problem is, we don't need new encryption. It's been solved robustly. And I had a queasy feeling. I Googled \"virtual matrix encryption,\" and the first hit was Bruce Schneier, a real cryptographer and author of Blowfish, still state of the art, with no weakness ever found."
+        },
+        {
+          "type": "fact",
+          "title": "Blowfish today",
+          "t": "Blowfish was never broken, but its 64-bit block size later proved a practical weakness, shown by 2016's \"Sweet32\" attack. Schneier himself recommended its successor, Twofish, or AES."
+        },
+        {
+          "s": "steve",
+          "t": "In 2003 he wrote that back in 1999 he'd described the warning signs of cryptographic snake oil, and Meganet was a shining example. Four years later they were still peddling the same pseudomathematical nonsense with a more professional website, and he got a query a month about them."
+        },
+        {
+          "s": "steve",
+          "t": "He explained that in cryptography, we assume something is broken until there's evidence otherwise. Not proof, evidence. Everything Meganet wrote showed no idea how modern cryptography works. Like a doctor talking about bloodletting, humors and pyramids. He might be right, but you'd switch doctors."
+        },
+        {
+          "s": "leo",
+          "t": "So it's just not needed?"
+        },
+        {
+          "s": "steve",
+          "t": "We have Rijndael and RSA, now in the public domain with expired patents. It's very likely this can be cracked, since it's not based on sound crypto science. Someone thought a million-bit key must be more secure than 128 bits. Not necessarily."
+        },
+        {
+          "s": "steve",
+          "t": "And I love crypto, and the last thing I'd do is invent my own bit-scrambling routine."
+        },
+        {
+          "s": "leo",
+          "t": "Neal Stephenson did a clever card-based cipher in \"Cryptonomicon,\" and I think Bruce was involved."
+        },
+        {
+          "s": "steve",
+          "t": "I think he was consulted."
+        },
+        {
+          "s": "leo",
+          "t": "It's a fun hobby. But for business data, use well-known, established technology."
+        },
+        {
+          "s": "steve",
+          "t": "I'd phrase that even more strongly."
+        },
+        {
+          "type": "fact",
+          "title": "The card cipher",
+          "t": "Schneier actually designed it. \"Solitaire,\" the deck-of-cards cipher in \"Cryptonomicon,\" appears in the novel's appendix."
+        }
+      ]
+    },
+    {
+      "title": "Why a Beginner's Random Numbers Repeat",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ryan Sullivan in New York is writing a PIN generator. Every run, the first number is the same, then the second, in the same random order. He's tried combining random numbers. Is there an algorithm that's more random?"
+        },
+        {
+          "s": "steve",
+          "t": "I'd call that \"not random.\""
+        },
+        {
+          "s": "leo",
+          "t": "Everybody who learns to program does this once."
+        },
+        {
+          "s": "steve",
+          "t": "Most languages' built-in generators use a poor technique called \"linear congruential\" generation. Multiply the current number by a constant and add another constant to get the next. It's very low in entropy."
+        },
+        {
+          "s": "leo",
+          "t": "That's not random at all."
+        },
+        {
+          "s": "steve",
+          "t": "Most languages have a \"randomize\" function you call once at the start, which picks a random seed, so your program isn't entirely deterministic."
+        },
+        {
+          "s": "steve",
+          "t": "But I just finished writing an extremely good random number source for my roaming authentication solution, and I'm making all the code free on GRC. Ryan, wait one week, call my code, and you'll never get the same number twice."
+        },
+        {
+          "s": "leo",
+          "t": "You can seed it with something kind of random."
+        },
+        {
+          "s": "steve",
+          "t": "Like a high-resolution time of day."
+        },
+        {
+          "s": "leo",
+          "t": "But you'll just start at a different point in the same sequence."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, in the relatively short loop that multiply-and-add produces. My generator tested at the top of the scale when crypto guys compared it with other high-quality generators."
+        },
+        {
+          "s": "leo",
+          "t": "Where did you get the algorithm?"
+        },
+        {
+          "s": "steve",
+          "t": "If you put anything into one end of a good cipher, even a counter, 1-2-3-4-5, what comes out is highly random. You can't predict the next output. I used Rijndael with a 256-bit key, the longest it allows."
+        }
+      ]
+    },
+    {
+      "title": "Could a Bug Leak Your Cookie?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "An anonymous listener worries about relying on cookie security. A cookie from legitimate.webserverA.com should only go back to that site. What if a browser bug, or JavaScript, let another site read it?"
+        },
+        {
+          "s": "steve",
+          "t": "It depends on what the cookie stores. Most cookies are \"opaque tokens,\" random-looking gibberish, probably encrypted, meaningful only to the issuing site."
+        },
+        {
+          "s": "steve",
+          "t": "Browsers struggle to prevent disclosure, since cookies are now intrinsic to web security. But even if one leaked, a site that doesn't know how to interpret it would just ignore it."
+        },
+        {
+          "s": "leo",
+          "t": "It takes an unlikely combination: a broken browser plus a cookie that's actually useful."
+        }
+      ]
+    },
+    {
+      "title": "Where Does the Roaming Cookie Live?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Another listener asks about the permanent cookie from Episode 113. Is it in the browser? What if it gets deleted when cleaning browsing traces? And does it work beyond Internet Explorer?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a standard browser cookie, in any browser. If it's deleted, they just reconnect at home, from the authorized IP. The server sees no cookie and asks again whether this machine should be authorized for roaming."
+        },
+        {
+          "s": "steve",
+          "t": "It's one of several interlocking requirements before they're prompted with the secret that can't be cracked even with full knowledge of their login. That's next week."
+        }
+      ]
+    },
+    {
+      "title": "Stolen Cookies and Sidejacking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Victor in the U.K. asks about \"Roman\" authentication. Couldn't malware steal your secret cookie and session cookie? And on a hotel's private Ethernet, the thief wouldn't even need to spoof your IP."
+        },
+        {
+          "s": "steve",
+          "t": "Malware would need to recognize what's going on and capture both the static cookie and the session cookie, which is created only after the user authenticates uniquely each time. It would also need our nonpublic, heavily encrypted management URLs, all over SSL."
+        },
+        {
+          "s": "steve",
+          "t": "Off your network, IP spoofing is impossible, since TCP needs the three-way handshake. And the session cookie has the authorized IP encrypted into it. So you'd need both cookies, the same public IP, and our cryptographically strong URLs. Essentially, you'd have to be one of our users."
+        },
+        {
+          "s": "steve",
+          "t": "There's a practice called \"sidejacking.\" Gmail makes you use a secure connection to log in. But unless you go to a secure Gmail URL, it drops you to a non-secure connection, while maintaining your session with a cookie that travels in the clear. It can't be flagged secure, since the server needs it over non-SSL connections."
+        },
+        {
+          "s": "steve",
+          "t": "On open WiFi, someone can watch your Gmail traffic, grab the cookie and commandeer your session, without ever getting your password."
+        },
+        {
+          "s": "leo",
+          "t": "Why \"sidejacking\"?"
+        },
+        {
+          "s": "steve",
+          "t": "You're not in the middle. You don't intercept anything. You just sniff it going by: there goes his Gmail cookie, on port 80, I'll grab it."
+        },
+        {
+          "s": "steve",
+          "t": "That's why GRC's management interface never falls back from SSL."
+        },
+        {
+          "type": "fact",
+          "title": "Sidejacking",
+          "t": "Robert Graham demonstrated the technique at Black Hat in 2007 with his \"Hamster\" tool. Gmail made HTTPS the default in 2010, and the 2010 Firesheep add-on finally pushed most big sites to encrypt whole sessions."
+        }
+      ]
+    },
+    {
+      "title": "The Brilliant Idea of the Week",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian Polak of St. Louis, Missouri wins the Security Now! Brilliant Idea Award."
+        },
+        {
+          "s": "leo",
+          "t": "He says don't type the token code after your password on PayPal's first page. If you don't, PayPal prompts for it on the next screen. If he's ever not asked for the token, he knows right away something's wrong. A phishing site wouldn't get enough to log in, and he can change his password. The minor inconvenience is well worth it."
+        },
+        {
+          "s": "steve",
+          "t": "That's the brilliant idea of the week. I've been entering both at once, though I always right-click to check the certificate chain. No phishing site would know to prompt for your token. If it doesn't, that's an immediate red flag."
+        },
+        {
+          "s": "leo",
+          "t": "Bank of America finally did something. They still use lame SiteKey, but now they put a permanent cookie on your machine. If it's missing, from a new machine or deleted cookies, they ask for more. Normally it's a secret question, but I turned on sending a code to my cell phone, validated ahead of time. You can register multiple phones, so Jennifer can use hers."
+        },
+        {
+          "s": "steve",
+          "t": "I'm really glad to see more robust authentication evolving. I'm an authentication fanatic. Next week: my solution, so secure that someone with full knowledge of everything the user sees and types can't do it again."
+        },
+        {
+          "s": "leo",
+          "t": "The conclusion of our Roman authentication. Maybe Persian authentication."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does an attacker \"sidejack\" a Gmail session?",
+      "options": [
+        "By sniffing the session cookie sent over a non-secure connection and reusing it",
+        "By guessing the password",
+        "By intercepting and changing traffic in the middle",
+        "By hacking Google"
+      ],
+      "answer": 0,
+      "explain": "The cookie couldn't be flagged secure."
+    },
+    {
+      "q": "Which ports did Steve say Windows Home Server needs forwarded?",
+      "options": [
+        "80, 443 and 4125",
+        "21 and 23",
+        "Only 3389",
+        "All ports"
+      ],
+      "answer": 0,
+      "explain": "Manual forwarding avoids enabling UPnP."
+    },
+    {
+      "q": "What happens when a Skype client becomes a supernode?",
+      "options": [
+        "It relays other users' conversation traffic",
+        "It only handles the ringing",
+        "It gets free calls",
+        "It becomes faster"
+      ],
+      "answer": 0,
+      "explain": "Windows Skype 3.0 can disable it in the registry."
+    },
+    {
+      "q": "What did Steve require before trusting Amazon S3 for backups?",
+      "options": [
+        "That Amazon can't decrypt his data or recover his keys",
+        "That it's free",
+        "That it's in California",
+        "That it uses SSL only"
+      ],
+      "answer": 0,
+      "explain": "He called it TNO, Trust No One."
+    },
+    {
+      "q": "Why did Bruce Schneier dismiss Meganet's encryption?",
+      "options": [
+        "It wasn't based on sound cryptography, and crypto is assumed broken until evidence shows otherwise",
+        "It was too slow",
+        "Its key was too short",
+        "It was already cracked publicly"
+      ],
+      "answer": 0,
+      "explain": "A huge key doesn't make a cipher secure."
+    },
+    {
+      "q": "What was Brian Polak's brilliant anti-phishing habit?",
+      "options": [
+        "Enter only his password, so a real PayPal page will prompt for the token",
+        "Never use PayPal",
+        "Change his password daily",
+        "Use two tokens"
+      ],
+      "answer": 0,
+      "explain": "A phishing site wouldn't know to ask for the token."
+    }
+  ]
+}

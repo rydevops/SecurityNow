@@ -1,0 +1,645 @@
+{
+  "number": 103,
+  "title": "PayPal Security Key",
+  "subtitle": "PayPal's Michael Vergara on the $5 one-time-password token",
+  "date": "2007-08-02",
+  "description": "Steve describes AirPcap, a USB WiFi sniffer from the WinPcap folks, and a SpinRite run that warned a technician to save data first. Then PayPal's Director of Account Protection, Michael Vergara, explains the Security Key: why it's only in three countries, what happens when you forget it, how VeriSign's VIP Network lets one token work at many sites, plans for phone-based codes and multiple tokens, and why it costs $5 instead of nothing. Plus PayPal's one-time virtual debit card.",
+  "transcript": "https://www.grc.com/sn/sn-103.txt",
+  "audio": "http://media.GRC.com/sn/SN-103.mp3",
+  "guests": {
+    "michael": "Michael Vergara"
+  },
+  "chapters": [
+    {
+      "title": "Never Missing a Week",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's Security Now! Episode 103, chugging along."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is 104 episodes, two times 52."
+        },
+        {
+          "s": "leo",
+          "t": "We never even took Christmas off."
+        },
+        {
+          "s": "steve",
+          "t": "Not even when my home is fumigated at the end of this month."
+        },
+        {
+          "s": "leo",
+          "t": "Are they tenting your house?"
+        },
+        {
+          "s": "steve",
+          "t": "The entire complex. It's 32 years old and has never been fumigated. Time to kill off the little wood eaters."
+        },
+        {
+          "s": "leo",
+          "t": "You won't say it, so I will. This is happening because of you. You lobbied the Homeowners' Association to pass the assessment, and you made a DVD."
+        },
+        {
+          "s": "steve",
+          "t": "My first glass-mastered, pressed DVD: 500 copies, made in four days by a local company in Tustin. It interviewed everyone on the board, explaining what was needed."
+        },
+        {
+          "s": "steve",
+          "t": "I spent about four months doing little else but marketing the assessment. No one believed it was possible, but 146 of our 309 households agreed. I'm impressed our community understood the need."
+        }
+      ]
+    },
+    {
+      "title": "AirPcap: A WiFi Sniffer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Setting up a new machine, I needed low-level packet I/O, the kind ShieldsUP! uses, through the well-known WinPcap library."
+        },
+        {
+          "s": "steve",
+          "t": "At its site I noticed AirPcap, from CACE Technologies, which has some affiliation with WinPcap. It's a USB WiFi gizmo for sniffing what's in the air."
+        },
+        {
+          "s": "steve",
+          "t": "Many WiFi cards can't go into promiscuous mode, or won't give you whole packets. For $198, this freestanding USB unit plugs into any laptop or desktop and works with lots of free, open-source software."
+        },
+        {
+          "s": "steve",
+          "t": "For $39.95 there's their Network Toolkit, with things like Aircrack, which can crack WEP protection in about a minute. A $298 version transmits as well as receives."
+        },
+        {
+          "s": "steve",
+          "t": "I ordered one and will report back. I like the idea of easily seeing what's in the air at Starbucks."
+        },
+        {
+          "s": "leo",
+          "t": "Not for any nefarious purpose."
+        },
+        {
+          "s": "steve",
+          "t": "No, for network monitoring and auditing, and making sure your corporate network is as secure as IT thinks."
+        },
+        {
+          "s": "leo",
+          "t": "It underscores the risk of open access points."
+        },
+        {
+          "s": "steve",
+          "t": "We've pounded that in. A question I bumped to a later Q&A says: no WEP or WPA, but MAC address filtering and no SSID broadcast, so I'm safe, right? No. Go back and listen to more Security Nows."
+        },
+        {
+          "s": "steve",
+          "t": "It's at winpcap.org, the first Google hit for WinPcap. Look for the AirPcap blurb on the right."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Says: Save Your Data First",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "This SpinRite story highlights something I've never mentioned. Steve Shank's motto is \"Keeping clients' computers safe and profitable for over 20 years,\" so he's been at it as long as SpinRite has. His subject: \"SpinRite Testimonial with a Twist.\""
+        },
+        {
+          "s": "steve",
+          "t": "A client's Windows wouldn't boot, with no safe mode or last good configuration, just endless returns to the boot menu. It reported a bad Boot.ini file."
+        },
+        {
+          "s": "steve",
+          "t": "From the Recovery Console, he planned to delete Boot.ini, rebuild it with Bootcfg /Rebuild, and run Fixboot. But he couldn't change the file's attributes, couldn't find it, and DIR returned nothing at all."
+        },
+        {
+          "s": "steve",
+          "t": "Back at his office, SpinRite said the disk had so many problems it seemed to be on its last legs. It warned him to get his data off first, since its exhaustive testing might be the last thing the drive ever did."
+        },
+        {
+          "s": "steve",
+          "t": "He says that warning made him feel good: SpinRite saved his data by not running. It showed honesty and integrity. He's used it for many years and versions, once buying a license per client computer, and now has a reasonably priced consultant license."
+        },
+        {
+          "s": "leo",
+          "t": "You built that in."
+        },
+        {
+          "s": "steve",
+          "t": "It's SMART data. SpinRite polls the drive's SMART information before starting. Here it decided things were so bad it wasn't safe to proceed."
+        },
+        {
+          "s": "steve",
+          "t": "He recovered the important files, replaced the drive, and sold the client a new computer, since it was time."
+        },
+        {
+          "s": "leo",
+          "t": "So SMART does have value."
+        },
+        {
+          "s": "steve",
+          "t": "It has an all-or-nothing flag that says, \"I'm in serious trouble.\" Some BIOSes check it and warn that a drive is about to fail, but this one didn't. Sadly, running anything on the drive earlier might have caught it in time for an easier recovery."
+        }
+      ]
+    },
+    {
+      "title": "Meet PayPal's Michael Vergara",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Michael Vergara is on the line from PayPal's headquarters."
+        },
+        {
+          "s": "michael",
+          "t": "In lovely San Jose, California. eBay's South Campus near Campbell holds most of eBay. Many PayPal people are on the North Campus, off 101 and 87 near San Jose Airport."
+        },
+        {
+          "s": "leo",
+          "t": "Is Director of Account Protection a new job?"
+        },
+        {
+          "s": "michael",
+          "t": "I started about a year ago, handling authentication and now verification. That covers devices like the Security Key, plus products and policies to reduce the phishing threat many customers face."
+        },
+        {
+          "s": "michael",
+          "t": "My mandate was to create the right policies and products, and make sure customers have the education and tools to be safe online."
+        },
+        {
+          "s": "steve",
+          "t": "For $5 I could add this to my PayPal account, and our listeners have gone nuts over it."
+        }
+      ]
+    },
+    {
+      "title": "Why Only Three Countries?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some listeners were told the key was unavailable. They wondered if we'd slashdotted you. Is it regional?"
+        },
+        {
+          "s": "michael",
+          "t": "The Security Key works on PayPal, eBay or both. It's an eBay, Inc. solution. We were in beta until eBay Live last month, and we've been pleasantly surprised by the interest from customers like your audience."
+        },
+        {
+          "s": "michael",
+          "t": "To test the market, we ran the beta in three countries, the U.S., Germany and Australia, for geographic spread and different shipping and language issues. We've now gone live in those three."
+        },
+        {
+          "s": "michael",
+          "t": "Regrettably, you need an account in one of them for now. Next year we'll expand to countries that show strong interest."
+        },
+        {
+          "s": "leo",
+          "t": "You'll see a lot of interest from Canada."
+        },
+        {
+          "s": "steve",
+          "t": "Our Canadian listeners will be really happy."
+        }
+      ]
+    },
+    {
+      "title": "How It Works, and Forgetting It",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Describe how it works for those who missed it."
+        },
+        {
+          "s": "michael",
+          "t": "It's a one-time password, or OTP, device. A little piece of plastic with an LCD and a secure chip that gives a random code every 30 seconds. It's like a PIN added to your username and password. A fraudster must steal the device and your password. Something you have, plus something you know."
+        },
+        {
+          "s": "leo",
+          "t": "I have a lot of money in my PayPal account, where TWiT donations go, and I use it like a bank account because it earns interest. This is far better than SiteKey or that stupid stuff Bank of America does. I trust you more than BofA now."
+        },
+        {
+          "s": "leo",
+          "t": "But last night I didn't have my dongle, and you asked a security question instead. Doesn't that undermine it?"
+        },
+        {
+          "s": "michael",
+          "t": "We've earned your trust over the years. No one has ever broken into our network and stolen our accounts. The key is an extra layer if you travel and use public networks, or your computer goes places with lots of viruses. But we don't want it so onerous you can't use your account because you left it at home."
+        },
+        {
+          "s": "leo",
+          "t": "Which isn't much different than forgetting your password."
+        },
+        {
+          "s": "michael",
+          "t": "Right now. As we learn how customers use it, we may change those flows. We've already made tweaks from our German users' feedback. We're only a month out of beta."
+        },
+        {
+          "s": "steve",
+          "t": "I remembered that buying without the key required a call from PayPal to my registered phone number."
+        },
+        {
+          "s": "michael",
+          "t": "That's one way. It depends on what's on file and your risk profile, including the transaction's risk. There's no one-size-fits-all. We'll keep improving the mix so it's secure but doesn't hinder customers."
+        },
+        {
+          "s": "leo",
+          "t": "It shows the difficulty. Anyone improving security gets pushback that it's inconvenient."
+        }
+      ]
+    },
+    {
+      "title": "One Token for Many Sites",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The most common question: I have an E*TRADE token too. Will I end up with a keychain full of dongles?"
+        },
+        {
+          "s": "michael",
+          "t": "We call it the necklace problem. What excited us most is that we're a leading member of the VIP Network. VeriSign provides the infrastructure for the Security Key."
+        },
+        {
+          "s": "michael",
+          "t": "Other banks, financial institutions or Web 2.0 companies in the network can accept our token, and we can accept theirs. You should need only one token for the whole VIP Network."
+        },
+        {
+          "s": "leo",
+          "t": "Like the Plus network for ATM cards."
+        },
+        {
+          "s": "michael",
+          "t": "Very similar. Shared infrastructure, so everyone can confirm your strong authentication no matter who issued your token."
+        },
+        {
+          "s": "leo",
+          "t": "I wish BofA did this instead of SiteKey, which doesn't solve phishing because of man-in-the-middle attacks, and is a pain."
+        },
+        {
+          "s": "steve",
+          "t": "And VeriSign is aggressively supporting OpenID."
+        },
+        {
+          "s": "leo",
+          "t": "This could become an OpenID key."
+        },
+        {
+          "s": "steve",
+          "t": "Then it wouldn't be expensive for websites to support this authentication, with the same $5 dongle. A major win."
+        },
+        {
+          "s": "michael",
+          "t": "I can't speak for VeriSign. But VIP is a federated network, so you can share your identity across sites. As we prove its value, it can open up to things like OpenID or CardSpace, which fit federated infrastructure well. First we must prove customers want it."
+        },
+        {
+          "type": "fact",
+          "title": "The VIP Network",
+          "t": "VeriSign's Identity Protection network was later sold to Symantec, along with VeriSign's certificate business, in 2010. Today the same idea lives on in FIDO security keys and passkeys, which a single device can use with many sites."
+        }
+      ]
+    },
+    {
+      "title": "Do People Get It?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Our audience gets it after two episodes on multifactor authentication. What about the public?"
+        },
+        {
+          "s": "michael",
+          "t": "I expected small interest, especially in the U.S. We've been almost blown away by customers wanting to take a more active role in their security. Partly it's the good form factor. And regrettably, so much phishing news has made people realize they need this extra layer."
+        },
+        {
+          "s": "steve",
+          "t": "As one dongle becomes useful at more sites, Leo won't leave it at home. It'll earn its place on your main key ring."
+        },
+        {
+          "s": "michael",
+          "t": "Leo may still forget it. That may be a more fundamental flaw in his character."
+        },
+        {
+          "s": "michael",
+          "t": "We're also testing more convenient form factors, built into things you carry, like your phone, and hope to have them next year."
+        },
+        {
+          "s": "leo",
+          "t": "How would it work on a cell phone?"
+        },
+        {
+          "s": "michael",
+          "t": "As simply as sending you the code by SMS when you request it, and you type it in."
+        },
+        {
+          "s": "leo",
+          "t": "I'd like that. Text messages are usually nearly instant."
+        },
+        {
+          "s": "steve",
+          "t": "And nothing prevents the crypto algorithm from running on the phone itself."
+        },
+        {
+          "s": "michael",
+          "t": "That's number two. An application on the phone, or embedded when you buy it. SMS is simple, but an app on the phone can be more elaborate and even more secure."
+        },
+        {
+          "s": "steve",
+          "t": "And since you use VeriSign's infrastructure, PayPal just asks it to authenticate the person with whatever method they chose."
+        },
+        {
+          "s": "michael",
+          "t": "You've summed it up very well. Other countries with wider mobile adoption may prefer SMS or apps, and we're crafting form factors to meet their needs."
+        },
+        {
+          "type": "fact",
+          "title": "Phone codes",
+          "t": "Text-message codes later proved weak, because criminals can hijack a phone number through SIM swapping. Authenticator apps, and hardware keys tied to a site's real address, are now considered safer."
+        }
+      ]
+    },
+    {
+      "title": "Who Else Is in the Network?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How widespread is VIP?"
+        },
+        {
+          "s": "michael",
+          "t": "Many companies are involved. Many U.S. financial institutions are interested or running pilots, but I don't know which are public."
+        },
+        {
+          "s": "steve",
+          "t": "So there's a lot going on that you can't talk about."
+        },
+        {
+          "s": "michael",
+          "t": "To be cautious, yes."
+        },
+        {
+          "s": "steve",
+          "t": "We're hoping this doesn't become a Blu-ray versus HD DVD or VHS versus Betamax battle. With VeriSign in the network and open to OpenID, it looks like it's reaching critical mass."
+        },
+        {
+          "s": "michael",
+          "t": "Completely agree. It will grow by the same network effect that made PayPal and eBay successful: people using it, telling friends, using one token everywhere."
+        },
+        {
+          "s": "steve",
+          "t": "PayPal makes sense as the launch point. It's used extensively, there's a tremendous need, and sites where a dongle alone wouldn't justify the cost get to come along for the ride."
+        },
+        {
+          "s": "leo",
+          "t": "How many have signed up?"
+        },
+        {
+          "s": "michael",
+          "t": "We're exceeding expectations, but I can't give numbers. It's about equal between PayPal and eBay. Sellers running shops with a few employees want to control who gets into their accounts."
+        }
+      ]
+    },
+    {
+      "title": "Two Tokens, Serial Numbers and Batteries",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Can you associate two dongles with one account?"
+        },
+        {
+          "s": "michael",
+          "t": "Not yet. Current plans are to allow multiple tokens later this year."
+        },
+        {
+          "s": "steve",
+          "t": "Beautiful. One stays home and one goes with you."
+        },
+        {
+          "s": "leo",
+          "t": "One at home and one at the office."
+        },
+        {
+          "s": "michael",
+          "t": "I call it my husband-and-wife problem. My wife and I share a PayPal account. Two tokens make my marriage better."
+        },
+        {
+          "s": "steve",
+          "t": "A listener worried that the serial number on the back gives away cryptographic information. I assumed it just indexes a database at the authenticator, like VeriSign, which holds the crypto data to compute what the token should show now, plus or minus 30 seconds."
+        },
+        {
+          "s": "leo",
+          "t": "You enter that number to activate the key."
+        },
+        {
+          "s": "michael",
+          "t": "That's basically correct. There's no personal information in it. It only tells tokens apart. Each has its own random secret, so lined up together they'd all show different codes. The serial number tells us which secret, and so which sequence, belongs to your account."
+        },
+        {
+          "s": "leo",
+          "t": "If I lose it, do you recreate it?"
+        },
+        {
+          "s": "michael",
+          "t": "No. We remove it so no one else can use it, and send a new one with a new random secret."
+        },
+        {
+          "s": "steve",
+          "t": "How long does the sealed battery last?"
+        },
+        {
+          "s": "michael",
+          "t": "I believe three to five years. If it stops working, contact support and we'll issue a new token."
+        }
+      ]
+    },
+    {
+      "title": "Why $5 and Not Free?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "How can it be only $5, not 50?"
+        },
+        {
+          "s": "michael",
+          "t": "We're losing money. The goal isn't profit. Giving customers an extra layer of security is in our long-term interest."
+        },
+        {
+          "s": "leo",
+          "t": "You're not losing a lot. It's not a hundred-dollar device."
+        },
+        {
+          "s": "michael",
+          "t": "People ask why not give them away. Our beta showed that people value something at what they paid for it. Many who got it free didn't use it, compared to those who paid $5."
+        },
+        {
+          "s": "leo",
+          "t": "So it's earnest money. When I get free concert tickets, I never go."
+        },
+        {
+          "s": "steve",
+          "t": "It also stops everyone clicking \"I want one\" just because it's free, and then never getting around to it."
+        },
+        {
+          "s": "leo",
+          "t": "Thank you for doing this. We've used PayPal for TWiT donations for over two years. People remember its early problems, but we've been very happy. Things like this, and hiring you, raise my comfort level. I'm completely comfortable now."
+        }
+      ]
+    },
+    {
+      "title": "PayPal's One-Time Virtual Card",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "PayPal also now offers a virtual card service. Is that yours?"
+        },
+        {
+          "s": "michael",
+          "t": "I'm not directly involved, but I know the virtual debit card."
+        },
+        {
+          "s": "steve",
+          "t": "It's a little client you install. It can fill in forms, or give you a one-time card number for a non-PayPal site, good only for that amount and that time, and then never again. I'm using it, and it's fantastic."
+        },
+        {
+          "s": "leo",
+          "t": "I bet it's Windows only."
+        },
+        {
+          "s": "michael",
+          "t": "It obfuscates your card. The transaction goes through, but the merchant never sees your real number. I'll email you the address."
+        },
+        {
+          "s": "leo",
+          "t": "The Security Key is at paypal.com/securitykey, and eBay.com/securitykey works too. If I have an eBay account, I just activate the same key there?"
+        },
+        {
+          "s": "michael",
+          "t": "Just activate it on your eBay account."
+        },
+        {
+          "s": "leo",
+          "t": "Is Bank of America in the VIP Network?"
+        },
+        {
+          "s": "michael",
+          "t": "To my knowledge, no."
+        },
+        {
+          "s": "leo",
+          "t": "Of course not. Whatever bank does this, I'll move all my accounts there. And if it uses my cell phone, even more so."
+        },
+        {
+          "s": "steve",
+          "t": "With banks pushing people out of branches and online, online banking needs to be secure. If this reaches critical mass, people will choose banks by their Internet security."
+        },
+        {
+          "s": "leo",
+          "t": "Thanks, Michael."
+        },
+        {
+          "s": "michael",
+          "t": "Glad I could help."
+        }
+      ]
+    },
+    {
+      "title": "Wrapping Up",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Was I over-effusive?"
+        },
+        {
+          "s": "steve",
+          "t": "No. It's PayPal, not some obscure site, with strong adoption and clear listener interest. And it's federated. I'll study the VIP program for a future episode, including what it costs. If VeriSign becomes an OpenID authenticator, smaller sites could use the $5 dongle too, maybe free."
+        },
+        {
+          "s": "leo",
+          "t": "I tried to download the virtual debit card client while we talked, on Windows, and it kept sending me to another page. It's Windows only. It's not as straightforward as it ought to be."
+        },
+        {
+          "s": "steve",
+          "t": "It's in beta, and we're jumping on early. It gives you a one-time number for any site that doesn't support PayPal. The site gets paid through PayPal on the fly but never sees the real card tied to your account."
+        },
+        {
+          "s": "leo",
+          "t": "And if somebody steals it, it's only good once. Apparently you don't even need a PayPal card to use it."
+        },
+        {
+          "s": "steve",
+          "t": "Search \"PayPal virtual debit card.\""
+        },
+        {
+          "s": "leo",
+          "t": "Next week is our mod 4 Q&A, and Episode 104 is our two-year mark."
+        },
+        {
+          "s": "steve",
+          "t": "And someone will say we haven't finished two years until 105. We have very attentive listeners."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why was PayPal's Security Key only available in three countries?",
+      "options": [
+        "The U.S., Germany and Australia had been its test markets during beta",
+        "Encryption export laws",
+        "Listeners bought them all",
+        "Other countries banned it"
+      ],
+      "answer": 0,
+      "explain": "PayPal planned to expand to more countries."
+    },
+    {
+      "q": "What did Michael say solves the \"necklace problem\" of carrying many tokens?",
+      "options": [
+        "VeriSign's VIP Network, where one token works at all member sites",
+        "A bigger keychain",
+        "Printing codes on paper",
+        "Using the same password everywhere"
+      ],
+      "answer": 0,
+      "explain": "Sites in the network accept each other's tokens."
+    },
+    {
+      "q": "Why does PayPal charge $5 rather than giving the key away?",
+      "options": [
+        "Its beta showed people who got it free often didn't use it",
+        "To make a profit",
+        "Because tokens cost $5 to make",
+        "To cover shipping only"
+      ],
+      "answer": 0,
+      "explain": "Michael said PayPal loses money on each one."
+    },
+    {
+      "q": "What does the serial number on the back of the token do?",
+      "options": [
+        "Identifies which token, and so which secret, belongs to your account",
+        "Reveals your password",
+        "Holds your personal information",
+        "Sets the time"
+      ],
+      "answer": 0,
+      "explain": "Each token has its own random secret."
+    },
+    {
+      "q": "Why did SpinRite refuse to run on Steve Shank's client's drive?",
+      "options": [
+        "Its SMART data showed the drive was in such bad shape that testing might finish it off",
+        "It wasn't licensed",
+        "The drive was encrypted",
+        "It wasn't a hard drive"
+      ],
+      "answer": 0,
+      "explain": "It warned him to save his data first."
+    },
+    {
+      "q": "What does PayPal's virtual debit card give you?",
+      "options": [
+        "A one-time card number so a merchant never sees your real card",
+        "A free credit line",
+        "A new bank account",
+        "A physical card"
+      ],
+      "answer": 0,
+      "explain": "It's good for only one purchase."
+    }
+  ]
+}
