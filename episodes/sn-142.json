@@ -1,0 +1,679 @@
+{
+  "number": 142,
+  "title": "Listener Feedback Q&A #40",
+  "subtitle": "A mass SQL injection attack, UAC, YubiKey details and more",
+  "date": "2008-05-01",
+  "description": "Half a million IIS sites are hit by a mass SQL injection attack, Intel Centrino WiFi drivers can be exploited over the air, and Bruce Schneier echoes Steve's view of RSA's exhibit floor. Questions cover whether a utility \"bypassed\" Vista's UAC, YubiKey pricing and its web service, an ActiveX kill bit update, downloading all episodes, ING Direct's scrambled PIN pad, text-message codes, a dedicated banking computer, Linux live CDs, URL shorteners for intranet links, a sysadmin's case against all-SSL sites, AI versus CAPTCHA, mechanics copying data and VeriSign vouching for itself.",
+  "transcript": "https://www.grc.com/sn/sn-142.txt",
+  "audio": "http://media.GRC.com/sn/SN-142.mp3",
+  "chapters": [
+    {
+      "title": "Maypoles and Mayday",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "May Day. And \"mayday\" comes from French for \"help me.\""
+        },
+        {
+          "s": "steve",
+          "t": "Do kids in elementary school still get crepe paper streamers and do the Maypole dance?"
+        },
+        {
+          "s": "leo",
+          "t": "We talked about that on the Giz Wiz this morning. Going over, under, over, under, so they braid. I doubt anyone does it anymore. We're antiquarians."
+        },
+        {
+          "s": "steve",
+          "t": "Q&As cover things that are interactive and responsive, and topics that don't need a whole show. There's even a bonus 13th, very short. I call it the Quip of the Week."
+        }
+      ]
+    },
+    {
+      "title": "The Yoggie Pico",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many listeners at GRC.com/feedback have asked about the Yoggie Pico. It's a full Linux PC, with a small Intel chip, in a USB dongle. Plug it in, and it installs a low-level NDIS driver deep in the kernel to intercept all incoming and outgoing traffic, putting a Linux security system inline with your network connection."
+        },
+        {
+          "s": "steve",
+          "t": "The idea sounds great. I'll give it a show once I've thoroughly scoped it out and looked for problems."
+        },
+        {
+          "s": "leo",
+          "t": "Just running Linux on a USB key is very cool."
+        }
+      ]
+    },
+    {
+      "title": "Half a Million Sites Hacked",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "As many as half a million sites running Microsoft's IIS web server have been hacked."
+        },
+        {
+          "s": "leo",
+          "t": "Including, the punch line, the Department of Homeland Security."
+        },
+        {
+          "s": "steve",
+          "t": "And the U.N. and U.K. government sites. The attack on Barack Obama's site was different, using cross-site scripting."
+        },
+        {
+          "s": "leo",
+          "t": "Click a link and it sent you to Hillary's page. This one is SQL injection."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. It's really not Microsoft's fault. It's web coders not sanitizing input. Web 2.0 is interactive, with users posting blog comments and Facebook and MySpace content, typically stored in an SQL database, the default database for everyone but me."
+        },
+        {
+          "s": "steve",
+          "t": "As in our SQL injection episode, SQL is a language, so you can inject commands. Here they inject JavaScript into the site. Innocent users' browsers download and run it, and it sends them to an IP address in China that tries known Windows vulnerabilities to compromise them further."
+        },
+        {
+          "s": "steve",
+          "t": "The only defense is disabling JavaScript, or enabling it selectively, with Firefox's NoScript add-on or by configuring IE to block scripts by default and enabling them for sites you trust."
+        },
+        {
+          "s": "steve",
+          "t": "At RSA I heard a lot about this huge move to web-based attacks. They're low-hanging fruit. So many web apps are written without an eye to security that anyone who knows the tricks can plant malware, and every visitor gets infected. We talked about it in theory. Now hundreds of thousands of sites are infected."
+        },
+        {
+          "s": "leo",
+          "t": "Though being infected doesn't mean the payload runs. The researchers said often nothing happens, and the servers the code points to are down, maybe shut down. These exploits work only briefly once discovered."
+        },
+        {
+          "s": "leo",
+          "t": "And a study of the top hundred sites found 80 percent use JavaScript. It's almost universal."
+        },
+        {
+          "s": "steve",
+          "t": "And it'll be more so. It powers the next generation of the web. But you're running a web server's code locally."
+        },
+        {
+          "s": "leo",
+          "t": "Your technique lets you enable it selectively. But SQL injection infects trusted sites. You'd trust Homeland Security."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. But disabling scripts by default still dramatically shrinks your attack window. We all wander off the well-trodden path following links."
+        },
+        {
+          "s": "leo",
+          "t": "One hopes Homeland Security, having found it, is now more secure."
+        },
+        {
+          "type": "fact",
+          "title": "The attack",
+          "t": "The April 2008 wave targeted Microsoft ASP pages backed by SQL Server databases, using an automated SQL injection that appended a malicious script tag to every text field in the database."
+        }
+      ]
+    },
+    {
+      "title": "Centrino WiFi Drivers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "An old, known privilege elevation problem in Intel's Centrino laptop WiFi drivers has evolved into remote code execution. The affected driver is for the 2200BG. My laptop had a different one."
+        },
+        {
+          "s": "steve",
+          "t": "No firewall can block it, since the flaw is in the WiFi driver itself, underneath every other defense. A wise guy at Starbucks could install malware on any unpatched laptop nearby, even one not connected to Starbucks' network. Just having the adapter live lets it receive the malicious frames."
+        },
+        {
+          "s": "steve",
+          "t": "My show notes link to Intel's site, including a little app that identifies your driver and version. You need at least version 10.5 of the 2200BG driver. You can also check the driver details in Windows."
+        },
+        {
+          "s": "steve",
+          "t": "It's not a huge deal, but nobody wants code installed on them in public. And these drivers, not being mainstream Microsoft components, may not have been updated in ages."
+        }
+      ]
+    },
+    {
+      "title": "Schneier on the Exhibit Floor",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm annoyed I didn't get to say hi to Bruce Schneier at RSA. He was on a different track. But his blog so much echoed what I said last week. He wrote that the booths are full of broad product claims, meaningless security platitudes and unintelligible marketing, that you can hear a five-minute pitch and still not know what the company does, and that even seasoned security professionals are confused."
+        },
+        {
+          "s": "leo",
+          "t": "I saw that. Great."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly my sense. Every booth said fantastic new authentication, then you go to the next one."
+        }
+      ]
+    },
+    {
+      "title": "A New \"Andromeda Strain\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Elaine reminded me of our Michael Crichton discussion and how good \"The Andromeda Strain\" was. Over Memorial Day weekend, A&E airs a remade miniseries from Ridley Scott."
+        },
+        {
+          "s": "steve",
+          "t": "The guy who gave us the first \"Alien.\" I found the trailer, and it looks like everything you'd want. The original was back in '75, I think, and dated, though a great story. The DVD comes out in June, I think."
+        },
+        {
+          "s": "steve",
+          "t": "We have a grc.scifi newsgroup, and they'd been discussing it for weeks. I need to keep up with my own newsgroup."
+        },
+        {
+          "type": "fact",
+          "title": "Dates",
+          "t": "The original film of \"The Andromeda Strain\" came out in 1971, two years after Crichton's novel."
+        }
+      ]
+    },
+    {
+      "title": "The Skeptic Becomes a Believer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Ralph Montgomery has 21 years in IT and has used SpinRite on everything from MFM and RLL drives to today's EIDE and SATA. One coworker answered his praise for years with \"Yeah, yeah, sure it works.\" He finally bought a copy and used it sparingly to check new drives."
+        },
+        {
+          "s": "steve",
+          "t": "Then a friend referred a recent college graduate, a web designer, with a laptop that wouldn't boot. She'd taken it to all her professors and several friends. It held a client job she hadn't backed up."
+        },
+        {
+          "s": "steve",
+          "t": "The coworker tried everything, even the drive on an external USB cable. Finally he booted his SpinRite CD. It worked about 15 minutes on the first couple of sectors, recovering data, then screamed through the rest of the drive. The laptop booted with all the data intact. And I have a convert."
+        }
+      ]
+    },
+    {
+      "title": "Did Someone Bypass Vista's UAC?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jon in Adamstown, Pennsylvania saw a Slashdot article saying a utility's authors, annoyed by Vista's User Account Control, easily coded around it. Is there any security benefit?"
+        },
+        {
+          "s": "steve",
+          "t": "When that ran, people asked, is UAC worthless? Has it been circumvented? I did the research. This is nothing, a bogus report."
+        },
+        {
+          "s": "steve",
+          "t": "Some utility, maybe for multibooting, needed admin privileges and ran at startup, so UAC prompted at every boot. They found that annoying and recoded it."
+        },
+        {
+          "s": "steve",
+          "t": "They split it into two parts: a service, which you must be an admin and approve through UAC to install, and a client that talks to it. That's the way Windows works. You give a privileged component permission once, like a firewall, and from then on it's trusted, down in the kernel. You couldn't use Windows if you approved every service action. This is UAC as meant to be used, not a circumvention."
+        },
+        {
+          "s": "leo",
+          "t": "So don't get your hopes up, hackers."
+        }
+      ]
+    },
+    {
+      "title": "YubiKey Questions",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jesse in Honolulu went straight to Yubico after hearing about the $4 token. The ordering page offers one key for evaluation only, or a \"pilot box\" of 50, too many for a small business, and bulk keys cost 4 euros more each. The open-source APIs seem to rely on Yubico's subscription web service, and keys come with only a one-year subscription. Is he missing something? It sounds like a good SecurID alternative, but not the holy grail."
+        },
+        {
+          "s": "steve",
+          "t": "There's been a lot of interest. Stina was really happy with last week's mention. More than 50 Security Now! listeners and companies have emailed them."
+        },
+        {
+          "s": "steve",
+          "t": "Our Security Now! newsgroup had many good questions, since the website is unclear. Stina sent me one of their patent applications and an independent security analysis. I'll figure it out and probably do an episode, since it has lots of interesting characteristics."
+        },
+        {
+          "s": "steve",
+          "t": "I acknowledge Jesse's frustration. This is just beginning. She says they're still putting together the server documentation. I don't have firm pricing on the subscription. I like the idea of being independent of their service, in which case there's no one-year expiration."
+        },
+        {
+          "s": "leo",
+          "t": "And if their server went down, you'd be out of luck."
+        },
+        {
+          "s": "steve",
+          "t": "VeriSign just notified major accounts that its VIP system would be down four hours for maintenance. Imagine needing mission-critical authentication during those hours. That's not okay."
+        },
+        {
+          "s": "steve",
+          "t": "Hamachi users had the same problem. When Hamachi's servers were down, existing connections stayed up, but you couldn't start new ones. People in love with Hamachi were in huge pain. That's why CryptoLink, my VPN, will be not only TNO, Trust No One, but RNO, Rely on No One. It'll work without any third party."
+        },
+        {
+          "s": "leo",
+          "t": "Your own server could be unreliable, but at least it's your own fault."
+        },
+        {
+          "s": "steve",
+          "t": "And if your own server is down, you can't connect to it anyway."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Yubico later released its validation server as open source and let customers program keys with their own secrets, so organizations could authenticate YubiKeys without Yubico's service."
+        }
+      ]
+    },
+    {
+      "title": "What's a Kill Bit Update?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Nick Bauer in Newmarket, New Hampshire saw a \"kill bits\" patch on Patch Tuesday. Is it like DEP for ActiveX? Are ActiveX controls safer now?"
+        },
+        {
+          "s": "steve",
+          "t": "I wondered too. IE loads ActiveX controls. Flash is one, embedding itself into IE pages. I have a taskbar utility that disables Flash on the fly, for when bunnies are jumping all over a page I just want to read."
+        },
+        {
+          "s": "steve",
+          "t": "Every ActiveX control has a kill bit, which denies IE permission to load it. A couple of years ago, for really bad exploits Microsoft hadn't patched, we gave listeners the registry key to set the kill bit until a patch came. You can even set it preemptively, before a control is installed, and it stays set."
+        },
+        {
+          "s": "steve",
+          "t": "This time a third party asked Microsoft to set its kill bit. That was Yahoo!, for some control with a known exploit we discussed recently. Yahoo! has no way to push updates, and it's widely exploited, so Microsoft did it for them."
+        },
+        {
+          "s": "steve",
+          "t": "So it's not an improvement in ActiveX controls, however much we wish there could be. It's Microsoft doing Yahoo! a favor."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe part of their courtship. Yes, dear."
+        },
+        {
+          "s": "steve",
+          "t": "The Hatfields and McCoys at the moment."
+        },
+        {
+          "type": "fact",
+          "title": "Which one",
+          "t": "Microsoft's April 2008 kill bit update included Yahoo!'s Music Jukebox ActiveX controls, whose exploited flaw we covered in Episode 131."
+        }
+      ]
+    },
+    {
+      "title": "Grabbing Every Episode",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Amir Katz in Kfar Saba, Israel says GRC.com/securitynow links every episode, so Firefox's DownThemAll extension can download every link of a type. He made a filter for the PDF transcripts. You'd want MP3s too."
+        },
+        {
+          "s": "leo",
+          "t": "Someone also Twittered me a one-line shell script using curl to grab any TWiT podcast, since our file names follow a pattern, like SN-142. I'll put it in the show notes. When we hit 1,000 episodes, we'll need another digit and it'll all break down."
+        },
+        {
+          "s": "steve",
+          "t": "That reminds me: in 2032 or 2036, the 32-bit seconds counter in NTP, the Network Time Protocol, wraps to zero. We survived Y2K, but..."
+        },
+        {
+          "s": "leo",
+          "t": "UNIX runs out in 2038, since it counts from 1970."
+        },
+        {
+          "s": "steve",
+          "t": "That's what I mean. 32 bits of seconds starting January 1, 1970."
+        },
+        {
+          "s": "leo",
+          "t": "It's not just time servers, it's everything. By then someone will have a 64-bit UNIX."
+        },
+        {
+          "s": "steve",
+          "t": "In 30 years I'm going to be going strong."
+        },
+        {
+          "s": "leo",
+          "t": "I'll be looking down saying, it's Steve's problem now. And we'd need 860 more shows to reach 999. My plan is to do this for 10 years."
+        },
+        {
+          "type": "fact",
+          "title": "Two different dates",
+          "t": "NTP counts seconds from 1900, and its 32-bit counter rolls over in February 2036. UNIX's signed 32-bit time, counting from 1970, overflows in January 2038. Most modern systems now use 64-bit time."
+        }
+      ]
+    },
+    {
+      "title": "ING Direct's Scrambled PIN Pad",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Joe Rodricks in Massachusetts opened an ING Direct account. After his ID and two security questions, it asks for a 4-to-10-digit PIN. You never type the digits. An on-screen keypad laid out like a phone shows a letter on each number, and the letters change every login. If your PIN is 12345, you might type QOSPX this time and SLCUG next time. He thinks it would fool all but the most sophisticated keystroke loggers."
+        },
+        {
+          "s": "steve",
+          "t": "It's a really neat idea. A fixed PIN with a translation table that changes every time."
+        },
+        {
+          "s": "steve",
+          "t": "The problem, discussed at RSA, is that keystroke loggers now capture the screen too. They'd see the mapping table, reverse what you typed back into the numbers, and the numbers never change. Then they could log in."
+        },
+        {
+          "s": "leo",
+          "t": "They only need to get it once."
+        },
+        {
+          "s": "steve",
+          "t": "It would take a sophisticated keylogger. But \"sophisticated keystroke logger\" is now redundant."
+        },
+        {
+          "s": "leo",
+          "t": "The opposite of an oxymoron. A noxymoron."
+        }
+      ]
+    },
+    {
+      "title": "Are Text-Message Codes Safe?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ryan Benz in nearby Irvine asks about Bank of America's one-time codes by text message, which I love. Steve won't discuss sensitive things with his attorney by cell phone. Can text messages be sniffed?"
+        },
+        {
+          "s": "steve",
+          "t": "I was talking about the original analog cell phones. They were open radios. Any scanner could pick them up, and some of those conversations were fascinating. Today's phones are digital. A discussion of their cryptography and its relative weakness is on my list. Both CDMA and GPS..."
+        },
+        {
+          "s": "leo",
+          "t": "You mean GSM."
+        },
+        {
+          "s": "steve",
+          "t": "GSM, thank you. Both have been cracked. Someone who really wants to can intercept them."
+        },
+        {
+          "s": "steve",
+          "t": "But it doesn't matter much here. The bank texts you a code to prove you possess that phone. An eavesdropper doesn't have your secure HTTPS session with the bank, or your secure cookies inside it. Even if the code were skywritten, nobody else could use it at that moment, and it's never good again."
+        },
+        {
+          "s": "steve",
+          "t": "It's a clever, nice way to add a factor. I just hope the messages arrive quickly. Sites that email you a link to click often leave you waiting and waiting."
+        },
+        {
+          "s": "leo",
+          "t": "With T-Mobile and Bank of America, it's been instant every time. And you can resend."
+        },
+        {
+          "s": "steve",
+          "t": "It'll be very popular for people who carry cell phones."
+        },
+        {
+          "s": "leo",
+          "t": "It's a one-time password without carrying a dongle."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Text-message codes are now considered a weak second factor. Attackers trick carriers into moving victims' numbers to new SIM cards, and phishing sites relay codes in real time. Authenticator apps and hardware keys are stronger."
+        }
+      ]
+    },
+    {
+      "title": "A Computer Just for Banking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Neil Roberts in Liverpool uses his regular PC for browsing, email and Word, but never for banking. For sensitive sites he uses an old G3 Mac running OS X 10.4.11, with the OS and Firefox kept up to date. He only visits bookmarked sites and uses it for nothing else."
+        },
+        {
+          "s": "steve",
+          "t": "For years I've told moms and dads: never let your kids use the important computer with your banking and stock portfolio. Lord knows what they'll click. Give the kids their own machine, and even when Susie and Johnnie both want a computer, Dad's is off limits. If you have an older spare machine, segregating functions is pretty good."
+        },
+        {
+          "s": "leo",
+          "t": "And bookmarks prevent phishing, and staying off other sites avoids infected ones."
+        },
+        {
+          "s": "steve",
+          "t": "There's no email on it. It's his clean browser interface to his finances."
+        },
+        {
+          "s": "leo",
+          "t": "Would a VMware virtual machine do the same?"
+        },
+        {
+          "s": "steve",
+          "t": "Very much so, though something on the outside could be involved in its traffic, and there are questions about how isolated VMs really are."
+        },
+        {
+          "s": "leo",
+          "t": "I run Ubuntu's new Hardy Heron in VMware on my Mac, and it can see the Mac's drive."
+        },
+        {
+          "s": "steve",
+          "t": "That's an example. And the kids won't want the old machine, since it barely runs a browser."
+        },
+        {
+          "s": "leo",
+          "t": "But it's still on the LAN."
+        },
+        {
+          "s": "steve",
+          "t": "To really do it, use the three-router Y configuration to give it its own LAN segment, so it can't reach the family LAN and vice versa. Then it's a matter of discipline, as good security always is. Neil must never compromise it, however tempting. That's great security."
+        },
+        {
+          "s": "leo",
+          "t": "And using a different OS from the rest of the network helps."
+        }
+      ]
+    },
+    {
+      "title": "A Linux Live CD for Risky Browsing",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave Mulligan in Calgary suggests a Linux live CD instead of rebuilding a VMware Windows image for risky browsing. Modern live CDs, like the new Ubuntu install disc, run on almost any hardware with a recent Firefox, 3.0 beta 5 on Hardy Heron. He says it doesn't mount your hard disks, so your installation is safe, and nothing persists. I'm not sure about the mounting part."
+        },
+        {
+          "s": "steve",
+          "t": "He mentions your network too. Ideally it wouldn't mount your network either, and you'd move files only by USB key. Containment is the idea. Of course it has to be on the network to browse."
+        },
+        {
+          "s": "leo",
+          "t": "Some live CDs let you save data to a drive, so check your distribution."
+        },
+        {
+          "s": "steve",
+          "t": "Rebooting is a pain. But Linux is lean enough to run a live CD on a really old PC used just for banking. Unlike Neil's Mac, it starts clean from the CD every time."
+        },
+        {
+          "s": "leo",
+          "t": "What was that Windows thing that starts over each time? We did a whole show on it."
+        },
+        {
+          "s": "steve",
+          "t": "SteadyState. It looks like it does a good job, for public terminals that flush everything at restart. But you're hoping the isolation holds, and if malware reached a USB key, it might jump out. A separate old machine with a Linux live CD is a great solution for the really concerned."
+        }
+      ]
+    },
+    {
+      "title": "Shortening Intranet Links",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve Barta in Rowlett, Texas likes TinyURL and the SnipURL service Steve and I use, since you can choose your own short names. He works for a large defense contractor. Intranet URLs are huge and break apart in emails, so he shortens them with TinyURL. The short link lives outside the firewall but takes colleagues to the internal page. Is that ping-pong a security risk?"
+        },
+        {
+          "s": "steve",
+          "t": "These services use an HTTP redirect. I think it's code 302, moved permanently. Your browser goes out through the firewall to, say, snipurl.com/rsa2008. Behind it is a database mapping short URLs to long ones. It returns a page saying the one you asked for has moved, here's the long URL, and your browser goes there instead, which is the internal page."
+        },
+        {
+          "type": "fact",
+          "title": "The codes",
+          "t": "301 means \"Moved Permanently.\" 302 means \"Found,\" a temporary redirect. Shorteners have used both."
+        },
+        {
+          "s": "steve",
+          "t": "The only exposure I see is information leakage. Those long URLs pass in the clear outside the company. Are they just GUIDs and gobbledygook, or human-readable content a defense contractor wouldn't want out? Otherwise it's pretty secure."
+        },
+        {
+          "s": "leo",
+          "t": "The key is that the intranet isn't reachable from outside."
+        }
+      ]
+    },
+    {
+      "title": "A Sysadmin's Case Against All-SSL Sites",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Richard de Tarnowsky, senior systems administrator at LiveWorld, disagrees about running everything over SSL. It might suit a low-traffic site on one machine, but not a large commercial site. Certificates are valid per host name, wildcards aside, and a high-availability site may have many servers. Often a load balancer handles all SSL, needing one certificate per URL, simplifying management and avoiding per-server charges. Heavy graphics or video could mean a significant encryption performance hit. Unencrypted content in an encrypted page brings that lame browser popup. SSL is expensive in hardware, certificates, design time and, probably the key, operations overhead."
+        },
+        {
+          "s": "steve",
+          "t": "I'm sure there's validity, and I'm sympathetic about certificate management. For my little site, GRC.com and www.grc.com each need a certificate so people can connect either way, and GRCtech.com needs another."
+        },
+        {
+          "s": "steve",
+          "t": "But not the encryption performance. The only real overhead is establishing the connection, with its public-key exchange. Then the two sides share a symmetric key, which is extremely fast, faster than reading the content from disk."
+        },
+        {
+          "s": "steve",
+          "t": "And modern browsers keep connections up. A browser opens up to two connections to a server, sets up SSL on both, and moves all of a page's assets through them for a long time. So yes to management and operational cost, but not a performance hit from encryption."
+        },
+        {
+          "s": "leo",
+          "t": "Good to know."
+        }
+      ]
+    },
+    {
+      "title": "Observation of the Week: The End of CAPTCHA",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Tyler Larson in Arizona says Jeff Hawkins' RSA keynote on Hierarchical Temporal Memory makes clear we're approaching the end of CAPTCHA. Numenta's AI already solves exactly the problems sites use to test humanity: reading noisy text, recognizing words in noisy audio, picking which pictures are kittens."
+        },
+        {
+          "s": "steve",
+          "t": "It's remarkably good."
+        },
+        {
+          "s": "leo",
+          "t": "He says we'll stop sorting human from machine and instead authorize based on whether the human or machine acts for an allowed party. My agents might legitimately create an email account for me. It's an extremely hard problem, and we'd better get a head start. I think we'll need a personal certificate to do anything on the 'Net."
+        },
+        {
+          "s": "steve",
+          "t": "Remember from our CAPTCHA coverage how surprisingly hard it is to tell a human from a machine across a connection. It's the classic Turing test. Watch Jeff's keynote at snipurl.com/rsa2008. What it recognizes is jaw-droppingly impressive."
+        },
+        {
+          "s": "leo",
+          "t": "If Hawkins can build chips that work like the brain, losing CAPTCHA is the least of it. In \"On Intelligence\" he says it won't be robots taking over the world, but machines doing human jobs like air traffic control and weather forecasting. Mostly good stuff. Maybe some bad."
+        }
+      ]
+    },
+    {
+      "title": "More Mechanics Copying Your Data",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mr. No Name in Detroit runs a small computer repair company while finishing his computer science degree, and maintains mechanics shops' computers too. Updating an office's machines, the service guys called him into the garage. They were ripping customers' CDs and wanted to know how to get the data onto an external drive to take home. They also copied thumb drives on keyrings and MP3 players. He worries most about personal photos."
+        },
+        {
+          "s": "steve",
+          "t": "Worth refreshing. This apparently isn't anecdotal. No offense to mechanics everywhere, but it's happening."
+        },
+        {
+          "s": "leo",
+          "t": "Get a valet key and lock everything in the trunk, or take it with you."
+        }
+      ]
+    },
+    {
+      "title": "Quip of the Week",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The bonus Quip of the Week, from listener Roger: funny how VeriSign's EV certification has VeriSign authenticating itself. You'd think they'd get someone else to vouch for them."
+        },
+        {
+          "s": "steve",
+          "t": "I got a kick out of it. A certificate is signed by someone you trust to have done due diligence. So what does it mean when VeriSign signs VeriSign's own certificate? I guess they're very sure who they are."
+        },
+        {
+          "s": "leo",
+          "t": "That's why we have PGP key-signing parties, building a chain of trust by showing each other our driver's licenses."
+        },
+        {
+          "type": "fact",
+          "title": "How it works",
+          "t": "Every chain of trust ends at a root certificate, which is always self-signed. Browsers trust roots because their makers vet and include them, not because anyone else signed them."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the April 2008 mass SQL injection attack do?",
+      "options": [
+        "Injected malicious JavaScript into hundreds of thousands of IIS sites, sending visitors to attack servers",
+        "Defaced homepages",
+        "Stole server passwords",
+        "Shut the sites down"
+      ],
+      "answer": 0,
+      "explain": "Steve blames web coders who don't sanitize input."
+    },
+    {
+      "q": "Why couldn't a firewall stop the Intel Centrino WiFi driver flaw?",
+      "options": [
+        "The flaw was in the WiFi driver itself, beneath every other defense",
+        "Firewalls don't run on laptops",
+        "It used port 80",
+        "It came by email"
+      ],
+      "answer": 0,
+      "explain": "Even an unconnected but active adapter was vulnerable."
+    },
+    {
+      "q": "Did the utility on Slashdot really bypass Vista's UAC?",
+      "options": [
+        "No, installing its privileged service still required UAC approval",
+        "Yes, it disabled UAC",
+        "Yes, it exploited a bug",
+        "Only on 64-bit Vista"
+      ],
+      "answer": 0,
+      "explain": "Trusted services running without prompts is how Windows works."
+    },
+    {
+      "q": "Why doesn't ING Direct's scrambled keypad stop sophisticated keyloggers?",
+      "options": [
+        "They capture the screen too, so they can map the letters back to the fixed PIN",
+        "The PIN is too short",
+        "The letters repeat",
+        "It sends the PIN unencrypted"
+      ],
+      "answer": 0,
+      "explain": "They only need to capture it once."
+    },
+    {
+      "q": "Why does Steve say a text-message code is useful even if text messages can be intercepted?",
+      "options": [
+        "The code only works in the user's own secure session and only once",
+        "Text messages are strongly encrypted",
+        "It also requires a fingerprint",
+        "The bank resends it hourly"
+      ],
+      "answer": 0,
+      "explain": "It proves you possess the phone."
+    },
+    {
+      "q": "According to Steve, what's the real cost of running a big site entirely over SSL?",
+      "options": [
+        "Certificate management and operations, not encryption speed once a connection is set up",
+        "Encrypting video slows everything greatly",
+        "Browsers can't handle it",
+        "Google won't index it"
+      ],
+      "answer": 0,
+      "explain": "The public-key exchange only happens when a connection starts."
+    }
+  ]
+}
