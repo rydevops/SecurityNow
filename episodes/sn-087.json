@@ -1,0 +1,404 @@
+{
+  "number": 87,
+  "title": "SQL Injection Exploits",
+  "subtitle": "How web forms let attackers rewrite database queries",
+  "date": "2007-04-12",
+  "description": "Steve notes the first AACS key revocation, against the WinDVD software player, posts the missing Episode 85a, explains the fixed DLL conflict from the animated-cursor patch, and shares two free e-book sites. Then he wraps up the code injection series with SQL injection: how a password like \"noodles or 1=1\" can rewrite a login query, how attackers map and dump an entire database through one weak guestbook, and why 38 new SQL injection flaws appeared in March alone.",
+  "transcript": "https://www.grc.com/sn/sn-087.txt",
+  "audio": "http://media.GRC.com/sn/SN-087.mp3",
+  "chapters": [
+    {
+      "title": "Even Experts Learn Something",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We get feedback from people who've been in IT all their lives, saying even on subjects they know well, they still pick up a tidbit they hadn't encountered."
+        },
+        {
+          "s": "leo",
+          "t": "Even pros know it's hard to keep up. Stuff changes."
+        }
+      ]
+    },
+    {
+      "title": "WinDVD's Keys Revoked",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Many people wrote about the AACS news. WinDVD's keys are being revoked."
+        },
+        {
+          "s": "leo",
+          "t": "The first example of key revocation."
+        },
+        {
+          "s": "steve",
+          "t": "As we said was possible. Revoking a software player is far less onerous than revoking your Toshiba HD DVD player. This all started with muslix64, and Doom9 forum members kept working. Someone made a utility that dumps all the encryption keys from any disc you insert in a PC with WinDVD. So Hollywood said, no more."
+        },
+        {
+          "s": "leo",
+          "t": "Does that stop the technique?"
+        },
+        {
+          "s": "steve",
+          "t": "It'll be cat and mouse. InterVideo, WinDVD's publisher, released a new version, a mandatory upgrade, that presumably hides the keys better. But on an open platform like XP, where the player must decrypt, it's very hard to prevent."
+        },
+        {
+          "s": "steve",
+          "t": "Vista's protected processes make it much harder. You can't run a debugger on a protected Vista process and dump its memory. Microsoft is building walls around processes for this reason."
+        },
+        {
+          "s": "leo",
+          "t": "What if you don't update?"
+        },
+        {
+          "s": "steve",
+          "t": "The AACS authority's keys for older WinDVD will be invalidated by newer discs, which won't play on it. It's unclear whether older discs will still play, or whether one new disc leaves a mark that stops even old ones."
+        },
+        {
+          "s": "leo",
+          "t": "So it could make your existing stuff not work."
+        },
+        {
+          "s": "steve",
+          "t": "You'll need to upgrade. And the Doom9 folks won't take this lying down, if only to prove that what Hollywood wants is fundamentally impossible."
+        },
+        {
+          "s": "leo",
+          "t": "For those who said nobody would ever revoke keys, now we know they will."
+        },
+        {
+          "s": "steve",
+          "t": "For software. The nightmare is hardware people bought that stops working because one instance somewhere was reverse-engineered."
+        },
+        {
+          "s": "leo",
+          "t": "I suspect the movie industry worries more about software, since that's what really enables piracy."
+        }
+      ]
+    },
+    {
+      "title": "Episode 85a and the Patch Conflict",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "People asked why I never posted Episode 85a, our early announcement of the ANI animated cursor vulnerability. I thought of it as a quick notice, with a regular episode three days later. But people want it, so it's on the Security Now! page now."
+        },
+        {
+          "s": "leo",
+          "t": "Collect all 87."
+        },
+        {
+          "s": "steve",
+          "t": "Last week I mentioned an error after installing the ANI fix. On my little HP Pavilion, it said user32.dll was relocated in memory and the application wouldn't run properly. The cause was the Realtek HD Audio Control Panel. A German tax calculator, TUGZip and a CD tagging program conflicted too."
+        },
+        {
+          "s": "steve",
+          "t": "There was an interim hotfix, but Microsoft folded it into this Tuesday's regular April 10th updates, along with three or four other patches depending on your Windows version. Make sure you're patched."
+        }
+      ]
+    },
+    {
+      "title": "Free E-Books",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Listeners following our e-book talk pointed to two sites with tens of thousands of free e-books. Manybooks.net offers about 20 formats, including RTF. One listener downloads RTF, enlarges or bolds the font in Word or WordPad, and says it works beautifully on the Sony Reader."
+        },
+        {
+          "s": "leo",
+          "t": "McCollum's PDFs didn't work well on it."
+        },
+        {
+          "s": "steve",
+          "t": "I'm playing with a little converter that produces native-format text you can resize. Manybooks says it has 16,380 free e-books."
+        },
+        {
+          "s": "leo",
+          "t": "Mostly public domain?"
+        },
+        {
+          "s": "steve",
+          "t": "Many classics, and surprises, like a huge compendium of English idioms published around 1920. The other is wowio.com. Links are in the show notes. Some people felt we spent too much time on e-books. We don't want to be the e-book show."
+        },
+        {
+          "s": "leo",
+          "t": "We talk about what interests us."
+        }
+      ]
+    },
+    {
+      "title": "What SQL Is",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Today's topic is an incredibly big problem for the Web. You could almost imagine a system couldn't have been deliberately designed worse."
+        },
+        {
+          "s": "steve",
+          "t": "It's old technology meeting new. SQL, Structured Query Language, was designed long before the Web as a very powerful, language-based way to access databases."
+        },
+        {
+          "s": "steve",
+          "t": "You write queries in an almost English-y form: select subject, date and content from the newsletters table where the newsletter ID is 5. You can create tables, add items and columns. Data lives in tables of rows, which are records, and fields. Mark Thompson of AnalogX loves it, since programmers are comfortable with a linguistic interface to data."
+        },
+        {
+          "s": "steve",
+          "t": "Moving from static pages to dynamic ones, an online forum must store its postings somewhere they can be efficiently retrieved. SQL databases were the natural choice."
+        },
+        {
+          "s": "steve",
+          "t": "Older databases over a network made you shuttle data back and forth to check each record. SQL's cool concept: send the query across the network, and the smart database applies it and returns only the results."
+        },
+        {
+          "s": "leo",
+          "t": "There are many flavors. Microsoft makes SQL Server, and at TWiT we use the open-source MySQL. SQL is a language with many implementations."
+        }
+      ]
+    },
+    {
+      "title": "\"Noodles or 1=1\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So it's like overrunning a field to execute arbitrary code?"
+        },
+        {
+          "s": "steve",
+          "t": "That's a buffer overrun, which is different. And last week's cross-site scripting was exploited in the user's browser. SQL injection lets hackers inject queries into the remote server that its designers never intended, leveraging SQL's expressive power. It's easy to get working, and very hard to make uncompromisable."
+        },
+        {
+          "s": "steve",
+          "t": "Say a high-value site asks for your username and password. The server code builds a query like: select ID from logins where username equals what the user typed, and password equals what the user typed. Both must match."
+        },
+        {
+          "s": "steve",
+          "t": "Now, in the password field, type a bogus password, noodles, and then \"or 1 equals 1.\" Submit it."
+        },
+        {
+          "s": "steve",
+          "t": "Now the query says: username matches, and password equals noodles, or 1 equals 1. Which is always true. The user has written their own SQL into the query."
+        },
+        {
+          "s": "steve",
+          "t": "It works on a surprising number of sites. There are details, like the quotes the server puts around what you type, but you work around them. Our show notes link to white papers with more."
+        },
+        {
+          "s": "leo",
+          "t": "Let me try it on my site."
+        },
+        {
+          "type": "fact",
+          "title": "The quotes",
+          "t": "A classic version is typing ' OR '1'='1 into a field. The leading quote closes the server's own quotation mark, and the rest becomes part of the query."
+        }
+      ]
+    },
+    {
+      "title": "Mapping and Dumping a Database",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "SQL is so powerful you can nest queries and reach parts of the server unrelated to the application. Databases keep \"metadata\" in system tables, like sysobjects, syscolumns and sysindexes, describing their own tables. You can query those to learn table and column names."
+        },
+        {
+          "s": "steve",
+          "t": "On a site that doesn't carefully cleanse user input, say a forum page listing threads, a series of experiments can extract table and column names, starting from knowing nothing. Eventually you submit a query that makes the page, which thinks it's listing threads, dump every username and password instead."
+        },
+        {
+          "s": "steve",
+          "t": "Imagine a bank with this flaw. Someone poking at a form could extract the table names and dump every online customer's login, then log in as you and send checks to themselves."
+        },
+        {
+          "type": "fact",
+          "title": "Metadata tables",
+          "t": "Those system table names are Microsoft SQL Server's. MySQL and others expose the same information through a standard schema called information_schema."
+        }
+      ]
+    },
+    {
+      "title": "38 New SQL Injection Flaws in March",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "How do you prevent this? Screen the input?"
+        },
+        {
+          "s": "steve",
+          "t": "Essentially. Last week I read 28 cross-site scripting flaws from March. SQL injection had 38 in March alone."
+        },
+        {
+          "s": "leo",
+          "t": "You'd think it'd be standard practice to prevent it by now."
+        },
+        {
+          "s": "steve",
+          "t": "It's the webmaster's fault, whoever coded it. A few examples: vBulletin, forum software, fails to sanitize the \"postids\" parameter of inlinemod.php before using it in an SQL query. Serendipity, a weblog. Angel Learning Management Suite, written in ASP. Coppermine Photo Gallery. Zephyr Toolbox Address Book. GaziYapBoz Game Portal."
+        },
+        {
+          "s": "leo",
+          "t": "GaziYapBoz? Say it's not so."
+        },
+        {
+          "s": "steve",
+          "t": "SQL-Ledger and LedgerSMB, with remote code execution. Link managers, guestbooks, portals, PhpStats, image galleries, Woltlab Burning Book. That's one month, and every month is like this."
+        }
+      ]
+    },
+    {
+      "title": "One Weak Guestbook Exposes Everything",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You might say, so a guestbook is vulnerable. But it's probably a guestbook on a site with a lot else going on. I read about nine vulnerable guestbook apps. They're low-security things."
+        },
+        {
+          "s": "leo",
+          "t": "Written by amateurs, free group projects."
+        },
+        {
+          "s": "steve",
+          "t": "And the guestbook uses the same SQL server that runs the entire website."
+        },
+        {
+          "s": "leo",
+          "t": "Most sites, mine included, run one MySQL server."
+        },
+        {
+          "s": "steve",
+          "t": "It's worse. Through the metadata, one insecure guestbook can get the names of every database on your server and explore them all, finding much more valuable data. Through some notorious SQL problems, it can even reach the underlying operating system."
+        },
+        {
+          "s": "steve",
+          "t": "Guestbooks are often someone's first web application, free to download, and rarely updated. Woltlab Burning Board, a free PHP and MySQL bulletin board, has a flaw in the \"action\" parameter of usergroup.php in version 2.7 and earlier. They fixed it. But how many users know? Now every hacker does, and some know which board each interesting site uses. Any site that didn't update has its whole SQL repository exposed."
+        },
+        {
+          "s": "leo",
+          "t": "And on shared hosting, one MySQL instance serves many accounts. You may expose hundreds or thousands of other websites."
+        },
+        {
+          "s": "steve",
+          "t": "With Web 2.0 sites, the page content itself often lives in SQL. That's how a lot of website defacing happens. SQL has a command called \"drop table.\" And baby, does it."
+        },
+        {
+          "s": "leo",
+          "t": "I've used it. I'm always scared pressing that button."
+        }
+      ]
+    },
+    {
+      "title": "Why It's Hard to Stop",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Imagine someone who wishes you no good learns a table name and inserts a drop table command through a web form. The prevention is to absolutely scrutinize anything the user provides."
+        },
+        {
+          "s": "steve",
+          "t": "But you'd like passwords to be freeform. An SQL command extension is a valid, unguessable password. How does the system know?"
+        },
+        {
+          "s": "steve",
+          "t": "Forums also want people to type anything. It's harder than script injection, where you can watch for the script keyword. SQL is much more like English, with nothing as obvious to hang onto."
+        },
+        {
+          "s": "steve",
+          "t": "There were 38 examples in March, a similar number in February and January, and back through time. Non-experts use powerful tools like SQL behind web servers. Once it doesn't crash when users submit data, they think they're done."
+        },
+        {
+          "s": "leo",
+          "t": "I'm going to go have a hamburger."
+        },
+        {
+          "s": "steve",
+          "t": "Pay me, I'm on to my next disaster. And these are valid queries, so SQL Server or MySQL can't flag them as suspicious. The problem is that untrusted people were allowed to make them through anonymous user input. It'll take time for awareness to reach web developers."
+        },
+        {
+          "s": "leo",
+          "t": "I watch for updates to programs we use, like Drupal, which have had SQL injection flaws, and apply them. If you're a webmaster, keep your eye peeled, even for a stupid guestbook."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, a listener whose ears perked up at last week's list realized he used one of the vulnerable programs, and it had been exploited on his server. This is real."
+        },
+        {
+          "type": "fact",
+          "title": "The real fix",
+          "t": "The standard defense became parameterized queries, also called prepared statements. The query's structure is sent separately from the user's data, so input can never be interpreted as SQL, no matter what it contains."
+        },
+        {
+          "s": "leo",
+          "t": "GRC.com now has every episode, including 85a. Nerds like complete sets. Next week, Episode 88, questions and answers."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does typing \"noodles or 1=1\" as a password break a vulnerable login?",
+      "options": [
+        "It adds an always-true condition to the server's SQL query",
+        "It overflows a buffer",
+        "It guesses the real password",
+        "It runs JavaScript"
+      ],
+      "answer": 0,
+      "explain": "The user has written their own SQL into the query."
+    },
+    {
+      "q": "What made SQL powerful for networks?",
+      "options": [
+        "The database interprets queries itself and returns only the results",
+        "It encrypts data",
+        "It's faster than files",
+        "It runs in browsers"
+      ],
+      "answer": 0,
+      "explain": "Older systems shuttled all the data across the network."
+    },
+    {
+      "q": "How can an attacker learn a database's table and column names?",
+      "options": [
+        "By querying the database's own metadata tables through the injection",
+        "From the website's HTML",
+        "By phoning the host",
+        "It's impossible"
+      ],
+      "answer": 0,
+      "explain": "Then they can dump usernames and passwords."
+    },
+    {
+      "q": "Why can a vulnerable guestbook endanger a whole website?",
+      "options": [
+        "It shares the site's SQL server, so it's a doorway to every database on it",
+        "Guestbooks store passwords",
+        "It runs as root",
+        "It disables firewalls"
+      ],
+      "answer": 0,
+      "explain": "On shared hosting, it can expose other sites too."
+    },
+    {
+      "q": "Why can't database servers simply block injected queries?",
+      "options": [
+        "The injected queries are perfectly valid SQL",
+        "They lack the CPU",
+        "SQL has no security",
+        "Browsers hide them"
+      ],
+      "answer": 0,
+      "explain": "The problem is who was allowed to issue them."
+    },
+    {
+      "q": "What happened to WinDVD in April 2007?",
+      "options": [
+        "Its AACS keys were revoked, forcing an upgrade to keep playing new discs",
+        "It was banned",
+        "It became free",
+        "It added Blu-ray"
+      ],
+      "answer": 0,
+      "explain": "A tool had been dumping disc keys through it."
+    }
+  ]
+}
