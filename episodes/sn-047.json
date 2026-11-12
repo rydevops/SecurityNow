@@ -1,0 +1,407 @@
+{
+  "number": 47,
+  "title": "Internet Weaponry",
+  "subtitle": "Botnets, floods and extortion",
+  "date": "2006-07-06",
+  "description": "Steve and Leo trace eight years of denial-of-service attacks: how bandwidth floods work, early protocol attacks like the SYN flood, Mafiaboy, IRC \"bot wars\" that grew into huge botnets, extortion of gambling sites, the 2002 attack on DNS root servers, and why a well-crafted flood is nearly impossible to stop.",
+  "transcript": "https://www.grc.com/sn/sn-047.txt",
+  "audio": "http://media.GRC.com/sn/SN-047.mp3",
+  "chapters": [
+    {
+      "title": "A Gray Moustache",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 47. Nitrozac and Snaggy draw our pictures for the TWiT site. Somebody suggested your moustache should move up and down."
+        },
+        {
+          "s": "steve",
+          "t": "What's happening is that it's turning gray. I don't mind being unretouched."
+        },
+        {
+          "s": "leo",
+          "t": "Today: Internet weaponry. More effective than Kim Jong-il's missiles."
+        },
+        {
+          "s": "steve",
+          "t": "It can be aimed at anyone its controllers choose, it's nearly impossible to hide from, and it has unlimited range. Unlike that missile, which lasted 35 seconds and sputtered out."
+        }
+      ]
+    },
+    {
+      "title": "How a Flood Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "It began toward the end of 1998 and in 1999, with attacks from networks of UNIX machines. The goal is to generate a lot of bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "Every connection has a speed: a 56K modem, 384K DSL, maybe a megabit of cable. If more traffic arrives than fits, the upstream router's buffers overflow and it simply drops what it can't send."
+        },
+        {
+          "s": "steve",
+          "t": "The Internet handles dropped packets. TCP acknowledges and retransmits, and applications like DNS resend."
+        },
+        {
+          "s": "steve",
+          "t": "But flood a 384K DSL line with 384 megabits, a thousand times too much, and your good packets have about a one-in-a-thousand chance. The router can't tell wanted packets from attacking ones."
+        },
+        {
+          "s": "steve",
+          "t": "So it's not that the attack overheats your modem. Your valid traffic just can't compete statistically. It's a bottleneck."
+        },
+        {
+          "s": "steve",
+          "t": "A single attacker on a cable modem can upload only about a quarter megabit, so you'd still have three-quarters of your bandwidth. That's why modern attacks are DDoS, distributed: thousands or tens of thousands of machines worldwide, controlled centrally, all aiming at one point."
+        }
+      ]
+    },
+    {
+      "title": "Attacks That Exploit Bugs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Listeners pointed out that other DoS attacks exploit flaws and don't need bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "Right. I love one called the Ping of Death: send early Windows a single ping whose spoofed source IP equals its own address. It tries to reply to itself, loops, and grinds to a halt."
+        },
+        {
+          "type": "fact",
+          "title": "Ping of Death vs. LAND",
+          "t": "The attack Steve describes, a packet whose source address and port match the target's own, was actually the \"LAND\" attack from 1997, usually sent as a TCP SYN. The Ping of Death (1996) was different: an oversized ping, reassembled into more than 65,535 bytes, which crashed many systems."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft fixed that. The original attacks on servers were TCP protocol attacks, SYN floods."
+        },
+        {
+          "s": "steve",
+          "t": "A server receiving a SYN allocates resources for the coming connection and replies with a SYN/ACK, expecting the third packet of the handshake. Send lots of SYNs that never complete, and an unhardened server runs out of resources, even with little bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "Servers are much smarter now about what they allocate. But a true flood exploits how the Internet is supposed to work."
+        },
+        {
+          "type": "fact",
+          "title": "SYN cookies",
+          "t": "Dan Bernstein's 1996 \"SYN cookies\" let a server encode the connection's details in its SYN/ACK's sequence number, so it allocates nothing until the client completes the handshake. Linux and other systems adopted them."
+        }
+      ]
+    },
+    {
+      "title": "The Magnifying Glass",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Hold your hand in the sun and it feels warm. Focus that same sunlight to a point with a magnifying glass, and you're burned."
+        },
+        {
+          "s": "steve",
+          "t": "Ten thousand computers surfing the web cause no trouble. Focus all of them on one spot, and that spot is in trouble."
+        },
+        {
+          "s": "leo",
+          "t": "Like being slashdotted, or \"dugg.\""
+        },
+        {
+          "s": "steve",
+          "t": "The benign version: too many legitimate users want the same pages at once."
+        },
+        {
+          "s": "steve",
+          "t": "The first big wake-up was a 15-year-old called Mafiaboy, who knocked Yahoo!, Dell, eBay, Amazon and CNN offline. One kid. Estimated damage: about $1.7 billion."
+        },
+        {
+          "s": "steve",
+          "t": "He was in Montreal. He pleaded guilty to 55 counts and served eight months in a youth detention center."
+        },
+        {
+          "s": "leo",
+          "t": "Either he's not allowed near a computer, or he has a very good job at a security firm."
+        },
+        {
+          "type": "fact",
+          "title": "Mafiaboy",
+          "t": "Michael Calce launched the attacks in February 2000. In 2001 he was sentenced to eight months in \"open custody\" plus probation. He later became a security consultant and wrote a book about the episode."
+        }
+      ]
+    },
+    {
+      "title": "Bot Wars on IRC",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Those attacks inspired young hackers who hung out on IRC, Internet Relay Chat. A channel operator can kick or ban anyone, which caused fights among teenagers."
+        },
+        {
+          "s": "steve",
+          "t": "So kids wrote attack \"bots,\" in Visual Basic or C, starting from source code floating around, to knock each other off IRC and take over channels."
+        },
+        {
+          "s": "steve",
+          "t": "Attack an IRC server and the network splits. Join the leaderless side, stop the attack, and when the servers merge, you briefly have two operators, so one can kick the other."
+        },
+        {
+          "s": "steve",
+          "t": "Then it became \"my bots are stronger than yours.\" More bandwidth means more machines, so bots were spread to innocent people's computers: in viruses, or through IRC scripts that naive users were told to run. They're Trojans."
+        },
+        {
+          "s": "steve",
+          "t": "The bots receive instructions over IRC too. They're built with a domain name, which the owner points at a server using dynamic DNS. The owner can connect to any server on the IRC network, and his commands are relayed anonymously. Unlike email, IRC adds no trail of headers."
+        },
+        {
+          "s": "leo",
+          "t": "If you invented a service designed for hacking, it'd be IRC. Everybody knows everybody's IP address."
+        },
+        {
+          "s": "steve",
+          "t": "Powerful scriptable clients like mIRC help too, though there are benign bots, like an autoresponder."
+        },
+        {
+          "s": "leo",
+          "t": "I have a Leo bot."
+        }
+      ]
+    },
+    {
+      "title": "Reporting for Duty",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "When GRC was first attacked this way, I reverse-engineered a bot and surreptitiously joined its private channel. You constantly see machines joining and leaving."
+        },
+        {
+          "s": "steve",
+          "t": "Somewhere an innocent person turns on their computer, and a hidden Trojan logs into the channel. Chillingly, they're reporting for duty."
+        },
+        {
+          "s": "steve",
+          "t": "The owner joins the hidden, password-protected channel from another server and issues a command, posted like any chat comment. Some botnets even spread across several domains so they don't all gather on one server."
+        },
+        {
+          "s": "leo",
+          "t": "Can't the FBI just find the channel and kill it?"
+        },
+        {
+          "s": "steve",
+          "t": "Presumably that happens all the time. But they just change the channel and reinfect machines."
+        },
+        {
+          "s": "steve",
+          "t": "In July 2002, the RIAA's website was blown off the Net, on and off for days, in retaliation for its support of tough anti-file-sharing legislation."
+        },
+        {
+          "s": "leo",
+          "t": "How big are these nets?"
+        },
+        {
+          "s": "steve",
+          "t": "Mark Thompson's friend at a major bandwidth provider has seen 9-gigabit attacks. Cable bots are prized. Modem bots are lame. At a quarter megabit each, that's 36,000 machines. And one botnet was found with 100,000 machines under one person."
+        },
+        {
+          "type": "fact",
+          "title": "Botnets since",
+          "t": "Botnets moved from IRC to web-based, peer-to-peer and encrypted control. In 2016, the Mirai botnet of hacked cameras and routers hit DNS provider Dyn at about 1.2 terabits per second, disrupting Twitter, Netflix and others."
+        }
+      ]
+    },
+    {
+      "title": "How Machines Get Recruited",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Any way to get code running on someone's machine has been used: email attachments, shady websites that exploit known flaws, or \"a free utility that will speed up your Internet connection five times.\""
+        },
+        {
+          "s": "steve",
+          "t": "Code Red and Nimda only spread themselves, though some left backdoors and had built-in, time-delayed attacks on targets like whitehouse.gov and Microsoft's update site."
+        },
+        {
+          "s": "steve",
+          "t": "Only download from reputable sites, like SnapFiles or CNET, that check their files. If it seems too good to be true, it probably is."
+        }
+      ]
+    },
+    {
+      "title": "Protection Rackets",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Then came profit. If Mafiaboy did $1.7 billion in damage, wouldn't companies pay to avoid it?"
+        },
+        {
+          "s": "steve",
+          "t": "Online gambling sites are prime targets, especially around big horse races and boxing matches. Extortion rings say: pay us $10,000 and we'll make sure you aren't attacked."
+        },
+        {
+          "s": "leo",
+          "t": "The traditional protection racket. They can only protect you from themselves."
+        },
+        {
+          "s": "steve",
+          "t": "Owners used to blow it off. Then on the big day, they were black for 24 hours, and customers left for good. An hour later: \"Sorry we couldn't prevent that. About that next boxing match…\" More often than not, they get paid."
+        },
+        {
+          "s": "steve",
+          "t": "My FBI friends on the Electronic Crimes Task Force say a few months later comes another demand."
+        },
+        {
+          "s": "leo",
+          "t": "That's blackmail. They never stop."
+        },
+        {
+          "s": "steve",
+          "t": "Sites now buy huge pipes, or services that accept connections on their behalf. Their costs have gone up forever."
+        }
+      ]
+    },
+    {
+      "title": "Can It Be Stopped?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The traffic comes from every ISP and network. Nowhere does it look unusual until it converges on the target. You can't practically trace it back."
+        },
+        {
+          "s": "steve",
+          "t": "In October 2002, a one-hour ICMP ping flood hit all 13 DNS root servers, and nine went down."
+        },
+        {
+          "s": "steve",
+          "t": "DNS doesn't need ICMP, so routers far enough upstream, where the attack is still dispersed, could drop pings to those addresses. But attackers can just use the protocol the service needs, UDP for DNS, or TCP on port 80 for a website. An attack that looks exactly like real customers can't be filtered."
+        },
+        {
+          "s": "leo",
+          "t": "So there's no defense."
+        },
+        {
+          "s": "steve",
+          "t": "Only enormous pipes and servers that answer every packet as if it were valid. That creates \"backscatter\": since the attackers spoof random source IPs, the victim's SYN/ACKs spray all over the Internet."
+        },
+        {
+          "s": "steve",
+          "t": "Brilliant people at the San Diego Supercomputer Center watched SYN/ACKs landing in a large block of unused IP space they owned. From that, they could see attacks happening all over the Internet, how strong they were, and who was being hit."
+        },
+        {
+          "type": "fact",
+          "title": "Measuring backscatter",
+          "t": "Researchers at UC San Diego and CAIDA published this technique in 2001. Watching a large block of unused addresses, a \"network telescope,\" they inferred thousands of attacks a week. Network telescopes are still a standard research tool."
+        },
+        {
+          "s": "steve",
+          "t": "I made noise about raw sockets before XP shipped, because they make floods worse. MSBlast used them against Microsoft, and SP2 removed them."
+        },
+        {
+          "s": "leo",
+          "t": "Tell your friends and family: don't open attachments, update, run antivirus. Though a bot with a rootkit may be invisible."
+        }
+      ]
+    },
+    {
+      "title": "DNS and the Bigger Picture",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "People think I'm an alarmist. I'm just explaining what is. Still, it doesn't seem to be escalating. Extortionists have to get paid, often by Western Union, and governments now cooperate. Five years ago, police would say \"a what?\""
+        },
+        {
+          "s": "leo",
+          "t": "I'm more worried about DNS."
+        },
+        {
+          "s": "steve",
+          "t": "That one-hour attack frightened the networking community. But DNS is distributed and cached, typically for about a day. You'd have to hold all the servers down for a day for caches to drain. If you did, the whole Net would come down. IP addresses would work, but who knows anyone's?"
+        },
+        {
+          "s": "leo",
+          "t": "Maybe keep a hosts file of your favorite sites, just in case. Including TWiT.tv."
+        },
+        {
+          "type": "fact",
+          "title": "Root servers today",
+          "t": "The 13 root server names are now served by over 1,900 machines worldwide using \"anycast,\" which spreads attack traffic across many sites. Attacks in 2015 and 2016 barely affected users."
+        },
+        {
+          "s": "steve",
+          "t": "And a listener got a $1,199 quote from a data recovery company, said \"send it back,\" bought SpinRite, and had his drive working three hours later."
+        },
+        {
+          "s": "steve",
+          "t": "Next week, Episode 48, is Q&A."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does a bandwidth-flooding attack deny service?",
+      "options": [
+        "Floods of packets crowd out valid traffic at the bottleneck to the victim",
+        "It overheats the victim's modem",
+        "It deletes files",
+        "It changes your password"
+      ],
+      "answer": 0,
+      "explain": "The router can't tell attacking packets from wanted ones, so it drops most of both."
+    },
+    {
+      "q": "Why are modern denial-of-service attacks distributed?",
+      "options": [
+        "One home connection has too little upload bandwidth; thousands combined overwhelm a target",
+        "To avoid encryption",
+        "Because it's legal",
+        "Distribution is slower"
+      ],
+      "answer": 0,
+      "explain": "Steve's magnifying glass: harmless sunlight, focused to a point, burns."
+    },
+    {
+      "q": "How did a SYN flood take down early servers?",
+      "options": [
+        "Each SYN made the server reserve resources for connections that never completed",
+        "It used huge pings",
+        "It guessed passwords",
+        "It filled the hard drive"
+      ],
+      "answer": 0,
+      "explain": "Modern servers allocate resources much more carefully."
+    },
+    {
+      "q": "Where did attack botnets first develop and take their orders?",
+      "options": [
+        "On IRC, where teenagers battled for control of channels",
+        "On eBay",
+        "In email newsletters",
+        "On Usenet"
+      ],
+      "answer": 0,
+      "explain": "IRC relays commands anonymously, making owners hard to trace."
+    },
+    {
+      "q": "What did the October 2002 attack on DNS do?",
+      "options": [
+        "An hour-long ping flood knocked nine of the 13 root servers offline",
+        "Erased all domain names",
+        "Redirected Google",
+        "Shut down email"
+      ],
+      "answer": 0,
+      "explain": "DNS caching meant most users didn't notice."
+    },
+    {
+      "q": "What is denial-of-service \"backscatter\"?",
+      "options": [
+        "Replies the victim sends to the attackers' spoofed random addresses",
+        "The attack's echo on the victim's screen",
+        "A type of virus",
+        "Extortion emails"
+      ],
+      "answer": 0,
+      "explain": "Researchers watching unused IP space used it to observe attacks worldwide."
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "number": 46,
+  "title": "Router Logs",
+  "subtitle": "Why your router cries wolf",
+  "date": "2006-06-29",
+  "description": "Listeners constantly ask what their router logs mean. Steve explains why consumer router logs mostly record harmless Internet Background Radiation, why they're too incomplete to diagnose anything, why \"DoS protection\" claims make no sense, and when logs actually are useful.",
+  "transcript": "https://www.grc.com/sn/sn-046.txt",
+  "audio": "http://media.GRC.com/sn/SN-046.mp3",
+  "chapters": [
+    {
+      "title": "Plain Explanations",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 46. More and more people think of you as a teacher, Steve."
+        },
+        {
+          "s": "steve",
+          "t": "I've never understood why people think this stuff is so difficult. You read an academic paper four pages long, and all it's really saying fits in one paragraph my mother could understand."
+        },
+        {
+          "s": "steve",
+          "t": "The form on the Security Now! page constantly gets questions about router logs. People are worried by what their logs tell them."
+        },
+        {
+          "s": "leo",
+          "t": "Do all routers keep logs?"
+        },
+        {
+          "s": "steve",
+          "t": "All contemporary ones at least offer it. It's a bullet point every competing router needs."
+        }
+      ]
+    },
+    {
+      "title": "Crying Wolf",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The log is the router's version of a personal firewall popping up every time something unsolicited hits you. I think they do it to prove they're useful, until you finally uncheck \"notify me.\""
+        },
+        {
+          "s": "steve",
+          "t": "It's all IBR, Internet Background Radiation. Old worms like Code Red, Nimda and MSBlast on forgotten machines keep scanning randomly, so every IP gets some of their packets. Misconfigured systems spray strange packets too."
+        },
+        {
+          "type": "fact",
+          "title": "Internet Background Radiation",
+          "t": "Researchers use the same term. A 2004 study, \"Characteristics of Internet Background Radiation,\" measured this constant unsolicited traffic hitting unused address space. Today, automated scanners probe every IPv4 address on popular ports many times a day."
+        },
+        {
+          "s": "steve",
+          "t": "Some routers even claim to protect you from denial-of-service attacks. I've never understood that."
+        },
+        {
+          "s": "leo",
+          "t": "A DoS attack blocks access. How's a router going to stop that?"
+        },
+        {
+          "s": "steve",
+          "t": "The flood fills your bandwidth before it reaches the router. The router can't filter what it never receives, and all your machines share its one public IP, which is swamped anyway."
+        },
+        {
+          "s": "steve",
+          "t": "People send me logs saying they're under a DoS attack, and they show one packet every five seconds. Wait an hour and get 26 SYN packets, and that's not an attack."
+        },
+        {
+          "s": "leo",
+          "t": "It's advertising for what a good job it's doing."
+        },
+        {
+          "s": "steve",
+          "t": "It's like tuning an AM radio between stations and trying to find something in the static. There's so much going on that nothing is going on."
+        },
+        {
+          "type": "fact",
+          "title": "Real DDoS protection",
+          "t": "Large floods have to be absorbed upstream, by your ISP or by services like Cloudflare and Akamai that spread traffic across huge networks. Records keep climbing, past several terabits per second by the 2020s. No home router can stop that."
+        }
+      ]
+    },
+    {
+      "title": "Logs That Don't Say Enough",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Sometimes a log helps. If your IP changes, you may suddenly get far more traffic, because the address you inherited belonged to someone on Kazaa or Morpheus. Their peers keep trying for a long time."
+        },
+        {
+          "s": "leo",
+          "t": "We once had a BitTorrent tracker on my website, and I still get hundreds of hits a minute from clients looking for it."
+        },
+        {
+          "s": "steve",
+          "t": "Perfect example. If your logs suddenly get noisy after restarting your router, you may have someone else's old IP."
+        },
+        {
+          "s": "steve",
+          "t": "The bigger problem is that consumer logs are incomplete. They claim an \"attack\" but don't show the packet's TCP flags, so nobody can tell what it really was. Professional gear tells you more than you want to know, but at least it's what you need."
+        },
+        {
+          "s": "steve",
+          "t": "These are bubblegum logs, there just to add a feature."
+        },
+        {
+          "s": "steve",
+          "t": "A real UNIX or Linux firewall on an inexpensive PC, like SmoothWall or m0n0wall, keeps complete logs and doesn't nag you by interpreting them."
+        },
+        {
+          "s": "steve",
+          "t": "Some routers also wait hours to group related packets into one report. Then the alarm appears long after whatever you did to cause it, like running BitTorrent, and it looks like a mysterious attack."
+        }
+      ]
+    },
+    {
+      "title": "Who's Knocking?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Is some of the noise from hackers looking for vulnerabilities?"
+        },
+        {
+          "s": "steve",
+          "t": "Still, yes. People used to look up the ISP behind every stray packet and send abuse reports: \"Someone in your network scanned me!\" Thankfully that has faded. Nobody could keep up."
+        },
+        {
+          "s": "steve",
+          "t": "But malicious scanners really are methodically sweeping the Internet for anything that accepts a connection on, say, telnet port 23."
+        },
+        {
+          "s": "leo",
+          "t": "Any script kiddie can run a tool: pick an IP range, pick some ports, press a button and walk away."
+        },
+        {
+          "s": "steve",
+          "t": "The famous one is Fyodor's Nmap, which is very powerful and surely used maliciously too. A simple scanner searching for TCP port 139 is what showed me all those wide-open Windows drives that led to ShieldsUP!."
+        },
+        {
+          "s": "steve",
+          "t": "My cable provider, Cox, now blocks ports 137 through 139 and 445 at its border, which really helps its customers. But scans from inside the Cox network still get through."
+        },
+        {
+          "s": "steve",
+          "t": "There's also Windows Messenger pop-up spam aimed at port 135, at unprotected machines without XP SP2."
+        },
+        {
+          "s": "steve",
+          "t": "When I was dealing with Wicked, the 13-year-old who attacked GRC years ago, I kept a constant log of my cable modem traffic. It was a mix: worms, Messenger spam, and clear port scans, with SYN packets to port 23 arriving at my successive IP addresses in order."
+        },
+        {
+          "s": "steve",
+          "t": "Six years ago, your cable modem's light showed when your computer had traffic. Now it never stops flashing."
+        }
+      ]
+    },
+    {
+      "title": "When Logs Are Useful",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So if your router's log is noisy, it's mostly justifying its existence. Logs help with forensics and diagnosis: say, checking whether a friend's connection attempts are being dropped when you thought you'd opened a port."
+        },
+        {
+          "s": "steve",
+          "t": "Here's a clever idea: two computers could each read their own router's log to see which IP and port the other's packets came from, then send traffic back there. That would be NAT traversal without a third party. I've never seen it done."
+        },
+        {
+          "s": "steve",
+          "t": "Technically we are all under attack all the time. An unpatched Windows machine with no firewall is taken over within minutes."
+        },
+        {
+          "s": "steve",
+          "t": "So put a NAT router on your network, or turn on your PC's firewall, and ignore the noise. That's why XP SP2's firewall is so quiet. It has an optional log for diagnosis, not alerts."
+        },
+        {
+          "type": "fact",
+          "title": "Windows Firewall's prompts",
+          "t": "XP SP2's firewall doesn't warn you about blocked incoming packets, but it does ask once when a program wants to accept incoming connections. Its log, if turned on, is written to pfirewall.log in the Windows folder."
+        },
+        {
+          "s": "leo",
+          "t": "So mainly we're here to calm people down. It's normal. It's just noise."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite at the Loading Dock",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Drives are so big now that many areas are rarely visited. SpinRite reads every sector, inverts the data, writes it back, reads it, inverts it again, and writes and reads it once more."
+        },
+        {
+          "s": "steve",
+          "t": "That makes the drive inspect itself. A sector that's starting to fail gets noticed, mapped out and replaced with a spare."
+        },
+        {
+          "s": "leo",
+          "t": "I run it on every new 500-gigabyte drive before I trust it with anything."
+        },
+        {
+          "s": "steve",
+          "t": "Years ago, some major manufacturers, okay, Compaq, would over-order drives, qualify them with SpinRite at the loading dock, and send back the worst ones."
+        },
+        {
+          "s": "leo",
+          "t": "I'd pay a premium for a drive labeled \"SpinRite tested.\""
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What fills most consumer router logs?",
+      "options": [
+        "Internet Background Radiation: harmless noise from old worms and scanners",
+        "Real attacks targeting you personally",
+        "Your own web browsing",
+        "Errors in the router"
+      ],
+      "answer": 0,
+      "explain": "Every IP on the Internet receives this constant junk."
+    },
+    {
+      "q": "Why can't a home router protect you from a denial-of-service flood?",
+      "options": [
+        "The flood fills your connection before it reaches the router",
+        "Routers can't read packets",
+        "DoS attacks use encryption",
+        "It's illegal to block them"
+      ],
+      "answer": 0,
+      "explain": "It can't filter what it never receives."
+    },
+    {
+      "q": "Why might your router log suddenly get much noisier after a restart?",
+      "options": [
+        "You got a new IP that previously belonged to an active file sharer",
+        "You were hacked",
+        "The router broke",
+        "Your ISP is scanning you"
+      ],
+      "answer": 0,
+      "explain": "The old owner's peers keep trying to reach the address."
+    },
+    {
+      "q": "What's Steve's main complaint about consumer router logs?",
+      "options": [
+        "They're alarming but too incomplete, lacking details like TCP flags, to diagnose anything",
+        "They're too detailed",
+        "They use too much memory",
+        "They're encrypted"
+      ],
+      "answer": 0,
+      "explain": "Professional gear logs everything you need."
+    },
+    {
+      "q": "When are router logs actually useful?",
+      "options": [
+        "For diagnosing a specific problem, like whether packets are being dropped",
+        "For counting attacks",
+        "For speeding up your connection",
+        "Never"
+      ],
+      "answer": 0,
+      "explain": "Use them forensically, not as an attack alarm."
+    }
+  ]
+}
