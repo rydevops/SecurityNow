@@ -295,6 +295,11 @@
           "t": "And searches alone say so much. A reporter used AOL's released search data to track down a specific person."
         },
         {
+          "type": "fact",
+          "title": "The AOL release",
+          "t": "In 2006, AOL published three months of searches from 650,000 users, identified only by number. New York Times reporters identified one of them, a Georgia woman, from her searches alone."
+        },
+        {
           "s": "steve",
           "t": "On benefit: TiVo users get very little from TiVo selling our data, except maybe keeping TiVo in business."
         },
@@ -313,11 +318,6 @@
         {
           "s": "leo",
           "t": "It's got to be around here somewhere. Amazon now lets you opt in to publish what you've bought, a social networking feature. I just did. And Amazon Associates pays a reward when people buy through your links. Many authors make more from Amazon's associate fees than from their publisher."
-        },
-        {
-          "type": "fact",
-          "title": "The AOL release",
-          "t": "In 2006, AOL published three months of searches from 650,000 users, identified only by number. New York Times reporters identified one of them, a Georgia woman, from her searches alone."
         }
       ]
     },
