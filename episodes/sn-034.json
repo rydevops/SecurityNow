@@ -1,0 +1,262 @@
+{
+  "number": 34,
+  "title": "Public Key Cryptography",
+  "subtitle": "Diffie-Hellman and asymmetric ciphers",
+  "date": "2006-04-06",
+  "description": "After two weeks on symmetric ciphers, Steve and Leo turn to asymmetric, or public-key, cryptography: first the Diffie-Hellman key exchange from 1976, then general-purpose systems like RSA.",
+  "transcript": "https://www.grc.com/sn/sn-034.txt",
+  "audio": "http://media.GRC.com/sn/SN-034.mp3",
+  "chapters": [
+    {
+      "title": "A 1976 Revelation",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 34. Our first sponsor: Astaro, makers of the Astaro Security Gateway. And this is where I come in, because I really started using crypto once public-key cryptography arrived."
+        },
+        {
+          "s": "steve",
+          "t": "In 1976, Whit Diffie and Martin Hellman at Stanford conceived of a cipher where one key encrypts and a different key decrypts, and understood what that meant."
+        },
+        {
+          "s": "steve",
+          "t": "When they published it, the NSA reportedly said it had known about it since the mid-1960s. It's never been proven."
+        },
+        {
+          "s": "leo",
+          "t": "It does make you wonder what else is in their lab."
+        },
+        {
+          "type": "fact",
+          "title": "Who invented it first?",
+          "t": "In 1997, Britain declassified that GCHQ's James Ellis had conceived \"non-secret encryption\" in 1970, Clifford Cocks had devised the equivalent of RSA in 1973, and Malcolm Williamson the equivalent of Diffie-Hellman in 1974. All of it was kept secret for decades."
+        }
+      ]
+    },
+    {
+      "title": "Diffie-Hellman Key Exchange",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The big problem with crypto is getting the key to the other person. A 256-bit symmetric key is effectively unbreakable, but it's gold. If someone intercepts it, you have no protection."
+        },
+        {
+          "s": "steve",
+          "t": "Public-key crypto relies on one-way functions. RSA uses multiplying versus factoring. Diffie and Hellman used exponentiation versus logarithms."
+        },
+        {
+          "s": "steve",
+          "t": "Raising a number to a power is easy. Working backward from the result, a \"discrete logarithm,\" is infeasible when you only keep the remainder after dividing by a large prime. That's modular arithmetic, like our \"Mod 4\" episodes."
+        },
+        {
+          "s": "steve",
+          "t": "And exponentiation commutes: (2³)⁴ equals (2⁴)³, both 2¹²."
+        },
+        {
+          "s": "steve",
+          "t": "So here's the exchange. We publicly agree on a base number. I pick a huge secret random exponent, and you pick your own."
+        },
+        {
+          "s": "steve",
+          "t": "Each of us raises the base to our secret power and sends the other the result. Then I raise your result to my power, and you raise mine to yours. We both end up with exactly the same number."
+        },
+        {
+          "s": "leo",
+          "t": "And someone watching sees both intermediate results."
+        },
+        {
+          "s": "steve",
+          "t": "But can't work out either secret exponent, so can't compute our shared value. We use it as a session key to encrypt the conversation, and make a new one every time."
+        },
+        {
+          "type": "fact",
+          "title": "Diffie-Hellman in one line",
+          "t": "Public: prime p and base g. Alice sends g^a mod p, Bob sends g^b mod p. Each computes (g^b)^a = (g^a)^b = g^ab mod p. An eavesdropper would need a or b, which means solving a discrete logarithm. HTTPS uses a modern version (ECDHE) for nearly every connection."
+        },
+        {
+          "s": "leo",
+          "t": "How is that different from the double-padlock Puzzler?"
+        },
+        {
+          "s": "steve",
+          "t": "XOR was as easy to undo as to do. This also commutes, but it can't practically be reversed."
+        },
+        {
+          "s": "leo",
+          "t": "That's the beauty of math, if you get far enough to see it."
+        }
+      ]
+    },
+    {
+      "title": "Asymmetric Ciphers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In an asymmetric cipher, one key encrypts and the other decrypts, and you can't work out one key from the other."
+        },
+        {
+          "s": "steve",
+          "t": "\"Public key\" is a bit of a misnomer. The two keys are mirror images. Encrypt with either one, and only the other can decrypt. You simply choose one to publish and keep the other private."
+        },
+        {
+          "s": "steve",
+          "t": "You generate the two together as a key pair. Publish one on your website."
+        },
+        {
+          "s": "steve",
+          "t": "Anyone can encrypt a message with your public key, and only your private key can decrypt it. If the message is tampered with in transit, it won't decrypt properly."
+        },
+        {
+          "s": "steve",
+          "t": "But anyone could have sent it. To prove it's from me, I first encrypt with my private key, then encrypt that with your public key."
+        },
+        {
+          "s": "steve",
+          "t": "You decrypt with your private key, then with my public key. It only works if I did the first step, so you know it's from me and only you could read it."
+        },
+        {
+          "type": "fact",
+          "title": "How signing really works",
+          "t": "Steve described encrypting the whole message with your private key, which captures the idea. In practice, systems sign a short hash of the message with the private key (RSA-PSS, ECDSA, Ed25519) and encrypt with the recipient's public key separately, which is faster and avoids subtle attacks."
+        },
+        {
+          "s": "leo",
+          "t": "That's what I do when I sign my email."
+        }
+      ]
+    },
+    {
+      "title": "Why Both Kinds Are Used Together",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Public-key crypto needs much longer keys for the same strength. 128 bits is strong for a symmetric cipher, while 1,024 bits is about the minimum for public key, and longer is better."
+        },
+        {
+          "s": "leo",
+          "t": "And with today's computers, I can use a 4,096-bit key."
+        },
+        {
+          "s": "steve",
+          "t": "But asymmetric ciphers are also about a thousand times slower. So they aren't used to encrypt messages. They encrypt keys."
+        },
+        {
+          "s": "steve",
+          "t": "I generate a random 128- or 256-bit session key, encrypt the message quickly with a symmetric cipher, and encrypt only the session key with your public key. I send you both together."
+        },
+        {
+          "s": "steve",
+          "t": "You decrypt the session key with your private key, then use it to decrypt the message."
+        },
+        {
+          "s": "leo",
+          "t": "So it's like sending a one-time key, protected by public-key crypto."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. It's used once and thrown away."
+        },
+        {
+          "type": "fact",
+          "title": "Hybrid encryption",
+          "t": "PGP, HTTPS and VPNs all combine the two: slow public-key crypto to deliver or agree on a short symmetric session key, then fast symmetric encryption (like AES) for the actual data."
+        },
+        {
+          "s": "leo",
+          "t": "And it makes public key servers possible: look up someone's key and send them a private message."
+        }
+      ]
+    },
+    {
+      "title": "One Attack, and Its Fix",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Public-key systems have a unique weakness. Since anyone has your public key, an attacker can encrypt guesses themselves and compare them with your ciphertext. If one matches, they've found the plaintext, though not your key."
+        },
+        {
+          "s": "steve",
+          "t": "Symmetric crypto doesn't have this problem, because nobody else has the key."
+        },
+        {
+          "s": "steve",
+          "t": "The fix is simple: pad the data with lots of random bytes, typically about three-quarters random to one-quarter key. Guesses never match."
+        },
+        {
+          "type": "fact",
+          "title": "Randomized padding",
+          "t": "Raw \"textbook\" RSA always gives the same ciphertext for the same input, so guesses can be checked. Standards like OAEP add randomness, so encrypting the same thing twice gives different results and comparison attacks fail."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: cryptographic hashes, which we need in order to explain signing properly."
+        },
+        {
+          "s": "leo",
+          "t": "I'll put a link to my public key in the show notes. I use GNU Privacy Guard, the open-source PGP."
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite plays \"Yabba dabba doo\" every time a copy sells. When I hear it three times in a row, someone tried one copy and came back for the four-copy site license."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What problem does the Diffie-Hellman key exchange solve?",
+      "options": [
+        "Two parties agree on a shared secret key over a channel someone can listen to",
+        "Encrypting very large files quickly",
+        "Compressing data",
+        "Detecting viruses"
+      ],
+      "answer": 0,
+      "explain": "Each side combines its secret with the other's public value to reach the same key."
+    },
+    {
+      "q": "What one-way function does Diffie-Hellman rely on?",
+      "options": [
+        "Modular exponentiation, which is easy, versus discrete logarithm, which is infeasible",
+        "XOR",
+        "Prime factoring",
+        "Addition"
+      ],
+      "answer": 0,
+      "explain": "Easy one way and infeasible to reverse, unlike XOR."
+    },
+    {
+      "q": "Why are public-key ciphers used to encrypt keys rather than whole messages?",
+      "options": [
+        "They're about a thousand times slower than symmetric ciphers",
+        "They can't handle text",
+        "They're less secure",
+        "They need the Internet"
+      ],
+      "answer": 0,
+      "explain": "Fast symmetric crypto encrypts the data; public-key crypto protects the session key."
+    },
+    {
+      "q": "In a key pair, which key decrypts something encrypted with the public key?",
+      "options": [
+        "Only the matching private key",
+        "The same public key",
+        "Any public key",
+        "No key"
+      ],
+      "answer": 0,
+      "explain": "You publish one key and keep the other secret."
+    },
+    {
+      "q": "How do public-key systems defeat attackers who encrypt guesses with your public key?",
+      "options": [
+        "By adding random padding, so ciphertexts never match guesses",
+        "By using shorter keys",
+        "By changing the algorithm daily",
+        "They can't"
+      ],
+      "answer": 0,
+      "explain": "Randomized padding, like OAEP, makes every encryption of the same message different."
+    }
+  ]
+}

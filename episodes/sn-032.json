@@ -1,0 +1,304 @@
+{
+  "number": 32,
+  "title": "Listener Feedback Q&A #5",
+  "subtitle": "The first Puzzler, plus your questions",
+  "date": "2006-03-23",
+  "description": "A quick review of stream ciphers and the first Security Now! Puzzler: can two people exchange encrypted messages without either knowing the other's key? Then listener questions.",
+  "transcript": "https://www.grc.com/sn/sn-032.txt",
+  "audio": "http://media.GRC.com/sn/SN-032.mp3",
+  "chapters": [
+    {
+      "title": "Housekeeping",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 32, your questions. Skype sounds great now that Steve has a Heil PR-40."
+        },
+        {
+          "s": "steve",
+          "t": "Letterman has one too, and he keeps banging it with his pencil. It bugs me."
+        },
+        {
+          "s": "steve",
+          "t": "The OpenVPN guide is still my top priority. I'm working with a talented developer in Russia on a bridging driver that will make OpenVPN much easier and more robust."
+        },
+        {
+          "s": "steve",
+          "t": "A listener noted that Julius Caesar used the shifting-letters cipher with his generals."
+        },
+        {
+          "s": "leo",
+          "t": "The Caesar cipher. I bet it's even older; it's obvious once you have an alphabet."
+        }
+      ]
+    },
+    {
+      "title": "The First Puzzler",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Roger Cuthbert in the UK sent a clever idea. You know the padlock trick: you lock a box with your padlock and send it. Your friend adds their own padlock and sends it back. You remove yours and send it again, and they remove theirs and open it."
+        },
+        {
+          "s": "steve",
+          "t": "Why not do the same with one-time pads? You encrypt with your pad and send it. They encrypt that again with their pad and send it back. You remove your pad's effect, then they remove theirs."
+        },
+        {
+          "s": "leo",
+          "t": "So nobody ever has to share a pad, which is the weak link of one-time pads."
+        },
+        {
+          "s": "steve",
+          "t": "It works mathematically, because XOR undoes itself. Each pass flips bits, and flipping the same bits again restores them. Every message in transit is encrypted."
+        },
+        {
+          "s": "steve",
+          "t": "So is it a perfect system? Or is there a fatal flaw? Think about it, and we'll answer next week."
+        },
+        {
+          "type": "fact",
+          "title": "Commutative encryption",
+          "t": "The padlock trick needs the two encryptions to commute: locking with A then B, unlocking A then B, has to work. XOR does commute, which is why the idea looks so tempting. Shamir's three-pass protocol does the same thing safely using modular exponentiation instead of XOR."
+        }
+      ]
+    },
+    {
+      "title": "Why DRM Breaks but SSL Doesn't",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "You say 128-bit web encryption is uncrackable, but DRM and copy protection always get cracked. What's the difference?"
+        },
+        {
+          "s": "steve",
+          "t": "DRM must decrypt right in front of you. Your player has everything needed to turn the content back into something usable, and anything in your hands can be reverse-engineered."
+        },
+        {
+          "s": "leo",
+          "t": "Like the 16-year-old who reverse-engineered DVD players and wrote DeCSS."
+        },
+        {
+          "s": "steve",
+          "t": "With web encryption, the eavesdropper in the middle has nothing to work with. They never hold the means to decrypt."
+        },
+        {
+          "type": "fact",
+          "title": "Where the key lives",
+          "t": "Encryption protects data from people who don't have the key. DRM tries to protect data from the person whose device must hold the key, which is why it keeps getting broken."
+        }
+      ]
+    },
+    {
+      "title": "Radios and Browser Sessions",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Eric's laptop is plugged into the office LAN, but his Wi-Fi is still on. Is that a risk?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes. Wi-Fi has infrastructure mode, through an access point, and ad hoc mode, laptop to laptop. Windows XP allows both by default, and people have been hacked over ad hoc connections on airplanes."
+        },
+        {
+          "s": "steve",
+          "t": "Turn off radios you aren't using. It saves battery too."
+        },
+        {
+          "s": "leo",
+          "t": "Jason left a school computer, came back, and was still in Gmail without logging in."
+        },
+        {
+          "s": "steve",
+          "t": "His session was still open. A session cookie keeps you logged in until you log out or close the browser. On public computers, always click Log Out explicitly."
+        },
+        {
+          "type": "fact",
+          "title": "Session cookies",
+          "t": "A session cookie identifies you to a website until it expires, usually when the browser closes or you log out. On shared computers, explicitly logging out invalidates it on the server, so the next person can't continue as you."
+        }
+      ]
+    },
+    {
+      "title": "PPTP, Brute Force and Bogons",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Alan runs a PPTP VPN server on his DD-WRT router and wants to forward the PPTP port to Windows to accept VPN connections. Is that OK?"
+        },
+        {
+          "s": "steve",
+          "t": "Any open port into Windows bets that no buffer overrun turns up there. And PPTP lacks strong authentication, so a determined attacker could log in as you. If you use it, connect to the router rather than Windows. OpenVPN has military-grade authentication."
+        },
+        {
+          "type": "fact",
+          "title": "PPTP's port",
+          "t": "PPTP uses TCP port 1723 for control plus GRE (IP protocol 47) for data. The listener's \"1753\" was a typo. PPTP's MS-CHAPv2 authentication was later shown to be breakable, so it should no longer be used."
+        },
+        {
+          "s": "leo",
+          "t": "Alan in Des Moines asks: couldn't a trojan turn millions of PCs into a distributed crypto cracker, like SETI@home?"
+        },
+        {
+          "s": "steve",
+          "t": "Key length kills that idea. If a computer cracks a 40-bit key in 2 seconds, a 56-bit key takes 35 hours, 64 bits a year, 80 bits about 70,000 years, 112 bits about 10^14 years, and 128 bits about 10^19 years."
+        },
+        {
+          "s": "leo",
+          "t": "Worry about the sun exploding first. I just made a 4,096-bit PGP key."
+        },
+        {
+          "s": "steve",
+          "t": "That's a public key, which is a different thing. And all that work would crack just one session key. Modern systems change keys constantly; OpenVPN even rekeys during a connection."
+        },
+        {
+          "s": "leo",
+          "t": "Andy's ISP gave him addresses from what used to be \"bogon\" space, and now some sites block him."
+        },
+        {
+          "s": "steve",
+          "t": "A bogon is the unit of bogosity. Routers and firewalls are set to drop traffic from unassigned address ranges, and about 40% of the IPv4 space was unassigned. When a block gets allocated, it takes time for everyone to update their filters. Until then, his traffic gets dropped and there's nothing he can do."
+        },
+        {
+          "type": "fact",
+          "title": "Bogon filtering",
+          "t": "Many networks drop packets claiming to come from unallocated or reserved addresses, since such traffic is almost always spoofed. Static bogon lists go stale when new blocks are allocated, so modern filters use automatically updated feeds."
+        }
+      ]
+    },
+    {
+      "title": "Hotels, ARP and LSPs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dave's hotel gave every room its own cable modem. Safer?"
+        },
+        {
+          "s": "steve",
+          "t": "Possibly. DOCSIS cable modem links are encrypted, though it depends on how the hotel built its network."
+        },
+        {
+          "s": "leo",
+          "t": "Can I just carry my own NAT router to a hotel?"
+        },
+        {
+          "s": "steve",
+          "t": "It acts as a firewall, but traffic on the hotel side is still shared with the other guests. I bring an AirPort Express for in-room Wi-Fi with WPA, plus HotSpotVPN for the hotel side."
+        },
+        {
+          "s": "leo",
+          "t": "About ARP poisoning: why don't computers just ignore replies they never asked for?"
+        },
+        {
+          "s": "steve",
+          "t": "Then an attacker simply answers first. And you'd lose duplicate-IP detection. The real fix is authenticating devices on the LAN, which standards like 802.1X begin to address."
+        },
+        {
+          "s": "leo",
+          "t": "Kevin's anti-spyware warned about a \"Layered Service Provider\" after he installed a USB video driver."
+        },
+        {
+          "s": "steve",
+          "t": "LSPs are a Windows feature that lets any software insert itself into network traffic, with no authentication. Spyware abuses it to intercept browser and email traffic. If you just installed something legitimate that uses an LSP, the alert was probably harmless."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft keeps adding features that let anyone do anything."
+        },
+        {
+          "s": "steve",
+          "t": "In fairness, it's old code kept for compatibility, from before Microsoft took security seriously."
+        }
+      ]
+    },
+    {
+      "title": "Carrier NAT and \"I'll Hack You\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Anthony's DSL ISP gives out private 192.168 addresses. BitTorrent and dynamic DNS are broken."
+        },
+        {
+          "s": "steve",
+          "t": "His ISP is running NAT for all its customers. He was smart enough to give his own router a different subnet, but he can never run a server, since the ISP can't forward ports to everyone. I wouldn't even complain; I'd switch providers."
+        },
+        {
+          "s": "leo",
+          "t": "Chris asks: a kid threatened to hack into his machine. Can a talented hacker get into anyone's computer?"
+        },
+        {
+          "s": "steve",
+          "t": "It's not like the movies. Complex systems often have a way in, sometimes through social engineering, but computers don't all have a soft crust you can just poke through."
+        },
+        {
+          "s": "leo",
+          "t": "Still, unpatched systems and running as administrator give attackers openings, on Windows and Mac alike."
+        },
+        {
+          "s": "steve",
+          "t": "UNIX programs were always written to run without root privileges. Windows programs assume they have full power, which is the difference."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: the Puzzler's answer, then symmetric block ciphers like AES and Blowfish."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does DRM keep getting cracked while SSL holds up?",
+      "options": [
+        "The DRM device must hold the decryption capability, so it can be reverse-engineered",
+        "SSL uses longer keys",
+        "DRM uses no encryption",
+        "Pirates have supercomputers"
+      ],
+      "answer": 0,
+      "explain": "An eavesdropper on SSL never has the key; your DVD player always does."
+    },
+    {
+      "q": "Why should you turn off Wi-Fi when you're on a wired connection?",
+      "options": [
+        "Windows XP accepted ad hoc connections, exposing the laptop to nearby attackers",
+        "Wi-Fi slows the wired LAN",
+        "It's required by law",
+        "It overheats the laptop"
+      ],
+      "answer": 0,
+      "explain": "Unused radios are an attack surface, and turning them off saves battery too."
+    },
+    {
+      "q": "If cracking a 40-bit key takes 2 seconds, roughly how long does a 128-bit key take?",
+      "options": [
+        "About 10^19 years",
+        "About a week",
+        "About 128 seconds",
+        "About 64 years"
+      ],
+      "answer": 0,
+      "explain": "Each extra bit doubles the work, so distributed cracking doesn't help."
+    },
+    {
+      "q": "What is a \"bogon\" address?",
+      "options": [
+        "An address from an unallocated range that routers drop as bogus",
+        "A hacker's address",
+        "A private 10.x address only",
+        "A VPN address"
+      ],
+      "answer": 0,
+      "explain": "Newly allocated blocks suffer until filter lists are updated."
+    },
+    {
+      "q": "Why doesn't \"ignore unsolicited ARP replies\" fix ARP poisoning?",
+      "options": [
+        "An attacker can simply answer a real request first, because nothing is authenticated",
+        "ARP replies are encrypted",
+        "Routers never send ARP",
+        "It's too slow"
+      ],
+      "answer": 0,
+      "explain": "The real fix is authenticating LAN devices, not patching ARP."
+    }
+  ]
+}

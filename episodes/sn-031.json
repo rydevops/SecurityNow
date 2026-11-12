@@ -1,0 +1,290 @@
+{
+  "number": 31,
+  "title": "Symmetric Stream Ciphers",
+  "subtitle": "From secret decoder rings to XOR",
+  "date": "2006-03-16",
+  "description": "The crypto series continues. Steve uses secret decoder rings to build up cryptography's basic vocabulary, then explains the first kind of symmetric (secret-key) cryptography: the stream cipher.",
+  "transcript": "https://www.grc.com/sn/sn-031.txt",
+  "audio": "http://media.GRC.com/sn/SN-031.mp3",
+  "chapters": [
+    {
+      "title": "Housekeeping and News",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 31: Crypto, part two. Last week was the social side. This week, the technology."
+        },
+        {
+          "s": "steve",
+          "t": "One use we forgot to list last week: encrypting your own storage, like a laptop partition or a USB drive, so it's useless to anyone who gets hold of it. TrueCrypt does that, and we'll cover it once we have the vocabulary."
+        },
+        {
+          "s": "steve",
+          "t": "The feedback form at GRC.com/securitynow.htm now has optional name, email and location fields, so I can reply and give credit. The email address is only used to send your note to me, and nothing is stored."
+        },
+        {
+          "s": "steve",
+          "t": "A listener's boot drive died, and SpinRite 6 brought it back in a couple of hours. Stories like that are now at SpinRite.info, however you spell \"Rite.\""
+        },
+        {
+          "s": "steve",
+          "t": "A hoax keeps circulating that every laptop has a hidden hardware keystroke logger sending your typing out over the network. It's not true."
+        },
+        {
+          "s": "leo",
+          "t": "When an email like that looks plausible, check Snopes.com."
+        },
+        {
+          "s": "steve",
+          "t": "Something that isn't a hoax: researchers in Amsterdam showed that RFID tags can carry a virus. A malicious tag triggers a buffer overrun in the back-end database that reads it, and the injected code can then write itself onto other tags."
+        },
+        {
+          "s": "leo",
+          "t": "That requires a flaw in the reader software. They don't all use the same code."
+        },
+        {
+          "s": "steve",
+          "t": "Right. It just shows RFID developers haven't thought enough about security. If it's there, someone will hack it."
+        },
+        {
+          "type": "fact",
+          "title": "The RFID virus (2006)",
+          "t": "Melanie Rieback and colleagues at Vrije Universiteit Amsterdam showed that data on an RFID tag could carry SQL injection or buffer overflow attacks against the middleware that reads it, and could copy itself to other tags. It was a proof of concept, but a warning to treat tag data as untrusted input."
+        }
+      ]
+    },
+    {
+      "title": "The Secret Decoder Ring",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Picture a decoder ring with two concentric rings of symbols. Ours has 28: A–Z, period and space."
+        },
+        {
+          "s": "steve",
+          "t": "Some terms: unencrypted data is \"plaintext,\" even if it isn't text, and encrypted data is \"ciphertext.\""
+        },
+        {
+          "s": "steve",
+          "t": "Line the rings up and nothing changes. Twist the inner ring a few notches and keep it fixed for the whole message, then look up each character."
+        },
+        {
+          "s": "steve",
+          "t": "Your friend sets their ring the same way and reverses the lookup. The setting, how far you turned it, is the key."
+        },
+        {
+          "s": "leo",
+          "t": "Not very secure, I'm guessing."
+        },
+        {
+          "s": "steve",
+          "t": "There are only 28 settings, and one of them does nothing. Try each one until English comes out."
+        },
+        {
+          "s": "steve",
+          "t": "Or use frequency analysis: in English, E, T, A, O and S show up most. Count the ciphertext symbols and the code falls apart. Common letter pairs finish it off."
+        },
+        {
+          "s": "leo",
+          "t": "ETAOIN SHRDLU! Newspapers print these as puzzles."
+        },
+        {
+          "type": "fact",
+          "title": "Caesar cipher",
+          "t": "Shifting every letter by a fixed amount is the Caesar cipher, named after Julius Caesar, who used a shift of three. With only as many keys as letters in the alphabet, it falls instantly to trying every key or to letter-frequency counts."
+        }
+      ]
+    },
+    {
+      "title": "The One-Time Pad",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now drop the inner ring. Each character just moves some number of steps around the ring."
+        },
+        {
+          "s": "steve",
+          "t": "What if each step count were random? Pull numbered ping-pong balls from a basket, write each number down, and you have a pad of truly random numbers."
+        },
+        {
+          "s": "steve",
+          "t": "Encrypt each character by moving forward by the next number on the pad. Decrypt by moving backward with an identical copy of the pad."
+        },
+        {
+          "s": "steve",
+          "t": "Here's the critical idea: mix a message with truly random data and no analysis can ever reverse it. Not \"takes centuries.\" It can't be done."
+        },
+        {
+          "s": "leo",
+          "t": "So the recipient needs a copy of your pad."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Submarine captains left port with briefcases of pads. Once they have them, you could read the ciphertext aloud on the radio, or print it in The New York Times, and nobody could read it."
+        },
+        {
+          "s": "steve",
+          "t": "It's symmetric: the same key, the pad, is used to encrypt and decrypt."
+        },
+        {
+          "s": "steve",
+          "t": "Two weaknesses. You need a secure channel, like a trusted courier, to deliver the pad. And you must never reuse it. Some adversaries reused pads, and their messages were broken."
+        },
+        {
+          "type": "fact",
+          "title": "Two-time pad",
+          "t": "If two messages are encrypted with the same pad, combining the two ciphertexts cancels out the pad, leaving the two plaintexts mixed together. Language patterns then pull them apart. That's how the US Venona project read Soviet traffic."
+        }
+      ]
+    },
+    {
+      "title": "Pseudorandom Keystreams",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next step: replace ping-pong balls with an algorithm that generates pseudorandom numbers. Good ones are so random that it takes millions of samples to tell."
+        },
+        {
+          "s": "leo",
+          "t": "Don't they eventually repeat?"
+        },
+        {
+          "s": "steve",
+          "t": "Good generators keep a large, constantly churning pool of internal state, so in practice they don't fall into short loops."
+        },
+        {
+          "s": "steve",
+          "t": "You start the generator from a key, and the key determines the whole sequence. RC4 is one, the generator behind WEP."
+        },
+        {
+          "s": "leo",
+          "t": "And WEP's problem?"
+        },
+        {
+          "s": "steve",
+          "t": "Keystreams got reused. Same mistake as reusing a one-time pad."
+        },
+        {
+          "s": "steve",
+          "t": "RC4 starts by scrambling a 256-byte table with your key. Its first few hundred output bytes aren't very random, so throw them away and use the rest as your pad."
+        },
+        {
+          "s": "steve",
+          "t": "It isn't truly random, so it isn't absolutely unbreakable, but with a good generator it's state-of-the-art encryption."
+        },
+        {
+          "type": "fact",
+          "title": "Stream ciphers today",
+          "t": "A stream cipher turns a key (plus a unique nonce) into a long pseudorandom keystream that's combined with the data. RC4 has since been broken and banned from TLS. Modern choices are ChaCha20, or AES in counter mode. Rule one never changed: never reuse a key-and-nonce pair."
+        }
+      ]
+    },
+    {
+      "title": "XOR: The Magic Mixer",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The last piece is Exclusive OR. AND outputs 1 only if both inputs are 1. OR outputs 1 if either is. XOR outputs 1 if either is 1, but not both."
+        },
+        {
+          "s": "leo",
+          "t": "So it's 0 if both inputs match."
+        },
+        {
+          "s": "steve",
+          "t": "Think of it as a conditional inverter. If the key bit is 0, the data passes unchanged. If it's 1, the data bit flips."
+        },
+        {
+          "s": "steve",
+          "t": "Do it twice with the same key bit and you're back where you started. That reversibility is why XOR is everywhere in cryptography."
+        },
+        {
+          "s": "steve",
+          "t": "So: XOR each plaintext byte with a pseudorandom byte from the generator, and you have ciphertext. To decrypt, XOR again with the same bytes."
+        },
+        {
+          "s": "leo",
+          "t": "That's slick. Is that really all there is?"
+        },
+        {
+          "s": "steve",
+          "t": "That's exactly how many systems work today. The generator's math is hairy, but the idea is simple."
+        },
+        {
+          "type": "fact",
+          "title": "XOR truth table",
+          "t": "0⊕0=0, 0⊕1=1, 1⊕0=1, 1⊕1=0. Because (P⊕K)⊕K = P, the same operation with the same keystream both encrypts and decrypts."
+        },
+        {
+          "s": "steve",
+          "t": "The catch remains: the key, and the details of the algorithm, must be shared secretly with whoever decrypts. We've shrunk the problem from a suitcase of pads to one key, but it's still a secret to protect."
+        },
+        {
+          "s": "leo",
+          "t": "Wouldn't it be neat if we could give our keys out and still be secure?"
+        },
+        {
+          "s": "steve",
+          "t": "That's coming: how two parties can agree on a secret while someone listens to everything. Next week is Q&A, then block ciphers."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why is a decoder-ring (shift) cipher easy to break?",
+      "options": [
+        "There are only a few possible keys, and letter frequencies give it away",
+        "It uses XOR",
+        "It changes every letter randomly",
+        "It requires a computer"
+      ],
+      "answer": 0,
+      "explain": "With 28 settings you can try them all, or just count which symbols appear most."
+    },
+    {
+      "q": "What makes a one-time pad unbreakable?",
+      "options": [
+        "The key is truly random, as long as the message, and never reused",
+        "It uses very long passwords",
+        "It's kept in a safe",
+        "It's computer-generated"
+      ],
+      "answer": 0,
+      "explain": "Mixing a message with true randomness leaves nothing to analyze."
+    },
+    {
+      "q": "What is \"symmetric\" about symmetric cryptography?",
+      "options": [
+        "The same key both encrypts and decrypts",
+        "Messages are the same length",
+        "Both people use the same computer",
+        "It uses mirror-image letters"
+      ],
+      "answer": 0,
+      "explain": "Sender and receiver share one secret key."
+    },
+    {
+      "q": "Why is XOR so useful in stream ciphers?",
+      "options": [
+        "XORing with the same key bits a second time restores the original",
+        "It compresses data",
+        "It's slower and therefore safer",
+        "It hides the key"
+      ],
+      "answer": 0,
+      "explain": "(P⊕K)⊕K = P, so one operation encrypts and decrypts."
+    },
+    {
+      "q": "What was WEP's fundamental RC4 mistake?",
+      "options": [
+        "Reusing keystreams, like using a one-time pad twice",
+        "Using XOR",
+        "Keys that were too long",
+        "Encrypting too much data"
+      ],
+      "answer": 0,
+      "explain": "Any reuse of the same keystream lets attackers cancel it out."
+    }
+  ]
+}

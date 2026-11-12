@@ -1,0 +1,273 @@
+{
+  "number": 33,
+  "title": "Symmetric Block Ciphers",
+  "subtitle": "The Puzzler answered, then DES, 3DES and AES",
+  "date": "2006-03-30",
+  "description": "Steve answers last week's Puzzler about using two one-time pads like two padlocks, then explains how symmetric block ciphers work.",
+  "transcript": "https://www.grc.com/sn/sn-033.txt",
+  "audio": "http://media.GRC.com/sn/SN-033.mp3",
+  "chapters": [
+    {
+      "title": "The Puzzler Answered",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 33. Did people answer the Puzzler?"
+        },
+        {
+          "s": "steve",
+          "t": "In droves. Some sent pages of XOR proofs. One woman worked it all out while walking her dog, and said either we're teaching too well or the puzzles are too easy."
+        },
+        {
+          "s": "leo",
+          "t": "Recap: A encrypts with their one-time pad and sends it to B. B adds their own pad and sends it back. A removes their pad and sends it again. B removes theirs and reads it. Nobody ever shares a pad."
+        },
+        {
+          "s": "steve",
+          "t": "It does work. XOR and add/subtract are commutative, so you can remove the layers in a different order than you added them."
+        },
+        {
+          "s": "steve",
+          "t": "The flaw: an eavesdropper sees A's message before B adds their pad and after. XOR those two and out pops B's pad. Then, when A removes their layer, the message is protected only by B's pad, which the eavesdropper now has."
+        },
+        {
+          "s": "leo",
+          "t": "So it's really a two-time pad."
+        },
+        {
+          "type": "fact",
+          "title": "Why the three-pass XOR fails",
+          "t": "An eavesdropper sees M⊕A, then M⊕A⊕B, then M⊕B. XORing the first two gives B. XORing that with the third gives the message M. Each pad is used on more than one transmission, which breaks the one-time pad's only rule."
+        },
+        {
+          "s": "steve",
+          "t": "Steve from Chicago pointed out the physical padlock version has a flaw too: a man in the middle. Someone intercepts the box and adds their padlock, pretending to be you. I remove mine, they open the box, do what they like, then repeat the dance with you, posing as me."
+        },
+        {
+          "s": "leo",
+          "t": "That's exactly how a man-in-the-middle attack works."
+        },
+        {
+          "s": "steve",
+          "t": "And the fix is always the same: authentication."
+        },
+        {
+          "s": "leo",
+          "t": "Listeners recommend Simon Singh's \"The Code Book\" and David Kahn's \"The Codebreakers.\""
+        },
+        {
+          "s": "steve",
+          "t": "Those are the literature. My bible is Bruce Schneier's \"Applied Cryptography.\" It's heavy, but it's the definitive reference."
+        }
+      ]
+    },
+    {
+      "title": "From Streams to Blocks",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Stream ciphers, like RC4, mix a keystream into the data. Block ciphers are now the workhorse for bulk encryption: SSL, OpenVPN and the newer WPA mode all use them."
+        },
+        {
+          "s": "steve",
+          "t": "Start with a substitution table instead of a decoder ring. List A to Z in one column, and next to each a randomly chosen different letter. Encrypt by looking letters up, and decrypt with a copy of the table."
+        },
+        {
+          "s": "steve",
+          "t": "That's a block cipher with a block of one character, and it falls to frequency analysis instantly."
+        },
+        {
+          "s": "steve",
+          "t": "Modern ciphers fix two things. A key-driven algorithm builds the mapping instead of a hand-written table. And they encrypt many characters at once, say 64 bits, or 8 bytes."
+        },
+        {
+          "s": "steve",
+          "t": "With 64 bits there are about 18 billion billion possible inputs, and each maps to exactly one output. Change a single input bit and the entire output changes."
+        },
+        {
+          "type": "fact",
+          "title": "Block size today",
+          "t": "DES, 3DES, IDEA and Blowfish use 64-bit blocks. AES uses 128-bit blocks. With only 64 bits, encrypting huge amounts of data under one key starts to repeat blocks (the \"Sweet32\" attack), which is one reason 128-bit block ciphers replaced them."
+        },
+        {
+          "s": "leo",
+          "t": "That's why an encrypted PGP message is a different length from the original."
+        },
+        {
+          "s": "steve",
+          "t": "The last block has to be padded to a full block. Stream ciphers can be exactly as long as the message."
+        },
+        {
+          "s": "steve",
+          "t": "Decryption runs a different algorithm but uses the same key, so it's symmetric."
+        }
+      ]
+    },
+    {
+      "title": "Chaining Blocks Together",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "If identical plaintext blocks always produced identical ciphertext blocks, patterns would leak. So we use Cipher Block Chaining, CBC: XOR each block with the previous ciphertext block before encrypting it."
+        },
+        {
+          "s": "steve",
+          "t": "Now every block depends on everything before it, and a change anywhere affects everything after."
+        },
+        {
+          "type": "fact",
+          "title": "Modes of operation",
+          "t": "ECB (no chaining) leaks patterns: an image encrypted with it still shows the picture's outline. CBC chains blocks together and needs a random starting value (IV). Modern systems prefer authenticated modes like AES-GCM, which encrypt and detect tampering at the same time."
+        }
+      ]
+    },
+    {
+      "title": "DES, 3DES and AES",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The classic is DES, the US government's Data Encryption Standard. It's a strong design, but its 56-bit key is now too short. Purpose-built DES-cracking machines have been built."
+        },
+        {
+          "s": "steve",
+          "t": "Triple DES runs DES three times with two 56-bit keys, giving an effective 112-bit key. That's strong for the foreseeable future."
+        },
+        {
+          "s": "leo",
+          "t": "So they kept a trusted algorithm and just made it stronger."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. New ciphers, like new software, might have undiscovered flaws. Only time and attacks prove them. When a website brags about its own super-triple-scoop encryption, I think: this problem's already solved."
+        },
+        {
+          "type": "fact",
+          "title": "Breaking DES",
+          "t": "In 1998 the EFF's $250,000 \"Deep Crack\" machine found a DES key in 56 hours. In 1999, working with distributed.net, it took under 23 hours. That ended DES's credibility and pushed the world to 3DES and then AES."
+        },
+        {
+          "s": "steve",
+          "t": "The new standard is AES, the Advanced Encryption Standard, which is the Rijndael cipher. It was chosen in an open international competition."
+        },
+        {
+          "s": "steve",
+          "t": "The contenders included Schneier's Twofish, RSA's RC6, Serpent, MARS and many more. There's also IDEA, the bulk cipher in commercial PGP, and Schneier's Blowfish, which he put in the public domain."
+        },
+        {
+          "s": "leo",
+          "t": "IDEA was patented, so open-source PGP couldn't use it."
+        },
+        {
+          "s": "steve",
+          "t": "AES had to be released into the public domain. RSA said it would release RC6 only if it won."
+        },
+        {
+          "s": "steve",
+          "t": "WPA's TKIP still runs RC4, used correctly. Routers may also offer AES. It's more compute-intensive, and frankly overkill, so I don't bother."
+        }
+      ]
+    },
+    {
+      "title": "Choosing a Cipher",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So are they all about equally strong?"
+        },
+        {
+          "s": "steve",
+          "t": "All the well-known ones are regarded as strong. What matters is block length and key length. A good measure: encrypted output should be impossible to compress, because it has no patterns."
+        },
+        {
+          "s": "steve",
+          "t": "AES starts at 128 bits and also offers 192 and 256. My OpenVPN setup uses 256."
+        },
+        {
+          "s": "steve",
+          "t": "SSL uses 128-bit keys, which is plenty, because each connection picks a fresh random key and throws it away afterward."
+        },
+        {
+          "s": "steve",
+          "t": "Block ciphers are about a thousand times faster than the public-key ciphers coming next week. That's why they're called bulk ciphers."
+        },
+        {
+          "s": "leo",
+          "t": "I just take the defaults."
+        },
+        {
+          "s": "steve",
+          "t": "That's probably safe. When people claim a cipher was \"cracked,\" they usually mean a short key was brute-forced in a contest, not that the algorithm itself was broken."
+        },
+        {
+          "s": "leo",
+          "t": "Neal Stephenson's \"Cryptonomicon\" has a cipher you work with a deck of cards. Fun, but stick with the well-known algorithms."
+        },
+        {
+          "s": "steve",
+          "t": "Wander off the trail and get cute, and you end up like WEP. Strong, proven, public-domain algorithms are free. Why not use them?"
+        },
+        {
+          "s": "steve",
+          "t": "Next week: asymmetric, public-key cryptography. And Leo, even your PGP uses symmetric encryption behind the scenes."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does the double one-time-pad trick fail?",
+      "options": [
+        "An eavesdropper can XOR the transmissions to recover a pad and then the message",
+        "XOR isn't reversible",
+        "It needs three people",
+        "The pads are too short"
+      ],
+      "answer": 0,
+      "explain": "Each pad is effectively used twice, which breaks the one-time pad's rule."
+    },
+    {
+      "q": "What weakness does the physical double-padlock box have?",
+      "options": [
+        "A man in the middle can pose as the other person",
+        "Padlocks can't be removed",
+        "It needs a key exchange",
+        "It's too slow"
+      ],
+      "answer": 0,
+      "explain": "Without authentication, you can't tell whose padlock you're dealing with."
+    },
+    {
+      "q": "Why do modern block ciphers encrypt many bytes at once?",
+      "options": [
+        "Large blocks defeat frequency analysis, since every input bit affects the whole output",
+        "To save memory",
+        "Because computers can't handle single bytes",
+        "To make messages shorter"
+      ],
+      "answer": 0,
+      "explain": "A one-letter substitution leaks letter frequencies; 64- or 128-bit blocks don't."
+    },
+    {
+      "q": "What does Cipher Block Chaining do?",
+      "options": [
+        "XORs each block with the previous ciphertext block before encrypting it",
+        "Encrypts each block independently",
+        "Compresses blocks",
+        "Adds a digital signature"
+      ],
+      "answer": 0,
+      "explain": "Chaining stops identical plaintext blocks from producing identical ciphertext."
+    },
+    {
+      "q": "Why was DES replaced?",
+      "options": [
+        "Its 56-bit key became short enough to brute-force",
+        "Its algorithm was secretly broken",
+        "It was too slow",
+        "It was patented"
+      ],
+      "answer": 0,
+      "explain": "3DES stretched it to an effective 112 bits, and AES replaced it."
+    }
+  ]
+}
