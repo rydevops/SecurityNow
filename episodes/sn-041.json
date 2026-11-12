@@ -1,0 +1,335 @@
+{
+  "number": 41,
+  "title": "TrueCrypt",
+  "subtitle": "Free, open-source, on-the-fly encryption",
+  "date": "2006-05-25",
+  "description": "Steve and Leo explain why they love TrueCrypt: encrypted virtual drives from files or partitions, portable \"traveller\" USB keys, keyfiles, hidden volumes for plausible deniability, automatic dismounting, and header backups that let IT recover forgotten passwords.",
+  "transcript": "https://www.grc.com/sn/sn-041.txt",
+  "audio": "http://media.GRC.com/sn/SN-041.mp3",
+  "chapters": [
+    {
+      "title": "Open Source Done Right",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Steve seems to have hidden today. There's plausible deniability that he was ever here. That's a joke, because today it's our favorite encryption program."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt feels like a team that wasn't in a hurry and had no agenda worked out exactly the right set of features. It's what open source can produce when it really works."
+        },
+        {
+          "s": "steve",
+          "t": "It's at truecrypt.org and runs on Windows 2000, XP and 64-bit Windows, plus Linux. A Mac version is planned. Version 1.0 ran on 95, 98 and ME, but don't use that old version."
+        },
+        {
+          "s": "leo",
+          "t": "For encryption, open source seems the only way to be sure there's no backdoor and the algorithms are used properly."
+        },
+        {
+          "s": "steve",
+          "t": "Agreed. The last thing you'd want is to download your encryption from whitehouse.gov."
+        },
+        {
+          "s": "leo",
+          "t": "Frankly, I'd assume any large U.S. company's encryption might have a backdoor."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt uses well-proven, academically pounded-on algorithms. I can't imagine needing anything more."
+        },
+        {
+          "type": "fact",
+          "title": "TrueCrypt's fate",
+          "t": "TrueCrypt's anonymous developers abruptly ended the project in May 2014, warning it \"may contain unfixed security issues.\" A 2015 independent audit found no backdoors or serious design flaws. VeraCrypt, a fork, continues it with stronger key derivation."
+        }
+      ]
+    },
+    {
+      "title": "On-the-Fly Encryption",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Kim asked last week about stolen laptops. A locked hard drive can be unlocked by its manufacturer, and its contents aren't encrypted. The Xbox showed drive locks can be bypassed."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt installs a driver that turns a file or a partition into a virtual drive. Everything written passes through fast symmetric encryption and becomes noise. It's never unencrypted on disk, so you can't forget to encrypt something."
+        },
+        {
+          "s": "steve",
+          "t": "Reads are decrypted on the way back. To your computer, it's just another drive letter."
+        },
+        {
+          "s": "steve",
+          "t": "Here's my use. I have a 680MB file, just under a CD-R's 700MB. TrueCrypt mounts it as a drive, and I archive my source code there."
+        },
+        {
+          "s": "steve",
+          "t": "When it fills up, I burn the file to two CD-Rs. One goes to my attorney, and one goes home to Mom."
+        },
+        {
+          "s": "leo",
+          "t": "Do they get the password?"
+        },
+        {
+          "s": "steve",
+          "t": "No. To them it's an opaque disc of noise. If Mom leaves it on the coffee table, it doesn't matter. It's only of value to me."
+        }
+      ]
+    },
+    {
+      "title": "Traveller Mode and Strong Passwords",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "File containers can be made on the fly, and they work on USB keys. Put TrueCrypt itself on the key and fill the rest with one big container."
+        },
+        {
+          "s": "steve",
+          "t": "In \"traveller mode,\" settings live in an XML file, never the registry. An autorun file starts TrueCrypt, mounts the volume and asks for your password, on a USB key or a CD."
+        },
+        {
+          "s": "leo",
+          "t": "Some people set it to unlock automatically when they log in. It's more convenient but less secure."
+        },
+        {
+          "s": "steve",
+          "t": "That depends on your use, but most people would require a password. TrueCrypt accepts up to 64 characters of random gibberish, perfect for GRC's passwords page."
+        },
+        {
+          "s": "steve",
+          "t": "You can also add \"keyfiles.\" Say, an MP3 in your media folder. TrueCrypt hashes the files, which can be several in any order, and mixes them with your password. It only reads them."
+        },
+        {
+          "s": "steve",
+          "t": "No one analyzing your volume can tell which files you used. Even someone with your password can't get in without them."
+        },
+        {
+          "s": "leo",
+          "t": "Don't lose those files. There's no backdoor. Lose the password or the files, and the data is gone."
+        }
+      ]
+    },
+    {
+      "title": "Plausible Deniability",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A master key encrypts the whole volume and is stored in a header. But nothing in a TrueCrypt volume looks like anything but random data. Not even the header says what it is."
+        },
+        {
+          "s": "leo",
+          "t": "A file is a flag that something's secret. A partition could just look unused."
+        },
+        {
+          "s": "steve",
+          "t": "Or you could name your file BestofSecurityNow.mp3."
+        },
+        {
+          "s": "leo",
+          "t": "Britain is proposing that if you refuse to decrypt when ordered, you go to jail. If it looks empty, they won't know to ask."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt has that covered too: hidden volumes. Inside the unused space of a TrueCrypt volume, you can create a second encrypted volume with a different password."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt fills every volume with random data when it formats it. Strongly encrypted data looks exactly like random data, so nobody can prove the hidden volume exists."
+        },
+        {
+          "s": "steve",
+          "t": "So if you're forced to hand over a password, you put up a fight, then reveal the outer volume. They see something plausible, like your phone bills, and the hidden volume stays secure."
+        },
+        {
+          "s": "leo",
+          "t": "We're not encouraging criminals. But a freedom fighter, or anyone a government dislikes, could be jailed for refusing. I think there should be a right to bear encryption."
+        },
+        {
+          "s": "steve",
+          "t": "Or your ex-wife's attorneys."
+        },
+        {
+          "type": "fact",
+          "title": "Limits of deniability",
+          "t": "Hidden volumes are deniable only if nothing else gives them away. Investigators look at volume sizes, free space that's suspiciously random, and traces left by the operating system, like recent-file lists. Protecting a hidden volume means careful use, not just the feature."
+        }
+      ]
+    },
+    {
+      "title": "Everyday Features",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The newest version can grow file containers dynamically, using NTFS \"sparse files,\" so they take only the space they need."
+        },
+        {
+          "s": "steve",
+          "t": "For CD archives, format the container as FAT32. Windows won't mount an NTFS volume from read-only media. On DVD, burn in UDF format, or you'll hit a 2GB file size limit."
+        },
+        {
+          "s": "steve",
+          "t": "If someone walks up to you in a coffee shop, you want to close things fast. TrueCrypt can dismount volumes after a set idle time, when you log out, or when the screensaver starts. My Wizmo utility starts the screensaver with one click."
+        },
+        {
+          "s": "leo",
+          "t": "Laptop users should especially do this, because laptops get stolen."
+        },
+        {
+          "s": "steve",
+          "t": "TrueCrypt won't encrypt an existing partition. Before-and-after snapshots would give a cryptanalyst a lot of material."
+        },
+        {
+          "s": "steve",
+          "t": "So back up your data partition, safely, create a TrueCrypt volume there, which fills it with random data, then restore your files into it. Keep Windows on a minimal C drive. You can even run applications from the encrypted drive."
+        },
+        {
+          "type": "fact",
+          "title": "TrueCrypt's later features",
+          "t": "TrueCrypt 5.0 in 2008 added Mac support and full system-drive encryption, with a password prompt before Windows boots. It also added in-place encryption of existing partitions, which the version discussed here refused to do."
+        }
+      ]
+    },
+    {
+      "title": "TrueCrypt vs. Windows Encryption",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "XP Professional has encryption built in. Why use TrueCrypt?"
+        },
+        {
+          "s": "steve",
+          "t": "I know what TrueCrypt is, the source is there, it works on CDs and USB keys, and volumes move between operating systems."
+        },
+        {
+          "s": "leo",
+          "t": "Windows encryption also needs certificates, stored in the Windows directory. People forget to back them up and lose their data even with the password."
+        },
+        {
+          "s": "steve",
+          "t": "And that shows there's no deniability. Anyone can see you have encrypted files."
+        },
+        {
+          "type": "fact",
+          "title": "EFS vs. BitLocker",
+          "t": "XP's built-in option was the Encrypting File System, which encrypts individual files with keys tied to the user's certificate. Windows Vista added BitLocker in 2007 for whole-drive encryption. Today it's built into most editions of Windows."
+        },
+        {
+          "s": "steve",
+          "t": "You can also use a small TrueCrypt file to send files to someone, as long as you give them the password over a secure channel."
+        },
+        {
+          "s": "leo",
+          "t": "But it's not public-key crypto, so PGP is better for email."
+        }
+      ]
+    },
+    {
+      "title": "Under the Hood",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The hidden header holds the master key for the whole volume. Your password and keyfiles decrypt the header."
+        },
+        {
+          "s": "leo",
+          "t": "So you decrypt the header, and the header decrypts the rest."
+        },
+        {
+          "s": "steve",
+          "t": "You can choose among many hash and cipher algorithms, and even chain them, like Blowfish, AES and Twofish. That's overboard. Just use AES, which is also faster."
+        },
+        {
+          "s": "steve",
+          "t": "The FAQ asks why you can't choose any sequence of ciphers. Nothing records which ones you picked, since that would defeat deniability. TrueCrypt simply tries every combination it offers until one works."
+        },
+        {
+          "s": "steve",
+          "t": "For companies: after IT sets up an encrypted drive, it can back up the header, about a 1K file."
+        },
+        {
+          "s": "steve",
+          "t": "The employee can change their password whenever they like, say after a client watched them type it. The master key and ciphers never change."
+        },
+        {
+          "s": "leo",
+          "t": "So it's like a second key that always works."
+        },
+        {
+          "s": "steve",
+          "t": "If the employee forgets their password, IT restores the original header, and the original password works again."
+        },
+        {
+          "s": "leo",
+          "t": "I'm going to make one of my USB keys a TrueCrypt volume, just in case."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: peer-to-peer-friendly NAT routers, and how two people both behind NAT can connect directly."
+        },
+        {
+          "s": "leo",
+          "t": "And not with Universal Plug and Play."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does \"on-the-fly\" encryption mean in TrueCrypt?",
+      "options": [
+        "Data is encrypted as it's written and decrypted as it's read, so it's never stored unencrypted",
+        "You encrypt files manually",
+        "It encrypts network traffic",
+        "It only works once a day"
+      ],
+      "answer": 0,
+      "explain": "To your computer it's just another drive letter."
+    },
+    {
+      "q": "How does Steve store off-site archives safely with his attorney and his mom?",
+      "options": [
+        "He burns TrueCrypt container files to CD-R; without his password they're just noise",
+        "He gives them half the password each",
+        "He mails them unencrypted",
+        "He prints his code"
+      ],
+      "answer": 0,
+      "explain": "They hold the discs without being able to read them."
+    },
+    {
+      "q": "What are TrueCrypt keyfiles?",
+      "options": [
+        "Files whose hashes are mixed with your password to form the key",
+        "Backup copies of the volume",
+        "Files listing your passwords",
+        "Encrypted email"
+      ],
+      "answer": 0,
+      "explain": "Without the right files, even the correct password won't work."
+    },
+    {
+      "q": "What does a TrueCrypt hidden volume provide?",
+      "options": [
+        "A second secret volume inside the random-looking free space of another",
+        "A faster volume",
+        "An unencrypted backup",
+        "A recovery password"
+      ],
+      "answer": 0,
+      "explain": "You can reveal the outer volume's password while the hidden one stays undetectable."
+    },
+    {
+      "q": "How can a company recover a TrueCrypt drive after an employee forgets a changed password?",
+      "options": [
+        "By restoring a backed-up copy of the volume header",
+        "By calling TrueCrypt's developers",
+        "Using a master backdoor",
+        "It can't"
+      ],
+      "answer": 0,
+      "explain": "The header holds the master key, encrypted with the original password."
+    }
+  ]
+}
