@@ -708,6 +708,11 @@
           "t": "Like a retina scan or fingerprint. And there aren't that many orderings of eight chunks: eight times seven times six, down to one. And you'd have to tell your attorney: take my clothes off, shave my armpits, get a black light, and here's the sequence."
         },
         {
+          "type": "fact",
+          "title": "The math",
+          "t": "Eight chunks can be ordered 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40,320 ways, few enough for a computer to try them all in moments, if the chunks themselves were known."
+        },
+        {
           "s": "leo",
           "t": "And hope you don't sag. I'm sure he was tongue-in-cheek."
         },
@@ -718,11 +723,6 @@
         {
           "s": "steve",
           "t": "Rest assured, listeners, we're enjoying it too."
-        },
-        {
-          "type": "fact",
-          "title": "The math",
-          "t": "Eight chunks can be ordered 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40,320 ways, few enough for a computer to try them all in moments, if the chunks themselves were known."
         }
       ]
     }
