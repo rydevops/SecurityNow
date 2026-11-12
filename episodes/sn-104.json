@@ -8,15 +8,32 @@
   "audio": "http://media.GRC.com/sn/SN-104.mp3",
   "chapters": [
     {
-      "title": "Two Years of Security Now!",
+      "title": "Welcome to Security Now! #104",
       "beats": [
         {
           "s": "leo",
-          "t": "Two years, 104 episodes, and since Steve never misses one, exactly two years."
+          "t": "This is Security Now! with Steve Gibson, Episode 104, for August 9, 2007: your questions, Steve's answers."
+        },
+        {
+          "s": "leo",
+          "t": "Hard to believe it's been two years, 104 episodes. Since Steve Gibson is an engineer and never misses an episode, that's exactly two years. Hello, Steve."
         },
         {
           "s": "steve",
-          "t": "People who know me ask how Leo gets Steve to do this. They know how busy I am. But I really enjoy it, and nothing has been so good for spreading the word about SpinRite as listeners telling their stories."
+          "t": "Hello, Leo. Today is a Q&A, so we'll mark the two-year point, cover two bits of news, and then take a dozen listener questions."
+        },
+        {
+          "s": "steve",
+          "t": "Those cover free SSL certificates, text-message logins, formatting a drive, form spam, proxies versus TOR, a fake PayPal page, drive encryption, memory cleaners, video exploits, removing U3 from thumb drives, and CAPTCHA ideas."
+        }
+      ]
+    },
+    {
+      "title": "Two Years of Security Now!",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, a look back at two years. People who know me ask how Leo gets Steve to do this. They know how busy I am. But I really enjoy it, and nothing has been so good for spreading the word about SpinRite as listeners telling their stories."
         },
         {
           "s": "leo",
@@ -63,7 +80,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two quick notes. I always choose Custom in Windows Update, to see what Microsoft is giving my machine. On an XP system I saw an update mention CardSpace. Wait, that's Vista."
+          "t": "Before the questions, two quick pieces of news. The first is about Microsoft's CardSpace. I always choose Custom in Windows Update, to see what Microsoft is giving my machine. On an XP system I saw an update mention CardSpace. Wait, that's Vista."
         },
         {
           "s": "steve",
@@ -101,7 +118,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Second, after Mick's three-month run, Dan Morales wrote that SpinRite didn't take long for him."
+          "t": "The second note is a SpinRite follow-up. After Mick's three-month run in Episode 102, Dan Morales wrote that SpinRite didn't take long for him."
         },
         {
           "s": "leo",
@@ -134,7 +151,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "It's a mod 4 Q&A, and I get to read. I'm a trained professional."
+          "t": "That's the news. Now for the listener questions. It's a mod 4 Q&A, and I get to read them. I'm a trained professional."
         },
         {
           "s": "steve",
@@ -228,7 +245,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Next, Wes Trexler on LogMeIn's two-factor authentication. Instead of another dongle, LogMeIn can text a code to your cell phone when you log in. Any issues?"
+          "t": "Next, a question about avoiding another dongle. Wes Trexler asks about LogMeIn's two-factor authentication. Instead of another dongle, LogMeIn can text a code to your cell phone when you log in. Any issues?"
         },
         {
           "s": "steve",
@@ -262,7 +279,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Alexander Wood reformats his main system every eight to nine months to eliminate \"bit rot.\" A full NTFS format takes over an hour on his 240-gig RAID 0 array of two 120-gig Seagates, now almost four years old."
+          "t": "Next, a question about keeping a drive healthy. Alexander Wood reformats his main system every eight to nine months to eliminate \"bit rot.\" A full NTFS format takes over an hour on his 240-gig RAID 0 array of two 120-gig Seagates, now almost four years old."
         },
         {
           "s": "leo",
@@ -307,7 +324,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark Schreiber in San Francisco says spammers send spam through his website's email form. His host won't let him use a CAPTCHA. Can he outwit them?"
+          "t": "Now a spam problem. Mark Schreiber in San Francisco says spammers send spam through his website's email form. His host won't let him use a CAPTCHA. Can he outwit them?"
         },
         {
           "s": "steve",
@@ -336,7 +353,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chad in Charlotte, North Carolina, a great place for barbecue, wants more anonymity. He's seen lists of public proxy servers, labeled anonymous, high anonymity and transparent. Are they dangerous?"
+          "t": "Next, a question on anonymity. Chad in Charlotte, North Carolina, a great place for barbecue, wants more anonymity. He's seen lists of public proxy servers, labeled anonymous, high anonymity and transparent. Are they dangerous?"
         },
         {
           "s": "steve",
@@ -369,7 +386,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Patrick in Sartell, Minnesota asks about man-in-the-middle attacks. Sites bounce you to PayPal to enter your password, then back. Could a malicious site, say badguydiamonds.com, show a fake https PayPal page and relay your login in the background? Will https always show the true site?"
+          "t": "Back to PayPal with a security question. Patrick in Sartell, Minnesota asks about man-in-the-middle attacks. Sites bounce you to PayPal to enter your password, then back. Could a malicious site, say badguydiamonds.com, show a fake https PayPal page and relay your login in the background? Will https always show the true site?"
         },
         {
           "s": "steve",
@@ -410,7 +427,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Paul Elliott in Yorkshire, U.K. asks about \"native hard drive encryption\" and the TPM from Episode 99. In an encrypted file, one corrupted bit loses the whole file. Could one bad bit cost a whole encrypted drive?"
+          "t": "A question about encryption built into drives. Paul Elliott in Yorkshire, U.K. asks about \"native hard drive encryption\" and the TPM from Episode 99. In an encrypted file, one corrupted bit loses the whole file. Could one bad bit cost a whole encrypted drive?"
         },
         {
           "s": "steve",
@@ -451,7 +468,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Leo Sallen in Australia, I like the name, owns SpinRite and has used it to save himself. He couldn't find \"On Intelligence\" on Audible Australia. I'll answer this one, and Audible doesn't sponsor this podcast."
+          "t": "A question about Audible and the book Steve recommended in Episode 101. Leo Sallen in Australia, I like the name, owns SpinRite and has used it to save himself. He couldn't find \"On Intelligence\" on Audible Australia. I'll answer this one, and Audible doesn't sponsor this podcast."
         },
         {
           "s": "leo",
@@ -476,7 +493,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Vijay in London reclaimed gigabytes with SpaceMonger, which I just recommended on the radio show. Is there something friendlier than Task Manager's process list for seeing what's using RAM?"
+          "t": "A question about computer memory. Vijay in London reclaimed gigabytes with SpaceMonger, which I just recommended on the radio show. Is there something friendlier than Task Manager's process list for seeing what's using RAM?"
         },
         {
           "s": "steve",
@@ -497,7 +514,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill Rakosnik of Bishop, Georgia: can I get a virus from a YouTube video? Is video an executable?"
+          "t": "A question about whether media can infect you. Bill Rakosnik of Bishop, Georgia: can I get a virus from a YouTube video? Is video an executable?"
         },
         {
           "s": "steve",
@@ -543,7 +560,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Marcus Kaczmarek, I think, of Kenai, Alaska shares my worry about U3, which auto-launches applications when you plug in a flash drive. How does he get it off?"
+          "t": "Now back to U3 thumb drives. Marcus Kaczmarek, I think, of Kenai, Alaska shares my worry about U3, which auto-launches applications when you plug in a flash drive. How does he get it off?"
         },
         {
           "s": "steve",
@@ -605,7 +622,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Last, Sam Osborne of Bathurst, New South Wales: why not ask general knowledge in an image? \"What's the capital of Australia?\" Type \"enough\" backwards. Spell out the number 8. A color between red and yellow that's also a fruit."
+          "t": "Last question, returning to CAPTCHAs from Episode 101. Sam Osborne of Bathurst, New South Wales: why not ask general knowledge in an image? \"What's the capital of Australia?\" Type \"enough\" backwards. Spell out the number 8. A color between red and yellow that's also a fruit."
         },
         {
           "s": "steve",

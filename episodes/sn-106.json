@@ -8,15 +8,32 @@
   "audio": "http://media.GRC.com/sn/SN-106.mp3",
   "chapters": [
     {
-      "title": "Fumigation and a Thursday Habit",
+      "title": "Welcome to Security Now! #106",
       "beats": [
         {
           "s": "leo",
-          "t": "It's a listener mailbag episode, with Steve in his soon-to-be-tented lair in Irvine, California."
+          "t": "This is Security Now! with Steve Gibson, Episode 106, for August 23, 2007: Mailbag #2."
+        },
+        {
+          "s": "leo",
+          "t": "Time to talk about security, and it's a listener mailbag episode. Steve Gibson is here from his secure lair, soon to be tented and fumigated, in Irvine, California."
         },
         {
           "s": "steve",
-          "t": "Going through the email gives me such a great feeling. One guy said he just waits for Thursdays."
+          "t": "Thanks, Leo. We'll start with the fumigation, a decision about affiliate marketing, and a SpinRite story."
+        },
+        {
+          "s": "steve",
+          "t": "Then the mailbag: changing irises, logging in with your brain, U3 attack drives, a spam trap, a locked flash drive, PayPal, encrypting laptop drives, VeriSign's PIP, and firewalls."
+        }
+      ]
+    },
+    {
+      "title": "Fumigation and a Thursday Habit",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Going through the email for these mailbag episodes gives me such a great feeling. One guy said he just waits for Thursdays."
         },
         {
           "s": "leo",
@@ -61,11 +78,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "No errata, but a reminder of an unusual use for SpinRite, from our newsgroups."
-        },
-        {
-          "s": "steve",
-          "t": "When I was in Canada with Mark Thompson a couple of weeks ago, he suggested affiliate marketing: paying commissions to people who send buyers to GRC."
+          "t": "No errata this week, but some news from the GRC newsgroups. When I was in Canada with Mark Thompson a couple of weeks ago, he suggested affiliate marketing: paying commissions to people who send buyers to GRC."
         },
         {
           "s": "steve",
@@ -90,7 +103,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Skip quoted me in that thread saying SpinRite's appeal is too narrow for shotgun marketing. He agreed: it's always bought in time of need. He bought it in distress, saved his drive, and fixed two family drives a year later."
+          "t": "That thread also brought a reminder of an unusual use for SpinRite, from a poster named Skip. Skip quoted me in that thread saying SpinRite's appeal is too narrow for shotgun marketing. He agreed: it's always bought in time of need. He bought it in distress, saved his drive, and fixed two family drives a year later."
         },
         {
           "s": "steve",
@@ -139,7 +152,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I'll be your reader. Mike Gunn in San Francisco says irises do change. His kids' optometrist suggests photographing the iris, because aging and conditions like diabetes change how it looks. They can spot disease by comparing against a baseline. And Robert Heron's eye surgery would have changed his."
+          "t": "Now the mailbag, and I'll be your reader. First, a follow-up on irises and biometrics from Episode 100. Mike Gunn in San Francisco says irises do change. His kids' optometrist suggests photographing the iris, because aging and conditions like diabetes change how it looks. They can spot disease by comparing against a baseline. And Robert Heron's eye surgery would have changed his."
         },
         {
           "s": "leo",
@@ -164,7 +177,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Martin Yeomans of Memphis, Tennessee, an occupational therapist and Mensa member, read \"On Intelligence\" and recalled an NPR story on Dartmouth research about the auditory cortex."
+          "t": "Next, an authentication idea inspired by \"On Intelligence.\" Martin Yeomans of Memphis, Tennessee, an occupational therapist and Mensa member, read \"On Intelligence\" and recalled an NPR story on Dartmouth research about the auditory cortex."
         },
         {
           "s": "leo",
@@ -201,7 +214,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Daniel Barber, who must be a sysadmin, is even more worried about U3 than we are."
+          "t": "Back to U3 drives. Daniel Barber, who must be a sysadmin, is even more worried about U3 than we are."
         },
         {
           "s": "leo",
@@ -247,7 +260,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Abhi Beckert of Cairns, Australia makes a good point about our worry that YouTube videos or JPEGs could infect you. Sites that accept uploaded JPEGs often resize them and change compression, which would destroy buried malware. YouTube converts every upload to Flash video."
+          "t": "A follow-up on malware hidden in media files from Episode 104. Abhi Beckert of Cairns, Australia makes a good point about our worry that YouTube videos or JPEGs could infect you. Sites that accept uploaded JPEGs often resize them and change compression, which would destroy buried malware. YouTube converts every upload to Flash video."
         },
         {
           "s": "steve",
@@ -272,7 +285,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jared in Calgary, Alberta blocks 99.9 percent of his blog spam with what he calls a \"double honeypot.\""
+          "t": "Now a trick against spam. Jared in Calgary, Alberta blocks 99.9 percent of his blog spam with what he calls a \"double honeypot.\""
         },
         {
           "s": "leo",
@@ -301,7 +314,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brendan of Bismarck, North Dakota found Corsair's Flash Padlock, a thumb drive opened only by the right combination on its built-in keypad."
+          "t": "A product for securing thumb drives. Brendan of Bismarck, North Dakota found Corsair's Flash Padlock, a thumb drive opened only by the right combination on its built-in keypad."
         },
         {
           "s": "steve",
@@ -334,7 +347,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Miles Bosworth of Asheville, North Carolina bought SpinRite to support the show and has since used it to fix his wife's unbootable laptop and a friend's error-plagued PC."
+          "t": "Back to PayPal with a complaint. Miles Bosworth of Asheville, North Carolina bought SpinRite to support the show and has since used it to fix his wife's unbootable laptop and a friend's error-plagued PC."
         },
         {
           "s": "leo",
@@ -383,7 +396,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Farren Constable of Manhattan, Kansas says I said drives with built-in encryption wouldn't be available for a while, but distributor ASI already sells laptops with them, maybe exclusively."
+          "t": "A follow-up on drive encryption. Farren Constable of Manhattan, Kansas says I said drives with built-in encryption wouldn't be available for a while, but distributor ASI already sells laptops with them, maybe exclusively."
         },
         {
           "s": "steve",
@@ -417,7 +430,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Edward in nearby Santa Rosa says VeriSign's OpenID service, PIP at pip.verisignlabs.com, now supports the PayPal Security Key. VeriSign's email says PayPal tokens work with PIP, using second-factor credentials from the VeriSign Identity Protection Network, and it can send a one-time PIN by SMS or email if you've forgotten your credentials."
+          "t": "A follow-up on PayPal's token and OpenID. Edward in nearby Santa Rosa says VeriSign's OpenID service, PIP at pip.verisignlabs.com, now supports the PayPal Security Key. VeriSign's email says PayPal tokens work with PIP, using second-factor credentials from the VeriSign Identity Protection Network, and it can send a one-time PIN by SMS or email if you've forgotten your credentials."
         },
         {
           "s": "steve",
@@ -446,7 +459,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "George in Ohio found something about our sponsor Astaro that I don't mention in the ads. His long-running SmoothWall box, the open-source firewall Patrick and I have talked about since Screensavers days, cooked when its processor fan died."
+          "t": "Now something about our sponsor Astaro. George in Ohio found something about Astaro that I don't mention in the ads. His long-running SmoothWall box, the open-source firewall Patrick and I have talked about since Screensavers days, cooked when its processor fan died."
         },
         {
           "s": "leo",
@@ -471,7 +484,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Danny in Ogden, Utah does tech support for Juniper's firewall and intrusion detection and prevention products. He notes leaktests only apply to software firewalls. Juniper's aren't affected."
+          "t": "A response to last week's firewall leaktest episode. Danny in Ogden, Utah does tech support for Juniper's firewall and intrusion detection and prevention products. He notes leaktests only apply to software firewalls. Juniper's aren't affected."
         },
         {
           "s": "leo",
@@ -508,7 +521,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark Paynter in Sydney, Australia has an observation about the fob, dongle, key, doohickey."
+          "t": "And a clever trick for testing a phishing site. Mark Paynter in Sydney, Australia has an observation about the fob, dongle, key, doohickey."
         },
         {
           "s": "leo",

@@ -8,15 +8,32 @@
   "audio": "http://media.GRC.com/sn/SN-101.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #101",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 101, for July 19, 2007: \"Are You Human?\""
+        },
+        {
+          "s": "leo",
+          "t": "Time to talk about security, everybody's favorite subject. Well, maybe not everybody, but for about 150,000 listeners, anyway. Steve Gibson is here from GRC.com, the man behind SpinRite and free programs like SecurAble."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. It's a full show today. We'll start with some housekeeping: an antivirus false positive, a new way to write in, and PayPal's $5 security key."
+        },
+        {
+          "s": "steve",
+          "t": "Then a book recommendation and a SpinRite question about when to retire a drive. After that comes the main topic: how a website can tell a real person from a program, and why that has become so hard."
+        }
+      ]
+    },
+    {
       "title": "An AVG False Positive",
       "beats": [
         {
           "s": "leo",
-          "t": "Time to talk about security, everybody's favorite subject, for about 150,000 listeners."
-        },
-        {
-          "s": "leo",
-          "t": "Somebody told me an antivirus program is flagging one of your programs."
+          "t": "First, some news that affects users of one antivirus program. Somebody told me it's flagging one of your programs."
         },
         {
           "s": "steve",
@@ -45,7 +62,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Starting with 102, episodes at mod 4 plus 2 will be mailbag episodes."
+          "t": "Speaking of listener mail, a note on how to write in. Starting with 102, episodes at mod 4 plus 2 will be mailbag episodes."
         },
         {
           "s": "steve",
@@ -67,7 +84,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Something cool started with something not so cool. About two weeks ago I did something with PayPal at Starbucks on my laptop over T-Mobile that upset it. The next day from home, it said my account was flagged because someone might be trying to hack it."
+          "t": "Now a security tip about PayPal. Something cool started with something not so cool. About two weeks ago I did something with PayPal at Starbucks on my laptop over T-Mobile that upset it. The next day from home, it said my account was flagged because someone might be trying to hack it."
         },
         {
           "s": "steve",
@@ -129,7 +146,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We have to talk about a book you turned me onto."
+          "t": "Next, a book I want to recommend, one you turned me onto: \"On Intelligence\" by Jeff Hawkins."
         },
         {
           "s": "leo",
@@ -183,7 +200,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two related notes. Justin Gerard, the 13-year-old who saw an outside service fix his computer with SpinRite and has a Gamer's Edge podcast, says Nintendo partnered with Astaro for optional content filtering via a proxy for the Nintendo DS web browser."
+          "t": "A short item about our sponsor Astaro and Nintendo, in two related notes. Justin Gerard, the 13-year-old who saw an outside service fix his computer with SpinRite and has a Gamer's Edge podcast, says Nintendo partnered with Astaro for optional content filtering via a proxy for the Nintendo DS web browser."
         },
         {
           "s": "steve",
@@ -208,7 +225,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One more. David Lee, a Microsoft Small Business Specialist in Ottawa, had used SpinRite for a year to improve performance. Then, after installing the Adobe Reader 8.1 update, his laptop gave him a Blue Screen of Death and an \"unbootable drive\" message. Safe mode and Last Known Good Configuration failed."
+          "t": "Back to SpinRite for a question many people ask: when should you retire a drive that has had problems? David Lee, a Microsoft Small Business Specialist in Ottawa, had used SpinRite for a year to improve performance. Then, after installing the Adobe Reader 8.1 update, his laptop gave him a Blue Screen of Death and an \"unbootable drive\" message. Safe mode and Last Known Good Configuration failed."
         },
         {
           "s": "steve",
@@ -281,7 +298,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's get to the meat and potatoes."
+          "t": "That's the housekeeping. Let's get to the meat and potatoes: today's topic, \"Are You Human?\""
         },
         {
           "s": "steve",
@@ -318,7 +335,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The problem has a deep history in the Turing Test, proposed by Alan Turing, a father of modern computing, or at least of algorithms."
+          "t": "To see why telling machines from people is so hard, start with its history. The problem goes back to the Turing Test, proposed by Alan Turing, a father of modern computing, or at least of algorithms."
         },
         {
           "s": "leo",
@@ -376,7 +393,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Turing Test bears on this because the most popular approach is named after it. Around 2000, Carnegie Mellon researcher Luis von Ahn got serious about CAPTCHAs. CMU even holds a trademark on the word."
+          "t": "That history matters because the most popular modern solution, the CAPTCHA, is named after Turing's test. Around 2000, Carnegie Mellon researcher Luis von Ahn got serious about CAPTCHAs. CMU even holds a trademark on the word."
         },
         {
           "s": "leo",
@@ -414,7 +431,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Wikipedia has an excellent CAPTCHA page. And there are CAPTCHA-cracking sites with pictures of many popular CAPTCHAs, showing what isn't hard enough. Some are solved 100 percent of the time, others 88 or 89 percent."
+          "t": "So how strong are CAPTCHAs in practice? Not very, in many cases. Wikipedia has an excellent CAPTCHA page. And there are CAPTCHA-cracking sites with pictures of many popular CAPTCHAs, showing what isn't hard enough. Some are solved 100 percent of the time, others 88 or 89 percent."
         },
         {
           "s": "steve",
@@ -451,7 +468,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One of my favorite clever hacks was a proof of concept by someone at CMU playing the opposition, which is exactly what you want."
+          "t": "Cracking the image isn't the only way around a CAPTCHA. One of my favorite clever hacks was a proof of concept by someone at CMU playing the opposition, which is exactly what you want."
         },
         {
           "s": "steve",
@@ -480,7 +497,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "CAPTCHAs are also controversial. I link to the W3C's anti-CAPTCHA page. The World Wide Web Consortium says they unfairly discriminate against people with disabilities, and it wants a nondiscriminatory web."
+          "t": "CAPTCHAs also have a problem beyond security: they are controversial. I link to the W3C's anti-CAPTCHA page. The World Wide Web Consortium says they unfairly discriminate against people with disabilities, and it wants a nondiscriminatory web."
         },
         {
           "s": "steve",
@@ -509,7 +526,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One of the coolest things you sent me is reCAPTCHA, also from von Ahn at CMU. There's a huge effort to digitize books. A scanned page is a huge amount of data, while text can become an eBook or be read aloud by text-to-speech. Most books predate electronic publishing, so there's no original text file."
+          "t": "Now for a more hopeful CAPTCHA that puts the effort to good use. One of the coolest things you sent me is reCAPTCHA, also from von Ahn at CMU. There's a huge effort to digitize books. A scanned page is a huge amount of data, while text can become an eBook or be read aloud by text-to-speech. Most books predate electronic publishing, so there's no original text file."
         },
         {
           "s": "steve",
@@ -563,7 +580,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Other approaches try to tell people from computers without images. JavaScript can ask simple English questions like \"What is one plus one?\" But the vocabulary of question patterns is limited enough that code could answer them."
+          "t": "What about approaches that don't use distorted images at all? Other approaches try to tell people from computers without images. JavaScript can ask simple English questions like \"What is one plus one?\" But the vocabulary of question patterns is limited enough that code could answer them."
         },
         {
           "s": "steve",

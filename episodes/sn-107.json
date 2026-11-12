@@ -8,15 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-107.mp3",
   "chapters": [
     {
-      "title": "Collecting the Podcast Award",
+      "title": "Welcome to Security Now! #107",
       "beats": [
         {
           "s": "leo",
-          "t": "It's Security Now!, thanks to your votes the year's top science and technology podcast. Steve collects his award at the Podcast Expo at the end of the month."
+          "t": "This is Security Now! with Steve Gibson, Episode 107, for August 30, 2007: VeriSign's OpenID and Toward More Perfect Passwords."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, everybody's favorite security podcast and, thanks to your votes, the number one technology and science podcast of the year, a Podcast Award winner. Steve will be collecting his award at the Podcast Expo at the end of the month."
         },
         {
           "s": "steve",
-          "t": "It's my one annual chance to see Elaine, our transcriber. After a year and a half working together electronically, we both met her for the first time at the last Expo."
+          "t": "Thanks, Leo. Today we'll cover a critical patch for Vista's gadgets and a SpinRite story. Then VeriSign's VIP system, which our PayPal guest said is behind the PayPal Security Key, and something we've never discussed, Cipher Block Chaining, which I just implemented for GRC's Perfect Passwords page."
+        }
+      ]
+    },
+    {
+      "title": "Collecting the Podcast Award",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, the award. Collecting it is my one annual chance to see Elaine, our transcriber. After a year and a half working together electronically, we both met her for the first time at the last Expo."
         },
         {
           "s": "leo",
@@ -32,11 +45,7 @@
         },
         {
           "s": "steve",
-          "t": "Today: VeriSign's VIP system, which our PayPal guest said is behind the PayPal Security Key, and something we've never discussed, Cipher Block Chaining, which I just implemented for GRC's Perfect Passwords page."
-        },
-        {
-          "s": "steve",
-          "t": "More than 3,000 sets of passwords are generated a day, and more than three million in total. The Popular Perfect Passwords Page is very Popular with People. Now they're even more perfect."
+          "t": "I also have news about my Perfect Passwords page, which is the reason for today's second topic. More than 3,000 sets of passwords are generated a day, and more than three million in total. The Popular Perfect Passwords Page is very Popular with People. Now they're even more perfect."
         }
       ]
     },
@@ -45,7 +54,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two weeks ago I reminded people about August's nine Microsoft updates. One, which created a lot of buzz, fixed three problems in Vista's new Gadgets."
+          "t": "Now to security news. Two weeks ago I reminded people about August's nine Microsoft updates. One, which created a lot of buzz, fixed three problems in Vista's new Gadgets."
         },
         {
           "s": "steve",
@@ -79,7 +88,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Rob McCall of Oakridge, New Jersey debated buying SpinRite for a long time. When his HP desktop rarely reached the logon screen, and froze when it did, he bought it, thinking it was a drive problem. It wasn't. Another part had failed."
+          "t": "Now a SpinRite story. Rob McCall of Oakridge, New Jersey debated buying SpinRite for a long time. When his HP desktop rarely reached the logon screen, and froze when it did, he bought it, thinking it was a drive problem. It wasn't. Another part had failed."
         },
         {
           "s": "steve",
@@ -92,7 +101,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So it's PIP and PPP today."
+          "t": "So it's PIP and PPP today. Let's start with PIP, VeriSign's OpenID service."
         },
         {
           "s": "steve",
@@ -141,7 +150,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's a nice Firefox extension called SeatBelt, linked from PIP's site, that authenticates you with OpenID sites automatically. It's all interoperable."
+          "t": "To use a PIP account at OpenID sites without retyping everything, there's a nice Firefox extension called SeatBelt, linked from PIP's site, that authenticates you with OpenID sites automatically. It's all interoperable."
         },
         {
           "s": "leo",
@@ -186,7 +195,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Harsh as we've been about U3, VeriSign also supports SanDisk's flash drives in U3 mode, with VIP credential software tied to the drive's hardware, as an alternative to the fob."
+          "t": "PIP offers more ways to authenticate. Harsh as we've been about U3, VeriSign also supports SanDisk's flash drives in U3 mode, with VIP credential software tied to the drive's hardware, as an alternative to the fob."
         },
         {
           "s": "leo",
@@ -236,7 +245,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "You started the Perfect Passwords page a while ago."
+          "t": "Now to the second topic: GRC's Perfect Passwords page. You started it a while ago."
         },
         {
           "s": "steve",
@@ -277,7 +286,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I promised we'd never issue the same password twice. With a 256-bit result, it's very certain we haven't."
+          "t": "Here's how the new generator works. I promised we'd never issue the same password twice. With a 256-bit result, it's very certain we haven't."
         },
         {
           "s": "leo",
@@ -318,7 +327,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The solution is CBC, Cipher Block Chaining, something super clever the crypto guys came up with, and actually very simple."
+          "t": "The solution to that weakness is CBC, Cipher Block Chaining, something super clever the crypto guys came up with, and actually very simple."
         },
         {
           "s": "steve",
@@ -408,7 +417,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Download LeakTest for old times' sake, though now we know it's useless."
+          "t": "One last item, a follow-up on last week's leaktest episode."
         },
         {
           "s": "steve",
