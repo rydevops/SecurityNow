@@ -18,6 +18,11 @@
   };
   const pad = (n) => String(n).padStart(3, '0');
   const HOST_NAMES = { leo: 'Leo Laporte', steve: 'Steve Gibson' };
+  // A guest's lines use a key listed in the episode's `guests` map
+  // (e.g. { "peter": "Peter Gutmann" }). Guests sit in the centre, and
+  // both hosts are dimmed while one speaks.
+  const isHost = (s) => Object.prototype.hasOwnProperty.call(HOST_NAMES, s);
+  const speakerName = (s) => HOST_NAMES[s] || (ep && ep.guests && ep.guests[s]) || s;
 
   /* ---------- storage (best-effort; app works without it) ---------- */
   const store = {
@@ -347,8 +352,8 @@
       f.append(label, el('div', 'fact__title', beat.title), el('p', 'typed', beat.t));
       return f;
     }
-    const b = el('div', `bubble bubble--${beat.s}`);
-    b.append(el('span', 'bubble__who', HOST_NAMES[beat.s] || beat.s), el('span', 'typed', beat.t));
+    const b = el('div', `bubble bubble--${isHost(beat.s) ? beat.s : 'guest'}`);
+    b.append(el('span', 'bubble__who', speakerName(beat.s)), el('span', 'typed', beat.t));
     return b;
   }
 
@@ -383,7 +388,7 @@
     $('#rd-live').textContent =
       beat.type === 'fact' ? `Key fact. ${beat.title}. ${beat.t}`
       : beat.type === 'picture' ? `Picture of the Week: ${beat.caption || ''}. ${beat.t}`
-      : `${HOST_NAMES[beat.s] || beat.s}: ${beat.t}`;
+      : `${speakerName(beat.s)}: ${beat.t}`;
   }
 
   /* ---------- typewriter ----------

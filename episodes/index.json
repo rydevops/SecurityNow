@@ -353,122 +353,170 @@
     {
       "number": 51,
       "title": "Vista's Virgin Stack",
-      "date": "2006-08-03"
+      "subtitle": "Why a brand-new network stack worries Steve",
+      "date": "2006-08-03",
+      "file": "sn-051.json"
     },
     {
       "number": 52,
       "title": "A Busy Week for Security Troubles",
-      "date": "2006-08-10"
+      "subtitle": "Black Hat fallout, eBay botnets and a script-free menu",
+      "date": "2006-08-10",
+      "file": "sn-052.json"
     },
     {
       "number": 53,
       "title": "VMware",
-      "date": "2006-08-17"
+      "subtitle": "Virtual machines, the free Player and ready-made appliances",
+      "date": "2006-08-17",
+      "file": "sn-053.json"
     },
     {
       "number": 54,
       "title": "Blue Pill",
-      "date": "2006-08-24"
+      "subtitle": "A rootkit that slips your OS into a virtual machine",
+      "date": "2006-08-24",
+      "file": "sn-054.json"
     },
     {
       "number": 55,
       "title": "Application Sandboxes",
-      "date": "2006-08-31"
+      "subtitle": "Lightweight virtualization, and what it can't promise",
+      "date": "2006-08-31",
+      "file": "sn-055.json"
     },
     {
       "number": 56,
       "title": "Listener Feedback Q&A #10",
-      "date": "2006-09-07"
+      "subtitle": "Vista's Teredo, hosts files, remote access and more",
+      "date": "2006-09-07",
+      "file": "sn-056.json"
     },
     {
       "number": 57,
       "title": "Virtual PC versus VMware",
-      "date": "2006-09-14"
+      "subtitle": "Microsoft's free VM against the industry leader",
+      "date": "2006-09-14",
+      "file": "sn-057.json"
     },
     {
       "number": 58,
       "title": "Two New Critical Windows Problems",
-      "date": "2006-09-21"
+      "subtitle": "A VML zero-day in the wild, and a patch that corrupts files",
+      "date": "2006-09-21",
+      "file": "sn-058.json"
     },
     {
       "number": 59,
       "title": "Comparing \"Parallels\" VMs",
-      "date": "2006-09-28"
+      "subtitle": "Microsoft's emergency VML patch, then Parallels vs. VMware",
+      "date": "2006-09-28",
+      "file": "sn-059.json"
     },
     {
       "number": 60,
       "title": "Listener Feedback Q&A #11",
-      "date": "2006-10-05"
+      "subtitle": "ActiveX, USB in VMs, parental controls and patents",
+      "date": "2006-10-05",
+      "file": "sn-060.json"
     },
     {
       "number": 61,
       "title": "ISP Privacy and Security",
-      "date": "2006-10-12"
+      "subtitle": "Two more IE zero-days, then what your ISP can see",
+      "date": "2006-10-12",
+      "file": "sn-061.json"
     },
     {
       "number": 62,
       "title": "Internet Proxies",
-      "date": "2006-10-19"
+      "subtitle": "Caching, filtering and the privacy tradeoffs of proxies",
+      "date": "2006-10-19",
+      "file": "sn-062.json"
     },
     {
       "number": 63,
       "title": "MojoPac",
-      "date": "2006-10-26"
+      "subtitle": "Your Windows desktop and apps on a USB stick",
+      "date": "2006-10-26",
+      "file": "sn-063.json"
     },
     {
       "number": 64,
       "title": "Listener Feedback Q&A #12",
-      "date": "2006-11-02"
+      "subtitle": "Proxies that read SSL, blacklists, cookies and more",
+      "date": "2006-11-02",
+      "file": "sn-064.json"
     },
     {
       "number": 65,
       "title": "Why Is Security So Difficult?",
-      "date": "2006-11-09"
+      "subtitle": "Security as the absence of all insecurity",
+      "date": "2006-11-09",
+      "file": "sn-065.json"
     },
     {
       "number": 66,
       "title": "Windows Vista Security",
-      "date": "2006-11-16"
+      "subtitle": "Why 64-bit Vista is the secure one",
+      "date": "2006-11-16",
+      "file": "sn-066.json"
     },
     {
       "number": 67,
       "title": "Kernel Patch Protection",
-      "date": "2006-11-23"
+      "subtitle": "What PatchGuard really does, and why it's still good news",
+      "date": "2006-11-23",
+      "file": "sn-067.json"
     },
     {
       "number": 68,
       "title": "Listener Feedback Q&A #13",
-      "date": "2006-11-30"
+      "subtitle": "Encrypted drives, spam, VM-aware malware and more",
+      "date": "2006-11-30",
+      "file": "sn-068.json"
     },
     {
       "number": 69,
       "title": "The Social Implications of Internet Anonymity",
-      "date": "2006-12-07"
+      "subtitle": "Free speech, trolls, Freenet, and why anonymity is hard",
+      "date": "2006-12-07",
+      "file": "sn-069.json"
     },
     {
       "number": 70,
       "title": "Achieving Internet Anonymity",
-      "date": "2006-12-14"
+      "subtitle": "How Freenet and TOR actually work",
+      "date": "2006-12-14",
+      "file": "sn-070.json"
     },
     {
       "number": 71,
       "title": "SecurAble",
-      "date": "2006-12-21"
+      "subtitle": "Steve's new freeware checks your chip's security features",
+      "date": "2006-12-21",
+      "file": "sn-071.json"
     },
     {
       "number": 72,
       "title": "Listener Feedback Q&A #14",
-      "date": "2006-12-28"
+      "subtitle": "TOR follow-ups, passwords after death, SPF and CVV codes",
+      "date": "2006-12-28",
+      "file": "sn-072.json"
     },
     {
       "number": 73,
       "title": "Digital Rights Management (DRM)",
-      "date": "2007-01-04"
+      "subtitle": "From cassette copies to AACS",
+      "date": "2007-01-04",
+      "file": "sn-073.json"
     },
     {
       "number": 74,
       "title": "Peter Gutmann on Vista DRM",
-      "date": "2007-01-11"
+      "subtitle": "The costs of Vista's content protection",
+      "date": "2007-01-11",
+      "file": "sn-074.json"
     },
     {
       "number": 75,
