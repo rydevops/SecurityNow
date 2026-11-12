@@ -1,0 +1,768 @@
+{
+  "number": 148,
+  "title": "Listener Feedback Q&A #43",
+  "subtitle": "Safari's \"carpet bomb,\" MD5 hashes, short password limits and more",
+  "date": "2008-06-12",
+  "description": "June's Patch Tuesday brings a Bluetooth fix, Skype patches an executable-link flaw, and Safari on Windows can drop DLLs on your desktop that Internet Explorer will load. Then listener questions: why floppies can't spin faster, a router that renumbered itself, how a short MD5 hash can vouch for a CD image, PayPal's pushy plug-in, a new graduate who learned crypto here, whether the Internet's protocols will be replaced, login forms on insecure pages, why sites cap password length, ISP traffic shaping, tracking a stolen iPod Touch, \"The Code Book,\" passing USB drives around a classroom, and NAS boxes sold as web servers.",
+  "transcript": "https://www.grc.com/sn/sn-148.txt",
+  "audio": "http://media.GRC.com/sn/SN-148.mp3",
+  "chapters": [
+    {
+      "title": "Patch Tuesday Brings Bluetooth",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're recording on Patch Tuesday, so details aren't out yet. Microsoft's advance notice lists three critical updates: Internet Explorer, DirectX and Bluetooth. When wasn't there a critical IE update? The Bluetooth one interests me most. It's radio, and there are Bluetooth adapters on many laptops and portable Windows devices."
+        },
+        {
+          "s": "steve",
+          "t": "The Microsoft Baseline Security Analyzer from last week will tell you which you need, and all three require a reboot. A radio-based remote code execution flaw is something you'll want patched."
+        },
+        {
+          "s": "leo",
+          "t": "I have automatic patching on. Do you?"
+        },
+        {
+          "s": "steve",
+          "t": "No, mine downloads and asks me. For example, I don't want XP SP3. It caused me two separate sets of problems, and Greg too, and removing it fixed them. Every time I check, Microsoft says it'll be good for me. Uh, no."
+        },
+        {
+          "s": "leo",
+          "t": "On one machine, SP3 detected a problem and backed itself out nicely. In a VMware XP machine on my Mac, it installed flawlessly, and I immediately made a snapshot I can go back to."
+        },
+        {
+          "s": "steve",
+          "t": "Not everyone has problems. It's anecdotal. But items in my Start menu stopped responding, and double-clicking EXEs in Explorer isn't user friendly."
+        }
+      ]
+    },
+    {
+      "title": "Skype's Executable Links",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "For Skype users: Windows versions before 3.8.0.139 had a flaw letting one Skype user send another a link to an executable that bypasses Skype's warning before running executables. Someone could disguise a program and get you to run it. If you only Skype people you trust, it's probably not a big problem, but it's fixed in 3.8.0.139 and later."
+        },
+        {
+          "s": "steve",
+          "t": "I think it's only Windows. My Mac Skype is way back at 2.7.something."
+        }
+      ]
+    },
+    {
+      "title": "Safari's Carpet Bomb Meets Windows' DLL Search",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "You've probably heard Microsoft saying not to use Safari for Windows. The reason is freaky."
+        },
+        {
+          "s": "steve",
+          "t": "Safari has always let web pages download files without user involvement or confirmation. That doesn't seem very secure to me."
+        },
+        {
+          "s": "leo",
+          "t": "It doesn't execute them, though."
+        },
+        {
+          "s": "steve",
+          "t": "Right. But the default download folder on Windows is your desktop. A researcher called it \"carpet bombing\": a malicious site could fill your desktop with files. Annoying."
+        },
+        {
+          "s": "steve",
+          "t": "Then a mistake in Windows' design interacts with it, making it what we call a \"blended threat.\" Safari downloads but won't execute. Windows will."
+        },
+        {
+          "s": "steve",
+          "t": "When Internet Explorer runs, it loads DLLs, including sqmapi.dll, imageres.dll and schannel.dll, the secure channel DLL. Windows has an old problem with its \"DLL search order,\" the list of folders it searches."
+        },
+        {
+          "s": "steve",
+          "t": "\"Safe DLL search order\" was only on by default starting with Service Pack 2, and I'm not sure upgrading to SP2 turned it on. Microsoft left many settings alone on upgrade. If your firewall was off, it stayed off."
+        },
+        {
+          "s": "steve",
+          "t": "Without it, Windows looks first in the program's own folder. These DLLs live in System32, so they're not found there, and the next place searched is the folder the program was launched from. Most people launch IE from their desktop."
+        },
+        {
+          "s": "leo",
+          "t": "So it would look on the desktop."
+        },
+        {
+          "s": "steve",
+          "t": "And find the schannel.dll that Safari deposited, which you didn't notice among the clutter."
+        },
+        {
+          "s": "leo",
+          "t": "Is that why Apple says it's Windows' fault?"
+        },
+        {
+          "s": "steve",
+          "t": "Windows has always done it. When someone told Microsoft it was a bad idea, they agreed, but worried about side effects of changing something so fundamental."
+        },
+        {
+          "s": "leo",
+          "t": "Apple is passing the buck. Downloading without asking isn't good behavior regardless."
+        },
+        {
+          "s": "steve",
+          "t": "Correct. Microsoft's actual wording, despite the bold headlines, gently suggests maybe not using Safari. The fix for Safari users is simple: create a download folder, say under My Documents, and make it Safari's default. It'll never be searched for DLLs."
+        },
+        {
+          "s": "steve",
+          "t": "So the responsibility is blended. I'm glad IE7 clearly prevents silent downloads. But Windows running DLLs from your desktop is just bogus."
+        },
+        {
+          "s": "leo",
+          "t": "And carpet bombing alone, hundreds of files on your desktop, is just annoying. Safari on the Mac had a similar problem opening \"safe\" files automatically, and Apple changed that. I think they'll fix this."
+        },
+        {
+          "s": "steve",
+          "t": "Apple hasn't been in hackers' crosshairs as long as Microsoft. They don't yet have the maturity of understanding that anything that can be done, will be done."
+        },
+        {
+          "s": "leo",
+          "t": "Some call that paranoia, but it's the right point of view. And the new iPhone's enterprise syncing for Windows may explain why Apple pushed Safari on Windows users so hard, even through updates to people who never had it."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "Apple's Safari 3.1.2 for Windows, released days later, added a prompt before downloading files, and Microsoft later changed Windows' DLL loading to stop searching the current folder first."
+        }
+      ]
+    },
+    {
+      "title": "A Stylus for the iPhone",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "For fat-fingered listeners, ThinkGeek now sells a stylus that works on the iPod Touch and iPhone."
+        },
+        {
+          "s": "leo",
+          "t": "Those screens are capacitive, so normally you need a live human finger."
+        },
+        {
+          "s": "steve",
+          "t": "Palms use a resistive film, so a fingernail or stylus works. The pencil eraser won't work on an iPod. This stylus does, which helps with typing, my main gripe. Elegant as it is, I want my little two-thumb keyboard, like the Treo and BlackBerry."
+        },
+        {
+          "s": "leo",
+          "t": "That's why I use a BlackBerry, not an iPhone."
+        }
+      ]
+    },
+    {
+      "title": "Why Floppies Never Got Faster",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Philip Le Riche's subject: \"SpinRite Fails Again.\" He says SpinRite failure stories and floppy tales seem to be the flavor of the month, so here's both. He's one of those people Leo can't understand who still uses floppies, to move data between two systems where USB sticks are prohibited by policy."
+        },
+        {
+          "s": "leo",
+          "t": "What a silly policy if they allow floppies."
+        },
+        {
+          "s": "steve",
+          "t": "He anticipates that. His USB floppy drive said two floppies needed formatting. He'd finally bought SpinRite after some 60 episodes, hibernated his PC and ran it, and SpinRite immediately reported the floppy was not just dead but as good as fossilized."
+        },
+        {
+          "s": "steve",
+          "t": "Rarely missing a chance to take something apart, he opened the drive. One head had fallen off its carrier and was dangling by its leads. Expecting SpinRite to cope with that, he says, would be a bit much."
+        },
+        {
+          "s": "steve",
+          "t": "He superglued it back, but with no detent to align it, SpinRite still said fossilized. He bought a new drive. His question: with CD drives at around 52x, why did it take 20 years to find even a double-speed floppy drive?"
+        },
+        {
+          "s": "steve",
+          "t": "His P.S.: he can hear Leo asking about the policy. You can open a floppy and drop the disk in a shredder, and USB sticks rarely have a read-only switch to keep sensitive data from leaking when importing from a less trusted system."
+        },
+        {
+          "s": "leo",
+          "t": "A CD is 20 times faster than a floppy, and there are shredders for CDs."
+        },
+        {
+          "s": "steve",
+          "t": "So why don't floppies go faster? IBM's original eight-inch floppies..."
+        },
+        {
+          "s": "leo",
+          "t": "Those were truly floppy. That's where the name came from."
+        },
+        {
+          "s": "steve",
+          "t": "A soft outer jacket around the Mylar disk. IBM ran them at the maximum speed at which the head could stay in contact with the medium. Any faster and aerodynamic effects begin. Bernoulli Boxes spun soft media fast enough for the head to fly over it, and all hard drives fly their heads. But floppies have always been head-in-contact-with-Mylar. Spin them faster and the heads take off, and even SpinRite can't save you."
+        }
+      ]
+    },
+    {
+      "title": "A Router That Renumbered Itself",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Aaron in Union, New Jersey is taking a summer course in computer security. He has Verizon DSL with two routers: a Linksys Gizmo from the now-defunct VoIP provider SunRocket, which dials the DSL with PPPoE, and a Netgear Pre-N router. Logging into the Netgear at 192.168.1.1, he was told that due to a conflict, it's now 10.0.0.1, and its DHCP now hands out 10-dot addresses. He thought 192.168.1.1 couldn't conflict with an ISP. Any security implications?"
+        },
+        {
+          "s": "steve",
+          "t": "I'm impressed the Netgear noticed. The Gizmo faces the Internet and NATs into the common 192.168.1.x network. The Netgear, downstream, saw its WAN side was 192.168.1.1, a private address, and recognized it couldn't use the same subnet on its LAN side. Routing needs non-overlapping networks to know whether a packet stays local or crosses outside. So it chose 10.0.0.1."
+        },
+        {
+          "s": "leo",
+          "t": "I think all routers do that. Whenever I have both routers doing DHCP, the second one switches to the 10-dot pool."
+        },
+        {
+          "s": "steve",
+          "t": "I guess I'm older than I thought. The routers I've known had to be manually set to non-overlapping ranges, say one using 192.168.0.x and another 192.168.1.x."
+        },
+        {
+          "s": "leo",
+          "t": "Usually I put the second router in bridge mode and let the first do DHCP. Then there are never conflicts."
+        },
+        {
+          "s": "steve",
+          "t": "Or make it an access point, doing no NAT at all."
+        },
+        {
+          "s": "leo",
+          "t": "Is double DHCP bad? Does it slow things down?"
+        },
+        {
+          "s": "steve",
+          "t": "No. The inner router gets an address from the outer one on its WAN side, then hands out its own range to the LAN. Automatic switching makes sense, since people stack routers and set and forget them. And some ISPs NAT their own customers onto private addresses because they lack public ones, so a router might receive a conflicting private address from the ISP itself."
+        },
+        {
+          "s": "leo",
+          "t": "What about a third router?"
+        },
+        {
+          "s": "steve",
+          "t": "You can ping-pong. A third router could go back to 192, translating through 10 and back. Confusing, but it works, and these are all very fast."
+        },
+        {
+          "s": "steve",
+          "t": "I'd get rid of the Gizmo and let the Netgear dial PPPoE, if it can. It's apparently the nicer router."
+        },
+        {
+          "s": "leo",
+          "t": "Many ISP modems have built-in routers. Ours here has an 802.11n router behind Comcast's modem-router. Then just choose a non-overlapping range, like starting at 192.168.1.200."
+        },
+        {
+          "s": "steve",
+          "t": "Or 192.168.2.1. Routers normally NAT within the last byte, so changing the third number keeps it clearly private."
+        },
+        {
+          "s": "leo",
+          "t": "And yes, 192.168 and 10 are both private and can't conflict with anything outside your LAN. No security implication. It's a good thing."
+        }
+      ]
+    },
+    {
+      "title": "How Can a Tiny Hash Vouch for a Whole CD?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Brian in Raleigh asks: a 32-hex-digit MD5 hash has 16^32, about 10^38, possible values. A 700MB CD image has vastly more possible combinations. How are collisions avoided?"
+        },
+        {
+          "s": "steve",
+          "t": "Linux distribution sites post ISO images with their MD5 hashes. You download, compute your own MD5, and should get the same result, proving nothing changed."
+        },
+        {
+          "s": "steve",
+          "t": "Brian said \"avoided,\" not \"prevented,\" so let's be careful. He's absolutely right that collisions can't be prevented. Many, many different 700MB files hash to exactly the same value. It's not a perfect fingerprint. Only a byte-for-byte comparison is."
+        },
+        {
+          "s": "steve",
+          "t": "What makes it cryptographically secure is that it's computationally infeasible, as the crypto guys say, to deliberately create a fraudulent file that hashes to a given value. A hacker couldn't post a malicious ISO, or hand you one, that matches the published hash."
+        },
+        {
+          "s": "steve",
+          "t": "And with 10^38 possible hashes, a random download error has only about one chance in 10^38 of going unnoticed. So it reliably catches accidental changes and prevents deliberate forgeries."
+        },
+        {
+          "type": "fact",
+          "title": "An update",
+          "t": "Since 2004, researchers can easily create two different files with the same MD5 hash, so MD5 is no longer trusted against deliberate tampering. Matching an existing file's hash is still impractical, but distributions now publish SHA-256 hashes."
+        },
+        {
+          "s": "leo",
+          "t": "\"Computationally infeasible.\" I'm going to work that into conversation."
+        }
+      ]
+    },
+    {
+      "title": "PayPal's Pushy Plug-in",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sande Nissen in Northfield, Minnesota trusts PayPal's privacy and dispute resolution, but a browser plug-in? Given how buggy browsers are, can it be secure?"
+        },
+        {
+          "s": "steve",
+          "t": "I removed it, not for security reasons. It was dunning me constantly. It's a little \"P\" icon, but any time a page has a form with, say, a Name field, even when I'm not buying, it descends from above asking to fill it in. Go away. It didn't seem to obey its settings, and you have to go to PayPal's site to configure it."
+        },
+        {
+          "s": "leo",
+          "t": "I never install toolbar add-ons."
+        },
+        {
+          "s": "steve",
+          "t": "So I'll just log into PayPal when I need a one-time card. Password plug-ins carry risks too. But you authenticate every time, and with the $5 football, which I don't know why anyone wouldn't have, you can require it every time."
+        },
+        {
+          "s": "leo",
+          "t": "Amazon keeps rejecting my multi-use card, which should keep working at one site."
+        },
+        {
+          "s": "steve",
+          "t": "My one-time card worked nicely on that pushy subscription site. A week later they emailed: so you don't miss our valuable services, the card on file is about to expire. Please update it. I don't think so."
+        },
+        {
+          "s": "leo",
+          "t": "The one-time card is the more secure choice anyway."
+        }
+      ]
+    },
+    {
+      "title": "He Got the Job",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Curtis Wyatt in Phoenix just graduated from NMSU with a computer science degree. Interviewing with a government contractor for a security and encryption job, he could explain asymmetric versus symmetric encryption, thanks to our show. They hired him. On his first day, he impressed his supervisor by recognizing the TPM in laptops."
+        },
+        {
+          "s": "steve",
+          "t": "A neat little note."
+        },
+        {
+          "s": "leo",
+          "t": "I'm sure they covered it in school. But focusing on one topic at a time lets you explain it thoroughly, and it sticks."
+        }
+      ]
+    },
+    {
+      "title": "Will the Internet's Protocols Be Replaced?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Al in Lowell, Massachusetts was asked by a friend: will the Internet's protocols, like IP and TCP, be phased out for more secure ones? Will the bad guys always have the same encryption as the good guys? Can digital rights be protected without infringing privacy? As long as the government doesn't seize all PCs, the current model persists, so a new one would have a hard time."
+        },
+        {
+          "s": "steve",
+          "t": "We're seeing evolution. IPv6, which exists and is trying to come forward, though not quickly, incorporates encrypted security in the base protocol, which the original TCP/IP didn't. IPSec, L2TP and SSL over TCP were afterthoughts, grafted on."
+        },
+        {
+          "s": "steve",
+          "t": "The main protocols, like HTTP, POP, SMTP and IMAP, aren't encrypted by default. People are pushing for encrypted versions. And supporting IPv6 means good strong encryption is available. So we're moving that way."
+        },
+        {
+          "type": "fact",
+          "title": "An update",
+          "t": "IPv6's built-in IPsec support was later made optional rather than required. Encryption instead spread through TLS for the web and email."
+        },
+        {
+          "s": "leo",
+          "t": "The current protocols work remarkably well. Stanford has a \"Clean Slate\" initiative, at cleanslate.stanford.edu, asking how you'd redesign the Internet knowing what we know now, with papers like \"The Future of TCP: Train Wreck or Evolution?\" But how do you implement it?"
+        },
+        {
+          "s": "steve",
+          "t": "The original protocols have turned out surprisingly robust, accepting forward-looking, backward-compatible extensions as the world changed. I'm impressed it runs as well as it does."
+        },
+        {
+          "s": "leo",
+          "t": "Like building a new bridge beside the old one, then decommissioning the old. It would take decades. Look how hard IPv6 has been. Who flips the switch?"
+        },
+        {
+          "s": "steve",
+          "t": "It'll happen incrementally. Many people now use secure POP, SMTP and IMAP for end-to-end email security. Email could easily be encrypted by default. It's just inertia."
+        },
+        {
+          "s": "leo",
+          "t": "It's Microsoft's dilemma: start from scratch, or keep layering security on top until it's a bag hung on a bag on a wire. Do you ever start SpinRite over?"
+        },
+        {
+          "s": "steve",
+          "t": "Going from version 2 to 3, I completely rebuilt it. What I wanted wouldn't fit the old structure, so I built a new UI engine and rewrote it from scratch. Perfect Paper Passwords is on version 3, and I scrapped and restarted it each time."
+        },
+        {
+          "s": "leo",
+          "t": "We've lost a show and redone it, and it was better the second time."
+        }
+      ]
+    },
+    {
+      "title": "Banks With Insecure Login Pages",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Udo Penther in St. Thomas, U.S. Virgin Islands, says two local banks put the login on a plain HTTP page, then switch to HTTPS after you submit. Requesting the login page with HTTPS doesn't work. Is that sufficient? He'd hate to join the local power and phone companies in bankruptcy. Is there a professional reference he can put on the banks' managers' desks?"
+        },
+        {
+          "s": "steve",
+          "t": "It comes up a lot, so it's worth revisiting. The web was a read-only medium. Sending data back was grafted on. A form submission is actually a query that includes your data."
+        },
+        {
+          "s": "steve",
+          "t": "These sites weren't well designed, since the form isn't on a secure page. But since the next page is HTTPS, the query itself, carrying your data, is going over a secure connection. When you click, the browser establishes the secure connection, sends your information through it, and the server responds with the welcome page."
+        },
+        {
+          "s": "leo",
+          "t": "So it's very unlikely the bank isn't securing your login."
+        },
+        {
+          "s": "steve",
+          "t": "Right, but it's possible. In IE7, hovering over the button shows its destination URL at the bottom, and Firefox 2 and 3 do the same. IE can also warn you when form data goes over a non-secure connection."
+        },
+        {
+          "s": "steve",
+          "t": "Even a form on a secure page could have an insecure submit button. What matters is the URL the query is sent to. It's very confusing. It's a kludge."
+        },
+        {
+          "s": "leo",
+          "t": "Bank of America changed. Amazon puts you on an HTTPS page from the start."
+        },
+        {
+          "s": "steve",
+          "t": "It gives you a warm, fuzzy feeling. That's how I designed SpinRite's eCommerce system: you're on a secure page, you can check our certificate, then you fill in the form."
+        },
+        {
+          "s": "leo",
+          "t": "But the page being secure doesn't guarantee the button is."
+        },
+        {
+          "s": "steve",
+          "t": "That would be nutso, but it could happen by accident. So hover and see where it's going. God help you if it bounces through DoubleClick on the way to PayPal."
+        },
+        {
+          "s": "leo",
+          "t": "Amazon's button says \"Sign in using our secure server.\" Unless you hover and see HTTPS, you don't know."
+        },
+        {
+          "s": "steve",
+          "t": "And it's uninformed users, who aren't listening to this podcast, who fall into these traps."
+        },
+        {
+          "s": "leo",
+          "t": "That's nearly everyone."
+        }
+      ]
+    },
+    {
+      "title": "Why Do Sites Limit Password Length?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Aaron Feickert in Fargo, North Dakota has a pet peeve. He prefers 25-character passwords with spaces, and sites reject them. Even his bank limits him to 16 characters, no spaces. Mine too. With modern one-way hashing, is there any reason for such limits? With spaces, he could use a multiword passphrase that's easy to remember but nearly impossible to break."
+        },
+        {
+          "s": "steve",
+          "t": "A great point. A hash takes input of any length and always returns a fixed-size result, like MD5's 32 hex characters. Every character changes the output."
+        },
+        {
+          "s": "steve",
+          "t": "MD5 is fine for this, though longer hashes are better for the future, and some problems have been found in it."
+        },
+        {
+          "s": "steve",
+          "t": "The only reason I can imagine for a length limit is that the site set aside a fixed number of bytes in your record. That suggests they're storing your password, not a hash. Then anyone who gets their database gets every customer's name and password."
+        },
+        {
+          "s": "steve",
+          "t": "A stored hash is also fixed length, so it fits the same way. But it isn't reversible. If someone got the login database, which you never want, they still couldn't figure out the passwords. So Aaron is absolutely right. There's no good reason to limit length."
+        },
+        {
+          "s": "leo",
+          "t": "Does anything in Windows Server make spaces problematic?"
+        },
+        {
+          "s": "steve",
+          "t": "No. Someone just decided to disallow certain characters. WPA is a perfect modern example: the key can be pretty much anything, the longer the better, and it's hashed to a fixed size."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Sites shouldn't use fast hashes like MD5 for passwords at all, since attackers can try billions of guesses a second. Slow, salted algorithms like bcrypt, scrypt or Argon2 are the standard, and NIST says sites should accept passphrases of at least 64 characters, spaces included."
+        },
+        {
+          "s": "leo",
+          "t": "Secure UNIX versions store MD5 hashes in their password tables for exactly that reason. And banks push four-digit ATM PINs, which is really bad."
+        },
+        {
+          "s": "steve",
+          "t": "They want you to memorize it, not write it down. It's the classic security-versus-convenience tradeoff."
+        }
+      ]
+    },
+    {
+      "title": "ISP Traffic Shaping",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Paul Thomas in York, England says his son Gareth thinks he's a geek, since our podcast plays when he picks him up from school. Do you understand what they're talking about? No, but they do, and I will shortly. His new ISP does traffic shaping. How does it work, and are there security issues? He read that Comcast faces three new class-action lawsuits over its practices."
+        },
+        {
+          "s": "steve",
+          "t": "Traditionally, an ISP rented you an IP with full access: so much bandwidth, use it however you want."
+        },
+        {
+          "s": "steve",
+          "t": "That began changing a few years ago, and unfortunately Microsoft was the original driving force. Windows had so many security problems that ISPs began protecting us by blocking specific ports. On my Cablevision connection, an unfirewalled machine shows ports 135 through 139 stealthed in ShieldsUP!. That's not me. That's my cable provider blocking the old Windows filesharing range."
+        },
+        {
+          "s": "leo",
+          "t": "That's appropriate."
+        },
+        {
+          "s": "steve",
+          "t": "You might say yes or no. It means I couldn't deliberately expose Windows filesharing, even with a secure username and password, if I trusted Microsoft. The ISP decided unilaterally what's good for me. It began there and escalated."
+        },
+        {
+          "s": "steve",
+          "t": "Traffic shaping means the ISP inspects your traffic and applies a policy, hopefully public. The problem is it started in secret. And it's not the only thing happening in secret. Next week we'll cover Phorm's Webwise technology, which has people upset because ISPs that adopt it alter pages people download."
+        },
+        {
+          "s": "steve",
+          "t": "With BitTorrent and peer-to-peer, the ISP decides your behavior is outside its policy and injects its own packets into your connection to change what your computer and remote computers do."
+        },
+        {
+          "s": "leo",
+          "t": "That's what Comcast is in trouble for, using Sandvine to disconnect BitTorrent peers on your behalf, whether the download is legitimate or not."
+        },
+        {
+          "s": "steve",
+          "t": "People felt they were buying an unfiltered, unshaped connection. ISPs will have to state clearly that they reserve the right to play cop, or maybe offer a premium unshaped connection and a cheaper shaped one. It's very controversial."
+        },
+        {
+          "s": "leo",
+          "t": "I'm of mixed mind. ISPs say without shaping, bandwidth hogs would use it all. But they need to be clear. And a premium tier would just attract the hogs."
+        },
+        {
+          "s": "steve",
+          "t": "Remember our congestion episode. What we need is a more mature implementation, where email and web browsing get priority and big BitTorrent downloads use available bandwidth at a lower class of service. Web surfing stays snappy, customers are happy, and the ISP does traffic prioritizing instead of shaping."
+        },
+        {
+          "s": "leo",
+          "t": "Doesn't that need the Internet's infrastructure rewritten?"
+        },
+        {
+          "s": "steve",
+          "t": "These problems didn't have good answers originally, and nobody saw them coming."
+        }
+      ]
+    },
+    {
+      "title": "Tracking a Stolen iPod Touch",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Travis in Indianapolis had his car broken into in his driveway, along with others. They took his GPS, candy to car thieves, and his iPod Touch. He was devastated about the Touch, since that's how he listens to podcasts on his two hours of daily commuting."
+        },
+        {
+          "s": "leo",
+          "t": "He told the officer he'd hacked his iPod Touch, and if the thief checked his email, it would show in the logs of the mail server he runs himself. At work he found the thieves accessing his email that morning. Bingo, an IP address. He changed his passwords, and for about an hour they kept trying and failing."
+        },
+        {
+          "s": "leo",
+          "t": "His hacker instinct was in full force, but they had no open ports or remote administration."
+        },
+        {
+          "s": "steve",
+          "t": "This is why I removed his last name. Sad to say, it's illegal for him to try to penetrate their system, even though they're creepy thieves."
+        },
+        {
+          "s": "leo",
+          "t": "Vigilante justice. He confirmed through ARIN, the American Registry for Internet Numbers, that it was a local Comcast address, and the officer submitted it for a subpoena. He's also war driving, looking for his iPod's MAC address."
+        },
+        {
+          "s": "steve",
+          "t": "Can you see this poor guy checking every MAC address he picks up? Oh my god, there's my MAC address. Even then, it doesn't tell him exactly where."
+        },
+        {
+          "s": "leo",
+          "t": "It narrows it to a couple hundred feet. His point: if he'd locked the device down so the thief couldn't communicate, he'd have no IP address to go on. With whole-drive encryption and BIOS passwords on a laptop, he'd have nothing. So sometimes letting thieves use your device helps you get it back."
+        },
+        {
+          "s": "steve",
+          "t": "Companies sell tracking technology that installs essentially at a pre-boot level. It used to dial out through the modem, and now uses the Internet. I loved his story, and it'll probably work. From my experience, when police subpoena an ISP for who had an IP address, the ISP is absolutely happy to comply. They just want the protection of being compelled by a court."
+        },
+        {
+          "s": "leo",
+          "t": "One Mac product knows Apple Store IP addresses, so when the thief goes into an Apple Store, it takes a picture with the laptop's built-in camera and sends it to you. Laptops have been recovered that way. There's even a LoJack for laptops. But it doesn't enhance your security, only your chances of getting it back."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Apple's Find My, Google's Find My Device and Microsoft's Find My Device now build this in, locating lost devices while still letting you lock or erase them remotely."
+        }
+      ]
+    },
+    {
+      "title": "\"The Code Book\"",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Don in Burbank just finished Simon Singh's \"The Code Book,\" a must-read for listeners. It starts slow but builds carefully, and he came away thinking, oh, so that's what Steve's talking about."
+        },
+        {
+          "s": "leo",
+          "t": "There's also David Kahn's thick \"The Codebreakers,\" which ended in the '60s but was updated later and covers Enigma. I found both in the bibliography of Neal Stephenson's \"Cryptonomicon,\" my favorite of his books. He even includes a crypto scheme using a deck of cards, which I think Bruce Schneier helped with."
+        },
+        {
+          "type": "fact",
+          "title": "The card cipher",
+          "t": "Bruce Schneier designed the \"Solitaire\" cipher, which uses a deck of cards, for \"Cryptonomicon.\""
+        }
+      ]
+    },
+    {
+      "title": "Passing a USB Drive Around Class",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Dustin in Raleigh had a Security Now! moment. His work-provided course instructor passed around a USB key with the slides. Knowing better, he held Shift while plugging it in to block autorun. Good thing, since it was a U3 device, which he can't stand. The instructor wouldn't be malicious, but could infect every work laptop in the room."
+        },
+        {
+          "s": "steve",
+          "t": "If you're passing it around, baby, who knows about the machine it was in before yours."
+        },
+        {
+          "s": "leo",
+          "t": "Is holding Shift enough?"
+        },
+        {
+          "s": "steve",
+          "t": "It's better to disable the feature entirely. Windows allows it, but Microsoft's bias is to make everything work by default, so users must turn off USB autorun manually. And some USB devices pose as a CD-ROM, which is trickier."
+        },
+        {
+          "s": "leo",
+          "t": "That's what U3 does. And the next person could drag something onto the key while copying the slides."
+        },
+        {
+          "s": "steve",
+          "t": "Remember, floppies were the viral medium of choice in the sneakernet days. Viruses predated the Internet and needed a way to move between machines. A thumb drive looks to a virus like a way to escape. Viruses sit waiting for a USB drive to appear and jump onto it. So no one in the class need be malicious. Their machine could just be infected."
+        },
+        {
+          "s": "leo",
+          "t": "Not maliciousness, just incompetence."
+        },
+        {
+          "type": "fact",
+          "title": "Today",
+          "t": "Windows 7 and later no longer autorun programs from USB drives, after worms like Conficker spread that way."
+        }
+      ]
+    },
+    {
+      "title": "Looming Threat: NAS Boxes as Web Servers",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "The Looming Threat Observation of the Week, from John in Ottawa. He sees a proliferation of home servers coming, with NAS storage boxes moving into server territory and marketed to consumers. Are consumers ready?"
+        },
+        {
+          "s": "leo",
+          "t": "He quotes a manufacturer: \"Build up your dynamic website. Web Station runs Apache web server that allows you to publish websites with only a few steps. With preinstalled PHP and MySQL, you are free to install popular blog or bulletin board programs on your DS107. No advanced IT knowledge is required.\" $260 with a hard drive."
+        },
+        {
+          "s": "leo",
+          "t": "And since these feel like external drives, people won't take them seriously. They'll put them at the center of their LAN as their critical backup, and also expose them to the Internet. He hopes makers will warn customers, maybe link to a well-known security researcher."
+        },
+        {
+          "s": "steve",
+          "t": "Doesn't that sound like a bad idea? We've talked about how commercial websites constantly suffer vulnerabilities. Here's PHP and MySQL, with blog and bulletin board software, so many of which are exploitable with cross-site scripting, set up by people who have no appreciation of the security implications."
+        },
+        {
+          "s": "leo",
+          "t": "And it's your backup, with valuable data, and a portal into your LAN."
+        },
+        {
+          "s": "steve",
+          "t": "It's exactly what happened when Windows was first put on the Internet. People had C, D and E drives shared without passwords, because they'd never been on the Internet before. That's where all this began and why I created ShieldsUP!. Now we're in the same situation with a new generation of naïve users exposing insecure server-side applications."
+        },
+        {
+          "s": "leo",
+          "t": "It's tempting. People say, I have enough bandwidth, I'll just run my website from my office."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "John was right. Internet-exposed NAS boxes became a major ransomware target, with campaigns like SynoLocker, Qlocker and DeadBolt encrypting tens of thousands of devices."
+        },
+        {
+          "s": "steve",
+          "t": "Next week: Phorm's Webwise. ISPs are actually modifying the pages their customers download, adding their own JavaScript to monitor, track and profile them. Not a good idea."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How could Safari for Windows and Internet Explorer combine into a \"blended threat\"?",
+      "options": [
+        "Safari silently saved DLLs to the desktop, and IE loaded them from there because of Windows' DLL search order",
+        "Safari ran malware directly",
+        "IE downloaded files silently",
+        "Both shared a cookie store"
+      ],
+      "answer": 0,
+      "explain": "Changing Safari's download folder blocked it."
+    },
+    {
+      "q": "Why couldn't floppy drives spin much faster?",
+      "options": [
+        "The heads touch the disk, and at higher speeds they'd lift off and fly",
+        "The motors were too weak",
+        "The disks would melt",
+        "IBM patented the speed"
+      ],
+      "answer": 0,
+      "explain": "Hard drives deliberately fly their heads over the platters."
+    },
+    {
+      "q": "What does a matching MD5 hash prove about a downloaded file, according to Steve?",
+      "options": [
+        "It almost certainly wasn't changed by accident, and a forger couldn't easily make a file to match",
+        "The file is virus-free",
+        "It's the only file with that hash",
+        "It came from the right website"
+      ],
+      "answer": 0,
+      "explain": "Many files share each hash, so it's not a perfect fingerprint."
+    },
+    {
+      "q": "Why does a site's short password limit worry Steve?",
+      "options": [
+        "It suggests the site stores your actual password rather than a fixed-length hash",
+        "Short passwords are faster",
+        "It means no encryption",
+        "It breaks WPA"
+      ],
+      "answer": 0,
+      "explain": "A hash is the same length whatever the password."
+    },
+    {
+      "q": "How did Travis find where his stolen iPod Touch was being used?",
+      "options": [
+        "The thieves checked his email, and his own mail server logged their IP address",
+        "GPS tracking",
+        "Apple located it",
+        "A camera photo"
+      ],
+      "answer": 0,
+      "explain": "He passed the IP to police for a subpoena."
+    },
+    {
+      "q": "Why did John call home NAS web servers a looming threat?",
+      "options": [
+        "Naïve users will expose insecure web software on the same box that holds their backups and sits on their LAN",
+        "They're too slow",
+        "They use too much power",
+        "They can't run PHP"
+      ],
+      "answer": 0,
+      "explain": "It echoes early Windows file sharing on the Internet."
+    }
+  ]
+}
