@@ -430,6 +430,11 @@
           "t": "It looks to me like TrueCrypt can encrypt one partition, while FREE CompuSec always encrypts the entire physical drive. That may or may not be a problem. We'll cover TrueCrypt 5 in the next few weeks."
         },
         {
+          "type": "fact",
+          "title": "TrueCrypt 5",
+          "t": "TrueCrypt 5.0 could encrypt either the system partition or the entire system drive, with pre-boot authentication."
+        },
+        {
           "s": "steve",
           "t": "FREE CompuSec also encrypts the hibernation file, which they emphasize, so it must be hard. TrueCrypt can't, so it disables hibernation completely."
         },
@@ -444,11 +449,6 @@
         {
           "s": "steve",
           "t": "So despite its closed source, after a lot of time with it, I'm very impressed and wouldn't hesitate to use it."
-        },
-        {
-          "type": "fact",
-          "title": "TrueCrypt 5",
-          "t": "TrueCrypt 5.0 could encrypt either the system partition or the entire system drive, with pre-boot authentication."
         },
         {
           "s": "leo",
