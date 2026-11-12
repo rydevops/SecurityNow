@@ -1,0 +1,642 @@
+{
+  "number": 139,
+  "title": "Net Congestion",
+  "subtitle": "What happens when too much data meets too little pipe",
+  "date": "2008-04-10",
+  "description": "Setting the politics of net neutrality aside, Steve explains the engineering beneath it. A network costs the same whether it's idle or full, until it congests. Routers then simply drop packets, and TCP halves its speed and slowly ramps back up, which shares bandwidth per connection rather than per user, so multiple connections and peer-to-peer programs get more. He describes the research into holding heavy users accountable over time, why ISPs resort to forged resets, and why faster last-mile connections change behavior. A college SpinRite rescue and advice for new programmers come first.",
+  "transcript": "https://www.grc.com/sn/sn-139.txt",
+  "audio": "http://media.GRC.com/sn/SN-139.mp3",
+  "chapters": [
+    {
+      "title": "Engineering, Not Politics",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're approaching Episode 140, while TWiT is stalled in the water with Leo in Australia."
+        },
+        {
+          "s": "steve",
+          "t": "\"Net neutrality\" is the only common jargon for this, but it's not really that. I have no real interest in the politics. We've talked about ISPs disrupting connections, at first without admitting it, by sending spoofed packets to people using BitTorrent or downloading huge files."
+        },
+        {
+          "s": "steve",
+          "t": "Researching it, I found much more going on, including in the IETF, the Internet Engineering Task Force. They're dealing with a huge transformation of the last few years, from using the Internet mainly for email and browsing to massive content delivery."
+        },
+        {
+          "s": "leo",
+          "t": "The biggest net neutrality issues are political, like an ISP such as Comcast blocking Skype to protect its own VoIP product, not its network. We won't cover that today."
+        },
+        {
+          "s": "steve",
+          "t": "Or an ISP giving preferential treatment to YouTube over a content supplier that isn't paying a premium. That's what really upsets people, since content is no longer treated equally. Today I want to discuss something we've never covered: what happens when you push too much data through a narrow pipe, and how routers and protocols deal with it. Ultimately, the problem is there isn't enough bandwidth."
+        }
+      ]
+    },
+    {
+      "title": "A Public Key and a Private Key",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We've been prerecording, so no security news. We'll catch up next week."
+        },
+        {
+          "s": "steve",
+          "t": "Dan Linder wrote about the listener who suggested a detachable key ring for my thumb drive. If you split your keys like that, doesn't it become a physical implementation of a public key and a private key?"
+        },
+        {
+          "s": "leo",
+          "t": "There you go. It's true."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite Rescue in the Dorm",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "David Crisman has listened from the start. He says our early series on network basics and our encryption discussions greatly helped his computer science classes."
+        },
+        {
+          "s": "steve",
+          "t": "Working part time for campus IT, he became the go-to guy in his building. One evening someone asked for help with his girlfriend's computer. Friends were gathered around. It blue-screened on boot, and she was in tears, afraid she'd lost all her class work."
+        },
+        {
+          "s": "steve",
+          "t": "He realized SpinRite could almost certainly do it. On a student's budget, he didn't own it yet. He checked that he could afford it, and in less than 15 minutes he'd bought it, burned it to CD and put it in her machine."
+        },
+        {
+          "s": "leo",
+          "t": "It's a tiny download, what, 70K?"
+        },
+        {
+          "s": "steve",
+          "t": "It annoyed me when it went over 64K. It used to be a DOS COM file, which had to fit in a single 64K segment addressable with 16 bits. Switching to an EXE with multiple segments was a major revamp."
+        },
+        {
+          "s": "steve",
+          "t": "It ran about two hours. Everyone gathered around, it booted good as new, and all the files were recovered."
+        },
+        {
+          "s": "leo",
+          "t": "I bet he got a kiss for that."
+        },
+        {
+          "s": "steve",
+          "t": "Many there asked about the program, and he pointed them to us. He says his story isn't as impressive as others, with no million-dollar files or months of running. It's as great as any we've received."
+        }
+      ]
+    },
+    {
+      "title": "Advice for New Programmers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "David's question: any advice, books or articles for a newly graduated programmer, so his code doesn't cause the next security PR nightmare? He may just be a small part of a team."
+        },
+        {
+          "s": "leo",
+          "t": "Well, don't use strcpy. That's number one."
+        },
+        {
+          "s": "steve",
+          "t": "Many people at his stage have asked. Almost any code you write today has some Internet-facing surface. I don't have specific books, but the topic has had enough attention that there are a bunch on writing secure software. Search Amazon for \"secure programming techniques.\""
+        },
+        {
+          "s": "leo",
+          "t": "I saw a good one recently and can't remember its name. There's much more thinking about this now than \"use strncpy instead of strcpy.\""
+        },
+        {
+          "s": "steve",
+          "t": "I program in assembly with no higher-level libraries, and I'm extremely careful. That's the number one thing: think about it."
+        },
+        {
+          "s": "steve",
+          "t": "In corporate and team environments, there's deadline pressure. Software always takes longer than expected. Is it done yet? Check it in so we can build and test. All of that works against caution. The focus is making it work, not asking, what if someone wants it not to?"
+        },
+        {
+          "s": "steve",
+          "t": "Programmers develop a belief that their code is correct. It takes a debugger to rub your face in being wrong. You can stare at your code and it looks perfect until the debugger says, look, dummy, this is a zero. Security bugs are even more subtle, because you're not used to seeing them. Look at your own code skeptically."
+        },
+        {
+          "s": "leo",
+          "t": "Modern languages build in testing, so you test each module as you write it. If I were in college, I'd make this job one. You don't want to be in the headlines."
+        }
+      ]
+    },
+    {
+      "title": "How the Internet Is Built",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the issue. There's the last mile, by cable modem or DSL. At some level that's combined in an ISP's \"aggregation router,\" which feeds many customers' traffic into one larger connection. Those go to bigger routers aggregating many aggregation routers. It's a tree, ultimately routed to the ISP's peering partners."
+        },
+        {
+          "s": "steve",
+          "t": "Longtime listeners will remember when Cogent, my T1 provider, got into a dispute with Level 3, which hosts GRC's servers in its datacenter. One morning I couldn't reach my own servers. Level 3 stopped peering with Cogent, so chunks of the Internet were unreachable from Cogent. It lasted a few days, until they settled. It was a wakeup call about infrastructure we take for granted."
+        }
+      ]
+    },
+    {
+      "title": "Idle or Full, It Costs the Same",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Once all that equipment is in place, it costs the same whether it's used or not. The bandwidth and hardware have to be there to carry the maximum traffic. Running at less than 100 percent doesn't cost less. So there's a fixed cost, and no increased cost as you approach saturation."
+        },
+        {
+          "s": "steve",
+          "t": "Even at the top, peering agreements between Tier 1 providers like Level 3 and Cogent don't charge for transit. Each gets a balanced benefit. Only at the retail level do you negotiate what bandwidth you get and what you pay."
+        },
+        {
+          "s": "steve",
+          "t": "I found a huge amount of work in academia and among protocol designers that eventually becomes new support in routers and in our PCs. Very little surfaces. It's driven by recognizing a dramatic transformation in how the Internet is used. It's pretty clear now that the Internet isn't a fad."
+        },
+        {
+          "s": "leo",
+          "t": "Bill Gates thought so for a while."
+        },
+        {
+          "s": "steve",
+          "t": "He planned MSN to compete with CompuServe over dial-up modem pools. Then Netscape happened and caught Microsoft off guard."
+        }
+      ]
+    },
+    {
+      "title": "From Bursts to Streams",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Internet went from a messaging and bursting medium to something else. Load a web page, the browser fetches its images and assets, and then we stare at it a while."
+        },
+        {
+          "s": "steve",
+          "t": "Now you and I talk over Skype. That's a persistent connection, very sensitive to bandwidth, dropped packets and variation in packet arrival time, called \"jitter.\" Too much of any of them, and my voice wouldn't sound as good."
+        },
+        {
+          "s": "leo",
+          "t": "You hear that on the shows from time to time."
+        },
+        {
+          "s": "steve",
+          "t": "At Christmas I asked my sister what TV my niece and nephew in high school and college watch. TV? They don't watch TV. They watch everything on their laptops."
+        },
+        {
+          "s": "leo",
+          "t": "Same with my kids."
+        },
+        {
+          "s": "steve",
+          "t": "BitTorrent for shows, or hanging out on YouTube. Some companies block YouTube during the day after studies showed it was a big productivity drain. These new content applications put a huge load on the infrastructure."
+        },
+        {
+          "s": "steve",
+          "t": "You could actually use the original Internet over a modem. Pages were smaller, without Flash and animation burning bandwidth, and email was entirely practical. Now you can't use next-generation content without much more bandwidth, and people notice they pay for it."
+        }
+      ]
+    },
+    {
+      "title": "Best-Effort Delivery",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So as long as the network doesn't congest, using it up to its limit costs nothing extra. What happens beyond that?"
+        },
+        {
+          "s": "steve",
+          "t": "The genius of the Internet's design was realizing you could build a workable system on best-effort delivery. Everything is packetized. My computer puts a packet with a destination IP on the 'Net. My router translates my private IP to my public one and sends it to my ISP's nearest router, which sends it on."
+        },
+        {
+          "s": "steve",
+          "t": "Every router has routing tables and multiple interfaces, and routers are richly interconnected, so there's an optimal route plus alternatives. That gives the network great resilience."
+        },
+        {
+          "s": "steve",
+          "t": "Routers aggregate inherently. Packets arrive on any interface and leave on any other. At a busy time, packets arriving on several interfaces may all need the same outgoing interface, and their total bandwidth won't fit."
+        },
+        {
+          "s": "steve",
+          "t": "The first solution is buffers. Each interface has a queue, so a little burstiness, like three packets arriving at once for a fourth interface, just lines up. But if demand persists, the outgoing link simply can't carry it all."
+        }
+      ]
+    },
+    {
+      "title": "Routers Drop, TCP Backs Off",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So all Internet routers have the right to simply discard packets. They use various strategies, like choosing among packets in recognized \"flows,\" a flow being traffic between one source and one destination IP. But ultimately a full buffer means a packet gets dropped. That's why it's \"best effort.\""
+        },
+        {
+          "s": "steve",
+          "t": "TCP is a reliable delivery protocol. One way or another, it takes responsibility for getting every packet through, though maybe delayed or slowed."
+        },
+        {
+          "s": "steve",
+          "t": "The bytes in TCP packets are numbered sequentially. That handles packets arriving out of order, which happens when a router sends some around a congested link by an alternative, faster route. The receiver reorders them, then periodically acknowledges: I've received everything up to this byte."
+        },
+        {
+          "s": "steve",
+          "t": "So any congested router anywhere can just drop a packet and needn't tell anyone. That's also brilliant. Having overloaded routers send \"I'm underwater\" warnings would only add congestion."
+        },
+        {
+          "s": "steve",
+          "t": "The sender is allowed to send ahead of acknowledgments, for efficiency. If an expected acknowledgment doesn't arrive, by cleverly adaptive timeouts, it backs up and resends from the last acknowledged point."
+        },
+        {
+          "s": "steve",
+          "t": "And since it assumes the loss was from congestion, it cuts its speed in half."
+        },
+        {
+          "s": "leo",
+          "t": "And therein lies a tale."
+        },
+        {
+          "s": "steve",
+          "t": "Then it slowly ramps back up. Every TCP connection on the Internet is slowly speeding up until it loses a packet, then halving, then speeding up again. The waveform is a sawtooth."
+        },
+        {
+          "s": "steve",
+          "t": "So TCP seeks the best rate for the conditions from end to end, across a completely nondeterministic path. We drop packets on the 'Net, cross our fingers, and an acknowledgment tells us what arrived."
+        },
+        {
+          "type": "fact",
+          "title": "The details",
+          "t": "Modern TCP mostly halves its sending window when it detects a loss from duplicate acknowledgments, then grows it steadily, a scheme called additive increase, multiplicative decrease. A full timeout drops it back to a much slower start."
+        }
+      ]
+    },
+    {
+      "title": "Fair Per Connection, Not Per Person",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "That means every TCP connection is treated individually. Routers drop randomly, loving no flow more than another. So statistically, all the connections through a congested point share its bandwidth equally."
+        },
+        {
+          "s": "steve",
+          "t": "Which means someone who opens more connections through the same points gets a larger share. Hence parallel file downloaders."
+        },
+        {
+          "s": "steve",
+          "t": "I recently downloaded an updated Corel Draw and, curious after all this research, ran netstat. Sure enough, Corel's own downloader had four established connections to its server."
+        },
+        {
+          "s": "leo",
+          "t": "Doesn't that help when you have more bandwidth than the server gives one connection?"
+        },
+        {
+          "s": "steve",
+          "t": "With no congestion anywhere, one TCP connection ramps up until it finds the limit, say my cable modem's downstream bandwidth, and maximizes it. Multiple connections only help when there's competition at a congestion point."
+        },
+        {
+          "s": "leo",
+          "t": "Or to get around sites that limit each connection to, say, 500 kilobits."
+        },
+        {
+          "s": "steve",
+          "t": "Yes, it would do that."
+        },
+        {
+          "s": "steve",
+          "t": "Peer-to-peer programs, sending and receiving as fast as they can, are the perfect example. Say I use a parallel downloader and my neighbor on the same segment just browses. If the congestion point is our ISP's router, as it probably is, I get a larger share, because each of my connections is treated individually. Whether that's unfair is a value judgment."
+        }
+      ]
+    },
+    {
+      "title": "Charging for the Congestion You Cause",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So the network costs nothing extra until congestion, and congestion is where the cost appears. The designers of next-level protocols see it this way: it's almost as if you counted the dropped packets your use causes. Not your own losses, but everyone else's, summed over time."
+        },
+        {
+          "s": "steve",
+          "t": "They're looking for ways to create accountability. It's hard. Routers are autonomous packet movers with no knowledge of users and no history. A peer-to-peer user's connections branch out over many different paths."
+        },
+        {
+          "s": "steve",
+          "t": "The only solution anyone has proposed is a system that looks at each user's current and historical use and holds them accountable for their aggregate bandwidth over time."
+        },
+        {
+          "s": "steve",
+          "t": "Say my ISP's routers are congested by customers downloading huge files for hours, and I just want a web page. It's aggravating when it crawls. But I use the same bandwidth whether the page takes a minute or three seconds, then I sit and read it."
+        },
+        {
+          "s": "steve",
+          "t": "So the idea is to adjust each user's packet priority dynamically by their use over time. A light user doing a little Wikipedia or Google research gets snappy pages, using the same bandwidth with a different profile."
+        },
+        {
+          "s": "steve",
+          "t": "Also, deep buffers add delay, which hurts realtime services like VoIP. So we want to avoid overflowing buffers, and even better, keep them from getting too deep, for timely delivery without lots of jitter."
+        },
+        {
+          "type": "fact",
+          "title": "The research",
+          "t": "Steve's description matches BT researcher Bob Briscoe's 2007 paper \"Flow Rate Fairness: Dismantling a Religion,\" which argued for charging users for the congestion they cause. Related work produced congestion-exposure proposals at the IETF."
+        }
+      ]
+    },
+    {
+      "title": "The Fight in the Committees",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's exciting if it works."
+        },
+        {
+          "s": "steve",
+          "t": "If you think the surface politics are hairy, you wouldn't believe the fighting in the technical committees. Some talk about flow rates, some about fair use. What do we mean by \"fair\"? What are people buying? And users don't want variable pricing. They want to know what a month costs and what they get. Many wonder whether they're getting the bandwidth they pay for."
+        },
+        {
+          "s": "steve",
+          "t": "There will have to be an evolution to some accountability, letting ISPs keep networks from being overused while allowing them to be fully used. A fully used network benefits everyone. The ISP's costs are the same, and in theory customers pay less when the network isn't sitting half idle."
+        },
+        {
+          "s": "steve",
+          "t": "So customer contracts will change. You'll buy best-effort delivery. People moving huge files may find it takes longer, while people paying the same fixed price for light use get a network that's always snappy, because heavy users are throttled so the network is used but not overused."
+        }
+      ]
+    },
+    {
+      "title": "Burstable Bandwidth and Overselling",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Couldn't ISPs do just-in-time bandwidth, like streaming providers, where you pay only when you need it?"
+        },
+        {
+          "s": "steve",
+          "t": "At some level it happens. I have \"95/5 billing\" with Level 3. My equipment connects at 100 megabits, but I pay for a 15-megabit \"commit,\" burstable to 100. When I grab the Security Now! file from your server, I see 25 megabits in a short burst. Very cool."
+        },
+        {
+          "s": "steve",
+          "t": "I pay as if I used 15 megabits around the clock, though GRC uses more like 3 or 4. Fifteen is Level 3's minimum, since they don't want lots of small customers. A reseller would sell less, but I didn't want a middleman, and I've been glad."
+        },
+        {
+          "type": "fact",
+          "title": "How it works",
+          "t": "With 95th-percentile billing, the provider samples usage every few minutes, throws out the top 5 percent of samples, and bills on the highest remaining rate, so short bursts are free."
+        },
+        {
+          "s": "leo",
+          "t": "Our TWiT servers have a 100-megabit uplink. They figure you won't use it all the time. Modem pools had five users per modem."
+        },
+        {
+          "s": "steve",
+          "t": "The classic example is the phone system. If everyone goes off-hook at once, there's no dial tone. It's designed for typical use."
+        },
+        {
+          "s": "leo",
+          "t": "So you oversell, just not too much. And much of that theory goes out the window now that we do so much more online."
+        },
+        {
+          "s": "steve",
+          "t": "And none of today's technology solves this."
+        },
+        {
+          "s": "steve",
+          "t": "Not the hardware or the protocols. I'm now running XP."
+        },
+        {
+          "s": "leo",
+          "t": "Oh, baby."
+        },
+        {
+          "s": "steve",
+          "t": "With a state-of-the-art TCP/IP stack, and nothing in it handles this next-generation problem: how light users who want snappy service coexist with someone who says, I bought a $49 cable modem contract with unlimited bandwidth, baby, and I want to use it all."
+        }
+      ]
+    },
+    {
+      "title": "Leo Gets a T1",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We just bought a T1 from Covad for $379 a month. It's only 1.5 megabits up and down. Presumably we pay for upstream and guaranteed low latency."
+        },
+        {
+          "s": "steve",
+          "t": "A full T1, 1.54 megabits, symmetric. With a good supplier like Covad, you can move all of it 24 hours a day. T1s were originally voice links, carrying 24 64-kilobit voice channels. Corporations had one T1 and a multiplexer instead of 24 copper pairs."
+        },
+        {
+          "s": "leo",
+          "t": "They used to be $1,500."
+        },
+        {
+          "s": "steve",
+          "t": "I had a pair when they were. I'm glad I'm at Level 3, paying less than that for my whole lashup."
+        }
+      ]
+    },
+    {
+      "title": "Why ISPs Forge Resets",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The bandwidth explosion of the last couple of years caught our protocols and hardware off guard. The ISPs' first reaction was to kick connections using too much bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "They do it because they have no other technology. They'd love to throttle these flows, but the system I've described can't. So they spoof packets and shut users down, which really upsets people who say, you sold me $49.95 unlimited bandwidth, and now you're sending dummy packets to kill my links."
+        },
+        {
+          "s": "leo",
+          "t": "Comcast uses Sandvine, a Canadian company, as I think most ISPs do. It tells the peers, we're done, nothing more to offer, and cuts them off. Couldn't they use something like Squid to throttle instead?"
+        },
+        {
+          "s": "steve",
+          "t": "You'd need technology near the end user, where you can see all of that user's traffic. At the border, you'd have to aggregate a user's traffic from many points."
+        },
+        {
+          "s": "steve",
+          "t": "If you could see it all, you could drop packets to simulate congestion before it happens, throttling that user without hurting your network or killing connections. But that's expensive, and ISPs avoid deploying it. It's easy to pattern-match a connection, send one packet, and watch the traffic disappear."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "In August 2008, the FCC ordered Comcast to stop interfering with BitTorrent. Comcast switched to a \"protocol-agnostic\" system that temporarily lowered the priority of its heaviest users during congestion, much like Steve describes."
+        },
+        {
+          "s": "leo",
+          "t": "My friend runs Sonic.net, a very good local ISP, and was president of the California independent ISP association. We should have him on. You have to be a little sympathetic to ISPs trying to give most users the snappy service they expect. Though maybe if they spent more on infrastructure, they wouldn't have to be so draconian."
+        }
+      ]
+    },
+    {
+      "title": "Not All Big Downloads Are Piracy",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "And the stigma of peer-to-peer, with people downloading TV shows and movies, lets ISPs say it's copyright-violating traffic anyway."
+        },
+        {
+          "s": "leo",
+          "t": "It's not necessarily."
+        },
+        {
+          "s": "steve",
+          "t": "True. Someone who wants all 138 of our past podcasts has every right to click a bunch of links and suck them down, 100 percent legal, using lots of bandwidth."
+        },
+        {
+          "s": "leo",
+          "t": "A lot of Linux is distributed over BitTorrent. And remember, some of these ISPs are also big media companies, so they have a dog in that hunt. Some of this is political, some anticompetitive, and only some technical."
+        },
+        {
+          "s": "steve",
+          "t": "Two weeks ago my Mac downloaded a 50MB OS update and a 39MB Safari. I'm not doing anything wrong. Apple wants to send me a new OS every week or two."
+        },
+        {
+          "s": "leo",
+          "t": "Microsoft just pushed Vista SP1. That's maybe 150 million people downloading 150MB each, at about the same time."
+        },
+        {
+          "s": "steve",
+          "t": "And it's important, or they've got security nightmares."
+        }
+      ]
+    },
+    {
+      "title": "Will Fiber Fix It?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sometimes I'm online and it's a beast, and I don't know whether to blame my neighbor downloading every Terminator movie. Wouldn't all that dark fiber make bandwidth free and plentiful?"
+        },
+        {
+          "s": "steve",
+          "t": "There's dark fiber on the backbone, overbuilt during the dotcom boom. And there's FiOS, bringing fiber the last mile into homes. End users on fiber makes my eyes cross, thinking of the impact on the backbone."
+        },
+        {
+          "s": "steve",
+          "t": "Behavior changes with your last-mile bandwidth. When people moved from modems to DSL or cable, it was, whoa, think of all the stuff I can get now. People with fiber will grab much bigger chunks, because they can."
+        },
+        {
+          "s": "steve",
+          "t": "So we need a solution to individuals taking a disproportionate share of limited resources. Either make resources unlimited, or tell people they can download movies, but that traffic, which we'll be able to recognize, gets lower priority than those who just want snappy pages. We're not there yet, but that's what it will take."
+        }
+      ]
+    },
+    {
+      "title": "Will the T1 Sound Better?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I've been on business DSL, 384K up, shared with all our Internet use, and it degrades when my email downloads. Next week we'll be on the T1, which I'll eventually dedicate to streaming video. Will it sound better?"
+        },
+        {
+          "s": "steve",
+          "t": "Probably not. DSL is good if it's fed with enough bandwidth and no congestion. But with a T1 you're in a higher class of service, going into a bigger router for T1s, which has the upstream bandwidth for all of them. Then it's a short hop to the backbone and over to me."
+        },
+        {
+          "s": "steve",
+          "t": "Our packet traces showed my traffic going up to San Francisco and back down to you, because of the Cogent and Level 3 arrangement."
+        },
+        {
+          "s": "leo",
+          "t": "I'm on DSLExtreme, a Southern California company. Covad is a different outfit."
+        },
+        {
+          "s": "steve",
+          "t": "I imagine we'll have pristine connections, and you can do other things without interfering with our audio."
+        },
+        {
+          "s": "leo",
+          "t": "Skype's diagnostics show audio out maxing at 6,250, jitter at 20, as low as I've seen, and a 30-millisecond round trip. That's about as good as Skype gets."
+        },
+        {
+          "s": "steve",
+          "t": "You couldn't ask for better sound. It's way better than a telephone."
+        }
+      ]
+    },
+    {
+      "title": "Broadcast Versus Data Economics",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "When I talk about streaming to broadcasters, I explain that it's the opposite model. Once a radio tower and transmitter are up, a million listeners cost no more than 100,000. With data, more listeners cost more. But as you point out, the cost doesn't get great until it's congested."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Routers and links don't care whether they're limping along or saturated. It's capacity, and the cost is the same until you overflow. Then you're pushing cost back onto customers, who aren't getting what they pay for."
+        },
+        {
+          "s": "leo",
+          "t": "So it's a hybrid: like broadcasting until it breaks down, then like pay per download."
+        },
+        {
+          "s": "steve",
+          "t": "And we'll do our 39th Q&A for Episode 140 next week. Send feedback, questions and show ideas to GRC.com/feedback. And once Google indexes Elaine's transcripts, you can search them for any topic, with sitewide search in the GRC menu."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Steve say a network's cost doesn't rise with use until congestion?",
+      "options": [
+        "The routers and links are already paid for and cost the same whether idle or full",
+        "ISPs charge per packet",
+        "Power use doubles at full load",
+        "Peering partners bill per byte"
+      ],
+      "answer": 0,
+      "explain": "Cost appears as dropped packets once it congests."
+    },
+    {
+      "q": "What does an Internet router do when its outgoing buffer is full?",
+      "options": [
+        "It simply drops the packet without notifying anyone",
+        "It sends a warning to the sender",
+        "It stores the packet on disk",
+        "It reroutes every packet"
+      ],
+      "answer": 0,
+      "explain": "Warnings would only add congestion."
+    },
+    {
+      "q": "How does a TCP sender react when an acknowledgment doesn't arrive?",
+      "options": [
+        "It resends from the last acknowledged point and cuts its speed in half, then ramps back up",
+        "It closes the connection",
+        "It doubles its speed",
+        "It switches to UDP"
+      ],
+      "answer": 0,
+      "explain": "The result is a sawtooth pattern."
+    },
+    {
+      "q": "Why do parallel downloaders and peer-to-peer programs get more than their share at a congested router?",
+      "options": [
+        "Bandwidth is shared per connection, so more connections get a bigger share",
+        "They use special ports",
+        "Routers prefer them",
+        "They compress data"
+      ],
+      "answer": 0,
+      "explain": "Steve saw Corel's downloader open four connections."
+    },
+    {
+      "q": "Why do ISPs like Comcast send forged packets to cut off heavy users?",
+      "options": [
+        "Their equipment had no better way to throttle individual users' traffic",
+        "To save power",
+        "It's required by law",
+        "To block viruses"
+      ],
+      "answer": 0,
+      "explain": "The FCC later ordered Comcast to stop interfering with BitTorrent."
+    },
+    {
+      "q": "What kind of solution do protocol designers propose for congestion?",
+      "options": [
+        "Tracking each user's use over time and lowering heavy users' priority during congestion",
+        "Charging per web page",
+        "Banning peer-to-peer",
+        "Doubling all bandwidth"
+      ],
+      "answer": 0,
+      "explain": "Light users would then get snappy service."
+    }
+  ]
+}
