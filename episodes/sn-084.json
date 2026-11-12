@@ -1,0 +1,526 @@
+{
+  "number": 84,
+  "title": "Listener Feedback Q&A #17",
+  "subtitle": "Radio silence, UAC doubts, SSH ports, spoofing and scripting",
+  "date": "2007-03-22",
+  "description": "Nerds On Site returns, and a SpinRite fix earns a technician a promotion. Listeners ask about a newer wireless hotfix, what \"radio silence\" means, Cloudmark and collaborative spam filtering, whether users will just click through UAC, why old episodes vanish from iTunes, how a cracker knows a key is right, running SSH on port 22, when IP addresses can be spoofed, the tyranny of web scripting, stray preferred networks, and UAC versus assistive technology.",
+  "transcript": "https://www.grc.com/sn/sn-084.txt",
+  "audio": "http://media.GRC.com/sn/SN-084.mp3",
+  "chapters": [
+    {
+      "title": "A Radio Segment and a Returning Sponsor",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 84, divisible by four, so your questions. Steve now does a regular segment on my radio show, a six-minute mini Security Now!. We're on XM channel 152 and 13 or 14 markets, just adding Washington, D.C."
+        },
+        {
+          "s": "steve",
+          "t": "Did you mention GRC early Saturday? Something happened on the server, like the old TechTV days when I'd hold onto the desk."
+        },
+        {
+          "s": "leo",
+          "t": "Probably. And good news: Nerds On Site had bought only three weeks, but got such results that they're back for three more months."
+        },
+        {
+          "s": "steve",
+          "t": "They're a federation of independent consultants under one umbrella identity. They hold seminars and get-togethers, and I've done an expanded site-license deal letting the Nerds use SpinRite for their customers. There's a tremendous need, and quality matters. I've not heard great things about Geek Squad: long lead times and so-so performance."
+        },
+        {
+          "s": "leo",
+          "t": "This is not them. Nerds On Site is in Canada, the U.S., Mexico, England, Australia, South Africa, Bolivia..."
+        },
+        {
+          "s": "steve",
+          "t": "And India."
+        }
+      ]
+    },
+    {
+      "title": "A SpinRite Promotion",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "No separate errata this week. They're folded into the questions. A fun one: Hareem Haque, a technician at a Toronto firm, says life's been great since he bought SpinRite. His firm's primary data server, an old Dell, had a drive acting strange for months, nearly dead and making an awful noise. Within 12 hours of SpinRite, it worked like new, with no data loss. His boss was so impressed he got a promotion. \"The best $89 I ever spent.\""
+        },
+        {
+          "s": "leo",
+          "t": "And that drive SpinRite fixed for me is still recording reliably. I didn't even retire it."
+        }
+      ]
+    },
+    {
+      "title": "A Newer Wireless Hotfix",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Ian Chapman of Calgary, Alberta found newer versions of the Wireless Zero Config files Microsoft didn't push out. KB923154 has files four days newer than KB917021, dated August 22 rather than the 18th, build 2979 instead of 2977, plus a newer updspapi.dll. He found them in the RyanVM update packs, used to slipstream all XP patches into a new install disc."
+        },
+        {
+          "s": "steve",
+          "t": "The topic we can never get away from. It's an update to the update, neither of which Windows Update gives you. Microsoft calls it a hotfix for Wi-Fi reauthentication failures involving EAP, the Extensible Authentication Protocol WPA uses to add authentication methods. Microsoft says don't bother unless you have the problem."
+        },
+        {
+          "s": "steve",
+          "t": "But it gets you newer files, so I see why RyanVM uses it. It's not critical, but worth doing. A link is in today's notes, and I hope we never talk about this again."
+        }
+      ]
+    },
+    {
+      "title": "What \"Radio Silence\" Means",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Weiss of Redmond, Washington, a Mac user, was surprised it's so hard to turn off Wi-Fi in Windows. On a Mac you use the menu bar. Many laptops even have a switch. But a reader pointed out you meant silence while Wi-Fi is on. The name might mislead people."
+        },
+        {
+          "s": "steve",
+          "t": "Right. I meant the radio is on, but nothing is sent. For five weeks we've tried to get Windows to stay quiet, connected or not. Even connected, it sends packets looking for a better connection unless told not to."
+        },
+        {
+          "s": "steve",
+          "t": "My laptops have switches too, and I'd recommend the habit of turning the radio off. Being a battery-life fanatic, I do it all the time. Then it's fully gagged, rather than blabbing beacons and probes."
+        },
+        {
+          "s": "leo",
+          "t": "You can also right-click the network icon in the system tray and disable wireless. The switch is great on airplanes."
+        }
+      ]
+    },
+    {
+      "title": "Collaborative Spam Filtering",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Stefan Schmidt of Mississauga, Ontario tried Outlook's and Norton's filters without success. Cloudmark Desktop, which plugs into Outlook, now gets rid of 99.9 percent of his spam. Its community of users identifies spam, and Cloudmark ranks those users. What do you think?"
+        },
+        {
+          "s": "steve",
+          "t": "I assumed you'd know Cloudmark."
+        },
+        {
+          "s": "leo",
+          "t": "It's excellent, and I've talked about it since The Screen Savers. Mail goes through their servers after you change your MX record. I use a similar service, MailRoute. A professionally managed, constantly updated service beats anything on your desktop."
+        },
+        {
+          "type": "fact",
+          "title": "How it worked",
+          "t": "Cloudmark Desktop was actually an Outlook plug-in that checked messages against Cloudmark's collaborative network. Changing your MX record applies to server-side filtering services like MailRoute."
+        },
+        {
+          "s": "steve",
+          "t": "Gmail has the same centralized view. When you click \"Report Spam,\" everyone benefits."
+        },
+        {
+          "s": "leo",
+          "t": "Ironically, I get spam in Gmail daily. Most people report good results."
+        },
+        {
+          "s": "steve",
+          "t": "It works for me, but my address isn't widely public."
+        },
+        {
+          "s": "leo",
+          "t": "You're not a target. OnlyMyEmail.com uses collaborative filtering too, maybe 10 bucks a month. The best way to stop spam is to keep it from arriving. Desktop filters still download it all. Server filters keep a million messages a month away from me."
+        },
+        {
+          "s": "steve",
+          "t": "And some shotgun email is hazardous to your system, not just your mental health. Keeping it away is good security."
+        },
+        {
+          "s": "leo",
+          "t": "These services strip phishing scams and viruses too. Kevin Rose was a huge Cloudmark fan."
+        }
+      ]
+    },
+    {
+      "title": "Will Users Just Click Through UAC?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A listener in Warrington, U.K. isn't impressed by UAC. He believes it doesn't require a password, unlike Linux or OS X. And average users will click OK by reflex, eroding its security. Mark Russinovich and Jim Allchin say it's a tradeoff. He says don't give people a choice, since a compromised Windows machine harms us all with spambots. And people are creatures of habit."
+        },
+        {
+          "s": "leo",
+          "t": "Also, Kaspersky's chief executive, Natalya Kaspersky, told ZDNet that users will get so annoyed they'll disable UAC, and that her analysts found five ways malware could bypass it. She has an axe to grind."
+        },
+        {
+          "s": "steve",
+          "t": "He's a little mistaken. If you log on as an administrator, you just click OK. As a standard user, you must enter administrative credentials, which makes the pop-ups more annoying. On one of my Macs, I don't enter a password either."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft is fighting the corner it's painted into. Anything that really increases security breaks things. It's an unhappy compromise, but better than system changes with no oversight. We'll know in about six months whether it's useful or just annoying."
+        },
+        {
+          "s": "leo",
+          "t": "It does bug you more than the Mac, which asks only when you install something or modify system files."
+        },
+        {
+          "s": "steve",
+          "t": "Windows prompts in more places, because Microsoft is reacting to every specific way malware has abused Windows in the past."
+        },
+        {
+          "s": "leo",
+          "t": "There's no way to force a user to be secure. And Kaspersky also brings up that old complaint that PatchGuard keeps them out of the kernel."
+        },
+        {
+          "s": "leo",
+          "t": "Dan Berkowitz in Pennsylvania sets up PCs. A week after installing Vista for someone, they said they don't even read the UAC pop-up anymore, and hate Vista for it. He thinks UAC might cut infections from 25 percent of PCs to 15 or 20. Do you agree?"
+        },
+        {
+          "s": "steve",
+          "t": "It's Microsoft's experiment with people like my mom: is this you? Even that question is murky. It's like personal firewalls asking whether a program may talk to the Internet. People didn't know whether to say yes or no."
+        },
+        {
+          "s": "leo",
+          "t": "They turned it off, or just clicked okay, okay, okay."
+        },
+        {
+          "s": "steve",
+          "t": "Firewalls at least calmed down once you'd authorized your programs."
+        },
+        {
+          "s": "leo",
+          "t": "UAC won't. It warns every time you install a program. It doesn't bother me. I think, good, it's protecting me."
+        },
+        {
+          "s": "steve",
+          "t": "Power users expect it: yes, this is me."
+        },
+        {
+          "s": "leo",
+          "t": "Of course, we're the ones who need it least."
+        }
+      ]
+    },
+    {
+      "title": "Where Did the Old Episodes Go?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Jonathan Lackman of Kansas City, Missouri, listening since episode one, says only the last 14 episodes appear in iTunes. Why?"
+        },
+        {
+          "s": "steve",
+          "t": "I hear this all the time, and you're Mr. Podcast."
+        },
+        {
+          "s": "leo",
+          "t": "I choose not to include them all. An RSS feed isn't meant to be a complete list, any more than a website's feed lists every article. Every aggregator, including iTunes, downloads the feed each time it checks, which adds up to terabytes. So I keep about the most recent 20 episodes."
+        },
+        {
+          "s": "leo",
+          "t": "Every episode is at TWiT.tv/sn, and TWiT.tv/sn81 goes straight to Episode 81, with a player. iTunes makes it look like a list of all episodes, but it's just the current feed."
+        },
+        {
+          "s": "steve",
+          "t": "Security Now! built up significant material, so people want to go back. And if the feed had everything, someone just trying the show might download 84 monster files."
+        },
+        {
+          "s": "leo",
+          "t": "And from now on, iTunes keeps the episodes you've already downloaded."
+        }
+      ]
+    },
+    {
+      "title": "How Does a Cracker Know the Key Is Right?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Doug Smith of Albany, New York, hooked since Honey Monkeys, asks: in an offline brute-force attack on Wi-Fi traffic, how does the hacker know when he's found the key? Wouldn't he have to test it on your network?"
+        },
+        {
+          "s": "steve",
+          "t": "I never made that explicit. It's like the HD DVD key hunts, testing candidate keys against encrypted content. For WPA, the only known attack is capturing encrypted traffic and brute-forcing it offline, with dictionaries or every combination."
+        },
+        {
+          "s": "leo",
+          "t": "That's why you push 64-character random keys from GRC.com/passwords."
+        },
+        {
+          "s": "steve",
+          "t": "The answer: decrypted correctly, the format becomes crystal clear. A Wi-Fi packet or an MPEG frame starts with headers in a rigorous format that software easily recognizes."
+        },
+        {
+          "s": "leo",
+          "t": "It pops into focus."
+        },
+        {
+          "s": "steve",
+          "t": "Great analogy. With the wrong key, the result is completely random noise. If structure suddenly appears, you know you've got the key."
+        }
+      ]
+    },
+    {
+      "title": "Is SSH on Port 22 Risky?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Alex in Kentucky runs an SSH server on port 22 to tunnel TightVNC, with a 12-character random password. He's having trouble changing the default port. Is that a problem? 21 is the SSH default, isn't it?"
+        },
+        {
+          "s": "steve",
+          "t": "That's Telnet. 22 is the normal SSH port."
+        },
+        {
+          "type": "fact",
+          "title": "The port numbers",
+          "t": "Port 21 is FTP, port 22 is SSH, and port 23 is Telnet."
+        },
+        {
+          "s": "leo",
+          "t": "My server logs show people trying port 22 all the time. I use SSH on port 22 to manage my web server. With a good password, these attackers can't mass brute-force it. You get three tries, then start over."
+        },
+        {
+          "s": "steve",
+          "t": "His system is advertising an SSH server. SSH is well designed and can't be eavesdropped. With a bizarre 12-character password, it's very burdensome to crack. So it's not a security problem, just an annoyance. His logs would fill with people trying dictionary passwords."
+        },
+        {
+          "s": "steve",
+          "t": "Some routers let you map a different outside port to port 22 inside, in case his SSH server won't change ports."
+        },
+        {
+          "s": "leo",
+          "t": "I don't know of an SSH server that won't let you."
+        },
+        {
+          "s": "steve",
+          "t": "Make up your own mind. It's not a great risk, but it would bug me to see strangers worldwide hooking up to my port 22."
+        },
+        {
+          "s": "leo",
+          "t": "Those Chinese IPs we discussed are doing exactly that to me."
+        },
+        {
+          "s": "steve",
+          "t": "It's automated, day and night. And a .gov or Defense Department IP might attract someone patient enough to keep trying. Some may just be looking for SSH servers with known vulnerabilities, trying a buffer overrun and moving on."
+        },
+        {
+          "s": "leo",
+          "t": "Moving ports doesn't stop determined attackers, who scan all ports. How hard you harden your system depends on the value of what you're protecting."
+        },
+        {
+          "type": "fact",
+          "title": "Guessing attacks",
+          "t": "The attempt limit applies per connection, so bots simply reconnect. Tools like fail2ban block addresses after repeated failures, and key-based logins with passwords disabled stop guessing entirely."
+        }
+      ]
+    },
+    {
+      "title": "When Can IP Addresses Be Spoofed?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Mike Fattori in Toronto says Steve keeps saying IP addresses can't be spoofed because of TCP's three-way handshake. But a Cisco firewall expert told him IP spoofing is all too real, before they were interrupted. Are you talking about different things?"
+        },
+        {
+          "s": "steve",
+          "t": "I'd love to hear the rest. Every IP packet carries a destination and a source address. Nothing validates the source as packets cross the Internet, so anyone can make one up. That's spoofed."
+        },
+        {
+          "s": "leo",
+          "t": "But you can't have a conversation that way."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly my point. In TCP's handshake, the initiator sends a SYN, the receiver replies with a SYN/ACK, and the initiator sends a final ACK. That gives each end a round trip, which only works if the addresses are real. Pings, though, can be sent with any source."
+        },
+        {
+          "s": "leo",
+          "t": "And a SYN flood doesn't care about replies, so it can spoof."
+        },
+        {
+          "s": "leo",
+          "t": "What about a man in the middle?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. He rewrites the source addresses as he forwards packets, knitting himself into the conversation. That's exactly what proxies do. Properly encrypted connections prevent even that."
+        },
+        {
+          "s": "leo",
+          "t": "So you can't spoof an address in a real conversation, unless you're in the middle."
+        }
+      ]
+    },
+    {
+      "title": "The Tyranny of Web Scripting",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "David Barnes from Basildon asks what users can do about excessive client-side scripting. He says Java, but means JavaScript. Netscape named it that to confuse everybody."
+        },
+        {
+          "s": "steve",
+          "t": "It has no connection to Java at all."
+        },
+        {
+          "s": "leo",
+          "t": "It was a marketing move, since Java was hot."
+        },
+        {
+          "type": "fact",
+          "title": "The name",
+          "t": "Netscape's language was first called Mocha, then LiveScript, then renamed JavaScript in 1995 for marketing reasons, though it's unrelated to Java."
+        },
+        {
+          "s": "leo",
+          "t": "eBay told him he must use scripting, a \"tough, we don't care\" attitude. A normal search results page carries over 300K of JavaScript. He feels held hostage."
+        },
+        {
+          "s": "steve",
+          "t": "Mark my words, this will be a constant problem. I'm sympathetic. I surf with scripting off, and eBay is in my IE trusted zone, so scripting is enabled there but not on random sites."
+        },
+        {
+          "s": "leo",
+          "t": "Almost all sites require it. You can't do AJAX, validate forms, and much more without it. JavaScript exploits are few and far between. I don't think it's as dangerous as you do."
+        },
+        {
+          "s": "steve",
+          "t": "Philosophically, it's bad to load code from random sites you don't know. And my site, my e-commerce system and ShieldsUP! run perfectly without scripting."
+        },
+        {
+          "s": "leo",
+          "t": "But your site looks like it came from 1989. We want web-based applications, and Flash is scripting too. Look at Java, which is sandboxed. Insist that language makers sandbox their languages and make them bulletproof."
+        },
+        {
+          "s": "steve",
+          "t": "Vista's integrity levels are a start: browsers and other chatty programs run with less access to the desktop. And we've talked about sandboxing IE or using virtual machines."
+        },
+        {
+          "s": "leo",
+          "t": "The router attack can be fixed. The question is whether you want a static-text web or web applications. People want applications."
+        },
+        {
+          "s": "steve",
+          "t": "But it's a perfect example: my system running scripts I didn't want to run."
+        },
+        {
+          "type": "fact",
+          "title": "Java's turn",
+          "t": "Java in the browser later became one of the most exploited plug-ins, and browsers dropped it entirely by about 2017. JavaScript remained, protected by much stronger sandboxes."
+        }
+      ]
+    },
+    {
+      "title": "Phantom Networks in the List",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "John from Downers Grove, Illinois followed all our Wi-Fi lockdown instructions, but sees two unsecured computer-to-computer networks, \"freetoguest\" and \"NRT-AIRPORT.\" Network Stumbler doesn't see them. What are they?"
+        },
+        {
+          "s": "steve",
+          "t": "Windows shows two lists: networks visible now, and \"Preferred Networks,\" ones it has seen before. These are in his preferred list. Highlight them and delete them. With everything locked down, they won't come back."
+        },
+        {
+          "s": "steve",
+          "t": "Networks you connect to get added, but with these updates, you at least won't broadcast that you've used them."
+        }
+      ]
+    },
+    {
+      "title": "UAC and Assistive Technology",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Last, Ryan Skelton in Portland, Oregon, a serious computer user with multiple disabilities, enters all text with assistive technology. Will UAC's secure desktop block it from typing credentials? Can an administrator let a program run on the secure desktop? If not, maybe he can't use Vista."
+        },
+        {
+          "s": "steve",
+          "t": "A great question, since we haven't discussed disabling UAC. I'd imagine assistive software will be updated to handle it, though any such way in could also be a backdoor for hackers."
+        },
+        {
+          "s": "steve",
+          "t": "Power users know Tweak UI, but there's a huge array of Windows policy settings too, and Vista added many that can remove UAC's intrusions."
+        },
+        {
+          "s": "leo",
+          "t": "You don't have to turn UAC off. You can just turn off the secure desktop and keep UAC."
+        },
+        {
+          "s": "steve",
+          "t": "Then his assistive technology isn't cut off from the dialog. There's even a single checkbox in the user account settings to turn the prompts off entirely. It's no reason to abandon Vista."
+        },
+        {
+          "s": "leo",
+          "t": "Those policies are easy in Vista Ultimate and Business, through Local Security Policy. Home users must edit the registry. HowtoGeek.com explains how, with the registry key."
+        },
+        {
+          "type": "fact",
+          "title": "The setting",
+          "t": "The policy is \"User Account Control: Switch to the secure desktop when prompting for elevation.\" Later versions of Windows also let approved accessibility software interact with UAC prompts."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Steve mean by \"full radio silence\"?",
+      "options": [
+        "Wi-Fi left on but sending nothing, no probes for remembered networks",
+        "Turning the Wi-Fi radio off",
+        "Using Bluetooth",
+        "Unplugging the router"
+      ],
+      "answer": 0,
+      "explain": "He also turns the radio off to save battery."
+    },
+    {
+      "q": "How does an offline cracker know a guessed key is right?",
+      "options": [
+        "The decrypted data suddenly shows recognizable structure, like packet headers",
+        "The network tells him",
+        "He tests it on your router",
+        "It beeps"
+      ],
+      "answer": 0,
+      "explain": "A wrong key produces random noise."
+    },
+    {
+      "q": "Why doesn't the Security Now! feed list every episode?",
+      "options": [
+        "Feeds carry recent items, and every check downloads the whole feed",
+        "Old episodes were deleted",
+        "Apple limits feeds to 14",
+        "It's a bug"
+      ],
+      "answer": 0,
+      "explain": "All episodes are at TWiT.tv/sn."
+    },
+    {
+      "q": "When can a source IP address be spoofed?",
+      "options": [
+        "In one-way traffic like pings or SYN floods, or by a man in the middle",
+        "Never",
+        "Always, even in TCP conversations",
+        "Only on Wi-Fi"
+      ],
+      "answer": 0,
+      "explain": "TCP's handshake requires real round trips."
+    },
+    {
+      "q": "What's the main downside of running SSH on the default port 22?",
+      "options": [
+        "Constant automated login attempts filling your logs",
+        "It can't be encrypted",
+        "It's illegal",
+        "It disables passwords"
+      ],
+      "answer": 0,
+      "explain": "With a strong password, it's more annoyance than danger."
+    },
+    {
+      "q": "How can a Vista user keep UAC but avoid the secure desktop?",
+      "options": [
+        "Change the policy that switches to the secure desktop for prompts",
+        "Uninstall UAC",
+        "Use Safe Mode",
+        "Run as Guest"
+      ],
+      "answer": 0,
+      "explain": "Home editions require editing the registry."
+    }
+  ]
+}
