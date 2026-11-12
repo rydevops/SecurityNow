@@ -679,13 +679,13 @@
           "t": "Under CRTC rules the packets are private, and as a carrier Bell may only look at the PPPoE wrapper for the destination. Comcast just got an FCC warning for something similar. Are we losing the Net Neutrality war for profits and ads, or is he paranoid?"
         },
         {
+          "s": "steve",
+          "t": "That is the sad and disturbing truth. A common carrier has legal obligations. It can't spy on the data it carries and censor it by content."
+        },
+        {
           "type": "fact",
           "title": "The disputes",
           "t": "In 2008 Canadian ISPs, through their association, complained to the CRTC that Bell was throttling peer-to-peer traffic on the wholesale lines it sold them. The CRTC ruled for Bell that November, then set traffic-management rules for all ISPs in 2009."
-        },
-        {
-          "s": "steve",
-          "t": "That is the sad and disturbing truth. A common carrier has legal obligations. It can't spy on the data it carries and censor it by content."
         },
         {
           "s": "leo",

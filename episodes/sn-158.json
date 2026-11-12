@@ -120,13 +120,13 @@
           "t": "First question. Paul Sargent in the U.K. heard you, in Episode 167, dismiss \"debouncing\" DNS because it doubles the packets. But a server only queries on a cache miss or when a TTL expires. On expiry it asks once, and only asks again if the answer changed. Records rarely change, so the extra traffic would only come from complete cache misses. Is that often enough to matter?"
         },
         {
+          "s": "steve",
+          "t": "I like his clever notion. DNS is a distributed database. Chunks of the name-to-IP mapping float around on servers that check in only periodically, so no central server bears the brunt. The tradeoff is slower updates, which is what \"propagation\" really means."
+        },
+        {
           "type": "fact",
           "title": "The episode",
           "t": "Paul means Episode 157, \"DNS - After the Patch.\""
-        },
-        {
-          "s": "steve",
-          "t": "I like his clever notion. DNS is a distributed database. Chunks of the name-to-IP mapping float around on servers that check in only periodically, so no central server bears the brunt. The tradeoff is slower updates, which is what \"propagation\" really means."
         },
         {
           "s": "steve",
