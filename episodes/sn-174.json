@@ -1,0 +1,243 @@
+{
+  "number": 174,
+  "title": "Sandbox Limitations",
+  "subtitle": "What a sandbox or virtual machine can't protect you from",
+  "date": "2008-12-11",
+  "description": "Steve walks back any impression that Sandboxie or a virtual machine is total protection. A keylogger, spambot or password stealer can do real harm entirely inside a sandbox, and malware can sometimes detect that it's sandboxed and behave until it reaches the real machine. He compares Sandboxie, VMware and SteadyState and when to use each. Plus three cautionary tales: a town treasurer keylogged out of $50,000, a multinational home-equity identity-theft ring, and why you shouldn't give real answers to security questions.",
+  "transcript": "https://www.grc.com/sn/sn-174.txt",
+  "audio": "http://media.GRC.com/sn/SN-174.mp3",
+  "chapters": [
+    {
+      "title": "Recording From the Past",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're recording this a week early so you can have content through the holidays while Leo's in Paris."
+        },
+        {
+          "s": "leo",
+          "t": "You believe we recorded it in the past for your present enjoyment. A science fiction novel."
+        },
+        {
+          "s": "steve",
+          "t": "Today I want to walk back a little. Two weeks ago on Sandboxie I may have oversold it. People wrote saying it's all they need, no antivirus. I want to be more reality-based about what malware can still do inside a sandbox."
+        }
+      ]
+    },
+    {
+      "title": "Sandwich Loses $50,000",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The Boston Globe: \"Sandwich loses nearly $50k to hacker.\" Sandwich, Massachusetts, where a hacker implanted a keylogger on the town treasurer's computer, captured his security code and password, and withdrew close to $50,000 from town accounts."
+        },
+        {
+          "s": "steve",
+          "t": "The money went to four accounts in Florida and Georgia, then by Western Union to St. Petersburg, Russia. Each transfer was under $10,000, the threshold for FBI notification. A Florida man said he'd answered an ad to open an account."
+        },
+        {
+          "s": "leo",
+          "t": "Just one of many we'll never hear about."
+        },
+        {
+          "s": "steve",
+          "t": "It was probably a targeted spear-phishing attack. The treasurer's email is easy to find, or get by social engineering, and then you send him something to click. This is exactly what a keylogger does, and a sandbox wouldn't have protected him if he logged in within the same sandbox the keylogger entered."
+        },
+        {
+          "type": "fact",
+          "title": "Money mules",
+          "t": "The Florida account-opener is what's called a \"money mule,\" recruited by fake work-from-home ads to move stolen funds, often unaware they're laundering money, and left holding the legal risk."
+        }
+      ]
+    },
+    {
+      "title": "A Home-Equity Identity-Theft Ring",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A U.S. Attorney in New Jersey charged a multinational ring operating across the U.S., U.K., Canada, China, Japan, Vietnam and South Korea. They drained home equity lines of credit, HELOCs, by impersonating victims, withdrawing over $2.5 million and attempting $4 million more."
+        },
+        {
+          "s": "steve",
+          "t": "They gathered names, addresses, birth dates, account numbers, Social Security numbers, mothers' maiden names and security-question answers, hitting big banks and small credit unions alike, including the Navy, Pentagon and Senate federal credit unions."
+        },
+        {
+          "s": "steve",
+          "t": "The lesson: do not give real information for security questions. Mother's maiden name, first pet, all of that is findable online, and anything that goes on the 'Net never leaves it."
+        },
+        {
+          "s": "leo",
+          "t": "They're asking the incoming administration whether they've ever written an embarrassing email. Going to be an empty White House."
+        },
+        {
+          "s": "steve",
+          "t": "Don't use valid information except where you have no choice, like your Social Security number to a bank."
+        },
+        {
+          "s": "leo",
+          "t": "Give Disney's turnstile your knuckle."
+        }
+      ]
+    },
+    {
+      "title": "A Power-Outage Rescue",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Craig, who asked to stay anonymous, has followed GRC since 1999 and ShieldsUP!. During a thunderstorm the power blipped, and his PC went into a boot loop, beeping and rebooting after the BIOS screen. Support said replace the drive. He'd backed up only a month earlier. SpinRite found one damaged sector, did its best to repair it, and the machine booted like nothing happened."
+        }
+      ]
+    },
+    {
+      "title": "What a Sandbox Can't Stop",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We covered how Sandboxie and virtual machines contain malware. But there are limits."
+        },
+        {
+          "s": "steve",
+          "t": "Yes. A keylogger like the one in Sandwich is a perfect example a sandbox wouldn't stop, with a caveat. If his email were in a separate sandbox from his browser, and the keylogger entered through email while he logged in via the browser, the sandbox would have isolated it."
+        },
+        {
+          "s": "steve",
+          "t": "But I've amalgamated my Eudora and Firefox into one sandbox, because I'm always clicking email links. So if the keylogger entered through email and I logged in with the shared browser, they'd share the keylogger. Isolation only helps within the sandbox's boundaries, and the same applies to a virtual machine."
+        },
+        {
+          "s": "steve",
+          "t": "Programs in a sandbox have network access, since that's why they're there. So Internet-enabled malware can still read and send your data. A spambot that entered through email has your email and can mail your friends pretending to be you. No sandbox protects you from that, because everything it needs is inside."
+        },
+        {
+          "s": "steve",
+          "t": "I also need to walk back the idea of testing malware in a sandbox. As with Blue Pill, software can sometimes detect it's sandboxed and behave until it reaches the real machine."
+        },
+        {
+          "s": "leo",
+          "t": "A good sandbox should look normal."
+        },
+        {
+          "s": "steve",
+          "t": "One tell: a containment VM is a freshly installed OS with few documents and few installed programs. Malware could enumerate the uninstall list and, finding little, stay quiet until it wakes up on a machine with a thousand programs."
+        },
+        {
+          "s": "leo",
+          "t": "Blue Pill, or Red Pill, tested timing."
+        },
+        {
+          "s": "steve",
+          "t": "Joanna Rutkowska said Blue Pill 1.0 was undetectable, but you could detect it, so she's working on 2.0. You can compare the passage of time inside and outside using a trusted time reference like NTP, since virtualization adds subtle instruction-timing overhead. The counterargument is the VM could emulate that too; it's a cat-and-mouse game."
+        },
+        {
+          "type": "fact",
+          "title": "Blue Pill",
+          "t": "Blue Pill, by Joanna Rutkowska, was a proof-of-concept hypervisor rootkit that used hardware virtualization to run the real OS as a guest, aiming to be undetectable. Later research showed detection was possible, feeding the ongoing arms race."
+        }
+      ]
+    },
+    {
+      "title": "Which Tool When",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "So the toolbox has Sandboxie, virtual machines, and SteadyState."
+        },
+        {
+          "s": "steve",
+          "t": "SteadyState is heavyweight, right for untrusted public terminals like a library, because users can't get around it. It brings Group Policy Editor power with checkboxes, and caches all writes so the real disk isn't changed. Microsoft's sandboxing is bulletproof, but booting is slower as it flushes changes. I wouldn't use it on my own machine."
+        },
+        {
+          "s": "steve",
+          "t": "Virtual machines like VMware, Virtual PC or Parallels are for OS containment, running Vista, FreeBSD or Linux side by side. They're heavy, reserving a block of RAM and needing another licensed OS copy. I wouldn't use one just for application containment, since Sandboxie does that."
+        },
+        {
+          "s": "steve",
+          "t": "None of the three stop the non-writing malware we discussed; they only remove it when you flush their state. But Sandboxie is lightweight, always running, and pain-free, so I'm back to it for Firefox and Eudora. The clean rule: Sandboxie prevents what's inside from writing to your system, which is important, but not everything."
+        },
+        {
+          "s": "leo",
+          "t": "Anyone claiming a silver bullet is suspect. It's constant vigilance and a variety of tools."
+        },
+        {
+          "s": "steve",
+          "t": "Ronen already blocks tricks like opening the C$ admin share on localhost. And in two weeks we'll cover DropMyRights, a Microsoft engineer's utility; Ronen said he may add more of that to Sandboxie, which already drops many rights."
+        },
+        {
+          "s": "leo",
+          "t": "It's a cat-and-mouse game between smarter hackers and the good guys."
+        },
+        {
+          "s": "leo",
+          "t": "Because Windows is the most attacked platform, it may be the most defended, so you can use it very securely now."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why wouldn't Sandboxie have saved the Sandwich treasurer?",
+      "options": [
+        "A keylogger could capture his login within the same sandbox he logged in from",
+        "Sandboxie blocks keyloggers",
+        "It only runs on servers",
+        "He had no sandbox"
+      ],
+      "answer": 0,
+      "explain": "Isolation only helps across sandbox boundaries, not within one."
+    },
+    {
+      "q": "What kind of malware can do harm entirely inside a sandbox?",
+      "options": [
+        "A keylogger, spambot or password stealer that just reads and sends data",
+        "None",
+        "Only viruses",
+        "Only rootkits"
+      ],
+      "answer": 0,
+      "explain": "Sandboxed programs still have network access."
+    },
+    {
+      "q": "How might malware tell it's running in a containment VM?",
+      "options": [
+        "By noticing few installed programs or documents and staying quiet",
+        "By reading the CPU serial",
+        "It can't",
+        "By checking the clock speed"
+      ],
+      "answer": 0,
+      "explain": "It wakes up only on a well-used machine."
+    },
+    {
+      "q": "When is SteadyState the right tool?",
+      "options": [
+        "Locking down an untrusted public terminal so users can't change it",
+        "Running a second operating system",
+        "Everyday home browsing",
+        "Hosting a web server"
+      ],
+      "answer": 0,
+      "explain": "It caches all writes so the real disk isn't changed."
+    },
+    {
+      "q": "When does a full virtual machine make the most sense?",
+      "options": [
+        "For OS containment, running a different operating system alongside yours",
+        "For blocking scripts",
+        "For email",
+        "For light application containment"
+      ],
+      "answer": 0,
+      "explain": "It reserves RAM and needs another licensed OS copy."
+    },
+    {
+      "q": "Why shouldn't you give real answers to website security questions?",
+      "options": [
+        "Mother's maiden name and first pet are findable online and never leave the 'Net",
+        "They're encrypted anyway",
+        "Banks ignore them",
+        "They must match your ID"
+      ],
+      "answer": 0,
+      "explain": "A home-equity ring used exactly that kind of information."
+    }
+  ]
+}
