@@ -1,0 +1,571 @@
+{
+  "number": 149,
+  "title": "ISP Betrayal",
+  "subtitle": "ISPs that let third parties profile everything their customers browse",
+  "date": "2008-06-19",
+  "description": "Firefox 3's launch restores the third-party cookie checkbox, an AxCrypt update fixes Vista problems, the Windows Bluetooth flaw proves serious, and McAfee maps the riskiest corners of the web. Then, in the first of two parts, Steve explains \"behavioral targeting\": companies like NebuAd, Phorm, Adzilla and Front Porch installing equipment inside ISPs to watch customers' web traffic, profile their interests and share ad revenue with the ISP, and why it should be opt-in rather than opt-out.",
+  "transcript": "https://www.grc.com/sn/sn-149.txt",
+  "audio": "http://media.GRC.com/sn/SN-149.mp3",
+  "chapters": [
+    {
+      "title": "Five Screens and No Overlapping Windows",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're doing 149 this week, so 156 ends our third year."
+        },
+        {
+          "s": "leo",
+          "t": "And you can now watch Steve on TWiT Live as we record, Tuesdays at 11:00 a.m. Pacific. But there are no clues. His background is completely imaginary."
+        },
+        {
+          "s": "steve",
+          "t": "My camera is sandwiched between two LCDs, an upper and a lower one. I chose the Logitech partly for its thin profile, so it can sneak out between the screens."
+        },
+        {
+          "s": "leo",
+          "t": "How many screens do you stare at?"
+        },
+        {
+          "s": "steve",
+          "t": "Five. I should get a mirror."
+        },
+        {
+          "s": "leo",
+          "t": "I'd love to see that setup."
+        },
+        {
+          "s": "steve",
+          "t": "I used to have three SGI monitors, then decided I needed more real estate. Mark Thompson and I work the same way. Windows Explorer is always on the right side of my rightmost screen, a couple of browsers, Firefox and Opera, on my left, and a stopwatch right above the camera. Everything has its place, and nothing overlaps."
+        },
+        {
+          "s": "steve",
+          "t": "Remember Windows 1, when Gates argued against overlapping windows? It had no provision for them. Dialog boxes, but all the windows were tiled."
+        },
+        {
+          "s": "leo",
+          "t": "There was a big academic debate at Xerox, and I think at Apple, over tiled windows. A lot of the early Xerox work didn't overlap. Why hide information behind something else?"
+        },
+        {
+          "s": "leo",
+          "t": "The right side won. Does Windows still have the Tile command?"
+        },
+        {
+          "s": "steve",
+          "t": "For child windows, definitely."
+        }
+      ]
+    },
+    {
+      "title": "Firefox 3's Download Day",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "We're recording on Firefox 3 Download Day. Firefox wanted a Guinness world record for the most downloads in one day, got everybody to pledge, and as we speak SpreadFirefox.com is down. They said, let's break a record, and couldn't buy enough bandwidth."
+        },
+        {
+          "s": "steve",
+          "t": "I'm responsible for several features in Firefox 3. They returned the checkbox to easily disable third-party cookies."
+        },
+        {
+          "s": "steve",
+          "t": "GRC is producing new technology that will tell everyone who visits our site whether they have third-party cookies enabled, with a banner saying you're making it very easy to be tracked across the Internet, and a link to instructions to change it. The Firefox 3 developers realized that would generate so much interest that they put back the checkbox they mysteriously removed in version 2."
+        },
+        {
+          "s": "leo",
+          "t": "Didn't they say they removed it because it never really worked?"
+        },
+        {
+          "s": "steve",
+          "t": "That's one way to look at it. It was still there in version 2, but you had to type about:config, wade through an overwhelming list, search for \"coo,\" and change one of about eight items to a 1 or 2. They've fixed all that."
+        },
+        {
+          "s": "steve",
+          "t": "And Firefox 2 had bugs in its overall cookie handling, which it still has. It's not possible to block third-party cookies correctly under version 2. Firefox 3 looks like a good thing to move to."
+        },
+        {
+          "s": "leo",
+          "t": "Flock, the Firefox derivative I use, just released a beta of version 2 with many of the same security features, including the green EV address bar, but not the third-party cookie option, which makes me crazy."
+        },
+        {
+          "type": "fact",
+          "title": "The record",
+          "t": "Firefox 3 set a Guinness World Record with just over 8 million downloads in 24 hours."
+        }
+      ]
+    },
+    {
+      "title": "Two Losses: Tim Russert and Stan Winston",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Before our topic, I want to acknowledge two deaths. We lost Tim Russert on Friday. He was at NBC's studios at 2:00 in the afternoon, preparing for \"Meet the Press.\" He'd flown back early from vacationing in Italy with his wife and son to do the prep. He was 58 and had seen his son graduate about a month ago. I've watched him every Sunday for at least a decade. It was a coronary thrombosis. A chunk of plaque in his veins came loose and took him out."
+        },
+        {
+          "type": "fact",
+          "title": "A detail",
+          "t": "The plaque that ruptured was in a coronary artery, not a vein."
+        },
+        {
+          "s": "steve",
+          "t": "And late last night we lost the famous Hollywood effects artist Stan Winston. He gave us the dinosaurs of \"Jurassic Park,\" the Predator, the Terminator, the Aliens, and the cool suits in \"Iron Man.\" He died at 52 of multiple myeloma. I remember seeing his name scroll up the \"Iron Man\" credits, as it has for so many movies I love."
+        },
+        {
+          "type": "fact",
+          "title": "A correction",
+          "t": "Stan Winston was 62 when he died in June 2008."
+        },
+        {
+          "s": "leo",
+          "t": "It's a little scary for those of us in our 50s. Anyone who sees you on camera knows we don't have to worry about you. But I'm going to have to think about my diet and exercise."
+        },
+        {
+          "s": "steve",
+          "t": "I was on my stair climber, about to watch Chris Matthews' \"Hardball\" on MSNBC, when I heard about Tim Russert. I thought, okay, glad I'm working out while this is going on."
+        }
+      ]
+    },
+    {
+      "title": "AxCrypt, Bluetooth and the MalWeb",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I've recommended AxCrypt many times. There's an important update. As I understand it, versions before 1.6.4.4 could have problems under Vista because of its address space layout randomization, ASLR, which randomizes where things load so malware can't jump straight into known locations. That's fixed. It's a very nice standalone way to do strong AES encryption of files without encrypting your whole drive."
+        },
+        {
+          "s": "steve",
+          "t": "Last week's Windows Bluetooth vulnerability is as serious as I feared. Anyone with Bluetooth active and discoverable, without the update, could be remotely compromised by someone sending lots of service discovery protocol packets. A flaw in that protocol allows remote code execution. Radio always makes security more troublesome. Make sure you've applied last Tuesday's updates."
+        },
+        {
+          "s": "leo",
+          "t": "So it's your Windows machine that needs updating, not your phone."
+        },
+        {
+          "s": "steve",
+          "t": "I don't know whether Windows CE on PDAs was affected too. But certainly laptops."
+        },
+        {
+          "s": "steve",
+          "t": "And McAfee released a follow-up to last year's report, \"Mapping the Mal Web,\" a 14-page PDF at www.mcafee.com/advice. You need the www this time. Without it, you get a McAfee page saying they don't know about \"advice.\""
+        },
+        {
+          "s": "steve",
+          "t": "Not surprisingly, Hong Kong's .hk was the riskiest top-level domain. Of the sites tested, 19.2 percent tried some kind of exploit against your browser. China's .cn was second, with 11.8 percent. And among the general domains, .info was riskiest, up from 7.5 percent the year before."
+        },
+        {
+          "s": "steve",
+          "t": "But overall, very few sites are infected: 0.0717 percent, about seven out of every 10,000 randomly chosen sites. I like having hard numbers about the real odds."
+        },
+        {
+          "s": "steve",
+          "t": "Some classes of sites are far more dangerous, though. Of sites offering downloads, 4.7 percent had malicious content. Download sites are worse by a huge margin."
+        },
+        {
+          "s": "leo",
+          "t": "No surprise about Hong Kong and China. But I always get a little suspicious when people who make money on security publish scary studies."
+        },
+        {
+          "s": "steve",
+          "t": "True. But it's a big, varied market now, and it's no surprise to anyone that malware and browser exploits are out there."
+        },
+        {
+          "s": "leo",
+          "t": "What amazes me is how much more widespread it is than one thinks."
+        }
+      ]
+    },
+    {
+      "title": "From Third-Party Cookies to Behavioral Targeting",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I said last week I'd talk about Phorm's Webwise technology. I now completely understand it, and it's really horrible. The three largest ISPs in the U.K. have announced support, and several U.S. ISPs are at some stage of adoption."
+        },
+        {
+          "s": "steve",
+          "t": "So I'll do this in two parts. Today, an overview of how things were done before, how this is different, and what many companies are offering. In two weeks, exactly how Phorm works, because what they've done is extensive and amazingly intrusive."
+        },
+        {
+          "s": "steve",
+          "t": "It's called behavioral profiling or behavioral targeting. Companies install equipment inside end-user ISPs to literally track what we do, and essentially pay ISPs for the privilege of spying on us. It's new, and it's causing a huge amount of concern among privacy advocates and users."
+        },
+        {
+          "s": "steve",
+          "t": "BT in the U.K. secretly tested it in 2006 and 2007. Without telling its users, it let a third party, of questionable reputation, install equipment specifically to intercept customers' web traffic."
+        },
+        {
+          "s": "steve",
+          "t": "We've discussed third-party cookies. Images on a site are served by third-party servers. Leo, did you know Safari is the only browser that disables third-party cookies by default?"
+        },
+        {
+          "s": "leo",
+          "t": "We discovered that when I went through every browser on my desktop. You say that's how it should be."
+        },
+        {
+          "s": "steve",
+          "t": "I believe so, because the Netscape guys who created cookies, adding state management to web browsing, never intended third parties to use them."
+        },
+        {
+          "s": "steve",
+          "t": "But the people who wanted to advertising-enable the web said, wait, not only can we serve ads on sites people visit, but if we put a cookie on their machine, we can see where they go over time. A third party builds a persistent relationship with everyone who visits sites it serves ads to, and a profile from the sites they visit."
+        },
+        {
+          "s": "steve",
+          "t": "And it's of more concern than that, because personally identifiable information can leak out of browsing to make these more than anonymous files. Third-party cookies fundamentally enable it."
+        },
+        {
+          "s": "leo",
+          "t": "So DoubleClick or another ad network could follow you around to every site it serves."
+        },
+        {
+          "s": "steve",
+          "t": "It's more than a risk. It's their business model. They brag about it. They say tighter targeting is good for users. Newlyweds with babies get ads relevant to their lifestyle. Someone in their geriatric years gets different ads from the same site."
+        },
+        {
+          "s": "steve",
+          "t": "Many privacy-conscious people disable third-party cookies. First-party cookies are increasingly expected, wherever you log in, so a site knows you as you move through its pages. But arguably there's no defensible reason for third-party cookies."
+        },
+        {
+          "s": "leo",
+          "t": "Except making money collecting information about what you do. A very good reason for DoubleClick and Google."
+        },
+        {
+          "s": "steve",
+          "t": "I'm not saying it must be turned off. My concern is that all these companies say anyone uncomfortable can opt out. It's the classic adware line: we always provide opt-out. It's buried in fine print. When you tell people what's going on, they're upset, meaning they didn't know. Turn third-party cookies on if you want. I'm annoyed they're on by default everywhere but Safari."
+        },
+        {
+          "s": "leo",
+          "t": "And there's an irony. DoubleClick's opt-out is itself a cookie. Anti-spyware tools that kill tracking cookies often delete the opt-out cookie, and you're tracked again."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly."
+        }
+      ]
+    },
+    {
+      "title": "Why Advertisers Want More",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Google's approach: when a site wants relevant ads, Google analyzes the keywords on that page, figures out what it's about, and fills the ads from its advertisers. Mark Thompson has experimented with it. Google does a pretty good job."
+        },
+        {
+          "s": "steve",
+          "t": "The behavioral tracking vendors say the problem is sites without relevant ads, like blogs with no clear topic for advertisers to lock onto. So they put ads on pages based not on the page's content, but on the behavioral profile of the person visiting."
+        },
+        {
+          "s": "steve",
+          "t": "Many companies are entering this game. It's just beginning: Phorm, NebuAd, Front Porch, Adzilla and something called Project Rialto."
+        },
+        {
+          "s": "leo",
+          "t": "We're running out of names, and these are all terrible."
+        },
+        {
+          "s": "steve",
+          "t": "NebuAd tells site publishers it \"observes aggregated consumer activity across any site on the Internet without collecting and using any personally identifiable information,\" combining a wide view of pages navigated and searches performed. They're in your clickstream. Every one of these companies installs equipment in the ISP's facility."
+        },
+        {
+          "s": "leo",
+          "t": "The ISP knows everything you do, and it's willing to give that up."
+        },
+        {
+          "s": "steve",
+          "t": "NebuAd tells ISPs that until now they've enabled, but not participated in, the online advertising \"revenue ecosystem,\" and offers a \"risk-free\" way to increase average revenue per subscriber."
+        },
+        {
+          "s": "leo",
+          "t": "Charter Communications, a big cable ISP, announced this, spinning it as valuable to consumers. Its FAQ says you'll get ads more targeted to your interests."
+        },
+        {
+          "s": "steve",
+          "t": "The companies install the equipment free. The ISP just provides rack space."
+        },
+        {
+          "s": "leo",
+          "t": "And maybe its reputation."
+        }
+      ]
+    },
+    {
+      "title": "Phorm's Disastrous Trials",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "That can be huge. Phorm's early technology, tested with BT two years ago, raised a storm. It inserted JavaScript into every page your browser downloaded, to set cookies on your machine."
+        },
+        {
+          "s": "steve",
+          "t": "It was so ineptly done that people posting to web forums got the code stuck into their posts. Browsers locked up. IE would go to 100 percent CPU and stop responding, and you'd need Task Manager to kill it. All brought to you free by your ISP."
+        },
+        {
+          "s": "leo",
+          "t": "I probably would have blamed IE."
+        },
+        {
+          "s": "steve",
+          "t": "As far as I know it hasn't come to the U.S. yet, but Phorm is actively soliciting U.S. ISPs."
+        }
+      ]
+    },
+    {
+      "title": "Adzilla's ZillaCaster",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Adzilla tells ISPs it helps them \"monetize their traffic, anonymize their data, and offer a better browsing experience.\" How does it work? ISPs install its \"ZillaCaster\" device in their networks, free of charge."
+        },
+        {
+          "s": "steve",
+          "t": "ZillaCaster then analyzes \"terabytes of real-time anonymized data flowing over the ISP's network,\" which is to say everything all of the ISP's customers are doing, to offer \"precision ad preferencing\" to publishers and advertisers. When an advertiser pays for a targeted ad on Adzilla's network, Adzilla shares the revenue with the ISP."
+        },
+        {
+          "s": "leo",
+          "t": "That's why they do it. It's a moneymaker."
+        },
+        {
+          "s": "steve",
+          "t": "They claim it lets ISPs \"maintain optimal standards of consumer privacy.\" And their targeting is so precise, they say, because ZillaCaster continuously analyzes the sites visited, ads clicked and keywords searched for \"each anonymous entity,\" so publishers can charge advertisers the highest rates."
+        },
+        {
+          "s": "steve",
+          "t": "It's what we saw in the adware business: technology end users aren't told about before it's brought to them."
+        },
+        {
+          "s": "leo",
+          "t": "I just checked. Charter is using NebuAd."
+        }
+      ]
+    },
+    {
+      "title": "How NebuAd Works",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "NebuAd's technology is less bad than Phorm's, but it can't be blocked. Phorm's can, which we'll cover in two weeks."
+        },
+        {
+          "s": "steve",
+          "t": "NebuAd is essentially a shim in the ISP's facility that sees all its customers' requests. Thank goodness, it can't penetrate HTTPS. It only sees unencrypted traffic, presumably HTTP on port 80."
+        },
+        {
+          "s": "steve",
+          "t": "But it reads every unencrypted page you pull up and matches keywords to tell what it's about. It knows you by your IP address, and reportedly puts no cookies on your system, which makes it vastly cleaner than Phorm, whose cookie planting is beyond extreme. Since IPs change over time, it hashes your IP with some browser headers to detect when yours has changed."
+        },
+        {
+          "s": "steve",
+          "t": "They say they won't track health or sex-related sites. They sort pages into broad \"interest categories,\" a thousand or more, and associate your IP with the categories you visit."
+        },
+        {
+          "s": "steve",
+          "t": "When you visit a site in NebuAd's network, say CNN.com pulling ad images from NebuAd's servers, NebuAd sees your IP, checks what it knows, and serves an ad within your interest categories. So they don't need third-party cookies."
+        },
+        {
+          "s": "leo",
+          "t": "They've got even more information."
+        },
+        {
+          "s": "steve",
+          "t": "And one concern: a household with many machines behind a NAT router shares one public IP, so there's potential for cross-user leakage. Dad's using the computer, and then..."
+        },
+        {
+          "s": "leo",
+          "t": "You'd just see ads targeted at Dad. Not the end of the world."
+        },
+        {
+          "s": "steve",
+          "t": "And nobody has even shown this works. These companies are in early beta. Most of Adzilla's site is job postings for server engineers to build ZillaCaster. Nothing shows it produces higher click-through rates."
+        },
+        {
+          "s": "leo",
+          "t": "Advertisers have long known targeted ads are less annoying. Someone shopping for a car enjoys car ads. So the net result is less offensive ads, and advertisers waste less. But it's the privacy implications we're talking about."
+        }
+      ]
+    },
+    {
+      "title": "Opt-In, Not Opt-Out",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Given a choice, apparently most users say no, I'd rather not have my Internet use profiled at all. And the ISP is generating cash by letting third parties spy on its users."
+        },
+        {
+          "s": "steve",
+          "t": "I wouldn't have a problem if an ISP said, if you're willing to have your use profiled, we'll give you a discount on your monthly service."
+        },
+        {
+          "s": "steve",
+          "t": "No doubt lots of people would say sign me up. I'm not concerned about being anonymously profiled, and I'd like to save $2.50 a month."
+        },
+        {
+          "s": "leo",
+          "t": "I tried to bring this up on TWiT a couple of weeks ago, and people were ho-hum, I think because they didn't understand it. And more U.S. ISPs are looking at it."
+        },
+        {
+          "s": "steve",
+          "t": "In two weeks, after next week's Q&A, a propellerhead episode on Phorm. Its JavaScript injection two years ago backfired. These are not good people. They used to be called 121Media."
+        },
+        {
+          "s": "leo",
+          "t": "Did they do CoolWebSearch?"
+        },
+        {
+          "s": "steve",
+          "t": "They did something called PeopleOnPage, and Apropos. Apropos was one of the worst adware programs. It installed itself in randomly named directories and used a kernel-level rootkit driver to hook Windows' API, hide, inventory people's machines and monitor everything they did. These people now bring us Phorm."
+        },
+        {
+          "s": "leo",
+          "t": "KJ in our chat asks whether mobile carriers do this. They'd really know everything."
+        },
+        {
+          "s": "steve",
+          "t": "Front Porch's pitch to ISPs: monetize your network through advertising, at all stages of the user session, not just first login. Formats including \"Ultramercial,\" whatever that is."
+        },
+        {
+          "s": "steve",
+          "t": "Target users by location or preferences, \"advertise to the right user anywhere they surf the 'Net.\" Among popular uses: redirect subscribers' home page requests to your portal, redirect search requests to a partner, and create a \"walled garden\" of allowed sites for specific subscribers."
+        },
+        {
+          "s": "steve",
+          "t": "The ISP can do this because it has total control over your outgoing requests and incoming data. These companies say, we'll take care of everyone's privacy, just let us sit between you and your subscribers, and we'll pay you."
+        },
+        {
+          "s": "leo",
+          "t": "So ISPs should be like a utility: give us the bits and don't get involved."
+        },
+        {
+          "s": "steve",
+          "t": "My opinion is that users need to be informed. If an ISP makes money by monitoring customers and giving that to a third party, however it justifies it with relevant ads, it should not be opt-out. That never works. It must be opt-in. If they worry not enough people will opt in, gee, I wonder why, they can share the revenue."
+        },
+        {
+          "s": "leo",
+          "t": "There's intrusive and intrusive. Selling information so Google or Yahoo! ads are better tailored is one thing. Changing my home page and search page is another."
+        },
+        {
+          "s": "steve",
+          "t": "NebuAd wants to be an ad network like DoubleClick, placing ads on high-profile pages and choosing which to serve by the profile it builds from your IP."
+        },
+        {
+          "s": "leo",
+          "t": "Ed Markey in Congress said Charter's opt-out isn't enough. He wants it to be your choice. And the real problem is there's little ISP competition. Most markets have one or two. If both do it, there's nowhere to go."
+        },
+        {
+          "s": "steve",
+          "t": "Our listeners will know, and in two weeks we'll discuss what you can do to block this, including some things for NebuAd. What makes me angry is most people won't know."
+        },
+        {
+          "s": "steve",
+          "t": "It's like my fight with Aureate, which renamed itself Radiate, as 121Media renamed itself Phorm after ruining its name. People were furious to find that stuff on their machines. Aureate said its partners' contracts required that users be advised. I said, apparently they weren't, or they wouldn't be pissed off."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "After congressional scrutiny in mid-2008, Charter dropped its plan and NebuAd shut down in 2009. BT abandoned Phorm in 2009 after a public outcry and a European Commission inquiry into the secret trials, and Phorm closed in 2016."
+        }
+      ]
+    },
+    {
+      "title": "A Dad Saves the Semester",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I forgot my SpinRite story. William Turner, a longtime listener, got a call from his daughter at college 2,200 miles away, crying like the little schoolgirl he remembers. Blue Screen of Death, and a semester-long project with no backup. \"Daddy, I need you to come here now.\""
+        },
+        {
+          "s": "steve",
+          "t": "He FedExed her his copy of SpinRite. A few days later she called, jubilant: it fixed her hard drive, her laptop works, and she backed up all her documents. She thinks he's the smartest dad ever. He says no parent should send a son or daughter to school without SpinRite."
+        },
+        {
+          "s": "leo",
+          "t": "Everybody should go to school with a SpinRite disc."
+        },
+        {
+          "s": "steve",
+          "t": "The chat is asking whether SpinRite works on iPods. Remember the listener who took the drive out of his iPod, ran SpinRite on his PC and fixed it? It became a joke. Everyone gave him their dead iPods, 20 or 30 used as doorstops and bookends. He fixed them all and gave them back with their music intact."
+        }
+      ]
+    },
+    {
+      "title": "Firefox's Record, and Cookie Bugs",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Sargit in our chat says the Firefox site's application server can't keep up, though the site answers pings. Still, over 200,000 downloads while we talked, three quarters of a million so far, 11,000 a minute."
+        },
+        {
+          "s": "steve",
+          "t": "I've worked intensely on cookie handling for months. Most major browsers have cookie-handling bugs that have apparently gone unknown for a long time. IE does. Firefox 2 does. Opera is among the best, and Firefox 3 has it nailed. I'm very impressed with both."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Steve's research help bring back in Firefox 3?",
+      "options": [
+        "An easy checkbox to block third-party cookies",
+        "The green EV address bar",
+        "Pop-up blocking",
+        "A built-in VPN"
+      ],
+      "answer": 0,
+      "explain": "Firefox 2 had hidden the option in about:config."
+    },
+    {
+      "q": "What do behavioral targeting companies like NebuAd, Phorm and Adzilla install?",
+      "options": [
+        "Equipment inside ISPs that watches customers' web traffic to profile their interests",
+        "Browser toolbars",
+        "Spyware on PCs",
+        "New routers in homes"
+      ],
+      "answer": 0,
+      "explain": "They share ad revenue with the ISP."
+    },
+    {
+      "q": "Why can't NebuAd see some of your browsing?",
+      "options": [
+        "It can only read unencrypted traffic, not HTTPS connections",
+        "It only works at night",
+        "It skips Firefox users",
+        "It only sees email"
+      ],
+      "answer": 0,
+      "explain": "It identifies you by IP address."
+    },
+    {
+      "q": "Which browser blocked third-party cookies by default in 2008?",
+      "options": [
+        "Safari",
+        "Internet Explorer",
+        "Firefox",
+        "Opera"
+      ],
+      "answer": 0,
+      "explain": "Cookies' inventors never intended third parties to use them."
+    },
+    {
+      "q": "What does Steve insist such ISP profiling should be?",
+      "options": [
+        "Opt-in, perhaps with a discount for customers who agree",
+        "Banned outright",
+        "Opt-out",
+        "Hidden in the contract"
+      ],
+      "answer": 0,
+      "explain": "Opt-out never works, he says."
+    },
+    {
+      "q": "What did Phorm's company used to be called?",
+      "options": [
+        "121Media, makers of the rootkit adware Apropos",
+        "Aureate",
+        "DoubleClick",
+        "Claria"
+      ],
+      "answer": 0,
+      "explain": "Aureate similarly renamed itself Radiate."
+    }
+  ]
+}
