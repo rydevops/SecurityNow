@@ -1,0 +1,572 @@
+{
+  "number": 121,
+  "title": "Is Privacy Dead?",
+  "subtitle": "How everyday technology tracks us, and what we can do",
+  "date": "2007-12-06",
+  "description": "Steve and Leo reminisce about early PCs and gigabyte drives, Steve asks listeners to find his Kindle review on Amazon, and a listener revives 26 \"dead\" iPods with SpinRite. Then they step back from bits and bytes to discuss the erosion of privacy: TiVo's viewing data, store loyalty cards, Amazon's recommendations, OpenDNS's logs, search histories, the Patriot Act's secrecy, credit cards, toll transponders and cell phones, and the principles that should govern collected data: benefit, disclosure, transparency and control.",
+  "transcript": "https://www.grc.com/sn/sn-121.txt",
+  "audio": "http://media.GRC.com/sn/SN-121.mp3",
+  "chapters": [
+    {
+      "title": "Two Decades of SpinRite",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "It's Security Now! with Mr. Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "We've known each other for decades, Leo. You can drop the \"Mr.\""
+        },
+        {
+          "s": "leo",
+          "t": "Tech TV's 10th anniversary is in May. And you were world famous before that, creator of the Apple II light pen. How old is SpinRite?"
+        },
+        {
+          "s": "steve",
+          "t": "SpinRite is 20 years old. This month Sue celebrates 20 years with me, and Greg, my tech support guy, emailed to say he's been with me 17. That's stability."
+        },
+        {
+          "s": "leo",
+          "t": "Many vendors wouldn't trumpet two decades, but you're on version 6, and how drives operate hasn't changed that much."
+        },
+        {
+          "s": "steve",
+          "t": "I went down to the fundamentals, and those haven't changed, though drives have gotten insane. I once sent my lead tech guy, Jim Ralph, to Fry's for a bigger server drive. We hoped for 800 megs, since we probably had about 120. He came back sheepish: \"I hope this is okay. I got a gig.\" Nobody had seen a gigabyte. It was a full-height five-and-a-quarter-inch drive with a huge tower of heads, crammed with platters."
+        }
+      ]
+    },
+    {
+      "title": "Old Machines and Overclocking",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "I remember my first 20-megabyte drive, when they went to MFM."
+        },
+        {
+          "s": "steve",
+          "t": "I think that was in my first XP, a real steel tank IBM XP, with 20 megabytes."
+        },
+        {
+          "s": "leo",
+          "t": "The first IBM PC had a 4.77 megahertz processor."
+        },
+        {
+          "s": "steve",
+          "t": "A 4.77 megahertz 8008, and a cassette interface."
+        },
+        {
+          "s": "leo",
+          "t": "Not even a floppy. The XT was the first with a hard drive, and the AT was a 286, I think 8 megahertz. Clone ATs ran at 10 megahertz but were unreliable, since memory couldn't keep up."
+        },
+        {
+          "s": "steve",
+          "t": "They were being overclocked."
+        },
+        {
+          "type": "fact",
+          "title": "Fact check",
+          "t": "The IBM PC used Intel's 8088, not the 8008. Steve's \"XP\" was the XT, the 1983 PC with a hard drive, which shipped with 10 megabytes. The original 1984 AT ran its 286 at 6 megahertz, with 8 megahertz models later."
+        },
+        {
+          "s": "steve",
+          "t": "Then the clone market happened, and Asia got involved."
+        },
+        {
+          "s": "leo",
+          "t": "I set up a BBS for one of the first Mac stores in San Francisco on a 10 megahertz AT clone. It failed all the time. In retrospect, we were overclocking it."
+        },
+        {
+          "s": "steve",
+          "t": "There were tools called the \"overthruster\" and \"overdrive,\" with a dial sticking out the back. Turn it up until the machine locked up, then back it off. The Wild, Wild West."
+        },
+        {
+          "s": "leo",
+          "t": "Someday I want a computer history show with people like you."
+        },
+        {
+          "s": "steve",
+          "t": "And Dvorak. Cranky old men: this is the way things used to be."
+        }
+      ]
+    },
+    {
+      "title": "Steve's Kindle Review",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Did you get your Kindle?"
+        },
+        {
+          "s": "leo",
+          "t": "It's supposed to come today or tomorrow. I'd like to give it a few weeks, maybe take it to Egypt, and talk about it early next year."
+        },
+        {
+          "s": "steve",
+          "t": "Good. Meanwhile, I'd like to use the power of the podcast. The Kindle is incredibly controversial. Amazon has more one-star reviews than five-star, yet none of the one-star people own it or have seen it. They just know they hate it."
+        },
+        {
+          "s": "steve",
+          "t": "My review is at snipurl.com/skr, for Steve's Kindle Review. I waited until I'd used it a week and compared it to other readers, so it's buried on the fourth page. If our listeners found it useful, vote that it was helpful, so people considering a Kindle can find it."
+        },
+        {
+          "s": "leo",
+          "t": "248 people found it helpful already."
+        },
+        {
+          "s": "steve",
+          "t": "But others have 2,800-some. They were posted much earlier."
+        },
+        {
+          "s": "leo",
+          "t": "I can't find the voting button."
+        },
+        {
+          "s": "steve",
+          "t": "It's at the very bottom of the review."
+        },
+        {
+          "s": "leo",
+          "t": "I'm using Safari. I'll vote for you. You put a lot of thought into it."
+        },
+        {
+          "s": "steve",
+          "t": "I explain that I'm an avid eBook reader who wants to believe, like in Tinker Bell, so her light gets brighter. And I'm really happy with the Kindle."
+        }
+      ]
+    },
+    {
+      "title": "Still No Word From PayPal",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Have you heard from PayPal or DoubleClick?"
+        },
+        {
+          "s": "steve",
+          "t": "No. PayPal desperately needs competition. It's cornered the market, and reaching a human there is impossible. I've personally had no problems except the virtual debit card the automated process won't give me, after hours on hold on speakerphone. Despite our proven reach, nobody at PayPal reached back."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe they have no answer."
+        }
+      ]
+    },
+    {
+      "title": "26 Dead iPods",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A humorous SpinRite story from Thomas Martin in early November. A few years back, his third-generation iPod's hard drive failed. He was so mad he made it a doorstop for his office."
+        },
+        {
+          "s": "steve",
+          "t": "Over time, friends and their friends gave him their dead iPods. Over about three years he collected exactly 26, as paperweights, bookends and doorstops. A running joke."
+        },
+        {
+          "s": "steve",
+          "t": "Then Vista said it could repair his fifth-generation iPod's drive, and syncing failed. He was listening to us talk about SpinRite helping a guy's dating life, and the light bulb went on. He bought SpinRite during the episode, and his iPod worked."
+        },
+        {
+          "s": "steve",
+          "t": "Then he looked around at all the bookends. It worked time and time again. He spent a week calling friends to say their iPods worked. Thank goodness most had filled out owner information. He feels silly not connecting SpinRite to his broken doorstops sooner."
+        },
+        {
+          "s": "leo",
+          "t": "Once you have the connectors and cables for one, it's easy."
+        },
+        {
+          "s": "steve",
+          "t": "He must have had an iPod circus in his office."
+        },
+        {
+          "s": "leo",
+          "t": "I have a dead iPod. I'd have given it to him. It's the pain of getting the connectors."
+        },
+        {
+          "s": "steve",
+          "t": "That's why I didn't own an iPod until they took the hard drive out. No one knows better than I how flaky spinning drives are in consumer devices that get tossed around."
+        }
+      ]
+    },
+    {
+      "title": "TiVo Knows What You Watch",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I want to address something we've touched on many times but never discussed: how technology increasingly impinges on our privacy."
+        },
+        {
+          "s": "leo",
+          "t": "It follows from DoubleClick and PayPal. You assume there are protections, and as we learn more, there aren't."
+        },
+        {
+          "s": "steve",
+          "t": "It's pervasive, both passive and increasingly aggressive. Remember the Paul Reiser sitcom..."
+        },
+        {
+          "s": "leo",
+          "t": "\"Mad About You.\""
+        },
+        {
+          "s": "steve",
+          "t": "In one episode he's upset because his TiVo decided he was gay."
+        },
+        {
+          "s": "leo",
+          "t": "A takeoff on the famous Wall Street Journal story, \"My TiVo Thinks I'm Gay.\""
+        },
+        {
+          "s": "steve",
+          "t": "You rate shows thumbs up or down, and TiVo records things like the things you like, an early form of social networking. And its privacy statement says everything you do is recorded: when you fast-forward through commercials, stop a show midway, your season passes. It's a Nielsen box, except Nielsen families are paid, while TiVo users pay a subscription."
+        },
+        {
+          "s": "leo",
+          "t": "TiVo makes a lot of money selling that. They offered us reports at Tech TV, and they're very expensive. But it's aggregate data. I can't buy what Steve Gibson watches."
+        },
+        {
+          "s": "leo",
+          "t": "For The Screen Savers, they gave us a graph of how often each part was rewound and watched again, with spikes where people rewound several times. Hugely valuable for a programmer."
+        },
+        {
+          "s": "steve",
+          "t": "But TiVo does know me, and anything a company knows can be forced from it by subpoena. I can't imagine it's a specific privacy threat for Uncle Sam to know what shows I watch. Do terrorists watch different shows?"
+        },
+        {
+          "s": "leo",
+          "t": "Maybe not your TiVo. But your library card, or what movies you rent. The Patriot Act lets the government ask grocery stores what you buy. They've asked who's buying hummus."
+        }
+      ]
+    },
+    {
+      "title": "Loyalty Cards and Card Swapping",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I asked our newsgroups about pet peeves. One poster's wife could look up everything they'd ever bought at their grocery store on its website. That data exists and is aggregated."
+        },
+        {
+          "s": "leo",
+          "t": "Every time you use your club card."
+        },
+        {
+          "s": "steve",
+          "t": "Years ago at a security conference, I was followed by a rabid, EFF-style privacy speaker who said he turns to the person behind him in the supermarket line and offers to swap cards, and urged everyone to do it."
+        },
+        {
+          "s": "leo",
+          "t": "Scrambling their database."
+        },
+        {
+          "s": "steve",
+          "t": "If it went viral, the same purchases would be collected, but there'd be no individual behind them anymore."
+        },
+        {
+          "s": "leo",
+          "t": "I'm told you can ask for an anonymous card, or use the store's house card. There may be privacy rules about it in some places. Ask."
+        },
+        {
+          "s": "leo",
+          "t": "More equitable privacy advocates say: if a company is upfront that it aggregates and sells your data, and compensates you with something of value, like big discounts, what's wrong with that?"
+        }
+      ]
+    },
+    {
+      "title": "Benefit, Disclosure, Transparency and Control",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I completely agree. I see several perspectives: the benefit trade-off, disclosure, transparency and control."
+        },
+        {
+          "s": "steve",
+          "t": "Transparency: give me access to what you've collected about me. Control: let me delete some or all of it. Make you forget what you know about me."
+        },
+        {
+          "s": "leo",
+          "t": "And what you do with it, and who you give it to."
+        },
+        {
+          "s": "steve",
+          "t": "Repurposing is a real danger. Customers accept Company A's benign use of their data, then Company B, with a whole other agenda, buys Company A. That's why people are uncomfortable with Google buying DoubleClick. DoubleClick was bad enough. Google is a rabid cookie planter and knows everything I search for."
+        },
+        {
+          "s": "leo",
+          "t": "And searches alone say so much. A reporter used AOL's released search data to track down a specific person."
+        },
+        {
+          "s": "steve",
+          "t": "On benefit: TiVo users get very little from TiVo selling our data, except maybe keeping TiVo in business."
+        },
+        {
+          "s": "leo",
+          "t": "It's part of their business model."
+        },
+        {
+          "s": "steve",
+          "t": "Club cards give a substantial discount in trade. And Amazon knowing a lot about me often suggests things I find interesting: people who bought this book also bought these. That's transparent. If they aggregate others' data, obviously they aggregate mine."
+        },
+        {
+          "s": "steve",
+          "t": "And at our age, I've lost track of my movies. Amazon warns me: did you realize you bought this DVD six weeks ago?"
+        },
+        {
+          "s": "leo",
+          "t": "It's got to be around here somewhere. Amazon now lets you opt in to publish what you've bought, a social networking feature. I just did. And Amazon Associates pays a reward when people buy through your links. Many authors make more from Amazon's associate fees than from their publisher."
+        },
+        {
+          "type": "fact",
+          "title": "The AOL release",
+          "t": "In 2006, AOL published three months of searches from 650,000 users, identified only by number. New York Times reporters identified one of them, a Georgia woman, from her searches alone."
+        }
+      ]
+    },
+    {
+      "title": "Your DNS Provider's Logs",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Another concern: OpenDNS's privacy statement worried people. Basically, if anyone compels them, presumably a government agency, they'll turn over who performed what lookups."
+        },
+        {
+          "s": "leo",
+          "t": "Your ISP would do the same."
+        },
+        {
+          "s": "steve",
+          "t": "Only if it explicitly filtered and logged your DNS lookups. OpenDNS says it keeps logs. There's no cookie in DNS, thank goodness, so it's purely IP based. But your ISP's records show which IPs you had and when. So a government entity could determine every website your computer visited while the logs last."
+        },
+        {
+          "s": "leo",
+          "t": "Some of us accept that everybody knows what we do. But be aware. And the Patriot Act lets the government demand this information while forbidding the company from telling you or anyone else."
+        }
+      ]
+    },
+    {
+      "title": "A Spectrum of Concern",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Talking to people over many years, I've found a spectrum of concern. Some have given up."
+        },
+        {
+          "s": "leo",
+          "t": "I'm a public figure, so I have no privacy."
+        },
+        {
+          "s": "steve",
+          "t": "Some say, I have no illusions about being tracked, and I have nothing to hide. At the other end are people really concerned, mostly on principle. They're not doing anything wrong. They just object to unknown entities profiting from their information, or being compelled to release it."
+        },
+        {
+          "s": "leo",
+          "t": "Like your advice to turn off scripting. Most of us won't trade the convenience, but I'm glad hardcore privacy advocates exist, so we're given the choice."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. And the Patriot Act shows how policy changes what can be done with data. Five years ago, the bar for third parties like the government to get it was much higher. The same aggregation is going on, but now it's far more accessible, under easier terms, with laws preventing anyone from acknowledging they were asked."
+        },
+        {
+          "s": "leo",
+          "t": "The secrecy scares me. I'm more worried about the government than DoubleClick. It's the first step toward repressive government."
+        },
+        {
+          "s": "steve",
+          "t": "I hate the idea that an innocent email using hot keywords in an innocent context could set off an alarm and bring it to someone's attention. That crosses a line I can't quite describe."
+        },
+        {
+          "s": "leo",
+          "t": "In China, you expect your government to watch you. We live in a free nation. Privacy may not be specifically in the Constitution, but it's accepted as a fundamental right."
+        }
+      ]
+    },
+    {
+      "title": "The Flare Man, and \"Get Over It\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Last week some wacko strapped flares to himself and went into one of Hillary Clinton's campaign offices. The news said they quickly determined he'd bought the flares that day."
+        },
+        {
+          "s": "steve",
+          "t": "As a security guy, I wondered: was there an immediate pull of his credit card charges? I'm glad they could determine with some confidence that these were road flares, not TNT. But you hope some due process protects all of us from that kind of scrutiny, with a high enough bar."
+        },
+        {
+          "s": "leo",
+          "t": "Sun's CEO Scott McNealy famously said, \"Get over it, privacy is dead,\" years ago, and it's deteriorated since. Computers and widespread Internet databases pose the greatest threat to privacy in history."
+        },
+        {
+          "type": "fact",
+          "title": "The quote",
+          "t": "In 1999 McNealy told reporters, \"You have zero privacy anyway. Get over it.\""
+        },
+        {
+          "s": "steve",
+          "t": "Even email. You'd print a letter on your Series 1 HP LaserJet, which predated the Internet, fold it into an envelope, lick it and the stamp, and it was probably private."
+        },
+        {
+          "s": "leo",
+          "t": "By law. Someone could steam it open, but that's one letter at a time. Computers let them scan everything for keywords, en masse."
+        },
+        {
+          "s": "steve",
+          "t": "As our lives move online, what isn't? I use my Visa card as cash. So there's a record of everything I buy."
+        },
+        {
+          "s": "leo",
+          "t": "Your \"data smog,\" or data trail. Unless you drop off the grid entirely. Security and privacy are tightly linked. Privacy is one of the most important reasons to be secure."
+        }
+      ]
+    },
+    {
+      "title": "Toll Tags, Cell Phones and the Log Cabin",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some people delete their cookies routinely, just to shed surveillance they expect is anonymous anyway."
+        },
+        {
+          "s": "steve",
+          "t": "I keep an EZ Pass puck in my glove compartment for Southern California's toll roads. When it beeps, someone knows I just drove past that point. And my cell phone is always on, so my nearest tower reveals where I am."
+        },
+        {
+          "type": "fact",
+          "title": "Toll tags",
+          "t": "Southern California's electronic toll tag is FasTrak. E-ZPass is the East Coast's system, though both work the same way."
+        },
+        {
+          "s": "leo",
+          "t": "In theory, readers could be hidden everywhere, tracking you every moment, not just at the toll plaza."
+        },
+        {
+          "s": "steve",
+          "t": "So some people don't carry cell phones, avoid toll roads when there are alternatives, and don't use TiVo."
+        },
+        {
+          "s": "leo",
+          "t": "They don't use credit cards, the Internet or airplanes. Pretty soon you're in a log cabin in Idaho."
+        },
+        {
+          "s": "steve",
+          "t": "In conclusion, no modern lifestyle can conveniently be off the grid. The best people can do is be aware and decide where they fall on the spectrum. For those who are concerned, I hope there's transparency and control over this aggregation."
+        },
+        {
+          "s": "leo",
+          "t": "Maybe McNealy wasn't far off. But we'll help you protect your privacy in reasonable, sensible ways. It's not time to give up."
+        },
+        {
+          "s": "steve",
+          "t": "I want my Visa card's convenience, and not stopping at the toll booth. But I could go through the manual lane and toss coins in."
+        },
+        {
+          "s": "leo",
+          "t": "Or put the tag in its Mylar bag when you're not using it."
+        },
+        {
+          "s": "steve",
+          "t": "The goal was just to raise awareness, so people can decide."
+        }
+      ]
+    },
+    {
+      "title": "18,000 Submissions",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Where should people send questions?"
+        },
+        {
+          "s": "steve",
+          "t": "GRC.com/feedback. I really enjoy reading them, and get show ideas. This morning I pulled the accumulated submissions from the server: 18,000. Which is not to say I don't want more."
+        },
+        {
+          "s": "leo",
+          "t": "I can't answer all my email either."
+        },
+        {
+          "s": "steve",
+          "t": "Many questions come up again and again, so I choose a representative one. Answering it answers a question asked ten times."
+        },
+        {
+          "s": "leo",
+          "t": "A holiday gift: ScotteVest, Scott Jordan's clothing for geeks, with pockets galore and a Personal Area Network to run cords through, is giving listeners 20 percent off anything on ScotteVest.com with the code LEO. Part goes to TWiT."
+        },
+        {
+          "s": "leo",
+          "t": "Happy Hanukkah. I'll be in Egypt for Christmas, but we won't miss an episode."
+        },
+        {
+          "s": "steve",
+          "t": "We're doing double episodes for the next two weeks and squeezing in a fifth, to keep our record of never missing a week."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What privacy issue did Steve raise about TiVo?",
+      "options": [
+        "It records everything you watch and skip, and that data could be subpoenaed",
+        "It shows ads",
+        "It erases recordings",
+        "It's too expensive"
+      ],
+      "answer": 0,
+      "explain": "Leo said it sells aggregate reports."
+    },
+    {
+      "q": "What four perspectives on collected data did Steve name?",
+      "options": [
+        "Benefit trade-off, disclosure, transparency and control",
+        "Speed, cost, size and color",
+        "Encryption, hashing, signing and keys",
+        "Cookies, scripts, plug-ins and ads"
+      ],
+      "answer": 0,
+      "explain": "Control includes making a company forget data."
+    },
+    {
+      "q": "Why did one privacy advocate swap supermarket cards with strangers?",
+      "options": [
+        "To scramble the store's records so purchases no longer matched individuals",
+        "To get bigger discounts",
+        "To steal points",
+        "To test security"
+      ],
+      "answer": 0,
+      "explain": "Steve said it would ruin the data's value if widespread."
+    },
+    {
+      "q": "What did Steve say about OpenDNS's privacy policy?",
+      "options": [
+        "It keeps logs of lookups and will turn them over if compelled",
+        "It sells data to advertisers",
+        "It uses cookies",
+        "It never logs anything"
+      ],
+      "answer": 0,
+      "explain": "With ISP records, that could reveal sites you visited."
+    },
+    {
+      "q": "Why does Leo find the Patriot Act's data requests especially troubling?",
+      "options": [
+        "Companies can be forbidden from telling anyone they were asked",
+        "They cost too much",
+        "They only target companies",
+        "They're public records"
+      ],
+      "answer": 0,
+      "explain": "Steve said the bar for access dropped sharply."
+    },
+    {
+      "q": "What was Steve's conclusion about privacy today?",
+      "options": [
+        "No modern lifestyle can be fully off the grid, so be aware and choose where you stand",
+        "Privacy is fine",
+        "Stop using computers",
+        "Only governments are a threat"
+      ],
+      "answer": 0,
+      "explain": "He hopes for transparency and control."
+    }
+  ]
+}
