@@ -1,0 +1,435 @@
+{
+  "number": 117,
+  "title": "Even More Perfect Paper Passwords",
+  "subtitle": "PPP version 2 and the \"Peabody Dilemma\"",
+  "date": "2007-11-08",
+  "description": "Steve explains SpinRite's enterprise license and VeriSign's new credit-card token, now usable alongside up to five tokens on PayPal. Then he walks through two weeks of work in GRC's think tank newsgroup: why PPP version 2 drops a useless 128-bit offset, the many open-source implementations, the \"Peabody Dilemma\" of random versus truly one-time passwords when keystroke loggers exist, how choosing a better sequence key avoids early repeats, and how users can safely skip codes they can't or won't enter.",
+  "transcript": "https://www.grc.com/sn/sn-117.txt",
+  "audio": "http://media.GRC.com/sn/SN-117.mp3",
+  "chapters": [
+    {
+      "title": "SpinRite's Enterprise License",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is the Even More Perfect Paper Passwords episode. There can't be anything more perfect."
+        },
+        {
+          "s": "steve",
+          "t": "We've had two amazingly active weeks of think tank work, in a newsgroup actually called grc.thinktank. PPP is at version 2. This is sort of a propellerhead episode, but people will find the edge conditions interesting."
+        },
+        {
+          "type": "fact",
+          "title": "A change of plan",
+          "t": "Episode 114 had promised \"PayPal and DoubleClick\" for this week. The show covered PPP instead."
+        },
+        {
+          "s": "steve",
+          "t": "First, Sue, my operations manager of 20 years, keeps asking me to mention that companies don't know we have an enterprise license, a multi-site license. It's my fault. It's not on our website."
+        },
+        {
+          "s": "steve",
+          "t": "Big companies like IBM wanted one, and asking them to buy four copies per site made no sense. One copy is an individual license. Four copies is a site license, for all machines at one physical location. Ten copies is an enterprise license for anywhere in the U.S., and another ten covers anywhere outside it, so 20 for both."
+        },
+        {
+          "s": "leo",
+          "t": "Can you put this on the website?"
+        },
+        {
+          "s": "steve",
+          "t": "I've got to. I've been promising Sue."
+        }
+      ]
+    },
+    {
+      "title": "VeriSign's Credit-Card Token",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some cool news from VeriSign. I FedExed you one yesterday: a new form factor for the six-digit one-time password tokens."
+        },
+        {
+          "s": "leo",
+          "t": "Does it replace the keychain fob?"
+        },
+        {
+          "s": "steve",
+          "t": "Even better, VeriSign's back end now tests up to five tokens at once, and PayPal supports it. I've already done it, and it works."
+        },
+        {
+          "s": "steve",
+          "t": "The new one is perfectly credit-card size, no lumps or bumps. Its display is an eight-digit E Ink window, the technology we love in the Sony Reader, so it uses no power. It has a three-year warranty. It's about $48 from VeriSign, versus PayPal's subsidized $5 fob."
+        },
+        {
+          "s": "leo",
+          "t": "But you can stick it in your wallet."
+        },
+        {
+          "s": "steve",
+          "t": "My wallet's in my back pocket, so it's with me whenever I have my pants on, which is pretty much all the time."
+        },
+        {
+          "s": "steve",
+          "t": "No more blob on my key ring. It works with OpenID, eBay, PayPal and anyone else on VeriSign Identity Protection. See IDProtect.verisign.com for what I call the \"football\" fob and the new card."
+        },
+        {
+          "s": "steve",
+          "t": "On my PayPal account, both are registered. My workspace is secure, so the football stays on my desk, and the card goes with me to Starbucks."
+        },
+        {
+          "s": "leo",
+          "t": "So either one works."
+        },
+        {
+          "s": "steve",
+          "t": "In PayPal, it's under Security Key. You can add, remove or disable keys, up to five."
+        },
+        {
+          "s": "steve",
+          "t": "And VeriSign finally sent me the full documentation for their API. I haven't implemented it yet, but I've studied the protocol, and it's as clean as possible for privacy. It collects nothing it doesn't need, no user identification. Just: here's a token's serial number and its current display. Is it valid?"
+        },
+        {
+          "s": "leo",
+          "t": "I didn't realize they were that expensive. Thank you."
+        },
+        {
+          "s": "steve",
+          "t": "I got a couple more. I think I'll use VeriSign alongside Perfect Paper Passwords for GRC's authentication, to get the experience."
+        },
+        {
+          "s": "leo",
+          "t": "I'll add it to my PIP account too."
+        }
+      ]
+    },
+    {
+      "title": "Version 2: Dropping a Useless 128 Bits",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We're at version 2, and the algorithm changed. I realized the 128 bits I added to the cipher's input bought almost no additional security. It was completely dumb."
+        },
+        {
+          "s": "steve",
+          "t": "Recall: a 384-bit key, 256 bits to key Rijndael and 128 bits added to a counter. That sum was the data fed to Rijndael, and its output became the passcodes."
+        },
+        {
+          "s": "steve",
+          "t": "I wondered in a posting whether XOR would beat adding. Someone correctly pointed out neither helps. Since it's a cipher, you could reassemble passcodes into a 128-bit block and decrypt it back to its input. Two in succession would differ by exactly one count, so you'd trivially recover the counter and those 128 bits."
+        },
+        {
+          "s": "steve",
+          "t": "It only forced an attacker to do two operations instead of one. 128 extra bits only doubled the strength, like one more bit of key. He was absolutely right, so let's get rid of it now."
+        },
+        {
+          "s": "leo",
+          "t": "This is why peer review is so valuable in security."
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. That's how these weeks have been spent, in amazingly interesting dialogues with people pounding on this in GRC's newsgroups."
+        },
+        {
+          "s": "steve",
+          "t": "Version 2 is cleaner. The 128-bit counter feeds directly into Rijndael, and the sequence key is just the 256-bit Rijndael key. Output is grouped into 24-bit passcodes."
+        },
+        {
+          "s": "steve",
+          "t": "Someone might say it's only half as strong. But many feel 128 bits is already enough for a symmetric cipher, since each added bit doubles the strength. 256 bits, which is convenient, is phenomenally uncrackable."
+        }
+      ]
+    },
+    {
+      "title": "A Wave of Open-Source Versions",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The reaction from people writing their own open-source versions has been gratifying. I maintain the list on the \"Other PPP software\" page, linked at the bottom of every PPP page."
+        },
+        {
+          "s": "steve",
+          "t": "There are open-source implementations in C, the Mac OS X PAM, and one for Linux. People log into Macs and Linux machines over SSH and are prompted for passcodes. There's an open-source Windows version and several for UNIX."
+        },
+        {
+          "s": "steve",
+          "t": "There's one in PHP, with test pages where you can get passcards and log in. A .NET wrapper around my DLL for C#. A complete Java implementation for printing passcards and authenticating. And a Perl version is coming."
+        },
+        {
+          "s": "leo",
+          "t": "Randal Schwartz, a Perl guru and security guy now on a cruise, asked if this is like S/Key, a one-time password system in BSD for a while, though deprecated."
+        },
+        {
+          "s": "steve",
+          "t": "I've heard of it. We talked about OPIE on FreeBSD, which picks six words from a vocabulary of 2,048 short English words, 11 bits each. It's nice, but much bulkier than PPP. People really like these cute little four-character passcodes."
+        },
+        {
+          "s": "leo",
+          "t": "And carrying them in your wallet."
+        },
+        {
+          "s": "steve",
+          "t": "A credit-card printout holds 70. I moved the cards closer together, so you can cut out three as a strip and fold it inward into a little booklet, hiding the codes."
+        },
+        {
+          "s": "steve",
+          "t": "Some asked, what if someone photographs your card? True, printed cards have trade-offs a token, showing only the current code, doesn't. But this is zero hardware, with no batteries to run down. And Googling Perfect Paper Passwords, I see a lot of adoption, like SSL-Explorer adding it."
+        },
+        {
+          "type": "fact",
+          "title": "S/Key and OPIE",
+          "t": "S/Key, from Bellcore in the early 1990s, generated one-time passwords by repeatedly hashing a secret. OPIE, \"One-time Passwords In Everything,\" was the U.S. Naval Research Laboratory's improved version."
+        }
+      ]
+    },
+    {
+      "title": "The Peabody Dilemma",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One really interesting point became known as the \"Peabody Dilemma,\" after a poster called Peabody."
+        },
+        {
+          "s": "steve",
+          "t": "He said: if every passcode is random, it's not really one-time. With a one in 2 to the 24th, or 16,777,216, chance per code, two identical passcodes could sit right next to each other."
+        },
+        {
+          "s": "leo",
+          "t": "So it's changing a lot of most of the time."
+        },
+        {
+          "s": "steve",
+          "t": "And widening the window, two or three codes back, raises the probability, a bit like the birthday paradox. That sent us on a long tangent, because he had a point."
+        },
+        {
+          "s": "steve",
+          "t": "If an attacker knows nothing of prior passcodes, randomness is perfect. But we're defending against keystroke loggers that don't know about PPP but capture a username, secret password and passcode."
+        },
+        {
+          "s": "leo",
+          "t": "And now they have it, with a chance it'll work next time."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. So wouldn't a true one-time system be more secure against keystroke logging? He's absolutely right."
+        },
+        {
+          "s": "steve",
+          "t": "But a true one-time system has its own effect. An attacker with perfect knowledge of all past codes would know never to guess them, so the set shrinks. Not by much: even if you recorded eight million, there'd be eight million left, still eight times more than the hardware tokens' million."
+        }
+      ]
+    },
+    {
+      "title": "Why Repeats Happen",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The 128-bit outputs never repeat. A counter that only increases, run through Rijndael, maps every value to a different output."
+        },
+        {
+          "s": "steve",
+          "t": "Repetition happens because we only use 24 bits at a time. Another output might contain the same 24-bit chunk, even though the whole 128 bits is unique."
+        },
+        {
+          "s": "steve",
+          "t": "A true one-time system would need a 24-bit block cipher, permuting all 2 to the 24th values. But that's only 16 million passcodes, which fit in RAM. At three bytes each, that's just 48 megabytes. You could build a table of them."
+        },
+        {
+          "s": "steve",
+          "t": "That's why ciphers have larger blocks. 64 bits is considered very strong. 32 bits isn't anymore, because you can store a table of inputs and outputs, an \"electronic codebook\" attack. We can't store that for 64 or 128 bits. So we want a large block, which means repetition when we use only part of it."
+        },
+        {
+          "type": "fact",
+          "title": "Block sizes today",
+          "t": "64-bit blocks are no longer considered strong. 2016's \"Sweet32\" attack exploited them, which is why modern ciphers like AES use 128-bit blocks."
+        },
+        {
+          "s": "steve",
+          "t": "I proposed checking the prior 250 passcodes and, if the next would duplicate one, adding one to each byte. But to know those 250, you'd have to check the 250 before them, and so on. It's recursive back to the beginning, and not feasible."
+        }
+      ]
+    },
+    {
+      "title": "Choosing a Better Sequence Key",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "What came out of it: not all sequence keys are created equal. You can test random sequence keys, run, say, their first 100,000 codes, and reject any with lots of close duplicates."
+        },
+        {
+          "s": "steve",
+          "t": "That's what I'll do for my GRC employees' keys and in our coming commercial authentication product. It won't be part of the PPP spec itself. Instead of taking the first key from the random generator, scan a hundred or a thousand. It takes maybe four or five seconds."
+        },
+        {
+          "s": "steve",
+          "t": "Against an attacker with no knowledge, random is perfect. But keystroke loggers bias attacks toward reuse. I checked the first 200,000 passcodes, and lots of sequence keys have zero repeats. So we get the best of both worlds."
+        },
+        {
+          "s": "leo",
+          "t": "And if a key has repeats, try another."
+        },
+        {
+          "s": "steve",
+          "t": "You don't look long. Sequence keys are issued rarely and used a long time, so the upfront compute is economically feasible. 200,000 passcodes lasts a long time however often you log in. They're still random, and even an attacker who knew every passcode you'd used would have more than 15 million left."
+        },
+        {
+          "s": "leo",
+          "t": "How did Peabody feel?"
+        },
+        {
+          "s": "steve",
+          "t": "He likes it. Everyone kept telling him they're random, don't worry. But he kept saying keystroke loggers exist, so prevent reuse. That's better than random. He's right."
+        },
+        {
+          "s": "steve",
+          "t": "I found many keys with no repetition within 250 passcodes across a 200,000-passcode horizon. So we're really, really safe."
+        }
+      ]
+    },
+    {
+      "title": "Skipping Codes Safely",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I misspoke two weeks ago about skipping passcodes. Many people noted that if the system skipped forward automatically, an attacker could force your position far enough ahead that you'd run out. That was never my intention. You'd need the username, secret password and passcode all correct."
+        },
+        {
+          "s": "steve",
+          "t": "And there's the problem of four-letter words, which in English means words not used in polite conversation."
+        },
+        {
+          "s": "leo",
+          "t": "I know a bunch of them."
+        },
+        {
+          "s": "steve",
+          "t": "Imagine being asked to enter one that makes you uncomfortable. Every possible four-letter combination could occur. Someone suggested eliminating vowels, but that means more strange characters, which you might not have on a cell phone."
+        },
+        {
+          "s": "leo",
+          "t": "You can't prevent them from seeing it."
+        },
+        {
+          "s": "steve",
+          "t": "And a dictionary of offensive words to screen keys seems like overkill. There are other reasons too: an inkjet printer on the fritz, an illegible code, a passcard through the wash, or suspecting someone saw your cards."
+        },
+        {
+          "s": "steve",
+          "t": "The solution was simple. Normally the server prompts with the card, row and column of the next passcode. But you can always say, no, I'll tell you which one I'll enter."
+        },
+        {
+          "s": "leo",
+          "t": "You just say no."
+        },
+        {
+          "s": "steve",
+          "t": "There's my favorite word. You get a second form with blank card, row and column fields. The only limit is you must move forward, never back. Skip the next code, the next five, the next line or the next card. That advances your pointer, and you enter the matching code to authenticate."
+        }
+      ]
+    },
+    {
+      "title": "Hex Codes for Phones",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some said our funny characters are tricky on cell phones, and on an iPod touch or iPhone. One person said: you use six bits for four characters. I'll use four bits for six characters."
+        },
+        {
+          "s": "leo",
+          "t": "The same strength, without the hard-to-type characters."
+        },
+        {
+          "s": "steve",
+          "t": "Four bits is hex: zero through nine and A through F. Counterintuitively, people may think six characters are more secure than four, but the bit strength is the same. For phones, or where you don't have the full alphabet, it could make sense."
+        },
+        {
+          "s": "leo",
+          "t": "That's the joy of programming: the problem, the challenge and the solution."
+        },
+        {
+          "s": "steve",
+          "t": "Peabody took a lot of heat, because \"you can't do better than random.\" True, if the attacker has no knowledge of the past. With it, you can do better by eliminating codes that came before. So: better sequence keys, and 256-bit keys instead of 384."
+        },
+        {
+          "s": "leo",
+          "t": "Are third-party implementations updated?"
+        },
+        {
+          "s": "steve",
+          "t": "They're all at version 2 now."
+        },
+        {
+          "s": "steve",
+          "t": "Next week is a Q&A, then on to other topics."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did PPP version 2 drop the 128 bits added to the counter?",
+      "options": [
+        "An attacker could decrypt passcodes back to the input and easily recover them, so they added almost nothing",
+        "They made codes too long",
+        "They slowed it down",
+        "They were patented"
+      ],
+      "answer": 0,
+      "explain": "It was like adding just one more bit of key."
+    },
+    {
+      "q": "What was the \"Peabody Dilemma\"?",
+      "options": [
+        "Random passcodes can repeat, which matters if a keystroke logger has seen earlier codes",
+        "Passcodes were too short",
+        "Peabody lost his card",
+        "The cipher was weak"
+      ],
+      "answer": 0,
+      "explain": "Steve agreed he was right."
+    },
+    {
+      "q": "Why do PPP passcodes sometimes repeat even though cipher outputs never do?",
+      "options": [
+        "Each passcode uses only 24 bits of a 128-bit output",
+        "The counter goes backward",
+        "The key changes",
+        "Users reuse cards"
+      ],
+      "answer": 0,
+      "explain": "A 24-bit cipher would be too easy to tabulate."
+    },
+    {
+      "q": "How did Steve avoid early repeats without changing the algorithm?",
+      "options": [
+        "By testing many random sequence keys and choosing one with no repeats in the first 200,000 codes",
+        "By deleting repeated codes",
+        "By using a 24-bit cipher",
+        "By adding one to each byte"
+      ],
+      "answer": 0,
+      "explain": "Keys are issued rarely, so the extra work is cheap."
+    },
+    {
+      "q": "How can users skip a passcode they can't or won't enter?",
+      "options": [
+        "Tell the server which later card, row and column they'll enter, moving only forward",
+        "Go back to an earlier code",
+        "Call support",
+        "Enter any code"
+      ],
+      "answer": 0,
+      "explain": "Skipping obsoletes the earlier codes."
+    },
+    {
+      "q": "What did VeriSign's backend upgrade let PayPal users do?",
+      "options": [
+        "Register up to five tokens at once",
+        "Skip passwords",
+        "Get free tokens",
+        "Use SMS only"
+      ],
+      "answer": 0,
+      "explain": "Steve keeps a fob on his desk and a card in his wallet."
+    }
+  ]
+}
