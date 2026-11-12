@@ -1,0 +1,457 @@
+{
+  "number": 113,
+  "title": "Roaming Authentication",
+  "subtitle": "Part 1: letting GRC's staff in securely from anywhere",
+  "date": "2007-10-11",
+  "description": "Steve describes the award night, a Hawking router that turns off its security when you turn off its WiFi, the coming XP Service Pack 3, VeriSign's answers on OpenID recycling and phishing, and three \"bad\" PCs SpinRite brought back from the trash. Then he begins a two-part series on how he let GRC's employees reach the eCommerce system's management pages while traveling: why he rejected VPNs and client certificates, how a secure-flagged cookie authenticates a laptop, and why a simple password or puzzle can't defeat a keystroke logger.",
+  "transcript": "https://www.grc.com/sn/sn-113.txt",
+  "audio": "http://media.GRC.com/sn/SN-113.mp3",
+  "chapters": [
+    {
+      "title": "The Award Night",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Still the best science and technology podcast in the world, until this time next year."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks to our listeners. A week ago in Ontario, it was so fun to hang out with all the podcast people."
+        },
+        {
+          "s": "steve",
+          "t": "At the awards party after the first day, there were about 20 categories, and ours came near the end. I'd never heard of most of the winners, and I suspect most people hadn't either. There are a lot of obscure podcasts, and the TWiT family is a strong movement in pod land."
+        },
+        {
+          "s": "steve",
+          "t": "When Science & Technology was announced, and Security Now! was named, the room applauded. People know this podcast, being in our third year. When I accepted, I said I owe this to our listeners."
+        },
+        {
+          "s": "steve",
+          "t": "Next year it moves to Las Vegas. I'll be interested to see the attendance."
+        },
+        {
+          "s": "leo",
+          "t": "Probably bigger. Las Vegas flights are cheap, and Ontario is hard to reach. I'm going to Blog World in Las Vegas next month too."
+        }
+      ]
+    },
+    {
+      "title": "Roaming Authentication: The Plan",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Today is \"Roman authentication.\" Authentication you'd get in Rome?"
+        },
+        {
+          "s": "steve",
+          "t": "Roaming. It's something we've never done. In the next year or so, I'll have chances to include listeners in my own development of new technologies, as when I showed you GRC's eCommerce system."
+        },
+        {
+          "s": "steve",
+          "t": "I'm still nailing down loose ends. I needed to give Sue and Greg, my two employees, secure access to our eCommerce system when they're away from home."
+        },
+        {
+          "s": "steve",
+          "t": "We talk about snippets of technology. We've never used them to solve a real-world problem. This is part one of two, finishing the week after next, after next week's Q&A."
+        }
+      ]
+    },
+    {
+      "title": "A Router That Opens Itself Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, a really weird one. Our friend Mark Thompson of AnalogX has about 60 routers, six zero, collected while developing Universal Plug and Play technology, which lots of routers do incorrectly, and NAT penetration for peer-to-peer work."
+        },
+        {
+          "s": "steve",
+          "t": "He found a router from Hawking, a company I know; I use their KVM at Level 3."
+        },
+        {
+          "s": "leo",
+          "t": "I've used their antennas."
+        },
+        {
+          "s": "steve",
+          "t": "It's the H2WR54G: hardware revision A, boot code 1.0, runtime version 1.08. Mark has a WiFi spectrum analyzer, and he was turning off routers' WiFi with the regular admin interface. This one didn't turn off."
+        },
+        {
+          "s": "steve",
+          "t": "He unplugged the other routers to be sure. It was set up with WPA and working normally. When he disabled the WiFi, the SSID changed to \"Venus.\" It shut down security but not the WiFi, wide open, straight from the manufacturer."
+        },
+        {
+          "s": "leo",
+          "t": "Like someone got into the firmware: a known SSID and no security."
+        },
+        {
+          "s": "steve",
+          "t": "StarTech and Edimax routers have identical management pages, though Mark didn't test them. If you have this Hawking model, don't turn off its WiFi even if you're not using it. Wrap it in aluminum foil and put it in a steel box."
+        },
+        {
+          "s": "leo",
+          "t": "Unplugging it would probably do."
+        },
+        {
+          "s": "steve",
+          "t": "But you might want the router without the wireless."
+        },
+        {
+          "s": "leo",
+          "t": "Did he tell Hawking?"
+        },
+        {
+          "s": "steve",
+          "t": "You know Mark. He's on to his next thing. But he phoned me immediately to say I wouldn't believe it. It was fresh out of the box."
+        }
+      ]
+    },
+    {
+      "title": "XP Service Pack 3 Is Coming",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Windows XP Service Pack 3 is in beta, with something like 1,057 fixes. Have you set up XP recently? Service Pack 2 still leaves 84 or 85 patches, and you have to run updates five times, because the patches have patches, and the patch patches have patches."
+        },
+        {
+          "s": "leo",
+          "t": "Paul and I will discuss it tomorrow on Windows Weekly. I sense it's just the hotfixes rolled up."
+        },
+        {
+          "s": "steve",
+          "t": "One well-informed blurb said a few things were backported from Vista, like networking changes and enhanced kernel-mode crypto. It's nice that the OS we want to use, XP, benefits from the one some of us have no choice about, Vista."
+        },
+        {
+          "s": "leo",
+          "t": "I shiver at Vista networking coming to XP. My most common question is from people whose file sharing stopped working after moving to Vista."
+        },
+        {
+          "s": "steve",
+          "t": "They'd never backport something that breaks XP. That would be a catastrophe."
+        },
+        {
+          "type": "fact",
+          "title": "SP3 arrives",
+          "t": "Windows XP Service Pack 3 shipped in May 2008 with 1,174 fixes, plus a few backported features such as Network Access Protection."
+        }
+      ]
+    },
+    {
+      "title": "VeriSign Answers on OpenID",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Gary Krall, the PIP guy at VeriSign Labs, wrote right after our OpenID precautions episode, subject \"Yes, I was listening.\" He said they don't get out of the lab much to come on the show."
+        },
+        {
+          "s": "steve",
+          "t": "Most importantly, they never recycle user IDs, for exactly the reason we gave: someone could masquerade as a previous user. Once created, an account is frozen and never released. If some providers do recycle, that's a very bad idea."
+        },
+        {
+          "s": "steve",
+          "t": "He also asked whether we'd tried SeatBelt, which supports eight other OpenID providers besides theirs, including two in Korea and one in Germany, with its interface in Korean, German and French."
+        },
+        {
+          "s": "steve",
+          "t": "To prevent phishing, if you reach a site and aren't signed into PIP, they show a nondescript page with no external links saying you're not logged in. You must sign into PIP first. And beyond SSL throughout, PIP has an Extended Validation green bar."
+        },
+        {
+          "s": "steve",
+          "t": "With SeatBelt, when you click into an OpenID field on a site, it drops down a blind telling you you're not logged in, with a button to PIP's login page. Once you sign in, with your token for even stronger authentication, it returns you and fills in your OpenID URL."
+        },
+        {
+          "s": "leo",
+          "t": "Once I'm logged into SeatBelt, I go to a participating site, it sees my OpenID, I click okay, and I'm in. It's automatic."
+        },
+        {
+          "s": "steve",
+          "t": "So VeriSign Labs has dealt with the concerns we raised."
+        }
+      ]
+    },
+    {
+      "title": "Three \"Bad Drive\" PCs From the Trash",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Andrew Baker of Lake Forest, right around the corner from me, runs an eBay consignment business from a storage unit. Taking out trash, the storage staff stopped him to check for electronics, because someone had thrown away three old computers."
+        },
+        {
+          "s": "steve",
+          "t": "They were three Pentium 4 Shuttle-like PCs with sticky notes saying \"bad drive.\" He paid the employee $50 for all three and ran SpinRite. It fixed every drive and recovered every machine."
+        },
+        {
+          "s": "steve",
+          "t": "He was locked out without the Windows admin password, so he tried common passwords. On his second try he got in. It was their username."
+        },
+        {
+          "s": "leo",
+          "t": "Whoever was running these is an idiot."
+        },
+        {
+          "s": "steve",
+          "t": "He found it comical that SpinRite revived them and the password was so easy. He's honest, so he wiped the drives. His advice: don't let your non-working machine get into the wrong hands."
+        }
+      ]
+    },
+    {
+      "title": "Why Not a VPN?",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Here's the situation: employees offsite need to log in. Normally a business sets up a VPN."
+        },
+        {
+          "s": "steve",
+          "t": "But VPNs are problematic. At dinner a couple of weeks ago, two women in our group said they couldn't connect to their corporate VPNs, one because a hospital's network was hostile to it."
+        },
+        {
+          "s": "steve",
+          "t": "I've seen problems with OpenID, too. It's routing based, and if the network you're on uses the same address space as the one you're connecting to, it can't tell whether packets stay local or go over the VPN."
+        },
+        {
+          "type": "fact",
+          "title": "A slip",
+          "t": "Steve means OpenVPN, the open-source VPN he's discussed before, not the OpenID sign-on system. Overlapping private address ranges are a common VPN headache."
+        },
+        {
+          "s": "steve",
+          "t": "And I didn't need to give Greg and Sue access to our corporate network. I'd rather not. You never want to enable more access than necessary, and web access is all they need."
+        },
+        {
+          "s": "steve",
+          "t": "Right now our network knows my office's address range and Sue's and Greg's router IPs. They use DHCP, but if you never turn off your router, it tends to keep its IP."
+        },
+        {
+          "s": "steve",
+          "t": "Only connections from those IPs can bring up our eCommerce management pages. You can't spoof the IP of a TCP connection, because you need a valid return address to complete the three-way handshake. With fixed IPs, strong security is easy."
+        },
+        {
+          "s": "steve",
+          "t": "If an IP changes, say Greg turns off his router to cool off, or there's a power outage, they email me, the email reveals their router's new IP, and I edit a registry entry on our server. Strong, as long as they stay home."
+        },
+        {
+          "s": "steve",
+          "t": "But Sue would like a vacation now and then. Customers write: I'm on the East Coast, I live on the West Coast, I desperately need my SpinRite, and I don't have my receipt with the transaction ID. Sue can look it up only through the management interface, tied to her home IP."
+        },
+        {
+          "s": "steve",
+          "t": "She could VPN to a machine left on at home and go back out to GRC, which would see her home IP. That's sort of a solution. But current VPN technology is problematic, and I wanted something absolutely robust and absolutely secure."
+        }
+      ]
+    },
+    {
+      "title": "Why Not Client Certificates?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next I looked at client certificates. Normally, a web server's certificate authenticates it to the browser, signed by one of the growing, worrisome number of authorities browsers trust."
+        },
+        {
+          "s": "steve",
+          "t": "But you can also give the browser a certificate to present to the server. I looked at that for a couple of days. It's a pain to administer. For a huge organization with a certificate server and people coming and going, it makes sense. For us it seemed like overkill."
+        }
+      ]
+    },
+    {
+      "title": "A Cookie That Can't Be Sniffed",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So I fell back to cookies. They're generally considered insecure, but they can be used securely. Netscape defined a \"secure\" flag, which all browsers honor: the browser only offers that cookie over an SSL connection."
+        },
+        {
+          "s": "steve",
+          "t": "Remember, a server issues a cookie for its domain, and whenever the browser asks that server for anything, it offers back matching cookies. It lets the server track you through the site."
+        },
+        {
+          "s": "steve",
+          "t": "I wanted multifactor authentication: something the user has and something they know. First, authenticate the laptop itself with a cookie that can't be sniffed, even if they also view non-secure GRC pages. That's what the secure flag does."
+        },
+        {
+          "s": "leo",
+          "t": "It has to disclose it to somebody. Only to the originating site?"
+        },
+        {
+          "s": "steve",
+          "t": "I didn't explain that well. It will never send the cookie back, even to the issuing server, except over SSL."
+        },
+        {
+          "s": "leo",
+          "t": "So the normal rule, only back to the site that set it, plus SSL."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. Someone sniffing your traffic can never get it. SSL is strong, snooping-proof technology when used correctly. An inspecting SSL proxy needs its certificate on the client, which of course wouldn't be there."
+        }
+      ]
+    },
+    {
+      "title": "Planting the Cookie at Home",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "How does the laptop get the cookie? Only by being at a recognized management IP. Sue brings her laptop home and goes to the secure management pages. The server sees her home IP and no cookie."
+        },
+        {
+          "s": "steve",
+          "t": "It intercepts with a screen saying this machine has neither been authorized nor deauthorized for future roaming access."
+        },
+        {
+          "s": "steve",
+          "t": "If a visitor's machine were used at an employee's home, the same question would come up. She'd say no, and it would get a secure cookie whose value says: if this machine ever contacts GRC from outside our authenticated IPs, don't give it access."
+        },
+        {
+          "s": "leo",
+          "t": "So it has to be a machine you've seen before, from an IP you've seen."
+        },
+        {
+          "s": "steve",
+          "t": "A machine that was once physically at one of our authenticated IPs, where Greg, Sue or I said yes, give it future roaming access. Then, whenever it makes a secure connection to GRC from anywhere, it sends that cookie back."
+        },
+        {
+          "s": "leo",
+          "t": "Does it expire?"
+        },
+        {
+          "s": "steve",
+          "t": "It's a non-expiring cookie. I think I expire it in 2047 or something."
+        },
+        {
+          "s": "steve",
+          "t": "We'll have a whole different authentication technology by then. So part one is solved: our three laptops are identified as candidates for access to the privileged management interface when roaming."
+        }
+      ]
+    },
+    {
+      "title": "Proving Who's at the Keyboard",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now, how do I prove it's Sue, Greg or me using the laptop? You'd expect a password. But anything typed can be captured."
+        },
+        {
+          "s": "steve",
+          "t": "We hope our machines are clean. But I've told the story of Sue innocently visiting a site that installed CoolWebSearch into her IE. Removing it broke her connectivity. Your typical malware nightmare."
+        },
+        {
+          "s": "steve",
+          "t": "A keystroke logger pays special attention to secure sites as potentially high value, logging the keystrokes and URL and emailing them off to Russia, Lithuania or China for the evil ones to use. I won't leave us vulnerable to a known problem like that."
+        },
+        {
+          "s": "steve",
+          "t": "I considered the VeriSign and PayPal tokens, but I haven't gotten VeriSign's API yet. And I shy away from depending on any third party. My acronym, which I shared with you, is TNO: Trust No One."
+        },
+        {
+          "s": "steve",
+          "t": "These are the keys to the kingdom, GRC's most precious jewels. I want control. Even if everything bad possible is happening, we must still be secure, even with a keystroke logger watching. That means some kind of one-time something."
+        }
+      ]
+    },
+    {
+      "title": "Why a Puzzle Doesn't Work",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "My first idea: present a puzzle only we know how to solve. A jumble of letters and numbers, with a secret rule for reordering, sorting or adding digits. We'd never get the same puzzle twice, so a captured answer couldn't be replayed."
+        },
+        {
+          "s": "steve",
+          "t": "After solving it, we'd get a session cookie, alive while the browser is open, or maybe while we do something within an hour. Then another puzzle."
+        },
+        {
+          "s": "steve",
+          "t": "I thought about it for days and couldn't make it work. You must assume the attacker has perfect knowledge: the captured page and the keystrokes. Doodling on paper, I had to admit that if you saw a few puzzles and their answers, you could reverse-engineer the secret."
+        },
+        {
+          "s": "leo",
+          "t": "You wouldn't get a job at Microsoft. They ask puzzles like how many gallons of water are in the world, to watch your process."
+        },
+        {
+          "s": "steve",
+          "t": "But I did come up with a solution. We're 50 minutes in, so I'll leave you with a cliffhanger."
+        },
+        {
+          "s": "steve",
+          "t": "It's very cool and slick. I've implemented it and written the software, a whole crypto system, and I'm making it all available to the industry for free. I'll use it in a future GRC product, and I hope explaining it openly encourages others to use it."
+        },
+        {
+          "s": "steve",
+          "t": "It literally lets someone look over my employees' shoulders and monitor our connection, and it won't help them at all."
+        },
+        {
+          "s": "leo",
+          "t": "You think outside the box, building from scratch instead of cobbling something together. Next week, Episode 114, is a Q&A, and then in 115 we find out more about \"Roman\" authentication."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Mark Thompson's Hawking router do when he turned off its WiFi?",
+      "options": [
+        "Turned off its security, renamed the network \"Venus\" and kept broadcasting",
+        "Shut down completely",
+        "Erased its settings",
+        "Switched to WPA2"
+      ],
+      "answer": 0,
+      "explain": "It came that way from the manufacturer."
+    },
+    {
+      "q": "Why didn't Steve give GRC's roaming staff a VPN?",
+      "options": [
+        "VPNs often fail on hostile networks, and they'd get more access than needed",
+        "VPNs are illegal",
+        "They're too expensive",
+        "GRC has no network"
+      ],
+      "answer": 0,
+      "explain": "All they need is web access."
+    },
+    {
+      "q": "What does a cookie's \"secure\" flag do?",
+      "options": [
+        "The browser sends it only over an SSL connection",
+        "It encrypts the hard drive",
+        "It expires immediately",
+        "It's visible to all sites"
+      ],
+      "answer": 0,
+      "explain": "So it can't be sniffed."
+    },
+    {
+      "q": "How does a laptop get GRC's roaming cookie?",
+      "options": [
+        "By visiting the secure pages from an employee's recognized home IP and choosing to authorize it",
+        "By downloading it",
+        "By emailing Steve",
+        "From VeriSign"
+      ],
+      "answer": 0,
+      "explain": "Unauthorized machines get a \"deny\" cookie instead."
+    },
+    {
+      "q": "Why won't a password alone protect GRC's management pages?",
+      "options": [
+        "A keystroke logger could capture it and reuse it",
+        "Passwords are too short",
+        "Browsers forget them",
+        "Sue would forget it"
+      ],
+      "answer": 0,
+      "explain": "Steve wanted security even with a logger watching."
+    },
+    {
+      "q": "Why did Steve reject a secret-rule puzzle?",
+      "options": [
+        "An attacker who saw several puzzles and answers could work out the rule",
+        "It was too hard to solve",
+        "It took too long",
+        "Puzzles can't be typed"
+      ],
+      "answer": 0,
+      "explain": "He assumed the attacker has perfect knowledge."
+    }
+  ]
+}
