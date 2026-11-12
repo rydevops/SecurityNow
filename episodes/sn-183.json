@@ -1,0 +1,343 @@
+{
+  "number": 183,
+  "title": "Modes of Encryption",
+  "subtitle": "How ECB, counter mode and cipher block chaining turn a block cipher into real encryption",
+  "date": "2009-02-12",
+  "description": "Before the SSL deep dive, Steve lays the groundwork on operating modes: why feeding a block cipher one block at a time (ECB) leaks patterns, how counter mode and cipher block chaining fix that with XOR and an initialization vector, and how CBC naturally leads to keyed hashes and MACs. Plus a heavy Patch Tuesday including a critical IE7 flaw and a 250MB .NET update, VNC and Free Download Manager fixes, a stronger UAC in Windows 7, a SQL-injection embarrassment for Kaspersky, the Yubico YubiKing awards, and the Kindle 2.",
+  "transcript": "https://www.grc.com/sn/sn-183.txt",
+  "audio": "http://media.GRC.com/sn/SN-183.mp3",
+  "chapters": [
+    {
+      "title": "A Heavy Patch Tuesday",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Patch Tuesday landed a lot this month. The big one: a critical flaw in IE7 on XP and Vista, not in IE5 or 6, where just visiting a malicious site, or clicking a link in Outlook's IE-based viewer, can compromise your machine. Patch it."
+        },
+        {
+          "s": "steve",
+          "t": "There's also a new ~9.8MB MSRT, a cumulative IE7 update, an ActiveX kill-bit rollup, two Office 2003 fixes, and a monster .NET Framework 3.5 SP1 plus family update totaling about 250MB."
+        },
+        {
+          "type": "fact",
+          "title": "ActiveX kill bits",
+          "t": "A \"kill bit\" is a registry flag that tells Internet Explorer never to instantiate a particular ActiveX control in a web page. Microsoft ships kill bits for controls that have no business running from a web page, closing off a long-standing class of IE exploits."
+        },
+        {
+          "s": "leo",
+          "t": "Cumulatively that's nearly a third of a gigabyte from Microsoft. You couldn't do this before broadband; dialup users, about 14 percent, just won't get it."
+        }
+      ]
+    },
+    {
+      "title": "More Updates: Firefox, VNC and Free Download Manager",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Beyond Microsoft: Firefox should be at 3.0.6 and Thunderbird at 2.0.0.21, fixing six flaws, some allowing remote code execution."
+        },
+        {
+          "s": "steve",
+          "t": "There's a client-side hole in UltraVNC and TightVNC: a malicious VNC server can take over a connecting client. Unlikely, since you usually connect to your own machine, but update UltraVNC to 1.0.5.4 and TightVNC to 1.3.10."
+        },
+        {
+          "s": "steve",
+          "t": "And Free Download Manager has a remote-execution bug: download a file from a malicious site with it and your PC can be taken over. That one's worth caring about, since grabbing files from unknown sites is exactly what people do with it."
+        }
+      ]
+    },
+    {
+      "title": "Windows 7 Turns UAC Back Up",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In Vista, User Account Control nagged so much that in the Windows 7 beta Microsoft softened it, too far. Proof-of-concept code appeared that scripts the control-panel steps to switch UAC off, with no prompt."
+        },
+        {
+          "s": "steve",
+          "t": "So in the next beta they're keeping UAC quieter but protecting that path: the control-panel UAC setting runs at higher privilege, and crucially, changing UAC's strength now always requires manual confirmation."
+        },
+        {
+          "s": "leo",
+          "t": "That's the right fix. Even an admin should have to prove who they are for something that critical and global, and you don't change it often."
+        }
+      ]
+    },
+    {
+      "title": "Kaspersky's SQL-Injection Embarrassment",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A little embarrassment for Kaspersky: for about 10 days one of their corporate databases, their customer database, was exposed through a SQL-injection hole. The people who found it were outsiders who eventually told Kaspersky to fix it."
+        },
+        {
+          "s": "steve",
+          "t": "Kaspersky said no confidential data was taken, which is good, but it's not what you want happening to a security company."
+        },
+        {
+          "type": "fact",
+          "title": "SQL injection",
+          "t": "A SQL-injection attack slips database commands into input fields a web app fails to sanitize, letting an attacker read or alter the backing database. It remained one of the most common and damaging web vulnerabilities for years, and defenses center on parameterized queries."
+        }
+      ]
+    },
+    {
+      "title": "The Yubico YubiKing Awards",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "News from Yubico: they've launched the YubiKing awards, for the best applications, services, developer tools and ideas built around the YubiKey. Anyone who submits an entry on their new wiki gets three free YubiKeys."
+        },
+        {
+          "s": "steve",
+          "t": "Three winners are chosen, half by wiki participants and half by a jury I'm leading. We'll feature them on the show; they'll get five special-edition YubiKeys no one else can obtain, and Yubico pays their way to the RSA Security Conference."
+        },
+        {
+          "s": "steve",
+          "t": "Their wiki is also a lovely demo of the key: you sign up with just a handle and a touch of the button, no password ever, because one-time-password authentication logs you in. If you own a YubiKey, go try it."
+        },
+        {
+          "s": "leo",
+          "t": "I only have one YubiKey. I need many. One static, one in one-time-password mode, and it'd be nice to have one key that does both."
+        }
+      ]
+    },
+    {
+      "title": "Trusting a Third-Party Authenticator",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "If you use a YubiKey in OTP mode, authentication goes to Yubico's servers. Are people running their own key servers, the way Bank of America might?"
+        },
+        {
+          "s": "steve",
+          "t": "They could, but then your server has to know the secret AES key inside your key. The footballs PayPal and others ship actually use VeriSign as a shared back end, so a third-party authenticator is normal."
+        },
+        {
+          "s": "steve",
+          "t": "In CryptoLink I'll allow all three: static mode, your own endpoint knowing a privatized key, or Yubico as the back end. Whoever can authenticate your key knows its full internal state, counters and secret, and could impersonate you, so you're trusting that agent's complete disinterest, and a crypto company's whole reputation rides on it."
+        },
+        {
+          "s": "leo",
+          "t": "And to be clear, this isn't impugning Yubico. It's exactly the threat-model thinking we do: what does trusting someone actually risk?"
+        }
+      ]
+    },
+    {
+      "title": "The Kindle 2 and Ultracapacitor Gadgets",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Amazon announced the Kindle 2, and we both ordered one. Thinner and classier, 16 grey levels for better images, faster page turns, the page buttons moved off the corners, a joystick replacing the odd LCD side strip, and it can read books aloud with text-to-speech. The sticking point is still the $359 price."
+        },
+        {
+          "s": "steve",
+          "t": "Separately, ultracapacitors are reaching consumer products. Coleman's FlashCell screwdriver charges in 90 seconds, with no battery to wear out, and recharge/discharge up to 50,000 times. A chatroom listener found Popular Mechanics confirming the 90-second charge gives about 30 minutes of use."
+        },
+        {
+          "type": "fact",
+          "title": "Ultracapacitors vs batteries",
+          "t": "Ultracapacitors store energy in an electric field rather than chemically, so they charge in seconds, tolerate tens of thousands of cycles, and self-discharge slowly, but hold far less energy per size than batteries. The much-hyped EEStor ultracapacitor Steve had followed never shipped a product."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite Recovers Part of a Sector",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A SpinRite story from David Hoeflein: his PC wouldn't boot even in safe mode, and repair said Windows didn't recognize the partition type. SpinRite found a sector it couldn't fully repair but recovered most of it, which was enough; Windows booted, fixed its indexes, and his 20 years of documents survived."
+        },
+        {
+          "s": "leo",
+          "t": "When SpinRite can't recover a whole sector, it recovers part of the data?"
+        },
+        {
+          "s": "steve",
+          "t": "Yes, and that's unique. SpinRite drops into DynaStat, takes about 2,000 samples of the unreadable sector, and analyzes them to reconstruct what it can. A 512-byte sector is 4,096 bits, and only about 11 or 12 bad bits in a row defeat the drive's error correction, so SpinRite can often hand back 4,080 of 4,096 bits."
+        },
+        {
+          "s": "steve",
+          "t": "If those two lost bytes fall in a directory or boot structure you can live without, the sector becomes readable again. That's where the \"miracles\" come from: it gives you the data it could read instead of refusing the whole sector."
+        }
+      ]
+    },
+    {
+      "title": "Encryption Foundations: Symmetric and Asymmetric",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now to the groundwork for SSL. We've covered symmetric and asymmetric ciphers. An asymmetric, or public-key, cipher uses one key to encrypt and the other to decrypt; you publish one half of the pair."
+        },
+        {
+          "s": "steve",
+          "t": "Public-key keys must be long, 1024 or 2048 bits, and the math is slow, so you never encrypt a whole message with it. Instead you pick a fresh random symmetric key, encrypt the document with that fast symmetric cipher, and use public-key crypto only to encrypt the small key."
+        },
+        {
+          "s": "leo",
+          "t": "So you download my public key, and that's fine, it's meant to be public. Only my private key can undo what my public key encrypts, and vice versa."
+        }
+      ]
+    },
+    {
+      "title": "The Block Cipher as a Black Box",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Picture a symmetric cipher like AES (Rijndael) as a black box: 128 bits of data in, 128 bits out, under the control of a key. Flip one input bit and on average half the output bits change, unpredictably. Same input plus same key always gives the same output, and it's reversible."
+        },
+        {
+          "s": "steve",
+          "t": "Block size grew from 64 to 128 bits because every added bit doubles the combinations; going from 64 to 128 bits multiplies them by 2^64. AES keys can be 128, 192 or 256 bits."
+        },
+        {
+          "type": "fact",
+          "title": "Key length, dramatized",
+          "t": "DES used a 56-bit key, eventually brute-forceable. Steve's illustration: if a 56-bit key fell in one second at some fixed speed, a 128-bit key would take on the order of 142 trillion years at that same speed. Each added bit doubles the work, so strength grows exponentially with length."
+        }
+      ]
+    },
+    {
+      "title": "ECB: The Naive Mode That Leaks Patterns",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "So how do you actually encrypt a document? The obvious way: chop it into 16-byte (128-bit) blocks, run each through the cipher, and write down the gibberish. That works, and it's called Electronic Code Book, ECB."
+        },
+        {
+          "s": "steve",
+          "t": "The problem: identical input blocks always produce identical output blocks. An attacker can't read the plaintext, but can see where the same block repeats, and that pattern mirrors a pattern in the plaintext. That's information leakage."
+        },
+        {
+          "type": "fact",
+          "title": "Why ECB is dangerous",
+          "t": "Because ECB maps equal plaintext blocks to equal ciphertext blocks, the outline of structured data survives encryption, famously letting the shape of an encrypted bitmap image remain visible. Cryptographers always assume the attacker knows everything but the key, so leaking any structure is unacceptable."
+        }
+      ]
+    },
+    {
+      "title": "Counter Mode: Encrypting a Keystream",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The first fix is counter mode, CTR. Instead of encrypting the data, you encrypt a 128-bit counter, 0, 1, 2, 3, under the key. The cipher turns that simple count into a stream of pseudorandom noise."
+        },
+        {
+          "s": "steve",
+          "t": "Then you XOR each block of plaintext with the matching block of that noise. XOR with random noise randomly inverts your bits, hiding the data, and XORing again with the same noise reverses it exactly."
+        },
+        {
+          "s": "steve",
+          "t": "Because the counter never repeats, the same plaintext block encrypted later lines up against different noise, so identical input no longer yields identical output. The ECB pattern problem is gone."
+        }
+      ]
+    },
+    {
+      "title": "Cipher Block Chaining and the Initialization Vector",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Cryptographers wanted one more property: interblock influence, so a change propagates beyond its own 16 bytes. Cipher Block Chaining, CBC, does it. You XOR each plaintext block with the previous block's ciphertext before encrypting it, chaining every block to all that came before."
+        },
+        {
+          "s": "steve",
+          "t": "The first block has nothing before it, so you XOR it with a secret initialization vector, the IV, a 128-bit value separate from the key. CBC is fast because XOR is a single cheap CPU operation, and it's reversible."
+        },
+        {
+          "s": "leo",
+          "t": "XOR is great precisely because it's its own inverse."
+        },
+        {
+          "type": "fact",
+          "title": "The initialization vector",
+          "t": "An IV ensures that encrypting the same message twice, even with the same key, yields different ciphertext. In CBC the IV seeds the chain for the first block. Reusing or exposing an IV weakens the mode, which is why protocols take care to vary it."
+        }
+      ]
+    },
+    {
+      "title": "From CBC to Keyed Hashes",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Here's the bridge to our next topic. Run CBC but throw away every block's output except the last. That final block depends on all the data before it, and any change anywhere changes it, which is exactly the definition of a cryptographic hash, or digest."
+        },
+        {
+          "s": "steve",
+          "t": "But unlike MD5 or SHA-1, this digest is keyed: change the key and the whole result changes. That's where message authentication codes, MACs, come from, and we'll see in two weeks why a keyed digest is the last piece we need for SSL."
+        },
+        {
+          "s": "leo",
+          "t": "It all sounds brand new even though you say we've covered pieces before. It's complicated, elegant stuff, and it's what makes everything on the Internet secure."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Electronic Code Book (ECB) mode leak information?",
+      "options": [
+        "Identical plaintext blocks always produce identical ciphertext blocks, revealing patterns",
+        "It transmits the key in the clear with the first block",
+        "It uses a key that is too short to resist brute force",
+        "It leaves the last block of the message unencrypted"
+      ],
+      "answer": 0,
+      "explain": "ECB maps equal inputs to equal outputs, so repeated structure in the plaintext shows through as repeated ciphertext blocks, even though the plaintext itself stays hidden."
+    },
+    {
+      "q": "In counter mode (CTR), what is actually run through the block cipher?",
+      "options": [
+        "A sequential counter, whose output is then XORed with the plaintext",
+        "The plaintext itself, one block at a time",
+        "The public key of the recipient",
+        "The initialization vector repeated for every block"
+      ],
+      "answer": 0,
+      "explain": "CTR encrypts an incrementing counter under the key to produce a pseudorandom keystream, which is XORed with the data; because the counter never repeats, identical plaintext never yields identical ciphertext."
+    },
+    {
+      "q": "How does cipher block chaining (CBC) link the blocks together?",
+      "options": [
+        "Each plaintext block is XORed with the previous block's ciphertext before being encrypted",
+        "Each block is encrypted twice with two different keys",
+        "The blocks are encrypted in reverse order",
+        "Each block's key is derived from the block before it"
+      ],
+      "answer": 0,
+      "explain": "XORing each block with the prior ciphertext propagates any change forward through the rest of the message, giving the interblock influence ECB and CTR lack."
+    },
+    {
+      "q": "What is the purpose of the initialization vector (IV) in CBC mode?",
+      "options": [
+        "To vary the first block so the same message doesn't always encrypt to the same ciphertext",
+        "To store the decryption key for the recipient",
+        "To pad the final block to a full 128 bits",
+        "To authenticate the sender's identity"
+      ],
+      "answer": 0,
+      "explain": "The first block has no previous ciphertext to XOR with, so a secret IV seeds the chain, ensuring even identical messages produce different output."
+    },
+    {
+      "q": "Why is public-key crypto used only to encrypt a symmetric key, not the whole message?",
+      "options": [
+        "Public-key math is far slower and needs much longer keys, so bulk encryption would be impractically slow",
+        "Public keys can only encrypt data smaller than 16 bytes",
+        "Symmetric ciphers cannot be reversed without the public key",
+        "Public-key algorithms leak patterns like ECB does"
+      ],
+      "answer": 0,
+      "explain": "A fast symmetric cipher encrypts the document, and the slow public-key cipher protects only the small random symmetric key, combining speed with key exchange."
+    },
+    {
+      "q": "How can cipher block chaining be turned into a keyed cryptographic hash?",
+      "options": [
+        "Discard every block's output except the last, which depends on all preceding data and the key",
+        "XOR the plaintext with the key and take the first block",
+        "Encrypt the message twice and compare the halves",
+        "Run counter mode and keep only the counter's final value"
+      ],
+      "answer": 0,
+      "explain": "The last CBC block reflects all prior data, so keeping only it yields a digest; because the chain is driven by the key, the digest is keyed, which is the basis of a MAC."
+    }
+  ]
+}
