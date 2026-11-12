@@ -1,0 +1,283 @@
+{
+  "number": 39,
+  "title": "Buffer Overruns",
+  "subtitle": "How one missing letter lets hackers run their code",
+  "date": "2006-05-11",
+  "description": "One of the show's most technical episodes. Steve explains why secure code is so hard to write, how the system stack and subroutine calls work, and exactly how a signed-versus-unsigned mistake lets a remote attacker inject and run code. Plus: Data Execution Prevention.",
+  "transcript": "https://www.grc.com/sn/sn-039.txt",
+  "audio": "http://media.GRC.com/sn/SN-039.mp3",
+  "chapters": [
+    {
+      "title": "Why Secure Code Is Hard",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 39, recorded among teetering boxes because I'm moving offices. Today: the prime cause of security flaws in software, the buffer overflow, or overrun."
+        },
+        {
+          "s": "steve",
+          "t": "\"Overrun\" is a little more accurate. This is one of our heavier episodes, but listen carefully and you'll get another a-ha moment."
+        },
+        {
+          "s": "steve",
+          "t": "Programs today are built from components. Programmers stand on the shoulders of giants, libraries and huge operating systems, but those giants may not have cared about security."
+        },
+        {
+          "s": "steve",
+          "t": "I'm a dinosaur writing small programs in assembly, so I know every part of my code. Teams split work into chunks with specifications, and any misunderstanding at those boundaries becomes a mismatch."
+        },
+        {
+          "s": "steve",
+          "t": "The WMF flaw was old code carried from Windows 98 and NT into an era where security matters far more."
+        },
+        {
+          "s": "steve",
+          "t": "Then there's mindset. A programmer is trying to make code work. A hacker is looking for ways to make it fail."
+        },
+        {
+          "s": "steve",
+          "t": "I wrote InfoWorld's Tech Talk column for eight years, and I couldn't proofread my own columns. I knew what I meant, so I saw it, not what I wrote. Code is the same: it looks fine until a debugger rubs your face in the bug."
+        },
+        {
+          "s": "leo",
+          "t": "That's a programmer calling to thank you for the excuses. But it's still a serious mistake."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft said XP would be its most secure Windows ever. You can't claim that in advance, and until SP2 it was arguably the least secure. Steve Ballmer, who's now the president of Microsoft, reportedly once shouted at his programmers: \"Why can't we fix these buffer overruns?\""
+        },
+        {
+          "type": "fact",
+          "title": "Steve Ballmer's title",
+          "t": "Ballmer was Microsoft's chief executive officer from 2000 to 2014. He had held the title of president from 1998 to 2001."
+        }
+      ]
+    },
+    {
+      "title": "The Stack",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Programs borrow blocks of memory, buffers, for input or scratch work, then release them."
+        },
+        {
+          "s": "steve",
+          "t": "Forget the cafeteria plate stack. Picture a long vertical banner with a \"stack pointer\" at the top. To allocate memory, move the pointer down by the amount you need. The space above the pointer is yours."
+        },
+        {
+          "s": "leo",
+          "t": "The pointer points to the next available space, last in, first out."
+        },
+        {
+          "s": "steve",
+          "t": "Many things allocate from the stack at once, and moving the pointer back up frees the space. It's nearly instantaneous, which is why virtually every modern computer uses it."
+        },
+        {
+          "s": "leo",
+          "t": "C programmers don't even see the stack. The compiler manages it for them."
+        },
+        {
+          "s": "steve",
+          "t": "Right, but it's still there, and it's where the vulnerability lives."
+        }
+      ]
+    },
+    {
+      "title": "Subroutine Calls",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A subroutine is code written once and called from many places, say, a routine that uppercases a text buffer."
+        },
+        {
+          "s": "steve",
+          "t": "When it finishes, it has to return to wherever it was called from. So the call pushes the \"return address,\" the address of the next instruction, onto the stack: the pointer moves down 4 bytes, 32 bits."
+        },
+        {
+          "s": "steve",
+          "t": "The subroutine can allocate its own scratch space on the same stack. When it's done, it releases it, then executes a \"return\" instruction, which pops the return address and jumps back."
+        },
+        {
+          "type": "fact",
+          "title": "The stack frame",
+          "t": "Each call creates a \"frame\" holding the return address, saved registers and local variables, with local buffers just below the return address. The stack grows downward, but a buffer fills upward, so writing past a buffer's end runs straight into the return address."
+        }
+      ]
+    },
+    {
+      "title": "Signed vs. Unsigned",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "In 32 bits, an unsigned integer runs from 0 to a little over 4 billion. In C it's declared \"unsigned int.\""
+        },
+        {
+          "s": "steve",
+          "t": "A signed integer splits that range in half: 0 to about 2 billion, and negative values down to about -2 billion. The top bit is the sign bit. When it's 1, the number is negative."
+        },
+        {
+          "s": "steve",
+          "t": "Now suppose a program accepts a URL with a declared length. The programmer figures a thousand characters is plenty and allocates a 1,000-byte buffer on the stack."
+        },
+        {
+          "s": "steve",
+          "t": "They check that the declared length is under 1,000, then call a copy routine. But they typed \"int,\" as programmers do all day, instead of \"unsigned int.\""
+        },
+        {
+          "s": "steve",
+          "t": "An attacker declares a length of -4K. Is -4K less than 1,000? As a signed number, yes. The check passes."
+        },
+        {
+          "s": "steve",
+          "t": "But the copy routine, written by someone else, correctly treats lengths as unsigned, and a negative number read as unsigned is huge. It copies far more than 1K into the 1K buffer."
+        },
+        {
+          "type": "fact",
+          "title": "How big is \"-4K\" unsigned?",
+          "t": "In 32-bit two's complement, -4,096 read as unsigned is 4,294,963,200, about 4 billion. Steve's \"copies 4K\" simplifies this. How much actually gets copied depends on how the copy routine works, and attackers pick inputs that overwrite just what they need."
+        },
+        {
+          "s": "leo",
+          "t": "The attackers usually find this by trial and error. They try things until something breaks."
+        }
+      ]
+    },
+    {
+      "title": "Hijacking the Return",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "The extra data fills the buffer and keeps going upward, overwriting whatever was above it on the stack."
+        },
+        {
+          "s": "steve",
+          "t": "Control returns to the calling code, which doesn't know anything is wrong. It releases its buffer, then executes \"return.\" But the return address has been overwritten."
+        },
+        {
+          "s": "steve",
+          "t": "If the attacker did their job, it now points at code they supplied, right there on the stack. The processor jumps to it, and your computer belongs to the hacker."
+        },
+        {
+          "s": "steve",
+          "t": "All because one letter, the \"U\" for unsigned, was left off a C declaration, by a programmer who was trying to do the right thing."
+        },
+        {
+          "s": "leo",
+          "t": "Sometimes it's worse: an unchecked string copy with no limit at all."
+        },
+        {
+          "s": "steve",
+          "t": "That too. Code Red and Nimda used flaws like these in Microsoft's web server to inject and run their own code."
+        },
+        {
+          "s": "leo",
+          "t": "It's impressive work. They have to figure out exactly where the return address sits and where to jump."
+        },
+        {
+          "s": "steve",
+          "t": "It's advanced programming, operating at the machine level, far below most C programmers."
+        },
+        {
+          "s": "steve",
+          "t": "Programs have to be perfect not to have bugs like this. That's incredibly hard, especially when you depend on code you didn't write."
+        },
+        {
+          "type": "fact",
+          "title": "Memory-safe languages",
+          "t": "Languages like Rust, Go, Java, C# and Swift check bounds automatically, which eliminates this class of bug. Microsoft and Google have each reported that about 70 percent of their serious security bugs were memory-safety errors, and governments now urge moving away from C and C++ where possible."
+        }
+      ]
+    },
+    {
+      "title": "Data Execution Prevention",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Some good news: Data Execution Prevention, DEP, introduced in Windows XP Service Pack 2."
+        },
+        {
+          "s": "steve",
+          "t": "The stack should hold only data: variables, return addresses and buffers. Back in Windows 3.1, GDI programmers cleverly put code on the stack to move screen data quickly. But today there's no good reason for the stack to be executable."
+        },
+        {
+          "s": "steve",
+          "t": "New AMD and Intel processors can mark memory as non-executable. If an overrun jumps into data on the stack, the processor raises an exception and stops it."
+        },
+        {
+          "s": "steve",
+          "t": "Only the newer hardware supports it. There's a weaker software-only version. A few programs break with it, so Windows lets you make exceptions for them."
+        },
+        {
+          "s": "leo",
+          "t": "Linux and some BSDs have versions too. It's in the processor, but the operating system has to enable it."
+        },
+        {
+          "type": "fact",
+          "title": "Beyond DEP",
+          "t": "Attackers answered DEP with \"return-oriented programming,\" which chains together snippets of existing code. Defenders added stack canaries (which detect an overwritten return address), address space layout randomization (ASLR) and, more recently, hardware shadow stacks such as Intel CET."
+        },
+        {
+          "s": "leo",
+          "t": "Next week is Episode 40, so it's Q&A time. And a listener wrote that SpinRite fully recovered a crashing drive with his tax refund and insurance claim on it, in under four hours."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does Steve say programmers so often miss security bugs?",
+      "options": [
+        "They're trying to make code work, not looking for ways to break it, and rely on code they didn't write",
+        "They don't care",
+        "Compilers add the bugs",
+        "Hackers plant them"
+      ],
+      "answer": 0,
+      "explain": "Like proofreading your own writing, you see what you meant, not what you wrote."
+    },
+    {
+      "q": "What's stored on the stack when a subroutine is called?",
+      "options": [
+        "The return address of the instruction after the call",
+        "The whole program",
+        "The user's password",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explain": "The \"return\" instruction pops it off and jumps back there."
+    },
+    {
+      "q": "In Steve's example, how does a length of -4K get past a check that it's under 1,000?",
+      "options": [
+        "The check treats it as signed, so it's less than 1,000",
+        "The check is skipped",
+        "It's rounded to zero",
+        "Hackers turn off the check"
+      ],
+      "answer": 0,
+      "explain": "The copy routine then treats it as unsigned, a huge number."
+    },
+    {
+      "q": "What does a successful stack buffer overrun overwrite to take control?",
+      "options": [
+        "The subroutine's return address",
+        "The hard drive's boot sector",
+        "The keyboard driver",
+        "The screen buffer"
+      ],
+      "answer": 0,
+      "explain": "When the routine \"returns,\" it jumps to the attacker's code instead."
+    },
+    {
+      "q": "How does Data Execution Prevention stop these attacks?",
+      "options": [
+        "The processor refuses to run code from memory marked as data, like the stack",
+        "It encrypts the stack",
+        "It deletes viruses",
+        "It blocks all network traffic"
+      ],
+      "answer": 0,
+      "explain": "It needs supporting hardware and was introduced to XP in Service Pack 2."
+    }
+  ]
+}
