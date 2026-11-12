@@ -41,7 +41,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The word is confusing. We had serial ports and printer ports. \"Channel\" might be better."
+          "t": "So let's start with what a port is. The word is confusing. We had serial ports and printer ports. \"Channel\" might be better."
         },
         {
           "s": "steve",
@@ -178,7 +178,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "UDP is just as important, but it has no handshake. DNS sends one query packet and gets one reply, which is far more efficient than setting up and tearing down a TCP connection."
+          "t": "Everything so far was TCP. UDP is just as important, but it has no handshake. DNS sends one query packet and gets one reply, which is far more efficient than setting up and tearing down a TCP connection."
         },
         {
           "s": "steve",
@@ -216,7 +216,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Windows used to listen for everything, because Microsoft wanted things to just work. Putting Windows on the Internet was the same as putting it on your network. XP SP2's default firewall finally changed that."
+          "t": "So what about ports you have to leave open? First, some history. Windows used to listen for everything, because Microsoft wanted things to just work. Putting Windows on the Internet was the same as putting it on your network."
         },
         {
           "s": "steve",
@@ -257,7 +257,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "At Level 3, I have rack-mounted boxes that let me power-cycle or reach the consoles of GRC's machines remotely. They only support telnet, only on port 23, with an eight-character password."
+          "t": "Here's my own example of an exposed port. At Level 3, I have rack-mounted boxes that let me power-cycle or reach the consoles of GRC's machines remotely. They only support telnet, only on port 23, with an eight-character password."
         },
         {
           "s": "leo",
@@ -281,7 +281,7 @@
         },
         {
           "s": "leo",
-          "t": "Astaro tells us its gateway leaves source ports unchanged through NAT."
+          "t": "One follow-up from last week's NAT traversal episode: Astaro tells us its gateway leaves source ports unchanged through NAT."
         },
         {
           "s": "steve",

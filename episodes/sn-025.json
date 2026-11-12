@@ -62,7 +62,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "People constantly ask which antivirus is best. I'll never do that research myself, but PC World just tested ten."
+          "t": "Since we're on antivirus: people constantly ask which one is best. I'll never do that research myself, but PC World just tested ten."
         },
         {
           "s": "steve",
@@ -83,7 +83,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This starts our foundation series. We've used these terms glibly for 24 episodes, but even IT directors tell us they always pick up something new."
+          "t": "Now, our main topic. This starts our foundation series. We've used these terms glibly for 24 episodes, but even IT directors tell us they always pick up something new."
         },
         {
           "s": "steve",
@@ -117,7 +117,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Today's Internet runs on IPv4. Versions 1 through 3 were early experiments, and there will never be a version 5."
+          "t": "So how are all these machines addressed? Today's Internet runs on IPv4. Versions 1 through 3 were early experiments, and there will never be a version 5."
         },
         {
           "s": "steve",
@@ -163,7 +163,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A packet is just a block of binary data in a defined layout: source address, destination address and a protocol number saying what kind of packet it is."
+          "t": "So what's actually in a packet? It's just a block of binary data in a defined layout: source address, destination address and a protocol number saying what kind of packet it is."
         },
         {
           "s": "steve",

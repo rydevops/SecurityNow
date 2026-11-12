@@ -12,7 +12,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Episode 14, recorded in the dark Call for Help studio in Toronto."
+          "t": "Episode 14, recorded in the dark Call for Help studio in Toronto. First, news on Sony's rootkit."
         },
         {
           "s": "steve",
@@ -50,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A listener objected when I called WPA uncrackable, since WPA cracking tools already exist."
+          "t": "Next, a correction. A listener objected when I called WPA uncrackable, since WPA cracking tools already exist."
         },
         {
           "s": "steve",
@@ -129,7 +129,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The key idea in a Virtual Private Network is the tunnel."
+          "t": "So how does a VPN protect you? The key idea is the tunnel."
         },
         {
           "s": "steve",

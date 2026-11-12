@@ -58,7 +58,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The response was phenomenal. One listener had Hamachi installed before the episode ended and is now using it with VNC to reach his home PC from a three-week trip to Europe."
+          "t": "Now, your Hamachi feedback. The response was phenomenal. One listener had Hamachi installed before the episode ended and is now using it with VNC to reach his home PC from a three-week trip to Europe."
         },
         {
           "s": "steve",
@@ -108,7 +108,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Listeners pointed me to iPig, from iOpus. Terrible name, very compelling. The web page shows a hardware router, which confused me, but it's purely software."
+          "t": "Next, a new option listeners pointed me to: iPig, from iOpus. Terrible name, very compelling. The web page shows a hardware router, which confused me, but it's purely software."
         },
         {
           "s": "leo",
@@ -141,7 +141,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "OpenVPN is probably what you and I will end up using. It's open source on SourceForge and runs on Linux, the BSDs, Windows and the Mac."
+          "t": "Finally, OpenVPN, which is probably what you and I will end up using. It's open source on SourceForge and runs on Linux, the BSDs, Windows and the Mac."
         },
         {
           "s": "steve",

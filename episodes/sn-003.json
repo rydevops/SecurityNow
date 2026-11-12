@@ -10,102 +10,255 @@
     {
       "title": "Hardware vs. Software Firewalls",
       "beats": [
-        { "s": "leo", "t": "Episode 3, September 1, 2005. Steve, you convinced me long ago that a hardware router beats a software firewall, even though you helped put ZoneAlarm on the map." },
-        { "s": "steve", "t": "A software firewall runs on your machine, so anything that gets into your machine can attack it. Plenty of malware now knows how to shut software firewalls down." },
-        { "s": "steve", "t": "What few people realize is that the cheap NAT router they bought to share one Internet connection is also an excellent hardware firewall." }
+        {
+          "s": "leo",
+          "t": "Episode 3, September 1, 2005. Steve, you convinced me long ago that a hardware router beats a software firewall, even though you helped put ZoneAlarm on the map."
+        },
+        {
+          "s": "steve",
+          "t": "A software firewall runs on your machine, so anything that gets into your machine can attack it. Plenty of malware now knows how to shut software firewalls down."
+        },
+        {
+          "s": "steve",
+          "t": "What few people realize is that the cheap NAT router they bought to share one Internet connection is also an excellent hardware firewall."
+        }
       ]
     },
     {
       "title": "How NAT Works",
       "beats": [
-        { "s": "steve", "t": "Your ISP gives you one public IP address, and the router shares it with every machine in your house. When data comes back, the router has to work out which machine asked for it." },
-        { "s": "steve", "t": "So it watches outgoing packets. Each time one leaves, it puts its own public address on it, picks a port, and records the details in a connection table." },
-        { "s": "steve", "t": "When a reply arrives, the router looks it up in the table and passes it to the machine that started the conversation." },
-        { "type": "fact", "title": "NAT in one sentence", "t": "Network Address Translation lets many private devices share one public IP. The router rewrites addresses on outgoing traffic and remembers each conversation, so replies reach the right device." },
-        { "s": "leo", "t": "So how does that protect me?" },
-        { "s": "steve", "t": "Worms, hacker scans and Windows Messenger spam all arrive unsolicited. Nobody inside asked for them, so there's no entry in the table." },
-        { "s": "steve", "t": "The router doesn't know where to send them, so it just drops them. That's really all a firewall does." },
-        { "s": "leo", "t": "So any NAT router is a firewall, even if the box doesn't say so." },
-        { "s": "steve", "t": "Exactly. And I've never seen a broadband router that isn't NAT." }
+        {
+          "s": "leo",
+          "t": "It starts with what NAT does. Your ISP gives you one public IP address, and the router shares it with every machine in your house. When data comes back, the router has to work out which machine asked for it."
+        },
+        {
+          "s": "steve",
+          "t": "Your ISP gives you one public IP address, and the router shares it with every machine in your house. When data comes back, the router has to work out which machine asked for it."
+        },
+        {
+          "s": "steve",
+          "t": "So it watches outgoing packets. Each time one leaves, it puts its own public address on it, picks a port, and records the details in a connection table."
+        },
+        {
+          "s": "steve",
+          "t": "When a reply arrives, the router looks it up in the table and passes it to the machine that started the conversation."
+        },
+        {
+          "type": "fact",
+          "title": "NAT in one sentence",
+          "t": "Network Address Translation lets many private devices share one public IP. The router rewrites addresses on outgoing traffic and remembers each conversation, so replies reach the right device."
+        },
+        {
+          "s": "leo",
+          "t": "So how does that protect me?"
+        },
+        {
+          "s": "steve",
+          "t": "Worms, hacker scans and Windows Messenger spam all arrive unsolicited. Nobody inside asked for them, so there's no entry in the table."
+        },
+        {
+          "s": "steve",
+          "t": "The router doesn't know where to send them, so it just drops them. That's really all a firewall does."
+        },
+        {
+          "s": "leo",
+          "t": "So any NAT router is a firewall, even if the box doesn't say so."
+        },
+        {
+          "s": "steve",
+          "t": "Exactly. And I've never seen a broadband router that isn't NAT."
+        }
       ]
     },
     {
       "title": "Internet Background Radiation",
       "beats": [
-        { "s": "steve", "t": "Without a router, a software firewall pops up constantly: \"You're being attacked! I blocked this!\" It's trying to show you how useful it is." },
-        { "s": "steve", "t": "I call that noise Internet Background Radiation, IBR. It's like static on the Net, and it's never going away." },
-        { "s": "steve", "t": "Put an unpatched Windows machine directly on the Internet and it's compromised within minutes." },
-        { "s": "leo", "t": "And once you add a router, the software firewall goes quiet." },
-        { "s": "steve", "t": "Right, because nothing unsolicited gets past the router." },
-        { "type": "fact", "title": "Internet Background Radiation", "t": "Steve's term for the constant flood of unsolicited scans and worm traffic that hits every public IP address. It's automated, it never stops, and it isn't aimed at you personally." }
+        {
+          "s": "steve",
+          "t": "That also explains why software firewalls are so noisy. Without a router, one pops up constantly: \"You're being attacked! I blocked this!\" It's trying to show you how useful it is."
+        },
+        {
+          "s": "steve",
+          "t": "I call that noise Internet Background Radiation, IBR. It's like static on the Net, and it's never going away."
+        },
+        {
+          "s": "steve",
+          "t": "Put an unpatched Windows machine directly on the Internet and it's compromised within minutes."
+        },
+        {
+          "s": "leo",
+          "t": "And once you add a router, the software firewall goes quiet."
+        },
+        {
+          "s": "steve",
+          "t": "Right, because nothing unsolicited gets past the router."
+        },
+        {
+          "type": "fact",
+          "title": "Internet Background Radiation",
+          "t": "Steve's term for the constant flood of unsolicited scans and worm traffic that hits every public IP address. It's automated, it never stops, and it isn't aimed at you personally."
+        }
       ]
     },
     {
       "title": "Why Outbound Still Matters",
       "beats": [
-        { "s": "steve", "t": "A NAT router lets all outbound traffic through. If malware is already on your machine, only a software firewall will notice it phoning home." },
-        { "s": "steve", "t": "That's how I discovered spyware. I was beta testing the first ZoneAlarm, and adware bundled with a ZIP utility I was trying out was quietly connecting to remote servers." },
-        { "s": "steve", "t": "Windows Vista will add outbound filtering to the built-in firewall. Today's XP firewall only blocks incoming traffic, and malware can turn it off easily." },
-        { "s": "steve", "t": "My favorite free firewalls are Kerio and Tiny. Sygate's free one was good too, but Symantec just bought Sygate." },
-        { "s": "leo", "t": "I'll admit I don't run one. I trust my router." },
-        { "s": "steve", "t": "Neither do I, and no antivirus either. But I'm extremely careful: I never open email attachments, and I run Internet Explorer with scripting turned off except on sites I trust." }
+        {
+          "s": "steve",
+          "t": "But a router isn't the whole story. It lets all outbound traffic through, so if malware is already on your machine, only a software firewall will notice it phoning home."
+        },
+        {
+          "s": "steve",
+          "t": "That's how I discovered spyware. I was beta testing the first ZoneAlarm, and adware bundled with a ZIP utility I was trying out was quietly connecting to remote servers."
+        },
+        {
+          "s": "steve",
+          "t": "Windows Vista will add outbound filtering to the built-in firewall. Today's XP firewall only blocks incoming traffic, and malware can turn it off easily."
+        },
+        {
+          "s": "steve",
+          "t": "My favorite free firewalls are Kerio and Tiny. Sygate's free one was good too, but Symantec just bought Sygate."
+        },
+        {
+          "s": "leo",
+          "t": "I'll admit I don't run one. I trust my router."
+        },
+        {
+          "s": "steve",
+          "t": "Neither do I, and no antivirus either. But I'm extremely careful: I never open email attachments, and I run Internet Explorer with scripting turned off except on sites I trust."
+        }
       ]
     },
     {
       "title": "Close the Back Doors",
       "beats": [
-        { "s": "steve", "t": "Here's the big caveat: Universal Plug and Play. It lets any program inside your network tell the router to open a hole for incoming traffic." },
-        { "s": "steve", "t": "There's no prompt, no notice, and many routers don't even show you which ports it has opened." },
-        { "s": "steve", "t": "So far I don't know of any malware that does this, but trojans will start using UPnP to open their own way back in through routers." },
-        { "s": "steve", "t": "If you don't know you need it, turn UPnP off, then restart the router so any holes it already opened are cleared." },
-        { "type": "fact", "title": "UPnP: convenience vs. control", "t": "Universal Plug and Play lets games and messaging apps open router ports automatically. Any program can do it, malware included, without asking. Opening the ports yourself (port forwarding) at least means you know what's open." },
-        { "s": "leo", "t": "And change the router's default admin password. Everybody knows the defaults." },
-        { "s": "steve", "t": "Also look for \"WAN management\" or remote administration, which lets the router be configured from the Internet. Turn it off. It's often on by default, which is crazy." }
+        {
+          "s": "steve",
+          "t": "Even with a router, there are back doors to close. The big one is Universal Plug and Play. It lets any program inside your network tell the router to open a hole for incoming traffic."
+        },
+        {
+          "s": "steve",
+          "t": "There's no prompt, no notice, and many routers don't even show you which ports it has opened."
+        },
+        {
+          "s": "steve",
+          "t": "So far I don't know of any malware that does this, but trojans will start using UPnP to open their own way back in through routers."
+        },
+        {
+          "s": "steve",
+          "t": "If you don't know you need it, turn UPnP off, then restart the router so any holes it already opened are cleared."
+        },
+        {
+          "type": "fact",
+          "title": "UPnP: convenience vs. control",
+          "t": "Universal Plug and Play lets games and messaging apps open router ports automatically. Any program can do it, malware included, without asking. Opening the ports yourself (port forwarding) at least means you know what's open."
+        },
+        {
+          "s": "leo",
+          "t": "And while you're in the router's settings, change its default admin password. Everybody knows the defaults."
+        },
+        {
+          "s": "steve",
+          "t": "Also look for \"WAN management\" or remote administration, which lets the router be configured from the Internet. Turn it off. It's often on by default, which is crazy."
+        }
       ]
     },
     {
       "title": "Two Routers Are Better Than One",
       "beats": [
-        { "s": "leo", "t": "What about running a game server or web server at home?" },
-        { "s": "steve", "t": "Routers have a \"DMZ\" setting that sends all unsolicited traffic to one machine. The problem is that this machine is still on your LAN. If it's compromised, it can reach everything else." },
-        { "s": "steve", "t": "My trick is to put two NAT routers in series. The server goes on the outer router, and the rest of your computers go behind a second router plugged into the first." },
-        { "s": "steve", "t": "Think of a NAT router as a one-way valve: traffic flows out freely, but nothing unsolicited flows back in. Your computers can reach the server, but the server can't reach them." },
-        { "s": "steve", "t": "The same trick protects you from weak WEP wireless: put the wireless router on the outside, with your wired network behind its own router." },
-        { "s": "steve", "t": "Or for a family: give Mom and Dad's banking computer its own router, so nothing that infects the kids' machines can get back in." },
-        { "type": "fact", "title": "Network segmentation", "t": "Splitting a network into zones, so a compromised device can't reach the rest, is called segmentation. Steve's two-router setup is a cheap way to do it at home. He has diagrams on GRC's site at grc.com/nat/nat.htm." },
-        { "s": "leo", "t": "If you have broadband, get a router, even for a single computer. They're under $50 now." },
-        { "s": "steve", "t": "And starting with this episode, I'll post a text and PDF transcript of each show at GRC.com." }
+        {
+          "s": "leo",
+          "t": "What about running a game server or web server at home? Doesn't that mean letting traffic in?"
+        },
+        {
+          "s": "steve",
+          "t": "Routers have a \"DMZ\" setting that sends all unsolicited traffic to one machine. The problem is that this machine is still on your LAN. If it's compromised, it can reach everything else."
+        },
+        {
+          "s": "steve",
+          "t": "My trick is to put two NAT routers in series. The server goes on the outer router, and the rest of your computers go behind a second router plugged into the first."
+        },
+        {
+          "s": "steve",
+          "t": "Think of a NAT router as a one-way valve: traffic flows out freely, but nothing unsolicited flows back in. Your computers can reach the server, but the server can't reach them."
+        },
+        {
+          "s": "steve",
+          "t": "The same trick protects you from weak WEP wireless: put the wireless router on the outside, with your wired network behind its own router."
+        },
+        {
+          "s": "steve",
+          "t": "Or for a family: give Mom and Dad's banking computer its own router, so nothing that infects the kids' machines can get back in."
+        },
+        {
+          "type": "fact",
+          "title": "Network segmentation",
+          "t": "Splitting a network into zones, so a compromised device can't reach the rest, is called segmentation. Steve's two-router setup is a cheap way to do it at home. He has diagrams on GRC's site at grc.com/nat/nat.htm."
+        },
+        {
+          "s": "leo",
+          "t": "If you have broadband, get a router, even for a single computer. They're under $50 now."
+        },
+        {
+          "s": "steve",
+          "t": "And starting with this episode, I'll post a text and PDF transcript of each show at GRC.com."
+        }
       ]
     }
   ],
   "quiz": [
     {
       "q": "Why does a NAT router block unsolicited incoming traffic?",
-      "options": ["It runs antivirus software", "No entry in its connection table says which inside machine wants it, so it drops it", "It blocks every port", "The ISP tells it to"],
+      "options": [
+        "It runs antivirus software",
+        "No entry in its connection table says which inside machine wants it, so it drops it",
+        "It blocks every port",
+        "The ISP tells it to"
+      ],
       "answer": 1,
       "explain": "A router only forwards replies to conversations that started inside. Anything else has nowhere to go and is dropped."
     },
     {
       "q": "What can a software firewall do that a NAT router can't?",
-      "options": ["Block incoming worms", "Notice programs on your PC making outbound connections", "Share one IP address", "Speed up downloads"],
+      "options": [
+        "Block incoming worms",
+        "Notice programs on your PC making outbound connections",
+        "Share one IP address",
+        "Speed up downloads"
+      ],
       "answer": 1,
       "explain": "NAT routers let all outbound traffic through. A software firewall can catch malware phoning home, which is how Steve discovered spyware."
     },
     {
       "q": "What does Steve say to do with Universal Plug and Play?",
-      "options": ["Always turn it on", "Turn it off unless you know you need it, then restart the router", "Update it every week", "Use it only for games"],
+      "options": [
+        "Always turn it on",
+        "Turn it off unless you know you need it, then restart the router",
+        "Update it every week",
+        "Use it only for games"
+      ],
       "answer": 1,
       "explain": "UPnP lets any program open holes in the router without asking. Turn it off, then restart to clear any holes it already opened."
     },
     {
       "q": "What's the risk of putting a game server in the router's DMZ?",
-      "options": ["It slows down the game", "It's still on your LAN, so if it's compromised it can reach your other PCs", "It uses more electricity", "It disables NAT"],
+      "options": [
+        "It slows down the game",
+        "It's still on your LAN, so if it's compromised it can reach your other PCs",
+        "It uses more electricity",
+        "It disables NAT"
+      ],
       "answer": 1,
       "explain": "The fix is a second NAT router: server on the outside, everything else behind the inner router."
     },
     {
       "q": "What does Steve compare a NAT router to?",
-      "options": ["A lock and key", "A one-way valve", "A mirror", "A sponge"],
+      "options": [
+        "A lock and key",
+        "A one-way valve",
+        "A mirror",
+        "A sponge"
+      ],
       "answer": 1,
       "explain": "Traffic flows out freely, but unsolicited traffic can't flow back in, and you can chain routers to build safer layouts."
     }

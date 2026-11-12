@@ -85,7 +85,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Java's interpreter was meant to be a secure sandbox. Code isn't executed directly by the chip, so a stack overrun can't just run on the hardware. If the emulator is written correctly, sandboxed code can never do anything dangerous."
+          "t": "Emulation has a price, though, and a security angle. Java's interpreter was meant to be a secure sandbox. Code isn't executed directly by the chip, so a stack overrun can't just run on the hardware. If the emulator is written correctly, sandboxed code can never do anything dangerous."
         },
         {
           "s": "steve",
@@ -119,7 +119,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The original PC used the 8086 family. The 8086 had a 16-bit instruction set but an 8-bit bus, and the 8088 was 8-bit all the way."
+          "t": "The other kind, hardware virtualization, grew out of Intel's chips. The original PC used the 8086 family. The 8086 had a 16-bit instruction set but an 8-bit bus, and the 8088 was 8-bit all the way."
         },
         {
           "s": "steve",
@@ -170,7 +170,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "When Windows 3.0 came out, it only ran with Microsoft's own memory manager, which had none of 386MAX's features."
+          "t": "That reminds me of a story. When Windows 3.0 came out, it only ran with Microsoft's own memory manager, which had none of 386MAX's features."
         },
         {
           "s": "steve",
@@ -195,7 +195,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Software does two fundamental things: read and write memory, and read and write I/O devices. Starting with the 386, a supervisor can trap any attempt to do either."
+          "t": "So what exactly did the 386 add? Software does two fundamental things: read and write memory, and read and write I/O devices. Starting with the 386, a supervisor can trap any attempt to do either."
         },
         {
           "s": "steve",
@@ -229,7 +229,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "But isolation between processes is very permeable. A debugger can stop another program, single-step it and inject code, and so can malware. That's why netstat can't be trusted on an infected machine."
+          "t": "Which brings us to security. Isolation between processes is very permeable. A debugger can stop another program, single-step it and inject code, and so can malware. That's why netstat can't be trusted on an infected machine."
         },
         {
           "s": "steve",
@@ -285,7 +285,7 @@
         },
         {
           "s": "leo",
-          "t": "Is the OpenVPN guide still coming?"
+          "t": "Before we go, a question listeners keep asking: is the OpenVPN guide still coming?"
         },
         {
           "s": "steve",

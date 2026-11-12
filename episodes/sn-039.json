@@ -58,7 +58,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Programs borrow blocks of memory, buffers, for input or scratch work, then release them."
+          "t": "To understand the attack, you need to understand the stack. Programs borrow blocks of memory, buffers, for input or scratch work, then release them."
         },
         {
           "s": "steve",
@@ -87,7 +87,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A subroutine is code written once and called from many places, say, a routine that uppercases a text buffer."
+          "t": "The stack is also how subroutines work. A subroutine is code written once and called from many places, say, a routine that uppercases a text buffer."
         },
         {
           "s": "steve",
@@ -109,7 +109,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In 32 bits, an unsigned integer runs from 0 to a little over 4 billion. In C it's declared \"unsigned int.\""
+          "t": "So how does this break? It comes down to signed versus unsigned numbers. In 32 bits, an unsigned integer runs from 0 to a little over 4 billion. In C it's declared \"unsigned int.\""
         },
         {
           "s": "steve",
@@ -147,7 +147,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The extra data fills the buffer and keeps going upward, overwriting whatever was above it on the stack."
+          "t": "Now back to that oversized copy. The extra data fills the buffer and keeps going upward, overwriting whatever was above it on the stack."
         },
         {
           "s": "steve",

@@ -49,7 +49,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Microsoft's Stephen Toulouse blogged that it was intentional but benign, part of GDI."
+          "t": "Microsoft responded too. Its Stephen Toulouse blogged that the behavior was intentional but benign, part of GDI."
         },
         {
           "s": "steve",
@@ -79,7 +79,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So I needed a less loaded name: Metafile Image Code Execution, or MICE. Does your Windows have MICE? Hence MouseTrap, GRC's free official tester."
+          "t": "To lower the temperature, I needed a less loaded name: Metafile Image Code Execution, or MICE. Does your Windows have MICE? Hence MouseTrap, GRC's free official tester."
         },
         {
           "s": "leo",
@@ -109,7 +109,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Microsoft still says Windows 95, 98 and ME are vulnerable but not critical. They're not vulnerable at all."
+          "t": "Next, the question I left open last week: older Windows. Microsoft still says Windows 95, 98 and ME are vulnerable but not critical. They're not vulnerable at all."
         },
         {
           "s": "steve",
@@ -151,7 +151,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Three good things came from this. First, MouseTrap will always be on GRC's site, because a fresh install of Windows has MICE until it's patched."
+          "t": "So what came out of all this? Three good things. First, MouseTrap will always be on GRC's site, because a fresh install of Windows has MICE until it's patched."
         },
         {
           "s": "steve",

@@ -29,7 +29,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "When I installed it, my machine got an IP address starting with 5."
+          "t": "So what does Hamachi actually do? It starts with an odd address. When I installed it, my machine got an IP address starting with 5."
         },
         {
           "s": "leo",
@@ -63,7 +63,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You install one small program on each machine you want to connect. It's for Windows and Linux now, with the Mac coming after version 1.0. Go to hamachi.cc."
+          "t": "So how do you use it? You install one small program on each machine you want to connect. It's for Windows and Linux now, with the Mac coming after version 1.0. Go to hamachi.cc."
         },
         {
           "s": "steve",
@@ -101,7 +101,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "People love Remote Desktop but worry about it, rightly. It doesn't authenticate properly, and Cain & Abel can sit in the middle and log an entire session."
+          "t": "One of the best uses is Remote Desktop. People love it but worry about it, rightly. It doesn't authenticate properly, and Cain & Abel can sit in the middle and log an entire session."
         },
         {
           "s": "steve",
@@ -130,7 +130,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Tunneling TCP inside TCP performs terribly. Both layers retransmit and fight each other, which has given VPNs a bad name. Hamachi carries traffic over UDP, which also gets through NAT routers more easily."
+          "t": "And Hamachi is fast, for a technical reason. Tunneling TCP inside TCP performs terribly. Both layers retransmit and fight each other, which has given VPNs a bad name. Hamachi carries traffic over UDP, which also gets through NAT routers more easily."
         },
         {
           "s": "steve",
@@ -160,7 +160,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Earlier I suggested running a WPA network for your computers and an open one for WEP-only gadgets. Leo asked how to wire it, and I punted."
+          "t": "Finally, an answer I owe Leo. Earlier I suggested running a WPA network for your computers and an open one for WEP-only gadgets. Leo asked how to wire it, and I punted."
         },
         {
           "s": "steve",

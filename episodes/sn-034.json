@@ -38,7 +38,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The big problem with crypto is getting the key to the other person. A 256-bit symmetric key is effectively unbreakable, but it's gold. If someone intercepts it, you have no protection."
+          "t": "Here's the problem they solved. The big problem with crypto is getting the key to the other person. A 256-bit symmetric key is effectively unbreakable, but it's gold. If someone intercepts it, you have no protection."
         },
         {
           "s": "steve",
@@ -92,7 +92,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In an asymmetric cipher, one key encrypts and the other decrypts, and you can't work out one key from the other."
+          "t": "Diffie-Hellman agrees on a shared key. Asymmetric ciphers go further: one key encrypts and the other decrypts, and you can't work out one key from the other."
         },
         {
           "s": "steve",
@@ -130,7 +130,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Public-key crypto needs much longer keys for the same strength. 128 bits is strong for a symmetric cipher, while 1,024 bits is about the minimum for public key, and longer is better."
+          "t": "So why not use public keys for everything? Public-key crypto needs much longer keys for the same strength. 128 bits is strong for a symmetric cipher, while 1,024 bits is about the minimum for public key, and longer is better."
         },
         {
           "s": "leo",

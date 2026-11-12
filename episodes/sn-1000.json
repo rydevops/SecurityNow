@@ -3,209 +3,977 @@
   "title": "One Thousand!",
   "subtitle": "Twenty years, four digits, and a full week of news",
   "date": "2024-11-12",
-  "description": "Did Bitwarden go closed source? Germany protects security researchers, Australia plans an age limit for social media, Windows Server 2025 installs itself by surprise, and Microsoft hardens UAC. Plus fines from Russia and South Korea, Synology's critical zero-click flaw, a typosquatting Python package, Google's MFA mandate, Mozilla Foundation layoffs, and listener feedback.",
+  "description": "Did Bitwarden go closed source? Germany protects security researchers, Australia plans an age limit for social media, Windows Server 2025 installs itself by surprise, and Microsoft hardens UAC. Plus fines from Russia and South Korea, Synology's critical zero-click flaw, a typosquatting Python package, Google's MFA mandate, Mozilla Foundation layoffs, SpinRite on Dave's Garage, and a full hour of listener feedback.",
   "transcript": "https://www.grc.com/sn/sn-1000.txt",
   "audio": "https://media.grc.com/sn/sn-1000.mp3",
   "notes": "https://www.grc.com/sn/sn-1000-notes.pdf",
   "links": [
-    { "label": "Dave's Garage on YouTube", "url": "https://grc.sc/dave", "note": "Steve's shortcut to Dave Plummer's channel" },
-    { "label": "uBlock Origin filter list to hide YouTube Shorts", "url": "https://github.com/gijsdev/ublock-hide-yt-shorts", "note": "The list Darrell sent in" },
-    { "label": "CVE-2024-10443 (Synology RISK:STATION)", "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-10443" },
-    { "label": "Subscribe to GRC's Security Now! mailing list", "url": "https://www.grc.com/mail.htm" }
+    {
+      "label": "Dave's Garage on YouTube",
+      "url": "https://grc.sc/dave",
+      "note": "Steve's shortcut to Dave Plummer's channel"
+    },
+    {
+      "label": "uBlock Origin filter list to hide YouTube Shorts",
+      "url": "https://github.com/gijsdev/ublock-hide-yt-shorts",
+      "note": "The list Darrell sent in"
+    },
+    {
+      "label": "CVE-2024-10443 (Synology RISK:STATION)",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-10443"
+    },
+    {
+      "label": "Subscribe to GRC's Security Now! mailing list",
+      "url": "https://www.grc.com/mail.htm"
+    }
   ],
   "chapters": [
     {
       "title": "Episode One Thousand",
       "beats": [
-        { "s": "leo", "t": "It's Security Now! Episode 1000, recorded Tuesday, November 12th, 2024. They said it would never happen!" },
-        { "s": "steve", "t": "Some people did say that. One of them was me." },
-        { "s": "leo", "t": "We talked you into four digits. We're almost 20 years into security flaws, privacy breaches, and how things actually work." },
-        { "s": "steve", "t": "I'm at my alternate location today because the roof is being replaced at my usual one. It felt like they were walking on my head." },
-        { "s": "leo", "t": "So you could say Episode 1000 blew the roof off." },
-        { "s": "steve", "t": "Funny thing: 999 didn't get me. When I typed \"1000\" into the show notes, that's when I thought, wow, that's really cool." },
-        { "s": "leo", "t": "Kudos to you. I've only done maybe 950 of them. There's no Security Now! without Steve Gibson." },
-        { "s": "steve", "t": "It took us 20 years to get here. I don't think we'll make 2000, but we'll keep going until we can't." },
-        { "type": "fact", "title": "From 1 to 1000", "t": "Episode 1 aired in August 2005 and was about 20 minutes long. Nineteen years later, the show runs about two hours a week and has reached four digits." }
+        {
+          "s": "leo",
+          "t": "It's Security Now! Episode 1000, recorded Tuesday, November 12th, 2024. They said it would never happen!"
+        },
+        {
+          "s": "steve",
+          "t": "Some people did say that. One of them was me."
+        },
+        {
+          "s": "leo",
+          "t": "Well, we talked you into four digits. We're almost 20 years into security flaws, privacy breaches, staying safe online and, just as important, how things actually work."
+        },
+        {
+          "s": "steve",
+          "t": "I'm at my alternate location today because the roof is being replaced at my usual one. It felt like they were walking on my head."
+        },
+        {
+          "s": "leo",
+          "t": "So you could say Episode 1000 blew the roof off."
+        },
+        {
+          "s": "steve",
+          "t": "Funny thing: 999 didn't get me. It was typing \"1000\" into the show notes that made me think, wow, that really is cool."
+        },
+        {
+          "type": "fact",
+          "title": "From 1 to 1000",
+          "t": "Episode 1 aired in August 2005 and was about 20 minutes long. Nineteen years later, the show runs about two hours a week and has reached four digits."
+        },
+        {
+          "s": "steve",
+          "t": "The news has been so heavy lately that I haven't had time for your feedback. This week nothing needs a deep dive, so we'll end with a full set of listener notes."
+        },
+        {
+          "s": "steve",
+          "t": "Before that: Did Bitwarden go closed source? Germany clarifies the rights of security researchers, Australia plans an age limit for social media, some admins got a free Windows Server 2025 they didn't ask for, and Microsoft says UAC wasn't in the way enough."
+        },
+        {
+          "s": "steve",
+          "t": "Then fines from Russia and South Korea, a critical Synology flaw, a typosquatting Python package, Google's MFA mandate, layoffs at the Mozilla Foundation, and Dave Plummer's look at SpinRite."
+        },
+        {
+          "s": "leo",
+          "t": "I've only done about 950 of these. There's no Security Now! without Steve Gibson, so the kudos go to you."
+        },
+        {
+          "s": "steve",
+          "t": "You take vacations, and that keeps you fresh. It took us 20 years to get here. I don't think we'll make 2000, but we'll keep going until we can't."
+        },
+        {
+          "s": "leo",
+          "t": "We'd be in our late 80s. I'll be asking, \"What's this about HoneyMonkeys?\" and you'll say, \"Leo, that was 40 years ago.\""
+        },
+        {
+          "s": "steve",
+          "t": "Jerry Pournelle stayed sharp to the end, so there's hope. Let's start with the Picture of the Week."
+        }
       ]
     },
     {
       "title": "Picture of the Week",
       "beats": [
-        { "type": "picture", "caption": "What they intended was not what happened", "t": "A paved footpath runs beside a city park. Two staggered metal barriers stand across it so bikes and scooters have to slow down and weave through. Right beside them, a bare, muddy track is worn into the grass where riders simply went around." },
-        { "s": "steve", "t": "Picture a paved path beside a lovely green park. Someone wanted to stop bikes and scooters from speeding along it." },
-        { "s": "steve", "t": "So they added overlapping barriers that make you zig-zag through. My caption: \"What they intended was not what happened.\"" },
-        { "s": "leo", "t": "Because everyone just rode around them on the grass. You can see the ruts!" },
-        { "s": "steve", "t": "After a few thousand riders, the grass gave up and became the new path. It's the path of least resistance, and a nice security lesson: put up an obstacle and people route around it." }
+        {
+          "s": "steve",
+          "t": "This week's picture has been around, but it's new to the podcast. Picture a paved path beside a lovely green park, closed to cars by a concrete post."
+        },
+        {
+          "type": "picture",
+          "caption": "What they intended was not what happened",
+          "t": "A paved footpath runs beside a city park. Two staggered metal barriers stand across it so bikes and scooters have to slow down and weave through. Right beside them, a bare, muddy track is worn into the grass where riders simply went around."
+        },
+        {
+          "s": "steve",
+          "t": "Someone was annoyed by bikes and scooters speeding along it. So they added overlapping barriers that force you to zig-zag through, every 20 feet or so."
+        },
+        {
+          "s": "steve",
+          "t": "My caption: \"What they intended was not what happened.\""
+        },
+        {
+          "s": "leo",
+          "t": "Because everyone just rode around them on the grass. You can see the ruts!"
+        },
+        {
+          "s": "steve",
+          "t": "The first rider barely touched the grass. After about 5,000, it gave up and became the new path. Now newcomers know exactly where to go."
+        },
+        {
+          "s": "steve",
+          "t": "A listener who's a police officer wrote that there's a name for this \"path of least resistance\" effect. It's a nice security lesson: put up an obstacle, and people route around it."
+        }
       ]
     },
     {
-      "title": "Bitwarden Stays Open",
+      "title": "Bitwarden Stays Open Source",
       "beats": [
-        { "s": "steve", "t": "For weeks, listeners worried that Bitwarden, a TWiT sponsor, was going closed source. I'm glad I waited, because it has sorted itself out." },
-        { "s": "steve", "t": "A GitHub issue claimed the desktop app was \"no longer free software.\" Bitwarden said it was a packaging bug, not a policy change." },
-        { "s": "steve", "t": "Then they fixed it. The SDK the apps use moved from Bitwarden's own license to the unmodified GPL version 3, so you can build the whole client from freely available code." },
-        { "s": "steve", "t": "Their CTO, Kyle Spearrin, explained that the client code now lives in a new GPL-licensed \"sdk-internal\" repository. The business-only code was renamed \"sdk-secrets\" and isn't part of the client apps." },
-        { "s": "leo", "t": "That's really good." },
-        { "s": "steve", "t": "This is what open source is for. The community pushed back, and Bitwarden did the right thing. Props to them." },
-        { "type": "fact", "title": "Why the license matters", "t": "With a GPLv3 SDK, anyone can inspect, build and verify the whole password-manager client. For security software, that transparency is a big part of why people trust it." }
+        {
+          "s": "steve",
+          "t": "Our first story: for weeks, listeners worried that Bitwarden, a TWiT sponsor, was going closed source. I'm glad I waited, because it has sorted itself out."
+        },
+        {
+          "s": "steve",
+          "t": "It started with GitHub bug #11611, titled \"Desktop version 2024.10.0 is no longer free software.\" If you removed Bitwarden's internal SDK, which used its own license, the public source wouldn't build."
+        },
+        {
+          "s": "steve",
+          "t": "Bitwarden said on Twitter that a packaging bug had been \"misunderstood as something more,\" and that it remained committed to open source and a full-featured free version."
+        },
+        {
+          "s": "steve",
+          "t": "Then it followed through. A commit titled \"Improve licensing language\" moved the SDK from Bitwarden's own license to the unmodified GPL version 3."
+        },
+        {
+          "s": "steve",
+          "t": "CTO Kyle Spearrin explained that the clients now use a new GPL-licensed \"sdk-internal\" repository. If Bitwarden-licensed code is ever added, they'll offer separate builds, as they do for the web vault."
+        },
+        {
+          "s": "steve",
+          "t": "The original SDK is renamed \"sdk-secrets.\" It keeps its business license for the Secrets Manager products and is no longer used by the client apps."
+        },
+        {
+          "s": "leo",
+          "t": "That's really good."
+        },
+        {
+          "s": "steve",
+          "t": "The Register called it genuinely good news: everything can now be built from freely available code. It noted Bitwarden has left room for non-free business tools, which is fine."
+        },
+        {
+          "s": "steve",
+          "t": "This is what free and open source software is about. The community pushed back, Bitwarden did the right thing, and went further than undoing the change. Props to them."
+        },
+        {
+          "type": "fact",
+          "title": "Why the license matters",
+          "t": "With a GPLv3 SDK, anyone can inspect, build and verify the whole password-manager client. For security software, that transparency is a big part of why people trust it."
+        }
       ]
     },
     {
-      "title": "Researchers and Regulators",
+      "title": "Germany Protects Security Researchers",
       "beats": [
-        { "s": "steve", "t": "Good news for German security researchers. Draft legislation would remove criminal liability for vulnerability research, as long as the bugs are responsibly disclosed to the vendor." },
-        { "s": "steve", "t": "It also sets prison terms of three months to five years for anyone who abuses \"I'm a researcher\": causing serious financial damage, extortion, or harming critical infrastructure." },
-        { "s": "steve", "t": "We've seen companies send lawyers after people who were trying to help them, so it's good to see the gray area cleared up." },
-        { "s": "steve", "t": "Meanwhile, Australia is introducing a bill to require users of social media to be at least 16, and it would make the platforms enforce it." },
-        { "s": "steve", "t": "But how? On iOS, parents can set age restrictions of 4+, 9+, 12+ or 17+. There's no 16+, and nothing changes on its own as the child gets older." },
-        { "s": "steve", "t": "My suggestion: let parents set and lock the child's birth date on the device, and let apps check the age through a platform API. Services would then open up on later birthdays automatically." },
-        { "s": "leo", "t": "The hard part is age verification without invading everyone's privacy. Companies that claim AI can tell your age from your face seem ripe for misuse." },
-        { "s": "leo", "t": "Your approach is the right one: give parents the tools and let them decide." }
+        {
+          "s": "steve",
+          "t": "Next, good news for security researchers in Germany. The government has drafted legislation to remove the risk of criminal liability for vulnerability research, as long as bugs are responsibly disclosed to the vendor."
+        },
+        {
+          "s": "steve",
+          "t": "It also sets prison terms of three months to five years for anyone who abuses the \"I'm a researcher\" claim: causing substantial financial damage, attempting extortion, or harming critical infrastructure."
+        },
+        {
+          "s": "steve",
+          "t": "So the old gray area is gone in both directions. We've seen companies sic their lawyers on people who were only trying to warn them about a flaw, so this clarity is welcome."
+        }
       ]
     },
     {
-      "title": "Surprise Upgrades and a Stricter UAC",
+      "title": "Australia's Social Media Age Limit",
       "beats": [
-        { "s": "steve", "t": "On November 5th, some admins came in to find their Windows Server 2022 machines had upgraded themselves to Windows Server 2025, or were about to." },
-        { "s": "steve", "t": "Patch-management company Heimdal traced it to the full OS upgrade being labeled as security update KB5044284. About 7% of its customers were affected." },
-        { "s": "leo", "t": "Was it only Heimdal customers? If so, the patch manager is to blame, not Microsoft." },
-        { "s": "steve", "t": "Good point. It looks like the upgrades came from third-party patch management, not Windows Update directly. Either way, rolling back would be painful. You find out how good your backups are." },
-        { "s": "steve", "t": "Next, Microsoft decided User Account Control isn't in your face enough. Most people just click \"Yes\" without reading the prompt." },
-        { "type": "fact", "title": "How UAC works", "t": "An admin user gets two tokens: a standard one used most of the time and an elevated one. When something needs admin rights, a Yes/No prompt briefly switches to the elevated token. Attackers have found many ways to bypass it." },
-        { "s": "steve", "t": "The new Windows 11 feature, \"Admin Protection,\" moves elevated rights into a separate, system-managed account that is normally locked away. Elevating requires a password, PIN or other authentication, not just a Yes click." },
-        { "s": "steve", "t": "It's off by default and can be turned on through Group Policy, which is ideal for enterprises." },
-        { "s": "leo", "t": "And with Windows Hello biometrics, that's not much of a burden." },
-        { "s": "steve", "t": "I'll admit I turn UAC off completely, and as a developer I have to disable Defender too. Otherwise it deletes my freshly compiled EXE the moment it appears!" }
+        {
+          "s": "steve",
+          "t": "Staying with governments: Australia is introducing a bill this week that would restrict social media accounts to people 16 and older, and make the platforms, not parents, responsible for enforcing it."
+        },
+        {
+          "s": "steve",
+          "t": "It's not law yet, and platforms will presumably get time to comply. Officials say it's because of the harm social media is causing Australian children."
+        },
+        {
+          "s": "steve",
+          "t": "But how exactly is this done? And if parents can opt kids out, every child will say, \"All the other kids' parents let them watch TikTok.\""
+        },
+        {
+          "s": "steve",
+          "t": "The platform itself should provide age through an API. Today iOS lets parents choose app age limits of 4+, 9+, 12+ or 17+. There's no 16+."
+        },
+        {
+          "s": "steve",
+          "t": "And none of it is automatic. Parents have to set it, and it doesn't change on the child's birthday."
+        },
+        {
+          "s": "steve",
+          "t": "My suggestion: let parents set and lock the child's date of birth on the device, fudging it a year or two either way if they like. Apps check the age through the platform, and services open up automatically on later birthdays. Set and forget."
+        },
+        {
+          "s": "leo",
+          "t": "The problem is age verification without invading everyone's privacy. Companies that claim AI can tell your age from your face seem ripe for misuse and failure."
+        },
+        {
+          "s": "steve",
+          "t": "And the legislators just say \"thou shalt,\" and leave the \"how\" to the techies."
+        },
+        {
+          "s": "leo",
+          "t": "Your solution is the right one. Don't have government do it for parents. Give parents the tools and let them decide."
+        },
+        {
+          "s": "steve",
+          "t": "Maybe Apple uses broad brackets because a birth date feels like a privacy loss. But you can't have it both ways. If the platform must enforce an age limit, it has to know the age."
+        }
       ]
     },
     {
-      "title": "Fines: From Russia and South Korea",
+      "title": "Windows Server 2025 Arrives Uninvited",
       "beats": [
-        { "s": "steve", "t": "Russia's fine against Google is famously larger than all the money in existence, and Google's Russian subsidiary went bankrupt long ago. So they're trying smaller fines." },
-        { "s": "steve", "t": "A Moscow court fined Apple over two podcasts, Mozilla over some browser add-ons, and TikTok over videos about the war in Ukraine. Each fine is about $35,000 to $40,000, which is petty cash for those companies." },
-        { "s": "steve", "t": "South Korea is a different story. Its privacy regulator, the PIPC, fined Meta 21.62 billion won, about $15.67 million, and it expects to be paid." },
-        { "s": "steve", "t": "Meta analyzed likes and ad clicks to infer the religion, politics, sexual orientation and even North Korean defector status of about 980,000 users, then made those categories available to about 4,000 advertisers without consent." },
-        { "s": "steve", "t": "Meta also approved password resets for inactive accounts using fake IDs, which leaked 10 users' personal information." },
-        { "type": "fact", "title": "The bigger trend", "t": "Regulators around the world are restricting this kind of user profiling. If profiling becomes harder, the economics of online advertising will have to change." }
+        {
+          "s": "steve",
+          "t": "Now to Microsoft, and a Register headline: \"Sysadmin shock as Windows Server 2025 installs itself after update labeling error.\""
+        },
+        {
+          "s": "steve",
+          "t": "On the morning of November 5th, a customer of security company Heimdal found that every Windows Server 2022 machine had upgraded itself to Windows Server 2025, or was about to."
+        },
+        {
+          "s": "steve",
+          "t": "Heimdal's patch management traced it through the Windows Update API, where the full OS upgrade was labeled as security update KB5044284. The upgrade's GUID didn't match, and that KB number actually belongs to a Windows 11 update."
+        },
+        {
+          "s": "steve",
+          "t": "About 7% of Heimdal's customers were affected. It blocked KB5044284 in all its server policies, and Microsoft said nothing for a day."
+        },
+        {
+          "s": "steve",
+          "t": "Rolling back is hard, so victims either find out how good their backups are, or pay for the new license and live with Server 2025's changes."
+        },
+        {
+          "s": "steve",
+          "t": "If it were my servers, I'd frantically check everything still worked. If it did, I might stay, since Server 2022 machines will be moved to 2025 eventually anyway."
+        },
+        {
+          "s": "leo",
+          "t": "Was it only Heimdal customers? If so, blame the patch manager, not Microsoft."
+        },
+        {
+          "s": "steve",
+          "t": "Good point. Some listeners hit it too, without saying who managed their patches, but it appears to have come from third-party patch management, not Windows Update directly."
+        }
+      ]
+    },
+    {
+      "title": "A Stricter UAC: Admin Protection",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Staying with Microsoft: it has decided User Account Control isn't in your face enough."
+        },
+        {
+          "s": "leo",
+          "t": "Everybody gets the elevation prompt and just clicks \"Yes.\""
+        },
+        {
+          "s": "steve",
+          "t": "Exactly, which isn't much protection. I'll confess I turn UAC down to minimum, then disable it in the registry. I'm a mother hen over my own machine."
+        },
+        {
+          "s": "steve",
+          "t": "Here's how UAC works now. Running as an admin means anything you run by mistake gets admin rights. So Windows gives an admin two tokens and normally uses the standard one."
+        },
+        {
+          "s": "steve",
+          "t": "When you do something that needs more, like installing software, UAC asks \"Are you sure?\" Click Yes, and Windows briefly switches to the elevated token. I've always thought that was clever."
+        },
+        {
+          "type": "fact",
+          "title": "How UAC works",
+          "t": "An admin user gets two tokens: a standard one used most of the time and an elevated one. When something needs admin rights, a Yes/No prompt briefly switches to the elevated token. Attackers have found many ways to bypass it."
+        },
+        {
+          "s": "steve",
+          "t": "The new Windows 11 feature, \"Admin Protection,\" gives just-in-time admin rights. It's off by default and can be turned on through Group Policy, so enterprises can enable it everywhere."
+        },
+        {
+          "s": "steve",
+          "t": "According to The Hacker News, it's in Windows 11 Canary builds. Elevated rights move into a separate, system-managed \"super admin\" account that's normally disabled and locked away."
+        },
+        {
+          "s": "steve",
+          "t": "Instead of Yes and No, you must authenticate with a password, PIN or similar. Microsoft MVP Rudy Ooms, who spotted it, says it changes how Windows assigns admin rights entirely, because attackers kept finding UAC bypasses."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft promises details at its Ignite conference this month. The Hacker News hopes it supports multifactor authentication, which would make stolen admin accounts much harder to abuse."
+        },
+        {
+          "s": "steve",
+          "t": "An office worker on a locked-down \"standard\" account already needs full admin credentials, so this protects everyone who logs in as admin and clicks through the prompts. And it's optional, thank goodness."
+        },
+        {
+          "s": "leo",
+          "t": "With Windows Hello biometrics, it wouldn't be much of a burden."
+        },
+        {
+          "s": "steve",
+          "t": "Right, not running to your phone for a code every time. As a developer, though, I even have to shut Defender off, or it deletes my freshly compiled EXE the moment it appears!"
+        },
+        {
+          "s": "leo",
+          "t": "To Windows, brand-new code looks dangerous."
+        },
+        {
+          "s": "steve",
+          "t": "Still, Microsoft wouldn't do this if enterprises weren't seeing real problems. It's good that admins can crank the security up."
+        }
+      ]
+    },
+    {
+      "title": "Fines from Russia and South Korea",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next, fines, starting under the category of \"Who cares?\" Russia fined Google for refusing to carry Russian propaganda on YouTube. The amount is larger than all the money in existence, and Google's Russian subsidiary went bankrupt a year and a half ago."
+        },
+        {
+          "s": "steve",
+          "t": "So Russia is trying fines a company might actually pay. A Moscow court fined Apple for not removing two podcasts, Mozilla for some browser add-ons, and TikTok for videos about the war in Ukraine."
+        },
+        {
+          "s": "steve",
+          "t": "Each fine is about $35,000 to $40,000 in rubles. That's petty cash for these companies, but at least it's a number people can pronounce."
+        },
+        {
+          "s": "steve",
+          "t": "South Korea is a different story. Its privacy regulator, the PIPC, fined Meta 21.62 billion won. At about 1,400 won to the dollar, that's roughly $15.67 million, and South Korea expects to be paid."
+        },
+        {
+          "s": "steve",
+          "t": "Meta analyzed the pages about 980,000 South Korean users liked and the ads they clicked, inferring their religion, political views, sexual orientation, transgender status and even whether they had defected from North Korea."
+        },
+        {
+          "s": "steve",
+          "t": "It then made those categories available to about 4,000 advertisers, without a legal basis or users' consent."
+        },
+        {
+          "s": "steve",
+          "t": "Meta also approved password resets for inactive accounts based on fake IDs, which leaked 10 users' personal information. The PIPC says it will watch whether Meta complies, and Meta says it will \"carefully review\" the decision."
+        },
+        {
+          "type": "fact",
+          "title": "The bigger trend",
+          "t": "Regulators around the world are restricting this kind of user profiling. If profiling becomes harder, the economics of online advertising will have to change."
+        },
+        {
+          "s": "steve",
+          "t": "Everywhere we turn, the freewheeling early days of unaccountable Internet services are being reined in. Advertisers want everything about everyone, and governments are starting to say no."
+        }
       ]
     },
     {
       "title": "Synology's RISK:STATION",
       "beats": [
-        { "s": "steve", "t": "Leo, our favorite NAS maker, Synology, just patched a critical flaw: zero-click, no authentication needed, and full remote code execution as root." },
-        { "s": "leo", "t": "Ugh." },
-        { "s": "steve", "t": "It's CVE-2024-10443, nicknamed \"RISK:STATION\" by Rick de Jager of Midnight Blue, who demonstrated it at Pwn2Own Ireland 2024. It affects Synology Photos on DiskStation and BeePhotos on BeeStation." },
-        { "s": "steve", "t": "Between one and two million of those devices are exposed to the Internet, and Shodan or Censys can list them in seconds." },
-        { "s": "steve", "t": "The good news is that Pwn2Own disclosure is responsible, so no technical details have been released while people patch." },
-        { "s": "steve", "t": "I'll say it again: there is currently no safe way to expose a service like that directly to the Internet. My NASes sit behind a pfSense firewall with UPnP turned off." },
-        { "type": "fact", "title": "Zero-click", "t": "A zero-click flaw needs no action from the victim: no link, no login. If the vulnerable service can be reached over the network, an attacker can take it over." }
+        {
+          "s": "steve",
+          "t": "Our next story is a serious one. Leo, our favorite NAS maker, Synology, just patched a critical flaw: zero-click, no authentication needed, and full remote code execution as root."
+        },
+        {
+          "s": "leo",
+          "t": "Ugh."
+        },
+        {
+          "s": "steve",
+          "t": "It's CVE-2024-10443, nicknamed \"RISK:STATION\" by Rick de Jager of Midnight Blue, who demonstrated it at Pwn2Own Ireland 2024. It affects Synology Photos on DiskStation and BeePhotos on BeeStation."
+        },
+        {
+          "type": "fact",
+          "title": "Zero-click",
+          "t": "A zero-click flaw needs no action from the victim: no link, no login. If the vulnerable service can be reached over the network, an attacker can take it over."
+        },
+        {
+          "s": "steve",
+          "t": "That's only possible because those photo services were exposed to the Internet. Midnight Blue says one to two million devices are, and Censys or Shodan can list them in seconds."
+        },
+        {
+          "s": "steve",
+          "t": "The good news is that Pwn2Own disclosure is responsible, so no technical details will be released while people patch."
+        },
+        {
+          "s": "steve",
+          "t": "I just updated my two Synology NASes. They were never at risk, because they sit behind a pfSense firewall with UPnP turned off."
+        },
+        {
+          "s": "leo",
+          "t": "Somehow I doubt you use Synology's photo app."
+        },
+        {
+          "s": "steve",
+          "t": "I don't, and neither do you. I'll say it again: however tempting, there is currently no safe way to expose a service like that directly to the Internet, even with a login."
+        },
+        {
+          "s": "steve",
+          "t": "Safe remote access exists. I'm a huge fan of port knocking, which never took off. But vendors don't build it in, because they keep imagining the bug they just fixed was the last one. That's what needs to change."
+        }
       ]
     },
     {
       "title": "Fabric vs. Fabrice",
       "beats": [
-        { "s": "steve", "t": "This is a sneaky supply-chain attack. \"Fabric\" is a popular Python library for running shell commands over SSH, with more than 202 million downloads." },
-        { "s": "steve", "t": "\"Fabrice,\" with an extra E, sat on PyPI for three years, since 2021, and was downloaded more than 37,100 times by people who mistyped the name." },
-        { "s": "steve", "t": "On Linux it downloaded and ran four shell scripts. On Windows it dropped p.vbs and d.py, which fetched a fake \"chrome.exe\" and scheduled it to run every 15 minutes." },
-        { "s": "steve", "t": "Either way, the goal was to steal AWS access and secret keys. Fixing the typo later doesn't help, because the machine was compromised the first time it ran." },
-        { "s": "leo", "t": "PyPI and npm both have this problem. I wish there were an easy fix." },
-        { "s": "steve", "t": "We want public repositories where everyone shares code. Keeping the bad guys out completely just isn't possible." },
-        { "type": "fact", "title": "Typosquatting", "t": "Attackers publish packages whose names are one typo away from popular ones. Check package names carefully, pin dependencies, and use lock files." }
+        {
+          "s": "steve",
+          "t": "Next, a really interesting supply-chain attack. \"Fabric\" is a popular Python library for running shell commands remotely over SSH, with more than 202 million downloads."
+        },
+        {
+          "s": "steve",
+          "t": "\"Fabrice,\" with an \"e\" added, sounds like an air freshener. It sat on PyPI for three years, since 2021, and was downloaded more than 37,100 times by developers who mistyped the name."
+        },
+        {
+          "s": "steve",
+          "t": "On Linux it downloaded and ran four shell scripts from a server at 89.44.9.227."
+        },
+        {
+          "s": "steve",
+          "t": "On Windows it extracted p.vbs, which ran a hidden script, d.py, from the Downloads folder. That fetched a fake \"chrome.exe,\" scheduled it to run every 15 minutes, then deleted itself."
+        },
+        {
+          "s": "steve",
+          "t": "Either way, the goal was stealing AWS access and secret keys and sending them to that server. Fixing the typo later doesn't help, because the machine was compromised the first time it ran."
+        },
+        {
+          "type": "fact",
+          "title": "Typosquatting",
+          "t": "Attackers publish packages whose names are one typo away from popular ones. Check package names carefully, pin dependencies, and use lock files."
+        },
+        {
+          "s": "steve",
+          "t": "Which raises the question: what other typo traps are still sitting in these repositories? That's why researchers keep scouring them."
+        },
+        {
+          "s": "leo",
+          "t": "PyPI and npm both have this problem. I wish there were an easy fix."
+        },
+        {
+          "s": "steve",
+          "t": "We want public repositories where everyone shares code. Keeping the bad guys out completely just isn't possible."
+        }
       ]
     },
     {
-      "title": "MFA Mandate and Mozilla's Layoffs",
+      "title": "Google Requires MFA",
       "beats": [
-        { "s": "steve", "t": "Starting in 2025, Google will require some form of multifactor authentication for all of its cloud users, including Gmail. A username and password alone won't be enough." },
-        { "s": "leo", "t": "Good. It's time." },
-        { "s": "steve", "t": "The Mozilla Foundation just laid off 30% of its staff, and its statement was pure corporate jargon. As someone who relies on Firefox and Thunderbird, that made me nervous." },
-        { "s": "leo", "t": "Here's the good news: the Foundation is Mozilla's nonprofit arm, not the browser team, and it had more than doubled its staff in the previous two years." },
-        { "s": "leo", "t": "Firefox and Safari are the only mainstream browsers not built on Chromium. We need that diversity." },
-        { "s": "steve", "t": "I'm 100% Firefox. My computers run cooler and quieter without Chrome." }
+        {
+          "s": "steve",
+          "t": "Moving to account security: Google has said that during 2025, all of its cloud users, including Gmail, must use some form of multifactor authentication."
+        },
+        {
+          "s": "leo",
+          "t": "Good. It's time."
+        },
+        {
+          "s": "steve",
+          "t": "A username and password won't be enough. Google hasn't given exact deadlines, but expect to be pushed early next year if you haven't set up MFA."
+        }
       ]
     },
     {
-      "title": "SpinRite, Storage and Backups",
+      "title": "Mozilla Foundation Layoffs",
       "beats": [
-        { "s": "steve", "t": "Dave Plummer, the former Microsoft engineer who wrote Task Manager, ported Space Cadet Pinball to Windows NT and added built-in ZIP support to Windows, reviewed SpinRite 6.1 on his channel, Dave's Garage." },
-        { "s": "steve", "t": "He made a point of saying it wasn't sponsored. He's simply been a customer for more than 30 years. I made a shortcut to the channel: grc.sc/dave." },
-        { "s": "steve", "t": "One commenter remembered that Compaq used SpinRite to screen hard drives before installing them, so bad drives went back to the manufacturer." },
-        { "type": "fact", "title": "Why SMART can miss problems", "t": "A drive can only find its own weaknesses when it's asked to read or write its media. An idle drive usually reports good health. SpinRite puts the media under load, which reveals problems and can restore performance on slow SSDs." },
-        { "s": "steve", "t": "Robert Thibadeau, Seagate's former Chief Technologist, also commented. His advice: keep essential data on multiple independent drives. RAID isn't a backup unless it's full mirroring." },
-        { "s": "steve", "t": "Keep at least one dated, air-gapped copy, and copy to new drives every few years. Storage devices are generally designed to last about five years, and lightning does strike." },
-        { "s": "steve", "t": "Storage is cheap now, so make your backups automatic. That way nothing depends on remembering to do it." },
-        { "s": "leo", "t": "And most people have at least one copy in the cloud now. I use Syncthing to keep everything synced everywhere." },
-        { "s": "steve", "t": "One housekeeping item: some email providers open every link in a message to check it for malware, and that was triggering my one-click unsubscribe. Unsubscribe now shows a confirmation page, so subscriptions should stay put." },
-        { "s": "steve", "t": "This morning's mailing went to 12,656 subscribers without a problem. Next I'm working on the new DNS Benchmark." }
+        {
+          "s": "steve",
+          "t": "From Google to Mozilla, and some worrying news. The Mozilla Foundation just laid off 30% of its staff. As someone who depends on Firefox and Thunderbird, that made me nervous."
+        },
+        {
+          "s": "steve",
+          "t": "Its statement was pure gobbledygook, like the \"Turbo Encabulator\": \"reorganizing teams to increase agility and impact,\" \"a relentless onslaught of change,\" \"lofty goals demand hard choices.\""
+        },
+        {
+          "s": "leo",
+          "t": "Obviously they fired whoever in PR spoke sense."
+        },
+        {
+          "s": "leo",
+          "t": "Here's the good news: the Foundation is Mozilla's nonprofit arm, not the browser team, and it had more than doubled its staff in the previous two years."
+        },
+        {
+          "s": "leo",
+          "t": "Firefox and Safari are the only mainstream browsers not built on Chromium. We need that diversity."
+        },
+        {
+          "s": "steve",
+          "t": "I'm 100% Firefox. I left Chrome because my fans spun up while it sat there doing nothing."
+        },
+        {
+          "s": "steve",
+          "t": "And Firefox does get money from Google."
+        },
+        {
+          "s": "leo",
+          "t": "About $200 million a year, to be its default search engine. It's the same reason Google pays Apple about $20 billion."
+        },
+        {
+          "s": "steve",
+          "t": "I even keep Firefox's sponsored home page on, to support them."
+        },
+        {
+          "s": "steve",
+          "t": "That's the week's news. It's also Patch Tuesday, so we'll have that next week. Whether two or three digits' worth of fixes, we'll see."
+        }
       ]
     },
     {
-      "title": "Closing the Loop",
+      "title": "SpinRite on Dave's Garage",
       "beats": [
-        { "s": "steve", "t": "Paul asked: won't attackers use AI to find vulnerabilities too, and turn this into an arms race?" },
-        { "s": "steve", "t": "In the short term, yes. Old, unpatched software gives malicious AI a lot of targets. But there's an asymmetry: AI can only find flaws that exist. It can't create new ones." },
-        { "s": "steve", "t": "Once defensive AI stops new vulnerabilities from being introduced, attackers run out of things to find. In the long run, the good guys win." },
-        { "s": "steve", "t": "Several listeners sent ways to hide YouTube Shorts using only uBlock Origin filters, without installing another browser extension that could later be sold to someone who tracks you." },
-        { "type": "fact", "title": "Hide YouTube Shorts with uBlock Origin", "t": "Open uBlock Origin's Dashboard. Either add a few rules on the \"My filters\" tab, or, on \"Filter lists\", paste the address of a ready-made list under \"Import...\" and click Apply changes. Steve checked the list Darrell sent: 71 well-commented lines. It's linked in the chapter menu under \"From the show notes.\"" },
-        { "s": "steve", "t": "And the viral photo of a fire hose crossing train tracks under tire ramps? It was a joke by Belgian firefighters in Bornem. That track was closed for a week of maintenance." },
-        { "s": "steve", "t": "Jim asked how we can trust AI chatbots that disagree on basic facts, or won't answer at all. My view: what we get from AI is just another opinion, and the full truth is often more complicated than a simple answer." },
-        { "s": "leo", "t": "Those refusals are guardrails added by people, not the AI deciding. And because answers come from a computer, people give them too much weight. Researchers warned about that in the \"Stochastic Parrots\" paper." },
-        { "s": "steve", "t": "John asked whether hiding his Home Assistant on an IPv6 address is safe enough. It's obscurity at best. ISPs get well-known IPv6 blocks, and botnets can scan them." },
-        { "s": "steve", "t": "The right answer is an overlay network like Tailscale, ZeroTier or Nebula. It's secure, uses little bandwidth, and runs on phones, routers and even a Synology NAS through Docker." },
-        { "type": "fact", "title": "Remote access, done right", "t": "Don't open ports to home devices. An overlay network, a VPN or port knocking lets you reach home without exposing services to Internet-wide scanning." }
+        {
+          "s": "steve",
+          "t": "Before your feedback, a couple of GRC notes. Dave Plummer was an early Microsoft engineer. He wrote the original Windows Task Manager, ported Space Cadet Pinball to Windows NT, and added built-in ZIP support to Windows."
+        },
+        {
+          "s": "leo",
+          "t": "Hard to pick a favorite. I liked the pinball a lot."
+        },
+        {
+          "s": "steve",
+          "t": "Today he runs the YouTube channels \"Dave's Garage\" and \"Dave's Attic.\" I made a shortcut to the first: grc.sc/dave."
+        },
+        {
+          "s": "steve",
+          "t": "A week ago he posted a very positive review of SpinRite 6.1, saying it can extend data life, including on SSDs. He noted it was not sponsored: he's simply been a customer and fan for more than 30 years."
+        },
+        {
+          "s": "steve",
+          "t": "Listeners already know why: SSDs that are only ever read slow down over time, and a SpinRite Level 3 pass restores their factory performance."
+        },
+        {
+          "s": "steve",
+          "t": "One commenter, Brent Smithline, said Compaq's head of support told him Compaq used SpinRite to test hard drives before installing them, and sent the bad ones back."
+        },
+        {
+          "s": "steve",
+          "t": "It reminded me of something I've noticed: a drive's SMART health readings often drop while SpinRite runs."
+        },
+        {
+          "type": "fact",
+          "title": "Why SMART can miss problems",
+          "t": "A drive can only find its own weaknesses when it's asked to read or write its media. An idle drive usually reports good health. SpinRite puts the media under load, which reveals problems and can restore performance on slow SSDs."
+        },
+        {
+          "s": "steve",
+          "t": "So SpinRite can still be used the way Compaq used it, to qualify both spinning drives and SSDs."
+        }
+      ]
+    },
+    {
+      "title": "Keep More Than One Copy",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Another of the 756 comments on Dave's video came from Robert Thibadeau, Seagate's former Chief Technologist. He was a founding director of Carnegie Mellon's Robotics Institute and led Seagate's work on self-encrypting drives."
+        },
+        {
+          "s": "steve",
+          "t": "He said SpinRite is \"generally done right.\" His bigger point: keep essential data on multiple independent drives."
+        },
+        {
+          "s": "steve",
+          "t": "RAID isn't the answer, he said, except for transactional data or full mirroring."
+        },
+        {
+          "s": "leo",
+          "t": "Very good."
+        },
+        {
+          "s": "steve",
+          "t": "Keep a full, dated copy or two air-gapped, even in a safe deposit box, and copy everything to new drives every few years. Storage is typically designed to last about five years, though many last 10 or more."
+        },
+        {
+          "s": "steve",
+          "t": "He buys new drives every year or so. Lightning strikes, and fire's heat demagnetizes."
+        },
+        {
+          "s": "steve",
+          "t": "He also said solid-state drives can suffer magnetic-field failures."
+        },
+        {
+          "s": "leo",
+          "t": "Is that true?"
+        },
+        {
+          "s": "steve",
+          "t": "An MRI machine might hurt one, but SSDs are electrostatic, not magnetic. You'd need a serious pulse."
+        },
+        {
+          "s": "steve",
+          "t": "When I wrote SpinRite, our 10 to 30 megabyte drives cost thousands of dollars, and nobody had a second drive. That's why SpinRite recovers data in place. Changing that is one of the things I'm excited about for SpinRite's future."
+        },
+        {
+          "s": "steve",
+          "t": "Today, storage is cheap, so make backups automatic. Everyone forgets things that don't demand attention. If nothing ever goes wrong, you've still bought peace of mind."
+        },
+        {
+          "s": "leo",
+          "t": "And most people have at least one copy in the cloud now, like OneDrive or iCloud. I use Syncthing to keep everything synced everywhere."
+        }
+      ]
+    },
+    {
+      "title": "Email Fixed, DNS Benchmark Next",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "One last GRC note. Last week I said some listeners were being silently unsubscribed from my mailing list."
+        },
+        {
+          "s": "steve",
+          "t": "Some email providers check links for malware by opening every one. That triggered my one-click unsubscribe. It also makes email more trackable, which these providers must have decided was worth it."
+        },
+        {
+          "s": "steve",
+          "t": "Now the link shows a confirmation page, and nothing happens until you click \"Yes, I'm sure.\" This morning's mailing went to 12,656 subscribers without a problem, and you can resubscribe at GRC.com/mail."
+        },
+        {
+          "s": "steve",
+          "t": "So the email system is done, and I've turned to my next project: the new DNS Benchmark."
+        },
+        {
+          "s": "leo",
+          "t": "And to think it all started with our first sponsor, Astaro. Alex Neihaus still listens and emails me regularly. Thanks to all our sponsors and Club TWiT members."
+        }
+      ]
+    },
+    {
+      "title": "Can AI Win the Bug Race?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now our listener feedback, starting with Paul Walker. After last week's Episode 999, he asked: won't attackers use AI to find vulnerabilities too, and turn this into an arms race?"
+        },
+        {
+          "s": "steve",
+          "t": "He worries bad actors could have an advantage for a while, turning powerful new bug hunters on all the old software already out there."
+        },
+        {
+          "s": "steve",
+          "t": "I agree. Upgrade inertia means malicious AI will find a target-rich environment at first, and things may get rough while both sides adopt it."
+        },
+        {
+          "s": "steve",
+          "t": "But there's an asymmetry. AI can only find flaws that exist. It can't create new ones."
+        },
+        {
+          "s": "steve",
+          "t": "Once defensive AI stops new vulnerabilities from being introduced, attackers run out of things to find. Then it's not an arms race anymore. The good guys win."
+        }
+      ]
+    },
+    {
+      "title": "Hiding YouTube Shorts",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Staying with AI, Mathieu from Montreal asked ChatGPT how to hide YouTube Shorts. It suggested extensions, so he asked again for a solution using only uBlock Origin."
+        },
+        {
+          "s": "steve",
+          "t": "It gave him three filter rules to paste into uBlock Origin's \"My filters\" tab, and he says they work perfectly."
+        },
+        {
+          "s": "steve",
+          "t": "Darrell, a man of few words, sent a link to a GitHub filter list. I grabbed it: 71 lines, heavily commented. I'd be surprised if any Short got through."
+        },
+        {
+          "type": "fact",
+          "title": "Hide YouTube Shorts with uBlock Origin",
+          "t": "Open uBlock Origin's Dashboard. Either add a few rules on the \"My filters\" tab, or, on \"Filter lists\", paste the address of a ready-made list under \"Import...\" and click Apply changes. The list Darrell sent is linked in the chapter menu under \"From the show notes.\""
+        },
+        {
+          "s": "steve",
+          "t": "That confirms my hunch from last week: you don't need another extension that could later be sold to someone who tracks you. That's how this topic came up."
+        },
+        {
+          "s": "steve",
+          "t": "But why do people want this so badly? Darrell's link led to a Medium post by a software engineer who said Shorts were hurting his eyesight and he couldn't stop, which led to a Chris Titus Tech video with 1.6 million views and 8,423 comments."
+        },
+        {
+          "s": "steve",
+          "t": "The comments call Shorts spam that YouTube won't let you opt out of. One parent said their child wants to stop watching but \"can't.\" A student called them his downfall."
+        },
+        {
+          "s": "steve",
+          "t": "And one asked for a shorter version of the video. Okay, I made that one up. But whatever this is, it has people in its grasp."
+        }
+      ]
+    },
+    {
+      "title": "The Firefighters' Joke",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Next, Tom Damon, a listener since Episode 1, solved a mystery: the photo from Episode 998 of a fire hose crossing train tracks under tire ramps."
+        },
+        {
+          "s": "leo",
+          "t": "The one where the train would hit the ramps."
+        },
+        {
+          "s": "steve",
+          "t": "His Business Insider link was behind a paywall pop-up. uBlock Origin to the rescue: I disabled JavaScript for the site and read the story."
+        },
+        {
+          "s": "leo",
+          "t": "That site is really hard to get to. Good to know."
+        },
+        {
+          "s": "steve",
+          "t": "It was a joke by firefighter Tom Bongaerts in Bornem, Belgium. After a minor call, they had time by the railway, which was closed for a week of maintenance."
+        },
+        {
+          "s": "steve",
+          "t": "Once shared hundreds of times, the photo lost its caption, and people believed it. Stories even claimed it derailed a train. So either the firefighters knew it wouldn't survive a train, or a train wouldn't survive it."
+        }
+      ]
+    },
+    {
+      "title": "DNS Benchmark Beyond Windows",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Paul Northrup asks if the new DNS Benchmark will run on Apple, Linux or BSD."
+        },
+        {
+          "s": "steve",
+          "t": "Fifteen years ago, I made sure the original runs perfectly under WINE, and I'll keep that. All three systems can run WINE, so while it won't be native, it will run on all of them."
+        }
+      ]
+    },
+    {
+      "title": "Can We Trust AI Answers?",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jim Riley poses a philosophical question. Gemini, ChatGPT and Copilot disagree on basic facts, like who won the 2020 presidential election, and Gemini refused to answer."
+        },
+        {
+          "s": "steve",
+          "t": "He calls that Big Brother, Google as the \"Ministry of Truth,\" and asks whether AI should be prohibited from withholding the truth."
+        },
+        {
+          "s": "leo",
+          "t": "Well, there is disagreement in general on that one."
+        },
+        {
+          "s": "steve",
+          "t": "That's my point. I know my neighbors well, and I could ask each couple the same question and get radically different answers."
+        },
+        {
+          "s": "steve",
+          "t": "The truest answer is often complex and subtle, but many people choose a simple answer over a true one. Because I know my neighbors, I can filter what they say. Whether we like it or not, what we get from AI will just be another opinion."
+        },
+        {
+          "s": "leo",
+          "t": "Two things. The refusal isn't the AI deciding. Every company except Elon Musk's Grok adds human-written guardrails against controversial answers."
+        },
+        {
+          "s": "leo",
+          "t": "And Timnit Gebru, Margaret Mitchell and others warned in the \"Stochastic Parrots\" paper that people give computer answers too much weight. Ask the same AI the same question several times, and you'll get different answers. The term \"artificial intelligence\" is part of the problem."
+        },
+        {
+          "s": "steve",
+          "t": "In high school I was at Stanford's AI lab, and that was nothing like today."
+        },
+        {
+          "s": "leo",
+          "t": "I just read about Fei-Fei Li, who kept believing in neural networks when others gave up, and built an image recognizer that inspired Geoffrey Hinton and others. Now people say AGI is a few years away."
+        },
+        {
+          "s": "steve",
+          "t": "That's next week's topic. Sam Altman has gone on record, and there's enough meat to discuss."
+        },
+        {
+          "s": "leo",
+          "t": "He's a hype master, but I can't wait."
+        }
+      ]
+    },
+    {
+      "title": "Reaching Home Safely",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "John Torrisi in Australia has spent 20 years in security and has over 100 home automation devices, split up with VLANs, firewalls and separate SSIDs."
+        },
+        {
+          "s": "steve",
+          "t": "He wants to reach his Home Assistant controller while traveling. He has a fixed IP, but OpenVPN means turning it on and off. He worries an overlay network would use too much mobile data. Would an IPv6 address hide it well enough?"
+        },
+        {
+          "s": "steve",
+          "t": "This is the same problem behind those exposed Synology servers. We still need a clean, efficient way to reach home devices while roaming."
+        },
+        {
+          "s": "steve",
+          "t": "IPv6 is obscurity at best, and it needs IPv6 at both ends. You don't get a random 128-bit address. ISPs get well-known blocks and give each subscriber 64K addresses, so botnets can scan those ranges."
+        },
+        {
+          "s": "steve",
+          "t": "An overlay network like Tailscale, ZeroTier or Nebula is about as close to perfect as exists today. They run on desktops, phones, pfSense, OPNsense and other routers, and even on a Synology NAS through Docker."
+        },
+        {
+          "s": "steve",
+          "t": "Their overhead is small, so data usage isn't a concern. Run the client on your phone, browse to your home address, and that traffic goes only over the overlay."
+        },
+        {
+          "type": "fact",
+          "title": "Remote access, done right",
+          "t": "Don't open ports to home devices. An overlay network, a VPN or port knocking lets you reach home without exposing services to Internet-wide scanning."
+        }
       ]
     },
     {
       "title": "To 1999 and Beyond",
       "beats": [
-        { "s": "steve", "t": "Our last note is from Alan. He listened to Episode 1 in his first year of a computer science degree, while donating plasma to pay for a second monitor." },
-        { "s": "steve", "t": "He's now been a senior software engineer at Google for nine years. He says the podcast taught him as much as his degree did." },
-        { "s": "leo", "t": "That is so beautiful." },
-        { "s": "steve", "t": "Twenty years ago, Leo, you asked if I'd spend about 20 minutes a week talking about Internet security. Look what happened. Thank you for making this possible." },
-        { "s": "leo", "t": "I just gave you the platform, and you took it from there. Fun stat: our shortest episode was 4 minutes 12 seconds, a \"Vote for Steve\" special for the Podcast Awards." },
-        { "s": "steve", "t": "We won the first several years of those awards." },
-        { "s": "leo", "t": "Steve, it's been an honor to know you and work with you for more than 30 years." },
-        { "s": "steve", "t": "Listeners used to say \"To 999 and beyond.\" Now I think it's \"To 1999 and beyond.\"" },
-        { "s": "leo", "t": "And someday, somebody will be listening to AI Steve do Episode 10,000!" },
-        { "s": "steve", "t": "On to 1001. See you next week." }
+        {
+          "s": "steve",
+          "t": "Our last note is from Alan. He listened to Episode 1 in his first year of a computer science degree, while donating plasma to pay for a second monitor."
+        },
+        {
+          "s": "leo",
+          "t": "That's dedication."
+        },
+        {
+          "s": "steve",
+          "t": "He's now been a senior software engineer at Google for nine years, and he's heard every episode the week it came out. He says the podcast taught him as much as his degree."
+        },
+        {
+          "s": "leo",
+          "t": "That is so beautiful."
+        },
+        {
+          "s": "steve",
+          "t": "To Alan and everyone who has written something similar: this podcast has been one of the major features of my life. Twenty years ago, Leo, you asked if I'd spend about 20 minutes a week on Internet security. Look what happened. Thank you for making this possible."
+        },
+        {
+          "s": "leo",
+          "t": "I just gave you the platform, and you took it from there."
+        },
+        {
+          "s": "leo",
+          "t": "Patrick Delahanty dug up some stats. Our shortest episode was 4 minutes 12 seconds, Episode 103-SE, \"Vote for Steve,\" for the Podcast Awards."
+        },
+        {
+          "s": "steve",
+          "t": "We won the first several years of those."
+        },
+        {
+          "s": "leo",
+          "t": "The longest was 3 hours and 57 seconds, but that was a 2018 \"Best Of,\" so you're off the hook."
+        },
+        {
+          "s": "steve",
+          "t": "I think two hours is a reasonable target. A few listeners say they don't have two hours."
+        },
+        {
+          "s": "leo",
+          "t": "Nobody's making you listen to it all. My rule is that it should last longer than your commute. Most of our shows run two and a half to three hours, so yours is actually our shortest."
+        },
+        {
+          "s": "steve",
+          "t": "And dare I say, the most focused."
+        },
+        {
+          "s": "leo",
+          "t": "And easily the geekiest. Some listeners say they understand 15% and still love it. It's aspirational, like Martha Stewart's magazine. Keep listening, and you'll get it."
+        },
+        {
+          "s": "leo",
+          "t": "Steve, it's been an honor to know you and work with you for more than 30 years."
+        },
+        {
+          "s": "steve",
+          "t": "Listeners used to say \"To 999 and beyond.\" Now I think it's \"To 1999 and beyond.\""
+        },
+        {
+          "s": "leo",
+          "t": "And someday, somebody will be listening to AI Steve do Episode 10,000!"
+        },
+        {
+          "s": "steve",
+          "t": "You could probably feed all the transcripts to an AI today and ask for this week's news as Steve would present it. On to 1001. See you next week."
+        }
       ]
     }
   ],
   "quiz": [
     {
       "q": "What did Bitwarden do after users worried it had gone closed source?",
-      "options": ["Dropped its free tier", "Moved its client SDK to the GPL v3 license", "Sold the company", "Made the app paid-only"],
-      "answer": 1,
-      "explain": "Bitwarden called it a packaging bug and moved the SDK used by its apps to the unmodified GPLv3, so the whole client can be built from open code."
+      "options": [
+        "Moved its client SDK to the GPL v3 license",
+        "Dropped its free tier",
+        "Sold the company",
+        "Made the app paid-only"
+      ],
+      "answer": 0,
+      "explain": "Bitwarden called it a packaging bug, then moved the SDK used by its apps to the unmodified GPLv3, so the whole client can be built from open code."
     },
     {
       "q": "Why did some Windows Server 2022 machines suddenly become Server 2025?",
-      "options": ["A worm forced the upgrade", "The OS upgrade was mislabeled as security update KB5044284 and pushed by third-party patch management", "Admins clicked an ad", "A BIOS update"],
-      "answer": 1,
+      "options": [
+        "The OS upgrade was mislabeled as security update KB5044284 and pushed by third-party patch management",
+        "A worm forced the upgrade",
+        "Admins clicked an ad",
+        "A BIOS update"
+      ],
+      "answer": 0,
       "explain": "Heimdal traced it to the upgrade being labeled as KB5044284. About 7% of its customers were affected."
     },
     {
+      "q": "How does Windows 11's new Admin Protection differ from classic UAC?",
+      "options": [
+        "Elevation needs real authentication, like a password or PIN, and admin rights live in a separate locked account",
+        "It removes admin accounts entirely",
+        "It's on by default for everyone",
+        "It only works on servers"
+      ],
+      "answer": 0,
+      "explain": "It's off by default and can be enabled through Group Policy."
+    },
+    {
       "q": "What made Synology's RISK:STATION flaw so severe?",
-      "options": ["It needed physical access", "It only affected passwords", "It was zero-click and unauthenticated, giving root code execution", "It only crashed the device"],
-      "answer": 2,
+      "options": [
+        "It was zero-click and unauthenticated, giving root code execution",
+        "It needed physical access",
+        "It only affected passwords",
+        "It only crashed the device"
+      ],
+      "answer": 0,
       "explain": "Attackers could take over exposed Synology Photos or BeePhotos servers with no user action, and 1 to 2 million devices were reachable from the Internet."
     },
     {
       "q": "How did the malicious \"Fabrice\" package get onto developers' machines?",
-      "options": ["Phishing emails", "Developers mistyping the popular \"Fabric\" library's name", "A compromised CPU", "A fake Windows update"],
-      "answer": 1,
+      "options": [
+        "Developers mistyping the popular \"Fabric\" library's name",
+        "Phishing emails",
+        "A compromised CPU",
+        "A fake Windows update"
+      ],
+      "answer": 0,
       "explain": "It was a typosquat of Fabric. It was downloaded more than 37,100 times over three years and stole AWS credentials."
     },
     {
-      "q": "What does Steve recommend for safely reaching home devices while traveling?",
-      "options": ["Use an obscure IPv6 address", "Open the port and use a strong password", "An overlay network like Tailscale, ZeroTier or Nebula", "Turn on UPnP"],
-      "answer": 2,
-      "explain": "IPv6 only adds obscurity because ISPs' address blocks are known and can be scanned. Overlay networks provide secure access without exposing services."
-    },
-    {
       "q": "Why does Steve think defenders will win the AI vulnerability arms race in the long run?",
-      "options": ["Defenders have more money", "AI can only find flaws that exist, not create new ones", "Attackers can't use AI", "Laws will ban malicious AI"],
-      "answer": 1,
+      "options": [
+        "AI can only find flaws that exist, not create new ones",
+        "Defenders have more money",
+        "Attackers can't use AI",
+        "Laws will ban malicious AI"
+      ],
+      "answer": 0,
       "explain": "Once defensive AI stops new bugs from being introduced, attackers run out of vulnerabilities to find."
     }
   ]

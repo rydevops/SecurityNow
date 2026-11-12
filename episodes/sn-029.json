@@ -42,7 +42,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Bob Metcalfe designed Ethernet at Xerox PARC in the early '70s, when computers cost $100,000. His idea was to put them all on one shared coax cable, terminated at each end."
+          "t": "To see why Ethernet is so trusting, start with its history. Bob Metcalfe designed it at Xerox PARC in the early '70s, when computers cost $100,000. His idea was to put them all on one shared coax cable, terminated at each end."
         },
         {
           "s": "leo",
@@ -72,7 +72,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We moved from coax (10Base2) to twisted pair (10BaseT): one pair to transmit and one to receive. The plug has eight pins, but only four are used."
+          "t": "Ethernet's wiring has changed since. We moved from coax (10Base2) to twisted pair (10BaseT): one pair to transmit and one to receive. The plug has eight pins, but only four are used."
         },
         {
           "s": "steve",
@@ -97,7 +97,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The big problem: Ethernet has no concept of authentication. It assumed everyone on the LAN was trusted."
+          "t": "Now the big problem: Ethernet has no concept of authentication. It assumed everyone on the LAN was trusted."
         },
         {
           "s": "steve",
@@ -135,7 +135,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Send a PC an ARP reply saying \"I'm the gateway,\" and all its Internet traffic now goes to you."
+          "t": "Here's how an attacker uses that. Send a PC an ARP reply saying \"I'm the gateway,\" and all its Internet traffic now goes to you."
         },
         {
           "s": "leo",
@@ -180,7 +180,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A properly built VPN defeats both passive sniffing and man-in-the-middle attacks, because the attacker can't impersonate the other end without being detected."
+          "t": "So what's the defense? A properly built VPN defeats both passive sniffing and man-in-the-middle attacks, because the attacker can't impersonate the other end without being detected."
         },
         {
           "s": "steve",

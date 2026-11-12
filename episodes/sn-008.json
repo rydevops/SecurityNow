@@ -25,7 +25,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A denial-of-service attack is any traffic that stops you from getting a service you want. The classic one against web servers was the SYN flood."
+          "t": "Let's start with the basics. A denial-of-service attack is any traffic that stops you from getting a service you want. The classic one against web servers was the SYN flood."
         },
         {
           "s": "steve",
@@ -55,7 +55,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Then came DDoS: distributed denial of service. Malware infects hundreds or thousands of PCs, sometimes tens of thousands, and a \"zombie master\" commands them all to attack one target."
+          "t": "Servers learned to cope with SYN floods, so attackers changed tactics. Then came DDoS: distributed denial of service. Malware infects hundreds or thousands of PCs, sometimes tens of thousands, and a \"zombie master\" commands them all to attack one target."
         },
         {
           "s": "steve",
@@ -132,7 +132,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Honestly, the best defense is not to annoy people. The other is to change your IP address, because attacks target your address, not your equipment."
+          "t": "So what can you actually do? Honestly, the best defense is not to annoy people. The other is to change your IP address, because attacks target your address, not your equipment."
         },
         {
           "s": "steve",

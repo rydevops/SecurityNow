@@ -54,7 +54,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "At home, WPA has you covered. In a hotel, about half use cheap hubs, so anyone in any room with a sniffer sees everyone's traffic, wired or wireless."
+          "t": "Now, part two of our VPN series, starting with the problem. At home, WPA has you covered. In a hotel, about half use cheap hubs, so anyone in any room with a sniffer sees everyone's traffic, wired or wireless."
         },
         {
           "s": "steve",
@@ -84,7 +84,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Telnet sent everything unencrypted, including root passwords, when administering UNIX machines remotely. SSH, Secure Shell, replaced it with a strongly encrypted session that looks exactly the same."
+          "t": "The first solution is SSH. Telnet sent everything unencrypted, including root passwords, when administering UNIX machines remotely. SSH, Secure Shell, replaced it with a strongly encrypted session that looks exactly the same."
         },
         {
           "s": "leo",
@@ -126,7 +126,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "SSL is browser-centered, which makes setup much easier. Services like GoToMyPC and Anonymizer run over it."
+          "t": "A second, easier option is SSL. It's browser-centered, which makes setup much simpler. Services like GoToMyPC and Anonymizer run over it."
         },
         {
           "s": "leo",
@@ -155,7 +155,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So what's your holy grail?"
+          "t": "Those all work today. So what's your holy grail?"
         },
         {
           "s": "steve",

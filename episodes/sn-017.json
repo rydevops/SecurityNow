@@ -54,7 +54,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "PPTP, the Point-to-Point Tunneling Protocol, is Microsoft's, and every Windows since 95 has it. The Mac supports it too."
+          "t": "Now the VPNs themselves, starting with PPTP, the Point-to-Point Tunneling Protocol. It's Microsoft's, and every Windows since 95 has it. The Mac supports it too."
         },
         {
           "s": "steve",
@@ -93,7 +93,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I hoped Windows' built-in client could connect straight to a home VPN router with no extra software."
+          "t": "Now, my holy grail. I hoped Windows' built-in client could connect straight to a home VPN router with no extra software."
         },
         {
           "s": "steve",
@@ -114,7 +114,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The next problem: IPSec signs each packet so that any change is detected, and NAT routers have to change packets."
+          "t": "Even with matching software, there's a second problem: IPSec signs each packet so that any change is detected, and NAT routers have to change packets."
         },
         {
           "s": "steve",

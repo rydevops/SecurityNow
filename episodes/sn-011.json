@@ -11,6 +11,10 @@
       "title": "Mailbag: Sharing Your Wi-Fi",
       "beats": [
         {
+          "s": "leo",
+          "t": "Episode 11, October 27, 2005: bad Wi-Fi security. First, your mail about last week's open access points."
+        },
+        {
           "s": "steve",
           "t": "Wireless security is a soup of acronyms, and vendors keep making it worse. I saw a book listing the default WEP keys some routers ship with."
         },
@@ -45,7 +49,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Every Ethernet adapter has a 48-bit MAC address. The first 24 bits identify the manufacturer, and the last 24 are a serial number, so no two should match on the same network."
+          "t": "To see how people get around switches, and around Wi-Fi's weak protections, you need to know about MAC addresses. Every Ethernet adapter has a 48-bit MAC address. The first 24 bits identify the manufacturer, and the last 24 are a serial number, so no two should match on the same network."
         },
         {
           "type": "fact",
@@ -67,7 +71,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many people skip encryption and use MAC address filtering instead: a list of the only adapters allowed to connect. Is it secure? Not at all."
+          "t": "That matters because many people skip encryption and use MAC address filtering instead: a list of the only adapters allowed to connect. Is it secure? Not at all."
         },
         {
           "s": "leo",
@@ -105,7 +109,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Which leaves encryption. WEP is a textbook lesson in how not to design a security protocol."
+          "t": "So MAC filtering and hidden SSIDs don't help, which leaves encryption. WEP is a textbook lesson in how not to design a security protocol."
         },
         {
           "s": "steve",
@@ -148,7 +152,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Early WEP authentication went like this: the access point sends a challenge in the clear, the client encrypts it with the key and sends it back."
+          "t": "With that background, here's how WEP failed. Early WEP authentication went like this: the access point sends a challenge in the clear, the client encrypts it with the key and sends it back."
         },
         {
           "s": "steve",
