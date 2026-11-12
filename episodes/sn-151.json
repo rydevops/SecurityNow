@@ -1,0 +1,974 @@
+{
+  "number": 151,
+  "title": "Phracking Phorm",
+  "subtitle": "Exactly how Phorm tags you with cookies on every site you visit",
+  "date": "2008-07-03",
+  "description": "Charter drops NebuAd, Acrobat and Safari for Windows get security fixes, Microsoft's removal tool catches two million game-password stealers, and Wizmo gains \"lock\" and \"blindlock.\" Steve tells how he publicly corrected Bill Gates at the Pentium's launch, explains why he never uses copy protection, and describes his new media workstation. Then, propeller hats on: how Phorm's equipment inside an ISP impersonates the sites you visit and bounces your browser through three redirects to plant a tracking cookie in every domain, then reads every page you view.",
+  "transcript": "https://www.grc.com/sn/sn-151.txt",
+  "audio": "http://media.GRC.com/sn/SN-151.mp3",
+  "chapters": [
+    {
+      "title": "The Second Sesquicentennial",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Episode 151, our sesquicentennial."
+        },
+        {
+          "s": "steve",
+          "t": "It's 151."
+        },
+        {
+          "s": "leo",
+          "t": "It's that old \"when does the year 2000 begin\" thing."
+        },
+        {
+          "s": "steve",
+          "t": "I hate that. Are we counting from zero or one?"
+        },
+        {
+          "s": "leo",
+          "t": "We counted from one. So it's our second sesquicentennial."
+        },
+        {
+          "s": "steve",
+          "t": "There's been huge interest in today's topic: the horrifying technology Phorm uses to spy on ISP customers without their knowledge. Two weeks ago we opened the subject of ISPs betraying their customers' trust. Today, all the details of how Phorm achieves long-term profiling."
+        },
+        {
+          "s": "leo",
+          "t": "They bill themselves as advertising platforms, not spy platforms. Front Porch emailed asking to explain what they do. Maybe we'll give them a chance."
+        },
+        {
+          "s": "steve",
+          "t": "I'd like that. And someone very active in the U.K.'s anti-Phorm effort contacted me, and he'll join us in two weeks to talk about the political and regulatory fight. Phorm also has corporate offices in New York and is clearly planning to come to the U.S."
+        },
+        {
+          "s": "leo",
+          "t": "And good news: Charter has announced it won't go forward with NebuAd."
+        },
+        {
+          "s": "steve",
+          "t": "NebuAd is a different approach to the same idea, also ISP-installed equipment. It injects JavaScript into pages ISP customers download, which is what Phorm tried in '06 and '07 and messed up so badly that it backed off."
+        },
+        {
+          "s": "leo",
+          "t": "You've pried up this rock, and the spiders are moving."
+        },
+        {
+          "s": "steve",
+          "t": "Now when I download software, I'm often confronted with a full-screen interception page saying, \"If you'd like to bypass this ad, click here.\" Yes, I want to bypass this ad."
+        },
+        {
+          "s": "steve",
+          "t": "We began with less annoying ads, then Flash with dancing fish, and now interception pages. If ISPs give third parties a foothold to intercept our traffic and it becomes acceptable, what's next? Email filtering, \"just a keyword scan to determine your categories\"? This ought to be nipped in the bud."
+        },
+        {
+          "s": "leo",
+          "t": "We're advertising supported, and I don't think advertising is necessarily bad. There are acceptable ways to do it, and philosophical issues here as well as security and privacy."
+        },
+        {
+          "s": "steve",
+          "t": "And websites aren't that expensive. Remember the early nonsense that without ads we wouldn't have the web? We had the web before advertising."
+        },
+        {
+          "s": "leo",
+          "t": "And millions of Web 2.0 sites run without ads. But we spend more than a quarter million dollars a year producing content, so TWiT needs revenue."
+        },
+        {
+          "s": "steve",
+          "t": "Popular sites experimented, found ads could pay their way, which is good. But redirecting you to a blocking page instead of the URL you clicked is going too far."
+        }
+      ]
+    },
+    {
+      "title": "Acrobat, Safari and OS X Updates",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "A copy of Acrobat on one of my machines updated itself since we last spoke."
+        },
+        {
+          "s": "leo",
+          "t": "It updates every five seconds."
+        },
+        {
+          "s": "steve",
+          "t": "Adobe is in security nightmare land. There's another JavaScript parsing vulnerability being exploited in the wild, and in some situations a PDF displays itself without user interaction. If you use Acrobat and don't have automatic updates, use Check for Updates in the menu."
+        },
+        {
+          "s": "steve",
+          "t": "Safari for Windows had several vulnerabilities Apple just patched, two of them remote code execution. Update if you run it."
+        },
+        {
+          "s": "leo",
+          "t": "Apple also released OS X 10.5.4 yesterday. I haven't seen what it patched, but I'm sure there's security in there."
+        }
+      ]
+    },
+    {
+      "title": "Two Million Game Password Stealers",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "We wondered recently about Microsoft's Malicious Software Removal Tool. Microsoft says 330 million copies were downloaded in June, updated to remove a pernicious game-password-stealing malware, and it removed two million copies."
+        },
+        {
+          "s": "leo",
+          "t": "Online games are big business, especially in Asia. You'd think, who cares?"
+        },
+        {
+          "s": "steve",
+          "t": "Games are now such a big deal that someone who logs in as you can steal your resources and sell them for cash. And more than half the infections were at Chinese IP addresses."
+        }
+      ]
+    },
+    {
+      "title": "Wizmo Learns to Lock",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I updated Wizmo with two new commands. Locking the computer was its most requested feature. Control-Alt-Delete and Lock isn't hard, but okay, I give up. \"wizmo lock\" is in."
+        },
+        {
+          "s": "steve",
+          "t": "Combining it with \"monoff,\" which turns off the monitor, didn't work as well as it could. So \"blindlock\" locks the system and powers off all the monitors and keeps them off. You see no username or clues. It's in GRC's freeware menu, or GRC.com/freeware."
+        },
+        {
+          "s": "steve",
+          "t": "Practice with \"lock\" first, since fumbling blind at the keyboard is dangerous. Alt-U and Alt-P jump to the username and password fields if you make a typo you can't see."
+        },
+        {
+          "s": "leo",
+          "t": "Wizmo's been around for years."
+        },
+        {
+          "s": "steve",
+          "t": "It started when I got my first SGI monitors, which could power down. I didn't use a screensaver, but I always know when I'm getting up, and I never power cycle my computer. I wanted the monitors off when I said so. It uses Windows' power control API."
+        },
+        {
+          "s": "leo",
+          "t": "And it does more: the graviton screensaver, and the wireless zero config fix."
+        },
+        {
+          "s": "steve",
+          "t": "It's amazing Windows runs that service on a machine that has never seen a WiFi adapter."
+        },
+        {
+          "s": "leo",
+          "t": "The chatroom already has four feature requests."
+        },
+        {
+          "s": "steve",
+          "t": "GRC.com/feedback is the catchall."
+        }
+      ]
+    },
+    {
+      "title": "Jungle Disk 2.0",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Jungle Disk 2.0 is out, a free upgrade for everyone on version 1. There's also a new groupware version that lets multiple Jungle Disks log into the same Amazon S3 bucket and share files, essentially a shared directory. You can access multiple buckets at once, and the built-in backup does much more. He's been listening to users."
+        },
+        {
+          "s": "leo",
+          "t": "The backup now has an interface right in the window to start and pause it. Jungle Disk is an interface to Amazon's S3 storage that enhances its value immensely, for about 20 bucks."
+        }
+      ]
+    },
+    {
+      "title": "Steve Versus Bill Gates at the Pentium Launch",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "On Sunday's TWiT, with Bill Gates' last day at Microsoft, we had old-timers from the computer magazine world who knew him. Why I didn't think of you, Steve, is beyond me. You must have stories."
+        },
+        {
+          "s": "steve",
+          "t": "It was a great podcast. Gates, the richest man in the world, matters to everyone involved in PCs."
+        },
+        {
+          "s": "leo",
+          "t": "I can't think of anyone who matters more."
+        },
+        {
+          "s": "steve",
+          "t": "My problem with Bill is that when we get together, we tend to argue."
+        },
+        {
+          "s": "leo",
+          "t": "Why am I not surprised?"
+        },
+        {
+          "s": "steve",
+          "t": "I have the utmost respect for him. But his genius is that of a businessman. He once created a company called Traf-O-Data to process punched tape from traffic counters..."
+        },
+        {
+          "s": "leo",
+          "t": "When he was 15, or 14."
+        },
+        {
+          "s": "steve",
+          "t": "And no one's really clear how much coding Bill did. The trouble is, he says something he wants to be true because it serves Microsoft's interests, but it's not, and most people aren't sure. I am, so I call him on it."
+        },
+        {
+          "s": "steve",
+          "t": "The most memorable time, which Dvorak, Bill Machrone and Pournelle all witnessed, was the announcement of the Pentium."
+        },
+        {
+          "s": "steve",
+          "t": "I was in my eight years writing InfoWorld's weekly \"Tech Talk\" column. Cringely and I vied for first place among InfoWorld's features. I was even credited with launching Visual Basic. Microsoft's original VB product manager, Nevet Basker, showed me VB 1.0, and I thought, this changes everything. One of my programmers said it was a bad idea because it made programming too easy."
+        },
+        {
+          "s": "leo",
+          "t": "He might have been right."
+        },
+        {
+          "s": "steve",
+          "t": "That year the Las Vegas Convention Center was being remodeled, so Comdex was at McCormick Place in Chicago."
+        },
+        {
+          "s": "leo",
+          "t": "I was at that Comdex."
+        },
+        {
+          "s": "steve",
+          "t": "The entire press corps was there. I partied with Jerry Pournelle. His wife Roberta is a great hugger. Jerry just looks at me thinking, okay."
+        }
+      ]
+    },
+    {
+      "title": "Intel's Pitch",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Intel presented the radically improved Pentium architecture in the big auditorium. I was glued to it, thinking three or four columns. This was the first chip, I believe, with major on-chip cache, since processors were outpacing dynamic RAM. And the buzzword was still RISC."
+        },
+        {
+          "s": "leo",
+          "t": "Macs ran on a \"RISC\" chip, and everyone asked who'd win, RISC or CISC."
+        },
+        {
+          "s": "steve",
+          "t": "MIPS was the big RISC maker. As an assembly programmer, I knew how complex Intel's instruction set was. I still pick up my reference book to check whether carry is set by some instruction. But Intel wanted RISC because it was a buzzword."
+        },
+        {
+          "s": "steve",
+          "t": "They said they'd reengineered the processor around a RISC core with a fast emulation wrapper, still running the relatively horrible Intel instruction set. They'd profiled real code, and for the first time many of the most-used instructions executed in a single cycle."
+        },
+        {
+          "s": "steve",
+          "t": "The 286, 386 and 486 were heavily microcoded, with a ROM on the chip essentially emulating the instruction set, a computer within a computer, because the instruction set was too complicated for hardware."
+        },
+        {
+          "s": "steve",
+          "t": "Single-cycle execution required the data to be in the cache. So executing from cache was much better, and the penalty for a cache miss, going out to increasingly slow-seeming DRAM, was much greater."
+        },
+        {
+          "s": "leo",
+          "t": "That was the beginning of a bad road that ultimately bit Intel."
+        },
+        {
+          "s": "steve",
+          "t": "Keeping that instruction set compatible made it hard to speed up. They added parallel pipelines and speculative execution, where at a branch they'd effectively take it and not take it, splitting the execution stream to get ahead of the code. Bizarre lengths."
+        },
+        {
+          "type": "fact",
+          "title": "More precisely",
+          "t": "The 486 already had an 8KB on-chip cache, and the Pentium's on-chip caches were small Level 1 caches, two 8KB halves. Its big change was two parallel pipelines. Translating x86 instructions into RISC-like micro-operations came with the Pentium Pro in 1995."
+        }
+      ]
+    },
+    {
+      "title": "The Panel",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Then a panel: Philippe Kahn, Bill Gates, Fred Gibbons and Jim Manzi, \"the\" guys in the PC industry, moderated by Stewart Alsop, who wrote the PC Letter and was once InfoWorld's editor-in-chief."
+        },
+        {
+          "s": "leo",
+          "t": "Trivia: Stewart Alsop, John Dvorak, Fred Davis, Gina Smith and I did the first pilot TV show for CNET, which I produced, a roundtable that was the precursor of TWiT."
+        },
+        {
+          "s": "steve",
+          "t": "There was a long-running blood feud between Philippe Kahn's Borland and Microsoft. Microsoft began as the language company. IBM went to DRI for the operating system and Microsoft for languages. Microsoft started with BASIC for the Altair, then a BASIC for the Z80 and some Pascals. Its languages cost $499. I drooled over Microsoft Pascal, but $500, ow."
+        },
+        {
+          "s": "leo",
+          "t": "Enter Philippe Kahn."
+        },
+        {
+          "s": "steve",
+          "t": "Out of nowhere came huge full-page ads for Turbo Pascal, for $49."
+        },
+        {
+          "s": "leo",
+          "t": "And it was better, and fast."
+        },
+        {
+          "s": "steve",
+          "t": "Fantastic. I think it was the first integrated development environment of that size. Write, compile, run, boom boom boom, like a bat out of hell. It blew the crap out of Microsoft's pricing model."
+        },
+        {
+          "s": "leo",
+          "t": "I can see the steam coming out of Bill's ears."
+        },
+        {
+          "s": "steve",
+          "t": "Fred Gibbons ran Personal Software, which made the PFS programs. I think this was after the stroke John mentioned Sunday, which horrified those of us who knew Fred, a neat guy. He was back on his feet. And Jim Manzi ran Lotus, with its spreadsheets, which annoyed Bill too, since he wanted Excel. But mostly he was furious with Philippe."
+        },
+        {
+          "type": "fact",
+          "title": "A correction",
+          "t": "Fred Gibbons founded Software Publishing Corporation, maker of the pfs: line. \"Personal Software\" was the original name of VisiCorp, publisher of VisiCalc."
+        }
+      ]
+    },
+    {
+      "title": "\"Well, Bill, You're Wrong\"",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Philippe sat at the far right, closest to Stew. Stew asked: Philippe, as the preeminent compiler makers, and Bill is growling, will you be coming out with new compilers for this processor? Philippe gave his pro-Intel spiel: they'd worked with Intel and would have Pentium-aware compilers immediately."
+        },
+        {
+          "s": "steve",
+          "t": "Microsoft had long had a reputation for being chips behind."
+        },
+        {
+          "s": "leo",
+          "t": "Andy Grove was furious that Microsoft wouldn't keep up with Intel."
+        },
+        {
+          "s": "steve",
+          "t": "The joke was the 486 was out and Microsoft only supported the 286. There was Windows 3.0, then this weird Windows 386, as if to say, we did something with the 386, now please shut up."
+        },
+        {
+          "s": "leo",
+          "t": "Nobody used it and no software ran on it, but they made it."
+        },
+        {
+          "type": "fact",
+          "title": "The order",
+          "t": "Windows/386 came out in 1987, three years before Windows 3.0."
+        },
+        {
+          "s": "steve",
+          "t": "So the worst possible thing for Bill was another new processor with nothing from Microsoft for it."
+        },
+        {
+          "s": "steve",
+          "t": "Bill cut in: \"That's ridiculous. The Pentium is completely upward compatible.\" At the time Bill couldn't say \"processor.\" He said \"prosser.\" We forgave him because he was Bill."
+        },
+        {
+          "s": "leo",
+          "t": "He wasn't yet the titan. He was first among equals. People weren't afraid of him."
+        },
+        {
+          "s": "steve",
+          "t": "He railed that there was no need for new compilers, it was all baloney. I waited for Philippe to rebut, and he didn't. I was in the third row, and I stood up. Stew said, \"It looks like Steve wants to weigh in.\""
+        },
+        {
+          "s": "steve",
+          "t": "I turned to Bill and said, \"Well, Bill, you're wrong.\""
+        },
+        {
+          "s": "steve",
+          "t": "He stared at me, not happy. I said, we just heard Intel explain that the most-used instructions now run in a single cycle, while rarer ones are heavily microcoded to save silicon."
+        },
+        {
+          "s": "steve",
+          "t": "A compiler's back end, the code generator, emits the final machine language. An optimizing compiler exists to make the result run as fast as possible. One targeted at the Pentium would choose different instruction mixes that run much faster on a Pentium than on a 486. The tech-savvy audience knew I was right."
+        },
+        {
+          "s": "leo",
+          "t": "Of course. When Intel makes a new chip, the first thing it makes is an optimizing reference compiler."
+        },
+        {
+          "s": "steve",
+          "t": "And, I said, this is the first processor with a large on-chip cache. Instructions run in a single cycle only if what they need is in the cache. A Pentium-targeted compiler, knowing the cache size, maybe 4K then, could arrange loops to fit and maximize cache hits. So it seems clear, as Philippe said, that chip-aware compilers make sense."
+        },
+        {
+          "s": "leo",
+          "t": "But we don't have that yet, Bill."
+        },
+        {
+          "s": "steve",
+          "t": "You could have heard a pin drop. Then Stew said, \"Well, okay. Moving along, then.\""
+        },
+        {
+          "s": "steve",
+          "t": "Afterward, as we milled around, Bill came up and said, \"Steve, you're a technical guy. It's very important that the world not get the wrong impression about the compatibility of the Pentium prosser.\" I said, \"Bill, you know the care I put into communication. I absolutely won't give the wrong impression. But I want to be technically accurate.\" He glared at me and wandered off."
+        },
+        {
+          "s": "leo",
+          "t": "He wanted people to keep buying his products over Philippe's. And as John said Sunday, Bill's message, ultimately right, was that you wouldn't need to worry about optimization as chips got faster."
+        }
+      ]
+    },
+    {
+      "title": "The Loss of Pascal",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Had I been on TWiT, I'd have agreed wholeheartedly with Jerry about Pascal. Its failure to win is one of the great losses in computer science."
+        },
+        {
+          "s": "steve",
+          "t": "It's absolutely my favorite language of all time. My Pascal code just worked the first time, and years later my own code was still clear to me. Originally UCSD Pascal was interpreted. A front end compiled to pseudocode that an interpreter ran, so the whole environment could be bootstrapped onto many processors quickly. Turbo Pascal emitted native executables and ran like a bat out of hell."
+        },
+        {
+          "s": "leo",
+          "t": "Jerry's point was that it was strongly typed, so programmers couldn't make the same dumb mistakes with typing and casting. That has a security impact. We'd probably have fewer buffer overruns."
+        },
+        {
+          "s": "steve",
+          "t": "And it was visually beautiful. Languages like C have contests for how much you can do in one line. APL was famous for that too."
+        },
+        {
+          "s": "leo",
+          "t": "APL used such strange symbols you put special keycaps on your keyboard. I was a C guy."
+        },
+        {
+          "s": "leo",
+          "t": "Pascal lives on in Delphi."
+        },
+        {
+          "s": "steve",
+          "t": "Borland's heavily object-oriented Pascal."
+        },
+        {
+          "s": "leo",
+          "t": "I wish you could still get Turbo Pascal. On Vista, we'd see a lot more great freeware."
+        },
+        {
+          "s": "steve",
+          "t": "I'm sure it's around and probably still runs."
+        },
+        {
+          "s": "steve",
+          "t": "And Jerry told Audible to record \"The Mote in God's Eye,\" which he wrote with Larry Niven. In my opinion it's one of the classic sci-fi books of all time. I've read it three or four times. Hear, hear."
+        },
+        {
+          "s": "leo",
+          "t": "I've never read it. I've read all the Ringworld novels."
+        },
+        {
+          "s": "steve",
+          "t": "As soon as Audible has it, jump on it."
+        }
+      ]
+    },
+    {
+      "title": "Steve's New Media Machine",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I've complained that only one of my workstation's four cores ever does anything. But recompressing a two-hour video took over 24 hours on that machine. I couldn't tolerate that, so I built a really strong one: an Intel quad-core Extreme with 12MB of on-chip cache, in two 6MB halves each shared by a pair of cores, a 1,333MHz front-side bus, DDR3 and 8GB of RAM."
+        },
+        {
+          "s": "leo",
+          "t": "That's almost exactly our Ultimate Gaming Machine. You bought the QX9770, a $1,500 processor."
+        },
+        {
+          "s": "steve",
+          "t": "On a Supermicro motherboard and case. Intel's new heat sink is huge, like a mushroom cloud, and didn't fit. I had to cut away some plastic from the rear fan holder. It even has a blue LED shining through it."
+        },
+        {
+          "s": "leo",
+          "t": "People want that. What the hell, it costs a penny more."
+        },
+        {
+          "s": "steve",
+          "t": "As a test, it recompressed the same video that took 24 hours in 57 minutes, better than real time."
+        },
+        {
+          "s": "leo",
+          "t": "Hard drives?"
+        },
+        {
+          "s": "steve",
+          "t": "A 3TB RAID 5 of four 1TB SATA II drives, so I'm reading from all of them at once and getting about three times a single drive's throughput. Server-grade Hitachis, not the consumer ones."
+        },
+        {
+          "s": "leo",
+          "t": "Not the new 2.5-inch, 10,000 rpm VelociRaptors?"
+        },
+        {
+          "s": "steve",
+          "t": "2.5-inch drives scare me. They all seem like flaky laptop drives. I know that's crazy."
+        },
+        {
+          "s": "leo",
+          "t": "They get their speed from areal density. Our gaming machine will differ mainly in video, maybe four-way SLI, liquid cooled."
+        }
+      ]
+    },
+    {
+      "title": "Why Steve Hates Activation",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Reinstalling my software, I came to DVD-Lab PRO 2 from MediaChance.com, my prize-winning choice for DVD authoring. It makes a disc that just plays a movie, or multi-episode discs with menus. It even exposes the virtual machine inside DVD players. DVDs actually run a VM, and authoring tools write canned VM code behind the scenes for your menus. They have a demo quiz that runs on the DVD player itself, plus an emulator, editor and debugger."
+        },
+        {
+          "s": "steve",
+          "t": "Their site says it \"does not bother you with any online activation.\" Exactly."
+        },
+        {
+          "s": "steve",
+          "t": "Meanwhile my killer compression tool, Pegasys' Tsunami MPEG Encoder, reauthorizes itself every so often. I've paid them a lot over the years. I worry they'll go away, or their servers will be down when I need them, and it won't run until it \"renews your license,\" autonomously, needing an Internet connection."
+        },
+        {
+          "s": "steve",
+          "t": "And I needed a burning tool for my four Pioneer DVD burners."
+        },
+        {
+          "s": "leo",
+          "t": "I won't ask why you need four."
+        },
+        {
+          "s": "steve",
+          "t": "If I need four copies, I don't want to wait four times. I used Gear Pro, sold through Digital River, whom I hate. I activated it, then rebuilt my drive while messing with the RAID, and it deactivated and wouldn't reactivate. I had to email them."
+        },
+        {
+          "s": "steve",
+          "t": "So here's my philosophy. When you buy SpinRite, you get a 13-character transaction code, emailed and shown on screen. That's the keys to the kingdom. It downloads SpinRite anytime, anywhere. No activation, no online nonsense. I've never used copy protection, and I've survived. Travelers can call home for the code, enter it at GRC and download a fresh copy from our servers."
+        },
+        {
+          "s": "leo",
+          "t": "It's important for people like you to say it works, since the impression is that without copy protection you'll lose your shirt."
+        },
+        {
+          "s": "steve",
+          "t": "I know SpinRite is used illegally. But those aren't lost sales. Someone who borrows a copy or finds it online wasn't going to buy from me."
+        },
+        {
+          "s": "leo",
+          "t": "Think of them as customers who haven't paid you yet."
+        },
+        {
+          "s": "steve",
+          "t": "We've heard many stories of people loaning a copy that saved a friend, who then bought it."
+        },
+        {
+          "s": "leo",
+          "t": "I believe in people. If they find value, they pay."
+        },
+        {
+          "s": "steve",
+          "t": "If you treat them with respect."
+        },
+        {
+          "s": "leo",
+          "t": "Treat them like criminals, and they don't mind stealing."
+        },
+        {
+          "s": "steve",
+          "t": "Tsunami has a lock on compression, as PayPal does on what it does. If a better compressor came along that didn't constantly renew its license, I'd much rather support that."
+        }
+      ]
+    },
+    {
+      "title": "How Behavioral Ad Networks Differ",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Let's talk about Phorm."
+        },
+        {
+          "s": "steve",
+          "t": "Phorm pays ISPs to install its equipment in their data centers, monitor their customers, and aggregate profiles of the sites they visit. Then it's an ad network, like DoubleClick, selling ad space on websites."
+        },
+        {
+          "s": "steve",
+          "t": "Google ads relate to the page you're on. Phorm and this whole collection of next-generation nightmare companies track the user, not the page. They sort you into categories, a thousand by their brochures, and wherever you see their ads, you get ads about you."
+        },
+        {
+          "s": "steve",
+          "t": "Phorm began in '06 by injecting JavaScript into people's pages, so the page you got from the server had been altered. They weren't very good at it, and maybe it can't be done robustly. The code leaked into blog entries, and IE would hang at 100 percent CPU until you killed it with Task Manager."
+        },
+        {
+          "s": "steve",
+          "t": "What really angered people was that BT, one of the three biggest U.K. ISPs, let Phorm use its customers unwittingly, causing all these problems. And Phorm is a renamed company. It used to be Media something, like Media 247."
+        },
+        {
+          "type": "fact",
+          "title": "The name",
+          "t": "Phorm was formerly 121Media, the company behind the Apropos adware."
+        },
+        {
+          "s": "steve",
+          "t": "Back then they made rootkit spyware that hooked the kernel to hide its randomly named directories. There's a history of badness."
+        },
+        {
+          "s": "steve",
+          "t": "Now the main three U.K. ISPs have been seduced by the money. These companies say: we'll anonymize everything, respect your customers' privacy, put our hardware in your network, and pay you. Win-win-win. And ISPs are saying yes."
+        },
+        {
+          "s": "steve",
+          "t": "Today's propeller-hat topic is how Phorm now forcibly tracks users without any JavaScript injection. JavaScript is easier, but listeners may disable it, they never got it to work safely, or altering the page I download from CNET just crosses the line. The U.K. has more stringent privacy rules than the U.S., and people there are talking lawsuits. So Phorm came up with a solution that is amazing."
+        },
+        {
+          "s": "steve",
+          "t": "Amazingly awful."
+        }
+      ]
+    },
+    {
+      "title": "A Cookie Refresher",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, cookies. They're tokens a server offers, which the browser returns with later requests to the same domain. Visit www.cnet.com with a virgin browser, and CNET's response includes headers you never see: the page's expiration, its length, and a cookie. The browser keeps it, and whenever it requests anything from CNET.com, it sends back its CNET.com cookies. That's a first-party cookie."
+        },
+        {
+          "s": "leo",
+          "t": "Nothing wrong with first-party cookies. That's how the web works."
+        },
+        {
+          "s": "steve",
+          "t": "I agree. Web browsing has no state. Each page request stands alone unless you hand back the token. That's how you log into eBay or PayPal. Yesterday WallStreetJournal.com said, oh, hi, Steve, because I'd told it to remember me on this machine. For low-security convenience, that makes sense."
+        },
+        {
+          "s": "steve",
+          "t": "What Netscape's originators didn't think about was a site showing ads from someone else, like an image from www.doubleclick.net. The site's server is the first party, I'm the second, and that other server is the third party. Third parties can set cookies too, and browsers allow it by default, except Safari."
+        },
+        {
+          "s": "leo",
+          "t": "Because the ad is almost a little frame of another site on the page."
+        },
+        {
+          "s": "steve",
+          "t": "The clever marketing guys realized that if DoubleClick gives me a cookie while I'm at CNET, and later I'm at WallStreetJournal.com, which also shows DoubleClick ads, my DoubleClick cookie goes back to DoubleClick. And every request includes the \"referrer,\" the URL of the page I'm on. So DoubleClick knows someone was at CNET and later at The Wall Street Journal, and which articles. With ads all over the Internet, it builds up a history of everywhere I go that shows its ads."
+        },
+        {
+          "s": "leo",
+          "t": "Not everywhere. Just places with its ads. But DoubleClick, now owned by Google, is in so many places."
+        },
+        {
+          "s": "steve",
+          "t": "Privacy-aware people turn third-party cookies off. I'll soon be telling everyone who visits GRC whether they have them on, with a link to turn them off. There's just no purpose for them."
+        },
+        {
+          "s": "steve",
+          "t": "And DoubleClick knows nothing about sites that don't use its ads, with variations, like PayPal links that redirect through DoubleClick."
+        },
+        {
+          "s": "leo",
+          "t": "Could you block DoubleClick in your hosts file?"
+        },
+        {
+          "s": "steve",
+          "t": "Absolutely. Your browser checks the hosts file first and wouldn't get DoubleClick's IP, so its ads would vanish. But side effects: those PayPal links wouldn't work."
+        },
+        {
+          "s": "leo",
+          "t": "I bet DoubleClick pays them. That's why those links are there."
+        },
+        {
+          "s": "steve",
+          "t": "There's even worse, \"cross-context leakage,\" where browsers that block incoming third-party cookies but not outgoing ones, which is IE and Safari, can leak a first-party cookie out through a third party. That's for our cookie episode."
+        },
+        {
+          "s": "leo",
+          "t": "The party of the first part leaving cookies for the party of the third part."
+        },
+        {
+          "s": "steve",
+          "t": "At least DoubleClick is relatively hands-off. It's not inside your ISP. It deals with websites and has a forced relationship with your browser. This new generation is far more invasive."
+        }
+      ]
+    },
+    {
+      "title": "Phorm's Three-Redirect Dance",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "I'm a customer of a Phorm ISP. I type www.cnet.com. My ISP receives the request, of course. Phorm's equipment in the ISP intercepts it and checks whether my browser sent a WebWise cookie in the CNET.com domain. WebWise.net is Phorm's domain. Look it up in WHOIS, and you'll see Phorm, Inc., in New York."
+        },
+        {
+          "s": "steve",
+          "t": "At first, I wouldn't have one. So they block my access to CNET, and a server steps in and, get this, Leo, pretends to be CNET."
+        },
+        {
+          "s": "leo",
+          "t": "That should be completely prohibited."
+        },
+        {
+          "s": "steve",
+          "t": "It's inside the ISP, so it answers the connection. And it returns a \"307 temporary redirect.\" Normally you get a 200, okay, here's your page. A 307 says that URL has temporarily moved, here to WebWise.net, slash bind, with parameters including the original CNET URL, which they have to hold onto."
+        },
+        {
+          "s": "leo",
+          "t": "If I were CNET..."
+        },
+        {
+          "s": "steve",
+          "t": "We're just getting warmed up. My browser, none the wiser, requests the WebWise.net address. If my browser has a WebWise.net cookie, it sends it along. Again the ISP intercepts it. No request actually reaches WebWise.net. If there's a WebWise.net cookie, they know who you are."
+        },
+        {
+          "s": "leo",
+          "t": "Not just that they've seen you before. Who you are."
+        },
+        {
+          "s": "steve",
+          "t": "Your ISP knows everything about you: where you live, your billing information."
+        },
+        {
+          "s": "steve",
+          "t": "There can be, and probably is, a hands-on relationship between your ISP and Phorm. That's the kind of thing that changes in the fine print."
+        },
+        {
+          "s": "steve",
+          "t": "If there's no WebWise.net cookie, they assign one: a 128-bit pseudorandom unique ID. They answer with another 307 redirect, back to a special fake page at CNET. And since my browser went directly to WebWise.net, that cookie is a first-party cookie, the most privileged kind."
+        },
+        {
+          "s": "leo",
+          "t": "So unless you block all cookies, you've got it."
+        },
+        {
+          "s": "steve",
+          "t": "My browser requests the fake CNET URL, which still carries the original URL and now my encoded unique ID. Phorm's server steps in again, pretending to be CNET for the second time, reads my ID, and sets a WebWise cookie in the CNET.com domain, since my browser thinks it's talking to CNET. Then a third 307 redirect, finally to the page I actually wanted."
+        },
+        {
+          "s": "steve",
+          "t": "From then on, every request my browser makes to CNET includes, besides CNET's real cookies, a WebWise cookie with my Phorm ID."
+        },
+        {
+          "s": "steve",
+          "t": "And it's everywhere: Apple.com, CNET, CNN, MSNBC, TWiT.tv. Every site you visit gets an extra cookie. Your browser fills with WebWise cookies, first-party cookies, for every domain. Any request missing one sends you through the triple-redirect dance between fake servers, to migrate your ID from the WebWise.net domain into the domain you're visiting."
+        },
+        {
+          "s": "leo",
+          "t": "So the whole point is to get a WebWise cookie, with your unique ID, onto your system for every site you visit?"
+        },
+        {
+          "s": "steve",
+          "t": "That's what they've achieved."
+        },
+        {
+          "s": "leo",
+          "t": "I want to stress, since the chatroom is confused: CNET has nothing to do with this. No site you visit does. This is Phorm."
+        },
+        {
+          "s": "leo",
+          "t": "I'm sure CNET would hate this."
+        },
+        {
+          "s": "steve",
+          "t": "Their relationship with you is polluted by a cookie they never set, while someone else's server pretends to be them, bouncing your browser around URL space to plant cookies across every domain."
+        },
+        {
+          "type": "fact",
+          "title": "The source",
+          "t": "The most detailed public analysis of Phorm's system, which matches Steve's description, was published in April 2008 by Cambridge University researcher Richard Clayton."
+        }
+      ]
+    },
+    {
+      "title": "Where the Cookie Leaks Out",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "After that dance, my request finally reaches the real CNET. Phorm strips its WebWise cookie from the request, trying to corral it so it stays a private dialogue between you and the ISP."
+        },
+        {
+          "s": "steve",
+          "t": "When can't they? When I take my laptop to Starbucks on T-Mobile, I'm not on my home ISP. They can't strip the cookie, so my Phorm ID goes out to every site I visit. Normally each site gives you its own ID, with no aggregation. This common ID aggregates your identity across every site you visited while under the influence of a Phorm ISP."
+        },
+        {
+          "s": "steve",
+          "t": "And over secure connections. Phorm is blind to SSL traffic, God help us if ISPs ever require us to accept their certificate. So any HTTPS request, even from home, carries the WebWise cookie straight to the site."
+        }
+      ]
+    },
+    {
+      "title": "Reading Everything You Read",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "Again, this isn't CNET or TWiT.tv. It's your ISP and Phorm, going far beyond what third-party cookies could do."
+        },
+        {
+          "s": "steve",
+          "t": "Look what else happens. When the page comes back, Phorm reads it and analyzes it to determine what I'm interested in. This is where the spying goes beyond tagging. It reads everything I read and builds a profile tied to my tag."
+        },
+        {
+          "s": "steve",
+          "t": "They say they don't keep a record of pages. They do some semantic analysis and check off categories, over a thousand of them."
+        },
+        {
+          "s": "leo",
+          "t": "That's just what they say they're doing."
+        },
+        {
+          "s": "steve",
+          "t": "And having inserted themselves in the pipeline, wouldn't it be more valuable to read email too? Web pages are generic. Imagine the content of your conversations. Don't worry, we won't save it. We'll just analyze it."
+        },
+        {
+          "s": "steve",
+          "t": "And unlike DoubleClick, which sees only sites with its ads, Phorm builds your profile from everywhere you go, and makes it available to any site using its ad network. Even if only one site hosted Phorm ads, that site would serve you ads based on all your surfing."
+        },
+        {
+          "s": "leo",
+          "t": "Is any U.S. ISP using Phorm?"
+        },
+        {
+          "s": "steve",
+          "t": "It's become a hot potato. Our guest in two weeks will give us the inside story on the U.K."
+        },
+        {
+          "s": "leo",
+          "t": "Isn't it illegal there?"
+        },
+        {
+          "s": "steve",
+          "t": "People are really up in arms, and I'm glad. My role is explaining the technology. Some people may like more relevant ads."
+        },
+        {
+          "s": "leo",
+          "t": "That's Charter's argument: you just get ads for things you care about. What's wrong with that?"
+        },
+        {
+          "s": "steve",
+          "t": "The technology could do far more, and I'm concerned about drift and migration of capability."
+        },
+        {
+          "s": "steve",
+          "t": "I'd have no problem if it were opt-in. Go to your ISP's page and say, I'd like a $3 monthly discount, and I'm happy to contribute my profile. I love the language I read somewhere: we made it opt-out because more people will benefit than with opt-in. What happens is people are furious when they find out."
+        },
+        {
+          "s": "leo",
+          "t": "That's why Charter seemed surprised when we stood up on our hind legs."
+        },
+        {
+          "s": "steve",
+          "t": "This isn't for us. It's for Charter, which gets paid in return for letting someone profile us."
+        },
+        {
+          "s": "leo",
+          "t": "Their spin was that it's for your benefit."
+        },
+        {
+          "s": "steve",
+          "t": "Fine, make it opt-in. They can intercept God himself. So intercept my first attempt to reach the 'Net with a page explaining the service and asking whether I want it."
+        },
+        {
+          "s": "leo",
+          "t": "I've got a bull's-eye on my forehead, that's what they mean."
+        },
+        {
+          "s": "steve",
+          "t": "It's entirely possible."
+        },
+        {
+          "s": "leo",
+          "t": "Cut five bucks off my bill. They'll make a hundred. Give me some."
+        },
+        {
+          "s": "steve",
+          "t": "Lots of people would say, heck yeah, I care about my wallet, not my privacy. I don't mind that."
+        },
+        {
+          "s": "leo",
+          "t": "And we're at our ISP's mercy anyway. The FBI put boxes in ISPs years ago."
+        },
+        {
+          "type": "fact",
+          "title": "What happened next",
+          "t": "BT abandoned Phorm in 2009 after a public outcry and a European Commission case over the secret trials. Phorm never launched in the U.S. and shut down in 2016."
+        },
+        {
+          "s": "steve",
+          "t": "It's horrific what these guys have done."
+        },
+        {
+          "s": "leo",
+          "t": "No mainstream outlet can explain how this works. Technology has outpaced the public's ability to understand what's being done to them. Geeks who understand this: explain it to your friends and family, and tell your ISP this isn't something we want."
+        },
+        {
+          "s": "steve",
+          "t": "The good news is the outrage is making ISPs back off and rethink whether this is free money."
+        },
+        {
+          "s": "leo",
+          "t": "The chat says watching you gesticulate makes you easier to understand. They want to know if you're Italian."
+        },
+        {
+          "s": "steve",
+          "t": "There's some Italian in there. And we've figured out how to send video and audio over separate Skype channels, so the audio is back to normal."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Steve stand up at the Pentium launch?",
+      "options": [
+        "To tell Bill Gates he was wrong that Pentium-optimized compilers weren't needed",
+        "To ask about pricing",
+        "To praise Microsoft",
+        "To defend RISC"
+      ],
+      "answer": 0,
+      "explain": "Instruction timing and cache size give chip-aware compilers an edge."
+    },
+    {
+      "q": "Why doesn't Steve use copy protection on SpinRite?",
+      "options": [
+        "He treats customers with respect, and people who'd pirate it weren't going to buy it anyway",
+        "It's too expensive",
+        "Laws forbid it",
+        "SpinRite is free"
+      ],
+      "answer": 0,
+      "explain": "A 13-character transaction code lets buyers download it anytime."
+    },
+    {
+      "q": "How does Phorm's system get its cookie into every site's domain?",
+      "options": [
+        "It impersonates the site and bounces the browser through three 307 redirects via WebWise.net",
+        "It injects JavaScript",
+        "It edits the hosts file",
+        "It installs a toolbar"
+      ],
+      "answer": 0,
+      "explain": "The cookie is first-party, so third-party blocking doesn't stop it."
+    },
+    {
+      "q": "Where does the Phorm ID cookie leak to the sites you visit?",
+      "options": [
+        "When you browse from another network or over HTTPS, where Phorm can't strip it out",
+        "Only on CNET",
+        "Never",
+        "Only in Safari"
+      ],
+      "answer": 0,
+      "explain": "A common ID across sites aggregates your identity."
+    },
+    {
+      "q": "What makes Phorm's profiling broader than DoubleClick's?",
+      "options": [
+        "It reads every unencrypted page you view, not just sites that show its ads",
+        "It uses more cookies",
+        "It's run by Google",
+        "It only reads email"
+      ],
+      "answer": 0,
+      "explain": "It sorts users into about a thousand categories."
+    },
+    {
+      "q": "What does Steve say would make ISP profiling acceptable?",
+      "options": [
+        "Making it opt-in, perhaps with a discount for those who agree",
+        "Better encryption",
+        "Government approval",
+        "Fewer categories"
+      ],
+      "answer": 0,
+      "explain": "Phorm claimed opt-out benefits more people."
+    }
+  ]
+}
