@@ -442,8 +442,8 @@
         },
         {
           "type": "fact",
-          "title": "Later TrueCrypt",
-          "t": "TrueCrypt did preserve container timestamps by default, for plausible deniability, and later versions added a preference to update them so backup tools notice changes."
+          "title": "Steve guessed right",
+          "t": "TrueCrypt preserves a container file's timestamp by default, for plausible deniability. A setting in its preferences turns that off, so backup tools can see the file has changed."
         }
       ]
     },
