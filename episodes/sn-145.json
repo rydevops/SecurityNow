@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-145.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #145",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 145, for May 22, 2008: Secunia PSI."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today we have news about PayPal's one-time cards, IE8 and XP SP3, a SpinRite story, and then our main topic: Secunia's PSI, a free scanner that finds known holes in the software installed on your PC."
+        }
+      ]
+    },
+    {
       "title": "Leo's Site Gets Hacked",
       "beats": [
         {
@@ -33,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last week we discovered PayPal's one-time credit card numbers."
+          "t": "First, a follow-up on PayPal's one-time cards. Last week we discovered PayPal's one-time credit card numbers."
         },
         {
           "s": "leo",
@@ -91,7 +108,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last week we complained that IE7 hides the green extended validation display when you disable the phishing filter. The IE8 beta doesn't. Disable its \"safety filter,\" as they now call it, and you still get the EV display."
+          "t": "Next, IE8 and a correction. Last week we complained that IE7 hides the green extended validation display when you disable the phishing filter. The IE8 beta doesn't. Disable its \"safety filter,\" as they now call it, and you still get the EV display."
         },
         {
           "s": "steve",
@@ -121,7 +138,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "On sci-fi, sigh, Peter Hamilton has started another trilogy."
+          "t": "A sci-fi aside. On sci-fi, sigh, Peter Hamilton has started another trilogy."
         },
         {
           "s": "leo",
@@ -154,7 +171,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Something we've never done: Sven Thomas asked me to wish him and his wife a happy wedding anniversary on May 22. They've listened since Episode 1, enjoying everything from worms to my run-in with DoS attacks. Happy anniversary to Sven and his wife."
+          "t": "A listener request. Something we've never done: Sven Thomas asked me to wish him and his wife a happy wedding anniversary on May 22. They've listened since Episode 1, enjoying everything from worms to my run-in with DoS attacks. Happy anniversary to Sven and his wife."
         },
         {
           "s": "leo",
@@ -167,7 +184,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Security-wise, nothing really happened this week. But all my XP machines insisted on installing Service Pack 3, even fully patched ones."
+          "t": "Now the news: XP Service Pack 3 insists on installing. Security-wise, nothing really happened this week. But all my XP machines insisted on installing Service Pack 3, even fully patched ones."
         },
         {
           "s": "steve",
@@ -196,7 +213,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "For a twist, a SpinRite story titled \"My First SpinRite Failure.\""
+          "t": "Now, for a twist, a SpinRite story titled \"My First SpinRite Failure.\""
         },
         {
           "s": "leo",
@@ -285,7 +302,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's talk about Secunia."
+          "t": "Now to our main topic: Secunia's Personal Software Inspector, PSI. Let's talk about Secunia."
         },
         {
           "s": "steve",
@@ -310,7 +327,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "On my two-week-old quad-core machine, it found seven problems. My Opera was 9.26, which has a known vulnerability, and 9.27 was available."
+          "t": "Next, what PSI found on my new machine. On my two-week-old quad-core machine, it found seven problems. My Opera was 9.26, which has a known vulnerability, and 9.27 was available."
         },
         {
           "s": "steve",
@@ -335,7 +352,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's lightweight. I don't install Symantec or McAfee because they're huge and muck everything up. PSI puts itself in your startup group and is happy to run in the tray. I'm not someone with 85 processes running, so I gently removed it from startup and run it when I want. Even then, it used about 5 percent of one processor."
+          "t": "Next, how PSI works. It's lightweight. I don't install Symantec or McAfee because they're huge and muck everything up. PSI puts itself in your startup group and is happy to run in the tray. I'm not someone with 85 processes running, so I gently removed it from startup and run it when I want. Even then, it used about 5 percent of one processor."
         },
         {
           "s": "steve",
@@ -409,7 +426,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Is your original antispyware program still on GRC?"
+          "t": "To close, a look back at Steve's old antispyware. Is your original antispyware program still on GRC?"
         },
         {
           "s": "steve",

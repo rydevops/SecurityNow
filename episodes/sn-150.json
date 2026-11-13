@@ -8,6 +8,19 @@
   "audio": "http://media.GRC.com/sn/SN-150.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #150",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 150, for June 26, 2008: Listener Feedback #44."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now!."
+        }
+      ]
+    },
+    {
       "title": "Episode 150, and Last Week's Bad Audio",
       "beats": [
         {
@@ -16,7 +29,7 @@
         },
         {
           "s": "steve",
-          "t": "Six to go, and we cross our three-year mark."
+          "t": "Six to go, and we cross our three-year mark. Today is a Q&A, with some news first: a Word exploit and an unpatched Firefox flaw. Then questions on router-hijacking malware, transparent proxies, dodging ISP snooping, Hotspot Shield and invisible images in email."
         },
         {
           "s": "steve",
@@ -73,7 +86,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I just got a reader's copy of Neal Stephenson's new book, \"Anathem,\" out in September. He wrote \"Cryptonomicon,\" one of my favorites. So I'm reading a paper book, Steve."
+          "t": "A book note. I just got a reader's copy of Neal Stephenson's new book, \"Anathem,\" out in September. He wrote \"Cryptonomicon,\" one of my favorites. So I'm reading a paper book, Steve."
         },
         {
           "s": "steve",
@@ -98,7 +111,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Yong-Gu Bae is a Korean living in northern China, far from the Hong Kong Post Office we joke about as a certificate authority, but in a malware hot zone nonetheless. In the export-import business, he travels a lot. Last year his laptop bag was stolen in Barcelona: laptop, camera, external drive and iPod. His most expensive trip ever."
+          "t": "Now a listener story. Yong-Gu Bae is a Korean living in northern China, far from the Hong Kong Post Office we joke about as a certificate authority, but in a malware hot zone nonetheless. In the export-import business, he travels a lot. Last year his laptop bag was stolen in Barcelona: laptop, camera, external drive and iPod. His most expensive trip ever."
         },
         {
           "s": "steve",
@@ -115,7 +128,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's a weird Microsoft Word problem in how it parses bulleted lists. A crafted Word document can use a buffer overrun in the display of bulleted lists to execute remote code. As far as I know, it isn't patched yet."
+          "t": "Now the news. There's a weird Microsoft Word problem in how it parses bulleted lists. A crafted Word document can use a buffer overrun in the display of bulleted lists to execute remote code. As far as I know, it isn't patched yet."
         },
         {
           "s": "steve",
@@ -152,7 +165,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark Madison in Pawlet, Vermont points to the Washington Post's Brian Krebs, whom I read a lot. A new variant of the widespread Zlob trojan can change the DNS settings in your router. So even if you reformat after an infection, as we recommend, your router may still be compromised. Reset your router too."
+          "t": "Now to listener questions, starting with router-hijacking malware. Mark Madison in Pawlet, Vermont points to the Washington Post's Brian Krebs, whom I read a lot. A new variant of the widespread Zlob trojan can change the DNS settings in your router. So even if you reformat after an infection, as we recommend, your router may still be compromised. Reset your router too."
         },
         {
           "s": "steve",
@@ -206,7 +219,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian in Toronto worked for an ISP where all port 80 traffic went through its proxy, and he thinks his current ISP does too. The giveaway is stale data that won't purge even after you clear your caches and cookies and do the one-legged hop. You've said SSL traffic can terminate at a proxy, and that ISP tracking can't see SSL. Is that true with a transparent proxy? He also bought SpinRite, which fixed boot problems on his \"mother-outlaw's\" PC. What's a transparent proxy?"
+          "t": "Next, a question about ISPs' transparent proxies. Brian in Toronto worked for an ISP where all port 80 traffic went through its proxy, and he thinks his current ISP does too. The giveaway is stale data that won't purge even after you clear your caches and cookies and do the one-legged hop. You've said SSL traffic can terminate at a proxy, and that ISP tracking can't see SSL. Is that true with a transparent proxy? He also bought SpinRite, which fixed boot problems on his \"mother-outlaw's\" PC. What's a transparent proxy?"
         },
         {
           "s": "steve",
@@ -259,7 +272,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tim McCoy in California sees drives with close to a million seek failures or CRC errors in their SMART data, noticeably affecting performance. How do we convince manufacturers to exchange them? And SpinRite doesn't seem to work with USB keyboards."
+          "t": "Next, a question about SMART errors. Tim McCoy in California sees drives with close to a million seek failures or CRC errors in their SMART data, noticeably affecting performance. How do we convince manufacturers to exchange them? And SpinRite doesn't seem to work with USB keyboards."
         },
         {
           "s": "steve",
@@ -280,7 +293,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jake in Minnesota has Firefox clear all private data, including cookies, every time he quits. Is that secure, or is he fooling himself?"
+          "t": "Next, a question about clearing Firefox's private data. Jake in Minnesota has Firefox clear all private data, including cookies, every time he quits. Is that secure, or is he fooling himself?"
         },
         {
           "s": "steve",
@@ -301,7 +314,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris W. in Springfield, Virginia, a SpinRite owner since version 3 who just switched to a Mac and wants a Mac version, is disappointed that Firefox enables third-party cookies by default, especially for non-techies. Is it a nod to advertisers? Safari blocks them."
+          "t": "Next, a question about Firefox's cookie defaults. Chris W. in Springfield, Virginia, a SpinRite owner since version 3 who just switched to a Mac and wants a Mac version, is disappointed that Firefox enables third-party cookies by default, especially for non-techies. Is it a nod to advertisers? Safari blocks them."
         },
         {
           "s": "steve",
@@ -326,7 +339,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Don in Burbank uses Charter, which uses NebuAd. Would a proxy like Anonymizer work? A VPN like Public VPN? Could he write a program to pollute the data stream with random pages? Can he take legal action? Switch ISPs? Is his Yahoo! webmail spied on? He'd like easy, medium and hard levels."
+          "t": "Next, a question about dodging NebuAd. Don in Burbank uses Charter, which uses NebuAd. Would a proxy like Anonymizer work? A VPN like Public VPN? Could he write a program to pollute the data stream with random pages? Can he take legal action? Switch ISPs? Is his Yahoo! webmail spied on? He'd like easy, medium and hard levels."
         },
         {
           "s": "steve",
@@ -379,7 +392,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dan Hunt in Central Queensland, Australia can't find PayPal's one-time cards anywhere. He wonders whether we have upgraded Premier accounts, and whether basic accountholders, or Australians, can use them."
+          "t": "Next, a question about PayPal's one-time cards. Dan Hunt in Central Queensland, Australia can't find PayPal's one-time cards anywhere. He wonders whether we have upgraded Premier accounts, and whether basic accountholders, or Australians, can use them."
         },
         {
           "s": "steve",
@@ -444,7 +457,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mariusz \"Matt\" Cybulski in Newcastle, Ontario installed Hotspot Shield. ShieldsUP! showed everything stealth except ping, \"no reverse DNS,\" and an IP different from his ISP's. Can his ISP still track him? Is he safe from NebuAd and Phorm? There's nothing worse than a false sense of security. He sometimes needs our propeller-hat episodes more than once."
+          "t": "Next, a question about Hotspot Shield. Mariusz \"Matt\" Cybulski in Newcastle, Ontario installed Hotspot Shield. ShieldsUP! showed everything stealth except ping, \"no reverse DNS,\" and an IP different from his ISP's. Can his ISP still track him? Is he safe from NebuAd and Phorm? There's nothing worse than a false sense of security. He sometimes needs our propeller-hat episodes more than once."
         },
         {
           "s": "steve",
@@ -477,7 +490,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris Noble in Wellington, New Zealand is glad Firefox 3 can block third-party cookies again, but warns it breaks useful add-ons, like Foxmarks, which Chris and I both use, and Google Reader Notifier. Their cookies count as third-party because they're set without visiting the sites. The solution: keep third-party cookies off and add Foxmarks.com and Google.com to the exceptions list."
+          "t": "Next, a note on add-ons that need third-party cookies. Chris Noble in Wellington, New Zealand is glad Firefox 3 can block third-party cookies again, but warns it breaks useful add-ons, like Foxmarks, which Chris and I both use, and Google Reader Notifier. Their cookies count as third-party because they're set without visiting the sites. The solution: keep third-party cookies off and add Foxmarks.com and Google.com to the exceptions list."
         },
         {
           "s": "steve",
@@ -502,7 +515,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Joshua Brickner in Loveland, Colorado heard that labs can recover data even after a 35-pass erase."
+          "t": "Next, a question about backups and erased data. Joshua Brickner in Loveland, Colorado heard that labs can recover data even after a 35-pass erase."
         },
         {
           "s": "steve",
@@ -548,7 +561,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rob in Southern Illinois is very disturbed. Most users don't understand that email is usually plain text, so this technology could expose usernames, passwords, personal and confidential information. It should be stopped. And SpinRite has saved the day many times."
+          "t": "Next, a worry about email privacy. Rob in Southern Illinois is very disturbed. Most users don't understand that email is usually plain text, so this technology could expose usernames, passwords, personal and confidential information. It should be stopped. And SpinRite has saved the day many times."
         },
         {
           "s": "leo",
@@ -577,7 +590,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark De Nardo in Bethlehem, Pennsylvania reads email on his BlackBerry, which doesn't render HTML, so he sees the source. Emails passing through MX Logic, his company's spam-scanning provider, contain an image from MX Logic called transparent.gif. Is it a tracker? And Outlook, Outlook Express and Windows Live Mail won't let him read plain text to see such things. He's a 50-plus-year-old geek who turned his hobby into a corporate career."
+          "t": "Last, a question about invisible images in email. Mark De Nardo in Bethlehem, Pennsylvania reads email on his BlackBerry, which doesn't render HTML, so he sees the source. Emails passing through MX Logic, his company's spam-scanning provider, contain an image from MX Logic called transparent.gif. Is it a tracker? And Outlook, Outlook Express and Windows Live Mail won't let him read plain text to see such things. He's a 50-plus-year-old geek who turned his hobby into a corporate career."
         },
         {
           "s": "steve",

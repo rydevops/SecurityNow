@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-149.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #149",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 149, for June 19, 2008: ISP Privacy."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now!."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. We're doing 149 this week. Today we have news: Firefox 3, AxCrypt, a Bluetooth update, and two losses. After a SpinRite story, our main topic is ISP betrayal: ISPs that let third parties profile everything their customers browse, with Phorm, Adzilla and NebuAd."
+        }
+      ]
+    },
+    {
       "title": "Five Screens and No Overlapping Windows",
       "beats": [
         {
@@ -61,7 +78,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "We're recording on Firefox 3 Download Day. Firefox wanted a Guinness world record for the most downloads in one day, got everybody to pledge, and as we speak SpreadFirefox.com is down. They said, let's break a record, and couldn't buy enough bandwidth."
+          "t": "Now to the news. We're recording on Firefox 3 Download Day. Firefox wanted a Guinness world record for the most downloads in one day, got everybody to pledge, and as we speak SpreadFirefox.com is down. They said, let's break a record, and couldn't buy enough bandwidth."
         },
         {
           "s": "steve",
@@ -130,7 +147,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I've recommended AxCrypt many times. There's an important update. As I understand it, versions before 1.6.4.4 could have problems under Vista because of its address space layout randomization, ASLR, which randomizes where things load so malware can't jump straight into known locations. That's fixed. It's a very nice standalone way to do strong AES encryption of files without encrypting your whole drive."
+          "t": "Next, updates on AxCrypt, Bluetooth and the MalWeb. I've recommended AxCrypt many times. There's an important update. As I understand it, versions before 1.6.4.4 could have problems under Vista because of its address space layout randomization, ASLR, which randomizes where things load so malware can't jump straight into known locations. That's fixed. It's a very nice standalone way to do strong AES encryption of files without encrypting your whole drive."
         },
         {
           "s": "steve",
@@ -175,11 +192,32 @@
       ]
     },
     {
+      "title": "A Dad Saves the Semester",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now a SpinRite story. William Turner, a longtime listener, got a call from his daughter at college 2,200 miles away, crying like the little schoolgirl he remembers. Blue Screen of Death, and a semester-long project with no backup. \"Daddy, I need you to come here now.\""
+        },
+        {
+          "s": "steve",
+          "t": "He FedExed her his copy of SpinRite. A few days later she called, jubilant: it fixed her hard drive, her laptop works, and she backed up all her documents. She thinks he's the smartest dad ever. He says no parent should send a son or daughter to school without SpinRite."
+        },
+        {
+          "s": "leo",
+          "t": "Everybody should go to school with a SpinRite disc."
+        },
+        {
+          "s": "steve",
+          "t": "The chat is asking whether SpinRite works on iPods. Remember the listener who took the drive out of his iPod, ran SpinRite on his PC and fixed it? It became a joke. Everyone gave him their dead iPods, 20 or 30 used as doorstops and bookends. He fixed them all and gave them back with their music intact."
+        }
+      ]
+    },
+    {
       "title": "From Third-Party Cookies to Behavioral Targeting",
       "beats": [
         {
           "s": "steve",
-          "t": "I said last week I'd talk about Phorm's Webwise technology. I now completely understand it, and it's really horrible. The three largest ISPs in the U.K. have announced support, and several U.S. ISPs are at some stage of adoption."
+          "t": "Now to our main topic: ISPs that let third parties profile everything their customers browse. I said last week I'd talk about Phorm's Webwise technology. I now completely understand it, and it's really horrible. The three largest ISPs in the U.K. have announced support, and several U.S. ISPs are at some stage of adoption."
         },
         {
           "s": "steve",
@@ -248,7 +286,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Google's approach: when a site wants relevant ads, Google analyzes the keywords on that page, figures out what it's about, and fills the ads from its advertisers. Mark Thompson has experimented with it. Google does a pretty good job."
+          "t": "Next, why advertisers want more. Google's approach: when a site wants relevant ads, Google analyzes the keywords on that page, figures out what it's about, and fills the ads from its advertisers. Mark Thompson has experimented with it. Google does a pretty good job."
         },
         {
           "s": "steve",
@@ -293,7 +331,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "That can be huge. Phorm's early technology, tested with BT two years ago, raised a storm. It inserted JavaScript into every page your browser downloaded, to set cookies on your machine."
+          "t": "Next, Phorm's disastrous trials. Phorm's early technology, tested with BT two years ago, raised a storm. It inserted JavaScript into every page your browser downloaded, to set cookies on your machine."
         },
         {
           "s": "steve",
@@ -314,7 +352,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Adzilla tells ISPs it helps them \"monetize their traffic, anonymize their data, and offer a better browsing experience.\" How does it work? ISPs install its \"ZillaCaster\" device in their networks, free of charge."
+          "t": "Next, another vendor: Adzilla. Adzilla tells ISPs it helps them \"monetize their traffic, anonymize their data, and offer a better browsing experience.\" How does it work? ISPs install its \"ZillaCaster\" device in their networks, free of charge."
         },
         {
           "s": "steve",
@@ -343,7 +381,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "NebuAd's technology is less bad than Phorm's, but it can't be blocked. Phorm's can, which we'll cover in two weeks."
+          "t": "Next, how NebuAd works. NebuAd's technology is less bad than Phorm's, but it can't be blocked. Phorm's can, which we'll cover in two weeks."
         },
         {
           "s": "steve",
@@ -388,7 +426,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Given a choice, apparently most users say no, I'd rather not have my Internet use profiled at all. And the ISP is generating cash by letting third parties spy on its users."
+          "t": "What should be done? Opt-in, not opt-out. Given a choice, apparently most users say no, I'd rather not have my Internet use profiled at all. And the ISP is generating cash by letting third parties spy on its users."
         },
         {
           "s": "steve",
@@ -466,32 +504,11 @@
       ]
     },
     {
-      "title": "A Dad Saves the Semester",
-      "beats": [
-        {
-          "s": "steve",
-          "t": "I forgot my SpinRite story. William Turner, a longtime listener, got a call from his daughter at college 2,200 miles away, crying like the little schoolgirl he remembers. Blue Screen of Death, and a semester-long project with no backup. \"Daddy, I need you to come here now.\""
-        },
-        {
-          "s": "steve",
-          "t": "He FedExed her his copy of SpinRite. A few days later she called, jubilant: it fixed her hard drive, her laptop works, and she backed up all her documents. She thinks he's the smartest dad ever. He says no parent should send a son or daughter to school without SpinRite."
-        },
-        {
-          "s": "leo",
-          "t": "Everybody should go to school with a SpinRite disc."
-        },
-        {
-          "s": "steve",
-          "t": "The chat is asking whether SpinRite works on iPods. Remember the listener who took the drive out of his iPod, ran SpinRite on his PC and fixed it? It became a joke. Everyone gave him their dead iPods, 20 or 30 used as doorstops and bookends. He fixed them all and gave them back with their music intact."
-        }
-      ]
-    },
-    {
       "title": "Firefox's Record, and Cookie Bugs",
       "beats": [
         {
           "s": "leo",
-          "t": "Sargit in our chat says the Firefox site's application server can't keep up, though the site answers pings. Still, over 200,000 downloads while we talked, three quarters of a million so far, 11,000 a minute."
+          "t": "A last note on Firefox 3's download record, and cookie bugs. Sargit in our chat says the Firefox site's application server can't keep up, though the site answers pings. Still, over 200,000 downloads while we talked, three quarters of a million so far, 11,000 a minute."
         },
         {
           "s": "steve",

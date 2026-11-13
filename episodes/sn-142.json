@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-142.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #142",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 142, for May 1, 2008: Listener Feedback #40."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now!."
+        }
+      ]
+    },
+    {
       "title": "Maypoles and Mayday",
       "beats": [
         {
           "s": "leo",
           "t": "May Day. And \"mayday\" comes from French for \"help me.\""
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today is a Q&A. First, news: a mass SQL injection attack on half a million IIS sites and a Centrino WiFi driver flaw, plus the Yoggie Pico and a SpinRite story. Then questions on Vista's UAC, the YubiKey, kill bits, ING's scrambled PIN pad, text-message codes, safer browsing and all-SSL sites."
         },
         {
           "s": "steve",
@@ -33,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many listeners at GRC.com/feedback have asked about the Yoggie Pico. It's a full Linux PC, with a small Intel chip, in a USB dongle. Plug it in, and it installs a low-level NDIS driver deep in the kernel to intercept all incoming and outgoing traffic, putting a Linux security system inline with your network connection."
+          "t": "First, a product listeners asked about. Many listeners at GRC.com/feedback have asked about the Yoggie Pico. It's a full Linux PC, with a small Intel chip, in a USB dongle. Plug it in, and it installs a low-level NDIS driver deep in the kernel to intercept all incoming and outgoing traffic, putting a Linux security system inline with your network connection."
         },
         {
           "s": "steve",
@@ -50,7 +67,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "As many as half a million sites running Microsoft's IIS web server have been hacked."
+          "t": "Now the news. As many as half a million sites running Microsoft's IIS web server have been hacked."
         },
         {
           "s": "leo",
@@ -116,7 +133,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "An old, known privilege elevation problem in Intel's Centrino laptop WiFi drivers has evolved into remote code execution. The affected driver is for the 2200BG. My laptop had a different one."
+          "t": "Next, a WiFi driver flaw. An old, known privilege elevation problem in Intel's Centrino laptop WiFi drivers has evolved into remote code execution. The affected driver is for the 2200BG. My laptop had a different one."
         },
         {
           "s": "steve",
@@ -137,7 +154,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I'm annoyed I didn't get to say hi to Bruce Schneier at RSA. He was on a different track. But his blog so much echoed what I said last week. He wrote that the booths are full of broad product claims, meaningless security platitudes and unintelligible marketing, that you can hear a five-minute pitch and still not know what the company does, and that even seasoned security professionals are confused."
+          "t": "A follow-up on last week's RSA report. I'm annoyed I didn't get to say hi to Bruce Schneier at RSA. He was on a different track. But his blog so much echoed what I said last week. He wrote that the booths are full of broad product claims, meaningless security platitudes and unintelligible marketing, that you can hear a five-minute pitch and still not know what the company does, and that even seasoned security professionals are confused."
         },
         {
           "s": "leo",
@@ -154,7 +171,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Elaine reminded me of our Michael Crichton discussion and how good \"The Andromeda Strain\" was. Over Memorial Day weekend, A&E airs a remade miniseries from Ridley Scott."
+          "t": "A quick entertainment note. Elaine reminded me of our Michael Crichton discussion and how good \"The Andromeda Strain\" was. Over Memorial Day weekend, A&E airs a remade miniseries from Ridley Scott."
         },
         {
           "s": "steve",
@@ -176,7 +193,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Ralph Montgomery has 21 years in IT and has used SpinRite on everything from MFM and RLL drives to today's EIDE and SATA. One coworker answered his praise for years with \"Yeah, yeah, sure it works.\" He finally bought a copy and used it sparingly to check new drives."
+          "t": "Now a SpinRite story. Ralph Montgomery has 21 years in IT and has used SpinRite on everything from MFM and RLL drives to today's EIDE and SATA. One coworker answered his praise for years with \"Yeah, yeah, sure it works.\" He finally bought a copy and used it sparingly to check new drives."
         },
         {
           "s": "steve",
@@ -193,7 +210,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jon in Adamstown, Pennsylvania saw a Slashdot article saying a utility's authors, annoyed by Vista's User Account Control, easily coded around it. Is there any security benefit?"
+          "t": "Now to listener questions, starting with Vista. Jon in Adamstown, Pennsylvania saw a Slashdot article saying a utility's authors, annoyed by Vista's User Account Control, easily coded around it. Is there any security benefit?"
         },
         {
           "s": "steve",
@@ -218,7 +235,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jesse in Honolulu went straight to Yubico after hearing about the $4 token. The ordering page offers one key for evaluation only, or a \"pilot box\" of 50, too many for a small business, and bulk keys cost 4 euros more each. The open-source APIs seem to rely on Yubico's subscription web service, and keys come with only a one-year subscription. Is he missing something? It sounds like a good SecurID alternative, but not the holy grail."
+          "t": "Next, a question about the YubiKey. Jesse in Honolulu went straight to Yubico after hearing about the $4 token. The ordering page offers one key for evaluation only, or a \"pilot box\" of 50, too many for a small business, and bulk keys cost 4 euros more each. The open-source APIs seem to rely on Yubico's subscription web service, and keys come with only a one-year subscription. Is he missing something? It sounds like a good SecurID alternative, but not the holy grail."
         },
         {
           "s": "steve",
@@ -264,7 +281,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Nick Bauer in Newmarket, New Hampshire saw a \"kill bits\" patch on Patch Tuesday. Is it like DEP for ActiveX? Are ActiveX controls safer now?"
+          "t": "Next, a question about security patches. Nick Bauer in Newmarket, New Hampshire saw a \"kill bits\" patch on Patch Tuesday. Is it like DEP for ActiveX? Are ActiveX controls safer now?"
         },
         {
           "s": "steve",
@@ -302,7 +319,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Amir Katz in Kfar Saba, Israel says GRC.com/securitynow links every episode, so Firefox's DownThemAll extension can download every link of a type. He made a filter for the PDF transcripts. You'd want MP3s too."
+          "t": "Next, a tip for grabbing every episode. Amir Katz in Kfar Saba, Israel says GRC.com/securitynow links every episode, so Firefox's DownThemAll extension can download every link of a type. He made a filter for the PDF transcripts. You'd want MP3s too."
         },
         {
           "s": "leo",
@@ -344,7 +361,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Joe Rodricks in Massachusetts opened an ING Direct account. After his ID and two security questions, it asks for a 4-to-10-digit PIN. You never type the digits. An on-screen keypad laid out like a phone shows a letter on each number, and the letters change every login. If your PIN is 12345, you might type QOSPX this time and SLCUG next time. He thinks it would fool all but the most sophisticated keystroke loggers."
+          "t": "Next, a question about a bank's PIN pad. Joe Rodricks in Massachusetts opened an ING Direct account. After his ID and two security questions, it asks for a 4-to-10-digit PIN. You never type the digits. An on-screen keypad laid out like a phone shows a letter on each number, and the letters change every login. If your PIN is 12345, you might type QOSPX this time and SLCUG next time. He thinks it would fool all but the most sophisticated keystroke loggers."
         },
         {
           "s": "steve",
@@ -373,7 +390,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ryan Benz in nearby Irvine asks about Bank of America's one-time codes by text message, which I love. Steve won't discuss sensitive things with his attorney by cell phone. Can text messages be sniffed?"
+          "t": "Next, a question about text-message codes. Ryan Benz in nearby Irvine asks about Bank of America's one-time codes by text message, which I love. Steve won't discuss sensitive things with his attorney by cell phone. Can text messages be sniffed?"
         },
         {
           "s": "steve",
@@ -419,7 +436,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Neil Roberts in Liverpool uses his regular PC for browsing, email and Word, but never for banking. For sensitive sites he uses an old G3 Mac running OS X 10.4.11, with the OS and Firefox kept up to date. He only visits bookmarked sites and uses it for nothing else."
+          "t": "Next, a tip on a computer just for banking. Neil Roberts in Liverpool uses his regular PC for browsing, email and Word, but never for banking. For sensitive sites he uses an old G3 Mac running OS X 10.4.11, with the OS and Firefox kept up to date. He only visits bookmarked sites and uses it for nothing else."
         },
         {
           "s": "steve",
@@ -468,7 +485,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dave Mulligan in Calgary suggests a Linux live CD instead of rebuilding a VMware Windows image for risky browsing. Modern live CDs, like the new Ubuntu install disc, run on almost any hardware with a recent Firefox, 3.0 beta 5 on Hardy Heron. He says it doesn't mount your hard disks, so your installation is safe, and nothing persists. I'm not sure about the mounting part."
+          "t": "Next, a related tip on safer browsing. Dave Mulligan in Calgary suggests a Linux live CD instead of rebuilding a VMware Windows image for risky browsing. Modern live CDs, like the new Ubuntu install disc, run on almost any hardware with a recent Firefox, 3.0 beta 5 on Hardy Heron. He says it doesn't mount your hard disks, so your installation is safe, and nothing persists. I'm not sure about the mounting part."
         },
         {
           "s": "steve",
@@ -497,7 +514,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Steve Barta in Rowlett, Texas likes TinyURL and the SnipURL service Steve and I use, since you can choose your own short names. He works for a large defense contractor. Intranet URLs are huge and break apart in emails, so he shortens them with TinyURL. The short link lives outside the firewall but takes colleagues to the internal page. Is that ping-pong a security risk?"
+          "t": "Next, a question about shortened links. Steve Barta in Rowlett, Texas likes TinyURL and the SnipURL service Steve and I use, since you can choose your own short names. He works for a large defense contractor. Intranet URLs are huge and break apart in emails, so he shortens them with TinyURL. The short link lives outside the firewall but takes colleagues to the internal page. Is that ping-pong a security risk?"
         },
         {
           "s": "steve",
@@ -523,7 +540,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Richard de Tarnowsky, senior systems administrator at LiveWorld, disagrees about running everything over SSL. It might suit a low-traffic site on one machine, but not a large commercial site. Certificates are valid per host name, wildcards aside, and a high-availability site may have many servers. Often a load balancer handles all SSL, needing one certificate per URL, simplifying management and avoiding per-server charges. Heavy graphics or video could mean a significant encryption performance hit. Unencrypted content in an encrypted page brings that lame browser popup. SSL is expensive in hardware, certificates, design time and, probably the key, operations overhead."
+          "t": "Next, a pushback on all-SSL sites. Richard de Tarnowsky, senior systems administrator at LiveWorld, disagrees about running everything over SSL. It might suit a low-traffic site on one machine, but not a large commercial site. Certificates are valid per host name, wildcards aside, and a high-availability site may have many servers. Often a load balancer handles all SSL, needing one certificate per URL, simplifying management and avoiding per-server charges. Heavy graphics or video could mean a significant encryption performance hit. Unencrypted content in an encrypted page brings that lame browser popup. SSL is expensive in hardware, certificates, design time and, probably the key, operations overhead."
         },
         {
           "s": "steve",
@@ -548,7 +565,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tyler Larson in Arizona says Jeff Hawkins' RSA keynote on Hierarchical Temporal Memory makes clear we're approaching the end of CAPTCHA. Numenta's AI already solves exactly the problems sites use to test humanity: reading noisy text, recognizing words in noisy audio, picking which pictures are kittens."
+          "t": "Now for the Observation of the Week. Tyler Larson in Arizona says Jeff Hawkins' RSA keynote on Hierarchical Temporal Memory makes clear we're approaching the end of CAPTCHA. Numenta's AI already solves exactly the problems sites use to test humanity: reading noisy text, recognizing words in noisy audio, picking which pictures are kittens."
         },
         {
           "s": "steve",
@@ -573,7 +590,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mr. No Name in Detroit runs a small computer repair company while finishing his computer science degree, and maintains mechanics shops' computers too. Updating an office's machines, the service guys called him into the garage. They were ripping customers' CDs and wanted to know how to get the data onto an external drive to take home. They also copied thumb drives on keyrings and MP3 players. He worries most about personal photos."
+          "t": "Next, a follow-up on mechanics copying your data. Mr. No Name in Detroit runs a small computer repair company while finishing his computer science degree, and maintains mechanics shops' computers too. Updating an office's machines, the service guys called him into the garage. They were ripping customers' CDs and wanted to know how to get the data onto an external drive to take home. They also copied thumb drives on keyrings and MP3 players. He worries most about personal photos."
         },
         {
           "s": "steve",
@@ -590,7 +607,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The bonus Quip of the Week, from listener Roger: funny how VeriSign's EV certification has VeriSign authenticating itself. You'd think they'd get someone else to vouch for them."
+          "t": "To close, the bonus Quip of the Week, from listener Roger: funny how VeriSign's EV certification has VeriSign authenticating itself. You'd think they'd get someone else to vouch for them."
         },
         {
           "s": "steve",

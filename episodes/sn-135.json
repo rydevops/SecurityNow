@@ -11,11 +11,28 @@
   },
   "chapters": [
     {
+      "title": "Welcome to Security Now! #135",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 135, for March 13, 2008: IronKey."
+        },
+        {
+          "s": "leo",
+          "t": "Bandwidth for Security Now! is provided by AOL Radio at AOL.com/podcasting. This show and the entire TWiT broadcast network is brought to you by donations from listeners like you."
+        },
+        {
+          "s": "steve",
+          "t": "Hi, Leo. Today we start with the news: Java holes, Office patches, TrueCrypt 5.1, Chinese hackers and counterfeit Cisco gear, plus a SpinRite story. Then we spend 45 minutes with David Jevans, the founder of IronKey, about his hardware-encrypted USB drive."
+        }
+      ]
+    },
+    {
       "title": "Java Holes and Office Patches",
       "beats": [
         {
           "s": "steve",
-          "t": "It was a relatively quiet week in Microsoft Land. But after last week's podcast, Sun released updates to its Java JDK and JRE for serious privilege elevation and buffer overflow vulnerabilities."
+          "t": "First, the news. It was a relatively quiet week in Microsoft Land. But after last week's podcast, Sun released updates to its Java JDK and JRE for serious privilege elevation and buffer overflow vulnerabilities."
         },
         {
           "s": "steve",
@@ -44,7 +61,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Remember the listener whose TrueCrypt container kept its original date, so Jungle Disk didn't back it up? Jungle Disk's creator wrote that several listeners asked. TrueCrypt's \"/m ts\" mount option tells it not to preserve the timestamp, so Jungle Disk sees the change."
+          "t": "Next, some TrueCrypt follow-ups and version 5.1. Remember the listener whose TrueCrypt container kept its original date, so Jungle Disk didn't back it up? Jungle Disk's creator wrote that several listeners asked. TrueCrypt's \"/m ts\" mount option tells it not to preserve the timestamp, so Jungle Disk sees the change."
         },
         {
           "s": "steve",
@@ -93,7 +110,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "CNN met three Chinese hackers in their 20s who claim to have hacked many of the world's most sensitive sites, including downloading information from the Pentagon's network. They say the Chinese government paid them. The government calls that ridiculous."
+          "t": "Next, two stories about China. CNN met three Chinese hackers in their 20s who claim to have hacked many of the world's most sensitive sites, including downloading information from the Pentagon's network. They say the Chinese government paid them. The government calls that ridiculous."
         },
         {
           "s": "steve",
@@ -126,7 +143,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Speaking of which, SpinRite fixed a WiFi problem."
+          "t": "Now a SpinRite story: it fixed a WiFi problem."
         },
         {
           "s": "leo",
@@ -191,7 +208,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Our guest is David Jevans, founder and CEO of IronKey. We're doing this because listeners demanded it. IronKey competes with software encryption. So what has it got that no other solution has?"
+          "t": "Now to our main topic: IronKey, a hardware-encrypted USB drive. Our guest is David Jevans, founder and CEO of IronKey. We're doing this because listeners demanded it. IronKey competes with software encryption. So what has it got that no other solution has?"
         },
         {
           "s": "david",
@@ -216,7 +233,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Why hasn't it been? Every phishing link goes to a bad website. You'd think they'd be shut down so fast it wouldn't work."
+          "t": "David mentioned the Anti-Phishing Working Group. Why hasn't phishing been stopped? Every phishing link goes to a bad website. You'd think they'd be shut down so fast it wouldn't work."
         },
         {
           "s": "david",
@@ -261,7 +278,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You mention secure backup. Does it pull the encrypted data off without decrypting it?"
+          "t": "Next, how the keys are protected. You mention secure backup. Does it pull the encrypted data off without decrypting it?"
         },
         {
           "s": "david",
@@ -294,7 +311,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You prevent brute-force attacks by counting failed password attempts, and the site talks about self-destructing."
+          "t": "Next, protection against brute-force attacks. You prevent brute-force attacks by counting failed password attempts, and the site talks about self-destructing."
         },
         {
           "s": "david",
@@ -352,7 +369,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One thing you don't do, given your keylogger protection: it's the same password every time."
+          "t": "Next, keyloggers. One thing you don't do, given your keylogger protection: it's the same password every time."
         },
         {
           "s": "david",
@@ -401,7 +418,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Isn't firmware still software? Couldn't it be modified?"
+          "t": "Next, the firmware. Isn't firmware still software? Couldn't it be modified?"
         },
         {
           "s": "david",
@@ -434,7 +451,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Can the key be a general-purpose token for other authentication?"
+          "t": "Next, other uses for the key. Can the key be a general-purpose token for other authentication?"
         },
         {
           "s": "david",
@@ -469,6 +486,10 @@
     {
       "title": "Password Recovery and a Password Manager",
       "beats": [
+        {
+          "s": "steve",
+          "t": "Next, what services does the key enable, such as password recovery?"
+        },
         {
           "s": "david",
           "t": "Strong device authentication enables web services. One completely optional one is self-service password recovery. Register, and we store your device password. If you change it after a couple of beers and forget, or you're a busy doctor who uses it every couple of weeks, answer your secret questions, confirm by email, and we show you the password."
@@ -508,7 +529,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Unlike TrueCrypt, the IronKey doesn't need admin privileges on a foreign machine."
+          "t": "Next, no drivers or admin rights. Unlike TrueCrypt, the IronKey doesn't need admin privileges on a foreign machine."
         },
         {
           "s": "david",
@@ -590,7 +611,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And you have a Secure Sessions service."
+          "t": "Next, your Secure Sessions service. And you have a Secure Sessions service."
         },
         {
           "s": "david",
@@ -635,7 +656,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's also potted solid in epoxy, so it's extremely hard to get into, and uncrushable if you back over it."
+          "t": "Next, how it's built. It's also potted solid in epoxy, so it's extremely hard to get into, and uncrushable if you back over it."
         },
         {
           "s": "david",
@@ -688,7 +709,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My only complaint: can you make them smaller?"
+          "t": "Next, size and upgrades. My only complaint: can you make them smaller?"
         },
         {
           "s": "leo",
@@ -754,7 +775,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "You're cagey, Steve. I didn't realize it did all that."
+          "t": "To wrap up, Steve's verdict on IronKey. You're cagey, Steve. I didn't realize it did all that."
         },
         {
           "s": "steve",

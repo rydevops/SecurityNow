@@ -8,11 +8,24 @@
   "audio": "http://media.GRC.com/sn/SN-134.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #134",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 134, for March 6, 2008: Listener Feedback #36."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!. It feels like more than a week since we've done the show, and it is, because Steve and I prerecorded our last episode."
+        }
+      ]
+    },
+    {
       "title": "RAM That Remembers",
       "beats": [
         {
           "s": "steve",
-          "t": "It's been a busy week and a half. I had a hard time sorting the feedback, because something major happened that bears directly on whole-drive encryption."
+          "t": "Thanks, Leo. Today is a Q&A. First, the news: Princeton research on how long RAM remembers data, which bears directly on whole-drive encryption. Then a mailbag apology, an Adobe track-zero warning, a SpinRite story, and the questions. It's been a busy week and a half. I had a hard time sorting the feedback, because something major happened that bears directly on whole-drive encryption."
         },
         {
           "s": "steve",
@@ -54,7 +67,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "About 8,500 people subscribe to the ChangeDetection service from buttons on GRC's pages. GRC's pages change constantly, with download counts and days-since-update, so I'd configured their bot to notify only when I say so."
+          "t": "Next, an apology about GRC's change notices. About 8,500 people subscribe to the ChangeDetection service from buttons on GRC's pages. GRC's pages change constantly, with download counts and days-since-update, so I'd configured their bot to notify only when I say so."
         },
         {
           "s": "steve",
@@ -83,7 +96,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Brian Dent was glad TrueCrypt made him create a rescue CD. Adobe's acrotray.exe, which lives in the Windows tray, also writes into track zero and wiped out TrueCrypt's loader."
+          "t": "A follow-up on the Adobe track-zero collision, this time from another program. Brian Dent was glad TrueCrypt made him create a rescue CD. Adobe's acrotray.exe, which lives in the Windows tray, also writes into track zero and wiped out TrueCrypt's loader."
         },
         {
           "s": "steve",
@@ -108,7 +121,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A short note from someone who isn't a Security Now! listener, a handle of Mgomgo. He uses SpinRite every couple of years. An important USB drive went goofy, and nothing worked, not even XP's repair utility. In three hours, SpinRite restored the completely unreachable drive. He just thought I'd appreciate positive feedback."
+          "t": "Now a quick SpinRite story. A short note from someone who isn't a Security Now! listener, a handle of Mgomgo. He uses SpinRite every couple of years. An important USB drive went goofy, and nothing worked, not even XP's repair utility. In three hours, SpinRite restored the completely unreachable drive. He just thought I'd appreciate positive feedback."
         },
         {
           "s": "steve",
@@ -121,7 +134,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Keion, 19, an IT major at Monroe College in the Bronx and a new listener, says we made him encrypt his whole disk with TrueCrypt. But couldn't the password be recovered with rainbow tables or the L0phtCrack live CD? Explain what those are."
+          "t": "Now to listener questions, starting with rainbow tables. Keion, 19, an IT major at Monroe College in the Bronx and a new listener, says we made him encrypt his whole disk with TrueCrypt. But couldn't the password be recovered with rainbow tables or the L0phtCrack live CD? Explain what those are."
         },
         {
           "s": "steve",
@@ -176,7 +189,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Benton Greene of Austin, Texas heard that SpinRite doesn't care whether a drive is encrypted. But SpinRite moves data from a bad sector to a good one. On an encrypted drive, it's all noise. How does it know not to overwrite noise that's real data?"
+          "t": "Next, a question about SpinRite on encrypted drives. Benton Greene of Austin, Texas heard that SpinRite doesn't care whether a drive is encrypted. But SpinRite moves data from a bad sector to a good one. On an encrypted drive, it's all noise. How does it know not to overwrite noise that's real data?"
         },
         {
           "s": "steve",
@@ -217,7 +230,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ryan in Florida asks: you've said overwritten sectors can retain traces of earlier data. Couldn't unencrypted data be read from a fully encrypted drive? Is the best plan to DBAN, Darik's Boot and Nuke, the drive, reinstall, then encrypt immediately?"
+          "t": "Next, a question about leftover data. Ryan in Florida asks: you've said overwritten sectors can retain traces of earlier data. Couldn't unencrypted data be read from a fully encrypted drive? Is the best plan to DBAN, Darik's Boot and Nuke, the drive, reinstall, then encrypt immediately?"
         },
         {
           "s": "steve",
@@ -246,7 +259,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Each pass makes recovery tougher?"
+          "t": "A follow-up on wiping drives: how many passes are enough? Each pass makes recovery tougher?"
         },
         {
           "s": "steve",
@@ -312,7 +325,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matt in Melbourne, Australia has a Netgear WPN824 RangeMax router. Fed up with wireless dropouts, he wired his PC, but the wired connection drops just as often. He downloads about 50GB a month. Is it dropping, or is a setting wrong? And how can he give the wired connection priority?"
+          "t": "Next, a question about network dropouts. Matt in Melbourne, Australia has a Netgear WPN824 RangeMax router. Fed up with wireless dropouts, he wired his PC, but the wired connection drops just as often. He downloads about 50GB a month. Is it dropping, or is a setting wrong? And how can he give the wired connection priority?"
         },
         {
           "s": "steve",
@@ -353,7 +366,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So I made the first update to Wizmo in six years. The new command \"wizmo wanlock\" stops the Wireless Zero Configuration service once you have a connection you like. Put it in a desktop or quick launch shortcut. Stopping the service stops the dropouts."
+          "t": "Here's a related tool update. I made the first update to Wizmo in six years. The new command \"wizmo wanlock\" stops the Wireless Zero Configuration service once you have a connection you like. Put it in a desktop or quick launch shortcut. Stopping the service stops the dropouts."
         },
         {
           "s": "leo",
@@ -402,7 +415,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Deric Merino in San Diego uses TrueCrypt and Jungle Disk, which we both love. His 200MB TrueCrypt container, created January 1, 2008, always stays 200MB. After he changes files inside, unmounts it and starts a backup, Jungle Disk doesn't see a change, and Explorer still shows 01/01/08. Shouldn't the timestamp or hash change?"
+          "t": "Next, a question about backing up a TrueCrypt file. Deric Merino in San Diego uses TrueCrypt and Jungle Disk, which we both love. His 200MB TrueCrypt container, created January 1, 2008, always stays 200MB. After he changes files inside, unmounts it and starts a backup, Jungle Disk doesn't see a change, and Explorer still shows 01/01/08. Shouldn't the timestamp or hash change?"
         },
         {
           "s": "steve",
@@ -452,7 +465,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Andrew Dalton in Connecticut asks: his company plans to overwrite deleted sensitive files seven times. What threat does that protect against? Does an attacker need the physical drive, or could one recover conventionally deleted files over the network?"
+          "t": "Next, a question about wiping deleted files. Andrew Dalton in Connecticut asks: his company plans to overwrite deleted sensitive files seven times. What threat does that protect against? Does an attacker need the physical drive, or could one recover conventionally deleted files over the network?"
         },
         {
           "s": "steve",
@@ -482,7 +495,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rob Pontes of Toronto worries you weren't paying attention. Wouldn't restoring the drive from an image defragment it, explaining TrueCrypt's speedup?"
+          "t": "Next, a challenge to Steve's benchmark from last week. Rob Pontes of Toronto worries you weren't paying attention. Wouldn't restoring the drive from an image defragment it, explaining TrueCrypt's speedup?"
         },
         {
           "s": "steve",
@@ -503,7 +516,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Clement in Melbourne uses Firefox's NoScript and saw three or four scripts blocked on GRC.com and GRCtech.com. He thought your site was script-free. Is it malware?"
+          "t": "Next, a question about GRC's website. Clement in Melbourne uses Firefox's NoScript and saw three or four scripts blocked on GRC.com and GRCtech.com. He thought your site was script-free. Is it malware?"
         },
         {
           "s": "steve",
@@ -556,7 +569,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Colman Burke in San Francisco reminds us that in Episode 124 we praised the Heise Offline Update. Since then we've griped about patching a Windows reinstall. Did we forget it? He's used it for several XP reinstalls, and it avoided all the headaches except one recent update."
+          "t": "Next, a reminder about patching a Windows reinstall. Colman Burke in San Francisco reminds us that in Episode 124 we praised the Heise Offline Update. Since then we've griped about patching a Windows reinstall. Did we forget it? He's used it for several XP reinstalls, and it avoided all the headaches except one recent update."
         },
         {
           "s": "leo",
@@ -582,7 +595,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Speaking of which, I saw that Microsoft is getting ready to end XP."
+          "t": "A news note about XP's future: I saw that Microsoft is getting ready to end XP."
         },
         {
           "s": "leo",
@@ -640,7 +653,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Martin in Calgary needs the magic password. His kids set a system password and a hard drive password in his new Toshiba laptop's BIOS and can't remember them. Removing the motherboard battery reset the BIOS password. But the 200GB drive is still locked. He's using the 20GB drive from his fried Xbox 360 for now. There's no jumper. Is it a hardware encryption drive?"
+          "t": "Next, a question about a locked drive. Martin in Calgary needs the magic password. His kids set a system password and a hard drive password in his new Toshiba laptop's BIOS and can't remember them. Removing the motherboard battery reset the BIOS password. But the 200GB drive is still locked. He's using the 20GB drive from his fried Xbox 360 for now. There's no jumper. Is it a hardware encryption drive?"
         },
         {
           "s": "steve",
@@ -673,7 +686,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rene Knigge, at NATO headquarters in the Netherlands, solved the unshredder problem. Their shredders add water, creating irreversible, unscannable pulp."
+          "t": "Next, a follow-up on the unshredder story. Rene Knigge, at NATO headquarters in the Netherlands, solved the unshredder problem. Their shredders add water, creating irreversible, unscannable pulp."
         },
         {
           "s": "steve",
@@ -690,7 +703,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian W. in Montreal says Computerworld reviewed several \"secure\" USB drives. Some features are funny in a sad way. Kingston refused to say what encryption mode its device uses, calling it proprietary. They recommended IronKey, but didn't note that any USB key plus free TrueCrypt beats most of them."
+          "t": "Next, a note about secure USB drives. Brian W. in Montreal says Computerworld reviewed several \"secure\" USB drives. Some features are funny in a sad way. Kingston refused to say what encryption mode its device uses, calling it proprietary. They recommended IronKey, but didn't note that any USB key plus free TrueCrypt beats most of them."
         },
         {
           "s": "steve",
@@ -715,7 +728,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Wizmo's new wanlock is at GRC.com, along with DCOMbobulator, Shoot the Messenger, Unplug n' Pray and SpinRite. Now with script-free menus, and Google Analytics included."
+          "t": "To close, what's new at GRC. Wizmo's new wanlock is at GRC.com, along with DCOMbobulator, Shoot the Messenger, Unplug n' Pray and SpinRite. Now with script-free menus, and Google Analytics included."
         },
         {
           "s": "steve",

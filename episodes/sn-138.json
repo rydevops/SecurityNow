@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-138.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #138",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 138, for April 3, 2008: Listener Feedback #38."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, everybody's favorite security podcast, because it stars the great, the one, the only Steve Gibson, the man who discovered spyware."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Since you're in Australia and we recorded right after last week's episode, there's no news this week. Instead we have a paper Enigma machine, a wacky SpinRite story, and questions on redirects, drive sleep, IronKey's Tor network, quantum computers, Macs and more."
+        }
+      ]
+    },
+    {
       "title": "Never Dumbing It Down",
       "beats": [
         {
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Bruce Schneier blogged this week about a simple, zero-cost, reduced-capability but functional version of the Enigma cipher machine Germany used in World War II."
+          "t": "In place of news this week, a fun item. Bruce Schneier blogged this week about a simple, zero-cost, reduced-capability but functional version of the Enigma cipher machine Germany used in World War II."
         },
         {
           "s": "steve",
@@ -67,7 +84,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We're recording right after last week's episode, since you're in Australia, so no news. But here's a wacky SpinRite story from Steve Hall: \"Thanks to SpinRite, my daughter can read better.\""
+          "t": "Now a SpinRite story. We're recording right after last week's episode, since you're in Australia, so no news. But here's a wacky SpinRite story from Steve Hall: \"Thanks to SpinRite, my daughter can read better.\""
         },
         {
           "s": "leo",
@@ -133,7 +150,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Fred Zanegood in Orlando says AudiblePodcast.com/securitynow doesn't work for him in Firefox, even after whitelisting it in OpenDNS. It works for me."
+          "t": "Now to listener questions, starting with a web redirect. Fred Zanegood in Orlando says AudiblePodcast.com/securitynow doesn't work for him in Firefox, even after whitelisting it in OpenDNS. It works for me."
         },
         {
           "s": "steve",
@@ -182,7 +199,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rene van Belzen in the Netherlands uses TinkerTool System on his Mac, which I use too. It warns that switching off desktop hard disks too often may reduce their lifetime. He wants to be green without killing his drives. How long before sleep? 15 minutes? An hour? Never?"
+          "t": "Next, a question about sleeping drives. Rene van Belzen in the Netherlands uses TinkerTool System on his Mac, which I use too. It warns that switching off desktop hard disks too often may reduce their lifetime. He wants to be green without killing his drives. How long before sleep? 15 minutes? An hour? Never?"
         },
         {
           "s": "steve",
@@ -236,7 +253,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Scott Hemmeter in nearby Orange, California recalls you said traditional Tor is anonymous but not secure. Is IronKey's private Tor network both? Could it replace his HotSpotVPN service, $10.88 a month, which slows his connection considerably?"
+          "t": "Next, a question about IronKey's Tor network. Scott Hemmeter in nearby Orange, California recalls you said traditional Tor is anonymous but not secure. Is IronKey's private Tor network both? Could it replace his HotSpotVPN service, $10.88 a month, which slows his connection considerably?"
         },
         {
           "s": "steve",
@@ -273,7 +290,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bryan Moore in Carlsbad, California, which has caves, won't buy an IronKey unless there's a version with slowed-down password failures instead of Flash Trash destruction. He doesn't want e-waste or a doorstop because someone tried to peek."
+          "t": "Next, a suggestion about IronKey's design. Bryan Moore in Carlsbad, California, which has caves, won't buy an IronKey unless there's a version with slowed-down password failures instead of Flash Trash destruction. He doesn't want e-waste or a doorstop because someone tried to peek."
         },
         {
           "s": "leo",
@@ -326,7 +343,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Steve in Florida, good name, asks which services you stopped to get your new XP system booting in 131MB. He used BlackViper.com's list, disabled about 20, then found he needed one or two. Do you have a list for different setups: gaming, wireless laptop, print server and so on?"
+          "t": "Next, a question about Windows services. Steve in Florida, good name, asks which services you stopped to get your new XP system booting in 131MB. He used BlackViper.com's list, disabled about 20, then found he needed one or two. Do you have a list for different setups: gaming, wireless laptop, print server and so on?"
         },
         {
           "s": "steve",
@@ -347,7 +364,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matt in Virginia asks: does an SSL VPN, like WiTopia's or HotSpotVPN's, or I'd add Astaro's, protect non-browser activities? If he checks email in a desktop client, are his login and messages sent through the tunnel? IPSec and L2TP are often blocked at hotspots."
+          "t": "Next, a question about SSL VPNs. Matt in Virginia asks: does an SSL VPN, like WiTopia's or HotSpotVPN's, or I'd add Astaro's, protect non-browser activities? If he checks email in a desktop client, are his login and messages sent through the tunnel? IPSec and L2TP are often blocked at hotspots."
         },
         {
           "s": "steve",
@@ -388,7 +405,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kyle Hasegawa in Tokyo asks: what happens when government agencies use quantum computers? Will TrueCrypt be worthless against oppressive states? Quantum computing experts I've asked use exactly that example. But it's early days."
+          "t": "Next, a question about quantum computers. Kyle Hasegawa in Tokyo asks: what happens when government agencies use quantum computers? Will TrueCrypt be worthless against oppressive states? Quantum computing experts I've asked use exactly that example. But it's early days."
         },
         {
           "s": "steve",
@@ -422,7 +439,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chip Mason in Raleigh, North Carolina, a longtime Windows user, heard about banking trojans and wonders whether to switch to a Mac. Isn't the Mac safe only because its market share is too small to attract hackers? Is its BSD UNIX and Mach kernel inherently more secure? He doesn't want to invest heavily and then find the same problems."
+          "t": "Next, a question about Macs. Chip Mason in Raleigh, North Carolina, a longtime Windows user, heard about banking trojans and wonders whether to switch to a Mac. Isn't the Mac safe only because its market share is too small to attract hackers? Is its BSD UNIX and Mach kernel inherently more secure? He doesn't want to invest heavily and then find the same problems."
         },
         {
           "s": "steve",
@@ -479,7 +496,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Hurst in New York asks whether today's IronKeys can be updated with the improvements \"the rep\" mentioned, or whether he'd need a new one."
+          "t": "Next, a question about IronKey upgrades. John Hurst in New York asks whether today's IronKeys can be updated with the improvements \"the rep\" mentioned, or whether he'd need a new one."
         },
         {
           "s": "steve",
@@ -496,7 +513,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Justin Gerard heard on Windows Weekly that Firefox gobbles memory by pre-caching linked pages. If it pre-caches a page with an exploit, could he be infected without clicking? Justin does the Gamer's Edge podcast, which is great."
+          "t": "Next, a question about Firefox prefetching. Justin Gerard heard on Windows Weekly that Firefox gobbles memory by pre-caching linked pages. If it pre-caches a page with an exploit, could he be infected without clicking? Justin does the Gamer's Edge podcast, which is great."
         },
         {
           "s": "steve",
@@ -534,7 +551,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Hudson Seiler of Janesville, Wisconsin bought a dead Xbox 360 hard drive, removed it from Microsoft's proprietary mount to reveal a standard SATA drive, and ran SpinRite. It booted, and to his astonishment, SpinRite completely recovered the previous owner's data. He deleted it and reformatted, and the drive works great."
+          "t": "Next, a SpinRite story with a warning. Hudson Seiler of Janesville, Wisconsin bought a dead Xbox 360 hard drive, removed it from Microsoft's proprietary mount to reveal a standard SATA drive, and ran SpinRite. It booted, and to his astonishment, SpinRite completely recovered the previous owner's data. He deleted it and reformatted, and the drive works great."
         },
         {
           "s": "leo",
@@ -555,7 +572,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris Noble of Wellington, New Zealand heard us discuss not knowing where a form will be submitted. His tip: the Firefox extension FormFox."
+          "t": "To close, the Cool Add-On of the Week. Chris Noble of Wellington, New Zealand heard us discuss not knowing where a form will be submitted. His tip: the Firefox extension FormFox."
         },
         {
           "s": "steve",
@@ -592,7 +609,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Next week: network neutrality. Not the politics, which are for politicians, but the technology of congestion. A lot of Internet engineering is looking at the real problem of users colliding with each other."
+          "t": "Before we go, a preview: next week is network neutrality. Not the politics, which are for politicians, but the technology of congestion. A lot of Internet engineering is looking at the real problem of users colliding with each other."
         },
         {
           "s": "steve",

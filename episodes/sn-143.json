@@ -11,15 +11,28 @@
   },
   "chapters": [
     {
+      "title": "Welcome to Security Now! #143",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 143, for May 8, 2008: YubiKey."
+        },
+        {
+          "s": "leo",
+          "t": "Bandwidth for Security Now! is provided by AOL Radio at AOL.com/podcasting. This show and the entire TWiT broadcast network is brought to you by donations from listeners like you."
+        }
+      ]
+    },
+    {
       "title": "Never Missed a Week",
       "beats": [
         {
           "s": "leo",
-          "t": "We're in our new, highly technical studio that isn't really working yet."
+          "t": "First, a housekeeping note: we're in our new, highly technical studio that isn't really working yet."
         },
         {
           "s": "steve",
-          "t": "Great to be back for our 143rd week. We've never missed one."
+          "t": "Great to be back for our 143rd week. We've never missed one. Today we have the news: Anonymizer's sale, the FBI's data retention push and patches turned into exploits automatically. Then a SpinRite story. And our main topic is the YubiKey, with its creator Stina Ehrensvärd of Yubico."
         },
         {
           "s": "leo",
@@ -56,7 +69,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Dave Jevans of IronKey blogged on Friday that Anonymizer.com has been acquired by Abraxas, which provides anonymity services for the national security community: the NSA, CIA, DIA and so on. I'd feel much more comfortable if Anonymizer had stayed independent."
+          "t": "First, the news. Dave Jevans of IronKey blogged on Friday that Anonymizer.com has been acquired by Abraxas, which provides anonymity services for the national security community: the NSA, CIA, DIA and so on. I'd feel much more comfortable if Anonymizer had stayed independent."
         },
         {
           "s": "leo",
@@ -85,7 +98,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "At a recent congressional hearing, FBI director Robert Mueller again called for federal data retention laws forcing ISPs to keep records of what their customers do for two years."
+          "t": "Next, a privacy story. At a recent congressional hearing, FBI director Robert Mueller again called for federal data retention laws forcing ISPs to keep records of what their customers do for two years."
         },
         {
           "s": "leo",
@@ -122,7 +135,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Four researchers at Carnegie Mellon, UC Berkeley and the University of Pittsburgh built APEG, an Automated Patch-Based Exploit Generator. It compares Windows before and after a patch and designs an exploit for the vulnerability the patch fixes."
+          "t": "Next, a research result on patches. Four researchers at Carnegie Mellon, UC Berkeley and the University of Pittsburgh built APEG, an Automated Patch-Based Exploit Generator. It compares Windows before and after a patch and designs an exploit for the vulnerability the patch fixes."
         },
         {
           "s": "steve",
@@ -147,7 +160,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The subject: \"SpinRite helps kids with cancer.\" How could data recovery do that? Pete Harmon is a FedEx pilot with a reputation as a computer geek around flight operations. He runs PilotSwap.net for pilots."
+          "t": "Now a SpinRite story. The subject: \"SpinRite helps kids with cancer.\" How could data recovery do that? Pete Harmon is a FedEx pilot with a reputation as a computer geek around flight operations. He runs PilotSwap.net for pilots."
         },
         {
           "s": "steve",
@@ -176,7 +189,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Welcome, Stina. It's been about four weeks since we bumped into each other at the top of the escalators in San Francisco."
+          "t": "Now to our main topic: the YubiKey. Welcome, Stina. It's been about four weeks since we bumped into each other at the top of the escalators in San Francisco."
         },
         {
           "s": "stina",
@@ -199,6 +212,10 @@
     {
       "title": "A Bank's Challenge",
       "beats": [
+        {
+          "s": "steve",
+          "t": "Stina, tell us about the first design and the challenge a bank gave you."
+        },
         {
           "s": "stina",
           "t": "It needed a specific chip in a specific card with a keypad, our reader, and client software. An online bank planned a pilot. Then one of their people called and said, we like the authentication, but not the card reader or the client software. Our customers use every platform and browser, Windows, Mac, Firefox. Client software would mean hiring maybe 30 full-time employees just for support."
@@ -225,6 +242,10 @@
       "title": "Where the Name Came From",
       "beats": [
         {
+          "s": "steve",
+          "t": "Where does the name Yubico come from?"
+        },
+        {
           "s": "stina",
           "t": "Yubico comes from \"ubiquitous.\" I didn't want a name about secure, verified, ID or trust, like all the boring names out there."
         },
@@ -249,6 +270,10 @@
     {
       "title": "VeriSign, eBay and a Thinner Key",
       "beats": [
+        {
+          "s": "steve",
+          "t": "How did you connect with VeriSign and the OpenID community?"
+        },
         {
           "s": "stina",
           "t": "Simon is passionate about open-source security. He recommended I fly from Stockholm to an Internet Identity Workshop in California to learn about OpenID, which we think is great, so one YubiKey could work across the whole Internet."
@@ -275,6 +300,10 @@
       "title": "Choosing Open Source",
       "beats": [
         {
+          "s": "steve",
+          "t": "How did you decide to go open source?"
+        },
+        {
           "s": "stina",
           "t": "In January the thin YubiKey was ready. The first pilot box went to a friend of Paul's who runs a Chinese IPTV company, Dragon IPTV. Within a couple of months we had five pilots. Customers said it worked perfectly and users loved it. But no follow-up orders."
         },
@@ -297,7 +326,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "We should explain what the YubiKey is for anyone just tuning in."
+          "t": "Next, what the YubiKey is. We should explain what the YubiKey is for anyone just tuning in."
         },
         {
           "s": "steve",
@@ -359,7 +388,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I don't want to carry 20 keys. Could the YubiKey become a standard?"
+          "t": "Next, one key for everything. I don't want to carry 20 keys. Could the YubiKey become a standard?"
         },
         {
           "s": "stina",
@@ -416,7 +445,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's the thickness of a printed circuit board, with a touch surface that glows a nice green. Remember when I showed you that SanDisk SD card in Vancouver that also had a USB interface?"
+          "t": "Next, why emulating a keyboard changes everything. It's the thickness of a printed circuit board, with a touch surface that glows a nice green. Remember when I showed you that SanDisk SD card in Vancouver that also had a USB interface?"
         },
         {
           "s": "leo",
@@ -453,7 +482,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The first 12 characters never change. They're your YubiKey's public ID, different for every key."
+          "t": "Next, what the YubiKey types: the public ID and modhex. The first 12 characters never change. They're your YubiKey's public ID, different for every key."
         },
         {
           "s": "leo",
@@ -502,7 +531,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The YubiKey holds a write-only 128-bit AES secret key, different for everyone. When Yubico authenticates, it uses the public ID to look up that key's AES key in its database."
+          "t": "Next, the secret key that never comes out. The YubiKey holds a write-only 128-bit AES secret key, different for everyone. When Yubico authenticates, it uses the public ID to look up that key's AES key in its database."
         },
         {
           "s": "steve",
@@ -519,7 +548,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "128 bits is 16 bytes, the width of a Rijndael block. The first six bytes are a unique private device ID. Like the six-byte MAC address on every Ethernet adapter, it's planning ahead, so no two YubiKeys ever collide, even if this really takes off."
+          "t": "Next, what's inside the 128 bits. 128 bits is 16 bytes, the width of a Rijndael block. The first six bytes are a unique private device ID. Like the six-byte MAC address on every Ethernet adapter, it's planning ahead, so no two YubiKeys ever collide, even if this really takes off."
         },
         {
           "s": "steve",
@@ -572,7 +601,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Our chatroom asks whether a keystroke logger could capture it."
+          "t": "Next, keyloggers. Our chatroom asks whether a keystroke logger could capture it."
         },
         {
           "s": "steve",
@@ -617,7 +646,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You can't make it reveal its key. It only spits out tokens meaningful to someone who already has the key. And Yubico has even changed its website in the last couple of weeks. The language about evaluation keys that expire is gone. They've settled on selling keys."
+          "t": "Next, why the open model matters. You can't make it reveal its key. It only spits out tokens meaningful to someone who already has the key. And Yubico has even changed its website in the last couple of weeks. The language about evaluation keys that expire is gone. They've settled on selling keys."
         },
         {
           "s": "leo",
@@ -642,7 +671,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "If you lose it, there's no replacement with the same identity?"
+          "t": "What are the downsides? If you lose it, there's no replacement with the same identity?"
         },
         {
           "s": "steve",
@@ -695,7 +724,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "A chatter asks whether it works with static passwords on websites. It's really an OpenID-style device. If TWiT.tv added logins with OpenID, you'd give your OpenID, your provider would ask for the YubiKey, and you'd touch it. Would you still need a password?"
+          "t": "Next, a chatroom question about OpenID and two factors. A chatter asks whether it works with static passwords on websites. It's really an OpenID-style device. If TWiT.tv added logins with OpenID, you'd give your OpenID, your provider would ask for the YubiKey, and you'd touch it. Would you still need a password?"
         },
         {
           "s": "steve",
@@ -708,7 +737,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Robodog on Twitter, where we're TWiT Live, says Steve has the pipes for cameras. Can we see Steve next week? And he suggests a whiteboard. Our new TriCaster will let us switch to your Skype video."
+          "t": "A light note from the chatroom. Robodog on Twitter, where we're TWiT Live, says Steve has the pipes for cameras. Can we see Steve next week? And he suggests a whiteboard. Our new TriCaster will let us switch to your Skype video."
         },
         {
           "s": "steve",
@@ -741,7 +770,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So Yubico sells to people building it into systems, not end users?"
+          "t": "To wrap up, who can use it now? So Yubico sells to people building it into systems, not end users?"
         },
         {
           "s": "steve",

@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-146.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #146",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 146, for May 29, 2008: Listener Feedback #42."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. This is Security Now!, the show that helps you protect yourself online."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today is a Q&A. We start with some housekeeping and the news: XP SP3 breaking my Start menu, a flaw on PayPal's green-bar pages and an unpatched iCal hole. Then a SpinRite story, and questions on Debian's OpenSSL blunder, MAC filtering, stealth ports and more."
+        }
+      ]
+    },
+    {
       "title": "Three Years Nearly Done",
       "beats": [
         {
@@ -41,7 +58,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many people noticed I broke GRC.com/feedback. My server adds the .htm when it's left off, and something I did recently broke that. It didn't stop listeners from sending 375 questions in two weeks, but several had to add .htm by hand. It'll be fixed by the time you hear this."
+          "t": "First, a housekeeping note. Many people noticed I broke GRC.com/feedback. My server adds the .htm when it's left off, and something I did recently broke that. It didn't stop listeners from sending 375 questions in two weeks, but several had to add .htm by hand. It'll be fixed by the time you hear this."
         },
         {
           "s": "leo",
@@ -70,7 +87,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Someone in our newsgroup found how to get IE7's EV certificate display with the phishing filter off. Near the end of the long list in IE's advanced settings is \"Check for server certificate revocation.\" Check it and restart IE, and the green EV display returns."
+          "t": "Next, a follow-up on IE7's EV display. Someone in our newsgroup found how to get IE7's EV certificate display with the phishing filter off. Near the end of the long list in IE's advanced settings is \"Check for server certificate revocation.\" Check it and restart IE, and the green EV display returns."
         },
         {
           "s": "leo",
@@ -87,7 +104,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last week I was excited about XP Service Pack 3. It bit me, and my tech support guy Greg. On my brand-new main system, twice in the day after installing it, my Start menu died. The menu would come up, but nothing responded. I've never had that happen. Logging out and back in revived it, but that's ridiculous. I backed SP3 out, and it hasn't happened since."
+          "t": "Now the news, starting with a warning about XP Service Pack 3. Last week I was excited about XP Service Pack 3. It bit me, and my tech support guy Greg. On my brand-new main system, twice in the day after installing it, my Start menu died. The menu would come up, but nothing responded. I've never had that happen. Logging out and back in revived it, but that's ridiculous. I backed SP3 out, and it hasn't happened since."
         },
         {
           "s": "leo",
@@ -116,7 +133,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Speaking of PayPal's EV certificate, PayPal had a cross-site scripting flaw on its EV-certified pages. A couple of weeks ago, PayPal announced that browsers without EV support would soon not be welcome. After a furor, they backpedaled to saying they'd prefer EV-capable browsers."
+          "t": "Next, a flaw on PayPal's EV-certified pages. PayPal had a cross-site scripting flaw on its EV-certified pages. A couple of weeks ago, PayPal announced that browsers without EV support would soon not be welcome. After a furor, they backpedaled to saying they'd prefer EV-capable browsers."
         },
         {
           "s": "steve",
@@ -141,7 +158,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's an unpatched remote code execution vulnerability in Apple's iCal. Open a malicious iCal file, say from a link in email, and a buffer overrun lets exploit code run."
+          "t": "Next, an unpatched Apple flaw. There's an unpatched remote code execution vulnerability in Apple's iCal. Open a malicious iCal file, say from a link in email, and a buffer overrun lets exploit code run."
         },
         {
           "s": "steve",
@@ -162,7 +179,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Alex Walters' subject was \"SpinRite failed me, but it's NVIDIA's fault.\" SMART, the drive's Self-Monitoring, Analysis and Reporting Technology, gave him the dreaded \"back up your data now\" warning. He hadn't backed up that drive in seven and a half years."
+          "t": "Now a SpinRite story. Alex Walters' subject was \"SpinRite failed me, but it's NVIDIA's fault.\" SMART, the drive's Self-Monitoring, Analysis and Reporting Technology, gave him the dreaded \"back up your data now\" warning. He hadn't backed up that drive in seven and a half years."
         },
         {
           "s": "steve",
@@ -179,7 +196,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "\"Steve\" in Florida says when Windows Update offers SP3, small print says that even if you don't install it now, you may still need updates, and a button lets you skip SP3 and get the usual patches for SP2. Everyone can, and probably should."
+          "t": "Now to listener questions, starting with SP3. \"Steve\" in Florida says when Windows Update offers SP3, small print says that even if you don't install it now, you may still need updates, and a button lets you skip SP3 and get the usual patches for SP2. Everyone can, and probably should."
         },
         {
           "s": "steve",
@@ -204,7 +221,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jawny G. in British Columbia asks about the Debian and Ubuntu OpenSSL mistake, since you were quoted in an article. What does it mean for open source?"
+          "t": "Next, a question about the Debian OpenSSL blunder. Jawny G. in British Columbia asks about the Debian and Ubuntu OpenSSL mistake, since you were quoted in an article. What does it mean for open source?"
         },
         {
           "s": "steve",
@@ -258,7 +275,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jawny asks about open source's future. Shouldn't you be unable to modify something like a random number generator library?"
+          "t": "A follow-up on whether this is an open-source problem. Jawny asks about open source's future. Shouldn't you be unable to modify something like a random number generator library?"
         },
         {
           "s": "steve",
@@ -288,7 +305,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dave in Grand Rapids, Michigan worries: if the YubiKey is the only thing needed, someone who finds yours at your company could log in as you just by pressing the button. Or do you still need a username and password?"
+          "t": "Next, a question about the YubiKey. Dave in Grand Rapids, Michigan worries: if the YubiKey is the only thing needed, someone who finds yours at your company could log in as you just by pressing the button. Or do you still need a username and password?"
         },
         {
           "s": "leo",
@@ -341,7 +358,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kyle Hasegawa in Tokyo has a tip for me, since I wanted to test my server. Security Compass offers two Firefox add-ons: XSS Me, which slams your site with cross-site scripting attacks, and SQL Inject Me, which does the same with SQL injection, then gives in-depth reports. His Drupal 6.2 and homebrew sites passed. Limit testing to your own sites, he says, to avoid a visit from your local FBI agents."
+          "t": "Next, a tip on testing my own site, and how I was hacked. Kyle Hasegawa in Tokyo has a tip for me, since I wanted to test my server. Security Compass offers two Firefox add-ons: XSS Me, which slams your site with cross-site scripting attacks, and SQL Inject Me, which does the same with SQL injection, then gives in-depth reports. His Drupal 6.2 and homebrew sites passed. Limit testing to your own sites, he says, to avoid a visit from your local FBI agents."
         },
         {
           "s": "steve",
@@ -382,7 +399,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John in Moncton, New Brunswick asks: my wireless router can restrict access by MAC address. Behind a NAT router, isn't that secure, as long as MACs can't be faked?"
+          "t": "Next, a question about MAC filtering. John in Moncton, New Brunswick asks: my wireless router can restrict access by MAC address. Behind a NAT router, isn't that secure, as long as MACs can't be faked?"
         },
         {
           "s": "steve",
@@ -440,7 +457,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tom Terrific wants to fix friends' computers remotely with something like GoToMyPC. If their computer is full of malware, could connecting infect him?"
+          "t": "Next, a question about remote support. Tom Terrific wants to fix friends' computers remotely with something like GoToMyPC. If their computer is full of malware, could connecting infect him?"
         },
         {
           "s": "steve",
@@ -493,7 +510,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Oscar Aguirre in Gardena, California is house-hunting in Glendale. His realtor's printout footer showed a URL ending in mgrqispi.dll. Googling found many sites with the same file. Should he worry about a server exposing DLL names, or switch realtors?"
+          "t": "Next, a question about a website address. Oscar Aguirre in Gardena, California is house-hunting in Glendale. His realtor's printout footer showed a URL ending in mgrqispi.dll. Googling found many sites with the same file. Should he worry about a server exposing DLL names, or switch realtors?"
         },
         {
           "s": "steve",
@@ -526,7 +543,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Welles B. Goodrich in Santa Cruz bought an Apple AirPort Extreme. With its NAT firewall on, ShieldsUP! showed ports closed but not stealth, and no setting changed it. His previous routers were always stealth. He switched to a D-Link gaming router with an AirPort Express for WiFi and printing, and he's stealth again. If the AirPort truly has a NAT firewall, why closed? Was he too paranoid? Some subjects may as well be Klingon to this Mac user, but he gains a lot. And SpinRite for the Mac, please."
+          "t": "Next, a question about stealth ports. Welles B. Goodrich in Santa Cruz bought an Apple AirPort Extreme. With its NAT firewall on, ShieldsUP! showed ports closed but not stealth, and no setting changed it. His previous routers were always stealth. He switched to a D-Link gaming router with an AirPort Express for WiFi and printing, and he's stealth again. If the AirPort truly has a NAT firewall, why closed? Was he too paranoid? Some subjects may as well be Klingon to this Mac user, but he gains a lot. And SpinRite for the Mac, please."
         },
         {
           "s": "steve",
@@ -615,7 +632,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Gary Warner, director of research at UAB Computer Forensics, warns that if we train users that green bars are safe, we haven't fixed the main problem: webmasters ignoring security, as PayPal showed."
+          "t": "Next, a warning about EV certificates. Gary Warner, director of research at UAB Computer Forensics, warns that if we train users that green bars are safe, we haven't fixed the main problem: webmasters ignoring security, as PayPal showed."
         },
         {
           "s": "leo",
@@ -656,7 +673,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kyle Hasegawa is back with a trick for really dead drives, short of paying thousands. It's a last resort. Find an identical drive. The model number must match, and the production code is even better. Carefully move the PCB, the circuit board, from the good drive to your dead one. If the board was the problem, you're good to go. If not, you're out a few bucks."
+          "t": "Next, a tip for dead drives. Kyle Hasegawa is back with a trick for really dead drives, short of paying thousands. It's a last resort. Find an identical drive. The model number must match, and the production code is even better. Carefully move the PCB, the circuit board, from the good drive to your dead one. If the board was the problem, you're good to go. If not, you're out a few bucks."
         },
         {
           "s": "steve",
@@ -686,7 +703,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bob J. in Claremont, California says Verizon switched him to an Actiontec modem-router that fails ShieldsUP! by answering pings, which his Linksys never did, and typing his public IP brings up the router's homepage, showing his network setup. He uses a strong password but hates it, and Verizon was useless. Can he disable its NAT and go back to the Linksys? Comcast did the same to us, building the router into the modem."
+          "t": "Next, a question about an ISP's router. Bob J. in Claremont, California says Verizon switched him to an Actiontec modem-router that fails ShieldsUP! by answering pings, which his Linksys never did, and typing his public IP brings up the router's homepage, showing his network setup. He uses a strong password but hates it, and Verizon was useless. Can he disable its NAT and go back to the Linksys? Comcast did the same to us, building the router into the modem."
         },
         {
           "s": "steve",
@@ -715,7 +732,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "KakeMan in Malaysia picks a bone with recommending a Linux live CD for risky browsing or online banking. Hardy Heron is fresh now, but security holes will be found, and unless you build an up-to-date live CD, you'd be vulnerable."
+          "t": "Next, a pushback on Linux live CDs. KakeMan in Malaysia picks a bone with recommending a Linux live CD for risky browsing or online banking. Hardy Heron is fresh now, but security holes will be found, and unless you build an up-to-date live CD, you'd be vulnerable."
         },
         {
           "s": "steve",

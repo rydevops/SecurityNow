@@ -8,11 +8,24 @@
   "audio": "http://media.GRC.com/sn/SN-141.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #141",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 141, for April 24, 2008: The RSA Conference."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now!, with Steve Gibson, who has just come back from the RSA Conference."
+        }
+      ]
+    },
+    {
       "title": "The Identity and Authentication Show",
       "beats": [
         {
           "s": "steve",
-          "t": "Our 141st episode."
+          "t": "Thanks, Leo. This is our 141st episode, and today is my report on the RSA Conference, the big identity and authentication show. First, a SpinRite story and the week's news: a ClamAV hole, an ICQ flaw, XP SP3 and bots cracking Hotmail's CAPTCHA. Then the keynotes, EV certificates, and the YubiKey, the coolest thing I saw. Our 141st episode."
         },
         {
           "s": "leo",
@@ -65,7 +78,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Dan Stoddard wrote that a friend's laptop showed the Windows logo briefly, then blue-screened. The manufacturer said there was no way to recover his data."
+          "t": "First, a SpinRite story. Dan Stoddard wrote that a friend's laptop showed the Windows logo briefly, then blue-screened. The manufacturer said there was no way to recover his data."
         },
         {
           "s": "steve",
@@ -94,7 +107,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The most important news: a huge problem in ClamAV, the popular open-source antivirus. Because it's open source, the bad guys have the same access as the good guys. There's proof-of-concept code. Its email scanner has a buffer overflow, so a deliberately malformed email can take over the machine scanning it."
+          "t": "Now the news. The most important item is a huge problem in ClamAV, the popular open-source antivirus. Because it's open source, the bad guys have the same access as the good guys. There's proof-of-concept code. Its email scanner has a buffer overflow, so a deliberately malformed email can take over the machine scanning it."
         },
         {
           "s": "steve",
@@ -127,7 +140,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Remember ICQ, the original instant messenger with the little flower logo? I think I was user number 4444 or something. It's really not for me. But it has a weird vulnerability in the status display that shows whether a friend is online. A malicious status report could take over your machine."
+          "t": "Next, ICQ, browsers and XP SP3. Remember ICQ, the original instant messenger with the little flower logo? I think I was user number 4444 or something. It's really not for me. But it has a weird vulnerability in the status display that shows whether a friend is online. A malicious status report could take over your machine."
         },
         {
           "s": "steve",
@@ -173,7 +186,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A botnet now has a 10 to 15 percent success rate cutting through Hotmail's CAPTCHA. We covered CAPTCHAs in our \"Are You Human?\" episode."
+          "t": "Next, a news item on CAPTCHAs. A botnet now has a 10 to 15 percent success rate cutting through Hotmail's CAPTCHA. We covered CAPTCHAs in our \"Are You Human?\" episode."
         },
         {
           "s": "steve",
@@ -198,7 +211,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "RSA, the company, was founded by Rivest, Shamir and Adleman, who did the original public-key work and held patents that have since expired, after the 17-year patent life. It's a big, strong security company, and its annual RSA Conference in San Francisco was fantastic and very well put together."
+          "t": "Now to our main topic: my week at the RSA Conference. RSA, the company, was founded by Rivest, Shamir and Adleman, who did the original public-key work and held patents that have since expired, after the 17-year patent life. It's a big, strong security company, and its annual RSA Conference in San Francisco was fantastic and very well put together."
         },
         {
           "s": "steve",
@@ -235,7 +248,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I recommend John Thompson of Symantec. He brings out their head of malicious software. Some canned humor doesn't work, but listeners will be fascinated by the statistics. Symantec's global monitoring network shows that users now encounter more malicious software than good software. This year the scale tipped."
+          "t": "Next, the keynotes worth watching. I recommend John Thompson of Symantec. He brings out their head of malicious software. Some canned humor doesn't work, but listeners will be fascinated by the statistics. Symantec's global monitoring network shows that users now encounter more malicious software than good software. This year the scale tipped."
         },
         {
           "s": "steve",
@@ -289,7 +302,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "On Wednesday I stumbled into a session with a strange name, about securing the Internet with strong authentication. It was all about Extended Validation certificates. And I was pleased the panel was as upset as I am about the proliferation of certificate authorities."
+          "t": "Next, a session that changed my mind about EV certificates. On Wednesday I stumbled into a session with a strange name, about securing the Internet with strong authentication. It was all about Extended Validation certificates. And I was pleased the panel was as upset as I am about the proliferation of certificate authorities."
         },
         {
           "s": "steve",
@@ -403,7 +416,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Overall, are we winning against the bad guys?"
+          "t": "A big question after the conference: overall, are we winning against the bad guys?"
         },
         {
           "s": "steve",
@@ -472,7 +485,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Now your Swedish lady and her amazing authentication system."
+          "t": "Now to the coolest thing at the show: your Swedish lady and her amazing authentication system."
         },
         {
           "s": "steve",
@@ -545,7 +558,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's what I really like. I think VeriSign's cards and footballs are cool. But their business model requires big companies to buy lots of them, with VeriSign's servers doing the authentication. I've vetted that protocol, and it's 100 percent private. But my next product, a next-generation VPN, can't use VeriSign. I'm not Bank of America, PayPal or eBay."
+          "t": "Why I love the YubiKey. Here's what I really like. I think VeriSign's cards and footballs are cool. But their business model requires big companies to buy lots of them, with VeriSign's servers doing the authentication. I've vetted that protocol, and it's 100 percent private. But my next product, a next-generation VPN, can't use VeriSign. I'm not Bank of America, PayPal or eBay."
         },
         {
           "s": "steve",
@@ -603,7 +616,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Wizmo's wanlock helped a radio caller whose wireless kept dropping."
+          "t": "A follow-up on Wizmo's wanlock. Wizmo's wanlock helped a radio caller whose wireless kept dropping."
         },
         {
           "s": "steve",

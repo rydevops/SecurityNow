@@ -8,11 +8,24 @@
   "audio": "http://media.GRC.com/sn/SN-137.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #137",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 137, for March 27, 2008: RAM Hijacks."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now! with Steve Gibson, everybody's favorite security guru at GRC.com. You're a guru."
+        }
+      ]
+    },
+    {
       "title": "A Year Older Guru",
       "beats": [
         {
           "s": "steve",
-          "t": "I'm a year older guru now. I'm not a big birthday person, but I've survived another one, and I think I'm about halfway done. My grandfather lived to 103. I'd like to beat him by a year."
+          "t": "Thanks, Leo. I'm a year older guru now. Today we start with the news: a zero-day in Microsoft's Jet Database, Office under attack, and snooping in presidential candidates' passport files. Then a SpinRite story and our main topic: how Princeton recovered encryption keys from \"forgotten\" RAM. I'm not a big birthday person, but I've survived another one, and I think I'm about halfway done. My grandfather lived to 103. I'd like to beat him by a year."
         },
         {
           "s": "leo",
@@ -41,7 +54,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "First, an important issue Microsoft has acknowledged and that is being actively exploited: a flaw in its Jet Database engine, which comes with Office, and especially with Word. It affects Windows 2000, XP and Server 2003 SP1. Server 2003 SP2 and Vista use a different Jet edition and aren't affected."
+          "t": "First, the news. An important issue Microsoft has acknowledged and that is being actively exploited: a flaw in its Jet Database engine, which comes with Office, and especially with Word. It affects Windows 2000, XP and Server 2003 SP1. Server 2003 SP2 and Vista use a different Jet edition and aren't affected."
         },
         {
           "s": "steve",
@@ -78,7 +91,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Windows Update has been busy. A March 11 Excel patch had a \"regression error,\" breaking something else, so they had to patch the patch a few days later. And exploit code is now public for some of this month's big Office fixes, which means more attacks. Stay patched."
+          "t": "Next, more on the Office front. Windows Update has been busy. A March 11 Excel patch had a \"regression error,\" breaking something else, so they had to patch the patch a few days later. And exploit code is now public for some of this month's big Office fixes, which means more attacks. Stay patched."
         },
         {
           "s": "steve",
@@ -99,7 +112,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Late last week there was a furor. First, Barack Obama's passport file had been opened on three occasions, in January, February and March. Then it turned out Hillary Clinton's and John McCain's files had been opened too, all by contractors working for the State Department."
+          "t": "Next, a political security story. Late last week there was a furor. First, Barack Obama's passport file had been opened on three occasions, in January, February and March. Then it turned out Hillary Clinton's and John McCain's files had been opened too, all by contractors working for the State Department."
         },
         {
           "s": "steve",
@@ -124,7 +137,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Ravi Keecheril has a MythTV box made entirely of discarded hard drives. At his company, failed drives go to a dark storage room on their way to the hard drive graveyard. He's mentioned SpinRite, but they'd rather grab a new drive from inventory, usually bigger."
+          "t": "Now a SpinRite story. Ravi Keecheril has a MythTV box made entirely of discarded hard drives. At his company, failed drives go to a dark storage room on their way to the hard drive graveyard. He's mentioned SpinRite, but they'd rather grab a new drive from inventory, usually bigger."
         },
         {
           "s": "steve",
@@ -145,7 +158,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ed Felten at Princeton is a brilliant security researcher, always pushing the envelope. He first became known in the copy protection wars."
+          "t": "Now to our main topic, RAM hijacks. Ed Felten at Princeton is a brilliant security researcher, always pushing the envelope. He first became known in the copy protection wars."
         },
         {
           "s": "steve",
@@ -180,7 +193,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Our listeners flooded us with reports. There was some hype. The email made clear people believed whole-drive encryption had been cracked. That's not the case, though what they did was extremely cool. They discovered RAM's contents stay available longer than people believed."
+          "t": "First, what the Princeton research is and isn't. Our listeners flooded us with reports. There was some hype. The email made clear people believed whole-drive encryption had been cracked. That's not the case, though what they did was extremely cool. They discovered RAM's contents stay available longer than people believed."
         },
         {
           "s": "steve",
@@ -193,7 +206,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Let's back up to the technology. We've talked about flash. Volatile memory is either static or dynamic. The earliest computers used static memory. \"Static\" doesn't mean it survives power-off. It means it doesn't need to be continually refreshed, as dynamic memory does."
+          "t": "To understand it, let's back up to the technology of RAM. We've talked about flash. Volatile memory is either static or dynamic. The earliest computers used static memory. \"Static\" doesn't mean it survives power-off. It means it doesn't need to be continually refreshed, as dynamic memory does."
         },
         {
           "s": "steve",
@@ -218,7 +231,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So engineers made something simpler: dynamic RAM. Each bit is essentially just a capacitor, with a little logic around it. A capacitor stores charge electrostatically, by pulling electrons off one plate or pushing them on. Left alone, it holds. There's a bit."
+          "t": "Next, dynamic RAM. So engineers made something simpler: dynamic RAM. Each bit is essentially just a capacitor, with a little logic around it. A capacitor stores charge electrostatically, by pulling electrons off one plate or pushing them on. Left alone, it holds. There's a bit."
         },
         {
           "s": "steve",
@@ -239,7 +252,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So the researchers asked: cut the power, count to three, turn it back on. How many bits decay?"
+          "t": "Now, how fast does DRAM forget? So the researchers asked: cut the power, count to three, turn it back on. How many bits decay?"
         },
         {
           "s": "steve",
@@ -273,7 +286,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The coolest part was what they did with snapshots that had known bit errors. They went after the keys for whole-drive encryption, like BitLocker and TrueCrypt."
+          "t": "Next, rebuilding keys from damaged memory. The coolest part was what they did with snapshots that had known bit errors. They went after the keys for whole-drive encryption, like BitLocker and TrueCrypt."
         },
         {
           "s": "steve",
@@ -315,7 +328,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Impressive. But this isn't something a hacker can easily do to you."
+          "t": "How worried should we be? Impressive. But this isn't something a hacker can easily do to you."
         },
         {
           "s": "steve",
@@ -344,7 +357,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Other fallout: you could make a bootable USB dongle with a tiny OS that snapshots memory. It has to be small, since it runs in the same memory you're capturing."
+          "t": "Next, other ways to grab RAM. Other fallout: you could make a bootable USB dongle with a tiny OS that snapshots memory. It has to be small, since it runs in the same memory you're capturing."
         },
         {
           "s": "steve",
@@ -377,7 +390,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's of academic interest that DRAM can be slowed from forgetting, and that clever algorithms can repair a few bit errors to rebuild keys. But turn your laptop off and count to 10, and your data is gone."
+          "t": "So what does it mean in practice? It's of academic interest that DRAM can be slowed from forgetting, and that clever algorithms can repair a few bit errors to rebuild keys. But turn your laptop off and count to 10, and your data is gone."
         },
         {
           "s": "steve",
@@ -438,7 +451,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Apparently Microsoft designed BitLocker with some awareness of this. But the researchers point out that in BitLocker's basic mode, the TPM, the Trusted Platform Module on the motherboard, hands BitLocker its keys at boot without requiring any authentication."
+          "t": "One more point, about BitLocker's default setting. Apparently Microsoft designed BitLocker with some awareness of this. But the researchers point out that in BitLocker's basic mode, the TPM, the Trusted Platform Module on the motherboard, hands BitLocker its keys at boot without requiring any authentication."
         },
         {
           "s": "leo",
@@ -467,7 +480,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "You're pulling ahead of TWiT while I'm in Australia. We're pretaping Security Now! for the next two weeks. Only The Tech Guy, which started in 2004 and does two a week, and the Daily Giz Wiz, five a week, are ahead of you."
+          "t": "To wrap up, a note on the schedule. You're pulling ahead of TWiT while I'm in Australia. We're pretaping Security Now! for the next two weeks. Only The Tech Guy, which started in 2004 and does two a week, and the Daily Giz Wiz, five a week, are ahead of you."
         },
         {
           "s": "steve",
