@@ -8,15 +8,19 @@
   "audio": "http://media.GRC.com/sn/SN-119.mp3",
   "chapters": [
     {
-      "title": "The Most-Requested Topic",
+      "title": "Welcome to Security Now! #119",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 119, for November 22, 2007: PayPal and DoubleClick."
+        },
         {
           "s": "leo",
           "t": "Is this the day for DoubleClick and PayPal?"
         },
         {
           "s": "steve",
-          "t": "Yes. It's probably our most-requested topic ever. Scanning email for last week's Q&A, many people asked whatever happened. Perfect Paper Passwords exploded into something much bigger than I expected, which pushed this to today."
+          "t": "Yes, Leo. Today we'll cover a SpinRite story, then how web headers, cookies and referrers work, and then why PayPal's links detour through DoubleClick. It's probably our most-requested topic ever. Scanning email for last week's Q&A, many people asked whatever happened. Perfect Paper Passwords exploded into something much bigger than I expected, which pushed this to today."
         },
         {
           "s": "leo",
@@ -86,7 +90,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "How did you find out about this?"
+          "t": "Now to the main topic: PayPal's links through DoubleClick. How did you find out about this?"
         },
         {
           "s": "steve",
@@ -107,7 +111,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You give your browser a URL. It looks up the domain's IP address and connects to that server. A big site like PayPal may have a pool of IPs that DNS rotates among to spread the load, or one IP feeding a load balancer and a farm of machines."
+          "t": "Some background first: how headers and cookies work. You give your browser a URL. It looks up the domain's IP address and connects to that server. A big site like PayPal may have a pool of IPs that DNS rotates among to spread the load, or one IP feeding a load balancer and a farm of machines."
         },
         {
           "s": "steve",
@@ -132,7 +136,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Then, only a decade ago, someone figured out a use Netscape never intended but didn't prevent. Sites began hosting ads from third-party services. GRC is a bad example, since I have none."
+          "t": "Next, how ads turned cookies into tracking. Only a decade ago, someone figured out a use Netscape never intended but didn't prevent. Sites began hosting ads from third-party services. GRC is a bad example, since I have none."
         },
         {
           "s": "leo",
@@ -169,7 +173,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's more. When a page loads, it points to other assets: images, media, text. The browser requests each one, and each request includes a \"referrer\" field: the URL of the page containing the pointer."
+          "t": "Ad tracking also relies on the referrer field. There's more. When a page loads, it points to other assets: images, media, text. The browser requests each one, and each request includes a \"referrer\" field: the URL of the page containing the pointer."
         },
         {
           "s": "steve",
@@ -199,7 +203,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Information could also leak. Back in the good old days, people filled out forms with name, address, phone number and email, and pressed Submit."
+          "t": "Worse, personal form data used to leak to advertisers. Information could also leak. Back in the good old days, people filled out forms with name, address, phone number and email, and pressed Submit."
         },
         {
           "s": "steve",
@@ -236,7 +240,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And privacy-savvy people disable third-party cookies. Safari, IE and Opera let you. In the latest Firefox you have to jump through hoops. Firefox 1.5 had it in the interface."
+          "t": "Next, blocking third-party cookies. Privacy-savvy people disable third-party cookies. Safari, IE and Opera let you. In the latest Firefox you have to jump through hoops. Firefox 1.5 had it in the interface."
         },
         {
           "s": "leo",
@@ -278,7 +282,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This morning I started with a clean browser and went to www.paypal.com, without even identifying myself. A big happy screen said \"Ready, set, shop. PayPal Plus,\" offering the PayPal Plus credit card."
+          "t": "Now to PayPal's links themselves. This morning I started with a clean browser and went to www.paypal.com, without even identifying myself. A big happy screen said \"Ready, set, shop. PayPal Plus,\" offering the PayPal Plus credit card."
         },
         {
           "s": "leo",
@@ -331,7 +335,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "When do you get this? For an ad for the PayPal MasterCard, maybe it makes sense."
+          "t": "Which PayPal links go through DoubleClick? When do you get this? For an ad for the PayPal MasterCard, maybe it makes sense."
         },
         {
           "s": "steve",
@@ -388,7 +392,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "After ranting for three quarters of an hour, I'll say I use PayPal. I don't know any company more ripe for competition. I love aggregating my web purchases through them."
+          "t": "To wrap up, why I still use PayPal anyway. After ranting for three quarters of an hour, I'll say I use PayPal. I don't know any company more ripe for competition. I love aggregating my web purchases through them."
         },
         {
           "s": "leo",
@@ -450,7 +454,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And the download link for PayPal's virtual debit card applet is a DoubleClick link too."
+          "t": "One last example, the one that started this. The download link for PayPal's virtual debit card applet is a DoubleClick link too."
         },
         {
           "s": "leo",

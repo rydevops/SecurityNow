@@ -8,8 +8,12 @@
   "audio": "http://media.GRC.com/sn/SN-127.mp3",
   "chapters": [
     {
-      "title": "A Cold, and Today's Topic",
+      "title": "Welcome to Security Now! #127",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 127, for January 17, 2008: Corporate Security."
+        },
         {
           "s": "leo",
           "t": "I'm Leo Laporte, feeling a little better. Steve is the peak of health, since he never leaves his Irvine security lab."
@@ -24,7 +28,7 @@
         },
         {
           "s": "steve",
-          "t": "A listener wrote a long explanation of his organization's problems enforcing security policy. It raised something we've never discussed: the challenges of corporate IT security, and the inherent tension between IT staff and employees, in an environment more heterogeneous and complex every day."
+          "t": "Today we start with this week's security news, a SpinRite story, and then our main topic: securing a workplace. A listener wrote a long explanation of his organization's problems enforcing security policy. It raised something we've never discussed: the challenges of corporate IT security, and the inherent tension between IT staff and employees, in an environment more heterogeneous and complex every day."
         },
         {
           "s": "leo",
@@ -37,7 +41,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "First, this week's news. Last week, master boot record rootkits were theory. This week they're in the wild."
+          "t": "First, this week's news, starting with master boot record rootkits. Last week, master boot record rootkits were theory. This week they're in the wild."
         },
         {
           "s": "steve",
@@ -95,7 +99,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last week: 70,000-plus sites infected by JavaScript planted through SQL vulnerabilities in their database-driven pages. People knew it was 70,000 because they simply Googled the malicious script, which Google had dutifully catalogued."
+          "t": "Next, a follow-up on the website infections. Last week: 70,000-plus sites infected by JavaScript planted through SQL vulnerabilities in their database-driven pages. People knew it was 70,000 because they simply Googled the malicious script, which Google had dutifully catalogued."
         },
         {
           "s": "steve",
@@ -108,7 +112,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You'll get a kick out of this, Leo. Gray-hat hackers are zeroing in on UPnP-enabled routers."
+          "t": "Next, a warning about routers. You'll get a kick out of this, Leo. Gray-hat hackers are zeroing in on UPnP-enabled routers."
         },
         {
           "s": "leo",
@@ -161,7 +165,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Alex Eckelberry of Sunbelt Software blogged screenshots of a new trojan, Delf.ctk. It shows a screen that convincingly resembles Microsoft's Security Center: \"Error. Browser's security and anti-adware software component license exprited.\" A typo for \"expired.\""
+          "t": "Next, a new extortion trojan. Alex Eckelberry of Sunbelt Software blogged screenshots of a new trojan, Delf.ctk. It shows a screen that convincingly resembles Microsoft's Security Center: \"Error. Browser's security and anti-adware software component license exprited.\" A typo for \"expired.\""
         },
         {
           "s": "leo",
@@ -199,7 +203,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I just set up a couple of small HP Pavilions, cute for single purposes, and was shocked by the amount of what the industry calls \"crapware\" preinstalled. And there's now a third zero-day remote code execution flaw in HP's preinstalled software. It's not just annoying demoware. It's much less maintained than Microsoft's code."
+          "t": "Next, preinstalled software that is itself a risk. I just set up a couple of small HP Pavilions, cute for single purposes, and was shocked by the amount of what the industry calls \"crapware\" preinstalled. And there's now a third zero-day remote code execution flaw in HP's preinstalled software. It's not just annoying demoware. It's much less maintained than Microsoft's code."
         },
         {
           "s": "steve",
@@ -220,7 +224,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This is too bizarre. Digital picture frames are infecting PCs with malware."
+          "t": "And one more bizarre story: digital picture frames. This is too bizarre. Digital picture frames are infecting PCs with malware."
         },
         {
           "s": "leo",
@@ -249,7 +253,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Charles Hayes bought SpinRite around mid-2006, remembering it from The Screen Savers. His computer rebooted whenever he clicked one particular email or compacted his mail folders, and Windows Defrag wouldn't run. SpinRite fixed it completely."
+          "t": "Before our main topic, a SpinRite story. Charles Hayes bought SpinRite around mid-2006, remembering it from The Screen Savers. His computer rebooted whenever he clicked one particular email or compacted his mail folders, and Windows Defrag wouldn't run. SpinRite fixed it completely."
         },
         {
           "s": "steve",
@@ -266,7 +270,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's hear from your IT professional."
+          "t": "Now to our main topic: corporate security. Let's hear from your IT professional."
         },
         {
           "s": "steve",
@@ -339,7 +343,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many people must feel the same frustration. We've talked around this, but never about the challenge of enforcing corporate security policy."
+          "t": "Why is workplace security so hard to enforce? Many people must feel the same frustration. We've talked around this, but never about the challenge of enforcing corporate security policy."
         },
         {
           "s": "leo",
@@ -388,7 +392,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I've suggested, Draconian as it seems, a couple of lines on every company monitor's bezel: \"This computer, property of XYZ Corporation, is subject to continuous monitoring and filtering of all activity.\" I'd leave off \"this is not your property,\" but make it very clear."
+          "t": "Some practical ideas follow: labels, a break room and legal reality. I've suggested, Draconian as it seems, a couple of lines on every company monitor's bezel: \"This computer, property of XYZ Corporation, is subject to continuous monitoring and filtering of all activity.\" I'd leave off \"this is not your property,\" but make it very clear."
         },
         {
           "s": "steve",
@@ -417,7 +421,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "What about company laptops that go out into the unsecured world and bring back nasties?"
+          "t": "Last, company laptops and a Microsoft tool that may help. What about company laptops that go out into the unsecured world and bring back nasties?"
         },
         {
           "s": "steve",

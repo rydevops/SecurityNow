@@ -8,15 +8,19 @@
   "audio": "http://media.GRC.com/sn/SN-117.mp3",
   "chapters": [
     {
-      "title": "SpinRite's Enterprise License",
+      "title": "Welcome to Security Now! #117",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 117, for November 8, 2007: Even More Perfect Paper Passwords."
+        },
         {
           "s": "leo",
           "t": "This is the Even More Perfect Paper Passwords episode. There can't be anything more perfect."
         },
         {
           "s": "steve",
-          "t": "We've had two amazingly active weeks of think tank work, in a newsgroup actually called grc.thinktank. PPP is at version 2. This is sort of a propellerhead episode, but people will find the edge conditions interesting."
+          "t": "Thanks, Leo. We've had two amazingly active weeks of think tank work, in a newsgroup actually called grc.thinktank. PPP is at version 2. This is sort of a propellerhead episode, but people will find the edge conditions interesting."
         },
         {
           "type": "fact",
@@ -25,7 +29,16 @@
         },
         {
           "s": "steve",
-          "t": "First, Sue, my operations manager of 20 years, keeps asking me to mention that companies don't know we have an enterprise license, a multi-site license. It's my fault. It's not on our website."
+          "t": "First a SpinRite licensing note and news about VeriSign's new token. Then the main topic: what changed in version 2, the Peabody Dilemma, better sequence keys, and safely skipping codes."
+        }
+      ]
+    },
+    {
+      "title": "SpinRite's Enterprise License",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, a business note about SpinRite licensing. Sue, my operations manager of 20 years, keeps asking me to mention that companies don't know we have an enterprise license, a multi-site license. It's my fault. It's not on our website."
         },
         {
           "s": "steve",
@@ -46,7 +59,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Some cool news from VeriSign. I FedExed you one yesterday: a new form factor for the six-digit one-time password tokens."
+          "t": "Next, some cool news from VeriSign about a new credit-card token. I FedExed you one yesterday: a new form factor for the six-digit one-time password tokens."
         },
         {
           "s": "leo",
@@ -107,7 +120,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We're at version 2, and the algorithm changed. I realized the 128 bits I added to the cipher's input bought almost no additional security. It was completely dumb."
+          "t": "Now the main topic: what changed in PPP version 2. We're at version 2, and the algorithm changed. I realized the 128 bits I added to the cipher's input bought almost no additional security. It was completely dumb."
         },
         {
           "s": "steve",
@@ -144,7 +157,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The reaction from people writing their own open-source versions has been gratifying. I maintain the list on the \"Other PPP software\" page, linked at the bottom of every PPP page."
+          "t": "Next, the open-source versions of PPP. The reaction from people writing their own open-source versions has been gratifying. I maintain the list on the \"Other PPP software\" page, linked at the bottom of every PPP page."
         },
         {
           "s": "steve",
@@ -186,7 +199,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One really interesting point became known as the \"Peabody Dilemma,\" after a poster called Peabody."
+          "t": "Now the most interesting debate of the two weeks. One really interesting point became known as the \"Peabody Dilemma,\" after a poster called Peabody."
         },
         {
           "s": "steve",
@@ -223,7 +236,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The 128-bit outputs never repeat. A counter that only increases, run through Rijndael, maps every value to a different output."
+          "t": "To see why repeats happen at all, start here: the 128-bit outputs never repeat. A counter that only increases, run through Rijndael, maps every value to a different output."
         },
         {
           "s": "steve",
@@ -253,7 +266,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "What came out of it: not all sequence keys are created equal. You can test random sequence keys, run, say, their first 100,000 codes, and reject any with lots of close duplicates."
+          "t": "The fix for the Peabody Dilemma is better sequence keys. Not all sequence keys are created equal. You can test random sequence keys, run, say, their first 100,000 codes, and reject any with lots of close duplicates."
         },
         {
           "s": "steve",
@@ -290,7 +303,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I misspoke two weeks ago about skipping passcodes. Many people noted that if the system skipped forward automatically, an attacker could force your position far enough ahead that you'd run out. That was never my intention. You'd need the username, secret password and passcode all correct."
+          "t": "Next, skipping codes safely. I misspoke two weeks ago about skipping passcodes. Many people noted that if the system skipped forward automatically, an attacker could force your position far enough ahead that you'd run out. That was never my intention. You'd need the username, secret password and passcode all correct."
         },
         {
           "s": "steve",
@@ -331,7 +344,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Some said our funny characters are tricky on cell phones, and on an iPod touch or iPhone. One person said: you use six bits for four characters. I'll use four bits for six characters."
+          "t": "Finally, a variation for phones. Some said our funny characters are tricky on cell phones, and on an iPod touch or iPhone. One person said: you use six bits for four characters. I'll use four bits for six characters."
         },
         {
           "s": "leo",

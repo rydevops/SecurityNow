@@ -8,8 +8,16 @@
   "audio": "http://media.GRC.com/sn/SN-126.mp3",
   "chapters": [
     {
-      "title": "Back From Egypt",
+      "title": "Welcome to Security Now! #126",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 126, for January 11, 2008: Listener Feedback #32."
+        },
+        {
+          "s": "steve",
+          "t": "Today starts the weekly security news we promised, with a critical Windows flaw. Then come a SpinRite story and listener questions on tokens, nonces, DNS servers, initialization vectors, Skype, IronKey and Opera Mini."
+        },
         {
           "s": "leo",
           "t": "We're late, and it's my fault. I got back from Egypt with a raging cold, caught on the plane, of course."
@@ -45,7 +53,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Thanks to listeners for finding the vote buttons on my Kindle review despite my buttonless link. It's now the featured, number one review, by about two to one. When I last looked, 6,755 people had voted, and 98.4 percent found it helpful. Now it has a life of its own, and many non-listeners honestly find it helpful."
+          "t": "A quick follow-up first. Thanks to listeners for finding the vote buttons on my Kindle review despite my buttonless link. It's now the featured, number one review, by about two to one. When I last looked, 6,755 people had voted, and 98.4 percent found it helpful. Now it has a life of its own, and many non-listeners honestly find it helpful."
         },
         {
           "s": "leo",
@@ -78,7 +86,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "David Bins, an IT consultant listening since around Episode 40, felt guilty the podcasts were free and meant to buy SpinRite. But a colleague who runs it regularly said it had never found problems. Either his hardware was perfect, or SpinRite wasn't all it's cracked up to be. So David held off."
+          "t": "Now a SpinRite story about two failed drives in one week. David Bins, an IT consultant listening since around Episode 40, felt guilty the podcasts were free and meant to buy SpinRite. But a colleague who runs it regularly said it had never found problems. Either his hardware was perfect, or SpinRite wasn't all it's cracked up to be. So David held off."
         },
         {
           "s": "steve",
@@ -206,7 +214,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Won't all machines be patched? Another story: an SQL injection attack infected more than 70,000 Microsoft-based websites, many .gov, .edu and .mil, to send visitors to a malicious site that tries to install keystroke loggers through various browser vulnerabilities. The fix dates to April 2006. Patching once in almost two years would have prevented it."
+          "t": "Next, a story about unpatched websites, which shows why patching matters. Another story: an SQL injection attack infected more than 70,000 Microsoft-based websites, many .gov, .edu and .mil, to send visitors to a malicious site that tries to install keystroke loggers through various browser vulnerabilities. The fix dates to April 2006. Patching once in almost two years would have prevented it."
         },
         {
           "s": "steve",
@@ -223,7 +231,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Slashdot picked up the \"stealth MBR rootkit.\" The master boot record is the first sector of your hard drive. People think of it as the partition table, but it's executable code. At boot, the PC copies it into memory and starts executing from its first instruction."
+          "t": "Next, two more stories. Slashdot picked up the \"stealth MBR rootkit.\" The master boot record is the first sector of your hard drive. People think of it as the partition table, but it's executable code. At boot, the PC copies it into memory and starts executing from its first instruction."
         },
         {
           "s": "steve",
@@ -266,7 +274,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "J.P. in Sydney, Australia: if someone briefly got your VeriSign card token, couldn't they push the button a few times, write the codes down, and use them later with your username and password? The time-based football wouldn't allow that."
+          "t": "Now to listener questions, starting with the VeriSign card. J.P. in Sydney, Australia: if someone briefly got your VeriSign card token, couldn't they push the button a few times, write the codes down, and use them later with your username and password? The time-based football wouldn't allow that."
         },
         {
           "s": "steve",
@@ -303,7 +311,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Robin in Langley, British Columbia has a fix for Matthew's mega-hash login from Episode 120. Have the server send a unique ID, a serial number, with each login form. The client script hashes it together with the password. A captured blob would then be useless, since it's different every login."
+          "t": "Next, a follow-up on the homemade login from Episode 120. Robin in Langley, British Columbia has a fix for Matthew's mega-hash login from Episode 120. Have the server send a unique ID, a serial number, with each login form. The client script hashes it together with the password. A captured blob would then be useless, since it's different every login."
         },
         {
           "s": "steve",
@@ -320,7 +328,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tyler Menezes of Redmond, Washington, while setting type for a brochure, wondered: type a nonbreaking space, ALT+0160 on Windows' number pad, in your password. A keylogger would record a normal space, which isn't the same bit for bit."
+          "t": "Next, a clever password trick. Tyler Menezes of Redmond, Washington, while setting type for a brochure, wondered: type a nonbreaking space, ALT+0160 on Windows' number pad, in your password. A keylogger would record a normal space, which isn't the same bit for bit."
         },
         {
           "s": "steve",
@@ -349,7 +357,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Campbell in chilly Bozeman, Montana bypasses his ISP's DNS with TreeWalkDNS.com, a DNS server on his own machine that does lookups directly. It can also block ads and hostile sites, though that's harder to set up. He wishes they had a Donate button."
+          "t": "Next, a question about DNS. John Campbell in chilly Bozeman, Montana bypasses his ISP's DNS with TreeWalkDNS.com, a DNS server on his own machine that does lookups directly. It can also block ads and hostile sites, though that's harder to set up. He wishes they had a Donate button."
         },
         {
           "s": "steve",
@@ -386,7 +394,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Athol Wilson in Auckland, New Zealand says the symmetric cipher episode made the penny drop. Even a 5-gigahertz processor knocks only ten zeroes off 2 to the 128th. He expected a Double Romper Room cipher example, where brute force must try each of 256 keys 256 times."
+          "t": "Next, a follow-up on last week's symmetric ciphers episode. Athol Wilson in Auckland, New Zealand says the symmetric cipher episode made the penny drop. Even a 5-gigahertz processor knocks only ten zeroes off 2 to the 128th. He expected a Double Romper Room cipher example, where brute force must try each of 256 keys 256 times."
         },
         {
           "s": "steve",
@@ -416,7 +424,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Andrew Ayre in Perth, Australia says his whole office listens. They're building a .NET web service that encrypts data with 256-bit Rijndael. They planned to hard-code a key and initialization vector on client and server, but worry that reusing them is like reusing a one-time pad, open to statistical attack. Should they salt with the current date and time? Settle a bet."
+          "t": "Next, a question about encryption modes. Andrew Ayre in Perth, Australia says his whole office listens. They're building a .NET web service that encrypts data with 256-bit Rijndael. They planned to hard-code a key and initialization vector on client and server, but worry that reusing them is like reusing a one-time pad, open to statistical attack. Should they salt with the current date and time? Settle a bet."
         },
         {
           "s": "steve",
@@ -453,7 +461,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David Eckard in Durham has heard all 125 episodes. He spells out 2 to the 128th: 340 undecillion, 282 decillion, 366 nonillion, 920 octillion, 938 septillion, 463 sextillion, 463 quintillion, 374 quadrillion, 607 trillion, 431 billion, 768 million, 211 thousand, 456. And the number of digits in its factorial is 1 duodecillion, 296 undecillion. This is why scientists use scientific notation."
+          "t": "Next, a note about big numbers. David Eckard in Durham has heard all 125 episodes. He spells out 2 to the 128th: 340 undecillion, 282 decillion, 366 nonillion, 920 octillion, 938 septillion, 463 sextillion, 463 quintillion, 374 quadrillion, 607 trillion, 431 billion, 768 million, 211 thousand, 456. And the number of digits in its factorial is 1 duodecillion, 296 undecillion. This is why scientists use scientific notation."
         },
         {
           "s": "steve",
@@ -471,7 +479,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Keith Stein of College Station, Texas: his 50-person company uses Skype heavily, mostly for texting. IT now calls it a security risk and is removing it. Is it?"
+          "t": "Next, a question about Skype at work. Keith Stein of College Station, Texas: his 50-person company uses Skype heavily, mostly for texting. IT now calls it a security risk and is removing it. Is it?"
         },
         {
           "s": "steve",
@@ -513,7 +521,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rob in Pennsylvania built his first quad-core monster and wants to watch each core. I use MenuMeters on the Mac, showing CPU, disk, memory and network in the menu bar. Apple just announced an eight-core Mac."
+          "t": "Next, a question about quad-core monitoring. Rob in Pennsylvania built his first quad-core monster and wants to watch each core. I use MenuMeters on the Mac, showing CPU, disk, memory and network in the menu bar. Apple just announced an eight-core Mac."
         },
         {
           "s": "steve",
@@ -538,7 +546,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ryan Couture of Enfield, Connecticut asks about the IronKey thumb drive, which claims hardware encryption and a crypto chip that self-destructs its keys under physical attack. Worth the premium?"
+          "t": "Next, two questions about gadgets and mobile browsing. Ryan Couture of Enfield, Connecticut asks about the IronKey thumb drive, which claims hardware encryption and a crypto chip that self-destructs its keys under physical attack. Worth the premium?"
         },
         {
           "s": "steve",
@@ -571,7 +579,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ron Bailey in Dallas, an avid outliner, asks how you manage your outlines."
+          "t": "Last, a question about how Steve organizes his work. Ron Bailey in Dallas, an avid outliner, asks how you manage your outlines."
         },
         {
           "s": "steve",

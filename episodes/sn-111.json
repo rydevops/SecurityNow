@@ -8,11 +8,15 @@
   "audio": "http://media.GRC.com/sn/SN-111.mp3",
   "chapters": [
     {
-      "title": "Episode 1-1-1",
+      "title": "Welcome to Security Now! #111",
       "beats": [
         {
           "s": "leo",
-          "t": "This is Episode 1-1-1. That's either ominous or auspicious."
+          "t": "This is Security Now! with Steve Gibson, Episode 111, for September 27, 2007: OpenID Precautions."
+        },
+        {
+          "s": "leo",
+          "t": "Episode 1-1-1. That's either ominous or auspicious."
         },
         {
           "s": "steve",
@@ -54,6 +58,10 @@
         {
           "s": "leo",
           "t": "Buy SpinRite. That's all I need to say."
+        },
+        {
+          "s": "steve",
+          "t": "First, a follow-up on last week's wacky tattoo idea. Then OpenID's biggest worries: phishing, a single point of failure, provider outages, privacy, recycled names, and bots."
         }
       ]
     },
@@ -62,7 +70,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Speaking of alliteration, John J. Jost, JJJ, posted in GRC's newsgroup about last week's wacky number 13. He and his son were at a tattoo shop, and the owner said UV tattoos are dull but still visible in ordinary light, so avoid visible places for job application reasons. He wouldn't recommend a tattoo for security."
+          "t": "First, a follow-up on last week's wacky number 13, the UV password tattoo. Speaking of alliteration, John J. Jost, JJJ, posted in GRC's newsgroup about last week's wacky number 13. He and his son were at a tattoo shop, and the owner said UV tattoos are dull but still visible in ordinary light, so avoid visible places for job application reasons. He wouldn't recommend a tattoo for security."
         },
         {
           "s": "leo",
@@ -83,7 +91,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We've talked about OpenID, various providers and VeriSign's PIP, its beta OpenID identity provider. I've been jazzed that we're seeing good solutions to authentication, as people create usernames and passwords for ever more social networks, blogs and interactive sites."
+          "t": "Now to today's topic, OpenID, and a critique of it. We've talked about OpenID, various providers and VeriSign's PIP, its beta OpenID identity provider. I've been jazzed that we're seeing good solutions to authentication, as people create usernames and passwords for ever more social networks, blogs and interactive sites."
         },
         {
           "s": "leo",
@@ -125,7 +133,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "To recap: you give a site your OpenID, which looks like a URL. The site redirects your browser to wherever your credentials live, much as buying through PayPal bounces you to PayPal. You authenticate there, and you're bounced back."
+          "t": "The biggest worry is phishing. To recap: you give a site your OpenID, which looks like a URL. The site redirects your browser to wherever your credentials live, much as buying through PayPal bounces you to PayPal. You authenticate there, and you're bounced back."
         },
         {
           "s": "steve",
@@ -195,7 +203,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's an overall problem that's not OpenID's fault, but comes with centralizing identity. You concentrate trust in a single point of failure. If it fails, it's far more devastating than having separate credentials everywhere, a distributed model where one compromised password, used nowhere else, exposes only one site."
+          "t": "A second worry: there's an overall problem that's not OpenID's fault, but comes with centralizing identity. You concentrate trust in a single point of failure. If it fails, it's far more devastating than having separate credentials everywhere, a distributed model where one compromised password, used nowhere else, exposes only one site."
         },
         {
           "s": "steve",
@@ -220,7 +228,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Another centralization issue: your identity server becomes unavailable. If your provider suffers denial-of-service attacks, server problems or overload, you can't log into any site that uses it."
+          "t": "A third worry follows from the same centralization: your identity server becomes unavailable. If your provider suffers denial-of-service attacks, server problems or overload, you can't log into any site that uses it."
         },
         {
           "s": "steve",
@@ -233,7 +241,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Another problem is serious enough that I've set aside Episode 115 for it, titled \"Third Parties.\""
+          "t": "A fourth worry is privacy, and it's serious enough that I've set aside Episode 115 for it, titled \"Third Parties.\""
         },
         {
           "s": "steve",
@@ -283,7 +291,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Finally, OpenID users want sites to require nothing else. They complain they still have to give an email address, click verification links and solve CAPTCHAs."
+          "t": "Finally, a misunderstanding about what OpenID does. OpenID users want sites to require nothing else. They complain they still have to give an email address, click verification links and solve CAPTCHAs."
         },
         {
           "s": "steve",

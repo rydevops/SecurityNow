@@ -8,15 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-113.mp3",
   "chapters": [
     {
-      "title": "The Award Night",
+      "title": "Welcome to Security Now! #113",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 113, for October 11, 2007: Roaming Authentication."
+        },
         {
           "s": "leo",
           "t": "Still the best science and technology podcast in the world, until this time next year."
         },
         {
           "s": "steve",
-          "t": "Thanks to our listeners. A week ago in Ontario, it was so fun to hang out with all the podcast people."
+          "t": "Thanks, Leo. Today we have the award night, a Hawking router that turns off its own security, XP Service Pack 3, VeriSign's answers on OpenID, and a SpinRite story. Then the main topic: how I let GRC's staff safely reach our management pages while traveling."
+        },
+        {
+          "s": "steve",
+          "t": "First, the award. Thanks to our listeners. A week ago in Ontario, it was so fun to hang out with all the podcast people."
         },
         {
           "s": "steve",
@@ -41,7 +49,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Today is \"Roman authentication.\" Authentication you'd get in Rome?"
+          "t": "Our main topic today is \"Roman authentication.\" Authentication you'd get in Rome?"
         },
         {
           "s": "steve",
@@ -62,7 +70,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "First, a really weird one. Our friend Mark Thompson of AnalogX has about 60 routers, six zero, collected while developing Universal Plug and Play technology, which lots of routers do incorrectly, and NAT penetration for peer-to-peer work."
+          "t": "Before the main topic, a really weird router story. Our friend Mark Thompson of AnalogX has about 60 routers, six zero, collected while developing Universal Plug and Play technology, which lots of routers do incorrectly, and NAT penetration for peer-to-peer work."
         },
         {
           "s": "steve",
@@ -111,7 +119,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Windows XP Service Pack 3 is in beta, with something like 1,057 fixes. Have you set up XP recently? Service Pack 2 still leaves 84 or 85 patches, and you have to run updates five times, because the patches have patches, and the patch patches have patches."
+          "t": "Next, some Windows news: Windows XP Service Pack 3 is in beta, with something like 1,057 fixes. Have you set up XP recently? Service Pack 2 still leaves 84 or 85 patches, and you have to run updates five times, because the patches have patches, and the patch patches have patches."
         },
         {
           "s": "leo",
@@ -141,7 +149,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Gary Krall, the PIP guy at VeriSign Labs, wrote right after our OpenID precautions episode, subject \"Yes, I was listening.\" He said they don't get out of the lab much to come on the show."
+          "t": "A follow-up on OpenID: VeriSign answered our concerns. Gary Krall, the PIP guy at VeriSign Labs, wrote right after our OpenID precautions episode, subject \"Yes, I was listening.\" He said they don't get out of the lab much to come on the show."
         },
         {
           "s": "steve",
@@ -174,7 +182,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Andrew Baker of Lake Forest, right around the corner from me, runs an eBay consignment business from a storage unit. Taking out trash, the storage staff stopped him to check for electronics, because someone had thrown away three old computers."
+          "t": "A SpinRite story to close the news. Andrew Baker of Lake Forest, right around the corner from me, runs an eBay consignment business from a storage unit. Taking out trash, the storage staff stopped him to check for electronics, because someone had thrown away three old computers."
         },
         {
           "s": "steve",
@@ -199,7 +207,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Here's the situation: employees offsite need to log in. Normally a business sets up a VPN."
+          "t": "Now to the roaming problem: GRC employees offsite need to log in to the management pages. Normally a business sets up a VPN. Why didn't Steve?"
         },
         {
           "s": "steve",
@@ -245,7 +253,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Next I looked at client certificates. Normally, a web server's certificate authenticates it to the browser, signed by one of the growing, worrisome number of authorities browsers trust."
+          "t": "My second option was client certificates, and I rejected that too. I looked at them first. Normally, a web server's certificate authenticates it to the browser, signed by one of the growing, worrisome number of authorities browsers trust."
         },
         {
           "s": "steve",
@@ -258,7 +266,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So I fell back to cookies. They're generally considered insecure, but they can be used securely. Netscape defined a \"secure\" flag, which all browsers honor: the browser only offers that cookie over an SSL connection."
+          "t": "So I built the solution on cookies, the first of two factors. They're generally considered insecure, but they can be used securely. Netscape defined a \"secure\" flag, which all browsers honor: the browser only offers that cookie over an SSL connection."
         },
         {
           "s": "steve",
@@ -291,7 +299,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "How does the laptop get the cookie? Only by being at a recognized management IP. Sue brings her laptop home and goes to the secure management pages. The server sees her home IP and no cookie."
+          "t": "How does each laptop get that secure cookie? Only by being at a recognized management IP. Sue brings her laptop home and goes to the secure management pages. The server sees her home IP and no cookie."
         },
         {
           "s": "steve",
@@ -328,7 +336,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Now, how do I prove it's Sue, Greg or me using the laptop? You'd expect a password. But anything typed can be captured."
+          "t": "The second factor is proving who's at the keyboard. How do I prove it's Sue, Greg or me using the laptop? You'd expect a password. But anything typed can be captured."
         },
         {
           "s": "steve",
@@ -353,7 +361,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My first idea: present a puzzle only we know how to solve. A jumble of letters and numbers, with a secret rule for reordering, sorting or adding digits. We'd never get the same puzzle twice, so a captured answer couldn't be replayed."
+          "t": "Why a puzzle won't work. My first idea was to present a puzzle only we know how to solve. A jumble of letters and numbers, with a secret rule for reordering, sorting or adding digits. We'd never get the same puzzle twice, so a captured answer couldn't be replayed."
         },
         {
           "s": "steve",
