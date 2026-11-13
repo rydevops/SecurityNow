@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-187.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #187",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 187, for March 12, 2009: Windows Autorun-around."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover Windows Autorun: why disabling it never really worked, and how to actually do it. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "Vote for Your Favorite Security Podcast",
       "beats": [
         {
@@ -33,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "March's Patch Tuesday came and went, and the bad Excel zero-day we covered is still unpatched while being actively exploited. The security community wants Microsoft to ship an out-of-cycle fix rather than wait until April, because proof-of-concept code is circulating and opening a malicious spreadsheet runs code."
+          "t": "First, the news. March's Patch Tuesday came and went, and the bad Excel zero-day we covered is still unpatched while being actively exploited. The security community wants Microsoft to ship an out-of-cycle fix rather than wait until April, because proof-of-concept code is circulating and opening a malicious spreadsheet runs code."
         },
         {
           "s": "steve",
@@ -51,7 +68,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Adobe Acrobat flaw's patch shipped on the 11th, for version 9 only; versions 7 and 8 follow about a week later. It's a zero-day already exploited in the wild. Note that disabling Reader's JavaScript no longer protects you, non-JavaScript exploits for the bug now exist."
+          "t": "Next, Adobe Reader patched, and Foxit's JBIG2 flaw. The Adobe Acrobat flaw's patch shipped on the 11th, for version 9 only; versions 7 and 8 follow about a week later. It's a zero-day already exploited in the wild. Note that disabling Reader's JavaScript no longer protects you, non-JavaScript exploits for the bug now exist."
         },
         {
           "s": "leo",
@@ -64,7 +81,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's Mozilla update time too: Firefox 3.0.7, past-vulnerable Thunderbird and SeaMonkey, plus Opera after 9.63. And Winamp: its open-source Libsndfile sample parser has an integer-overflow bug, so update past Winamp 5.55."
+          "t": "Next, Mozilla updates and data files that carry exploits. It's Mozilla update time too: Firefox 3.0.7, past-vulnerable Thunderbird and SeaMonkey, plus Opera after 9.63. And Winamp: its open-source Libsndfile sample parser has an integer-overflow bug, so update past Winamp 5.55."
         },
         {
           "s": "leo",
@@ -86,7 +103,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "As of the end of February, all the government's top-level .gov DNS servers run DNSSEC, which they never had before. It's complex to set up, so almost nobody bothers, but now anyone wanting verifiable, non-spoofable signed records from .gov can get them. It doesn't help .com or .net, but it's a step."
+          "t": "Next, .gov goes DNSSEC. As of the end of February, all the government's top-level .gov DNS servers run DNSSEC, which they never had before. It's complex to set up, so almost nobody bothers, but now anyone wanting verifiable, non-spoofable signed records from .gov can get them. It doesn't help .com or .net, but it's a step."
         },
         {
           "s": "leo",
@@ -104,7 +121,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Brian Krebs wrote up the \"Tigger\" trojan, notable for being tightly targeted: over a quarter-million Windows machines infected, and it specifically goes after employees and clients of E*TRADE, ING Direct, Vanguard, optionsXpress, TD Ameritrade and Scottrade."
+          "t": "Next, the Tigger trojan. Brian Krebs wrote up the \"Tigger\" trojan, notable for being tightly targeted: over a quarter-million Windows machines infected, and it specifically goes after employees and clients of E*TRADE, ING Direct, Vanguard, optionsXpress, TD Ameritrade and Scottrade."
         },
         {
           "s": "steve",
@@ -117,7 +134,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Downadup/Conficker/Kido worm, found in a Symantec honeypot in November 2008, has infected at least 11.4 million PCs by a neutral SRI International census, and about three million are actively phoning home each day. It builds a botnet that updates itself by contacting generated domain names."
+          "t": "Next, Conficker. The Downadup/Conficker/Kido worm, found in a Symantec honeypot in November 2008, has infected at least 11.4 million PCs by a neutral SRI International census, and about three million are actively phoning home each day. It builds a botnet that updates itself by contacting generated domain names."
         },
         {
           "s": "steve",
@@ -138,7 +155,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A listener shared his \"hard drive paranoia\" setup: SpinRite run quarterly on his internal and backup drives, a full offsite backup every weekend, Carbonite on the system drive, and every Drobo disk SpinRite-tested before install. Every time, he wakes to \"No problems detected.\""
+          "t": "Now a SpinRite story. A listener shared his \"hard drive paranoia\" setup: SpinRite run quarterly on his internal and backup drives, a full offsite backup every weekend, Carbonite on the system drive, and every Drobo disk SpinRite-tested before install. Every time, he wakes to \"No problems detected.\""
         },
         {
           "s": "steve",
@@ -176,7 +193,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The control is the registry value NoDriveTypeAutorun, and each drive type is a bit in a one-byte value. Bit 0x01 disables unknown-type drives (and oddly 0x80 does the same). Bit 0x04 disables removable drives, which covers USB and Firewire. Bit 0x08 disables fixed hard drives."
+          "t": "Next, decoding the NoDriveTypeAutorun bits. The control is the registry value NoDriveTypeAutorun, and each drive type is a bit in a one-byte value. Bit 0x01 disables unknown-type drives (and oddly 0x80 does the same). Bit 0x04 disables removable drives, which covers USB and Firewire. Bit 0x08 disables fixed hard drives."
         },
         {
           "s": "steve",
@@ -193,7 +210,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's the critical omission. Microsoft documents only NoDriveTypeAutorun under HKEY_LOCAL_MACHINE\\...\\Policies\\Explorer. But the same value can exist under HKEY_CURRENT_USER, and when it does, it completely overrides the LOCAL_MACHINE value, the bits aren't OR'd or AND'd, the user key simply wins."
+          "t": "Finally, the CURRENT_USER override Microsoft forgot. Here's the critical omission. Microsoft documents only NoDriveTypeAutorun under HKEY_LOCAL_MACHINE\\...\\Policies\\Explorer. But the same value can exist under HKEY_CURRENT_USER, and when it does, it completely overrides the LOCAL_MACHINE value, the bits aren't OR'd or AND'd, the user key simply wins."
         },
         {
           "s": "steve",

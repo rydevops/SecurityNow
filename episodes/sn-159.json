@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-159.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #159",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 159, for August 28, 2008: Vista Security Bypass."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover the other big Black Hat paper: how browser plug-ins undermine Vista's DEP and ASLR. First, the news about 100 million exploitable Nokia phones and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "The Other Black Hat Paper",
       "beats": [
         {
@@ -45,7 +62,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The most interesting news, picked up by InformationWeek, ZDNet and The Register: Polish researcher Adam Gowdiak claims, and Nokia has confirmed, two serious flaws in the J2ME mobile Java on Nokia Series 40 handsets. There are more than 100 million of them."
+          "t": "First, the news. The most interesting news, picked up by InformationWeek, ZDNet and The Register: Polish researcher Adam Gowdiak claims, and Nokia has confirmed, two serious flaws in the J2ME mobile Java on Nokia Series 40 handsets. There are more than 100 million of them."
         },
         {
           "s": "steve",
@@ -71,7 +88,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Opera keeps getting updates. If you're not on 9.52, check for updates under Help. It fixes seven flaws on Windows, five on the Mac and six on Linux. They're coy about one cross-site scripting flaw, which, as we covered in its own episode, can let browser content confuse a website's code and spoof who you are to another site. Definitely update."
+          "t": "Next, another browser update. Opera keeps getting updates. If you're not on 9.52, check for updates under Help. It fixes seven flaws on Windows, five on the Mac and six on Linux. They're coy about one cross-site scripting flaw, which, as we covered in its own episode, can let browser content confuse a website's code and spoof who you are to another site. Definitely update."
         }
       ]
     },
@@ -80,7 +97,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One last DNS item. Dan says his flaw is being actively exploited, though ISPs won't be anxious to blab about it."
+          "t": "Next, one last DNS item. One last DNS item. Dan says his flaw is being actively exploited, though ISPs won't be anxious to blab about it."
         },
         {
           "s": "steve",
@@ -101,7 +118,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I have one for you. According to eWEEK, a laptop sold on eBay held personal information on more than a million customers of the Royal Bank of Scotland, American Express and NatWest, including credit card application data."
+          "t": "Next, a story about a bank laptop. I have one for you. According to eWEEK, a laptop sold on eBay held personal information on more than a million customers of the Royal Bank of Scotland, American Express and NatWest, including credit card application data."
         },
         {
           "s": "leo",
@@ -122,7 +139,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The subject line: \"SpinRite 6 Saves 8 Lives.\" He asks to stay anonymous. No names, and the location isn't important. Just know it's terrorist country."
+          "t": "Now a SpinRite story. The subject line: \"SpinRite 6 Saves 8 Lives.\" He asks to stay anonymous. No names, and the location isn't important. Just know it's terrorist country."
         },
         {
           "s": "steve",
@@ -232,7 +249,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "This presentation was at Black Hat, the more serious conference for security professionals, before DefCon."
+          "t": "Now to our main topic: the Black Hat paper that bypassed Vista's protections. This presentation was at Black Hat, the more serious conference for security professionals, before DefCon."
         },
         {
           "s": "steve",
@@ -262,7 +279,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Over and over, vulnerable software has unchecked pointers or the very common buffer overrun. Code allocates buffer space, often on the stack, a variable-size scratchpad, then reads in data it expects to be a certain size."
+          "t": "Next, buffer overruns and how Microsoft caught up. Over and over, vulnerable software has unchecked pointers or the very common buffer overrun. Code allocates buffer space, often on the stack, a variable-size scratchpad, then reads in data it expects to be a certain size."
         },
         {
           "s": "steve",
@@ -287,7 +304,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "DEP relies on the processor's NX, No eXecute, bit. Windows has used a flat memory model since Windows 3.1. Segmented 16-bit Windows could mark segments non-executable, but due to an Intel design oversight, flat-model pages couldn't be. We had to wait for newer Intel and AMD processors with NX."
+          "t": "Next, Data Execution Prevention. DEP relies on the processor's NX, No eXecute, bit. Windows has used a flat memory model since Windows 3.1. Segmented 16-bit Windows could mark segments non-executable, but due to an Intel design oversight, flat-model pages couldn't be. We had to wait for newer Intel and AMD processors with NX."
         },
         {
           "s": "steve",
@@ -352,7 +369,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Hackers often use code already in the system. Studying Windows' disassembly, they find that jumping into an odd spot makes existing code do work for them, then return. They chain these together without supplying their own code, as long as it's at a known location."
+          "t": "Next, Address Space Layout Randomization. Hackers often use code already in the system. Studying Windows' disassembly, they find that jumping into an odd spot makes existing code do work for them, then return. They chain these together without supplying their own code, as long as it's at a known location."
         },
         {
           "s": "steve",
@@ -381,7 +398,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So what do we do?"
+          "t": "Next, a wakeup call for developers. So what do we do?"
         },
         {
           "s": "steve",
@@ -398,7 +415,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Is this in the wild yet?"
+          "t": "Next, a question about .NET. Is this in the wild yet?"
         },
         {
           "s": "steve",
@@ -444,7 +461,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "What users can do, as I have, is switch DEP to opt-out with a boot.ini switch. My SecurAble freeware shows instantly whether your processor has the NX bit needed for hardware DEP."
+          "t": "Next, what users can do. What users can do, as I have, is switch DEP to opt-out with a boot.ini switch. My SecurAble freeware shows instantly whether your processor has the NX bit needed for hardware DEP."
         },
         {
           "s": "steve",
@@ -490,7 +507,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The conclusion sums it up. Windows' latest memory protections raise the bar, but in browsers an attacker still has a good chance of bypassing them."
+          "t": "Finally, the paper's conclusion. The conclusion sums it up. Windows' latest memory protections raise the bar, but in browsers an attacker still has a good chance of bypassing them."
         },
         {
           "s": "steve",
@@ -515,7 +532,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Do Linux and OS X use these techniques, and are they vulnerable?"
+          "t": "Next, other operating systems. Do Linux and OS X use these techniques, and are they vulnerable?"
         },
         {
           "s": "steve",
@@ -557,7 +574,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "There were lots of questions, even among experts: does this mean Vista isn't secure?"
+          "t": "To wrap up, a reality check. There were lots of questions, even among experts: does this mean Vista isn't secure?"
         },
         {
           "s": "steve",

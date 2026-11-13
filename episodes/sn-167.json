@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-167.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #167",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 167, for October 23, 2008: Listener Feedback Q&A #52."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news, then a SpinRite story. Then questions on debunking the WPA crack, payment services versus Visa, blocking port 25, solid-state drives and why banks ignore password case."
+        }
+      ]
+    },
+    {
       "title": "Books, Floppies and eSATA",
       "beats": [
         {
@@ -41,7 +58,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's been quiet. There's another Mac update, about 31MB, fixing third-party components and some remote code execution. And several listeners noted that Ruby on Rails has built-in CSRF defense, on by default since version 2.0."
+          "t": "First, the news. It's been quiet. There's another Mac update, about 31MB, fixing third-party components and some remote code execution. And several listeners noted that Ruby on Rails has built-in CSRF defense, on by default since version 2.0."
         },
         {
           "s": "leo",
@@ -58,7 +75,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Calvin from Saint John, New Brunswick is the tech guy for a friend in Alberta. She moved her youth-dance music to an external drive to copy to a new MacBook, but it only clicked and never mounted."
+          "t": "Now a SpinRite story. Calvin from Saint John, New Brunswick is the tech guy for a friend in Alberta. She moved her youth-dance music to an external drive to copy to a new MacBook, but it only clicked and never mounted."
         },
         {
           "s": "steve",
@@ -75,7 +92,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "During Game 7 of the American League Championship Series, TBS had technical trouble and missed the first two innings, running reruns and an ad for a Windows-speedup product. It said go to our website now."
+          "t": "Next, a story about an advertiser. During Game 7 of the American League Championship Series, TBS had technical trouble and missed the first two innings, running reruns and an ad for a Windows-speedup product. It said go to our website now."
         },
         {
           "s": "leo",
@@ -92,7 +109,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Many listeners, and me, ask about ElcomSoft's report that WPA and WPA2 may no longer be secure."
+          "t": "Now to listener questions, starting with the WPA crack. Many listeners, and me, ask about ElcomSoft's report that WPA and WPA2 may no longer be secure."
         },
         {
           "s": "steve",
@@ -130,7 +147,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike in Toronto wants a good VPN service after a poor experience with Strong VPN."
+          "t": "Next, a question about a VPN service. Mike in Toronto wants a good VPN service after a poor experience with Strong VPN."
         },
         {
           "s": "steve",
@@ -147,7 +164,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bruce Kincheloe in Denver asks whether power-line networking's encryption is enough to prevent eavesdropping."
+          "t": "Next, a question about power-line networking. Bruce Kincheloe in Denver asks whether power-line networking's encryption is enough to prevent eavesdropping."
         },
         {
           "s": "steve",
@@ -160,7 +177,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Lance Reichert in Greene, New York quotes his company's security quiz: \"Every time you log onto a web page you create a scenario hackers could potentially use to crack your employer's network.\" Is that FUD?"
+          "t": "Next, a question about web forms. Lance Reichert in Greene, New York quotes his company's security quiz: \"Every time you log onto a web page you create a scenario hackers could potentially use to crack your employer's network.\" Is that FUD?"
         },
         {
           "s": "steve",
@@ -189,7 +206,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matt Ludlam in Weybridge asks: if Microsoft hardened IIS against TCP attacks, haven't they hardened the whole stack, so we're all safe?"
+          "t": "Next, a question about IIS and the TCP stack. Matt Ludlam in Weybridge asks: if Microsoft hardened IIS against TCP attacks, haven't they hardened the whole stack, so we're all safe?"
         },
         {
           "s": "steve",
@@ -210,7 +227,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Sheldon Smith in Apple Valley, Minnesota asks why he needs PayPal, Amazon or Google payments when Visa already provides fraud protection."
+          "t": "Next, a question about payment services. Sheldon Smith in Apple Valley, Minnesota asks why he needs PayPal, Amazon or Google payments when Visa already provides fraud protection."
         },
         {
           "s": "steve",
@@ -244,7 +261,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Paul Corr in Trenton set a fixed high port for Skype and forwarded it, then found ShieldsUP! failed on ping until he re-enabled \"block anonymous requests.\" What's best practice?"
+          "t": "Next, a question about Skype and port forwarding. Paul Corr in Trenton set a fixed high port for Skype and forwarded it, then found ShieldsUP! failed on ping until he re-enabled \"block anonymous requests.\" What's best practice?"
         },
         {
           "s": "steve",
@@ -277,7 +294,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David Greenland in Perth says his ISP, Telstra, blocks port 25 to fight spam and wants $10 a month for a static IP so he can run his own mail server."
+          "t": "Next, a question about port 25. David Greenland in Perth says his ISP, Telstra, blocks port 25 to fight spam and wants $10 a month for a static IP so he can run his own mail server."
         },
         {
           "s": "steve",
@@ -306,7 +323,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ian Clark in Sydney asks whether a thumb drive and a solid-state hard drive are the same, and what their lifespan is."
+          "t": "Next, a question about solid-state drives. Ian Clark in Sydney asks whether a thumb drive and a solid-state hard drive are the same, and what their lifespan is."
         },
         {
           "s": "steve",
@@ -331,7 +348,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Gary Warner, director of research at the University of Alabama's Computer Forensics program, explains the Wells Fargo saga: banks still run on mainframes, which have accepted user IDs and passwords since the '60s. Many bank web apps just front-end mainframe applications that can't have passwords longer than eight, sometimes seven, characters, and can't be case-sensitive. Some predate shift keys on computers."
+          "t": "Next, a question about bank passwords. Gary Warner, director of research at the University of Alabama's Computer Forensics program, explains the Wells Fargo saga: banks still run on mainframes, which have accepted user IDs and passwords since the '60s. Many bank web apps just front-end mainframe applications that can't have passwords longer than eight, sometimes seven, characters, and can't be case-sensitive. Some predate shift keys on computers."
         },
         {
           "s": "steve",
@@ -348,7 +365,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian Voeller in Ashland, Oregon says Security Now! has passed a milestone: the episodes no longer fit on a single DVD. He can archive 1 through 164 for mandatory distribution to security-deficient family and friends. By his math, the lower-quality versions should fill a DVD around January 2019, with Episode 692."
+          "t": "Next, a fun observation. Brian Voeller in Ashland, Oregon says Security Now! has passed a milestone: the episodes no longer fit on a single DVD. He can archive 1 through 164 for mandatory distribution to security-deficient family and friends. By his math, the lower-quality versions should fill a DVD around January 2019, with Episode 692."
         },
         {
           "s": "steve",
@@ -365,7 +382,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matt Bender in Madison, Wisconsin has been following an exploit called clickjacking, possibly even scarier than the ones we've covered."
+          "t": "To close, a preview. Matt Bender in Madison, Wisconsin has been following an exploit called clickjacking, possibly even scarier than the ones we've covered."
         },
         {
           "s": "steve",

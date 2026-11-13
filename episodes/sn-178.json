@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-178.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #178",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 178, for January 8, 2009: Listener Feedback Q&A #57."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, a correction to the MD5 story. Then news and a SpinRite story, and questions on EEStor, the YubiKey, XP SP3, Twitter's happiness hack and Hamachi's decline."
+        }
+      ]
+    },
+    {
       "title": "Correcting the MD5 Story",
       "beats": [
         {
@@ -38,7 +55,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Sandboxie's rights-dropping feature is now public in 3.34, stripping even more than DropMyRights, including admin group membership."
+          "t": "Next, a few updates. Sandboxie's rights-dropping feature is now public in 3.34, stripping even more than DropMyRights, including admin group membership."
         },
         {
           "s": "steve",
@@ -63,7 +80,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Mike Roberts dropped a screwdriver into a running machine, which sparked and caught fire, and without thinking splashed Mountain Dew on an electrical fire, shorting the house. He pulled the hard drive, peeled off the melted plastic, wiped off the burn and stickiness, and none of his Windows, Mac or Linux machines saw it. SpinRite found it, ran at Level 2, and recovered every file."
+          "t": "Now a SpinRite story. Mike Roberts dropped a screwdriver into a running machine, which sparked and caught fire, and without thinking splashed Mountain Dew on an electrical fire, shorting the house. He pulled the hard drive, peeled off the melted plastic, wiped off the burn and stickiness, and none of his Windows, Mac or Linux machines saw it. SpinRite found it, ran at Level 2, and recovered every file."
         },
         {
           "s": "leo",
@@ -76,7 +93,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous hybrid-drivetrain researcher says EEStor's principals visited eight or nine years ago with fantastic claims but no samples, the first red flag, and never delivered one. Most experts doubt the physics, and even if it works, a power controller small, cheap and safe enough to handle 3,000-plus volts in a car is a huge challenge. He's hopeful about ultracapacitors in general, from Maxwell, NessCap and others, which have nearly unlimited life but not enough energy for electric-only cars."
+          "t": "Now to listener questions, starting with EEStor. An anonymous hybrid-drivetrain researcher says EEStor's principals visited eight or nine years ago with fantastic claims but no samples, the first red flag, and never delivered one. Most experts doubt the physics, and even if it works, a power controller small, cheap and safe enough to handle 3,000-plus volts in a car is a huge challenge. He's hopeful about ultracapacitors in general, from Maxwell, NessCap and others, which have nearly unlimited life but not enough energy for electric-only cars."
         },
         {
           "s": "steve",
@@ -97,7 +114,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Daniel Farrell, a solar researcher at Imperial College London, offered to discuss the field."
+          "t": "Next, an offer on solar cells. Daniel Farrell, a solar researcher at Imperial College London, offered to discuss the field."
         },
         {
           "s": "steve",
@@ -115,7 +132,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "James Ortega in Kokomo asks how to use the YubiKey with his router."
+          "t": "Next, a question about the YubiKey. James Ortega in Kokomo asks how to use the YubiKey with his router."
         },
         {
           "s": "steve",
@@ -128,7 +145,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike Gillmore thought the Malicious Software Removal Tool ran actively like antivirus and wondered if he should reboot his eight machines daily."
+          "t": "Next, a question about the Malicious Software Removal Tool. Mike Gillmore thought the Malicious Software Removal Tool ran actively like antivirus and wondered if he should reboot his eight machines daily."
         },
         {
           "s": "steve",
@@ -141,7 +158,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Elliott Kopp worried that Steve dislikes AT&T."
+          "t": "Next, a question about AT&T. Elliott Kopp worried that Steve dislikes AT&T."
         },
         {
           "s": "steve",
@@ -158,7 +175,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Burt in Redford, Michigan can't install Windows XP SP3 on two systems and feels vulnerable."
+          "t": "Next, a question about XP Service Pack 3. Burt in Redford, Michigan can't install Windows XP SP3 on two systems and feels vulnerable."
         },
         {
           "s": "steve",
@@ -175,7 +192,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Twitter got hit twice: a phishing attack via direct messages, and a more serious one. An 18-year-old ran a dictionary brute-force tool against an admin account whose password was \"happiness,\" then handed out access on a hacker forum. People posted lewd messages as Britney Spears, and took Barack Obama's, Fox News's and others' accounts. My account was accessed but nothing was posted."
+          "t": "Next, a story about Twitter. Twitter got hit twice: a phishing attack via direct messages, and a more serious one. An 18-year-old ran a dictionary brute-force tool against an admin account whose password was \"happiness,\" then handed out access on a hacker forum. People posted lewd messages as Britney Spears, and took Barack Obama's, Fox News's and others' accounts. My account was accessed but nothing was posted."
         },
         {
           "s": "leo",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Guillermo Garcia in Santiago, an IT person, asks whether anything short of a format and reload can clean an infected system."
+          "t": "Next, a question about cleaning an infected PC. Guillermo Garcia in Santiago, an IT person, asks whether anything short of a format and reload can clean an infected system."
         },
         {
           "s": "steve",
@@ -214,7 +231,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jason, driving to Dallas and typing on an iPhone, worries that the MD5/SSL break affects his TrueCrypt whole-drive encryption."
+          "t": "Next, a question about TrueCrypt. Jason, driving to Dallas and typing on an iPhone, worries that the MD5/SSL break affects his TrueCrypt whole-drive encryption."
         },
         {
           "s": "steve",
@@ -227,7 +244,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jared Burford in Australia can't find PayPal's one-time credit card."
+          "t": "Next, a question about PayPal's one-time card. Jared Burford in Australia can't find PayPal's one-time credit card."
         },
         {
           "s": "steve",
@@ -240,7 +257,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Michael Kean in Australia reports Hamachi's mediation servers down more than up since LogMeIn bought it."
+          "t": "Next, a question about Hamachi. Michael Kean in Australia reports Hamachi's mediation servers down more than up since LogMeIn bought it."
         },
         {
           "s": "steve",
@@ -253,7 +270,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian Franklin in Mesa offers the \"obvious in retrospect\" idea: a static YubiKey password alone is only single-factor, something you have, so type your own memorized password and then append the YubiKey's output, like the PayPal football."
+          "t": "To close, an idea for two-factor with the YubiKey. Brian Franklin in Mesa offers the \"obvious in retrospect\" idea: a static YubiKey password alone is only single-factor, something you have, so type your own memorized password and then append the YubiKey's output, like the PayPal football."
         },
         {
           "s": "steve",

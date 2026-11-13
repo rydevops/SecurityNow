@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-184.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #184",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 184, for February 19, 2009: Listener Feedback #60."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, news on Apple's update, the Pirate Bay trial and a PayPal dongle bypass. Then a SpinRite story and questions on scareware, VPNs versus SSL, NoScript, auto-updates and eInk."
+        }
+      ]
+    },
+    {
       "title": "Apple's Update and Its Tight Lips",
       "beats": [
         {
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In other news, the trial of the four Pirate Bay founders has begun in Stockholm, on charges of accessory and conspiracy to break copyright law. Their defense is that the files aren't on their servers, only tiny torrent metafiles are. Prosecutors seek about $14 million, and the men could face up to two years in prison."
+          "t": "Next, a trial. In other news, the trial of the four Pirate Bay founders has begun in Stockholm, on charges of accessory and conspiracy to break copyright law. Their defense is that the files aren't on their servers, only tiny torrent metafiles are. Prosecutors seek about $14 million, and the men could face up to two years in prison."
         },
         {
           "s": "leo",
@@ -46,7 +63,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I have my own PayPal horror story, a complete dongle bypass I stumbled onto. Buying vintage computers on eBay, I logged in with my username and password, reached the screen that recognized my security key, then clicked Back two screens to add a comment to the seller."
+          "t": "Next, a PayPal bypass Steve found. I have my own PayPal horror story, a complete dongle bypass I stumbled onto. Buying vintage computers on eBay, I logged in with my username and password, reached the screen that recognized my security key, then clicked Back two screens to add a comment to the seller."
         },
         {
           "s": "steve",
@@ -68,7 +85,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A few follow-ups. Many listeners wrote to thank me for recommending KatMouse; people are changing habits, scrolling background windows without raising them. And \"Dollhouse\" underwhelmed me, but my favorite show on TV is \"Fringe,\" a J.J. Abrams series I look forward to every week."
+          "t": "Next, a few follow-ups. A few follow-ups. Many listeners wrote to thank me for recommending KatMouse; people are changing habits, scrolling background windows without raising them. And \"Dollhouse\" underwhelmed me, but my favorite show on TV is \"Fringe,\" a J.J. Abrams series I look forward to every week."
         },
         {
           "s": "steve",
@@ -89,7 +106,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A different kind of SpinRite story, from Tim in Perth. A PC showed \"non-system disk,\" and when he ran SpinRite it reported a cabling error, not a drive error. He reseated the SATA cable, rebooted, and everything came up fine. SpinRite never touched the drive, yet solved it."
+          "t": "Now a SpinRite story. A different kind of SpinRite story, from Tim in Perth. A PC showed \"non-system disk,\" and when he ran SpinRite it reported a cabling error, not a drive error. He reseated the SATA cable, rebooted, and everything came up fine. SpinRite never touched the drive, yet solved it."
         },
         {
           "s": "steve",
@@ -107,7 +124,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Question one, from Alesia: \"Microsoft's MSRT removed AV 2009 from my computer and now I have no antivirus. Where can I download it again?\" We're laughing with you, not at you, because AV 2009 is itself a virus."
+          "t": "Now to listener questions, starting with scareware. Question one, from Alesia: \"Microsoft's MSRT removed AV 2009 from my computer and now I have no antivirus. Where can I download it again?\" We're laughing with you, not at you, because AV 2009 is itself a virus."
         },
         {
           "s": "steve",
@@ -133,7 +150,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jan Hertsens asks why a YubiKey-like device doesn't use public-key crypto: keep the private key on the device, hand out the public key, and then any site can verify you with no trusted third party. Trust No One. Would it work?"
+          "t": "Next, a question about public-key authentication. Jan Hertsens asks why a YubiKey-like device doesn't use public-key crypto: keep the private key on the device, hand out the public key, and then any site can verify you with no trusted third party. Trust No One. Would it work?"
         },
         {
           "s": "steve",
@@ -158,7 +175,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Darren in Redwood City asks: on open hotel WiFi, if anything sensitive is already over SSL, bank or Gmail, why pay for a VPN? A firewall protects his computer; a VPN doesn't."
+          "t": "Next, a question about VPNs and SSL. Darren in Redwood City asks: on open hotel WiFi, if anything sensitive is already over SSL, bank or Gmail, why pay for a VPN? A firewall protects his computer; a VPN doesn't."
         },
         {
           "s": "steve",
@@ -175,7 +192,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Larry in Streamwood loves NoScript's protection but hates deciding which blocked domain controls the button he needs, and usually gives up and allows the whole page. Doesn't that defeat the purpose?"
+          "t": "Next, a question about NoScript. Larry in Streamwood loves NoScript's protection but hates deciding which blocked domain controls the button he needs, and usually gives up and allows the whole page. Doesn't that defeat the purpose?"
         },
         {
           "s": "steve",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Alistair points out that last Q&A you suggested emailing a friend an encrypted file plus the AxDecrypt program, yet all sensible advice says never run emailed attachments. Fair?"
+          "t": "Next, a knuckle-rap on emailing an executable. Alistair points out that last Q&A you suggested emailing a friend an encrypted file plus the AxDecrypt program, yet all sensible advice says never run emailed attachments. Fair?"
         },
         {
           "s": "steve",
@@ -209,7 +226,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jonathan resists the static-password YubiKey: it's no more secure than writing down a strong password, still vulnerable to keyloggers, and no better than a key stored in a text file on a thumb drive."
+          "t": "Next, a question about the static YubiKey. Jonathan resists the static-password YubiKey: it's no more secure than writing down a strong password, still vulnerable to keyloggers, and no better than a key stored in a text file on a thumb drive."
         },
         {
           "s": "steve",
@@ -230,7 +247,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike in Salisbury visited IP-Lookup.net, which showed not just his WAN IP but, behind a link, his Mac's internal LAN address. How do they bust through NAT? Should he worry?"
+          "t": "Next, a question about LAN IPs and NAT. Mike in Salisbury visited IP-Lookup.net, which showed not just his WAN IP but, behind a link, his Mac's internal LAN address. How do they bust through NAT? Should he worry?"
         },
         {
           "s": "steve",
@@ -256,7 +273,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jack in Longmont asks: when Windows, iTunes, Acrobat or TurboTax prompt me to install an update, how do I know it's really them and not a trojan popup?"
+          "t": "Next, a question about auto-updates. Jack in Longmont asks: when Windows, iTunes, Acrobat or TurboTax prompt me to install an update, how do I know it's really them and not a trojan popup?"
         },
         {
           "s": "steve",
@@ -278,7 +295,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Todd in New York had a music service, Rhapsody, buffering constantly on his condo's Verizon Avenue connection, until he noticed it streamed flawlessly while connected to a client's network over VPN. Drop the VPN, it stalled; VPN on, perfect. Is Verizon throttling, and does the encrypted tunnel defeat it?"
+          "t": "Next, a question about throttling. Todd in New York had a music service, Rhapsody, buffering constantly on his condo's Verizon Avenue connection, until he noticed it streamed flawlessly while connected to a client's network over VPN. Drop the VPN, it stalled; VPN on, perfect. Is Verizon throttling, and does the encrypted tunnel defeat it?"
         },
         {
           "s": "steve",
@@ -295,7 +312,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John in Candler asks how the Kindle 2 gets 16 grey levels if eInk is just black-and-white balls that rotate."
+          "t": "Next, a question about eInk. John in Candler asks how the Kindle 2 gets 16 grey levels if eInk is just black-and-white balls that rotate."
         },
         {
           "s": "steve",
@@ -312,7 +329,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Regina in Great Mills prefers the Sony PRS-505 for a security reason: she drags Word and PDF files straight onto it, keeping control, whereas she believes the Kindle requires emailing documents to Amazon for conversion. As a government employee she can't send proprietary docs to a third party."
+          "t": "Next, a question about the Kindle and Sony. Regina in Great Mills prefers the Sony PRS-505 for a security reason: she drags Word and PDF files straight onto it, keeping control, whereas she believes the Kindle requires emailing documents to Amazon for conversion. As a government employee she can't send proprietary docs to a third party."
         },
         {
           "s": "steve",

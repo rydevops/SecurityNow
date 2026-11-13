@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-191.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #191",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 191, for April 9, 2009: GhostNet."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover GhostNet: how a covert cyber-spy network in 103 countries was found, and how its Ghost RAT works. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "A Warrantless-Wiretapping Immunity Decision",
       "beats": [
         {
           "s": "steve",
-          "t": "On a related note, the US Justice Department filed a disturbing position in the warrantless-wiretapping suits (people had sued AT&T for participating). Justice argued the government is immune and can be sued only if it deliberately, voluntarily discloses the information, not merely if the surveillance leaks or is discovered."
+          "t": "First, the news. The US Justice Department filed a disturbing position in the warrantless-wiretapping suits (people had sued AT&T for participating). Justice argued the government is immune and can be sued only if it deliberately, voluntarily discloses the information, not merely if the surveillance leaks or is discovered."
         },
         {
           "s": "leo",
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "On Monday the UK adopted its version of the EU data-retention directive. On top of existing landline and cell records (including knowable cell locations), ISPs must now retain, for no less than 12 months, the sender, recipient, date and time of all email, and the parties to Internet phone calls, not the message bodies, just the metadata."
+          "t": "Next, data retention in the UK and EU. On Monday the UK adopted its version of the EU data-retention directive. On top of existing landline and cell records (including knowable cell locations), ISPs must now retain, for no less than 12 months, the sender, recipient, date and time of all email, and the parties to Internet phone calls, not the message bodies, just the metadata."
         },
         {
           "s": "steve",
@@ -47,7 +64,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Relevant to today's topic: a zero-day, unpatched PowerPoint vulnerability is being used in targeted \"spear phishing,\" malicious .ppt files emailed to specific individuals, not yet spammed widely. When attackers find an unknown hole, they keep it quiet and use it for targeted attacks to extract maximum value before patching begins."
+          "t": "Next, a PowerPoint zero-day. Relevant to today's topic: a zero-day, unpatched PowerPoint vulnerability is being used in targeted \"spear phishing,\" malicious .ppt files emailed to specific individuals, not yet spammed widely. When attackers find an unknown hole, they keep it quiet and use it for targeted attacks to extract maximum value before patching begins."
         },
         {
           "s": "steve",
@@ -64,7 +81,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Lots of positive feedback on last week's Tree Style Tab recommendation for Firefox. One newsgroup tip I didn't know: if you've opened a hierarchy of tabs under a parent, dragging the parent tab to another window brings all its children along, instantly splitting off a whole subtree."
+          "t": "Next, a follow-up on Tree Style Tab. Lots of positive feedback on last week's Tree Style Tab recommendation for Firefox. One newsgroup tip I didn't know: if you've opened a hierarchy of tabs under a parent, dragging the parent tab to another window brings all its children along, instantly splitting off a whole subtree."
         },
         {
           "s": "leo",
@@ -77,7 +94,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A SpinRite story from Anthony in Australia, titled \"SpinRite on par with Craig Venter's brilliance.\" A developer's old Dell laptop blue-screened on every boot with no recent backup; SpinRite ran about an hour, churned on a few spots, and the laptop booted right up."
+          "t": "Now a SpinRite story. A SpinRite story from Anthony in Australia, titled \"SpinRite on par with Craig Venter's brilliance.\" A developer's old Dell laptop blue-screened on every boot with no recent backup; SpinRite ran about an hour, churned on a few spots, and the laptop booted right up."
         },
         {
           "s": "steve",
@@ -103,7 +120,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Now GhostNet. About nine months ago the Dalai Lama's exile organization, long targeted by malware, asked two Canadian groups, the SecDev Group and the Citizen Lab at the University of Toronto's Munk Center, to look at their network. On a couple of machines the researchers found unknown malware."
+          "t": "Now to our main topic: GhostNet. First, the discovery. About nine months ago the Dalai Lama's exile organization, long targeted by malware, asked two Canadian groups, the SecDev Group and the Citizen Lab at the University of Toronto's Munk Center, to look at their network. On a couple of machines the researchers found unknown malware."
         },
         {
           "s": "steve",
@@ -128,7 +145,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The command-and-control has evolved. Years ago, when I tracked attackers on GRC, botnets used IRC: the federation of relay servers let bot masters issue commands from an unrelated server, making them hard to trace. GhostNet instead uses plain HTTP."
+          "t": "Next, Ghost RAT's command channel. The command-and-control has evolved. Years ago, when I tracked attackers on GRC, botnets used IRC: the federation of relay servers let bot masters issue commands from an unrelated server, making them hard to trace. GhostNet instead uses plain HTTP."
         },
         {
           "s": "steve",
@@ -150,7 +167,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The control server's web interface listed every infected client: first-contact and last-contact dates, machine name, logged-in user, and click-to-send command links, a mature point-and-click console backed by a database. Each machine has a persistent ID, so it's tracked even across changing dynamic IPs."
+          "t": "Next, the scope of GhostNet. The control server's web interface listed every infected client: first-contact and last-contact dates, machine name, logged-in user, and click-to-send command links, a mature point-and-click console backed by a database. Each machine has a persistent ID, so it's tracked even across changing dynamic IPs."
         },
         {
           "s": "steve",
@@ -171,7 +188,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So despite good hackers usually covering their tracks, the Chinese comments, the Hainan servers and the single registrant point to China. But it doesn't look well done; you'd think a government wouldn't grab code off a forum."
+          "t": "Next, who is behind it. So despite good hackers usually covering their tracks, the Chinese comments, the Hainan servers and the single registrant point to China. But it doesn't look well done; you'd think a government wouldn't grab code off a forum."
         },
         {
           "s": "steve",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Wall Street Journal reported \"Electricity Grid in US Penetrated by Spies\": tools left behind on grid control systems that could be used to take down the power grid, with electronic trails followed to China and Russia (both deny it). The utilities often don't find these, US intelligence agencies do."
+          "t": "Finally, the grid, and why this matters. The Wall Street Journal reported \"Electricity Grid in US Penetrated by Spies\": tools left behind on grid control systems that could be used to take down the power grid, with electronic trails followed to China and Russia (both deny it). The utilities often don't find these, US intelligence agencies do."
         },
         {
           "s": "steve",

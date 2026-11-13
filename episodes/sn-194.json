@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-194.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #194",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 194, for April 30, 2009: Listener Feedback #65."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: Firefox, IE8 and a BlackBerry PDF flaw. Then a SpinRite story and questions on Conficker's domains, brute-forcing a public key, microkernels and how to tell if you have Conficker."
+        }
+      ]
+    },
+    {
       "title": "News: Firefox, IE8 and a Blackberry PDF Flaw",
       "beats": [
         {
           "s": "steve",
-          "t": "Firefox updates are coming fast: we're now at 3.0.10 after 3.0.9, fixing a critical text-rendering buffer overflow, so update. And Microsoft has added IE8 to Microsoft Update; I got the offer at Starbucks. I felt it wasn't ready for primetime, and I'm fully on Firefox now, using IE8 only to reach Microsoft's update site."
+          "t": "First, the news. Firefox updates are coming fast: we're now at 3.0.10 after 3.0.9, fixing a critical text-rendering buffer overflow, so update. And Microsoft has added IE8 to Microsoft Update; I got the offer at Starbucks. I felt it wasn't ready for primetime, and I'm fully on Firefox now, using IE8 only to reach Microsoft's update site."
         },
         {
           "s": "steve",
@@ -25,7 +42,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Jose asked whether SpinRite helps a new laptop's SSD. No, there's no benefit: SpinRite is all about mechanics and magnetics, neither of which exists in an SSD, which is exactly why good SSDs are so reliable. I bought a Samsung 64GB SLC drive rated at a two-million-hour MTBF."
+          "t": "Now a SpinRite story. Jose asked whether SpinRite helps a new laptop's SSD. No, there's no benefit: SpinRite is all about mechanics and magnetics, neither of which exists in an SSD, which is exactly why good SSDs are so reliable. I bought a Samsung 64GB SLC drive rated at a two-million-hour MTBF."
         },
         {
           "s": "steve",
@@ -47,7 +64,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Elaine asks the first question: if Conficker generates 50,000 domain names, don't they all have to be registered, costing someone half a million dollars a day?"
+          "t": "Now to listener questions, starting with Conficker's generated domains. Elaine asks the first question: if Conficker generates 50,000 domain names, don't they all have to be registered, costing someone half a million dollars a day?"
         },
         {
           "s": "steve",
@@ -68,7 +85,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Doug asks why you couldn't brute-force Conficker's private key with distributed computing, feeding known data through the public key and trying private keys until one matches."
+          "t": "Next, a question about brute-forcing a public key. Doug asks why you couldn't brute-force Conficker's private key with distributed computing, feeding known data through the public key and trying private keys until one matches."
         },
         {
           "s": "steve",
@@ -90,7 +107,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Russell, 19 years in process automation, chased Conficker out of a brewery whose Windows HMIs (operator screens) were on the corporate network, though the PLCs that actually run the valves aren't Windows. Pipeline and pharmaceutical control systems he works on aren't Internet-connected."
+          "t": "Next, a story about Windows in breweries and ATMs. Russell, 19 years in process automation, chased Conficker out of a brewery whose Windows HMIs (operator screens) were on the corporate network, though the PLCs that actually run the valves aren't Windows. Pipeline and pharmaceutical control systems he works on aren't Internet-connected."
         },
         {
           "s": "steve",
@@ -111,7 +128,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark pushes back on the Microsoft-bashing, arguing most infections come from lazy users who don't patch or turn off security, and that Windows is targeted simply because it has the market share."
+          "t": "Next, a Microsoft-bashing rebuttal. Mark pushes back on the Microsoft-bashing, arguing most infections come from lazy users who don't patch or turn off security, and that Windows is targeted simply because it has the market share."
         },
         {
           "s": "steve",
@@ -132,7 +149,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill praises NeXT (now the heart of OS X) for porting seamlessly across 68030, Intel, PPC and ARM thanks to its microkernel, while Microsoft packed everything into kernel space for '90s performance. What's a microkernel?"
+          "t": "Next, a question about microkernels. Bill praises NeXT (now the heart of OS X) for porting seamlessly across 68030, Intel, PPC and ARM thanks to its microkernel, while Microsoft packed everything into kernel space for '90s performance. What's a microkernel?"
         },
         {
           "s": "steve",
@@ -157,7 +174,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Andy and Peter both ask: couldn't you track the Conficker authors by who registered the domains, following the money even through stolen cards?"
+          "t": "Next, a question about tracing the domain registrants. Andy and Peter both ask: couldn't you track the Conficker authors by who registered the domains, following the money even through stolen cards?"
         },
         {
           "s": "steve",
@@ -174,7 +191,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill Everson reports the IronKey secure USB drive now supports VeriSign one-time passwords via a firmware update, so he can log into PayPal with either the football or the IronKey."
+          "t": "Next, news about IronKey. Bill Everson reports the IronKey secure USB drive now supports VeriSign one-time passwords via a firmware update, so he can log into PayPal with either the football or the IronKey."
         },
         {
           "s": "steve",
@@ -191,7 +208,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill Gearhiser says the Conficker episode left out the most important part: how do you know if you've got it?"
+          "t": "Next, a question about telling whether you have Conficker. Bill Gearhiser says the Conficker episode left out the most important part: how do you know if you've got it?"
         },
         {
           "s": "steve",
@@ -208,7 +225,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "D. Larson and Todd both ask what Conficker actually does once installed, is it logging keystrokes, stealing data?"
+          "t": "Next, a question about what Conficker does. D. Larson and Todd both ask what Conficker actually does once installed, is it logging keystrokes, stealing data?"
         },
         {
           "s": "steve",
@@ -229,7 +246,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Barry, a state agency CISO, objects to the remark that Steve hasn't seen a smart government person."
+          "t": "Next, an apology to government staff. Barry, a state agency CISO, objects to the remark that Steve hasn't seen a smart government person."
         },
         {
           "s": "steve",
@@ -242,7 +259,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Sam, a 16-year-old programming student, takes gentle issue with the line that Visual Basic \"allows monkeys to program.\""
+          "t": "To close, a note about Visual Basic. Sam, a 16-year-old programming student, takes gentle issue with the line that Visual Basic \"allows monkeys to program.\""
         },
         {
           "s": "steve",

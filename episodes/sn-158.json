@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-158.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #158",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 158, for August 21, 2008: Listener Feedback Q&A #48."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: ISPs confessing to Congress and a travel warning for laptops. Then a SpinRite story and questions on double-checking DNS, weak Debian keys, routing, rogue certificate authorities and a bank that ignores half your password."
+        }
+      ]
+    },
+    {
       "title": "Coding Name Servers",
       "beats": [
         {
@@ -33,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Security news has been quiet after last week's grand mal Patch Tuesday, a long list of critical fixes. A couple of strays came along later, too."
+          "t": "First, the news. Security news has been quiet after last week's grand mal Patch Tuesday, a long list of critical fixes. A couple of strays came along later, too."
         },
         {
           "s": "steve",
@@ -67,7 +84,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Speaking of that, strong advisories went out to people traveling abroad, not coincidentally around the Olympics in China. Take your electronics and data seriously. Countries without our constitutional privacy rights may search your hotel room, have customs officials dump your devices, and sometimes bar encrypted data entirely."
+          "t": "Next, a travel warning. Strong advisories went out to people traveling abroad, not coincidentally around the Olympics in China. Take your electronics and data seriously. Countries without our constitutional privacy rights may search your hotel room, have customs officials dump your devices, and sometimes bar encrypted data entirely."
         },
         {
           "s": "leo",
@@ -88,7 +105,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Following up on last week, when I said to run SpinRite on each RAID drive separately rather than through the RAID controller."
+          "t": "Now a SpinRite story. Following up on last week, when I said to run SpinRite on each RAID drive separately rather than through the RAID controller."
         },
         {
           "s": "leo",
@@ -163,7 +180,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous listener wants a private company wiki hosted at PBwiki, with no username or password, using PBwiki's IP whitelist. Business accounts run over SSL. Would whitelisting only the company's IPs keep everyone else out?"
+          "t": "Next, a question about whitelisting. An anonymous listener wants a private company wiki hosted at PBwiki, with no username or password, using PBwiki's IP whitelist. Business accounts run over SSL. Would whitelisting only the company's IPs keep everyone else out?"
         },
         {
           "s": "steve",
@@ -200,7 +217,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Stroker in Florida asks why a domain's name server IPs can change anywhere but at the registrar. Make the registrar the only place, and secure the registrar-to-TLD link. And why can't certificate authorities use IPs only, with no DNS? Banks should allow access by IP, maybe with each customer assigned an IP."
+          "t": "Next, a question about the registrar. Stroker in Florida asks why a domain's name server IPs can change anywhere but at the registrar. Make the registrar the only place, and secure the registrar-to-TLD link. And why can't certificate authorities use IPs only, with no DNS? Banks should allow access by IP, maybe with each customer assigned an IP."
         },
         {
           "s": "steve",
@@ -229,7 +246,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Olle Lindgren in Sweden says you're right that Kaminsky's flaw didn't break SSL. But imagine a certificate issued from a vulnerable Debian system. Its private key would be easy to guess, and it could authenticate the server or sign content like software updates. Add DNS cache poisoning and it's nasty. At least three large OpenID providers and a major bank used weak Debian certificates."
+          "t": "Next, a question about a blended threat. Olle Lindgren in Sweden says you're right that Kaminsky's flaw didn't break SSL. But imagine a certificate issued from a vulnerable Debian system. Its private key would be easy to guess, and it could authenticate the server or sign content like software updates. Add DNS cache poisoning and it's nasty. At least three large OpenID providers and a major bank used weak Debian certificates."
         },
         {
           "s": "steve",
@@ -262,7 +279,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Trevor Harrison in Vancouver asks: how does an IP address find the right computer? How does everyone know where each network card is? And couldn't that be spoofed too?"
+          "t": "Next, a question about routing. Trevor Harrison in Vancouver asks: how does an IP address find the right computer? How does everyone know where each network card is? And couldn't that be spoofed too?"
         },
         {
           "s": "steve",
@@ -307,7 +324,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tim in Houston always listens to us first. How secure is his iPhone? He leaves Bluetooth off except when using it, but leaves WiFi on, and it often sees open networks. Can someone hack it in his pocket? What about 3G or EDGE?"
+          "t": "Next, a question about the iPhone. Tim in Houston always listens to us first. How secure is his iPhone? He leaves Bluetooth off except when using it, but leaves WiFi on, and it often sees open networks. Can someone hack it in his pocket? What about 3G or EDGE?"
         },
         {
           "s": "steve",
@@ -360,7 +377,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill Richardson in Fort Worth, Texas, not the former governor, set his Linksys router's DNS to OpenDNS long ago. But when he mistyped an address, he got a Charter Communications \"not found\" page."
+          "t": "Next, a question about an ISP hijacking DNS requests. Bill Richardson in Fort Worth, Texas, not the former governor, set his Linksys router's DNS to OpenDNS long ago. But when he mistyped an address, he got a Charter Communications \"not found\" page."
         },
         {
           "s": "leo",
@@ -441,7 +458,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David in Heidelberg \"hosts\" an idea. Instead of bookmarking IP addresses, use the hosts file. If sites' IPs change, why not update it automatically? It could also block ads and throw malware off the track. Isn't this how DNS was born?"
+          "t": "Next, an idea for a self-updating hosts file. David in Heidelberg \"hosts\" an idea. Instead of bookmarking IP addresses, use the hosts file. If sites' IPs change, why not update it automatically? It could also block ads and throw malware off the track. Isn't this how DNS was born?"
         },
         {
           "s": "steve",
@@ -470,7 +487,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Derek O'Harrow in Reading, England notes that in Episode 155 you said SSL can't be faked. But you've also said there are many root certificate authorities. Couldn't Mr. Russian Hacker spoof a domain and get a PayPal.com certificate from a more dubious authority? Wouldn't the browser accept it? Thanks for never missing a week, earthquakes included."
+          "t": "Next, a question about rogue certificate authorities. Derek O'Harrow in Reading, England notes that in Episode 155 you said SSL can't be faked. But you've also said there are many root certificate authorities. Couldn't Mr. Russian Hacker spoof a domain and get a PayPal.com certificate from a more dubious authority? Wouldn't the browser accept it? Thanks for never missing a week, earthquakes included."
         },
         {
           "s": "steve",
@@ -519,7 +536,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matthew in Fresno, California asks two things. Couldn't a hacker spoof Gmail and VeriSign both, so a fake Gmail certificate checks out against a fake VeriSign? And couldn't he just fake webmail login pages to collect credentials? Gmail and Yahoo! Mail redirect plain http to SSL for login, but hotmail.com doesn't."
+          "t": "Next, a question about fake login pages. Matthew in Fresno, California asks two things. Couldn't a hacker spoof Gmail and VeriSign both, so a fake Gmail certificate checks out against a fake VeriSign? And couldn't he just fake webmail login pages to collect credentials? Gmail and Yahoo! Mail redirect plain http to SSL for login, but hotmail.com doesn't."
         },
         {
           "s": "steve",
@@ -577,7 +594,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Isaac Church in Loomis, California noticed that Wells Fargo accepts passwords that aren't quite right. As long as the first part is correct, extra characters are ignored. Doesn't that make guessing easier? Do other banks do this?"
+          "t": "Next, a question about a bank that ignores extra characters. Isaac Church in Loomis, California noticed that Wells Fargo accepts passwords that aren't quite right. As long as the first part is correct, extra characters are ignored. Doesn't that make guessing easier? Do other banks do this?"
         },
         {
           "s": "steve",
@@ -611,7 +628,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Russell McOrmond in Ottawa says: last Q&A, someone said SpinRite was the only program they'd bought, and Leo said they must be a pirate. SpinRite is the only program he's bought in 15 years too, and he's not a pirate."
+          "t": "Next, a note on piracy. Russell McOrmond in Ottawa says: last Q&A, someone said SpinRite was the only program they'd bought, and Leo said they must be a pirate. SpinRite is the only program he's bought in 15 years too, and he's not a pirate."
         },
         {
           "s": "leo",
@@ -660,7 +677,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Next week, the other big Black Hat presentation: the supposed complete defeat of Vista's ASLR and DEP. How easy is it to bypass them?"
+          "t": "To close, a preview: next week, the other big Black Hat presentation: the supposed complete defeat of Vista's ASLR and DEP. How easy is it to bypass them?"
         },
         {
           "s": "leo",

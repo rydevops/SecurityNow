@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-180.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #180",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 180, for January 22, 2009: Listener Feedback Q&A #58."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, corrections and the PDP-8. Then a SpinRite story and questions on the MSRT, Conficker, YubiKey, email encryption and why one-time tokens can't stop a man in the middle."
+        }
+      ]
+    },
+    {
       "title": "Corrections and the PDP-8",
       "beats": [
         {
@@ -30,7 +47,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Jason Hedges, IT director for cell phone stores, had a point-of-sale machine crash hours before a radio remote that would flood the store. His Drive Snapshot images were on a USB drive that wouldn't mount, so he ran SpinRite on the POS machine, and it booted five minutes before the remote. Then he ran SpinRite on the USB drive and recovered all the images."
+          "t": "Now a SpinRite story. Jason Hedges, IT director for cell phone stores, had a point-of-sale machine crash hours before a radio remote that would flood the store. His Drive Snapshot images were on a USB drive that wouldn't mount, so he ran SpinRite on the POS machine, and it booted five minutes before the remote. Then he ran SpinRite on the USB drive and recovered all the images."
         }
       ]
     },
@@ -39,7 +56,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mat Ludlam suggests a separate monthly show on technology topics."
+          "t": "Now to listener questions, starting with a suggestion for more off-topic shows. Mat Ludlam suggests a separate monthly show on technology topics."
         },
         {
           "s": "steve",
@@ -52,7 +69,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tom in Vancouver, Washington notes you can run the MSRT on demand: make a shortcut to MRT, or type MRT in Run."
+          "t": "Next, a question about running the MSRT yourself. Tom in Vancouver, Washington notes you can run the MSRT on demand: make a shortcut to MRT, or type MRT in Run."
         },
         {
           "s": "steve",
@@ -73,7 +90,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill Everson asks: if an EEStor ultracapacitor fails or is damaged in a crash, all that energy becomes heat instantly, basically a bomb, needing blast shielding and internal fuses."
+          "t": "Next, a question about the ultracapacitor. Bill Everson asks: if an EEStor ultracapacitor fails or is damaged in a crash, all that energy becomes heat instantly, basically a bomb, needing blast shielding and internal fuses."
         },
         {
           "s": "steve",
@@ -94,7 +111,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matt in Walla Walla asks whether a YubiKey's static password is fixed forever."
+          "t": "Next, a question about reconfiguring the YubiKey. Matt in Walla Walla asks whether a YubiKey's static password is fixed forever."
         },
         {
           "s": "steve",
@@ -107,7 +124,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Wes in Boise asks why there's no universal secure email standard."
+          "t": "Next, a question about email encryption. Wes in Boise asks why there's no universal secure email standard."
         },
         {
           "s": "steve",
@@ -133,7 +150,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jim at IBM worries the YubiKey's static password uses only a to z lowercase, reducing complexity."
+          "t": "Next, a question about the YubiKey's password. Jim at IBM worries the YubiKey's static password uses only a to z lowercase, reducing complexity."
         },
         {
           "s": "steve",
@@ -150,7 +167,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jon in Duluth notes the PayPal football could be defeated: a fake site takes your username, password and token and immediately logs into the real PayPal."
+          "t": "Next, a question about man-in-the-middle attacks. Jon in Duluth notes the PayPal football could be defeated: a fake site takes your username, password and token and immediately logs into the real PayPal."
         },
         {
           "s": "steve",
@@ -171,7 +188,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Angus Scott-Fleming warns that NirSoft's WirelessKeyView instantly shows Windows' stored WEP/WPA keys, so typing your WPA key into a guest's machine with a YubiKey doesn't keep it secret."
+          "t": "Next, a warning about Windows and WPA keys. Angus Scott-Fleming warns that NirSoft's WirelessKeyView instantly shows Windows' stored WEP/WPA keys, so typing your WPA key into a guest's machine with a YubiKey doesn't keep it secret."
         },
         {
           "s": "steve",
@@ -188,7 +205,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kerry in Santa Cruz asks whether a Thawte email certificate provider keeps a copy of his private key."
+          "t": "Next, a question about certificate authorities. Kerry in Santa Cruz asks whether a Thawte email certificate provider keeps a copy of his private key."
         },
         {
           "s": "steve",
@@ -205,7 +222,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Gustin Johnson says Leo, reviewing many sites, is exactly who should run NoScript, and suggests Jsview, ShowIP and Firebug."
+          "t": "Next, a tip on Firefox plug-ins. Gustin Johnson says Leo, reviewing many sites, is exactly who should run NoScript, and suggests Jsview, ShowIP and Firebug."
         },
         {
           "s": "leo",
@@ -231,7 +248,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dan, a civil servant, warns that last week's joke \"civil service exam score\" question is genuinely bad: in many states those scores are public record. Any employment-based security question is a bad idea."
+          "t": "To close, a follow-up on last week's joke questions. Dan, a civil servant, warns that last week's joke \"civil service exam score\" question is genuinely bad: in many states those scores are public record. Any employment-based security question is a bad idea."
         },
         {
           "s": "steve",

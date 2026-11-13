@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-199.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #199",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 199, for June 4, 2009: The Geek Atlas, IPv6 and Non-VPN."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover three topics: a geeky travel book, why IPv6 still isn't here, and a VPN-free way to reach home. First the news."
+        }
+      ]
+    },
+    {
       "title": "QuickTime, BlackBerry and a DirectShow Zero-Day",
       "beats": [
         {
           "s": "steve",
-          "t": "Apple fixed a QuickTime flaw: a mishandled 16-bit length in .PICT handling let a malicious QuickTime file take over your machine, so update. BlackBerry had yet another PDF flaw, its third or fourth in a year, where a malformed emailed PDF can take over the device; they were forthcoming about it and have fixed it, but corporations need to update the BlackBerry server that parses PDFs."
+          "t": "First, the news. Apple fixed a QuickTime flaw: a mishandled 16-bit length in .PICT handling let a malicious QuickTime file take over your machine, so update. BlackBerry had yet another PDF flaw, its third or fourth in a year, where a malformed emailed PDF can take over the device; they were forthcoming about it and have fixed it, but corporations need to update the BlackBerry server that parses PDFs."
         },
         {
           "s": "steve",
@@ -34,7 +51,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A big flap, flagged by Brian Krebs: back in February, Microsoft's monthly update (the .NET Framework 3.5 SP1) silently installed a Firefox add-on, the .NET Framework Assistant, enabling ClickOnce, \"the ability for websites to easily and quietly install software on your PC.\" That's exactly what people switched away from IE to avoid."
+          "t": "Next, Microsoft quietly installs a Firefox add-on. A big flap, flagged by Brian Krebs: back in February, Microsoft's monthly update (the .NET Framework 3.5 SP1) silently installed a Firefox add-on, the .NET Framework Assistant, enabling ClickOnce, \"the ability for websites to easily and quietly install software on your PC.\" That's exactly what people switched away from IE to avoid."
         },
         {
           "s": "steve",
@@ -55,7 +72,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Amazon says my Kindle DX ships June 10th, arriving the 11th, faster than I expected. For the first time I'll have a real PDF reader, instead of printing PDFs on paper all the time."
+          "t": "Next, the Kindle DX. Amazon says my Kindle DX ships June 10th, arriving the 11th, faster than I expected. For the first time I'll have a real PDF reader, instead of printing PDFs on paper all the time."
         },
         {
           "s": "leo",
@@ -72,7 +89,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Topic one: John Graham-Cumming, a longtime contributor to GRC's newsgroups (and author of POPFile), wrote \"The Geek Atlas,\" 128 (2^7, naturally) places worldwide where something technically or historically geeky happened, published by O'Reilly, under $20."
+          "t": "Now the first topic: the Geek Atlas. John Graham-Cumming, a longtime contributor to GRC's newsgroups (and author of POPFile), wrote \"The Geek Atlas,\" 128 (2^7, naturally) places worldwide where something technically or historically geeky happened, published by O'Reilly, under $20."
         },
         {
           "s": "steve",
@@ -93,7 +110,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Topic two: IPv6. Every packet's first four bits give the IP version; today's hardware mostly handles only IPv4 and would choke on a v6 packet (version 5 was a streaming protocol, so the next one became 6). People keep asking whether my DNS benchmark will support IPv6, and I sigh, because for end-users it still just doesn't matter."
+          "t": "Topic two: IPv6, and why it still isn't here. Every packet's first four bits give the IP version; today's hardware mostly handles only IPv4 and would choke on a v6 packet (version 5 was a streaming protocol, so the next one became 6). People keep asking whether my DNS benchmark will support IPv6, and I sigh, because for end-users it still just doesn't matter."
         },
         {
           "s": "steve",
@@ -115,7 +132,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A recap of IPv4 addressing: originally Class A (first byte network, 16.7 million hosts), Class B (two bytes each, 65,536 hosts), Class C (three bytes network, 254 hosts, your 192.168.0.x home network). Fixed byte boundaries wasted addresses."
+          "t": "Next, addressing, from classes to CIDR. A recap of IPv4 addressing: originally Class A (first byte network, 16.7 million hosts), Class B (two bytes each, 65,536 hosts), Class C (three bytes network, 254 hosts, your 192.168.0.x home network). Fixed byte boundaries wasted addresses."
         },
         {
           "s": "steve",
@@ -132,7 +149,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's the security catch. IPv6 \"stateless autoconfiguration\" forms the 64-bit host identifier from the network adapter's MAC address, which never changes. So unlike IPv4, where your whole address changes as you move, your IPv6 host ID stays constant everywhere you connect, a permanent identifier embedded in every address."
+          "t": "Next, IPv6's built-in privacy problem. Here's the security catch. IPv6 \"stateless autoconfiguration\" forms the 64-bit host identifier from the network adapter's MAC address, which never changes. So unlike IPv4, where your whole address changes as you move, your IPv6 host ID stays constant everywhere you connect, a permanent identifier embedded in every address."
         },
         {
           "s": "steve",
@@ -154,7 +171,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Topic three. At Starbucks, bringing up OpenVPN disrupts my existing connections, because a VPN fully encloses your machine as a peer on the remote network and reroutes all your traffic up and back, adding delay. I want \"partial enclosure\", route only chosen destinations through the tunnel, which CryptoLink will make easy. But I've thought of something even lighter."
+          "t": "Topic three: a non-VPN way to reach home. At Starbucks, bringing up OpenVPN disrupts my existing connections, because a VPN fully encloses your machine as a peer on the remote network and reroutes all your traffic up and back, adding delay. I want \"partial enclosure\", route only chosen destinations through the tunnel, which CryptoLink will make easy. But I've thought of something even lighter."
         },
         {
           "s": "steve",

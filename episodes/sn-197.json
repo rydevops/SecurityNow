@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-197.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #197",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 197, for May 21, 2009: Windows 7 Security."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover Windows 7 security: what Microsoft improved since Vista, including BitLocker, UAC, AppLocker and biometrics. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "An IIS WebDAV Flaw, Already Exploited",
       "beats": [
         {
           "s": "steve",
-          "t": "The one notable news item: a defect in IIS's WebDAV component, the HTTP-based protocol for viewing and editing remote directories (Jungle Disk uses it). There's a Unicode parsing flaw in WebDAV's password handling in IIS 5.0, 5.1 and 6.0, so any exposed WebDAV service can be exploited. Since it rides port 80 you can't just close the port; you must disable the WebDAV service."
+          "t": "First, the news. The one notable news item: a defect in IIS's WebDAV component, the HTTP-based protocol for viewing and editing remote directories (Jungle Disk uses it). There's a Unicode parsing flaw in WebDAV's password handling in IIS 5.0, 5.1 and 6.0, so any exposed WebDAV service can be exploited. Since it rides port 80 you can't just close the port; you must disable the WebDAV service."
         },
         {
           "s": "leo",
@@ -34,7 +51,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "SecureMac issued a critical warning for an unpatched Java flaw in OS X, present even after last week's half-gigabyte mega-update. It allows a \"drive-by download\": visiting a web page runs malicious code with the current user's permissions. Landon Fuller released proof-of-concept code because Apple had known and not patched it."
+          "t": "Next, a Mac Java drive-by. SecureMac issued a critical warning for an unpatched Java flaw in OS X, present even after last week's half-gigabyte mega-update. It allows a \"drive-by download\": visiting a web page runs malicious code with the current user's permissions. Landon Fuller released proof-of-concept code because Apple had known and not patched it."
         },
         {
           "s": "leo",
@@ -51,7 +68,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two finds. On my high-resolution tablet, websites and MSDN help were tiny for my aging eyes. Firefox's Ctrl-plus/minus zooms per site and remembers it, but there's no default zoom. The NoSquint add-on fixes that: set a default (I use 130%), with independent control of text-only versus full-page zoom and per-site exceptions."
+          "t": "Next, two finds. Two finds. On my high-resolution tablet, websites and MSDN help were tiny for my aging eyes. Firefox's Ctrl-plus/minus zooms per site and remembers it, but there's no default zoom. The NoSquint add-on fixes that: set a default (I use 130%), with independent control of text-only versus full-page zoom and per-site exceptions."
         },
         {
           "s": "steve",
@@ -68,7 +85,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Mac Morris shares a testimonial: a work PC would boot to a Blue Screen, so he ran SpinRite, which gave the drive a clean bill of health, which pointed him to the real culprit, a corrupt Windows installation. After repairing that, all was well."
+          "t": "Now a SpinRite story. Mac Morris shares a testimonial: a work PC would boot to a Blue Screen, so he ran SpinRite, which gave the drive a clean bill of health, which pointed him to the real culprit, a corrupt Windows installation. After repairing that, all was well."
         },
         {
           "s": "steve",
@@ -81,7 +98,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "To set the stage: Vista added real security. Kernel Patch Protection stopped things from hooking the kernel (controversial, since some products relied on that). It required drivers and services to be signed, did more with Data Execution Prevention (DEP), and added Address Space Layout Randomization (ASLR), loading Windows components at random addresses so malware can't reliably jump to a known location."
+          "t": "Now to our main topic: Windows 7 security. First, Vista's foundations. To set the stage: Vista added real security. Kernel Patch Protection stopped things from hooking the kernel (controversial, since some products relied on that). It required drivers and services to be signed, did more with Data Execution Prevention (DEP), and added Address Space Layout Randomization (ASLR), loading Windows components at random addresses so malware can't reliably jump to a known location."
         },
         {
           "s": "steve",
@@ -99,7 +116,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Windows 7 adds the Windows Biometric Framework (currently fingerprint readers). Today, each vendor ships its own closed drivers and glue; there's no API, so when I wanted my employees to authenticate with the fingerprint readers already in their ThinkPads, I couldn't, and ended up building Perfect Paper Passwords instead."
+          "t": "Next, a biometric framework at last. Windows 7 adds the Windows Biometric Framework (currently fingerprint readers). Today, each vendor ships its own closed drivers and glue; there's no API, so when I wanted my employees to authenticate with the fingerprint readers already in their ThinkPads, I couldn't, and ended up building Perfect Paper Passwords instead."
         },
         {
           "s": "steve",
@@ -112,7 +129,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Windows 7 extends authentication with \"home group authentication.\" In an enterprise you authenticate against a domain controller; Microsoft juniorized that for homes, creating peer-level authentication so you can authenticate as, say, Mom or Dad on a kid's machine across the network."
+          "t": "Next, home-group authentication. Windows 7 extends authentication with \"home group authentication.\" In an enterprise you authenticate against a domain controller; Microsoft juniorized that for homes, creating peer-level authentication so you can authenticate as, say, Mom or Dad on a kid's machine across the network."
         },
         {
           "s": "steve",
@@ -125,7 +142,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "BitLocker was always a pain because, unlike TrueCrypt's in-place whole-drive approach, it needs a separate system partition, and Vista shipped the whole disk as one C partition, so adding BitLocker meant repartitioning. Windows 7 setup now creates that separate active system partition by default."
+          "t": "Next, how BitLocker becomes usable. BitLocker was always a pain because, unlike TrueCrypt's in-place whole-drive approach, it needs a separate system partition, and Vista shipped the whole disk as one C partition, so adding BitLocker meant repartitioning. Windows 7 setup now creates that separate active system partition by default."
         },
         {
           "s": "steve",
@@ -138,7 +155,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "BitLocker to Go is BitLocker for removable drives, USB sticks and removable hard drives. And there's a corporate group-policy setting that makes any removable drive read-only unless it's BitLocker-encrypted, a big long-term win against lost, unencrypted thumb drives full of records."
+          "t": "Next, BitLocker to Go. BitLocker to Go is BitLocker for removable drives, USB sticks and removable hard drives. And there's a corporate group-policy setting that makes any removable drive read-only unless it's BitLocker-encrypted, a big long-term win against lost, unencrypted thumb drives full of records."
         },
         {
           "s": "steve",
@@ -156,7 +173,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Autoplay is now disabled by default on everything except optical drives (CDs/DVDs). Microsoft's own study found about 17.7% of malware propagated through Autorun, so they turned it off, with no pop-up prompting an action, since users tend to pick the wrong one."
+          "t": "Next, Autoplay off by default. Autoplay is now disabled by default on everything except optical drives (CDs/DVDs). Microsoft's own study found about 17.7% of malware propagated through Autorun, so they turned it off, with no pop-up prompting an action, since users tend to pick the wrong one."
         },
         {
           "s": "leo",
@@ -173,7 +190,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "UAC, the bane of Vista, got two big changes. Prompts for standard admin tasks like changing screen resolution are gone. And related prompts are aggregated: installing an IE add-on used to prompt once when it started and again when it acted, now you approve once, and the prompt reaches into the ActiveX control to show its name and publisher so you can decide with more information."
+          "t": "Next, a reworked User Account Control. UAC, the bane of Vista, got two big changes. Prompts for standard admin tasks like changing screen resolution are gone. And related prompts are aggregated: installing an IE add-on used to prompt once when it started and again when it acted, now you approve once, and the prompt reaches into the ActiveX control to show its name and publisher so you can decide with more information."
         },
         {
           "s": "steve",
@@ -190,7 +207,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's the concept people struggle with: keeping bad things outside the castle walls is genuinely useful, you can keep secrets safely inside. Everything changes once something gets in. UAC is a knock on the castle door: \"something is trying to install itself, allow it?\" If your computer never told you, a drive-by site could install silently."
+          "t": "Next, the idea that once it's in, the jig is up. Here's the concept people struggle with: keeping bad things outside the castle walls is genuinely useful, you can keep secrets safely inside. Everything changes once something gets in. UAC is a knock on the castle door: \"something is trying to install itself, allow it?\" If your computer never told you, a drive-by site could install silently."
         },
         {
           "s": "leo",
@@ -207,7 +224,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "AppLocker is a much-improved version of Software Restriction Policies. The old SRP keyed on a basic certificate check and a hash of the EXE, so any update changed the hash and broke the rule, far too brittle to deploy. AppLocker (stored as SRPv2) lets IT write rules based on the application's digital signature: trust all apps from this publisher, or this app from that publisher for all versions later than X."
+          "t": "Next, AppLocker. AppLocker is a much-improved version of Software Restriction Policies. The old SRP keyed on a basic certificate check and a hash of the EXE, so any update changed the hash and broke the rule, far too brittle to deploy. AppLocker (stored as SRPv2) lets IT write rules based on the application's digital signature: trust all apps from this publisher, or this app from that publisher for all versions later than X."
         },
         {
           "s": "steve",
@@ -220,7 +237,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Windows 7 is the first client that understands DNSSEC records, validating the signatures on DNS answers, so once ISPs cache and serve signed data, the spoofability problem is solved at the client. Browsers will likely surface a \"verified\" indicator the way they show extended-validation certificates."
+          "t": "Next, DNSSEC, DirectConnect and hidden extensions. Windows 7 is the first client that understands DNSSEC records, validating the signatures on DNS answers, so once ISPs cache and serve signed data, the spoofability problem is solved at the client. Browsers will likely surface a \"verified\" indicator the way they show extended-validation certificates."
         },
         {
           "s": "steve",
@@ -237,7 +254,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Overall I'm bullish on Windows 7's security: a much saner UAC, a genuinely usable BitLocker with enforceable removable-drive encryption, AppLocker, biometrics, DNSSEC and Autoplay fixed. These take years to pay off, but you have to start somewhere."
+          "t": "Finally, the verdict. Overall I'm bullish on Windows 7's security: a much saner UAC, a genuinely usable BitLocker with enforceable removable-drive encryption, AppLocker, biometrics, DNSSEC and Autoplay fixed. These take years to pay off, but you have to start somewhere."
         },
         {
           "s": "leo",

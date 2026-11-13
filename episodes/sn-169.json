@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-169.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #169",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 169, for November 6, 2008: Listener Feedback Q&A #53."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First the news and a SpinRite story. Then questions on where CryptoLink stands, SYN blocking, identity-theft insurance, NoScript fatigue and a question for Sandboxie's author."
+        }
+      ]
+    },
+    {
       "title": "Sleep and Coffee",
       "beats": [
         {
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Opera 9.62 came out, fixing a very serious exploit. Update if you use Opera."
+          "t": "First, the news. Opera 9.62 came out, fixing a very serious exploit. Update if you use Opera."
         },
         {
           "s": "steve",
@@ -67,7 +84,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Jake Oswald, not a listener, wrote in. After a Windows XP automatic update and restart, his screen said \"Windows is shutting down\" for hours with no drive activity. A reset gave a corrupted config file error. His employer's tech support, learning it was his home machine, said buy SpinRite because it repairs nine out of ten disk failures. It ran about five hours, and it was fixed."
+          "t": "Now a SpinRite story. Jake Oswald, not a listener, wrote in. After a Windows XP automatic update and restart, his screen said \"Windows is shutting down\" for hours with no drive activity. A reset gave a corrupted config file error. His employer's tech support, learning it was his home machine, said buy SpinRite because it repairs nine out of ten disk failures. It ran about five hours, and it was fixed."
         }
       ]
     },
@@ -76,7 +93,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Two listeners, Guillaume Auclair in Sherbrooke and Rich Schreiber in Erie, ask when CryptoLink is coming and whether it will do split tunneling."
+          "t": "Now to listener questions, starting with CryptoLink. Two listeners, Guillaume Auclair in Sherbrooke and Rich Schreiber in Erie, ask when CryptoLink is coming and whether it will do split tunneling."
         },
         {
           "s": "steve",
@@ -138,7 +155,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "\"Disappointed\" Dan Gardner in San Antonio says in Episode 167 we salivated over ISPs blocking incoming SYN packets, which would sink home web servers and remote desktop. Does it even stop botnets or viruses?"
+          "t": "Next, a pushback on SYN blocking. \"Disappointed\" Dan Gardner in San Antonio says in Episode 167 we salivated over ISPs blocking incoming SYN packets, which would sink home web servers and remote desktop. Does it even stop botnets or viruses?"
         },
         {
           "s": "steve",
@@ -175,7 +192,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ward Reed in Pensacola says don't use your PayPal one-time card as your primary card, because it acts like a debit card with less protection."
+          "t": "Next, a question about one-time cards. Ward Reed in Pensacola says don't use your PayPal one-time card as your primary card, because it acts like a debit card with less protection."
         },
         {
           "s": "steve",
@@ -197,7 +214,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark Bentsen in Dallas asks about transferring risk with identity-theft insurance, following the Avoid, Transfer, Mitigate approach."
+          "t": "Next, a question about identity-theft insurance. Mark Bentsen in Dallas asks about transferring risk with identity-theft insurance, following the Avoid, Transfer, Mitigate approach."
         },
         {
           "s": "steve",
@@ -226,7 +243,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike in Ohio suggests having nontechnical family install NoScript but enable \"allow scripts globally,\" since you said that still protects against clickjacking."
+          "t": "Next, a suggestion on clickjacking protection. Mike in Ohio suggests having nontechnical family install NoScript but enable \"allow scripts globally,\" since you said that still protects against clickjacking."
         },
         {
           "s": "steve",
@@ -243,7 +260,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jared in Western Australia gets a certificate error reaching Gmail over SSL in IE7: \"issued for a different website's address.\""
+          "t": "Next, a question about a Gmail certificate. Jared in Western Australia gets a certificate error reaching Gmail over SSL in IE7: \"issued for a different website's address.\""
         },
         {
           "s": "steve",
@@ -264,7 +281,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kevin Lampo in Lebanon, New Hampshire asks whether a secure SSL website with a credit card could collect votes."
+          "t": "Next, a question about secure online voting. Kevin Lampo in Lebanon, New Hampshire asks whether a secure SSL website with a credit card could collect votes."
         },
         {
           "s": "steve",
@@ -297,7 +314,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Almond McClain in Yuma ran netstat, it closed itself, and he found nine connections while running Skype and an old Hamachi. Time to format?"
+          "t": "Next, a question about reading netstat. Almond McClain in Yuma ran netstat, it closed itself, and he found nine connections while running Skype and an old Hamachi. Time to format?"
         },
         {
           "s": "steve",
@@ -318,7 +335,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Esbjorn Larsen in Denver loves NoScript but disables it, since most sites use scripting; it even breaks Google search. It's like Vista's UAC, which he turned off."
+          "t": "Next, a confession about NoScript. Esbjorn Larsen in Denver loves NoScript but disables it, since most sites use scripting; it even breaks Google search. It's like Vista's UAC, which he turned off."
         },
         {
           "s": "steve",
@@ -339,7 +356,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Sheldon Smith in Apple Valley asks why the target of the TCP stall attack can't just time out and drop the connection, like hanging up on a caller who says \"hold on,\" with shorter timeouts earlier in the sequence."
+          "t": "Next, a question about the TCP attack. Sheldon Smith in Apple Valley asks why the target of the TCP stall attack can't just time out and drop the connection, like hanging up on a caller who says \"hold on,\" with shorter timeouts earlier in the sequence."
         },
         {
           "s": "steve",
@@ -360,7 +377,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dominik in Stuttgart was about to buy Sandboxie but read it doesn't work on Vista 64. Could you ask the author about 64-bit support?"
+          "t": "Last, a question for Sandboxie's author. Dominik in Stuttgart was about to buy Sandboxie but read it doesn't work on Vista 64. Could you ask the author about 64-bit support?"
         },
         {
           "s": "steve",

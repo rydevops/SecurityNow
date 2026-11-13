@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-198.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #198",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 198, for May 28, 2009: Listener Feedback #67."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: Vista SP2, XP SP3 and Adobe's new schedule. Then a SpinRite story and questions on assembly, scripts, sockets, SSL caching, CPU bugs and detecting SSL proxying."
+        }
+      ]
+    },
+    {
       "title": "Vista SP2, XP SP3 and Adobe's New Schedule",
       "beats": [
         {
           "s": "steve",
-          "t": "Good news: Microsoft released Vista Service Pack 2 (also a hybrid SP2 for Server 2008). You need SP1 first, but then SP1 plus SP2 brings a new Vista install current without grinding through a year of individual updates."
+          "t": "First, the news. Good news: Microsoft released Vista Service Pack 2 (also a hybrid SP2 for Server 2008). You need SP1 first, but then SP1 plus SP2 brings a new Vista install current without grinding through a year of individual updates."
         },
         {
           "s": "steve",
@@ -34,7 +51,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "An errata: listeners corrected my dated dismissal of the Ada language, it has many compilers, open and closed, and colleges teach it. Point taken, it's everywhere."
+          "t": "Next, errata on Ada. An errata: listeners corrected my dated dismissal of the Ada language, it has many compilers, open and closed, and colleges teach it. Point taken, it's everywhere."
         },
         {
           "s": "steve",
@@ -51,7 +68,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Bob Blaine wrote: an XP machine wouldn't boot, with an obscure message that turned out to mean a corrupt registry file. SpinRite fixed it so he could get into Windows and back up all his data before replacing the drive."
+          "t": "Now a SpinRite story. Bob Blaine wrote: an XP machine wouldn't boot, with an obscure message that turned out to mean a corrupt registry file. SpinRite fixed it so he could get into Windows and back up all his data before replacing the drive."
         },
         {
           "s": "leo",
@@ -68,7 +85,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Alexandre, 18, in Quebec, loves the show's Assembly talk and asks which assembler Steve uses and recommends."
+          "t": "Now to listener questions, starting with getting started in assembly. Alexandre, 18, in Quebec, loves the show's Assembly talk and asks which assembler Steve uses and recommends."
         },
         {
           "s": "steve",
@@ -89,7 +106,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Marsh asks what Steve means by \"scripts,\" given all the web technologies, Java, ASP, Perl, XML."
+          "t": "Next, a question about scripts. Marsh asks what Steve means by \"scripts,\" given all the web technologies, Java, ASP, Perl, XML."
         },
         {
           "s": "steve",
@@ -111,7 +128,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Victor asks what a socket is."
+          "t": "Next, a question about sockets. Victor asks what a socket is."
         },
         {
           "s": "steve",
@@ -132,7 +149,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Shawn notes downsides to blanketing all web content in HTTPS: browsers don't cache HTTPS content, so every image and script reloads every time, and ISP caching proxies can't cache it either, wasting bandwidth."
+          "t": "Next, a question about encrypting everything. Shawn notes downsides to blanketing all web content in HTTPS: browsers don't cache HTTPS content, so every image and script reloads every time, and ISP caching proxies can't cache it either, wasting bandwidth."
         },
         {
           "s": "steve",
@@ -153,7 +170,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Simon asks why we never hear of processor microcode flaws being exploited, given how complex modern CPUs are, out-of-order execution, branch prediction, instruction renaming."
+          "t": "Next, a question about CPU bugs. Simon asks why we never hear of processor microcode flaws being exploited, given how complex modern CPUs are, out-of-order execution, branch prediction, instruction renaming."
         },
         {
           "s": "steve",
@@ -175,7 +192,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matthew (a USGS topographic map) and Eric (printed-to-PDF documents) both disabled Reader's JavaScript and now get pop-ups claiming the PDF contains JavaScript."
+          "t": "Next, a question about JavaScript warnings in PDFs. Matthew (a USGS topographic map) and Eric (printed-to-PDF documents) both disabled Reader's JavaScript and now get pop-ups claiming the PDF contains JavaScript."
         },
         {
           "s": "steve",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "William asks whether Windows 7's XP Mode properly sandboxes XP, given its integration lets XP apps share the Windows 7 desktop."
+          "t": "Next, a question about XP Mode. William asks whether Windows 7's XP Mode properly sandboxes XP, given its integration lets XP apps share the Windows 7 desktop."
         },
         {
           "s": "steve",
@@ -213,7 +230,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Steve Vance asks how to tell if his employer has installed a certificate and is SSL-proxying (man-in-the-middling) his HTTPS, even though the address bar looks green and normal."
+          "t": "Next, a question about detecting SSL proxying. Steve Vance asks how to tell if his employer has installed a certificate and is SSL-proxying (man-in-the-middling) his HTTPS, even though the address bar looks green and normal."
         },
         {
           "s": "steve",
@@ -238,7 +255,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ren wants to verify his travel router leaves no ports open, but ShieldsUP! only scans the Internet-facing router, not an intermediate one on the LAN."
+          "t": "Next, a question about local port scanning. Ren wants to verify his travel router leaves no ports open, but ShieldsUP! only scans the Internet-facing router, not an intermediate one on the LAN."
         },
         {
           "s": "steve",
@@ -255,7 +272,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Darius asks how Steve keeps source code safe and versioned while moving between GRC and Starbucks."
+          "t": "Next, a question about source control. Darius asks how Steve keeps source code safe and versioned while moving between GRC and Starbucks."
         },
         {
           "s": "steve",
@@ -276,7 +293,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David offers a travel-router tip: an Apple AirPort Express does what the D-Link does, wall-wart form with swing-out prongs, serves WiFi from a wired connection, and also extends a network, shares a USB printer, and streams iTunes audio to a stereo. One drawback: you configure it with an Apple utility, not a web server, less convenient for Windows."
+          "t": "To close, a travel-router tip. David offers a travel-router tip: an Apple AirPort Express does what the D-Link does, wall-wart form with swing-out prongs, serves WiFi from a wired connection, and also extends a network, shares a USB printer, and streams iTunes audio to a stereo. One drawback: you configure it with an Apple utility, not a web server, less convenient for Windows."
         },
         {
           "s": "steve",

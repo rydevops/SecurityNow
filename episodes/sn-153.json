@@ -11,11 +11,28 @@
   },
   "chapters": [
     {
-      "title": "Privacy, and Kaminsky's DNS Bombshell",
+      "title": "Welcome to Security Now! #153",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 153, for July 17, 2008: DePhormed Politics."
+        },
+        {
+          "s": "leo",
+          "t": "Bandwidth for Security Now! is provided by AOL Radio at AOL.com/podcasting. This show and the entire TWiT broadcast network is brought to you by donations from listeners like you."
+        },
+        {
+          "s": "steve",
+          "t": "Today we have the news: Dan Kaminsky's DNS patch, two zero-day Word and Access exploits and San Francisco locked out of its own network. After a SpinRite story, our guest is Alexander Hanff, who leads the U.K. fight against Phorm."
+        }
+      ]
+    },
+    {
+      "title": "Kaminsky's DNS Bombshell",
       "beats": [
         {
           "s": "steve",
-          "t": "We have one of our rare guests, Alexander Hanff in the U.K., who is pretty much leading the anti-Phorm charge in newsgroups and privacy circles. After two episodes on ISPs selling access to their customers' traffic, Alex will cover the human and political side, and the history in the U.K., where Phorm experimented secretly in '06 and '07."
+          "t": "Later we'll have one of our rare guests, Alexander Hanff in the U.K., who is pretty much leading the anti-Phorm charge in newsgroups and privacy circles. After two episodes on ISPs selling access to their customers' traffic, Alex will cover the human and political side, and the history in the U.K., where Phorm experimented secretly in '06 and '07. But first, the news."
         },
         {
           "s": "leo",
@@ -65,7 +82,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two new zero-day exploits for Windows, timed to arrive after Patch Tuesday so Microsoft can't respond. Zero-day means exploits of unknown vulnerabilities found in the wild."
+          "t": "Next, two zero-day exploits. Two new zero-day exploits for Windows, timed to arrive after Patch Tuesday so Microsoft can't respond. Zero-day means exploits of unknown vulnerabilities found in the wild."
         },
         {
           "s": "steve",
@@ -94,7 +111,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The San Francisco Chronicle reports a disgruntled city computer engineer has commandeered the city's multimillion-dollar FiberWAN network. He changed the passwords so nobody else can get in. They threw him in jail Sunday, and he won't give up the password."
+          "t": "Next, a story about a disgruntled employee. The San Francisco Chronicle reports a disgruntled city computer engineer has commandeered the city's multimillion-dollar FiberWAN network. He changed the passwords so nobody else can get in. They threw him in jail Sunday, and he won't give up the password."
         },
         {
           "s": "leo",
@@ -128,7 +145,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The subject: \"SpinRite got me a TC1100 Tablet PC.\" His wife's laptop died a slow, \"relatively painless\" death. He'd been using it as a TV display in his office. When it died, he tossed it in the trash, though he normally hates parting with legacy technology."
+          "t": "Now a SpinRite story. The subject: \"SpinRite got me a TC1100 Tablet PC.\" His wife's laptop died a slow, \"relatively painless\" death. He'd been using it as a TV display in his office. When it died, he tossed it in the trash, though he normally hates parting with legacy technology."
         },
         {
           "s": "steve",
@@ -157,7 +174,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Alexander Hanff joins us from England."
+          "t": "Now to our main topic: the fight against Phorm in the U.K. Alexander Hanff joins us from England."
         },
         {
           "s": "steve",
@@ -371,7 +388,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "What happened to your Kindle, my friend?"
+          "t": "To close, a personal note. What happened to your Kindle, my friend?"
         },
         {
           "s": "steve",

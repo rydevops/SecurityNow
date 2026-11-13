@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-181.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #181",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 181, for January 29, 2009: Crypto Rehash."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we step back to review the cryptography behind SSL. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "Learning Recursively",
       "beats": [
         {
@@ -25,7 +42,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "QuickTime 7.6, about 76MB, fixes seven critical remote execution flaws, on both Mac and Windows. Just visiting a site can auto-play QuickTime, so update."
+          "t": "First, the news. QuickTime 7.6, about 76MB, fixes seven critical remote execution flaws, on both Mac and Windows. Just visiting a site can auto-play QuickTime, so update."
         },
         {
           "s": "steve",
@@ -46,7 +63,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "On why people disable auto-update, despite Conficker: five hospitals in Sheffield had over 800 PCs infected because they'd administratively disabled Auto Update, after operating-theater PCs rebooted mid-surgery and shut down life-critical equipment."
+          "t": "Next, a note on updates. On why people disable auto-update, despite Conficker: five hospitals in Sheffield had over 800 PCs infected because they'd administratively disabled Auto Update, after operating-theater PCs rebooted mid-surgery and shut down life-critical equipment."
         },
         {
           "s": "leo",
@@ -76,7 +93,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A newsgroup poster, \"ferrix,\" confirms the YubiKey can generate a full 64-character, 256-bit static password, longer than last week's figure, though Yubico's tool makes shorter ones."
+          "t": "Next, errata and the CryptoLink trademark. A newsgroup poster, \"ferrix,\" confirms the YubiKey can generate a full 64-character, 256-bit static password, longer than last week's figure, though Yubico's tool makes shorter ones."
         },
         {
           "s": "leo",
@@ -93,7 +110,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Christopher A.H. runs SpinRite at Level 3 on new drives. His wife's Windows 2000 machine locked up and hung at the SATA detection screen, weeks after her last backup. Level 4 listed more than 50 recovered sectors over about 24 hours, a rerun at Level 5 found none, and she booted and reached her files. \"A Merry Christmas night indeed.\""
+          "t": "Now a SpinRite story. Christopher A.H. runs SpinRite at Level 3 on new drives. His wife's Windows 2000 machine locked up and hung at the SATA detection screen, weeks after her last backup. Level 4 listed more than 50 recovered sectors over about 24 hours, a rerun at Level 5 found none, and she booted and reached her files. \"A Merry Christmas night indeed.\""
         },
         {
           "s": "leo",
@@ -106,7 +123,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "How many crypto shows have we done?"
+          "t": "Now to our main topic: a rehash of the cryptography behind SSL. How many crypto shows have we done?"
         },
         {
           "s": "steve",
@@ -131,7 +148,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We assume non-infinite computational power. Every cipher we discuss is subject to brute force; 128 or 256 bits is a huge but finite number of combinations. It's not perfect security, just really, really good."
+          "t": "Next, the assumptions underneath. We assume non-infinite computational power. Every cipher we discuss is subject to brute force; 128 or 256 bits is a huge but finite number of combinations. It's not perfect security, just really, really good."
         },
         {
           "s": "leo",
@@ -168,7 +185,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Security here means three things: confidentiality, so no man in the middle can read our traffic; integrity, so we can tell if a message was modified; and endpoint authentication, so we know who we're talking to. All three are implicit in the Mayberry phone call."
+          "t": "Next, the three goals. Security here means three things: confidentiality, so no man in the middle can read our traffic; integrity, so we can tell if a message was modified; and endpoint authentication, so we know who we're talking to. All three are implicit in the Mayberry phone call."
         },
         {
           "s": "steve",
@@ -206,7 +223,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In two weeks we'll cover SSL's history. Version 1 was not good: it used RC4 protected only by a CRC checksum, so it was easy to manipulate. It never got out; Version 2 replaced it quickly."
+          "t": "Next, SSL's rough start. In two weeks we'll cover SSL's history. Version 1 was not good: it used RC4 protected only by a CRC checksum, so it was easy to manipulate. It never got out; Version 2 replaced it quickly."
         },
         {
           "s": "leo",
@@ -232,7 +249,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "You hacked the My.BarackObama.com site? No, people posted trojan links in its groups. Don't accept files from strangers."
+          "t": "To close, a note on the My.BarackObama.com trojan links. You hacked the My.BarackObama.com site? No, people posted trojan links in its groups. Don't accept files from strangers."
         },
         {
           "s": "steve",

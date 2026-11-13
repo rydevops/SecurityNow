@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-177.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #177",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 177, for January 1, 2009: Breaking SSL, PDP-8's and UltraCapacitors."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a full plate: a forged certificate authority that breaks SSL, the PDP-8 that was Steve's first computer, the Zune's Z2K bug and EEStor's ultracapacitor. First, patches and news."
+        }
+      ]
+    },
+    {
       "title": "A Full Plate",
       "beats": [
         {
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Over three weeks: Mac OS X 10.5.6 with many critical fixes, Opera 9.6.3, and Firefox's last version 2, 2.0.0.20, losing anti-phishing. Move to Firefox 3. Google's Chrome officially left beta."
+          "t": "First, patches. Over three weeks: Mac OS X 10.5.6 with many critical fixes, Opera 9.6.3, and Firefox's last version 2, 2.0.0.20, losing anti-phishing. Move to Firefox 3. Google's Chrome officially left beta."
         },
         {
           "s": "steve",
@@ -59,7 +76,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The RIAA announced a big policy shift: instead of suing random end users, they'll work with ISPs to notify users, who may throttle offenders' bandwidth. They won't rule out suing gross offenders."
+          "t": "Next, a policy shift at the RIAA. The RIAA announced a big policy shift: instead of suing random end users, they'll work with ISPs to notify users, who may throttle offenders' bandwidth. They won't rule out suing gross offenders."
         },
         {
           "s": "leo",
@@ -80,7 +97,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A couple of days ago, researchers Alexander Sotirov and Jacob Appelbaum demonstrated a forged certificate authority carrying a valid signature from a real root."
+          "t": "Now to our main topic: forging a certificate authority. A couple of days ago, researchers Alexander Sotirov and Jacob Appelbaum demonstrated a forged certificate authority carrying a valid signature from a real root."
         },
         {
           "s": "steve",
@@ -122,7 +139,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's talk about the PDP-8."
+          "t": "A change of pace: my first computer. Let's talk about the PDP-8."
         },
         {
           "s": "steve",
@@ -160,7 +177,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Will you power up your real PDP-8s?"
+          "t": "Next, reforming the capacitors. Will you power up your real PDP-8s?"
         },
         {
           "s": "steve",
@@ -173,7 +190,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Breaking now: 30GB Zunes froze at midnight on December 30, 2008, a firmware bug they're calling Z2K. Popping the battery and letting it reset fixes it."
+          "t": "Next, a funny breaking story. Breaking now: 30GB Zunes froze at midnight on December 30, 2008, a firmware bug they're calling Z2K. Popping the battery and letting it reset fixes it."
         },
         {
           "type": "fact",
@@ -187,7 +204,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I've watched energy technology for a while. We've pulled about half of Earth's two trillion barrels of oil, the easy half, so long-term, production can't keep growing with demand. That pressures alternatives, and the weak link in cars is the battery: heavy, toxic, slow to charge, and short-lived."
+          "t": "Next, an energy technology: EEStor's ultracapacitor. I've watched energy technology for a while. We've pulled about half of Earth's two trillion barrels of oil, the easy half, so long-term, production can't keep growing with demand. That pressures alternatives, and the weak link in cars is the battery: heavy, toxic, slow to charge, and short-lived."
         },
         {
           "s": "leo",
@@ -237,7 +254,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Officer Greg, a police investigator in Southern California, titled it \"SpinRite Beats the Police.\" His partner Detective Rick lost thousands of photos when his drive crashed, having only pretended to back up. Their forensic unit recovered only a few files and declared the drive dead. Greg ran SpinRite for two weeks, recovered all the images, and now the forensic unit plans to buy a copy."
+          "t": "To close, a SpinRite story. Officer Greg, a police investigator in Southern California, titled it \"SpinRite Beats the Police.\" His partner Detective Rick lost thousands of photos when his drive crashed, having only pretended to back up. Their forensic unit recovered only a few files and declared the drive dead. Greg ran SpinRite for two weeks, recovered all the images, and now the forensic unit plans to buy a copy."
         },
         {
           "s": "leo",

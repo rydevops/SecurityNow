@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-157.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #157",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 157, for August 14, 2008: DNS - After the Patch."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is \"DNS - After the Patch\": how a patched server fell in 10 hours, and the 0x20 hack that adds free bits. First a SpinRite story and the news from Black Hat and DefCon."
+        }
+      ]
+    },
+    {
       "title": "Year Four Begins",
       "beats": [
         {
@@ -53,7 +70,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Speaking of which, I ran SpinRite for nine hours Monday on our recording machine. It's RAID 0, it gives weird errors, and it bluescreened during TWiT on Sunday. SpinRite found no errors. I ran level four."
+          "t": "Now a SpinRite story of my own. I ran SpinRite for nine hours Monday on our recording machine. It's RAID 0, it gives weird errors, and it bluescreened during TWiT on Sunday. SpinRite found no errors. I ran level four."
         },
         {
           "s": "steve",
@@ -86,7 +103,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Today is \"DNS - After the Patch.\" Dan Kaminsky found the flaw in February, and secret meetings on Microsoft's campus in March led to patches for virtually every DNS server."
+          "t": "First, our plan for today. Today is \"DNS - After the Patch.\" Dan Kaminsky found the flaw in February, and secret meetings on Microsoft's campus in March led to patches for virtually every DNS server."
         },
         {
           "s": "steve",
@@ -103,7 +120,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Mac OS X got a major update. When I turned mine on this morning it offered iTunes and a big security update that needed the whole shutdown-and-repatch routine."
+          "t": "Now the news. Mac OS X got a major update. When I turned mine on this morning it offered iTunes and a big security update that needed the whole shutdown-and-repatch routine."
         },
         {
           "s": "steve",
@@ -116,7 +133,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Comcast's deep packet inspection selectively dropped BitTorrent connections. The FCC voted three to two against it. Interesting that two people thought it was fine."
+          "t": "Next, a ruling on Comcast. Comcast's deep packet inspection selectively dropped BitTorrent connections. The FCC voted three to two against it. Interesting that two people thought it was fine."
         },
         {
           "s": "steve",
@@ -153,7 +170,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Also from Black Hat: two researchers, one from IBM's Internet Security Systems and one from VMware, wrote a meaty paper, about 54 pages, showing how to bypass Vista's ASLR, Address Space Layout Randomization, and DEP, Data Execution Prevention. Those were the big additions beyond XP."
+          "t": "Next, from Black Hat: bypassing Vista's protections. Also from Black Hat: two researchers, one from IBM's Internet Security Systems and one from VMware, wrote a meaty paper, about 54 pages, showing how to bypass Vista's ASLR, Address Space Layout Randomization, and DEP, Data Execution Prevention. Those were the big additions beyond XP."
         },
         {
           "type": "fact",
@@ -179,7 +196,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Neil Abrahams in the U.K. wrote about his whole experience with GRC, which nobody's mentioned before. He's an IT consultant, so family call him. His virtual father-in-law's laptop wouldn't boot, even in safe mode or last known good configuration."
+          "t": "Next, a note about GRC. Neil Abrahams in the U.K. wrote about his whole experience with GRC, which nobody's mentioned before. He's an IT consultant, so family call him. His virtual father-in-law's laptop wouldn't boot, even in safe mode or last known good configuration."
         },
         {
           "s": "leo",
@@ -212,7 +229,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "There's a whole show in DefCon. Medeco locks cost twice as much because they're supposedly unhackable. Geeks love lock picking for some reason."
+          "t": "Next, a note on DefCon. There's a whole show in DefCon. Medeco locks cost twice as much because they're supposedly unhackable. Geeks love lock picking for some reason."
         },
         {
           "s": "leo",
@@ -242,7 +259,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Thank goodness you explained DNS before, because now the fix is broken."
+          "t": "Now to our main topic: DNS after the patch. Thank goodness you explained DNS before, because now the fix is broken."
         },
         {
           "s": "steve",
@@ -263,7 +280,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Dan's Black Hat talk was everything we expected. Nothing he revealed hadn't already been independently reverse-engineered, just from knowing there was a problem."
+          "t": "Next, Kaminsky's talk. Dan's Black Hat talk was everything we expected. Nothing he revealed hadn't already been independently reverse-engineered, just from knowing there was a problem."
         },
         {
           "s": "leo",
@@ -296,7 +313,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "With a fixed source port, the attacker only needs the 16-bit transaction ID, and with so few combinations you get a collision. So we want more bits."
+          "t": "Next, how more bits help. With a fixed source port, the attacker only needs the 16-bit transaction ID, and with so few combinations you get a collision. So we want more bits."
         },
         {
           "s": "steve",
@@ -318,7 +335,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Late last week a Russian physicist, Dr. Evgeniy Polyakov, blogged that he used two machines on gigabit Ethernet, very closely coupled to the name server, generating a ton of queries and replies."
+          "t": "Next, a patched server that fell in 10 hours. Late last week a Russian physicist, Dr. Evgeniy Polyakov, blogged that he used two machines on gigabit Ethernet, very closely coupled to the name server, generating a ton of queries and replies."
         },
         {
           "s": "leo",
@@ -352,7 +369,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Dan said even SSL depends on DNS, since everything does. I sort of take issue, though he has a point."
+          "t": "Next, does SSL depend on DNS? Dan said even SSL depends on DNS, since everything does. I sort of take issue, though he has a point."
         },
         {
           "s": "steve",
@@ -385,7 +402,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One proposal is to \"debounce\" queries: ask twice and only trust matching answers. If they differ, engage deeper logic, like more queries and majority voting."
+          "t": "Next, ideas that won't fly. One proposal is to \"debounce\" queries: ask twice and only trust matching answers. If they differ, engage deeper logic, like more queries and majority voting."
         },
         {
           "s": "steve",
@@ -406,7 +423,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Then there's DNSSEC, DNS Security, a very sophisticated next-generation secure DNS simmering for about nine years. Each time groups try to ratify it, they look at real-world costs and back off. Like, if a root server changed its private key, it would have to send out 22 million copies of its public key."
+          "t": "Next, DNSSEC. Then there's DNSSEC, DNS Security, a very sophisticated next-generation secure DNS simmering for about nine years. Each time groups try to ratify it, they look at real-world costs and back off. Like, if a root server changed its private key, it would have to send out 22 million copies of its public key."
         },
         {
           "s": "steve",
@@ -444,7 +461,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Now for the galactic hack. It adds no overhead and no packets, and works within today's DNS. We want the query to carry more randomness that the responder will send back. What more could it send back? This is hack of the year."
+          "t": "Now the 0x20 hack, the galactic hack. It adds no overhead and no packets, and works within today's DNS. We want the query to carry more randomness that the responder will send back. What more could it send back? This is hack of the year."
         },
         {
           "s": "steve",
@@ -506,7 +523,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "You'd have to patch DNS servers?"
+          "t": "Does the 0x20 hack require everyone to change? You'd have to patch DNS servers?"
         },
         {
           "s": "steve",
@@ -567,7 +584,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "It's a seesaw battle. Nobody gets the upper hand forever."
+          "t": "To wrap up on raising the bar. It's a seesaw battle. Nobody gets the upper hand forever."
         },
         {
           "s": "steve",

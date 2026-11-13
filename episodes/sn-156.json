@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-156.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #156",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 156, for August 7, 2008: Listener Feedback Q&A #47."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: DNS servers still unpatched, a RealPlayer update, DD-WRT router firmware and a poem about the DNS debacle. Then questions on sentences as passwords, PGP keys, PayPal, tracking cookies and Gmail's HTTPS setting, with the announcement of CryptoLink."
+        }
+      ]
+    },
+    {
       "title": "After the Earthquake",
       "beats": [
         {
@@ -46,7 +63,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's been a relatively calm week, thank goodness, because the DNS problem we covered is causing real trouble. As we record on August 1, more than half the servers being tested, about 53 percent, are still vulnerable."
+          "t": "First, the news. It's been a relatively calm week, thank goodness, because the DNS problem we covered is causing real trouble. As we record on August 1, more than half the servers being tested, about 53 percent, are still vulnerable."
         },
         {
           "s": "steve",
@@ -85,7 +102,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "An interesting issue came up. If your DNS can be spoofed, how do you know you've reached the real testing site?"
+          "t": "Next, a follow-up on the DNS test. An interesting issue came up. If your DNS can be spoofed, how do you know you've reached the real testing site?"
         },
         {
           "s": "steve",
@@ -134,7 +151,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I use OpenDNS, but the test also sees my Comcast servers. OpenDNS is great. Comcast's source port randomness is \"poor,\" but its transaction ID randomness is great. What does that mean?"
+          "t": "A related note on Comcast. I use OpenDNS, but the test also sees my Comcast servers. OpenDNS is great. Comcast's source port randomness is \"poor,\" but its transaction ID randomness is great. What does that mean?"
         },
         {
           "s": "steve",
@@ -176,7 +193,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I said last week I believed DD-WRT router firmware was vulnerable. It's confirmed, and there's a patch. If you've flashed your router, you know who you are."
+          "t": "Next, a router firmware follow-up. I said last week I believed DD-WRT router firmware was vulnerable. It's confirmed, and there's a patch. If you've flashed your router, you know who you are."
         },
         {
           "s": "steve",
@@ -193,7 +210,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Over the lawn blower brigade outside my window, I want to read a poem you sent me. It's \"The DNS Debacle in Poetic Review\" by Christofer Hoff, on his blog Rational Survivability."
+          "t": "Now a lighter note. Over the lawn blower brigade outside my window, I want to read a poem you sent me. It's \"The DNS Debacle in Poetic Review\" by Christofer Hoff, on his blog Rational Survivability."
         },
         {
           "s": "steve",
@@ -227,7 +244,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One more twitch: the first round of DNS updates is causing a performance problem. Paul Vixie, still very involved in DNS, formally acknowledged it. His advice: do not back out to the vulnerable version. They'll fix performance next, but the main problem had to be fixed first."
+          "t": "Back to DNS news. One more twitch: the first round of DNS updates is causing a performance problem. Paul Vixie, still very involved in DNS, formally acknowledged it. His advice: do not back out to the vulnerable version. They'll fix performance next, but the main problem had to be fixed first."
         },
         {
           "s": "steve",
@@ -281,7 +298,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The lawn blowers are marching on, so I'll cut my mic."
+          "t": "Now a SpinRite story. The lawn blowers are marching on, so I'll cut my mic."
         },
         {
           "s": "steve",
@@ -351,7 +368,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Aaron Feickert in North Dakota encrypts his offsite backups with PGP and carries his private key on a USB drive. It has a passphrase. If someone got the key, could they break his backups? Good question, because I don't particularly protect mine."
+          "t": "Next, a question about protecting a PGP key. Aaron Feickert in North Dakota encrypts his offsite backups with PGP and carries his private key on a USB drive. It has a passphrase. If someone got the key, could they break his backups? Good question, because I don't particularly protect mine."
         },
         {
           "s": "steve",
@@ -388,7 +405,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bryan in Melbourne has listened since the beginning. He jumped on Hamachi hoping to move to the OpenVPN solution you promised. Hamachi was bought, and options like Back to My Mac and GoToMyPC appeared. He'd rather not route traffic through another party, especially with most servers in the U.S., and wants to reach his home network over a local community wireless network."
+          "t": "Next, a question about a GRC VPN. Bryan in Melbourne has listened since the beginning. He jumped on Hamachi hoping to move to the OpenVPN solution you promised. Hamachi was bought, and options like Back to My Mac and GoToMyPC appeared. He'd rather not route traffic through another party, especially with most servers in the U.S., and wants to reach his home network over a local community wireless network."
         },
         {
           "s": "steve",
@@ -430,7 +447,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Peter Chase in Columbus, Ohio asks: if I put sites' actual IP addresses in my bookmarks, wouldn't that be quicker and safer than a DNS lookup?"
+          "t": "Next, a question about bookmarking IP addresses. Peter Chase in Columbus, Ohio asks: if I put sites' actual IP addresses in my bookmarks, wouldn't that be quicker and safer than a DNS lookup?"
         },
         {
           "s": "steve",
@@ -479,7 +496,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Scott Griswold in New London, New Hampshire paid GoDaddy through PayPal with his security key ready. After his password, it authorized the payment without asking for the six-digit code. PayPal.com confirmed the payment. It always asks when he logs in directly. I've never had that happen."
+          "t": "Next, a question about PayPal's security key. Scott Griswold in New London, New Hampshire paid GoDaddy through PayPal with his security key ready. After his password, it authorized the payment without asking for the six-digit code. PayPal.com confirmed the payment. It always asks when he logs in directly. I've never had that happen."
         },
         {
           "s": "steve",
@@ -492,7 +509,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matthew Justice in Austin, Texas doesn't trust online password storage. Would you write one, maybe using a GPG key? GPG, GNU Privacy Guard, is the open source PGP. That's what I use."
+          "t": "Next, a question about a password safe. Matthew Justice in Austin, Texas doesn't trust online password storage. Would you write one, maybe using a GPG key? GPG, GNU Privacy Guard, is the open source PGP. That's what I use."
         },
         {
           "s": "steve",
@@ -518,7 +535,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Peter Fleischman in New York asks if the hosts file can block NebuAd. As a refresher, NebuAd and Phorm are what ISPs use to follow your surfing and target ads, and your ISP sees everything, far more than DoubleClick."
+          "t": "Next, a question about blocking NebuAd. Peter Fleischman in New York asks if the hosts file can block NebuAd. As a refresher, NebuAd and Phorm are what ISPs use to follow your surfing and target ads, and your ISP sees everything, far more than DoubleClick."
         },
         {
           "s": "steve",
@@ -568,7 +585,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Darrell Duffy in Coos Bay, Oregon has a friend with a Nikon D70 and a 2GB Microdrive, a tiny hard drive in a CompactFlash package. After a day of shooting real estate, pictures wouldn't come off. It kept erroring and going offline. XP recovered more than Vista, because XP didn't read the files to update details in list view. SpinRite doesn't do USB thumb drives, but would it help here?"
+          "t": "Next, a SpinRite question about a Microdrive. Darrell Duffy in Coos Bay, Oregon has a friend with a Nikon D70 and a 2GB Microdrive, a tiny hard drive in a CompactFlash package. After a day of shooting real estate, pictures wouldn't come off. It kept erroring and going offline. XP recovered more than Vista, because XP didn't read the files to update details in list view. SpinRite doesn't do USB thumb drives, but would it help here?"
         },
         {
           "s": "steve",
@@ -615,7 +632,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jonathan Kemp in Leicester, England works for a free travel service, unnamed, that lives on affiliate advertising. Cookie blocking and deletion are growing, pushed by security companies, without people understanding the effect on affiliate publishers. Free services need tracking cookies. And I'd add ad blocking, which affects services paid for by ads."
+          "t": "Next, a defense of tracking cookies. Jonathan Kemp in Leicester, England works for a free travel service, unnamed, that lives on affiliate advertising. Cookie blocking and deletion are growing, pushed by security companies, without people understanding the effect on affiliate publishers. Free services need tracking cookies. And I'd add ad blocking, which affects services paid for by ads."
         },
         {
           "s": "steve",
@@ -660,7 +677,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bobby Clark in Berea, Kentucky notes that Gmail now has a setting to always use HTTPS. You no longer have to type https:// to be sure of a secure connection."
+          "t": "Next, a note on Gmail's HTTPS setting. Bobby Clark in Berea, Kentucky notes that Gmail now has a setting to always use HTTPS. You no longer have to type https:// to be sure of a secure connection."
         },
         {
           "s": "steve",
@@ -677,7 +694,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Our Exciting, Fantastic, Wonderful, Extra Special News of the Week, from Brian Scallan in London. Has Amazon been listening to you say the market is ripe for a PayPal competitor? They've launched Payments.Amazon.com."
+          "t": "Now the Exciting, Fantastic, Wonderful, Extra Special News of the Week. Our Exciting, Fantastic, Wonderful, Extra Special News of the Week, from Brian Scallan in London. Has Amazon been listening to you say the market is ripe for a PayPal competitor? They've launched Payments.Amazon.com."
         },
         {
           "s": "steve",
@@ -710,7 +727,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Our Cool Tip of the Week, from Ryan Morris in Niagara Falls, Ontario. His friend at the University of Waterloo couldn't use routers at school, like the university we discussed last show."
+          "t": "Now the Cool Tip of the Week. Our Cool Tip of the Week, from Ryan Morris in Niagara Falls, Ontario. His friend at the University of Waterloo couldn't use routers at school, like the university we discussed last show."
         },
         {
           "type": "fact",
@@ -752,7 +769,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I'm off to do the Ronn Owens Show on KGO in San Francisco. Next week I'm taking four days off with the family in the gold country."
+          "t": "To close, one more note. I'm off to do the Ronn Owens Show on KGO in San Francisco. Next week I'm taking four days off with the family in the gold country."
         },
         {
           "s": "steve",

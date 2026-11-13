@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-162.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #162",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 162, for September 18, 2008: Listener Feedback Q&A #50."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: Mac OS X 10.5.5, iTunes 8 crashing Windows and a visit with Yubico. Then a SpinRite story and questions on bank passwords, a school locked down with OpenDNS and Chrome."
+        }
+      ]
+    },
+    {
       "title": "Sold Out, and VeriSign",
       "beats": [
         {
@@ -41,7 +58,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Apple's OS X 10.5.5 is out."
+          "t": "First, the news. Apple's OS X 10.5.5 is out."
         },
         {
           "s": "leo",
@@ -103,7 +120,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The day after we last spoke, I had coffee at 5:30 in the morning with Stina Ehrensvärd of Yubico, in town for the DEMO show. We spent a couple of hours, and they're doing fantastically."
+          "t": "Next, a visit with Yubico. The day after we last spoke, I had coffee at 5:30 in the morning with Stina Ehrensvärd of Yubico, in town for the DEMO show. We spent a couple of hours, and they're doing fantastically."
         },
         {
           "s": "steve",
@@ -136,7 +153,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "We're looking for someone near Petaluma, no suit required, to edit audio. You don't need editing skills, just comfort with computers. Email Dane. Tony is moving to video, which is a full-time job in itself."
+          "t": "Next, a housekeeping note. We're looking for someone near Petaluma, no suit required, to edit audio. You don't need editing skills, just comfort with computers. Email Dane. Tony is moving to video, which is a full-time job in itself."
         },
         {
           "s": "leo",
@@ -161,7 +178,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Ki Il Song listens on his commute and sometimes falls asleep to TWiT netcasts."
+          "t": "Now a SpinRite story. Ki Il Song listens on his commute and sometimes falls asleep to TWiT netcasts."
         },
         {
           "s": "steve",
@@ -186,7 +203,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Vic Thompson in Newcastle, Australia, a retired, as in unpaid, medium-level geek, says a friend was about to sink his PC in the sea after his OS was dismembered by an unknown event. Our mention of Trend Micro explained everything. Very little notification existed anywhere."
+          "t": "Now to listener questions, starting with Trend Micro. Vic Thompson in Newcastle, Australia, a retired, as in unpaid, medium-level geek, says a friend was about to sink his PC in the sea after his OS was dismembered by an unknown event. Our mention of Trend Micro explained everything. Very little notification existed anywhere."
         },
         {
           "s": "steve",
@@ -223,7 +240,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Our old friend Opher, who writes to the Daily Giz Wiz, has good news about Wells Fargo. Extra characters on his password are rejected, contrary to last week's report. It's true the username and password aren't case sensitive. But after three failed logins, the session ends and the user ID is locked out."
+          "t": "Next, a follow-up on Wells Fargo. Our old friend Opher, who writes to the Daily Giz Wiz, has good news about Wells Fargo. Extra characters on his password are rejected, contrary to last week's report. It's true the username and password aren't case sensitive. But after three failed logins, the session ends and the user ID is locked out."
         },
         {
           "s": "leo",
@@ -277,7 +294,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jon Kuhn in Ann Arbor, Michigan tried his mixed-case Perfect Passwords and found Chase, Citibank, Vanguard and his credit union all have case-insensitive passwords."
+          "t": "Next, a note that Wells Fargo has company. Jon Kuhn in Ann Arbor, Michigan tried his mixed-case Perfect Passwords and found Chase, Citibank, Vanguard and his credit union all have case-insensitive passwords."
         },
         {
           "s": "steve",
@@ -298,7 +315,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brent McLaren in Ajax, near Toronto, works in IT. At his bank, the online password is shared with telephone banking, so it's limited to six alphanumeric characters with no case sensitivity. Separate passwords for each channel would confuse people."
+          "t": "Next, an explanation for the bank passwords. Brent McLaren in Ajax, near Toronto, works in IT. At his bank, the online password is shared with telephone banking, so it's limited to six alphanumeric characters with no case sensitivity. Separate passwords for each channel would confuse people."
         },
         {
           "s": "steve",
@@ -319,7 +336,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David Townsend in Wimbledon, U.K. works for a large blue-chip computer consultancy. Its global timesheet and expense system, fed straight into billing, runs over the Internet without SSL, with no password expiration, no lockouts and case-insensitive passwords. He's formally complained twice. The company says it's never been hacked, so it's safe, and he's scaremongering. Are his concerns real?"
+          "t": "Next, a question about an insecure timesheet system. David Townsend in Wimbledon, U.K. works for a large blue-chip computer consultancy. Its global timesheet and expense system, fed straight into billing, runs over the Internet without SSL, with no password expiration, no lockouts and case-insensitive passwords. He's formally complained twice. The company says it's never been hacked, so it's safe, and he's scaremongering. Are his concerns real?"
         },
         {
           "s": "steve",
@@ -356,7 +373,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous listener uses Perfect Paper Passwords but wants rules, like mixed case and at least one digit, which some systems require. Can the web or EXE version do that?"
+          "t": "Next, a question about rules for random passwords. An anonymous listener uses Perfect Paper Passwords but wants rules, like mixed case and at least one digit, which some systems require. Can the web or EXE version do that?"
         },
         {
           "s": "steve",
@@ -386,7 +403,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Carl Schweitzer in Hilbert, Wisconsin asks, why only 0s and 1s? Remembering that forensic labs can detect overwritten data, what equipment does that take, and could it fit in a drive? Could you write over data and still read it, doubling a drive's capacity, maybe with new drivers?"
+          "t": "Next, a question about data under data. Carl Schweitzer in Hilbert, Wisconsin asks, why only 0s and 1s? Remembering that forensic labs can detect overwritten data, what equipment does that take, and could it fit in a drive? Could you write over data and still read it, doubling a drive's capacity, maybe with new drivers?"
         },
         {
           "s": "steve",
@@ -419,7 +436,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Blake in Minnesota thinks Windows has the most vulnerabilities because it's attacked the most, so comparing operating systems is more complex than counting flaws."
+          "t": "Next, a question about Windows security. Blake in Minnesota thinks Windows has the most vulnerabilities because it's attacked the most, so comparing operating systems is more complex than counting flaws."
         },
         {
           "s": "leo",
@@ -505,7 +522,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Thomas Paulsen in Nordland, Norway, a senior IT consultant, has a client: a private high school whose all-wireless student network, about 10 Linksys access points on a separate ADSL line behind a Cisco PIX 501, was swamped by heavy downloading and peer-to-peer filesharing."
+          "t": "Next, a story about a school and OpenDNS. Thomas Paulsen in Nordland, Norway, a senior IT consultant, has a client: a private high school whose all-wireless student network, about 10 Linksys access points on a separate ADSL line behind a Cisco PIX 501, was swamped by heavy downloading and peer-to-peer filesharing."
         },
         {
           "s": "leo",
@@ -550,7 +567,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ben Jaques in Des Moines, Iowa asks what you meant when you said Google \"fixed\" Chrome's license."
+          "t": "Next, a question about Chrome's license. Ben Jaques in Des Moines, Iowa asks what you meant when you said Google \"fixed\" Chrome's license."
         },
         {
           "s": "steve",
@@ -575,7 +592,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Corby in Reno, Nevada doesn't think Google is competing in the browser market. It's a platform for Google's web apps. Firefox will run alongside it. Soon Google's apps will use APIs only Chrome knows, and Google will control the apps and the data. Will that happen?"
+          "t": "Next, a note on what Chrome is for. Corby in Reno, Nevada doesn't think Google is competing in the browser market. It's a platform for Google's web apps. Firefox will run alongside it. Soon Google's apps will use APIs only Chrome knows, and Google will control the apps and the data. Will that happen?"
         },
         {
           "s": "leo",
@@ -608,7 +625,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The \"Bad Chrome-osome,\" from Richard Chao in Fullerton, California. Installing Chrome apparently also put plug-ins in his Firefox 3, and they stayed after he uninstalled Chrome. When he deleted a folder called Chrome from Firefox's program files, it broke Firefox. Does it put files in IE too? He was never asked."
+          "t": "To close, the Bad Chrome-osome. The \"Bad Chrome-osome,\" from Richard Chao in Fullerton, California. Installing Chrome apparently also put plug-ins in his Firefox 3, and they stayed after he uninstalled Chrome. When he deleted a folder called Chrome from Firefox's program files, it broke Firefox. Does it put files in IE too? He was never asked."
         },
         {
           "s": "steve",

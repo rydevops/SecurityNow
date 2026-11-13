@@ -8,15 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-176.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #176",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 176, for December 25, 2008: \"DropMyRights\"."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover DropMyRights, a poor man's Sandboxie: a tiny Microsoft tool that runs chosen applications without admin rights even while you're admin. First the news, YubiKey and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "A DHCP-Spoofing DNSChanger",
       "beats": [
         {
           "s": "steve",
-          "t": "Today we cover DropMyRights, a poor man's Sandboxie that runs chosen applications without admin rights even while you're admin."
-        },
-        {
-          "s": "steve",
-          "t": "In the news, the DNSChanger trojan has a fascinating new version. It installs a valid NDIS network driver that gives it raw sockets, then pretends to be a DHCP server. One infected machine on a LAN races the real DHCP server to answer a booting machine's request, and if it wins, it reconfigures that machine's DNS to a malicious server."
+          "t": "First, the news. The DNSChanger trojan has a fascinating new version. It installs a valid NDIS network driver that gives it raw sockets, then pretends to be a DHCP server. One infected machine on a LAN races the real DHCP server to answer a booting machine's request, and if it wins, it reconfigures that machine's DNS to a malicious server."
         },
         {
           "s": "steve",
@@ -50,7 +63,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Firefox 2's final version ships December 16 and loses its anti-phishing feature, because it used the first anti-phishing API that Google will no longer support."
+          "t": "Next, a browser update. Firefox 2's final version ships December 16 and loses its anti-phishing feature, because it used the first anti-phishing API that Google will no longer support."
         },
         {
           "s": "leo",
@@ -67,7 +80,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "YubiKey news. Yubico's new personalization tool lets you take over your key with your own AES secret, or set it to emit a fixed 32-character random password instead of a one-time code."
+          "t": "Next, YubiKey news. YubiKey news. Yubico's new personalization tool lets you take over your key with your own AES secret, or set it to emit a fixed 32-character random password instead of a one-time code."
         },
         {
           "s": "steve",
@@ -96,7 +109,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Earl Pearce bought SpinRite in 2006, saw no miracles, then hit an unmountable-boot-volume blue screen so brief he had to video the screen and single-step it to read it. After a couple of drive-heat warnings, SpinRite fixed it and the system worked great. He called me Gandalf reborn."
+          "t": "Now a SpinRite story. Earl Pearce bought SpinRite in 2006, saw no miracles, then hit an unmountable-boot-volume blue screen so brief he had to video the screen and single-step it to read it. After a couple of drive-heat warnings, SpinRite fixed it and the system worked great. He called me Gandalf reborn."
         }
       ]
     },
@@ -105,7 +118,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I didn't realize DropMyRights was a side project by a Microsoft employee."
+          "t": "Now to our main topic: DropMyRights. I didn't realize DropMyRights was a side project by a Microsoft employee."
         },
         {
           "s": "steve",
@@ -130,7 +143,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Michael Howard, a security-minded Microsoft engineer, blogged four years ago that he runs as admin but realized some programs, like IE, are too dangerous to have full admin rights. So he wrote DropMyRights."
+          "t": "Next, how DropMyRights works. Michael Howard, a security-minded Microsoft engineer, blogged four years ago that he runs as admin but realized some programs, like IE, are too dangerous to have full admin rights. So he wrote DropMyRights."
         },
         {
           "s": "steve",
@@ -163,7 +176,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Software restriction policy defines five levels: trusted (essentially admin), normal (non-admin), constrained, untrusted, and disallowed. DropMyRights offers normal, constrained, or untrusted."
+          "t": "Next, the five levels. Software restriction policy defines five levels: trusted (essentially admin), normal (non-admin), constrained, untrusted, and disallowed. DropMyRights offers normal, constrained, or untrusted."
         },
         {
           "s": "steve",

@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-166.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #166",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 166, for October 16, 2008: Cross-Site Request Forgery."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover cross-site request forgery: how a mere image tag can act on sites where you're logged in. First the news, a clarification and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "Updates and an Exploitability Index",
       "beats": [
         {
@@ -50,7 +67,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This Patch Tuesday was a big one: 11 bulletins across Windows, Active Directory, Internet Explorer, Office and more, four critical. Don't discriminate; install them."
+          "t": "First, the news. This Patch Tuesday was a big one: 11 bulletins across Windows, Active Directory, Internet Explorer, Office and more, four critical. Don't discriminate; install them."
         },
         {
           "s": "steve",
@@ -79,7 +96,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Jeff Stuckey in Fort Payne, Alabama set up a free Audible account and was surprised the book Leo recommends wasn't free, because a free account gives one credit and Neal Stephenson's \"Anathem\" costs two."
+          "t": "Next, a clarification about Audible. Jeff Stuckey in Fort Payne, Alabama set up a free Audible account and was surprised the book Leo recommends wasn't free, because a free account gives one credit and Neal Stephenson's \"Anathem\" costs two."
         },
         {
           "s": "leo",
@@ -92,7 +109,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The neat story of the week, from The Wall Street Journal. European police uncovered a sophisticated credit card fraud ring funneling data to Pakistan from hundreds of grocery store card readers across Europe, affecting retailers including a British unit of Wal-Mart and Tesco. Estimated losses: $50 to $100 million."
+          "t": "Next, a skimming ring. The neat story of the week, from The Wall Street Journal. European police uncovered a sophisticated credit card fraud ring funneling data to Pakistan from hundreds of grocery store card readers across Europe, affecting retailers including a British unit of Wal-Mart and Tesco. Estimated losses: $50 to $100 million."
         },
         {
           "s": "steve",
@@ -125,7 +142,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Ron Webb bought SpinRite 6 four years ago after hearing Leo, used it a couple of times, then forgot he owned it. His father's XP desktop wouldn't restart after a power outage, looping at the splash screen, failing even safe mode. Over the phone, a repair install reported an unknown partition type."
+          "t": "Now a SpinRite story. Ron Webb bought SpinRite 6 four years ago after hearing Leo, used it a couple of times, then forgot he owned it. His father's XP desktop wouldn't restart after a power outage, looping at the splash screen, failing even safe mode. Over the phone, a repair install reported an unknown partition type."
         },
         {
           "s": "steve",
@@ -146,7 +163,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Today's topic has a genesis. A couple of Q&As ago, someone asked what cross-site request forgery is. While preparing, something I read confused me, and when you asked, I said it's pretty much the same as cross-site scripting. That was wrong, and I knew better."
+          "t": "Now to our main topic: cross-site request forgery. Today's topic has a genesis. A couple of Q&As ago, someone asked what cross-site request forgery is. While preparing, something I read confused me, and when you asked, I said it's pretty much the same as cross-site scripting. That was wrong, and I knew better."
         },
         {
           "s": "leo",
@@ -163,7 +180,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I've long been annoyed at how users send data back to servers. The web began as browsing pages others built. With Web 2.0 it became participatory: blog comments, forums, webmail, applications run over the 'Net."
+          "t": "Next, GET and POST. I've long been annoyed at how users send data back to servers. The web began as browsing pages others built. With Web 2.0 it became participatory: blog comments, forums, webmail, applications run over the 'Net."
         },
         {
           "s": "steve",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Everything you do is sent the same way. At Amazon, when I click one-click to buy, that's a GET or POST request, validated by the cookie that keeps me logged in. My browser always returns the cookie for the site I'm at. Amazon sees the cookie and accepts the purchase."
+          "t": "Next, why persistent login is the weakness. Everything you do is sent the same way. At Amazon, when I click one-click to buy, that's a GET or POST request, validated by the cookie that keeps me logged in. My browser always returns the cookie for the site I'm at. Amazon sees the cookie and accepts the purchase."
         },
         {
           "s": "steve",
@@ -209,7 +226,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Take MetaFilter.com, a popular link-blog site. When logged in, you can change your email address, and separately ask the site to email your password. A site you visit could take over your MetaFilter account with two images: the first changes your email to the attacker's, the second requests your password, which is emailed to the new address. Then the attacker has everything."
+          "t": "Next, two examples. Take MetaFilter.com, a popular link-blog site. When logged in, you can change your email address, and separately ask the site to email your password. A site you visit could take over your MetaFilter account with two images: the first changes your email to the attacker's, the second requests your password, which is emailed to the new address. Then the attacker has everything."
         },
         {
           "s": "steve",
@@ -246,7 +263,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's not terribly hard to solve. Sites should not accept requests that lack information an attacker can't know. When a real page shows a form, it should include a hidden, cryptographically strong random token, sent back with the submission. No third party could generate a blind request with the right token."
+          "t": "Next, fixing it. It's not terribly hard to solve. Sites should not accept requests that lack information an attacker can't know. When a real page shows a form, it should include a hidden, cryptographically strong random token, sent back with the submission. No third party could generate a blind request with the right token."
         },
         {
           "s": "leo",
@@ -272,7 +289,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two takeaways. First, explicitly log out of important sites when you're done, to break the persistent authentication. When eBay says \"welcome back, Steve,\" that's a problem: any request my browser makes carries my eBay cookie, and anything a page or email displays or runs is as authentic as something I do."
+          "t": "Next, takeaways. Two takeaways. First, explicitly log out of important sites when you're done, to break the persistent authentication. When eBay says \"welcome back, Steve,\" that's a problem: any request my browser makes carries my eBay cookie, and anything a page or email displays or runs is as authentic as something I do."
         },
         {
           "s": "leo",
@@ -313,7 +330,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Amazon was told about the one-click exploit by a leading researcher, including that email could trigger an unwanted purchase. A year later it wasn't fixed, so he went public and called it the \"Amazon Anniversary.\""
+          "t": "Next, Amazon's anniversary and a rule about GET. Amazon was told about the one-click exploit by a leading researcher, including that email could trigger an unwanted purchase. A year later it wasn't fixed, so he went public and called it the \"Amazon Anniversary.\""
         },
         {
           "s": "leo",
@@ -346,7 +363,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Websites, stop using GET. Use POST and check referrers."
+          "t": "To wrap up: websites, stop using GET. Use POST and check referrers."
         },
         {
           "s": "steve",
