@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-165.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #165",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 165, for October 9, 2008: Listener Feedback Q&A #51."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: Google Update backs down, RealDVD is pulled, Skype logging in China and a spy camera on eBay. Then a SpinRite story and questions about the Sockstress follow-up, worms, BGP, proxies and bank email."
+        }
+      ]
+    },
+    {
       "title": "Talking With the Sockstress Researchers",
       "beats": [
         {
@@ -65,7 +82,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "From Google's Chrome blog: Google Update is automatically uninstalled on the next update check, typically every few hours, after the last Google product using it is removed. They're working on making it uninstall immediately."
+          "t": "First, the news. From Google's Chrome blog: Google Update is automatically uninstalled on the next update check, typically every few hours, after the last Google product using it is removed. They're working on making it uninstall immediately."
         },
         {
           "s": "steve",
@@ -82,7 +99,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "RealDVD has been removed from the market. It copied DVDs to a hard drive while leaving CSS encryption intact. Real preemptively sued, and the MPAA countersued."
+          "t": "Next, a legal item. RealDVD has been removed from the market. It copied DVDs to a hard drive while leaving CSS encryption intact. Real preemptively sued, and the MPAA countersued."
         },
         {
           "s": "steve",
@@ -124,7 +141,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Some happy news: the Travelers' Privacy Protection Act in Congress would require Homeland Security to have reasonable suspicion before searching U.S. residents' devices, and probable cause with a court order to hold a device more than 24 hours. That's above random strip searches of anyone with a laptop, and would end forcing TrueCrypt passwords without suspicion."
+          "t": "Next, a privacy item. Some happy news: the Travelers' Privacy Protection Act in Congress would require Homeland Security to have reasonable suspicion before searching U.S. residents' devices, and probable cause with a court order to hold a device more than 24 hours. That's above random strip searches of anyone with a laptop, and would end forcing TrueCrypt passwords without suspicion."
         },
         {
           "s": "leo",
@@ -158,7 +175,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Too bizarre to be true, but is. A 28-year-old UK deliveryman bought a Nikon Coolpix for about $31 on eBay. It arrived with top-secret MI6 material: named al-Qaeda cells, images of suspected terrorists, fingerprint information, and login details for a Secret Service computer network, marked \"Top Secret.\""
+          "t": "Next, a bizarre story. Too bizarre to be true, but is. A 28-year-old UK deliveryman bought a Nikon Coolpix for about $31 on eBay. It arrived with top-secret MI6 material: named al-Qaeda cells, images of suspected terrorists, fingerprint information, and login details for a Secret Service computer network, marked \"Top Secret.\""
         },
         {
           "s": "steve",
@@ -183,7 +200,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Scott in Pawtucket notes that the first film of Richard Matheson's \"I Am Legend\" was 1964's \"The Last Man on Earth,\" with Vincent Price, before the 1971 and 2007 versions."
+          "t": "Next, a few random notes. Scott in Pawtucket notes that the first film of Richard Matheson's \"I Am Legend\" was 1964's \"The Last Man on Earth,\" with Vincent Price, before the 1971 and 2007 versions."
         },
         {
           "s": "leo",
@@ -212,7 +229,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "David Lisney in Hertfordshire ran SpinRite on a PC running the London Fire Brigade's paging system, which had run 24/7 for 10 years until its CPU fan failed and it crashed. After replacing the fan, it still wouldn't boot. SpinRite raced through in under an hour, and it booted. His colleagues couldn't believe it. The machine was due for replacement the next week anyway."
+          "t": "Now a SpinRite story. David Lisney in Hertfordshire ran SpinRite on a PC running the London Fire Brigade's paging system, which had run 24/7 for 10 years until its CPU fan failed and it crashed. After replacing the fan, it still wouldn't boot. SpinRite raced through in under an hour, and it booted. His colleagues couldn't believe it. The machine was due for replacement the next week anyway."
         }
       ]
     },
@@ -221,7 +238,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Schember in Florida asks why, if Vista has a new network stack, Microsoft made one vulnerable to Sockstress."
+          "t": "Now to listener questions, starting with Vista and Sockstress. John Schember in Florida asks why, if Vista has a new network stack, Microsoft made one vulnerable to Sockstress."
         },
         {
           "s": "steve",
@@ -250,7 +267,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Paul Cousins in Regina asks, black-hat and probably illegal, whether Sockstress could take worm-infested computers offline: leave your computer open, and when a worm connects, hit it with Sockstress."
+          "t": "Next, a question about counterattacking worms. Paul Cousins in Regina asks, black-hat and probably illegal, whether Sockstress could take worm-infested computers offline: leave your computer open, and when a worm connects, hit it with Sockstress."
         },
         {
           "s": "steve",
@@ -276,7 +293,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jamie Scanlon in Venice, California asks: what if the stack just didn't care that a client's buffer was full? If you can't handle the connection, don't make it."
+          "t": "Next, a question about ignoring stalled clients. Jamie Scanlon in Venice, California asks: what if the stack just didn't care that a client's buffer was full? If you can't handle the connection, don't make it."
         },
         {
           "s": "steve",
@@ -297,7 +314,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Donald Stone in the UK suggests ignoring a client IP after a threshold of failed connections and blacklisting it for a few minutes."
+          "t": "Next, a suggestion about blacklisting bad IPs. Donald Stone in the UK suggests ignoring a client IP after a threshold of failed connections and blacklisting it for a few minutes."
         },
         {
           "s": "steve",
@@ -310,7 +327,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mat Ludlam in Weybridge notes that a 10,000-machine botnet, each opening 100 connections, is a million connections, probably enough to fail a server tuned for short HTTP requests. If you have a botnet, why bother with user-mode stacks?"
+          "t": "Next, a question about botnets. Mat Ludlam in Weybridge notes that a 10,000-machine botnet, each opening 100 connections, is a million connections, probably enough to fail a server tuned for short HTTP requests. If you have a botnet, why bother with user-mode stacks?"
         },
         {
           "s": "steve",
@@ -335,7 +352,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian in Wichita heard you say routers have open TCP ports accepting Border Gateway Protocol. Does his home two-wire gateway have open ports?"
+          "t": "Next, a question about BGP. Brian in Wichita heard you say routers have open TCP ports accepting Border Gateway Protocol. Does his home two-wire gateway have open ports?"
         },
         {
           "s": "steve",
@@ -364,7 +381,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kyle in Des Moines, a programmer, disagrees with his LAN administrator, who thinks their public web server could be infected by spyware on visitors' machines just from an HTTP request."
+          "t": "Next, a question about web servers. Kyle in Des Moines, a programmer, disagrees with his LAN administrator, who thinks their public web server could be infected by spyware on visitors' machines just from an HTTP request."
         },
         {
           "s": "steve",
@@ -385,7 +402,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Eric in Los Angeles wants to test a new SSL proxy with ShieldsUP!, but it detects the proxy and refuses."
+          "t": "Next, a question about testing through a proxy. Eric in Los Angeles wants to test a new SSL proxy with ShieldsUP!, but it detects the proxy and refuses."
         },
         {
           "s": "steve",
@@ -406,7 +423,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ben Isenhour in Lexington refused to give Disney World's ticket machine his fingerprint, meant to stop ticket sharing. He pressed his knuckle crease instead, and it worked. He doesn't want a biometric identifier escaping to the highest bidder."
+          "t": "Next, a story about fingerprints and security questions. Ben Isenhour in Lexington refused to give Disney World's ticket machine his fingerprint, meant to stop ticket sharing. He pressed his knuckle crease instead, and it worked. He doesn't want a biometric identifier escaping to the highest bidder."
         },
         {
           "s": "steve",
@@ -436,7 +453,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian Hoort at Michigan State asks about your OQO. And he asks why operating systems corrupt their file systems. Is it buggy OS code, or drive firmware?"
+          "t": "Next, a question about Steve's OQO. Brian Hoort at Michigan State asks about your OQO. And he asks why operating systems corrupt their file systems. Is it buggy OS code, or drive firmware?"
         },
         {
           "s": "steve",
@@ -473,7 +490,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jimmy Retzlaff in San Jose got a genuine-looking JPMorgan Chase email. All links go to Chase domains, with his name and last four digits. At the bottom: \"If you are concerned about the authenticity of this message, please click here.\""
+          "t": "Next, a question about links in bank email. Jimmy Retzlaff in San Jose got a genuine-looking JPMorgan Chase email. All links go to Chase domains, with his name and last four digits. At the bottom: \"If you are concerned about the authenticity of this message, please click here.\""
         },
         {
           "s": "steve",
@@ -490,7 +507,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Troubling News of the Week, from James Hudson in the UK. He found undeliverable emails in his box and spam-subject items in Sent Mail, sent from his PC. They began with \"Not Read\": Outlook read receipts."
+          "t": "To close, the Troubling News of the Week, from James Hudson in the UK. He found undeliverable emails in his box and spam-subject items in Sent Mail, sent from his PC. They began with \"Not Read\": Outlook read receipts."
         },
         {
           "s": "leo",

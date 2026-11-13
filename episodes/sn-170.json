@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-170.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #170",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 170, for November 13, 2008: The TKIP Hack."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover the TKIP hack: WPA was not \"cracked,\" but a clever, very limited flaw was found in the TKIP protocol. First a clarification and the news."
+        }
+      ]
+    },
+    {
       "title": "Where Attacks Come From",
       "beats": [
         {
@@ -49,7 +66,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last week I couldn't explain why a listener's netstat window closed itself. Listeners pointed out he probably typed \"netstat\" in the Start menu's Run box, which launches the command window, runs it and closes it."
+          "t": "First, a clarification. Last week I couldn't explain why a listener's netstat window closed itself. Listeners pointed out he probably typed \"netstat\" in the Start menu's Run box, which launches the command window, runs it and closes it."
         },
         {
           "s": "leo",
@@ -66,7 +83,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This Patch Tuesday was small: two remote code execution flaws, in Microsoft's XML parsing, one critical, one important."
+          "t": "Next, the news. This Patch Tuesday was small: two remote code execution flaws, in Microsoft's XML parsing, one critical, one important."
         },
         {
           "s": "steve",
@@ -108,7 +125,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So the mainstream media got the TKIP hack wrong."
+          "t": "Now to our main topic: the TKIP hack. The mainstream media got it wrong."
         },
         {
           "s": "steve",
@@ -141,7 +158,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A hacker known as KoreK found \"chopchop.\" Chop the last byte off a WEP packet and the ICV is now wrong. But he worked out the relationship so he could guess that byte: the access point tells you if the checksum is right. With an average of 128 guesses you learn the byte, and because you chopped it off, you knew its plaintext, so XOR gives you that key stream byte."
+          "t": "Next, the chopchop attack. A hacker known as KoreK found \"chopchop.\" Chop the last byte off a WEP packet and the ICV is now wrong. But he worked out the relationship so he could guess that byte: the access point tells you if the checksum is right. With an average of 128 guesses you learn the byte, and because you chopped it off, you knew its plaintext, so XOR gives you that key stream byte."
         },
         {
           "s": "leo",
@@ -162,7 +179,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The IEEE's 802.11i committee was huge and slow, so manufacturers couldn't wait and shipped WPA based on the TKIP part. Some also threw in AES, but the final AES details changed, so early \"AES\" gear isn't WPA2-compatible."
+          "t": "Next, how TKIP fixed WEP without new hardware. The IEEE's 802.11i committee was huge and slow, so manufacturers couldn't wait and shipped WPA based on the TKIP part. Some also threw in AES, but the final AES details changed, so early \"AES\" gear isn't WPA2-compatible."
         },
         {
           "s": "steve",
@@ -184,7 +201,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Tews and Beck applied a chopchop-like attack to TKIP. Capture one small packet, like an ARP packet, where little is unknown. Chop the last byte and send it back. If the CRC is wrong, TKIP silently drops it as a transmission error, so you can keep guessing."
+          "t": "Next, extending chopchop to TKIP. Tews and Beck applied a chopchop-like attack to TKIP. Capture one small packet, like an ARP packet, where little is unknown. Chop the last byte and send it back. If the CRC is wrong, TKIP silently drops it as a transmission error, so you can keep guessing."
         },
         {
           "s": "steve",
@@ -205,7 +222,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "But there's replay protection: a counter that increments with each packet, so a reinjected packet is rejected."
+          "t": "Next, the quality-of-service loophole. But there's replay protection: a counter that increments with each packet, so a reinjected packet is rejected."
         },
         {
           "s": "steve",
@@ -251,7 +268,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So what should people set on their routers?"
+          "t": "Now, what to do. So what should people set on their routers?"
         },
         {
           "s": "steve",
@@ -304,7 +321,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "While people are in their routers, GRC.com/passwords gives an extremely random password over a secure connection, and it never repeats. About 3,200 people use it daily."
+          "t": "Finally, strong passwords. While people are in their routers, GRC.com/passwords gives an extremely random password over a secure connection, and it never repeats. About 3,200 people use it daily."
         },
         {
           "s": "leo",

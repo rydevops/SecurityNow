@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-182.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #182",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 182, for February 5, 2009: Listener Feedback #59."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, news, errata and a SpinRite story. Then questions on the MSRT, YubiKey static mode, keyfiles, VPNs and two PayPal blunders."
+        }
+      ]
+    },
+    {
       "title": "A Quiet Week and a Hacked Road Sign",
       "beats": [
         {
@@ -34,7 +51,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "An aside on what's had me using PayPal so much lately: I've been collecting old computers. The core-memory plane I held up started it, and it led me back to the PDP-8, and now to the PDP-11 and the VAX."
+          "t": "Next, a hobby note. An aside on what's had me using PayPal so much lately: I've been collecting old computers. The core-memory plane I held up started it, and it led me back to the PDP-8, and now to the PDP-11 and the VAX."
         },
         {
           "s": "steve",
@@ -64,7 +81,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A bit of errata. Leo, you were reading dictionary definitions on another show and skipped one close to my heart: hysteresis."
+          "t": "Next, some errata. A bit of errata. Leo, you were reading dictionary definitions on another show and skipped one close to my heart: hysteresis."
         },
         {
           "s": "leo",
@@ -81,7 +98,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Some sci-fi news. Joss Whedon, who gave us \"Firefly,\" has a new series, \"Dollhouse,\" premiering on Fox this Friday the 13th. It's about \"Actives\" or \"Dolls\" whose personalities are wiped and reimprinted for assignments; Eliza Dushku's character, Echo, starts becoming self-aware."
+          "t": "Next, a sci-fi roundup. Some sci-fi news. Joss Whedon, who gave us \"Firefly,\" has a new series, \"Dollhouse,\" premiering on Fox this Friday the 13th. It's about \"Actives\" or \"Dolls\" whose personalities are wiped and reimprinted for assignments; Eliza Dushku's character, Echo, starts becoming self-aware."
         },
         {
           "s": "steve",
@@ -98,7 +115,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A quick SpinRite story from John Salter. While making a video on using a YubiKey with TrueCrypt whole-disk encryption, TrueCrypt hit a bad sector and stopped. He deferred the encryption, ran SpinRite, which found the bad sector and fixed it with DynaStat, then let TrueCrypt resume. It finished fine."
+          "t": "Now a SpinRite story. A quick SpinRite story from John Salter. While making a video on using a YubiKey with TrueCrypt whole-disk encryption, TrueCrypt hit a bad sector and stopped. He deferred the encryption, ran SpinRite, which found the bad sector and fixed it with DynaStat, then let TrueCrypt resume. It finished fine."
         },
         {
           "s": "steve",
@@ -111,7 +128,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One more thing I'm excited about. I went back to an old outliner called ECCO to lay out the CryptoLink protocol, and discovered ECCO has no idea what a mouse wheel is. After five days of frustration I found a tiny free Windows utility called KatMouse."
+          "t": "Next, a software tip. One more thing I'm excited about. I went back to an old outliner called ECCO to lay out the CryptoLink protocol, and discovered ECCO has no idea what a mouse wheel is. After five days of frustration I found a tiny free Windows utility called KatMouse."
         },
         {
           "s": "steve",
@@ -129,7 +146,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "First question, from Iain Alexander in Nottingham, by way of Paul Thurrott: in Windows 7 the Malicious Software Removal Tool isn't called MSRT or MRT. To launch it on demand, type kb890830 into the Start menu search box and hit Enter."
+          "t": "Now to listener questions, starting with running the Malicious Software Removal Tool. First question, from Iain Alexander in Nottingham, by way of Paul Thurrott: in Windows 7 the Malicious Software Removal Tool isn't called MSRT or MRT. To launch it on demand, type kb890830 into the Start menu search box and hit Enter."
         },
         {
           "s": "steve",
@@ -150,7 +167,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike Siwinski in Rochester points out that Start, Run, MRT finds the copy already in System32, which may be old. He launched the December 2008 copy that way; January's was waiting in Windows Update. Running last month's tool won't help with a current infection."
+          "t": "Next, a follow-up on the current MRT. Mike Siwinski in Rochester points out that Start, Run, MRT finds the copy already in System32, which may be old. He launched the December 2008 copy that way; January's was waiting in Windows Update. Running last month's tool won't help with a current infection."
         },
         {
           "s": "steve",
@@ -172,7 +189,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Derek writes that calling a YubiKey in static-password mode \"something you have\" is wrong. A static password is something you were too lazy to memorize; a keylogger captures it just as well, and you could in principle type it yourself. The \"something you have\" property only holds in one-time-password mode."
+          "t": "Next, a question about the static YubiKey. Derek writes that calling a YubiKey in static-password mode \"something you have\" is wrong. A static password is something you were too lazy to memorize; a keylogger captures it just as well, and you could in principle type it yourself. The \"something you have\" property only holds in one-time-password mode."
         },
         {
           "s": "steve",
@@ -189,7 +206,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Paul in Portland wants to send the occasional encrypted email, a Social Security number say, without making the recipient do the whole key dance. He found Comodo's free SecureEmail, where only the sender configures certificates and an unprepared recipient gets a one-time certificate and decrypts via Comodo's web reader."
+          "t": "Next, a question about secure email. Paul in Portland wants to send the occasional encrypted email, a Social Security number say, without making the recipient do the whole key dance. He found Comodo's free SecureEmail, where only the sender configures certificates and an unprepared recipient gets a one-time certificate and decrypts via Comodo's web reader."
         },
         {
           "s": "steve",
@@ -210,7 +227,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dick Victor in Milwaukee says Yubico is changing the firmware so a YubiKey can work in static mode for preboot password entry on a TrueCrypt system partition. Today the key isn't recognized before the OS loads."
+          "t": "Next, a question about unlocking TrueCrypt before boot. Dick Victor in Milwaukee says Yubico is changing the firmware so a YubiKey can work in static mode for preboot password entry on a TrueCrypt system partition. Today the key isn't recognized before the OS loads."
         },
         {
           "s": "steve",
@@ -231,7 +248,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Poojan Wagh in Chicago offers a cheaper alternative. KeePass can use a keyfile in addition to a password, so he keeps a keyfile on a USB stick, or a tiny SDHC card in his wallet, and gets two-factor from a few-dollar stick. TrueCrypt supports default keyfiles on removable media too, though probably not for preboot."
+          "t": "Next, a suggestion about KeePass keyfiles. Poojan Wagh in Chicago offers a cheaper alternative. KeePass can use a keyfile in addition to a password, so he keeps a keyfile on a USB stick, or a tiny SDHC card in his wallet, and gets two-factor from a few-dollar stick. TrueCrypt supports default keyfiles on removable media too, though probably not for preboot."
         },
         {
           "s": "steve",
@@ -252,7 +269,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jim in Westchester, PA sometimes has to work from an office whose only Internet is an open WiFi hotspot, no phone line for a modem. How does he protect himself without hassling the owner about running open WiFi?"
+          "t": "Next, a question about VPNs on open WiFi. Jim in Westchester, PA sometimes has to work from an office whose only Internet is an open WiFi hotspot, no phone line for a modem. How does he protect himself without hassling the owner about running open WiFi?"
         },
         {
           "s": "steve",
@@ -277,7 +294,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dixon in San Francisco asks whether a keylogger can see a YubiKey or password used to log in before the OS boots, and whether Vista and 7 dropping the Ctrl-Alt-Del login requirement weakened keylogger protection."
+          "t": "Next, a question about keyloggers. Dixon in San Francisco asks whether a keylogger can see a YubiKey or password used to log in before the OS boots, and whether Vista and 7 dropping the Ctrl-Alt-Del login requirement weakened keylogger protection."
         },
         {
           "s": "steve",
@@ -299,7 +316,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Alex B in Minnesota was stunned by a PC World article that told readers to turn on MAC address filtering \"and you won't need any additional security at all,\" no password required."
+          "t": "Next, a warning about MAC filtering. Alex B in Minnesota was stunned by a PC World article that told readers to turn on MAC address filtering \"and you won't need any additional security at all,\" no password required."
         },
         {
           "s": "steve",
@@ -320,7 +337,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Now the PayPal questions. Brian in Raleigh lost his PayPal security key football and called customer service. All they asked for was his name and the last four digits of his credit card, then they deactivated the key and let him reset his password."
+          "t": "To close, the PayPal questions. Brian in Raleigh lost his PayPal security key football and called customer service. All they asked for was his name and the last four digits of his credit card, then they deactivated the key and let him reset his password."
         },
         {
           "s": "steve",

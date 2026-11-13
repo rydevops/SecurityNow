@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-179.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #179",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 179, for January 15, 2009: Cracking Security Certificates."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover cracking security certificates: how they work and how researchers forged a trusted authority. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "Why Certificates Matter",
       "beats": [
         {
@@ -41,7 +58,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "January's Patch Tuesday was small: one flaw, but a critical remote code execution in the Windows file-sharing protocol SMB, on ports 139 and 445, critical for XP and 2000, moderate for Vista and Server 2008. Routers, firewalls and many ISPs block those ports, but it can spread inside a network. Companies that skipped October's out-of-cycle patch are being hit by worms."
+          "t": "First, the news. January's Patch Tuesday was small: one flaw, but a critical remote code execution in the Windows file-sharing protocol SMB, on ports 139 and 445, critical for XP and 2000, moderate for Vista and Server 2008. Routers, firewalls and many ISPs block those ports, but it can spread inside a network. Companies that skipped October's out-of-cycle patch are being hit by worms."
         },
         {
           "s": "steve",
@@ -75,7 +92,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Boston Globe and Washington Post noted 25-cent charges appearing on many cards. Brian Krebs's theory, more likely than hiding small profits, is that it's a service to verify stolen card numbers are live. You first see 25 cents, then serious charges later. Scan your statements for tiny unexplained charges."
+          "t": "Next, a payment-card story. The Boston Globe and Washington Post noted 25-cent charges appearing on many cards. Brian Krebs's theory, more likely than hiding small profits, is that it's a service to verify stolen card numbers are live. You first see 25 cents, then serious charges later. Scan your statements for tiny unexplained charges."
         }
       ]
     },
@@ -84,7 +101,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A correction from the newsgroups: PayPal only shows the \"Plug-in\" menu item, where you reach the one-time cards, after you've once downloaded the plug-in, even if you never use it."
+          "t": "Next, a correction on PayPal's one-time cards. A correction from the newsgroups: PayPal only shows the \"Plug-in\" menu item, where you reach the one-time cards, after you've once downloaded the plug-in, even if you never use it."
         },
         {
           "s": "leo",
@@ -101,7 +118,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "McSweeney's posted joke security questions by Joel Gunz: \"Who did your paternal grandfather vote for in the 1956 presidential election?\" \"In what year did you begin working on your novel?\" \"What is the name of the hedge fund manager your ex-wife married?\""
+          "t": "A lighter note. McSweeney's posted joke security questions by Joel Gunz: \"Who did your paternal grandfather vote for in the 1956 presidential election?\" \"In what year did you begin working on your novel?\" \"What is the name of the hedge fund manager your ex-wife married?\""
         },
         {
           "s": "leo",
@@ -118,7 +135,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Garry Weil at Intel recovered his daughter's PS3 game drive. After the PS3's Restore wouldn't take, he pulled the disk, ran SpinRite at Level 2, which found one unrecoverable sector, and the PS3 worked."
+          "t": "Now a SpinRite story. Garry Weil at Intel recovered his daughter's PS3 game drive. After the PS3's Restore wouldn't take, he pulled the disk, ran SpinRite at Level 2, which found one unrecoverable sector, and the PS3 worked."
         },
         {
           "s": "steve",
@@ -131,7 +148,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A certificate publishes someone's public key, binding an identity to that key. A web server certificate binds the domain name, like www.grc.com, to GRC's public key. A trusted third party attests that binding is true."
+          "t": "Now to our main topic: certificates. First, what a certificate does. A certificate publishes someone's public key, binding an identity to that key. A web server certificate binds the domain name, like www.grc.com, to GRC's public key. A trusted third party attests that binding is true."
         },
         {
           "s": "steve",
@@ -160,7 +177,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In 2004 researchers found problems in MD5, one of the oldest hashes, after MD2 and MD4. MD5 outputs 128 bits no matter how much you put in. A good hash is computationally infeasible to reverse or to deliberately steer to a chosen output, and tiny changes should completely change the result."
+          "t": "Next, how MD5 works. In 2004 researchers found problems in MD5, one of the oldest hashes, after MD2 and MD4. MD5 outputs 128 bits no matter how much you put in. A good hash is computationally infeasible to reverse or to deliberately steer to a chosen output, and tiny changes should completely change the result."
         },
         {
           "s": "steve",
@@ -182,7 +199,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In summer 2008 the researchers decided to shock people into abandoning MD5 by forging a real certificate. They needed an authority to issue exactly the certificate they'd designed, matching a forged one with the same hash. The problem was the parts they couldn't control: the serial number and the validity timestamps."
+          "t": "Next, forging a certificate authority. In summer 2008 the researchers decided to shock people into abandoning MD5 by forging a real certificate. They needed an authority to issue exactly the certificate they'd designed, matching a forged one with the same hash. The problem was the parts they couldn't control: the serial number and the validity timestamps."
         },
         {
           "s": "steve",
@@ -220,7 +237,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "How repeatable is this?"
+          "t": "Finally, why this research must be allowed. How repeatable is this?"
         },
         {
           "s": "steve",

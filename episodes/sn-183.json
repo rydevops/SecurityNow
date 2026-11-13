@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-183.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #183",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 183, for February 12, 2009: Modes of Encryption."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover the modes of encryption: how ECB, counter mode and cipher block chaining turn a block cipher into something usable. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "A Heavy Patch Tuesday",
       "beats": [
         {
           "s": "steve",
-          "t": "Patch Tuesday landed a lot this month. The big one: a critical flaw in IE7 on XP and Vista, not in IE5 or 6, where just visiting a malicious site, or clicking a link in Outlook's IE-based viewer, can compromise your machine. Patch it."
+          "t": "First, the news. Patch Tuesday landed a lot this month. The big one: a critical flaw in IE7 on XP and Vista, not in IE5 or 6, where just visiting a malicious site, or clicking a link in Outlook's IE-based viewer, can compromise your machine. Patch it."
         },
         {
           "s": "steve",
@@ -34,7 +51,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Beyond Microsoft: Firefox should be at 3.0.6 and Thunderbird at 2.0.0.21, fixing six flaws, some allowing remote code execution."
+          "t": "Next, more updates. Beyond Microsoft: Firefox should be at 3.0.6 and Thunderbird at 2.0.0.21, fixing six flaws, some allowing remote code execution."
         },
         {
           "s": "steve",
@@ -51,7 +68,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In Vista, User Account Control nagged so much that in the Windows 7 beta Microsoft softened it, too far. Proof-of-concept code appeared that scripts the control-panel steps to switch UAC off, with no prompt."
+          "t": "Next, Windows 7 and UAC. In Vista, User Account Control nagged so much that in the Windows 7 beta Microsoft softened it, too far. Proof-of-concept code appeared that scripts the control-panel steps to switch UAC off, with no prompt."
         },
         {
           "s": "steve",
@@ -68,7 +85,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A little embarrassment for Kaspersky: for about 10 days one of their corporate databases, their customer database, was exposed through a SQL-injection hole. The people who found it were outsiders who eventually told Kaspersky to fix it."
+          "t": "Next, an embarrassment for Kaspersky. A little embarrassment for Kaspersky: for about 10 days one of their corporate databases, their customer database, was exposed through a SQL-injection hole. The people who found it were outsiders who eventually told Kaspersky to fix it."
         },
         {
           "s": "steve",
@@ -86,7 +103,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "News from Yubico: they've launched the YubiKing awards, for the best applications, services, developer tools and ideas built around the YubiKey. Anyone who submits an entry on their new wiki gets three free YubiKeys."
+          "t": "Next, news from Yubico. News from Yubico: they've launched the YubiKing awards, for the best applications, services, developer tools and ideas built around the YubiKey. Anyone who submits an entry on their new wiki gets three free YubiKeys."
         },
         {
           "s": "steve",
@@ -107,7 +124,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "If you use a YubiKey in OTP mode, authentication goes to Yubico's servers. Are people running their own key servers, the way Bank of America might?"
+          "t": "A question on trust. If you use a YubiKey in OTP mode, authentication goes to Yubico's servers. Are people running their own key servers, the way Bank of America might?"
         },
         {
           "s": "steve",
@@ -128,7 +145,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Amazon announced the Kindle 2, and we both ordered one. Thinner and classier, 16 grey levels for better images, faster page turns, the page buttons moved off the corners, a joystick replacing the odd LCD side strip, and it can read books aloud with text-to-speech. The sticking point is still the $359 price."
+          "t": "Next, the Kindle 2. Amazon announced the Kindle 2, and we both ordered one. Thinner and classier, 16 grey levels for better images, faster page turns, the page buttons moved off the corners, a joystick replacing the odd LCD side strip, and it can read books aloud with text-to-speech. The sticking point is still the $359 price."
         },
         {
           "s": "steve",
@@ -146,7 +163,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A SpinRite story from David Hoeflein: his PC wouldn't boot even in safe mode, and repair said Windows didn't recognize the partition type. SpinRite found a sector it couldn't fully repair but recovered most of it, which was enough; Windows booted, fixed its indexes, and his 20 years of documents survived."
+          "t": "Now a SpinRite story. A SpinRite story from David Hoeflein: his PC wouldn't boot even in safe mode, and repair said Windows didn't recognize the partition type. SpinRite found a sector it couldn't fully repair but recovered most of it, which was enough; Windows booted, fixed its indexes, and his 20 years of documents survived."
         },
         {
           "s": "leo",
@@ -167,7 +184,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Now to the groundwork for SSL. We've covered symmetric and asymmetric ciphers. An asymmetric, or public-key, cipher uses one key to encrypt and the other to decrypt; you publish one half of the pair."
+          "t": "Now to our main topic: modes of encryption. First, the foundations, the groundwork for SSL. We've covered symmetric and asymmetric ciphers. An asymmetric, or public-key, cipher uses one key to encrypt and the other to decrypt; you publish one half of the pair."
         },
         {
           "s": "steve",
@@ -184,7 +201,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Picture a symmetric cipher like AES (Rijndael) as a black box: 128 bits of data in, 128 bits out, under the control of a key. Flip one input bit and on average half the output bits change, unpredictably. Same input plus same key always gives the same output, and it's reversible."
+          "t": "Next, the block cipher as a black box. Picture a symmetric cipher like AES (Rijndael) as a black box: 128 bits of data in, 128 bits out, under the control of a key. Flip one input bit and on average half the output bits change, unpredictably. Same input plus same key always gives the same output, and it's reversible."
         },
         {
           "s": "steve",
@@ -202,7 +219,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So how do you actually encrypt a document? The obvious way: chop it into 16-byte (128-bit) blocks, run each through the cipher, and write down the gibberish. That works, and it's called Electronic Code Book, ECB."
+          "t": "Next, ECB, the naive mode. So how do you actually encrypt a document? The obvious way: chop it into 16-byte (128-bit) blocks, run each through the cipher, and write down the gibberish. That works, and it's called Electronic Code Book, ECB."
         },
         {
           "s": "steve",
@@ -220,7 +237,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The first fix is counter mode, CTR. Instead of encrypting the data, you encrypt a 128-bit counter, 0, 1, 2, 3, under the key. The cipher turns that simple count into a stream of pseudorandom noise."
+          "t": "Next, counter mode. The first fix is counter mode, CTR. Instead of encrypting the data, you encrypt a 128-bit counter, 0, 1, 2, 3, under the key. The cipher turns that simple count into a stream of pseudorandom noise."
         },
         {
           "s": "steve",
@@ -237,7 +254,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Cryptographers wanted one more property: interblock influence, so a change propagates beyond its own 16 bytes. Cipher Block Chaining, CBC, does it. You XOR each plaintext block with the previous block's ciphertext before encrypting it, chaining every block to all that came before."
+          "t": "Next, cipher block chaining. Cryptographers wanted one more property: interblock influence, so a change propagates beyond its own 16 bytes. Cipher Block Chaining, CBC, does it. You XOR each plaintext block with the previous block's ciphertext before encrypting it, chaining every block to all that came before."
         },
         {
           "s": "steve",
@@ -259,7 +276,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's the bridge to our next topic. Run CBC but throw away every block's output except the last. That final block depends on all the data before it, and any change anywhere changes it, which is exactly the definition of a cryptographic hash, or digest."
+          "t": "Finally, from CBC to keyed hashes. Here's the bridge to our next topic. Run CBC but throw away every block's output except the last. That final block depends on all the data before it, and any change anywhere changes it, which is exactly the definition of a cryptographic hash, or digest."
         },
         {
           "s": "steve",

@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-200.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #200",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 200, for June 11, 2009: Listener Feedback #68."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a milestone Q&A for Episode 200. First, the news: Windows ATM trojans, the Pirate Bay appeal, Comcast sending an SSN in the clear and a record Patch Tuesday. Then a SpinRite story and questions on non-VPN connections, ClickOnce, the TPM and NAT."
+        }
+      ]
+    },
+    {
       "title": "Windows ATM Trojans",
       "beats": [
         {
           "s": "steve",
-          "t": "The big news vindicates my warnings: trojan software has been found in ATMs in Eastern Europe, and they all have one thing in common, they run Windows. The trojan was a fake LSASS.exe (the main security service) placed in the Windows directory, written in Borland Delphi, commercial-grade code."
+          "t": "First, the news. The big news vindicates my warnings: trojan software has been found in ATMs in Eastern Europe, and they all have one thing in common, they run Windows. The trojan was a fake LSASS.exe (the main security service) placed in the Windows directory, written in Borland Delphi, commercial-grade code."
         },
         {
           "s": "steve",
@@ -34,7 +51,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Pirate Bay appeal was denied: it was based on two judges belonging to a pro-copyright organization, but the court ruled that just kept them informed and didn't bias them, so the guilty verdict and sentence stand."
+          "t": "Next, the Pirate Bay appeal. The Pirate Bay appeal was denied: it was based on two judges belonging to a pro-copyright organization, but the court ruled that just kept them informed and didn't bias them, so the guilty verdict and sentence stand."
         },
         {
           "s": "steve",
@@ -51,7 +68,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Google engineer Greg Miller blogged about setting up Comcast service: the final step required an online chat, over HTTPS, but he was skeptical the chat text itself was encrypted, especially since it asked for his Social Security number alongside his name and address."
+          "t": "Next, Comcast sends an SSN in the clear. Google engineer Greg Miller blogged about setting up Comcast service: the final step required an online chat, over HTTPS, but he was skeptical the chat text itself was encrypted, especially since it asked for his Social Security number alongside his name and address."
         },
         {
           "s": "steve",
@@ -68,7 +85,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Microsoft's biggest-ever Patch Tuesday: 31 vulnerabilities, including critical remote-code-execution bugs in Active Directory (two), the print spooler (three), IE (eight), Word, Excel, Works, four kernel privilege-elevation bugs, plus IIS and Search. Definitely reboot. But astonishingly, last week's actively-exploited DirectShow QuickTime zero-day is still not fixed; keep using the \"Fix it\" workaround."
+          "t": "Next, Patch Tuesday, DirectShow and Adobe. Microsoft's biggest-ever Patch Tuesday: 31 vulnerabilities, including critical remote-code-execution bugs in Active Directory (two), the print spooler (three), IE (eight), Word, Excel, Works, four kernel privilege-elevation bugs, plus IIS and Search. Definitely reboot. But astonishingly, last week's actively-exploited DirectShow QuickTime zero-day is still not fixed; keep using the \"Fix it\" workaround."
         },
         {
           "s": "steve",
@@ -85,7 +102,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Nate Friedman asked to have his story read on Episode 200, so here it is. He inherited a mission-critical server with a failing drive that the previous admin had failed to clone three times. He talked the money people into SpinRite, which found a few bad sectors at Level 3, ran Level 4 over that section, then cloned the drive cleanly. The server's been humming ever since."
+          "t": "Now a SpinRite story for Episode 200. Nate Friedman asked to have his story read on Episode 200, so here it is. He inherited a mission-critical server with a failing drive that the previous admin had failed to clone three times. He talked the money people into SpinRite, which found a few bad sectors at Level 3, ran Level 4 over that section, then cloned the drive cleanly. The server's been humming ever since."
         },
         {
           "s": "steve",
@@ -98,7 +115,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jim in Kansas City (and a torrent of others) caught Steve's claim that consumer switches would \"break\" under IPv6. A switch operates at Layer 2 on MAC addresses, not IP addresses, so IPv6 won't bother it."
+          "t": "Now to listener questions, starting with a correction about switches. Jim in Kansas City (and a torrent of others) caught Steve's claim that consumer switches would \"break\" under IPv6. A switch operates at Layer 2 on MAC addresses, not IP addresses, so IPv6 won't bother it."
         },
         {
           "s": "steve",
@@ -116,7 +133,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Meuser asks whether Steve's non-VPN idea is just SSH port forwarding with port knocking."
+          "t": "Next, a question about the non-VPN idea. John Meuser asks whether Steve's non-VPN idea is just SSH port forwarding with port knocking."
         },
         {
           "s": "steve",
@@ -133,7 +150,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brad notes a non-VPN server would need port forwarding or a DMZ, and asks about relying on a software firewall."
+          "t": "Next, a question about NAT traversal. Brad notes a non-VPN server would need port forwarding or a DMZ, and asks about relying on a software firewall."
         },
         {
           "s": "steve",
@@ -150,7 +167,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Clayton, a .NET developer, corrects last week: Microsoft's ClickOnce is a way to package and deploy thick-client desktop applications, not browser code. The user is always prompted to install, so it isn't silent, and it supports Authenticode signatures. The Firefox add-on just handles the .application files that start the install; without it you'd get raw XML. He adds that Skype, Office, Acrobat, iTunes and QuickTime all install Firefox hooks the same way."
+          "t": "Next, a clarification about ClickOnce. John Clayton, a .NET developer, corrects last week: Microsoft's ClickOnce is a way to package and deploy thick-client desktop applications, not browser code. The user is always prompted to install, so it isn't silent, and it supports Authenticode signatures. The Firefox add-on just handles the .application files that start the install; without it you'd get raw XML. He adds that Skype, Office, Acrobat, iTunes and QuickTime all install Firefox hooks the same way."
         },
         {
           "s": "steve",
@@ -167,7 +184,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rob near Ottawa still calls ClickOnce dangerous, since clicking a web page can download, install and run an app, and notes a third-party FFClickOnce extension already existed, so Microsoft's wasn't even necessary. His tip: if you keep it, use the Options button to require confirmation before running a ClickOnce app, turning ClickOnce into \"ClickTwice.\""
+          "t": "Next, a follow-up on ClickOnce. Rob near Ottawa still calls ClickOnce dangerous, since clicking a web page can download, install and run an app, and notes a third-party FFClickOnce extension already existed, so Microsoft's wasn't even necessary. His tip: if you keep it, use the Options button to require confirmation before running a ClickOnce app, turning ClickOnce into \"ClickTwice.\""
         },
         {
           "s": "steve",
@@ -189,7 +206,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Michael wishes Steve covered Linux security and open-sourced his code, calling the \"hackers could use it\" reason arrogant and a form of security-by-obscurity."
+          "t": "Next, a question about closed code. Michael wishes Steve covered Linux security and open-sourced his code, calling the \"hackers could use it\" reason arrogant and a form of security-by-obscurity."
         },
         {
           "s": "steve",
@@ -210,7 +227,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike Potts recommends Basic-256 (kidbasic.sourceforge.net), open source, inspired by the \"Why Johnny Can't Code\" article, for teaching young people. It gives a small graphics window with primitives, so kids can write games, and it held his 14-year-old's interest for months."
+          "t": "Next, a tip on teaching programming. Mike Potts recommends Basic-256 (kidbasic.sourceforge.net), open source, inspired by the \"Why Johnny Can't Code\" article, for teaching young people. It gives a small graphics window with primitives, so kids can write games, and it held his 14-year-old's interest for months."
         },
         {
           "s": "steve",
@@ -227,7 +244,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Greg M. asks whether data is still encrypted when a site's SSL certificate has expired."
+          "t": "Next, a question about expired SSL certificates. Greg M. asks whether data is still encrypted when a site's SSL certificate has expired."
         },
         {
           "s": "steve",
@@ -244,7 +261,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jonathan dislikes NAT: he and his brothers can't all host Battlefield 2 because some are behind ISP-level NAT, so he argues NAT segments the Internet and IPv6 (per-machine addresses) is the real answer."
+          "t": "Next, a question about NAT. Jonathan dislikes NAT: he and his brothers can't all host Battlefield 2 because some are behind ISP-level NAT, so he argues NAT segments the Internet and IPv6 (per-machine addresses) is the real answer."
         },
         {
           "s": "steve",
@@ -261,7 +278,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeff asks how to tell if his computer has a Trusted Platform Module, since BitLocker complained it had none on a year-old laptop."
+          "t": "Next, a question about the TPM. Jeff asks how to tell if his computer has a Trusted Platform Module, since BitLocker complained it had none on a year-old laptop."
         },
         {
           "s": "steve",
@@ -278,7 +295,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Don Daniels found Skype 4 has \"Enable uPnP\" checked by default, yet Steve's UnPlug n' Pray still reports \"UPnP is safely disabled.\" What's going on?"
+          "t": "Next, a question about Skype and UPnP. Don Daniels found Skype 4 has \"Enable uPnP\" checked by default, yet Steve's UnPlug n' Pray still reports \"UPnP is safely disabled.\" What's going on?"
         },
         {
           "s": "steve",
@@ -300,7 +317,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "From Riley Township: Steve, does your ancient BRIEF editor have syntax highlighting?"
+          "t": "To close, a question about Steve's editor. From Riley Township: Steve, does your ancient BRIEF editor have syntax highlighting?"
         },
         {
           "s": "steve",

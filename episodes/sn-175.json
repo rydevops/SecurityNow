@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-175.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #175",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 175, for December 18, 2008: Listener Feedback Q&A #56."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: a Linksys webcam that leaks all your keys and a 19-flaw Patch Tuesday. Then a SpinRite story and questions on sandboxes, scheduled scans, PayPal's weak fallback and destroying hard drives."
+        }
+      ]
+    },
+    {
       "title": "A Webcam That Leaks Everything",
       "beats": [
         {
           "s": "steve",
-          "t": "Shocking news, from Secunia: the Linksys WVC54GC, which I first thought was a router."
+          "t": "First, the news. Shocking news, from Secunia: the Linksys WVC54GC, which I first thought was a router."
         },
         {
           "s": "leo",
@@ -42,7 +59,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "December's Patch Tuesday was massive: 19 critical remote code execution flaws. Two in GDI via crafted Windows Metafiles, an oldie but a goodie; two in the new Windows Search service, which I declined to install; four in IE; eight in Word and Outlook via crafted RTF; and three in Excel. This needs a reboot, but take care of it."
+          "t": "Next, December's Patch Tuesday and the fourth-Tuesday patches. December's Patch Tuesday was massive: 19 critical remote code execution flaws. Two in GDI via crafted Windows Metafiles, an oldie but a goodie; two in the new Windows Search service, which I declined to install; four in IE; eight in Word and Outlook via crafted RTF; and three in Excel. This needs a reboot, but take care of it."
         },
         {
           "s": "steve",
@@ -71,7 +88,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Dan Baldwin, IT for a radio station, had the sales manager's PC fail to boot. He ran a friend's SpinRite, which found three unrecoverable sectors. Afterward Windows said the OS was damaged, but he used the XP install disc's \"R\" repair, and all was well. Then he bought his own copy, triggering a yabba-dabba-do."
+          "t": "Now a SpinRite story. Dan Baldwin, IT for a radio station, had the sales manager's PC fail to boot. He ran a friend's SpinRite, which found three unrecoverable sectors. Afterward Windows said the OS was damaged, but he used the XP install disc's \"R\" repair, and all was well. Then he bought his own copy, triggering a yabba-dabba-do."
         },
         {
           "s": "steve",
@@ -84,7 +101,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Creighton in Arizona sandboxes all his Internet activity, and points the sandbox at a TrueCrypt container."
+          "t": "Now to listener questions, starting with sandboxes. Creighton in Arizona sandboxes all his Internet activity, and points the sandbox at a TrueCrypt container."
         },
         {
           "s": "steve",
@@ -101,7 +118,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Garrett Lucas updated three identical XP machines; one wanted five high-priority updates, the other two said none were available."
+          "t": "Next, a question about staggered Windows updates. Garrett Lucas updated three identical XP machines; one wanted five high-priority updates, the other two said none were available."
         },
         {
           "s": "steve",
@@ -114,7 +131,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Robert Berry wants to rely on his AV's real-time protection and skip the scheduled full scan that bogs his daughter's laptop at startup."
+          "t": "Next, a question about scheduled scans. Robert Berry wants to rely on his AV's real-time protection and skip the scheduled full scan that bogs his daughter's laptop at startup."
         },
         {
           "s": "steve",
@@ -143,7 +160,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Richard Warriner and Theo Jones in the U.K. both got PayPal security keys, with the option to text the code to their phone. But there's still an \"I don't have my key\" link that falls back to security questions, or your bank account number, which you can't fake because PayPal uses it for funds."
+          "t": "Next, a question about PayPal's fallback. Richard Warriner and Theo Jones in the U.K. both got PayPal security keys, with the option to text the code to their phone. But there's still an \"I don't have my key\" link that falls back to security questions, or your bank account number, which you can't fake because PayPal uses it for funds."
         },
         {
           "s": "steve",
@@ -169,7 +186,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kyle Hasegawa in Tokyo tested last week's ZoneAlarm claim in a VM with packet capture. ZoneAlarm does not send DNS to its own servers; it looks up zonelabs.com on your configured DNS servers every 10 seconds, with no extra data, and an app can't override the system's DNS list."
+          "t": "Next, a follow-up on ZoneAlarm. Kyle Hasegawa in Tokyo tested last week's ZoneAlarm claim in a VM with packet capture. ZoneAlarm does not send DNS to its own servers; it looks up zonelabs.com on your configured DNS servers every 10 seconds, with no extra data, and an app can't override the system's DNS list."
         },
         {
           "s": "steve",
@@ -182,7 +199,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mathieu in Montreal and Peter in Orangevale both learned Sandboxie can't run on 64-bit Windows because of PatchGuard."
+          "t": "Next, a question about Sandboxie and 64-bit Windows. Mathieu in Montreal and Peter in Orangevale both learned Sandboxie can't run on 64-bit Windows because of PatchGuard."
         },
         {
           "s": "steve",
@@ -212,7 +229,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Daniel Smith had brand-new PCs that refused to log off or shut down for any user."
+          "t": "Next, a question about Wizmo. Daniel Smith had brand-new PCs that refused to log off or shut down for any user."
         },
         {
           "s": "steve",
@@ -229,7 +246,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Andrew Green used his knuckle at Universal Orlando's annual-pass scanner, argued, and got a \"Check ID\" sticker instead. And their free lockers used your fingerprint as the key, with no override."
+          "t": "Next, a story about fingerprint lockers. Andrew Green used his knuckle at Universal Orlando's annual-pass scanner, argued, and got a \"Check ID\" sticker instead. And their free lockers used your fingerprint as the key, with no override."
         },
         {
           "s": "steve",
@@ -250,7 +267,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous admin at a top security company uses a microwave-sized degausser: shove the whole drive in, and two seconds later it won't even spin up, because the servo information is wiped too. It also gives the operators a headache."
+          "t": "To close, a question about destroying hard drives. An anonymous admin at a top security company uses a microwave-sized degausser: shove the whole drive in, and two seconds later it won't even spin up, because the servo information is wiped too. It also gives the operators a headache."
         },
         {
           "s": "steve",

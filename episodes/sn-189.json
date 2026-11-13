@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-189.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #189",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 189, for March 26, 2009: Internet Explorer 8."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we take a security-focused tour of IE8: InPrivate filtering, SmartScreen and DEP. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "A Botnet Living Inside Routers",
       "beats": [
         {
           "s": "steve",
-          "t": "Something new: a botnet running autonomously inside routers, about 100,000 of them, on a Linux-based NetComm NB5 DSL router. For a time it shipped with firmware that left the web interface and the SSH/telnet port open to the Internet, one version needing no password at all."
+          "t": "First, the news. Something new: a botnet running autonomously inside routers, about 100,000 of them, on a Linux-based NetComm NB5 DSL router. For a time it shipped with firmware that left the web interface and the SSH/telnet port open to the Internet, one version needing no password at all."
         },
         {
           "s": "steve",
@@ -34,7 +51,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Adobe Reader/Acrobat updates for versions 7 and 8 are finally out, so anyone still on those can patch rather than being forced to version 9."
+          "t": "Next, Adobe patches and an exploit \"spray.\" The Adobe Reader/Acrobat updates for versions 7 and 8 are finally out, so anyone still on those can patch rather than being forced to version 9."
         },
         {
           "s": "steve",
@@ -56,7 +73,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "An errata: last week I said SSH uses SSL. It doesn't. SSH has its own Transport Layer Protocol, which confused me with TLS (Transport Layer Security). It's functionally similar, with its own cipher negotiation, Triple DES is mandatory, with AES options, endpoints agreeing on the strongest both support."
+          "t": "Next, errata and two tools. An errata: last week I said SSH uses SSL. It doesn't. SSH has its own Transport Layer Protocol, which confused me with TLS (Transport Layer Security). It's functionally similar, with its own cipher negotiation, Triple DES is mandatory, with AES options, endpoints agreeing on the strongest both support."
         },
         {
           "s": "steve",
@@ -77,7 +94,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "April 1st is a special date built into Conficker, and we don't know what it'll do; it happens before listeners hear our next episode."
+          "t": "Next, Conficker's April 1 date. April 1st is a special date built into Conficker, and we don't know what it'll do; it happens before listeners hear our next episode."
         },
         {
           "s": "steve",
@@ -90,7 +107,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A SpinRite story from a listener in Toronto (name withheld to spare his friend). His newly retired friend needed to move her 1.4GB Outlook .pst, all her email, to a new laptop, but it wouldn't copy, returning a CRC error, with no backup. On New Year's Eve at a snowbound cottage, he bought and downloaded SpinRite, ran it, DynaStat recovered most of the data, and as the champagne popped the .pst copied fine."
+          "t": "Now a SpinRite story. A SpinRite story from a listener in Toronto (name withheld to spare his friend). His newly retired friend needed to move her 1.4GB Outlook .pst, all her email, to a new laptop, but it wouldn't copy, returning a CRC error, with no backup. On New Year's Eve at a snowbound cottage, he bought and downloaded SpinRite, ran it, DynaStat recovered most of the data, and as the champagne popped the .pst copied fine."
         },
         {
           "s": "steve",
@@ -103,7 +120,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "IE8 is the first major update since IE7 in October 2006, after about a year in beta. I don't care about web slices and accelerators; my question is what it means for security, since IE is the number-one infection vector. It's still the slowest of the top five browsers on JavaScript (Chrome fastest, then Firefox, Safari, Opera), but local render time matters less than round-trip packet time, and it felt snappy."
+          "t": "Now to our main topic: Internet Explorer 8 through a security lens. IE8 is the first major update since IE7 in October 2006, after about a year in beta. I don't care about web slices and accelerators; my question is what it means for security, since IE is the number-one infection vector. It's still the slowest of the top five browsers on JavaScript (Chrome fastest, then Firefox, Safari, Opera), but local render time matters less than round-trip packet time, and it felt snappy."
         },
         {
           "s": "steve",
@@ -120,7 +137,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One thing IE8 did not fix: like IE7, you cannot actually block all third-party cookies even when you tell it to. I found a rendering anomaly too, fixable with compatibility mode."
+          "t": "Next, still-broken cookie blocking. One thing IE8 did not fix: like IE7, you cannot actually block all third-party cookies even when you tell it to. I found a rendering anomaly too, fixable with compatibility mode."
         },
         {
           "s": "leo",
@@ -137,7 +154,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "IE8's popular feature is InPrivate browsing, nicknamed \"porn mode\": a clearly labeled window that writes nothing permanent to disk. In testing I couldn't find any trace left behind, even watching for the cookie leakage IE normally has."
+          "t": "Next, InPrivate browsing and filtering. IE8's popular feature is InPrivate browsing, nicknamed \"porn mode\": a clearly labeled window that writes nothing permanent to disk. In testing I couldn't find any trace left behind, even watching for the cookie leakage IE normally has."
         },
         {
           "s": "steve",
@@ -163,7 +180,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "IE8's SmartScreen Filter gives reputation-based warnings: a local cache of known-good sites, with unknown ones checked against Microsoft's database. Hit a known-bad site and the whole screen turns red with an unmissable warning; otherwise it stays quiet, so it doesn't false-positive."
+          "t": "Next, SmartScreen, ActiveX and domain highlighting. IE8's SmartScreen Filter gives reputation-based warnings: a local cache of known-good sites, with unknown ones checked against Microsoft's database. Hit a known-bad site and the whole screen turns red with an unmissable warning; otherwise it stays quiet, so it doesn't false-positive."
         },
         {
           "s": "steve",
@@ -185,7 +202,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A big one: under Vista (and Windows 7), IE8 enables DEP, Data Execution Prevention, by default, where IE7 did not. Using the CPU's No-Execute bit, DEP stops data, like a booby-trapped image or PDF, from being executed, a major long-term security win. You don't get it under XP."
+          "t": "Finally, DEP, crashes and the verdict. A big one: under Vista (and Windows 7), IE8 enables DEP, Data Execution Prevention, by default, where IE7 did not. Using the CPU's No-Execute bit, DEP stops data, like a booby-trapped image or PDF, from being executed, a major long-term security win. You don't get it under XP."
         },
         {
           "s": "steve",

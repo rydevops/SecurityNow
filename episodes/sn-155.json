@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-155.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #155",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 155, for July 31, 2008: BailiWicked Domain Attack."
+        },
+        {
+          "s": "leo",
+          "t": "This show is brought to you by listeners like you and your contributions. We couldn't do it without you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we explain how DNS works and how Dan Kaminsky's BailiWicked attack poisons it. First a quick news item and a few SpinRite stories."
+        }
+      ]
+    },
+    {
       "title": "Steve's InfoWorld Column",
       "beats": [
         {
@@ -45,7 +62,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Our plans have changed. We were going to embargo the details until Dan Kaminsky's talk at Black Hat in Las Vegas on August 6. But it has all made it onto the Internet, so there's no need to wait."
+          "t": "Now, our plan for today. Our plans have changed. We were going to embargo the details until Dan Kaminsky's talk at Black Hat in Las Vegas on August 6. But it has all made it onto the Internet, so there's no need to wait."
         },
         {
           "s": "steve",
@@ -66,7 +83,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "What's the news? The Kaminsky story has dominated headlines for three weeks."
+          "t": "Now, the story behind the news. What's the news? The Kaminsky story has dominated headlines for three weeks."
         },
         {
           "s": "steve",
@@ -95,7 +112,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Blessedly, little else went wrong this week. But another memory corruption bug was found in Mozilla-derived browsers. It was already fixed in the latest releases, Firefox 3.0.1 and 2.0.0.16, and it's more serious than the problems those updates were made for. So if you use Firefox, make sure you're up to date."
+          "t": "Next, a quick news item. Blessedly, little else went wrong this week. But another memory corruption bug was found in Mozilla-derived browsers. It was already fixed in the latest releases, Firefox 3.0.1 and 2.0.0.16, and it's more serious than the problems those updates were made for. So if you use Firefox, make sure you're up to date."
         }
       ]
     },
@@ -104,7 +121,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Alain Donais bought SpinRite and talks about great timing. Right after, his parents' computer wouldn't boot, and the store's technician said the drive was done. They had no backup of their photos. Alain ran SpinRite, and after several hours it worked like new. The tech was extremely surprised."
+          "t": "Now a SpinRite story. Alain Donais bought SpinRite and talks about great timing. Right after, his parents' computer wouldn't boot, and the store's technician said the drive was done. They had no backup of their photos. Alain ran SpinRite, and after several hours it worked like new. The tech was extremely surprised."
         },
         {
           "s": "steve",
@@ -198,7 +215,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So, back before DNS, the way the Internet... whoa, we're having an earthquake. A big one."
+          "t": "Now to our main topic: how DNS works. So, back before DNS, the way the Internet... whoa, we're having an earthquake. A big one."
         },
         {
           "s": "leo",
@@ -236,7 +253,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Back to it. Once upon a time a single hosts.txt file held the names of every machine on the Internet. The NIC, the original Internet authority, maintained it on an FTP server."
+          "t": "After the earthquake, back to the history of DNS. Once upon a time a single hosts.txt file held the names of every machine on the Internet. The NIC, the original Internet authority, maintained it on an FTP server."
         },
         {
           "s": "leo",
@@ -269,7 +286,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "When I look up a domain, my computer, Windows, Mac or Linux, first checks the hosts file, then its local cache of addresses looked up since power-on that haven't expired."
+          "t": "Next, how lookups use the hosts file, the cache and Time To Live. When I look up a domain, my computer, Windows, Mac or Linux, first checks the hosts file, then its local cache of addresses looked up since power-on that haven't expired."
         },
         {
           "s": "steve",
@@ -302,7 +319,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "If the answer isn't local, my computer asks the DNS server it's configured to use. If Windows obtains an IP automatically, it also receives two DNS servers approved by your ISP."
+          "t": "Next, asking the ISP's DNS server. If the answer isn't local, my computer asks the DNS server it's configured to use. If Windows obtains an IP automatically, it also receives two DNS servers approved by your ISP."
         },
         {
           "s": "steve",
@@ -327,7 +344,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "If the ISP's server doesn't have the answer, or it has expired, it goes upstream. It will surely have the .com servers cached, since it needs them constantly."
+          "t": "Next, going up the hierarchy. If the ISP's server doesn't have the answer, or it has expired, it goes upstream. It will surely have the .com servers cached, since it needs them constantly."
         },
         {
           "s": "steve",
@@ -356,7 +373,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "If I knew I'd change IPs tomorrow, I could lower the Time To Live, the TTL, on GRC's records. As records expired around the Internet, servers would get new ones with short TTLs and come back sooner. That raises my DNS server's load, but changes spread much faster."
+          "t": "Next, TTL and \"propagation.\" If I knew I'd change IPs tomorrow, I could lower the Time To Live, the TTL, on GRC's records. As records expired around the Internet, servers would get new ones with short TTLs and come back sooner. That raises my DNS server's load, but changes spread much faster."
         },
         {
           "s": "steve",
@@ -385,7 +402,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In the early days nobody worried about security. The whole Internet fit in one hosts file. There were people in white lab coats, a few domains like .gov, .edu and .mil, and hundreds or thousands of machines."
+          "t": "Now, how DNS was built without security. In the early days nobody worried about security. The whole Internet fit in one hosts file. There were people in white lab coats, a few domains like .gov, .edu and .mil, and hundreds or thousands of machines."
         },
         {
           "s": "steve",
@@ -414,7 +431,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Every UDP packet has a port at each end, 1 to 65,535, and a 32-bit IP address."
+          "t": "Next, transaction IDs and early spoofing. Every UDP packet has a port at each end, 1 to 65,535, and a 32-bit IP address."
         },
         {
           "s": "steve",
@@ -439,7 +456,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So DNS servers switched to a pseudorandom number generator for transaction IDs. That made spoofing much harder, since you had no information about the next ID."
+          "t": "Next, why random transaction IDs weren't enough. So DNS servers switched to a pseudorandom number generator for transaction IDs. That made spoofing much harder, since you had no information about the next ID."
         },
         {
           "s": "steve",
@@ -461,7 +478,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A reply must match two things: the transaction ID, and the port the query came from. DNS servers listen on port 53, as the web uses 80, SMTP 25 and POP 110. But the source port of an outgoing query can be anything."
+          "t": "Next, source port randomization. A reply must match two things: the transaction ID, and the port the query came from. DNS servers listen on port 53, as the web uses 80, SMTP 25 and POP 110. But the source port of an outgoing query can be anything."
         },
         {
           "s": "steve",
@@ -507,7 +524,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's talk about the attack. Dan has now revealed how it works?"
+          "t": "Now to Dan Kaminsky's attack itself. Let's talk about the attack. Dan has now revealed how it works?"
         },
         {
           "s": "steve",
@@ -528,7 +545,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A \"bailiwick\" is the neighborhood, the domain, a query is about. A DNS reply has four sections: the question, the answer, authority information, and additional information."
+          "t": "Next, \"bailiwick.\" A \"bailiwick\" is the neighborhood, the domain, a query is about. A DNS reply has four sections: the question, the answer, authority information, and additional information."
         },
         {
           "s": "steve",
@@ -549,7 +566,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Take Example.com. First you look up its two name servers, NS1 and NS2, just as the ISP's server would. Now you know which IPs it will query. Your target is a lame ISP that hasn't added source port randomization, and a huge number still haven't."
+          "t": "Next, how the attack works. Take Example.com. First you look up its two name servers, NS1 and NS2, just as the ISP's server would. Now you know which IPs it will query. Your target is a lame ISP that hasn't added source port randomization, and a huge number still haven't."
         },
         {
           "s": "steve",
@@ -591,7 +608,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Certificates, SSL, are the defense. A malicious server in Russia spoofing PayPal can't have a certificate for PayPal.com. But not all users are security-conscious. People assume the login will be secure. Only the newest browsers color the address bar. Otherwise it's a little padlock nobody looks at."
+          "t": "Next, SSL as the defense. Certificates, SSL, are the defense. A malicious server in Russia spoofing PayPal can't have a certificate for PayPal.com. But not all users are security-conscious. People assume the login will be secure. Only the newest browsers color the address bar. Otherwise it's a little padlock nobody looks at."
         },
         {
           "s": "leo",
@@ -632,7 +649,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This is serious. HD Moore's Metasploit has it, attacks are underway, and they take a couple of minutes against servers that don't randomize."
+          "t": "Now, testing your ISP's DNS. This is serious. HD Moore's Metasploit has it, attacks are underway, and they take a couple of minutes against servers that don't randomize."
         },
         {
           "s": "steve",
@@ -670,7 +687,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "What about personal routers? Inexpensive Netgear and Linksys-style routers don't cache. They just pass queries on."
+          "t": "Next, home routers. What about personal routers? Inexpensive Netgear and Linksys-style routers don't cache. They just pass queries on."
         },
         {
           "s": "steve",
@@ -687,7 +704,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "An attacker can insert new name servers for any domain and poison it for as long as they like. An ISP would probably learn of it only when customers complained that PayPal seemed wrong, and then flush the record. Who knows how many people would be hit meanwhile."
+          "t": "Next, what the fixes may do. An attacker can insert new name servers for any domain and poison it for as long as they like. An ISP would probably learn of it only when customers complained that PayPal seemed wrong, and then flush the record. Who knows how many people would be hit meanwhile."
         },
         {
           "s": "steve",
@@ -712,7 +729,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "HD Moore said the exploit runs on Linux and is being ported to Mac OS X, but not to Windows, because Windows can't spoof UDP. Thankfully it doesn't have full raw sockets."
+          "t": "Next, Windows. HD Moore said the exploit runs on Linux and is being ported to Mac OS X, but not to Windows, because Windows can't spoof UDP. Thankfully it doesn't have full raw sockets."
         },
         {
           "s": "leo",
@@ -734,7 +751,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Dan has taken a lot of heat. People accuse him of self-promotion and exaggeration. I think he's done the Internet community a great service."
+          "t": "To close, a defense of Dan Kaminsky. Dan has taken a lot of heat. People accuse him of self-promotion and exaggeration. I think he's done the Internet community a great service."
         },
         {
           "s": "steve",

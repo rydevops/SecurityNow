@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-168.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #168",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 168, for October 30, 2008: ClickJacking."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover clickjacking: a transparent layer makes you click things you never see, on sites that know you. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "An Out-of-Cycle RPC Patch",
       "beats": [
         {
           "s": "steve",
-          "t": "Microsoft put out an out-of-cycle patch. People in GRC's newsgroups joked that Microsoft times these for right after we record."
+          "t": "First, the news. Microsoft put out an out-of-cycle patch. People in GRC's newsgroups joked that Microsoft times these for right after we record."
         },
         {
           "s": "steve",
@@ -58,7 +75,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Just after Opera's 9.61 update fixed three vulnerabilities, another was found. The fix, 9.62, is in final testing. It's a cross-site scripting flaw; a demo could pop up the Windows calculator from a link."
+          "t": "Next, an Opera flaw and another stolen card. Just after Opera's 9.61 update fixed three vulnerabilities, another was found. The fix, 9.62, is in final testing. It's a cross-site scripting flaw; a demo could pop up the Windows calculator from a link."
         },
         {
           "s": "leo",
@@ -91,7 +108,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "An anonymous listener, a lab systems administrator, told his coworker about SpinRite, but the coworker thought it was snake oil. He bought a copy through work and ran it on healthy office systems, which didn't impress anyone."
+          "t": "Now a SpinRite story. An anonymous listener, a lab systems administrator, told his coworker about SpinRite, but the coworker thought it was snake oil. He bought a copy through work and ran it on healthy office systems, which didn't impress anyone."
         },
         {
           "s": "steve",
@@ -108,7 +125,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's talk about something timely: clickjacking."
+          "t": "Now to our main topic, something timely: clickjacking."
         },
         {
           "s": "steve",
@@ -142,7 +159,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Imagine you go to eBay, PayPal or MySpace, where the site knows you. Persistent login is a problem, but notice that if Firefox remembers your password, just visiting the page fills in your username and password. You now have one-click login, even if you logged out last time."
+          "t": "Next, why persistent login makes it work. Imagine you go to eBay, PayPal or MySpace, where the site knows you. Persistent login is a problem, but notice that if Firefox remembers your password, just visiting the page fills in your username and password. You now have one-click login, even if you logged out last time."
         },
         {
           "s": "steve",
@@ -163,7 +180,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It was serious enough that the researchers toned down their OWASP talk at Adobe's request, because several examples showed how easily Flash could be made to give remote access to your webcam and microphone."
+          "t": "Next, Flash and the webcam. It was serious enough that the researchers toned down their OWASP talk at Adobe's request, because several examples showed how easily Flash could be made to give remote access to your webcam and microphone."
         },
         {
           "s": "steve",
@@ -184,7 +201,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two takeaways. First, Firefox users: update NoScript. Giorgio Maone, its author, was clued in early and added a feature called ClearClick. Even if you globally allow scripting, it inspects what you're actually clicking and warns you if games are being played. Blanket protection."
+          "t": "Finally, fixes. Two takeaways. First, Firefox users: update NoScript. Giorgio Maone, its author, was clued in early and added a feature called ClearClick. Even if you globally allow scripting, it inspects what you're actually clicking and warns you if games are being played. Blanket protection."
         },
         {
           "s": "steve",
@@ -213,7 +230,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "We talked last time about logging out of sites. Still worth it?"
+          "t": "To wrap up: a question on logging out. We talked last time about logging out of sites. Still worth it?"
         },
         {
           "s": "steve",

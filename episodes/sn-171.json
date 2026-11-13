@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-171.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #171",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 171, for November 20, 2008: Listener Feedback Q&A #54."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First the news and a SpinRite story. Then follow-ups on the TKIP hack, a keyboard you can sniff from across the room, hard-drive passwords and PayPal workarounds."
+        }
+      ]
+    },
+    {
       "title": "DNS, a New Visa Card, and NebuAd Sued",
       "beats": [
         {
@@ -54,7 +71,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Apple's Safari 3.2 fixed 11 flaws, but there are many reports of crashes afterward, predominantly on Windows. Firefox 3.0.4 fixed 12 flaws, six critical, several remote code execution. And Chrome fixed a file-stealing hole."
+          "t": "First, the news. Apple's Safari 3.2 fixed 11 flaws, but there are many reports of crashes afterward, predominantly on Windows. Firefox 3.0.4 fixed 12 flaws, six critical, several remote code execution. And Chrome fixed a file-stealing hole."
         },
         {
           "s": "steve",
@@ -71,7 +88,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A listener calling himself \"Scooby Drew\" did tech support. A crashed computer full of customer data, including credit card numbers, was left out front of the building. The IT guy said it was just scrap. Curious, he took it home and ran a pirated copy of SpinRite over the weekend, then booted the machine in front of the IT guys."
+          "t": "Now a SpinRite story. A listener calling himself \"Scooby Drew\" did tech support. A crashed computer full of customer data, including credit card numbers, was left out front of the building. The IT guy said it was just scrap. Curious, he took it home and ran a pirated copy of SpinRite over the weekend, then booted the machine in front of the IT guys."
         },
         {
           "s": "steve",
@@ -92,7 +109,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ben Jaques in Des Moines and Bruce Harrison in Durban both ask: since two MIC failures within 60 seconds shut the access point down and rekey everyone, couldn't you deliberately cause MIC failures to keep a network down?"
+          "t": "Now to listener questions, starting with the TKIP hack. Ben Jaques in Des Moines and Bruce Harrison in Durban both ask: since two MIC failures within 60 seconds shut the access point down and rekey everyone, couldn't you deliberately cause MIC failures to keep a network down?"
         },
         {
           "s": "steve",
@@ -117,7 +134,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Marc Carroll at a British base in the Falklands, Cam C in Melbourne, and Ted in Research Triangle Park all ask: since the chopchop needs 12 minutes and routers rekey hourly, would lowering the group-key renewal interval below 12 minutes defeat it?"
+          "t": "Next, a question about the rekey interval. Marc Carroll at a British base in the Falklands, Cam C in Melbourne, and Ted in Research Triangle Park all ask: since the chopchop needs 12 minutes and routers rekey hourly, would lowering the group-key renewal interval below 12 minutes defeat it?"
         },
         {
           "s": "steve",
@@ -130,7 +147,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dennis Wigmore in Port Hope suggests forcing deauthentication to get a new key faster."
+          "t": "Next, a suggestion for a faster hack. Dennis Wigmore in Port Hope suggests forcing deauthentication to get a new key faster."
         },
         {
           "s": "steve",
@@ -143,7 +160,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike in Salt Lake City couldn't find QoS on his router but found WMM, which he learned is the same thing, and disabled it."
+          "t": "Next, a question about QoS. Mike in Salt Lake City couldn't find QoS on his router but found WMM, which he learned is the same thing, and disabled it."
         },
         {
           "s": "steve",
@@ -164,7 +181,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Paul Kamet in Kaneohe asks: if the IP addresses in a WiFi packet are encrypted, how does the packet cross the country?"
+          "t": "Next, a question about encrypted IPs. Paul Kamet in Kaneohe asks: if the IP addresses in a WiFi packet are encrypted, how does the packet cross the country?"
         },
         {
           "s": "steve",
@@ -185,7 +202,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matt in Howell, New Jersey heard a lecture mention a \"salt value\" mixed into a hash. What is salt?"
+          "t": "Next, a question about salt. Matt in Howell, New Jersey heard a lecture mention a \"salt value\" mixed into a hash. What is salt?"
         },
         {
           "s": "steve",
@@ -207,7 +224,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rodney Morton, on assignment in Germany, cites a BBC article: Swiss researchers reproduced what a target typed by analyzing the electromagnetic signals from key presses, at up to 20 meters."
+          "t": "Next, a story about keyboards you can sniff. Rodney Morton, on assignment in Germany, cites a BBC article: Swiss researchers reproduced what a target typed by analyzing the electromagnetic signals from key presses, at up to 20 meters."
         },
         {
           "s": "steve",
@@ -228,7 +245,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark Piper asks how to turn on the hard-drive startup password; he can't find it in his BIOS."
+          "t": "Next, a question about hard-drive passwords. Mark Piper asks how to turn on the hard-drive startup password; he can't find it in his BIOS."
         },
         {
           "s": "steve",
@@ -253,7 +270,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John in Columbus asks whether he should still disable Universal Plug and Play on his router."
+          "t": "Next, a question about Universal Plug and Play. John in Columbus asks whether he should still disable Universal Plug and Play on his router."
         },
         {
           "s": "steve",
@@ -278,7 +295,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Storey in the UK asks how to close port 1029 externally."
+          "t": "Next, a question about an open port. John Storey in the UK asks how to close port 1029 externally."
         },
         {
           "s": "steve",
@@ -291,7 +308,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike O'Hare in Georgetown, Massachusetts opened a separate savings account just for PayPal, since PayPal insists on pulling from a checking account and its one-time card gives no spending limit. He transfers in only what he needs."
+          "t": "Last, a question about PayPal workarounds. Mike O'Hare in Georgetown, Massachusetts opened a separate savings account just for PayPal, since PayPal insists on pulling from a checking account and its one-time card gives no spending limit. He transfers in only what he needs."
         },
         {
           "s": "steve",

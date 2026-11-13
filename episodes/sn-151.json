@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-151.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #151",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 151, for July 3, 2008: Phracking Phorm."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we start with updates and some computer history from the Pentium launch. Then our main topic: exactly how Phorm tags you with cookies on every site you visit."
+        }
+      ]
+    },
+    {
       "title": "The Second Sesquicentennial",
       "beats": [
         {
@@ -85,7 +102,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A copy of Acrobat on one of my machines updated itself since we last spoke."
+          "t": "First, the news, starting with software updates. A copy of Acrobat on one of my machines updated itself since we last spoke."
         },
         {
           "s": "leo",
@@ -110,7 +127,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We wondered recently about Microsoft's Malicious Software Removal Tool. Microsoft says 330 million copies were downloaded in June, updated to remove a pernicious game-password-stealing malware, and it removed two million copies."
+          "t": "Next, a malware story. We wondered recently about Microsoft's Malicious Software Removal Tool. Microsoft says 330 million copies were downloaded in June, updated to remove a pernicious game-password-stealing malware, and it removed two million copies."
         },
         {
           "s": "leo",
@@ -127,7 +144,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I updated Wizmo with two new commands. Locking the computer was its most requested feature. Control-Alt-Delete and Lock isn't hard, but okay, I give up. \"wizmo lock\" is in."
+          "t": "Now, a tool update. I updated Wizmo with two new commands. Locking the computer was its most requested feature. Control-Alt-Delete and Lock isn't hard, but okay, I give up. \"wizmo lock\" is in."
         },
         {
           "s": "steve",
@@ -168,7 +185,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Jungle Disk 2.0 is out, a free upgrade for everyone on version 1. There's also a new groupware version that lets multiple Jungle Disks log into the same Amazon S3 bucket and share files, essentially a shared directory. You can access multiple buckets at once, and the built-in backup does much more. He's been listening to users."
+          "t": "Next, a Jungle Disk update. Jungle Disk 2.0 is out, a free upgrade for everyone on version 1. There's also a new groupware version that lets multiple Jungle Disks log into the same Amazon S3 bucket and share files, essentially a shared directory. You can access multiple buckets at once, and the built-in backup does much more. He's been listening to users."
         },
         {
           "s": "leo",
@@ -181,7 +198,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "On Sunday's TWiT, with Bill Gates' last day at Microsoft, we had old-timers from the computer magazine world who knew him. Why I didn't think of you, Steve, is beyond me. You must have stories."
+          "t": "Now, some computer history, prompted by Bill Gates' last day at Microsoft. On Sunday's TWiT, with Bill Gates' last day at Microsoft, we had old-timers from the computer magazine world who knew him. Why I didn't think of you, Steve, is beyond me. You must have stories."
         },
         {
           "s": "steve",
@@ -242,7 +259,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Intel presented the radically improved Pentium architecture in the big auditorium. I was glued to it, thinking three or four columns. This was the first chip, I believe, with major on-chip cache, since processors were outpacing dynamic RAM. And the buzzword was still RISC."
+          "t": "The story starts at the Pentium launch. Intel presented the radically improved Pentium architecture in the big auditorium. I was glued to it, thinking three or four columns. This was the first chip, I believe, with major on-chip cache, since processors were outpacing dynamic RAM. And the buzzword was still RISC."
         },
         {
           "s": "leo",
@@ -284,7 +301,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Then a panel: Philippe Kahn, Bill Gates, Fred Gibbons and Jim Manzi, \"the\" guys in the PC industry, moderated by Stewart Alsop, who wrote the PC Letter and was once InfoWorld's editor-in-chief."
+          "t": "Next, the panel at that launch. Then a panel: Philippe Kahn, Bill Gates, Fred Gibbons and Jim Manzi, \"the\" guys in the PC industry, moderated by Stewart Alsop, who wrote the PC Letter and was once InfoWorld's editor-in-chief."
         },
         {
           "s": "leo",
@@ -330,7 +347,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Philippe sat at the far right, closest to Stew. Stew asked: Philippe, as the preeminent compiler makers, and Bill is growling, will you be coming out with new compilers for this processor? Philippe gave his pro-Intel spiel: they'd worked with Intel and would have Pentium-aware compilers immediately."
+          "t": "Then came the famous exchange. Philippe sat at the far right, closest to Stew. Stew asked: Philippe, as the preeminent compiler makers, and Bill is growling, will you be coming out with new compilers for this processor? Philippe gave his pro-Intel spiel: they'd worked with Intel and would have Pentium-aware compilers immediately."
         },
         {
           "s": "steve",
@@ -412,7 +429,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Had I been on TWiT, I'd have agreed wholeheartedly with Jerry about Pascal. Its failure to win is one of the great losses in computer science."
+          "t": "A related thought on programming languages: the loss of Pascal. Had I been on TWiT, I'd have agreed wholeheartedly with Jerry about Pascal. Its failure to win is one of the great losses in computer science."
         },
         {
           "s": "steve",
@@ -465,7 +482,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I've complained that only one of my workstation's four cores ever does anything. But recompressing a two-hour video took over 24 hours on that machine. I couldn't tolerate that, so I built a really strong one: an Intel quad-core Extreme with 12MB of on-chip cache, in two 6MB halves each shared by a pair of cores, a 1,333MHz front-side bus, DDR3 and 8GB of RAM."
+          "t": "Now, a hardware note. I've complained that only one of my workstation's four cores ever does anything. But recompressing a two-hour video took over 24 hours on that machine. I couldn't tolerate that, so I built a really strong one: an Intel quad-core Extreme with 12MB of on-chip cache, in two 6MB halves each shared by a pair of cores, a 1,333MHz front-side bus, DDR3 and 8GB of RAM."
         },
         {
           "s": "leo",
@@ -510,7 +527,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Reinstalling my software, I came to DVD-Lab PRO 2 from MediaChance.com, my prize-winning choice for DVD authoring. It makes a disc that just plays a movie, or multi-episode discs with menus. It even exposes the virtual machine inside DVD players. DVDs actually run a VM, and authoring tools write canned VM code behind the scenes for your menus. They have a demo quiz that runs on the DVD player itself, plus an emulator, editor and debugger."
+          "t": "A related gripe: software activation. Reinstalling my software, I came to DVD-Lab PRO 2 from MediaChance.com, my prize-winning choice for DVD authoring. It makes a disc that just plays a movie, or multi-episode discs with menus. It even exposes the virtual machine inside DVD players. DVDs actually run a VM, and authoring tools write canned VM code behind the scenes for your menus. They have a demo quiz that runs on the DVD player itself, plus an emulator, editor and debugger."
         },
         {
           "s": "steve",
@@ -575,7 +592,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's talk about Phorm."
+          "t": "Now to our main topic: how Phorm's behavioral ad system works. Let's talk about Phorm."
         },
         {
           "s": "steve",
@@ -621,7 +638,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "First, cookies. They're tokens a server offers, which the browser returns with later requests to the same domain. Visit www.cnet.com with a virgin browser, and CNET's response includes headers you never see: the page's expiration, its length, and a cookie. The browser keeps it, and whenever it requests anything from CNET.com, it sends back its CNET.com cookies. That's a first-party cookie."
+          "t": "First, a refresher on cookies. They're tokens a server offers, which the browser returns with later requests to the same domain. Visit www.cnet.com with a virgin browser, and CNET's response includes headers you never see: the page's expiration, its length, and a cookie. The browser keeps it, and whenever it requests anything from CNET.com, it sends back its CNET.com cookies. That's a first-party cookie."
         },
         {
           "s": "leo",
@@ -686,7 +703,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I'm a customer of a Phorm ISP. I type www.cnet.com. My ISP receives the request, of course. Phorm's equipment in the ISP intercepts it and checks whether my browser sent a WebWise cookie in the CNET.com domain. WebWise.net is Phorm's domain. Look it up in WHOIS, and you'll see Phorm, Inc., in New York."
+          "t": "Next, Phorm's three-redirect dance. I'm a customer of a Phorm ISP. I type www.cnet.com. My ISP receives the request, of course. Phorm's equipment in the ISP intercepts it and checks whether my browser sent a WebWise cookie in the CNET.com domain. WebWise.net is Phorm's domain. Look it up in WHOIS, and you'll see Phorm, Inc., in New York."
         },
         {
           "s": "steve",
@@ -772,7 +789,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "After that dance, my request finally reaches the real CNET. Phorm strips its WebWise cookie from the request, trying to corral it so it stays a private dialogue between you and the ISP."
+          "t": "Next, where the cookie leaks out. After that dance, my request finally reaches the real CNET. Phorm strips its WebWise cookie from the request, trying to corral it so it stays a private dialogue between you and the ISP."
         },
         {
           "s": "steve",
@@ -789,7 +806,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Again, this isn't CNET or TWiT.tv. It's your ISP and Phorm, going far beyond what third-party cookies could do."
+          "t": "Finally, what Phorm reads. Again, this isn't CNET or TWiT.tv. It's your ISP and Phorm, going far beyond what third-party cookies could do."
         },
         {
           "s": "steve",

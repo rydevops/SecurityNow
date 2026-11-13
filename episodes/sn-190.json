@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-190.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #190",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 190, for April 2, 2009: Listener Feedback #63."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: Conficker's April Fools' trigger, a new XP flaw and a preview of GhostNet. Then questions on TOR exit-node trust, HTTPS interception, Conficker symptoms, SpinRite on NAS drives and password-strength meters."
+        }
+      ]
+    },
+    {
       "title": "Conficker's April Fools' Trigger",
       "beats": [
         {
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A nasty new integer overflow in Windows XP only (not Vista or 7): in gdiplus.dll, the enhanced metafile handler, formally \"GdiPlus EMF GpFont.SetData Integer Overflow.\" A maliciously crafted image shown on your machine is a takeover: on a web page you visit, in an email you view (even without a preview pane), in an Office document or a PDF, anything that renders the image."
+          "t": "Next, a new XP flaw. A nasty new integer overflow in Windows XP only (not Vista or 7): in gdiplus.dll, the enhanced metafile handler, formally \"GdiPlus EMF GpFont.SetData Integer Overflow.\" A maliciously crafted image shown on your machine is a takeover: on a web page you visit, in an email you view (even without a preview pane), in an Office document or a PDF, anything that renders the image."
         },
         {
           "s": "steve",
@@ -55,7 +72,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Housekeeping: Firefox is now 3.0.8, fixing two flaws including one needing a malicious XML file (and, on the Mac, the Pwn2Own exploit). And Cisco released eight updates covering 11 security flaws in IOS router firmware, worth attention for anyone maintaining Cisco gear."
+          "t": "Next, housekeeping and a preview of GhostNet. Housekeeping: Firefox is now 3.0.8, fixing two flaws including one needing a malicious XML file (and, on the Mac, the Pwn2Own exploit). And Cisco released eight updates covering 11 security flaws in IOS router firmware, worth attention for anyone maintaining Cisco gear."
         },
         {
           "s": "steve",
@@ -72,7 +89,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A Firefox find for tab addicts: Tree Style Tab, which shows tabs down the left side in an indented hierarchy (shift-click a link and it nests under its parent) and lets you protect tabs so you don't close them by accident. I end up with tab insanity, so I love it."
+          "t": "Next, tools, a PDP-8 kit and a roaming surprise. A Firefox find for tab addicts: Tree Style Tab, which shows tabs down the left side in an indented hierarchy (shift-click a link and it nests under its parent) and lets you protect tabs so you don't close them by accident. I end up with tab insanity, so I love it."
         },
         {
           "s": "steve",
@@ -93,7 +110,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Michael, an expat in Southeast Asia, uses TOR with his exit node pinned to US/Europe IPs, and asks Steve to run a trustworthy TOR server he could choose as his exit node, since a compromised exit node could sniff his login credentials."
+          "t": "Now to listener questions, starting with TOR exit nodes. Michael, an expat in Southeast Asia, uses TOR with his exit node pinned to US/Europe IPs, and asks Steve to run a trustworthy TOR server he could choose as his exit node, since a compromised exit node could sniff his login credentials."
         },
         {
           "s": "steve",
@@ -119,7 +136,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Fred's company shows a daily pop-up: \"HTTPS scanning servers decrypt all HTTPS traffic.\" He doesn't object on the corporate domain but asks, can HTTPS really be decrypted, and what stops any server doing it?"
+          "t": "Next, a question about an HTTPS-scanning gateway. Fred's company shows a daily pop-up: \"HTTPS scanning servers decrypt all HTTPS traffic.\" He doesn't object on the corporate domain but asks, can HTTPS really be decrypted, and what stops any server doing it?"
         },
         {
           "s": "steve",
@@ -140,7 +157,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jack in Tampa hears mouse clicks and typing coming from his speakers that aren't his, even with the browser closed, and his firewall is denying Firefox requests."
+          "t": "Next, a question about spotting Conficker. Jack in Tampa hears mouse clicks and typing coming from his speakers that aren't his, even with the browser closed, and his firewall is denying Firefox requests."
         },
         {
           "s": "steve",
@@ -161,7 +178,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Paul in Calgary has 5.6TB across internal, external USB/eSATA and NAS drives, and asks whether SpinRite works effectively on them."
+          "t": "Next, a SpinRite question about external drives. Paul in Calgary has 5.6TB across internal, external USB/eSATA and NAS drives, and asks whether SpinRite works effectively on them."
         },
         {
           "s": "steve",
@@ -178,7 +195,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike asks Steve three questions: do you accept cookies, do you worry about them, and should they just be accepted to reduce hassle?"
+          "t": "Next, a question about cookies. Mike asks Steve three questions: do you accept cookies, do you worry about them, and should they just be accepted to reduce hassle?"
         },
         {
           "s": "steve",
@@ -195,7 +212,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Lee refuses to run as administrator, and was surprised the MSRT won't run from a limited account."
+          "t": "Next, a question about running as admin. Lee refuses to run as administrator, and was surprised the MSRT won't run from a limited account."
         },
         {
           "s": "steve",
@@ -220,7 +237,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ben at Virginia Tech wants a client-server tool like a zombie's: each machine keeps an outbound TCP connection open to his server so he can remote-control it through NATs and firewalls. He suggests Steve build it into CryptoLink."
+          "t": "Next, a question about reaching clients behind NAT. Ben at Virginia Tech wants a client-server tool like a zombie's: each machine keeps an outbound TCP connection open to his server so he can remote-control it through NATs and firewalls. He suggests Steve build it into CryptoLink."
         },
         {
           "s": "steve",
@@ -242,7 +259,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Poojan asks how those red-to-green password meters work: \"7EDAHR7J\" rates strong but \"01234567\" only fair, so it's more than length."
+          "t": "Next, a question about password-strength meters. Poojan asks how those red-to-green password meters work: \"7EDAHR7J\" rates strong but \"01234567\" only fair, so it's more than length."
         },
         {
           "s": "steve",
@@ -259,7 +276,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dain (a YubiKing winner, and Swedish, not Swiss) proposes turning a hash into a cipher: generate an IV, append a passphrase, then hash repeatedly, appending each hash of the previous result to build a keystream as long as the plaintext, and XOR it with the message. Reversible with the same IV and passphrase. Did he miss something?"
+          "t": "Next, a question about rolling your own cipher. Dain (a YubiKing winner, and Swedish, not Swiss) proposes turning a hash into a cipher: generate an IV, append a passphrase, then hash repeatedly, appending each hash of the previous result to build a keystream as long as the plaintext, and XOR it with the message. Reversible with the same IV and passphrase. Did he miss something?"
         },
         {
           "s": "steve",
@@ -280,7 +297,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Richard's bookkeeper client juggles 200+ account names and passwords across 60 clients, some static, some rotating, on PCs and Macs, recorded in an unsecured handwritten journal. A better way?"
+          "t": "Next, a question about password overload. Richard's bookkeeper client juggles 200+ account names and passwords across 60 clients, some static, some rotating, on PCs and Macs, recorded in an unsecured handwritten journal. A better way?"
         },
         {
           "s": "steve",
@@ -301,7 +318,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John objects that Steve overuses \"granular.\" Does more granular mean bigger or smaller grains?"
+          "t": "To close, a note on a word. John objects that Steve overuses \"granular.\" Does more granular mean bigger or smaller grains?"
         },
         {
           "s": "steve",

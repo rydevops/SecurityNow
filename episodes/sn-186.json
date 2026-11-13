@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-186.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #186",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 186, for March 5, 2009: Listener Feedback #61."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: an Excel zero-day, Adobe and Koobface. Then questions on guest WiFi, iFrames, RISC versus CISC, open-source trust, GoToMyPC and defragmenting huge drives."
+        }
+      ]
+    },
+    {
       "title": "News: Excel Zero-Day, Adobe and Koobface",
       "beats": [
         {
           "s": "steve",
-          "t": "A new zero-day Excel remote-code-execution exploit is in the wild. Open a malicious attachment, even one disguised with a non-Excel name, and it triggers Excel and runs code. It hits Office 2000 through 2007 on Windows and Office 2004 and 2008 on the Mac, so the bug is old; Microsoft acknowledges it in article 968272 and a patch should come next Patch Tuesday."
+          "t": "First, the news. A new zero-day Excel remote-code-execution exploit is in the wild. Open a malicious attachment, even one disguised with a non-Excel name, and it triggers Excel and runs code. It hits Office 2000 through 2007 on Windows and Office 2004 and 2008 on the Mac, so the bug is old; Microsoft acknowledges it in article 968272 and a patch should come next Patch Tuesday."
         },
         {
           "s": "steve",
@@ -38,7 +55,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Following up on the Kindle 2: I dislike its non-replaceable battery. Lithium-ion has both a cycle life and a shelf life of a few years, so even light use degrades it; both my Kindle 1s lost noticeable battery life within a year. The touted 25% gain isn't showing up."
+          "t": "Next, errata on the Kindle 2. Following up on the Kindle 2: I dislike its non-replaceable battery. Lithium-ion has both a cycle life and a shelf life of a few years, so even light use degrades it; both my Kindle 1s lost noticeable battery life within a year. The touted 25% gain isn't showing up."
         },
         {
           "s": "leo",
@@ -59,7 +76,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike shares a retro-PC tip: the Retr0bright project (Retr0bright with a zero), a cheap way to reverse the yellowing of old beige computers."
+          "t": "Next, a retro-PC tip. Mike shares a retro-PC tip: the Retr0bright project (Retr0bright with a zero), a cheap way to reverse the yellowing of old beige computers."
         },
         {
           "s": "steve",
@@ -72,7 +89,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chad notes Apple added guest networking to AirPort Extreme and Time Capsule. What do they do?"
+          "t": "Now to listener questions, starting with Apple's guest networking. Chad notes Apple added guest networking to AirPort Extreme and Time Capsule. What do they do?"
         },
         {
           "s": "steve",
@@ -102,7 +119,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Gary in Tehachapi recalls his first computer, a PDP-8 running Lunar Lander loaded from paper tape, showing velocity and altitude on the front-panel lights, with a toggle switch to fire the engine."
+          "t": "Next, a memory from the PDP-8. Gary in Tehachapi recalls his first computer, a PDP-8 running Lunar Lander loaded from paper tape, showing velocity and altitude on the front-panel lights, with a toggle switch to fire the engine."
         },
         {
           "s": "steve",
@@ -119,7 +136,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill in Auckland found that a secure page with a non-secure image warns of mixed content, but a non-secure page embedding an iFrame to a secure page shows no warning and no padlock. Isn't that the same leakage risk?"
+          "t": "Next, a question about iFrames. Bill in Auckland found that a secure page with a non-secure image warns of mixed content, but a non-secure page embedding an iFrame to a secure page shows no warning and no padlock. Isn't that the same leakage risk?"
         },
         {
           "s": "steve",
@@ -140,7 +157,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Wayne disagrees that \"mini\" referred to the instruction set; he says minicomputers were \"mini\" versus room-filling mainframes, and the minimal instruction set is RISC."
+          "t": "Next, a question about \"mini\" versus RISC. Wayne disagrees that \"mini\" referred to the instruction set; he says minicomputers were \"mini\" versus room-filling mainframes, and the minimal instruction set is RISC."
         },
         {
           "s": "steve",
@@ -157,7 +174,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tyler asks whether Steve's transcriptionist, Elaine, could handle eight hours of audio he needs transcribed."
+          "t": "Next, a question about transcription. Tyler asks whether Steve's transcriptionist, Elaine, could handle eight hours of audio he needs transcribed."
         },
         {
           "s": "steve",
@@ -170,7 +187,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Joe Sturonas, CTO of PKWARE, inventors of the ZIP format, responds to our mention that ZIP now uses AES. PKWARE updated the standard to support strong encryption: AES with a passphrase (symmetric), X.509 v3 certificates (asymmetric), or both, plus SHA-1/SHA-2 digital signatures on individual files or the whole archive, as strong as PGP."
+          "t": "Next, a response about encrypted ZIP. Joe Sturonas, CTO of PKWARE, inventors of the ZIP format, responds to our mention that ZIP now uses AES. PKWARE updated the standard to support strong encryption: AES with a passphrase (symmetric), X.509 v3 certificates (asymmetric), or both, plus SHA-1/SHA-2 digital signatures on individual files or the whole archive, as strong as PGP."
         },
         {
           "s": "steve",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tom in Ontario worries open source lets anyone insert malware and distribute a trojaned Linux."
+          "t": "Next, a question about open source. Tom in Ontario worries open source lets anyone insert malware and distribute a trojaned Linux."
         },
         {
           "s": "steve",
@@ -213,7 +230,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David asks why GoToMyPC is called safe at an Internet café. It isn't, in that sense; if the café PC has a keylogger, SSL doesn't help, and even on your own laptop someone could watch you type."
+          "t": "Next, a question about GoToMyPC. David asks why GoToMyPC is called safe at an Internet café. It isn't, in that sense; if the café PC has a keylogger, SSL doesn't help, and even on your own laptop someone could watch you type."
         },
         {
           "s": "steve",
@@ -230,7 +247,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Riley asks: if an email isn't encrypted, how hard is it to grab its contents between his mail server and the destination server?"
+          "t": "Next, a question about unencrypted email. Riley asks: if an email isn't encrypted, how hard is it to grab its contents between his mail server and the destination server?"
         },
         {
           "s": "steve",
@@ -251,7 +268,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Pierre read that defragging terabyte drives may do more harm than good, long runtime stressing the drive, and transfer rates so fast the gain is minor."
+          "t": "Last, a question about defragging. Pierre read that defragging terabyte drives may do more harm than good, long runtime stressing the drive, and transfer rates so fast the gain is minor."
         },
         {
           "s": "steve",

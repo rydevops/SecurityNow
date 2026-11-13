@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-193.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #193",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 193, for April 23, 2009: Conficker."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we take a deep technical tour of Conficker, the most sophisticated worm the Internet had seen. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "The Pirate Bay Verdict",
       "beats": [
         {
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Amazon's UK site is the first high-profile company to block Phorm from scanning its pages. Phorm is the invasive ISP technology that intercepts your connections, stuffs your browser with its cookies on every site, and keyword-scans the pages you visit to inject targeted ads."
+          "t": "Next, Amazon UK blocks Phorm. Amazon's UK site is the first high-profile company to block Phorm from scanning its pages. Phorm is the invasive ISP technology that intercepts your connections, stuffs your browser with its cookies on every site, and keyword-scans the pages you visit to inject targeted ads."
         },
         {
           "s": "steve",
@@ -42,7 +59,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Verizon Business reported responding in 2008 to at least 90 confirmed data breaches involving about 285 million consumer records, more than all breaches of 2004 through 2007 combined. Banks and financial institutions accounted for 93% of the records compromised. So much stolen data is now on the black market that prices have actually fallen."
+          "t": "Next, breaches and spies in the fighter jet. Verizon Business reported responding in 2008 to at least 90 confirmed data breaches involving about 285 million consumer records, more than all breaches of 2004 through 2007 combined. Banks and financial institutions accounted for 93% of the records compromised. So much stolen data is now on the black market that prices have actually fallen."
         },
         {
           "s": "steve",
@@ -63,7 +80,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A useful bit of errata. Windows XP wisely limits file-and-printer-sharing traffic to your local network, so even on a public IP those scary ports (137, 139, 445) won't accept traffic from a global address. But it occurred to me at Starbucks, now on open, unencrypted AT&T WiFi, that every laptop there is on the same LAN."
+          "t": "Next, errata on file sharing over WiFi. A useful bit of errata. Windows XP wisely limits file-and-printer-sharing traffic to your local network, so even on a public IP those scary ports (137, 139, 445) won't accept traffic from a global address. But it occurred to me at Starbucks, now on open, unencrypted AT&T WiFi, that every laptop there is on the same LAN."
         },
         {
           "s": "steve",
@@ -85,7 +102,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A thank-you from Jerry: he couldn't image his laptop drive, getting write/disk-full errors though the disk wasn't full. chkdsk found nothing, and SpinRite in read-only mode 2 found no errors either. But switching SpinRite to a mode that reads and rewrites the data fixed it."
+          "t": "Now a SpinRite story. A thank-you from Jerry: he couldn't image his laptop drive, getting write/disk-full errors though the disk wasn't full. chkdsk found nothing, and SpinRite in read-only mode 2 found no errors either. But switching SpinRite to a mode that reads and rewrites the data fixed it."
         },
         {
           "s": "steve",
@@ -98,7 +115,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Before the Conficker dive, one ground rule: when I say I'm impressed, I'm not endorsing it. And one concept: a thread. A computer does one instruction at a time, very fast. A thread is one chain of that execution; a program can spawn several, and the OS rapidly switches between them, so it looks like many things happen at once."
+          "t": "Now to our main topic: Conficker. First, what a thread is. Before the Conficker dive, one ground rule: when I say I'm impressed, I'm not endorsing it. And one concept: a thread. A computer does one instruction at a time, very fast. A thread is one chain of that execution; a program can spawn several, and the OS rapidly switches between them, so it looks like many things happen at once."
         },
         {
           "s": "steve",
@@ -116,7 +133,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Microsoft patched a remote-execution flaw out of cycle on October 23, 2008 (MS08-067). A TCP connection to port 445 reached the Remote Procedure Call service, and a defect let an attacker's payload execute. Conficker's first packet wasn't the whole worm; it just made the victim open a reverse connection back and download all of Conficker from the attacker."
+          "t": "Next, the MS08-067 exploit. Microsoft patched a remote-execution flaw out of cycle on October 23, 2008 (MS08-067). A TCP connection to port 445 reached the Remote Procedure Call service, and a defect let an attacker's payload execute. Conficker's first packet wasn't the whole worm; it just made the victim open a reverse connection back and download all of Conficker from the attacker."
         },
         {
           "s": "steve",
@@ -137,7 +154,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Conficker is a worm: with no user interaction it finds vulnerable hosts, infects them, and they infect others. Unlike MSBlast or Code Red, which flooded the Internet and acted like local denial-of-service attacks, Conficker is patient, my copy sends only three or four packets a second."
+          "t": "Next, worm versus virus, and patient spreading. Conficker is a worm: with no user interaction it finds vulnerable hosts, infects them, and they infect others. Unlike MSBlast or Code Red, which flooded the Internet and acted like local denial-of-service attacks, Conficker is patient, my copy sends only three or four packets a second."
         },
         {
           "s": "leo",
@@ -158,7 +175,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Conficker's payload is a DLL, compressed with UPX and further obfuscated so it only reveals itself once decrypted in RAM. It injects itself into an existing svchost.exe process by starting a thread that loads the library, then deliberately never returns from the DLL's initialization stub, so Windows never lists it as loaded."
+          "t": "Next, the payload and how it hides. Conficker's payload is a DLL, compressed with UPX and further obfuscated so it only reveals itself once decrypted in RAM. It injects itself into an existing svchost.exe process by starting a thread that loads the library, then deliberately never returns from the DLL's initialization stub, so Windows never lists it as loaded."
         },
         {
           "s": "steve",
@@ -179,7 +196,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Conficker's novel trick is a pseudorandom domain generator seeded by the current UTC date (fetched from the Date header of well-known sites, so all copies worldwide agree on the day). Variant A generated 250 domains a day across five TLDs (.com, .net, .org, .info, .biz), did DNS lookups, and tried to download a signed binary over port 80."
+          "t": "Next, phoning home via generated domains. Conficker's novel trick is a pseudorandom domain generator seeded by the current UTC date (fetched from the Date header of well-known sites, so all copies worldwide agree on the day). Variant A generated 250 domains a day across five TLDs (.com, .net, .org, .info, .biz), did DNS lookups, and tried to download a signed binary over port 80."
         },
         {
           "s": "steve",
@@ -197,7 +214,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Conficker protects its updates with real cryptography so no one, white hat or rival, can commandeer it. The update code is hashed into a 512-bit digest (A used SHA-1; B used MD6, which Ron Rivest had released just two weeks earlier, the author even copied an early MD6 bug). That hash keys an RC4 stream cipher to encrypt the binary."
+          "t": "Next, signed, encrypted self-protection. Conficker protects its updates with real cryptography so no one, white hat or rival, can commandeer it. The update code is hashed into a 512-bit digest (A used SHA-1; B used MD6, which Ron Rivest had released just two weeks earlier, the author even copied an early MD6 bug). That hash keys an RC4 stream cipher to encrypt the binary."
         },
         {
           "s": "steve",
@@ -214,7 +231,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A spread only one way: the port-445 MS08-067 exploit, generating random IPs (avoiding Ukraine) to attack. B added two more routes: NetBIOS shares, trying a list of 240 common passwords (which in corporate networks tripped account-lockout policies and locked real users out), and USB drives, writing an autorun.inf so it ran when the stick was plugged in elsewhere."
+          "t": "Next, how the variants propagated. A spread only one way: the port-445 MS08-067 exploit, generating random IPs (avoiding Ukraine) to attack. B added two more routes: NetBIOS shares, trying a list of 240 common passwords (which in corporate networks tripped account-lockout policies and locked real users out), and USB drives, writing an autorun.inf so it ran when the stick was plugged in elsewhere."
         },
         {
           "s": "steve",
@@ -227,7 +244,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Conficker kept outmaneuvering defenders. It needs its public IP to receive reverse connections, so it queries sites like getmyip.org and checkip.dyndns.org and parses the result. It learned to distrust DNS answers that returned multiple IPs or a localhost stub like 127.0.0.1, both tricks defenders used, and it blacklisted any IP it saw from more than one lookup."
+          "t": "Next, getting smarter over time. Conficker kept outmaneuvering defenders. It needs its public IP to receive reverse connections, so it queries sites like getmyip.org and checkip.dyndns.org and parses the result. It learned to distrust DNS answers that returned multiple IPs or a localhost stub like 127.0.0.1, both tricks defenders used, and it blacklisted any IP it saw from more than one lookup."
         },
         {
           "s": "steve",
@@ -240,7 +257,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Just after April 1st, C began pulling an encrypted package, updating toward an E variant, which is what finally made me stand up my own Conficker honeypot. E started downloading scareware, suggesting the authors decided to commercialize their established millions-strong network."
+          "t": "Finally, the E variant and the lessons. Just after April 1st, C began pulling an encrypted package, updating toward an E variant, which is what finally made me stand up my own Conficker honeypot. E started downloading scareware, suggesting the authors decided to commercialize their established millions-strong network."
         },
         {
           "s": "steve",

@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-185.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #185",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 185, for February 26, 2009: Cryptographic HMACs."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover cryptographic HMACs: how a keyed hash authenticates a message and why it survives attacks that break plain hashes. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "A \"Non-Security Security Update\" for AutoRun",
       "beats": [
         {
           "s": "steve",
-          "t": "Microsoft shipped an out-of-band update it awkwardly calls a \"non-security security update.\" It fixes AutoRun, the Windows feature that runs an autorun.inf file's instructions when you insert a CD or drive, which is how the infamous Sony rootkit got installed years ago."
+          "t": "First, the news. Microsoft shipped an out-of-band update it awkwardly calls a \"non-security security update.\" It fixes AutoRun, the Windows feature that runs an autorun.inf file's instructions when you insert a CD or drive, which is how the infamous Sony rootkit got installed years ago."
         },
         {
           "s": "steve",
@@ -33,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A somewhat obscure one: recent changes in FreeBSD 7 introduced a remote-code-execution flaw in its telnet daemon. Even before login, telnet lets you set environment variables like baud rate, and that path can be exploited."
+          "t": "Next, a FreeBSD flaw. A somewhat obscure one: recent changes in FreeBSD 7 introduced a remote-code-execution flaw in its telnet daemon. Even before login, telnet lets you set environment variables like baud rate, and that path can be exploited."
         },
         {
           "s": "steve",
@@ -46,7 +63,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "After Patch Tuesday comes \"Exploit Wednesday.\" Less than a week after the critical IE7 patch, attackers reverse-engineered it and built a live exploit. It arrives as a Word document with an embedded ActiveX object; open the document and IE is sent to a malicious site whose script leverages the IE7 flaw."
+          "t": "Next, Exploit Wednesday. After Patch Tuesday comes \"Exploit Wednesday.\" Less than a week after the critical IE7 patch, attackers reverse-engineered it and built a live exploit. It arrives as a Word document with an embedded ActiveX object; open the document and IE is sent to a malicious site whose script leverages the IE7 flaw."
         },
         {
           "s": "steve",
@@ -64,7 +81,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Two bills, Senate S.436 and House HR 1076, both named the Internet SAFETY Act (Stopping Adults Facilitating the Exploitation of Today's Youth). They invoke child protection, but read the text: providers must retain for at least two years all records identifying the user of each temporarily assigned network address."
+          "t": "Next, a data-retention bill. Two bills, Senate S.436 and House HR 1076, both named the Internet SAFETY Act (Stopping Adults Facilitating the Exploitation of Today's Youth). They invoke child protection, but read the text: providers must retain for at least two years all records identifying the user of each temporarily assigned network address."
         },
         {
           "s": "steve",
@@ -85,7 +102,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's a zero-day in Adobe Acrobat Reader being actively exploited, with no patch yet. Adobe's workaround is to disable JavaScript in Reader, which blocks current instances but doesn't fix the root cause. A v9 patch won't come until March 11th, and versions 7 and 8 not until March 18th."
+          "t": "Next, an Adobe zero-day. There's a zero-day in Adobe Acrobat Reader being actively exploited, with no patch yet. Adobe's workaround is to disable JavaScript in Reader, which blocks current instances but doesn't fix the root cause. A v9 patch won't come until March 11th, and versions 7 and 8 not until March 18th."
         },
         {
           "s": "steve",
@@ -107,7 +124,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My Kindle 2 came. It's a clear second-generation device: longer battery life, and clever page buttons that now pivot from the outer edge inward, so just gripping the device no longer flips pages. The old LCD strip and scroll wheel are gone, replaced by a five-way joystick, which I find too smooth to push sideways easily."
+          "t": "Next, the Kindle 2. My Kindle 2 came. It's a clear second-generation device: longer battery life, and clever page buttons that now pivot from the outer edge inward, so just gripping the device no longer flips pages. The old LCD strip and scroll wheel are gone, replaced by a five-way joystick, which I find too smooth to push sideways easily."
         },
         {
           "s": "steve",
@@ -128,7 +145,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I confirmed last week's PayPal security-token bypass, and found the minimal version. Coming from eBay (which needs no token) to PayPal's login, enter your email and password, reach the token prompt, then just hit the back arrow."
+          "t": "Next, a PayPal follow-up. I confirmed last week's PayPal security-token bypass, and found the minimal version. Coming from eBay (which needs no token) to PayPal's login, enter your email and password, reach the token prompt, then just hit the back arrow."
         },
         {
           "s": "steve",
@@ -145,7 +162,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A SpinRite story from William Burlingame. His daughter's PC wouldn't boot and she had no backups, only a recovery disk that would wipe her data. He ran SpinRite in Recover mode for about an hour; despite two unrecoverable errors on the map, the system booted and they backed up everything to an external drive."
+          "t": "Now a SpinRite story. A SpinRite story from William Burlingame. His daughter's PC wouldn't boot and she had no backups, only a recovery disk that would wipe her data. He ran SpinRite in Recover mode for about an hour; despite two unrecoverable errors on the map, the system booted and they backed up everything to an external drive."
         },
         {
           "s": "steve",
@@ -162,7 +179,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Now the last building block for SSL: Message Authentication Codes. Encryption hides a message's contents; a MAC is the complement, it detects any change, whether the message is encrypted or not."
+          "t": "Now to our main topic: message authentication codes, the last building block for SSL. Message Authentication Codes. Encryption hides a message's contents; a MAC is the complement, it detects any change, whether the message is encrypted or not."
         },
         {
           "s": "steve",
@@ -179,7 +196,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's the weakness. Because the signature is the encrypted hash output, if an attacker with some control over the document can make a change that produces the same hash, the old signature still validates, even though the document differs. That's exactly the MD5 chosen-prefix attack that forged SSL certificates."
+          "t": "Next, why signing an unkeyed hash is fragile. Here's the weakness. Because the signature is the encrypted hash output, if an attacker with some control over the document can make a change that produces the same hash, the old signature still validates, even though the document differs. That's exactly the MD5 chosen-prefix attack that forged SSL certificates."
         },
         {
           "s": "steve",
@@ -197,7 +214,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One way to get a keyed tag is a CBC-MAC: chain a block cipher over the text (encrypt a block, XOR into the next, repeat) and the final block is a keyed fingerprint. It works, but ciphers were historically slower in software, patent-encumbered, and export-restricted as \"munitions.\""
+          "t": "Next, from CBC-MAC to keyed hashes. One way to get a keyed tag is a CBC-MAC: chain a block cipher over the text (encrypt a block, XOR into the next, repeat) and the final block is a keyed fingerprint. It works, but ciphers were historically slower in software, patent-encumbered, and export-restricted as \"munitions.\""
         },
         {
           "s": "steve",
@@ -214,7 +231,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The fix, now the formal HMAC standard that has survived all analysis, is to hash twice. Recall that MD5 and SHA-1 process input in 512-bit blocks, carrying an internal state forward."
+          "t": "Finally, building HMAC. The fix, now the formal HMAC standard that has survived all analysis, is to hash twice. Recall that MD5 and SHA-1 process input in 512-bit blocks, carrying an internal state forward."
         },
         {
           "s": "steve",

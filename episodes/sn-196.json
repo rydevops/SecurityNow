@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-196.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #196",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 196, for May 14, 2009: Listener Feedback #66."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: Patch Tuesday, Chrome, a huge Mac update and Conficker in hospital machines. Then questions on the TLS key exchange, travel routers, preshared keys and Windows in kiosks and ATMs."
+        }
+      ]
+    },
+    {
       "title": "Patch Tuesday, Chrome and a Huge Mac Update",
       "beats": [
         {
           "s": "steve",
-          "t": "May's Patch Tuesday fixed the critical PowerPoint remote-code-execution flaw we discussed. A reminder: IE8 is now offered through Microsoft Update and checked by default, so \"install everything\" users will get it unannounced. I use \"notify but don't download,\" then custom-pick, having been burned by updates incompatible with hardware. And there's the monthly MSRT, worth a deep scan since it's a month more current."
+          "t": "First, the news. May's Patch Tuesday fixed the critical PowerPoint remote-code-execution flaw we discussed. A reminder: IE8 is now offered through Microsoft Update and checked by default, so \"install everything\" users will get it unannounced. I use \"notify but don't download,\" then custom-pick, having been burned by updates incompatible with hardware. And there's the monthly MSRT, worth a deep scan since it's a month more current."
         },
         {
           "s": "steve",
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many listeners sent a San Jose Mercury News story: Conficker infected hundreds of medical devices, including MRI machines, at dozens of hospitals. No patients were harmed, but around March 24 researchers saw an imaging machine reaching out over the Internet for instructions, and found 300-plus similar devices compromised worldwide."
+          "t": "Next, Conficker in hospital imaging machines. Many listeners sent a San Jose Mercury News story: Conficker infected hundreds of medical devices, including MRI machines, at dozens of hospitals. No patients were harmed, but around March 24 researchers saw an imaging machine reaching out over the Internet for instructions, and found 300-plus similar devices compromised worldwide."
         },
         {
           "s": "steve",
@@ -47,7 +64,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many wrote about the NoScript-versus-Adblock-Plus controversy. I run both. The charge was that NoScript's author quietly changed, and obfuscated, his add-on's code so Adblock Plus couldn't block ads on his own NoScript domains, without asking users."
+          "t": "Next, the NoScript and Adblock Plus flap. Many wrote about the NoScript-versus-Adblock-Plus controversy. I run both. The charge was that NoScript's author quietly changed, and obfuscated, his add-on's code so Adblock Plus couldn't block ads on his own NoScript domains, without asking users."
         },
         {
           "s": "leo",
@@ -64,7 +81,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "For CryptoLink's cipher mode I wanted OCB, invented by cryptographer Phillip Rogaway at UC Davis, because it does encryption and authentication in a single pass with just one extra block operation, roughly twice as efficient as doing CBC plus a separate CBC-MAC. It's patented, so I asked about licensing. He replied: \"You can use OCB for free, now and forever... I have no intention of profiting from a three-man software publishing company.\""
+          "t": "Next, a free OCB license, and SecurAble's moment. For CryptoLink's cipher mode I wanted OCB, invented by cryptographer Phillip Rogaway at UC Davis, because it does encryption and authentication in a single pass with just one extra block operation, roughly twice as efficient as doing CBC plus a separate CBC-MAC. It's patented, so I asked about licensing. He replied: \"You can use OCB for free, now and forever... I have no intention of profiting from a three-man software publishing company.\""
         },
         {
           "s": "steve",
@@ -82,7 +99,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A correction: the Kindle DX's pixel pitch is actually lower (150 dpi) than the earlier Kindles (167 dpi), but because the screen is physically larger its total resolution is higher, 1200x824, more than a 1024x768 laptop, so PDFs should look good."
+          "t": "Next, a Kindle DX correction and router DNS hijacking. A correction: the Kindle DX's pixel pitch is actually lower (150 dpi) than the earlier Kindles (167 dpi), but because the screen is physically larger its total resolution is higher, 1200x824, more than a 1024x768 laptop, so PDFs should look good."
         },
         {
           "s": "steve",
@@ -99,7 +116,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Nathaniel asks whether a Western Digital drive is safe to trust after SpinRite recovered sectors and later showed ECC corrections but no bad sectors. No hard-and-fast answer: a drive should never produce the errors SpinRite finds, but you can't blame a drive that's had no maintenance."
+          "t": "Now a SpinRite question. Nathaniel asks whether a Western Digital drive is safe to trust after SpinRite recovered sectors and later showed ECC corrections but no bad sectors. No hard-and-fast answer: a drive should never produce the errors SpinRite finds, but you can't blame a drive that's had no maintenance."
         },
         {
           "s": "steve",
@@ -112,7 +129,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Robert (who listened to the SSL episode four times) notes Steve explained the cached-session case but never how two machines create and secretly share a new symmetric key."
+          "t": "Now to listener questions, starting with the TLS key exchange. Robert (who listened to the SSL episode four times) notes Steve explained the cached-session case but never how two machines create and secretly share a new symmetric key."
         },
         {
           "s": "steve",
@@ -138,7 +155,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Marv worries that NAT protects against the Internet, but an infected laptop plugged into the LAN side can still attack other LAN machines, so he carries a travel router to put between his machine and any hotel or conference LAN. Paranoid, or smart?"
+          "t": "Next, a question about travel routers. Marv worries that NAT protects against the Internet, but an infected laptop plugged into the LAN side can still attack other LAN machines, so he carries a travel router to put between his machine and any hotel or conference LAN. Paranoid, or smart?"
         },
         {
           "s": "steve",
@@ -159,7 +176,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jason and JD both point out that, contrary to last week, JavaScript in PDFs has real uses: interactive forms (field calculation, input validation, dynamic UI) and embedded Flash content like interactive dashboards."
+          "t": "Next, a correction about JavaScript in PDFs. Jason and JD both point out that, contrary to last week, JavaScript in PDFs has real uses: interactive forms (field calculation, input validation, dynamic UI) and embedded Flash content like interactive dashboards."
         },
         {
           "s": "steve",
@@ -176,7 +193,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Adrian in Thailand worked 30 years in industrial automation, from nuclear plants down to small factories, where critical control always ran homegrown OSes or a real-time OS like VxWorks. Microsoft once pitched Windows Embedded, promising a patch within two weeks that the system would download, install and reboot, as if rebooting a reactor control mid-run were fine."
+          "t": "Next, a question about embedded Windows. Adrian in Thailand worked 30 years in industrial automation, from nuclear plants down to small factories, where critical control always ran homegrown OSes or a real-time OS like VxWorks. Microsoft once pitched Windows Embedded, promising a patch within two weeks that the system would download, install and reboot, as if rebooting a reactor control mid-run were fine."
         },
         {
           "s": "steve",
@@ -202,7 +219,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Lucas at Walmart saw the self-checkouts and the new Money Center Express run Windows XP, the latter failing half the time and serviced weekly. Andre, who works for an ATM vendor in Jamaica, confirms most ATMs run XP, having migrated from OS/2 to NT to XP, sold on ease of software development."
+          "t": "Next, a note on Windows in kiosks and ATMs. Lucas at Walmart saw the self-checkouts and the new Money Center Express run Windows XP, the latter failing half the time and serviced weekly. Andre, who works for an ATM vendor in Jamaica, confirms most ATMs run XP, having migrated from OS/2 to NT to XP, sold on ease of software development."
         },
         {
           "s": "steve",
@@ -223,7 +240,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Barry asks: if his Linux WiFi profile lists just the SSID and the preshared key, couldn't someone spoof his SSID and capture his preshared key when his machine tries to connect?"
+          "t": "Next, a question about WiFi preshared keys. Barry asks: if his Linux WiFi profile lists just the SSID and the preshared key, couldn't someone spoof his SSID and capture his preshared key when his machine tries to connect?"
         },
         {
           "s": "steve",
@@ -240,7 +257,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous listener asks: if criminals control millions of machines, can't they take down any site, and extort money? Has it happened?"
+          "t": "Next, a question about why the Internet is still up. An anonymous listener asks: if criminals control millions of machines, can't they take down any site, and extort money? Has it happened?"
         },
         {
           "s": "steve",
@@ -257,7 +274,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Marv asks whether the choice of language affects reliability and thus security, since Assembly, C and C++ invite buffer overruns, bad pointers and manual memory bugs, while strongly-typed languages (he cites Xerox PARC's MESA) prevent whole classes of errors."
+          "t": "Next, a question about safer languages. Marv asks whether the choice of language affects reliability and thus security, since Assembly, C and C++ invite buffer overruns, bad pointers and manual memory bugs, while strongly-typed languages (he cites Xerox PARC's MESA) prevent whole classes of errors."
         },
         {
           "s": "steve",
@@ -274,7 +291,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dan asks how governments or others spy on people using VPNs, do they need the VPN provider's help?"
+          "t": "To close, a question about spying on VPN users. Dan asks how governments or others spy on people using VPNs, do they need the VPN provider's help?"
         },
         {
           "s": "steve",

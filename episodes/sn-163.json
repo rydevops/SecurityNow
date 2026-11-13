@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-163.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #163",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 163, for September 25, 2008: GoogleUpdate & DNS Security."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we start with Chrome's updater, which cleans up after all, and the news. After a SpinRite story, our main topic is whether DNS is fixed, and what DNSSEC would do."
+        }
+      ]
+    },
+    {
       "title": "Precise Words",
       "beats": [
         {
@@ -37,7 +54,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I just got a Windows update, and it's not the second Tuesday."
+          "t": "First, a note on patching. I just got a Windows update, and it's not the second Tuesday."
         },
         {
           "s": "steve",
@@ -70,7 +87,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last week a listener's question made me raise alarms about Chrome's uninstall. In a clean virtual machine that had never seen Google code, I installed and removed Chrome. All the GoogleUpdate infrastructure, which keeps Google's desktop search, toolbar and Chrome current, was left behind. GoogleUpdate.exe was still in the registry's Run key, so it would always be running, for hours afterward."
+          "t": "Now a follow-up on Chrome. Last week a listener's question made me raise alarms about Chrome's uninstall. In a clean virtual machine that had never seen Google code, I installed and removed Chrome. All the GoogleUpdate infrastructure, which keeps Google's desktop search, toolbar and Chrome current, was left behind. GoogleUpdate.exe was still in the registry's Run key, so it would always be running, for hours afterward."
         },
         {
           "s": "steve",
@@ -111,7 +128,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let me explain what happened. Viewers of the live video saw us go on about this. Before we published, Steve emailed that it seemed to uninstall itself, so I cut most of that discussion rather than scare people without the facts."
+          "t": "Setting the record straight. Let me explain what happened. Viewers of the live video saw us go on about this. Before we published, Steve emailed that it seemed to uninstall itself, so I cut most of that discussion rather than scare people without the facts."
         },
         {
           "s": "leo",
@@ -136,7 +153,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Chatroom folks said Apple does the same thing. I don't care what Apple does."
+          "t": "Next, how Apple's updater compares. Chatroom folks said Apple does the same thing. I don't care what Apple does."
         },
         {
           "s": "leo",
@@ -214,7 +231,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And my big news: I've switched to Firefox, Leo."
+          "t": "Next, big news: I've switched to Firefox, Leo."
         },
         {
           "s": "leo",
@@ -259,7 +276,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Since we talked about the Large Hadron Collider, it's shut down. It literally had a coolant leak. I thought, this is the Enterprise. Starships were always having coolant leaks."
+          "t": "A science note. Since we talked about the Large Hadron Collider, it's shut down. It literally had a coolant leak. I thought, this is the Enterprise. Starships were always having coolant leaks."
         },
         {
           "s": "steve",
@@ -277,7 +294,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In my errata section: the Kindle store now has the Financial Times. I've been reading The Wall Street Journal, plus The New York Times and the L.A. Times. Even my county's Orange County Register is there now."
+          "t": "Next, a note on the Kindle. In my errata section: the Kindle store now has the Financial Times. I've been reading The Wall Street Journal, plus The New York Times and the L.A. Times. Even my county's Orange County Register is there now."
         },
         {
           "s": "leo",
@@ -310,7 +327,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In security news, Sarah Palin's Yahoo! accounts, gov.palin and gov.sarah, were broken into last week. The FBI tracked down someone who appears to be a state representative's son."
+          "t": "Now the security news. In security news, Sarah Palin's Yahoo! accounts, gov.palin and gov.sarah, were broken into last week. The FBI tracked down someone who appears to be a state representative's son."
         },
         {
           "s": "leo",
@@ -364,7 +381,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last, from the SANS newsletter, three recent cases of employees breaching their own companies' security, something we've never discussed."
+          "t": "Next, from the SANS newsletter, three recent cases of employees breaching their own companies' security, something we've never discussed."
         },
         {
           "s": "steve",
@@ -446,7 +463,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Back to DNS. After Kaminsky's bug, people learned their ISPs' DNS wasn't secure. Is it fixed now?"
+          "t": "Now to our main topic: DNSSEC and whether DNS is fixed. Back to DNS. After Kaminsky's bug, people learned their ISPs' DNS wasn't secure. Is it fixed now?"
         },
         {
           "s": "steve",
@@ -463,7 +480,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "DNSSEC, DNS Security, offers for the first time cryptographically signed DNS records. Using public key infrastructure, PKI, a resolver could prove that the data it receives is what the authoritative name server is offering."
+          "t": "Next, what DNSSEC does. DNSSEC, DNS Security, offers for the first time cryptographically signed DNS records. Using public key infrastructure, PKI, a resolver could prove that the data it receives is what the authoritative name server is offering."
         },
         {
           "s": "steve",
@@ -484,7 +501,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The system has evolved over about 15 years. Early RFCs were defective because they didn't scale. Originally, whenever a zone's records changed, the parent would re-sign them. If GRC changed records, I'd send them up to the .com servers to sign, and anyone could check them with .com's public key."
+          "t": "Next, how the design evolved. The system has evolved over about 15 years. Early RFCs were defective because they didn't scale. Originally, whenever a zone's records changed, the parent would re-sign them. If GRC changed records, I'd send them up to the .com servers to sign, and anyone could check them with .com's public key."
         },
         {
           "s": "steve",
@@ -501,7 +518,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "If DNSSEC were broadly deployed, we'd have for the first time a really secure, distributed database for the Internet. DNS has been okay, but never trustable."
+          "t": "Next, what secure DNS would enable. If DNSSEC were broadly deployed, we'd have for the first time a really secure, distributed database for the Internet. DNS has been okay, but never trustable."
         },
         {
           "s": "steve",
@@ -519,7 +536,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The technology is largely resolved. The problem is politics. For GRC to be authenticated, there must be an unbroken chain of trust up to a \"trust anchor,\" an ultimate authority. The root would sign all the top-level domains, including the country codes like .it, .se and .ru."
+          "t": "Next, who holds the root key. The technology is largely resolved. The problem is politics. For GRC to be authenticated, there must be an unbroken chain of trust up to a \"trust anchor,\" an ultimate authority. The root would sign all the top-level domains, including the country codes like .it, .se and .ru."
         },
         {
           "s": "steve",
@@ -552,7 +569,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "DNSSEC changes everything. There are key-signing keys, zone-signing keys and delegation signer records. And it bloats. In one example, a normal 75-line, 2.3K zone file became 665 lines and 27K."
+          "t": "Next, the technical burden. DNSSEC changes everything. There are key-signing keys, zone-signing keys and delegation signer records. And it bloats. In one example, a normal 75-line, 2.3K zone file became 665 lines and 27K."
         },
         {
           "s": "leo",
@@ -610,7 +627,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's a funky alternative called DLV, DNSSEC Lookaside Validation. Since no one can agree on a single root authority, an organization like ISC, the Internet Systems Consortium, would run its own servers. GRC would give ISC its public key securely, and it would be published under a name like grc.dlv.isc.org. Knowing only ISC's public key, you could verify GRC's key."
+          "t": "Next, the lookaside alternative. There's a funky alternative called DLV, DNSSEC Lookaside Validation. Since no one can agree on a single root authority, an organization like ISC, the Internet Systems Consortium, would run its own servers. GRC would give ISC its public key securely, and it would be published under a name like grc.dlv.isc.org. Knowing only ISC's public key, you could verify GRC's key."
         },
         {
           "s": "steve",
@@ -648,7 +665,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One proposal avoids a single root signer. Multiple independent, non-governmental root key operators would each generate keys and send their public parts to the root zone maintainer, which builds a root key set. Each operator signs it and the root zone file with its own keys, over secure out-of-band channels. The result is a master root zone file signed by as many participants as want to."
+          "t": "Next, many signers for the root. One proposal avoids a single root signer. Multiple independent, non-governmental root key operators would each generate keys and send their public parts to the root zone maintainer, which builds a root key set. Each operator signs it and the root zone file with its own keys, over secure out-of-band channels. The result is a master root zone file signed by as many participants as want to."
         },
         {
           "s": "leo",
@@ -686,7 +703,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "And this sits on top of solving the UDP, bandwidth and computation problems."
+          "t": "To wrap up: and this sits on top of solving the UDP, bandwidth and computation problems."
         },
         {
           "s": "steve",

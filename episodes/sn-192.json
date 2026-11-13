@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-192.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #192",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 192, for April 16, 2009: Listener Feedback #64."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, a Conficker honeypot and the news: Patch Tuesday, VMware, Phorm and scareware. Then a SpinRite story and questions on why Windows is what it is, patch failures, Sandboxie and cookies."
+        }
+      ]
+    },
+    {
       "title": "A Conficker Honeypot and Tarpits",
       "beats": [
         {
           "s": "steve",
-          "t": "I set up a little Conficker honeypot five days ago, so next week's whole episode is Conficker, with a complete technical timeline. It's beautifully engineered, which I say with full disapproval of what it does: its update payloads carry cryptographic digital signatures, so no outsider can hijack it by feeding it a fake payload."
+          "t": "First, a Conficker honeypot. I set up a little Conficker honeypot five days ago, so next week's whole episode is Conficker, with a complete technical timeline. It's beautifully engineered, which I say with full disapproval of what it does: its update payloads carry cryptographic digital signatures, so no outsider can hijack it by feeding it a fake payload."
         },
         {
           "s": "steve",
@@ -33,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "April's Patch Tuesday brought eight fixes, including a new client-side HTTPS flaw: a Windows user lured to a malicious secure site could be compromised through the exchanged certificate, a buffer/integer-overflow at heart, but a new vector. And yes, the promised SSL-protocol episode is coming; I prioritize what's newsy, like Conficker."
+          "t": "Next, the news. April's Patch Tuesday brought eight fixes, including a new client-side HTTPS flaw: a Windows user lured to a malicious secure site could be compromised through the exchanged certificate, a buffer/integer-overflow at heart, but a new vector. And yes, the promised SSL-protocol episode is coming; I prioritize what's newsy, like Conficker."
         },
         {
           "s": "steve",
@@ -59,7 +76,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A SpinRite anecdote from Rabbe Sandelin. His nieces' iBook wouldn't boot, with important documents on it. A Mac recovery tool saw something but recovered nothing. He pulled the drive, ran SpinRite on a PC (it warned the drive was about to die), and after two days it reported some unrecoverable and many repaired sectors."
+          "t": "Now a SpinRite story. A SpinRite anecdote from Rabbe Sandelin. His nieces' iBook wouldn't boot, with important documents on it. A Mac recovery tool saw something but recovered nothing. He pulled the drive, ran SpinRite on a PC (it warned the drive was about to die), and after two days it reported some unrecoverable and many repaired sectors."
         },
         {
           "s": "steve",
@@ -76,7 +93,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Phil in Montreal pushes back on last week's remark that control systems shouldn't run Windows, calling it security-by-obscurity and doubting other OSes or programmers are any better."
+          "t": "Now to listener questions, starting with Windows in control systems. Phil in Montreal pushes back on last week's remark that control systems shouldn't run Windows, calling it security-by-obscurity and doubting other OSes or programmers are any better."
         },
         {
           "s": "steve",
@@ -106,7 +123,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dan in Rochester asks Steve to make a page listing the software he recommends, Taskbar Shuffle, allSnap, Image for Windows, so listeners don't have to search transcripts."
+          "t": "Next, a request for a page of software picks. Dan in Rochester asks Steve to make a page listing the software he recommends, Taskbar Shuffle, allSnap, Image for Windows, so listeners don't have to search transcripts."
         },
         {
           "s": "steve",
@@ -119,7 +136,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "J.T. in Houston says Steve is too trusting, how does he know a brand-new Firefox plug-in from an unknown author isn't a threat?"
+          "t": "Next, a question about trusting plug-ins. J.T. in Houston says Steve is too trusting, how does he know a brand-new Firefox plug-in from an unknown author isn't a threat?"
         },
         {
           "s": "steve",
@@ -136,7 +153,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Taylor shares a stat: only about 4% of Conficker infections are in the US, about half are in China, partly because of widespread pirated Windows that can't get security patches."
+          "t": "Next, a question about pirated Windows. Taylor shares a stat: only about 4% of Conficker infections are in the US, about half are in China, partly because of widespread pirated Windows that can't get security patches."
         },
         {
           "s": "steve",
@@ -153,7 +170,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Casey in Hattiesburg found a college-lab PC with auto-updates off that hadn't even reached Service Pack 3, and fixed it, wondering how many others on campus were the same."
+          "t": "Next, a story about a campus lab. Casey in Hattiesburg found a college-lab PC with auto-updates off that hadn't even reached Service Pack 3, and fixed it, wondering how many others on campus were the same."
         },
         {
           "s": "steve",
@@ -171,7 +188,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Nick asks: if he runs risky apps in Sandboxie under a limited account and one suffers a buffer overflow, is the injected code contained, given that many running processes are system processes?"
+          "t": "Next, a question about Sandboxie. Nick asks: if he runs risky apps in Sandboxie under a limited account and one suffers a buffer overflow, is the injected code contained, given that many running processes are system processes?"
         },
         {
           "s": "steve",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Robert asks why inserting a CD or a bad disc brings a whole computer, Mac or Windows, to a crawl."
+          "t": "Next, a question about CDs freezing the system. Robert asks why inserting a CD or a bad disc brings a whole computer, Mac or Windows, to a crawl."
         },
         {
           "s": "steve",
@@ -209,7 +226,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jesse found his mom's Vista laptop had installed no updates since November despite being set to automatic; running Update manually failed, hundreds of forum posts described the same, and the only fix was reinstalling Windows."
+          "t": "Next, a question about a broken Windows Update. Jesse found his mom's Vista laptop had installed no updates since November despite being set to automatic; running Update manually failed, hundreds of forum posts described the same, and the only fix was reinstalling Windows."
         },
         {
           "s": "steve",
@@ -226,7 +243,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jonathan supported a school whose IT director blocked all HTTPS, breaking GoToMeeting (which redirects to HTTPS). Why would anyone do that?"
+          "t": "Next, a question about blocking all HTTPS. Jonathan supported a school whose IT director blocked all HTTPS, breaking GoToMeeting (which redirects to HTTPS). Why would anyone do that?"
         },
         {
           "s": "steve",
@@ -243,7 +260,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Zurahn asks, legality aside, whether you could register one of Conficker's daily domains and serve an update that tells it to self-destruct."
+          "t": "Next, a question about Conficker's domains. Zurahn asks, legality aside, whether you could register one of Conficker's daily domains and serve an update that tells it to self-destruct."
         },
         {
           "s": "steve",
@@ -260,7 +277,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Gerco in the Netherlands notes that on boot, email clients, Skype and notifiers connect before the VPN comes up, leaking who you are and what you run to the local network."
+          "t": "Next, a question about VPN leakage. Gerco in the Netherlands notes that on boot, email clients, Skype and notifiers connect before the VPN comes up, leaking who you are and what you run to the local network."
         },
         {
           "s": "steve",
@@ -281,7 +298,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brad in San Diego runs a middle-ground cookie scheme in Firefox: accept all cookies (even third-party) but delete them all when the browser closes, with a whitelist of most-used domains allowed to persist. No site breaks, but unknown sites can't track you across sessions."
+          "t": "To close, a cookie-management scheme. Brad in San Diego runs a middle-ground cookie scheme in Firefox: accept all cookies (even third-party) but delete them all when the browser closes, with a whitelist of most-used domains allowed to persist. No site breaks, but unknown sites can't track you across sessions."
         },
         {
           "s": "steve",

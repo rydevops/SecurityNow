@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-160.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #160",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 160, for September 4, 2008: Listener Feedback Q&A #49."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: Google Chrome's first look, NebuAd and Phorm collapsing and VMware's kill bits. Then questions on disappearing SATA drives, malicious e-cards, cross-site request forgery and Wells Fargo's passwords."
+        }
+      ]
+    },
+    {
       "title": "A Quiet Week, and Chrome",
       "beats": [
         {
@@ -45,7 +62,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We'll absolutely do a Chrome episode. Early news: Safari remains the only browser with third-party cookies disabled by default. Chrome enables them, though you can change it."
+          "t": "First, the news on Google Chrome. We'll absolutely do a Chrome episode. Early news: Safari remains the only browser with third-party cookies disabled by default. Chrome enables them, though you can change it."
         },
         {
           "s": "steve",
@@ -70,7 +87,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The most compelling idea is sandboxing. Each tab is its own browser instance, so a crashing tab doesn't take down the whole browser, which does happen in IE. And they talk about restricting what code in each window can do. The question is what that really means."
+          "t": "Next, Chrome's sandboxing and speed. The most compelling idea is sandboxing. Each tab is its own browser instance, so a crashing tab doesn't take down the whole browser, which does happen in IE. And they talk about restricting what code in each window can do. The question is what that really means."
         },
         {
           "s": "steve",
@@ -104,7 +121,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Increasingly good news for people, and bad news for NebuAd and Phorm. NebuAd has lost its CEO and apparently all its customers. Phorm's stock has fallen 75 percent from its peak, 11 days after its announcement. Everyone figured out what was going on."
+          "t": "Next, a privacy update. Increasingly good news for people, and bad news for NebuAd and Phorm. NebuAd has lost its CEO and apparently all its customers. Phorm's stock has fallen 75 percent from its peak, 11 days after its announcement. Everyone figured out what was going on."
         },
         {
           "s": "leo",
@@ -138,7 +155,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Did people write in saying last week's SEAL story couldn't be true? We get this kind of mail, and you can never verify it."
+          "t": "Now a follow-up on last week's SpinRite story. Did people write in saying last week's SEAL story couldn't be true? We get this kind of mail, and you can never verify it."
         },
         {
           "s": "steve",
@@ -171,7 +188,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Skauge in Bergen, Norway isn't SATAsfied. Of two new 1TB Samsung SpinPoint F1 SATA2 drives, one crashed after a week, and the other randomly disappears from the system. Now one of his two 250GB Samsungs disappears too, though SpinRite Level 4 finds no faults on either."
+          "t": "Now to listener questions, starting with disappearing SATA drives. John Skauge in Bergen, Norway isn't SATAsfied. Of two new 1TB Samsung SpinPoint F1 SATA2 drives, one crashed after a week, and the other randomly disappears from the system. Now one of his two 250GB Samsungs disappears too, though SpinRite Level 4 finds no faults on either."
         },
         {
           "s": "leo",
@@ -212,7 +229,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "A public service announcement from Spencer B. in Utah: he's getting about five emails a day from GreetingCard.org, linking straight to \"e-card.exe.\""
+          "t": "Next, a public service announcement. A public service announcement from Spencer B. in Utah: he's getting about five emails a day from GreetingCard.org, linking straight to \"e-card.exe.\""
         },
         {
           "s": "steve",
@@ -261,7 +278,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Lil Banchik in Long Island, New York: you say nothing is secure until people pound on it. How long would be long enough for Chrome, especially since its license lets Google install updates at any time without warning?"
+          "t": "Next, a question about Chrome. Lil Banchik in Long Island, New York: you say nothing is secure until people pound on it. How long would be long enough for Chrome, especially since its license lets Google install updates at any time without warning?"
         },
         {
           "s": "steve",
@@ -331,7 +348,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ryan Sullivan, a college freshman in New York, says his campus uses Cisco. Everyone logs in with their college email and password over a VPN, IPSec over UDP, to reach the Internet, and passwords change every 60 days. His very high-tech school is full of skilled students. Can another student do anything to him?"
+          "t": "Next, a question about a campus network. Ryan Sullivan, a college freshman in New York, says his campus uses Cisco. Everyone logs in with their college email and password over a VPN, IPSec over UDP, to reach the Internet, and passwords change every 60 days. His very high-tech school is full of skilled students. Can another student do anything to him?"
         },
         {
           "s": "steve",
@@ -360,7 +377,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Martin Nothnagel in Berlin notes that Microsoft can push vendors toward DEP. Its Windows Logo requirements say printer driver components must run with DEP enabled and with User Account Control as a non-administrative user. Drivers shipping in 2009 or later must comply to be signed and certified."
+          "t": "Next, a note on Microsoft and DEP. Martin Nothnagel in Berlin notes that Microsoft can push vendors toward DEP. Its Windows Logo requirements say printer driver components must run with DEP enabled and with User Account Control as a non-administrative user. Drivers shipping in 2009 or later must comply to be signed and certified."
         },
         {
           "s": "steve",
@@ -385,7 +402,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kashyap, a security professional in Hyderabad, India, asks for an in-depth look at the lesser-known but effective cross-site request forgery."
+          "t": "Next, a question about cross-site request forgery. Kashyap, a security professional in Hyderabad, India, asks for an in-depth look at the lesser-known but effective cross-site request forgery."
         },
         {
           "s": "steve",
@@ -415,7 +432,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Terry Voth in Toronto says his son's Nintendo DS is probably North America's biggest driver of WEP, since it supports nothing else. He flinched when his son asked to switch to WEP. If a Pavlovian response anticipates a reward, a Gibsonian response anticipates a security threat."
+          "t": "Next, a question about the Nintendo DS. Terry Voth in Toronto says his son's Nintendo DS is probably North America's biggest driver of WEP, since it supports nothing else. He flinched when his son asked to switch to WEP. If a Pavlovian response anticipates a reward, a Gibsonian response anticipates a security threat."
         },
         {
           "s": "leo",
@@ -489,7 +506,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Edward Hanson in Rexton, New Brunswick switched his D-Link DI-604 router to OpenDNS after our DNS episodes. The only way to enter the addresses was to switch from Dynamic to Static PPPoE. Is that less secure? And ShieldsUP! always says \"full stealth.\" Is he invisible to miscreants?"
+          "t": "Next, a question about OpenDNS on an old router. Edward Hanson in Rexton, New Brunswick switched his D-Link DI-604 router to OpenDNS after our DNS episodes. The only way to enter the addresses was to switch from Dynamic to Static PPPoE. Is that less secure? And ShieldsUP! always says \"full stealth.\" Is he invisible to miscreants?"
         },
         {
           "s": "steve",
@@ -550,7 +567,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike Graham in Hopatcong, New Jersey rolls his own DNS. He once used a free utility called TreeWalk DNS, a local DNS service on his own machine, to replace his ISP's poor service. Its forums say it's not vulnerable to spoofing, since only the local machine can access it. Do you know it? It's at ntcanuck.com."
+          "t": "Next, a question about running your own DNS. Mike Graham in Hopatcong, New Jersey rolls his own DNS. He once used a free utility called TreeWalk DNS, a local DNS service on his own machine, to replace his ISP's poor service. Its forums say it's not vulnerable to spoofing, since only the local machine can access it. Do you know it? It's at ntcanuck.com."
         },
         {
           "s": "steve",
@@ -596,7 +613,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Danny Howerton in Ogden, Utah tested his Wells Fargo password after our last show. It's also not case sensitive. Their technical department confirmed it and said they'd submit a ticket to security, but doubted it would change unless many people asked."
+          "t": "Next, a follow-up on Wells Fargo. Danny Howerton in Ogden, Utah tested his Wells Fargo password after our last show. It's also not case sensitive. Their technical department confirmed it and said they'd submit a ticket to security, but doubted it would change unless many people asked."
         },
         {
           "s": "steve",
@@ -625,7 +642,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Savvy Observation of the Week, from Tim Knittel in Lexington, Kentucky. In Episode 156 a listener asked about bypassing DNS by typing sites' IP addresses. Tim says it won't protect him."
+          "t": "Now the Savvy Observation of the Week. The Savvy Observation of the Week, from Tim Knittel in Lexington, Kentucky. In Episode 156 a listener asked about bypassing DNS by typing sites' IP addresses. Tim says it won't protect him."
         },
         {
           "s": "leo",
@@ -654,7 +671,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Marc Argent makes the Very Good Point of the Week. If Flash triggers a DEP alert, how do you know whether it's an exploit or just poor programming by Adobe? Blindly disabling DEP could be dangerous. And we checked: Silverlight works fine with DEP on."
+          "t": "Now the Very Good Point of the Week. Marc Argent makes the Very Good Point of the Week. If Flash triggers a DEP alert, how do you know whether it's an exploit or just poor programming by Adobe? Blindly disabling DEP could be dangerous. And we checked: Silverlight works fine with DEP on."
         },
         {
           "s": "leo",
@@ -679,7 +696,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Send questions to GRC.com/feedback."
+          "t": "To close, send questions to GRC.com/feedback."
         },
         {
           "s": "steve",

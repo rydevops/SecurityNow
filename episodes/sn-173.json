@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-173.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #173",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 173, for December 4, 2008: Listener Feedback Q&A #55."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: worms on port 445, TrueCrypt 6.1a and keys copied from 200 feet. Then questions on sandboxing USB drives, TPM-locked laptops, ZoneAlarm's DNS requests and whether Sandboxie makes NoScript redundant."
+        }
+      ]
+    },
+    {
       "title": "Worms on Port 445, and a Vista Crash",
       "beats": [
         {
@@ -37,7 +54,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "TrueCrypt is updated to 6.1a, with small bug fixes and a new option to blank or replace the pre-boot password screen for whole-drive encryption."
+          "t": "Next, TrueCrypt and keys copied from 200 feet. TrueCrypt is updated to 6.1a, with small bug fixes and a new option to blank or replace the pre-boot password screen for whole-drive encryption."
         },
         {
           "s": "steve",
@@ -62,7 +79,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Apple posted, then quickly pulled, an advisory recommending antivirus, naming McAfee, Symantec and Intego."
+          "t": "Next, Apple and antivirus, and Phorm. Apple posted, then quickly pulled, an advisory recommending antivirus, naming McAfee, Symantec and Intego."
         },
         {
           "s": "leo",
@@ -92,7 +109,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "How's NoScript going for you?"
+          "t": "Next, a follow-up on NoScript. How's NoScript going for you?"
         },
         {
           "s": "leo",
@@ -109,7 +126,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Art, in the newsgroups, asks whether Sandboxie can help with USB drives, given the Pentagon just banned them."
+          "t": "Now to listener questions, starting with sandboxing USB drives. Art, in the newsgroups, asks whether Sandboxie can help with USB drives, given the Pentagon just banned them."
         },
         {
           "s": "steve",
@@ -130,7 +147,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Louis Gerard in Montreal ordered a PayPal Security Key in Canada for $5 Canadian, and Jon Peter Hansen, likely Scandinavian, can't get the football yet."
+          "t": "Next, a note on PayPal tokens. Louis Gerard in Montreal ordered a PayPal Security Key in Canada for $5 Canadian, and Jon Peter Hansen, likely Scandinavian, can't get the football yet."
         },
         {
           "s": "steve",
@@ -151,7 +168,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jared Burford asks: if a PC is protected by TPM and a fingerprint, how does a repair technician get in?"
+          "t": "Next, a question about servicing a TPM-locked laptop. Jared Burford asks: if a PC is protected by TPM and a fingerprint, how does a repair technician get in?"
         },
         {
           "s": "steve",
@@ -172,7 +189,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Sam in Sweden asks how to scrap a completely dead drive he can't wipe with DBAN. Someone also asked about running it through a tape degausser."
+          "t": "Next, a question about destroying a dead drive. Sam in Sweden asks how to scrap a completely dead drive he can't wipe with DBAN. Someone also asked about running it through a tape degausser."
         },
         {
           "s": "steve",
@@ -193,7 +210,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Another Sam, in a cubicle, asks how to tell whether his employer installed spyware like Spector, maybe something that warns of keyboard hooking."
+          "t": "Next, a question about corporate spyware. Another Sam, in a cubicle, asks how to tell whether his employer installed spyware like Spector, maybe something that warns of keyboard hooking."
         },
         {
           "s": "steve",
@@ -218,7 +235,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Patrick in Des Moines asks: if you move a password-locked IDE drive to a computer that doesn't support the feature, does it stay locked? And why doesn't the government lock its drives?"
+          "t": "Next, a question about IDE drive locks. Patrick in Des Moines asks: if you move a password-locked IDE drive to a computer that doesn't support the feature, does it stay locked? And why doesn't the government lock its drives?"
         },
         {
           "s": "steve",
@@ -243,7 +260,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John D in Chicago asks: when brute-forcing, how does an attacker know a guessed key actually decrypted something?"
+          "t": "Next, a question about brute-forcing. John D in Chicago asks: when brute-forcing, how does an attacker know a guessed key actually decrypted something?"
         },
         {
           "s": "steve",
@@ -264,7 +281,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Thomas in Stockholm wants to safely run older, unsupported software like ACDSee with known flaws. Could he Sandboxie it?"
+          "t": "Next, a question about running old software safely. Thomas in Stockholm wants to safely run older, unsupported software like ACDSee with known flaws. Could he Sandboxie it?"
         },
         {
           "s": "steve",
@@ -277,7 +294,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John Pitt in Melbourne used Wireshark and found ZoneAlarm constantly sending DNS requests to its own servers, which his other firewall doesn't block. Why?"
+          "t": "Next, a question about ZoneAlarm. John Pitt in Melbourne used Wireshark and found ZoneAlarm constantly sending DNS requests to its own servers, which his other firewall doesn't block. Why?"
         },
         {
           "s": "steve",
@@ -303,7 +320,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris in Detroit has a friend's PC that caught a virus, had it \"removed,\" and now redirects Google to a fake Microsoft spyware page, with other Google URLs giving 404s. He pointed it at OpenDNS with no luck."
+          "t": "Next, a question about a once-infected PC. Chris in Detroit has a friend's PC that caught a virus, had it \"removed,\" and now redirects Google to a fake Microsoft spyware page, with other Google URLs giving 404s. He pointed it at OpenDNS with no luck."
         },
         {
           "s": "steve",
@@ -333,7 +350,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ken Harrington asks: if a nasty script is trapped in the sandbox, can he uninstall NoScript?"
+          "t": "Next, a question about Sandboxie and NoScript. Ken Harrington asks: if a nasty script is trapped in the sandbox, can he uninstall NoScript?"
         },
         {
           "s": "steve",
@@ -350,7 +367,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Hamish in New Zealand got a call that the school cafeteria's cash-register computer wouldn't boot, half an hour before hundreds of hungry students arrived. He ran SpinRite on the small 4GB drive, it repaired a couple of problems in about 20 minutes, and the register came up in time."
+          "t": "To close, a SpinRite story. Hamish in New Zealand got a call that the school cafeteria's cash-register computer wouldn't boot, half an hour before hundreds of hungry students arrived. He ran SpinRite on the small 4GB drive, it repaired a couple of problems in about 20 minutes, and the register came up in time."
         },
         {
           "s": "leo",

@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-154.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #154",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 154, for July 24, 2008: Listener Feedback Q&A #46."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: Firefox updates, cheap stolen bank data, attacks on TrueCrypt's deniability, NebuAd injecting script and blocking XP SP3. Then a SpinRite story and questions on a Penn State dorm network, antivirus false alarms, unpatched DNS and more."
+        }
+      ]
+    },
+    {
       "title": "Three Years Approaching",
       "beats": [
         {
@@ -33,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "First, new Firefox updates for both versions 2 and 3. Every time I mention Firefox 2 there's another sub-version; last time it was .15, now .16."
+          "t": "First, the news: new Firefox updates for both versions 2 and 3. Every time I mention Firefox 2 there's another sub-version; last time it was .15, now .16."
         },
         {
           "type": "fact",
@@ -301,7 +318,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Christos Kirst in Huntington Beach, California owns SpinRite and has talked four people into buying it. Running \"netstat -an\" on his Windows 2000 server, he sees \"UDP 0.0.0.0:65518\". Should he worry?"
+          "t": "Next, a question about a mystery port. Christos Kirst in Huntington Beach, California owns SpinRite and has talked four people into buying it. Running \"netstat -an\" on his Windows 2000 server, he sees \"UDP 0.0.0.0:65518\". Should he worry?"
         },
         {
           "s": "steve",
@@ -347,7 +364,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "T.O. Galloway in Prince Frederick, Maryland was listening to Episode 152 and thinking about the South African listener whose router exposed its admin page on port 80."
+          "t": "Next, a question about webcams. T.O. Galloway in Prince Frederick, Maryland was listening to Episode 152 and thinking about the South African listener whose router exposed its admin page on port 80."
         },
         {
           "s": "steve",
@@ -412,7 +429,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Henry Cocozzoli in Troy, Michigan wants to be sure he doesn't have a trojan. If you live in Troy, you should."
+          "t": "Next, a question about antivirus flagging Wizmo. Henry Cocozzoli in Troy, Michigan wants to be sure he doesn't have a trojan. If you live in Troy, you should."
         },
         {
           "s": "steve",
@@ -457,7 +474,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Danny Richardson in Fremont, California saw a CNET article about the future of antivirus, with companies moving from a blacklist to a whitelist model. What do you think?"
+          "t": "Next, a question about antivirus whitelisting. Danny Richardson in Fremont, California saw a CNET article about the future of antivirus, with companies moving from a blacklist to a whitelist model. What do you think?"
         },
         {
           "s": "steve",
@@ -490,7 +507,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill Barnes in Charlotte, North Carolina asks what to do if Dan Kaminsky's test at DoxPara.com says he's vulnerable. Several of his clients' ISPs aren't patched, and the test shows a different DNS server than the router or ISP gave him. He has no leverage and doesn't want to shame them publicly. His EarthLink DNS got patched a couple of days after he first checked."
+          "t": "Next, a question about unpatched DNS servers. Bill Barnes in Charlotte, North Carolina asks what to do if Dan Kaminsky's test at DoxPara.com says he's vulnerable. Several of his clients' ISPs aren't patched, and the test shows a different DNS server than the router or ISP gave him. He has no leverage and doesn't want to shame them publicly. His EarthLink DNS got patched a couple of days after he first checked."
         },
         {
           "s": "leo",
@@ -519,7 +536,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Nick Cody in Ipswich, U.K. found that GRC.com stalled while loading something from GRCtech.com, in both IE7 and Firefox 3. With ZoneAlarm 7's cookie control at medium, which blocks third-party cookies and removes private header information, he can't reach GRC. Turning it off fixed it. Surely there are no third-party cookies at GRC?"
+          "t": "Next, a question about ZoneAlarm and GRC. Nick Cody in Ipswich, U.K. found that GRC.com stalled while loading something from GRCtech.com, in both IE7 and Firefox 3. With ZoneAlarm 7's cookie control at medium, which blocks third-party cookies and removes private header information, he can't reach GRC. Turning it off fixed it. Surely there are no third-party cookies at GRC?"
         },
         {
           "s": "leo",
@@ -568,7 +585,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Samir Talwar in London says there are reasons for third-party cookies. Don't enable them by default, but one at a time as needed. He enables RememberTheMilk.com, a to-do manager with an iGoogle widget and a Google Calendar plug-in, and Disqus, the commenting system that loads into many blogs."
+          "t": "Next, a point about third-party cookies. Samir Talwar in London says there are reasons for third-party cookies. Don't enable them by default, but one at a time as needed. He enables RememberTheMilk.com, a to-do manager with an iGoogle widget and a Google Calendar plug-in, and Disqus, the commenting system that loads into many blogs."
         },
         {
           "s": "leo",
@@ -597,7 +614,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Michael Tiller in Canton, Michigan likes the YubiKey idea but says its symmetric encryption makes it impractical. Anyone able to verify your identity could also fake your credentials. The killer device would be asymmetric: give out a public credential and prove with a private one that it's you. The YubiKey forum says that would need pricier hardware and much more data."
+          "t": "Next, a question about the YubiKey. Michael Tiller in Canton, Michigan likes the YubiKey idea but says its symmetric encryption makes it impractical. Anyone able to verify your identity could also fake your credentials. The killer device would be asymmetric: give out a public credential and prove with a private one that it's you. The YubiKey forum says that would need pricier hardware and much more data."
         },
         {
           "s": "steve",
@@ -639,7 +656,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jez Goldstone in Manchester, U.K. doesn't want to give anyone ideas. Instead of Phorm's browser dance, the ISP could tell Phorm which subscriber has an IP at any moment. Phorm could link that IP to its unique ID and inject a cookie into requests, then read it from ads on sites like CNET. Only TOR, JAP or another anonymizer would stop it. It fails behind a shared NAT router, but so does a cookie when a household shares one login. Did he miss anything?"
+          "t": "Next, a suggestion for a simpler Phorm. Jez Goldstone in Manchester, U.K. doesn't want to give anyone ideas. Instead of Phorm's browser dance, the ISP could tell Phorm which subscriber has an IP at any moment. Phorm could link that IP to its unique ID and inject a cookie into requests, then read it from ads on sites like CNET. Only TOR, JAP or another anonymizer would stop it. It fails behind a shared NAT router, but so does a cookie when a household shares one login. Did he miss anything?"
         },
         {
           "s": "steve",
@@ -668,7 +685,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Sad and Disturbing Truth of the Week, from Pat Kugel in London, Ontario. Bell Canada provides PPPoE carrier service for many smaller ISPs; its ISP arm is Sympatico."
+          "t": "Now the Sad and Disturbing Truth of the Week. The Sad and Disturbing Truth of the Week, from Pat Kugel in London, Ontario. Bell Canada provides PPPoE carrier service for many smaller ISPs; its ISP arm is Sympatico."
         },
         {
           "s": "leo",
@@ -711,7 +728,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Creative Writing Award goes to \"Jake,\" writing from the future. Since 2003 he's spent 10 years building a time machine. In 2013 he found Security Now!, really Security Then!, and listens for nostalgia about when security was comprehensible."
+          "t": "Now the Creative Writing Award. The Creative Writing Award goes to \"Jake,\" writing from the future. Since 2003 he's spent 10 years building a time machine. In 2013 he found Security Now!, really Security Then!, and listens for nostalgia about when security was comprehensible."
         },
         {
           "s": "leo",
@@ -736,7 +753,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "How can people send questions?"
+          "t": "To close, how people can send questions, and a preview of next week's DNS spoofing episode. How can people send questions?"
         },
         {
           "s": "steve",

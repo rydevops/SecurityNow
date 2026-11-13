@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-161.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #161",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 161, for September 11, 2008: Google's Chrome."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we look at Google's Chrome from the security angle: a promising architecture with almost no privacy or security controls. First the news, a SpinRite story and some other notes."
+        }
+      ]
+    },
+    {
       "title": "Seven Years After 9/11",
       "beats": [
         {
@@ -37,7 +54,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "It's also the day after the Large Hadron Collider did not destroy the Earth."
+          "t": "A lighter note. It's also the day after the Large Hadron Collider did not destroy the Earth."
         },
         {
           "s": "steve",
@@ -129,7 +146,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Wells Fargo saga continues. First, extra characters on a password were ignored. Then, passwords weren't case sensitive. Now a listener reports that usernames aren't case sensitive either."
+          "t": "Next, a follow-up on Wells Fargo. The Wells Fargo saga continues. First, extra characters on a password were ignored. Then, passwords weren't case sensitive. Now a listener reports that usernames aren't case sensitive either."
         },
         {
           "s": "leo",
@@ -154,7 +171,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I got a kick out of this, only because I don't use Trend Micro. Early last week a Trend Micro update misidentified a collection of XP and Vista core files, quarantined them and removed them."
+          "t": "Next, a security software story. I got a kick out of this, only because I don't use Trend Micro. Early last week a Trend Micro update misidentified a collection of XP and Vista core files, quarantined them and removed them."
         },
         {
           "s": "leo",
@@ -175,7 +192,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My friends at Golden Bow, publishers of Vopt, one of my two favorite defraggers, released version 9 after a long time at 8.1. It's redesigned, with Vista enhancements, and very nice."
+          "t": "Next, a defragmenter update. My friends at Golden Bow, publishers of Vopt, one of my two favorite defraggers, released version 9 after a long time at 8.1. It's redesigned, with Vista enhancements, and very nice."
         },
         {
           "s": "steve",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I promised a story about SpinRite saving 200 kittens. That was only a slight misquote. The subject: \"SpinRite Saved 200 Hungry Cats.\""
+          "t": "Now a SpinRite story. I promised a story about SpinRite saving 200 kittens. That was only a slight misquote. The subject: \"SpinRite Saved 200 Hungry Cats.\""
         },
         {
           "s": "steve",
@@ -213,7 +230,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You know where the name comes from? \"Chrome\" is browser designers' jargon for all the UI outside the page."
+          "t": "Now to our main topic: Google Chrome. First, the name. You know where the name comes from? \"Chrome\" is browser designers' jargon for all the UI outside the page."
         },
         {
           "s": "leo",
@@ -230,7 +247,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "With the license as it was, I didn't do anything more with Chrome. Then I visited one of my not-yet-public cookie pages. I've paused that work for my very comprehensive DNS profiling facility, which I expect to announce in two weeks."
+          "t": "Next, Chrome in GRC's stats. With the license as it was, I didn't do anything more with Chrome. Then I visited one of my not-yet-public cookie pages. I've paused that work for my very comprehensive DNS profiling facility, which I expect to announce in two weeks."
         },
         {
           "s": "steve",
@@ -255,7 +272,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "You just sold a copy of SpinRite, I hear. Don't mute that."
+          "t": "A quick aside. You just sold a copy of SpinRite, I hear. Don't mute that."
         },
         {
           "s": "steve",
@@ -276,7 +293,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Globally, IE has about 71 percent, Firefox 20, Safari 6.1 to 6.3 on Windows and Mac combined, and Opera, surprisingly, as low as 0.75."
+          "t": "Next, browser market share. Globally, IE has about 71 percent, Firefox 20, Safari 6.1 to 6.3 on Windows and Mac combined, and Opera, surprisingly, as low as 0.75."
         },
         {
           "s": "leo",
@@ -301,7 +318,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My main complaint: you only get one chance to make a first impression. Who is Chrome aimed at? Clearly people willing to leave IE, meaning Firefox users."
+          "t": "Next, my main complaint. My main complaint: you only get one chance to make a first impression. Who is Chrome aimed at? Clearly people willing to leave IE, meaning Firefox users."
         },
         {
           "s": "steve",
@@ -354,7 +371,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Google did this for two reasons. If the browser becomes your word processor, you can't have another tab hang the whole browser when you're 15 pages into a document. When Chrome vanished on me, I wasn't impressed with its crash handling. But it's beta."
+          "t": "Next, process per tab. Google did this for two reasons. If the browser becomes your word processor, you can't have another tab hang the whole browser when you're 15 pages into a document. When Chrome vanished on me, I wasn't impressed with its crash handling. But it's beta."
         },
         {
           "s": "steve",
@@ -400,7 +417,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The last benefit is security. Separate processes get the OS's inter-process isolation, though under Windows that isn't as good as it should be."
+          "t": "Next, sandboxing. The last benefit is security. Separate processes get the OS's inter-process isolation, though under Windows that isn't as good as it should be."
         },
         {
           "s": "steve",
@@ -417,7 +434,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My problem is that \"feature-lean\" is an understatement. Firefox users love features IE lacks, and IE was slow to adopt things like tabs. But also simple security features."
+          "t": "Next, passwords in plain view. My problem is that \"feature-lean\" is an understatement. Firefox users love features IE lacks, and IE was slow to adopt things like tabs. But also simple security features."
         },
         {
           "s": "steve",
@@ -443,7 +460,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And there's no script management at all. You can't turn JavaScript off. Even IE lets you."
+          "t": "Next, no script or per-site control. And there's no script management at all. You can't turn JavaScript off. Even IE lets you."
         },
         {
           "s": "leo",
@@ -501,7 +518,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And they call that box at the top the \"Omnibox\"?"
+          "t": "Next, the address box. And they call that box at the top the \"Omnibox\"?"
         },
         {
           "s": "leo",
@@ -526,7 +543,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's the Incognito window, a nice feature. Nothing done there stays: no permanent cookies, cache or history. Google's example is buying a secret present your spouse won't find in your history. People online call it the \"porn window.\" IE8 will have something similar."
+          "t": "Next, Incognito, tabs and a little worm. There's the Incognito window, a nice feature. Nothing done there stays: no permanent cookies, cache or history. Google's example is buying a secret present your spouse won't find in your history. People online call it the \"porn window.\" IE8 will have something similar."
         },
         {
           "s": "leo",
@@ -552,7 +569,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "While we're on science fiction, I recommend Larry Niven's novel Protector. There's a \"Pak Protector\" entry in Wikipedia, but don't look if you might read the book. It's a total spoiler."
+          "t": "A science fiction aside. I recommend Larry Niven's novel Protector. There's a \"Pak Protector\" entry in Wikipedia, but don't look if you might read the book. It's a total spoiler."
         },
         {
           "s": "steve",
@@ -577,7 +594,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's talk about the flaws people have discovered."
+          "t": "Now to Chrome's early security holes. Let's talk about the flaws people have discovered."
         },
         {
           "s": "steve",
@@ -610,7 +627,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "In summary: Chrome is underfeatured, and its privacy controls leave much to be desired."
+          "t": "Now, Steve's verdict. In summary: Chrome is underfeatured, and its privacy controls leave much to be desired."
         },
         {
           "s": "steve",
@@ -655,7 +672,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "GRC.com/feedback takes you to a page, no scripting required, for next week's Q&A."
+          "t": "To close, GRC.com/feedback takes you to a page, no scripting required, for next week's Q&A."
         },
         {
           "s": "steve",

@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-152.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #152",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 152, for July 10, 2008: Listener Feedback Q&A #45."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, the news: fixes for Microsoft Dynamics GP, Mac OS X and the Mozilla family, TrueCrypt 6.0 and 637,000 laptops lost at airports. Then questions on what happens to your keys when you die, blocking Phorm, cookies, Microsoft's removal tool and a router that ignored its settings."
+        }
+      ]
+    },
+    {
       "title": "Nearly Three Years",
       "beats": [
         {
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Every week there's security news, the original concept for this podcast."
+          "t": "First, the news. Every week there's security news, the original concept for this podcast."
         },
         {
           "s": "steve",
@@ -54,7 +71,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I can't tell you how many notes I got in case I didn't know about TrueCrypt 6.0, released on the Fourth of July. Thanks, everybody. People on 5 will probably want to move up."
+          "t": "Next, a TrueCrypt update. I can't tell you how many notes I got in case I didn't know about TrueCrypt 6.0, released on the Fourth of July. Thanks, everybody. People on 5 will probably want to move up."
         },
         {
           "s": "steve",
@@ -116,7 +133,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A Dell-commissioned study found more than 637,000 laptops are lost every year in U.S. airports, about 12,000 a week, and two thirds are never recovered."
+          "t": "Next, a study on lost laptops. A Dell-commissioned study found more than 637,000 laptops are lost every year in U.S. airports, about 12,000 a week, and two thirds are never recovered."
         },
         {
           "s": "steve",
@@ -154,7 +171,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Blizzard has adopted a bizarrely painted version of the PayPal football to authenticate World of Warcraft players. Like PayPal, they're pricing it low to encourage use: $6.50. Oops, sold out."
+          "t": "Next, an authentication item for gamers. Blizzard has adopted a bizarrely painted version of the PayPal football to authenticate World of Warcraft players. Like PayPal, they're pricing it low to encourage use: $6.50. Oops, sold out."
         },
         {
           "s": "steve",
@@ -172,7 +189,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And a non-security item, about a question I heard you answer on your Tech Guy radio show."
+          "t": "Now a non-security tip, prompted by a question I heard you answer on your Tech Guy radio show."
         },
         {
           "s": "leo",
@@ -225,7 +242,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris Simpson of Simpsonville, South Carolina lost his grandfather to an unexpected heart attack in May, and the family spent hours hunting for financial, insurance and medical information. As a network engineer, he encrypts virtually everything, all his disks with TrueCrypt. What happens if something happens to him? He hates writing passwords down. You've mentioned giving your attorney one CD and your mom another. He doesn't trust a lawyer with the keys to his whole life, and his mom, though she wouldn't snoop, isn't security minded and might leave it lying around."
+          "t": "Now to listener questions, starting with what happens to your encryption keys when you die. Chris Simpson of Simpsonville, South Carolina lost his grandfather to an unexpected heart attack in May, and the family spent hours hunting for financial, insurance and medical information. As a network engineer, he encrypts virtually everything, all his disks with TrueCrypt. What happens if something happens to him? He hates writing passwords down. You've mentioned giving your attorney one CD and your mom another. He doesn't trust a lawyer with the keys to his whole life, and his mom, though she wouldn't snoop, isn't security minded and might leave it lying around."
         },
         {
           "s": "steve",
@@ -287,7 +304,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Peggy Willingham in San Marcos, Texas, a SpinRite fan since version 2 whose happiest day was when SpinRite 6 supported NTFS, asks: could a hosts file block Phorm?"
+          "t": "Next, a question about blocking Phorm. Peggy Willingham in San Marcos, Texas, a SpinRite fan since version 2 whose happiest day was when SpinRite 6 supported NTFS, asks: could a hosts file block Phorm?"
         },
         {
           "s": "steve",
@@ -332,7 +349,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeffrey T. Darlington in Beckley, West Virginia has run a moderately popular website for a decade, an eternity on the web. It's largely ad supported, so pause for the boos and hisses. Hey, we're ad supported too. He never enjoyed pushing ads, but as a one-man operation he needs them to pay his bandwidth bills. He'd dispute our claim that bandwidth is cheap. Without ads, he'd have folded years ago. Online ads, like politics, are the lesser of evils."
+          "t": "Next, a question about mystery cookies. Jeffrey T. Darlington in Beckley, West Virginia has run a moderately popular website for a decade, an eternity on the web. It's largely ad supported, so pause for the boos and hisses. Hey, we're ad supported too. He never enjoyed pushing ads, but as a one-man operation he needs them to pay his bandwidth bills. He'd dispute our claim that bandwidth is cheap. Without ads, he'd have folded years ago. Online ads, like politics, are the lesser of evils."
         },
         {
           "s": "leo",
@@ -393,7 +410,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Gilbert Langevin in Le Gardeur, Quebec suggests Firefox's option to allow cookies for the session only. It would accept a site's cookies, but delete them when you close Firefox. Wouldn't that reduce Phorm's effectiveness?"
+          "t": "Next, a suggestion about session-only cookies. Gilbert Langevin in Le Gardeur, Quebec suggests Firefox's option to allow cookies for the session only. It would accept a site's cookies, but delete them when you close Firefox. Wouldn't that reduce Phorm's effectiveness?"
         },
         {
           "s": "steve",
@@ -422,7 +439,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Rick Nyman in Virginia, who listens on his Treo using Resco News, suggests an HTTPS link in ShieldsUP! that flags unknown cookies as possible Phorm. Though Phorm might stop setting cookies for GRC to avoid detection."
+          "t": "Next, an idea for detecting Phorm from GRC. Rick Nyman in Virginia, who listens on his Treo using Resco News, suggests an HTTPS link in ShieldsUP! that flags unknown cookies as possible Phorm. Though Phorm might stop setting cookies for GRC to avoid detection."
         },
         {
           "s": "steve",
@@ -443,7 +460,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Steve Bradshaw in Bobbington, U.K., who works with IBM Power Systems and BladeCenters, asks: if Microsoft's Malicious Software Removal Tool removed two million game-password stealers, how does Microsoft know? Does it phone home? Did he agree to that one night after a glass too many of brain tonic?"
+          "t": "Next, a question about Microsoft's removal tool. Steve Bradshaw in Bobbington, U.K., who works with IBM Power Systems and BladeCenters, asks: if Microsoft's Malicious Software Removal Tool removed two million game-password stealers, how does Microsoft know? Does it phone home? Did he agree to that one night after a glass too many of brain tonic?"
         },
         {
           "s": "steve",
@@ -460,7 +477,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "James in Vancouver wonders how much Phorm-induced surfing overhead there is, and whether it affects the ISP's bandwidth."
+          "t": "Next, a question about Phorm's overhead. James in Vancouver wonders how much Phorm-induced surfing overhead there is, and whether it affects the ISP's bandwidth."
         },
         {
           "s": "steve",
@@ -481,7 +498,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Andrew Steer near London says PayPal isn't the only one awkward for people blocking DoubleClick in their hosts file. In the U.K., the bank Abbey now uses DoubleClick link-throughs on its home page."
+          "t": "Next, a note about a bank and DoubleClick. Andrew Steer near London says PayPal isn't the only one awkward for people blocking DoubleClick in their hosts file. In the U.K., the bank Abbey now uses DoubleClick link-throughs on its home page."
         },
         {
           "s": "steve",
@@ -498,7 +515,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Santiago Rivero in Miami heard your love for Pascal and points to Free Pascal, an open-source, still-supported compiler at FreePascal.org."
+          "t": "Next, a tip following up on Pascal. Santiago Rivero in Miami heard your love for Pascal and points to Free Pascal, an open-source, still-supported compiler at FreePascal.org."
         },
         {
           "s": "steve",
@@ -531,7 +548,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris Noble in Wellington, New Zealand asks the Important and Obvious Question of the Week: how can you tell if your ISP is doing something dodgy, by inspecting cookies or headers?"
+          "t": "Next, a question about telling whether your ISP is tracking you. Chris Noble in Wellington, New Zealand asks the Important and Obvious Question of the Week: how can you tell if your ISP is doing something dodgy, by inspecting cookies or headers?"
         },
         {
           "s": "steve",
@@ -548,7 +565,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "\"Calvin,\" named for the hero of mischief, is in IT at a medium-sized international airport. Their DHCP pool, normally 20 percent free, was completely used up, by devices he didn't recognize, many iPhones and laptops named things like \"Johns Laptop.\" Every time he pinged one, it was gone."
+          "t": "Next, an interesting story from an airport. \"Calvin,\" named for the hero of mischief, is in IT at a medium-sized international airport. Their DHCP pool, normally 20 percent free, was completely used up, by devices he didn't recognize, many iPhones and laptops named things like \"Johns Laptop.\" Every time he pinged one, it was gone."
         },
         {
           "s": "leo",
@@ -593,7 +610,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Our Horror Story and Fix of the Week, from Ruan Viljoen in rainy Cape Town, South Africa. He'd changed his router's default username and password, luckily, but found its admin interface exposed to the Internet on his public IP. A friend logged in from home successfully. And the router's option to hide the admin interface from the Internet, \"disable WAN administration,\" was enabled."
+          "t": "To close, the Horror Story and Fix of the Week. Our Horror Story and Fix of the Week, from Ruan Viljoen in rainy Cape Town, South Africa. He'd changed his router's default username and password, luckily, but found its admin interface exposed to the Internet on his public IP. A friend logged in from home successfully. And the router's option to hide the admin interface from the Internet, \"disable WAN administration,\" was enabled."
         },
         {
           "s": "leo",

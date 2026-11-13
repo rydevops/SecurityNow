@@ -11,6 +11,23 @@
   },
   "chapters": [
     {
+      "title": "Welcome to Security Now! #172",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 172, for November 27, 2008: Sandboxie."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover Sandboxie, a lightweight sandbox that isolates any program's changes from your system, with its creator Ronen Tzur. First, making NoScript bearable, PayPal and the news."
+        }
+      ]
+    },
+    {
       "title": "Making NoScript Bearable",
       "beats": [
         {
@@ -48,7 +65,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "PayPal started acting differently: it became aware of my VeriSign VIP card, so it now asks which token I'm using."
+          "t": "Next, two PayPal tokens. PayPal started acting differently: it became aware of my VeriSign VIP card, so it now asks which token I'm using."
         },
         {
           "s": "leo",
@@ -69,7 +86,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Safari 3.2 fixed critical remote code execution flaws; update whether you're on Windows or Mac."
+          "t": "Next, security news. Safari 3.2 fixed critical remote code execution flaws; update whether you're on Windows or Mac."
         },
         {
           "s": "steve",
@@ -110,7 +127,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Let's say hello to Ronen Tzur, creator of Sandboxie, calling from Israel."
+          "t": "Now to our main topic: Sandboxie. Let's say hello to Ronen Tzur, creator of Sandboxie, calling from Israel."
         },
         {
           "s": "ronen",
@@ -227,7 +244,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Does using Sandboxie mean you don't need NoScript?"
+          "t": "Next, how Sandboxie works. Does using Sandboxie mean you don't need NoScript?"
         },
         {
           "s": "steve",

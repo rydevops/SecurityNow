@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-164.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #164",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 164, for October 2, 2008: Sockstress."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we skip the Q&A for something that surfaced hours ago: Sockstress, a new class of low-bandwidth TCP denial-of-service attacks. First the news and a SpinRite story."
+        }
+      ]
+    },
+    {
       "title": "Why the Q&A Is Postponed",
       "beats": [
         {
@@ -38,7 +55,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A BBC story: a security researcher bought a Cisco VPN router on eBay for next to nothing. When he plugged it in, it automatically connected to the internal network of Kirklees Council in West Yorkshire, which called the discovery concerning but said its data wasn't compromised."
+          "t": "First, the news. A BBC story: a security researcher bought a Cisco VPN router on eBay for next to nothing. When he plugged it in, it automatically connected to the internal network of Kirklees Council in West Yorkshire, which called the discovery concerning but said its data wasn't compromised."
         },
         {
           "s": "steve",
@@ -55,7 +72,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Several listeners flagged that BT will run another Phorm trial, this time opt-in, on about 10,000 randomly chosen users, who will see an intercept page offering to join. That's the fix I said was needed. Phorm is now pitching it with anti-phishing protection."
+          "t": "Next, a Phorm update. Several listeners flagged that BT will run another Phorm trial, this time opt-in, on about 10,000 randomly chosen users, who will see an intercept page offering to join. That's the fix I said was needed. Phorm is now pitching it with anti-phishing protection."
         },
         {
           "s": "steve",
@@ -76,7 +93,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Hollywood has taken RealDVD to court. The software let you copy DVDs to a computer while keeping copy protection by decrypting and re-encrypting. Real sued first, asking a court to rule it legal as fair use; the studios countersued for copyright infringement and violating the DMCA."
+          "t": "Next, a legal fight over RealDVD. Hollywood has taken RealDVD to court. The software let you copy DVDs to a computer while keeping copy protection by decrypting and re-encrypting. Real sued first, asking a court to rule it legal as fair use; the studios countersued for copyright infringement and violating the DMCA."
         },
         {
           "s": "leo",
@@ -89,7 +106,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Firefox moved from 3.0.2 to 3.0.3 with several fixes, Mozilla had other updates, and Java for the Mac got a 136MB update fixing two serious flaws with remote-exploit aspects. If you use any of those, update."
+          "t": "Next, updates. Firefox moved from 3.0.2 to 3.0.3 with several fixes, Mozilla had other updates, and Java for the Mac got a 136MB update fixing two serious flaws with remote-exploit aspects. If you use any of those, update."
         },
         {
           "s": "leo",
@@ -102,7 +119,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A little sci-fi news. Fox's \"Fringe\" continues to be fun. Amanda Tapping has left Stargate for the Sci-Fi Channel's \"Sanctuary,\" premiering tomorrow, a show made largely against green screens where a sanctuary shelters monsters. I'm also enjoying the BBC's \"Primeval,\" and it's striking how far computer graphics have come for weekly TV."
+          "t": "A sci-fi note. A little sci-fi news. Fox's \"Fringe\" continues to be fun. Amanda Tapping has left Stargate for the Sci-Fi Channel's \"Sanctuary,\" premiering tomorrow, a show made largely against green screens where a sanctuary shelters monsters. I'm also enjoying the BBC's \"Primeval,\" and it's striking how far computer graphics have come for weekly TV."
         },
         {
           "s": "steve",
@@ -119,7 +136,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A letter titled \"SpinRite Saves a Tech from Himself.\" Matthew works for a college in southern BC and runs SpinRite first on any machine brought in, even telling clients to buy it. Then his own PC fell into an endless boot loop after a move. He spent four hours on the Recovery Console, repairs, reinstalls and hardware tests."
+          "t": "Now a SpinRite story. A letter titled \"SpinRite Saves a Tech from Himself.\" Matthew works for a college in southern BC and runs SpinRite first on any machine brought in, even telling clients to buy it. Then his own PC fell into an endless boot loop after a move. He spent four hours on the Recovery Console, repairs, reinstalls and hardware tests."
         },
         {
           "s": "steve",
@@ -136,7 +153,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's the story. Two Swedish researchers from Outpost24, Robert Lee and Jack Louis, were asked to scan a very large network. To scan that much at once, they wrote their own TCP stack as an ordinary application, called a \"userland stack,\" rather than using the operating system's, because their probing traffic would otherwise overwhelm their own kernel."
+          "t": "Now to our main topic: Sockstress. First, the setup. Here's the story. Two Swedish researchers from Outpost24, Robert Lee and Jack Louis, were asked to scan a very large network. To scan that much at once, they wrote their own TCP stack as an ordinary application, called a \"userland stack,\" rather than using the operating system's, because their probing traffic would otherwise overwhelm their own kernel."
         },
         {
           "s": "steve",
@@ -153,7 +170,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Early denial-of-service attacks weren't bandwidth floods but resource-consumption attacks. A server receiving a SYN set aside memory for the half-open connection; keep sending SYNs, perhaps with spoofed source addresses, and the server's connection resources fill and it can't accept anyone else."
+          "t": "Next, some background on SYN floods and SYN cookies. Early denial-of-service attacks weren't bandwidth floods but resource-consumption attacks. A server receiving a SYN set aside memory for the half-open connection; keep sending SYNs, perhaps with spoofed source addresses, and the server's connection resources fill and it can't accept anyone else."
         },
         {
           "s": "steve",
@@ -175,7 +192,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "While scanning, the researchers inadvertently started crashing machines, including routers. They looked into why, and they describe a family of weaknesses that they call Sockstress, after \"sockets.\" Their claims: it works against Windows, Linux, BSD and routers; sometimes only one service dies, sometimes the whole machine; in one case a machine wouldn't reboot afterward."
+          "t": "Next, what the researchers reported. While scanning, the researchers inadvertently started crashing machines, including routers. They looked into why, and they describe a family of weaknesses that they call Sockstress, after \"sockets.\" Their claims: it works against Windows, Linux, BSD and routers; sometimes only one service dies, sometimes the whole machine; in one case a machine wouldn't reboot afterward."
         },
         {
           "s": "steve",
@@ -192,7 +209,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The key idea is that this isn't a flood. The old SYN-cookie defenses protect the front door, the handshake. But once a connection is really established, TCP must keep state: it has to remember data awaiting acknowledgment, retransmit lost packets on timers, and honor each side's advertised \"window\" of buffer space."
+          "t": "Next, why low bandwidth is the point. The key idea is that this isn't a flood. The old SYN-cookie defenses protect the front door, the handshake. But once a connection is really established, TCP must keep state: it has to remember data awaiting acknowledgment, retransmit lost packets on timers, and honor each side's advertised \"window\" of buffer space."
         },
         {
           "s": "steve",
@@ -214,7 +231,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Does this only matter to people running websites?"
+          "t": "Finally, who is at risk. Does this only matter to people running websites?"
         },
         {
           "s": "steve",

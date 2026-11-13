@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-174.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #174",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 174, for December 11, 2008: Sandbox Limitations."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Today we cover what a sandbox or virtual machine can't protect you from. First the news and a SpinRite story. We're recording a week early while Leo is in Paris."
+        }
+      ]
+    },
+    {
       "title": "Recording From the Past",
       "beats": [
         {
@@ -29,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Boston Globe: \"Sandwich loses nearly $50k to hacker.\" Sandwich, Massachusetts, where a hacker implanted a keylogger on the town treasurer's computer, captured his security code and password, and withdrew close to $50,000 from town accounts."
+          "t": "First, the news. The Boston Globe: \"Sandwich loses nearly $50k to hacker.\" Sandwich, Massachusetts, where a hacker implanted a keylogger on the town treasurer's computer, captured his security code and password, and withdrew close to $50,000 from town accounts."
         },
         {
           "s": "steve",
@@ -55,7 +72,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A U.S. Attorney in New Jersey charged a multinational ring operating across the U.S., U.K., Canada, China, Japan, Vietnam and South Korea. They drained home equity lines of credit, HELOCs, by impersonating victims, withdrawing over $2.5 million and attempting $4 million more."
+          "t": "Next, an identity-theft ring. A U.S. Attorney in New Jersey charged a multinational ring operating across the U.S., U.K., Canada, China, Japan, Vietnam and South Korea. They drained home equity lines of credit, HELOCs, by impersonating victims, withdrawing over $2.5 million and attempting $4 million more."
         },
         {
           "s": "steve",
@@ -84,7 +101,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Craig, who asked to stay anonymous, has followed GRC since 1999 and ShieldsUP!. During a thunderstorm the power blipped, and his PC went into a boot loop, beeping and rebooting after the BIOS screen. Support said replace the drive. He'd backed up only a month earlier. SpinRite found one damaged sector, did its best to repair it, and the machine booted like nothing happened."
+          "t": "Now a SpinRite story. Craig, who asked to stay anonymous, has followed GRC since 1999 and ShieldsUP!. During a thunderstorm the power blipped, and his PC went into a boot loop, beeping and rebooting after the BIOS screen. Support said replace the drive. He'd backed up only a month earlier. SpinRite found one damaged sector, did its best to repair it, and the machine booted like nothing happened."
         }
       ]
     },
@@ -93,7 +110,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "We covered how Sandboxie and virtual machines contain malware. But there are limits."
+          "t": "Now to our main topic: what a sandbox can't stop. We covered how Sandboxie and virtual machines contain malware. But there are limits."
         },
         {
           "s": "steve",
@@ -139,7 +156,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "So the toolbox has Sandboxie, virtual machines, and SteadyState."
+          "t": "Next, which tool to use when. So the toolbox has Sandboxie, virtual machines, and SteadyState."
         },
         {
           "s": "steve",
