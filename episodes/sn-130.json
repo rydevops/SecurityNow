@@ -8,11 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-130.mp3",
   "chapters": [
     {
-      "title": "Kindle Secrets and Amazon Buys Audible",
+      "title": "Welcome to Security Now! #130",
       "beats": [
         {
           "s": "leo",
-          "t": "I'm in the middle of Peter Hamilton's \"Night's Dawn Trilogy,\" the world's longest book. The Kindle shows dots instead of page numbers, and it always has the same number of dots."
+          "t": "This is Security Now! with Steve Gibson, Episode 130, for February 7, 2008: Listener Feedback Q&A #34."
+        },
+        {
+          "s": "leo",
+          "t": "Mr. Steve Gibson is on the other side of the microphone. A long Q&A today."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. We start with some news: Kindle secrets, Yahoo! and OpenID, wireless headsets that bug an office, and the Silent Banker trojan. Then come listener questions on SpinRite, cellular data cards, junk on new PCs, warez, AxCrypt, Mac encryption, FREE CompuSec and a clever OpenBSD firewall."
+        },
+        {
+          "s": "leo",
+          "t": "First, my Kindle. I'm in the middle of Peter Hamilton's \"Night's Dawn Trilogy,\" the world's longest book. The Kindle shows dots instead of page numbers, and it always has the same number of dots."
         },
         {
           "s": "leo",
@@ -49,7 +61,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Yahoo! is now an OpenID authentication provider, which should do a lot to promote OpenID. But it's only single-factor. If you'd use Yahoo! for OpenID, drop them a note asking them to add VeriSign's VIP authentication."
+          "t": "In news, Yahoo! is now an OpenID authentication provider, which should do a lot to promote OpenID. But it's only single-factor. If you'd use Yahoo! for OpenID, drop them a note asking them to add VeriSign's VIP authentication."
         },
         {
           "s": "leo",
@@ -75,7 +87,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I'm loving Jungle Disk. It just updated to 1.50c, fixing little things. My Amazon bill for last month: 10 cents."
+          "t": "A quick Jungle Disk update. I'm loving Jungle Disk. It just updated to 1.50c, fixing little things. My Amazon bill for last month: 10 cents."
         },
         {
           "s": "leo",
@@ -100,7 +112,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Now two stories that will boggle minds. Years ago, I refused to talk to my attorney on my analog cell phone from the car. It was a radio."
+          "t": "Now two security stories that will boggle minds, starting with wireless office headsets that bug the office. Years ago, Years ago, I refused to talk to my attorney on my analog cell phone from the car. It was a radio."
         },
         {
           "s": "leo",
@@ -182,7 +194,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The second story is horrifying and true. A Symantec blog post titled \"Banking in Silence\" describes a trojan called Silent Banker. It touches on much we've discussed."
+          "t": "The second story is horrifying and true: a banking trojan. A Symantec blog post titled \"Banking in Silence\" describes a trojan called Silent Banker. It touches on much we've discussed."
         },
         {
           "s": "steve",
@@ -247,7 +259,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Many people, starting with Rami, a level designer at Ubisoft Montreal, gave me that name I couldn't remember: Deep Freeze, from Faronics. Like SteadyState, it resets the machine on every reboot."
+          "t": "A follow-up on SteadyState and TrueCrypt. Many people, starting with Rami, a level designer at Ubisoft Montreal, gave me that name I couldn't remember: Deep Freeze, from Faronics. Like SteadyState, it resets the machine on every reboot."
         },
         {
           "s": "leo",
@@ -268,7 +280,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Our first question is from Lin in Kalamazoo, who has listened since Episode 1. Should that have been Episode 0? In true programmer's form, yes. TWiT started with 0."
+          "t": "Now to listener questions. Our first question, about SpinRite, is from Lin in Kalamazoo, who has listened since Episode 1. Should that have been Episode 0? In true programmer's form, yes. TWiT started with 0."
         },
         {
           "s": "leo",
@@ -309,7 +321,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Lin also asks about his Sprint wireless data card on a corporate laptop with sensitive data. I use a Verizon EVDO card myself. Is he behind a NAT router? Does he need a software firewall? It fails ShieldsUP's all-stealth test, but every port is closed or stealthed, and port 22, SSH, is closed. His traceroute shows seven hops in Sprint's 68.x.x.x range."
+          "t": "Lin's next question is about cellular data cards. Lin also asks about his Sprint wireless data card on a corporate laptop with sensitive data. I use a Verizon EVDO card myself. Is he behind a NAT router? Does he need a software firewall? It fails ShieldsUP's all-stealth test, but every port is closed or stealthed, and port 22, SSH, is closed. His traceroute shows seven hops in Sprint's 68.x.x.x range."
         },
         {
           "s": "steve",
@@ -359,7 +371,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Lin's last question: he shares Excel spreadsheets so people can use them, but not see his formulas or change anything. Freeware cracks sheet protection in seconds, even with complicated passwords. OpenOffice's protection doesn't help Microsoft Office users. Is there a way?"
+          "t": "Lin's last question is about protecting Excel spreadsheets. He shares Excel spreadsheets so people can use them, but not see his formulas or change anything. Freeware cracks sheet protection in seconds, even with complicated passwords. OpenOffice's protection doesn't help Microsoft Office users. Is there a way?"
         },
         {
           "s": "steve",
@@ -380,7 +392,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chuck in Tennessee asks how to deal with all the preinstalled junk on a new machine. Should he buy a copy of Windows for each new machine to start clean? Is that obsessive? And which processes should Task Manager show?"
+          "t": "Next, a question about junk on new machines. Chuck in Tennessee asks how to deal with all the preinstalled junk on a new machine. Should he buy a copy of Windows for each new machine to start clean? Is that obsessive? And which processes should Task Manager show?"
         },
         {
           "s": "steve",
@@ -413,7 +425,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Speaking of installing Windows, I noticed on MSDN that XP Service Pack 3 is at release candidate 1. No more 95 or 98 updates and nine reboots for the updates' updates."
+          "t": "A Windows news note: I noticed on MSDN that XP Service Pack 3 is at release candidate 1. No more 95 or 98 updates and nine reboots for the updates' updates."
         },
         {
           "s": "leo",
@@ -426,7 +438,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "As for Task Manager, there's no easy answer about processes. But GRC's Win2K server is jarring for how few it runs. I turned off all the nonsense."
+          "t": "Chuck's other question was about Task Manager and running processes. There's no easy answer about processes. But GRC's Win2K server is jarring for how few it runs. I turned off all the nonsense."
         },
         {
           "s": "steve",
@@ -451,7 +463,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous listener asks why we've never discussed cracks, pirated software and the \"warez\" scene. He doesn't pirate, but is surprised how many people use serials and cracks without considering the security risks."
+          "t": "Next, a question about pirated software. An anonymous listener asks why we've never discussed cracks, pirated software and the \"warez\" scene. He doesn't pirate, but is surprised how many people use serials and cracks without considering the security risks."
         },
         {
           "s": "steve",
@@ -488,7 +500,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Aaron Skinner in Omaha runs Windows XP Media Center Edition 2005, shared with roommates and used for online games. Games like Battlefield 2142 seem to need an administrator account. He wants full access for himself and a roommate-and-gaming login that resets at logoff, though game saves might suffer. Media Center must keep recording TV, and his Avast antivirus must update. Would SteadyState work?"
+          "t": "Next, a question about SteadyState for roommates. Aaron Skinner in Omaha runs Windows XP Media Center Edition 2005, shared with roommates and used for online games. Games like Battlefield 2142 seem to need an administrator account. He wants full access for himself and a roommate-and-gaming login that resets at logoff, though game saves might suffer. Media Center must keep recording TV, and his Avast antivirus must update. Would SteadyState work?"
         },
         {
           "s": "steve",
@@ -513,7 +525,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Amir Katz, from Kfar Saba, Israel, needs only a little encryption, just a few files, not a TrueCrypt partition. He finds AxCrypt simple and effective. It's open source under the GPL and has a secure-delete feature like SDelete. Is it secure?"
+          "t": "Next, a question about encrypting a few files. Amir Katz, from Kfar Saba, Israel, needs only a little encryption, just a few files, not a TrueCrypt partition. He finds AxCrypt simple and effective. It's open source under the GPL and has a secure-delete feature like SDelete. Is it secure?"
         },
         {
           "s": "steve",
@@ -547,7 +559,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous listener at a large university says it owns a Class B public IP range, over 60,000 addresses. A single IP can cost $5 a month in the private sector. Isn't this a huge waste of money, maybe taxpayer-subsidized, and needless exposure to hackers, when 90 percent of users would do fine with private IPs?"
+          "t": "Next, a question about IP addresses. An anonymous listener at a large university says it owns a Class B public IP range, over 60,000 addresses. A single IP can cost $5 a month in the private sector. Isn't this a huge waste of money, maybe taxpayer-subsidized, and needless exposure to hackers, when 90 percent of users would do fine with private IPs?"
         },
         {
           "s": "steve",
@@ -609,7 +621,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brad Beyenhof has listened since Episode 1, as it aired. About last time's question on Mac encryption without FileVault, many people wrote in."
+          "t": "Next, more on Mac encryption. Brad Beyenhof has listened since Episode 1, as it aired. About last time's question on Mac encryption without FileVault, many people wrote in."
         },
         {
           "s": "steve",
@@ -655,7 +667,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Steve Hendry of Kitchener, Ontario thinks Steve missed an obvious solution for sharing WEP and WPA safely. Instead of the kludgey three routers, why not a free Linux firewall like IPCop, Endian Firewall or Smoothwall? They install on an old PC with multiple network cards and keep up to three networks isolated, each less-trusted network unable to see the more trusted one. Endian also comes as an appliance. I'd add Astaro Security Gateway."
+          "t": "Next, a follow-up on the three-router solution. Steve Hendry of Kitchener, Ontario thinks Steve missed an obvious solution for sharing WEP and WPA safely. Instead of the kludgey three routers, why not a free Linux firewall like IPCop, Endian Firewall or Smoothwall? They install on an old PC with multiple network cards and keep up to three networks isolated, each less-trusted network unable to see the more trusted one. Endian also comes as an appliance. I'd add Astaro Security Gateway."
         },
         {
           "s": "steve",
@@ -680,7 +692,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Joe also asks about enterprise security. His company uses full-disk encryption, maybe from Check Point. It slows things down, and some computers crashed from corrupted encryption data. Why not Windows' built-in EFS?"
+          "t": "Next, whole-drive encryption. Joe in Sacramento also asks about enterprise security. His company uses full-disk encryption, maybe from Check Point. It slows things down, and some computers crashed from corrupted encryption data. Why not Windows' built-in EFS?"
         },
         {
           "s": "steve",
@@ -705,7 +717,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Glen in Denver hates long logins. How long does SteadyState take: seconds or minutes?"
+          "t": "Next, a question about SteadyState. Glen in Denver hates long logins. How long does SteadyState take: seconds or minutes?"
         },
         {
           "s": "steve",
@@ -738,7 +750,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mark Livingstone's Quick Tip of the Week: to data-mine the transcripts, type \"site:grc.com transcript\" and your keywords into Google."
+          "t": "Now the Quick Tip of the Week. Mark Livingstone's Quick Tip of the Week: to data-mine the transcripts, type \"site:grc.com transcript\" and your keywords into Google."
         },
         {
           "s": "steve",
@@ -759,7 +771,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Read #12 carefully, Leo. It's the Amazing Idea of the Week. Listeners will have to pay attention."
+          "t": "To close, the Amazing Idea of the Week. Read #12 carefully, Leo. It's the Amazing Idea of the Week. Listeners will have to pay attention."
         },
         {
           "s": "leo",

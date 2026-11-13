@@ -8,8 +8,12 @@
   "audio": "http://media.GRC.com/sn/SN-129.mp3",
   "chapters": [
     {
-      "title": "Recorded a Week Early",
+      "title": "Welcome to Security Now! #129",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 129, for January 31, 2008: Windows SteadyState."
+        },
         {
           "s": "steve",
           "t": "Leo's in Vancouver as people hear this, so we recorded Episode 129 right after 128. That means no security news this week. We'll catch up next week so nothing gets missed."
@@ -20,7 +24,7 @@
         },
         {
           "s": "steve",
-          "t": "Today is Windows SteadyState, as promised. And by coincidence, a listener wrote to me about both SteadyState and SpinRite."
+          "t": "Today is Windows SteadyState, as promised: a free Microsoft tool that freezes Windows XP so users can't make lasting changes. We'll cover how it works, how to keep documents on a separate drive, the lockdown options and its quirks. And by coincidence, a listener wrote to me about both SteadyState and SpinRite."
         }
       ]
     },
@@ -67,7 +71,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Jim in Shelley turns out to be the school district's senior tech and network admin, and he uses SteadyState in the libraries. He calls it a godsend."
+          "t": "First, SteadyState in a real library. Jim Gaydusek, whose SpinRite story we just heard, turns out to be the Shelley School District's senior tech and network admin, and he uses SteadyState in the libraries. He calls it a godsend."
         },
         {
           "s": "steve",
@@ -96,7 +100,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Windows Group Policy has a phenomenal number of settings. Type gpedit.msc, an MSC file rather than an EXE, on the Run line to browse them."
+          "t": "Next, why SteadyState helps: it makes Windows Group Policy usable. Windows Group Policy has a phenomenal number of settings. Type gpedit.msc, an MSC file rather than an EXE, on the Run line to browse them."
         },
         {
           "s": "steve",
@@ -117,7 +121,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In my experience it's not as onerous as Jim's letter suggests. It doesn't copy your whole system drive. You set aside a block of disk space, and a file-system filter captures and caches every change to the system drive."
+          "t": "Now, how SteadyState's disk protection works. In my experience it's not as onerous as Jim's letter suggests. It doesn't copy your whole system drive. You set aside a block of disk space, and a file-system filter captures and caches every change to the system drive."
         },
         {
           "s": "steve",
@@ -158,7 +162,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It protects only the Windows drive, usually C:, where the Windows directory lives, and all of it, with no exceptions. I'm impressed Microsoft said, if we protect C, we protect C, period."
+          "t": "Next, keeping user documents. SteadyState protects only the Windows drive, usually C:, where the Windows directory lives, and all of it, with no exceptions. I'm impressed Microsoft said, if we protect C, we protect C, period."
         },
         {
           "s": "steve",
@@ -195,7 +199,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "SteadyState also has many options for limiting what users can do. I've put screenshots of all its configuration screens on this episode's show notes page."
+          "t": "Next, SteadyState's lockdown options. It has many options for limiting what users can do. I've put screenshots of all its configuration screens on this episode's show notes page."
         },
         {
           "s": "steve",
@@ -232,7 +236,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Another checkbox blocks writing to USB storage. It caught me too. My Drive Snapshot backups of C and D started failing, even logged in as administrator."
+          "t": "One of those lockdown options caught me out. Another checkbox blocks writing to USB storage. It caught me too. My Drive Snapshot backups of C and D started failing, even logged in as administrator."
         },
         {
           "s": "steve",
@@ -245,7 +249,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "It's free, and as far as I can tell, XP only."
+          "t": "Who can use SteadyState? It's free, and as far as I can tell, XP only."
         },
         {
           "s": "steve",
@@ -270,7 +274,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Microsoft doesn't say this replaces antivirus software."
+          "t": "Does SteadyState replace antivirus software? Microsoft doesn't say this replaces antivirus software."
         },
         {
           "s": "leo",
@@ -304,7 +308,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It gets in your way a little. Jim mentioned slow startup."
+          "t": "SteadyState does have some quirks. It gets in your way a little. Jim mentioned slow startup."
         },
         {
           "s": "steve",
@@ -345,7 +349,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Microsoft still says use AV. You and I don't, Leo."
+          "t": "Can malware beat SteadyState? Microsoft still says use AV. You and I don't, Leo."
         },
         {
           "s": "leo",
@@ -379,7 +383,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "For instance, under general restrictions: prevent autoplay on CD, DVD and USB drives. One click stops a smart aleck with a CD."
+          "t": "A few more useful checkboxes. For instance, under general restrictions: prevent autoplay on CD, DVD and USB drives. One click stops a smart aleck with a CD."
         },
         {
           "s": "steve",
@@ -404,7 +408,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And if you want to experiment, it uninstalls nicely and cleanly."
+          "t": "To wrap up, if you want to experiment, SteadyState uninstalls nicely and cleanly."
         },
         {
           "s": "leo",

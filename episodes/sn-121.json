@@ -8,19 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-121.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #121",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 121, for December 6, 2007: Is Privacy Dead?"
+        },
+        {
+          "s": "leo",
+          "t": "It's Security Now! with Mr. Steve Gibson, the guru of technology, security and privacy."
+        },
+        {
+          "s": "steve",
+          "t": "We've known each other for decades, Leo. You can drop the \"Mr.\" Today we start with some computing history, my Kindle review and a SpinRite story. Then we step back from bits and bytes to the big question: is privacy dead?"
+        }
+      ]
+    },
+    {
       "title": "Two Decades of SpinRite",
       "beats": [
         {
           "s": "leo",
-          "t": "It's Security Now! with Mr. Steve Gibson."
-        },
-        {
-          "s": "steve",
-          "t": "We've known each other for decades, Leo. You can drop the \"Mr.\""
-        },
-        {
-          "s": "leo",
-          "t": "Tech TV's 10th anniversary is in May. And you were world famous before that, creator of the Apple II light pen. How old is SpinRite?"
+          "t": "First, some history. Tech TV's 10th anniversary is in May. And you were world famous before that, creator of the Apple II light pen. How old is SpinRite?"
         },
         {
           "s": "steve",
@@ -41,7 +50,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I remember my first 20-megabyte drive, when they went to MFM."
+          "t": "That brings back old machines. I remember my first 20-megabyte drive, when they went to MFM."
         },
         {
           "s": "steve",
@@ -95,7 +104,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Did you get your Kindle?"
+          "t": "Next, a request about the Kindle. Did you get your Kindle?"
         },
         {
           "s": "leo",
@@ -140,7 +149,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Have you heard from PayPal or DoubleClick?"
+          "t": "A follow-up on last week's PayPal and DoubleClick story: have you heard from PayPal or DoubleClick?"
         },
         {
           "s": "steve",
@@ -157,7 +166,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "A humorous SpinRite story from Thomas Martin in early November. A few years back, his third-generation iPod's hard drive failed. He was so mad he made it a doorstop for his office."
+          "t": "Now a humorous SpinRite story, from Thomas Martin in early November. A few years back, his third-generation iPod's hard drive failed. He was so mad he made it a doorstop for his office."
         },
         {
           "s": "steve",
@@ -194,7 +203,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I want to address something we've touched on many times but never discussed: how technology increasingly impinges on our privacy."
+          "t": "Now to our main topic: is privacy dead? I want to address something we've touched on many times but never discussed: how technology increasingly impinges on our privacy."
         },
         {
           "s": "leo",
@@ -243,7 +252,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I asked our newsgroups about pet peeves. One poster's wife could look up everything they'd ever bought at their grocery store on its website. That data exists and is aggregated."
+          "t": "Another everyday example is store loyalty cards. I asked our newsgroups about pet peeves. One poster's wife could look up everything they'd ever bought at their grocery store on its website. That data exists and is aggregated."
         },
         {
           "s": "leo",
@@ -276,7 +285,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I completely agree. I see several perspectives: the benefit trade-off, disclosure, transparency and control."
+          "t": "Which brings us to the principles that should govern collected data. I agree with that fair-trade view. I see several perspectives: the benefit trade-off, disclosure, transparency and control."
         },
         {
           "s": "steve",
@@ -326,7 +335,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Another concern: OpenDNS's privacy statement worried people. Basically, if anyone compels them, presumably a government agency, they'll turn over who performed what lookups."
+          "t": "Another example is your DNS provider's logs. Another concern: OpenDNS's privacy statement worried people. Basically, if anyone compels them, presumably a government agency, they'll turn over who performed what lookups."
         },
         {
           "s": "leo",
@@ -347,7 +356,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Talking to people over many years, I've found a spectrum of concern. Some have given up."
+          "t": "So where do people fall on privacy? Talking to people over many years, I've found a spectrum of concern. Some have given up."
         },
         {
           "s": "leo",
@@ -384,7 +393,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Last week some wacko strapped flares to himself and went into one of Hillary Clinton's campaign offices. The news said they quickly determined he'd bought the flares that day."
+          "t": "A news story shows how quickly purchase records get pulled. Last week some wacko strapped flares to himself and went into one of Hillary Clinton's campaign offices. The news said they quickly determined he'd bought the flares that day."
         },
         {
           "s": "steve",
@@ -422,7 +431,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Some people delete their cookies routinely, just to shed surveillance they expect is anonymous anyway."
+          "t": "More everyday trackers are toll tags and cell phones. Some people delete their cookies routinely, just to shed surveillance they expect is anonymous anyway."
         },
         {
           "s": "steve",
@@ -472,7 +481,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Where should people send questions?"
+          "t": "Before we go, where should people send questions?"
         },
         {
           "s": "steve",

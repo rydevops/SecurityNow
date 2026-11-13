@@ -8,15 +8,19 @@
   "audio": "http://media.GRC.com/sn/SN-125.mp3",
   "chapters": [
     {
-      "title": "Passing TWiT",
+      "title": "Welcome to Security Now! #125",
       "beats": [
         {
           "s": "leo",
-          "t": "Happy New Year, Steve."
+          "t": "This is Security Now! with Steve Gibson, Episode 125, for January 3, 2008: Symmetric Ciphers."
+        },
+        {
+          "s": "leo",
+          "t": "Ready for a new year of security? Happy New Year, Steve."
         },
         {
           "s": "steve",
-          "t": "Happy New Year. I'm really excited about this. It comes from my bungled answer a few weeks ago about double encryption: encrypt with one key, then another. I absolutely know it's better and why. I've implemented Rijndael, the AES standard, in assembly language. But my next answer got into 2 to the power of 128 factorial, and everyone's eyes crossed."
+          "t": "Happy New Year, Leo. Today we explain symmetric ciphers: why double encryption works, and how Rijndael, the AES standard, really operates, inside and out. First, a SpinRite story. I'm really excited about this. It comes from my bungled answer a few weeks ago about double encryption: encrypt with one key, then another. I absolutely know it's better and why. I've implemented Rijndael, the AES standard, in assembly language. But my next answer got into 2 to the power of 128 factorial, and everyone's eyes crossed."
         },
         {
           "s": "leo",
@@ -49,7 +53,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Distinguish symmetric ciphers for us."
+          "t": "Today's topic is symmetric ciphers. Distinguish them for us."
         },
         {
           "s": "steve",
@@ -74,7 +78,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Scott Keoseyan wrote, \"SpinRite = Success.\" His 12-year-old son's laptop, Scott's old Dell Inspiron 8600, blue-screened on boot with an unmountable primary partition."
+          "t": "Before the main topic, a quick SpinRite story. Scott Keoseyan wrote, \"SpinRite = Success.\" His 12-year-old son's laptop, Scott's old Dell Inspiron 8600, blue-screened on boot with an unmountable primary partition."
         },
         {
           "s": "steve",
@@ -106,12 +110,8 @@
       "title": "The Question Everyone Asked",
       "beats": [
         {
-          "s": "leo",
-          "t": "How do you implement a cipher? From a spec?"
-        },
-        {
           "s": "steve",
-          "t": "Today we'll understand Rijndael well enough that people will say, is that all? It's not that hard. But first, the question so many asked. Adam in Ottawa, Ontario, a computer science graduate, felt compelled to write in for the first time."
+          "t": "Now to the question everyone asked about double encryption. Today we'll understand Rijndael well enough that people will say, is that all? It's not that hard. But first, the question so many asked. Adam in Ottawa, Ontario, a computer science graduate, felt compelled to write in for the first time."
         },
         {
           "s": "steve",
@@ -197,7 +197,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "For a real cipher like Rijndael, the block isn't 4 bits but 128. So the number of possible mappings is 2 to the 128th, factorial. It was hard to find, but a math genius on the Internet who's devoted her life to clever ways of computing factorials gave me its size."
+          "t": "Now, scaling up to a real cipher. For Rijndael, the block isn't 4 bits but 128. So the number of possible mappings is 2 to the 128th, factorial. It was hard to find, but a math genius on the Internet who's devoted her life to clever ways of computing factorials gave me its size."
         },
         {
           "s": "steve",
@@ -264,7 +264,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Until now, ciphers have been black boxes. We have explained public-key crypto: exponentiation is easy but its exact reverse, a discrete logarithm, is incredibly hard, and multiplying two big primes is trivial while factoring their product isn't. Those one-way functions create its security."
+          "t": "Now let's open the black box of Rijndael, starting with its key schedule. Until now, ciphers have been black boxes. We have explained public-key crypto: exponentiation is easy but its exact reverse, a discrete logarithm, is incredibly hard, and multiplying two big primes is trivial while factoring their product isn't. Those one-way functions create its security."
         },
         {
           "s": "steve",
@@ -289,7 +289,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Data comes in and is XORed with the first 128 bits of expanded key material. Then come three mixing steps."
+          "t": "Next, what happens in each round. Data comes in and is XORed with the first 128 bits of expanded key material. Then come three mixing steps."
         },
         {
           "s": "steve",
@@ -362,7 +362,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "How is public key different?"
+          "t": "Now, how is public key different from symmetric?"
         },
         {
           "s": "steve",

@@ -8,8 +8,12 @@
   "audio": "http://media.GRC.com/sn/SN-128.mp3",
   "chapters": [
     {
-      "title": "No Heath Ledger, Just Security",
+      "title": "Welcome to Security Now! #128",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 128, for January 24, 2008: Listener Feedback Q&A #33."
+        },
         {
           "s": "leo",
           "t": "This is the one show where we won't mention Heath Ledger, the stock market or the Fed's rate cut. We talk about security."
@@ -29,6 +33,10 @@
         {
           "s": "leo",
           "t": "There are people listening who just had 37 inches of snow."
+        },
+        {
+          "s": "steve",
+          "t": "Today is a Q&A. First, this week's news: an exploit for the Windows stack flaw and an Apple QuickTime patch. Then a SpinRite story, and questions on WPA keys, chained routers, secure deletion, TrueCrypt, multiple monitors and a preview of Windows SteadyState."
         }
       ]
     },
@@ -37,7 +45,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It was a rather quiet week, with one or two big things. The big one: there's now a remote code execution exploit for last week's horrible Windows TCP/IP flaw."
+          "t": "First, the news. It was a rather quiet week, with one or two big things. The big one: there's now a remote code execution exploit for last week's horrible Windows TCP/IP flaw."
         },
         {
           "s": "leo",
@@ -74,7 +82,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "When I turned on my little Mac for Skype today, I saw Apple has patched the serious QuickTime vulnerability we mentioned last week, in all versions before 7.4, on both OS X and Windows. Any QuickTime video, image or stream could take over a machine."
+          "t": "Next, more news: Apple patched QuickTime. When I turned on my little Mac for Skype today, I saw Apple has patched the serious QuickTime vulnerability we mentioned last week, in all versions before 7.4, on both OS X and Windows. Any QuickTime video, image or stream could take over a machine."
         },
         {
           "s": "leo",
@@ -95,7 +103,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Aaron wrote, \"Just a SpinRite Story.\" In 2003, before he'd heard of SpinRite, his Dell's drive crashed, clicking, so he was \"sure\" it was total hardware failure. Dell sent a replacement, and he restored from a month-old backup, losing a month of precious family photos. Recovery software failed, and he couldn't afford recovery companies. So he put the drive in a box for four years."
+          "t": "Now a SpinRite story. Aaron wrote, \"Just a SpinRite Story.\" In 2003, before he'd heard of SpinRite, his Dell's drive crashed, clicking, so he was \"sure\" it was total hardware failure. Dell sent a replacement, and he restored from a month-old backup, losing a month of precious family photos. Recovery software failed, and he couldn't afford recovery companies. So he put the drive in a box for four years."
         },
         {
           "s": "leo",
@@ -125,7 +133,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Eddie in Watsonville, California used a 63-character random password from GRC.com/passwords for WPA. Fine until his Sony PSP, which has no keyboard. After six failed attempts, he gave up on it. Then a WiFi Internet radio for Christmas. So he used just the first 24 characters. Two tries on the radio and three on the PSP, and they're online. How much security did he give up? Decades instead of millennia?"
+          "t": "Now to listener questions, starting with WPA keys. Eddie in Watsonville, California used a 63-character random password from GRC.com/passwords for WPA. Fine until his Sony PSP, which has no keyboard. After six failed attempts, he gave up on it. Then a WiFi Internet radio for Christmas. So he used just the first 24 characters. Two tries on the radio and three on the PSP, and they're online. How much security did he give up? Decades instead of millennia?"
         },
         {
           "s": "steve",
@@ -191,7 +199,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Don Sherman in Clawson, Michigan, an engineering graduate student, runs WEP for his TiVos and WPA for everything else. Why three routers? Why not a switch to split the networks?"
+          "t": "Next, a follow-up on separating WEP and WPA networks. Don Sherman in Clawson, Michigan, an engineering graduate student, runs WEP for his TiVos and WPA for everything else. Why three routers? Why not a switch to split the networks?"
         },
         {
           "s": "steve",
@@ -228,7 +236,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeremy in St. Petersburg, Florida paid $72 for his VeriSign card, because $24 overnight shipping was the only option. It's slick, but eBay and VeriSign's PIP site allow only one token per account, unlike PayPal. VeriSign's Gary Krall confirmed neither plans to support more. Doesn't eBay own PayPal? So he disabled his football on eBay and PIP, keeping it only for PayPal."
+          "t": "Next, a question about tokens on eBay. Jeremy in St. Petersburg, Florida paid $72 for his VeriSign card, because $24 overnight shipping was the only option. It's slick, but eBay and VeriSign's PIP site allow only one token per account, unlike PayPal. VeriSign's Gary Krall confirmed neither plans to support more. Doesn't eBay own PayPal? So he disabled his football on eBay and PIP, keeping it only for PayPal."
         },
         {
           "s": "leo",
@@ -261,7 +269,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Marcio in London got a replica-watch spam from kasey@ibm.com. A forged address, or a bot-infected IBM machine?"
+          "t": "Next, a question about spoofed spam. Marcio in London got a replica-watch spam from kasey@ibm.com. A forged address, or a bot-infected IBM machine?"
         },
         {
           "s": "steve",
@@ -291,7 +299,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Thomas Bonham can't use FileVault on OS X 10.5 Leopard because his drive is case-sensitive HFS+. He wants something like TrueCrypt for the Mac."
+          "t": "Next, a question about Mac encryption. Thomas Bonham can't use FileVault on OS X 10.5 Leopard because his drive is case-sensitive HFS+. He wants something like TrueCrypt for the Mac."
         },
         {
           "s": "leo",
@@ -313,7 +321,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matthew Reeves of Alpharetta, Georgia, a lawyer... no, a loyal listener, wants the secure deletion utility we mentioned. And can the transcripts become searchable?"
+          "t": "Next, a question about deleting files for real. Matthew Reeves of Alpharetta, Georgia, a lawyer... no, a loyal listener, wants the secure deletion utility we mentioned. And can the transcripts become searchable?"
         },
         {
           "s": "steve",
@@ -350,7 +358,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Steven Barrett of Round Rock, Texas asks: honestly, why not just use something other than Windows? You know better than anyone what's wrong with it."
+          "t": "Next, a pointed question about operating systems. Steven Barrett of Round Rock, Texas asks: honestly, why not just use something other than Windows? You know better than anyone what's wrong with it."
         },
         {
           "s": "steve",
@@ -391,7 +399,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Michael Daniels of Dallas, a fan since Steve's Screen Savers guest spots, carries a 120-gig drive and realized anyone who found it could read his files. He found TrueCrypt. Is it good?"
+          "t": "Next, a question about encrypting a portable drive. Michael Daniels of Dallas, a fan since Steve's Screen Savers guest spots, carries a 120-gig drive and realized anyone who found it could read his files. He found TrueCrypt. Is it good?"
         },
         {
           "s": "leo",
@@ -416,7 +424,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Don Hebert of Burbank noticed in a photo that you use three monitors, like Bill Gates. How?"
+          "t": "Next, a question about Steve's desk. Don Hebert of Burbank noticed in a photo that you use three monitors, like Bill Gates. How?"
         },
         {
           "s": "steve",
@@ -453,7 +461,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Peter Brischetto in Sydney, Australia hoped we'd discuss enterprise security for hours. He was network administrator at a 40-person software firm. Every developer's laptop ran XP with IIS, Microsoft SQL and Visual Studio, and connected to client networks, hotels and home. Mid-project, developers refused Microsoft's updates, which broke their environments. I don't blame them."
+          "t": "Next, a follow-up on enterprise security. Peter Brischetto in Sydney, Australia hoped we'd discuss enterprise security for hours. He was network administrator at a 40-person software firm. Every developer's laptop ran XP with IIS, Microsoft SQL and Visual Studio, and connected to client networks, hotels and home. Mid-project, developers refused Microsoft's updates, which broke their environments. I don't blame them."
         },
         {
           "s": "leo",
@@ -482,7 +490,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Javier Gordo of Katy, Texas lost the little app you mentioned that makes window edges stick to the screen and each other."
+          "t": "Next, a question about Windows tools. Javier Gordo of Katy, Texas lost the little app you mentioned that makes window edges stick to the screen and each other."
         },
         {
           "s": "steve",
@@ -499,7 +507,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Leo in New Jersey, a 16-year-old and his house's resident IT guy, has a downstairs computer that's his torrent box and the Mom, Dad and houseguest computer."
+          "t": "Last, a question that sets up next week's topic. Leo in New Jersey, a 16-year-old and his house's resident IT guy, has a downstairs computer that's his torrent box and the Mom, Dad and houseguest computer."
         },
         {
           "s": "leo",

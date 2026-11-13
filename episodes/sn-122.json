@@ -8,23 +8,32 @@
   "audio": "http://media.GRC.com/sn/SN-122.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #122",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 122, for December 13, 2007: Listener Feedback #30."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, the show that teaches you how to protect yourself, your security and your privacy."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. This is a Q&A episode with three special awards at the end: the Perfect PPP Quandary, the Great Tip, and the Horrifying Show-Stopper Question of the Week. First, a SpinRite story about Macs and a Kindle follow-up. Then questions on double encryption, backups, IPv6, SSL, solid-state drives and wireless keyboards."
+        }
+      ]
+    },
+    {
       "title": "SpinRite and the Mac",
       "beats": [
         {
           "s": "leo",
-          "t": "It's a Q&A, and you've got special awards this time."
+          "t": "A quick note on last week. No addenda from our privacy discussion, except we probably sent a chill down some spines. It's good to be aware and make choices where you can."
         },
         {
           "s": "steve",
-          "t": "The last three are the Perfect PPP Quandary of the Week, the Great Tip of the Week and, last, the Horrifying Show-Stopper Question of the Week."
-        },
-        {
-          "s": "leo",
-          "t": "No addenda from our privacy discussion, except we probably sent a chill down some spines. It's good to be aware and make choices where you can."
-        },
-        {
-          "s": "steve",
-          "t": "A short anecdote from a lifelong Mac user. SpinRite has always been PC only, because it uses the BIOS from the original IBM PC specification. Intel Macs use EFI, the Extensible Firmware Interface, which serves the same purpose but isn't compatible."
+          "t": "First, a SpinRite anecdote from a lifelong Mac user, and why SpinRite can't boot on Macs. SpinRite has always been PC only, because it uses the BIOS from the original IBM PC specification. Intel Macs use EFI, the Extensible Firmware Interface, which serves the same purpose but isn't compatible."
         },
         {
           "s": "leo",
@@ -82,7 +91,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "If you meant to check my Kindle review on Amazon but forgot, it's snipurl.com/skr, for Steve's Kindle Review. Reviews posted first get seen, so an unseen review can't get voted up unless something like this happens."
+          "t": "Next, a quick Kindle follow-up. If you meant to check my Kindle review on Amazon but forgot, it's snipurl.com/skr, for Steve's Kindle Review. Reviews posted first get seen, so an unseen review can't get voted up unless something like this happens."
         },
         {
           "s": "steve",
@@ -127,7 +136,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Perry Harris of Bluffton, Indiana says their RSA SecurID fobs stop working if banged around with keys, and the card tokens shouldn't go in your wallet. Sitting on a back-pocket wallet curves the card and cracks its display. He doesn't know about VeriSign's card."
+          "t": "Now to listener questions, starting with security tokens. Perry Harris of Bluffton, Indiana says their RSA SecurID fobs stop working if banged around with keys, and the card tokens shouldn't go in your wallet. Sitting on a back-pocket wallet curves the card and cracks its display. He doesn't know about VeriSign's card."
         },
         {
           "s": "steve",
@@ -148,7 +157,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeff Parsons of Issaquah, Washington: couldn't PayPal link straight to its own page, but put a DoubleClick-hosted image on it, with a user-specific ID in the image's URL? DoubleClick would record it and return the image. Browsers send cookies for image requests too."
+          "t": "Next, a follow-up on DoubleClick and PayPal. Jeff Parsons of Issaquah, Washington: couldn't PayPal link straight to its own page, but put a DoubleClick-hosted image on it, with a user-specific ID in the image's URL? DoubleClick would record it and return the image. Browsers send cookies for image requests too."
         },
         {
           "s": "steve",
@@ -173,7 +182,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Corby in Reno, Nevada isn't sure twice beats once. Encrypt with Key A, then Key B, and a brute-force attack might find a third key that decrypts it in one step. Mat Ludlam of Weybridge, England notes that works for simple XOR. And Carlos Gonzalez in San José, Costa Rica says Key C would equal A XOR B."
+          "t": "Next, a follow-up on double encryption. Corby in Reno, Nevada isn't sure twice beats once. Encrypt with Key A, then Key B, and a brute-force attack might find a third key that decrypts it in one step. Mat Ludlam of Weybridge, England notes that works for simple XOR. And Carlos Gonzalez in San José, Costa Rica says Key C would equal A XOR B."
         },
         {
           "s": "steve",
@@ -211,7 +220,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Joel Bialek of Syracuse, New York wants the imaging software you mentioned long ago. He dislikes backup tools like Maxtor's OneTouch that keep software running in the background. Ideally something splittable onto DVDs, or an external USB drive. Your top three? Would Windows Home Server work?"
+          "t": "Next, a question about backups. Joel Bialek of Syracuse, New York wants the imaging software you mentioned long ago. He dislikes backup tools like Maxtor's OneTouch that keep software running in the background. Ideally something splittable onto DVDs, or an external USB drive. Your top three? Would Windows Home Server work?"
         },
         {
           "s": "steve",
@@ -256,7 +265,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "James Wilcox of Rapid City, South Dakota loves showing off his football while explaining multifactor authentication and watching eyes glaze over. He read that IPv4 didn't anticipate the demand for addresses, which NAT routers solve. With IPv6's 3.4 times 10 to the 38th addresses, won't routers be obsolete, and their firewall protection gone?"
+          "t": "Next, a question about IPv6. James Wilcox of Rapid City, South Dakota loves showing off his football while explaining multifactor authentication and watching eyes glaze over. He read that IPv4 didn't anticipate the demand for addresses, which NAT routers solve. With IPv6's 3.4 times 10 to the 38th addresses, won't routers be obsolete, and their firewall protection gone?"
         },
         {
           "s": "steve",
@@ -294,7 +303,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jim Bassett of Pleasant Hill, California also banks at Patelco. He points out you can choose to trust no provider, so a new password arrives by email or text for every login. He'd never trust his work's provider, and may skip Comcast at home too. Is that more acceptable?"
+          "t": "A follow-up on the credit union login from last week. Jim Bassett of Pleasant Hill, California also banks at Patelco. He points out you can choose to trust no provider, so a new password arrives by email or text for every login. He'd never trust his work's provider, and may skip Comcast at home too. Is that more acceptable?"
         },
         {
           "s": "steve",
@@ -311,7 +320,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Aaron Mashburn in the Republic of Panama went back to Episodes 31 through 37 to refresh his crypto. Good idea, by the way. He asks: a certificate verifies the server's identity, but is it used in the encryption?"
+          "t": "Next, a question about SSL. Aaron Mashburn in the Republic of Panama went back to Episodes 31 through 37 to refresh his crypto. Good idea, by the way. He asks: a certificate verifies the server's identity, but is it used in the encryption?"
         },
         {
           "s": "steve",
@@ -337,7 +346,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jack in Australia asks if his ISP or government agencies could strip HTTPS and read his traffic."
+          "t": "Next, a question about HTTPS. Jack in Australia asks if his ISP or government agencies could strip HTTPS and read his traffic."
         },
         {
           "s": "steve",
@@ -378,7 +387,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Zacc Cooley of Gilbert, Arizona asks about solid-state drives. We just got a 64-gig one at the Lab for $2,500. Can their bits get corrupted? Will he need SpinRite, defragging, backups? Is there a battery that could die?"
+          "t": "Next, a question about solid-state drives. Zacc Cooley of Gilbert, Arizona asks about solid-state drives. We just got a 64-gig one at the Lab for $2,500. Can their bits get corrupted? Will he need SpinRite, defragging, backups? Is there a battery that could die?"
         },
         {
           "s": "steve",
@@ -432,7 +441,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Perfect PPP Quandary of the Week, from Sean Reiser of Astoria, New York. It's no flaw in PPP, just proof there's no patch for human stupidity. PEBKAC, baby."
+          "t": "Now for the three awards. First, the Perfect PPP Quandary of the Week, from Sean Reiser of Astoria, New York. It's no flaw in PPP, just proof there's no patch for human stupidity. PEBKAC, baby."
         },
         {
           "s": "leo",
@@ -469,7 +478,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Great Tip of the Week, from Patrick in Montreal. Right-click any Flash object on a web page, choose Settings, and click the Advanced button on the first tab. It takes you straight to Adobe's Flash Player Settings Manager. And adjust settings in both Firefox and IE, since they're browser specific."
+          "t": "Next, the Great Tip of the Week, from Patrick in Montreal. Right-click any Flash object on a web page, choose Settings, and click the Advanced button on the first tab. It takes you straight to Adobe's Flash Player Settings Manager. And adjust settings in both Firefox and IE, since they're browser specific."
         },
         {
           "s": "steve",
@@ -486,7 +495,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Horrifying Show-Stopper Question of the Week, from Brian W., also in Montreal. He loves wireless keyboards but never considered the risk. He saw a Black Hat presentation saying Microsoft's wireless keyboard \"encryption\" is a 1-bit shift register. Is that industry wide?"
+          "t": "Finally, the Horrifying Show-Stopper Question of the Week, about wireless keyboards, from Brian W., also in Montreal. He loves wireless keyboards but never considered the risk. He saw a Black Hat presentation saying Microsoft's wireless keyboard \"encryption\" is a 1-bit shift register. Is that industry wide?"
         },
         {
           "s": "leo",
@@ -552,7 +561,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "GRC.com has 16KB versions of all 122 episodes. Transcripts for every one?"
+          "t": "Before we go, a note on transcripts and holiday plans. GRC.com has 16KB versions of all 122 episodes. Transcripts for every one?"
         },
         {
           "s": "steve",

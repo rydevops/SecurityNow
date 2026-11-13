@@ -8,11 +8,19 @@
   "audio": "http://media.GRC.com/sn/SN-112.mp3",
   "chapters": [
     {
-      "title": "The Award, and Preventive Maintenance",
+      "title": "Welcome to Security Now! #112",
       "beats": [
         {
           "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 112, for October 4, 2007: Listener Feedback #25."
+        },
+        {
+          "s": "leo",
           "t": "It's Security Now!, officially the best technology and science podcast of 2007, voted by you, the listeners. And we only asked once."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today is a Q&A episode. We'll cover how GRC charges cards, SSL-inspecting proxies, anonymous web mail over TOR, Xbox Live without UPnP, SpinRite on RAID, OpenDNS, and why a PayPal download detours through DoubleClick. First, the award."
         },
         {
           "s": "steve",
@@ -57,7 +65,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Question 1: Keith in New Jersey wants to know what service actually processes your credit card transactions. Does VeriSign charge cards?"
+          "t": "Our first question is about how GRC takes payments. Keith in New Jersey wants to know what service actually processes your credit card transactions. Does VeriSign charge cards?"
         },
         {
           "s": "steve",
@@ -99,7 +107,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Russell Johnson in Minnesota helped install an SSL proxy, like Finjan's, on a public school network. What are the privacy and legal issues? What should users be told? A CEO might not know IT staff or contractors can see his encrypted credit card numbers and passwords. And could ISPs do this? That would scare me."
+          "t": "Next, a question about snooping on encrypted web traffic. Russell Johnson in Minnesota helped install an SSL proxy, like Finjan's, on a public school network. What are the privacy and legal issues? What should users be told? A CEO might not know IT staff or contractors can see his encrypted credit card numbers and passwords. And could ISPs do this? That would scare me."
         },
         {
           "s": "steve",
@@ -189,7 +197,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Eric, anonymously somewhere near the Hong Kong Post Office..."
+          "t": "Now, how to send anonymous web mail over TOR. Eric, anonymously somewhere near the Hong Kong Post Office..."
         },
         {
           "s": "steve",
@@ -231,7 +239,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David Farrell in London says TOR, for anonymity, not security, may make ordinary browsing less secure. Without TOR, his data goes through his ISP, whether Be Broadband, BT or NTL, which he trusts not to sniff his passwords, then straight to the site."
+          "t": "A related TOR question: is it actually riskier? David Farrell in London says TOR, for anonymity, not security, may make ordinary browsing less secure. Without TOR, his data goes through his ISP, whether Be Broadband, BT or NTL, which he trusts not to sniff his passwords, then straight to the site."
         },
         {
           "s": "leo",
@@ -260,7 +268,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Joe Graf of Sacramento suggests adding alt text to the feedback form's label images, for screen readers and XHTML compliance."
+          "t": "Next, a suggestion about GRC's feedback form. Joe Graf of Sacramento suggests adding alt text to the feedback form's label images, for screen readers and XHTML compliance."
         },
         {
           "s": "leo",
@@ -281,7 +289,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Laura Cooksey in Burke, Virginia used Unplug n' Pray on her computers and disabled UPnP on her Linksys WRT54G router. I like you, Laura. But Microsoft strongly recommends UPnP on routers for Xbox Live multiplayer games. With it off on her PCs, can she enable it on the router full time, or only when gaming? And what about UPnP 2, which Microsoft says fixes the security issues?"
+          "t": "Now to gaming and UPnP. Laura Cooksey in Burke, Virginia used Unplug n' Pray on her computers and disabled UPnP on her Linksys WRT54G router. I like you, Laura. But Microsoft strongly recommends UPnP on routers for Xbox Live multiplayer games. With it off on her PCs, can she enable it on the router full time, or only when gaming? And what about UPnP 2, which Microsoft says fixes the security issues?"
         },
         {
           "s": "steve",
@@ -339,7 +347,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kalman Dee in Australia's capital, Canberra..."
+          "t": "A correction on last week's infinite monkeys. Kalman Dee in Australia's capital, Canberra..."
         },
         {
           "s": "steve",
@@ -372,7 +380,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Adam in Ottumwa, Iowa, a listener since the beginning, 112 episodes ago, asks how your eCommerce state-saving works with Safari's private browsing, which saves no history, cookies or session data."
+          "t": "Next, a question about Safari's private browsing. Adam in Ottumwa, Iowa, a listener since the beginning, 112 episodes ago, asks how your eCommerce state-saving works with Safari's private browsing, which saves no history, cookies or session data."
         },
         {
           "s": "steve",
@@ -413,7 +421,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris Noble of Wellington, New Zealand gets the Gold Star. Instead of type=hidden on honeypot fields, which bots can see and know to skip, use a CSS class, like class=\"abc\", and in the stylesheet, .abc {visibility:hidden; display:none;}."
+          "t": "A gold-star tip for GRC's anti-bot honeypot fields. Chris Noble of Wellington, New Zealand gets the Gold Star. Instead of type=hidden on honeypot fields, which bots can see and know to skip, use a CSS class, like class=\"abc\", and in the stylesheet, .abc {visibility:hidden; display:none;}."
         },
         {
           "s": "leo",
@@ -430,7 +438,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Andy in Iowa loves SpinRite and RAID. Can he combine them?"
+          "t": "A SpinRite question about RAID. Andy in Iowa loves SpinRite and RAID. Can he combine them?"
         },
         {
           "s": "steve",
@@ -475,7 +483,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Eliezer Martinez in Puerto Rico started using OpenDNS because it seems to speed up pages and blocks known phishing sites. After our TOR discussion, he stopped, fearing OpenDNS could monitor his banking. Is he mixing up two things?"
+          "t": "Now a question about OpenDNS and privacy. Eliezer Martinez in Puerto Rico started using OpenDNS because it seems to speed up pages and blocks known phishing sites. After our TOR discussion, he stopped, fearing OpenDNS could monitor his banking. Is he mixing up two things?"
         },
         {
           "s": "steve",
@@ -521,7 +529,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Sidney in Jacksonville, Florida tried to download PayPal's virtual debit card software. His hosts file manager, HostMon, blocked the download link and redirected him, because it points to DoubleClick.net. Why? Should he unblock DoubleClick?"
+          "t": "Our last question is a surprising PayPal detour. Sidney in Jacksonville, Florida tried to download PayPal's virtual debit card software. His hosts file manager, HostMon, blocked the download link and redirected him, because it points to DoubleClick.net. Why? Should he unblock DoubleClick?"
         },
         {
           "s": "steve",

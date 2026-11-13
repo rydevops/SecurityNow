@@ -8,12 +8,25 @@
   "audio": "http://media.GRC.com/sn/SN-115.mp3",
   "chapters": [
     {
-      "title": "Fires in the Southland",
+      "title": "Welcome to Security Now! #115",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 115, for October 25, 2007: Perfect Paper Passwords."
+        },
         {
           "s": "leo",
           "t": "Steve, with all the fires in the Southland, are you okay down there in Irvine?"
         },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today we'll talk about my eBook readers, a SpinRite story, and then the main topic: the second half of \"Roman authentication\", my free one-time password system called Perfect Paper Passwords."
+        }
+      ]
+    },
+    {
+      "title": "The Fires in Southern California",
+      "beats": [
         {
           "s": "steve",
           "t": "The good news is I'm really close to the water, so I can jump in if I need to."
@@ -53,7 +66,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Today is the long-awaited second half of what's been called \"Roman authentication\": the solution I came up with for really bulletproof roaming authentication for my employees."
+          "t": "First, the news from the show's main topic. The long-awaited second half of \"Roman authentication\" is my solution for really bulletproof roaming authentication for my employees."
         },
         {
           "s": "steve",
@@ -65,7 +78,7 @@
         },
         {
           "s": "steve",
-          "t": "I'll recap. But first, I heard you mention the next-generation Sony eBook Reader. I bought mine the second day it was out, having read it had an improved screen."
+          "t": "I'll recap the problem later. But first, a tech aside on Sony's second-generation eBook Reader. I heard you mention it. I bought mine the second day it was out, having read it had an improved screen."
         },
         {
           "s": "steve",
@@ -142,7 +155,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And Amazon's Kindle is apparently days away. No big stretch for a major bookseller. They bought Mobipocket, I think, the first eBook source I used in my Palm days. Or Mobi-something."
+          "t": "Staying with eBook readers, Amazon's Kindle is apparently days away. No big stretch for a major bookseller. They bought Mobipocket, I think, the first eBook source I used in my Palm days. Or Mobi-something."
         },
         {
           "s": "steve",
@@ -212,7 +225,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In my quest for interesting SpinRite stories, I'd want to call this one \"SpinRite Got Me Laid.\""
+          "t": "Now a SpinRite story. In my quest for interesting SpinRite stories, I'd want to call this one \"SpinRite Got Me Laid.\""
         },
         {
           "s": "leo",
@@ -237,7 +250,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I call it \"Roman\" authentication because of the Roman chair at the gym, a torture device where you hinge at the waist down to the floor and back up. Backwards sit-ups. Recap the problem."
+          "t": "Now to our main topic: the second half of roaming authentication. I call it \"Roman\" authentication because of the Roman chair at the gym, a torture device where you hinge at the waist down to the floor and back up. Backwards sit-ups. Recap the problem."
         },
         {
           "s": "steve",
@@ -278,7 +291,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It'd be in Sue's purse or Greg's wallet, or mine. Next time I see you in Vancouver, Leo, I'll show you."
+          "t": "The answer is something printed. It'd be in Sue's purse or Greg's wallet, or mine. Next time I see you in Vancouver, Leo, I'll show you."
         },
         {
           "s": "steve",
@@ -344,7 +357,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So the design became columns and rows of separate codes. My first was 8.5 by 11, columns A through P by 50 lines. A ton of them."
+          "t": "Next, the design of the codes: short, with a 64-character alphabet. So the design became columns and rows of separate codes. My first was 8.5 by 11, columns A through P by 50 lines. A ton of them."
         },
         {
           "s": "steve",
@@ -401,7 +414,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's running in a demo mode at GRC.com/ppp, which forces an SSL connection. You enter a passphrase, only for the demo, because a passphrase isn't secure. The only known possible attack on this system is a weak passphrase, so no real implementation uses one."
+          "t": "Now for the crypto inside. It's running in a demo mode at GRC.com/ppp, which forces an SSL connection. You enter a passphrase, only for the demo, because a passphrase isn't secure. The only known possible attack on this system is a weak passphrase, so no real implementation uses one."
         },
         {
           "s": "leo",
@@ -439,7 +452,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "That first 8.5 by 11 sheet, 16 columns by 50 lines, 800 codes, would last about three years. Ridiculous. Convenience trumped longevity."
+          "t": "The finished product is a wallet card. That first 8.5 by 11 sheet, 16 columns by 50 lines, 800 codes, would last about three years. Ridiculous. Convenience trumped longevity."
         },
         {
           "s": "steve",
@@ -492,7 +505,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "There's an open-source implementation in C. My code is all assembly. The DLL is 17K, and 4K of that is an Authenticode signature."
+          "t": "Now, the free code and compatible tools. There's an open-source implementation in C. My code is all assembly. The DLL is 17K, and 4K of that is an Authenticode signature."
         },
         {
           "s": "steve",
@@ -541,7 +554,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Unlike a one-time pad, where you make two copies and physically deliver one, this is algorithmic."
+          "t": "One more point about the key. Unlike a one-time pad, where you make two copies and physically deliver one, this is algorithmic."
         },
         {
           "s": "steve",

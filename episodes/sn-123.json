@@ -11,15 +11,19 @@
   },
   "chapters": [
     {
-      "title": "Christmas Week, and Kindle Votes",
+      "title": "Welcome to Security Now! #123",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 123, for December 20, 2007: Jungle Disk."
+        },
         {
           "s": "leo",
           "t": "A few days before Christmas, most TWiT shows have gone dark. But Steve says, \"I'm not missing a show, dagnabit.\""
         },
         {
           "s": "steve",
-          "t": "We're doing shows while you and your family are in Egypt."
+          "t": "We're doing shows while you and your family are in Egypt. Today we'll follow up on my Kindle review and your Kindle impressions, share a SpinRite story, and then talk with the creator of Jungle Disk about secure backup to Amazon S3."
         },
         {
           "s": "leo",
@@ -167,7 +171,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dave Wright, author of Jungle Disk, is with us. Where are you?"
+          "t": "Now to our main topic: Jungle Disk, backup to Amazon S3. Dave Wright, author of Jungle Disk, is with us. Where are you?"
         },
         {
           "s": "dave",
@@ -212,7 +216,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "And Amazon storage is cheap."
+          "t": "Next, cost and platforms. Amazon storage is cheap."
         },
         {
           "s": "dave",
@@ -262,7 +266,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "In use, the client contacts you a little. What's that?"
+          "t": "Next, a privacy question: does Jungle Disk phone home? In use, the client contacts you a little. What's that?"
         },
         {
           "s": "dave",
@@ -303,7 +307,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Amazon deserves praise for providing APIs. Was it easy to write?"
+          "t": "Now to how Jungle Disk is built. Amazon deserves praise for providing APIs. Was it easy to write?"
         },
         {
           "s": "dave",
@@ -336,7 +340,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And the heart of the Trust No One question: Amazon's keys, versus your own encryption before anything reaches Amazon."
+          "t": "Now the heart of the Trust No One question: Amazon's keys, versus your own encryption before anything reaches Amazon."
         },
         {
           "s": "dave",
@@ -381,7 +385,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I'm really glad we covered this. You get a feel for things as you use them, and I have a really good feel about this. The tool's operation and their motivation are very transparent. They even provide open-source files showing how they access Amazon, though for $20 nobody will bother writing their own client. It's solid, open and done right. For using S3 in a truly Trust No One fashion, Jungle Disk does it."
+          "t": "To wrap up, my verdict on Jungle Disk. I'm really glad we covered this. You get a feel for things as you use them, and I have a really good feel about this. The tool's operation and their motivation are very transparent. They even provide open-source files showing how they access Amazon, though for $20 nobody will bother writing their own client. It's solid, open and done right. For using S3 in a truly Trust No One fashion, Jungle Disk does it."
         },
         {
           "s": "leo",

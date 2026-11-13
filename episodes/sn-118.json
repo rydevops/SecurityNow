@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-118.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #118",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 118, for November 15, 2007: Listener Feedback #28."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, the show about protecting yourself online, with Steve Gibson, who is in Irvine, California."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today is a Q&A episode. First, news: Security Now! arrives on the Zune, November's highly critical XP patch, a quirk in PayPal's token and the HushMail subpoena. Then we'll get to listener questions on Perfect Paper Passwords, Windows' random numbers, WEP gadgets, lottery odds, typing rhythm, banks that remember your computer, and Gmail encryption."
+        }
+      ]
+    },
+    {
       "title": "iChat, and Security Now! on the Zune",
       "beats": [
         {
           "s": "leo",
-          "t": "I'd hoped to try Apple's new iChat, said to use a high-quality codec, but we're still on Skype because Skype works. iChat worked, but it was awful."
+          "t": "First, some housekeeping. I'd hoped to try Apple's new iChat, said to use a high-quality codec, but we're still on Skype because Skype works. iChat worked, but it was awful."
         },
         {
           "s": "steve",
@@ -55,7 +72,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Speaking of Microsoft, Tuesday's monthly update is really important, rated not just critical but highly critical. Refreshingly, it doesn't involve Vista."
+          "t": "Speaking of Microsoft, the biggest security news this week is a highly critical XP patch. Tuesday's monthly update is really important, rated not just critical but highly critical. Refreshingly, it doesn't involve Vista."
         },
         {
           "s": "leo",
@@ -129,7 +146,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Someone analyzed the codes from his PayPal VeriSign \"football\" token. The first digit isn't random at all. It counts 0, 1, 2, 3 and back around."
+          "t": "A surprising quirk in PayPal's token. Someone analyzed the codes from his PayPal VeriSign \"football\" token. The first digit isn't random at all. It counts 0, 1, 2, 3 and back around."
         },
         {
           "s": "leo",
@@ -174,7 +191,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many listeners asked about the very disturbing breach of faith by HushMail."
+          "t": "Now to an email privacy story. Many listeners asked about the very disturbing breach of faith by HushMail."
         },
         {
           "s": "leo",
@@ -231,7 +248,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Aye Mossum in Redlands, California, his workplace's entire IT department, installed Tom Fors' PPP PAM module on his servers. He feels much better carrying the keys in his wallet. Every week or two he implements some new security measure from the show, and SpinRite saved his bacon twice."
+          "t": "Now to listener questions, starting with Perfect Paper Passwords in the field. Aye Mossum in Redlands, California, his workplace's entire IT department, installed Tom Fors' PPP PAM module on his servers. He feels much better carrying the keys in his wallet. Every week or two he implements some new security measure from the show, and SpinRite saved his bacon twice."
         },
         {
           "s": "steve",
@@ -264,7 +281,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian Scallan in London read that Israeli researchers cracked the pseudorandom number generator in Windows 2000, possibly revealing past and future SSL keys, maybe in later versions too. It shattered his confidence in online banking. Can you restore it?"
+          "t": "Next, a question about Windows and random numbers. Brian Scallan in London read that Israeli researchers cracked the pseudorandom number generator in Windows 2000, possibly revealing past and future SSL keys, maybe in later versions too. It shattered his confidence in online banking. Can you restore it?"
         },
         {
           "s": "steve",
@@ -310,7 +327,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Lil on Long Island notes MP3 players and handheld game systems now sync over WiFi with WEP, so they store your WEP key in flash. Could someone sniff it from the device?"
+          "t": "Next, a question about WiFi gadgets. Lil on Long Island notes MP3 players and handheld game systems now sync over WiFi with WEP, so they store your WEP key in flash. Could someone sniff it from the device?"
         },
         {
           "s": "steve",
@@ -339,7 +356,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Adrian Jimenez in El Paso notes PPP's 16,777,216 combinations versus the Texas lottery's one in 25 million odds. So he has better odds guessing a passcode? Why not five characters, for about one in a billion? People win the lottery all the time."
+          "t": "Now a question about the odds against guessing a passcode. Adrian Jimenez in El Paso notes PPP's 16,777,216 combinations versus the Texas lottery's one in 25 million odds. So he has better odds guessing a passcode? Why not five characters, for about one in a billion? People win the lottery all the time."
         },
         {
           "s": "steve",
@@ -368,7 +385,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "James Earl Ford in Apple Valley asks about BioPassword, which combines your login credentials with the \"behavioral biometric of keystroke dynamics,\" your unique typing rhythm. No special hardware, no change in behavior."
+          "t": "Next, a question about a different kind of authentication. James Earl Ford in Apple Valley asks about BioPassword, which combines your login credentials with the \"behavioral biometric of keystroke dynamics,\" your unique typing rhythm. No special hardware, no change in behavior."
         },
         {
           "s": "steve",
@@ -397,7 +414,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Michael Peksa in High Wycombe, U.K., who caught up on about eight days of the back catalog in four months, is rolling out a web app for a large client. Access is limited to his company's and the client's IP ranges, all over SSL. The client wants no passwords, for ease. He argued passwords stop casual access by a visitor or a night cleaner. Is he missing something?"
+          "t": "Next, a question about access control without passwords. Michael Peksa in High Wycombe, U.K., who caught up on about eight days of the back catalog in four months, is rolling out a web app for a large client. Access is limited to his company's and the client's IP ranges, all over SSL. The client wants no passwords, for ease. He argued passwords stop casual access by a visitor or a night cleaner. Is he missing something?"
         },
         {
           "s": "leo",
@@ -430,7 +447,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bill in Grand Rapids, Michigan listens while mowing his lawn and now looks forward to it. He uses a long random password from GRC.com/passwords, saved in a text file in My Documents. Worried bad guys might find it, when he pastes it in, he replaces a few characters with his normal password. Does that weaken it?"
+          "t": "Next, a question about storing a random password. Bill in Grand Rapids, Michigan listens while mowing his lawn and now looks forward to it. He uses a long random password from GRC.com/passwords, saved in a text file in My Documents. Worried bad guys might find it, when he pastes it in, he replaces a few characters with his normal password. Does that weaken it?"
         },
         {
           "s": "steve",
@@ -447,7 +464,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Andrew in Australia helps run a user group plagued by people re-registering through proxies after IP bans. Blacklisting proxies also blocks legitimate AOL users. Can a server see and block a visitor's MAC address?"
+          "t": "Now, a question about banning abusive users. Andrew in Australia helps run a user group plagued by people re-registering through proxies after IP bans. Blacklisting proxies also blocks legitimate AOL users. Can a server see and block a visitor's MAC address?"
         },
         {
           "s": "steve",
@@ -476,7 +493,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Allan Blomquist in Belmont, California, among many, says you were wrong that keystroke loggers bias attacks toward replaying recent passcodes. An attacker with perfect knowledge, knowing your policy, would cross off recent codes, slightly improving his odds. Against perfect information, you can't beat completely random."
+          "t": "A challenge to last week's Peabody discussion. Allan Blomquist in Belmont, California, among many, says you were wrong that keystroke loggers bias attacks toward replaying recent passcodes. An attacker with perfect knowledge, knowing your policy, would cross off recent codes, slightly improving his odds. Against perfect information, you can't beat completely random."
         },
         {
           "s": "steve",
@@ -493,7 +510,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John in Fort Worth says the FFIEC, the Federal Financial Institutions Examination Council, which I looked up, requires banks to use multifactor authentication. His bank can remember his computer and skip the challenge question. He deleted his cookies and cleared his cache, and it still remembered him. Not by IP, surely?"
+          "t": "Next, a question about how banks remember your computer. John in Fort Worth says the FFIEC, the Federal Financial Institutions Examination Council, which I looked up, requires banks to use multifactor authentication. His bank can remember his computer and skip the challenge question. He deleted his cookies and cleared his cache, and it still remembered him. Not by IP, surely?"
         },
         {
           "s": "steve",
@@ -526,7 +543,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dan Gardner in San Antonio wants free software to track each computer's bandwidth on his network. Radio callers ask this to watch their roommates."
+          "t": "Next, a question about monitoring a home network. Dan Gardner in San Antonio wants free software to track each computer's bandwidth on his network. Radio callers ask this to watch their roommates."
         },
         {
           "s": "steve",
@@ -547,7 +564,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kokaly in Hamilton, Ontario logs into Gmail securely, but then the lock disappears and Firefox says the connection isn't encrypted. Is his mail in clear text?"
+          "t": "Last question, on Gmail. Kokaly in Hamilton, Ontario logs into Gmail securely, but then the lock disappears and Firefox says the connection isn't encrypted. Is his mail in clear text?"
         },
         {
           "s": "steve",

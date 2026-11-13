@@ -8,19 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-116.mp3",
   "chapters": [
     {
-      "title": "Saved Passwords Aren't Safe",
+      "title": "Welcome to Security Now! #116",
       "beats": [
         {
           "s": "leo",
-          "t": "Episode 116, a brand-new month, and our 27th Q&A."
+          "t": "This is Security Now! with Steve Gibson, Episode 116, for November 1, 2007: Listener Feedback Q&A #27."
+        },
+        {
+          "s": "leo",
+          "t": "It's a brand-new month, and our 27th Q&A."
         },
         {
           "s": "steve",
-          "t": "The feedback from our listeners is just delightful to read."
-        },
+          "t": "Thanks, Leo. The feedback from our listeners is just delightful to read. Today we start with a follow-up on saved browser passwords and a SpinRite story. Then come questions on Perfect Paper Passwords, spoofing, routers, the Rockies ticket crash, Comcast's forged resets and more."
+        }
+      ]
+    },
+    {
+      "title": "Saved Passwords Aren't Safe",
+      "beats": [
         {
           "s": "steve",
-          "t": "Two follow-ups on Firefox's master password, which you and I also discussed on your radio show last weekend. Setting it protects and encrypts the stored sites, usernames and passwords. But several open-source programs can brute-force the master password. So all the rules about really hard-to-guess passwords apply to it."
+          "t": "First, a follow-up on saved passwords. Two follow-ups on Firefox's master password, which you and I also discussed on your radio show last weekend. Setting it protects and encrypts the stored sites, usernames and passwords. But several open-source programs can brute-force the master password. So all the rules about really hard-to-guess passwords apply to it."
         },
         {
           "s": "leo",
@@ -57,7 +66,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Robert in Aberdeen, Scotland has used SpinRite since it saved his data after a drive failed 13 busy days into his fortnightly backup cycle, half an hour into a new backup."
+          "t": "Next, a SpinRite story. Robert in Aberdeen, Scotland has used SpinRite since it saved his data after a drive failed 13 busy days into his fortnightly backup cycle, half an hour into a new backup."
         },
         {
           "s": "steve",
@@ -78,7 +87,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dave F. in San Francisco thinks Perfect Paper Passwords' policy of never reusing a four-character passcode weakens it. An attacker watching long enough could cross off codes and shrink the keyspace. Better to prevent duplicates only within, say, 12 cards."
+          "t": "Now to listener questions, starting with Perfect Paper Passwords. Dave F. in San Francisco thinks Perfect Paper Passwords' policy of never reusing a four-character passcode weakens it. An attacker watching long enough could cross off codes and shrink the keyspace. Better to prevent duplicates only within, say, 12 cards."
         },
         {
           "s": "steve",
@@ -99,7 +108,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ron Goodbin of Clifton, New Jersey: you've said a client can't spoof its IP when making a TCP connection. Then what's an IP spoofing attack?"
+          "t": "Next, a question about IP spoofing. Ron Goodbin of Clifton, New Jersey: you've said a client can't spoof its IP when making a TCP connection. Then what's an IP spoofing attack?"
         },
         {
           "s": "steve",
@@ -128,7 +137,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ferruccio in Sharon, Massachusetts agrees nobody should write their own encryption for production use. So why did you write your own random number generator? It's a solved problem too. Run it by a math and crypto expert, he says."
+          "t": "A challenge to Steve about randomness. Ferruccio in Sharon, Massachusetts agrees nobody should write their own encryption for production use. So why did you write your own random number generator? It's a solved problem too. Run it by a math and crypto expert, he says."
         },
         {
           "s": "steve",
@@ -158,7 +167,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike Gray in Tacoma, which bills itself as the world's most wired city, is plugged directly into the Internet with one computer. Does he need a router, or is his software firewall enough?"
+          "t": "Next, a question about routers. Mike Gray in Tacoma, which bills itself as the world's most wired city, is plugged directly into the Internet with one computer. Does he need a router, or is his software firewall enough?"
         },
         {
           "s": "steve",
@@ -199,7 +208,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian F. in Denver, a SpinRite user and his local GRC enthusiast, asks about the Colorado Rockies. I did interviews on this for our affiliate KCOL. The Rockies sold World Series tickets online only, and after 500 tickets, the servers went down. They claimed malicious attackers, citing over 8.5 million connection attempts in 90 minutes. A DDoS, or fans hitting reload?"
+          "t": "Now, a news-driven question about a ticket-sale crash. Brian F. in Denver, a SpinRite user and his local GRC enthusiast, asks about the Colorado Rockies. I did interviews on this for our affiliate KCOL. The Rockies sold World Series tickets online only, and after 500 tickets, the servers went down. They claimed malicious attackers, citing over 8.5 million connection attempts in 90 minutes. A DDoS, or fans hitting reload?"
         },
         {
           "s": "steve",
@@ -236,7 +245,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Don Ramm in Chula Vista isn't convinced by withholding the PayPal token code to see if PayPal asks for it. Couldn't a phishing site relay your password to PayPal instantly, see PayPal ask for the token, and then ask you?"
+          "t": "A follow-up on last week's PayPal token trick. Don Ramm in Chula Vista isn't convinced by withholding the PayPal token code to see if PayPal asks for it. Couldn't a phishing site relay your password to PayPal instantly, see PayPal ask for the token, and then ask you?"
         },
         {
           "s": "steve",
@@ -257,7 +266,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "James Lewis of Colorado Springs reports the PayPal token is washing-machine safe. He searched his house and found it in the washer. After drying overnight, it generated codes again, but they weren't valid on PayPal or eBay. He guesses the wash reset its timer. He reactivated the key, and it was good again."
+          "t": "A lighter token story. James Lewis of Colorado Springs reports the PayPal token is washing-machine safe. He searched his house and found it in the washer. After drying overnight, it generated codes again, but they weren't valid on PayPal or eBay. He guesses the wash reset its timer. He reactivated the key, and it was good again."
         },
         {
           "s": "steve",
@@ -274,7 +283,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeffrey Wurzbach in San Diego asks about the AP's report that Comcast shapes traffic with what looks like a man-in-the-middle attack, interrupting peer-to-peer connections by telling your software to disconnect. Is it app specific, or just heavy upstream traffic? Is it ethical, or even legal? The EFF and others say no."
+          "t": "Now to a story in the news: Comcast and file sharing. Jeffrey Wurzbach in San Diego asks about the AP's report that Comcast shapes traffic with what looks like a man-in-the-middle attack, interrupting peer-to-peer connections by telling your software to disconnect. Is it app specific, or just heavy upstream traffic? Is it ethical, or even legal? The EFF and others say no."
         },
         {
           "s": "leo",
@@ -328,7 +337,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matthew Paulson in Madison, South Dakota, for an undergraduate research project, asks whether a bank's on-screen keyboard with randomized key layouts would be immune to keyloggers."
+          "t": "Back to keyloggers and on-screen keyboards. Matthew Paulson in Madison, South Dakota, for an undergraduate research project, asks whether a bank's on-screen keyboard with randomized key layouts would be immune to keyloggers."
         },
         {
           "s": "steve",
@@ -349,7 +358,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Frank S. Werren of Sherman, New York works on closed networks with no Internet. He'd like the Perfect Passwords generator as a standalone utility. He trusts your software."
+          "t": "A request for Perfect Paper Passwords as a utility. Frank S. Werren of Sherman, New York works on closed networks with no Internet. He'd like the Perfect Passwords generator as a standalone utility. He trusts your software."
         },
         {
           "s": "steve",
@@ -366,7 +375,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Fred Zanegood of Orlando asks for details on OpenID delegation. He understands it creates an easier alias for VeriSign's long identity. How else is it used? Does SeatBelt replace adding HTML to your site?"
+          "t": "A question about OpenID. Fred Zanegood of Orlando asks for details on OpenID delegation. He understands it creates an easier alias for VeriSign's long identity. How else is it used? Does SeatBelt replace adding HTML to your site?"
         },
         {
           "s": "steve",
@@ -391,7 +400,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tim Knittel of Lexington, Kentucky wins this week's clever idea award, which is not a contest and has no prize."
+          "t": "To close, this week's clever idea award. Tim Knittel of Lexington, Kentucky wins this week's clever idea award, which is not a contest and has no prize."
         },
         {
           "s": "leo",

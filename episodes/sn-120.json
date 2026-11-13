@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-120.mp3",
   "chapters": [
     {
-      "title": "Recording Ahead, and a Spanned Drive Rescue",
+      "title": "Welcome to Security Now! #120",
       "beats": [
         {
           "s": "leo",
-          "t": "We're prerecording because of Thanksgiving, and I'm in Vancouver this week, so no errata from last week."
+          "t": "This is Security Now! with Steve Gibson, Episode 120, for November 29, 2007: Listener Feedback #29."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, with the king of security, Steve Gibson. We're prerecording this one because of Thanksgiving."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today is a Q&A episode. We start with a SpinRite rescue and news on VeriSign's tokens. Then come questions on ISP-based logins, double encryption, patching XP, Flash cookies, WEP and WPA routers, and our first thoughts on the Kindle."
+        }
+      ]
+    },
+    {
+      "title": "A Spanned Drive Rescue, and How Often to Run SpinRite",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "A note on timing: I'm in Vancouver this week, so no errata from last week."
         },
         {
           "s": "steve",
@@ -89,7 +106,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Erik in Palo Alto got excited when his credit union, Patelco, said it would require multifactor authentication for online banking. He joined the beta."
+          "t": "Now to listener questions, starting with a credit union's login. Erik in Palo Alto got excited when his credit union, Patelco, said it would require multifactor authentication for online banking. He joined the beta."
         },
         {
           "s": "leo",
@@ -142,7 +159,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I want everybody using these VeriSign cards."
+          "t": "Now, news about VeriSign's tokens. I want everybody using these VeriSign cards."
         },
         {
           "s": "steve",
@@ -199,7 +216,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bob Gusek in High Point, North Carolina has experimented with double encryption: encrypt with one key, then again with a second. Brute forcers try keys until they get clear text, but they'll never see it, because it's encrypted twice. Is he missing something?"
+          "t": "Next, a question about encryption. Bob Gusek in High Point, North Carolina has experimented with double encryption: encrypt with one key, then again with a second. Brute forcers try keys until they get clear text, but they'll never see it, because it's encrypted twice. Is he missing something?"
         },
         {
           "s": "steve",
@@ -238,7 +255,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matthew Beacher of Pottstown, Pennsylvania is writing a PHP web app. For convenience, he's skipping SSL and doing one-way encryption in JavaScript. He takes the password, adds a string from GRC's Perfect Passwords page, MD5 hashes it, adds a second string, SHA1 hashes that, then does an HMAC SHA1 with a key from the PHP version of Perfect Paper Passwords, and sends it as hex. The server compares it with passwords stored the same way."
+          "t": "Next, a question about a homemade login scheme. Matthew Beacher of Pottstown, Pennsylvania is writing a PHP web app. For convenience, he's skipping SSL and doing one-way encryption in JavaScript. He takes the password, adds a string from GRC's Perfect Passwords page, MD5 hashes it, adds a second string, SHA1 hashes that, then does an HMAC SHA1 with a key from the PHP version of Perfect Paper Passwords, and sends it as hex. The server compares it with passwords stored the same way."
         },
         {
           "s": "leo",
@@ -320,7 +337,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian Dewey of Crestwood, Kentucky, a SpinRite customer since version 3.1, must reload XP on his father-in-law's computer. Service Pack 3 isn't out yet. He's found third-party slipstreamed hotfixes but only trusts Microsoft. Is there an authoritative list of essential hotfixes since August 2004, to burn to CD before going online? Is visiting update.microsoft.com safe? The PC is behind a NAT router."
+          "t": "Next, a question about rebuilding Windows XP safely. Brian Dewey of Crestwood, Kentucky, a SpinRite customer since version 3.1, must reload XP on his father-in-law's computer. Service Pack 3 isn't out yet. He's found third-party slipstreamed hotfixes but only trusts Microsoft. Is there an authoritative list of essential hotfixes since August 2004, to burn to CD before going online? Is visiting update.microsoft.com safe? The PC is behind a NAT router."
         },
         {
           "s": "steve",
@@ -382,7 +399,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "William Marquiss of Mt. Vernon, Washington is starting a small business and wants to hold what he buys. No store employee knows what a NAT router is. Where are they hiding?"
+          "t": "Next, a question about buying a router. William Marquiss of Mt. Vernon, Washington is starting a small business and wants to hold what he buys. No store employee knows what a NAT router is. Where are they hiding?"
         },
         {
           "s": "steve",
@@ -403,7 +420,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Andy Leidy of Escondido, California: even with the token, being duped into giving a code to a phishing site could be bad once. Why not reverse it? After you enter your username, PayPal shows a code that should match your token within 30 to 60 seconds. If it matches, you know you're not being phished. Timing would be an issue."
+          "t": "Next, an idea for improving the PayPal token. Andy Leidy of Escondido, California: even with the token, being duped into giving a code to a phishing site could be bad once. Why not reverse it? After you enter your username, PayPal shows a code that should match your token within 30 to 60 seconds. If it matches, you know you're not being phished. Timing would be an issue."
         },
         {
           "s": "steve",
@@ -440,7 +457,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jay in New Hampshire told a friend to use a secure connection on public computers, since you just add an S to http. She asked whether the server she's using can decrypt sessions at will. They both work for the government and know Big Brother is watching."
+          "t": "Next, a question about HTTPS on public computers. Jay in New Hampshire told a friend to use a secure connection on public computers, since you just add an S to http. She asked whether the server she's using can decrypt sessions at will. They both work for the government and know Big Brother is watching."
         },
         {
           "s": "steve",
@@ -469,7 +486,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dusan Maletic of Babylon, New York was surprised our answer to last week's bank question didn't mention Flash cookies, which he learned about on an earlier episode. All three of his financial institutions plant them to track users, including Bank of America. He's angered that they use something most people don't know exists, without clear disclosure, a typical spyware-like method."
+          "t": "A follow-up on last week's question about banks recognizing you. Dusan Maletic of Babylon, New York was surprised our answer to last week's bank question didn't mention Flash cookies, which he learned about on an earlier episode. All three of his financial institutions plant them to track users, including Bank of America. He's angered that they use something most people don't know exists, without clear disclosure, a typical spyware-like method."
         },
         {
           "s": "leo",
@@ -523,7 +540,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dan in Needmore, Pennsylvania tried the token's first digit several minutes apart and got 2, 5 and 9, not sequential."
+          "t": "A follow-up on the token's counting digit. Dan in Needmore, Pennsylvania tried the token's first digit several minutes apart and got 2, 5 and 9, not sequential."
         },
         {
           "s": "steve",
@@ -536,7 +553,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "James Kilner in Israel heard you on my radio show, episode 403, say Firefox's master password can be brute-forced, so make it long and complex. But he says you claimed you only type it to view stored passwords."
+          "t": "Next, a question about Firefox's master password. James Kilner in Israel heard you on my radio show, episode 403, say Firefox's master password can be brute-forced, so make it long and complex. But he says you claimed you only type it to view stored passwords."
         },
         {
           "s": "leo",
@@ -577,7 +594,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeff in Manila, among many, asks about the Buffalo router I suggested on Windows Weekly for the original Zune, which doesn't support WPA. Isn't the WEP side an attack vector into the WPA network?"
+          "t": "Next, a follow-up on WEP and WPA routers. Jeff in Manila, among many, asks about the Buffalo router I suggested on Windows Weekly for the original Zune, which doesn't support WPA. Isn't the WEP side an attack vector into the WPA network?"
         },
         {
           "s": "leo",
@@ -622,7 +639,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ernie Moreau of Kelowna, British Columbia wins the Clever Observation of the Week Award. About BioPassword's typing-rhythm biometric: this sounds great until keystroke loggers start logging the timing too. Then you're hooped."
+          "t": "To close the questions, the Clever Observation of the Week. Ernie Moreau of Kelowna, British Columbia wins the Clever Observation of the Week Award. About BioPassword's typing-rhythm biometric: this sounds great until keystroke loggers start logging the timing too. Then you're hooped."
         },
         {
           "s": "steve",
@@ -639,7 +656,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You and I have both ordered Amazon's new Kindle."
+          "t": "Before we go, a quick word on Amazon's new Kindle. You and I have both ordered one."
         },
         {
           "s": "leo",

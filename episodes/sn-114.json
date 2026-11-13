@@ -8,19 +8,32 @@
   "audio": "http://media.GRC.com/sn/SN-114.mp3",
   "chapters": [
     {
-      "title": "Confirmed: PayPal Routes Through DoubleClick",
+      "title": "Welcome to Security Now! #114",
       "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 114, for October 18, 2007: Listener Feedback #26."
+        },
         {
           "s": "leo",
           "t": "Our Podcast of the Year in Science and Technology, with Mr. Fanfare, Steve Gibson."
         },
         {
           "s": "steve",
-          "t": "Someone saw streaming video of me accepting the award, which was basically just thanking our listeners."
+          "t": "Thanks, Leo. Someone saw streaming video of me accepting the award, which was basically just thanking our listeners."
         },
         {
           "s": "steve",
-          "t": "Many people reminded me, here and in our newsgroups, that I promised to check the Episode 112 report: PayPal's virtual debit card download breaks if you block DoubleClick in your hosts file."
+          "t": "Today is a Q&A episode. First, news: PayPal's download really does route through DoubleClick, and Apple promises an iPhone SDK. Then questions on Windows Home Server, Skype supernodes, Amazon S3 backups, snake-oil encryption, random numbers and sidejacking."
+        }
+      ]
+    },
+    {
+      "title": "Confirmed: PayPal Routes Through DoubleClick",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "First, a follow-up on PayPal. Many people reminded me, here and in our newsgroups, that I promised to check the Episode 112 report: PayPal's virtual debit card download breaks if you block DoubleClick in your hosts file."
         },
         {
           "s": "leo",
@@ -53,7 +66,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "News just broke: Apple will allow third-party applications on the iPhone and iPod touch, with an SDK in February."
+          "t": "Next, big iPhone news that just broke: Apple will allow third-party applications on the iPhone and iPod touch, with an SDK in February."
         },
         {
           "s": "leo",
@@ -123,7 +136,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Stewart Leathwood, network support at a small government organization where every penny is precious, says SpinRite fixed PC drives famously. But his story is more unusual."
+          "t": "Now a SpinRite story. Stewart Leathwood, network support at a small government organization where every penny is precious, says SpinRite fixed PC drives famously. But his story is more unusual."
         },
         {
           "s": "steve",
@@ -152,7 +165,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike Vona of Carolina, Rhode Island, a listener since Episode 1, heard on Windows Weekly that Windows Home Server needs UPnP turned on in the router. I've seen articles asking if it's really secure."
+          "t": "Now to listener questions, starting with Windows Home Server. Mike Vona of Carolina, Rhode Island, a listener since Episode 1, heard on Windows Weekly that Windows Home Server needs UPnP turned on in the router. I've seen articles asking if it's really secure."
         },
         {
           "s": "leo",
@@ -221,7 +234,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Justin Van Viersen of Perth, Western Australia asks: if you forward a port through your NAT router to Skype, does that make Skype a supernode?"
+          "t": "Next, a question about Skype. Justin Van Viersen of Perth, Western Australia asks: if you forward a port through your NAT router to Skype, does that make Skype a supernode?"
         },
         {
           "s": "steve",
@@ -306,7 +319,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Finn in Sweden chose Amazon's S3 with Jungle Disk for offsite backup. Authentication uses SSL, and files are encrypted on the fly with 256-bit AES. But can you trust a company with your precious documents long term?"
+          "t": "Now, backing up offsite. Finn in Sweden chose Amazon's S3 with Jungle Disk for offsite backup. Authentication uses SSL, and files are encrypted on the fly with 256-bit AES. But can you trust a company with your precious documents long term?"
         },
         {
           "s": "steve",
@@ -364,7 +377,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris Noble in Wellington, New Zealand asks about F5 Networks' FirePass remote access login. You click a graphical keyboard on screen instead of typing, and it jumps around after each click, so even a mouse logger can't reuse the click positions."
+          "t": "Next, a question about login security. Chris Noble in Wellington, New Zealand asks about F5 Networks' FirePass remote access login. You click a graphical keyboard on screen instead of typing, and it jumps around after each click, so even a mouse logger can't reuse the click positions."
         },
         {
           "s": "leo",
@@ -381,7 +394,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Iain Cheyne in London was shocked to learn the importance of Firefox's master password, from a page at Ghacks.net. I use it."
+          "t": "A password-storage warning next. Iain Cheyne in London was shocked to learn the importance of Firefox's master password, from a page at Ghacks.net. I use it."
         },
         {
           "s": "steve",
@@ -410,7 +423,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Nathan in Huntsville, Alabama started building his own server-side password store, then found Passlet.com. Data seems encrypted on his end before it's sent and stored. His worry: someone hacks the server and changes the code."
+          "t": "Staying with passwords, an online password store. Nathan in Huntsville, Alabama started building his own server-side password store, then found Passlet.com. Data seems encrypted on his end before it's sent and stored. His worry: someone hacks the server and changes the code."
         },
         {
           "s": "steve",
@@ -447,7 +460,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Kerry Merritt asks about Meganet's VME, \"Victory Marvelous Encryption.\" I made that up. They claim a million-bit key, a matrix created from a secret file, and a million dollars to anyone who breaks it. That worries me."
+          "t": "Now to a suspicious encryption product. Kerry Merritt asks about Meganet's VME, \"Victory Marvelous Encryption.\" I made that up. They claim a million-bit key, a matrix created from a secret file, and a million dollars to anyone who breaks it. That worries me."
         },
         {
           "s": "steve",
@@ -518,7 +531,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ryan Sullivan in New York is writing a PIN generator. Every run, the first number is the same, then the second, in the same random order. He's tried combining random numbers. Is there an algorithm that's more random?"
+          "t": "A beginner programming question about randomness. Ryan Sullivan in New York is writing a PIN generator. Every run, the first number is the same, then the second, in the same random order. He's tried combining random numbers. Is there an algorithm that's more random?"
         },
         {
           "s": "steve",
@@ -575,7 +588,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous listener worries about relying on cookie security. A cookie from legitimate.webserverA.com should only go back to that site. What if a browser bug, or JavaScript, let another site read it?"
+          "t": "Back to cookies, with a question about whether they can leak. An anonymous listener worries about relying on cookie security. A cookie from legitimate.webserverA.com should only go back to that site. What if a browser bug, or JavaScript, let another site read it?"
         },
         {
           "s": "steve",
@@ -596,7 +609,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Another listener asks about the permanent cookie from Episode 113. Is it in the browser? What if it gets deleted when cleaning browsing traces? And does it work beyond Internet Explorer?"
+          "t": "A question about last week's roaming authentication. Another listener asks about the permanent cookie from Episode 113. Is it in the browser? What if it gets deleted when cleaning browsing traces? And does it work beyond Internet Explorer?"
         },
         {
           "s": "steve",
@@ -613,7 +626,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Victor in the U.K. asks about \"Roman\" authentication. Couldn't malware steal your secret cookie and session cookie? And on a hotel's private Ethernet, the thief wouldn't even need to spoof your IP."
+          "t": "One more question on roaming authentication. Victor in the U.K. asks about \"Roman\" authentication. Couldn't malware steal your secret cookie and session cookie? And on a hotel's private Ethernet, the thief wouldn't even need to spoof your IP."
         },
         {
           "s": "steve",
@@ -655,7 +668,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian Polak of St. Louis, Missouri wins the Security Now! Brilliant Idea Award."
+          "t": "To close, the Brilliant Idea of the Week. Brian Polak of St. Louis, Missouri wins the Security Now! Brilliant Idea Award."
         },
         {
           "s": "leo",
