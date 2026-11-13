@@ -8,11 +8,24 @@
   "audio": "http://media.GRC.com/sn/SN-133.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #133",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 133, for February 28, 2008: TrueCrypt 5."
+        },
+        {
+          "s": "leo",
+          "t": "Time for Security Now! with Steve Gibson, the show where we talk about securing yourself on the Internet, securing your computer, protecting your privacy."
+        }
+      ]
+    },
+    {
       "title": "TrueCrypt 5 Arrives",
       "beats": [
         {
           "s": "steve",
-          "t": "This is the much-anticipated TrueCrypt 5 episode. It came out February 5th."
+          "t": "Thanks, Leo. Today is the much-anticipated TrueCrypt 5 episode, the second half of our look at whole-drive encryption. First, a SpinRite story. Then we'll cover TrueCrypt 5's system encryption, its recovery CD, tests I ran, and traveler mode for thumb drives. TrueCrypt 5 came out February 5th."
         },
         {
           "s": "leo",
@@ -41,7 +54,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Jeff Locke in Portsmouth, Virginia found his computer completely frozen, unresponsive until he cut the power. On reboot, Windows reported an error on his data drive, which holds his family photos, his software collection and the files for several websites he manages."
+          "t": "First, a SpinRite story. Jeff Locke in Portsmouth, Virginia found his computer completely frozen, unresponsive until he cut the power. On reboot, Windows reported an error on his data drive, which holds his family photos, his software collection and the files for several websites he manages."
         },
         {
           "s": "steve",
@@ -70,7 +83,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "And ChkDsk wasn't enough. Doesn't it do the same thing as SpinRite? A softball for you, Mr. Gibson."
+          "t": "A question on that story: ChkDsk wasn't enough for Jeff. Doesn't it do the same thing as SpinRite? A softball for you, Mr. Gibson."
         },
         {
           "s": "steve",
@@ -112,7 +125,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "DriveSpace turned your drive into one big file, and one error ruined everything. Does TrueCrypt's whole-drive encryption do that?"
+          "t": "Now to TrueCrypt 5, with a worry from the DriveSpace days. DriveSpace turned your drive into one big file, and one error ruined everything. Does TrueCrypt's whole-drive encryption do that?"
         },
         {
           "s": "steve",
@@ -133,7 +146,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's how committed they are to safety, way beyond FREE CompuSec, and part of why I switched. In TrueCrypt you choose to encrypt the system drive. First it asks whether you single-boot or multi-boot."
+          "t": "Next, setting up system encryption. Here's how committed they are to safety, way beyond FREE CompuSec, and part of why I switched. In TrueCrypt you choose to encrypt the system drive. First it asks whether you single-boot or multi-boot."
         },
         {
           "s": "steve",
@@ -166,7 +179,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Then, unlike FREE CompuSec, it builds an ISO file you must burn to a CD, your recovery disk. On my scrap test machine, I tried clicking Next. It said, wait, you didn't do it. You have to burn it and prove it. So I have a pile of coasters. Then I found a way to fake it out."
+          "t": "Next, the mandatory recovery CD. Then, unlike FREE CompuSec, it builds an ISO file you must burn to a CD, your recovery disk. On my scrap test machine, I tried clicking Next. It said, wait, you didn't do it. You have to burn it and prove it. So I have a pile of coasters. Then I found a way to fake it out."
         },
         {
           "s": "leo",
@@ -207,7 +220,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It shows the percentage done to three decimal places and the time. You can still use Windows, but it's sluggish, with the drive light on solid. You could probably answer email, but don't render 3D or play a game."
+          "t": "Next, encrypting the drive while Windows runs. It shows the percentage done to three decimal places and the time. You can still use Windows, but it's sluggish, with the drive light on solid. You could probably answer email, but don't render 3D or play a game."
         },
         {
           "s": "steve",
@@ -248,7 +261,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So I really stressed it. About 18MB into the drive, I found a free cluster, sector 37299. Using my own proprietary tools for SpinRite development, I damaged it."
+          "t": "Next, a torture test with a deliberately bad sector. So I really stressed it. About 18MB into the drive, I found a free cluster, sector 37299. Using my own proprietary tools for SpinRite development, I damaged it."
         },
         {
           "s": "steve",
@@ -301,7 +314,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Now a killer one. FREE CompuSec had 9 percent overhead. So I wrote a batch file timing, with EndTimer, Windows defrag, then Vopt, then Windows defrag again."
+          "t": "Next, a benchmark result that surprised me. Now a killer one. FREE CompuSec had 9 percent overhead. So I wrote a batch file timing, with EndTimer, Windows defrag, then Vopt, then Windows defrag again."
         },
         {
           "s": "steve",
@@ -354,7 +367,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It uses AES. And more overkill: you can chain multiple ciphers, like AES followed by Twofish. Come on, folks, no one needs that."
+          "t": "Next, TrueCrypt's ciphers. It uses AES. And more overkill: you can chain multiple ciphers, like AES followed by Twofish. Come on, folks, no one needs that."
         },
         {
           "s": "leo",
@@ -375,7 +388,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "As a tweaker who wants a minimal environment, I wondered whether TrueCrypt has to run at startup and sit in the tray, if all you want is whole-drive encryption. Say it's an office computer, where you just want a passphrase at boot so a thief gets nothing. That's what led me to FREE CompuSec."
+          "t": "Next, how little needs to run. As a tweaker who wants a minimal environment, I wondered whether TrueCrypt has to run at startup and sit in the tray, if all you want is whole-drive encryption. Say it's an office computer, where you just want a passphrase at boot so a thief gets nothing. That's what led me to FREE CompuSec."
         },
         {
           "s": "steve",
@@ -392,7 +405,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "At the boot loader, you can bypass it, or enter your passphrase and boot, or permanently decrypt the drive right there. You can also decrypt from within Windows. The recovery CD can do more, which is why it's mandatory."
+          "t": "Next, what the recovery CD can do. At the boot loader, you can bypass it, or enter your passphrase and boot, or permanently decrypt the drive right there. You can also decrypt from within Windows. The recovery CD can do more, which is why it's mandatory."
         },
         {
           "s": "steve",
@@ -425,7 +438,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "As we said in the last two episodes, the hibernation file isn't encrypted. FREE CompuSec does it and is proud of it, so it must be tricky. It's a copy of your RAM and hardware state, written as Windows' last gasp, after most of Windows has shut down."
+          "t": "Now two of TrueCrypt's limits: the hibernation file and no password recovery. As we said in the last two episodes, the hibernation file isn't encrypted. FREE CompuSec does it and is proud of it, so it must be tricky. It's a copy of your RAM and hardware state, written as Windows' last gasp, after most of Windows has shut down."
         },
         {
           "s": "steve",
@@ -451,7 +464,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The last two are edge cases: hard drive sector sparing and the wear leveling in better solid-state media."
+          "t": "Two more edge cases to know about. The last two are edge cases: hard drive sector sparing and the wear leveling in better solid-state media."
         },
         {
           "s": "steve",
@@ -492,7 +505,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Finally, traveler mode is spectacular. A nice wizard puts TrueCrypt's EXE and SYS driver, including 64-bit support, on the unencrypted portion of a USB drive, along with an autorun INF file."
+          "t": "Finally, traveler mode for thumb drives is spectacular. A nice wizard puts TrueCrypt's EXE and SYS driver, including 64-bit support, on the unencrypted portion of a USB drive, along with an autorun INF file."
         },
         {
           "s": "steve",
@@ -522,7 +535,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "And it's free from TrueCrypt.org."
+          "t": "To wrap up: it's free from TrueCrypt.org."
         },
         {
           "s": "steve",

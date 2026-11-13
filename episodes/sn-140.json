@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-140.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #140",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 140, for April 17, 2008: Listener Feedback #39."
+        },
+        {
+          "s": "leo",
+          "t": "It's time for Security Now!, with Steve Gibson, the man who knows all about protecting yourself online."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today is a Q&A. First, the news: April's Patch Tuesday brings yet another Windows Metafile flaw. Then a SpinRite story, and questions on keyboard-pattern passwords, old operating systems, online bill paying, HTTPS as authentication, DNS resolvers and TrueCrypt versus IronKey."
+        }
+      ]
+    },
+    {
       "title": "Coffee and the RSA Conference",
       "beats": [
         {
@@ -50,7 +67,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "April's Patch Tuesday had eight security updates, all critical, with proof-of-concept code released and exploits in the wild. The most significant is our old friend the Windows Metafile."
+          "t": "First, the news. April's Patch Tuesday had eight security updates, all critical, with proof-of-concept code released and exploits in the wild. The most significant is our old friend the Windows Metafile."
         },
         {
           "s": "steve",
@@ -99,7 +116,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We're about to cross four million deliveries from GRC's Perfect Passwords page, about 3,600 a day, and each delivery is a set of passwords."
+          "t": "Next, a GRC milestone. We're about to cross four million deliveries from GRC's Perfect Passwords page, about 3,600 a day, and each delivery is a set of passwords."
         },
         {
           "s": "leo",
@@ -120,7 +137,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "An early report on my quad-core workstation: as a personal workstation, the quad core seems a total waste, unless you're compressing media. For that, oh my god, it's fast."
+          "t": "Next, a hardware note. An early report on my quad-core workstation: as a personal workstation, the quad core seems a total waste, unless you're compressing media. For that, oh my god, it's fast."
         },
         {
           "s": "leo",
@@ -157,7 +174,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Matt Ludlum in Weybridge, near London, noted that IE7 already does what that FormFox add-on does: hover over a Submit button and the status bar shows its URL. I checked IE6 too. I now run VMware on this workstation, with multiple Windows versions, each with its own IE."
+          "t": "A follow-up on last week's FormFox add-on. Matt Ludlum in Weybridge, near London, noted that IE7 already does what that FormFox add-on does: hover over a Submit button and the status bar shows its URL. I checked IE6 too. I now run VMware on this workstation, with multiple Windows versions, each with its own IE."
         },
         {
           "s": "leo",
@@ -182,7 +199,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This is Episode 140, past TWiT, with 10 to go to 150."
+          "t": "Now a SpinRite story. This is Episode 140, past TWiT, with 10 to go to 150."
         },
         {
           "s": "steve",
@@ -219,7 +236,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Chris Clark in Perth, Western Australia, makes passwords by muscle memory: a geometric pattern across the keyboard that looks like gibberish. A basic example: start at the bottom-left key and type four keys, zxcv, then move up a row, asdf, then qwer, then 1234. It's long, and only his fingers know it. His real pattern is a lot crazier. Would it stand up to a sophisticated brute-force attack?"
+          "t": "Now to listener questions, starting with passwords. Chris Clark in Perth, Western Australia, makes passwords by muscle memory: a geometric pattern across the keyboard that looks like gibberish. A basic example: start at the bottom-left key and type four keys, zxcv, then move up a row, asdf, then qwer, then 1234. It's long, and only his fingers know it. His real pattern is a lot crazier. Would it stand up to a sophisticated brute-force attack?"
         },
         {
           "s": "steve",
@@ -257,7 +274,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous listener in Tennessee strongly disagrees with our advice about old operating systems. Many vulnerabilities in new versions exist in old ones too, like the animated cursor flaw, and some networking holes go way back."
+          "t": "Next, a challenge to our advice about old operating systems. An anonymous listener in Tennessee strongly disagrees with our advice about old operating systems. Many vulnerabilities in new versions exist in old ones too, like the animated cursor flaw, and some networking holes go way back."
         },
         {
           "s": "leo",
@@ -294,7 +311,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Eric in Sanford, North Carolina never misses an episode and enjoys looking smart helping friends and family. He keeps Windows patched, uses the Comodo firewall, scans weekly, has a NAT router, and visits only a few favorite sites to avoid a CTD, a Computer Transmitted Disease, though he takes a Sunday drive on the 'Net and worries about third-party ad banners. Could you do an episode on slimming down Windows and closing vulnerability doors?"
+          "t": "Next, a question about Windows services. Eric in Sanford, North Carolina never misses an episode and enjoys looking smart helping friends and family. He keeps Windows patched, uses the Comodo firewall, scans weekly, has a NAT router, and visits only a few favorite sites to avoid a CTD, a Computer Transmitted Disease, though he takes a Sunday drive on the 'Net and worries about third-party ad banners. Could you do an episode on slimming down Windows and closing vulnerability doors?"
         },
         {
           "s": "steve",
@@ -331,7 +348,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Curtis Wyatt in Las Cruces, New Mexico is considering online bill paying. Is it safe to give his electric, gas and cell phone companies his bank information? I've done it for years."
+          "t": "Next, a question about online bill paying. Curtis Wyatt in Las Cruces, New Mexico is considering online bill paying. Is it safe to give his electric, gas and cell phone companies his bank information? I've done it for years."
         },
         {
           "s": "steve",
@@ -393,7 +410,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "While you were in Australia, I lost control of my credit card number. Third time it's happened. I use it all over the 'Net."
+          "t": "A cautionary tale about my credit card. While you were in Australia, I lost control of my credit card number. Third time it's happened. I use it all over the 'Net."
         },
         {
           "s": "steve",
@@ -430,7 +447,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "John wants to download every episode, but iTunes only offers some, and our site says you can \"subscribe.\" Does subscribing mean he can't download the rest? Doesn't he want to violate our policy?"
+          "t": "Next, a question about downloading old episodes. John wants to download every episode, but iTunes only offers some, and our site says you can \"subscribe.\" Does subscribing mean he can't download the rest? Doesn't he want to violate our policy?"
         },
         {
           "s": "leo",
@@ -459,7 +476,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Håkan Lindqvist in Sweden, and we have many listeners in Scandinavia and Australia, says banks that put the login form on a plain HTTP page with a note saying it \"will be submitted securely,\" or that even redirect you back to HTTP if you try HTTPS, invite catastrophe."
+          "t": "Next, a question about login pages. Håkan Lindqvist in Sweden, and we have many listeners in Scandinavia and Australia, says banks that put the login form on a plain HTTP page with a note saying it \"will be submitted securely,\" or that even redirect you back to HTTP if you try HTTPS, invite catastrophe."
         },
         {
           "s": "leo",
@@ -513,7 +530,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jim Busser in Vancouver reminds us: IronKey needs no administrative rights. In many government and corporate settings, users lack admin rights on the PCs they use. And IronKey's secure surfing service matters on untrusted access points. So TrueCrypt needs admin rights even to unlock?"
+          "t": "Next, a follow-up on IronKey. Jim Busser in Vancouver reminds us: IronKey needs no administrative rights. In many government and corporate settings, users lack admin rights on the PCs they use. And IronKey's secure surfing service matters on untrusted access points. So TrueCrypt needs admin rights even to unlock?"
         },
         {
           "s": "steve",
@@ -530,7 +547,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dan Menear in Northglenn, Colorado: you said you run your own OpenDNS server. If the goal is avoiding DNS poisoning, how do you get propagated DNS information?"
+          "t": "Next, a question about DNS. Dan Menear in Northglenn, Colorado: you said you run your own OpenDNS server. If the goal is avoiding DNS poisoning, how do you get propagated DNS information?"
         },
         {
           "s": "steve",
@@ -579,7 +596,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Eric Larsen in Denmark uses TrueCrypt's pre-boot authentication. TrueCrypt recommends 20 or more characters, which is hard to remember. IronKey's 10 tries make even four characters secure. Why not limit TrueCrypt to 50 tries? A brute-force cracker would use them up in a millisecond."
+          "t": "Next, a question about guess limits. Eric Larsen in Denmark uses TrueCrypt's pre-boot authentication. TrueCrypt recommends 20 or more characters, which is hard to remember. IronKey's 10 tries make even four characters secure. Why not limit TrueCrypt to 50 tries? A brute-force cracker would use them up in a millisecond."
         },
         {
           "s": "steve",
@@ -616,7 +633,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Scott Edwards in Newcastle, Australia was explaining to a coworker how impractical it is to crack strong encryption. He found the \"billion billion billion billion\" example in our show notes, a number with 1,296 billion billion billion billion digits. The notes made it easy."
+          "t": "Next, a note on searching the show notes. Scott Edwards in Newcastle, Australia was explaining to a coworker how impractical it is to crack strong encryption. He found the \"billion billion billion billion\" example in our show notes, a number with 1,296 billion billion billion billion digits. The notes made it easy."
         },
         {
           "s": "steve",
@@ -633,7 +650,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "James Manger in Melbourne makes a good point about leaving your thumb drive with a mechanic. TrueCrypt protects your files, but they could put malware on the drive, infecting the next computer you plug it into, maybe even with autorun disabled, and U3 might need more."
+          "t": "Next, a follow-up on the thumb drive and the mechanic. James Manger in Melbourne makes a good point about leaving your thumb drive with a mechanic. TrueCrypt protects your files, but they could put malware on the drive, infecting the next computer you plug it into, maybe even with autorun disabled, and U3 might need more."
         },
         {
           "s": "leo",
@@ -670,7 +687,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Our Shocking but True Jolt of the Week comes anonymously from nearby Irvine."
+          "t": "To close, our Shocking but True Jolt of the Week. It comes anonymously from nearby Irvine."
         },
         {
           "s": "steve",
@@ -723,7 +740,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Next week, the RSA Conference, the big security conference of the year. And send your questions to GRC.com/feedback."
+          "t": "Looking ahead: next week, the RSA Conference, the big security conference of the year. And send your questions to GRC.com/feedback."
         },
         {
           "s": "steve",

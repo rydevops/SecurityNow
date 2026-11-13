@@ -8,11 +8,24 @@
   "audio": "http://media.GRC.com/sn/SN-136.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #136",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 136, for March 20, 2008: Listener Feedback #37."
+        },
+        {
+          "s": "leo",
+          "t": "We're going to talk about security for the next hour or so with Steve Gibson, the man who coined the phrase \"spyware.\" He is a security wizard."
+        }
+      ]
+    },
+    {
       "title": "Tied With TWiT",
       "beats": [
         {
           "s": "steve",
-          "t": "We've been doing this 136 weeks."
+          "t": "Thanks, Leo. Today is a Q&A with a few notes first: a false alarm about GRC, a key ring tip and two SpinRite stories. Then questions on Windows 2000, login forms, TrueCrypt versus IronKey, flash drives, antivirus, Bluetooth keyboards and OpenDNS. We've been doing this 136 weeks."
         },
         {
           "s": "leo",
@@ -33,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Greg, my tech support guy, asked me to say that GRC has not been infected by viruses or trojans. The Avast antivirus scanner had been warning people for a week that GRC was infected with trojans and spyware. I don't know if it was the Google Analytics scripts. They've fixed it, so update your Avast signatures."
+          "t": "First, a note about GRC. Greg, my tech support guy, asked me to say that GRC has not been infected by viruses or trojans. The Avast antivirus scanner had been warning people for a week that GRC was infected with trojans and spyware. I don't know if it was the Google Analytics scripts. They've fixed it, so update your Avast signatures."
         },
         {
           "s": "leo",
@@ -54,7 +67,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Under \"I love our listeners\": Mark Odell quoted me from Episode 134, about handing my keys to the mechanic with my little TrueCrypted 4GB thumb drive attached. Keys are a problem with valets anyway. Your registration is in the glove compartment, and they could copy your key. And a thumb drive would be tantalizing."
+          "t": "Next, a tip from a listener. Under \"I love our listeners\": Mark Odell quoted me from Episode 134, about handing my keys to the mechanic with my little TrueCrypted 4GB thumb drive attached. Keys are a problem with valets anyway. Your registration is in the glove compartment, and they could copy your key. And a thumb drive would be tantalizing."
         },
         {
           "s": "leo",
@@ -79,7 +92,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Westcott Hyde wrote that it took him six months and a day to catch up on every episode, some six or seven times, through IronKey. Where's his Security Now! degree?"
+          "t": "Now a SpinRite story with a record-length run. Westcott Hyde wrote that it took him six months and a day to catch up on every episode, some six or seven times, through IronKey. Where's his Security Now! degree?"
         },
         {
           "s": "leo",
@@ -128,7 +141,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Did you know Dvorak is running SpinRite? Lots of people told me he'd complained somewhere that his family's main gaming machine went down. I crashed my Windows 2000 box last Thursday, so when I got email back on Sunday, I found John had tried every channel to reach me for a copy. Of course I sent one."
+          "t": "Next, a SpinRite note about John Dvorak, and a RAID error of Leo's. Did you know Dvorak is running SpinRite? Lots of people told me he'd complained somewhere that his family's main gaming machine went down. I crashed my Windows 2000 box last Thursday, so when I got email back on Sunday, I found John had tried every channel to reach me for a copy. Of course I sent one."
         },
         {
           "s": "leo",
@@ -149,7 +162,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Postdiction in Chicago has an old P3 850 laptop that lost memory, going from 384MB to 128MB. XP is too slow now, but Windows 2000 runs great. How does Steve set up and lock down Windows 2000 on his laptop, to take it into the wild? And isn't 2000 no longer supported?"
+          "t": "Now to listener questions, starting with an old laptop. Postdiction in Chicago has an old P3 850 laptop that lost memory, going from 384MB to 128MB. XP is too slow now, but Windows 2000 runs great. How does Steve set up and lock down Windows 2000 on his laptop, to take it into the wild? And isn't 2000 no longer supported?"
         },
         {
           "s": "steve",
@@ -190,7 +203,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "What about patches? Isn't Microsoft done patching 2000?"
+          "t": "A follow-up on Windows 2000: what about patches? Isn't Microsoft done patching 2000?"
         },
         {
           "s": "steve",
@@ -240,7 +253,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "TJ Schroemer in Houston types https for DiscoverCard.com, but it always lands on plain http. The help desk says clicking the login button switches to a secure connection. Is that true, or are they blowing smoke?"
+          "t": "Next, a question about login forms. TJ Schroemer in Houston types https for DiscoverCard.com, but it always lands on plain http. The help desk says clicking the login button switches to a secure connection. Is that true, or are they blowing smoke?"
         },
         {
           "s": "steve",
@@ -294,7 +307,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeffrey in Columbia, Maryland is torn. TrueCrypt on a USB key, or IronKey? Both are worthless if your computer is already compromised. Is TrueCrypt really less secure because software can be brute-forced? Can't TrueCrypt's keyfiles make up for that? TrueCrypt is free, and he doesn't want to trust another company's servers with his password. It's Trust No One. And only a state-sponsored enemy would try to break either. So what's the scare for an everyday user?"
+          "t": "Next, a question about USB encryption. Jeffrey in Columbia, Maryland is torn. TrueCrypt on a USB key, or IronKey? Both are worthless if your computer is already compromised. Is TrueCrypt really less secure because software can be brute-forced? Can't TrueCrypt's keyfiles make up for that? TrueCrypt is free, and he doesn't want to trust another company's servers with his password. It's Trust No One. And only a state-sponsored enemy would try to break either. So what's the scare for an everyday user?"
         },
         {
           "s": "steve",
@@ -331,7 +344,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tyler in Arizona says all the virtual machines feel heavy in performance or size. Then he found Cooperative Linux, coLinux. It's not virtualization. Both kernels run in ring zero as coroutines, neither in charge. Linux sees hardware only through a virtualization layer, so the two don't fight over, say, a USB key. Both run on bare metal."
+          "t": "Next, a question about virtualization. Tyler in Arizona says all the virtual machines feel heavy in performance or size. Then he found Cooperative Linux, coLinux. It's not virtualization. Both kernels run in ring zero as coroutines, neither in charge. Linux sees hardware only through a virtualization layer, so the two don't fight over, say, a USB key. Both run on bare metal."
         },
         {
           "s": "leo",
@@ -373,7 +386,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tim Bousky in Singapore asks: if drives relocate bad sectors but keep their numbers, doesn't that erode the benefit of defragmenters like PerfectDisk, since sequential sector numbers won't be physically sequential?"
+          "t": "Next, a question about drives and defragmenting. Tim Bousky in Singapore asks: if drives relocate bad sectors but keep their numbers, doesn't that erode the benefit of defragmenters like PerfectDisk, since sequential sector numbers won't be physically sequential?"
         },
         {
           "s": "steve",
@@ -399,7 +412,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Shawn White in Osaka, Japan says his university runs PortableApps from flash drives: Firefox, OpenOffice, Audacity, GIMP, NVU. How would you estimate the write cycles? As we move toward portable and cloud computing, is MLC enough, or should we use SLC?"
+          "t": "Next, a question about flash drives. Shawn White in Osaka, Japan says his university runs PortableApps from flash drives: Firefox, OpenOffice, Audacity, GIMP, NVU. How would you estimate the write cycles? As we move toward portable and cloud computing, is MLC enough, or should we use SLC?"
         },
         {
           "s": "steve",
@@ -432,7 +445,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jim Phelan was also having trouble getting Jungle Disk to back up his TrueCrypt containers. He found the setting in TrueCrypt's interface: under Settings, Preferences, uncheck \"Preserve modification timestamp of file containers.\" It warns that you lose plausible deniability. Then each time you dismount a volume, its timestamp updates."
+          "t": "Next, a follow-up on TrueCrypt and Jungle Disk. Jim Phelan was also having trouble getting Jungle Disk to back up his TrueCrypt containers. He found the setting in TrueCrypt's interface: under Settings, Preferences, uncheck \"Preserve modification timestamp of file containers.\" It warns that you lose plausible deniability. Then each time you dismount a volume, its timestamp updates."
         },
         {
           "s": "steve",
@@ -453,7 +466,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David O. in the Bay Area says \"only the NSA can do it\" understates the threat. I'm the one who said that. He worked in tech support at a large computer company, where a data recovery service told them they could recover erased and overwritten disks for forensic purposes, using residual magnetic traces. It's not cheap or easy, but anyone can hire them."
+          "t": "Next, a challenge about recovering overwritten data. David O. in the Bay Area says \"only the NSA can do it\" understates the threat. I'm the one who said that. He worked in tech support at a large computer company, where a data recovery service told them they could recover erased and overwritten disks for forensic purposes, using residual magnetic traces. It's not cheap or easy, but anyone can hire them."
         },
         {
           "s": "leo",
@@ -491,7 +504,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tim O'Malley of Beach Park, Illinois heard us say, in Episode 129 and before, that neither of us uses antivirus. How do you set up your machines so you feel safe?"
+          "t": "Next, a question about going without antivirus. Tim O'Malley of Beach Park, Illinois heard us say, in Episode 129 and before, that neither of us uses antivirus. How do you set up your machines so you feel safe?"
         },
         {
           "s": "steve",
@@ -528,7 +541,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Here's one to give you a chill. Sonu Daswani's subject is \"to learn password of any ID,\" and asks, \"Please give us how we can learn password cracking.\""
+          "t": "Next, a request we can't help with. Here's one to give you a chill. Sonu Daswani's subject is \"to learn password of any ID,\" and asks, \"Please give us how we can learn password cracking.\""
         },
         {
           "s": "leo",
@@ -553,7 +566,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David in the United Kingdom heard us on wireless keyboard insecurity, so he doesn't bank with his Logitech wireless keyboard. He wants a new iMac with Apple's Bluetooth keyboard. His flatmate got malware on his phone through Bluetooth. Could a Bluetooth keyboard be compromised, even with a keylogger in it?"
+          "t": "Next, a question about Bluetooth keyboards. David in the United Kingdom heard us on wireless keyboard insecurity, so he doesn't bank with his Logitech wireless keyboard. He wants a new iMac with Apple's Bluetooth keyboard. His flatmate got malware on his phone through Bluetooth. Could a Bluetooth keyboard be compromised, even with a keylogger in it?"
         },
         {
           "s": "steve",
@@ -583,7 +596,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "David Miles of Westminster, Colorado has used OpenDNS for over a year, as have I. Lately Google was painfully slow and accused him of having a virus, even from his Ubuntu and Fedora systems. Tired of OpenDNS's \"server not responding\" pages, he went back to Comcast's DNS, and Google returned to normal. He thinks OpenDNS is harvesting information from queries, citing Wikipedia. Have you looked into this?"
+          "t": "Next, a question about OpenDNS. David Miles of Westminster, Colorado has used OpenDNS for over a year, as have I. Lately Google was painfully slow and accused him of having a virus, even from his Ubuntu and Fedora systems. Tired of OpenDNS's \"server not responding\" pages, he went back to Comcast's DNS, and Google returned to normal. He thinks OpenDNS is harvesting information from queries, citing Wikipedia. Have you looked into this?"
         },
         {
           "s": "leo",
@@ -637,11 +650,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Next week is RAM hacking: spraying Freon on memory chips, putting them in the refrigerator, and recovering keys."
-        },
-        {
-          "s": "steve",
-          "t": "Did you run SpinRite on that RAID drive at level 4, or just 2?"
+          "t": "A follow-up on your RAID array, Leo. Did you run SpinRite on that RAID drive at level 4, or just 2?"
         },
         {
           "s": "leo",
@@ -666,6 +675,10 @@
         {
           "s": "steve",
           "t": "Someone wrote today that 80GB took about three hours."
+        },
+        {
+          "s": "steve",
+          "t": "To wrap up, next week is RAM hacking: spraying Freon on memory chips, putting them in the refrigerator, and recovering keys."
         }
       ]
     }

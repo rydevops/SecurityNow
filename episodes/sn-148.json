@@ -8,11 +8,24 @@
   "audio": "http://media.GRC.com/sn/SN-148.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #148",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 148, for June 12, 2008: Listener Feedback #43."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. This is Security Now! with Steve Gibson."
+        }
+      ]
+    },
+    {
       "title": "Patch Tuesday Brings Bluetooth",
       "beats": [
         {
           "s": "steve",
-          "t": "We're recording on Patch Tuesday, so details aren't out yet. Microsoft's advance notice lists three critical updates: Internet Explorer, DirectX and Bluetooth. When wasn't there a critical IE update? The Bluetooth one interests me most. It's radio, and there are Bluetooth adapters on many laptops and portable Windows devices."
+          "t": "Thanks, Leo. Today is a Q&A. First, the news: Patch Tuesday's Bluetooth fix, a Skype flaw and Safari's carpet bomb on Windows. Then a SpinRite story, and questions on a router that renumbered itself, hashes, PayPal's plug-in, password length limits, traffic shaping and more. We're recording on Patch Tuesday, so details aren't out yet. Microsoft's advance notice lists three critical updates: Internet Explorer, DirectX and Bluetooth. When wasn't there a critical IE update? The Bluetooth one interests me most. It's radio, and there are Bluetooth adapters on many laptops and portable Windows devices."
         },
         {
           "s": "steve",
@@ -41,7 +54,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "For Skype users: Windows versions before 3.8.0.139 had a flaw letting one Skype user send another a link to an executable that bypasses Skype's warning before running executables. Someone could disguise a program and get you to run it. If you only Skype people you trust, it's probably not a big problem, but it's fixed in 3.8.0.139 and later."
+          "t": "Next, a Skype flaw. For Skype users: Windows versions before 3.8.0.139 had a flaw letting one Skype user send another a link to an executable that bypasses Skype's warning before running executables. Someone could disguise a program and get you to run it. If you only Skype people you trust, it's probably not a big problem, but it's fixed in 3.8.0.139 and later."
         },
         {
           "s": "steve",
@@ -54,7 +67,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "You've probably heard Microsoft saying not to use Safari for Windows. The reason is freaky."
+          "t": "Next, a freaky problem with Safari for Windows. You've probably heard Microsoft saying not to use Safari for Windows. The reason is freaky."
         },
         {
           "s": "steve",
@@ -136,7 +149,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "For fat-fingered listeners, ThinkGeek now sells a stylus that works on the iPod Touch and iPhone."
+          "t": "A gadget note. For fat-fingered listeners, ThinkGeek now sells a stylus that works on the iPod Touch and iPhone."
         },
         {
           "s": "leo",
@@ -157,7 +170,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Philip Le Riche's subject: \"SpinRite Fails Again.\" He says SpinRite failure stories and floppy tales seem to be the flavor of the month, so here's both. He's one of those people Leo can't understand who still uses floppies, to move data between two systems where USB sticks are prohibited by policy."
+          "t": "Now a SpinRite story, and a floppy tale. Philip Le Riche's subject: \"SpinRite Fails Again.\" He says SpinRite failure stories and floppy tales seem to be the flavor of the month, so here's both. He's one of those people Leo can't understand who still uses floppies, to move data between two systems where USB sticks are prohibited by policy."
         },
         {
           "s": "leo",
@@ -202,7 +215,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Aaron in Union, New Jersey is taking a summer course in computer security. He has Verizon DSL with two routers: a Linksys Gizmo from the now-defunct VoIP provider SunRocket, which dials the DSL with PPPoE, and a Netgear Pre-N router. Logging into the Netgear at 192.168.1.1, he was told that due to a conflict, it's now 10.0.0.1, and its DHCP now hands out 10-dot addresses. He thought 192.168.1.1 couldn't conflict with an ISP. Any security implications?"
+          "t": "Now to listener questions, starting with a puzzling router. Aaron in Union, New Jersey is taking a summer course in computer security. He has Verizon DSL with two routers: a Linksys Gizmo from the now-defunct VoIP provider SunRocket, which dials the DSL with PPPoE, and a Netgear Pre-N router. Logging into the Netgear at 192.168.1.1, he was told that due to a conflict, it's now 10.0.0.1, and its DHCP now hands out 10-dot addresses. He thought 192.168.1.1 couldn't conflict with an ISP. Any security implications?"
         },
         {
           "s": "steve",
@@ -263,7 +276,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Brian in Raleigh asks: a 32-hex-digit MD5 hash has 16^32, about 10^38, possible values. A 700MB CD image has vastly more possible combinations. How are collisions avoided?"
+          "t": "Next, a question about hashes. Brian in Raleigh asks: a 32-hex-digit MD5 hash has 16^32, about 10^38, possible values. A 700MB CD image has vastly more possible combinations. How are collisions avoided?"
         },
         {
           "s": "steve",
@@ -297,7 +310,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Sande Nissen in Northfield, Minnesota trusts PayPal's privacy and dispute resolution, but a browser plug-in? Given how buggy browsers are, can it be secure?"
+          "t": "Next, a question about PayPal's plug-in. Sande Nissen in Northfield, Minnesota trusts PayPal's privacy and dispute resolution, but a browser plug-in? Given how buggy browsers are, can it be secure?"
         },
         {
           "s": "steve",
@@ -330,7 +343,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Curtis Wyatt in Phoenix just graduated from NMSU with a computer science degree. Interviewing with a government contractor for a security and encryption job, he could explain asymmetric versus symmetric encryption, thanks to our show. They hired him. On his first day, he impressed his supervisor by recognizing the TPM in laptops."
+          "t": "Next, a thank-you note. Curtis Wyatt in Phoenix just graduated from NMSU with a computer science degree. Interviewing with a government contractor for a security and encryption job, he could explain asymmetric versus symmetric encryption, thanks to our show. They hired him. On his first day, he impressed his supervisor by recognizing the TPM in laptops."
         },
         {
           "s": "steve",
@@ -347,7 +360,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Al in Lowell, Massachusetts was asked by a friend: will the Internet's protocols, like IP and TCP, be phased out for more secure ones? Will the bad guys always have the same encryption as the good guys? Can digital rights be protected without infringing privacy? As long as the government doesn't seize all PCs, the current model persists, so a new one would have a hard time."
+          "t": "Next, a question about the future of Internet protocols. Al in Lowell, Massachusetts was asked by a friend: will the Internet's protocols, like IP and TCP, be phased out for more secure ones? Will the bad guys always have the same encryption as the good guys? Can digital rights be protected without infringing privacy? As long as the government doesn't seize all PCs, the current model persists, so a new one would have a hard time."
         },
         {
           "s": "steve",
@@ -397,7 +410,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Udo Penther in St. Thomas, U.S. Virgin Islands, says two local banks put the login on a plain HTTP page, then switch to HTTPS after you submit. Requesting the login page with HTTPS doesn't work. Is that sufficient? He'd hate to join the local power and phone companies in bankruptcy. Is there a professional reference he can put on the banks' managers' desks?"
+          "t": "Next, a question about bank login pages. Udo Penther in St. Thomas, U.S. Virgin Islands, says two local banks put the login on a plain HTTP page, then switch to HTTPS after you submit. Requesting the login page with HTTPS doesn't work. Is that sufficient? He'd hate to join the local power and phone companies in bankruptcy. Is there a professional reference he can put on the banks' managers' desks?"
         },
         {
           "s": "steve",
@@ -454,7 +467,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Aaron Feickert in Fargo, North Dakota has a pet peeve. He prefers 25-character passwords with spaces, and sites reject them. Even his bank limits him to 16 characters, no spaces. Mine too. With modern one-way hashing, is there any reason for such limits? With spaces, he could use a multiword passphrase that's easy to remember but nearly impossible to break."
+          "t": "Next, a pet peeve about password limits. Aaron Feickert in Fargo, North Dakota has a pet peeve. He prefers 25-character passwords with spaces, and sites reject them. Even his bank limits him to 16 characters, no spaces. Mine too. With modern one-way hashing, is there any reason for such limits? With spaces, he could use a multiword passphrase that's easy to remember but nearly impossible to break."
         },
         {
           "s": "steve",
@@ -500,7 +513,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Paul Thomas in York, England says his son Gareth thinks he's a geek, since our podcast plays when he picks him up from school. Do you understand what they're talking about? No, but they do, and I will shortly. His new ISP does traffic shaping. How does it work, and are there security issues? He read that Comcast faces three new class-action lawsuits over its practices."
+          "t": "Next, a question about traffic shaping. Paul Thomas in York, England says his son Gareth thinks he's a geek, since our podcast plays when he picks him up from school. Do you understand what they're talking about? No, but they do, and I will shortly. His new ISP does traffic shaping. How does it work, and are there security issues? He read that Comcast faces three new class-action lawsuits over its practices."
         },
         {
           "s": "steve",
@@ -557,7 +570,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Travis in Indianapolis had his car broken into in his driveway, along with others. They took his GPS, candy to car thieves, and his iPod Touch. He was devastated about the Touch, since that's how he listens to podcasts on his two hours of daily commuting."
+          "t": "Next, a story about tracking a stolen iPod Touch. Travis in Indianapolis had his car broken into in his driveway, along with others. They took his GPS, candy to car thieves, and his iPod Touch. He was devastated about the Touch, since that's how he listens to podcasts on his two hours of daily commuting."
         },
         {
           "s": "leo",
@@ -603,7 +616,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Don in Burbank just finished Simon Singh's \"The Code Book,\" a must-read for listeners. It starts slow but builds carefully, and he came away thinking, oh, so that's what Steve's talking about."
+          "t": "Next, a book recommendation. Don in Burbank just finished Simon Singh's \"The Code Book,\" a must-read for listeners. It starts slow but builds carefully, and he came away thinking, oh, so that's what Steve's talking about."
         },
         {
           "s": "leo",
@@ -621,7 +634,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dustin in Raleigh had a Security Now! moment. His work-provided course instructor passed around a USB key with the slides. Knowing better, he held Shift while plugging it in to block autorun. Good thing, since it was a U3 device, which he can't stand. The instructor wouldn't be malicious, but could infect every work laptop in the room."
+          "t": "Next, a USB safety story. Dustin in Raleigh had a Security Now! moment. His work-provided course instructor passed around a USB key with the slides. Knowing better, he held Shift while plugging it in to block autorun. Good thing, since it was a U3 device, which he can't stand. The instructor wouldn't be malicious, but could infect every work laptop in the room."
         },
         {
           "s": "steve",
@@ -659,7 +672,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Looming Threat Observation of the Week, from John in Ottawa. He sees a proliferation of home servers coming, with NAS storage boxes moving into server territory and marketed to consumers. Are consumers ready?"
+          "t": "To close, the Looming Threat Observation of the Week, from John in Ottawa. He sees a proliferation of home servers coming, with NAS storage boxes moving into server territory and marketed to consumers. Are consumers ready?"
         },
         {
           "s": "leo",

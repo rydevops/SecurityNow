@@ -8,11 +8,28 @@
   "audio": "http://media.GRC.com/sn/SN-131.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #131",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 131, for February 14, 2008: FREE CompuSec."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now!. I know you've been waiting all week with bated breath and unprotected systems to hear what Steve Gibson has to say about security."
+        },
+        {
+          "s": "steve",
+          "t": "Hi, Leo. Today we start with the week's news: a huge Patch Tuesday, exploited Acrobat and Yahoo! jukebox flaws, and a Skype fix. Then comes a SpinRite story. And our main topic is whole-drive encryption, with a look at FREE CompuSec and how to protect a stolen workstation. Next week, we'll finish with TrueCrypt 5."
+        }
+      ]
+    },
+    {
       "title": "Microsoft's Super Tuesday",
       "beats": [
         {
           "s": "steve",
-          "t": "It was a busy week. The first Tuesday of February was the presidential primaries' Super Tuesday. I'd call last Tuesday Microsoft's Super Tuesday: 12 security updates for Windows, Office, VBScript and JScript, plus a big IE update. Many are critical, meaning remote code execution."
+          "t": "First, the news, starting with Microsoft's big Patch Tuesday. It was a busy week. The first Tuesday of February was the presidential primaries' Super Tuesday. I'd call last Tuesday Microsoft's Super Tuesday: 12 security updates for Windows, Office, VBScript and JScript, plus a big IE update. Many are critical, meaning remote code execution."
         },
         {
           "s": "steve",
@@ -33,7 +50,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Apple also had a substantial update, about 180MB on my PowerPC Mac Mini that records our Skype calls, and apparently up to 360MB on Intel Macs."
+          "t": "Staying with updates, Apple also had a substantial update, about 180MB on my PowerPC Mac Mini that records our Skype calls, and apparently up to 360MB on Intel Macs."
         },
         {
           "s": "leo",
@@ -46,7 +63,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We mentioned Adobe updating Acrobat without saying what was fixed. That didn't stop the bad guys from figuring it out. The flaw is now being exploited by malicious PDFs to install the ZoneBac trojan, which disables antivirus and alters search results and banner ads."
+          "t": "Next, a follow-up on Acrobat, Firefox and Skype. We mentioned Adobe updating Acrobat without saying what was fixed. That didn't stop the bad guys from figuring it out. The flaw is now being exploited by malicious PDFs to install the ZoneBac trojan, which disables antivirus and alters search results and banner ads."
         },
         {
           "s": "steve",
@@ -87,7 +104,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We discussed Yahoo!'s Music Jukebox ActiveX control. Malware is now exploiting it to install backdoors, and Yahoo! has no fix. The only defense is setting the \"kill bit,\" which also stops the jukebox."
+          "t": "Another follow-up, which shows why to give up on ActiveX. We discussed Yahoo!'s Music Jukebox ActiveX control. Malware is now exploiting it to install backdoors, and Yahoo! has no fix. The only defense is setting the \"kill bit,\" which also stops the jukebox."
         },
         {
           "s": "steve",
@@ -116,7 +133,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This week's SpinRite story comes from someone who asked for anonymity, because he doesn't want to get fired."
+          "t": "Now for this week's SpinRite story. It comes from someone who asked for anonymity, because he doesn't want to get fired."
         },
         {
           "s": "leo",
@@ -157,7 +174,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Microsoft moved up Vista Service Pack 1. It's released to manufacturing, and MSDN subscribers get it by the 16th. Sometime in March it starts going out to everyone. Paul Thurrott has an FAQ at WinSuperSite.com, and we'll discuss it on Windows Weekly."
+          "t": "One more news item before our main topic: Microsoft moved up Vista Service Pack 1. It's released to manufacturing, and MSDN subscribers get it by the 16th. Sometime in March it starts going out to everyone. Paul Thurrott has an FAQ at WinSuperSite.com, and we'll discuss it on Windows Weekly."
         },
         {
           "s": "steve",
@@ -174,7 +191,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "We've covered TrueCrypt at length. What's today's program?"
+          "t": "Now to today's topic, whole-drive encryption, and protecting a stolen workstation. We've covered TrueCrypt at length. What's today's program?"
         },
         {
           "s": "steve",
@@ -191,7 +208,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My laptops have a fingerprint reader and a TPM, the Trusted Platform Module on the motherboard. I don't encrypt the whole drive. I use the drive password feature drives, especially laptop drives, have had for years."
+          "t": "Option one for a laptop is the drive password. My laptops have a fingerprint reader and a TPM, the Trusted Platform Module on the motherboard. I don't encrypt the whole drive. I use the drive password feature drives, especially laptop drives, have had for years."
         },
         {
           "s": "steve",
@@ -233,7 +250,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The next level is native hard drive encryption, just becoming available. I skipped it on my recent ThinkPads because it cost more than I needed to spend."
+          "t": "Option two is drives that encrypt themselves. The next level is native hard drive encryption, just becoming available. I skipped it on my recent ThinkPads because it cost more than I needed to spend."
         },
         {
           "s": "steve",
@@ -258,7 +275,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So, a couple of months ago, I found FREE CompuSec. Google \"free compusec,\" and it's the first link."
+          "t": "Option three is software whole-drive encryption with pre-boot authentication. So, a couple of months ago, I found FREE CompuSec. Google \"free compusec,\" and it's the first link."
         },
         {
           "s": "leo",
@@ -323,7 +340,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Can I be a turd in the punchbowl? It's not open source, is it?"
+          "t": "An objection to FREE CompuSec before we go on. Can I be a turd in the punchbowl? It's not open source, is it?"
         },
         {
           "s": "steve",
@@ -352,7 +369,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "My concern was overhead, since a software driver now sits between Windows and the drive. But drives aren't fast anyway, so it's not like software encryption between Windows and RAM."
+          "t": "Next, how much does it slow the machine down? My concern was overhead, since a software driver now sits between Windows and the drive. But drives aren't fast anyway, so it's not like software encryption between Windows and RAM."
         },
         {
           "s": "steve",
@@ -378,7 +395,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I'm very impressed. It keeps log files and installs carefully. You can encrypt the whole drive from outside Windows or from inside, while you use it."
+          "t": "Now the rest of the FREE CompuSec suite. I'm very impressed. It keeps log files and installs carefully. You can encrypt the whole drive from outside Windows or from inside, while you use it."
         },
         {
           "s": "steve",
@@ -419,7 +436,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The only thing I know of that competes is TrueCrypt 5."
+          "t": "How does FREE CompuSec compare with TrueCrypt 5? The only thing I know of that competes is TrueCrypt 5."
         },
         {
           "s": "steve",
@@ -477,7 +494,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "There are interesting court cases about encrypted drives. A man crossing the border between Canada and the U.S. had files with nasty names on his laptop. I won't say them out loud."
+          "t": "There's a legal wrinkle to encrypted drives: can you be forced to give up your password? There are interesting court cases about encrypted drives. A man crossing the border between Canada and the U.S. had files with nasty names on his laptop. I won't say them out loud."
         },
         {
           "s": "steve",
@@ -543,7 +560,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "One more benefit of whole-drive encryption, whether in the drive's hardware, FREE CompuSec or TrueCrypt: it solves the problem of discarding a drive."
+          "t": "A bonus benefit is safe drive disposal. One more benefit of whole-drive encryption, whether in the drive's hardware, FREE CompuSec or TrueCrypt: it solves the problem of discarding a drive."
         },
         {
           "s": "steve",

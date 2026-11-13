@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-144.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #144",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 144, for May 15, 2008: Listener Feedback #41."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson, the show that explains how to stay safe online."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today is a Q&A. We start with a YubiKey follow-up and the news: XP SP3, Microsoft's COFEE toolkit and Adobe's patch. Then a SpinRite story, and questions on Gmail, quantum computers, YubiKey logins, DNS, deep packet inspection and PayPal's secure cards."
+        }
+      ]
+    },
+    {
       "title": "Twelve Shots of Espresso",
       "beats": [
         {
@@ -46,7 +63,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Filing my Yubico correspondence, I searched my email and found two earlier mentions from listeners. Eric Roller wrote on October 6, 2007, about a company spun out of Cypak with a thin USB token that acts like a keyboard and sends a 128-bit authorization key, with no battery. And Torkel Hasle wrote in February about a \"smart security dongle.\""
+          "t": "First, a YubiKey follow-up. Filing my Yubico correspondence, I searched my email and found two earlier mentions from listeners. Eric Roller wrote on October 6, 2007, about a company spun out of Cypak with a thin USB token that acts like a keyboard and sends a 128-bit authorization key, with no battery. And Torkel Hasle wrote in February about a \"smart security dongle.\""
         },
         {
           "s": "steve",
@@ -63,7 +80,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Windows XP Service Pack 3 was released last Thursday. As it happens, I reinstalled XP for the manager of my local California Pizza Kitchen. He's a good guy and had been bugging me for a year. It's good to see how the rest of the world uses computers."
+          "t": "Now the news, starting with XP. Windows XP Service Pack 3 was released last Thursday. As it happens, I reinstalled XP for the manager of my local California Pizza Kitchen. He's a good guy and had been bugging me for a year. It's good to see how the rest of the world uses computers."
         },
         {
           "s": "steve",
@@ -101,7 +118,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Many listeners worried about COFEE, with one F: the Computer Online Forensic Evidence Extractor. Online reports exaggerated it. Even Ars Technica, which I usually rate highly, said it bypasses PC security. I've seen \"backdoor\" and \"decrypts BitLocker drives.\" None of that is the case."
+          "t": "Next, Microsoft's COFEE toolkit. Many listeners worried about COFEE, with one F: the Computer Online Forensic Evidence Extractor. Online reports exaggerated it. Even Ars Technica, which I usually rate highly, said it bypasses PC security. I've seen \"backdoor\" and \"decrypts BitLocker drives.\" None of that is the case."
         },
         {
           "s": "steve",
@@ -119,7 +136,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Remember Adobe's mysterious February patch, with fixes they wouldn't describe? They now say it fixed eight flaws, six allowing remote code execution, mostly in the JavaScript interpreter in Adobe's products, and some are being actively exploited. If you're still on Acrobat Reader 6 or 7, malicious PDFs can take over your computer. Use the latest, 8.1-something."
+          "t": "Next, Adobe and this month's Patch Tuesday. Remember Adobe's mysterious February patch, with fixes they wouldn't describe? They now say it fixed eight flaws, six allowing remote code execution, mostly in the JavaScript interpreter in Adobe's products, and some are being actively exploited. If you're still on Acrobat Reader 6 or 7, malicious PDFs can take over your computer. Use the latest, 8.1-something."
         },
         {
           "s": "steve",
@@ -160,7 +177,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "On the sci-fi side, Ridley Scott's \"Andromeda Strain\" miniseries airs on A&E soon. I saw an extended trailer when I went to see \"Iron Man,\" which I loved, Leo. The DVD comes out in June."
+          "t": "Some lighter notes follow. On the sci-fi side, Ridley Scott's \"Andromeda Strain\" miniseries airs on A&E soon. I saw an extended trailer when I went to see \"Iron Man,\" which I loved, Leo. The DVD comes out in June."
         }
       ]
     },
@@ -223,7 +240,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Gregory Mills is a sculptor and IT manager at a museum. A digital artwork in one gallery runs on a laptop hidden in a pedestal. One day it stopped, and the laptop wouldn't boot."
+          "t": "Now a SpinRite story. Gregory Mills is a sculptor and IT manager at a museum. A digital artwork in one gallery runs on a laptop hidden in a pedestal. One day it stopped, and the laptop wouldn't boot."
         },
         {
           "s": "steve",
@@ -240,7 +257,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Leo, I'm watching you flail around with your hands. I'm the same way. With a microphone like yours, I'd feel different about being on camera. I'm hunched over my Heil like an old-time newscaster."
+          "t": "A studio aside. Leo, I'm watching you flail around with your hands. I'm the same way. With a microphone like yours, I'd feel different about being on camera. I'm hunched over my Heil like an old-time newscaster."
         },
         {
           "s": "leo",
@@ -265,7 +282,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mitchell in London rebuilt his Firefox profile, cutting it from 12MB to 2MB, zipped it with WinZip's built-in 256-bit AES encryption and a 26-character password, and emailed it to himself through Gmail. After a long think, Gmail refused, saying it contained an executable. How could it see inside his encrypted file?"
+          "t": "Now to listener questions, starting with Gmail. Mitchell in London rebuilt his Firefox profile, cutting it from 12MB to 2MB, zipped it with WinZip's built-in 256-bit AES encryption and a 26-character password, and emailed it to himself through Gmail. After a long think, Gmail refused, saying it contained an executable. How could it see inside his encrypted file?"
         },
         {
           "s": "steve",
@@ -295,7 +312,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Robb in Orlando asks whether today's encryption will stand up to quantum computing, said to make PCs millions of times more powerful. Will governments get them first and break encryption easily? Its promoters often say it'll crack strong crypto in minutes instead of millennia."
+          "t": "Next, a question about quantum computers. Robb in Orlando asks whether today's encryption will stand up to quantum computing, said to make PCs millions of times more powerful. Will governments get them first and break encryption easily? Its promoters often say it'll crack strong crypto in minutes instead of millennia."
         },
         {
           "s": "steve",
@@ -349,7 +366,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Greg Christopher in the San Jose area is on Adobe's quality engineering staff and listens regularly. He heard the turf fight between Adobe products and TrueCrypt and thought, little do they know someone at Adobe can do something about it."
+          "t": "Next, a follow-up on Adobe and TrueCrypt. Greg Christopher in the San Jose area is on Adobe's quality engineering staff and listens regularly. He heard the turf fight between Adobe products and TrueCrypt and thought, little do they know someone at Adobe can do something about it."
         },
         {
           "s": "leo",
@@ -378,7 +395,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Craig Cuttner in Connecticut asks which media encoder made use of your quad core. Many professional encoders just call a stock Microsoft DLL and do a mediocre job."
+          "t": "Next, a question about video encoders. Craig Cuttner in Connecticut asks which media encoder made use of your quad core. Many professional encoders just call a stock Microsoft DLL and do a mediocre job."
         },
         {
           "s": "steve",
@@ -411,7 +428,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Ken Juenke in Sparks, Nevada wants to give all his users YubiKeys to log onto Windows. Yubico told him it's coming. And Daniel Ernst in West Bloomfield, Michigan ordered one when prices were still in euros. He loves touching it and watching it spit out crypto, but has no use for it yet. Could it authenticate locally, for TrueCrypt or Password Safe, Bruce Schneier's password program? Both are open source."
+          "t": "Next, questions about using a YubiKey for Windows logins. Ken Juenke in Sparks, Nevada wants to give all his users YubiKeys to log onto Windows. Yubico told him it's coming. And Daniel Ernst in West Bloomfield, Michigan ordered one when prices were still in euros. He loves touching it and watching it spit out crypto, but has no use for it yet. Could it authenticate locally, for TrueCrypt or Password Safe, Bruce Schneier's password program? Both are open source."
         },
         {
           "s": "steve",
@@ -448,7 +465,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Much of a YubiKey's output changes constantly. But the first 12 characters, in the clear, are its public ID. That's 48 bits: 281,474,976,710,656 possibilities. So one option is just using those 12 characters, which never change and which you'd never have to type. Not 128 bits, but a lot."
+          "t": "Next, how local YubiKey authentication could work. Much of a YubiKey's output changes constantly. But the first 12 characters, in the clear, are its public ID. That's 48 bits: 281,474,976,710,656 possibilities. So one option is just using those 12 characters, which never change and which you'd never have to type. Not 128 bits, but a lot."
         },
         {
           "s": "steve",
@@ -486,7 +503,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Dave Rodgers in Green Bay asks: XP lets you set the Netgear router's address, 192.168.0.1, as your DNS server. Is that more or less secure than your ISP's DNS servers? Unless the Netgear has a DNS server built in..."
+          "t": "Next, a question about routers and DNS. Dave Rodgers in Green Bay asks: XP lets you set the Netgear router's address, 192.168.0.1, as your DNS server. Is that more or less secure than your ISP's DNS servers? Unless the Netgear has a DNS server built in..."
         },
         {
           "s": "steve",
@@ -507,7 +524,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Tom Fenton and his Network Security classmates at Colorado Technical University read that deep packet inspection breaks encryption, since it works down to layer two. Are they wrong?"
+          "t": "Next, a question about deep packet inspection. Tom Fenton and his Network Security classmates at Colorado Technical University read that deep packet inspection breaks encryption, since it works down to layer two. Are they wrong?"
         },
         {
           "s": "steve",
@@ -544,7 +561,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Robert Berry in North Carolina says his credit union rolled out \"multifactor security\" with fanfare, but just added occasional security questions, like your mother's maiden name or first pet. They cite the Federal Financial Institutions Examination Council. Is that really multifactor? How can he get them to do better cheaply?"
+          "t": "Next, a question about multifactor claims. Robert Berry in North Carolina says his credit union rolled out \"multifactor security\" with fanfare, but just added occasional security questions, like your mother's maiden name or first pet. They cite the Federal Financial Institutions Examination Council. Is that really multifactor? How can he get them to do better cheaply?"
         },
         {
           "s": "leo",
@@ -593,7 +610,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The Quip of the Week, from Anonymous John in Oregon: Security Now! is costing me a fortune. Listening to the YubiKey episode, he decided he needed one. So he fired up portable Firefox from his IronKey, a Security Now!-influenced purchase, started a secure session, ordered the YubiKey and paid with PayPal, authenticating with his football, another Security Now!-influenced purchase. He's really glad we don't talk about cars or private jets."
+          "t": "Now the Quip of the Week, from Anonymous John in Oregon: Security Now! is costing me a fortune. Listening to the YubiKey episode, he decided he needed one. So he fired up portable Firefox from his IronKey, a Security Now!-influenced purchase, started a secure session, ordered the YubiKey and paid with PayPal, authenticating with his football, another Security Now!-influenced purchase. He's really glad we don't talk about cars or private jets."
         },
         {
           "s": "leo",
@@ -622,7 +639,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The long-awaited Winning Kick-Ass Revelation of the Week, from Tim Madison in Westchester County, New York. Since Steve's card was stolen, probably at a site without PayPal or Google Checkout, here's his method. For sites without those options, he uses PayPal's one-time credit card numbers. He even bought SpinRite with one."
+          "t": "To close, the long-awaited Winning Kick-Ass Revelation of the Week, from Tim Madison in Westchester County, New York. Since Steve's card was stolen, probably at a site without PayPal or Google Checkout, here's his method. For sites without those options, he uses PayPal's one-time credit card numbers. He even bought SpinRite with one."
         },
         {
           "s": "leo",

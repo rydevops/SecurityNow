@@ -8,6 +8,19 @@
   "audio": "http://media.GRC.com/sn/SN-132.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #132",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 132, for February 21, 2008: Listener Feedback #35."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now!, everybody's favorite podcast about protecting yourself against the bad guys on the Internet. Here he is, the good guy, Mr. Steve Gibson."
+        }
+      ]
+    },
+    {
       "title": "600 Emails and Counting",
       "beats": [
         {
@@ -17,6 +30,10 @@
         {
           "s": "leo",
           "t": "We have 12 questions, with an Observation of the Week and a Cool Hack of the Week at the end."
+        },
+        {
+          "s": "steve",
+          "t": "First, some news: encryption mandates, a computerized unshredder and a second look at closed-source security. Then a latent sector errors story, a SpinRite story, and the questions."
         }
       ]
     },
@@ -25,7 +42,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It's been relatively quiet in security disasters. But there's growing talk about requiring encryption for corporate databases of personal information, and I saw that some country abroad was considering requiring all government laptops to be encrypted."
+          "t": "First, the news. It's been relatively quiet in security disasters. But there's growing talk about requiring encryption for corporate databases of personal information, and I saw that some country abroad was considering requiring all government laptops to be encrypted."
         },
         {
           "s": "leo",
@@ -51,7 +68,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Here's classic security by obscurity. A German firm has built a computerized unshredder. A conveyor belt scans up to 10,000 tiny bits of paper at once and reassembles shredded documents."
+          "t": "Next, a news item about shredders. Here's classic security by obscurity. A German firm has built a computerized unshredder. A conveyor belt scans up to 10,000 tiny bits of paper at once and reassembles shredded documents."
         },
         {
           "s": "leo",
@@ -81,7 +98,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "I've been thinking about your comment last week, Leo, about closed-source FREE CompuSec versus open-source TrueCrypt. I like that TrueCrypt is open source. But maybe we came off too negative about closed solutions."
+          "t": "Now a second look at closed-source security. I've been thinking about your comment last week, Leo, about closed-source FREE CompuSec versus open-source TrueCrypt. I like that TrueCrypt is open source. But maybe we came off too negative about closed solutions."
         },
         {
           "s": "steve",
@@ -114,7 +131,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Robin Harris, who writes ZDNet's storage blog, \"Persistence of Memory,\" discusses \"latent sector errors,\" and says bigger drives are getting serious data corruption from them. Have you heard of this?"
+          "t": "Next, a storage story. Robin Harris, who writes ZDNet's storage blog, \"Persistence of Memory,\" discusses \"latent sector errors,\" and says bigger drives are getting serious data corruption from them. Have you heard of this?"
         },
         {
           "s": "steve",
@@ -148,7 +165,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "This subject line caught my eye: \"Damn you, SpinRite!\" Eric Gerlach bought SpinRite when he started listening. A point-of-sale terminal at work got the dreaded \"unmountable boot volume\" error, right when it was needed that night."
+          "t": "Now a SpinRite story. This subject line caught my eye: \"Damn you, SpinRite!\" Eric Gerlach bought SpinRite when he started listening. A point-of-sale terminal at work got the dreaded \"unmountable boot volume\" error, right when it was needed that night."
         },
         {
           "s": "steve",
@@ -177,7 +194,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Glenn Edward in Nottingham, Maryland had at least three of this month's five Microsoft patches fail. The logs said a CurrentControlSet subkey was missing, or \"iis_www\" had the wrong value. Is it because he turned off some XP services for security, or because he's installed only security patches since SP2? Don't these patches expect a certain state? Are they even in effect?"
+          "t": "Now to listener questions, starting with failed patches. Glenn Edward in Nottingham, Maryland had at least three of this month's five Microsoft patches fail. The logs said a CurrentControlSet subkey was missing, or \"iis_www\" had the wrong value. Is it because he turned off some XP services for security, or because he's installed only security patches since SP2? Don't these patches expect a certain state? Are they even in effect?"
         },
         {
           "s": "steve",
@@ -234,7 +251,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Don in Ventura asks whether the Kindle suits reference and technical books, like the latest O'Reilly book. Is searching effective? Could it replace MSDN?"
+          "t": "Next, a question about the Kindle. Don in Ventura asks whether the Kindle suits reference and technical books, like the latest O'Reilly book. Is searching effective? Could it replace MSDN?"
         },
         {
           "s": "steve",
@@ -279,7 +296,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Derek Rainwater, somewhere in the middle of Texas, likes GRC.com's recent changes. He's reading Simon Singh's \"The Code Book,\" which covers much of what we've discussed, in more detail than the podcast can. He suggests recommending it, and enjoys hearing about our books and the Kindle."
+          "t": "Next, a note about GRC's website and a book recommendation. Derek Rainwater, somewhere in the middle of Texas, likes GRC.com's recent changes. He's reading Simon Singh's \"The Code Book,\" which covers much of what we've discussed, in more detail than the podcast can. He suggests recommending it, and enjoys hearing about our books and the Kindle."
         },
         {
           "s": "steve",
@@ -308,7 +325,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Bryan Key in Huntsville, Alabama asks about obscurity. You say breaking RSA or a 128-bit or 256-bit key takes so many attempts. But if the NSA grabbed some encrypted data, wouldn't they have to try every algorithm and key size: RSA, Blowfish and on and on? Doesn't not knowing the method add astronomically more difficulty? So wouldn't using the same standard as everyone be less secure? Can you look at a file and tell how it was encrypted?"
+          "t": "Next, a question about secret ciphers. Bryan Key in Huntsville, Alabama asks about obscurity. You say breaking RSA or a 128-bit or 256-bit key takes so many attempts. But if the NSA grabbed some encrypted data, wouldn't they have to try every algorithm and key size: RSA, Blowfish and on and on? Doesn't not knowing the method add astronomically more difficulty? So wouldn't using the same standard as everyone be less secure? Can you look at a file and tell how it was encrypted?"
         },
         {
           "s": "steve",
@@ -353,7 +370,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "An anonymous listener in Calgary thanks you for the Perfect Paper Passwords v3 pages."
+          "t": "Next, a note on Perfect Paper Passwords. An anonymous listener in Calgary thanks you for the Perfect Paper Passwords v3 pages."
         },
         {
           "s": "steve",
@@ -394,7 +411,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Mike Cerminara of Moorestown, New Jersey, has drive encryption puzzlers. He was put off by CompuSec's closed source, and waited for TrueCrypt, but it's a nonstarter on his laptop because it doesn't support hibernation."
+          "t": "Next, a question about moving an encrypted drive. Mike Cerminara of Moorestown, New Jersey, has drive encryption puzzlers. He was put off by CompuSec's closed source, and waited for TrueCrypt, but it's a nonstarter on his laptop because it doesn't support hibernation."
         },
         {
           "s": "steve",
@@ -436,11 +453,11 @@
       ]
     },
     {
-      "title": "Amazon S3 Goes Dark",
+      "title": "How TWiT's Donations Work",
       "beats": [
         {
           "s": "leo",
-          "t": "Sky Moreno of Yorba Linda, in Orange County, bought SpinRite and sends TWiT $10 a month. Thank you, Sky."
+          "t": "Next, a donor's note. Sky Moreno of Yorba Linda, in Orange County, bought SpinRite and sends TWiT $10 a month. Thank you, Sky."
         },
         {
           "s": "leo",
@@ -461,10 +478,15 @@
         {
           "s": "leo",
           "t": "I want to be able to say a product is crap. When people are nice to you, it's hard to say bad things. That's why I don't even get to know them."
-        },
+        }
+      ]
+    },
+    {
+      "title": "Amazon S3 Goes Dark",
+      "beats": [
         {
           "s": "leo",
-          "t": "Sky runs a small network integration company and, after our Jungle Disk show, sent 5,500 family photos to Amazon. Then S3 went offline. Should Jungle Disk users like us worry?"
+          "t": "Sky also asks about Amazon S3 going offline. Sky runs a small network integration company and, after our Jungle Disk show, sent 5,500 family photos to Amazon. Then S3 went offline. Should Jungle Disk users like us worry?"
         },
         {
           "s": "steve",
@@ -502,7 +524,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Jeffrey in Columbia, Maryland encrypted his entire drive with TrueCrypt. Acronis True Image found the partition but didn't recognize its format, since it's random data, though it offered to image it anyway. Must he decrypt his drive before imaging it? Is this a downfall of full-disk encryption?"
+          "t": "Next, a question about imaging an encrypted drive. Jeffrey in Columbia, Maryland encrypted his entire drive with TrueCrypt. Acronis True Image found the partition but didn't recognize its format, since it's random data, though it offered to image it anyway. Must he decrypt his drive before imaging it? Is this a downfall of full-disk encryption?"
         },
         {
           "s": "steve",
@@ -551,7 +573,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Isaac in New Orleans, a SpinRite owner, asks: if Windows breaks and you need the Recovery Console, does CompuSec's boot driver support Windows repair and the F6 third-party SCSI/SATA driver install? Or does the console see no Windows, since the drive is random noise?"
+          "t": "Next, a question about Windows repair on an encrypted drive. Isaac in New Orleans, a SpinRite owner, asks: if Windows breaks and you need the Recovery Console, does CompuSec's boot driver support Windows repair and the F6 third-party SCSI/SATA driver install? Or does the console see no Windows, since the drive is random noise?"
         },
         {
           "s": "steve",
@@ -608,7 +630,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Matthew Simmons in Raleigh, North Carolina asks: can SpinRite still recover data from a drive full of what looks like random noise? And how resistant are TrueCrypt and FREE CompuSec to bad blocks?"
+          "t": "Next, a question about SpinRite and whole-drive encryption. Matthew Simmons in Raleigh, North Carolina asks: can SpinRite still recover data from a drive full of what looks like random noise? And how resistant are TrueCrypt and FREE CompuSec to bad blocks?"
         },
         {
           "s": "steve",
@@ -662,7 +684,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Now the Tremendous Observation of the Week, from Steve Nicholas in the U.K. He saw forum posts saying FREE CompuSec doesn't create a recovery CD, so he tried TrueCrypt 5.0a and encrypted his whole system disk with no problems."
+          "t": "To close, the Tremendous Observation of the Week, from Steve Nicholas in the U.K. He saw forum posts saying FREE CompuSec doesn't create a recovery CD, so he tried TrueCrypt 5.0a and encrypted his whole system disk with no problems."
         },
         {
           "s": "leo",
@@ -752,7 +774,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Next week is TrueCrypt 5.0. We'll also cover its traveler mode for encrypting USB thumb drives, which leads into our IronKey episode with its founder two weeks later, after a Q&A."
+          "t": "Looking ahead: next week is TrueCrypt 5.0. We'll also cover its traveler mode for encrypting USB thumb drives, which leads into our IronKey episode with its founder two weeks later, after a Q&A."
         },
         {
           "s": "steve",

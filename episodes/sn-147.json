@@ -8,6 +8,23 @@
   "audio": "http://media.GRC.com/sn/SN-147.mp3",
   "chapters": [
     {
+      "title": "Welcome to Security Now! #147",
+      "beats": [
+        {
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 147, for June 5, 2008: Microsoft's Baseline Security Analyzer."
+        },
+        {
+          "s": "leo",
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you. It's time for Security Now! with Steve Gibson."
+        },
+        {
+          "s": "steve",
+          "t": "Thanks, Leo. Today we start with why an infected PC can never be trusted again, then the news: Comcast.net hijacked, Mac updates and an attack on Revision3. After a SpinRite story, our main topic is two free Microsoft security checkups: the Baseline Security Analyzer and the Security Assessment Tool."
+        }
+      ]
+    },
+    {
       "title": "Once Infected, Never Trusted",
       "beats": [
         {
@@ -57,7 +74,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The really big news happened right after we recorded last week. Comcast's domain was hijacked."
+          "t": "Now the news: Comcast.net was hijacked. The really big news happened right after we recorded last week. Comcast's domain was hijacked."
         },
         {
           "s": "steve",
@@ -123,7 +140,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Mac listeners should get OS X 10.5.3. It didn't get much press, but it fixed a number of remote code execution vulnerabilities."
+          "t": "Next, Mac and Flash updates. Mac listeners should get OS X 10.5.3. It didn't get much press, but it fixed a number of remote code execution vulnerabilities."
         },
         {
           "s": "leo",
@@ -144,7 +161,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "You didn't mention the DoS attack against our friends at Revision3."
+          "t": "Next, a denial-of-service attack on a friend of ours. You didn't mention the DoS attack against our friends at Revision3."
         },
         {
           "s": "steve",
@@ -181,7 +198,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Dennis Thiel's subject was \"SpinRite works on floppy and saves wedding.\" A friend brought him a floppy with the guest list for her upcoming wedding, her only copy. She couldn't read it."
+          "t": "Now a SpinRite story. Dennis Thiel's subject was \"SpinRite works on floppy and saves wedding.\" A friend brought him a floppy with the guest list for her upcoming wedding, her only copy. She couldn't read it."
         },
         {
           "s": "leo",
@@ -222,7 +239,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "After our Secunia PSI episode, people asked about Microsoft's Baseline Security Analyzer. When Microsoft woke up to security and launched its initiative, \"trustworthy computing\" in Bill Gates' phrase from a Comdex keynote, some useful things came out of it that normal Windows users never hear about. You have to go get them."
+          "t": "Now to our main topic: Microsoft's Baseline Security Analyzer, MBSA. After our Secunia PSI episode, people asked about it. When Microsoft woke up to security and launched its initiative, \"trustworthy computing\" in Bill Gates' phrase from a Comdex keynote, some useful things came out of it that normal Windows users never hear about. You have to go get them."
         },
         {
           "s": "steve",
@@ -263,7 +280,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "It also checks what it calls administrative vulnerabilities. Another red shield: automatic updates aren't set to start automatically. I know. I'll run it when I want. No incomplete update installations were found. And the Windows firewall is disabled and has exceptions configured. I must have turned it off for something."
+          "t": "Next, the settings MBSA checks. It also checks what it calls administrative vulnerabilities. Another red shield: automatic updates aren't set to start automatically. I know. I'll run it when I want. No incomplete update installations were found. And the Windows firewall is disabled and has exceptions configured. I must have turned it off for something."
         },
         {
           "s": "leo",
@@ -321,7 +338,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The second is very different: the Microsoft Security Assessment Tool. Refamiliarizing myself with it, I thought it's like therapy. Security therapy. It doesn't tell you what to do at first. It asks you questions."
+          "t": "Now Microsoft's second free tool. The second is very different: the Microsoft Security Assessment Tool. Refamiliarizing myself with it, I thought it's like therapy. Security therapy. It doesn't tell you what to do at first. It asks you questions."
         },
         {
           "s": "leo",
@@ -366,7 +383,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The downside: it requires .NET 2."
+          "t": "One downside of the Security Assessment Tool: it requires .NET 2."
         },
         {
           "s": "leo",
@@ -432,7 +449,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "The chatroom asks whether SpinRite works on solid-state drives."
+          "t": "To close, a chatroom question about SpinRite. The chatroom asks whether SpinRite works on solid-state drives."
         },
         {
           "s": "steve",

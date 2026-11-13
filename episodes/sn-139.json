@@ -8,27 +8,19 @@
   "audio": "http://media.GRC.com/sn/SN-139.mp3",
   "chapters": [
     {
-      "title": "Engineering, Not Politics",
+      "title": "Welcome to Security Now! #139",
       "beats": [
         {
-          "s": "steve",
-          "t": "We're approaching Episode 140, while TWiT is stalled in the water with Leo in Australia."
-        },
-        {
-          "s": "steve",
-          "t": "\"Net neutrality\" is the only common jargon for this, but it's not really that. I have no real interest in the politics. We've talked about ISPs disrupting connections, at first without admitting it, by sending spoofed packets to people using BitTorrent or downloading huge files."
-        },
-        {
-          "s": "steve",
-          "t": "Researching it, I found much more going on, including in the IETF, the Internet Engineering Task Force. They're dealing with a huge transformation of the last few years, from using the Internet mainly for email and browsing to massive content delivery."
+          "s": "leo",
+          "t": "This is Security Now! with Steve Gibson, Episode 139, for April 10, 2008: Network Congestion."
         },
         {
           "s": "leo",
-          "t": "The biggest net neutrality issues are political, like an ISP such as Comcast blocking Skype to protect its own VoIP product, not its network. We won't cover that today."
+          "t": "This show and the entire TWiT broadcast network is brought to you by donations from listeners like you."
         },
         {
           "s": "steve",
-          "t": "Or an ISP giving preferential treatment to YouTube over a content supplier that isn't paying a premium. That's what really upsets people, since content is no longer treated equally. Today I want to discuss something we've never covered: what happens when you push too much data through a narrow pipe, and how routers and protocols deal with it. Ultimately, the problem is there isn't enough bandwidth."
+          "t": "Thanks, Leo. We're approaching Episode 140, while TWiT is stalled in the water with you in Australia. Today we have a SpinRite story and a programming question, then our main topic: the engineering of network congestion, what happens when too much data meets too little pipe."
         }
       ]
     },
@@ -37,7 +29,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "We've been prerecording, so no security news. We'll catch up next week."
+          "t": "First, a housekeeping note: we've been prerecording, so no security news. We'll catch up next week."
         },
         {
           "s": "steve",
@@ -54,7 +46,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "David Crisman has listened from the start. He says our early series on network basics and our encryption discussions greatly helped his computer science classes."
+          "t": "Now a SpinRite story. David Crisman has listened from the start. He says our early series on network basics and our encryption discussions greatly helped his computer science classes."
         },
         {
           "s": "steve",
@@ -91,7 +83,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "David's question: any advice, books or articles for a newly graduated programmer, so his code doesn't cause the next security PR nightmare? He may just be a small part of a team."
+          "t": "David Crisman also asked a question after his SpinRite story: any advice, books or articles for a newly graduated programmer, so his code doesn't cause the next security PR nightmare? He may just be a small part of a team."
         },
         {
           "s": "leo",
@@ -124,11 +116,32 @@
       ]
     },
     {
+      "title": "Engineering, Not Politics",
+      "beats": [
+        {
+          "s": "steve",
+          "t": "Now to our main topic: network congestion, which is really engineering, not politics. \"Net neutrality\" is the only common jargon for this, but it's not really that. I have no real interest in the politics. We've talked about ISPs disrupting connections, at first without admitting it, by sending spoofed packets to people using BitTorrent or downloading huge files."
+        },
+        {
+          "s": "steve",
+          "t": "Researching it, I found much more going on, including in the IETF, the Internet Engineering Task Force. They're dealing with a huge transformation of the last few years, from using the Internet mainly for email and browsing to massive content delivery."
+        },
+        {
+          "s": "leo",
+          "t": "The biggest net neutrality issues are political, like an ISP such as Comcast blocking Skype to protect its own VoIP product, not its network. We won't cover that today."
+        },
+        {
+          "s": "steve",
+          "t": "Or an ISP giving preferential treatment to YouTube over a content supplier that isn't paying a premium. That's what really upsets people, since content is no longer treated equally. Today I want to discuss something we've never covered: what happens when you push too much data through a narrow pipe, and how routers and protocols deal with it. Ultimately, the problem is there isn't enough bandwidth."
+        }
+      ]
+    },
+    {
       "title": "How the Internet Is Built",
       "beats": [
         {
           "s": "steve",
-          "t": "Here's the issue. There's the last mile, by cable modem or DSL. At some level that's combined in an ISP's \"aggregation router,\" which feeds many customers' traffic into one larger connection. Those go to bigger routers aggregating many aggregation routers. It's a tree, ultimately routed to the ISP's peering partners."
+          "t": "First, how the Internet is built. Here's the issue. There's the last mile, by cable modem or DSL. At some level that's combined in an ISP's \"aggregation router,\" which feeds many customers' traffic into one larger connection. Those go to bigger routers aggregating many aggregation routers. It's a tree, ultimately routed to the ISP's peering partners."
         },
         {
           "s": "steve",
@@ -141,7 +154,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "Once all that equipment is in place, it costs the same whether it's used or not. The bandwidth and hardware have to be there to carry the maximum traffic. Running at less than 100 percent doesn't cost less. So there's a fixed cost, and no increased cost as you approach saturation."
+          "t": "Next, why a full pipe costs the same as an idle one. Once all that equipment is in place, it costs the same whether it's used or not. The bandwidth and hardware have to be there to carry the maximum traffic. Running at less than 100 percent doesn't cost less. So there's a fixed cost, and no increased cost as you approach saturation."
         },
         {
           "s": "steve",
@@ -166,7 +179,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The Internet went from a messaging and bursting medium to something else. Load a web page, the browser fetches its images and assets, and then we stare at it a while."
+          "t": "Next, how traffic changed, from bursts to streams. The Internet went from a messaging and bursting medium to something else. Load a web page, the browser fetches its images and assets, and then we stare at it a while."
         },
         {
           "s": "steve",
@@ -199,7 +212,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So as long as the network doesn't congest, using it up to its limit costs nothing extra. What happens beyond that?"
+          "t": "Now, what happens when the network congests? So as long as the network doesn't congest, using it up to its limit costs nothing extra. What happens beyond that?"
         },
         {
           "s": "steve",
@@ -224,7 +237,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So all Internet routers have the right to simply discard packets. They use various strategies, like choosing among packets in recognized \"flows,\" a flow being traffic between one source and one destination IP. But ultimately a full buffer means a packet gets dropped. That's why it's \"best effort.\""
+          "t": "Next, what routers do when overloaded. So all Internet routers have the right to simply discard packets. They use various strategies, like choosing among packets in recognized \"flows,\" a flow being traffic between one source and one destination IP. But ultimately a full buffer means a packet gets dropped. That's why it's \"best effort.\""
         },
         {
           "s": "steve",
@@ -270,7 +283,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "That means every TCP connection is treated individually. Routers drop randomly, loving no flow more than another. So statistically, all the connections through a congested point share its bandwidth equally."
+          "t": "Next, how bandwidth gets shared. That means every TCP connection is treated individually. Routers drop randomly, loving no flow more than another. So statistically, all the connections through a congested point share its bandwidth equally."
         },
         {
           "s": "steve",
@@ -307,7 +320,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "So the network costs nothing extra until congestion, and congestion is where the cost appears. The designers of next-level protocols see it this way: it's almost as if you counted the dropped packets your use causes. Not your own losses, but everyone else's, summed over time."
+          "t": "Next, charging for the congestion you cause. So the network costs nothing extra until congestion, and congestion is where the cost appears. The designers of next-level protocols see it this way: it's almost as if you counted the dropped packets your use causes. Not your own losses, but everyone else's, summed over time."
         },
         {
           "s": "steve",
@@ -340,12 +353,8 @@
       "title": "The Fight in the Committees",
       "beats": [
         {
-          "s": "leo",
-          "t": "It's exciting if it works."
-        },
-        {
           "s": "steve",
-          "t": "If you think the surface politics are hairy, you wouldn't believe the fighting in the technical committees. Some talk about flow rates, some about fair use. What do we mean by \"fair\"? What are people buying? And users don't want variable pricing. They want to know what a month costs and what they get. Many wonder whether they're getting the bandwidth they pay for."
+          "t": "Not everyone agrees on the fix. If you think the surface politics are hairy, you wouldn't believe the fighting in the technical committees. Some talk about flow rates, some about fair use. What do we mean by \"fair\"? What are people buying? And users don't want variable pricing. They want to know what a month costs and what they get. Many wonder whether they're getting the bandwidth they pay for."
         },
         {
           "s": "steve",
@@ -362,7 +371,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Couldn't ISPs do just-in-time bandwidth, like streaming providers, where you pay only when you need it?"
+          "t": "Next, a question about billing. Couldn't ISPs do just-in-time bandwidth, like streaming providers, where you pay only when you need it?"
         },
         {
           "s": "steve",
@@ -412,7 +421,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "We just bought a T1 from Covad for $379 a month. It's only 1.5 megabits up and down. Presumably we pay for upstream and guaranteed low latency."
+          "t": "A personal note on bandwidth. We just bought a T1 from Covad for $379 a month. It's only 1.5 megabits up and down. Presumably we pay for upstream and guaranteed low latency."
         },
         {
           "s": "steve",
@@ -433,7 +442,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "The bandwidth explosion of the last couple of years caught our protocols and hardware off guard. The ISPs' first reaction was to kick connections using too much bandwidth."
+          "t": "Now, why ISPs forge resets. The bandwidth explosion of the last couple of years caught our protocols and hardware off guard. The ISPs' first reaction was to kick connections using too much bandwidth."
         },
         {
           "s": "steve",
@@ -467,7 +476,7 @@
       "beats": [
         {
           "s": "steve",
-          "t": "And the stigma of peer-to-peer, with people downloading TV shows and movies, lets ISPs say it's copyright-violating traffic anyway."
+          "t": "There's also the stigma that big downloads are piracy. The stigma of peer-to-peer, with people downloading TV shows and movies, lets ISPs say it's copyright-violating traffic anyway."
         },
         {
           "s": "leo",
@@ -500,7 +509,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "Sometimes I'm online and it's a beast, and I don't know whether to blame my neighbor downloading every Terminator movie. Wouldn't all that dark fiber make bandwidth free and plentiful?"
+          "t": "Next, will fiber fix congestion? Sometimes I'm online and it's a beast, and I don't know whether to blame my neighbor downloading every Terminator movie. Wouldn't all that dark fiber make bandwidth free and plentiful?"
         },
         {
           "s": "steve",
@@ -521,7 +530,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "I've been on business DSL, 384K up, shared with all our Internet use, and it degrades when my email downloads. Next week we'll be on the T1, which I'll eventually dedicate to streaming video. Will it sound better?"
+          "t": "Next, will our T1 sound better? I've been on business DSL, 384K up, shared with all our Internet use, and it degrades when my email downloads. Next week we'll be on the T1, which I'll eventually dedicate to streaming video. Will it sound better?"
         },
         {
           "s": "steve",
@@ -554,7 +563,7 @@
       "beats": [
         {
           "s": "leo",
-          "t": "When I talk about streaming to broadcasters, I explain that it's the opposite model. Once a radio tower and transmitter are up, a million listeners cost no more than 100,000. With data, more listeners cost more. But as you point out, the cost doesn't get great until it's congested."
+          "t": "To wrap up, how broadcast and data economics differ. When I talk about streaming to broadcasters, I explain that it's the opposite model. Once a radio tower and transmitter are up, a million listeners cost no more than 100,000. With data, more listeners cost more. But as you point out, the cost doesn't get great until it's congested."
         },
         {
           "s": "steve",
